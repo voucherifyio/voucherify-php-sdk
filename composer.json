@@ -1,0 +1,8 @@
+{
+    "name": "rspective/voucherify",
+    "version": "1.0.0",
+    "require": {
+        "ext-curl": "*",
+        "ext-json": "*"
+    }
+}
