@@ -1,0 +1,11 @@
+# Dependencies:
+/.idea/
+/vendor/
+.DS_Store
+# Log and temporary files:
+*.log
+*.iml
+/dist/
+# Editor configuraton files:
+/typings/
+/.vscode/
