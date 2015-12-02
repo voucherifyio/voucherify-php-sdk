@@ -1,6 +1,9 @@
 {
     "name": "rspective/voucherify",
-    "version": "1.0.0",
+    "description": "PHP SDK for Voucherify.",
+    "keywords": [ "rspective", "voucherify", "voucher" ],
+    "homepage": "https://github.com/rspective/voucherify-php-sdk",
+    "license": "MIT",
     "require": {
         "ext-curl": "*",
         "ext-json": "*"
