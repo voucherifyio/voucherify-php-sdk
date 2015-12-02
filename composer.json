@@ -7,5 +7,10 @@
     "require": {
         "ext-curl": "*",
         "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Voucherify\\": "."
+        }
     }
 }
