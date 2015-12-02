@@ -7,7 +7,7 @@ namespace Voucherify {
         /**
          * @var string
          */
-        private static $apiURL = "https://voucherify-bouncer.herokuapp.com/v1";
+        private static $apiURL = "http://api.voucherify.io/v1";
         
         /**
          * @var string
@@ -95,13 +95,13 @@ namespace Voucherify {
             return $this->apiRequest("GET", "/vouchers/" . urlencode($code) . "/redemption/", NULL, NULL);
         }
         
-        public function redeem($code, $trackingId) {
+        public function redeem($code, $trackingId) {       
             $context = array();
             if (is_array($code)) {
                 $context = $code;
                 $code = $context["voucher"];
                 unset($context["voucher"]);
-            }        
+            }  
             return $this->apiRequest("POST", "/vouchers/" . urlencode($code) . "/redemption/", [ "tracking_id" => $trackingId ], $context);
         }
     }
