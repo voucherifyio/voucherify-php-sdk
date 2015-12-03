@@ -53,6 +53,14 @@ namespace Voucherify {
             return implode("&", $result);
         }
         
+        /**
+         * @param string $method
+         * @param string $endpoint
+         * @param array|null $params
+         * @param string|array|object|null $data
+         *
+         * @throws Voucherify\ClientException
+         */
         private function apiRequest($method, $endpoint, $params, $data) {
             
             $setParams  = $params   && in_array($method, [ "GET", "POST" ]);
@@ -72,29 +80,67 @@ namespace Voucherify {
             
             curl_setopt_array($curl, $options);
             
-            $result = curl_exec($curl); 
-            
-            curl_close($curl); 
+            $result         = curl_exec($curl);
+            $statusCode     = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            $error          = curl_error($curl);
+            curl_close($curl);
+                
+            // Connection errors
+            if ($result === false) {
+                throw new ClientException($error);
+            }
+            // Invalid status code
+            else if ($statusCode >= 400) {
+                throw new ClientException("Unexpected status code: " . $statusCode . " - Details: " . $result);
+            }
             
             return json_decode($result);
         }
         
+        /**
+         * @param string $apiKey
+         */
         public function setApiKey($apiKey) {
             $this->apiKey = $apiKey;
         }
         
+        /**
+         * @param string $apiID
+         */
         public function setApiID($apiID) {
             $this->apiID = $apiID;
         }
         
+        /**
+         * @param string $code
+         *
+         * Get voucher details
+         *
+         * @throws Voucherify\ClientException
+         */
         public function get($code) {
             return $this->apiRequest("GET", "/vouchers/" . urlencode($code), NULL, NULL);
         }
         
+        /**
+         * @param string $code 
+         *
+         * Get voucher redemption
+         *
+         * @throws Voucherify\ClientException
+         */
         public function redemption($code) {
             return $this->apiRequest("GET", "/vouchers/" . urlencode($code) . "/redemption/", NULL, NULL);
         }
         
+        /**
+         * @param string|array $code Voucher code or array with voucher and custormer items 
+         * @param string|null $trackingId Provided tracking id 
+         *
+         * Get voucher redemption
+         *
+         * @throws Voucherify\ClientException
+         */
         public function redeem($code, $trackingId) {
             $context = array();
             if (is_array($code)) {
