@@ -25,7 +25,7 @@ try {
     print_r($result);
 } 
 catch (ClientException $e) {
-    echo ("Error: " . $e->getMessage());
+    echo("Error: " . $e->getMessage());
 }
 ```
 
@@ -65,7 +65,7 @@ try {
     print_r($result);
 }
 catch (ClientException $e) {
-    echo ("Error: " . $e->getMessage());
+    echo("Error: " . $e->getMessage());
 }
 ```
 
@@ -95,7 +95,7 @@ try {
     print_r($result);
 }
 catch (ClientException $e) {
-    echo ("Error: " . $e->getMessage());
+    echo("Error: " . $e->getMessage());
 }
 ```
 
@@ -153,7 +153,7 @@ try {
     print_r($result);
 }
 catch (ClientException $e) {
-    echo ("Error: " . $e->getMessage());
+    echo("Error: " . $e->getMessage());
 }
 ```
 
@@ -220,7 +220,7 @@ try {
     print_r($result);
 }
 catch (ClientException $e) {
-    echo("Error: " . $e->getMessage() . PHP_EOL);
+    echo("Error: " . $e->getMessage());
 }
 ```
 
