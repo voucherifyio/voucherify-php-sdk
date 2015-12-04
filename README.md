@@ -204,7 +204,7 @@ You can record a detailed customer profile consisting of an `id` (obligatory), `
 ```php
 try {
     $result = $voucherify->redeem([
-        "voucher" => $voucherCode, 
+        "voucher" => "rc-WB-6D9icS1", 
         "customer" => [ 
             "id"            => "alice.morgan",
             "name"          => "Alice Morgan",
