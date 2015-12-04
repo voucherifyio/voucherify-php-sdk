@@ -21,7 +21,7 @@ $voucherify = new VoucherifyClient($apiID, $apiKey);
 
 ```php
 try {
-    $result = $voucherify->get("rc-WB-6D9icS1");
+    $result = $voucherify->get("Testing7fjWdr");
     print_r($result);
 } 
 catch (ClientException $e) {
@@ -32,22 +32,35 @@ catch (ClientException $e) {
 Result:
 ```php
 stdClass Object (
-    [code] => rc-WB-6D9icS1
-    [campaign] => Readme Campaign
+    [code] => Testing7fjWdr
+    [campaign] => TestingPlatform
     [category] =>
-    [discount] => 9900
+    [discount] => 999
     [discount_type] => AMOUNT
     [start_date] =>
     [expiration_date] =>
     [redemption] => stdClass Object (
-        [quantity] => 3
-        [redeemed_quantity] => 1
+        [quantity] =>
+        [redeemed_quantity] => 73
         [redemption_entries] => Array (
             [0] => stdClass Object (
-                [id] => r_rSFzBUkpdw110VgMF2RkEZu5
-                [object] => redemption
-                [date] => 2015-12-03T23:45:23Z
+                [id] => r_icykIG693ChNGuJejQZjtYjl
+                [object] =>
+                [date] => 2015-11-09T15:41:34Z
                 [tracking_id] => (tracking_id not set)
+            )
+            [1] => stdClass Object (
+                [id] => r_xRjIVSdYnYOncmWSvVgBcWVi
+                [object] =>
+                [date] => 2015-11-09T15:49:11Z
+                [tracking_id] => (tracking_id not set)
+            )
+            ...
+            [72] => stdClass Object (
+                [id] => r_vr7xbbTc5XiJcIDQeP3LLb27
+                [object] => redemption
+                [date] => 2015-12-03T11:07:56Z
+                [tracking_id] => alice.morgan
             )
         )
     )
@@ -61,7 +74,7 @@ stdClass Object (
 
 ```php
 try {
-    $result = $voucherify->redemption("rc-WB-6D9icS1");
+    $result = $voucherify->redemption("Testing7fjWdr");
     print_r($result);
 }
 catch (ClientException $e) {
@@ -72,14 +85,27 @@ catch (ClientException $e) {
 Result:
 ```php
 stdClass Object (
-    [quantity] => 3
-    [redeemed_quantity] => 1
+    [quantity] =>
+    [redeemed_quantity] => 73
     [redemption_entries] => Array (
         [0] => stdClass Object (
-            [id] => r_rSFzBUkpdw110VgMF2RkEZu5
-            [object] => redemption
-            [date] => 2015-12-03T23:45:23Z
+            [id] => r_icykIG693ChNGuJejQZjtYjl
+            [object] =>
+            [date] => 2015-11-09T15:41:34Z
             [tracking_id] => (tracking_id not set)
+        )
+        [1] => stdClass Object (
+            [id] => r_xRjIVSdYnYOncmWSvVgBcWVi
+            [object] =>
+            [date] => 2015-11-09T15:49:11Z
+            [tracking_id] => (tracking_id not set)
+        )
+        ...
+        [72] => stdClass Object (
+            [id] => r_vr7xbbTc5XiJcIDQeP3LLb27
+            [object] => redemption
+            [date] => 2015-12-03T11:07:56Z
+            [tracking_id] => alice.morgan
         )
     )
 )
@@ -91,7 +117,7 @@ stdClass Object (
 
 ```php
 try {
-    $result = $voucherify->redeem("rc-WB-6D9icS1", NULL);
+    $result = $voucherify->redeem("Testing7fjWdr", NULL);
     print_r($result);
 }
 catch (ClientException $e) {
@@ -102,27 +128,35 @@ catch (ClientException $e) {
 Result (voucher details after redemption):
 
 ```php
+php test.php
 stdClass Object (
-    [id] => r_rSFzBUkpdw110VgMF2RkEZu5
+    [id] => r_MkNMsis65DZBZ8uoG6W901nt
     [object] => redemption
-    [date] => 2015-12-03T23:45:23Z
+    [date] => 2015-12-04T09:32:24Z
     [tracking_id] => (tracking_id not set)
     [voucher] => stdClass Object (
-        [code] => rc-WB-6D9icS1
-        [campaign] => Readme Campaign
+        [code] => Testing7fjWdr
+        [campaign] => TestingPlatform
         [category] =>
-        [discount] => 9900
+        [discount] => 999
         [discount_type] => AMOUNT
         [start_date] =>
         [expiration_date] =>
         [redemption] => stdClass Object (
-            [quantity] => 3
-            [redeemed_quantity] => 1
+            [quantity] =>
+            [redeemed_quantity] => 74
             [redemption_entries] => Array (
                 [0] => stdClass Object (
-                    [id] => r_rSFzBUkpdw110VgMF2RkEZu5
+                    [id] => r_icykIG693ChNGuJejQZjtYjl
+                    [object] =>
+                    [date] => 2015-11-09T15:41:34Z
+                    [tracking_id] => (tracking_id not set)
+                )
+                ...
+                [73] => stdClass Object (
+                    [id] => r_MkNMsis65DZBZ8uoG6W901nt
                     [object] => redemption
-                    [date] => 2015-12-03T23:45:23Z
+                    [date] => 2015-12-04T09:32:24Z
                     [tracking_id] => (tracking_id not set)
                 )
             )
@@ -139,7 +173,7 @@ Error:
 Error: Unexpected status code: 400 - Details: {
     "code": 400,
     "message": "voucher expired or quantity exceeded",
-    "details": "rc-WB-6D9icS1"
+    "details": "Testing7fjWdr"
 }
 ```
 
@@ -149,7 +183,7 @@ You can provide a tracking id (e.g. your customer's login or a generated id) to 
 
 ```php
 try {
-    $result = $voucherify->redeem("rc-WB-6D9icS1", "alice.morgan");
+    $result = $voucherify->redeem("Testing7fjWdr", "alice.morgan");
     print_r($result);
 }
 catch (ClientException $e) {
@@ -160,32 +194,39 @@ catch (ClientException $e) {
 Result:
 ```php
 stdClass Object (
-    [id] => r_bXvP3kfx91rd3IEUk9egW9hk
+    [id] => r_2SgnmcI0ejXOItrS1SeQNlkY
     [object] => redemption
-    [date] => 2015-12-03T23:50:35Z
+    [date] => 2015-12-04T09:41:19Z
     [tracking_id] => alice.morgan
     [voucher] => stdClass Object (
-        [code] => rc-WB-6D9icS1
-        [campaign] => Readme Campaign
+        [code] => Testing7fjWdr
+        [campaign] => TestingPlatform
         [category] =>
-        [discount] => 9900
+        [discount] => 999
         [discount_type] => AMOUNT
         [start_date] =>
         [expiration_date] =>
         [redemption] => stdClass Object (
-            [quantity] => 3
-            [redeemed_quantity] => 2
+            [quantity] =>
+            [redeemed_quantity] => 75
             [redemption_entries] => Array (
                 [0] => stdClass Object (
-                    [id] => r_rSFzBUkpdw110VgMF2RkEZu5
-                    [object] => redemption
-                    [date] => 2015-12-03T23:45:23Z
+                    [id] => r_icykIG693ChNGuJejQZjtYjl
+                    [object] =>
+                    [date] => 2015-11-09T15:41:34Z
                     [tracking_id] => (tracking_id not set)
                 )
-                [1] => stdClass Object(
-                    [id] => r_bXvP3kfx91rd3IEUk9egW9hk
+                [1] => stdClass Object (
+                    [id] => r_xRjIVSdYnYOncmWSvVgBcWVi
+                    [object] =>
+                    [date] => 2015-11-09T15:49:11Z
+                    [tracking_id] => (tracking_id not set)
+                )
+                ...
+                [74] => stdClass Object (
+                    [id] => r_2SgnmcI0ejXOItrS1SeQNlkY
                     [object] => redemption
-                    [date] => 2015-12-03T23:50:35Z
+                    [date] => 2015-12-04T09:41:19Z
                     [tracking_id] => alice.morgan
                 )
             )
@@ -204,7 +245,7 @@ You can record a detailed customer profile consisting of an `id` (obligatory), `
 ```php
 try {
     $result = $voucherify->redeem([
-        "voucher" => "rc-WB-6D9icS1", 
+        "voucher" => "Testing7fjWdr", 
         "customer" => [ 
             "id"            => "alice.morgan",
             "name"          => "Alice Morgan",
