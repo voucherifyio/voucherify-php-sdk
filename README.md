@@ -1,5 +1,7 @@
 ## Voucherify SDK
 
+PHP SDK for [Voucherify](http://www.voucherify.io/?utm_source=inbound&utm_medium=github&utm_campaign=voucherify-php-sdk) - an API-first voucher managment solution.
+
 ### Usage
 
 #### Authentication
