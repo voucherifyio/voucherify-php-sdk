@@ -25,39 +25,48 @@ try {
     print_r($result);
 } 
 catch (ClientException $e) {
-    echo ("Error: " . $e->getMessage());
+    echo("Error: " . $e->getMessage());
 }
 ```
 
 Result:
 ```php
-stdClass Object
-(
-    [code] => CODE1
-    [campaign] => Test Import Campaign
+stdClass Object (
+    [code] => Testing7fjWdr
+    [campaign] => TestingPlatform
     [category] =>
-    [discount] => 300
+    [discount] => 999
     [discount_type] => AMOUNT
-    [start_date] => 2015-11-11T23:00:00Z
-    [expiration_date] => 2015-11-28T22:59:59Z
+    [start_date] =>
+    [expiration_date] =>
     [redemption] => stdClass Object (
-        [quantity] => 1
-        [redeemed_quantity] => 1
+        [quantity] =>
+        [redeemed_quantity] => 73
         [redemption_entries] => Array (
             [0] => stdClass Object (
-                [id] => r_AYSBUFD2U5xmYATtXank8NI5
+                [id] => r_icykIG693ChNGuJejQZjtYjl
                 [object] =>
-                [date] => 2015-11-12T11:39:07Z
+                [date] => 2015-11-09T15:41:34Z
                 [tracking_id] => (tracking_id not set)
             )
-
+            [1] => stdClass Object (
+                [id] => r_xRjIVSdYnYOncmWSvVgBcWVi
+                [object] =>
+                [date] => 2015-11-09T15:49:11Z
+                [tracking_id] => (tracking_id not set)
+            )
+            ...
+            [72] => stdClass Object (
+                [id] => r_vr7xbbTc5XiJcIDQeP3LLb27
+                [object] => redemption
+                [date] => 2015-12-03T11:07:56Z
+                [tracking_id] => alice.morgan
+            )
         )
     )
     [active] => 1
-    [additional_info] => secret-code1
-    [metadata] => stdClass Object (
-        [unit] => EUR
-    )
+    [additional_info] =>
+    [metadata] =>
 )
 ```
 
@@ -69,22 +78,34 @@ try {
     print_r($result);
 }
 catch (ClientException $e) {
-    echo ("Error: " . $e->getMessage());
+    echo("Error: " . $e->getMessage());
 }
 ```
 
 Result:
 ```php
-stdClass Object
-(
-    [quantity] => 1
-    [redeemed_quantity] => 1
+stdClass Object (
+    [quantity] =>
+    [redeemed_quantity] => 73
     [redemption_entries] => Array (
         [0] => stdClass Object (
-            [id] => r_AYSBUFD2U5xmYATtXank8NI5
+            [id] => r_icykIG693ChNGuJejQZjtYjl
             [object] =>
-            [date] => 2015-11-12T11:39:07Z
+            [date] => 2015-11-09T15:41:34Z
             [tracking_id] => (tracking_id not set)
+        )
+        [1] => stdClass Object (
+            [id] => r_xRjIVSdYnYOncmWSvVgBcWVi
+            [object] =>
+            [date] => 2015-11-09T15:49:11Z
+            [tracking_id] => (tracking_id not set)
+        )
+        ...
+        [72] => stdClass Object (
+            [id] => r_vr7xbbTc5XiJcIDQeP3LLb27
+            [object] => redemption
+            [date] => 2015-12-03T11:07:56Z
+            [tracking_id] => alice.morgan
         )
     )
 )
@@ -100,18 +121,18 @@ try {
     print_r($result);
 }
 catch (ClientException $e) {
-    echo ("Error: " . $e->getMessage());
+    echo("Error: " . $e->getMessage());
 }
 ```
 
 Result (voucher details after redemption):
 
 ```php
-stdClass Object
-(
-    [id] => r_lIpiuyMKYK4NN5uyFuMDzuUX
+php test.php
+stdClass Object (
+    [id] => r_MkNMsis65DZBZ8uoG6W901nt
     [object] => redemption
-    [date] => 2015-12-03T10:58:08Z
+    [date] => 2015-12-04T09:32:24Z
     [tracking_id] => (tracking_id not set)
     [voucher] => stdClass Object (
         [code] => Testing7fjWdr
@@ -123,7 +144,7 @@ stdClass Object
         [expiration_date] =>
         [redemption] => stdClass Object (
             [quantity] =>
-            [redeemed_quantity] => 71
+            [redeemed_quantity] => 74
             [redemption_entries] => Array (
                 [0] => stdClass Object (
                     [id] => r_icykIG693ChNGuJejQZjtYjl
@@ -132,10 +153,10 @@ stdClass Object
                     [tracking_id] => (tracking_id not set)
                 )
                 ...
-                [70] => stdClass Object (
-                    [id] => r_lIpiuyMKYK4NN5uyFuMDzuUX
+                [73] => stdClass Object (
+                    [id] => r_MkNMsis65DZBZ8uoG6W901nt
                     [object] => redemption
-                    [date] => 2015-12-03T10:58:08Z
+                    [date] => 2015-12-04T09:32:24Z
                     [tracking_id] => (tracking_id not set)
                 )
             )
@@ -166,18 +187,17 @@ try {
     print_r($result);
 }
 catch (ClientException $e) {
-    echo ("Error: " . $e->getMessage());
+    echo("Error: " . $e->getMessage());
 }
 ```
 
 Result:
 ```php
-stdClass Object
-(
-    [id] => r_lIpiuyMKYK4NN5uyFuMDzuUX
+stdClass Object (
+    [id] => r_2SgnmcI0ejXOItrS1SeQNlkY
     [object] => redemption
-    [date] => 2015-12-03T10:58:08Z
-    [tracking_id] => (tracking_id not set)
+    [date] => 2015-12-04T09:41:19Z
+    [tracking_id] => alice.morgan
     [voucher] => stdClass Object (
         [code] => Testing7fjWdr
         [campaign] => TestingPlatform
@@ -188,7 +208,7 @@ stdClass Object
         [expiration_date] =>
         [redemption] => stdClass Object (
             [quantity] =>
-            [redeemed_quantity] => 71
+            [redeemed_quantity] => 75
             [redemption_entries] => Array (
                 [0] => stdClass Object (
                     [id] => r_icykIG693ChNGuJejQZjtYjl
@@ -196,11 +216,17 @@ stdClass Object
                     [date] => 2015-11-09T15:41:34Z
                     [tracking_id] => (tracking_id not set)
                 )
+                [1] => stdClass Object (
+                    [id] => r_xRjIVSdYnYOncmWSvVgBcWVi
+                    [object] =>
+                    [date] => 2015-11-09T15:49:11Z
+                    [tracking_id] => (tracking_id not set)
+                )
                 ...
-                [71] => stdClass Object (
-                    [id] => r_eqLAE4y1Wdt4n7kLWgTkWdZ9
+                [74] => stdClass Object (
+                    [id] => r_2SgnmcI0ejXOItrS1SeQNlkY
                     [object] => redemption
-                    [date] => 2015-12-03T11:02:35Z
+                    [date] => 2015-12-04T09:41:19Z
                     [tracking_id] => alice.morgan
                 )
             )
@@ -219,7 +245,7 @@ You can record a detailed customer profile consisting of an `id` (obligatory), `
 ```php
 try {
     $result = $voucherify->redeem([
-        "voucher" => $voucherCode, 
+        "voucher" => "Testing7fjWdr", 
         "customer" => [ 
             "id"            => "alice.morgan",
             "name"          => "Alice Morgan",
@@ -235,7 +261,7 @@ try {
     print_r($result);
 }
 catch (ClientException $e) {
-    echo("Error: " . $e->getMessage() . PHP_EOL);
+    echo("Error: " . $e->getMessage());
 }
 ```
 
