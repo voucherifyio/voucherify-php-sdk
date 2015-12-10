@@ -37,8 +37,10 @@ stdClass Object (
     [code] => Testing7fjWdr
     [campaign] => TestingPlatform
     [category] =>
-    [discount] => 999
-    [discount_type] => AMOUNT
+    [discount] => stdClass Object (
+        [type] = AMOUNT
+        [amount_off] = 999
+    )
     [start_date] =>
     [expiration_date] =>
     [redemption] => stdClass Object (
@@ -140,8 +142,10 @@ stdClass Object (
         [code] => Testing7fjWdr
         [campaign] => TestingPlatform
         [category] =>
-        [discount] => 999
-        [discount_type] => AMOUNT
+        [discount] => stdClass Object (
+            [type] = AMOUNT
+            [amount_off] = 999
+        )
         [start_date] =>
         [expiration_date] =>
         [redemption] => stdClass Object (
@@ -204,8 +208,10 @@ stdClass Object (
         [code] => Testing7fjWdr
         [campaign] => TestingPlatform
         [category] =>
-        [discount] => 999
-        [discount_type] => AMOUNT
+        [discount] => stdClass Object (
+            [type] = AMOUNT
+            [amount_off] = 999
+        )
         [start_date] =>
         [expiration_date] =>
         [redemption] => stdClass Object (
