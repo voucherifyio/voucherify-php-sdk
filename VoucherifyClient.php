@@ -134,10 +134,10 @@ namespace Voucherify {
         }
         
         /**
-         * @param string|array $code Voucher code or array with voucher and custormer items 
+         * @param string|array $code Voucher code or array with voucher and customer items 
          * @param string|null $trackingId Provided tracking id 
          *
-         * Get voucher redemption
+         * Redeem voucher
          *
          * @throws Voucherify\ClientException
          */

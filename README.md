@@ -274,7 +274,7 @@ catch (ClientException $e) {
 ```
 
 ### Changelog
-
+- **2015-12-11** - `0.1.1` - New discount model. Added UNIT - a new discount type.
 - **2015-12-02** - `0.1.0` - First version:
   - Authentication
   - Voucher informations: *get*, *redemption*
