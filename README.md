@@ -1,6 +1,14 @@
 ## Voucherify SDK
 
-PHP SDK for [Voucherify](http://www.voucherify.io/?utm_source=inbound&utm_medium=github&utm_campaign=voucherify-php-sdk) - an API-first voucher managment solution.
+PHP SDK for [Voucherify](http://www.voucherify.io/?utm_source=inbound&utm_medium=github&utm_campaign=voucherify-php-sdk) - an API-first voucher managment solution. Voucherify has a new platform that will help your team  to automate voucher campaigns. It does this by providing composable API and the marketer-friendly interface that let growth teams:
+
+- **roll-out thousands** of vouchers **in minutes** instead of weeks,
+- **check status** or disable **every single** promo code in real time, 
+- **track redemption** history and build reports on the fly.
+
+Here is a library that makes it easier to integrate Voucherify with your PHP application.
+
+You can find full documentation on [voucherify.readme.io](https://voucherify.readme.io).
 
 ### Usage
 
