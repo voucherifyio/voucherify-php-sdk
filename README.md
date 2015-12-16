@@ -25,8 +25,8 @@ require_once('vendor/autoload.php');
 use Voucherify\VoucherifyClient;
 use Voucherify\ClientException;
 
-$apiID          = "YOUR-APPLICATION-ID-OBTAINED-FROM-CONFIGURATION";
-$apiKey         = "YOUR-CLIENT-SECRET-KEY-OBTAINED-FROM-CONFIGURATION";
+$apiID          = "c70a6f00-cf91-4756-9df5-47628850002b";
+$apiKey         = "3266b9f8-e246-4f79-bdf0-833929b1380c";
 
 $voucherify = new VoucherifyClient($apiID, $apiKey);
 ```
