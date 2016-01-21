@@ -11,6 +11,7 @@ PHP SDK for [Voucherify](http://www.voucherify.io/?utm_source=inbound&utm_medium
 require_once('vendor/autoload.php');
 
 use Voucherify\VoucherifyClient;
+use Voucherify\VoucherBuilder;
 use Voucherify\ClientException;
 
 $apiID          = "YOUR-APPLICATION-ID-OBTAINED-FROM-CONFIGURATION";
@@ -273,7 +274,58 @@ catch (ClientException $e) {
 }
 ```
 
+#### Creating voucher
+
+You can create a new voucher using `VoucherifyClient->create`. It accepts an object representing the voucher.
+`VoucherBuilder` will help you to create a valid [voucher object](https://voucherify.readme.io/docs/vouchers).
+
+```php
+try {
+    $voucher = (new VoucherBuilder())
+        ->setCategory("PHP-SDK-Test")
+        ->setAmountDiscount(10.0)
+        ->setStartDate(new DateTime("2016-01-20"))
+        ->setRedemptionLimit(1)
+        ->build();
+        
+    $result = $voucherify->create($voucher);
+    print_r($result);
+}
+catch (ClientException $e) {
+    echo("Error: " . $e->getMessage());
+}
+```
+
+#### Disabling voucher
+
+You can make a voucher inactive by calling `VoucherifyClient->disable` with a voucher code:
+
+    ```php
+    try {
+        $voucherify->disable("Testing7fjWdr");
+        echo "Voucher disabled.\n";
+    }
+    catch (ClientException $e) {
+        echo("Error: " . $e->getMessage());
+    }
+    ```
+    
+#### Enabling voucher
+
+You can enable a voucher by calling `VoucherifyClient->enable` with a voucher code:
+
+    ```php
+    try {
+        $voucherify->enable("Testing7fjWdr");
+        echo "Voucher enabled.\n";
+    }
+    catch (ClientException $e) {
+        echo("Error: " . $e->getMessage());
+    }
+    ```
+
 ### Changelog
+- **2016-01-21** - `0.2.0` - Added new API methods - create, disable and enable.
 - **2015-12-11** - `0.1.1` - New discount model. Added UNIT - a new discount type.
 - **2015-12-02** - `0.1.0` - First version:
   - Authentication
