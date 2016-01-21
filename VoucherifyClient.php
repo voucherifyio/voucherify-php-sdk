@@ -123,6 +123,43 @@ namespace Voucherify {
         }
         
         /**
+         * @param stdClass $voucher
+         *
+         * Create voucher.
+         *
+         * @throws Voucherify\ClientException
+         */
+        public function create($voucher) {
+            if (isset($voucher->code)) {
+                return $this->apiRequest("POST", "/vouchers/" . urlencode($voucher->code), NULL, $voucher);    
+            } else {
+                return $this->apiRequest("POST", "/vouchers/", NULL, $voucher);    
+            }
+        }
+        
+        /**
+         * @param string $code
+         *
+         * Enable voucher with given code.
+         *
+         * @throws Voucherify\ClientException
+         */
+        public function enable($code) {
+            return $this->apiRequest("POST", "/vouchers/" . urlencode($code) . "/enable", NULL, NULL);
+        }
+        
+        /**
+         * @param string $code
+         *
+         * Disable voucher with given code.
+         *
+         * @throws Voucherify\ClientException
+         */
+        public function diasble($code) {
+            return $this->apiRequest("POST", "/vouchers/" . urlencode($code) . "/disable", NULL, NULL);
+        }
+        
+        /**
          * @param string $code 
          *
          * Get voucher redemption
