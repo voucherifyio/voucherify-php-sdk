@@ -1,10 +1,22 @@
-## Voucherify SDK
+## Voucherify PHP SDK
 
-PHP SDK for [Voucherify](http://www.voucherify.io/?utm_source=inbound&utm_medium=github&utm_campaign=voucherify-php-sdk) - an API-first voucher managment solution.
+[Voucherify](http://www.voucherify.io/?utm_source=inbound&utm_medium=github&utm_campaign=voucherify-php-sdk) has a new platform that will help your team  to automate voucher campaigns. It does this by providing composable API and the marketer-friendly interface that let growth teams:
+
+- **roll-out thousands** of vouchers **in minutes** instead of weeks,
+- **check status** or disable **every single** promo code in real time, 
+- **track redemption** history and build reports on the fly.
+
+Here is a library that makes it easier to integrate Voucherify with your PHP application.
+
+You can find full documentation on [voucherify.readme.io](https://voucherify.readme.io).
 
 ### Usage
 
 #### Authentication
+
+[Log-in](http://app.voucherify.io/#/login) to Voucherify web interace and obtain your Application Keys from [Configuration](https://app.voucherify.io/#/app/configuration):
+
+![](https://www.filepicker.io/api/file/WKYkl2bSAWKHccEN9tEG)
 
 ```php
 // Run autoload after installing package with Composer
@@ -14,8 +26,8 @@ use Voucherify\VoucherifyClient;
 use Voucherify\VoucherBuilder;
 use Voucherify\ClientException;
 
-$apiID          = "YOUR-APPLICATION-ID-OBTAINED-FROM-CONFIGURATION";
-$apiKey         = "YOUR-CLIENT-SECRET-KEY-OBTAINED-FROM-CONFIGURATION";
+$apiID          = "c70a6f00-cf91-4756-9df5-47628850002b";
+$apiKey         = "3266b9f8-e246-4f79-bdf0-833929b1380c";
 
 $voucherify = new VoucherifyClient($apiID, $apiKey);
 ```
