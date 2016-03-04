@@ -155,7 +155,7 @@ namespace Voucherify {
          *
          * @throws Voucherify\ClientException
          */
-        public function diasble($code) {
+        public function disable($code) {
             return $this->apiRequest("POST", "/vouchers/" . urlencode($code) . "/disable", NULL, NULL);
         }
         
