@@ -7,7 +7,7 @@ namespace Voucherify {
         /**
          * @var string
          */
-        private static $apiURL = "https://voucherify-bouncer.herokuapp.com/v1";
+        private static $apiURL = "https://api.voucherify.io/v1";
         
         /**
          * @var string

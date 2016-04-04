@@ -337,7 +337,8 @@ You can enable a voucher by calling `VoucherifyClient->enable` with a voucher co
     ```
 
 ### Changelog
-- **2016-03-03** - `0.2.1` - Fixed a typo (diasble -> disable)
+- **2016-04-04** - `0.2.2` - Updated API URL.
+- **2016-03-03** - `0.2.1` - Fixed a typo (diasble -> disable).
 - **2016-01-21** - `0.2.0` - Added new API methods - create, disable and enable.
 - **2015-12-11** - `0.1.1` - New discount model. Added UNIT - a new discount type.
 - **2015-12-02** - `0.1.0` - First version:
