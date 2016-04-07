@@ -39,7 +39,7 @@ namespace Voucherify {
         }
         
         private function encodeParams($params) {
-            if (!is_array($params)) {
+            if (!is_array($params) && !is_object($params)) {
                 return $params;
             }
                 
@@ -186,6 +186,22 @@ namespace Voucherify {
                 unset($context["voucher"]);
             }        
             return $this->apiRequest("POST", "/vouchers/" . urlencode($code) . "/redemption/", [ "tracking_id" => $trackingId ], $context);
+        }
+        
+        /**
+         * @param array|stdClass $filter
+         *
+         * Get a filtered list of redemptions. The filter can include following properties:
+         * - limit      - number (default 100)
+         * - page       - number (default 0)
+         * - start_date - string (ISO8601 format, default is the beginning of current month)
+         * - end_date   - string (ISO8601 format, default is the end of current month)
+         * - result     - string (Success|Failure-NotExist|Failure-Inactive)
+         * 
+         * @throws Voucherify\ClientException
+         */
+        public function redemptions($filter) {
+            return $this->apiRequest("GET", "/redemptions/", $filter, NULL);    
         }
     }
 }

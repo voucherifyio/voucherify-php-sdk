@@ -336,7 +336,39 @@ You can enable a voucher by calling `VoucherifyClient->enable` with a voucher co
     }
     ```
 
+#### List redemptions
+
+Use `VoucherifyClient->redemptions` to get a filtered list of redemptions. Pass an array specifing a filter.
+The filter can include following properties:
+- limit      - number (default 100)
+- page       - number (default 0)
+- start_date - string (ISO8601 format, default is the beginning of current month)
+- end_date   - string (ISO8601 format, default is the end of current month)
+- result     - string (Success|Failure-NotExist|Failure-Inactive) 
+
+Example - 1000 successful redemptions from April 2016:
+
+```php
+try {
+    $filter = (object) array(
+       "limit" => 1000,
+       "page" => 0,
+       "start_date" => "2016-04-01T00:00:00",
+       "end_date" => "2016-04-30T23:59:59",
+       "result" => "Success"
+    );
+
+    $redemptions = $voucherify->redemptions($filter2);
+    print_r($redemptions);
+}
+catch (ClientException $e) {
+    echo("Error: " . $e->getMessage());
+}
+
+```
+    
 ### Changelog
+- **2016-04-07** - `0.3.0` - List redemptions.
 - **2016-04-04** - `0.2.2` - Updated API URL.
 - **2016-03-03** - `0.2.1` - Fixed a typo (diasble -> disable).
 - **2016-01-21** - `0.2.0` - Added new API methods - create, disable and enable.
