@@ -335,6 +335,33 @@ You can enable a voucher by calling `VoucherifyClient->enable` with a voucher co
         echo("Error: " . $e->getMessage());
     }
     ```
+    
+#### List vouchers
+
+Use `VoucherifyClient->vouchers` to get a filtered list of vouchers. Pass an array specifing a filter.
+The filter can include following properties:
+- code_query  - string
+- limit       - number (default 10)
+- skip        - number (default 0)
+- campaign    - string
+- category    - string
+- customer_id - string
+
+Example :
+
+```php
+try {
+    $filter = (object) array(
+       "limit" => 100,
+       "customer_id" => "alice.morgan"
+    );
+
+    $vouchers = $voucherify->redemptions($filter);
+    print_r($redemptions);
+}
+catch (ClientException $e) {
+    echo("Error: " . $e->getMessage());
+}
 
 #### List redemptions
 
@@ -344,7 +371,8 @@ The filter can include following properties:
 - page       - number (default 0)
 - start_date - string (ISO8601 format, default is the beginning of current month)
 - end_date   - string (ISO8601 format, default is the end of current month)
-- result     - string (Success|Failure-NotExist|Failure-Inactive) 
+- result     - string (Success|Failure-NotExist|Failure-Inactive)
+- customer_id - string 
 
 Example - 1000 successful redemptions from April 2016:
 
@@ -358,7 +386,7 @@ try {
        "result" => "Success"
     );
 
-    $redemptions = $voucherify->redemptions($filter2);
+    $redemptions = $voucherify->redemptions($filter);
     print_r($redemptions);
 }
 catch (ClientException $e) {
@@ -368,6 +396,7 @@ catch (ClientException $e) {
 ```
     
 ### Changelog
+- **2016-04-18** - `0.4.0` - List vouchers. Filter by customer_id.
 - **2016-04-07** - `0.3.0` - List redemptions.
 - **2016-04-04** - `0.2.2` - Updated API URL.
 - **2016-03-03** - `0.2.1` - Fixed a typo (diasble -> disable).

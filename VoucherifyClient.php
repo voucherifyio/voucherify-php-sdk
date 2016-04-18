@@ -191,12 +191,30 @@ namespace Voucherify {
         /**
          * @param array|stdClass $filter
          *
+         * Get a filtered list of vouchers. The filter can include following properties:
+         * - code_query  - string
+         * - limit       - number (default 10)
+         * - skip        - number (default 0)
+         * - campaign    - string
+         * - category    - string
+         * - customer_id - string
+         * 
+         * @throws Voucherify\ClientException
+         */
+        public function vouchers($filter) {
+            return $this->apiRequest("GET", "/vouchers/", $filter, NULL);    
+        }
+        
+        /**
+         * @param array|stdClass $filter
+         *
          * Get a filtered list of redemptions. The filter can include following properties:
-         * - limit      - number (default 100)
-         * - page       - number (default 0)
-         * - start_date - string (ISO8601 format, default is the beginning of current month)
-         * - end_date   - string (ISO8601 format, default is the end of current month)
-         * - result     - string (Success|Failure-NotExist|Failure-Inactive)
+         * - limit       - number (default 100)
+         * - page        - number (default 0)
+         * - start_date  - string (ISO8601 format, default is the beginning of current month)
+         * - end_date    - string (ISO8601 format, default is the end of current month)
+         * - result      - string (Success|Failure-NotExist|Failure-Inactive)
+         * - customer_id - string
          * 
          * @throws Voucherify\ClientException
          */
