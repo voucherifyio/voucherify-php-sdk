@@ -213,9 +213,9 @@ catch (ClientException $e) {
 Result:
 ```php
 stdClass Object (
-    [id] => r_2SgnmcI0ejXOItrS1SeQNlkY
+    [id] => r_xRjIVSdYnYOncmWSvVgBcWVi
     [object] => redemption
-    [date] => 2015-12-04T09:41:19Z
+    [date] => 2016-04-25T15:49:11Z
     [tracking_id] => alice.morgan
     [voucher] => stdClass Object (
         [code] => Testing7fjWdr
@@ -229,25 +229,18 @@ stdClass Object (
         [expiration_date] =>
         [redemption] => stdClass Object (
             [quantity] =>
-            [redeemed_quantity] => 75
+            [redeemed_quantity] => 2
             [redemption_entries] => Array (
                 [0] => stdClass Object (
                     [id] => r_icykIG693ChNGuJejQZjtYjl
-                    [object] =>
-                    [date] => 2015-11-09T15:41:34Z
+                    [object] => redemption
+                    [date] => 2016-04-25T15:41:34Z
                     [tracking_id] => (tracking_id not set)
                 )
                 [1] => stdClass Object (
                     [id] => r_xRjIVSdYnYOncmWSvVgBcWVi
-                    [object] =>
-                    [date] => 2015-11-09T15:49:11Z
-                    [tracking_id] => (tracking_id not set)
-                )
-                ...
-                [74] => stdClass Object (
-                    [id] => r_2SgnmcI0ejXOItrS1SeQNlkY
                     [object] => redemption
-                    [date] => 2015-12-04T09:41:19Z
+                    [date] => 2016-04-25T15:49:11Z
                     [tracking_id] => alice.morgan
                 )
             )
@@ -410,6 +403,56 @@ try {
 catch (ClientException $e) {
     echo("Error: " . $e->getMessage());
 }
+```
+
+Result:
+```php
+stdClass Object (
+    [id] => rr_3Kaak0d9pXO5Nb21UUNiAJ0j
+    [object] => redemption_rollback
+    [date] => 2016-04-27T13:44:13Z
+    [tracking_id] => alice.morgan
+    [redemption] => r_xRjIVSdYnYOncmWSvVgBcWVi
+    [voucher] => stdClass Object (
+        [code] => Testing7fjWdr
+        [campaign] => TestingPlatform
+        [category] =>
+        [discount] => stdClass Object (
+            [type] = AMOUNT
+            [amount_off] = 999
+        )
+        [start_date] =>
+        [expiration_date] =>
+        [redemption] => stdClass Object (
+            [quantity] =>
+            [redeemed_quantity] => 1
+            [redemption_entries] => Array (
+                [0] => stdClass Object (
+                    [id] => r_icykIG693ChNGuJejQZjtYjl
+                    [object] => redemption
+                    [date] => 2016-04-25T15:41:34Z
+                    [tracking_id] => (tracking_id not set)
+                )
+                [1] => stdClass Object (
+                    [id] => r_xRjIVSdYnYOncmWSvVgBcWVi
+                    [object] => redemption
+                    [date] => 2016-04-25T15:49:11Z
+                    [tracking_id] => alice.morgan
+                )
+                [2] => stdClass Object (
+                    [id] => rr_3Kaak0d9pXO5Nb21UUNiAJ0j
+                    [object] => redemption_rollback
+                    [date] => 2016-04-25T15:49:13Z
+                    [tracking_id] => alice.morgan
+                    [redemption] => r_xRjIVSdYnYOncmWSvVgBcWVi
+                )
+            )
+        )
+        [active] => 1
+        [additional_info] =>
+        [metadata] =>
+    )
+)
 ```
     
 ### Changelog
