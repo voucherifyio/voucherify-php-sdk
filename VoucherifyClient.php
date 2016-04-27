@@ -189,6 +189,20 @@ namespace Voucherify {
         }
         
         /**
+         * @param string $redemptionId 
+         * @param string|null $trackingId
+         * @param string|null $reason
+         *
+         * Rollback redemption. This operation creates a rollback entry in voucher's redemption history (`redemption.redemption_entries`)
+         * and gives 1 redemption back to the pool (decreases `redeemed_quantity` by 1).
+         *
+         * @throws Voucherify\ClientException
+         */
+        public function rollback($redemptionId, $trackingId = NULL, $reason = NULL) {
+            return $this->apiRequest("POST", "/redemptions/" . urlencode($redemptionId) . "/rollback/", [ "tracking_id" => $trackingId, "reason" => $reason ], NULL);
+        }
+        
+        /**
          * @param array|stdClass $filter
          *
          * Get a filtered list of vouchers. The filter can include following properties:
