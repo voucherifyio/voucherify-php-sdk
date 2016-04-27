@@ -392,10 +392,28 @@ try {
 catch (ClientException $e) {
     echo("Error: " . $e->getMessage());
 }
+```
 
+#### Rollback redemption
+
+You can invoke `VoucherifyClient->rollback(redemption_id, tracking_id*, reason*)` to revert a redemption.
+This operation creates a rollback entry in voucher's redemption history (`redemption.redemption_entries`)
+and gives 1 redemption back to the pool (decreases `redeemed_quantity` by 1).
+
+Example - 1000 successful redemptions from April 2016:
+
+```php
+try {
+    $result = $voucherify->rollback("r_irOQWUTAjthQwnkn5JQM1V6N", "alice.morgan");
+    print_r($result);
+}
+catch (ClientException $e) {
+    echo("Error: " . $e->getMessage());
+}
 ```
     
 ### Changelog
+- **2016-04-27** - `0.5.0` - Rollback redemption.
 - **2016-04-18** - `0.4.0` - List vouchers. Filter by customer.
 - **2016-04-07** - `0.3.0` - List redemptions.
 - **2016-04-04** - `0.2.2` - Updated API URL.
