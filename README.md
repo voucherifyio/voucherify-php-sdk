@@ -62,14 +62,16 @@ stdClass Object (
         [redemption_entries] => Array (
             [0] => stdClass Object (
                 [id] => r_icykIG693ChNGuJejQZjtYjl
-                [object] =>
+                [object] => redemption
                 [date] => 2015-11-09T15:41:34Z
+                [customer_id] =>
                 [tracking_id] => (tracking_id not set)
             )
             [1] => stdClass Object (
                 [id] => r_xRjIVSdYnYOncmWSvVgBcWVi
-                [object] =>
+                [object] => redemption
                 [date] => 2015-11-09T15:49:11Z
+                [customer_id] =>
                 [tracking_id] => (tracking_id not set)
             )
             ...
@@ -77,6 +79,7 @@ stdClass Object (
                 [id] => r_vr7xbbTc5XiJcIDQeP3LLb27
                 [object] => redemption
                 [date] => 2015-12-03T11:07:56Z
+                [customer_id] => cust_84LPwcHJ1jVEpxV1uF9nLLBB
                 [tracking_id] => alice.morgan
             )
         )
@@ -107,14 +110,16 @@ stdClass Object (
     [redemption_entries] => Array (
         [0] => stdClass Object (
             [id] => r_icykIG693ChNGuJejQZjtYjl
-            [object] =>
+            [object] => redemption
             [date] => 2015-11-09T15:41:34Z
+            [customer_id] =>
             [tracking_id] => (tracking_id not set)
         )
         [1] => stdClass Object (
             [id] => r_xRjIVSdYnYOncmWSvVgBcWVi
-            [object] =>
+            [object] => redemption
             [date] => 2015-11-09T15:49:11Z
+            [customer_id] =>
             [tracking_id] => (tracking_id not set)
         )
         ...
@@ -122,6 +127,7 @@ stdClass Object (
             [id] => r_vr7xbbTc5XiJcIDQeP3LLb27
             [object] => redemption
             [date] => 2015-12-03T11:07:56Z
+            customer_id] => cust_84LPwcHJ1jVEpxV1uF9nLLBB
             [tracking_id] => alice.morgan
         )
     )
@@ -150,6 +156,7 @@ stdClass Object (
     [id] => r_MkNMsis65DZBZ8uoG6W901nt
     [object] => redemption
     [date] => 2015-12-04T09:32:24Z
+    [customer_id] => 
     [tracking_id] => (tracking_id not set)
     [voucher] => stdClass Object (
         [code] => Testing7fjWdr
@@ -167,8 +174,9 @@ stdClass Object (
             [redemption_entries] => Array (
                 [0] => stdClass Object (
                     [id] => r_icykIG693ChNGuJejQZjtYjl
-                    [object] =>
+                    [object] => redemption
                     [date] => 2015-11-09T15:41:34Z
+                    [customer_id] =>
                     [tracking_id] => (tracking_id not set)
                 )
                 ...
@@ -176,6 +184,7 @@ stdClass Object (
                     [id] => r_MkNMsis65DZBZ8uoG6W901nt
                     [object] => redemption
                     [date] => 2015-12-04T09:32:24Z
+                    [customer_id] => 
                     [tracking_id] => (tracking_id not set)
                 )
             )
@@ -216,6 +225,7 @@ stdClass Object (
     [id] => r_xRjIVSdYnYOncmWSvVgBcWVi
     [object] => redemption
     [date] => 2016-04-25T15:49:11Z
+    [customer_id] => cust_84LPwcHJ1jVEpxV1uF9nLLBB
     [tracking_id] => alice.morgan
     [voucher] => stdClass Object (
         [code] => Testing7fjWdr
@@ -241,6 +251,7 @@ stdClass Object (
                     [id] => r_xRjIVSdYnYOncmWSvVgBcWVi
                     [object] => redemption
                     [date] => 2016-04-25T15:49:11Z
+                    [customer_id] => cust_84LPwcHJ1jVEpxV1uF9nLLBB
                     [tracking_id] => alice.morgan
                 )
             )
@@ -254,14 +265,14 @@ stdClass Object (
 
 ##### 3. With customer profile
 
-You can record a detailed customer profile consisting of an `id` (obligatory), `name`, `email`, `description` and a `metadata` section that can include any data you wish.
+You can record a detailed customer profile consisting of an `source_id`, `name`, `email`, `description` and a `metadata` section that can include any data you wish. Voucherify will create (or update) provided customer profile in its database.
 
 ```php
 try {
     $result = $voucherify->redeem([
         "voucher" => "Testing7fjWdr", 
         "customer" => [ 
-            "id"            => "alice.morgan",
+            "source_id"     => "alice.morgan",
             "name"          => "Alice Morgan",
             "email"         => "alice@morgan.com",
             "description"   => "",
@@ -365,7 +376,7 @@ The filter can include following properties:
 - start_date - string (ISO8601 format, default is the beginning of current month)
 - end_date   - string (ISO8601 format, default is the end of current month)
 - result     - string (Success|Failure-NotExist|Failure-Inactive)
-- customer   - string 
+- customer   - string (id or source_id)
 
 Example - 1000 successful redemptions from April 2016:
 
@@ -411,6 +422,7 @@ stdClass Object (
     [id] => rr_3Kaak0d9pXO5Nb21UUNiAJ0j
     [object] => redemption_rollback
     [date] => 2016-04-27T13:44:13Z
+    [customer_id] => cust_84LPwcHJ1jVEpxV1uF9nLLBB
     [tracking_id] => alice.morgan
     [redemption] => r_xRjIVSdYnYOncmWSvVgBcWVi
     [voucher] => stdClass Object (
@@ -431,12 +443,14 @@ stdClass Object (
                     [id] => r_icykIG693ChNGuJejQZjtYjl
                     [object] => redemption
                     [date] => 2016-04-25T15:41:34Z
+                    [customer_id] =>
                     [tracking_id] => (tracking_id not set)
                 )
                 [1] => stdClass Object (
                     [id] => r_xRjIVSdYnYOncmWSvVgBcWVi
                     [object] => redemption
                     [date] => 2016-04-25T15:49:11Z
+                    [customer_id] => cust_84LPwcHJ1jVEpxV1uF9nLLBB
                     [tracking_id] => alice.morgan
                 )
                 [2] => stdClass Object (
@@ -444,6 +458,7 @@ stdClass Object (
                     [object] => redemption_rollback
                     [date] => 2016-04-25T15:49:13Z
                     [tracking_id] => alice.morgan
+                    [customer_id] => cust_84LPwcHJ1jVEpxV1uF9nLLBB
                     [redemption] => r_xRjIVSdYnYOncmWSvVgBcWVi
                 )
             )
