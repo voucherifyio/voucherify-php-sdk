@@ -1,6 +1,6 @@
 ## Voucherify PHP SDK
 
-[Voucherify](http://www.voucherify.io/?utm_source=inbound&utm_medium=github&utm_campaign=voucherify-php-sdk) has a new platform that will help your team  to automate voucher campaigns. It does this by providing composable API and the marketer-friendly interface that let growth teams:
+[Voucherify](http://www.voucherify.io/?utm_source=github&utm_medium=sdk&utm_campaign=acq) has a new platform that will help your team  to automate voucher campaigns. It does this by providing composable API and the marketer-friendly interface that let growth teams:
 
 - **roll-out thousands** of vouchers **in minutes** instead of weeks,
 - **check status** or disable **every single** promo code in real time, 
