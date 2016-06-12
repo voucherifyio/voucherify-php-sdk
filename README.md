@@ -469,6 +469,121 @@ stdClass Object (
     )
 )
 ```
+
+#### Create customer
+
+```php
+try {
+    $customer = (new CustomerBuilder())
+        ->setName("Natalie Morgan")
+        ->setEmail("natalie@mail.com")
+        ->setDescription("Simple description of Natalie personality")
+        ->setMetadata((object)array("lang" => "pl"))
+        ->build();
+
+    $result = $voucherify->customer->create($customer);
+    print_r($result);
+} catch (ClientException $e) {
+    echo("Error: " . $e->getMessage());
+}
+```
+
+Result:
+```php
+(
+    [id] => cust_HPBnmNYdQAEYZ5jsBYPk3NXt
+    [name] => Natalie Morgan
+    [email] => natalie@mail.com
+    [description] => Simple description of Natalie personality
+    [metadata] => stdClass Object
+        (
+            [lang] => pl
+        )
+
+    [created_at] => 2016-06-12T18:22:17Z
+    [object] => customer
+)
+
+```
+
+#### Fetch customer
+
+```php
+try {
+    $result = $voucherify->customer->fetch("cust_toV1gv43r7coKX9u95QHd1td");
+    print_r($result);
+} catch (ClientException $e) {
+    echo("Error: " . $e->getMessage());
+}
+```
+
+Result:
+```php
+stdClass Object
+(
+    [id] => cust_toV1gv43r7coKX9u95QHd1td
+    [name] => Natalie Morgan
+    [email] => natalie@mail.com
+    [description] => Simple description of Natalie personality
+    [metadata] => stdClass Object
+        (
+            [lang] => pl
+        )
+
+    [created_at] => 2016-06-12T18:29:28Z
+    [object] => customer
+)
+```
+
+#### Update customer
+
+```php
+try {
+    $payload = (object) [];
+    $payload->id = "cust_toV1gv43r7coKX9u95QHd1td";
+    $payload->description = "Improved description about Natalie personality";
+
+    $result = $voucherify->customer->update($payload);
+    print_r($result);
+
+    $result = $voucherify->customer->delete($result->id);
+    print_r($result);
+} catch (ClientException $e) {
+    echo("Error: " . $e->getMessage());
+}
+```
+
+Result:
+```php
+stdClass Object
+(
+    [id] => cust_toV1gv43r7coKX9u95QHd1td
+    [name] => Natalie Morgan
+    [email] => natalie@mail.com
+    [description] => Improved description about Natalie personality
+    [metadata] => stdClass Object
+        (
+            [lang] => pl
+        )
+
+    [created_at] => 2016-06-12T18:29:28Z
+    [object] => customer
+)
+```
+
+#### Delete customer
+
+```php
+try {
+    $voucherify->customer->delete("cust_toV1gv43r7coKX9u95QHd1td");
+    echo("Customer deleted");
+} catch (ClientException $e) {
+    echo("Error: " . $e->getMessage());
+}
+```
+
+Result:
+`This endpoint does not return result`
     
 ### Changelog
 - **2016-04-27** - `0.5.0` - Rollback redemption.
