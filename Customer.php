@@ -15,7 +15,7 @@ class Customer extends VoucherifyRequest {
     }
 
     /**
-     * @param stdClass $customer
+     * @param Customer $customer
      *
      * Create customer.
      *
