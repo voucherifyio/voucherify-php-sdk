@@ -4,8 +4,21 @@ namespace Voucherify {
 
     class VoucherifyClient extends VoucherifyRequest {
 
+        /**
+         * @var Customer
+         */
+        public $customer;
+
+        /**
+         * VoucherifyClient constructor.
+         *
+         * @param string $apiID
+         * @param string $apiKey
+         */
         public function __construct($apiID, $apiKey) {
             parent::__construct($apiID, $apiKey);
+
+            $this->customer = new Customer($apiID, $apiKey);
         }
 
         /**
