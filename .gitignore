@@ -9,3 +9,4 @@
 # Editor configuraton files:
 /typings/
 /.vscode/
+composer.phar
