@@ -52,7 +52,7 @@ class Customer extends VoucherifyRequest {
             $customerId = $customer->id;
         }
 
-        return $this->apiRequest("PUT", "/customers/" . urlencode($customerId), $customer, NULL);
+        return $this->apiRequest("PUT", "/customers/" . urlencode($customerId), NULL, $customer);
     }
 
     /**
