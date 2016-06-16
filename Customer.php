@@ -32,7 +32,7 @@ class Customer extends VoucherifyRequest {
      *
      * @throws Voucherify\ClientException
      */
-    public function fetch($customerId) {
+    public function get($customerId) {
         return $this->apiRequest("GET", "/customers/" . urlencode($customerId), NULL, NULL);
     }
 

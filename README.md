@@ -475,10 +475,10 @@ stdClass Object (
 ```php
 try {
     $customer = (new CustomerBuilder())
-        ->setName("Natalie Morgan")
-        ->setEmail("natalie@mail.com")
+        ->setName("John Doe")
+        ->setEmail("john@email.com")
         ->setDescription("Simple description of Natalie personality")
-        ->setMetadata((object)array("lang" => "pl"))
+        ->setMetadata((object)array("lang" => "en"))
         ->build();
 
     $result = $voucherify->customer->create($customer);
@@ -492,12 +492,12 @@ Result:
 ```php
 (
     [id] => cust_HPBnmNYdQAEYZ5jsBYPk3NXt
-    [name] => Natalie Morgan
-    [email] => natalie@mail.com
-    [description] => Simple description of Natalie personality
+    [name] => John Doe
+    [email] => john@email.com
+    [description] => Sample description about customer
     [metadata] => stdClass Object
         (
-            [lang] => pl
+            [lang] => en
         )
 
     [created_at] => 2016-06-12T18:22:17Z
@@ -506,11 +506,11 @@ Result:
 
 ```
 
-#### Fetch customer
+#### Get customer
 
 ```php
 try {
-    $result = $voucherify->customer->fetch("cust_toV1gv43r7coKX9u95QHd1td");
+    $result = $voucherify->customer->get("cust_toV1gv43r7coKX9u95QHd1td");
     print_r($result);
 } catch (ClientException $e) {
     echo("Error: " . $e->getMessage());
@@ -522,12 +522,12 @@ Result:
 stdClass Object
 (
     [id] => cust_toV1gv43r7coKX9u95QHd1td
-    [name] => Natalie Morgan
-    [email] => natalie@mail.com
-    [description] => Simple description of Natalie personality
+    [name] => John Doe
+    [email] => john@email.com
+    [description] => Sample description about customer
     [metadata] => stdClass Object
         (
-            [lang] => pl
+            [lang] => en
         )
 
     [created_at] => 2016-06-12T18:29:28Z
@@ -539,14 +539,11 @@ stdClass Object
 
 ```php
 try {
-    $payload = (object) [];
+    $payload = (object) [ ... customer object ... ];
     $payload->id = "cust_toV1gv43r7coKX9u95QHd1td";
-    $payload->description = "Improved description about Natalie personality";
+    $payload->description = "Sample description about customer with changes";
 
     $result = $voucherify->customer->update($payload);
-    print_r($result);
-
-    $result = $voucherify->customer->delete($result->id);
     print_r($result);
 } catch (ClientException $e) {
     echo("Error: " . $e->getMessage());
@@ -558,12 +555,12 @@ Result:
 stdClass Object
 (
     [id] => cust_toV1gv43r7coKX9u95QHd1td
-    [name] => Natalie Morgan
-    [email] => natalie@mail.com
-    [description] => Improved description about Natalie personality
+    [name] => John Doe
+    [email] => john@email.com
+    [description] => Sample description about customer with changes
     [metadata] => stdClass Object
         (
-            [lang] => pl
+            [lang] => en
         )
 
     [created_at] => 2016-06-12T18:29:28Z
@@ -586,6 +583,7 @@ Result:
 `This endpoint does not return result`
     
 ### Changelog
+- **2016-04-27** - `0.6.0` - Added new API methods for customer - create, get, update, delete.
 - **2016-04-27** - `0.5.0` - Rollback redemption.
 - **2016-04-18** - `0.4.0` - List vouchers. Filter by customer.
 - **2016-04-07** - `0.3.0` - List redemptions.
