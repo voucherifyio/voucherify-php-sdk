@@ -24,6 +24,7 @@ require_once('vendor/autoload.php');
 
 use Voucherify\VoucherifyClient;
 use Voucherify\VoucherBuilder;
+use Voucherify\CustomerBuilder;
 use Voucherify\ClientException;
 
 $apiID          = "c70a6f00-cf91-4756-9df5-47628850002b";
