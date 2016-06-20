@@ -24,6 +24,7 @@ require_once('vendor/autoload.php');
 
 use Voucherify\VoucherifyClient;
 use Voucherify\VoucherBuilder;
+use Voucherify\CustomerBuilder;
 use Voucherify\ClientException;
 
 $apiID          = "c70a6f00-cf91-4756-9df5-47628850002b";
@@ -469,8 +470,121 @@ stdClass Object (
     )
 )
 ```
+
+#### Create customer
+
+```php
+try {
+    $customer = (new CustomerBuilder())
+        ->setName("John Doe")
+        ->setEmail("john@email.com")
+        ->setDescription("Simple description of Natalie personality")
+        ->setMetadata((object)array("lang" => "en"))
+        ->build();
+
+    $result = $voucherify->customer->create($customer);
+    print_r($result);
+} catch (ClientException $e) {
+    echo("Error: " . $e->getMessage());
+}
+```
+
+Result:
+```php
+(
+    [id] => cust_HPBnmNYdQAEYZ5jsBYPk3NXt
+    [name] => John Doe
+    [email] => john@email.com
+    [description] => Sample description about customer
+    [metadata] => stdClass Object
+        (
+            [lang] => en
+        )
+
+    [created_at] => 2016-06-12T18:22:17Z
+    [object] => customer
+)
+
+```
+
+#### Get customer
+
+```php
+try {
+    $result = $voucherify->customer->get("cust_toV1gv43r7coKX9u95QHd1td");
+    print_r($result);
+} catch (ClientException $e) {
+    echo("Error: " . $e->getMessage());
+}
+```
+
+Result:
+```php
+stdClass Object
+(
+    [id] => cust_toV1gv43r7coKX9u95QHd1td
+    [name] => John Doe
+    [email] => john@email.com
+    [description] => Sample description about customer
+    [metadata] => stdClass Object
+        (
+            [lang] => en
+        )
+
+    [created_at] => 2016-06-12T18:29:28Z
+    [object] => customer
+)
+```
+
+#### Update customer
+
+```php
+try {
+    $payload = (object) [ ... customer object ... ];
+    $payload->id = "cust_toV1gv43r7coKX9u95QHd1td";
+    $payload->description = "Sample description about customer with changes";
+
+    $result = $voucherify->customer->update($payload);
+    print_r($result);
+} catch (ClientException $e) {
+    echo("Error: " . $e->getMessage());
+}
+```
+
+Result:
+```php
+stdClass Object
+(
+    [id] => cust_toV1gv43r7coKX9u95QHd1td
+    [name] => John Doe
+    [email] => john@email.com
+    [description] => Sample description about customer with changes
+    [metadata] => stdClass Object
+        (
+            [lang] => en
+        )
+
+    [created_at] => 2016-06-12T18:29:28Z
+    [object] => customer
+)
+```
+
+#### Delete customer
+
+```php
+try {
+    $voucherify->customer->delete("cust_toV1gv43r7coKX9u95QHd1td");
+    echo("Customer deleted");
+} catch (ClientException $e) {
+    echo("Error: " . $e->getMessage());
+}
+```
+
+Result:
+`This endpoint does not return result`
     
 ### Changelog
+- **2016-04-27** - `0.6.0` - Added new API methods for customer - create, get, update, delete.
 - **2016-04-27** - `0.5.0` - Rollback redemption.
 - **2016-04-18** - `0.4.0` - List vouchers. Filter by customer.
 - **2016-04-07** - `0.3.0` - List redemptions.
