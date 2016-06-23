@@ -51,6 +51,7 @@ stdClass Object (
     [code] => Testing7fjWdr
     [campaign] => TestingPlatform
     [category] =>
+    [type] => DISCOUNT_VOUCHER
     [discount] => stdClass Object (
         [type] = AMOUNT
         [amount_off] = 999
@@ -163,6 +164,7 @@ stdClass Object (
         [code] => Testing7fjWdr
         [campaign] => TestingPlatform
         [category] =>
+        [type] => DISCOUNT_VOUCHER
         [discount] => stdClass Object (
             [type] = AMOUNT
             [amount_off] = 999
@@ -232,6 +234,7 @@ stdClass Object (
         [code] => Testing7fjWdr
         [campaign] => TestingPlatform
         [category] =>
+        [type] => DISCOUNT_VOUCHER
         [discount] => stdClass Object (
             [type] = AMOUNT
             [amount_off] = 999
@@ -289,6 +292,34 @@ try {
 catch (ClientException $e) {
     echo("Error: " . $e->getMessage());
 }
+```
+
+##### 4. With customer id
+
+If you already created a customer profile in Voucherify's database, whether it was implicitly by providing it to the `redeem` function or explicitly by invoking the [`customer.create`](#create-customer) method, you can identify your customer in following redemptions by a generated id (starting with `cust_`).
+
+
+```php
+$voucherify->redeem([
+        "voucher" => "Testing7fjWdr", 
+        "customer" => [ 
+            "id" => "cust_C9qJ3xKgZFqkpMw7b21MF2ow"
+        ]
+    ], NULL);
+```
+
+##### 5. With order amount
+
+Redeeming a gift voucher requires to pass an amount that you wish to withdraw from the voucher.
+Order amount have to be expressed in cents, as an integer. For example $22.50 should be provided as 2250:    
+
+```php      
+$voucherify->redeem([
+        "voucher" => "91Ft4U", 
+        "order" => [ 
+            "amount" => 2550
+        ]
+    ], NULL);
 ```
 
 #### Creating voucher
@@ -430,6 +461,7 @@ stdClass Object (
         [code] => Testing7fjWdr
         [campaign] => TestingPlatform
         [category] =>
+        [type] => DISCOUNT_VOUCHER
         [discount] => stdClass Object (
             [type] = AMOUNT
             [amount_off] = 999
@@ -584,6 +616,7 @@ Result:
 `This endpoint does not return result`
     
 ### Changelog
+- **2016-04-23** - `0.7.0` - Gift vouchers.
 - **2016-04-27** - `0.6.0` - Added new API methods for customer - create, get, update, delete.
 - **2016-04-27** - `0.5.0` - Rollback redemption.
 - **2016-04-18** - `0.4.0` - List vouchers. Filter by customer.

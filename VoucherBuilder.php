@@ -26,6 +26,7 @@
             }
             
             public function setAmountDiscount($amount_off) {
+                $this->_voucher->type = "DISCOUNT_VOUCHER";
                 $this->_voucher->discount = (object) [
                     "type" => "AMOUNT",
                     "amount_off" => $amount_off * 100
@@ -34,6 +35,7 @@
             }
             
             public function setPercentDiscount($percent_off) {
+                $this->_voucher->type = "DISCOUNT_VOUCHER";
                 $this->_voucher->discount = (object) [
                     "type" => "PERCENT",
                     "percent_off" => $percent_off
@@ -42,10 +44,19 @@
             }
             
             public function setUnitDiscount($unit_off, $unit_type) {
+                $this->_voucher->type = "DISCOUNT_VOUCHER";
                 $this->_voucher->discount = (object) [
                     "type" => "UNIT",
                     "unit_off" => $unit_off,
                     "unit_type" => $unit_type
+                ];
+                return $this;
+            }
+            
+            public function setGiftAmount($amount) {
+                $this->_voucher->type = "GIFT_VOUCHER"
+                $this->_voucher->gift = (object) [
+                    "amount" => $amount * 100
                 ];
                 return $this;
             }
