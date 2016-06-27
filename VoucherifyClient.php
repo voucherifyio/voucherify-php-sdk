@@ -81,7 +81,7 @@ namespace Voucherify {
         }
 
         /**
-         * @param string|array $code Voucher code or array with voucher and customer items
+         * @param string|array $code Voucher code or array with voucher (code), customer profile and order amount
          * @param string|null $trackingId Provided tracking id
          *
          * Redeem voucher
