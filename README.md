@@ -332,7 +332,7 @@ try {
     $voucher = (new VoucherBuilder())
         ->setCategory("PHP-SDK-Test")
         ->setAmountDiscount(10.0)
-        ->setStartDate(new DateTime("2016-01-20"))
+        ->setStartDate(new DateTime("2016-01-20", new DateTimeZone("UTC")))
         ->setRedemptionLimit(1)
         ->build();
         
@@ -616,7 +616,7 @@ Result:
 `This endpoint does not return result`
     
 ### Changelog
-- **2016-04-23** - `0.7.0` - Gift vouchers.
+- **2016-06-23** - `0.7.0` - Gift vouchers.
 - **2016-04-27** - `0.6.0` - Added new API methods for customer - create, get, update, delete.
 - **2016-04-27** - `0.5.0` - Rollback redemption.
 - **2016-04-18** - `0.4.0` - List vouchers. Filter by customer.

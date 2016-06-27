@@ -54,7 +54,7 @@
             }
             
             public function setGiftAmount($amount) {
-                $this->_voucher->type = "GIFT_VOUCHER"
+                $this->_voucher->type = "GIFT_VOUCHER";
                 $this->_voucher->gift = (object) [
                     "amount" => $amount * 100
                 ];
