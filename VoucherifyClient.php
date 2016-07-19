@@ -48,6 +48,17 @@ namespace Voucherify {
         }
 
         /**
+         * @param stdClass $voucher_update
+         *
+         * Update voucher.
+         *
+         * @throws Voucherify\ClientException
+         */
+        public function update($voucher_update) {
+            return $this->apiRequest("PUT", "/vouchers/" . urlencode($voucher_update->code), NULL, $voucher_update);
+        }
+        
+        /**
          * @param string $code
          *
          * Enable voucher with given code.
