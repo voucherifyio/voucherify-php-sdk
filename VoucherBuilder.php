@@ -7,11 +7,38 @@
             private $_voucher;
             
             public function __construct() {
-                $this->_voucher = (object)[];
+                $this->_voucher = (object)[
+                    "code_config" => (object)[]
+                ];
             }
            
             public function setCode($code) {
                 $this->_voucher->code = $code;
+                return $this;
+            }
+            
+            public function setCodeLength($length) {
+                $this->_voucher->code_config->length = $length;
+                return $this;
+            }
+            
+            public function setCodeCharset($charset) {
+                $this->_voucher->code_config->charset = $charset;
+                return $this;
+            }
+            
+            public function setCodePrefix($prefix) {
+                $this->_voucher->code_config->prefix = $prefix;
+                return $this;
+            }
+            
+            public function setCodePostfix($postfix) {
+                $this->_voucher->code_config->postfix = $postfix;
+                return $this;
+            }
+            
+            public function setCodePattern($pattern) {
+                $this->_voucher->code_config->pattern = $pattern;
                 return $this;
             }
             
@@ -89,6 +116,9 @@
             }
             
             public function build() {
+                if (isset($this->_voucher->code)) {
+                    unset($this->_voucher->code_config);
+                }
                 return $this->_voucher;
             }
         }
