@@ -326,10 +326,21 @@ $voucherify->redeem([
 
 You can create a new voucher using `VoucherifyClient->create`. It accepts an object representing the voucher.
 `VoucherBuilder` will help you to create a valid [voucher object](https://voucherify.readme.io/docs/vouchers).
+You can create a voucher with a specified code (`VoucherBuilder->setCode`) or let Voucherify generate one.
+By default a generated code is a 8 characters long alphanumeric string, however, you can define how to create 
+the random code passign a `code_config` object:
+- `length` (`VoucherBuilder->setCodeLength`) - Number of characters in a generated code (excluding prefix and postfix)
+- `charset` (`VoucherBuilder->setCodeCharset`) - Characters that can appear in the code.
+- `prefix` (`VoucherBuilder->setCodePrefix`) - A text appended before the code.
+- `postfix` (`VoucherBuilder->setCodePostfix`) - A text appended after the code.
+- `pattern` (`VoucherBuilder->setCodePattern`) - A pattern for codes where hashes (#) will be replaced with random characters. Overrides `length`.
+
+Example:
 
 ```php
 try {
     $voucher = (new VoucherBuilder())
+        ->setCodePattern("TEST-#####")
         ->setCategory("PHP-SDK-Test")
         ->setAmountDiscount(10.0)
         ->setStartDate(new DateTime("2016-01-20", new DateTimeZone("UTC")))
@@ -641,6 +652,7 @@ Result:
 `This endpoint does not return result`
     
 ### Changelog
+- **2016-07-20** - `0.9.0` - Voucher code pattern.
 - **2016-07-19** - `0.8.0` - Voucher update method.
 - **2016-06-23** - `0.7.0` - Gift vouchers.
 - **2016-04-27** - `0.6.0` - Added new API methods for customer - create, get, update, delete.
