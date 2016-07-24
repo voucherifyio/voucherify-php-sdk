@@ -355,6 +355,31 @@ catch (ClientException $e) {
 }
 ```
 
+#### Updating voucher
+
+You can change some properties of a voucher that has been already created:
+- category
+- start date
+- expiration date
+- active
+- additinal info
+- metadata
+
+Other fields than listed above won't be modified. Even if provided they will be silently skipped.
+
+Use `VoucherifyClient->update` to update a voucher.
+
+```php
+$voucher_update = (object) array(
+    "code" => "Summer-2016",
+    "category" => "Season",
+    "start_date" => "2016-07-01T00:00:00Z",
+    "expiration_date" => "2016-08-31T23:59:59Z"
+);
+
+$updated_voucher = $voucherify->update($voucher_update);
+```
+
 #### Disabling voucher
 
 You can make a voucher inactive by calling `VoucherifyClient->disable` with a voucher code:
