@@ -669,6 +669,7 @@ Result:
 `This endpoint does not return result`
     
 ### Changelog
+- **2016-09-13** - `0.9.1` - Fix to maintain builder pattern.
 - **2016-07-20** - `0.9.0` - Voucher code pattern.
 - **2016-07-19** - `0.8.0` - Voucher update method.
 - **2016-06-23** - `0.7.0` - Gift vouchers.
