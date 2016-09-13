@@ -61,7 +61,7 @@ class VoucherifyRequest {
      */
     protected function apiRequest($method, $endpoint, $params, $data) {
 
-        $setParams = $params && in_array($method, ["GET", "POST"]);
+        $setParams = $params && in_array($method, ["GET", "POST", "DELETE"]);
         $setData = $data && in_array($method, ["POST", "PUT", "DELETE"]);
 
         $method = strtoupper($method);

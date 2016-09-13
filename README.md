@@ -425,6 +425,27 @@ You can enable a voucher by calling `VoucherifyClient->enable` with a voucher co
     }
     ```
     
+#### Deleting voucher
+
+You can delete a voucher by calling `VoucherifyClient->delete` with a voucher code.
+Param `force` is optional. It allows you to remove voucher with keeping the possibility of creating a new voucher with the same code:
+- code       - string
+- force      - boolean _(optional)_
+
+Example :
+
+```php
+$force = true;
+
+try {
+    $voucherify->delete("Testing7fjWdr", $force);
+    echo "Voucher deleted.\n";
+}
+catch (ClientException $e) {
+    echo("Error: " . $e->getMessage());
+}
+```
+    
 #### List vouchers
 
 Use `VoucherifyClient->vouchers` to get a filtered list of vouchers. Pass an array specifing a filter.
@@ -451,6 +472,7 @@ try {
 catch (ClientException $e) {
     echo("Error: " . $e->getMessage());
 }
+```
 
 #### List redemptions
 
@@ -669,6 +691,7 @@ Result:
 `This endpoint does not return result`
     
 ### Changelog
+- **2016-09-13** - `0.10.0` - Added new API method for voucher - delete
 - **2016-09-13** - `0.9.1` - Fix to maintain builder pattern.
 - **2016-07-20** - `0.9.0` - Voucher code pattern.
 - **2016-07-19** - `0.8.0` - Voucher update method.
