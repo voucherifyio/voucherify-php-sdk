@@ -439,7 +439,7 @@ $force = true;
 
 try {
     $voucherify->delete("Testing7fjWdr", $force);
-    echo "Voucher disabled.\n";
+    echo "Voucher deleted.\n";
 }
 catch (ClientException $e) {
     echo("Error: " . $e->getMessage());
