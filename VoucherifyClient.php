@@ -82,6 +82,18 @@ namespace Voucherify {
 
         /**
          * @param string $code
+         * @param boolean|null $force
+         *
+         * Delete voucher by code
+         *
+         * @throws Voucherify\ClientException
+         */
+        public function delete($code, $force = NULL) {
+            return $this->apiRequest("DELETE", "/vouchers/" . urlencode($code), ["force" => $force], NULL);
+        }
+
+        /**
+         * @param string $code
          *
          * Get voucher redemption
          *
