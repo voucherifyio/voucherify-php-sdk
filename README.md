@@ -430,7 +430,7 @@ You can enable a voucher by calling `VoucherifyClient->enable` with a voucher co
 You can delete a voucher by calling `VoucherifyClient->delete` with a voucher code.
 Param `force` is optional. It allows you to remove voucher with keeping the possibility of creating a new voucher with the same code:
 - code       - string
-- force      - boolean (optional)
+- force      - boolean _(optional)_
 
 Example :
 

@@ -89,7 +89,7 @@ namespace Voucherify {
          * @throws Voucherify\ClientException
          */
         public function delete($code, $force = NULL) {
-            return $this->apiRequest("DELETE", "/vouchers/" . urlencode($code), ["force" => $force], NULL);
+            return $this->apiRequest("DELETE", "/vouchers/" . urlencode($code), ["force" => $force ? "true" : "false"], NULL);
         }
 
         /**
