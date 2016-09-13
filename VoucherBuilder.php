@@ -113,6 +113,7 @@
             
             public function setActive($active) {
                 $this->_voucher->active = $active;
+		return $this;
             }
             
             public function build() {
