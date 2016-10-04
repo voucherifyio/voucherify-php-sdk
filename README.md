@@ -729,6 +729,7 @@ Result:
 `This endpoint does not return result`
     
 ### Changelog
+- **2016-09-13** - `0.11.0` - Added new API method for voucher - publish
 - **2016-09-13** - `0.10.0` - Added new API method for voucher - delete
 - **2016-09-13** - `0.9.1` - Fix to maintain builder pattern.
 - **2016-07-20** - `0.9.0` - Voucher code pattern.
