@@ -81,6 +81,27 @@ namespace Voucherify {
         }
 
         /**
+         * @param $campaignName
+         * @return mixed
+         * @internal param string $code Enable voucher with given code.*
+         * Enable voucher with given code.
+         *
+         */
+        public function publish($campaignName) {
+            $payload = NULL;
+
+            if (gettype($campaignName) === "string") {
+                $payload = ["campaign" => $campaignName];
+            }
+
+            if (gettype($campaignName) === "object") {
+                $payload = $campaignName;
+            }
+
+            return $this->apiRequest("POST", "/vouchers/publish", NULL, $payload);
+        }
+
+        /**
          * @param string $code
          * @param boolean|null $force
          *
