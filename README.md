@@ -379,7 +379,7 @@ You can change some properties of a voucher that has been already created:
 - start date
 - expiration date
 - active
-- additinal info
+- additional info
 - metadata
 
 Other fields than listed above won't be modified. Even if provided they will be silently skipped.
@@ -396,6 +396,44 @@ $voucher_update = (object) array(
 
 $updated_voucher = $voucherify->update($voucher_update);
 ```
+
+#### Publishing voucher
+
+This method selects a voucher that is suitable for publication, adds a publish entry and returns the voucher.
+A voucher is suitable for publication when it's active and has not been published more times than the redemption limit.
+
+Example:
+
+Using campaign name:
+
+```php
+$published_voucher = $voucherify->publish("First Ride");
+```
+
+Using object with campaign name:
+
+```php
+$payload = (object) array(
+    "campaign" => "First Ride",
+    "channel" => "SDK Test",
+    "customer" => "alice.morgan@mail.com"
+);
+
+$published_voucher = $voucherify->publish($payload);
+```
+
+Using object with specific voucher code:
+
+```php
+$payload = (object) array(
+    "voucher" => "Summer-2016",
+    "channel" => "SDK Test",
+    "customer" => "alice.morgan@mail.com"
+);
+
+$published_voucher = $voucherify->publish($payload);
+```
+
 
 #### Disabling voucher
 
@@ -691,6 +729,7 @@ Result:
 `This endpoint does not return result`
     
 ### Changelog
+- **2016-09-13** - `0.11.0` - Added new API method for voucher - publish
 - **2016-09-13** - `0.10.0` - Added new API method for voucher - delete
 - **2016-09-13** - `0.9.1` - Fix to maintain builder pattern.
 - **2016-07-20** - `0.9.0` - Voucher code pattern.
