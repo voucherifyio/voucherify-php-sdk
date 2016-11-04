@@ -143,6 +143,25 @@ namespace Voucherify {
         }
 
         /**
+         * @param string|array $code Voucher code or array with voucher (code), customer profile and order amount
+         * @param string|null $trackingId Provided tracking id
+         *
+         * Validate voucher
+         *
+         * @throws Voucherify\ClientException
+         */
+        public function validate($code, $trackingId = NULL) {
+            $context = array();
+            if (is_array($code)) {
+                $context = $code;
+                $code = $context["voucher"];
+                unset($context["voucher"]);
+            }
+
+            return $this->apiRequest("POST", "/vouchers/" . urlencode($code) . "/validate", ["tracking_id" => $trackingId], $context);
+        }
+
+        /**
          * @param string $redemptionId
          * @param string|null $trackingId
          * @param string|null $reason
