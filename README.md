@@ -434,6 +434,24 @@ $payload = (object) array(
 $published_voucher = $voucherify->publish($payload);
 ```
 
+Using object with specific voucher code and customer data (new customer object will be created):
+
+```php
+$customer = (new CustomerBuilder())
+    ->setName("John Doe")
+    ->setEmail("john@email.com")
+    ->setDescription("Simple description of Natalie personality")
+    ->setMetadata((object)array("lang" => "en"))
+    ->build();
+
+$payload = (object) array(
+    "voucher" => "Summer-2016",
+    "channel" => "SDK Test",
+    "customer" => $customer
+);
+
+$published_voucher = $voucherify->publish($payload);
+```
 
 #### Disabling voucher
 
