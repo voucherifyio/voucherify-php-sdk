@@ -88,6 +88,10 @@ class VoucherifyRequest {
             throw new ClientException($error);
         } // Invalid status code
         else if ($statusCode >= 400) {
+            $resultDecoded = json_decode($result, true);
+            if($resultDecoded && $resultDecoded['message']) {
+                throw new ClientException($resultDecoded['message']);
+            }
             throw new ClientException("Unexpected status code: " . $statusCode . " - Details: " . $result);
         }
 
