@@ -208,5 +208,16 @@ namespace Voucherify {
         public function redemptions($filter) {
             return $this->apiRequest("GET", "/redemptions/", $filter, NULL);
         }
+
+        /**
+         * @param array|stdClass $data
+         *
+         * Create a validation rule
+         *
+         * @throws Voucherify\ClientException
+         */
+        public function createValidationRule($data) {
+            return $this->apiRequest("POST", "/validation-rules/", NULL, $data);
+        }
     }
 }
