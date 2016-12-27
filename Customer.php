@@ -2,15 +2,16 @@
 
 namespace Voucherify;
 
-class Customer extends VoucherifyRequest {
-
+class Customer extends VoucherifyRequest
+{
     /**
      * Customer constructor.
      *
      * @param string $apiID
      * @param string $apiKey
      */
-    public function __construct($apiID, $apiKey) {
+    public function __construct($apiID, $apiKey)
+    {
         parent::__construct($apiID, $apiKey);
     }
 
@@ -19,10 +20,11 @@ class Customer extends VoucherifyRequest {
      *
      * Create customer.
      *
-     * @throws Voucherify\ClientException
+     * @throws \Voucherify\ClientException
      */
-    public function create($customer) {
-        return $this->apiRequest("POST", "/customers/", NULL, $customer);
+    public function create($customer)
+    {
+        return $this->apiRequest("POST", "/customers/", null, $customer);
     }
 
     /**
@@ -30,10 +32,11 @@ class Customer extends VoucherifyRequest {
      *
      * Get customer details
      *
-     * @throws Voucherify\ClientException
+     * @throws \Voucherify\ClientException
      */
-    public function get($customerId) {
-        return $this->apiRequest("GET", "/customers/" . urlencode($customerId), NULL, NULL);
+    public function get($customerId)
+    {
+        return $this->apiRequest("GET", "/customers/" . urlencode($customerId), null, null);
     }
 
     /**
@@ -41,9 +44,10 @@ class Customer extends VoucherifyRequest {
      *
      * Update customer
      *
-     * @throws Voucherify\ClientException
+     * @throws \Voucherify\ClientException
      */
-    public function update($customer) {
+    public function update($customer)
+    {
         $customerId = "";
 
         if (is_array($customer)) {
@@ -52,7 +56,7 @@ class Customer extends VoucherifyRequest {
             $customerId = $customer->id;
         }
 
-        return $this->apiRequest("PUT", "/customers/" . urlencode($customerId), NULL, $customer);
+        return $this->apiRequest("PUT", "/customers/" . urlencode($customerId), null, $customer);
     }
 
     /**
@@ -60,9 +64,10 @@ class Customer extends VoucherifyRequest {
      *
      * Delete customer
      *
-     * @throws Voucherify\ClientException
+     * @throws \Voucherify\ClientException
      */
-    public function delete($customerId) {
-        return $this->apiRequest("DELETE", "/customers/" . urlencode($customerId), NULL, NULL);
+    public function delete($customerId)
+    {
+        return $this->apiRequest("DELETE", "/customers/" . urlencode($customerId), null, null);
     }
 }

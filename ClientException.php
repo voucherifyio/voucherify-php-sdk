@@ -1,7 +1,7 @@
 <?php 
 
-namespace Voucherify { 
-    class ClientException extends \Exception { }
-} 
+namespace Voucherify;
 
-?>
+class ClientException extends \Exception
+{
+}
