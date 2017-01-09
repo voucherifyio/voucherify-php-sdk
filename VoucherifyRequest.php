@@ -2,7 +2,8 @@
 
 namespace Voucherify;
 
-class VoucherifyRequest {
+class VoucherifyRequest
+{
     /**
      * @var string
      */
@@ -22,12 +23,14 @@ class VoucherifyRequest {
      * @param string $apiID
      * @param string $apiKey
      */
-    public function __construct($apiID, $apiKey) {
+    public function __construct($apiID, $apiKey)
+    {
         $this->setApiID($apiID);
         $this->setApiKey($apiKey);
     }
 
-    private function getHeaders() {
+    private function getHeaders()
+    {
         return [
             "Content-Type: application/json",
             "X-App-Id: " . $this->apiID,
@@ -36,7 +39,8 @@ class VoucherifyRequest {
         ];
     }
 
-    private function encodeParams($params) {
+    private function encodeParams($params)
+    {
         if (!is_array($params) && !is_object($params)) {
             return $params;
         }
@@ -57,10 +61,10 @@ class VoucherifyRequest {
      * @param array|null $params
      * @param string|array|object|null $data
      *
-     * @throws Voucherify\ClientException
+     * @throws \Voucherify\ClientException
      */
-    protected function apiRequest($method, $endpoint, $params, $data) {
-
+    protected function apiRequest($method, $endpoint, $params, $data)
+    {
         $setParams = $params && in_array($method, ["GET", "POST", "DELETE"]);
         $setData = $data && in_array($method, ["POST", "PUT", "DELETE"]);
 
@@ -72,7 +76,7 @@ class VoucherifyRequest {
         $options[CURLOPT_HTTPHEADER] = $this->getHeaders();
         $options[CURLOPT_RETURNTRANSFER] = true;
         $options[CURLOPT_CUSTOMREQUEST] = $method;
-        $options[CURLOPT_POSTFIELDS] = $setData ? json_encode($data) : NULL;
+        $options[CURLOPT_POSTFIELDS] = $setData ? json_encode($data) : null;
 
         $curl = curl_init();
 
@@ -87,7 +91,7 @@ class VoucherifyRequest {
         if ($result === false) {
             throw new ClientException($error);
         } // Invalid status code
-        else if ($statusCode >= 400) {
+        elseif ($statusCode >= 400) {
             throw new ClientException("Unexpected status code: " . $statusCode . " - Details: " . $result);
         }
 
@@ -97,14 +101,16 @@ class VoucherifyRequest {
     /**
      * @param string $apiKey
      */
-    protected function setApiKey($apiKey) {
+    protected function setApiKey($apiKey)
+    {
         $this->apiKey = $apiKey;
     }
 
     /**
      * @param string $apiID
      */
-    protected function setApiID($apiID) {
+    protected function setApiID($apiID)
+    {
         $this->apiID = $apiID;
     }
 }
