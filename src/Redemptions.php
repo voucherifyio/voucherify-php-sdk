@@ -30,10 +30,10 @@ class Redemptions
         $payload = null;
         $options = null;
 
-        if (is_string($code)) {
+        if (is_string($code) && !is_string($params)) {
             $payload = $params;
         }
-        elseif (is_array($code)) {
+        if (is_array($code)) {
             $payload = $code;
             $code = $payload["voucher"];
             unset($payload["voucher"]);
