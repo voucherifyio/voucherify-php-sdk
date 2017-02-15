@@ -89,8 +89,8 @@ class Redemptions
      */
     public function rollback($redemptionId, $params = null)
     {
-        $payload = (object)[];
-        $options = (object)[];
+        $payload = null;
+        $options = (object)[ "qs" => null ];
 
         if (is_string($params)) {
             $options->qs->reason = $params;
@@ -101,11 +101,13 @@ class Redemptions
                 $options->qs->reason = $params->reason;
             }
 
-            if (isset($params->$tracking_id)) {
+            if (isset($params->tracking_id)) {
                 $options->qs->tracking_id = $params->tracking_id;
             }
 
-            $payload->customer = $params->customer;
+            if (isset($params->customer)) {
+                $payload = (object)[ "customer" => $params->customer ];
+            }
         }
         elseif (is_array($params)) {
 
@@ -117,7 +119,9 @@ class Redemptions
                 $options->qs->tracking_id = $params["tracking_id"];
             }
 
-            $payload->customer = $params["customer"];
+            if (isset($params["customer"])) {
+                $payload = (object)[ "customer" => $params["customer"] ];
+            }
         }
 
         return $this->client->post("/redemptions/" . urlencode($redemptionId) . "/rollback/", $payload, $options);
