@@ -2,36 +2,68 @@
 
 namespace Voucherify;
 
-class VoucherifyClient extends VoucherifyRequest
+class VoucherifyClient
 {
+    /**
+     * @var \Voucherify\ApiClient
+     */
+    private $client;
+
+    /**
+     * @var \Voucherify\Customers
+     */
+    public $customers;
+
+    /**
+     * @var \Voucherify\Distributions
+     */
+    public $distributions;
+
+    /**
+     * @var \Voucherify\Redemptions
+     */
+    public $redemptions;
+
+    /**
+     * @var \Voucherify\Vouchers
+     */
+    public $vouchers;
+
+    /**
+     * @param string $apiId
+     * @param string $apiKey
+     */
+    public function __construct($apiId, $apiKey)
+    {
+        $this->client = new ApiClient($apiId, $apiKey);
+
+        $this->customers = new Customers($this->client);
+        $this->distributions = new Distributions($this->client);
+        $this->redemptions = new Redemptions($this->client);
+        $this->vouchers = new Vouchers($this->client);
+
+        /* ********* BACKWARD COMPATIBILITY ********* */
+
+        $this->customer = $this->customers;
+    }
+
+    /* ********* BACKWARD COMPATIBILITY ********* */
+
     /**
      * @var Customer
      */
     public $customer;
 
     /**
-     * VoucherifyClient constructor.
-     *
-     * @param string $apiID
-     * @param string $apiKey
-     */
-    public function __construct($apiID, $apiKey)
-    {
-        parent::__construct($apiID, $apiKey);
-
-        $this->customer = new Customer($apiID, $apiKey);
-    }
-
-    /**
      * @param string $code
      *
-     * Get voucher details
+     * Get voucher details.
      *
      * @throws \Voucherify\ClientException
      */
     public function get($code)
     {
-        return $this->apiRequest("GET", "/vouchers/" . urlencode($code), null, null);
+        return $this->vouchers->get($code);
     }
 
     /**
@@ -43,11 +75,7 @@ class VoucherifyClient extends VoucherifyRequest
      */
     public function create($voucher)
     {
-        if (isset($voucher->code)) {
-            return $this->apiRequest("POST", "/vouchers/" . urlencode($voucher->code), null, $voucher);
-        } else {
-            return $this->apiRequest("POST", "/vouchers/", null, $voucher);
-        }
+        return $this->vouchers->create($voucher);
     }
 
     /**
@@ -59,7 +87,7 @@ class VoucherifyClient extends VoucherifyRequest
      */
     public function update($voucher_update)
     {
-        return $this->apiRequest("PUT", "/vouchers/" . urlencode($voucher_update->code), null, $voucher_update);
+        return $this->vouchers->update($voucher_update);
     }
 
     /**
@@ -71,7 +99,7 @@ class VoucherifyClient extends VoucherifyRequest
      */
     public function enable($code)
     {
-        return $this->apiRequest("POST", "/vouchers/" . urlencode($code) . "/enable", null, null);
+        return $this->vouchers->enable($code);
     }
 
     /**
@@ -83,7 +111,7 @@ class VoucherifyClient extends VoucherifyRequest
      */
     public function disable($code)
     {
-        return $this->apiRequest("POST", "/vouchers/" . urlencode($code) . "/disable", null, null);
+        return $this->vouchers->disable($code);
     }
 
     /**
@@ -95,17 +123,7 @@ class VoucherifyClient extends VoucherifyRequest
      */
     public function publish($campaignName)
     {
-        $payload = null;
-
-        if (gettype($campaignName) === "string") {
-            $payload = ["campaign" => $campaignName];
-        }
-
-        if (gettype($campaignName) === "object") {
-            $payload = $campaignName;
-        }
-
-        return $this->apiRequest("POST", "/vouchers/publish", null, $payload);
+        return $this->distributions->publish($campaignName);
     }
 
     /**
@@ -118,8 +136,7 @@ class VoucherifyClient extends VoucherifyRequest
      */
     public function delete($code, $force = null)
     {
-        return $this->apiRequest("DELETE", "/vouchers/" . urlencode($code), ["force" => $force ? "true" : "false"],
-            null);
+        return $this->vouchers->delete($code, $force);
     }
 
     /**
@@ -131,7 +148,7 @@ class VoucherifyClient extends VoucherifyRequest
      */
     public function redemption($code)
     {
-        return $this->apiRequest("GET", "/vouchers/" . urlencode($code) . "/redemption/", null, null);
+        return $this->redemptions->getForVoucher($code);
     }
 
     /**
@@ -144,14 +161,7 @@ class VoucherifyClient extends VoucherifyRequest
      */
     public function redeem($code, $trackingId)
     {
-        $context = array();
-        if (is_array($code)) {
-            $context = $code;
-            $code = $context["voucher"];
-            unset($context["voucher"]);
-        }
-        return $this->apiRequest("POST", "/vouchers/" . urlencode($code) . "/redemption/",
-            ["tracking_id" => $trackingId], $context);
+        return $this->redemptions->redeem($code, $trackingId);
     }
 
     /**
@@ -166,8 +176,11 @@ class VoucherifyClient extends VoucherifyRequest
      */
     public function rollback($redemptionId, $trackingId = null, $reason = null)
     {
-        return $this->apiRequest("POST", "/redemptions/" . urlencode($redemptionId) . "/rollback/",
-            ["tracking_id" => $trackingId, "reason" => $reason], null);
+        $params = (object)[];
+        $params->tracking_id = $trackingId;
+        $params->reason = $reason;
+
+        return $this->redemptions->rollback($redemptionId, $params);
     }
 
     /**
@@ -185,7 +198,7 @@ class VoucherifyClient extends VoucherifyRequest
      */
     public function vouchers($filter)
     {
-        return $this->apiRequest("GET", "/vouchers/", $filter, null);
+        return $this->vouchers->getList($filter);
     }
 
     /**
@@ -203,6 +216,6 @@ class VoucherifyClient extends VoucherifyRequest
      */
     public function redemptions($filter)
     {
-        return $this->apiRequest("GET", "/redemptions/", $filter, null);
+        return $this->redemptions->getList($filter);
     }
 }
