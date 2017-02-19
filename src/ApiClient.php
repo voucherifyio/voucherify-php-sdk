@@ -59,8 +59,8 @@ class ApiClient
     /**
      * @param string $method
      * @param string $endpoint
-     * @param string|array|object|null $params
-     * @param string|array|object|null $body
+     * @param string|array|stdClass|null $params
+     * @param string|array|stdClass|null $body
      *
      * @throws \Voucherify\ClientException
      */
@@ -94,7 +94,8 @@ class ApiClient
             throw new ClientException($error);
         } // Invalid status code
         elseif ($statusCode >= 400) {
-            throw new ClientException("Unexpected status code: " . $statusCode . " - Details: " . $result);
+            $error = json_decode($result);
+            throw new ClientException($error, $statusCode);
         }
 
         return json_decode($result);
