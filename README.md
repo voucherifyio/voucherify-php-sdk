@@ -2,10 +2,6 @@
   <img src="./docs/images/voucherify-php-sdk.png" />
 </p>
 
-<p align="center" >
-  <img src="./voucherify-nodejs-sdk.png" />
-</p>
-
 <h3 align="center">Official <a href="http://voucherify.io?utm_source=github&utm_medium=sdk&utm_campaign=acq">Voucherify</a> SDK for PHP</h3>
 
 <hr />
