@@ -122,4 +122,19 @@ class Vouchers
     {
         return $this->client->post("/vouchers/" . urlencode($code) . "/disable", null, null);
     }
+
+    /**
+     * @param string $code
+     *
+     * Increase Gif-Card type voucher's balance.
+     *
+     * @throws \Voucherify\ClientException
+     */
+    public function addBalance($code, $balance)
+    {
+        $payload = (object)[];
+        $payload->amount = $balance;
+
+        return $this->client->post("/vouchers/" . urlencode($code) . "/balance", $payload, null);
+    }
 }
