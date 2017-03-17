@@ -107,6 +107,11 @@ $client->vouchers->enable($code);
 $client->vouchers->disable($code);
 ```
 
+#### [Add balance to Gift-Card Voucher]
+```php
+$client->vouchers->addBalance($code, $balance);
+```
+
 ---
 
 ### Distributions API
@@ -222,6 +227,7 @@ catch (ClientException $e) {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2017-03-17** - `1.0.1` - Vouchers addBalance method
 - **2017-02-19** - `1.0.0` - Namespace refectoring
 - **2016-09-13** - `0.11.0` - Added new API method for voucher - publish
 - **2016-09-13** - `0.10.0` - Added new API method for voucher - delete
