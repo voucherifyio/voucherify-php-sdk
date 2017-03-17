@@ -25,10 +25,10 @@ class ClientException extends \Exception
         $details = null;
 
         if (is_object($message)) {
-            $key     = $message->key;
-            $details = $message->details;
-            $code    = $message->code;
-            $message = $message->message;
+            $key     = isset($message->key)     ? $message->key     : null;
+            $details = isset($message->details) ? $message->details : null;
+            $code    = isset($message->code)    ? $message->code    : null;
+            $message = isset($message->message) ? $message->message : null;
         }
         else if (is_array($message)) {
             $key     = $message["key"];
