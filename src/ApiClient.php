@@ -30,6 +30,13 @@ class ApiClient
      */
     public function __construct($apiId, $apiKey)
     {
+        if (!isset($apiId)) {
+            throw new \Exception("ApiId is required");
+        }
+        if (!isset($apiKey)) {
+            throw new \Exception("ApiKey is required");
+        }
+
         $this->apiId = $apiId;
         $this->apiKey = $apiKey;
         $this->headers = [
