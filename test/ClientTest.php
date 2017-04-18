@@ -9,7 +9,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
 { 
     protected static $headers;
     protected static $apiId;
-    Protected static $apiKey;
+    protected static $apiKey;
 
     public static function setUpBeforeClass()
     {
@@ -69,5 +69,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
                 "key" => "duplicate_resource_key"
             ]));
         }
+
+        CurlMock::done();
     }
 }

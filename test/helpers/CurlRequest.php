@@ -26,13 +26,6 @@ class CurlRequest
         return $this;
     }
 
-    public function setQuery($qs)
-    {
-        $this->reqParams = $qs;
-
-        return $this;
-    }
-
     public function setRequest($method, $path = null, $body = null)
     {
         $this->reqMethod = $method;
@@ -42,22 +35,29 @@ class CurlRequest
         return $this;
     }
 
+    public function query($qs)
+    {
+        $this->reqParams = $qs;
+
+        return $this;
+    }
+
     public function get($path)
     {
         return $this->setRequest("GET", $path);
     }
 
-    public function post($path, $body)
+    public function post($path, $body = null)
     {
         return $this->setRequest("POST", $path, $body);
     }
 
-    public function put($path, $body)
+    public function put($path, $body = null)
     {
         return $this->setRequest("PUT", $path, $body);
     }
 
-    public function delete($path, $body)
+    public function delete($path, $body = null)
     {
         return $this->setRequest("DELETE", $path, $body);
     }
@@ -105,7 +105,7 @@ class CurlRequest
             foreach ($value as $k => $v) {
                 if (strlen($k)) {
                     if (is_array($v)) {
-                        $obj->{$k} = ensureObject($v);
+                        $obj->{$k} = $this->ensureObject($v);
                         } else {
                         $obj->{$k} = $v;
                     }
@@ -143,7 +143,8 @@ class CurlRequest
         return true;
     }
 
-    public function getReplyBody() {
+    public function getReplyBody()
+    {
         if (isset($this->reqError)) {
             return false;
         }
@@ -153,18 +154,26 @@ class CurlRequest
         return json_encode($this->reqReply->body);
     }
 
-    public function getReplyStatusCode() {
+    public function getReplyStatusCode()
+    {
         if (!isset($this->reqReply)) {
             return;
         }
         return $this->reqReply->statusCode;
     }
 
-    public function getError() {
+    public function getError()
+    {
         return $this->reqError;
     }
 
-    public function done() {
+    public function done()
+    {
         $this->reqIsDone = true;
+    }
+
+    public function isDone()
+    {
+        return $this->reqIsDone === true;
     }
 }

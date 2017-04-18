@@ -125,7 +125,7 @@ class CurlMock
             }
         }
         if (!isset($match)) {
-            throw new \Exception("Request mock for url '" . $url . "' not found");
+            throw new \Exception("Request mock for '" . $method . " " . $url . "' BODY '" . json_encode($body) . "' not found");
         }
 
         $curl->index = $match->index;
@@ -209,6 +209,22 @@ class CurlMock
         return $request;
     }
 
+    public function allDone()
+    {
+        $undone = 0;
+
+        foreach($this->requests as $request) {
+            if (!$request->isDone()) {
+                $undone++;
+                $request->done();
+            }
+        }
+
+        if ($undone > 0) {
+            throw new \Exception("Not handled request exists (" . $undone . ")");
+        }
+    }
+
     /**
      * Get / initialize default instance
      */
@@ -242,5 +258,10 @@ class CurlMock
     public static function register($baseUrl, $headers)
     {
         return self::getInstance()->registerRequest($baseUrl, $headers);
+    }
+
+    public static function done()
+    {
+        return self::getInstance()->allDone();
     }
 }
