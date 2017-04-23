@@ -94,7 +94,7 @@ class Vouchers
      *
      * @throws \Voucherify\ClientException
      */
-    public function getList($filter)
+    public function getList($filter = null)
     {
         return $this->client->get("/vouchers/", $filter);
     }

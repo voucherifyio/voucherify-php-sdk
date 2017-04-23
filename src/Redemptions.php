@@ -61,7 +61,7 @@ class Redemptions
      *
      * @throws \Voucherify\ClientException
      */
-    public function getList($filter)
+    public function getList($filter = null)
     {
         return $this->client->get("/redemptions/", $filter);
     }
@@ -93,15 +93,21 @@ class Redemptions
         $options = (object)[ "qs" => null ];
 
         if (is_string($params)) {
-            $options->qs->reason = $params;
+            $options->qs = (object)[ "reason" => $params ];
         }
         elseif (is_object($params)) {
 
             if (isset($params->reason)) {
+                if (!isset($options->qs)) {
+                    $options->qs = (object)[];
+                }
                 $options->qs->reason = $params->reason;
             }
 
             if (isset($params->tracking_id)) {
+                if (!isset($options->qs)) {
+                    $options->qs = (object)[];
+                }
                 $options->qs->tracking_id = $params->tracking_id;
             }
 
@@ -112,10 +118,16 @@ class Redemptions
         elseif (is_array($params)) {
 
             if (isset($params["reason"])) {
+                if (!isset($options->qs)) {
+                    $options->qs = (object)[];
+                }
                 $options->qs->reason = $params["reason"];
             }
 
             if (isset($params["tracking_id"])) {
+                if (!isset($options->qs)) {
+                    $options->qs = (object)[];
+                }
                 $options->qs->tracking_id = $params["tracking_id"];
             }
 
