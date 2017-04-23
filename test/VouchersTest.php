@@ -197,4 +197,25 @@ class VouchersTest extends PHPUnit_Framework_TestCase
 
         CurlMock::done();
     }
+    
+    public function testImport()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/vouchers/import", [
+                [ "code" => "test_1234" ],
+                [ "code" => "test_1243" ],
+                [ "code" => "test_4321" ]
+            ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->vouchers->import([
+            [ "code" => "test_1234" ],
+            [ "code" => "test_1243" ],
+            [ "code" => "test_4321" ]
+        ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
 }
