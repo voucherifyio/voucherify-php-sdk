@@ -38,11 +38,13 @@ class CustomersTest extends PHPUnit_Framework_TestCase
             ->post("/customers/", [
                 "name" => "customer name"
             ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->customers->create((object)[
+        $result = self::$client->customers->create((object)[
             "name" => "customer name"
         ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -51,9 +53,11 @@ class CustomersTest extends PHPUnit_Framework_TestCase
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->get("/customers/test-customer-id")
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->customers->get("test-customer-id");
+        $result = self::$client->customers->get("test-customer-id");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -65,12 +69,14 @@ class CustomersTest extends PHPUnit_Framework_TestCase
                 "id" => "test-customer-id",
                 "name" => "customer name"
             ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->customers->update((object)[
+        $result = self::$client->customers->update((object)[
             "id" => "test-customer-id",
             "name" => "customer name"
         ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -82,12 +88,14 @@ class CustomersTest extends PHPUnit_Framework_TestCase
                 "id" => "test-customer-id",
                 "name" => "customer name"
             ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->customers->update([
+        $result = self::$client->customers->update([
             "id" => "test-customer-id",
             "name" => "customer name"
         ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -96,9 +104,11 @@ class CustomersTest extends PHPUnit_Framework_TestCase
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->delete("/customers/test-customer-id")
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->customers->delete("test-customer-id");
+        $result = self::$client->customers->delete("test-customer-id");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }

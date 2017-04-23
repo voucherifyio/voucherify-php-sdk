@@ -38,9 +38,11 @@ class DistributionsTest extends PHPUnit_Framework_TestCase
             ->post("/vouchers/publish", [
                 "campaign" => "test-campaign"
             ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->distributions->publish("test-campaign");
+        $result = self::$client->distributions->publish("test-campaign");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -52,12 +54,14 @@ class DistributionsTest extends PHPUnit_Framework_TestCase
                 "campaign" => "test-campaign",
                 "voucher" => "test-voucher"
             ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->distributions->publish((object)[
+        $result = self::$client->distributions->publish((object)[
             "campaign" => "test-campaign",
             "voucher" => "test-voucher"
         ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -69,12 +73,14 @@ class DistributionsTest extends PHPUnit_Framework_TestCase
                 "campaign" => "test-campaign",
                 "voucher" => "test-voucher"
             ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->distributions->publish([
+        $result = self::$client->distributions->publish([
             "campaign" => "test-campaign",
             "voucher" => "test-voucher"
         ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
