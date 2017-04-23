@@ -137,4 +137,14 @@ class Vouchers
 
         return $this->client->post("/vouchers/" . rawurlencode($code) . "/balance", $payload, null);
     }
+
+    /**
+     * @param stdClass[] $vouchers
+     *
+     * Import vouchers to the repository.
+     */
+    public function import($vouchers)
+    {
+        return $this->client->post("/vouchers/import", $vouchers);
+    }
 }
