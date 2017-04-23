@@ -90,7 +90,7 @@ class CurlRequest
             if (is_null($value)) {
                 continue;
             }
-            $result[] = urlencode($key) . "=" . urlencode($value);
+            $result[] = rawurlencode($key) . "=" . rawurlencode($value);
         }
         return implode("&", $result);
     }

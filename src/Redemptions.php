@@ -45,7 +45,7 @@ class Redemptions
             $options->qs = ["tracking_id" => $params];
         }
 
-        return $this->client->post("/vouchers/" . urlencode($code) . "/redemption/", $payload, $options);
+        return $this->client->post("/vouchers/" . rawurlencode($code) . "/redemption/", $payload, $options);
     }
 
     /**
@@ -75,7 +75,7 @@ class Redemptions
      */
     public function getForVoucher($code)
     {
-        return $this->client->get("/vouchers/" . urlencode($code) . "/redemption/", null);
+        return $this->client->get("/vouchers/" . rawurlencode($code) . "/redemption/", null);
     }
 
     /**
@@ -136,6 +136,6 @@ class Redemptions
             }
         }
 
-        return $this->client->post("/redemptions/" . urlencode($redemptionId) . "/rollback/", $payload, $options);
+        return $this->client->post("/redemptions/" . rawurlencode($redemptionId) . "/rollback/", $payload, $options);
     }
 }
