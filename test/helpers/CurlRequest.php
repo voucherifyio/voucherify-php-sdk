@@ -106,7 +106,7 @@ class CurlRequest
                 if (strlen($k)) {
                     if (is_array($v)) {
                         $obj->{$k} = $this->ensureObject($v);
-                        } else {
+                    } else {
                         $obj->{$k} = $v;
                     }
                 }
