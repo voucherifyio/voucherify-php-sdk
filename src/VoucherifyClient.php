@@ -37,6 +37,7 @@ class VoucherifyClient
     {
         $this->client = new ApiClient($apiId, $apiKey);
 
+        $this->campaigns = new Campaigns($this->client);
         $this->customers = new Customers($this->client);
         $this->distributions = new Distributions($this->client);
         $this->redemptions = new Redemptions($this->client);
