@@ -38,7 +38,7 @@ class Customers
      */
     public function get($customerId)
     {
-        return $this->client->get("/customers/" . urlencode($customerId), null);
+        return $this->client->get("/customers/" . rawurlencode($customerId), null);
     }
 
     /**
@@ -59,7 +59,7 @@ class Customers
             $customerId = $customer->id;
         }
 
-        return $this->client->put("/customers/" . urlencode($customerId), $customer, null);
+        return $this->client->put("/customers/" . rawurlencode($customerId), $customer, null);
     }
 
     /**
@@ -71,6 +71,6 @@ class Customers
      */
     public function delete($customerId)
     {
-        return $this->client->delete("/customers/" . urlencode($customerId), null, null);
+        return $this->client->delete("/customers/" . rawurlencode($customerId), null, null);
     }
 }

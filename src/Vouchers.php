@@ -27,7 +27,7 @@ class Vouchers
     public function create($voucher)
     {
         if (isset($voucher->code)) {
-            return $this->client->post("/vouchers/" . urlencode($voucher->code), $voucher, null);
+            return $this->client->post("/vouchers/" . rawurlencode($voucher->code), $voucher, null);
         }
         else {
             return $this->client->post("/vouchers/", $voucher, null);
@@ -43,7 +43,7 @@ class Vouchers
      */
     public function get($code)
     {
-        return $this->client->get("/vouchers/" . urlencode($code), null);
+        return $this->client->get("/vouchers/" . rawurlencode($code), null);
     }
 
     /**
@@ -64,7 +64,7 @@ class Vouchers
             $code = $voucher->code;
         }
 
-        return $this->client->put("/vouchers/" . urlencode($code), $voucher, null);
+        return $this->client->put("/vouchers/" . rawurlencode($code), $voucher, null);
     }
 
     /**
@@ -80,7 +80,7 @@ class Vouchers
         $options = (object)[];
         $options->qs = [ "force" => ($force ? "true" : "false") ];
 
-        return $this->client->delete("/vouchers/" . urlencode($code), null, $options);
+        return $this->client->delete("/vouchers/" . rawurlencode($code), null, $options);
     }
 
     /**
@@ -108,7 +108,7 @@ class Vouchers
      */
     public function enable($code)
     {
-        return $this->client->post("/vouchers/" . urlencode($code) . "/enable", null, null);
+        return $this->client->post("/vouchers/" . rawurlencode($code) . "/enable", null, null);
     }
 
     /**
@@ -120,7 +120,7 @@ class Vouchers
      */
     public function disable($code)
     {
-        return $this->client->post("/vouchers/" . urlencode($code) . "/disable", null, null);
+        return $this->client->post("/vouchers/" . rawurlencode($code) . "/disable", null, null);
     }
 
     /**
@@ -135,6 +135,16 @@ class Vouchers
         $payload = (object)[];
         $payload->amount = $balance;
 
-        return $this->client->post("/vouchers/" . urlencode($code) . "/balance", $payload, null);
+        return $this->client->post("/vouchers/" . rawurlencode($code) . "/balance", $payload, null);
+    }
+
+    /**
+     * @param stdClass[] $vouchers
+     *
+     * Import vouchers to the repository.
+     */
+    public function import($vouchers)
+    {
+        return $this->client->post("/vouchers/import", $vouchers);
     }
 }

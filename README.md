@@ -35,7 +35,7 @@ API:
 
 Add Voucherify dependency into your `composer.json`:
 ```
-"rspective/voucherify": "v1.0.*"
+"rspective/voucherify": "v1.1.*"
 ```
 Update project dependencies:
 
@@ -73,6 +73,8 @@ Methods are provided within `$client->vouchers->*` namespace.
 - [List Vouchers](#list-vouchers)
 - [Enable Voucher](#enable-voucher)
 - [Disable Voucher](#disable-voucher)
+- [Add balance to Gift-Card Voucher](#add-balance-to-gift-card-voucher)
+- [Import Vouchers](#import-vouchers)
 
 #### [Create Voucher]
 ```php
@@ -106,10 +108,53 @@ $client->vouchers->enable($code);
 ```php
 $client->vouchers->disable($code);
 ```
-
 #### [Add balance to Gift-Card Voucher]
 ```php
 $client->vouchers->addBalance($code, $balance);
+```
+#### [Import Vouchers]
+```php
+$client->vouchers->import($vouchers);
+```
+
+---
+
+### Campaigns API
+
+Methods are provided within `$client->campaigns->*` namespace.
+
+- [Create Campaign](#create-campaign)
+- [Get Campaign](#get-campaign)
+- [Add Voucher to Campaign](#add-voucher-to-campaign)
+- [Add Voucher with certain code to Campaign](#add-voucher-with-certain-code-to-campaign)
+- [Import Vouchers to Campaign](#import-vouchers-to-campaign)
+- [Delete Campaign](#delete-campaign)
+
+#### [Create Campaign]
+```php
+$client->campaigns->create($campaign);
+```
+#### [Get Campaign]
+```php
+$client->campaigns->get($name);
+```
+#### [Add Voucher to Campaign]
+```php
+$client->campaigns->addVoucher($campaignName);
+$client->campaigns->addVoucher($campaignName, $params);
+```
+#### [Add Voucher with certain code to Campaign]
+```php
+$client->campaigns->addVoucherWithCode($campaignName, $code);
+$client->campaigns->addVoucherWithCode($campaignName, $code, $params);
+```
+#### [Import Vouchers to Campaign]
+```php
+$client->campaigns->importVouchers($campaignName, $vouchers);
+```
+#### [Delete Campaign]
+```php
+$client->campaigns->delete($campaignName);
 ```
 
 ---
@@ -227,6 +272,7 @@ catch (ClientException $e) {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2017-04-26** - `1.1.0` - Campaigns API, Vouchers import method
 - **2017-04-19** - `1.0.2` - Unit tests, bug fixes
 - **2017-03-17** - `1.0.1` - Vouchers addBalance method
 - **2017-02-19** - `1.0.0` - Namespace refectoring
@@ -258,6 +304,15 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
 [List Vouchers]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-vouchers
 [Enable Voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#enable-voucher
 [Disable Voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#disable-voucher
+[Add balance to Gift-Card Voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-gift-voucher-balance
+[Import Vouchers]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers-1
+
+[Create Campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-campaign
+[Get Campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq
+[Add Voucher to Campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-voucher-to-campaign
+[Add Voucher with certain code to Campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-voucher-with-certain-code-to-campaign
+[Import Vouchers to Campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#import-vouchers
+[Delete Campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-campaign
 
 [Publish Voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#publish-voucher
 

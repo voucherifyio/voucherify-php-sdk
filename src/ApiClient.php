@@ -58,7 +58,7 @@ class ApiClient
             if (is_null($value)) {
                 continue;
             }
-            $result[] = urlencode($key) . "=" . urlencode($value);
+            $result[] = rawurlencode($key) . "=" . rawurlencode($value);
         }
         return implode("&", $result);
     }
@@ -112,7 +112,7 @@ class ApiClient
      * @param string $path
      * @param string|array|stdClass|null $qs
      */
-    public function get($path, $qs)
+    public function get($path, $qs = null)
     {
         return $this->request("GET", $path, $qs, null);
     }

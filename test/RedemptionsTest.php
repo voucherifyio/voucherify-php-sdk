@@ -36,9 +36,11 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->post("/vouchers/test-code/redemption/")
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->redemptions->redeem("test-code");
+        $result = self::$client->redemptions->redeem("test-code");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -54,14 +56,16 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
                     "id" => "test-customer-id"
                 ]
             ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->redemptions->redeem([
+        $result = self::$client->redemptions->redeem([
             "voucher" => "test-code",
             "customer" => [
                 "id" => "test-customer-id"
             ]
         ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -74,13 +78,15 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
                     "id" => "test-customer-id"
                 ]
             ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->redemptions->redeem("test-code", (object)[
+        $result = self::$client->redemptions->redeem("test-code", (object)[
             "customer" => (object)[
                 "id" => "test-customer-id"
             ]
         ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -93,13 +99,15 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
                     "id" => "test-customer-id"
                 ]
             ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->redemptions->redeem("test-code", [
+        $result = self::$client->redemptions->redeem("test-code", [
             "customer" => [
                 "id" => "test-customer-id"
             ]
         ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -109,9 +117,11 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->post("/vouchers/test-code/redemption/")
             ->query([ "tracking_id" => "test-tracking-id" ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->redemptions->redeem("test-code", "test-tracking-id");
+        $result = self::$client->redemptions->redeem("test-code", "test-tracking-id");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -120,9 +130,11 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->get("/redemptions/")
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->redemptions->getList();
+        $result = self::$client->redemptions->getList();
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -132,9 +144,11 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->get("/redemptions/")
             ->query([ "limit" => 100 ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->redemptions->getList([ "limit" => 100 ]);
+        $result = self::$client->redemptions->getList([ "limit" => 100 ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -143,9 +157,11 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->get("/vouchers/test-code/redemption/")
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->redemptions->getForVoucher("test-code");
+        $result = self::$client->redemptions->getForVoucher("test-code");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -154,9 +170,11 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->post("/redemptions/test-redemption-id/rollback/")
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->redemptions->rollback("test-redemption-id");
+        $result = self::$client->redemptions->rollback("test-redemption-id");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -169,13 +187,15 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
                     "id" => "test-customer-id"
                 ]
             ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->redemptions->rollback("test-redemption-id", (object)[
+        $result = self::$client->redemptions->rollback("test-redemption-id", (object)[
             "customer" => (object)[
                 "id" => "test-customer-id"
             ]
         ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -188,13 +208,15 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
                     "id" => "test-customer-id"
                 ]
             ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->redemptions->rollback("test-redemption-id", [
+        $result = self::$client->redemptions->rollback("test-redemption-id", [
             "customer" => [
                 "id" => "test-customer-id"
             ]
         ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -204,9 +226,11 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->post("/redemptions/test-redemption-id/rollback/")
             ->query([ "reason" => "test-reason" ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->redemptions->rollback("test-redemption-id", "test-reason");
+        $result = self::$client->redemptions->rollback("test-redemption-id", "test-reason");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -223,15 +247,17 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
                 "reason" => "test-reason",
                 "tracking_id" => "test-tracking-id"
             ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->redemptions->rollback("test-redemption-id", (object)[
+        $result = self::$client->redemptions->rollback("test-redemption-id", (object)[
             "reason" => "test-reason",
             "tracking_id" => "test-tracking-id",
             "customer" => (object)[
                 "id" => "test-customer-id"
             ]
         ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
@@ -248,15 +274,17 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
                 "reason" => "test-reason",
                 "tracking_id" => "test-tracking-id"
             ])
-            ->reply(200, []);
+            ->reply(200, [ "status" => "ok" ]);
 
-        self::$client->redemptions->rollback("test-redemption-id", [
+        $result = self::$client->redemptions->rollback("test-redemption-id", [
             "reason" => "test-reason",
             "tracking_id" => "test-tracking-id",
             "customer" => [
                 "id" => "test-customer-id"
             ]
         ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
