@@ -31,16 +31,29 @@ class Campaigns
 
     /**
      * @param string $name - campaign name
-     * @param stdClass $voucher
+     * @param stdClass $params
      *
      * Add voucher to campaign.
      *
      * @throws \Voucherify\ClientException
      */
-    public function addVoucher($name, $voucher)
+    public function addVoucher($name, $params = null)
     {
-        // campaigns/name/vouchers/code
-        return $this->client->post("/campaigns/" . rawurlencode($name) . "/vouchers/", $voucher);
+        return $this->client->post("/campaigns/" . rawurlencode($name) . "/vouchers/", $params);
+    }
+
+    /**
+     * @param string $name - campaign name
+     * @param string $code - voucher code
+     * @param stdClass $params
+     *
+     * Add voucher with certain code to campaign.
+     *
+     * @throws \Voucherify\ClientException
+     */
+    public function addVoucherWithCode($name, $code, $params = null)
+    {
+        return $this->client->post("/campaigns/" . rawurlencode($name) . "/vouchers/" . rawurlencode($code), $params);
     }
 
     /**

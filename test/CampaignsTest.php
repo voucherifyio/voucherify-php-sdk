@@ -53,13 +53,46 @@ class CampaignsTest extends PHPUnit_Framework_TestCase
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->post("/campaigns/test%20campaign/vouchers/", [
-                "code" => "test-code"
+                "params" => "test-params"
             ])
             ->reply(200, [ "status" => "ok" ]);
 
         $result = self::$client->campaigns->addVoucher("test campaign", (object)[
-            "code" => "test-code"
+            "params" => "test-params"
         ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/campaigns/test%20campaign/vouchers/", null)
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->campaigns->addVoucher("test campaign");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
+    public function testAddVoucherWithCode()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/campaigns/test%20campaign/vouchers/test-code", [
+                "params" => "test-params"
+            ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->campaigns->addVoucherWithCode("test campaign", "test-code", (object)[
+            "params" => "test-params"
+        ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/campaigns/test%20campaign/vouchers/test-code", null)
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->campaigns->addVoucherWithCode("test campaign", "test-code");
 
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
