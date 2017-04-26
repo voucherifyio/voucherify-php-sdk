@@ -219,5 +219,17 @@ namespace Voucherify {
         public function createValidationRule($data) {
             return $this->apiRequest("POST", "/validation-rules/", NULL, $data);
         }
+
+        /**
+         * @param string $campaignName
+         * @param array|stdClass $context
+         *
+         * Add to campaign
+         *
+         * @throws Voucherify\ClientException
+         */
+        public function addToCampaign($campaignName, $context) {
+            return $this->apiRequest("POST", "/campaigns/" . $campaignName . "/vouchers/", NULL, $context);
+        }
     }
 }
