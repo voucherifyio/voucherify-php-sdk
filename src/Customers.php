@@ -71,6 +71,6 @@ class Customers
      */
     public function delete($customerId)
     {
-        return $this->client->delete("/customers/" . rawurlencode($customerId), null, null);
+        return $this->client->delete("/customers/" . rawurlencode($customerId));
     }
 }
