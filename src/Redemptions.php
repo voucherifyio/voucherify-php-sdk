@@ -49,6 +49,18 @@ class Redemptions
     }
 
     /**
+     * @param string| $redemptionId
+     *
+     * Get redemption.
+     *
+     * @throws \Voucherify\ClientException
+     */
+    public function get($redemptionId)
+    {
+        return $this->client->get("/redemptions/" . rawurlencode($redemptionId));
+    }
+
+    /**
      * @param array|stdClass $filter
      *
      * Get a filtered list of redemptions. The filter can include following properties:

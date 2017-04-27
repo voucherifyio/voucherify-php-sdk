@@ -126,6 +126,19 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
         CurlMock::done();
     }
 
+    public function testGet()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->get("/redemptions/test-redemption-id")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->redemptions->get("test-redemption-id");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
     public function testGetList()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
