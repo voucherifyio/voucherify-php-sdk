@@ -151,7 +151,7 @@ class ApiClient
      * @param string|array|stdClass|null $body
      * @param array|stdClass|null $options
      */
-    public function delete($path, $body, $options = null)
+    public function delete($path, $body = null, $options = null)
     {
         $qs = null;
 
