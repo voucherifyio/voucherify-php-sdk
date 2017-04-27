@@ -84,4 +84,62 @@ class DistributionsTest extends PHPUnit_Framework_TestCase
 
         CurlMock::done();
     }
+
+    public function testCreateExport()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/exports/", [
+                "exported_object" => "voucher",
+                "parameters" => "test-object"
+            ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->distributions->createExport([
+            "exported_object" => "voucher",
+                "parameters" => "test-object"
+        ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
+    public function testGetExport()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->get("/exports/test-export-id")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->distributions->getExport("test-export-id");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
+    public function testDeleteExport()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->delete("/exports/test-export-id")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->distributions->deleteExport("test-export-id");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
+    public function testGetPublications()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->get("/publications")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->distributions->getPublications();
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
 }
