@@ -26,6 +26,8 @@ API:
 |
 <a href="#distributions-api">Distributions</a>
 |
+<a href="#validations-api">Validations</a>
+|
 <a href="#redemptions-api">Redemptions</a>
 |
 <a href="#customers-api">Customers</a>
@@ -162,10 +164,43 @@ $client->campaigns->delete($campaignName);
 ### Distributions API
 Methods are provided within `$client->distributions->*` namespace.
 
+- [Publish Voucher](#publish-voucher)
+- [Create Export](#create-export)
+- [Get Export](#get-export)
+- [Delete Export](#delete-export)
+- [List Publications](#list-publications)
+
 #### [Publish Voucher]
-```javascript
+```php
 $client->distributions->publish($campaign_name);
 $client->distributions->publish($params);
+```
+#### [Create Export]
+```php
+$client->distributions->createExport($params);
+```
+#### [Get Export]
+```php
+$client->distributions->getExport($exportId);
+```
+#### [Delete Export]
+```php
+$client->distributions->deleteExport($exportId);
+```
+#### [List Publications]
+```php
+$client->distributions->getPublications();
+```
+
+---
+
+### Validations API
+Methods are provided within `$client->validations->*` namespace.
+
+#### [Validate Voucher]
+```php
+$client->validations->validateVoucher($code);
+$client->validations->validateVoucher($code, $params);
 ```
 
 ---
@@ -174,6 +209,7 @@ $client->distributions->publish($params);
 Methods are provided within `$client->redemptions->*` namespace.
 
 - [Redeem Voucher](#redeem-voucher)
+- [Get Redemption](#get-redemption)
 - [List Redemptions](#list-redemptions)
 - [Get Voucher's Redemptions](#get-vouchers-redemptions)
 - [Rollback Redemption](#rollback-redemption)
@@ -182,6 +218,10 @@ Methods are provided within `$client->redemptions->*` namespace.
 ```php
 $client->redemptions->redeem($code);
 $client->redemptions->redeem($code, $params);
+```
+#### [Get Redemption]
+```
+$client->redemptions->get($redemptionId);
 ```
 #### [List Redemptions]
 ```php
@@ -272,6 +312,7 @@ catch (ClientException $e) {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2017-04-27** - `1.2.0` - Validations API, Redemptions-Get, Distributions-Export
 - **2017-04-26** - `1.1.0` - Campaigns API, Vouchers import method
 - **2017-04-19** - `1.0.2` - Unit tests, bug fixes
 - **2017-03-17** - `1.0.1` - Vouchers addBalance method
@@ -315,8 +356,15 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
 [Delete Campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-campaign
 
 [Publish Voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#publish-voucher
+[Create Export]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-export
+[Get Export]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-export
+[Delete Export]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-export
+[List Publications]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-publications
+
+[Validate Voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#validate-voucher
 
 [Redeem Voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-voucher
+[Get Redemption]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-redemption
 [List Redemptions]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-redemptions
 [Get Voucher's Redemptions]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#vouchers-redemptions
 [Rollback Redemption]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#rollback-redemption
