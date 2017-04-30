@@ -31,6 +31,8 @@ API:
 <a href="#redemptions-api">Redemptions</a>
 |
 <a href="#customers-api">Customers</a>
+|
+<a href="#validation-rules-api">Validation Rules</a>
 </p>
 
 ## Setup
@@ -270,6 +272,33 @@ $client->customers->delete($customer_id);
 
 ---
 
+### Validation Rules API
+Methods are provided within `$client->validationRules->*` namespace.
+
+- [Create Validation Rule](#create-validation-rule)
+- [Get Validation Rule](#get-validation-rule)
+- [Update Validation Rule](#update-validation-rule)
+- [Delete Validation Rule](#delete-validation-rule)
+
+#### [Create Validation Rule]
+```php
+$client->validationRule->create($params);
+```
+#### [Get Validation Rule]
+```php
+$client->validationRule->get($rule_id);
+```
+#### [Update Validation Rule]
+```php
+$client->validationRule->update($rule_id, $params);
+```
+#### [Delete Validation Rule]
+```php
+$client->validationRule->delete($rule_id);
+```
+
+---
+
 ### Migration from 0.x
 
 Version 1.x of the PHP is fully backward compatible with version 0.x.
@@ -373,3 +402,8 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
 [Get Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#read-customer
 [Update Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customer
 [Delete Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-customer
+
+[Create Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-validation-rules
+[Get Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-validation-rules
+[Update Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-validation-rules
+[Delete Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-validation-rules
