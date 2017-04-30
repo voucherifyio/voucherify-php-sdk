@@ -49,9 +49,20 @@ class ValidationRules
      *
      * @throws \Voucherify\ClientException
      */
-    public function update($ruleId, $params)
+    public function update($rule)
     {
-        return $this->client->put("/validation-rules/" . rawurlencode($ruleId), $params);
+        $ruleId = "";
+
+        if (is_array($rule)) {
+            $ruleId = $rule["id"];
+            unset($rule["id"]);
+        }
+        elseif (is_object($rule)) {
+            $ruleId = $rule->id;
+            unset($rule->id);
+        }
+
+        return $this->client->put("/validation-rules/" . rawurlencode($ruleId), $rule);
     }
 
     /**

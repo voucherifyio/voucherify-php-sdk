@@ -32,7 +32,7 @@ class ValidationRulesTest extends PHPUnit_Framework_TestCase
         CurlMock::disable();
     }
  
-    public function testCreateValidationRule()
+    public function testCreate()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->post("/validation-rules/", [
@@ -61,7 +61,7 @@ class ValidationRulesTest extends PHPUnit_Framework_TestCase
         CurlMock::done();
     }
 
-    public function testGetValidationRule()
+    public function testGet()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->get("/validation-rules/test-rule-id")
@@ -74,7 +74,7 @@ class ValidationRulesTest extends PHPUnit_Framework_TestCase
         CurlMock::done();
     }
 
-    public function testUpadateValidationRule()
+    public function testUpadate()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->put("/validation-rules/test-rule-id", [
@@ -82,8 +82,9 @@ class ValidationRulesTest extends PHPUnit_Framework_TestCase
             ])
             ->reply(200, [ "status" => "ok" ]);
 
-        $result = self::$client->validationRules->update("test-rule-id", (object)[
-             "campaign" => "test-campaign"
+        $result = self::$client->validationRules->update((object)[
+            "id" => "test-rule-id",
+            "campaign" => "test-campaign"
         ]);
 
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
@@ -94,8 +95,9 @@ class ValidationRulesTest extends PHPUnit_Framework_TestCase
              ])
             ->reply(200, [ "status" => "ok" ]);
 
-        $result = self::$client->validationRules->update("test-rule-id", [
-              "campaign" => "test-campaign"
+        $result = self::$client->validationRules->update([
+            "id" => "test-rule-id",
+            "campaign" => "test-campaign"
         ]);
 
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
@@ -103,7 +105,7 @@ class ValidationRulesTest extends PHPUnit_Framework_TestCase
         CurlMock::done();
     }
 
-    public function testDeleteValidationRule()
+    public function testDelete()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->delete("/validation-rules/test-rule-id")
