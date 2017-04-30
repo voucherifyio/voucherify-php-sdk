@@ -32,7 +32,7 @@ class SegmentsTest extends PHPUnit_Framework_TestCase
         CurlMock::disable();
     }
  
-    public function testCreateSegment()
+    public function testCreate()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->post("/segments/", [
@@ -61,7 +61,7 @@ class SegmentsTest extends PHPUnit_Framework_TestCase
         CurlMock::done();
     }
 
-    public function testGetSegment()
+    public function testGet()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->get("/segments/test-segment-id")
@@ -74,7 +74,7 @@ class SegmentsTest extends PHPUnit_Framework_TestCase
         CurlMock::done();
     }
 
-    public function testDeleteSegment()
+    public function testDelete()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->delete("/segments/test-segement-id")
