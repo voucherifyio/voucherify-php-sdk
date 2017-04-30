@@ -33,6 +33,8 @@ API:
 <a href="#customers-api">Customers</a>
 |
 <a href="#validation-rules-api">Validation Rules</a>
+|
+<a href="#segments-api">Segments</a>
 </p>
 
 ## Setup
@@ -80,12 +82,12 @@ Methods are provided within `$client->vouchers->*` namespace.
 - [Add balance to Gift-Card Voucher](#add-balance-to-gift-card-voucher)
 - [Import Vouchers](#import-vouchers)
 
+Check [voucher object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-voucher-object).
+
 #### [Create Voucher]
 ```php
 $client->vouchers->create($voucher);
 ```
-Check [voucher oject](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-voucher-object).
-
 #### [Get Voucher]
 ```php
 $client->vouchers->get($code);
@@ -216,6 +218,8 @@ Methods are provided within `$client->redemptions->*` namespace.
 - [Get Voucher's Redemptions](#get-vouchers-redemptions)
 - [Rollback Redemption](#rollback-redemption)
 
+Check [redemption rollback object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-redemption-rollback-object).
+
 #### [Redeem Voucher]
 ```php
 $client->redemptions->redeem($code);
@@ -240,7 +244,6 @@ $client->redemptions->rollback($redemption_id);
 $client->redemptions->rollback($redemption_id, $params);
 $client->redemptions->rollback($redemption_id, $reason);
 ```
-Check [redemption rollback object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-redemption-rollback-object).
 
 ---
 
@@ -252,11 +255,12 @@ Methods are provided within `$client->customers->*` namespace.
 - [Update Customer](#update-customer)
 - [Delete Customer](#delete-customer)
 
+Check [customer object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-customer-object).
+
 #### [Create Customer]
 ```php
 $client->customers->create($customer);
 ```
-Check [customer object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-customer-object).
 #### [Get Customer]
 ```php
 $client->customers->get($customer_id);
@@ -280,6 +284,8 @@ Methods are provided within `$client->validationRules->*` namespace.
 - [Update Validation Rule](#update-validation-rule)
 - [Delete Validation Rule](#delete-validation-rule)
 
+Check [validation rule object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-validation-rule-object).
+
 #### [Create Validation Rule]
 ```php
 $client->validationRule->create($params);
@@ -295,6 +301,30 @@ $client->validationRule->update($rule_id, $params);
 #### [Delete Validation Rule]
 ```php
 $client->validationRule->delete($rule_id);
+```
+
+---
+
+### Segments API
+Methods are provided within `$client->segments->*` namespace.
+
+- [Create Segment](#create-segment)
+- [Get Segment](#get-segment)
+- [Delete Segment](#delete-segment)
+
+Check [segment object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-segment-object).
+
+#### [Create Segment]
+```php
+$client->segments->create($params);
+```
+#### [Get Segment]
+```php
+$client->segments->get($segment_id);
+```
+#### [Delete Segment]
+```php
+$client->segments->delete($segment_id);
 ```
 
 ---
@@ -407,3 +437,8 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
 [Get Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-validation-rules
 [Update Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-validation-rules
 [Delete Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-validation-rules
+
+
+[Create Segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-segment
+[Get Segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-segment
+[Delete Segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-segment
