@@ -30,14 +30,19 @@ class VoucherifyClient
     public $redemptions;
 
     /**
+     * @var \Voucherify\Segments
+     */
+    public $segments;
+
+    /**
      * @var \Voucherify\Validations
      */
-     public $validations;
+    public $validations;
 
     /**
      * @var \Voucherify\ValidationRules
      */
-     public $validationRules;
+    public $validationRules;
 
 
     /**
@@ -57,6 +62,7 @@ class VoucherifyClient
         $this->customers = new Customers($this->client);
         $this->distributions = new Distributions($this->client);
         $this->redemptions = new Redemptions($this->client);
+        $this->segments = new Segments($this->client);
         $this->validations = new Validations($this->client);
         $this->validationRules = new ValidationRules($this->client);
         $this->vouchers = new Vouchers($this->client);
