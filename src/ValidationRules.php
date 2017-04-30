@@ -56,9 +56,8 @@ class ValidationRules
 
     /**
      * @param string $ruleId Validation rule id.
-     * @param array|stdClass $params Params object
-     * 
-     * Upadate validation rule.
+     *
+     * Delete validation rule.
      *
      * @throws \Voucherify\ClientException
      */
