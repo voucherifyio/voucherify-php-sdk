@@ -32,6 +32,8 @@ API:
 |
 <a href="#customers-api">Customers</a>
 |
+<a href="#products-api">Products</a>
+|
 <a href="#validation-rules-api">Validation Rules</a>
 |
 <a href="#segments-api">Segments</a>
@@ -276,6 +278,67 @@ $client->customers->delete($customer_id);
 
 ---
 
+### Products API
+Methods are provided within `$client->products->*` namespace.
+
+- [Create Product](#create-product)
+- [Get Product](#get-product)
+- [List Products](#list-products)
+- [Update Product](#update-product)
+- [Delete Product](#delete-product)
+- [Create SKU](#create-sku)
+- [Get SKU](#get-sku)
+- [List SKUs](#list-skus)
+- [Update SKU](#update-sku)
+- [Delete SKU](#delete-sku)
+
+Check [product object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-product-object).
+
+Check [sku object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-sku-object).
+
+#### [Create Product]
+```php
+$client->products->create($product);
+```
+#### [Get Product]
+```php
+$client->products->get($product_id);
+```
+#### [List Products]
+```php
+$client->products->getList();
+```
+#### [Update Product]
+```php
+$client->products->update($product_update);
+```
+#### [Delete Product]
+```php
+$client->products->delete($product_id);
+```
+#### [Create SKU]
+```php
+$client->products->createSku($product_id, $sku);
+```
+#### [Get SKU]
+```php
+$client->products->getSku($product_id, $sku_id);
+```
+#### [List SKUs]
+```php
+$client->products->getSkus($product_id);
+```
+#### [Update SKU]
+```php
+$client->products->updateSku($product_id, $sku_update);
+```
+#### [Delete SKU]
+```php
+$client->products->deleteSku($product_id, $sku_id);
+```
+
+---
+
 ### Validation Rules API
 Methods are provided within `$client->validationRules->*` namespace.
 
@@ -288,7 +351,7 @@ Check [validation rule object](https://docs.voucherify.io/reference?utm_source=g
 
 #### [Create Validation Rule]
 ```php
-$client->validationRule->create($params);
+$client->validationRule->create($rule);
 ```
 #### [Get Validation Rule]
 ```php
@@ -296,7 +359,7 @@ $client->validationRule->get($rule_id);
 ```
 #### [Update Validation Rule]
 ```php
-$client->validationRule->update($rule_id, $params);
+$client->validationRule->update($rule_update);
 ```
 #### [Delete Validation Rule]
 ```php
@@ -433,11 +496,22 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
 [Update Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customer
 [Delete Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-customer
 
+[Create Product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-product
+[Get Product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-product
+[List Products]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-products
+[Update Product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-product
+[Delete Product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-product
+
+[Create SKU]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-sku
+[Get SKU]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-sku
+[List SKUs]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-skus
+[Update SKU]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-sku
+[Delete SKU]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-sku
+
 [Create Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-validation-rules
 [Get Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-validation-rules
 [Update Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-validation-rules
 [Delete Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-validation-rules
-
 
 [Create Segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-segment
 [Get Segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-segment
