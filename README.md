@@ -43,7 +43,7 @@ API:
 
 Add Voucherify dependency into your `composer.json`:
 ```
-"rspective/voucherify": "v1.1.*"
+"rspective/voucherify": "v1.4.*"
 ```
 Update project dependencies:
 
@@ -57,14 +57,23 @@ require_once('vendor/autoload.php');
 
 use Voucherify\VoucherifyClient;
 use Voucherify\ClientException;
-use Voucherify\VoucherBuilder;
-use Voucherify\CustomerBuilder;
 
 $apiID  = "YOUR-APPLICATION-ID";
 $apiKey = "YOUR-CLIENT-SECRET-KEY";
 
 $client = new VoucherifyClient($apiID, $apiKey);
 ```
+
+### Versioning
+All requests will use your account API settings, unless you override the API version. The changelog lists every available version.
+
+```php
+$apiVersion = "v2017-04-05";
+
+$client = new VoucherifyClient($apiID, $apiKey, $apiVersion);
+```
+
+Check [versioning](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#versioning).
 
 ## API
 
@@ -434,7 +443,8 @@ catch (ClientException $e) {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
-- **2017-05-02** - `1.3.0` - Validation rules API, Segments API, products API
+- **2017-05-02** - `1.4.0` - API Version Header support
+- **2017-05-02** - `1.3.0` - Validation rules API, Segments API, Products API
 - **2017-04-27** - `1.2.0` - Validations API, Redemptions-Get, Distributions-Export
 - **2017-04-26** - `1.1.0` - Campaigns API, Vouchers import method
 - **2017-04-19** - `1.0.2` - Unit tests, bug fixes
