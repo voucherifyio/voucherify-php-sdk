@@ -27,8 +27,9 @@ class ApiClient
     /**
      * @param string $apiID
      * @param string $apiKey
+     * @param string $apiVersion
      */
-    public function __construct($apiId, $apiKey)
+    public function __construct($apiId, $apiKey, $apiVersion = null)
     {
         if (!isset($apiId)) {
             throw new \Exception("ApiId is required");
@@ -45,6 +46,10 @@ class ApiClient
             "X-App-Token: " . $this->apiKey,
             "X-Voucherify-Channel: PHP-SDK"
         ];
+
+        if (isset($apiVersion)) {
+            $this->headers[] = "X-Voucherify-API-Version: " . $apiVersion;
+        }
     }
 
     private function encodeParams($params)

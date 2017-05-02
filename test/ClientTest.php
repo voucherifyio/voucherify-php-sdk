@@ -46,6 +46,44 @@ class ClientTest extends PHPUnit_Framework_TestCase
             $this->assertEquals($e->getMessage(), "ApiKey is required");
         }
     }
+
+    public function testVersioning()
+    {
+        $headers = [
+            "Content-Type: application/json",
+            "X-App-Id: " . self::$apiId,
+            "X-App-Token: " . self::$apiKey,
+            "X-Voucherify-Channel: PHP-SDK"
+        ];
+
+        CurlMock::register("https://api.voucherify.io/v1", $headers)
+            ->get("/vouchers/test-voucher-1")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $client = new VoucherifyClient(self::$apiId, self::$apiKey);
+        
+        $result = $client->vouchers->get("test-voucher-1");
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        $headers = [
+            "Content-Type: application/json",
+            "X-App-Id: " . self::$apiId,
+            "X-App-Token: " . self::$apiKey,
+            "X-Voucherify-Channel: PHP-SDK",
+            "X-Voucherify-API-Version: v2017-04-05",
+        ];
+
+        CurlMock::register("https://api.voucherify.io/v1", $headers)
+            ->get("/vouchers/test-voucher-2")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $client = new VoucherifyClient(self::$apiId, self::$apiKey, "v2017-04-05");
+        
+        $result = $client->vouchers->get("test-voucher-2");
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
     
     public function testErrorHandling()
     {
