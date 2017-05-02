@@ -2,6 +2,7 @@
 /.idea/
 /vendor/
 .DS_Store
+/.test/
 # Log and temporary files:
 *.log
 *.iml

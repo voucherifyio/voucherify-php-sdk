@@ -31,6 +31,12 @@ API:
 <a href="#redemptions-api">Redemptions</a>
 |
 <a href="#customers-api">Customers</a>
+|
+<a href="#products-api">Products</a>
+|
+<a href="#validation-rules-api">Validation Rules</a>
+|
+<a href="#segments-api">Segments</a>
 </p>
 
 ## Setup
@@ -78,12 +84,12 @@ Methods are provided within `$client->vouchers->*` namespace.
 - [Add balance to Gift-Card Voucher](#add-balance-to-gift-card-voucher)
 - [Import Vouchers](#import-vouchers)
 
+Check [voucher object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-voucher-object).
+
 #### [Create Voucher]
 ```php
 $client->vouchers->create($voucher);
 ```
-Check [voucher oject](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-voucher-object).
-
 #### [Get Voucher]
 ```php
 $client->vouchers->get($code);
@@ -214,6 +220,8 @@ Methods are provided within `$client->redemptions->*` namespace.
 - [Get Voucher's Redemptions](#get-vouchers-redemptions)
 - [Rollback Redemption](#rollback-redemption)
 
+Check [redemption rollback object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-redemption-rollback-object).
+
 #### [Redeem Voucher]
 ```php
 $client->redemptions->redeem($code);
@@ -238,7 +246,6 @@ $client->redemptions->rollback($redemption_id);
 $client->redemptions->rollback($redemption_id, $params);
 $client->redemptions->rollback($redemption_id, $reason);
 ```
-Check [redemption rollback object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-redemption-rollback-object).
 
 ---
 
@@ -250,11 +257,12 @@ Methods are provided within `$client->customers->*` namespace.
 - [Update Customer](#update-customer)
 - [Delete Customer](#delete-customer)
 
+Check [customer object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-customer-object).
+
 #### [Create Customer]
 ```php
 $client->customers->create($customer);
 ```
-Check [customer object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-customer-object).
 #### [Get Customer]
 ```php
 $client->customers->get($customer_id);
@@ -266,6 +274,120 @@ $client->customers->update($customer_update);
 #### [Delete Customer]
 ```php
 $client->customers->delete($customer_id);
+```
+
+---
+
+### Products API
+Methods are provided within `$client->products->*` namespace.
+
+- [Create Product](#create-product)
+- [Get Product](#get-product)
+- [List Products](#list-products)
+- [Update Product](#update-product)
+- [Delete Product](#delete-product)
+- [Create SKU](#create-sku)
+- [Get SKU](#get-sku)
+- [List SKUs](#list-skus)
+- [Update SKU](#update-sku)
+- [Delete SKU](#delete-sku)
+
+Check [product object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-product-object).
+
+Check [sku object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-sku-object).
+
+#### [Create Product]
+```php
+$client->products->create($product);
+```
+#### [Get Product]
+```php
+$client->products->get($product_id);
+```
+#### [List Products]
+```php
+$client->products->getList();
+```
+#### [Update Product]
+```php
+$client->products->update($product_update);
+```
+#### [Delete Product]
+```php
+$client->products->delete($product_id);
+```
+#### [Create SKU]
+```php
+$client->products->createSku($product_id, $sku);
+```
+#### [Get SKU]
+```php
+$client->products->getSku($product_id, $sku_id);
+```
+#### [List SKUs]
+```php
+$client->products->getSkus($product_id);
+```
+#### [Update SKU]
+```php
+$client->products->updateSku($product_id, $sku_update);
+```
+#### [Delete SKU]
+```php
+$client->products->deleteSku($product_id, $sku_id);
+```
+
+---
+
+### Validation Rules API
+Methods are provided within `$client->validationRules->*` namespace.
+
+- [Create Validation Rule](#create-validation-rule)
+- [Get Validation Rule](#get-validation-rule)
+- [Update Validation Rule](#update-validation-rule)
+- [Delete Validation Rule](#delete-validation-rule)
+
+Check [validation rule object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-validation-rule-object).
+
+#### [Create Validation Rule]
+```php
+$client->validationRules->create($rule);
+```
+#### [Get Validation Rule]
+```php
+$client->validationRules->get($rule_id);
+```
+#### [Update Validation Rule]
+```php
+$client->validationRules->update($rule_update);
+```
+#### [Delete Validation Rule]
+```php
+$client->validationRules->delete($rule_id);
+```
+
+---
+
+### Segments API
+Methods are provided within `$client->segments->*` namespace.
+
+- [Create Segment](#create-segment)
+- [Get Segment](#get-segment)
+- [Delete Segment](#delete-segment)
+
+Check [segment object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-segment-object).
+
+#### [Create Segment]
+```php
+$client->segments->create($params);
+```
+#### [Get Segment]
+```php
+$client->segments->get($segment_id);
+```
+#### [Delete Segment]
+```php
+$client->segments->delete($segment_id);
 ```
 
 ---
@@ -312,6 +434,7 @@ catch (ClientException $e) {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2017-05-02** - `1.3.0` - Validation rules API, Segments API, products API
 - **2017-04-27** - `1.2.0` - Validations API, Redemptions-Get, Distributions-Export
 - **2017-04-26** - `1.1.0` - Campaigns API, Vouchers import method
 - **2017-04-19** - `1.0.2` - Unit tests, bug fixes
@@ -373,3 +496,24 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
 [Get Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#read-customer
 [Update Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customer
 [Delete Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-customer
+
+[Create Product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-product
+[Get Product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-product
+[List Products]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-products
+[Update Product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-product
+[Delete Product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-product
+
+[Create SKU]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-sku
+[Get SKU]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-sku
+[List SKUs]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-skus
+[Update SKU]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-sku
+[Delete SKU]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-sku
+
+[Create Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-validation-rules
+[Get Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-validation-rules
+[Update Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-validation-rules
+[Delete Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-validation-rules
+
+[Create Segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-segment
+[Get Segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-segment
+[Delete Segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-segment

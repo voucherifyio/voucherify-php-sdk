@@ -25,14 +25,30 @@ class VoucherifyClient
     public $distributions;
 
     /**
+     * @var \Voucherify\Products
+     */
+    public $products;
+
+    /**
      * @var \Voucherify\Redemptions
      */
     public $redemptions;
 
     /**
+     * @var \Voucherify\Segments
+     */
+    public $segments;
+
+    /**
      * @var \Voucherify\Validations
      */
-     public $validations;
+    public $validations;
+
+    /**
+     * @var \Voucherify\ValidationRules
+     */
+    public $validationRules;
+
 
     /**
      * @var \Voucherify\Vouchers
@@ -50,8 +66,11 @@ class VoucherifyClient
         $this->campaigns = new Campaigns($this->client);
         $this->customers = new Customers($this->client);
         $this->distributions = new Distributions($this->client);
+        $this->products = new Products($this->client);
         $this->redemptions = new Redemptions($this->client);
+        $this->segments = new Segments($this->client);
         $this->validations = new Validations($this->client);
+        $this->validationRules = new ValidationRules($this->client);
         $this->vouchers = new Vouchers($this->client);
 
         /* ********* BACKWARD COMPATIBILITY ********* */
