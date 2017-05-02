@@ -351,19 +351,19 @@ Check [validation rule object](https://docs.voucherify.io/reference?utm_source=g
 
 #### [Create Validation Rule]
 ```php
-$client->validationRule->create($rule);
+$client->validationRules->create($rule);
 ```
 #### [Get Validation Rule]
 ```php
-$client->validationRule->get($rule_id);
+$client->validationRules->get($rule_id);
 ```
 #### [Update Validation Rule]
 ```php
-$client->validationRule->update($rule_update);
+$client->validationRules->update($rule_update);
 ```
 #### [Delete Validation Rule]
 ```php
-$client->validationRule->delete($rule_id);
+$client->validationRules->delete($rule_id);
 ```
 
 ---
@@ -434,6 +434,7 @@ catch (ClientException $e) {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2017-05-02** - `1.3.0` - Validation rules API, Segments API, products API
 - **2017-04-27** - `1.2.0` - Validations API, Redemptions-Get, Distributions-Export
 - **2017-04-26** - `1.1.0` - Campaigns API, Vouchers import method
 - **2017-04-19** - `1.0.2` - Unit tests, bug fixes
