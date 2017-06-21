@@ -60,9 +60,9 @@ class VoucherifyClient
      * @param string $apiKey
      * @param string $apiVersion - Override the API version. When 'null' use default account API settings.
      */
-    public function __construct($apiId, $apiKey, $apiVersion = null)
+    public function __construct($apiId, $apiKey, $apiVersion = null, $apiUrl = null)
     {
-        $this->client = new ApiClient($apiId, $apiKey, $apiVersion);
+        $this->client = new ApiClient($apiId, $apiKey, $apiVersion, $apiUrl);
 
         $this->campaigns = new Campaigns($this->client);
         $this->customers = new Customers($this->client);
