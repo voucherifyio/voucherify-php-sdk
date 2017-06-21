@@ -7,7 +7,7 @@ class ApiClient
     /**
      * @var string
      */
-    private static $basePath = "https://api.voucherify.io/v1";
+    private $basePath = "https://api.voucherify.io/v1";
 
     /**
      * @var string
@@ -27,9 +27,10 @@ class ApiClient
     /**
      * @param string $apiID
      * @param string $apiKey
-     * @param string $apiVersion
+     * @param string $apiVersion - default null
+     * @param string $apiUrl - default null
      */
-    public function __construct($apiId, $apiKey, $apiVersion = null)
+    public function __construct($apiId, $apiKey, $apiVersion = null, $apiUrl = null)
     {
         if (!isset($apiId)) {
             throw new \Exception("ApiId is required");
@@ -47,6 +48,9 @@ class ApiClient
             "X-Voucherify-Channel: PHP-SDK"
         ];
 
+        if (isset($apiUrl)) {
+            $this->basePath = $apiUrl;
+        }
         if (isset($apiVersion)) {
             $this->headers[] = "X-Voucherify-API-Version: " . $apiVersion;
         }
@@ -82,7 +86,7 @@ class ApiClient
         $setBody = $body && in_array($method, ["POST", "PUT", "DELETE"]);
 
         $method = strtoupper($method);
-        $url = self::$basePath . $endpoint . ($setParams ? "?" . $this->encodeParams($params) : "");
+        $url = $this->basePath . $endpoint . ($setParams ? "?" . $this->encodeParams($params) : "");
 
         $options = array();
         $options[CURLOPT_URL] = $url;
