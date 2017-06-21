@@ -43,7 +43,7 @@ API:
 
 Add Voucherify dependency into your `composer.json`:
 ```
-"rspective/voucherify": "v1.4.*"
+"rspective/voucherify": "v1.5.*"
 ```
 Update project dependencies:
 
@@ -74,6 +74,16 @@ $client = new VoucherifyClient($apiID, $apiKey, $apiVersion);
 ```
 
 Check [versioning](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#versioning).
+
+### Custom API URL
+By default client is sending request to `https://api.voucherify.io/v1`. You can override default api url while creating client instance.
+
+```php
+$apiVersion = null;
+$apiUrl = "https://custom-api-url";
+
+$client = new VoucherifyClient($apiID, $apiKey, $apiVersion, $apiUrl);
+```
 
 ## API
 
@@ -443,6 +453,7 @@ catch (ClientException $e) {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2017-06-21** - `1.5.0` - Custom API URL support
 - **2017-05-02** - `1.4.0` - API Version Header support
 - **2017-05-02** - `1.3.0` - Validation rules API, Segments API, Products API
 - **2017-04-27** - `1.2.0` - Validations API, Redemptions-Get, Distributions-Export
