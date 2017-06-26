@@ -448,11 +448,24 @@ catch (ClientException $e) {
 }
 ```
 
+## Logging
+
+VoucherifyClient has method `setLogger()` which can be used to set PSR-3 logger interface.
+
+Set own logger if you want to preview curl request and response data.
+```php
+$logger = /* Initialaze logger i.e Monolog, Analog */
+
+$client = new VoucherifyClient($apiID, $apiKey);
+$client->setLogger($logger);
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2017-06-26** - `1.6.0` - Api Client logger support
 - **2017-06-21** - `1.5.0` - Custom API URL support
 - **2017-05-02** - `1.4.0` - API Version Header support
 - **2017-05-02** - `1.3.0` - Validation rules API, Segments API, Products API
