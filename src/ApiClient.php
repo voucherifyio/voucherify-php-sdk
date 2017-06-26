@@ -25,6 +25,11 @@ class ApiClient
     private $headers;
 
     /**
+     * @var \Psr\Log\LoggerInterface
+     */
+    private $logger;
+
+    /**
      * @param string $apiID
      * @param string $apiKey
      * @param string $apiVersion - default null
@@ -39,6 +44,7 @@ class ApiClient
             throw new \Exception("ApiKey is required");
         }
 
+        $this->logger = new \Psr\Log\NullLogger();
         $this->apiId = $apiId;
         $this->apiKey = $apiKey;
         $this->headers = [
@@ -54,6 +60,14 @@ class ApiClient
         if (isset($apiVersion)) {
             $this->headers[] = "X-Voucherify-API-Version: " . $apiVersion;
         }
+    }
+
+    /**
+     * @param \Psr\Log\LoggerInterface $logger
+     */
+    public function setLogger($logger)
+    {
+        $this->logger = $logger;
     }
 
     private function encodeParams($params)
@@ -97,6 +111,9 @@ class ApiClient
 
         $curl = curl_init();
 
+        $context = [ "options" => $options ];
+        $this->logger->info("[ApiClient][Request] Curl request;", $context);
+
         curl_setopt_array($curl, $options);
 
         $result = curl_exec($curl);
@@ -105,10 +122,12 @@ class ApiClient
 
         curl_close($curl);
 
-        // Connection errors
+        $context = [ "result" => $result, "statusCode" => $statusCode, "error" => $error ];
+        $this->logger->info("[ApiClient][Request] Curl response;", $context);
+
         if ($result === false) {
             throw new ClientException($error);
-        } // Invalid status code
+        }
         elseif ($statusCode >= 400) {
             $error = json_decode($result);
             throw new ClientException($error, $statusCode);

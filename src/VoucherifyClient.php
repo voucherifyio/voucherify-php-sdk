@@ -79,6 +79,14 @@ class VoucherifyClient
         $this->customer = $this->customers;
     }
 
+    /**
+     * @param \PsrLogLoggerInterface $logger
+     */
+    public function setLogger($logger)
+    {
+        $this->client->setLogger($logger);
+    }
+
     /* ********* BACKWARD COMPATIBILITY ********* */
 
     /**

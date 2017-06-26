@@ -5,6 +5,7 @@
     "homepage": "http://www.voucherify.io/",
     "license": "MIT",
     "require": {
+        "psr/log": "*",
         "ext-curl": "*",
         "ext-json": "*"
     },
