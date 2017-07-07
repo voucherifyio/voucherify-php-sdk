@@ -44,7 +44,6 @@ class ApiClient
             throw new \Exception("ApiKey is required");
         }
 
-        $this->logger = new \Psr\Log\NullLogger();
         $this->apiId = $apiId;
         $this->apiKey = $apiKey;
         $this->headers = [
@@ -111,8 +110,10 @@ class ApiClient
 
         $curl = curl_init();
 
-        $context = [ "options" => $options ];
-        $this->logger->info("[ApiClient][Request] Curl request;", $context);
+        if (isset($this->logger)) {
+            $context = [ "options" => $options ];
+            $this->logger->info("[ApiClient][Request] Curl request;", $context);
+        }
 
         curl_setopt_array($curl, $options);
 
@@ -122,8 +123,10 @@ class ApiClient
 
         curl_close($curl);
 
-        $context = [ "result" => $result, "statusCode" => $statusCode, "error" => $error ];
-        $this->logger->info("[ApiClient][Request] Curl response;", $context);
+        if (isset($this->logger)) {
+            $context = [ "result" => $result, "statusCode" => $statusCode, "error" => $error ];
+            $this->logger->info("[ApiClient][Request] Curl response;", $context);
+        }
 
         if ($result === false) {
             throw new ClientException($error);
