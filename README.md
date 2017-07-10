@@ -43,7 +43,7 @@ API:
 
 Add Voucherify dependency into your `composer.json`:
 ```
-"rspective/voucherify": "v1.5.*"
+"rspective/voucherify": "v1.6.*"
 ```
 Update project dependencies:
 
@@ -83,6 +83,19 @@ $apiVersion = null;
 $apiUrl = "https://custom-api-url";
 
 $client = new VoucherifyClient($apiID, $apiKey, $apiVersion, $apiUrl);
+```
+
+### PHP autoloading
+
+When you aren't using composer you can load Voucherify module by including `autoload.php` file from `/src` directory.
+
+```php
+require_once('{voucherify_src_path}/autoload.php');
+
+use Voucherify\VoucherifyClient;
+use Voucherify\ClientException;
+
+$client = new VoucherifyClient($apiID, $apiKey);
 ```
 
 ## API
@@ -460,11 +473,68 @@ $client = new VoucherifyClient($apiID, $apiKey);
 $client->setLogger($logger);
 ```
 
+## Use case - CodeIgniter
+
+Simple example of adding Voucherify to your CodeIgniter project.
+
+### Setup
+
+Download voucherify `/src` directory to `application/third_party/voucherify`.
+
+### Custom Library
+
+Create new library file in `/application/libraries` directory, i.e. `Coupons.php`.
+
+```php
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+
+$src_voucherify = APPPATH . "third_party/voucherify/autoload.php";
+
+include($src_voucherify);
+
+use Voucherify\VoucherifyClient;
+use Voucherify\ClientException;
+
+class Coupons {
+
+    public $voucherify;
+
+    public function __construct() {
+        $apiID  = "YOUR-APPLICATION-ID";
+        $apiKey = "YOUR-CLIENT-SECRET-KEY";
+
+        $this->voucherify = new VoucherifyClient($apiId, $apiKey);
+    }
+}
+```
+
+### Using Voucherify
+
+Load new library and start using voucherify client.
+```php
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Voucher extends CI_Controller {
+
+    public function index()
+    {
+        $this->load->library('coupons');
+
+        $voucherCode = "TEST-VOUCHER-CODE";
+        $voucher = $this->coupons->voucherify->get($voucherCode);
+
+        ...
+    }
+}
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2017-07-10** - `1.6.2` - PHP autoloading support
+- **2017-07-07** - `1.6.1` - Remove Psr/Log dependency
 - **2017-06-26** - `1.6.0` - Api Client logger support
 - **2017-06-21** - `1.5.0` - Custom API URL support
 - **2017-05-02** - `1.4.0` - API Version Header support
