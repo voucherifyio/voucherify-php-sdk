@@ -25,6 +25,11 @@ class VoucherifyClient
     public $distributions;
 
     /**
+     * @var \Voucherify\Orders
+     */
+    public $orders;
+
+    /**
      * @var \Voucherify\Products
      */
     public $products;
@@ -49,7 +54,6 @@ class VoucherifyClient
      */
     public $validationRules;
 
-
     /**
      * @var \Voucherify\Vouchers
      */
@@ -73,6 +77,7 @@ class VoucherifyClient
         $this->validations = new Validations($this->client);
         $this->validationRules = new ValidationRules($this->client);
         $this->vouchers = new Vouchers($this->client);
+        $this->orders = new Orders($this->client);
 
         /* ********* BACKWARD COMPATIBILITY ********* */
 
