@@ -32,6 +32,8 @@ API:
 |
 <a href="#customers-api">Customers</a>
 |
+<a href="#orders-api">Orders</a>
+|
 <a href="#products-api">Products</a>
 |
 <a href="#validation-rules-api">Validation Rules</a>
@@ -43,7 +45,7 @@ API:
 
 Add Voucherify dependency into your `composer.json`:
 ```
-"rspective/voucherify": "v1.6.*"
+"rspective/voucherify": "v1.7.*"
 ```
 Update project dependencies:
 
@@ -310,6 +312,35 @@ $client->customers->delete($customer_id);
 
 ---
 
+### Orders API
+Methods are provided within `$client->orders->*` namespace.
+
+- [Create Order](#create-order)
+- [Get Order](#get-order)
+- [Update Order](#update-order)
+- [List Orders](#list-orders)
+
+Check [customer object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-order-object).
+
+#### [Create Order]
+```php
+$client->orders->create($order);
+```
+#### [Get Order]
+```php
+$client->orders->get($order_id);
+```
+#### [Update Order]
+```php
+$client->orders->update($order_update);
+```
+#### [List Orders]
+```php
+$client->orders->getList();
+```
+
+---
+
 ### Products API
 Methods are provided within `$client->products->*` namespace.
 
@@ -533,6 +564,7 @@ class Voucher extends CI_Controller {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2017-07-12** - `1.7.0` - Orders API
 - **2017-07-10** - `1.6.2` - PHP autoloading support
 - **2017-07-07** - `1.6.1` - Remove Psr/Log dependency
 - **2017-06-26** - `1.6.0` - Api Client logger support
@@ -600,6 +632,11 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
 [Get Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#read-customer
 [Update Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customer
 [Delete Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-customer
+
+[Create Order]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-order
+[Get Order]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-order
+[Update Order]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-order
+[List Orders]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-orders
 
 [Create Product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-product
 [Get Product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-product
