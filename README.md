@@ -479,7 +479,6 @@ with their namespaced equivalent.
 - `$client->customer->*` - changed namespace to [$client->customers->\*](#customers-api)
 
 ---
-
 ## Error handling
 
 VoucherifyClient will throw custom `ClientException` object. To get sutructure described in our [API reference](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#errors) please use:
@@ -502,6 +501,24 @@ $logger = /* Initialaze logger i.e Monolog, Analog */
 
 $client = new VoucherifyClient($apiID, $apiKey);
 $client->setLogger($logger);
+```
+
+## Connection Options
+
+Use `setConnectionOptions()` method to set client connection options.
+
+Options:
+- `timeout` - curl 'CURLOPT_TIMEOUT_MS'
+- `connectTimeout` - curl 'CURLOPT_CONNECTTIMEOUT'
+
+```php
+$options = [
+    "timeout" => 1500,
+    "connectTimeout" => 2
+];
+
+$client = new VoucherifyClient($apiID, $apiKey);
+$client->setConnectionOptions($options);
 ```
 
 ## Use case - CodeIgniter
@@ -564,6 +581,7 @@ class Voucher extends CI_Controller {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2017-07-23** - `1.7.1` - Api Client conneciton options
 - **2017-07-12** - `1.7.0` - Orders API
 - **2017-07-10** - `1.6.2` - PHP autoloading support
 - **2017-07-07** - `1.6.1` - Remove Psr/Log dependency
