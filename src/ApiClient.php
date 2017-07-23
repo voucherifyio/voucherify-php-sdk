@@ -30,6 +30,11 @@ class ApiClient
     private $logger;
 
     /**
+     * @var array|stdClass
+     */
+    private $options;
+
+    /**
      * @param string $apiID
      * @param string $apiKey
      * @param string $apiVersion - default null
@@ -61,14 +66,6 @@ class ApiClient
         }
     }
 
-    /**
-     * @param \Psr\Log\LoggerInterface $logger
-     */
-    public function setLogger($logger)
-    {
-        $this->logger = $logger;
-    }
-
     private function encodeParams($params)
     {
         if (!is_array($params) && !is_object($params)) {
@@ -83,6 +80,13 @@ class ApiClient
             $result[] = rawurlencode($key) . "=" . rawurlencode($value);
         }
         return implode("&", $result);
+    }
+
+    private function getConnectionOption($name)
+    {
+        $hasValue = isset($this->options, $this->options[$name]);
+
+        return $hasValue ? $this->options[$name] : null;
     }
 
     /**
@@ -107,6 +111,8 @@ class ApiClient
         $options[CURLOPT_RETURNTRANSFER] = true;
         $options[CURLOPT_CUSTOMREQUEST] = $method;
         $options[CURLOPT_POSTFIELDS] = $setBody ? json_encode($body) : null;
+        $options[CURLOPT_CONNECTTIMEOUT] = $this->getConnectionOption("connectTimeout");
+        $options[CURLOPT_TIMEOUT_MS] = $this->getConnectionOption("timeout");
 
         $curl = curl_init();
 
@@ -137,6 +143,22 @@ class ApiClient
         }
 
         return json_decode($result);
+    }
+
+    /**
+     * @param \Psr\Log\LoggerInterface $logger
+     */
+    public function setLogger($logger)
+    {
+        $this->logger = $logger;
+    }
+
+    /**
+     * @param array $options
+     */
+    public function setConnectionOptions($options)
+    {
+        $this->options = $options;
     }
 
     /**
