@@ -92,6 +92,14 @@ class VoucherifyClient
         $this->client->setLogger($logger);
     }
 
+    /**
+     * @param array $options
+     */
+    public function setConnectionOptions($options)
+    {
+        $this->client->setConnectionOptions($options);
+    }
+
     /* ********* BACKWARD COMPATIBILITY ********* */
 
     /**
