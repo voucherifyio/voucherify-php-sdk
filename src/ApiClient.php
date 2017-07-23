@@ -82,13 +82,11 @@ class ApiClient
         return implode("&", $result);
     }
 
-    private function getConnectionOption($name, $default) 
+    private function getConnectionOption($name)
     {
         $hasValue = isset($this->options, $this->options[$name]);
 
-        echo("-- ". $name . " hasValue: " . $hasValue . " " . $this->options[$name]);
-
-        return $hasValue ? $this->options[$name] : $default;
+        return $hasValue ? $this->options[$name] : null;
     }
 
     /**
@@ -113,8 +111,8 @@ class ApiClient
         $options[CURLOPT_RETURNTRANSFER] = true;
         $options[CURLOPT_CUSTOMREQUEST] = $method;
         $options[CURLOPT_POSTFIELDS] = $setBody ? json_encode($body) : null;
-        $options[CURLOPT_CONNECTTIMEOUT] = $this->getConnectionOption("connectTimeout", 300);
-        $options[CURLOPT_TIMEOUT_MS] = $this->getConnectionOption("timeout", 0);
+        $options[CURLOPT_CONNECTTIMEOUT] = $this->getConnectionOption("connectTimeout");
+        $options[CURLOPT_TIMEOUT_MS] = $this->getConnectionOption("timeout");
 
         $curl = curl_init();
 
