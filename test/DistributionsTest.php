@@ -142,4 +142,18 @@ class DistributionsTest extends PHPUnit_Framework_TestCase
 
         CurlMock::done();
     }
+
+    public function testGetPublicationsByQuery()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->get("/publications")
+            ->query([ "campaign" => "test-campaign" ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->distributions->getPublications([ "campaign" => "test-campaign" ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
 }

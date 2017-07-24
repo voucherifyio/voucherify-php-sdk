@@ -230,6 +230,7 @@ $client->distributions->deleteExport($exportId);
 #### [List Publications]
 ```php
 $client->distributions->getPublications();
+$client->distributions->getPublications($params);
 ```
 
 ---
