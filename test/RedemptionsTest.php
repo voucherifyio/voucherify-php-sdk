@@ -5,7 +5,7 @@ use Voucherify\Test\Helpers\CurlMock;
 use Voucherify\VoucherifyClient;
 use Voucherify\ClientException;
 
-class RedemptionsTest extends PHPUnit_Framework_TestCase 
+class RedemptionsTest extends PHPUnit_Framework_TestCase
 { 
     protected static $headers;
     protected static $apiId;
@@ -32,7 +32,7 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
         CurlMock::disable();
     }
  
-    public function testRedeemByCode()
+    public function testRedeemVoucher()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->post("/vouchers/test-code/redemption/")
@@ -42,13 +42,45 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/vouchers/test-code/redemption/", [
+                "customer" => [
+                    "id" => "test-customer-id"
+                ]
+            ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->redemptions->redeem("test-code", (object)[
+            "customer" => (object)[
+                "id" => "test-customer-id"
+            ]
+        ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/vouchers/test-code/redemption/", [
+                "customer" => [
+                    "id" => "test-customer-id"
+                ]
+            ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->redemptions->redeem("test-code", [
+            "customer" => [
+                "id" => "test-customer-id"
+            ]
+        ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
         CurlMock::done();
     }
 
     /**
      * DEPRECATED!
      */
-    public function testRedeemByVoucher_deprecated()
+    public function testRedeemVoucher_deprecated()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->post("/vouchers/test-code/redemption/", [
@@ -70,49 +102,7 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
         CurlMock::done();
     }
 
-    public function testRedeemByVoucherObject()
-    {
-        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
-            ->post("/vouchers/test-code/redemption/", [
-                "customer" => [
-                    "id" => "test-customer-id"
-                ]
-            ])
-            ->reply(200, [ "status" => "ok" ]);
-
-        $result = self::$client->redemptions->redeem("test-code", (object)[
-            "customer" => (object)[
-                "id" => "test-customer-id"
-            ]
-        ]);
-
-        $this->assertEquals($result, (object)[ "status" => "ok" ]);
-
-        CurlMock::done();
-    }
-
-    public function testRedeemByVoucherArray()
-    {
-        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
-            ->post("/vouchers/test-code/redemption/", [
-                "customer" => [
-                    "id" => "test-customer-id"
-                ]
-            ])
-            ->reply(200, [ "status" => "ok" ]);
-
-        $result = self::$client->redemptions->redeem("test-code", [
-            "customer" => [
-                "id" => "test-customer-id"
-            ]
-        ]);
-
-        $this->assertEquals($result, (object)[ "status" => "ok" ]);
-
-        CurlMock::done();
-    }
-
-    public function testRedeemWithTracking()
+    public function testRedeemVoucherWithTracking()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->post("/vouchers/test-code/redemption/")
@@ -120,6 +110,47 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
             ->reply(200, [ "status" => "ok" ]);
 
         $result = self::$client->redemptions->redeem("test-code", "test-tracking-id");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
+    public function testRedeemPromotionTier()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/promotions/tiers/test-promotion/redemption/", [
+                "data" => [
+                    "id" => "test_customer_id"
+                ]
+            ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->redemptions->redeem((object)[
+            "id" => "test-promotion"
+        ], (object)[
+            "data" => [
+                "id" => "test_customer_id"
+            ]
+        ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/promotions/tiers/test-promotion/redemption/", [
+                "data" => [
+                    "id" => "test_customer_id"
+                ]
+            ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->redemptions->redeem([
+            "id" => "test-promotion"
+        ], [ 
+            "data" => [
+                "id" => "test_customer_id"
+            ]
+        ]);
 
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
@@ -192,7 +223,7 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
         CurlMock::done();
     }
 
-    public function testRollbackWithCustomerByObject()
+    public function testRollbackWithCustomer()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->post("/redemptions/test-redemption-id/rollback/", [
@@ -210,11 +241,6 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
-        CurlMock::done();
-    }
-
-    public function testRollbackWithCustomerByArray()
-    {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->post("/redemptions/test-redemption-id/rollback/", [
                 "customer" => [
@@ -248,7 +274,7 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
         CurlMock::done();
     }
 
-    public function testRollbackWithCustomerReasonAndTrackingByObject()
+    public function testRollbackWithCustomerReasonAndTracking()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->post("/redemptions/test-redemption-id/rollback/", [
@@ -272,11 +298,6 @@ class RedemptionsTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
-        CurlMock::done();
-    }
-
-    public function testRollbackWithCustomerReasonAndTrackingByArray()
-    {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->post("/redemptions/test-redemption-id/rollback/", [
                 "customer" => [

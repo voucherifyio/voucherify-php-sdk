@@ -10,22 +10,52 @@ class Redemptions
     private $client;
 
     /**
+     * @var \Voucherify\Promotions
+     */
+    private $promotions;
+
+    /**
      * @param \Voucherify\ApiClient $client
      */
-    public function __construct($client)
+    public function __construct($client, $dependencies)
     {
         $this->client = $client;
+        $this->promotions = $dependencies["promotions"];
     }
 
     /**
-     * @param string|array $code Voucher code or array with voucher (code), customer profile and order amount
-     * @param string|null $params Provided tracking id
+     * @param array|stdClass $promotionTier
+     * @param array|stdClass $params
      *
-     * Redeem voucher
+     * Redeem promotion tier.
      *
      * @throws \Voucherify\ClientException
      */
-    public function redeem($code, $params = null)
+    private function redeemPromotionTier($promotionTier, $params)
+    {
+        $promotionTierId = "";
+
+        if (is_object($promotionTier)) {
+            $promotionTierId = $promotionTier->id;
+        }
+        elseif (is_array($promotionTier)) {
+            $promotionTierId = $promotionTier["id"];
+        }
+
+        return $this->promotions->tiers->redeem($promotionTierId, $params);
+    }
+
+    /**
+     * Voucher code or array with voucher (code), customer profile and order amount
+     *
+     * @param string|array $code Voucher code or array with voucher (code), customer profile and order amount
+     * @param string|null $params Provided tracking id
+     *
+     * Redeem voucher.
+     *
+     * @throws \Voucherify\ClientException
+     */
+    private function redeemVoucher($code, $params)
     {
         $payload = null;
         $options = null;
@@ -33,6 +63,8 @@ class Redemptions
         if (is_string($code) && !is_string($params)) {
             $payload = $params;
         }
+
+        // Backward compatibility - Should always use string code as first param
         if (is_array($code)) {
             $payload = $code;
             $code = $payload["voucher"];
@@ -46,6 +78,26 @@ class Redemptions
         }
 
         return $this->client->post("/vouchers/" . rawurlencode($code) . "/redemption/", $payload, $options);
+    }
+
+    /**
+     * @param string|array|stdClass $params Voucher code, Voucher validation data or Promotion tier data
+     * @param string|array|stdClass $context Voucher validation context data or Promotion tier validation context data
+     *
+     * Validate voucher or promotion tier.
+     *
+     * @throws \Voucherify\ClientException
+     */
+    public function redeem($params, $context = null)
+    {
+        $redeemPromotionTier =
+            (is_object($params) || is_array($params)) &&
+            (is_object($context) || is_array($context));
+
+        if ($redeemPromotionTier) {
+            return $this->redeemPromotionTier($params, $context);
+        }
+        return $this->redeemVoucher($params, $context);
     }
 
     /**

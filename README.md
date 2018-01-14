@@ -39,6 +39,8 @@ API:
 <a href="#validation-rules-api">Validation Rules</a>
 |
 <a href="#segments-api">Segments</a>
+|
+<a href="#promotions-api">Promotions</a>
 </p>
 
 ## Setup
@@ -238,10 +240,23 @@ $client->distributions->getPublications($params);
 ### Validations API
 Methods are provided within `$client->validations->*` namespace.
 
+- [Validate Voucher](#validate-voucher)
+- [Validate Promotion Campaign](#validate-promotions-1)
+
 #### [Validate Voucher]
 ```php
+$client->validations->validate($code);
+$client->validations->validate($code, $params);
+
+// OR
+
 $client->validations->validateVoucher($code);
 $client->validations->validateVoucher($code, $params);
+```
+
+#### [Validate Promotion Campaign]
+```php
+$client->validations->validate($params);
 ```
 
 ---
@@ -250,6 +265,7 @@ $client->validations->validateVoucher($code, $params);
 Methods are provided within `$client->redemptions->*` namespace.
 
 - [Redeem Voucher](#redeem-voucher)
+- [Redeem Promotion's Tier](#redeem-promotion-tier)
 - [Get Redemption](#get-redemption)
 - [List Redemptions](#list-redemptions)
 - [Get Voucher's Redemptions](#get-vouchers-redemptions)
@@ -261,6 +277,10 @@ Check [redemption rollback object](https://docs.voucherify.io/reference?utm_sour
 ```php
 $client->redemptions->redeem($code);
 $client->redemptions->redeem($code, $params);
+```
+#### [Redeem Promotion's Tier]
+```php
+$client->redemptions->redeem($promotionsTier, $params);
 ```
 #### [Get Redemption]
 ```
@@ -456,6 +476,58 @@ $client->segments->delete($segment_id);
 
 ---
 
+### Promotions API
+Methods are provided within `$client->promotions->*` namespace.
+
+- [Create Promotion Campaign](#create-promotion-campaign)
+- [Validate Promotion Campaign](#validate-promotion-campaign)
+- [List Promotion's Tiers](#list-promotions-tiers)
+- [Create Promotion's Tier](#create-promotions-tier)
+- [Redeem Promotion's Tier](#redeem-promotions-tier)
+- [Update Promotion's Tier](#update-promotions-tier)
+- [Delete Promotion's Tier](#delete-promotions-tier)
+
+Check [promotion campaign object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-promotion-campaign).
+
+Check [promotion's tier object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-promotion-object).
+
+#### [Create Promotion Campaign]
+```php
+$client->promotions->create($promotionCampaign);
+```
+
+#### [Validate Promotion Campaign]
+```php
+$client->promotions->validate($validationContext);
+```
+
+#### [List Promotion's Tiers]
+```php
+$client->promotions->tiers->getList($promotionCampaignId);
+```
+
+#### [Create Promotion's Tier]
+```php
+$client->promotions->tiers->create($promotionCampaignId, $promotionsTier);
+```
+
+#### [Redeem Promotion's Tier]
+```php
+$client->promotions->tiers->redeem($promotionsTierId, $redemptionContext);
+```
+
+#### [Update Promotion's Tier]
+```php
+$client->promotions->tiers->update($promotionTierId);
+```
+
+#### [Delete Promotion's Tier]
+```php
+$client->promotions->tiers->delete($promotionTierId);
+```
+
+---
+
 ### Migration from 0.x
 
 Version 1.x of the PHP is fully backward compatible with version 0.x.
@@ -582,6 +654,7 @@ class Voucher extends CI_Controller {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2018-01-14** - `1.7.3` - Promotions API
 - **2017-07-24** - `1.7.2` - Fix get publications missing params
 - **2017-07-23** - `1.7.1` - Api Client conneciton options
 - **2017-07-12** - `1.7.0` - Orders API
@@ -641,8 +714,10 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
 [List Publications]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-publications
 
 [Validate Voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#validate-voucher
+[Validate Promotion Campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#validate-promotions-1
 
 [Redeem Voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-voucher
+[Redeem Promotion's Tier]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-promotion
 [Get Redemption]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-redemption
 [List Redemptions]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-redemptions
 [Get Voucher's Redemptions]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#vouchers-redemptions
@@ -678,3 +753,11 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
 [Create Segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-segment
 [Get Segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-segment
 [Delete Segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-segment
+
+[Create Promotion Campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-promotion-campaign
+[Validate Promotion Campaign]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#validate-promotions-1
+[List Promotion's Tiers]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-promotions
+[Create Promotion's Tier]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#add-promotion-tier-to-campaign
+[Redeem Promotion's Tier]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-promotion
+[Update Promotion's Tier]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-promotion
+[Delete Promotion's Tier]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-promotion

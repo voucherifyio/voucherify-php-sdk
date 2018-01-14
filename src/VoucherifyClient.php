@@ -10,6 +10,11 @@ class VoucherifyClient
     private $client;
 
     /**
+     * @var \Voucherify\PromotionTiers
+     */
+    private $promotionTiers;
+
+    /**
      * @var \Voucherify\Campaigns
      */
     public $campaigns;
@@ -33,6 +38,11 @@ class VoucherifyClient
      * @var \Voucherify\Products
      */
     public $products;
+
+    /**
+     * @var \Voucherify\Promotions
+     */
+    public $promotions;
 
     /**
      * @var \Voucherify\Redemptions
@@ -66,18 +76,29 @@ class VoucherifyClient
      */
     public function __construct($apiId, $apiKey, $apiVersion = null, $apiUrl = null)
     {
+        // PRIVATE
         $this->client = new ApiClient($apiId, $apiKey, $apiVersion, $apiUrl);
+        $this->promotionTiers = new PromotionTiers($this->client);
 
+        // PUBLIC
         $this->campaigns = new Campaigns($this->client);
         $this->customers = new Customers($this->client);
         $this->distributions = new Distributions($this->client);
+        $this->orders = new Orders($this->client);
         $this->products = new Products($this->client);
-        $this->redemptions = new Redemptions($this->client);
+        $this->promotions = new Promotions($this->client, [
+            "campaigns" => $this->campaigns,
+            "promotionTiers" => $this->promotionTiers
+        ]);
+        $this->redemptions = new Redemptions($this->client, [
+            "promotions" => $this->promotions
+        ]);
         $this->segments = new Segments($this->client);
-        $this->validations = new Validations($this->client);
+        $this->validations = new Validations($this->client, [
+            "promotions" => $this->promotions
+        ]);
         $this->validationRules = new ValidationRules($this->client);
         $this->vouchers = new Vouchers($this->client);
-        $this->orders = new Orders($this->client);
 
         /* ********* BACKWARD COMPATIBILITY ********* */
 

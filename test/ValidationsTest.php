@@ -31,6 +31,67 @@ class ValidationsTest extends PHPUnit_Framework_TestCase
     {
         CurlMock::disable();
     }
+
+    public function testValidate()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/vouchers/test-code/validate")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->validations->validate("test-code");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/vouchers/test-code/validate", [
+                "customer" => "test-customer"
+             ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->validations->validate("test-code", [
+            "customer" => "test-customer"
+        ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/vouchers/test-code/validate", [
+                "customer" => "test-customer"
+             ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->validations->validate("test-code", (object)[
+            "customer" => "test-customer"
+        ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/promotions/validation", [
+                "data" => "test"
+             ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->validations->validate((object)[
+            "data" => "test"
+        ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/promotions/validation", [
+                "data" => "test"
+             ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->validations->validate([
+            "data" => "test"
+        ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
  
     public function testValidateVoucher()
     {
