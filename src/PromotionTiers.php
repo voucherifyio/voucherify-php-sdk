@@ -43,6 +43,19 @@ class PromotionTiers
     }
 
     /**
+     * List available promotion tiers.
+     *
+     * @throws \Voucherify\ClientException
+     */
+    public function getAvailable()
+    {
+        $params = [ "is_available" => true ];
+        return $this->client->get("/promotions/tiers", $params);
+    }
+
+     
+
+    /**
      * @param string $promotionTierId
      * @param array|stdClass $params
      *
