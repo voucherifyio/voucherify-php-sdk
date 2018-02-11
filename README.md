@@ -311,6 +311,7 @@ Methods are provided within `$client->customers->*` namespace.
 - [Get Customer](#get-customer)
 - [Update Customer](#update-customer)
 - [Delete Customer](#delete-customer)
+- [List Customers](#list-customers)
 
 Check [customer object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-customer-object).
 
@@ -329,6 +330,11 @@ $client->customers->update($customer_update);
 #### [Delete Customer]
 ```php
 $client->customers->delete($customer_id);
+```
+#### [List Customers]
+```php
+$client->customers->getList();
+$client->customers->getList($params);
 ```
 
 ---
@@ -654,6 +660,7 @@ class Voucher extends CI_Controller {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2018-02-11** - `1.7.4` - Customers getList method
 - **2018-01-14** - `1.7.3` - Promotions API
 - **2017-07-24** - `1.7.2` - Fix get publications missing params
 - **2017-07-23** - `1.7.1` - Api Client conneciton options
@@ -727,6 +734,7 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
 [Get Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#read-customer
 [Update Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customer
 [Delete Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-customer
+[List Customers]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-customers
 
 [Create Order]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-order
 [Get Order]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-order
