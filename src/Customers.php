@@ -42,6 +42,23 @@ class Customers
     }
 
     /**
+     * @param array|stdClass $filter
+     *
+     * Get a filtered list of vouchers. The filter can include following properties:
+     * - limit      - number (default 100)
+     * - page       - number (default 1)
+     * - email      - string
+     * - city       - string
+     * - name       - string
+     *
+     * @throws \Voucherify\ClientException
+     */
+    public function getList($filter = null)
+    {
+        return $this->client->get("/customers/", $filter);
+    }
+
+    /**
      * @param array|stdClass $customer Object with customer fields for update
      *
      * Update customer.

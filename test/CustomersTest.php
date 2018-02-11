@@ -62,6 +62,20 @@ class CustomersTest extends PHPUnit_Framework_TestCase
         CurlMock::done();
     }
 
+    public function testGetList()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->get("/customers/")
+            ->query([ "limit" => 3 ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->customers->getList([ "limit" => 3 ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
     public function testUpdateByObject()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
