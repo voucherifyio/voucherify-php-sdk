@@ -492,6 +492,7 @@ Methods are provided within `$client->promotions->*` namespace.
 - [Redeem Promotion's Tier](#redeem-promotions-tier)
 - [Update Promotion's Tier](#update-promotions-tier)
 - [Delete Promotion's Tier](#delete-promotions-tier)
+- [List Available Promotion Tiers](#list-available-promotion-tiers)
 
 Check [promotion campaign object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-promotion-campaign).
 
@@ -530,6 +531,11 @@ $client->promotions->tiers->update($promotionTierId);
 #### [Delete Promotion's Tier]
 ```php
 $client->promotions->tiers->delete($promotionTierId);
+```
+
+#### [List Available Promotion Tiers]
+```php
+$client->promotions->tiers->getAvailable();
 ```
 
 ---
@@ -660,6 +666,7 @@ class Voucher extends CI_Controller {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2018-02-12** - `1.7.5` - Promotions Tiers getAvailable method
 - **2018-02-11** - `1.7.4` - Customers getList method
 - **2018-01-14** - `1.7.3` - Promotions API
 - **2017-07-24** - `1.7.2` - Fix get publications missing params
@@ -769,3 +776,4 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
 [Redeem Promotion's Tier]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#redeem-promotion
 [Update Promotion's Tier]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-promotion
 [Delete Promotion's Tier]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-promotion
+[List Available Promotion Tiers]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#introduction-1
