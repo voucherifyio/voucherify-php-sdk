@@ -49,7 +49,7 @@ class PromotionTiers
      */
     public function getAvailable()
     {
-        $params = [ "is_available" => true ];
+        $params = [ "is_available" => "true" ];
         return $this->client->get("/promotions/tiers", $params);
     }
 

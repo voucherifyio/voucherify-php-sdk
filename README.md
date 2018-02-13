@@ -666,7 +666,8 @@ class Voucher extends CI_Controller {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
-- **2018-02-12** - `1.7.5` - Promotions Tiers getAvailable method
+- **2018-02-13** - `1.7.7` - Fix Promotions Tiers getAvailable method param
+- **2018-02-13** - `1.7.6` - Promotions Tiers getAvailable method
 - **2018-02-11** - `1.7.4` - Customers getList method
 - **2018-01-14** - `1.7.3` - Promotions API
 - **2017-07-24** - `1.7.2` - Fix get publications missing params
