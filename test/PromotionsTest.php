@@ -113,7 +113,7 @@ class PromotionsTest extends PHPUnit_Framework_TestCase
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->get("/promotions/tiers")
-            ->query([ "is_available" => true ])
+            ->query([ "is_available" => "true" ])
             ->reply(200, [ "status" => "ok" ]);
 
         $result = self::$client->promotions->tiers->getAvailable();
