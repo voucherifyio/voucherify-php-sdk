@@ -99,12 +99,24 @@ class PromotionsTest extends PHPUnit_Framework_TestCase
     public function testTiersGetList()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
-            ->get("/promotions/test_promotion/tiers", [
-                "name" => "test promotion tier name"
-            ])
+            ->get("/promotions/test_promotion/tiers")
             ->reply(200, [ "status" => "ok" ]);
 
         $result = self::$client->promotions->tiers->getList("test_promotion");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
+    public function testTiersGetAvailable()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->get("/promotions/tiers")
+            ->query([ "is_available" => true ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->promotions->tiers->getAvailable();
 
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
