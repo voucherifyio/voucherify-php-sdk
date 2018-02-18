@@ -78,14 +78,18 @@ class Products
 
     /**
      * @param string $productId
+     * @param boolean|null $force
      * 
      * Delete product.
      *
      * @throws \Voucherify\ClientException
      */
-    public function delete($productId)
+    public function delete($productId, $force = null)
     {
-        return $this->client->delete("/products/" . rawurlencode($productId));
+        $options = (object)[];
+        $options->qs = [ "force" => ($force ? "true" : "false") ];
+
+        return $this->client->delete("/products/" . rawurlencode($productId), null, $options);
     }
 
     /**
@@ -153,14 +157,18 @@ class Products
     /**
      * @param string $productId
      * @param string $skuId
+     * @param boolean|null $force
      * 
      * Delete product's sku.
      *
      * @throws \Voucherify\ClientException
      */
-    public function deleteSku($productId, $skuId)
+    public function deleteSku($productId, $skuId, $force = null)
     {
-        return $this->client->delete("/products/" . rawurlencode($productId) . "/skus/" . rawurlencode($skuId));
+        $options = (object)[];
+        $options->qs = [ "force" => ($force ? "true" : "false") ];
+
+        return $this->client->delete("/products/" . rawurlencode($productId) . "/skus/" . rawurlencode($skuId), null, $options);
     }
 }
 

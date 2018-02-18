@@ -405,6 +405,7 @@ $client->products->update($product_update);
 #### [Delete Product]
 ```php
 $client->products->delete($product_id);
+$client->products->delete($product_id, $force);
 ```
 #### [Create SKU]
 ```php
@@ -425,6 +426,7 @@ $client->products->updateSku($product_id, $sku_update);
 #### [Delete SKU]
 ```php
 $client->products->deleteSku($product_id, $sku_id);
+$client->products->deleteSku($product_id, $sku_id, $force);
 ```
 
 ---
@@ -666,6 +668,7 @@ class Voucher extends CI_Controller {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2018-02-18** - `1.7.8` - Product delete force option support
 - **2018-02-13** - `1.7.7` - Fix Promotions Tiers getAvailable method param
 - **2018-02-13** - `1.7.6` - Promotions Tiers getAvailable method
 - **2018-02-11** - `1.7.4` - Customers getList method
