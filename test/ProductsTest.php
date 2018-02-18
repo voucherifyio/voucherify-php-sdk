@@ -117,9 +117,24 @@ class ProductsTest extends PHPUnit_Framework_TestCase
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->delete("/products/test-product-id")
+            ->query([ "force" => "false" ])
             ->reply(200, [ "status" => "ok" ]);
 
         $result = self::$client->products->delete("test-product-id");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
+    public function testDeletePermamently()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->delete("/products/test-product-id")
+            ->query([ "force" => "true" ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->products->delete("test-product-id", true);
 
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
@@ -216,9 +231,24 @@ class ProductsTest extends PHPUnit_Framework_TestCase
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
             ->delete("/products/test-product-id/skus/test-sku-id")
+            ->query([ "force" => "false" ])
             ->reply(200, [ "status" => "ok" ]);
 
         $result = self::$client->products->deleteSku("test-product-id", "test-sku-id");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
+    public function testDeleteSkuPermamently()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->delete("/products/test-product-id/skus/test-sku-id")
+            ->query([ "force" => "true" ])
+            ->reply(200, [ "status" => "ok" ]);
+
+            $result = self::$client->products->deleteSku("test-product-id", "test-sku-id", true);
 
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 

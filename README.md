@@ -405,6 +405,7 @@ $client->products->update($product_update);
 #### [Delete Product]
 ```php
 $client->products->delete($product_id);
+$client->products->delete($product_id, $force);
 ```
 #### [Create SKU]
 ```php
@@ -425,6 +426,7 @@ $client->products->updateSku($product_id, $sku_update);
 #### [Delete SKU]
 ```php
 $client->products->deleteSku($product_id, $sku_id);
+$client->products->deleteSku($product_id, $sku_id, $force);
 ```
 
 ---
