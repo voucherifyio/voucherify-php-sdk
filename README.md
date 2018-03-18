@@ -41,6 +41,8 @@ API:
 <a href="#segments-api">Segments</a>
 |
 <a href="#promotions-api">Promotions</a>
+|
+<a href="#utils">Utils</a>
 </p>
 
 ## Setup
@@ -542,6 +544,23 @@ $client->promotions->tiers->getAvailable();
 
 ---
 
+### Utils
+To use utils you have to import Voucherify Utils class.
+
+```php
+require_once('vendor/autoload.php');
+
+use Voucherify\Utils;
+```
+Available methods:
+
+#### Verify Webhook Signature
+```php
+Utils::verifyWebhookSignature($signature, $message, $secretKey)
+```
+
+---
+
 ### Migration from 0.x
 
 Version 1.x of the PHP is fully backward compatible with version 0.x.
@@ -668,6 +687,7 @@ class Voucher extends CI_Controller {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2018-03-18** - `1.7.9` - Add Utils with verifyWebhookSignature method
 - **2018-02-18** - `1.7.8` - Product delete force option support
 - **2018-02-13** - `1.7.7` - Fix Promotions Tiers getAvailable method param
 - **2018-02-13** - `1.7.6` - Promotions Tiers getAvailable method
