@@ -19,7 +19,7 @@ class ValidationRules
 
     /**
      * @param array|stdClass $params Params object
-     * 
+     *
      * Create validation rule.
      *
      * @throws \Voucherify\ClientException
@@ -31,7 +31,7 @@ class ValidationRules
 
     /**
      * @param string $ruleId Validation rule id.
-     * 
+     *
      * Get validation rule.
      *
      * @throws \Voucherify\ClientException
@@ -42,9 +42,21 @@ class ValidationRules
     }
 
     /**
+     * @param array|stdClass $params
+     *
+     * List validation rules.
+     *
+     * @throws \Voucherify\ClientException
+     */
+    public function getList($params = null)
+    {
+        return $this->client->get("/validation-rules/", $params);
+    }
+
+    /**
      * @param string $ruleId Validation rule id.
      * @param array|stdClass $params Params object
-     * 
+     *
      * Upadate validation rule.
      *
      * @throws \Voucherify\ClientException
@@ -75,6 +87,42 @@ class ValidationRules
     public function delete($ruleId)
     {
         return $this->client->delete("/validation-rules/" . rawurlencode($ruleId));
+    }
+
+    /**
+     * @param array|stdClass $params Params object
+     *
+     * Create validation rule assignment
+     *
+     * @throws \Voucherify\ClientException
+     */
+    public function createAssignment($ruleId, $assignment)
+    {
+        return $this->client->post("/validation-rules/" . rawurlencode($ruleId) . "/assignments", $assignment);
+    }
+
+    /**
+     * @param array|stdClass $params
+     *
+     * List validation rule assignments
+     *
+     * @throws \Voucherify\ClientException
+     */
+    public function getAssignments($ruleId, $params = null)
+    {
+        return $this->client->get("/validation-rules/" . rawurlencode($ruleId) . "/assignments", $params);
+    }
+
+    /**
+     * @param array|stdClass $params Params object
+     *
+     * Delete validation rule assignment
+     *
+     * @throws \Voucherify\ClientException
+     */
+    public function deleteAssignment($ruleId, $assignmentId)
+    {
+        return $this->client->delete("/validation-rules/" . rawurlencode($ruleId) . "/assignments/" . rawurlencode($assignmentId));
     }
 }
 

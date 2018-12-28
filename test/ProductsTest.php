@@ -31,7 +31,7 @@ class ProductsTest extends PHPUnit_Framework_TestCase
     {
         CurlMock::disable();
     }
- 
+
     public function testCreate()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)

@@ -31,7 +31,7 @@ class ValidationRulesTest extends PHPUnit_Framework_TestCase
     {
         CurlMock::disable();
     }
- 
+
     public function testCreate()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
@@ -68,6 +68,27 @@ class ValidationRulesTest extends PHPUnit_Framework_TestCase
             ->reply(200, [ "status" => "ok" ]);
 
         $result = self::$client->validationRules->get("test-rule-id");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
+    public function testGetList()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->get("/validation-rules/")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->validationRules->getList();
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->get("/validation-rules/?limit=10")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->validationRules->getList([ "limit" => 10 ]);
 
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
@@ -112,6 +133,73 @@ class ValidationRulesTest extends PHPUnit_Framework_TestCase
             ->reply(200, [ "status" => "ok" ]);
 
         $result = self::$client->validationRules->delete("test-rule-id");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
+    public function testCreateAssignment()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/validation-rules/test-rule-id/assignments", [
+                "name" => "test-assignment",
+                "voucher" => "test-voucher"
+            ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->validationRules->createAssignment("test-rule-id", (object)[
+            "name" => "test-assignment",
+            "voucher" => "test-voucher"
+        ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->post("/validation-rules/test-rule-id/assignments", [
+                 "name" => "test-assignment",
+                 "voucher" => "test-voucher"
+             ])
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->validationRules->createAssignment("test-rule-id", [
+            "name" => "test-assignment",
+            "voucher" => "test-voucher"
+        ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
+    public function testGetAssignments()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->get("/validation-rules/test-rule-id/assignments")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->validationRules->getAssignments("test-rule-id");
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->get("/validation-rules/test-rule-id/assignments?limit=10")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->validationRules->getAssignments("test-rule-id", [ "limit" => 10 ]);
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
+    public function testDeleteAssignment()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->delete("/validation-rules/test-rule-id/assignments/test-assignment-id")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->validationRules->deleteAssignment("test-rule-id", "test-assignment-id");
 
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
