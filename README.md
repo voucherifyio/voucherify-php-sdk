@@ -451,6 +451,10 @@ $client->validationRules->create($rule);
 ```php
 $client->validationRules->get($rule_id);
 ```
+#### [List Validation Rules]
+```php
+$client->validationRules->getList();
+```
 #### [Update Validation Rule]
 ```php
 $client->validationRules->update($rule_update);
@@ -458,6 +462,18 @@ $client->validationRules->update($rule_update);
 #### [Delete Validation Rule]
 ```php
 $client->validationRules->delete($rule_id);
+```
+#### [Create Validation Rule Assignment]
+```php
+$client->validationRules->createAssignment($rule_id, $assignment);
+```
+#### [List Validation Rule Assignments]
+```php
+$client->validationRules->getAssignments($rule_id);
+```
+#### [Delete Validation Rule Assignment]
+```php
+$client->validationRules->deleteAssignment($rule_id, $assignment_id);
 ```
 
 ---
@@ -687,6 +703,7 @@ class Voucher extends CI_Controller {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2018-12-28** - `1.7.10` - Add Validation Rule Assignments
 - **2018-03-18** - `1.7.9` - Add Utils with verifyWebhookSignature method
 - **2018-02-18** - `1.7.8` - Product delete force option support
 - **2018-02-13** - `1.7.7` - Fix Promotions Tiers getAvailable method param
@@ -786,8 +803,12 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
 
 [Create Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-validation-rules
 [Get Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-validation-rules
+[List Validation Rules]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-validation-rules
 [Update Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-validation-rules
 [Delete Validation Rule]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-validation-rules
+[Create Validation Rule Assignment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-validation-rules-assignment
+[List Validation Rule Assignments]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-validation-rule-assignments
+[Delete Validation Rule Assignment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-validation-rules-assignment
 
 [Create Segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-segment
 [Get Segment]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-segment
