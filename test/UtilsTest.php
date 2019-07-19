@@ -53,7 +53,7 @@ class UtilsTest extends PHPUnit_Framework_TestCase
         // /////////////////////////////////////// UNHAPPY PATH (INVALID SIGNATURE)
 
         $signature = "invalid_signature";
-        $data = "Example test message";
+        $message = "Example test message";
         $secretKey = "secret_01234567890_secret";
 
         $result = Utils::verifyWebhookSignature($signature, $message, $secretKey);

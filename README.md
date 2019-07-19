@@ -82,11 +82,11 @@ $client = new VoucherifyClient($apiID, $apiKey, $apiVersion);
 Check [versioning](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#versioning).
 
 ### Custom API URL
-By default client is sending request to `https://api.voucherify.io/v1`. You can override default api url while creating client instance.
+By default client is sending request to `https://api.voucherify.io`. You can override `$apiUrl` while creating client instance if you want to use Voucherify running in a specific region
 
 ```php
 $apiVersion = null;
-$apiUrl = "https://custom-api-url";
+$apiUrl = "https://<region>.api.voucherify.io";
 
 $client = new VoucherifyClient($apiID, $apiKey, $apiVersion, $apiUrl);
 ```
@@ -703,6 +703,7 @@ class Voucher extends CI_Controller {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2019-07-19** - `2.0.0` - Hide API versioning in `$apiUrl` param
 - **2018-12-28** - `1.7.10` - Add Validation Rule Assignments
 - **2018-03-18** - `1.7.9` - Add Utils with verifyWebhookSignature method
 - **2018-02-18** - `1.7.8` - Product delete force option support
