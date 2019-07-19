@@ -7,7 +7,7 @@ class ApiClient
     /**
      * @var string
      */
-    private $basePath = "https://api.voucherify.io/v1";
+    private $basePath = "https://api.voucherify.io";
 
     /**
      * @var string
@@ -103,7 +103,7 @@ class ApiClient
         $setBody = $body && in_array($method, ["POST", "PUT", "DELETE"]);
 
         $method = strtoupper($method);
-        $url = $this->basePath . $endpoint . ($setParams ? "?" . $this->encodeParams($params) : "");
+        $url = $this->basePath . "/v1" . $endpoint . ($setParams ? "?" . $this->encodeParams($params) : "");
 
         $options = array();
         $options[CURLOPT_URL] = $url;

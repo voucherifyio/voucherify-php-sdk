@@ -5,8 +5,8 @@ use Voucherify\Test\Helpers\CurlMock;
 use Voucherify\VoucherifyClient;
 use Voucherify\ClientException;
 
-class ClientTest extends PHPUnit_Framework_TestCase 
-{ 
+class ClientTest extends PHPUnit_Framework_TestCase
+{
     protected static $headers;
     protected static $apiId;
     protected static $apiKey;
@@ -61,7 +61,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
             ->reply(200, [ "status" => "ok" ]);
 
         $client = new VoucherifyClient(self::$apiId, self::$apiKey);
-        
+
         $result = $client->vouchers->get("test-voucher-1");
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
@@ -69,9 +69,9 @@ class ClientTest extends PHPUnit_Framework_TestCase
             ->get("/vouchers/test-voucher-2")
             ->reply(200, [ "status" => "ok" ]);
 
-        $customUrl = "https://custom-api.voucherify.io/v1";
+        $customUrl = "https://custom-api.voucherify.io";
         $client = new VoucherifyClient(self::$apiId, self::$apiKey, null, $customUrl);
-        
+
         $result = $client->vouchers->get("test-voucher-2");
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
@@ -92,7 +92,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
             ->reply(200, [ "status" => "ok" ]);
 
         $client = new VoucherifyClient(self::$apiId, self::$apiKey);
-        
+
         $result = $client->vouchers->get("test-voucher-1");
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
@@ -109,13 +109,13 @@ class ClientTest extends PHPUnit_Framework_TestCase
             ->reply(200, [ "status" => "ok" ]);
 
         $client = new VoucherifyClient(self::$apiId, self::$apiKey, "v2017-04-05");
-        
+
         $result = $client->vouchers->get("test-voucher-2");
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
-    
+
     public function testErrorHandling()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
