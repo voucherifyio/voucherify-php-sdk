@@ -18,7 +18,7 @@ class Orders
     }
 
     /**
-     * @param stdClass $order
+     * @param array|stdClass $order
      *
      * Create order.
      *
