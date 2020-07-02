@@ -49,7 +49,7 @@ API:
 
 Add Voucherify dependency into your `composer.json`:
 ```
-"rspective/voucherify": "v1.7.*"
+"rspective/voucherify": "v2.0.*"
 ```
 Update project dependencies:
 
