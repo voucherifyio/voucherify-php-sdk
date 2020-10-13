@@ -74,7 +74,7 @@ $client = new VoucherifyClient($apiID, $apiKey);
 All requests will use your account API settings, unless you override the API version. The changelog lists every available version.
 
 ```php
-$apiVersion = "v2017-04-05";
+$apiVersion = "v2018-08-01";
 
 $client = new VoucherifyClient($apiID, $apiKey, $apiVersion);
 ```
