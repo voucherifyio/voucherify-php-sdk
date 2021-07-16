@@ -558,6 +558,21 @@ $client->promotions->tiers->delete($promotionTierId);
 $client->promotions->tiers->getAvailable();
 ```
 
+### Async Actions API
+Methods are provided within `$client->asyncActions->*` namespace.
+- [Get Async Action](#get-async-action)
+- [List Async Actions](#list-async-actions)
+
+#### [Get Async Action]
+```php
+$client->asyncActions->get($id);
+```
+#### [List Async Actions]
+```php
+$client->asyncActions->getList();
+$client->asyncActions->getList($params);
+```
+
 ---
 
 ### Utils
@@ -744,7 +759,8 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
   - Voucher informations: *get*, *redemption*
   - Voucher operations: *redeem*
 
-
+[Get Async Action]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-async-actions-1
+[List Async Actions]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-async-actions
 
 [Create Voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-voucher
 [Get Voucher]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#vouchers-get

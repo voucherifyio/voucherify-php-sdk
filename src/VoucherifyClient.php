@@ -70,6 +70,11 @@ class VoucherifyClient
     public $vouchers;
 
     /**
+     * @var \Voucherify\AsyncActions
+     */
+    public $asyncActions;
+
+    /**
      * @param string $apiId
      * @param string $apiKey
      * @param string $apiVersion - Override the API version. When 'null' use default account API settings.
@@ -99,6 +104,7 @@ class VoucherifyClient
         ]);
         $this->validationRules = new ValidationRules($this->client);
         $this->vouchers = new Vouchers($this->client);
+        $this->asyncActions = new AsyncActions($this->client);
 
         /* ********* BACKWARD COMPATIBILITY ********* */
 
