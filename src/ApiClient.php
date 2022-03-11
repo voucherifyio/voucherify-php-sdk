@@ -39,8 +39,9 @@ class ApiClient
      * @param string $apiKey
      * @param string $apiVersion - default null
      * @param string $apiUrl - default null
+     * @param array|stdClass $customHeaders - default null
      */
-    public function __construct($apiId, $apiKey, $apiVersion = null, $apiUrl = null)
+    public function __construct($apiId, $apiKey, $apiVersion = null, $apiUrl = null, $customHeaders = null)
     {
         if (!isset($apiId)) {
             throw new \Exception("ApiId is required");
@@ -63,6 +64,22 @@ class ApiClient
         }
         if (isset($apiVersion)) {
             $this->headers[] = "X-Voucherify-API-Version: " . $apiVersion;
+        }
+        $this->resolveCustomHeaders($customHeaders);
+    }
+
+    private function resolveCustomHeaders($customHeaders) {
+        if (!isset($customHeaders)) {
+            return;
+        }
+        if (!is_array($customHeaders) && !is_object($customHeaders)) {
+            throw new \Exception("CustomHeaders type not allowed. Must be an array or an object");
+        }
+        foreach ($customHeaders as $key => $value) {
+            if (is_null($value)) {
+                continue;
+            }
+            $this->headers[] = $key . ": " . $value;
         }
     }
 

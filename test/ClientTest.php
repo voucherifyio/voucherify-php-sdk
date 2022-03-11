@@ -116,6 +116,34 @@ class ClientTest extends PHPUnit_Framework_TestCase
         CurlMock::done();
     }
 
+    public function testCustomHeaders()
+    {
+        $headers = [
+            "Content-Type: application/json",
+            "X-App-Id: " . self::$apiId,
+            "X-App-Token: " . self::$apiKey,
+            "X-Voucherify-Channel: PHP-SDK",
+            "X-Custom-1: Value-1",
+            "X-Custom-2: Value-2"
+        ];
+
+        CurlMock::register("https://api.voucherify.io/v1", $headers)
+            ->get("/vouchers/test-voucher-1")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $customHeaders = [
+            "X-Custom-1" => "Value-1",
+            "X-Custom-2" => "Value-2"
+        ];
+
+        $client = new VoucherifyClient(self::$apiId, self::$apiKey, null, null, $customHeaders);
+
+        $result = $client->vouchers->get("test-voucher-1");
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
+    }
+
     public function testErrorHandling()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
