@@ -17,10 +17,10 @@ class ValidationsTest extends PHPUnit_Framework_TestCase
         self::$apiId = "c70a6f00-cf91-4756-9df5-47628850002b";
         self::$apiKey = "3266b9f8-e246-4f79-bdf0-833929b1380c";
         self::$headers = [
-            "Content-Type: application/json",
-            "X-App-Id: " . self::$apiId,
-            "X-App-Token: " . self::$apiKey,
-            "X-Voucherify-Channel: PHP-SDK"
+            "content-type: application/json",
+            "x-app-id: " . self::$apiId,
+            "x-app-token: " . self::$apiKey,
+            "x-voucherify-channel: PHP-SDK"
         ];
         self::$client = new VoucherifyClient(self::$apiId, self::$apiKey);
 

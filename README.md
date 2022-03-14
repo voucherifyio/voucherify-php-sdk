@@ -101,7 +101,25 @@ $customHeaders = [
 ];
 
 $client = new VoucherifyClient($apiID, $apiKey, $apiVersion, $apiUrl, $customHeaders);
+
+# RESULT:
+#   x-custom-1: Value-1
 ```
+
+Special: Voucherify-Channel customization
+```php
+$apiVersion = null;
+$apiUrl = null;
+$customHeaders = [
+    "V-Voucherify-Channel" => "Value-1"
+];
+
+$client = new VoucherifyClient($apiID, $apiKey, $apiVersion, $apiUrl, $customHeaders);
+
+# RESULT:
+#   x-voucherify-channel: PHP-SDK-Value-1
+```
+
 ### PHP autoloading
 
 When you aren't using composer you can load Voucherify module by including `autoload.php` file from `/src` directory.
