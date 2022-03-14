@@ -91,6 +91,35 @@ $apiUrl = "https://<region>.api.voucherify.io";
 $client = new VoucherifyClient($apiID, $apiKey, $apiVersion, $apiUrl);
 ```
 
+### Custom Headers
+It is possible to send custom headers in Voucherify API request.
+```php
+$apiVersion = null;
+$apiUrl = null;
+$customHeaders = [
+    "X-Custom-1" => "Value-1"
+];
+
+$client = new VoucherifyClient($apiID, $apiKey, $apiVersion, $apiUrl, $customHeaders);
+
+# RESULT:
+#   x-custom-1: Value-1
+```
+
+Special: Voucherify-Channel customization
+```php
+$apiVersion = null;
+$apiUrl = null;
+$customHeaders = [
+    "V-Voucherify-Channel" => "Value-1"
+];
+
+$client = new VoucherifyClient($apiID, $apiKey, $apiVersion, $apiUrl, $customHeaders);
+
+# RESULT:
+#   x-voucherify-channel: PHP-SDK-Value-1
+```
+
 ### PHP autoloading
 
 When you aren't using composer you can load Voucherify module by including `autoload.php` file from `/src` directory.
@@ -718,6 +747,7 @@ class Voucher extends CI_Controller {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2022-03-11** - `2.1.0` - Add AsyncActions support and a `$customHeaders` param
 - **2019-07-19** - `2.0.0` - Hide API versioning in `$apiUrl` param
 - **2018-12-28** - `1.7.10` - Add Validation Rule Assignments
 - **2018-03-18** - `1.7.9` - Add Utils with verifyWebhookSignature method

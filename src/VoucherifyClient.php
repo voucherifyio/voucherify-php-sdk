@@ -78,11 +78,12 @@ class VoucherifyClient
      * @param string $apiId
      * @param string $apiKey
      * @param string $apiVersion - Override the API version. When 'null' use default account API settings.
+     * @param array|stdClass $customHeaders - Provide custom headers
      */
-    public function __construct($apiId, $apiKey, $apiVersion = null, $apiUrl = null)
+    public function __construct($apiId, $apiKey, $apiVersion = null, $apiUrl = null, $customHeaders = null)
     {
         // PRIVATE
-        $this->client = new ApiClient($apiId, $apiKey, $apiVersion, $apiUrl);
+        $this->client = new ApiClient($apiId, $apiKey, $apiVersion, $apiUrl, $customHeaders);
         $this->promotionTiers = new PromotionTiers($this->client);
 
         // PUBLIC

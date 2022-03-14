@@ -39,8 +39,9 @@ class ApiClient
      * @param string $apiKey
      * @param string $apiVersion - default null
      * @param string $apiUrl - default null
+     * @param array|stdClass $customHeaders - default null
      */
-    public function __construct($apiId, $apiKey, $apiVersion = null, $apiUrl = null)
+    public function __construct($apiId, $apiKey, $apiVersion = null, $apiUrl = null, $customHeaders = null)
     {
         if (!isset($apiId)) {
             throw new \Exception("ApiId is required");
@@ -51,18 +52,48 @@ class ApiClient
 
         $this->apiId = $apiId;
         $this->apiKey = $apiKey;
-        $this->headers = [
-            "Content-Type: application/json",
-            "X-App-Id: " . $this->apiId,
-            "X-App-Token: " . $this->apiKey,
-            "X-Voucherify-Channel: PHP-SDK"
-        ];
 
         if (isset($apiUrl)) {
             $this->basePath = $apiUrl;
         }
+
+        $this->setHeaders($apiVersion, $customHeaders);
+    }
+
+    private function setHeaders($apiVersion, $customHeaders) {
+        $channel = "PHP-SDK";
+
+        $headers = [
+            "content-type" => "application/json",
+            "x-app-id" => $this->apiId,
+            "x-app-token" => $this->apiKey,
+            "x-voucherify-channel" => $channel
+        ];
+
         if (isset($apiVersion)) {
-            $this->headers[] = "X-Voucherify-API-Version: " . $apiVersion;
+            $headers["x-voucherify-api-version"] = $apiVersion;
+        }
+        if (isset($customHeaders)) {
+            if (!is_array($customHeaders) && !is_object($customHeaders)) {
+                throw new \Exception("CustomHeaders type not allowed. Must be an array or an object");
+            }
+            foreach ($customHeaders as $key => $value) {
+                if (is_null($value)) {
+                    continue;
+                }
+                $headers[strtolower($key)] = $value;
+            }
+        }
+        if (substr($headers["x-voucherify-channel"], 0, strlen($channel)) !== $channel) {
+            $headers["x-voucherify-channel"] = $channel . "-" . $headers["x-voucherify-channel"];
+        }
+        $this->headers = array();
+
+        foreach ($headers as $key => $value) {
+            if (is_null($value)) {
+                continue;
+            }
+            $this->headers[] = $key . ": " . $value;
         }
     }
 
