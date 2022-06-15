@@ -40,7 +40,11 @@ API:
 |
 <a href="#segments-api">Segments</a>
 |
+<a href="#events-api">Events</a>
+|
 <a href="#promotions-api">Promotions</a>
+|
+<a href="#async-actions-api">Async Actions</a>
 |
 <a href="#utils">Utils</a>
 </p>
@@ -530,6 +534,18 @@ $client->segments->delete($segment_id);
 ```
 
 ---
+### Events API
+Methods are provided within `$client->customEvents->*` namespace.
+- [Track Custom Event](#track-custom-event)
+
+Check [event object](https://docs.voucherify.io/reference/the-custom-event-object?utm_source=github&utm_medium=sdk&utm_campaign=acq).
+
+#### [Track Custom Event]
+```php
+$client->customEvent->track($event, $customer);
+```
+
+---
 
 ### Promotions API
 Methods are provided within `$client->promotions->*` namespace.
@@ -586,6 +602,8 @@ $client->promotions->tiers->delete($promotionTierId);
 ```php
 $client->promotions->tiers->getAvailable();
 ```
+
+---
 
 ### Async Actions API
 Methods are provided within `$client->asyncActions->*` namespace.
@@ -747,6 +765,7 @@ class Voucher extends CI_Controller {
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
+- **2022-05-16** - `2.2.0` - Add CustomEvents support
 - **2022-03-11** - `2.1.0` - Add AsyncActions support and a `$customHeaders` param
 - **2019-07-19** - `2.0.0` - Hide API versioning in `$apiUrl` param
 - **2018-12-28** - `1.7.10` - Add Validation Rule Assignments
@@ -869,3 +888,5 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
 [Update Promotion's Tier]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-promotion
 [Delete Promotion's Tier]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-promotion
 [List Available Promotion Tiers]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#introduction-1
+
+[Track Custom Event]: https://docs.voucherify.io/reference/create-custom-event?utm_source=github&utm_medium=sdk&utm_campaign=acq
