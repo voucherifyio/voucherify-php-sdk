@@ -37,15 +37,15 @@ class CustomEvents
         ];
 
         if ($metadata) {
-            $params['metadata'] = $metadata;
+            $params['metadata'] = (object)$metadata;
         }
 
         if ($referral) {
-            $params['referral'] = $referral;
+            $params['referral'] = (object)$referral;
         }
 
         if ($loyalty) {
-            $params['loyalty'] = $loyalty;
+            $params['loyalty'] = (object)$loyalty;
         }
 
         return $this->client->post("/events", $params);
