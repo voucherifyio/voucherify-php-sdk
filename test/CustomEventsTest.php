@@ -5,7 +5,7 @@ use Voucherify\Test\Helpers\CurlMock;
 use Voucherify\VoucherifyClient;
 use Voucherify\ClientException;
 
-class AsyncActionsTest extends PHPUnit_Framework_TestCase
+class CustomEventsTest extends PHPUnit_Framework_TestCase
 {
     protected static $headers;
     protected static $apiId;
@@ -31,45 +31,24 @@ class AsyncActionsTest extends PHPUnit_Framework_TestCase
     {
         CurlMock::disable();
     }
-
-    public function testGet()
+ 
+    public function testTrack()
     {
         CurlMock::register("https://api.voucherify.io/v1", self::$headers)
-            ->get("/async-actions/test-id")
+            ->post("/events/", [
+                "event" => "php-event",
+                "customer" => [
+                    "source_id" => "php-test-customer"
+                ]
+            ])
             ->reply(200, [ "status" => "ok" ]);
 
-        $result = self::$client->asyncActions->get("test-id");
+        $result = self::$client->customEvents->track("php-event", (object)[
+            "source_id" => "php-test-customer"
+        ]);
 
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
     }
-
-    public function testGetList()
-    {
-        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
-            ->get("/async-actions/")
-            ->reply(200, [ "status" => "ok" ]);
-
-        $result = self::$client->asyncActions->getList();
-
-        $this->assertEquals($result, (object)[ "status" => "ok" ]);
-
-        CurlMock::done();
-    }
-
-    public function testGetListByQuery()
-    {
-        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
-            ->get("/async-actions/")
-            ->query([ "limit" => 5, "end_date" => "2021-07-16T15:12:43Z" ])
-            ->reply(200, [ "status" => "ok" ]);
-
-        $result = self::$client->asyncActions->getList([ "limit" => 5, "end_date" => "2021-07-16T15:12:43Z" ]);
-
-        $this->assertEquals($result, (object)[ "status" => "ok" ]);
-
-        CurlMock::done();
-    }
-
 }

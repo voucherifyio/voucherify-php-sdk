@@ -32,22 +32,22 @@ class CustomEvents
     public function track($event, $customer, $metadata = null, $referral = null, $loyalty = null)
     {
         $params = [
-            'event'    => $event,
-            'customer' => $customer,
+            "event"    => $event,
+            "customer" => $customer
         ];
 
         if ($metadata) {
-            $params['metadata'] = (object)$metadata;
+            $params["metadata"] = (object)$metadata;
         }
 
         if ($referral) {
-            $params['referral'] = (object)$referral;
+            $params["referral"] = (object)$referral;
         }
 
         if ($loyalty) {
-            $params['loyalty'] = (object)$loyalty;
+            $params["loyalty"] = (object)$loyalty;
         }
 
-        return $this->client->post("/events", $params);
+        return $this->client->post("/events/", $params);
     }
 }
