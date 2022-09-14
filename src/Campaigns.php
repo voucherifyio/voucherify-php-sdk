@@ -18,6 +18,33 @@ class Campaigns
     }
 
     /**
+     * @param string $id
+     *
+     * Get a single Campaign by ID.
+     *
+     * @throws \Voucherify\ClientException
+     */
+    public function get($id)
+    {
+        return $this->client->get("/campaigns/" . $id);
+    }
+
+    /**
+     * @param array|stdClass $filter
+     *
+     * Get a filtered list of vouchers. The filter can include following properties:
+     * - limit          - number (default 10)
+     * - page           - number (default 0)
+     * - campaign_type  - string
+     *
+     * @throws \Voucherify\ClientException
+     */
+    public function getList($filter = null)
+    {
+        return $this->client->get("/campaigns", $filter);
+    }
+
+    /**
      * @param stdClass $campaign
      *
      * Create campaign.
