@@ -5,7 +5,7 @@ use Voucherify\Test\Helpers\CurlMock;
 use Voucherify\VoucherifyClient;
 use Voucherify\ClientException;
 
-class CampaignsTest extends PHPUnit_Framework_TestCase 
+class CampaignsTest extends PHPUnit_Framework_TestCase
 {
     protected static $headers;
     protected static $apiId;
@@ -30,6 +30,32 @@ class CampaignsTest extends PHPUnit_Framework_TestCase
     public static function tearDownAfterClass()
     {
         CurlMock::disable();
+    }
+
+    public function testGet()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->get("/campaigns/test-id")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->campaigns->get('test-id');
+
+        $this->assertEquals($result, (object)[ "status" => "ok "]);
+
+        CurlMock::done();
+    }
+
+    public function testGetList()
+    {
+        CurlMock::register("https://api.voucherify.io/v1", self::$headers)
+            ->get("/campaigns/")
+            ->reply(200, [ "status" => "ok" ]);
+
+        $result = self::$client->campaigns->getList();
+
+        $this->assertEquals($result, (object)[ "status" => "ok" ]);
+
+        CurlMock::done();
     }
 
     public function testCreate()
@@ -138,7 +164,7 @@ class CampaignsTest extends PHPUnit_Framework_TestCase
             ->reply(200, [ "status" => "ok" ]);
 
         $result = self::$client->campaigns->delete("test campaign", true);
-        
+
         $this->assertEquals($result, (object)[ "status" => "ok" ]);
 
         CurlMock::done();
