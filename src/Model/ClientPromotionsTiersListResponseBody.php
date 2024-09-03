@@ -60,10 +60,10 @@ class ClientPromotionsTiersListResponseBody implements ModelInterface, ArrayAcce
       */
     protected static $openAPITypes = [
         'object' => 'string',
-        'data_ref' => 'string',
+        'dataRef' => 'string',
         'tiers' => '\OpenAPI\Client\Model\PromotionTier[]',
         'total' => 'int',
-        'has_more' => 'bool'
+        'hasMore' => 'bool'
     ];
 
     /**
@@ -75,10 +75,10 @@ class ClientPromotionsTiersListResponseBody implements ModelInterface, ArrayAcce
       */
     protected static $openAPIFormats = [
         'object' => null,
-        'data_ref' => null,
+        'dataRef' => null,
         'tiers' => null,
         'total' => null,
-        'has_more' => null
+        'hasMore' => null
     ];
 
     /**
@@ -88,10 +88,10 @@ class ClientPromotionsTiersListResponseBody implements ModelInterface, ArrayAcce
       */
     protected static array $openAPINullables = [
         'object' => true,
-		'data_ref' => true,
+		'dataRef' => true,
 		'tiers' => true,
 		'total' => true,
-		'has_more' => true
+		'hasMore' => true
     ];
 
     /**
@@ -181,10 +181,10 @@ class ClientPromotionsTiersListResponseBody implements ModelInterface, ArrayAcce
      */
     protected static $attributeMap = [
         'object' => 'object',
-        'data_ref' => 'data_ref',
+        'dataRef' => 'data_ref',
         'tiers' => 'tiers',
         'total' => 'total',
-        'has_more' => 'has_more'
+        'hasMore' => 'has_more'
     ];
 
     /**
@@ -194,10 +194,10 @@ class ClientPromotionsTiersListResponseBody implements ModelInterface, ArrayAcce
      */
     protected static $setters = [
         'object' => 'setObject',
-        'data_ref' => 'setDataRef',
+        'dataRef' => 'setDataRef',
         'tiers' => 'setTiers',
         'total' => 'setTotal',
-        'has_more' => 'setHasMore'
+        'hasMore' => 'setHasMore'
     ];
 
     /**
@@ -207,10 +207,10 @@ class ClientPromotionsTiersListResponseBody implements ModelInterface, ArrayAcce
      */
     protected static $getters = [
         'object' => 'getObject',
-        'data_ref' => 'getDataRef',
+        'dataRef' => 'getDataRef',
         'tiers' => 'getTiers',
         'total' => 'getTotal',
-        'has_more' => 'getHasMore'
+        'hasMore' => 'getHasMore'
     ];
 
     /**
@@ -271,10 +271,10 @@ class ClientPromotionsTiersListResponseBody implements ModelInterface, ArrayAcce
     public function __construct(array $data = null)
     {
         $this->setIfExists('object', $data ?? [], 'list');
-        $this->setIfExists('data_ref', $data ?? [], 'tiers');
+        $this->setIfExists('dataRef', $data ?? [], 'tiers');
         $this->setIfExists('tiers', $data ?? [], null);
         $this->setIfExists('total', $data ?? [], null);
-        $this->setIfExists('has_more', $data ?? [], null);
+        $this->setIfExists('hasMore', $data ?? [], null);
     }
 
     /**
@@ -354,35 +354,35 @@ class ClientPromotionsTiersListResponseBody implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets data_ref
+     * Gets dataRef
      *
      * @return string|null
      */
     public function getDataRef()
     {
-        return $this->container['data_ref'];
+        return $this->container['dataRef'];
     }
 
     /**
-     * Sets data_ref
+     * Sets dataRef
      *
-     * @param string|null $data_ref Identifies the name of the attribute that contains the array of promotion tier objects.
+     * @param string|null $dataRef Identifies the name of the attribute that contains the array of promotion tier objects.
      *
      * @return self
      */
-    public function setDataRef($data_ref)
+    public function setDataRef($dataRef)
     {
-        if (is_null($data_ref)) {
-            array_push($this->openAPINullablesSetToNull, 'data_ref');
+        if (is_null($dataRef)) {
+            array_push($this->openAPINullablesSetToNull, 'dataRef');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('data_ref', $nullablesSetToNull);
+            $index = array_search('dataRef', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['data_ref'] = $data_ref;
+        $this->container['dataRef'] = $dataRef;
 
         return $this;
     }
@@ -456,35 +456,35 @@ class ClientPromotionsTiersListResponseBody implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets has_more
+     * Gets hasMore
      *
      * @return bool|null
      */
     public function getHasMore()
     {
-        return $this->container['has_more'];
+        return $this->container['hasMore'];
     }
 
     /**
-     * Sets has_more
+     * Sets hasMore
      *
-     * @param bool|null $has_more As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different page or a different start date filter) to get more records returned in the results.
+     * @param bool|null $hasMore As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different page or a different start date filter) to get more records returned in the results.
      *
      * @return self
      */
-    public function setHasMore($has_more)
+    public function setHasMore($hasMore)
     {
-        if (is_null($has_more)) {
-            array_push($this->openAPINullablesSetToNull, 'has_more');
+        if (is_null($hasMore)) {
+            array_push($this->openAPINullablesSetToNull, 'hasMore');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('has_more', $nullablesSetToNull);
+            $index = array_search('hasMore', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['has_more'] = $has_more;
+        $this->container['hasMore'] = $hasMore;
 
         return $this;
     }

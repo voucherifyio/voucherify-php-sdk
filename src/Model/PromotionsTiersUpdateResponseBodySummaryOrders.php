@@ -59,8 +59,8 @@ class PromotionsTiersUpdateResponseBodySummaryOrders implements ModelInterface, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total_amount' => 'int',
-        'total_discount_amount' => 'int'
+        'totalAmount' => 'int',
+        'totalDiscountAmount' => 'int'
     ];
 
     /**
@@ -71,8 +71,8 @@ class PromotionsTiersUpdateResponseBodySummaryOrders implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'total_amount' => null,
-        'total_discount_amount' => null
+        'totalAmount' => null,
+        'totalDiscountAmount' => null
     ];
 
     /**
@@ -81,8 +81,8 @@ class PromotionsTiersUpdateResponseBodySummaryOrders implements ModelInterface, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'total_amount' => true,
-		'total_discount_amount' => true
+        'totalAmount' => true,
+		'totalDiscountAmount' => true
     ];
 
     /**
@@ -171,8 +171,8 @@ class PromotionsTiersUpdateResponseBodySummaryOrders implements ModelInterface, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'total_amount' => 'total_amount',
-        'total_discount_amount' => 'total_discount_amount'
+        'totalAmount' => 'total_amount',
+        'totalDiscountAmount' => 'total_discount_amount'
     ];
 
     /**
@@ -181,8 +181,8 @@ class PromotionsTiersUpdateResponseBodySummaryOrders implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-        'total_amount' => 'setTotalAmount',
-        'total_discount_amount' => 'setTotalDiscountAmount'
+        'totalAmount' => 'setTotalAmount',
+        'totalDiscountAmount' => 'setTotalDiscountAmount'
     ];
 
     /**
@@ -191,8 +191,8 @@ class PromotionsTiersUpdateResponseBodySummaryOrders implements ModelInterface, 
      * @var string[]
      */
     protected static $getters = [
-        'total_amount' => 'getTotalAmount',
-        'total_discount_amount' => 'getTotalDiscountAmount'
+        'totalAmount' => 'getTotalAmount',
+        'totalDiscountAmount' => 'getTotalDiscountAmount'
     ];
 
     /**
@@ -252,8 +252,8 @@ class PromotionsTiersUpdateResponseBodySummaryOrders implements ModelInterface, 
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('total_amount', $data ?? [], null);
-        $this->setIfExists('total_discount_amount', $data ?? [], null);
+        $this->setIfExists('totalAmount', $data ?? [], null);
+        $this->setIfExists('totalDiscountAmount', $data ?? [], null);
     }
 
     /**
@@ -299,69 +299,69 @@ class PromotionsTiersUpdateResponseBodySummaryOrders implements ModelInterface, 
 
 
     /**
-     * Gets total_amount
+     * Gets totalAmount
      *
      * @return int|null
      */
     public function getTotalAmount()
     {
-        return $this->container['total_amount'];
+        return $this->container['totalAmount'];
     }
 
     /**
-     * Sets total_amount
+     * Sets totalAmount
      *
-     * @param int|null $total_amount Sum of order totals.
+     * @param int|null $totalAmount Sum of order totals.
      *
      * @return self
      */
-    public function setTotalAmount($total_amount)
+    public function setTotalAmount($totalAmount)
     {
-        if (is_null($total_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'total_amount');
+        if (is_null($totalAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'totalAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_amount', $nullablesSetToNull);
+            $index = array_search('totalAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['total_amount'] = $total_amount;
+        $this->container['totalAmount'] = $totalAmount;
 
         return $this;
     }
 
     /**
-     * Gets total_discount_amount
+     * Gets totalDiscountAmount
      *
      * @return int|null
      */
     public function getTotalDiscountAmount()
     {
-        return $this->container['total_discount_amount'];
+        return $this->container['totalDiscountAmount'];
     }
 
     /**
-     * Sets total_discount_amount
+     * Sets totalDiscountAmount
      *
-     * @param int|null $total_discount_amount Sum of total discount applied using the promotion tier.
+     * @param int|null $totalDiscountAmount Sum of total discount applied using the promotion tier.
      *
      * @return self
      */
-    public function setTotalDiscountAmount($total_discount_amount)
+    public function setTotalDiscountAmount($totalDiscountAmount)
     {
-        if (is_null($total_discount_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'total_discount_amount');
+        if (is_null($totalDiscountAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'totalDiscountAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_discount_amount', $nullablesSetToNull);
+            $index = array_search('totalDiscountAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['total_discount_amount'] = $total_discount_amount;
+        $this->container['totalDiscountAmount'] = $totalDiscountAmount;
 
         return $this;
     }

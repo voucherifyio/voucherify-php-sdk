@@ -60,7 +60,7 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItems implements ModelI
     protected static $openAPITypes = [
         'quantity' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantity',
         'amount' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsAmount',
-        'subtotal_amount' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmount'
+        'subtotalAmount' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmount'
     ];
 
     /**
@@ -73,7 +73,7 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItems implements ModelI
     protected static $openAPIFormats = [
         'quantity' => null,
         'amount' => null,
-        'subtotal_amount' => null
+        'subtotalAmount' => null
     ];
 
     /**
@@ -84,7 +84,7 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItems implements ModelI
     protected static array $openAPINullables = [
         'quantity' => true,
 		'amount' => true,
-		'subtotal_amount' => true
+		'subtotalAmount' => true
     ];
 
     /**
@@ -175,7 +175,7 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItems implements ModelI
     protected static $attributeMap = [
         'quantity' => 'quantity',
         'amount' => 'amount',
-        'subtotal_amount' => 'subtotal_amount'
+        'subtotalAmount' => 'subtotal_amount'
     ];
 
     /**
@@ -186,7 +186,7 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItems implements ModelI
     protected static $setters = [
         'quantity' => 'setQuantity',
         'amount' => 'setAmount',
-        'subtotal_amount' => 'setSubtotalAmount'
+        'subtotalAmount' => 'setSubtotalAmount'
     ];
 
     /**
@@ -197,7 +197,7 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItems implements ModelI
     protected static $getters = [
         'quantity' => 'getQuantity',
         'amount' => 'getAmount',
-        'subtotal_amount' => 'getSubtotalAmount'
+        'subtotalAmount' => 'getSubtotalAmount'
     ];
 
     /**
@@ -259,7 +259,7 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItems implements ModelI
     {
         $this->setIfExists('quantity', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
-        $this->setIfExists('subtotal_amount', $data ?? [], null);
+        $this->setIfExists('subtotalAmount', $data ?? [], null);
     }
 
     /**
@@ -373,35 +373,35 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItems implements ModelI
     }
 
     /**
-     * Gets subtotal_amount
+     * Gets subtotalAmount
      *
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmount|null
      */
     public function getSubtotalAmount()
     {
-        return $this->container['subtotal_amount'];
+        return $this->container['subtotalAmount'];
     }
 
     /**
-     * Sets subtotal_amount
+     * Sets subtotalAmount
      *
-     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmount|null $subtotal_amount subtotal_amount
+     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmount|null $subtotalAmount subtotalAmount
      *
      * @return self
      */
-    public function setSubtotalAmount($subtotal_amount)
+    public function setSubtotalAmount($subtotalAmount)
     {
-        if (is_null($subtotal_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'subtotal_amount');
+        if (is_null($subtotalAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'subtotalAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('subtotal_amount', $nullablesSetToNull);
+            $index = array_search('subtotalAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['subtotal_amount'] = $subtotal_amount;
+        $this->container['subtotalAmount'] = $subtotalAmount;
 
         return $this;
     }

@@ -59,8 +59,8 @@ class RewardsUpdateRequestBodyParametersCoin implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'exchange_ratio' => 'string',
-        'points_ratio' => 'string'
+        'exchangeRatio' => 'string',
+        'pointsRatio' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class RewardsUpdateRequestBodyParametersCoin implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'exchange_ratio' => null,
-        'points_ratio' => null
+        'exchangeRatio' => null,
+        'pointsRatio' => null
     ];
 
     /**
@@ -81,8 +81,8 @@ class RewardsUpdateRequestBodyParametersCoin implements ModelInterface, ArrayAcc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'exchange_ratio' => true,
-		'points_ratio' => true
+        'exchangeRatio' => true,
+		'pointsRatio' => true
     ];
 
     /**
@@ -171,8 +171,8 @@ class RewardsUpdateRequestBodyParametersCoin implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'exchange_ratio' => 'exchange_ratio',
-        'points_ratio' => 'points_ratio'
+        'exchangeRatio' => 'exchange_ratio',
+        'pointsRatio' => 'points_ratio'
     ];
 
     /**
@@ -181,8 +181,8 @@ class RewardsUpdateRequestBodyParametersCoin implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'exchange_ratio' => 'setExchangeRatio',
-        'points_ratio' => 'setPointsRatio'
+        'exchangeRatio' => 'setExchangeRatio',
+        'pointsRatio' => 'setPointsRatio'
     ];
 
     /**
@@ -191,8 +191,8 @@ class RewardsUpdateRequestBodyParametersCoin implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'exchange_ratio' => 'getExchangeRatio',
-        'points_ratio' => 'getPointsRatio'
+        'exchangeRatio' => 'getExchangeRatio',
+        'pointsRatio' => 'getPointsRatio'
     ];
 
     /**
@@ -252,8 +252,8 @@ class RewardsUpdateRequestBodyParametersCoin implements ModelInterface, ArrayAcc
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('exchange_ratio', $data ?? [], null);
-        $this->setIfExists('points_ratio', $data ?? [], null);
+        $this->setIfExists('exchangeRatio', $data ?? [], null);
+        $this->setIfExists('pointsRatio', $data ?? [], null);
     }
 
     /**
@@ -299,69 +299,69 @@ class RewardsUpdateRequestBodyParametersCoin implements ModelInterface, ArrayAcc
 
 
     /**
-     * Gets exchange_ratio
+     * Gets exchangeRatio
      *
      * @return string|null
      */
     public function getExchangeRatio()
     {
-        return $this->container['exchange_ratio'];
+        return $this->container['exchangeRatio'];
     }
 
     /**
-     * Sets exchange_ratio
+     * Sets exchangeRatio
      *
-     * @param string|null $exchange_ratio The cash equivalent of the points defined in the `points_ratio` property.
+     * @param string|null $exchangeRatio The cash equivalent of the points defined in the `points_ratio` property.
      *
      * @return self
      */
-    public function setExchangeRatio($exchange_ratio)
+    public function setExchangeRatio($exchangeRatio)
     {
-        if (is_null($exchange_ratio)) {
-            array_push($this->openAPINullablesSetToNull, 'exchange_ratio');
+        if (is_null($exchangeRatio)) {
+            array_push($this->openAPINullablesSetToNull, 'exchangeRatio');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('exchange_ratio', $nullablesSetToNull);
+            $index = array_search('exchangeRatio', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['exchange_ratio'] = $exchange_ratio;
+        $this->container['exchangeRatio'] = $exchangeRatio;
 
         return $this;
     }
 
     /**
-     * Gets points_ratio
+     * Gets pointsRatio
      *
      * @return string|null
      */
     public function getPointsRatio()
     {
-        return $this->container['points_ratio'];
+        return $this->container['pointsRatio'];
     }
 
     /**
-     * Sets points_ratio
+     * Sets pointsRatio
      *
-     * @param string|null $points_ratio The number of loyalty points that will map to the predefined cash amount defined by the `exchange_ratio` property.
+     * @param string|null $pointsRatio The number of loyalty points that will map to the predefined cash amount defined by the `exchange_ratio` property.
      *
      * @return self
      */
-    public function setPointsRatio($points_ratio)
+    public function setPointsRatio($pointsRatio)
     {
-        if (is_null($points_ratio)) {
-            array_push($this->openAPINullablesSetToNull, 'points_ratio');
+        if (is_null($pointsRatio)) {
+            array_push($this->openAPINullablesSetToNull, 'pointsRatio');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('points_ratio', $nullablesSetToNull);
+            $index = array_search('pointsRatio', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['points_ratio'] = $points_ratio;
+        $this->container['pointsRatio'] = $pointsRatio;
 
         return $this;
     }

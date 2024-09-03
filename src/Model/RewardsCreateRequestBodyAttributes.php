@@ -59,7 +59,7 @@ class RewardsCreateRequestBodyAttributes implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'image_url' => 'string',
+        'imageUrl' => 'string',
         'description' => 'string'
     ];
 
@@ -71,7 +71,7 @@ class RewardsCreateRequestBodyAttributes implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'image_url' => null,
+        'imageUrl' => null,
         'description' => null
     ];
 
@@ -81,7 +81,7 @@ class RewardsCreateRequestBodyAttributes implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'image_url' => true,
+        'imageUrl' => true,
 		'description' => true
     ];
 
@@ -171,7 +171,7 @@ class RewardsCreateRequestBodyAttributes implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'image_url' => 'image_url',
+        'imageUrl' => 'image_url',
         'description' => 'description'
     ];
 
@@ -181,7 +181,7 @@ class RewardsCreateRequestBodyAttributes implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'image_url' => 'setImageUrl',
+        'imageUrl' => 'setImageUrl',
         'description' => 'setDescription'
     ];
 
@@ -191,7 +191,7 @@ class RewardsCreateRequestBodyAttributes implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'image_url' => 'getImageUrl',
+        'imageUrl' => 'getImageUrl',
         'description' => 'getDescription'
     ];
 
@@ -252,7 +252,7 @@ class RewardsCreateRequestBodyAttributes implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('image_url', $data ?? [], null);
+        $this->setIfExists('imageUrl', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
     }
 
@@ -299,35 +299,35 @@ class RewardsCreateRequestBodyAttributes implements ModelInterface, ArrayAccess,
 
 
     /**
-     * Gets image_url
+     * Gets imageUrl
      *
      * @return string|null
      */
     public function getImageUrl()
     {
-        return $this->container['image_url'];
+        return $this->container['imageUrl'];
     }
 
     /**
-     * Sets image_url
+     * Sets imageUrl
      *
-     * @param string|null $image_url HTTPS URL pointing to a .png or .jpg file.
+     * @param string|null $imageUrl HTTPS URL pointing to a .png or .jpg file.
      *
      * @return self
      */
-    public function setImageUrl($image_url)
+    public function setImageUrl($imageUrl)
     {
-        if (is_null($image_url)) {
-            array_push($this->openAPINullablesSetToNull, 'image_url');
+        if (is_null($imageUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'imageUrl');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('image_url', $nullablesSetToNull);
+            $index = array_search('imageUrl', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['image_url'] = $image_url;
+        $this->container['imageUrl'] = $imageUrl;
 
         return $this;
     }

@@ -59,15 +59,15 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'source_id' => 'string',
-        'voucher_id' => 'string',
-        'campaign_id' => 'string',
+        'sourceId' => 'string',
+        'voucherId' => 'string',
+        'campaignId' => 'string',
         'source' => 'string',
         'reason' => 'string',
         'type' => 'string',
         'details' => '\OpenAPI\Client\Model\VoucherTransactionDetails',
-        'related_transaction_id' => 'string',
-        'created_at' => '\DateTime'
+        'relatedTransactionId' => 'string',
+        'createdAt' => '\DateTime'
     ];
 
     /**
@@ -79,15 +79,15 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'source_id' => null,
-        'voucher_id' => null,
-        'campaign_id' => null,
+        'sourceId' => null,
+        'voucherId' => null,
+        'campaignId' => null,
         'source' => null,
         'reason' => null,
         'type' => null,
         'details' => null,
-        'related_transaction_id' => null,
-        'created_at' => 'date-time'
+        'relatedTransactionId' => null,
+        'createdAt' => 'date-time'
     ];
 
     /**
@@ -97,15 +97,15 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'source_id' => true,
-		'voucher_id' => true,
-		'campaign_id' => true,
+		'sourceId' => true,
+		'voucherId' => true,
+		'campaignId' => true,
 		'source' => true,
 		'reason' => true,
 		'type' => true,
 		'details' => true,
-		'related_transaction_id' => true,
-		'created_at' => true
+		'relatedTransactionId' => true,
+		'createdAt' => true
     ];
 
     /**
@@ -195,15 +195,15 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'source_id' => 'source_id',
-        'voucher_id' => 'voucher_id',
-        'campaign_id' => 'campaign_id',
+        'sourceId' => 'source_id',
+        'voucherId' => 'voucher_id',
+        'campaignId' => 'campaign_id',
         'source' => 'source',
         'reason' => 'reason',
         'type' => 'type',
         'details' => 'details',
-        'related_transaction_id' => 'related_transaction_id',
-        'created_at' => 'created_at'
+        'relatedTransactionId' => 'related_transaction_id',
+        'createdAt' => 'created_at'
     ];
 
     /**
@@ -213,15 +213,15 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'id' => 'setId',
-        'source_id' => 'setSourceId',
-        'voucher_id' => 'setVoucherId',
-        'campaign_id' => 'setCampaignId',
+        'sourceId' => 'setSourceId',
+        'voucherId' => 'setVoucherId',
+        'campaignId' => 'setCampaignId',
         'source' => 'setSource',
         'reason' => 'setReason',
         'type' => 'setType',
         'details' => 'setDetails',
-        'related_transaction_id' => 'setRelatedTransactionId',
-        'created_at' => 'setCreatedAt'
+        'relatedTransactionId' => 'setRelatedTransactionId',
+        'createdAt' => 'setCreatedAt'
     ];
 
     /**
@@ -231,15 +231,15 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'id' => 'getId',
-        'source_id' => 'getSourceId',
-        'voucher_id' => 'getVoucherId',
-        'campaign_id' => 'getCampaignId',
+        'sourceId' => 'getSourceId',
+        'voucherId' => 'getVoucherId',
+        'campaignId' => 'getCampaignId',
         'source' => 'getSource',
         'reason' => 'getReason',
         'type' => 'getType',
         'details' => 'getDetails',
-        'related_transaction_id' => 'getRelatedTransactionId',
-        'created_at' => 'getCreatedAt'
+        'relatedTransactionId' => 'getRelatedTransactionId',
+        'createdAt' => 'getCreatedAt'
     ];
 
     /**
@@ -327,15 +327,15 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('source_id', $data ?? [], null);
-        $this->setIfExists('voucher_id', $data ?? [], null);
-        $this->setIfExists('campaign_id', $data ?? [], null);
+        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('voucherId', $data ?? [], null);
+        $this->setIfExists('campaignId', $data ?? [], null);
         $this->setIfExists('source', $data ?? [], null);
         $this->setIfExists('reason', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('details', $data ?? [], null);
-        $this->setIfExists('related_transaction_id', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('relatedTransactionId', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
     }
 
     /**
@@ -424,103 +424,103 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Gets source_id
+     * Gets sourceId
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['source_id'];
+        return $this->container['sourceId'];
     }
 
     /**
-     * Sets source_id
+     * Sets sourceId
      *
-     * @param string|null $source_id The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service. In case of a redemption, this value is null.
+     * @param string|null $sourceId The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service. In case of a redemption, this value is null.
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setSourceId($sourceId)
     {
-        if (is_null($source_id)) {
-            array_push($this->openAPINullablesSetToNull, 'source_id');
+        if (is_null($sourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'sourceId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('source_id', $nullablesSetToNull);
+            $index = array_search('sourceId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['source_id'] = $source_id;
+        $this->container['sourceId'] = $sourceId;
 
         return $this;
     }
 
     /**
-     * Gets voucher_id
+     * Gets voucherId
      *
      * @return string|null
      */
     public function getVoucherId()
     {
-        return $this->container['voucher_id'];
+        return $this->container['voucherId'];
     }
 
     /**
-     * Sets voucher_id
+     * Sets voucherId
      *
-     * @param string|null $voucher_id Unique voucher ID.
+     * @param string|null $voucherId Unique voucher ID.
      *
      * @return self
      */
-    public function setVoucherId($voucher_id)
+    public function setVoucherId($voucherId)
     {
-        if (is_null($voucher_id)) {
-            array_push($this->openAPINullablesSetToNull, 'voucher_id');
+        if (is_null($voucherId)) {
+            array_push($this->openAPINullablesSetToNull, 'voucherId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('voucher_id', $nullablesSetToNull);
+            $index = array_search('voucherId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['voucher_id'] = $voucher_id;
+        $this->container['voucherId'] = $voucherId;
 
         return $this;
     }
 
     /**
-     * Gets campaign_id
+     * Gets campaignId
      *
      * @return string|null
      */
     public function getCampaignId()
     {
-        return $this->container['campaign_id'];
+        return $this->container['campaignId'];
     }
 
     /**
-     * Sets campaign_id
+     * Sets campaignId
      *
-     * @param string|null $campaign_id Unqiue campaign ID of the voucher's parent campaign if it is part of campaign that generates bulk codes.
+     * @param string|null $campaignId Unqiue campaign ID of the voucher's parent campaign if it is part of campaign that generates bulk codes.
      *
      * @return self
      */
-    public function setCampaignId($campaign_id)
+    public function setCampaignId($campaignId)
     {
-        if (is_null($campaign_id)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_id');
+        if (is_null($campaignId)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_id', $nullablesSetToNull);
+            $index = array_search('campaignId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaign_id'] = $campaign_id;
+        $this->container['campaignId'] = $campaignId;
 
         return $this;
     }
@@ -672,69 +672,69 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Gets related_transaction_id
+     * Gets relatedTransactionId
      *
      * @return string|null
      */
     public function getRelatedTransactionId()
     {
-        return $this->container['related_transaction_id'];
+        return $this->container['relatedTransactionId'];
     }
 
     /**
-     * Sets related_transaction_id
+     * Sets relatedTransactionId
      *
-     * @param string|null $related_transaction_id The related transaction ID on the receiving card.
+     * @param string|null $relatedTransactionId The related transaction ID on the receiving card.
      *
      * @return self
      */
-    public function setRelatedTransactionId($related_transaction_id)
+    public function setRelatedTransactionId($relatedTransactionId)
     {
-        if (is_null($related_transaction_id)) {
-            array_push($this->openAPINullablesSetToNull, 'related_transaction_id');
+        if (is_null($relatedTransactionId)) {
+            array_push($this->openAPINullablesSetToNull, 'relatedTransactionId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('related_transaction_id', $nullablesSetToNull);
+            $index = array_search('relatedTransactionId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['related_transaction_id'] = $related_transaction_id;
+        $this->container['relatedTransactionId'] = $relatedTransactionId;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the transaction was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the transaction was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }

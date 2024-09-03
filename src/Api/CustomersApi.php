@@ -164,16 +164,16 @@ class CustomersApi
      *
      * Create Customer
      *
-     * @param  \OpenAPI\Client\Model\CustomersCreateRequestBody $customers_create_request_body Create a customer with specified parameters. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersCreateRequestBody $customersCreateRequestBody Create a customer with specified parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomer'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomersCreateResponseBody
      */
-    public function createCustomer($customers_create_request_body = null, string $contentType = self::contentTypes['createCustomer'][0])
+    public function createCustomer($customersCreateRequestBody = null, string $contentType = self::contentTypes['createCustomer'][0])
     {
-        list($response) = $this->createCustomerWithHttpInfo($customers_create_request_body, $contentType);
+        list($response) = $this->createCustomerWithHttpInfo($customersCreateRequestBody, $contentType);
         return $response;
     }
 
@@ -182,16 +182,16 @@ class CustomersApi
      *
      * Create Customer
      *
-     * @param  \OpenAPI\Client\Model\CustomersCreateRequestBody $customers_create_request_body Create a customer with specified parameters. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersCreateRequestBody $customersCreateRequestBody Create a customer with specified parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomer'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomersCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createCustomerWithHttpInfo($customers_create_request_body = null, string $contentType = self::contentTypes['createCustomer'][0])
+    public function createCustomerWithHttpInfo($customersCreateRequestBody = null, string $contentType = self::contentTypes['createCustomer'][0])
     {
-        $request = $this->createCustomerRequest($customers_create_request_body, $contentType);
+        $request = $this->createCustomerRequest($customersCreateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -282,15 +282,15 @@ class CustomersApi
      *
      * Create Customer
      *
-     * @param  \OpenAPI\Client\Model\CustomersCreateRequestBody $customers_create_request_body Create a customer with specified parameters. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersCreateRequestBody $customersCreateRequestBody Create a customer with specified parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createCustomerAsync($customers_create_request_body = null, string $contentType = self::contentTypes['createCustomer'][0])
+    public function createCustomerAsync($customersCreateRequestBody = null, string $contentType = self::contentTypes['createCustomer'][0])
     {
-        return $this->createCustomerAsyncWithHttpInfo($customers_create_request_body, $contentType)
+        return $this->createCustomerAsyncWithHttpInfo($customersCreateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -303,16 +303,16 @@ class CustomersApi
      *
      * Create Customer
      *
-     * @param  \OpenAPI\Client\Model\CustomersCreateRequestBody $customers_create_request_body Create a customer with specified parameters. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersCreateRequestBody $customersCreateRequestBody Create a customer with specified parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createCustomerAsyncWithHttpInfo($customers_create_request_body = null, string $contentType = self::contentTypes['createCustomer'][0])
+    public function createCustomerAsyncWithHttpInfo($customersCreateRequestBody = null, string $contentType = self::contentTypes['createCustomer'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomersCreateResponseBody';
-        $request = $this->createCustomerRequest($customers_create_request_body, $contentType);
+        $request = $this->createCustomerRequest($customersCreateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -353,13 +353,13 @@ class CustomersApi
     /**
      * Create request for operation 'createCustomer'
      *
-     * @param  \OpenAPI\Client\Model\CustomersCreateRequestBody $customers_create_request_body Create a customer with specified parameters. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersCreateRequestBody $customersCreateRequestBody Create a customer with specified parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createCustomerRequest($customers_create_request_body = null, string $contentType = self::contentTypes['createCustomer'][0])
+    public function createCustomerRequest($customersCreateRequestBody = null, string $contentType = self::contentTypes['createCustomer'][0])
     {
 
 
@@ -382,12 +382,12 @@ class CustomersApi
         );
 
         // for model (json/xml)
-        if (isset($customers_create_request_body)) {
+        if (isset($customersCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($customers_create_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($customersCreateRequestBody));
             } else {
-                $httpBody = $customers_create_request_body;
+                $httpBody = $customersCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -450,16 +450,16 @@ class CustomersApi
      *
      * Delete Customer Permanently
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerPermanentlyDeletion'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomersPermanentDeletionCreateResponseBody
      */
-    public function customerPermanentlyDeletion($customer_id, string $contentType = self::contentTypes['customerPermanentlyDeletion'][0])
+    public function customerPermanentlyDeletion($customerId, string $contentType = self::contentTypes['customerPermanentlyDeletion'][0])
     {
-        list($response) = $this->customerPermanentlyDeletionWithHttpInfo($customer_id, $contentType);
+        list($response) = $this->customerPermanentlyDeletionWithHttpInfo($customerId, $contentType);
         return $response;
     }
 
@@ -468,16 +468,16 @@ class CustomersApi
      *
      * Delete Customer Permanently
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerPermanentlyDeletion'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomersPermanentDeletionCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerPermanentlyDeletionWithHttpInfo($customer_id, string $contentType = self::contentTypes['customerPermanentlyDeletion'][0])
+    public function customerPermanentlyDeletionWithHttpInfo($customerId, string $contentType = self::contentTypes['customerPermanentlyDeletion'][0])
     {
-        $request = $this->customerPermanentlyDeletionRequest($customer_id, $contentType);
+        $request = $this->customerPermanentlyDeletionRequest($customerId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -568,15 +568,15 @@ class CustomersApi
      *
      * Delete Customer Permanently
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerPermanentlyDeletion'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerPermanentlyDeletionAsync($customer_id, string $contentType = self::contentTypes['customerPermanentlyDeletion'][0])
+    public function customerPermanentlyDeletionAsync($customerId, string $contentType = self::contentTypes['customerPermanentlyDeletion'][0])
     {
-        return $this->customerPermanentlyDeletionAsyncWithHttpInfo($customer_id, $contentType)
+        return $this->customerPermanentlyDeletionAsyncWithHttpInfo($customerId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -589,16 +589,16 @@ class CustomersApi
      *
      * Delete Customer Permanently
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerPermanentlyDeletion'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerPermanentlyDeletionAsyncWithHttpInfo($customer_id, string $contentType = self::contentTypes['customerPermanentlyDeletion'][0])
+    public function customerPermanentlyDeletionAsyncWithHttpInfo($customerId, string $contentType = self::contentTypes['customerPermanentlyDeletion'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomersPermanentDeletionCreateResponseBody';
-        $request = $this->customerPermanentlyDeletionRequest($customer_id, $contentType);
+        $request = $this->customerPermanentlyDeletionRequest($customerId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -639,19 +639,19 @@ class CustomersApi
     /**
      * Create request for operation 'customerPermanentlyDeletion'
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerPermanentlyDeletion'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerPermanentlyDeletionRequest($customer_id, string $contentType = self::contentTypes['customerPermanentlyDeletion'][0])
+    public function customerPermanentlyDeletionRequest($customerId, string $contentType = self::contentTypes['customerPermanentlyDeletion'][0])
     {
 
-        // verify the required parameter 'customer_id' is set
-        if ($customer_id === null || (is_array($customer_id) && count($customer_id) === 0)) {
+        // verify the required parameter 'customerId' is set
+        if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $customer_id when calling customerPermanentlyDeletion'
+                'Missing the required parameter $customerId when calling customerPermanentlyDeletion'
             );
         }
 
@@ -666,10 +666,10 @@ class CustomersApi
 
 
         // path params
-        if ($customer_id !== null) {
+        if ($customerId !== null) {
             $resourcePath = str_replace(
                 '{' . 'customerId' . '}',
-                ObjectSerializer::toPathValue($customer_id),
+                ObjectSerializer::toPathValue($customerId),
                 $resourcePath
             );
         }
@@ -743,16 +743,16 @@ class CustomersApi
      *
      * Delete Customer
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCustomer'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteCustomer($customer_id, string $contentType = self::contentTypes['deleteCustomer'][0])
+    public function deleteCustomer($customerId, string $contentType = self::contentTypes['deleteCustomer'][0])
     {
-        $this->deleteCustomerWithHttpInfo($customer_id, $contentType);
+        $this->deleteCustomerWithHttpInfo($customerId, $contentType);
     }
 
     /**
@@ -760,16 +760,16 @@ class CustomersApi
      *
      * Delete Customer
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCustomer'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteCustomerWithHttpInfo($customer_id, string $contentType = self::contentTypes['deleteCustomer'][0])
+    public function deleteCustomerWithHttpInfo($customerId, string $contentType = self::contentTypes['deleteCustomer'][0])
     {
-        $request = $this->deleteCustomerRequest($customer_id, $contentType);
+        $request = $this->deleteCustomerRequest($customerId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -820,15 +820,15 @@ class CustomersApi
      *
      * Delete Customer
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCustomerAsync($customer_id, string $contentType = self::contentTypes['deleteCustomer'][0])
+    public function deleteCustomerAsync($customerId, string $contentType = self::contentTypes['deleteCustomer'][0])
     {
-        return $this->deleteCustomerAsyncWithHttpInfo($customer_id, $contentType)
+        return $this->deleteCustomerAsyncWithHttpInfo($customerId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -841,16 +841,16 @@ class CustomersApi
      *
      * Delete Customer
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCustomerAsyncWithHttpInfo($customer_id, string $contentType = self::contentTypes['deleteCustomer'][0])
+    public function deleteCustomerAsyncWithHttpInfo($customerId, string $contentType = self::contentTypes['deleteCustomer'][0])
     {
         $returnType = '';
-        $request = $this->deleteCustomerRequest($customer_id, $contentType);
+        $request = $this->deleteCustomerRequest($customerId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -878,19 +878,19 @@ class CustomersApi
     /**
      * Create request for operation 'deleteCustomer'
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteCustomerRequest($customer_id, string $contentType = self::contentTypes['deleteCustomer'][0])
+    public function deleteCustomerRequest($customerId, string $contentType = self::contentTypes['deleteCustomer'][0])
     {
 
-        // verify the required parameter 'customer_id' is set
-        if ($customer_id === null || (is_array($customer_id) && count($customer_id) === 0)) {
+        // verify the required parameter 'customerId' is set
+        if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $customer_id when calling deleteCustomer'
+                'Missing the required parameter $customerId when calling deleteCustomer'
             );
         }
 
@@ -905,10 +905,10 @@ class CustomersApi
 
 
         // path params
-        if ($customer_id !== null) {
+        if ($customerId !== null) {
             $resourcePath = str_replace(
                 '{' . 'customerId' . '}',
-                ObjectSerializer::toPathValue($customer_id),
+                ObjectSerializer::toPathValue($customerId),
                 $resourcePath
             );
         }
@@ -982,16 +982,16 @@ class CustomersApi
      *
      * Get Customer
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomer'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomersGetResponseBody
      */
-    public function getCustomer($customer_id, string $contentType = self::contentTypes['getCustomer'][0])
+    public function getCustomer($customerId, string $contentType = self::contentTypes['getCustomer'][0])
     {
-        list($response) = $this->getCustomerWithHttpInfo($customer_id, $contentType);
+        list($response) = $this->getCustomerWithHttpInfo($customerId, $contentType);
         return $response;
     }
 
@@ -1000,16 +1000,16 @@ class CustomersApi
      *
      * Get Customer
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomer'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomersGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCustomerWithHttpInfo($customer_id, string $contentType = self::contentTypes['getCustomer'][0])
+    public function getCustomerWithHttpInfo($customerId, string $contentType = self::contentTypes['getCustomer'][0])
     {
-        $request = $this->getCustomerRequest($customer_id, $contentType);
+        $request = $this->getCustomerRequest($customerId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1100,15 +1100,15 @@ class CustomersApi
      *
      * Get Customer
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCustomerAsync($customer_id, string $contentType = self::contentTypes['getCustomer'][0])
+    public function getCustomerAsync($customerId, string $contentType = self::contentTypes['getCustomer'][0])
     {
-        return $this->getCustomerAsyncWithHttpInfo($customer_id, $contentType)
+        return $this->getCustomerAsyncWithHttpInfo($customerId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1121,16 +1121,16 @@ class CustomersApi
      *
      * Get Customer
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCustomerAsyncWithHttpInfo($customer_id, string $contentType = self::contentTypes['getCustomer'][0])
+    public function getCustomerAsyncWithHttpInfo($customerId, string $contentType = self::contentTypes['getCustomer'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomersGetResponseBody';
-        $request = $this->getCustomerRequest($customer_id, $contentType);
+        $request = $this->getCustomerRequest($customerId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1171,19 +1171,19 @@ class CustomersApi
     /**
      * Create request for operation 'getCustomer'
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCustomerRequest($customer_id, string $contentType = self::contentTypes['getCustomer'][0])
+    public function getCustomerRequest($customerId, string $contentType = self::contentTypes['getCustomer'][0])
     {
 
-        // verify the required parameter 'customer_id' is set
-        if ($customer_id === null || (is_array($customer_id) && count($customer_id) === 0)) {
+        // verify the required parameter 'customerId' is set
+        if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $customer_id when calling getCustomer'
+                'Missing the required parameter $customerId when calling getCustomer'
             );
         }
 
@@ -1198,10 +1198,10 @@ class CustomersApi
 
 
         // path params
-        if ($customer_id !== null) {
+        if ($customerId !== null) {
             $resourcePath = str_replace(
                 '{' . 'customerId' . '}',
-                ObjectSerializer::toPathValue($customer_id),
+                ObjectSerializer::toPathValue($customerId),
                 $resourcePath
             );
         }
@@ -1566,14 +1566,14 @@ class CustomersApi
      *
      * List Customer Activity
      *
-     * @param  string $customer_id A Voucherify customers id or source ID of the customer who performed the activities. (required)
+     * @param  string $customerId A Voucherify customers id or source ID of the customer who performed the activities. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
-     * @param  \DateTime $start_date Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  string $campaign_id Requests only events related to specific campaign identified by its ID. (optional)
-     * @param  ParameterCampaignType $campaign_type Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  \DateTime $startDate Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  string $campaignId Requests only events related to specific campaign identified by its ID. (optional)
+     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
      * @param  ParameterActivityCategory $category Filters activities for actions or effects. Allowed values:  ACTION, EFFECT. (optional)
      * @param  string $type Event name of the customer event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerActivity'] to see the possible values for this operation
@@ -1582,9 +1582,9 @@ class CustomersApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomersActivityListResponseBody
      */
-    public function listCustomerActivity($customer_id, $limit = null, $order = null, $starting_after_id = null, $start_date = null, $end_date = null, $campaign_id = null, $campaign_type = null, $category = null, $type = null, string $contentType = self::contentTypes['listCustomerActivity'][0])
+    public function listCustomerActivity($customerId, $limit = null, $order = null, $startingAfterId = null, $startDate = null, $endDate = null, $campaignId = null, $campaignType = null, $category = null, $type = null, string $contentType = self::contentTypes['listCustomerActivity'][0])
     {
-        list($response) = $this->listCustomerActivityWithHttpInfo($customer_id, $limit, $order, $starting_after_id, $start_date, $end_date, $campaign_id, $campaign_type, $category, $type, $contentType);
+        list($response) = $this->listCustomerActivityWithHttpInfo($customerId, $limit, $order, $startingAfterId, $startDate, $endDate, $campaignId, $campaignType, $category, $type, $contentType);
         return $response;
     }
 
@@ -1593,14 +1593,14 @@ class CustomersApi
      *
      * List Customer Activity
      *
-     * @param  string $customer_id A Voucherify customers id or source ID of the customer who performed the activities. (required)
+     * @param  string $customerId A Voucherify customers id or source ID of the customer who performed the activities. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
-     * @param  \DateTime $start_date Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  string $campaign_id Requests only events related to specific campaign identified by its ID. (optional)
-     * @param  ParameterCampaignType $campaign_type Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  \DateTime $startDate Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  string $campaignId Requests only events related to specific campaign identified by its ID. (optional)
+     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
      * @param  ParameterActivityCategory $category Filters activities for actions or effects. Allowed values:  ACTION, EFFECT. (optional)
      * @param  string $type Event name of the customer event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerActivity'] to see the possible values for this operation
@@ -1609,9 +1609,9 @@ class CustomersApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomersActivityListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCustomerActivityWithHttpInfo($customer_id, $limit = null, $order = null, $starting_after_id = null, $start_date = null, $end_date = null, $campaign_id = null, $campaign_type = null, $category = null, $type = null, string $contentType = self::contentTypes['listCustomerActivity'][0])
+    public function listCustomerActivityWithHttpInfo($customerId, $limit = null, $order = null, $startingAfterId = null, $startDate = null, $endDate = null, $campaignId = null, $campaignType = null, $category = null, $type = null, string $contentType = self::contentTypes['listCustomerActivity'][0])
     {
-        $request = $this->listCustomerActivityRequest($customer_id, $limit, $order, $starting_after_id, $start_date, $end_date, $campaign_id, $campaign_type, $category, $type, $contentType);
+        $request = $this->listCustomerActivityRequest($customerId, $limit, $order, $startingAfterId, $startDate, $endDate, $campaignId, $campaignType, $category, $type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1702,14 +1702,14 @@ class CustomersApi
      *
      * List Customer Activity
      *
-     * @param  string $customer_id A Voucherify customers id or source ID of the customer who performed the activities. (required)
+     * @param  string $customerId A Voucherify customers id or source ID of the customer who performed the activities. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
-     * @param  \DateTime $start_date Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  string $campaign_id Requests only events related to specific campaign identified by its ID. (optional)
-     * @param  ParameterCampaignType $campaign_type Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  \DateTime $startDate Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  string $campaignId Requests only events related to specific campaign identified by its ID. (optional)
+     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
      * @param  ParameterActivityCategory $category Filters activities for actions or effects. Allowed values:  ACTION, EFFECT. (optional)
      * @param  string $type Event name of the customer event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerActivity'] to see the possible values for this operation
@@ -1717,9 +1717,9 @@ class CustomersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCustomerActivityAsync($customer_id, $limit = null, $order = null, $starting_after_id = null, $start_date = null, $end_date = null, $campaign_id = null, $campaign_type = null, $category = null, $type = null, string $contentType = self::contentTypes['listCustomerActivity'][0])
+    public function listCustomerActivityAsync($customerId, $limit = null, $order = null, $startingAfterId = null, $startDate = null, $endDate = null, $campaignId = null, $campaignType = null, $category = null, $type = null, string $contentType = self::contentTypes['listCustomerActivity'][0])
     {
-        return $this->listCustomerActivityAsyncWithHttpInfo($customer_id, $limit, $order, $starting_after_id, $start_date, $end_date, $campaign_id, $campaign_type, $category, $type, $contentType)
+        return $this->listCustomerActivityAsyncWithHttpInfo($customerId, $limit, $order, $startingAfterId, $startDate, $endDate, $campaignId, $campaignType, $category, $type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1732,14 +1732,14 @@ class CustomersApi
      *
      * List Customer Activity
      *
-     * @param  string $customer_id A Voucherify customers id or source ID of the customer who performed the activities. (required)
+     * @param  string $customerId A Voucherify customers id or source ID of the customer who performed the activities. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
-     * @param  \DateTime $start_date Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  string $campaign_id Requests only events related to specific campaign identified by its ID. (optional)
-     * @param  ParameterCampaignType $campaign_type Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  \DateTime $startDate Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  string $campaignId Requests only events related to specific campaign identified by its ID. (optional)
+     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
      * @param  ParameterActivityCategory $category Filters activities for actions or effects. Allowed values:  ACTION, EFFECT. (optional)
      * @param  string $type Event name of the customer event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerActivity'] to see the possible values for this operation
@@ -1747,10 +1747,10 @@ class CustomersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCustomerActivityAsyncWithHttpInfo($customer_id, $limit = null, $order = null, $starting_after_id = null, $start_date = null, $end_date = null, $campaign_id = null, $campaign_type = null, $category = null, $type = null, string $contentType = self::contentTypes['listCustomerActivity'][0])
+    public function listCustomerActivityAsyncWithHttpInfo($customerId, $limit = null, $order = null, $startingAfterId = null, $startDate = null, $endDate = null, $campaignId = null, $campaignType = null, $category = null, $type = null, string $contentType = self::contentTypes['listCustomerActivity'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomersActivityListResponseBody';
-        $request = $this->listCustomerActivityRequest($customer_id, $limit, $order, $starting_after_id, $start_date, $end_date, $campaign_id, $campaign_type, $category, $type, $contentType);
+        $request = $this->listCustomerActivityRequest($customerId, $limit, $order, $startingAfterId, $startDate, $endDate, $campaignId, $campaignType, $category, $type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1791,14 +1791,14 @@ class CustomersApi
     /**
      * Create request for operation 'listCustomerActivity'
      *
-     * @param  string $customer_id A Voucherify customers id or source ID of the customer who performed the activities. (required)
+     * @param  string $customerId A Voucherify customers id or source ID of the customer who performed the activities. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
-     * @param  \DateTime $start_date Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  string $campaign_id Requests only events related to specific campaign identified by its ID. (optional)
-     * @param  ParameterCampaignType $campaign_type Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  \DateTime $startDate Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  string $campaignId Requests only events related to specific campaign identified by its ID. (optional)
+     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
      * @param  ParameterActivityCategory $category Filters activities for actions or effects. Allowed values:  ACTION, EFFECT. (optional)
      * @param  string $type Event name of the customer event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerActivity'] to see the possible values for this operation
@@ -1806,13 +1806,13 @@ class CustomersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listCustomerActivityRequest($customer_id, $limit = null, $order = null, $starting_after_id = null, $start_date = null, $end_date = null, $campaign_id = null, $campaign_type = null, $category = null, $type = null, string $contentType = self::contentTypes['listCustomerActivity'][0])
+    public function listCustomerActivityRequest($customerId, $limit = null, $order = null, $startingAfterId = null, $startDate = null, $endDate = null, $campaignId = null, $campaignType = null, $category = null, $type = null, string $contentType = self::contentTypes['listCustomerActivity'][0])
     {
 
-        // verify the required parameter 'customer_id' is set
-        if ($customer_id === null || (is_array($customer_id) && count($customer_id) === 0)) {
+        // verify the required parameter 'customerId' is set
+        if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $customer_id when calling listCustomerActivity'
+                'Missing the required parameter $customerId when calling listCustomerActivity'
             );
         }
 
@@ -1859,7 +1859,7 @@ class CustomersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $starting_after_id,
+            $startingAfterId,
             'starting_after_id', // param base name
             'string', // openApiType
             'form', // style
@@ -1868,7 +1868,7 @@ class CustomersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $start_date,
+            $startDate,
             'start_date', // param base name
             'string', // openApiType
             'form', // style
@@ -1877,7 +1877,7 @@ class CustomersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $end_date,
+            $endDate,
             'end_date', // param base name
             'string', // openApiType
             'form', // style
@@ -1886,7 +1886,7 @@ class CustomersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $campaign_id,
+            $campaignId,
             'campaign_id', // param base name
             'string', // openApiType
             'form', // style
@@ -1895,7 +1895,7 @@ class CustomersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $campaign_type,
+            $campaignType,
             'campaign_type', // param base name
             'ParameterCampaignType', // openApiType
             'form', // style
@@ -1923,10 +1923,10 @@ class CustomersApi
 
 
         // path params
-        if ($customer_id !== null) {
+        if ($customerId !== null) {
             $resourcePath = str_replace(
                 '{' . 'customerId' . '}',
-                ObjectSerializer::toPathValue($customer_id),
+                ObjectSerializer::toPathValue($customerId),
                 $resourcePath
             );
         }
@@ -2000,10 +2000,10 @@ class CustomersApi
      *
      * List Customer&#39;s Redeemables
      *
-     * @param  string $customer_id Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
+     * @param  string $customerId Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderListRedeemables $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  ParameterFiltersListCustomerRedeemables $filters Filters for listing customer redeemables. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerRedeemables'] to see the possible values for this operation
      *
@@ -2011,9 +2011,9 @@ class CustomersApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomersRedeemablesListResponseBody
      */
-    public function listCustomerRedeemables($customer_id, $limit = null, $order = null, $starting_after_id = null, $filters = null, string $contentType = self::contentTypes['listCustomerRedeemables'][0])
+    public function listCustomerRedeemables($customerId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listCustomerRedeemables'][0])
     {
-        list($response) = $this->listCustomerRedeemablesWithHttpInfo($customer_id, $limit, $order, $starting_after_id, $filters, $contentType);
+        list($response) = $this->listCustomerRedeemablesWithHttpInfo($customerId, $limit, $order, $startingAfterId, $filters, $contentType);
         return $response;
     }
 
@@ -2022,10 +2022,10 @@ class CustomersApi
      *
      * List Customer&#39;s Redeemables
      *
-     * @param  string $customer_id Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
+     * @param  string $customerId Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderListRedeemables $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  ParameterFiltersListCustomerRedeemables $filters Filters for listing customer redeemables. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerRedeemables'] to see the possible values for this operation
      *
@@ -2033,9 +2033,9 @@ class CustomersApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomersRedeemablesListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCustomerRedeemablesWithHttpInfo($customer_id, $limit = null, $order = null, $starting_after_id = null, $filters = null, string $contentType = self::contentTypes['listCustomerRedeemables'][0])
+    public function listCustomerRedeemablesWithHttpInfo($customerId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listCustomerRedeemables'][0])
     {
-        $request = $this->listCustomerRedeemablesRequest($customer_id, $limit, $order, $starting_after_id, $filters, $contentType);
+        $request = $this->listCustomerRedeemablesRequest($customerId, $limit, $order, $startingAfterId, $filters, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2126,19 +2126,19 @@ class CustomersApi
      *
      * List Customer&#39;s Redeemables
      *
-     * @param  string $customer_id Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
+     * @param  string $customerId Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderListRedeemables $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  ParameterFiltersListCustomerRedeemables $filters Filters for listing customer redeemables. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerRedeemables'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCustomerRedeemablesAsync($customer_id, $limit = null, $order = null, $starting_after_id = null, $filters = null, string $contentType = self::contentTypes['listCustomerRedeemables'][0])
+    public function listCustomerRedeemablesAsync($customerId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listCustomerRedeemables'][0])
     {
-        return $this->listCustomerRedeemablesAsyncWithHttpInfo($customer_id, $limit, $order, $starting_after_id, $filters, $contentType)
+        return $this->listCustomerRedeemablesAsyncWithHttpInfo($customerId, $limit, $order, $startingAfterId, $filters, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2151,20 +2151,20 @@ class CustomersApi
      *
      * List Customer&#39;s Redeemables
      *
-     * @param  string $customer_id Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
+     * @param  string $customerId Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderListRedeemables $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  ParameterFiltersListCustomerRedeemables $filters Filters for listing customer redeemables. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerRedeemables'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCustomerRedeemablesAsyncWithHttpInfo($customer_id, $limit = null, $order = null, $starting_after_id = null, $filters = null, string $contentType = self::contentTypes['listCustomerRedeemables'][0])
+    public function listCustomerRedeemablesAsyncWithHttpInfo($customerId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listCustomerRedeemables'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomersRedeemablesListResponseBody';
-        $request = $this->listCustomerRedeemablesRequest($customer_id, $limit, $order, $starting_after_id, $filters, $contentType);
+        $request = $this->listCustomerRedeemablesRequest($customerId, $limit, $order, $startingAfterId, $filters, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2205,23 +2205,23 @@ class CustomersApi
     /**
      * Create request for operation 'listCustomerRedeemables'
      *
-     * @param  string $customer_id Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
+     * @param  string $customerId Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderListRedeemables $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  ParameterFiltersListCustomerRedeemables $filters Filters for listing customer redeemables. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerRedeemables'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listCustomerRedeemablesRequest($customer_id, $limit = null, $order = null, $starting_after_id = null, $filters = null, string $contentType = self::contentTypes['listCustomerRedeemables'][0])
+    public function listCustomerRedeemablesRequest($customerId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listCustomerRedeemables'][0])
     {
 
-        // verify the required parameter 'customer_id' is set
-        if ($customer_id === null || (is_array($customer_id) && count($customer_id) === 0)) {
+        // verify the required parameter 'customerId' is set
+        if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $customer_id when calling listCustomerRedeemables'
+                'Missing the required parameter $customerId when calling listCustomerRedeemables'
             );
         }
 
@@ -2263,7 +2263,7 @@ class CustomersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $starting_after_id,
+            $startingAfterId,
             'starting_after_id', // param base name
             'string', // openApiType
             'form', // style
@@ -2282,10 +2282,10 @@ class CustomersApi
 
 
         // path params
-        if ($customer_id !== null) {
+        if ($customerId !== null) {
             $resourcePath = str_replace(
                 '{' . 'customerId' . '}',
-                ObjectSerializer::toPathValue($customer_id),
+                ObjectSerializer::toPathValue($customerId),
                 $resourcePath
             );
         }
@@ -2359,16 +2359,16 @@ class CustomersApi
      *
      * List Customer&#39;s Segments
      *
-     * @param  string $customer_id Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
+     * @param  string $customerId Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerSegments'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomersSegmentsListResponseBody
      */
-    public function listCustomerSegments($customer_id, string $contentType = self::contentTypes['listCustomerSegments'][0])
+    public function listCustomerSegments($customerId, string $contentType = self::contentTypes['listCustomerSegments'][0])
     {
-        list($response) = $this->listCustomerSegmentsWithHttpInfo($customer_id, $contentType);
+        list($response) = $this->listCustomerSegmentsWithHttpInfo($customerId, $contentType);
         return $response;
     }
 
@@ -2377,16 +2377,16 @@ class CustomersApi
      *
      * List Customer&#39;s Segments
      *
-     * @param  string $customer_id Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
+     * @param  string $customerId Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerSegments'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomersSegmentsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCustomerSegmentsWithHttpInfo($customer_id, string $contentType = self::contentTypes['listCustomerSegments'][0])
+    public function listCustomerSegmentsWithHttpInfo($customerId, string $contentType = self::contentTypes['listCustomerSegments'][0])
     {
-        $request = $this->listCustomerSegmentsRequest($customer_id, $contentType);
+        $request = $this->listCustomerSegmentsRequest($customerId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2477,15 +2477,15 @@ class CustomersApi
      *
      * List Customer&#39;s Segments
      *
-     * @param  string $customer_id Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
+     * @param  string $customerId Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerSegments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCustomerSegmentsAsync($customer_id, string $contentType = self::contentTypes['listCustomerSegments'][0])
+    public function listCustomerSegmentsAsync($customerId, string $contentType = self::contentTypes['listCustomerSegments'][0])
     {
-        return $this->listCustomerSegmentsAsyncWithHttpInfo($customer_id, $contentType)
+        return $this->listCustomerSegmentsAsyncWithHttpInfo($customerId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2498,16 +2498,16 @@ class CustomersApi
      *
      * List Customer&#39;s Segments
      *
-     * @param  string $customer_id Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
+     * @param  string $customerId Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerSegments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCustomerSegmentsAsyncWithHttpInfo($customer_id, string $contentType = self::contentTypes['listCustomerSegments'][0])
+    public function listCustomerSegmentsAsyncWithHttpInfo($customerId, string $contentType = self::contentTypes['listCustomerSegments'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomersSegmentsListResponseBody';
-        $request = $this->listCustomerSegmentsRequest($customer_id, $contentType);
+        $request = $this->listCustomerSegmentsRequest($customerId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2548,19 +2548,19 @@ class CustomersApi
     /**
      * Create request for operation 'listCustomerSegments'
      *
-     * @param  string $customer_id Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
+     * @param  string $customerId Unique identifier of a customer represented by an internal customer ID or customer source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerSegments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listCustomerSegmentsRequest($customer_id, string $contentType = self::contentTypes['listCustomerSegments'][0])
+    public function listCustomerSegmentsRequest($customerId, string $contentType = self::contentTypes['listCustomerSegments'][0])
     {
 
-        // verify the required parameter 'customer_id' is set
-        if ($customer_id === null || (is_array($customer_id) && count($customer_id) === 0)) {
+        // verify the required parameter 'customerId' is set
+        if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $customer_id when calling listCustomerSegments'
+                'Missing the required parameter $customerId when calling listCustomerSegments'
             );
         }
 
@@ -2575,10 +2575,10 @@ class CustomersApi
 
 
         // path params
-        if ($customer_id !== null) {
+        if ($customerId !== null) {
             $resourcePath = str_replace(
                 '{' . 'customerId' . '}',
-                ObjectSerializer::toPathValue($customer_id),
+                ObjectSerializer::toPathValue($customerId),
                 $resourcePath
             );
         }
@@ -2657,22 +2657,22 @@ class CustomersApi
      * @param  string $email Limit the customers to the ones that have this specific email address. (optional)
      * @param  string $city Limit the customers to the ones that are located in the specified city. (optional)
      * @param  string $name Filter customers by the name property. (optional)
-     * @param  string $segment_id Filter customers by the segment id. (optional)
-     * @param  \DateTime $created_at_before Filter customers by date customer was created. (optional)
-     * @param  \DateTime $created_at_after Filter customers by date customer was created. (optional)
-     * @param  \DateTime $updated_at_before Filter customers by date customer was updated last time. (optional)
-     * @param  \DateTime $updated_at_after Filter customers by date customer was updated last time. (optional)
+     * @param  string $segmentId Filter customers by the segment id. (optional)
+     * @param  \DateTime $createdAtBefore Filter customers by date customer was created. (optional)
+     * @param  \DateTime $createdAtAfter Filter customers by date customer was created. (optional)
+     * @param  \DateTime $updatedAtBefore Filter customers by date customer was updated last time. (optional)
+     * @param  \DateTime $updatedAtAfter Filter customers by date customer was updated last time. (optional)
      * @param  ParameterOrderListCustomers $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $starting_after A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
+     * @param  \DateTime $startingAfter A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomers'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomersListResponseBody
      */
-    public function listCustomers($limit = null, $page = null, $email = null, $city = null, $name = null, $segment_id = null, $created_at_before = null, $created_at_after = null, $updated_at_before = null, $updated_at_after = null, $order = null, $starting_after = null, string $contentType = self::contentTypes['listCustomers'][0])
+    public function listCustomers($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listCustomers'][0])
     {
-        list($response) = $this->listCustomersWithHttpInfo($limit, $page, $email, $city, $name, $segment_id, $created_at_before, $created_at_after, $updated_at_before, $updated_at_after, $order, $starting_after, $contentType);
+        list($response) = $this->listCustomersWithHttpInfo($limit, $page, $email, $city, $name, $segmentId, $createdAtBefore, $createdAtAfter, $updatedAtBefore, $updatedAtAfter, $order, $startingAfter, $contentType);
         return $response;
     }
 
@@ -2686,22 +2686,22 @@ class CustomersApi
      * @param  string $email Limit the customers to the ones that have this specific email address. (optional)
      * @param  string $city Limit the customers to the ones that are located in the specified city. (optional)
      * @param  string $name Filter customers by the name property. (optional)
-     * @param  string $segment_id Filter customers by the segment id. (optional)
-     * @param  \DateTime $created_at_before Filter customers by date customer was created. (optional)
-     * @param  \DateTime $created_at_after Filter customers by date customer was created. (optional)
-     * @param  \DateTime $updated_at_before Filter customers by date customer was updated last time. (optional)
-     * @param  \DateTime $updated_at_after Filter customers by date customer was updated last time. (optional)
+     * @param  string $segmentId Filter customers by the segment id. (optional)
+     * @param  \DateTime $createdAtBefore Filter customers by date customer was created. (optional)
+     * @param  \DateTime $createdAtAfter Filter customers by date customer was created. (optional)
+     * @param  \DateTime $updatedAtBefore Filter customers by date customer was updated last time. (optional)
+     * @param  \DateTime $updatedAtAfter Filter customers by date customer was updated last time. (optional)
      * @param  ParameterOrderListCustomers $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $starting_after A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
+     * @param  \DateTime $startingAfter A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomers'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomersListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCustomersWithHttpInfo($limit = null, $page = null, $email = null, $city = null, $name = null, $segment_id = null, $created_at_before = null, $created_at_after = null, $updated_at_before = null, $updated_at_after = null, $order = null, $starting_after = null, string $contentType = self::contentTypes['listCustomers'][0])
+    public function listCustomersWithHttpInfo($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listCustomers'][0])
     {
-        $request = $this->listCustomersRequest($limit, $page, $email, $city, $name, $segment_id, $created_at_before, $created_at_after, $updated_at_before, $updated_at_after, $order, $starting_after, $contentType);
+        $request = $this->listCustomersRequest($limit, $page, $email, $city, $name, $segmentId, $createdAtBefore, $createdAtAfter, $updatedAtBefore, $updatedAtAfter, $order, $startingAfter, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2797,21 +2797,21 @@ class CustomersApi
      * @param  string $email Limit the customers to the ones that have this specific email address. (optional)
      * @param  string $city Limit the customers to the ones that are located in the specified city. (optional)
      * @param  string $name Filter customers by the name property. (optional)
-     * @param  string $segment_id Filter customers by the segment id. (optional)
-     * @param  \DateTime $created_at_before Filter customers by date customer was created. (optional)
-     * @param  \DateTime $created_at_after Filter customers by date customer was created. (optional)
-     * @param  \DateTime $updated_at_before Filter customers by date customer was updated last time. (optional)
-     * @param  \DateTime $updated_at_after Filter customers by date customer was updated last time. (optional)
+     * @param  string $segmentId Filter customers by the segment id. (optional)
+     * @param  \DateTime $createdAtBefore Filter customers by date customer was created. (optional)
+     * @param  \DateTime $createdAtAfter Filter customers by date customer was created. (optional)
+     * @param  \DateTime $updatedAtBefore Filter customers by date customer was updated last time. (optional)
+     * @param  \DateTime $updatedAtAfter Filter customers by date customer was updated last time. (optional)
      * @param  ParameterOrderListCustomers $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $starting_after A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
+     * @param  \DateTime $startingAfter A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCustomersAsync($limit = null, $page = null, $email = null, $city = null, $name = null, $segment_id = null, $created_at_before = null, $created_at_after = null, $updated_at_before = null, $updated_at_after = null, $order = null, $starting_after = null, string $contentType = self::contentTypes['listCustomers'][0])
+    public function listCustomersAsync($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listCustomers'][0])
     {
-        return $this->listCustomersAsyncWithHttpInfo($limit, $page, $email, $city, $name, $segment_id, $created_at_before, $created_at_after, $updated_at_before, $updated_at_after, $order, $starting_after, $contentType)
+        return $this->listCustomersAsyncWithHttpInfo($limit, $page, $email, $city, $name, $segmentId, $createdAtBefore, $createdAtAfter, $updatedAtBefore, $updatedAtAfter, $order, $startingAfter, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2829,22 +2829,22 @@ class CustomersApi
      * @param  string $email Limit the customers to the ones that have this specific email address. (optional)
      * @param  string $city Limit the customers to the ones that are located in the specified city. (optional)
      * @param  string $name Filter customers by the name property. (optional)
-     * @param  string $segment_id Filter customers by the segment id. (optional)
-     * @param  \DateTime $created_at_before Filter customers by date customer was created. (optional)
-     * @param  \DateTime $created_at_after Filter customers by date customer was created. (optional)
-     * @param  \DateTime $updated_at_before Filter customers by date customer was updated last time. (optional)
-     * @param  \DateTime $updated_at_after Filter customers by date customer was updated last time. (optional)
+     * @param  string $segmentId Filter customers by the segment id. (optional)
+     * @param  \DateTime $createdAtBefore Filter customers by date customer was created. (optional)
+     * @param  \DateTime $createdAtAfter Filter customers by date customer was created. (optional)
+     * @param  \DateTime $updatedAtBefore Filter customers by date customer was updated last time. (optional)
+     * @param  \DateTime $updatedAtAfter Filter customers by date customer was updated last time. (optional)
      * @param  ParameterOrderListCustomers $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $starting_after A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
+     * @param  \DateTime $startingAfter A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCustomersAsyncWithHttpInfo($limit = null, $page = null, $email = null, $city = null, $name = null, $segment_id = null, $created_at_before = null, $created_at_after = null, $updated_at_before = null, $updated_at_after = null, $order = null, $starting_after = null, string $contentType = self::contentTypes['listCustomers'][0])
+    public function listCustomersAsyncWithHttpInfo($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listCustomers'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomersListResponseBody';
-        $request = $this->listCustomersRequest($limit, $page, $email, $city, $name, $segment_id, $created_at_before, $created_at_after, $updated_at_before, $updated_at_after, $order, $starting_after, $contentType);
+        $request = $this->listCustomersRequest($limit, $page, $email, $city, $name, $segmentId, $createdAtBefore, $createdAtAfter, $updatedAtBefore, $updatedAtAfter, $order, $startingAfter, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2890,19 +2890,19 @@ class CustomersApi
      * @param  string $email Limit the customers to the ones that have this specific email address. (optional)
      * @param  string $city Limit the customers to the ones that are located in the specified city. (optional)
      * @param  string $name Filter customers by the name property. (optional)
-     * @param  string $segment_id Filter customers by the segment id. (optional)
-     * @param  \DateTime $created_at_before Filter customers by date customer was created. (optional)
-     * @param  \DateTime $created_at_after Filter customers by date customer was created. (optional)
-     * @param  \DateTime $updated_at_before Filter customers by date customer was updated last time. (optional)
-     * @param  \DateTime $updated_at_after Filter customers by date customer was updated last time. (optional)
+     * @param  string $segmentId Filter customers by the segment id. (optional)
+     * @param  \DateTime $createdAtBefore Filter customers by date customer was created. (optional)
+     * @param  \DateTime $createdAtAfter Filter customers by date customer was created. (optional)
+     * @param  \DateTime $updatedAtBefore Filter customers by date customer was updated last time. (optional)
+     * @param  \DateTime $updatedAtAfter Filter customers by date customer was updated last time. (optional)
      * @param  ParameterOrderListCustomers $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $starting_after A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
+     * @param  \DateTime $startingAfter A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listCustomersRequest($limit = null, $page = null, $email = null, $city = null, $name = null, $segment_id = null, $created_at_before = null, $created_at_after = null, $updated_at_before = null, $updated_at_after = null, $order = null, $starting_after = null, string $contentType = self::contentTypes['listCustomers'][0])
+    public function listCustomersRequest($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listCustomers'][0])
     {
 
         if ($limit !== null && $limit > 100) {
@@ -2984,7 +2984,7 @@ class CustomersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $segment_id,
+            $segmentId,
             'segment_id', // param base name
             'string', // openApiType
             'form', // style
@@ -2993,7 +2993,7 @@ class CustomersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $created_at_before,
+            $createdAtBefore,
             'created_at[before]', // param base name
             'string', // openApiType
             'form', // style
@@ -3002,7 +3002,7 @@ class CustomersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $created_at_after,
+            $createdAtAfter,
             'created_at[after]', // param base name
             'string', // openApiType
             'form', // style
@@ -3011,7 +3011,7 @@ class CustomersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $updated_at_before,
+            $updatedAtBefore,
             'updated_at[before]', // param base name
             'string', // openApiType
             'form', // style
@@ -3020,7 +3020,7 @@ class CustomersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $updated_at_after,
+            $updatedAtAfter,
             'updated_at[after]', // param base name
             'string', // openApiType
             'form', // style
@@ -3038,7 +3038,7 @@ class CustomersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $starting_after,
+            $startingAfter,
             'starting_after', // param base name
             'string', // openApiType
             'form', // style
@@ -3117,17 +3117,17 @@ class CustomersApi
      *
      * Update Customer
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
-     * @param  \OpenAPI\Client\Model\CustomersUpdateRequestBody $customers_update_request_body Specify the parameters to be updated. (optional)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
+     * @param  \OpenAPI\Client\Model\CustomersUpdateRequestBody $customersUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomer'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomersUpdateResponseBody
      */
-    public function updateCustomer($customer_id, $customers_update_request_body = null, string $contentType = self::contentTypes['updateCustomer'][0])
+    public function updateCustomer($customerId, $customersUpdateRequestBody = null, string $contentType = self::contentTypes['updateCustomer'][0])
     {
-        list($response) = $this->updateCustomerWithHttpInfo($customer_id, $customers_update_request_body, $contentType);
+        list($response) = $this->updateCustomerWithHttpInfo($customerId, $customersUpdateRequestBody, $contentType);
         return $response;
     }
 
@@ -3136,17 +3136,17 @@ class CustomersApi
      *
      * Update Customer
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
-     * @param  \OpenAPI\Client\Model\CustomersUpdateRequestBody $customers_update_request_body Specify the parameters to be updated. (optional)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
+     * @param  \OpenAPI\Client\Model\CustomersUpdateRequestBody $customersUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomer'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomersUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateCustomerWithHttpInfo($customer_id, $customers_update_request_body = null, string $contentType = self::contentTypes['updateCustomer'][0])
+    public function updateCustomerWithHttpInfo($customerId, $customersUpdateRequestBody = null, string $contentType = self::contentTypes['updateCustomer'][0])
     {
-        $request = $this->updateCustomerRequest($customer_id, $customers_update_request_body, $contentType);
+        $request = $this->updateCustomerRequest($customerId, $customersUpdateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3237,16 +3237,16 @@ class CustomersApi
      *
      * Update Customer
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
-     * @param  \OpenAPI\Client\Model\CustomersUpdateRequestBody $customers_update_request_body Specify the parameters to be updated. (optional)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
+     * @param  \OpenAPI\Client\Model\CustomersUpdateRequestBody $customersUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateCustomerAsync($customer_id, $customers_update_request_body = null, string $contentType = self::contentTypes['updateCustomer'][0])
+    public function updateCustomerAsync($customerId, $customersUpdateRequestBody = null, string $contentType = self::contentTypes['updateCustomer'][0])
     {
-        return $this->updateCustomerAsyncWithHttpInfo($customer_id, $customers_update_request_body, $contentType)
+        return $this->updateCustomerAsyncWithHttpInfo($customerId, $customersUpdateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3259,17 +3259,17 @@ class CustomersApi
      *
      * Update Customer
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
-     * @param  \OpenAPI\Client\Model\CustomersUpdateRequestBody $customers_update_request_body Specify the parameters to be updated. (optional)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
+     * @param  \OpenAPI\Client\Model\CustomersUpdateRequestBody $customersUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateCustomerAsyncWithHttpInfo($customer_id, $customers_update_request_body = null, string $contentType = self::contentTypes['updateCustomer'][0])
+    public function updateCustomerAsyncWithHttpInfo($customerId, $customersUpdateRequestBody = null, string $contentType = self::contentTypes['updateCustomer'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomersUpdateResponseBody';
-        $request = $this->updateCustomerRequest($customer_id, $customers_update_request_body, $contentType);
+        $request = $this->updateCustomerRequest($customerId, $customersUpdateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3310,20 +3310,20 @@ class CustomersApi
     /**
      * Create request for operation 'updateCustomer'
      *
-     * @param  string $customer_id A Voucherify customers id or source_id. (required)
-     * @param  \OpenAPI\Client\Model\CustomersUpdateRequestBody $customers_update_request_body Specify the parameters to be updated. (optional)
+     * @param  string $customerId A Voucherify customers id or source_id. (required)
+     * @param  \OpenAPI\Client\Model\CustomersUpdateRequestBody $customersUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateCustomerRequest($customer_id, $customers_update_request_body = null, string $contentType = self::contentTypes['updateCustomer'][0])
+    public function updateCustomerRequest($customerId, $customersUpdateRequestBody = null, string $contentType = self::contentTypes['updateCustomer'][0])
     {
 
-        // verify the required parameter 'customer_id' is set
-        if ($customer_id === null || (is_array($customer_id) && count($customer_id) === 0)) {
+        // verify the required parameter 'customerId' is set
+        if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $customer_id when calling updateCustomer'
+                'Missing the required parameter $customerId when calling updateCustomer'
             );
         }
 
@@ -3339,10 +3339,10 @@ class CustomersApi
 
 
         // path params
-        if ($customer_id !== null) {
+        if ($customerId !== null) {
             $resourcePath = str_replace(
                 '{' . 'customerId' . '}',
-                ObjectSerializer::toPathValue($customer_id),
+                ObjectSerializer::toPathValue($customerId),
                 $resourcePath
             );
         }
@@ -3355,12 +3355,12 @@ class CustomersApi
         );
 
         // for model (json/xml)
-        if (isset($customers_update_request_body)) {
+        if (isset($customersUpdateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($customers_update_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($customersUpdateRequestBody));
             } else {
-                $httpBody = $customers_update_request_body;
+                $httpBody = $customersUpdateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3423,7 +3423,7 @@ class CustomersApi
      *
      * Update Customer&#39;s consents [Deprecated]
      *
-     * @param  string $customer_id A Voucherify unique customer identifier or source ID. (required)
+     * @param  string $customerId A Voucherify unique customer identifier or source ID. (required)
      * @param  object $body Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use unsubscribed as a consent identifier and true as its value.   ## Examples  Opt-out from all communication: (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersConsents'] to see the possible values for this operation
      *
@@ -3432,9 +3432,9 @@ class CustomersApi
      * @return void
      * @deprecated
      */
-    public function updateCustomersConsents($customer_id, $body = null, string $contentType = self::contentTypes['updateCustomersConsents'][0])
+    public function updateCustomersConsents($customerId, $body = null, string $contentType = self::contentTypes['updateCustomersConsents'][0])
     {
-        $this->updateCustomersConsentsWithHttpInfo($customer_id, $body, $contentType);
+        $this->updateCustomersConsentsWithHttpInfo($customerId, $body, $contentType);
     }
 
     /**
@@ -3442,7 +3442,7 @@ class CustomersApi
      *
      * Update Customer&#39;s consents [Deprecated]
      *
-     * @param  string $customer_id A Voucherify unique customer identifier or source ID. (required)
+     * @param  string $customerId A Voucherify unique customer identifier or source ID. (required)
      * @param  object $body Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use unsubscribed as a consent identifier and true as its value.   ## Examples  Opt-out from all communication: (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersConsents'] to see the possible values for this operation
      *
@@ -3451,9 +3451,9 @@ class CustomersApi
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function updateCustomersConsentsWithHttpInfo($customer_id, $body = null, string $contentType = self::contentTypes['updateCustomersConsents'][0])
+    public function updateCustomersConsentsWithHttpInfo($customerId, $body = null, string $contentType = self::contentTypes['updateCustomersConsents'][0])
     {
-        $request = $this->updateCustomersConsentsRequest($customer_id, $body, $contentType);
+        $request = $this->updateCustomersConsentsRequest($customerId, $body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3504,7 +3504,7 @@ class CustomersApi
      *
      * Update Customer&#39;s consents [Deprecated]
      *
-     * @param  string $customer_id A Voucherify unique customer identifier or source ID. (required)
+     * @param  string $customerId A Voucherify unique customer identifier or source ID. (required)
      * @param  object $body Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use unsubscribed as a consent identifier and true as its value.   ## Examples  Opt-out from all communication: (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersConsents'] to see the possible values for this operation
      *
@@ -3512,9 +3512,9 @@ class CustomersApi
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function updateCustomersConsentsAsync($customer_id, $body = null, string $contentType = self::contentTypes['updateCustomersConsents'][0])
+    public function updateCustomersConsentsAsync($customerId, $body = null, string $contentType = self::contentTypes['updateCustomersConsents'][0])
     {
-        return $this->updateCustomersConsentsAsyncWithHttpInfo($customer_id, $body, $contentType)
+        return $this->updateCustomersConsentsAsyncWithHttpInfo($customerId, $body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3527,7 +3527,7 @@ class CustomersApi
      *
      * Update Customer&#39;s consents [Deprecated]
      *
-     * @param  string $customer_id A Voucherify unique customer identifier or source ID. (required)
+     * @param  string $customerId A Voucherify unique customer identifier or source ID. (required)
      * @param  object $body Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use unsubscribed as a consent identifier and true as its value.   ## Examples  Opt-out from all communication: (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersConsents'] to see the possible values for this operation
      *
@@ -3535,10 +3535,10 @@ class CustomersApi
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function updateCustomersConsentsAsyncWithHttpInfo($customer_id, $body = null, string $contentType = self::contentTypes['updateCustomersConsents'][0])
+    public function updateCustomersConsentsAsyncWithHttpInfo($customerId, $body = null, string $contentType = self::contentTypes['updateCustomersConsents'][0])
     {
         $returnType = '';
-        $request = $this->updateCustomersConsentsRequest($customer_id, $body, $contentType);
+        $request = $this->updateCustomersConsentsRequest($customerId, $body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3566,7 +3566,7 @@ class CustomersApi
     /**
      * Create request for operation 'updateCustomersConsents'
      *
-     * @param  string $customer_id A Voucherify unique customer identifier or source ID. (required)
+     * @param  string $customerId A Voucherify unique customer identifier or source ID. (required)
      * @param  object $body Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use unsubscribed as a consent identifier and true as its value.   ## Examples  Opt-out from all communication: (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersConsents'] to see the possible values for this operation
      *
@@ -3574,13 +3574,13 @@ class CustomersApi
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function updateCustomersConsentsRequest($customer_id, $body = null, string $contentType = self::contentTypes['updateCustomersConsents'][0])
+    public function updateCustomersConsentsRequest($customerId, $body = null, string $contentType = self::contentTypes['updateCustomersConsents'][0])
     {
 
-        // verify the required parameter 'customer_id' is set
-        if ($customer_id === null || (is_array($customer_id) && count($customer_id) === 0)) {
+        // verify the required parameter 'customerId' is set
+        if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $customer_id when calling updateCustomersConsents'
+                'Missing the required parameter $customerId when calling updateCustomersConsents'
             );
         }
 
@@ -3596,10 +3596,10 @@ class CustomersApi
 
 
         // path params
-        if ($customer_id !== null) {
+        if ($customerId !== null) {
             $resourcePath = str_replace(
                 '{' . 'customerId' . '}',
-                ObjectSerializer::toPathValue($customer_id),
+                ObjectSerializer::toPathValue($customerId),
                 $resourcePath
             );
         }
@@ -3680,16 +3680,16 @@ class CustomersApi
      *
      * Update Customers in Bulk
      *
-     * @param  \OpenAPI\Client\Model\CustomersUpdateInBulkRequestBody[] $customers_update_in_bulk_request_body List the customer fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersUpdateInBulkRequestBody[] $customersUpdateInBulkRequestBody List the customer fields to be updated in each customer object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersInBulk'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomersUpdateInBulkResponseBody
      */
-    public function updateCustomersInBulk($customers_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateCustomersInBulk'][0])
+    public function updateCustomersInBulk($customersUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateCustomersInBulk'][0])
     {
-        list($response) = $this->updateCustomersInBulkWithHttpInfo($customers_update_in_bulk_request_body, $contentType);
+        list($response) = $this->updateCustomersInBulkWithHttpInfo($customersUpdateInBulkRequestBody, $contentType);
         return $response;
     }
 
@@ -3698,16 +3698,16 @@ class CustomersApi
      *
      * Update Customers in Bulk
      *
-     * @param  \OpenAPI\Client\Model\CustomersUpdateInBulkRequestBody[] $customers_update_in_bulk_request_body List the customer fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersUpdateInBulkRequestBody[] $customersUpdateInBulkRequestBody List the customer fields to be updated in each customer object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersInBulk'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomersUpdateInBulkResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateCustomersInBulkWithHttpInfo($customers_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateCustomersInBulk'][0])
+    public function updateCustomersInBulkWithHttpInfo($customersUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateCustomersInBulk'][0])
     {
-        $request = $this->updateCustomersInBulkRequest($customers_update_in_bulk_request_body, $contentType);
+        $request = $this->updateCustomersInBulkRequest($customersUpdateInBulkRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3798,15 +3798,15 @@ class CustomersApi
      *
      * Update Customers in Bulk
      *
-     * @param  \OpenAPI\Client\Model\CustomersUpdateInBulkRequestBody[] $customers_update_in_bulk_request_body List the customer fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersUpdateInBulkRequestBody[] $customersUpdateInBulkRequestBody List the customer fields to be updated in each customer object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateCustomersInBulkAsync($customers_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateCustomersInBulk'][0])
+    public function updateCustomersInBulkAsync($customersUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateCustomersInBulk'][0])
     {
-        return $this->updateCustomersInBulkAsyncWithHttpInfo($customers_update_in_bulk_request_body, $contentType)
+        return $this->updateCustomersInBulkAsyncWithHttpInfo($customersUpdateInBulkRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3819,16 +3819,16 @@ class CustomersApi
      *
      * Update Customers in Bulk
      *
-     * @param  \OpenAPI\Client\Model\CustomersUpdateInBulkRequestBody[] $customers_update_in_bulk_request_body List the customer fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersUpdateInBulkRequestBody[] $customersUpdateInBulkRequestBody List the customer fields to be updated in each customer object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateCustomersInBulkAsyncWithHttpInfo($customers_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateCustomersInBulk'][0])
+    public function updateCustomersInBulkAsyncWithHttpInfo($customersUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateCustomersInBulk'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomersUpdateInBulkResponseBody';
-        $request = $this->updateCustomersInBulkRequest($customers_update_in_bulk_request_body, $contentType);
+        $request = $this->updateCustomersInBulkRequest($customersUpdateInBulkRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3869,13 +3869,13 @@ class CustomersApi
     /**
      * Create request for operation 'updateCustomersInBulk'
      *
-     * @param  \OpenAPI\Client\Model\CustomersUpdateInBulkRequestBody[] $customers_update_in_bulk_request_body List the customer fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersUpdateInBulkRequestBody[] $customersUpdateInBulkRequestBody List the customer fields to be updated in each customer object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateCustomersInBulkRequest($customers_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateCustomersInBulk'][0])
+    public function updateCustomersInBulkRequest($customersUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateCustomersInBulk'][0])
     {
 
 
@@ -3898,12 +3898,12 @@ class CustomersApi
         );
 
         // for model (json/xml)
-        if (isset($customers_update_in_bulk_request_body)) {
+        if (isset($customersUpdateInBulkRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($customers_update_in_bulk_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($customersUpdateInBulkRequestBody));
             } else {
-                $httpBody = $customers_update_in_bulk_request_body;
+                $httpBody = $customersUpdateInBulkRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3966,16 +3966,16 @@ class CustomersApi
      *
      * Update Customers&#39; Metadata in Bulk
      *
-     * @param  \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkRequestBody $customers_metadata_update_in_bulk_request_body List the source_ids of the customers you would like to update with the metadata key/value pairs. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkRequestBody $customersMetadataUpdateInBulkRequestBody List the source_ids of the customers you would like to update with the metadata key/value pairs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersMetadataInBulk'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkResponseBody
      */
-    public function updateCustomersMetadataInBulk($customers_metadata_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateCustomersMetadataInBulk'][0])
+    public function updateCustomersMetadataInBulk($customersMetadataUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateCustomersMetadataInBulk'][0])
     {
-        list($response) = $this->updateCustomersMetadataInBulkWithHttpInfo($customers_metadata_update_in_bulk_request_body, $contentType);
+        list($response) = $this->updateCustomersMetadataInBulkWithHttpInfo($customersMetadataUpdateInBulkRequestBody, $contentType);
         return $response;
     }
 
@@ -3984,16 +3984,16 @@ class CustomersApi
      *
      * Update Customers&#39; Metadata in Bulk
      *
-     * @param  \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkRequestBody $customers_metadata_update_in_bulk_request_body List the source_ids of the customers you would like to update with the metadata key/value pairs. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkRequestBody $customersMetadataUpdateInBulkRequestBody List the source_ids of the customers you would like to update with the metadata key/value pairs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersMetadataInBulk'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateCustomersMetadataInBulkWithHttpInfo($customers_metadata_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateCustomersMetadataInBulk'][0])
+    public function updateCustomersMetadataInBulkWithHttpInfo($customersMetadataUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateCustomersMetadataInBulk'][0])
     {
-        $request = $this->updateCustomersMetadataInBulkRequest($customers_metadata_update_in_bulk_request_body, $contentType);
+        $request = $this->updateCustomersMetadataInBulkRequest($customersMetadataUpdateInBulkRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4084,15 +4084,15 @@ class CustomersApi
      *
      * Update Customers&#39; Metadata in Bulk
      *
-     * @param  \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkRequestBody $customers_metadata_update_in_bulk_request_body List the source_ids of the customers you would like to update with the metadata key/value pairs. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkRequestBody $customersMetadataUpdateInBulkRequestBody List the source_ids of the customers you would like to update with the metadata key/value pairs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersMetadataInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateCustomersMetadataInBulkAsync($customers_metadata_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateCustomersMetadataInBulk'][0])
+    public function updateCustomersMetadataInBulkAsync($customersMetadataUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateCustomersMetadataInBulk'][0])
     {
-        return $this->updateCustomersMetadataInBulkAsyncWithHttpInfo($customers_metadata_update_in_bulk_request_body, $contentType)
+        return $this->updateCustomersMetadataInBulkAsyncWithHttpInfo($customersMetadataUpdateInBulkRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4105,16 +4105,16 @@ class CustomersApi
      *
      * Update Customers&#39; Metadata in Bulk
      *
-     * @param  \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkRequestBody $customers_metadata_update_in_bulk_request_body List the source_ids of the customers you would like to update with the metadata key/value pairs. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkRequestBody $customersMetadataUpdateInBulkRequestBody List the source_ids of the customers you would like to update with the metadata key/value pairs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersMetadataInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateCustomersMetadataInBulkAsyncWithHttpInfo($customers_metadata_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateCustomersMetadataInBulk'][0])
+    public function updateCustomersMetadataInBulkAsyncWithHttpInfo($customersMetadataUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateCustomersMetadataInBulk'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomersMetadataUpdateInBulkResponseBody';
-        $request = $this->updateCustomersMetadataInBulkRequest($customers_metadata_update_in_bulk_request_body, $contentType);
+        $request = $this->updateCustomersMetadataInBulkRequest($customersMetadataUpdateInBulkRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4155,13 +4155,13 @@ class CustomersApi
     /**
      * Create request for operation 'updateCustomersMetadataInBulk'
      *
-     * @param  \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkRequestBody $customers_metadata_update_in_bulk_request_body List the source_ids of the customers you would like to update with the metadata key/value pairs. (optional)
+     * @param  \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkRequestBody $customersMetadataUpdateInBulkRequestBody List the source_ids of the customers you would like to update with the metadata key/value pairs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCustomersMetadataInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateCustomersMetadataInBulkRequest($customers_metadata_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateCustomersMetadataInBulk'][0])
+    public function updateCustomersMetadataInBulkRequest($customersMetadataUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateCustomersMetadataInBulk'][0])
     {
 
 
@@ -4184,12 +4184,12 @@ class CustomersApi
         );
 
         // for model (json/xml)
-        if (isset($customers_metadata_update_in_bulk_request_body)) {
+        if (isset($customersMetadataUpdateInBulkRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($customers_metadata_update_in_bulk_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($customersMetadataUpdateInBulkRequestBody));
             } else {
-                $httpBody = $customers_metadata_update_in_bulk_request_body;
+                $httpBody = $customersMetadataUpdateInBulkRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

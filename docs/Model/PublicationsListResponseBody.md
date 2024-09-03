@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **object** | **string** | The type of the object represented by JSON. This object stores information about publications in a dictionary. | [optional] [default to 'list']
-**data_ref** | **string** | Identifies the name of the attribute that contains the array of publications. | [optional] [default to 'publications']
+**dataRef** | **string** | Identifies the name of the attribute that contains the array of publications. | [optional] [default to 'publications']
 **publications** | [**\OpenAPI\Client\Model\PublicationsListResponseBodyPublicationsItem[]**](PublicationsListResponseBodyPublicationsItem.md) | Response schema model for publishing vouchers to a specific customer. | [optional]
 **total** | **int** | Total number of publications. | [optional]
 

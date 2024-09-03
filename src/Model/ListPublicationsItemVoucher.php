@@ -62,9 +62,9 @@ class ListPublicationsItemVoucher implements ModelInterface, ArrayAccess, \JsonS
         'object' => 'string',
         'campaign' => 'string',
         'gift' => '\OpenAPI\Client\Model\Gift',
-        'loyalty_card' => 'object',
+        'loyaltyCard' => 'object',
         'discount' => '\OpenAPI\Client\Model\Discount',
-        'is_referral_code' => 'bool'
+        'isReferralCode' => 'bool'
     ];
 
     /**
@@ -79,9 +79,9 @@ class ListPublicationsItemVoucher implements ModelInterface, ArrayAccess, \JsonS
         'object' => null,
         'campaign' => null,
         'gift' => null,
-        'loyalty_card' => null,
+        'loyaltyCard' => null,
         'discount' => null,
-        'is_referral_code' => null
+        'isReferralCode' => null
     ];
 
     /**
@@ -94,9 +94,9 @@ class ListPublicationsItemVoucher implements ModelInterface, ArrayAccess, \JsonS
 		'object' => true,
 		'campaign' => true,
 		'gift' => false,
-		'loyalty_card' => true,
+		'loyaltyCard' => true,
 		'discount' => false,
-		'is_referral_code' => true
+		'isReferralCode' => true
     ];
 
     /**
@@ -189,9 +189,9 @@ class ListPublicationsItemVoucher implements ModelInterface, ArrayAccess, \JsonS
         'object' => 'object',
         'campaign' => 'campaign',
         'gift' => 'gift',
-        'loyalty_card' => 'loyalty_card',
+        'loyaltyCard' => 'loyalty_card',
         'discount' => 'discount',
-        'is_referral_code' => 'is_referral_code'
+        'isReferralCode' => 'is_referral_code'
     ];
 
     /**
@@ -204,9 +204,9 @@ class ListPublicationsItemVoucher implements ModelInterface, ArrayAccess, \JsonS
         'object' => 'setObject',
         'campaign' => 'setCampaign',
         'gift' => 'setGift',
-        'loyalty_card' => 'setLoyaltyCard',
+        'loyaltyCard' => 'setLoyaltyCard',
         'discount' => 'setDiscount',
-        'is_referral_code' => 'setIsReferralCode'
+        'isReferralCode' => 'setIsReferralCode'
     ];
 
     /**
@@ -219,9 +219,9 @@ class ListPublicationsItemVoucher implements ModelInterface, ArrayAccess, \JsonS
         'object' => 'getObject',
         'campaign' => 'getCampaign',
         'gift' => 'getGift',
-        'loyalty_card' => 'getLoyaltyCard',
+        'loyaltyCard' => 'getLoyaltyCard',
         'discount' => 'getDiscount',
-        'is_referral_code' => 'getIsReferralCode'
+        'isReferralCode' => 'getIsReferralCode'
     ];
 
     /**
@@ -298,9 +298,9 @@ class ListPublicationsItemVoucher implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('object', $data ?? [], 'voucher');
         $this->setIfExists('campaign', $data ?? [], null);
         $this->setIfExists('gift', $data ?? [], null);
-        $this->setIfExists('loyalty_card', $data ?? [], null);
+        $this->setIfExists('loyaltyCard', $data ?? [], null);
         $this->setIfExists('discount', $data ?? [], null);
-        $this->setIfExists('is_referral_code', $data ?? [], null);
+        $this->setIfExists('isReferralCode', $data ?? [], null);
     }
 
     /**
@@ -494,35 +494,35 @@ class ListPublicationsItemVoucher implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets loyalty_card
+     * Gets loyaltyCard
      *
      * @return object|null
      */
     public function getLoyaltyCard()
     {
-        return $this->container['loyalty_card'];
+        return $this->container['loyaltyCard'];
     }
 
     /**
-     * Sets loyalty_card
+     * Sets loyaltyCard
      *
-     * @param object|null $loyalty_card Defines the loyalty card details.
+     * @param object|null $loyaltyCard Defines the loyalty card details.
      *
      * @return self
      */
-    public function setLoyaltyCard($loyalty_card)
+    public function setLoyaltyCard($loyaltyCard)
     {
-        if (is_null($loyalty_card)) {
-            array_push($this->openAPINullablesSetToNull, 'loyalty_card');
+        if (is_null($loyaltyCard)) {
+            array_push($this->openAPINullablesSetToNull, 'loyaltyCard');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('loyalty_card', $nullablesSetToNull);
+            $index = array_search('loyaltyCard', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['loyalty_card'] = $loyalty_card;
+        $this->container['loyaltyCard'] = $loyaltyCard;
 
         return $this;
     }
@@ -555,35 +555,35 @@ class ListPublicationsItemVoucher implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets is_referral_code
+     * Gets isReferralCode
      *
      * @return bool|null
      */
     public function getIsReferralCode()
     {
-        return $this->container['is_referral_code'];
+        return $this->container['isReferralCode'];
     }
 
     /**
-     * Sets is_referral_code
+     * Sets isReferralCode
      *
-     * @param bool|null $is_referral_code Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
+     * @param bool|null $isReferralCode Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
      *
      * @return self
      */
-    public function setIsReferralCode($is_referral_code)
+    public function setIsReferralCode($isReferralCode)
     {
-        if (is_null($is_referral_code)) {
-            array_push($this->openAPINullablesSetToNull, 'is_referral_code');
+        if (is_null($isReferralCode)) {
+            array_push($this->openAPINullablesSetToNull, 'isReferralCode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_referral_code', $nullablesSetToNull);
+            $index = array_search('isReferralCode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['is_referral_code'] = $is_referral_code;
+        $this->container['isReferralCode'] = $isReferralCode;
 
         return $this;
     }

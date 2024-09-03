@@ -1,0 +1,61 @@
+{
+  "id": "v_xklC7g2b9hgJj5BYVHGlBvF38SVgvuIu",
+  "code": "yTvzaHUr",
+  "campaign": "AtxKIrXscs",
+  "campaign_id": "camp_iZy6jreBPA1Ol19A3pLutHxB",
+  "category": null,
+  "category_id": null,
+  "type": "LOYALTY_CARD",
+  "discount": null,
+  "gift": null,
+  "loyalty_card": {
+    "points": 1000,
+    "balance": 1000,
+    "next_expiration_date": null,
+    "next_expiration_points": null
+  },
+  "start_date": null,
+  "expiration_date": null,
+  "validity_timeframe": null,
+  "validity_day_of_week": null,
+  "validity_hours": null,
+  "active": true,
+  "additional_info": null,
+  "metadata": {},
+  "assets": {
+    "qr": {
+      "id": "507f876b-4aac-4508-8793-989176029dec",
+      "url": "https://dl.voucherify.io/api/v1/assets/qr/507f876b-4aac-4508-8793-989176029dec"
+    },
+    "barcode": {
+      "id": "f47d6955-7fa1-4464-80d8-d3fa39d8b145",
+      "url": "https://dl.voucherify.io/api/v1/assets/barcode/f47d6955-7fa1-4464-80d8-d3fa39d8b145"
+    }
+  },
+  "is_referral_code": false,
+  "created_at": "2024-08-02T11:36:45+00:00",
+  "updated_at": null,
+  "holder_id": null,
+  "referrer_id": null,
+  "object": "voucher",
+  "publish": {
+    "object": "list",
+    "count": 0,
+    "url": "/v1/vouchers/yTvzaHUr/publications?page=1&limit=10"
+  },
+  "redemption": {
+    "quantity": null,
+    "redeemed_quantity": 0,
+    "redeemed_points": 0,
+    "object": "list",
+    "url": "/v1/vouchers/yTvzaHUr/redemptions?page=1&limit=10"
+  },
+  "categories": [],
+  "validation_rules_assignments": {
+    "object": "list",
+    "data_ref": "data",
+    "data": [],
+    "total": 0
+  },
+  "async_action_id": null
+}

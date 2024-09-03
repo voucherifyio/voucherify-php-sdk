@@ -53,7 +53,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `addMember()`
 
 ```php
-addMember($campaign_id, $loyalties_members_create_request_body): \OpenAPI\Client\Model\LoyaltiesMembersCreateResponseBody
+addMember($campaignId, $loyaltiesMembersCreateRequestBody): \OpenAPI\Client\Model\LoyaltiesMembersCreateResponseBody
 ```
 
 Add Member
@@ -84,11 +84,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID of the loyalty program.
-$loyalties_members_create_request_body = {"customer":"source_customer_1","metadata":{"year":2022},"channel":"postman","voucher":"KpzbHUY5"}; // \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody | Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID of the loyalty program.
+$loyaltiesMembersCreateRequestBody = {"customer":"source_customer_1","metadata":{"year":2022},"channel":"postman","voucher":"KpzbHUY5"}; // \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody | Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint.
 
 try {
-    $result = $apiInstance->addMember($campaign_id, $loyalties_members_create_request_body);
+    $result = $apiInstance->addMember($campaignId, $loyaltiesMembersCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->addMember: ', $e->getMessage(), PHP_EOL;
@@ -99,8 +99,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID of the loyalty program. | |
-| **loyalties_members_create_request_body** | [**\OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody**](../Model/LoyaltiesMembersCreateRequestBody.md)| Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. | [optional] |
+| **campaignId** | **string**| Unique campaign ID of the loyalty program. | |
+| **loyaltiesMembersCreateRequestBody** | [**\OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody**](../Model/LoyaltiesMembersCreateRequestBody.md)| Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. | [optional] |
 
 ### Return type
 
@@ -122,7 +122,7 @@ try {
 ## `createEarningRule()`
 
 ```php
-createEarningRule($campaign_id, $loyalties_earning_rules_create_request_body_item): \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateResponseBody[]
+createEarningRule($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem): \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateResponseBody[]
 ```
 
 Create Earning Rule
@@ -153,11 +153,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
-$loyalties_earning_rules_create_request_body_item = [{"event":"order.paid","validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"FIXED","points":"5"},"source":{"banner":"Order paid 5 points."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid - fixed amount of points"}},{"event":"order.paid","validation_rule_id":null,"loyalty":{"type":"PROPORTIONAL","calculation_type":"ORDER_AMOUNT","order":{"amount":{"every":1,"points":1}}},"source":{"banner":"Order paid - 1 point for 1 dollar spent excluding discounts."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid- points proportional to order amount"}},{"event":"order.paid","validation_rule_id":null,"loyalty":{"type":"PROPORTIONAL","calculation_type":"ORDER_TOTAL_AMOUNT","order":{"total_amount":{"every":1,"points":1}}},"source":{"banner":"Order paid - 1 point for 1 dollar spent including discounts."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid- points proportional to order total amount"}},{"event":"order.paid","validation_rule_id":null,"loyalty":{"type":"PROPORTIONAL","calculation_type":"ORDER_METADATA","order":{"metadata":{"every":2,"points":1,"property":"number_of_store_visits"}}},"source":{"banner":"Order paid - 2 points for each store visit."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid- points proportional to numerical order metadata property "}},{"event":"order.paid","validation_rule_id":null,"loyalty":{"type":"PROPORTIONAL","calculation_type":"ORDER_ITEMS_AMOUNT","order_items":{"amount":{"every":2,"points":1,"object":"product","id":"prod_0bae32322150fd0546"}}},"source":{"banner":"Order paid - 2 points for 1 dollar spent on items excluding discounts."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid- points proportional to order items amount"}},{"event":"order.paid","validation_rule_id":null,"loyalty":{"type":"PROPORTIONAL","calculation_type":"ORDER_ITEMS_SUBTOTAL_AMOUNT","order_items":{"subtotal_amount":{"every":2,"points":1,"object":"products_collection","id":"pc_75U0dHlr7u75BJodrW1AE3t6"}}},"source":{"banner":"Order paid - 2 points for every dollar spent on the product collection."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid- points proportional to order items subtotal amount"}},{"event":"order.paid","validation_rule_id":null,"loyalty":{"type":"PROPORTIONAL","calculation_type":"ORDER_ITEMS_QUANTITY","order_items":{"quantity":{"every":1,"points":1,"object":"sku","id":"sku_0b7d7dfb090be5c619"}}},"source":{"banner":"Order paid - 1 point for every brand phone in your cart."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid - points proportional to quantity of items in a cart of a product varient."}},{"event":"order.paid","validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"PROPORTIONAL","calculation_type":"CUSTOMER_METADATA","customer":{"metadata":{"every":1,"points":1,"property":"customer_life_time_value"}}},"source":{"banner":"Order paid 1 point for 1 month of being a customer with us."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid - points proportional to customer metadata property"}},{"event":"customer.segment.entered","segment":{"id":"seg_OlE7DmfzMI5pHyD5VAv512r1"},"validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"PROPORTIONAL","calculation_type":"CUSTOMER_METADATA","customer":{"metadata":{"every":1,"points":1,"property":"customer_life_time_value"}}},"source":{"banner":"Customer entered birthday segment - 1 point for each month of being a customer with us."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Entered segment - points proportional to customer metadata property"}},{"event":"customer.segment.entered","segment":{"id":"seg_OlE7DmfzMI5pHyD5VAv512r1"},"validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"FIXED","points":"5"},"source":{"banner":"Customer entered birthday segment - 5 points"},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Entered segment - fixed points"}},{"event":"page_view","validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"points":3,"type":"FIXED"},"custom_event":{"schema_id":"ms_gn4Qe4xsFPf7orCArCiNVY13"},"source":{"banner":"See page - 3 points"},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Custom Event - fixed points for viewing a page"}},{"event":"page_view","validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"PROPORTIONAL","calculation_type":"CUSTOM_EVENT_METADATA","custom_event":{"metadata":{"every":1,"points":2,"property":"volume_number"}}},"custom_event":{"schema_id":"ms_gn4Qe4xsFPf7orCArCiNVY13"},"source":{"banner":"See page X - get 2 points multiplied by the page number"},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Custom Event - proportional points for viewing a page based on custom event metadata"}},{"event":"page_view","validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"PROPORTIONAL","calculation_type":"CUSTOMER_METADATA","customer":{"metadata":{"every":1,"points":2,"property":"customer_life_time_value"}}},"custom_event":{"schema_id":"ms_gn4Qe4xsFPf7orCArCiNVY13"},"source":{"banner":"Get 2 points for every month you're a customer for viewing a page"},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Custom Event - proportional points for viewing a page based on customer metadata"}},{"event":"customer.loyalty.tier.prolonged","validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"PROPORTIONAL","calculation_type":"CUSTOMER_METADATA","customer":{"metadata":{"every":1,"points":2,"property":"customer_life_time_value"}}},"loyalty_tier":{"id":"ltr_pudTGWasuIqxdiDM0go31OV1"},"source":{"banner":"Get 2 points for every month you're a customer when your loyalty tier is prolonged."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Custom Event - proportional points for extending a loyalty tier based on customer metadata."}}]; // \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItem[] | Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$loyaltiesEarningRulesCreateRequestBodyItem = [{"event":"order.paid","validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"FIXED","points":"5"},"source":{"banner":"Order paid 5 points."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid - fixed amount of points"}},{"event":"order.paid","validation_rule_id":null,"loyalty":{"type":"PROPORTIONAL","calculation_type":"ORDER_AMOUNT","order":{"amount":{"every":1,"points":1}}},"source":{"banner":"Order paid - 1 point for 1 dollar spent excluding discounts."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid- points proportional to order amount"}},{"event":"order.paid","validation_rule_id":null,"loyalty":{"type":"PROPORTIONAL","calculation_type":"ORDER_TOTAL_AMOUNT","order":{"total_amount":{"every":1,"points":1}}},"source":{"banner":"Order paid - 1 point for 1 dollar spent including discounts."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid- points proportional to order total amount"}},{"event":"order.paid","validation_rule_id":null,"loyalty":{"type":"PROPORTIONAL","calculation_type":"ORDER_METADATA","order":{"metadata":{"every":2,"points":1,"property":"number_of_store_visits"}}},"source":{"banner":"Order paid - 2 points for each store visit."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid- points proportional to numerical order metadata property "}},{"event":"order.paid","validation_rule_id":null,"loyalty":{"type":"PROPORTIONAL","calculation_type":"ORDER_ITEMS_AMOUNT","order_items":{"amount":{"every":2,"points":1,"object":"product","id":"prod_0bae32322150fd0546"}}},"source":{"banner":"Order paid - 2 points for 1 dollar spent on items excluding discounts."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid- points proportional to order items amount"}},{"event":"order.paid","validation_rule_id":null,"loyalty":{"type":"PROPORTIONAL","calculation_type":"ORDER_ITEMS_SUBTOTAL_AMOUNT","order_items":{"subtotal_amount":{"every":2,"points":1,"object":"products_collection","id":"pc_75U0dHlr7u75BJodrW1AE3t6"}}},"source":{"banner":"Order paid - 2 points for every dollar spent on the product collection."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid- points proportional to order items subtotal amount"}},{"event":"order.paid","validation_rule_id":null,"loyalty":{"type":"PROPORTIONAL","calculation_type":"ORDER_ITEMS_QUANTITY","order_items":{"quantity":{"every":1,"points":1,"object":"sku","id":"sku_0b7d7dfb090be5c619"}}},"source":{"banner":"Order paid - 1 point for every brand phone in your cart."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid - points proportional to quantity of items in a cart of a product varient."}},{"event":"order.paid","validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"PROPORTIONAL","calculation_type":"CUSTOMER_METADATA","customer":{"metadata":{"every":1,"points":1,"property":"customer_life_time_value"}}},"source":{"banner":"Order paid 1 point for 1 month of being a customer with us."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid - points proportional to customer metadata property"}},{"event":"customer.segment.entered","segment":{"id":"seg_OlE7DmfzMI5pHyD5VAv512r1"},"validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"PROPORTIONAL","calculation_type":"CUSTOMER_METADATA","customer":{"metadata":{"every":1,"points":1,"property":"customer_life_time_value"}}},"source":{"banner":"Customer entered birthday segment - 1 point for each month of being a customer with us."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Entered segment - points proportional to customer metadata property"}},{"event":"customer.segment.entered","segment":{"id":"seg_OlE7DmfzMI5pHyD5VAv512r1"},"validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"FIXED","points":"5"},"source":{"banner":"Customer entered birthday segment - 5 points"},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Entered segment - fixed points"}},{"event":"page_view","validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"points":3,"type":"FIXED"},"custom_event":{"schema_id":"ms_gn4Qe4xsFPf7orCArCiNVY13"},"source":{"banner":"See page - 3 points"},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Custom Event - fixed points for viewing a page"}},{"event":"page_view","validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"PROPORTIONAL","calculation_type":"CUSTOM_EVENT_METADATA","custom_event":{"metadata":{"every":1,"points":2,"property":"volume_number"}}},"custom_event":{"schema_id":"ms_gn4Qe4xsFPf7orCArCiNVY13"},"source":{"banner":"See page X - get 2 points multiplied by the page number"},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Custom Event - proportional points for viewing a page based on custom event metadata"}},{"event":"page_view","validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"PROPORTIONAL","calculation_type":"CUSTOMER_METADATA","customer":{"metadata":{"every":1,"points":2,"property":"customer_life_time_value"}}},"custom_event":{"schema_id":"ms_gn4Qe4xsFPf7orCArCiNVY13"},"source":{"banner":"Get 2 points for every month you're a customer for viewing a page"},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Custom Event - proportional points for viewing a page based on customer metadata"}},{"event":"customer.loyalty.tier.prolonged","validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"PROPORTIONAL","calculation_type":"CUSTOMER_METADATA","customer":{"metadata":{"every":1,"points":2,"property":"customer_life_time_value"}}},"loyalty_tier":{"id":"ltr_pudTGWasuIqxdiDM0go31OV1"},"source":{"banner":"Get 2 points for every month you're a customer when your loyalty tier is prolonged."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Custom Event - proportional points for extending a loyalty tier based on customer metadata."}}]; // \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItem[] | Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object
 
 try {
-    $result = $apiInstance->createEarningRule($campaign_id, $loyalties_earning_rules_create_request_body_item);
+    $result = $apiInstance->createEarningRule($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->createEarningRule: ', $e->getMessage(), PHP_EOL;
@@ -168,8 +168,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
-| **loyalties_earning_rules_create_request_body_item** | [**\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItem[]**](../Model/LoyaltiesEarningRulesCreateRequestBodyItem.md)| Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object | [optional] |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **loyaltiesEarningRulesCreateRequestBodyItem** | [**\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItem[]**](../Model/LoyaltiesEarningRulesCreateRequestBodyItem.md)| Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object | [optional] |
 
 ### Return type
 
@@ -191,7 +191,7 @@ try {
 ## `createInBulkLoyaltyTiers()`
 
 ```php
-createInBulkLoyaltyTiers($campaign_id, $loyalties_tiers_create_in_bulk_request_body_item): \OpenAPI\Client\Model\LoyaltyTier[]
+createInBulkLoyaltyTiers($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem): \OpenAPI\Client\Model\LoyaltyTier[]
 ```
 
 Create loyalty tiers
@@ -222,11 +222,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique loyalty campaign ID or name.
-$loyalties_tiers_create_in_bulk_request_body_item = array(new \OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem()); // \OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem[] | Provide tier definitions you want to add to existing loyalty campaign.
+$campaignId = 'campaignId_example'; // string | Unique loyalty campaign ID or name.
+$loyaltiesTiersCreateInBulkRequestBodyItem = array(new \OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem()); // \OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem[] | Provide tier definitions you want to add to existing loyalty campaign.
 
 try {
-    $result = $apiInstance->createInBulkLoyaltyTiers($campaign_id, $loyalties_tiers_create_in_bulk_request_body_item);
+    $result = $apiInstance->createInBulkLoyaltyTiers($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->createInBulkLoyaltyTiers: ', $e->getMessage(), PHP_EOL;
@@ -237,8 +237,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique loyalty campaign ID or name. | |
-| **loyalties_tiers_create_in_bulk_request_body_item** | [**\OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem[]**](../Model/LoyaltiesTiersCreateInBulkRequestBodyItem.md)| Provide tier definitions you want to add to existing loyalty campaign. | [optional] |
+| **campaignId** | **string**| Unique loyalty campaign ID or name. | |
+| **loyaltiesTiersCreateInBulkRequestBodyItem** | [**\OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem[]**](../Model/LoyaltiesTiersCreateInBulkRequestBodyItem.md)| Provide tier definitions you want to add to existing loyalty campaign. | [optional] |
 
 ### Return type
 
@@ -260,7 +260,7 @@ try {
 ## `createLoyaltyProgram()`
 
 ```php
-createLoyaltyProgram($loyalties_create_campaign_request_body): \OpenAPI\Client\Model\LoyaltiesCreateCampaignResponseBody
+createLoyaltyProgram($loyaltiesCreateCampaignRequestBody): \OpenAPI\Client\Model\LoyaltiesCreateCampaignResponseBody
 ```
 
 Create Loyalty Campaign
@@ -291,10 +291,10 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$loyalties_create_campaign_request_body = {"name":"Loyalty Program 4","description":"This is a campaign description.","auto_join":true,"join_once":true,"use_voucher_metadata_schema":true,"start_date":"2016-10-26T00:00:00Z","expiration_date":"2024-10-26T00:00:00Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"activity_duration_after_publishing":"P24D","category_id":"cat_0b6152ce12414820dc","vouchers_count":2,"voucher":{"type":"LOYALTY_CARD","loyalty_card":{"points":0,"expiration_rules":{"period_type":"MONTH","period_value":3,"rounding_type":"END_OF_QUARTER"}},"redemption":{"quantity":2},"code_config":{"pattern":"L-CARD-#######"}},"metadata":{"test":true},"type":"STATIC","loyalty_tiers_expiration":{"qualification_type":"BALANCE","start_date":{"type":"IMMEDIATE"},"expiration_date":{"type":"CUSTOM","extend":"P3M","rounding":{"type":"MONTH","strategy":"END"}}}}; // \OpenAPI\Client\Model\LoyaltiesCreateCampaignRequestBody | Specify the loyalty campaign details.
+$loyaltiesCreateCampaignRequestBody = {"name":"Loyalty Program 4","description":"This is a campaign description.","auto_join":true,"join_once":true,"use_voucher_metadata_schema":true,"start_date":"2016-10-26T00:00:00Z","expiration_date":"2024-10-26T00:00:00Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"activity_duration_after_publishing":"P24D","category_id":"cat_0b6152ce12414820dc","vouchers_count":2,"voucher":{"type":"LOYALTY_CARD","loyalty_card":{"points":0,"expiration_rules":{"period_type":"MONTH","period_value":3,"rounding_type":"END_OF_QUARTER"}},"redemption":{"quantity":2},"code_config":{"pattern":"L-CARD-#######"}},"metadata":{"test":true},"type":"STATIC","loyalty_tiers_expiration":{"qualification_type":"BALANCE","start_date":{"type":"IMMEDIATE"},"expiration_date":{"type":"CUSTOM","extend":"P3M","rounding":{"type":"MONTH","strategy":"END"}}}}; // \OpenAPI\Client\Model\LoyaltiesCreateCampaignRequestBody | Specify the loyalty campaign details.
 
 try {
-    $result = $apiInstance->createLoyaltyProgram($loyalties_create_campaign_request_body);
+    $result = $apiInstance->createLoyaltyProgram($loyaltiesCreateCampaignRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->createLoyaltyProgram: ', $e->getMessage(), PHP_EOL;
@@ -305,7 +305,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **loyalties_create_campaign_request_body** | [**\OpenAPI\Client\Model\LoyaltiesCreateCampaignRequestBody**](../Model/LoyaltiesCreateCampaignRequestBody.md)| Specify the loyalty campaign details. | [optional] |
+| **loyaltiesCreateCampaignRequestBody** | [**\OpenAPI\Client\Model\LoyaltiesCreateCampaignRequestBody**](../Model/LoyaltiesCreateCampaignRequestBody.md)| Specify the loyalty campaign details. | [optional] |
 
 ### Return type
 
@@ -327,7 +327,7 @@ try {
 ## `createPointsExpirationExport()`
 
 ```php
-createPointsExpirationExport($campaign_id, $loyalties_points_expiration_export_create_request_body): \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBody
+createPointsExpirationExport($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody): \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBody
 ```
 
 Create Points Expiration Export
@@ -358,11 +358,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID or name.
-$loyalties_points_expiration_export_create_request_body = {"parameters":{"fields":["id","campaign_id","voucher_id","status","expires_at","points"],"order":"-expires_at","filters":{"junction":"and","voucher_id":{"conditions":{"$in":["v_0aMj6Mdp0i3zuXrd9NnBKboc7746mlgF","v_YLn0WVWXSXbUfDvxgrgUbtfJ3SQIY655"]}}}}}; // \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody | Specify the data filters, types of data to return and order in which the results should be returned.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID or name.
+$loyaltiesPointsExpirationExportCreateRequestBody = {"parameters":{"fields":["id","campaign_id","voucher_id","status","expires_at","points"],"order":"-expires_at","filters":{"junction":"and","voucher_id":{"conditions":{"$in":["v_0aMj6Mdp0i3zuXrd9NnBKboc7746mlgF","v_YLn0WVWXSXbUfDvxgrgUbtfJ3SQIY655"]}}}}}; // \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody | Specify the data filters, types of data to return and order in which the results should be returned.
 
 try {
-    $result = $apiInstance->createPointsExpirationExport($campaign_id, $loyalties_points_expiration_export_create_request_body);
+    $result = $apiInstance->createPointsExpirationExport($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->createPointsExpirationExport: ', $e->getMessage(), PHP_EOL;
@@ -373,8 +373,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID or name. | |
-| **loyalties_points_expiration_export_create_request_body** | [**\OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody**](../Model/LoyaltiesPointsExpirationExportCreateRequestBody.md)| Specify the data filters, types of data to return and order in which the results should be returned. | [optional] |
+| **campaignId** | **string**| Unique campaign ID or name. | |
+| **loyaltiesPointsExpirationExportCreateRequestBody** | [**\OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody**](../Model/LoyaltiesPointsExpirationExportCreateRequestBody.md)| Specify the data filters, types of data to return and order in which the results should be returned. | [optional] |
 
 ### Return type
 
@@ -396,7 +396,7 @@ try {
 ## `createRewardAssignment1()`
 
 ```php
-createRewardAssignment1($campaign_id, $loyalties_rewards_create_assignment_item_request_body): \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentResponseBody
+createRewardAssignment1($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody): \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentResponseBody
 ```
 
 Create Reward Assignment
@@ -427,11 +427,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
-$loyalties_rewards_create_assignment_item_request_body = [{"reward":"rew_wg2pvCr5LDhCq4uVQZ9LhuZm","parameters":{"loyalty":{"points":2}}},{"reward":"rew_z35ffKoH0tCcck8EL56p6SIs","parameters":{"loyalty":{"points":2}}}]; // \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] | Define the cost of the rewards in loyalty points.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$loyaltiesRewardsCreateAssignmentItemRequestBody = [{"reward":"rew_wg2pvCr5LDhCq4uVQZ9LhuZm","parameters":{"loyalty":{"points":2}}},{"reward":"rew_z35ffKoH0tCcck8EL56p6SIs","parameters":{"loyalty":{"points":2}}}]; // \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] | Define the cost of the rewards in loyalty points.
 
 try {
-    $result = $apiInstance->createRewardAssignment1($campaign_id, $loyalties_rewards_create_assignment_item_request_body);
+    $result = $apiInstance->createRewardAssignment1($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->createRewardAssignment1: ', $e->getMessage(), PHP_EOL;
@@ -442,8 +442,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
-| **loyalties_rewards_create_assignment_item_request_body** | [**\OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[]**](../Model/LoyaltiesRewardsCreateAssignmentItemRequestBody.md)| Define the cost of the rewards in loyalty points. | [optional] |
+| **campaignId** | **string**| Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **loyaltiesRewardsCreateAssignmentItemRequestBody** | [**\OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[]**](../Model/LoyaltiesRewardsCreateAssignmentItemRequestBody.md)| Define the cost of the rewards in loyalty points. | [optional] |
 
 ### Return type
 
@@ -465,7 +465,7 @@ try {
 ## `deleteEarningRule()`
 
 ```php
-deleteEarningRule($campaign_id, $earning_rule_id)
+deleteEarningRule($campaignId, $earningRuleId)
 ```
 
 Delete Earning Rule
@@ -496,11 +496,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
-$earning_rule_id = 'earning_rule_id_example'; // string | A unique earning rule ID.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$earningRuleId = 'earningRuleId_example'; // string | A unique earning rule ID.
 
 try {
-    $apiInstance->deleteEarningRule($campaign_id, $earning_rule_id);
+    $apiInstance->deleteEarningRule($campaignId, $earningRuleId);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->deleteEarningRule: ', $e->getMessage(), PHP_EOL;
 }
@@ -510,8 +510,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
-| **earning_rule_id** | **string**| A unique earning rule ID. | |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **earningRuleId** | **string**| A unique earning rule ID. | |
 
 ### Return type
 
@@ -533,7 +533,7 @@ void (empty response body)
 ## `deleteLoyaltyProgram()`
 
 ```php
-deleteLoyaltyProgram($campaign_id, $force): \OpenAPI\Client\Model\LoyaltiesDeleteResponseBody
+deleteLoyaltyProgram($campaignId, $force): \OpenAPI\Client\Model\LoyaltiesDeleteResponseBody
 ```
 
 Delete Loyalty Campaign
@@ -564,11 +564,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
 $force = True; // bool | If this flag is set to true, the campaign and related vouchers will be removed permanently. If it is set to false or not set at all, the loyalty campaign and all related loyalty cards will be moved to the bin. Going forward, the user will be able to create the next campaign with the same name.
 
 try {
-    $result = $apiInstance->deleteLoyaltyProgram($campaign_id, $force);
+    $result = $apiInstance->deleteLoyaltyProgram($campaignId, $force);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->deleteLoyaltyProgram: ', $e->getMessage(), PHP_EOL;
@@ -579,7 +579,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
 | **force** | **bool**| If this flag is set to true, the campaign and related vouchers will be removed permanently. If it is set to false or not set at all, the loyalty campaign and all related loyalty cards will be moved to the bin. Going forward, the user will be able to create the next campaign with the same name. | [optional] |
 
 ### Return type
@@ -602,7 +602,7 @@ try {
 ## `deleteRewardAssignment1()`
 
 ```php
-deleteRewardAssignment1($campaign_id, $assignment_id)
+deleteRewardAssignment1($campaignId, $assignmentId)
 ```
 
 Delete Reward Assignment
@@ -633,11 +633,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
-$assignment_id = 'assignment_id_example'; // string | A unique reward assignment ID.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$assignmentId = 'assignmentId_example'; // string | A unique reward assignment ID.
 
 try {
-    $apiInstance->deleteRewardAssignment1($campaign_id, $assignment_id);
+    $apiInstance->deleteRewardAssignment1($campaignId, $assignmentId);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->deleteRewardAssignment1: ', $e->getMessage(), PHP_EOL;
 }
@@ -647,8 +647,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
-| **assignment_id** | **string**| A unique reward assignment ID. | |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **assignmentId** | **string**| A unique reward assignment ID. | |
 
 ### Return type
 
@@ -670,7 +670,7 @@ void (empty response body)
 ## `disableEarningRule()`
 
 ```php
-disableEarningRule($campaign_id, $earning_rule_id): \OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBody
+disableEarningRule($campaignId, $earningRuleId): \OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBody
 ```
 
 Disable Earning Rule
@@ -701,11 +701,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID or name.
-$earning_rule_id = 'earning_rule_id_example'; // string | Unique earning rule ID.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID or name.
+$earningRuleId = 'earningRuleId_example'; // string | Unique earning rule ID.
 
 try {
-    $result = $apiInstance->disableEarningRule($campaign_id, $earning_rule_id);
+    $result = $apiInstance->disableEarningRule($campaignId, $earningRuleId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->disableEarningRule: ', $e->getMessage(), PHP_EOL;
@@ -716,8 +716,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID or name. | |
-| **earning_rule_id** | **string**| Unique earning rule ID. | |
+| **campaignId** | **string**| Unique campaign ID or name. | |
+| **earningRuleId** | **string**| Unique earning rule ID. | |
 
 ### Return type
 
@@ -739,7 +739,7 @@ try {
 ## `enableEarningRule()`
 
 ```php
-enableEarningRule($campaign_id, $earning_rule_id): \OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBody
+enableEarningRule($campaignId, $earningRuleId): \OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBody
 ```
 
 Enable Earning Rule
@@ -770,11 +770,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID or name.
-$earning_rule_id = 'earning_rule_id_example'; // string | Unique earning rule ID.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID or name.
+$earningRuleId = 'earningRuleId_example'; // string | Unique earning rule ID.
 
 try {
-    $result = $apiInstance->enableEarningRule($campaign_id, $earning_rule_id);
+    $result = $apiInstance->enableEarningRule($campaignId, $earningRuleId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->enableEarningRule: ', $e->getMessage(), PHP_EOL;
@@ -785,8 +785,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID or name. | |
-| **earning_rule_id** | **string**| Unique earning rule ID. | |
+| **campaignId** | **string**| Unique campaign ID or name. | |
+| **earningRuleId** | **string**| Unique earning rule ID. | |
 
 ### Return type
 
@@ -808,7 +808,7 @@ try {
 ## `exportLoyaltyCardTransactions()`
 
 ```php
-exportLoyaltyCardTransactions($member_id, $loyalties_members_transactions_export_create_request_body): \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBody
+exportLoyaltyCardTransactions($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody): \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBody
 ```
 
 Export Loyalty Card Transactions
@@ -839,11 +839,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$member_id = 'member_id_example'; // string | A unique code identifying the loyalty card that you are looking to export transaction data for.
-$loyalties_members_transactions_export_create_request_body = {"parameters":{"order":"-created_at","fields":["id","type","source_id","reason","balance","amount","created_at","voucher_id","campaign_id","details","related_transaction_id"]}}; // \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody | Specify the parameters and filters for the transaction export.
+$memberId = 'memberId_example'; // string | A unique code identifying the loyalty card that you are looking to export transaction data for.
+$loyaltiesMembersTransactionsExportCreateRequestBody = {"parameters":{"order":"-created_at","fields":["id","type","source_id","reason","balance","amount","created_at","voucher_id","campaign_id","details","related_transaction_id"]}}; // \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody | Specify the parameters and filters for the transaction export.
 
 try {
-    $result = $apiInstance->exportLoyaltyCardTransactions($member_id, $loyalties_members_transactions_export_create_request_body);
+    $result = $apiInstance->exportLoyaltyCardTransactions($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->exportLoyaltyCardTransactions: ', $e->getMessage(), PHP_EOL;
@@ -854,8 +854,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **member_id** | **string**| A unique code identifying the loyalty card that you are looking to export transaction data for. | |
-| **loyalties_members_transactions_export_create_request_body** | [**\OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody**](../Model/LoyaltiesMembersTransactionsExportCreateRequestBody.md)| Specify the parameters and filters for the transaction export. | [optional] |
+| **memberId** | **string**| A unique code identifying the loyalty card that you are looking to export transaction data for. | |
+| **loyaltiesMembersTransactionsExportCreateRequestBody** | [**\OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody**](../Model/LoyaltiesMembersTransactionsExportCreateRequestBody.md)| Specify the parameters and filters for the transaction export. | [optional] |
 
 ### Return type
 
@@ -877,7 +877,7 @@ try {
 ## `exportLoyaltyCardTransactions1()`
 
 ```php
-exportLoyaltyCardTransactions1($campaign_id, $member_id, $loyalties_members_transactions_export_create_request_body): \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBody
+exportLoyaltyCardTransactions1($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody): \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBody
 ```
 
 Export Loyalty Card Transactions
@@ -908,12 +908,12 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export.
-$member_id = 'member_id_example'; // string | A unique code identifying the loyalty card that you are looking to export transaction data for.
-$loyalties_members_transactions_export_create_request_body = {"parameters":{"order":"-created_at","fields":["id","type","source_id","reason","balance","amount","created_at","voucher_id","campaign_id","details","related_transaction_id"]}}; // \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody | Specify the parameters and filters for the transaction export.
+$campaignId = 'campaignId_example'; // string | A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export.
+$memberId = 'memberId_example'; // string | A unique code identifying the loyalty card that you are looking to export transaction data for.
+$loyaltiesMembersTransactionsExportCreateRequestBody = {"parameters":{"order":"-created_at","fields":["id","type","source_id","reason","balance","amount","created_at","voucher_id","campaign_id","details","related_transaction_id"]}}; // \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody | Specify the parameters and filters for the transaction export.
 
 try {
-    $result = $apiInstance->exportLoyaltyCardTransactions1($campaign_id, $member_id, $loyalties_members_transactions_export_create_request_body);
+    $result = $apiInstance->exportLoyaltyCardTransactions1($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->exportLoyaltyCardTransactions1: ', $e->getMessage(), PHP_EOL;
@@ -924,9 +924,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. | |
-| **member_id** | **string**| A unique code identifying the loyalty card that you are looking to export transaction data for. | |
-| **loyalties_members_transactions_export_create_request_body** | [**\OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody**](../Model/LoyaltiesMembersTransactionsExportCreateRequestBody.md)| Specify the parameters and filters for the transaction export. | [optional] |
+| **campaignId** | **string**| A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. | |
+| **memberId** | **string**| A unique code identifying the loyalty card that you are looking to export transaction data for. | |
+| **loyaltiesMembersTransactionsExportCreateRequestBody** | [**\OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody**](../Model/LoyaltiesMembersTransactionsExportCreateRequestBody.md)| Specify the parameters and filters for the transaction export. | [optional] |
 
 ### Return type
 
@@ -948,7 +948,7 @@ try {
 ## `getEarningRule()`
 
 ```php
-getEarningRule($campaign_id, $earning_rule_id): \OpenAPI\Client\Model\LoyaltiesEarningRulesGetResponseBody
+getEarningRule($campaignId, $earningRuleId): \OpenAPI\Client\Model\LoyaltiesEarningRulesGetResponseBody
 ```
 
 Get Earning Rule
@@ -979,11 +979,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
-$earning_rule_id = 'earning_rule_id_example'; // string | A unique earning rule ID.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$earningRuleId = 'earningRuleId_example'; // string | A unique earning rule ID.
 
 try {
-    $result = $apiInstance->getEarningRule($campaign_id, $earning_rule_id);
+    $result = $apiInstance->getEarningRule($campaignId, $earningRuleId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->getEarningRule: ', $e->getMessage(), PHP_EOL;
@@ -994,8 +994,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
-| **earning_rule_id** | **string**| A unique earning rule ID. | |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **earningRuleId** | **string**| A unique earning rule ID. | |
 
 ### Return type
 
@@ -1017,7 +1017,7 @@ try {
 ## `getLoyaltyProgram()`
 
 ```php
-getLoyaltyProgram($campaign_id): \OpenAPI\Client\Model\LoyaltiesGetCampaignResponseBody
+getLoyaltyProgram($campaignId): \OpenAPI\Client\Model\LoyaltiesGetCampaignResponseBody
 ```
 
 Get Loyalty Campaign
@@ -1048,10 +1048,10 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
 
 try {
-    $result = $apiInstance->getLoyaltyProgram($campaign_id);
+    $result = $apiInstance->getLoyaltyProgram($campaignId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->getLoyaltyProgram: ', $e->getMessage(), PHP_EOL;
@@ -1062,7 +1062,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
 
 ### Return type
 
@@ -1084,7 +1084,7 @@ try {
 ## `getLoyaltyTier()`
 
 ```php
-getLoyaltyTier($campaign_id, $loyalty_tier_id): \OpenAPI\Client\Model\LoyaltiesTiersGetResponseBody
+getLoyaltyTier($campaignId, $loyaltyTierId): \OpenAPI\Client\Model\LoyaltiesTiersGetResponseBody
 ```
 
 Get Loyalty Tier
@@ -1115,11 +1115,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique loyalty campaign ID or name.
-$loyalty_tier_id = 'loyalty_tier_id_example'; // string | Unique loyalty tier ID.
+$campaignId = 'campaignId_example'; // string | Unique loyalty campaign ID or name.
+$loyaltyTierId = 'loyaltyTierId_example'; // string | Unique loyalty tier ID.
 
 try {
-    $result = $apiInstance->getLoyaltyTier($campaign_id, $loyalty_tier_id);
+    $result = $apiInstance->getLoyaltyTier($campaignId, $loyaltyTierId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->getLoyaltyTier: ', $e->getMessage(), PHP_EOL;
@@ -1130,8 +1130,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique loyalty campaign ID or name. | |
-| **loyalty_tier_id** | **string**| Unique loyalty tier ID. | |
+| **campaignId** | **string**| Unique loyalty campaign ID or name. | |
+| **loyaltyTierId** | **string**| Unique loyalty tier ID. | |
 
 ### Return type
 
@@ -1153,7 +1153,7 @@ try {
 ## `getMember()`
 
 ```php
-getMember($member_id): \OpenAPI\Client\Model\LoyaltiesMembersGetResponseBody
+getMember($memberId): \OpenAPI\Client\Model\LoyaltiesMembersGetResponseBody
 ```
 
 Get Member
@@ -1184,10 +1184,10 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$member_id = 'member_id_example'; // string | Unique loyalty card code assigned to a particular customer.
+$memberId = 'memberId_example'; // string | Unique loyalty card code assigned to a particular customer.
 
 try {
-    $result = $apiInstance->getMember($member_id);
+    $result = $apiInstance->getMember($memberId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->getMember: ', $e->getMessage(), PHP_EOL;
@@ -1198,7 +1198,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **member_id** | **string**| Unique loyalty card code assigned to a particular customer. | |
+| **memberId** | **string**| Unique loyalty card code assigned to a particular customer. | |
 
 ### Return type
 
@@ -1220,7 +1220,7 @@ try {
 ## `getMember1()`
 
 ```php
-getMember1($campaign_id, $member_id): \OpenAPI\Client\Model\LoyaltiesMembersGetResponseBody
+getMember1($campaignId, $memberId): \OpenAPI\Client\Model\LoyaltiesMembersGetResponseBody
 ```
 
 Get Member
@@ -1251,11 +1251,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID.
-$member_id = 'member_id_example'; // string | Unique code that identifies the loyalty card.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID.
+$memberId = 'memberId_example'; // string | Unique code that identifies the loyalty card.
 
 try {
-    $result = $apiInstance->getMember1($campaign_id, $member_id);
+    $result = $apiInstance->getMember1($campaignId, $memberId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->getMember1: ', $e->getMessage(), PHP_EOL;
@@ -1266,8 +1266,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID. | |
-| **member_id** | **string**| Unique code that identifies the loyalty card. | |
+| **campaignId** | **string**| Unique campaign ID. | |
+| **memberId** | **string**| Unique code that identifies the loyalty card. | |
 
 ### Return type
 
@@ -1289,7 +1289,7 @@ try {
 ## `getRewardAssignment1()`
 
 ```php
-getRewardAssignment1($campaign_id, $assignment_id): \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsGetResponseBody
+getRewardAssignment1($campaignId, $assignmentId): \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsGetResponseBody
 ```
 
 Get Reward Assignment
@@ -1320,11 +1320,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
-$assignment_id = 'assignment_id_example'; // string | Unique reward assignment ID.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$assignmentId = 'assignmentId_example'; // string | Unique reward assignment ID.
 
 try {
-    $result = $apiInstance->getRewardAssignment1($campaign_id, $assignment_id);
+    $result = $apiInstance->getRewardAssignment1($campaignId, $assignmentId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->getRewardAssignment1: ', $e->getMessage(), PHP_EOL;
@@ -1335,8 +1335,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
-| **assignment_id** | **string**| Unique reward assignment ID. | |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **assignmentId** | **string**| Unique reward assignment ID. | |
 
 ### Return type
 
@@ -1358,7 +1358,7 @@ try {
 ## `getRewardAssignment2()`
 
 ```php
-getRewardAssignment2($campaign_id, $assignment_id): \OpenAPI\Client\Model\LoyaltiesRewardsGetResponseBody
+getRewardAssignment2($campaignId, $assignmentId): \OpenAPI\Client\Model\LoyaltiesRewardsGetResponseBody
 ```
 
 Get Reward Assignment
@@ -1389,11 +1389,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
-$assignment_id = 'assignment_id_example'; // string | A unique reward assignment ID.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$assignmentId = 'assignmentId_example'; // string | A unique reward assignment ID.
 
 try {
-    $result = $apiInstance->getRewardAssignment2($campaign_id, $assignment_id);
+    $result = $apiInstance->getRewardAssignment2($campaignId, $assignmentId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->getRewardAssignment2: ', $e->getMessage(), PHP_EOL;
@@ -1404,8 +1404,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
-| **assignment_id** | **string**| A unique reward assignment ID. | |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **assignmentId** | **string**| A unique reward assignment ID. | |
 
 ### Return type
 
@@ -1427,7 +1427,7 @@ try {
 ## `getRewardDetails()`
 
 ```php
-getRewardDetails($campaign_id, $assignment_id): \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsRewardGetResponseBody
+getRewardDetails($campaignId, $assignmentId): \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsRewardGetResponseBody
 ```
 
 Get Reward Details
@@ -1458,11 +1458,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
-$assignment_id = 'assignment_id_example'; // string | Unique reward assignment ID.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$assignmentId = 'assignmentId_example'; // string | Unique reward assignment ID.
 
 try {
-    $result = $apiInstance->getRewardDetails($campaign_id, $assignment_id);
+    $result = $apiInstance->getRewardDetails($campaignId, $assignmentId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->getRewardDetails: ', $e->getMessage(), PHP_EOL;
@@ -1473,8 +1473,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
-| **assignment_id** | **string**| Unique reward assignment ID. | |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **assignmentId** | **string**| Unique reward assignment ID. | |
 
 ### Return type
 
@@ -1496,7 +1496,7 @@ try {
 ## `listEarningRules()`
 
 ```php
-listEarningRules($campaign_id, $limit, $page, $order): \OpenAPI\Client\Model\LoyaltiesEarningRulesListResponseBody
+listEarningRules($campaignId, $limit, $page, $order): \OpenAPI\Client\Model\LoyaltiesEarningRulesListResponseBody
 ```
 
 List Earning Rules
@@ -1527,13 +1527,13 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 $order = new \OpenAPI\Client\Model\ParameterOrderListEarningRules(); // ParameterOrderListEarningRules | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
 
 try {
-    $result = $apiInstance->listEarningRules($campaign_id, $limit, $page, $order);
+    $result = $apiInstance->listEarningRules($campaignId, $limit, $page, $order);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listEarningRules: ', $e->getMessage(), PHP_EOL;
@@ -1544,7 +1544,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 | **order** | [**ParameterOrderListEarningRules**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
@@ -1569,7 +1569,7 @@ try {
 ## `listLoyaltyCardTransactions()`
 
 ```php
-listLoyaltyCardTransactions($member_id, $limit): \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody
+listLoyaltyCardTransactions($memberId, $limit): \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody
 ```
 
 List Loyalty Card Transactions
@@ -1600,11 +1600,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$member_id = 'member_id_example'; // string | A unique code identifying the loyalty card that you are looking to retrieve transaction data for.
+$memberId = 'memberId_example'; // string | A unique code identifying the loyalty card that you are looking to retrieve transaction data for.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 
 try {
-    $result = $apiInstance->listLoyaltyCardTransactions($member_id, $limit);
+    $result = $apiInstance->listLoyaltyCardTransactions($memberId, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listLoyaltyCardTransactions: ', $e->getMessage(), PHP_EOL;
@@ -1615,7 +1615,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **member_id** | **string**| A unique code identifying the loyalty card that you are looking to retrieve transaction data for. | |
+| **memberId** | **string**| A unique code identifying the loyalty card that you are looking to retrieve transaction data for. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 
 ### Return type
@@ -1638,7 +1638,7 @@ try {
 ## `listLoyaltyCardTransactions1()`
 
 ```php
-listLoyaltyCardTransactions1($campaign_id, $member_id, $limit, $page): \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody
+listLoyaltyCardTransactions1($campaignId, $memberId, $limit, $page): \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody
 ```
 
 List Loyalty Card Transactions
@@ -1669,13 +1669,13 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return.
-$member_id = 'member_id_example'; // string | A unique code identifying the loyalty card that you are looking to retrieve transaction data for.
+$campaignId = 'campaignId_example'; // string | A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return.
+$memberId = 'memberId_example'; // string | A unique code identifying the loyalty card that you are looking to retrieve transaction data for.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 
 try {
-    $result = $apiInstance->listLoyaltyCardTransactions1($campaign_id, $member_id, $limit, $page);
+    $result = $apiInstance->listLoyaltyCardTransactions1($campaignId, $memberId, $limit, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listLoyaltyCardTransactions1: ', $e->getMessage(), PHP_EOL;
@@ -1686,8 +1686,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. | |
-| **member_id** | **string**| A unique code identifying the loyalty card that you are looking to retrieve transaction data for. | |
+| **campaignId** | **string**| A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. | |
+| **memberId** | **string**| A unique code identifying the loyalty card that you are looking to retrieve transaction data for. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 
@@ -1782,7 +1782,7 @@ try {
 ## `listLoyaltyTierEarningRules()`
 
 ```php
-listLoyaltyTierEarningRules($campaign_id, $loyalty_tier_id, $limit, $page): \OpenAPI\Client\Model\LoyaltiesTiersEarningRulesListResponseBody
+listLoyaltyTierEarningRules($campaignId, $loyaltyTierId, $limit, $page): \OpenAPI\Client\Model\LoyaltiesTiersEarningRulesListResponseBody
 ```
 
 List Loyalty Tier Earning Rules
@@ -1813,13 +1813,13 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID or name.
-$loyalty_tier_id = 'loyalty_tier_id_example'; // string | Unique loyalty tier ID.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID or name.
+$loyaltyTierId = 'loyaltyTierId_example'; // string | Unique loyalty tier ID.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 
 try {
-    $result = $apiInstance->listLoyaltyTierEarningRules($campaign_id, $loyalty_tier_id, $limit, $page);
+    $result = $apiInstance->listLoyaltyTierEarningRules($campaignId, $loyaltyTierId, $limit, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listLoyaltyTierEarningRules: ', $e->getMessage(), PHP_EOL;
@@ -1830,8 +1830,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID or name. | |
-| **loyalty_tier_id** | **string**| Unique loyalty tier ID. | |
+| **campaignId** | **string**| Unique campaign ID or name. | |
+| **loyaltyTierId** | **string**| Unique loyalty tier ID. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 
@@ -1855,7 +1855,7 @@ try {
 ## `listLoyaltyTierRewards()`
 
 ```php
-listLoyaltyTierRewards($campaign_id, $loyalty_tier_id): \OpenAPI\Client\Model\LoyaltiesTiersRewardsListResponseBody
+listLoyaltyTierRewards($campaignId, $loyaltyTierId): \OpenAPI\Client\Model\LoyaltiesTiersRewardsListResponseBody
 ```
 
 List Loyalty Tier Rewards
@@ -1886,11 +1886,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID or name.
-$loyalty_tier_id = 'loyalty_tier_id_example'; // string | Unique loyalty tier ID.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID or name.
+$loyaltyTierId = 'loyaltyTierId_example'; // string | Unique loyalty tier ID.
 
 try {
-    $result = $apiInstance->listLoyaltyTierRewards($campaign_id, $loyalty_tier_id);
+    $result = $apiInstance->listLoyaltyTierRewards($campaignId, $loyaltyTierId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listLoyaltyTierRewards: ', $e->getMessage(), PHP_EOL;
@@ -1901,8 +1901,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID or name. | |
-| **loyalty_tier_id** | **string**| Unique loyalty tier ID. | |
+| **campaignId** | **string**| Unique campaign ID or name. | |
+| **loyaltyTierId** | **string**| Unique loyalty tier ID. | |
 
 ### Return type
 
@@ -1924,7 +1924,7 @@ try {
 ## `listLoyaltyTiers()`
 
 ```php
-listLoyaltyTiers($campaign_id, $limit, $order): \OpenAPI\Client\Model\LoyaltiesTiersListResponseBody
+listLoyaltyTiers($campaignId, $limit, $order): \OpenAPI\Client\Model\LoyaltiesTiersListResponseBody
 ```
 
 List Loyalty Tiers
@@ -1955,12 +1955,12 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique loyalty campaign ID or name.
+$campaignId = 'campaignId_example'; // string | Unique loyalty campaign ID or name.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $order = new \OpenAPI\Client\Model\ParameterOrderListLoyaltyTiers(); // ParameterOrderListLoyaltyTiers | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
 
 try {
-    $result = $apiInstance->listLoyaltyTiers($campaign_id, $limit, $order);
+    $result = $apiInstance->listLoyaltyTiers($campaignId, $limit, $order);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listLoyaltyTiers: ', $e->getMessage(), PHP_EOL;
@@ -1971,7 +1971,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique loyalty campaign ID or name. | |
+| **campaignId** | **string**| Unique loyalty campaign ID or name. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **order** | [**ParameterOrderListLoyaltyTiers**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
 
@@ -1995,7 +1995,7 @@ try {
 ## `listMemberActivity()`
 
 ```php
-listMemberActivity($member_id, $limit, $order, $starting_after_id): \OpenAPI\Client\Model\LoyaltiesMemberActivityListResponseBody
+listMemberActivity($memberId, $limit, $order, $startingAfterId): \OpenAPI\Client\Model\LoyaltiesMemberActivityListResponseBody
 ```
 
 List Member Activity
@@ -2026,13 +2026,13 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$member_id = 'member_id_example'; // string | Unique loyalty card assigned to a particular customer.
+$memberId = 'memberId_example'; // string | Unique loyalty card assigned to a particular customer.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $order = new \OpenAPI\Client\Model\ParameterOrderCreatedAt(); // ParameterOrderCreatedAt | Apply this filter to order the events according the date and time when it was created. The dash - preceding a sorting option means sorting in a descending order.
-$starting_after_id = 'starting_after_id_example'; // string | A cursor for pagination. It retrieves the events starting after an event with the given ID.
+$startingAfterId = 'startingAfterId_example'; // string | A cursor for pagination. It retrieves the events starting after an event with the given ID.
 
 try {
-    $result = $apiInstance->listMemberActivity($member_id, $limit, $order, $starting_after_id);
+    $result = $apiInstance->listMemberActivity($memberId, $limit, $order, $startingAfterId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listMemberActivity: ', $e->getMessage(), PHP_EOL;
@@ -2043,10 +2043,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **member_id** | **string**| Unique loyalty card assigned to a particular customer. | |
+| **memberId** | **string**| Unique loyalty card assigned to a particular customer. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **order** | [**ParameterOrderCreatedAt**](../Model/.md)| Apply this filter to order the events according the date and time when it was created. The dash - preceding a sorting option means sorting in a descending order. | [optional] |
-| **starting_after_id** | **string**| A cursor for pagination. It retrieves the events starting after an event with the given ID. | [optional] |
+| **startingAfterId** | **string**| A cursor for pagination. It retrieves the events starting after an event with the given ID. | [optional] |
 
 ### Return type
 
@@ -2068,7 +2068,7 @@ try {
 ## `listMemberActivity1()`
 
 ```php
-listMemberActivity1($campaign_id, $member_id, $limit, $order, $starting_after_id): \OpenAPI\Client\Model\LoyaltiesMemberActivityListResponseBody
+listMemberActivity1($campaignId, $memberId, $limit, $order, $startingAfterId): \OpenAPI\Client\Model\LoyaltiesMemberActivityListResponseBody
 ```
 
 List Member Activity
@@ -2099,14 +2099,14 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID.
-$member_id = 'member_id_example'; // string | A code that identifies the loyalty card.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID.
+$memberId = 'memberId_example'; // string | A code that identifies the loyalty card.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $order = new \OpenAPI\Client\Model\ParameterOrderCreatedAt(); // ParameterOrderCreatedAt | Apply this filter to order the events according the date and time when it was created. The dash - preceding a sorting option means sorting in a descending order.
-$starting_after_id = 'starting_after_id_example'; // string | A cursor for pagination. It retrieves the events starting after an event with the given ID.
+$startingAfterId = 'startingAfterId_example'; // string | A cursor for pagination. It retrieves the events starting after an event with the given ID.
 
 try {
-    $result = $apiInstance->listMemberActivity1($campaign_id, $member_id, $limit, $order, $starting_after_id);
+    $result = $apiInstance->listMemberActivity1($campaignId, $memberId, $limit, $order, $startingAfterId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listMemberActivity1: ', $e->getMessage(), PHP_EOL;
@@ -2117,11 +2117,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID. | |
-| **member_id** | **string**| A code that identifies the loyalty card. | |
+| **campaignId** | **string**| Unique campaign ID. | |
+| **memberId** | **string**| A code that identifies the loyalty card. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **order** | [**ParameterOrderCreatedAt**](../Model/.md)| Apply this filter to order the events according the date and time when it was created. The dash - preceding a sorting option means sorting in a descending order. | [optional] |
-| **starting_after_id** | **string**| A cursor for pagination. It retrieves the events starting after an event with the given ID. | [optional] |
+| **startingAfterId** | **string**| A cursor for pagination. It retrieves the events starting after an event with the given ID. | [optional] |
 
 ### Return type
 
@@ -2143,7 +2143,7 @@ try {
 ## `listMemberLoyaltyTier()`
 
 ```php
-listMemberLoyaltyTier($member_id): \OpenAPI\Client\Model\LoyaltiesMembersTiersListResponseBody
+listMemberLoyaltyTier($memberId): \OpenAPI\Client\Model\LoyaltiesMembersTiersListResponseBody
 ```
 
 List Member's Loyalty Tiers
@@ -2174,10 +2174,10 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$member_id = 'member_id_example'; // string | Unique loyalty card assigned to a particular customer.
+$memberId = 'memberId_example'; // string | Unique loyalty card assigned to a particular customer.
 
 try {
-    $result = $apiInstance->listMemberLoyaltyTier($member_id);
+    $result = $apiInstance->listMemberLoyaltyTier($memberId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listMemberLoyaltyTier: ', $e->getMessage(), PHP_EOL;
@@ -2188,7 +2188,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **member_id** | **string**| Unique loyalty card assigned to a particular customer. | |
+| **memberId** | **string**| Unique loyalty card assigned to a particular customer. | |
 
 ### Return type
 
@@ -2210,7 +2210,7 @@ try {
 ## `listMemberRewards()`
 
 ```php
-listMemberRewards($member_id, $affordable_only): \OpenAPI\Client\Model\LoyaltiesMembersRewardsListResponseBody
+listMemberRewards($memberId, $affordableOnly): \OpenAPI\Client\Model\LoyaltiesMembersRewardsListResponseBody
 ```
 
 List Member Rewards
@@ -2241,11 +2241,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$member_id = 'member_id_example'; // string | Unique loyalty card assigned to a particular customer.
-$affordable_only = True; // bool | Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford.
+$memberId = 'memberId_example'; // string | Unique loyalty card assigned to a particular customer.
+$affordableOnly = True; // bool | Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford.
 
 try {
-    $result = $apiInstance->listMemberRewards($member_id, $affordable_only);
+    $result = $apiInstance->listMemberRewards($memberId, $affordableOnly);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listMemberRewards: ', $e->getMessage(), PHP_EOL;
@@ -2256,8 +2256,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **member_id** | **string**| Unique loyalty card assigned to a particular customer. | |
-| **affordable_only** | **bool**| Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford. | [optional] |
+| **memberId** | **string**| Unique loyalty card assigned to a particular customer. | |
+| **affordableOnly** | **bool**| Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford. | [optional] |
 
 ### Return type
 
@@ -2279,7 +2279,7 @@ try {
 ## `listMembers()`
 
 ```php
-listMembers($campaign_id, $limit, $page, $customer, $created_at, $updated_at, $order, $code, $ids): \OpenAPI\Client\Model\LoyaltiesListMembersResponseBody
+listMembers($campaignId, $limit, $page, $customer, $createdAt, $updatedAt, $order, $code, $ids): \OpenAPI\Client\Model\LoyaltiesListMembersResponseBody
 ```
 
 List Members
@@ -2310,18 +2310,18 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID of the loyalty program.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID of the loyalty program.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 $customer = 'customer_example'; // string | A tracking identifier of a customer who is the holder of the vouchers. It can be an id generated by Voucherify or the source_id. Remember to use the proper URL escape codes if the source_id contains special characters.
-$created_at = new \OpenAPI\Client\Model\ParameterCreatedBeforeAfter(); // ParameterCreatedBeforeAfter | A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z
-$updated_at = new \OpenAPI\Client\Model\ParameterUpdatedBeforeAfter(); // ParameterUpdatedBeforeAfter | A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z
+$createdAt = new \OpenAPI\Client\Model\ParameterCreatedBeforeAfter(); // ParameterCreatedBeforeAfter | A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z
+$updatedAt = new \OpenAPI\Client\Model\ParameterUpdatedBeforeAfter(); // ParameterUpdatedBeforeAfter | A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z
 $order = new \OpenAPI\Client\Model\ParameterOrderVouchers(); // ParameterOrderVouchers | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
 $code = 'code_example'; // string
 $ids = array('ids_example'); // string[]
 
 try {
-    $result = $apiInstance->listMembers($campaign_id, $limit, $page, $customer, $created_at, $updated_at, $order, $code, $ids);
+    $result = $apiInstance->listMembers($campaignId, $limit, $page, $customer, $createdAt, $updatedAt, $order, $code, $ids);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listMembers: ', $e->getMessage(), PHP_EOL;
@@ -2332,12 +2332,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID of the loyalty program. | |
+| **campaignId** | **string**| Unique campaign ID of the loyalty program. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 | **customer** | **string**| A tracking identifier of a customer who is the holder of the vouchers. It can be an id generated by Voucherify or the source_id. Remember to use the proper URL escape codes if the source_id contains special characters. | [optional] |
-| **created_at** | [**ParameterCreatedBeforeAfter**](../Model/.md)| A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z | [optional] |
-| **updated_at** | [**ParameterUpdatedBeforeAfter**](../Model/.md)| A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z | [optional] |
+| **createdAt** | [**ParameterCreatedBeforeAfter**](../Model/.md)| A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z | [optional] |
+| **updatedAt** | [**ParameterUpdatedBeforeAfter**](../Model/.md)| A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z | [optional] |
 | **order** | [**ParameterOrderVouchers**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
 | **code** | **string**|  | [optional] |
 | **ids** | [**string[]**](../Model/string.md)|  | [optional] |
@@ -2362,7 +2362,7 @@ try {
 ## `listPointsExpiration()`
 
 ```php
-listPointsExpiration($campaign_id, $member_id, $limit, $page): \OpenAPI\Client\Model\LoyaltiesMembersPointsExpirationListResponseBody
+listPointsExpiration($campaignId, $memberId, $limit, $page): \OpenAPI\Client\Model\LoyaltiesMembersPointsExpirationListResponseBody
 ```
 
 Get Points Expiration
@@ -2393,13 +2393,13 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
-$member_id = 'member_id_example'; // string | Loyalty card code.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$memberId = 'memberId_example'; // string | Loyalty card code.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 
 try {
-    $result = $apiInstance->listPointsExpiration($campaign_id, $member_id, $limit, $page);
+    $result = $apiInstance->listPointsExpiration($campaignId, $memberId, $limit, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listPointsExpiration: ', $e->getMessage(), PHP_EOL;
@@ -2410,8 +2410,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
-| **member_id** | **string**| Loyalty card code. | |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **memberId** | **string**| Loyalty card code. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 
@@ -2435,7 +2435,7 @@ try {
 ## `listRewardAssignments1()`
 
 ```php
-listRewardAssignments1($campaign_id, $limit, $page, $assignment_id): \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsListResponseBody
+listRewardAssignments1($campaignId, $limit, $page, $assignmentId): \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsListResponseBody
 ```
 
 List Reward Assignments
@@ -2466,13 +2466,13 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
-$assignment_id = 'assignment_id_example'; // string | A unique reward assignment ID.
+$assignmentId = 'assignmentId_example'; // string | A unique reward assignment ID.
 
 try {
-    $result = $apiInstance->listRewardAssignments1($campaign_id, $limit, $page, $assignment_id);
+    $result = $apiInstance->listRewardAssignments1($campaignId, $limit, $page, $assignmentId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listRewardAssignments1: ', $e->getMessage(), PHP_EOL;
@@ -2483,10 +2483,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
-| **assignment_id** | **string**| A unique reward assignment ID. | [optional] |
+| **assignmentId** | **string**| A unique reward assignment ID. | [optional] |
 
 ### Return type
 
@@ -2508,7 +2508,7 @@ try {
 ## `listRewardAssignments2()`
 
 ```php
-listRewardAssignments2($campaign_id, $limit, $page, $assignment_id): \OpenAPI\Client\Model\LoyaltiesRewardsListAssignmentsResponseBody
+listRewardAssignments2($campaignId, $limit, $page, $assignmentId): \OpenAPI\Client\Model\LoyaltiesRewardsListAssignmentsResponseBody
 ```
 
 List Reward Assignments
@@ -2539,13 +2539,13 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
-$assignment_id = 'assignment_id_example'; // string | A unique reward assignment ID.
+$assignmentId = 'assignmentId_example'; // string | A unique reward assignment ID.
 
 try {
-    $result = $apiInstance->listRewardAssignments2($campaign_id, $limit, $page, $assignment_id);
+    $result = $apiInstance->listRewardAssignments2($campaignId, $limit, $page, $assignmentId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listRewardAssignments2: ', $e->getMessage(), PHP_EOL;
@@ -2556,10 +2556,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **campaignId** | **string**| Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
-| **assignment_id** | **string**| A unique reward assignment ID. | [optional] |
+| **assignmentId** | **string**| A unique reward assignment ID. | [optional] |
 
 ### Return type
 
@@ -2581,7 +2581,7 @@ try {
 ## `redeemReward()`
 
 ```php
-redeemReward($member_id, $loyalties_members_redemption_redeem_request_body): \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBody
+redeemReward($memberId, $loyaltiesMembersRedemptionRedeemRequestBody): \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBody
 ```
 
 Redeem Reward
@@ -2612,11 +2612,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$member_id = 'member_id_example'; // string | Unique loyalty card assigned to a particular customer.
-$loyalties_members_redemption_redeem_request_body = {"reward":{"id":"rew_INt3fGH3n7xIr3ZQcq4kkUZ1","points":100},"order":{"items":[{"product_id":"prod_0c5d6689b39320059b","quantity":"1"},{"product_id":"prod_0b2c36568000039138","quantity":"2"}]}}; // \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody | Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order.
+$memberId = 'memberId_example'; // string | Unique loyalty card assigned to a particular customer.
+$loyaltiesMembersRedemptionRedeemRequestBody = {"reward":{"id":"rew_INt3fGH3n7xIr3ZQcq4kkUZ1","points":100},"order":{"items":[{"product_id":"prod_0c5d6689b39320059b","quantity":"1"},{"product_id":"prod_0b2c36568000039138","quantity":"2"}]}}; // \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody | Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order.
 
 try {
-    $result = $apiInstance->redeemReward($member_id, $loyalties_members_redemption_redeem_request_body);
+    $result = $apiInstance->redeemReward($memberId, $loyaltiesMembersRedemptionRedeemRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->redeemReward: ', $e->getMessage(), PHP_EOL;
@@ -2627,8 +2627,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **member_id** | **string**| Unique loyalty card assigned to a particular customer. | |
-| **loyalties_members_redemption_redeem_request_body** | [**\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody**](../Model/LoyaltiesMembersRedemptionRedeemRequestBody.md)| Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. | [optional] |
+| **memberId** | **string**| Unique loyalty card assigned to a particular customer. | |
+| **loyaltiesMembersRedemptionRedeemRequestBody** | [**\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody**](../Model/LoyaltiesMembersRedemptionRedeemRequestBody.md)| Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. | [optional] |
 
 ### Return type
 
@@ -2650,7 +2650,7 @@ try {
 ## `redeemReward1()`
 
 ```php
-redeemReward1($campaign_id, $member_id, $loyalties_members_redemption_redeem_request_body): \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBody
+redeemReward1($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody): \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBody
 ```
 
 Redeem Reward
@@ -2681,12 +2681,12 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID.
-$member_id = 'member_id_example'; // string | A code that identifies the loyalty card.
-$loyalties_members_redemption_redeem_request_body = {"reward":{"id":"rew_INt3fGH3n7xIr3ZQcq4kkUZ1","points":100},"order":{"items":[{"product_id":"prod_0c5d6689b39320059b","quantity":"1"},{"product_id":"prod_0b2c36568000039138","quantity":"2"}]}}; // \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody | Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID.
+$memberId = 'memberId_example'; // string | A code that identifies the loyalty card.
+$loyaltiesMembersRedemptionRedeemRequestBody = {"reward":{"id":"rew_INt3fGH3n7xIr3ZQcq4kkUZ1","points":100},"order":{"items":[{"product_id":"prod_0c5d6689b39320059b","quantity":"1"},{"product_id":"prod_0b2c36568000039138","quantity":"2"}]}}; // \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody | Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order.
 
 try {
-    $result = $apiInstance->redeemReward1($campaign_id, $member_id, $loyalties_members_redemption_redeem_request_body);
+    $result = $apiInstance->redeemReward1($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->redeemReward1: ', $e->getMessage(), PHP_EOL;
@@ -2697,9 +2697,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID. | |
-| **member_id** | **string**| A code that identifies the loyalty card. | |
-| **loyalties_members_redemption_redeem_request_body** | [**\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody**](../Model/LoyaltiesMembersRedemptionRedeemRequestBody.md)| Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. | [optional] |
+| **campaignId** | **string**| Unique campaign ID. | |
+| **memberId** | **string**| A code that identifies the loyalty card. | |
+| **loyaltiesMembersRedemptionRedeemRequestBody** | [**\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody**](../Model/LoyaltiesMembersRedemptionRedeemRequestBody.md)| Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. | [optional] |
 
 ### Return type
 
@@ -2721,7 +2721,7 @@ try {
 ## `transferPoints()`
 
 ```php
-transferPoints($campaign_id, $member_id, $loyalties_transfer_points): \OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBody
+transferPoints($campaignId, $memberId, $loyaltiesTransferPoints): \OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBody
 ```
 
 Transfer Loyalty Points
@@ -2752,12 +2752,12 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination).
-$member_id = 'member_id_example'; // string | A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination).
-$loyalties_transfer_points = [{"code":"0PmQ7JQI","points":1},{"code":"kCeufB8i","points":1}]; // \OpenAPI\Client\Model\LoyaltiesTransferPoints[] | Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card.
+$campaignId = 'campaignId_example'; // string | A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination).
+$memberId = 'memberId_example'; // string | A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination).
+$loyaltiesTransferPoints = [{"code":"0PmQ7JQI","points":1},{"code":"kCeufB8i","points":1}]; // \OpenAPI\Client\Model\LoyaltiesTransferPoints[] | Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card.
 
 try {
-    $result = $apiInstance->transferPoints($campaign_id, $member_id, $loyalties_transfer_points);
+    $result = $apiInstance->transferPoints($campaignId, $memberId, $loyaltiesTransferPoints);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->transferPoints: ', $e->getMessage(), PHP_EOL;
@@ -2768,9 +2768,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination). | |
-| **member_id** | **string**| A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination). | |
-| **loyalties_transfer_points** | [**\OpenAPI\Client\Model\LoyaltiesTransferPoints[]**](../Model/LoyaltiesTransferPoints.md)| Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card. | [optional] |
+| **campaignId** | **string**| A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination). | |
+| **memberId** | **string**| A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination). | |
+| **loyaltiesTransferPoints** | [**\OpenAPI\Client\Model\LoyaltiesTransferPoints[]**](../Model/LoyaltiesTransferPoints.md)| Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card. | [optional] |
 
 ### Return type
 
@@ -2792,7 +2792,7 @@ try {
 ## `updateEarningRule()`
 
 ```php
-updateEarningRule($campaign_id, $earning_rule_id, $loyalties_earning_rules_update_request_body): \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBody
+updateEarningRule($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody): \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBody
 ```
 
 Update Earning Rule
@@ -2823,12 +2823,12 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
-$earning_rule_id = 'earning_rule_id_example'; // string | A unique earning rule ID.
-$loyalties_earning_rules_update_request_body = {"validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"FIXED","points":"5"},"source":{"banner":"Order paid 5 points."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid - fixed amount of points"}}; // \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBody | Specify the parameters that you would like to update for the given earning rule.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$earningRuleId = 'earningRuleId_example'; // string | A unique earning rule ID.
+$loyaltiesEarningRulesUpdateRequestBody = {"validation_rule_id":"val_7SxpdhPeBngA","loyalty":{"type":"FIXED","points":"5"},"source":{"banner":"Order paid 5 points."},"active":true,"start_date":"2022-11-02T13:00:00.000Z","expiration_date":"2023-03-03T14:30:00.000Z","validity_timeframe":{"duration":"PT1H","interval":"P1D"},"validity_day_of_week":[0,1,2,3,4,5],"metadata":{"Type":"Order paid - fixed amount of points"}}; // \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBody | Specify the parameters that you would like to update for the given earning rule.
 
 try {
-    $result = $apiInstance->updateEarningRule($campaign_id, $earning_rule_id, $loyalties_earning_rules_update_request_body);
+    $result = $apiInstance->updateEarningRule($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->updateEarningRule: ', $e->getMessage(), PHP_EOL;
@@ -2839,9 +2839,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
-| **earning_rule_id** | **string**| A unique earning rule ID. | |
-| **loyalties_earning_rules_update_request_body** | [**\OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBody**](../Model/LoyaltiesEarningRulesUpdateRequestBody.md)| Specify the parameters that you would like to update for the given earning rule. | [optional] |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **earningRuleId** | **string**| A unique earning rule ID. | |
+| **loyaltiesEarningRulesUpdateRequestBody** | [**\OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBody**](../Model/LoyaltiesEarningRulesUpdateRequestBody.md)| Specify the parameters that you would like to update for the given earning rule. | [optional] |
 
 ### Return type
 
@@ -2863,7 +2863,7 @@ try {
 ## `updateLoyaltyCardBalance()`
 
 ```php
-updateLoyaltyCardBalance($member_id, $loyalties_members_balance_update_request_body): \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBody
+updateLoyaltyCardBalance($memberId, $loyaltiesMembersBalanceUpdateRequestBody): \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBody
 ```
 
 Add or Remove Loyalty Card Balance
@@ -2894,11 +2894,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$member_id = 'member_id_example'; // string | Unique loyalty card assigned to a particular customer.
-$loyalties_members_balance_update_request_body = {"points":-100}; // \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody | Specify the point adjustment along with the expiration mechanism.
+$memberId = 'memberId_example'; // string | Unique loyalty card assigned to a particular customer.
+$loyaltiesMembersBalanceUpdateRequestBody = {"points":-100}; // \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody | Specify the point adjustment along with the expiration mechanism.
 
 try {
-    $result = $apiInstance->updateLoyaltyCardBalance($member_id, $loyalties_members_balance_update_request_body);
+    $result = $apiInstance->updateLoyaltyCardBalance($memberId, $loyaltiesMembersBalanceUpdateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->updateLoyaltyCardBalance: ', $e->getMessage(), PHP_EOL;
@@ -2909,8 +2909,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **member_id** | **string**| Unique loyalty card assigned to a particular customer. | |
-| **loyalties_members_balance_update_request_body** | [**\OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody**](../Model/LoyaltiesMembersBalanceUpdateRequestBody.md)| Specify the point adjustment along with the expiration mechanism. | [optional] |
+| **memberId** | **string**| Unique loyalty card assigned to a particular customer. | |
+| **loyaltiesMembersBalanceUpdateRequestBody** | [**\OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody**](../Model/LoyaltiesMembersBalanceUpdateRequestBody.md)| Specify the point adjustment along with the expiration mechanism. | [optional] |
 
 ### Return type
 
@@ -2932,7 +2932,7 @@ try {
 ## `updateLoyaltyCardBalance1()`
 
 ```php
-updateLoyaltyCardBalance1($campaign_id, $member_id, $loyalties_members_balance_update_request_body): \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBody
+updateLoyaltyCardBalance1($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody): \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBody
 ```
 
 Add or Remove Loyalty Card Balance
@@ -2963,12 +2963,12 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID.
-$member_id = 'member_id_example'; // string | A code that identifies the loyalty card.
-$loyalties_members_balance_update_request_body = {"points":100,"expiration_type":"CUSTOM_DATE","expiration_date":"2023-05-30"}; // \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody | Specify the point adjustment along with the expiration mechanism.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID.
+$memberId = 'memberId_example'; // string | A code that identifies the loyalty card.
+$loyaltiesMembersBalanceUpdateRequestBody = {"points":100,"expiration_type":"CUSTOM_DATE","expiration_date":"2023-05-30"}; // \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody | Specify the point adjustment along with the expiration mechanism.
 
 try {
-    $result = $apiInstance->updateLoyaltyCardBalance1($campaign_id, $member_id, $loyalties_members_balance_update_request_body);
+    $result = $apiInstance->updateLoyaltyCardBalance1($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->updateLoyaltyCardBalance1: ', $e->getMessage(), PHP_EOL;
@@ -2979,9 +2979,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID. | |
-| **member_id** | **string**| A code that identifies the loyalty card. | |
-| **loyalties_members_balance_update_request_body** | [**\OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody**](../Model/LoyaltiesMembersBalanceUpdateRequestBody.md)| Specify the point adjustment along with the expiration mechanism. | [optional] |
+| **campaignId** | **string**| Unique campaign ID. | |
+| **memberId** | **string**| A code that identifies the loyalty card. | |
+| **loyaltiesMembersBalanceUpdateRequestBody** | [**\OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody**](../Model/LoyaltiesMembersBalanceUpdateRequestBody.md)| Specify the point adjustment along with the expiration mechanism. | [optional] |
 
 ### Return type
 
@@ -3003,7 +3003,7 @@ try {
 ## `updateLoyaltyProgram()`
 
 ```php
-updateLoyaltyProgram($campaign_id, $loyalties_update_campaign_request_body): \OpenAPI\Client\Model\LoyaltiesUpdateCampaignResponseBody
+updateLoyaltyProgram($campaignId, $loyaltiesUpdateCampaignRequestBody): \OpenAPI\Client\Model\LoyaltiesUpdateCampaignResponseBody
 ```
 
 Update Loyalty Campaign
@@ -3034,11 +3034,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
-$loyalties_update_campaign_request_body = {"description":"This is a campaign description. Updated","auto_join":false,"join_once":false,"start_date":"2013-10-26T00:00:00Z","expiration_date":"2025-10-26T00:00:00Z","validity_timeframe":{"duration":"PT2H","interval":"P2D"},"validity_day_of_week":[0,1,2,3,4,5,6],"activity_duration_after_publishing":"P25D","category_id":"cat_0b6152ce12414820dd","loyalty_card":{"points":1,"expiration_rules":{"period_type":"MONTH","period_value":4,"rounding_type":"END_OF_YEAR"}},"metadata":{"test":false},"type":"AUTO_UPDATE","loyalty_tiers_expiration":{"qualification_type":"BALANCE","start_date":{"type":"IMMEDIATE"},"expiration_date":{"type":"CUSTOM","extend":"P4M","rounding":{"type":"CUSTOM","unit":"MONTH","value":1}}}}; // \OpenAPI\Client\Model\LoyaltiesUpdateCampaignRequestBody | Specify the new values for the parameters that you would like to update for the given loyalty campaign.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$loyaltiesUpdateCampaignRequestBody = {"description":"This is a campaign description. Updated","auto_join":false,"join_once":false,"start_date":"2013-10-26T00:00:00Z","expiration_date":"2025-10-26T00:00:00Z","validity_timeframe":{"duration":"PT2H","interval":"P2D"},"validity_day_of_week":[0,1,2,3,4,5,6],"activity_duration_after_publishing":"P25D","category_id":"cat_0b6152ce12414820dd","loyalty_card":{"points":1,"expiration_rules":{"period_type":"MONTH","period_value":4,"rounding_type":"END_OF_YEAR"}},"metadata":{"test":false},"type":"AUTO_UPDATE","loyalty_tiers_expiration":{"qualification_type":"BALANCE","start_date":{"type":"IMMEDIATE"},"expiration_date":{"type":"CUSTOM","extend":"P4M","rounding":{"type":"CUSTOM","unit":"MONTH","value":1}}}}; // \OpenAPI\Client\Model\LoyaltiesUpdateCampaignRequestBody | Specify the new values for the parameters that you would like to update for the given loyalty campaign.
 
 try {
-    $result = $apiInstance->updateLoyaltyProgram($campaign_id, $loyalties_update_campaign_request_body);
+    $result = $apiInstance->updateLoyaltyProgram($campaignId, $loyaltiesUpdateCampaignRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->updateLoyaltyProgram: ', $e->getMessage(), PHP_EOL;
@@ -3049,8 +3049,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
-| **loyalties_update_campaign_request_body** | [**\OpenAPI\Client\Model\LoyaltiesUpdateCampaignRequestBody**](../Model/LoyaltiesUpdateCampaignRequestBody.md)| Specify the new values for the parameters that you would like to update for the given loyalty campaign. | [optional] |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **loyaltiesUpdateCampaignRequestBody** | [**\OpenAPI\Client\Model\LoyaltiesUpdateCampaignRequestBody**](../Model/LoyaltiesUpdateCampaignRequestBody.md)| Specify the new values for the parameters that you would like to update for the given loyalty campaign. | [optional] |
 
 ### Return type
 
@@ -3072,7 +3072,7 @@ try {
 ## `updateRewardAssignment1()`
 
 ```php
-updateRewardAssignment1($campaign_id, $assignment_id, $loyalties_rewards_update_assignment_request_body): \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentResponseBody
+updateRewardAssignment1($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody): \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentResponseBody
 ```
 
 Update Reward Assignment
@@ -3103,12 +3103,12 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
-$assignment_id = 'assignment_id_example'; // string | A unique reward assignment ID.
-$loyalties_rewards_update_assignment_request_body = {"parameters":{"loyalty":{"points":3}}}; // \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentRequestBody | Update the points cost for the reward assignment.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign.
+$assignmentId = 'assignmentId_example'; // string | A unique reward assignment ID.
+$loyaltiesRewardsUpdateAssignmentRequestBody = {"parameters":{"loyalty":{"points":3}}}; // \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentRequestBody | Update the points cost for the reward assignment.
 
 try {
-    $result = $apiInstance->updateRewardAssignment1($campaign_id, $assignment_id, $loyalties_rewards_update_assignment_request_body);
+    $result = $apiInstance->updateRewardAssignment1($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->updateRewardAssignment1: ', $e->getMessage(), PHP_EOL;
@@ -3119,9 +3119,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
-| **assignment_id** | **string**| A unique reward assignment ID. | |
-| **loyalties_rewards_update_assignment_request_body** | [**\OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentRequestBody**](../Model/LoyaltiesRewardsUpdateAssignmentRequestBody.md)| Update the points cost for the reward assignment. | [optional] |
+| **campaignId** | **string**| The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. | |
+| **assignmentId** | **string**| A unique reward assignment ID. | |
+| **loyaltiesRewardsUpdateAssignmentRequestBody** | [**\OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentRequestBody**](../Model/LoyaltiesRewardsUpdateAssignmentRequestBody.md)| Update the points cost for the reward assignment. | [optional] |
 
 ### Return type
 

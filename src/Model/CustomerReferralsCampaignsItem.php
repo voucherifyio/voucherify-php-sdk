@@ -59,10 +59,10 @@ class CustomerReferralsCampaignsItem implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'campaign_id' => 'string',
-        'referrer_id' => 'string',
-        'related_object_id' => 'string',
-        'related_object_type' => 'string',
+        'campaignId' => 'string',
+        'referrerId' => 'string',
+        'relatedObjectId' => 'string',
+        'relatedObjectType' => 'string',
         'date' => '\DateTime'
     ];
 
@@ -74,10 +74,10 @@ class CustomerReferralsCampaignsItem implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'campaign_id' => null,
-        'referrer_id' => null,
-        'related_object_id' => null,
-        'related_object_type' => null,
+        'campaignId' => null,
+        'referrerId' => null,
+        'relatedObjectId' => null,
+        'relatedObjectType' => null,
         'date' => 'date-time'
     ];
 
@@ -87,10 +87,10 @@ class CustomerReferralsCampaignsItem implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'campaign_id' => false,
-		'referrer_id' => false,
-		'related_object_id' => false,
-		'related_object_type' => false,
+        'campaignId' => false,
+		'referrerId' => false,
+		'relatedObjectId' => false,
+		'relatedObjectType' => false,
 		'date' => false
     ];
 
@@ -180,10 +180,10 @@ class CustomerReferralsCampaignsItem implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'campaign_id' => 'campaign_id',
-        'referrer_id' => 'referrer_id',
-        'related_object_id' => 'related_object_id',
-        'related_object_type' => 'related_object_type',
+        'campaignId' => 'campaign_id',
+        'referrerId' => 'referrer_id',
+        'relatedObjectId' => 'related_object_id',
+        'relatedObjectType' => 'related_object_type',
         'date' => 'date'
     ];
 
@@ -193,10 +193,10 @@ class CustomerReferralsCampaignsItem implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'campaign_id' => 'setCampaignId',
-        'referrer_id' => 'setReferrerId',
-        'related_object_id' => 'setRelatedObjectId',
-        'related_object_type' => 'setRelatedObjectType',
+        'campaignId' => 'setCampaignId',
+        'referrerId' => 'setReferrerId',
+        'relatedObjectId' => 'setRelatedObjectId',
+        'relatedObjectType' => 'setRelatedObjectType',
         'date' => 'setDate'
     ];
 
@@ -206,10 +206,10 @@ class CustomerReferralsCampaignsItem implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'campaign_id' => 'getCampaignId',
-        'referrer_id' => 'getReferrerId',
-        'related_object_id' => 'getRelatedObjectId',
-        'related_object_type' => 'getRelatedObjectType',
+        'campaignId' => 'getCampaignId',
+        'referrerId' => 'getReferrerId',
+        'relatedObjectId' => 'getRelatedObjectId',
+        'relatedObjectType' => 'getRelatedObjectType',
         'date' => 'getDate'
     ];
 
@@ -270,10 +270,10 @@ class CustomerReferralsCampaignsItem implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('campaign_id', $data ?? [], null);
-        $this->setIfExists('referrer_id', $data ?? [], null);
-        $this->setIfExists('related_object_id', $data ?? [], null);
-        $this->setIfExists('related_object_type', $data ?? [], null);
+        $this->setIfExists('campaignId', $data ?? [], null);
+        $this->setIfExists('referrerId', $data ?? [], null);
+        $this->setIfExists('relatedObjectId', $data ?? [], null);
+        $this->setIfExists('relatedObjectType', $data ?? [], null);
         $this->setIfExists('date', $data ?? [], null);
     }
 
@@ -304,17 +304,17 @@ class CustomerReferralsCampaignsItem implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
-        if ($this->container['campaign_id'] === null) {
-            $invalidProperties[] = "'campaign_id' can't be null";
+        if ($this->container['campaignId'] === null) {
+            $invalidProperties[] = "'campaignId' can't be null";
         }
-        if ($this->container['referrer_id'] === null) {
-            $invalidProperties[] = "'referrer_id' can't be null";
+        if ($this->container['referrerId'] === null) {
+            $invalidProperties[] = "'referrerId' can't be null";
         }
-        if ($this->container['related_object_id'] === null) {
-            $invalidProperties[] = "'related_object_id' can't be null";
+        if ($this->container['relatedObjectId'] === null) {
+            $invalidProperties[] = "'relatedObjectId' can't be null";
         }
-        if ($this->container['related_object_type'] === null) {
-            $invalidProperties[] = "'related_object_type' can't be null";
+        if ($this->container['relatedObjectType'] === null) {
+            $invalidProperties[] = "'relatedObjectType' can't be null";
         }
         if ($this->container['date'] === null) {
             $invalidProperties[] = "'date' can't be null";
@@ -335,109 +335,109 @@ class CustomerReferralsCampaignsItem implements ModelInterface, ArrayAccess, \Js
 
 
     /**
-     * Gets campaign_id
+     * Gets campaignId
      *
      * @return string
      */
     public function getCampaignId()
     {
-        return $this->container['campaign_id'];
+        return $this->container['campaignId'];
     }
 
     /**
-     * Sets campaign_id
+     * Sets campaignId
      *
-     * @param string $campaign_id Unique campaign ID, assigned by Voucherify.
+     * @param string $campaignId Unique campaign ID, assigned by Voucherify.
      *
      * @return self
      */
-    public function setCampaignId($campaign_id)
+    public function setCampaignId($campaignId)
     {
-        if (is_null($campaign_id)) {
-            throw new \InvalidArgumentException('non-nullable campaign_id cannot be null');
+        if (is_null($campaignId)) {
+            throw new \InvalidArgumentException('non-nullable campaignId cannot be null');
         }
-        $this->container['campaign_id'] = $campaign_id;
+        $this->container['campaignId'] = $campaignId;
 
         return $this;
     }
 
     /**
-     * Gets referrer_id
+     * Gets referrerId
      *
      * @return string
      */
     public function getReferrerId()
     {
-        return $this->container['referrer_id'];
+        return $this->container['referrerId'];
     }
 
     /**
-     * Sets referrer_id
+     * Sets referrerId
      *
-     * @param string $referrer_id Unique referrer ID, assigned by Voucherify. This is the customer ID of a customer that is referring this customer.
+     * @param string $referrerId Unique referrer ID, assigned by Voucherify. This is the customer ID of a customer that is referring this customer.
      *
      * @return self
      */
-    public function setReferrerId($referrer_id)
+    public function setReferrerId($referrerId)
     {
-        if (is_null($referrer_id)) {
-            throw new \InvalidArgumentException('non-nullable referrer_id cannot be null');
+        if (is_null($referrerId)) {
+            throw new \InvalidArgumentException('non-nullable referrerId cannot be null');
         }
-        $this->container['referrer_id'] = $referrer_id;
+        $this->container['referrerId'] = $referrerId;
 
         return $this;
     }
 
     /**
-     * Gets related_object_id
+     * Gets relatedObjectId
      *
      * @return string
      */
     public function getRelatedObjectId()
     {
-        return $this->container['related_object_id'];
+        return $this->container['relatedObjectId'];
     }
 
     /**
-     * Sets related_object_id
+     * Sets relatedObjectId
      *
-     * @param string $related_object_id Related object id
+     * @param string $relatedObjectId Related object id
      *
      * @return self
      */
-    public function setRelatedObjectId($related_object_id)
+    public function setRelatedObjectId($relatedObjectId)
     {
-        if (is_null($related_object_id)) {
-            throw new \InvalidArgumentException('non-nullable related_object_id cannot be null');
+        if (is_null($relatedObjectId)) {
+            throw new \InvalidArgumentException('non-nullable relatedObjectId cannot be null');
         }
-        $this->container['related_object_id'] = $related_object_id;
+        $this->container['relatedObjectId'] = $relatedObjectId;
 
         return $this;
     }
 
     /**
-     * Gets related_object_type
+     * Gets relatedObjectType
      *
      * @return string
      */
     public function getRelatedObjectType()
     {
-        return $this->container['related_object_type'];
+        return $this->container['relatedObjectType'];
     }
 
     /**
-     * Sets related_object_type
+     * Sets relatedObjectType
      *
-     * @param string $related_object_type Related object type, i.e. `redemption`.
+     * @param string $relatedObjectType Related object type, i.e. `redemption`.
      *
      * @return self
      */
-    public function setRelatedObjectType($related_object_type)
+    public function setRelatedObjectType($relatedObjectType)
     {
-        if (is_null($related_object_type)) {
-            throw new \InvalidArgumentException('non-nullable related_object_type cannot be null');
+        if (is_null($relatedObjectType)) {
+            throw new \InvalidArgumentException('non-nullable relatedObjectType cannot be null');
         }
-        $this->container['related_object_type'] = $related_object_type;
+        $this->container['relatedObjectType'] = $relatedObjectType;
 
         return $this;
     }

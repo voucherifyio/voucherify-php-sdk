@@ -1,0 +1,189 @@
+{
+  "valid": true,
+  "redeemables": [
+    {
+      "status": "APPLICABLE",
+      "id": "6VzwdmXT",
+      "object": "voucher",
+      "order": {
+        "id": null,
+        "source_id": null,
+        "created_at": null,
+        "updated_at": null,
+        "status": null,
+        "amount": 20000,
+        "initial_amount": null,
+        "discount_amount": null,
+        "items_discount_amount": 1000,
+        "total_discount_amount": 1000,
+        "total_amount": 19000,
+        "applied_discount_amount": null,
+        "items_applied_discount_amount": 1000,
+        "total_applied_discount_amount": 1000,
+        "items": [
+          {
+            "sku_id": null,
+            "product_id": "prod_0f26796b8d556bbbb3",
+            "related_object": "product",
+            "source_id": null,
+            "quantity": 1,
+            "discount_quantity": 1,
+            "initial_quantity": null,
+            "amount": 20000,
+            "discount_amount": 1000,
+            "applied_discount_amount": 1000,
+            "applied_discount_quantity": null,
+            "applied_quantity": null,
+            "applied_quantity_amount": null,
+            "initial_amount": null,
+            "price": 20000,
+            "subtotal_amount": 19000,
+            "product": {
+              "id": "prod_0f26796b8d556bbbb3",
+              "source_id": null,
+              "override": null,
+              "name": null,
+              "metadata": null,
+              "price": null
+            },
+            "sku": null,
+            "object": "order_item",
+            "metadata": null
+          }
+        ],
+        "metadata": {},
+        "customer_id": null,
+        "referrer_id": null,
+        "object": "order",
+        "redemptions": null,
+        "customer": null,
+        "referrer": null
+      },
+      "applicable_to": {
+        "data": [
+          {
+            "object": "product",
+            "id": "prod_0f26796b8d556bbbb3",
+            "source_id": null,
+            "product_id": null,
+            "product_source_id": null,
+            "strict": false,
+            "price": null,
+            "price_formula": null,
+            "effect": "APPLY_TO_EVERY",
+            "quantity_limit": null,
+            "aggregated_quantity_limit": null,
+            "amount_limit": null,
+            "aggregated_amount_limit": null,
+            "order_item_indices": [0]
+          }
+        ],
+        "total": 1,
+        "object": "list",
+        "data_ref": "data"
+      },
+      "inapplicable_to": {
+        "data": [],
+        "total": 0,
+        "object": "list",
+        "data_ref": "data"
+      },
+      "result": {
+        "discount": {
+          "type": "AMOUNT",
+          "amount_off": 1000,
+          "amount_off_formula": null,
+          "aggregated_amount_limit": null,
+          "effect": "APPLY_TO_ITEMS",
+          "is_dynamic": false,
+          "unit_off": null,
+          "unit_off_formula": null,
+          "unit_type": null,
+          "product": null,
+          "sku": null,
+          "units": null,
+          "percent_off": null,
+          "percent_off_formula": null,
+          "amount_limit": null,
+          "fixed_amount": null,
+          "fixed_amount_formula": null
+        },
+        "gift": null,
+        "loyalty_card": null,
+        "error": null,
+        "details": null
+      },
+      "metadata": {},
+      "categories": null
+    }
+  ],
+  "skipped_redeemables": null,
+  "inapplicable_redeemables": null,
+  "order": {
+    "id": null,
+    "source_id": null,
+    "created_at": null,
+    "updated_at": null,
+    "status": null,
+    "amount": 20000,
+    "initial_amount": null,
+    "discount_amount": null,
+    "items_discount_amount": 1000,
+    "total_discount_amount": 1000,
+    "total_amount": 19000,
+    "applied_discount_amount": null,
+    "items_applied_discount_amount": 1000,
+    "total_applied_discount_amount": 1000,
+    "items": [
+      {
+        "sku_id": null,
+        "product_id": "prod_0f26796b8d556bbbb3",
+        "related_object": "product",
+        "source_id": null,
+        "quantity": 1,
+        "discount_quantity": 1,
+        "initial_quantity": null,
+        "amount": 20000,
+        "discount_amount": 1000,
+        "applied_discount_amount": 1000,
+        "applied_discount_quantity": null,
+        "applied_quantity": null,
+        "applied_quantity_amount": null,
+        "initial_amount": null,
+        "price": 20000,
+        "subtotal_amount": 19000,
+        "product": {
+          "id": "prod_0f26796b8d556bbbb3",
+          "source_id": null,
+          "override": null,
+          "name": null,
+          "metadata": null,
+          "price": null
+        },
+        "sku": null,
+        "object": "order_item",
+        "metadata": null
+      }
+    ],
+    "metadata": {},
+    "customer_id": null,
+    "referrer_id": null,
+    "object": "order",
+    "redemptions": null,
+    "customer": null,
+    "referrer": null
+  },
+  "tracking_id": "track_E/X2BeBJoQFgLNeuHLodQQ==",
+  "session": null,
+  "stacking_rules": {
+    "redeemables_limit": 30,
+    "applicable_redeemables_limit": 5,
+    "applicable_redeemables_per_category_limit": null,
+    "applicable_exclusive_redeemables_limit": 1,
+    "applicable_exclusive_redeemables_per_category_limit": null,
+    "exclusive_categories": [],
+    "joint_categories": [],
+    "redeemables_application_mode": "ALL",
+    "redeemables_sorting_rule": "REQUESTED_ORDER"
+  }
+}

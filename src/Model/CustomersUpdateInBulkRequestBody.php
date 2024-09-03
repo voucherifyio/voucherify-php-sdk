@@ -59,7 +59,7 @@ class CustomersUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'source_id' => 'string',
+        'sourceId' => 'string',
         'name' => 'string',
         'description' => 'string',
         'email' => 'string',
@@ -78,7 +78,7 @@ class CustomersUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'source_id' => null,
+        'sourceId' => null,
         'name' => null,
         'description' => null,
         'email' => null,
@@ -95,7 +95,7 @@ class CustomersUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'source_id' => true,
+        'sourceId' => true,
 		'name' => true,
 		'description' => true,
 		'email' => true,
@@ -192,7 +192,7 @@ class CustomersUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'source_id' => 'source_id',
+        'sourceId' => 'source_id',
         'name' => 'name',
         'description' => 'description',
         'email' => 'email',
@@ -209,7 +209,7 @@ class CustomersUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'source_id' => 'setSourceId',
+        'sourceId' => 'setSourceId',
         'name' => 'setName',
         'description' => 'setDescription',
         'email' => 'setEmail',
@@ -226,7 +226,7 @@ class CustomersUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'source_id' => 'getSourceId',
+        'sourceId' => 'getSourceId',
         'name' => 'getName',
         'description' => 'getDescription',
         'email' => 'getEmail',
@@ -294,7 +294,7 @@ class CustomersUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('source_id', $data ?? [], null);
+        $this->setIfExists('sourceId', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('email', $data ?? [], null);
@@ -348,35 +348,35 @@ class CustomersUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets source_id
+     * Gets sourceId
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['source_id'];
+        return $this->container['sourceId'];
     }
 
     /**
-     * Sets source_id
+     * Sets sourceId
      *
-     * @param string|null $source_id Unique customer source ID.
+     * @param string|null $sourceId Unique customer source ID.
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setSourceId($sourceId)
     {
-        if (is_null($source_id)) {
-            array_push($this->openAPINullablesSetToNull, 'source_id');
+        if (is_null($sourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'sourceId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('source_id', $nullablesSetToNull);
+            $index = array_search('sourceId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['source_id'] = $source_id;
+        $this->container['sourceId'] = $sourceId;
 
         return $this;
     }

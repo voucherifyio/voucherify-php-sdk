@@ -63,9 +63,9 @@ class CategoriesGetResponseBody implements ModelInterface, ArrayAccess, \JsonSer
         'name' => 'string',
         'hierarchy' => 'int',
         'object' => 'string',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
-        'stacking_rules_type' => 'string'
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
+        'stackingRulesType' => 'string'
     ];
 
     /**
@@ -80,9 +80,9 @@ class CategoriesGetResponseBody implements ModelInterface, ArrayAccess, \JsonSer
         'name' => null,
         'hierarchy' => null,
         'object' => null,
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
-        'stacking_rules_type' => null
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
+        'stackingRulesType' => null
     ];
 
     /**
@@ -95,9 +95,9 @@ class CategoriesGetResponseBody implements ModelInterface, ArrayAccess, \JsonSer
 		'name' => true,
 		'hierarchy' => true,
 		'object' => true,
-		'created_at' => true,
-		'updated_at' => true,
-		'stacking_rules_type' => true
+		'createdAt' => true,
+		'updatedAt' => true,
+		'stackingRulesType' => true
     ];
 
     /**
@@ -190,9 +190,9 @@ class CategoriesGetResponseBody implements ModelInterface, ArrayAccess, \JsonSer
         'name' => 'name',
         'hierarchy' => 'hierarchy',
         'object' => 'object',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
-        'stacking_rules_type' => 'stacking_rules_type'
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
+        'stackingRulesType' => 'stacking_rules_type'
     ];
 
     /**
@@ -205,9 +205,9 @@ class CategoriesGetResponseBody implements ModelInterface, ArrayAccess, \JsonSer
         'name' => 'setName',
         'hierarchy' => 'setHierarchy',
         'object' => 'setObject',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt',
-        'stacking_rules_type' => 'setStackingRulesType'
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
+        'stackingRulesType' => 'setStackingRulesType'
     ];
 
     /**
@@ -220,9 +220,9 @@ class CategoriesGetResponseBody implements ModelInterface, ArrayAccess, \JsonSer
         'name' => 'getName',
         'hierarchy' => 'getHierarchy',
         'object' => 'getObject',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt',
-        'stacking_rules_type' => 'getStackingRulesType'
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
+        'stackingRulesType' => 'getStackingRulesType'
     ];
 
     /**
@@ -314,9 +314,9 @@ class CategoriesGetResponseBody implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('hierarchy', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'category');
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('updated_at', $data ?? [], null);
-        $this->setIfExists('stacking_rules_type', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('updatedAt', $data ?? [], null);
+        $this->setIfExists('stackingRulesType', $data ?? [], null);
     }
 
     /**
@@ -356,10 +356,10 @@ class CategoriesGetResponseBody implements ModelInterface, ArrayAccess, \JsonSer
         }
 
         $allowedValues = $this->getStackingRulesTypeAllowableValues();
-        if (!is_null($this->container['stacking_rules_type']) && !in_array($this->container['stacking_rules_type'], $allowedValues, true)) {
+        if (!is_null($this->container['stackingRulesType']) && !in_array($this->container['stackingRulesType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'stacking_rules_type', must be one of '%s'",
-                $this->container['stacking_rules_type'],
+                "invalid value '%s' for 'stackingRulesType', must be one of '%s'",
+                $this->container['stackingRulesType'],
                 implode("', '", $allowedValues)
             );
         }
@@ -526,113 +526,113 @@ class CategoriesGetResponseBody implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \DateTime|null $updated_at Timestamp representing the date and time when the category was updated. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the category was updated. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        if (is_null($updated_at)) {
-            array_push($this->openAPINullablesSetToNull, 'updated_at');
+        if (is_null($updatedAt)) {
+            array_push($this->openAPINullablesSetToNull, 'updatedAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updated_at', $nullablesSetToNull);
+            $index = array_search('updatedAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }
 
     /**
-     * Gets stacking_rules_type
+     * Gets stackingRulesType
      *
      * @return string|null
      */
     public function getStackingRulesType()
     {
-        return $this->container['stacking_rules_type'];
+        return $this->container['stackingRulesType'];
     }
 
     /**
-     * Sets stacking_rules_type
+     * Sets stackingRulesType
      *
-     * @param string|null $stacking_rules_type The type of the stacking rule eligibility.
+     * @param string|null $stackingRulesType The type of the stacking rule eligibility.
      *
      * @return self
      */
-    public function setStackingRulesType($stacking_rules_type)
+    public function setStackingRulesType($stackingRulesType)
     {
-        if (is_null($stacking_rules_type)) {
-            array_push($this->openAPINullablesSetToNull, 'stacking_rules_type');
+        if (is_null($stackingRulesType)) {
+            array_push($this->openAPINullablesSetToNull, 'stackingRulesType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('stacking_rules_type', $nullablesSetToNull);
+            $index = array_search('stackingRulesType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getStackingRulesTypeAllowableValues();
-        if (!is_null($stacking_rules_type) && !in_array($stacking_rules_type, $allowedValues, true)) {
+        if (!is_null($stackingRulesType) && !in_array($stackingRulesType, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'stacking_rules_type', must be one of '%s'",
-                    $stacking_rules_type,
+                    "Invalid value '%s' for 'stackingRulesType', must be one of '%s'",
+                    $stackingRulesType,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['stacking_rules_type'] = $stacking_rules_type;
+        $this->container['stackingRulesType'] = $stackingRulesType;
 
         return $this;
     }

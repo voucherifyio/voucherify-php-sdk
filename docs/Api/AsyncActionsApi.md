@@ -11,7 +11,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `getAsyncAction()`
 
 ```php
-getAsyncAction($async_action_id): \OpenAPI\Client\Model\AsyncActionGetResponseBody
+getAsyncAction($asyncActionId): \OpenAPI\Client\Model\AsyncActionGetResponseBody
 ```
 
 Get Async Action
@@ -42,10 +42,10 @@ $apiInstance = new OpenAPI\Client\Api\AsyncActionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$async_action_id = 'async_action_id_example'; // string | Unique ID of the asynchronous operation.
+$asyncActionId = 'asyncActionId_example'; // string | Unique ID of the asynchronous operation.
 
 try {
-    $result = $apiInstance->getAsyncAction($async_action_id);
+    $result = $apiInstance->getAsyncAction($asyncActionId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AsyncActionsApi->getAsyncAction: ', $e->getMessage(), PHP_EOL;
@@ -56,7 +56,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **async_action_id** | **string**| Unique ID of the asynchronous operation. | |
+| **asyncActionId** | **string**| Unique ID of the asynchronous operation. | |
 
 ### Return type
 
@@ -78,7 +78,7 @@ try {
 ## `listAsyncActions()`
 
 ```php
-listAsyncActions($limit, $end_date): \OpenAPI\Client\Model\AsyncActionsListResponseBody
+listAsyncActions($limit, $endDate): \OpenAPI\Client\Model\AsyncActionsListResponseBody
 ```
 
 List Async Actions
@@ -110,10 +110,10 @@ $apiInstance = new OpenAPI\Client\Api\AsyncActionsApi(
     $config
 );
 $limit = 56; // int | Limit the number of asynchronous actions that the API returns in the response.
-$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Limits results to actions scheduled before the end_date. The date format needs to be consistent with ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16).
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Limits results to actions scheduled before the end_date. The date format needs to be consistent with ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16).
 
 try {
-    $result = $apiInstance->listAsyncActions($limit, $end_date);
+    $result = $apiInstance->listAsyncActions($limit, $endDate);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AsyncActionsApi->listAsyncActions: ', $e->getMessage(), PHP_EOL;
@@ -125,7 +125,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **limit** | **int**| Limit the number of asynchronous actions that the API returns in the response. | [optional] |
-| **end_date** | **\DateTime**| Limits results to actions scheduled before the end_date. The date format needs to be consistent with ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). | [optional] |
+| **endDate** | **\DateTime**| Limits results to actions scheduled before the end_date. The date format needs to be consistent with ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). | [optional] |
 
 ### Return type
 

@@ -61,10 +61,10 @@ class ReferrerAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'city' => 'string',
         'state' => 'string',
-        'line_1' => 'string',
-        'line_2' => 'string',
+        'line1' => 'string',
+        'line2' => 'string',
         'country' => 'string',
-        'postal_code' => 'string'
+        'postalCode' => 'string'
     ];
 
     /**
@@ -77,10 +77,10 @@ class ReferrerAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'city' => null,
         'state' => null,
-        'line_1' => null,
-        'line_2' => null,
+        'line1' => null,
+        'line2' => null,
         'country' => null,
-        'postal_code' => null
+        'postalCode' => null
     ];
 
     /**
@@ -91,10 +91,10 @@ class ReferrerAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'city' => true,
 		'state' => true,
-		'line_1' => true,
-		'line_2' => true,
+		'line1' => true,
+		'line2' => true,
 		'country' => true,
-		'postal_code' => true
+		'postalCode' => true
     ];
 
     /**
@@ -185,10 +185,10 @@ class ReferrerAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'city' => 'city',
         'state' => 'state',
-        'line_1' => 'line_1',
-        'line_2' => 'line_2',
+        'line1' => 'line_1',
+        'line2' => 'line_2',
         'country' => 'country',
-        'postal_code' => 'postal_code'
+        'postalCode' => 'postal_code'
     ];
 
     /**
@@ -199,10 +199,10 @@ class ReferrerAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'city' => 'setCity',
         'state' => 'setState',
-        'line_1' => 'setLine1',
-        'line_2' => 'setLine2',
+        'line1' => 'setLine1',
+        'line2' => 'setLine2',
         'country' => 'setCountry',
-        'postal_code' => 'setPostalCode'
+        'postalCode' => 'setPostalCode'
     ];
 
     /**
@@ -213,10 +213,10 @@ class ReferrerAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'city' => 'getCity',
         'state' => 'getState',
-        'line_1' => 'getLine1',
-        'line_2' => 'getLine2',
+        'line1' => 'getLine1',
+        'line2' => 'getLine2',
         'country' => 'getCountry',
-        'postal_code' => 'getPostalCode'
+        'postalCode' => 'getPostalCode'
     ];
 
     /**
@@ -278,10 +278,10 @@ class ReferrerAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('city', $data ?? [], null);
         $this->setIfExists('state', $data ?? [], null);
-        $this->setIfExists('line_1', $data ?? [], null);
-        $this->setIfExists('line_2', $data ?? [], null);
+        $this->setIfExists('line1', $data ?? [], null);
+        $this->setIfExists('line2', $data ?? [], null);
         $this->setIfExists('country', $data ?? [], null);
-        $this->setIfExists('postal_code', $data ?? [], null);
+        $this->setIfExists('postalCode', $data ?? [], null);
     }
 
     /**
@@ -395,69 +395,69 @@ class ReferrerAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets line_1
+     * Gets line1
      *
      * @return string|null
      */
     public function getLine1()
     {
-        return $this->container['line_1'];
+        return $this->container['line1'];
     }
 
     /**
-     * Sets line_1
+     * Sets line1
      *
-     * @param string|null $line_1 First line of address.
+     * @param string|null $line1 First line of address.
      *
      * @return self
      */
-    public function setLine1($line_1)
+    public function setLine1($line1)
     {
-        if (is_null($line_1)) {
-            array_push($this->openAPINullablesSetToNull, 'line_1');
+        if (is_null($line1)) {
+            array_push($this->openAPINullablesSetToNull, 'line1');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('line_1', $nullablesSetToNull);
+            $index = array_search('line1', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['line_1'] = $line_1;
+        $this->container['line1'] = $line1;
 
         return $this;
     }
 
     /**
-     * Gets line_2
+     * Gets line2
      *
      * @return string|null
      */
     public function getLine2()
     {
-        return $this->container['line_2'];
+        return $this->container['line2'];
     }
 
     /**
-     * Sets line_2
+     * Sets line2
      *
-     * @param string|null $line_2 Second line of address.
+     * @param string|null $line2 Second line of address.
      *
      * @return self
      */
-    public function setLine2($line_2)
+    public function setLine2($line2)
     {
-        if (is_null($line_2)) {
-            array_push($this->openAPINullablesSetToNull, 'line_2');
+        if (is_null($line2)) {
+            array_push($this->openAPINullablesSetToNull, 'line2');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('line_2', $nullablesSetToNull);
+            $index = array_search('line2', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['line_2'] = $line_2;
+        $this->container['line2'] = $line2;
 
         return $this;
     }
@@ -497,35 +497,35 @@ class ReferrerAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets postal_code
+     * Gets postalCode
      *
      * @return string|null
      */
     public function getPostalCode()
     {
-        return $this->container['postal_code'];
+        return $this->container['postalCode'];
     }
 
     /**
-     * Sets postal_code
+     * Sets postalCode
      *
-     * @param string|null $postal_code Postal code.
+     * @param string|null $postalCode Postal code.
      *
      * @return self
      */
-    public function setPostalCode($postal_code)
+    public function setPostalCode($postalCode)
     {
-        if (is_null($postal_code)) {
-            array_push($this->openAPINullablesSetToNull, 'postal_code');
+        if (is_null($postalCode)) {
+            array_push($this->openAPINullablesSetToNull, 'postalCode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('postal_code', $nullablesSetToNull);
+            $index = array_search('postalCode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['postal_code'] = $postal_code;
+        $this->container['postalCode'] = $postalCode;
 
         return $this;
     }

@@ -60,12 +60,12 @@ class Export implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'object' => 'string',
-        'created_at' => '\DateTime',
+        'createdAt' => '\DateTime',
         'status' => 'string',
         'channel' => 'string',
         'result' => '\OpenAPI\Client\Model\ExportResult',
-        'user_id' => 'string',
-        'exported_object' => 'string',
+        'userId' => 'string',
+        'exportedObject' => 'string',
         'parameters' => '\OpenAPI\Client\Model\ExportParameters'
     ];
 
@@ -79,12 +79,12 @@ class Export implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'object' => null,
-        'created_at' => 'date-time',
+        'createdAt' => 'date-time',
         'status' => null,
         'channel' => null,
         'result' => null,
-        'user_id' => null,
-        'exported_object' => null,
+        'userId' => null,
+        'exportedObject' => null,
         'parameters' => null
     ];
 
@@ -96,12 +96,12 @@ class Export implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => true,
 		'object' => true,
-		'created_at' => true,
+		'createdAt' => true,
 		'status' => true,
 		'channel' => true,
 		'result' => true,
-		'user_id' => true,
-		'exported_object' => true,
+		'userId' => true,
+		'exportedObject' => true,
 		'parameters' => true
     ];
 
@@ -193,12 +193,12 @@ class Export implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'object' => 'object',
-        'created_at' => 'created_at',
+        'createdAt' => 'created_at',
         'status' => 'status',
         'channel' => 'channel',
         'result' => 'result',
-        'user_id' => 'user_id',
-        'exported_object' => 'exported_object',
+        'userId' => 'user_id',
+        'exportedObject' => 'exported_object',
         'parameters' => 'parameters'
     ];
 
@@ -210,12 +210,12 @@ class Export implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'object' => 'setObject',
-        'created_at' => 'setCreatedAt',
+        'createdAt' => 'setCreatedAt',
         'status' => 'setStatus',
         'channel' => 'setChannel',
         'result' => 'setResult',
-        'user_id' => 'setUserId',
-        'exported_object' => 'setExportedObject',
+        'userId' => 'setUserId',
+        'exportedObject' => 'setExportedObject',
         'parameters' => 'setParameters'
     ];
 
@@ -227,12 +227,12 @@ class Export implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'object' => 'getObject',
-        'created_at' => 'getCreatedAt',
+        'createdAt' => 'getCreatedAt',
         'status' => 'getStatus',
         'channel' => 'getChannel',
         'result' => 'getResult',
-        'user_id' => 'getUserId',
-        'exported_object' => 'getExportedObject',
+        'userId' => 'getUserId',
+        'exportedObject' => 'getExportedObject',
         'parameters' => 'getParameters'
     ];
 
@@ -352,12 +352,12 @@ class Export implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'export');
-        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('channel', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
-        $this->setIfExists('user_id', $data ?? [], null);
-        $this->setIfExists('exported_object', $data ?? [], null);
+        $this->setIfExists('userId', $data ?? [], null);
+        $this->setIfExists('exportedObject', $data ?? [], null);
         $this->setIfExists('parameters', $data ?? [], null);
     }
 
@@ -407,10 +407,10 @@ class Export implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $allowedValues = $this->getExportedObjectAllowableValues();
-        if (!is_null($this->container['exported_object']) && !in_array($this->container['exported_object'], $allowedValues, true)) {
+        if (!is_null($this->container['exportedObject']) && !in_array($this->container['exportedObject'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'exported_object', must be one of '%s'",
-                $this->container['exported_object'],
+                "invalid value '%s' for 'exportedObject', must be one of '%s'",
+                $this->container['exportedObject'],
                 implode("', '", $allowedValues)
             );
         }
@@ -509,35 +509,35 @@ class Export implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the export was scheduled in ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the export was scheduled in ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
@@ -655,79 +655,79 @@ class Export implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets user_id
+     * Gets userId
      *
      * @return string|null
      */
     public function getUserId()
     {
-        return $this->container['user_id'];
+        return $this->container['userId'];
     }
 
     /**
-     * Sets user_id
+     * Sets userId
      *
-     * @param string|null $user_id Identifies the specific user who initiated the export through the Voucherify Dashboard; returned when the channel value is WEBSITE.
+     * @param string|null $userId Identifies the specific user who initiated the export through the Voucherify Dashboard; returned when the channel value is WEBSITE.
      *
      * @return self
      */
-    public function setUserId($user_id)
+    public function setUserId($userId)
     {
-        if (is_null($user_id)) {
-            array_push($this->openAPINullablesSetToNull, 'user_id');
+        if (is_null($userId)) {
+            array_push($this->openAPINullablesSetToNull, 'userId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('user_id', $nullablesSetToNull);
+            $index = array_search('userId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['user_id'] = $user_id;
+        $this->container['userId'] = $userId;
 
         return $this;
     }
 
     /**
-     * Gets exported_object
+     * Gets exportedObject
      *
      * @return string|null
      */
     public function getExportedObject()
     {
-        return $this->container['exported_object'];
+        return $this->container['exportedObject'];
     }
 
     /**
-     * Sets exported_object
+     * Sets exportedObject
      *
-     * @param string|null $exported_object exported_object
+     * @param string|null $exportedObject exportedObject
      *
      * @return self
      */
-    public function setExportedObject($exported_object)
+    public function setExportedObject($exportedObject)
     {
-        if (is_null($exported_object)) {
-            array_push($this->openAPINullablesSetToNull, 'exported_object');
+        if (is_null($exportedObject)) {
+            array_push($this->openAPINullablesSetToNull, 'exportedObject');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('exported_object', $nullablesSetToNull);
+            $index = array_search('exportedObject', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getExportedObjectAllowableValues();
-        if (!is_null($exported_object) && !in_array($exported_object, $allowedValues, true)) {
+        if (!is_null($exportedObject) && !in_array($exportedObject, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'exported_object', must be one of '%s'",
-                    $exported_object,
+                    "Invalid value '%s' for 'exportedObject', must be one of '%s'",
+                    $exportedObject,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['exported_object'] = $exported_object;
+        $this->container['exportedObject'] = $exportedObject;
 
         return $this;
     }

@@ -60,11 +60,11 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'source_id' => 'string',
+        'sourceId' => 'string',
         'status' => 'string',
         'amount' => 'int',
-        'initial_amount' => 'int',
-        'discount_amount' => 'int',
+        'initialAmount' => 'int',
+        'discountAmount' => 'int',
         'items' => '\OpenAPI\Client\Model\OrderItem[]',
         'metadata' => 'object'
     ];
@@ -78,11 +78,11 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'source_id' => null,
+        'sourceId' => null,
         'status' => null,
         'amount' => null,
-        'initial_amount' => null,
-        'discount_amount' => null,
+        'initialAmount' => null,
+        'discountAmount' => null,
         'items' => null,
         'metadata' => null
     ];
@@ -94,11 +94,11 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'source_id' => true,
+		'sourceId' => true,
 		'status' => true,
 		'amount' => true,
-		'initial_amount' => true,
-		'discount_amount' => true,
+		'initialAmount' => true,
+		'discountAmount' => true,
 		'items' => true,
 		'metadata' => true
     ];
@@ -190,11 +190,11 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'source_id' => 'source_id',
+        'sourceId' => 'source_id',
         'status' => 'status',
         'amount' => 'amount',
-        'initial_amount' => 'initial_amount',
-        'discount_amount' => 'discount_amount',
+        'initialAmount' => 'initial_amount',
+        'discountAmount' => 'discount_amount',
         'items' => 'items',
         'metadata' => 'metadata'
     ];
@@ -206,11 +206,11 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
-        'source_id' => 'setSourceId',
+        'sourceId' => 'setSourceId',
         'status' => 'setStatus',
         'amount' => 'setAmount',
-        'initial_amount' => 'setInitialAmount',
-        'discount_amount' => 'setDiscountAmount',
+        'initialAmount' => 'setInitialAmount',
+        'discountAmount' => 'setDiscountAmount',
         'items' => 'setItems',
         'metadata' => 'setMetadata'
     ];
@@ -222,11 +222,11 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
-        'source_id' => 'getSourceId',
+        'sourceId' => 'getSourceId',
         'status' => 'getStatus',
         'amount' => 'getAmount',
-        'initial_amount' => 'getInitialAmount',
-        'discount_amount' => 'getDiscountAmount',
+        'initialAmount' => 'getInitialAmount',
+        'discountAmount' => 'getDiscountAmount',
         'items' => 'getItems',
         'metadata' => 'getMetadata'
     ];
@@ -308,11 +308,11 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('source_id', $data ?? [], null);
+        $this->setIfExists('sourceId', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
-        $this->setIfExists('initial_amount', $data ?? [], null);
-        $this->setIfExists('discount_amount', $data ?? [], null);
+        $this->setIfExists('initialAmount', $data ?? [], null);
+        $this->setIfExists('discountAmount', $data ?? [], null);
         $this->setIfExists('items', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
     }
@@ -403,35 +403,35 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets source_id
+     * Gets sourceId
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['source_id'];
+        return $this->container['sourceId'];
     }
 
     /**
-     * Sets source_id
+     * Sets sourceId
      *
-     * @param string|null $source_id Unique source ID of an existing order that will be linked to the redemption of this request.
+     * @param string|null $sourceId Unique source ID of an existing order that will be linked to the redemption of this request.
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setSourceId($sourceId)
     {
-        if (is_null($source_id)) {
-            array_push($this->openAPINullablesSetToNull, 'source_id');
+        if (is_null($sourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'sourceId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('source_id', $nullablesSetToNull);
+            $index = array_search('sourceId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['source_id'] = $source_id;
+        $this->container['sourceId'] = $sourceId;
 
         return $this;
     }
@@ -515,69 +515,69 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets initial_amount
+     * Gets initialAmount
      *
      * @return int|null
      */
     public function getInitialAmount()
     {
-        return $this->container['initial_amount'];
+        return $this->container['initialAmount'];
     }
 
     /**
-     * Sets initial_amount
+     * Sets initialAmount
      *
-     * @param int|null $initial_amount A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+     * @param int|null $initialAmount A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
      *
      * @return self
      */
-    public function setInitialAmount($initial_amount)
+    public function setInitialAmount($initialAmount)
     {
-        if (is_null($initial_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'initial_amount');
+        if (is_null($initialAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'initialAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('initial_amount', $nullablesSetToNull);
+            $index = array_search('initialAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['initial_amount'] = $initial_amount;
+        $this->container['initialAmount'] = $initialAmount;
 
         return $this;
     }
 
     /**
-     * Gets discount_amount
+     * Gets discountAmount
      *
      * @return int|null
      */
     public function getDiscountAmount()
     {
-        return $this->container['discount_amount'];
+        return $this->container['discountAmount'];
     }
 
     /**
-     * Sets discount_amount
+     * Sets discountAmount
      *
-     * @param int|null $discount_amount Sum of all order-level discounts applied to the order.
+     * @param int|null $discountAmount Sum of all order-level discounts applied to the order.
      *
      * @return self
      */
-    public function setDiscountAmount($discount_amount)
+    public function setDiscountAmount($discountAmount)
     {
-        if (is_null($discount_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'discount_amount');
+        if (is_null($discountAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'discountAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('discount_amount', $nullablesSetToNull);
+            $index = array_search('discountAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['discount_amount'] = $discount_amount;
+        $this->container['discountAmount'] = $discountAmount;
 
         return $this;
     }

@@ -62,8 +62,8 @@ class MemberActivity implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'string',
         'type' => 'string',
         'data' => 'object',
-        'created_at' => '\DateTime',
-        'group_id' => 'string'
+        'createdAt' => '\DateTime',
+        'groupId' => 'string'
     ];
 
     /**
@@ -77,8 +77,8 @@ class MemberActivity implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => null,
         'type' => null,
         'data' => null,
-        'created_at' => 'date-time',
-        'group_id' => null
+        'createdAt' => 'date-time',
+        'groupId' => null
     ];
 
     /**
@@ -90,8 +90,8 @@ class MemberActivity implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => true,
 		'type' => true,
 		'data' => true,
-		'created_at' => true,
-		'group_id' => true
+		'createdAt' => true,
+		'groupId' => true
     ];
 
     /**
@@ -183,8 +183,8 @@ class MemberActivity implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'type' => 'type',
         'data' => 'data',
-        'created_at' => 'created_at',
-        'group_id' => 'group_id'
+        'createdAt' => 'created_at',
+        'groupId' => 'group_id'
     ];
 
     /**
@@ -196,8 +196,8 @@ class MemberActivity implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'type' => 'setType',
         'data' => 'setData',
-        'created_at' => 'setCreatedAt',
-        'group_id' => 'setGroupId'
+        'createdAt' => 'setCreatedAt',
+        'groupId' => 'setGroupId'
     ];
 
     /**
@@ -209,8 +209,8 @@ class MemberActivity implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'type' => 'getType',
         'data' => 'getData',
-        'created_at' => 'getCreatedAt',
-        'group_id' => 'getGroupId'
+        'createdAt' => 'getCreatedAt',
+        'groupId' => 'getGroupId'
     ];
 
     /**
@@ -273,8 +273,8 @@ class MemberActivity implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('data', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('group_id', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('groupId', $data ?? [], null);
     }
 
     /**
@@ -422,69 +422,69 @@ class MemberActivity implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the member activity occurred in ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the member activity occurred in ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets group_id
+     * Gets groupId
      *
      * @return string|null
      */
     public function getGroupId()
     {
-        return $this->container['group_id'];
+        return $this->container['groupId'];
     }
 
     /**
-     * Sets group_id
+     * Sets groupId
      *
-     * @param string|null $group_id Unique identifier of the request that caused the event.
+     * @param string|null $groupId Unique identifier of the request that caused the event.
      *
      * @return self
      */
-    public function setGroupId($group_id)
+    public function setGroupId($groupId)
     {
-        if (is_null($group_id)) {
-            array_push($this->openAPINullablesSetToNull, 'group_id');
+        if (is_null($groupId)) {
+            array_push($this->openAPINullablesSetToNull, 'groupId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('group_id', $nullablesSetToNull);
+            $index = array_search('groupId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['group_id'] = $group_id;
+        $this->container['groupId'] = $groupId;
 
         return $this;
     }

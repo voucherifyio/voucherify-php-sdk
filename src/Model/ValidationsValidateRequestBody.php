@@ -64,7 +64,7 @@ class ValidationsValidateRequestBody implements ModelInterface, ArrayAccess, \Js
         'order' => '\OpenAPI\Client\Model\Order',
         'customer' => '\OpenAPI\Client\Model\Customer',
         'session' => '\OpenAPI\Client\Model\Session',
-        'tracking_id' => 'string',
+        'trackingId' => 'string',
         'metadata' => 'object'
     ];
 
@@ -81,7 +81,7 @@ class ValidationsValidateRequestBody implements ModelInterface, ArrayAccess, \Js
         'order' => null,
         'customer' => null,
         'session' => null,
-        'tracking_id' => null,
+        'trackingId' => null,
         'metadata' => null
     ];
 
@@ -96,7 +96,7 @@ class ValidationsValidateRequestBody implements ModelInterface, ArrayAccess, \Js
 		'order' => false,
 		'customer' => false,
 		'session' => false,
-		'tracking_id' => true,
+		'trackingId' => true,
 		'metadata' => true
     ];
 
@@ -191,7 +191,7 @@ class ValidationsValidateRequestBody implements ModelInterface, ArrayAccess, \Js
         'order' => 'order',
         'customer' => 'customer',
         'session' => 'session',
-        'tracking_id' => 'tracking_id',
+        'trackingId' => 'tracking_id',
         'metadata' => 'metadata'
     ];
 
@@ -206,7 +206,7 @@ class ValidationsValidateRequestBody implements ModelInterface, ArrayAccess, \Js
         'order' => 'setOrder',
         'customer' => 'setCustomer',
         'session' => 'setSession',
-        'tracking_id' => 'setTrackingId',
+        'trackingId' => 'setTrackingId',
         'metadata' => 'setMetadata'
     ];
 
@@ -221,7 +221,7 @@ class ValidationsValidateRequestBody implements ModelInterface, ArrayAccess, \Js
         'order' => 'getOrder',
         'customer' => 'getCustomer',
         'session' => 'getSession',
-        'tracking_id' => 'getTrackingId',
+        'trackingId' => 'getTrackingId',
         'metadata' => 'getMetadata'
     ];
 
@@ -287,7 +287,7 @@ class ValidationsValidateRequestBody implements ModelInterface, ArrayAccess, \Js
         $this->setIfExists('order', $data ?? [], null);
         $this->setIfExists('customer', $data ?? [], null);
         $this->setIfExists('session', $data ?? [], null);
-        $this->setIfExists('tracking_id', $data ?? [], null);
+        $this->setIfExists('trackingId', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
     }
 
@@ -483,35 +483,35 @@ class ValidationsValidateRequestBody implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets tracking_id
+     * Gets trackingId
      *
      * @return string|null
      */
     public function getTrackingId()
     {
-        return $this->container['tracking_id'];
+        return $this->container['trackingId'];
     }
 
     /**
-     * Sets tracking_id
+     * Sets trackingId
      *
-     * @param string|null $tracking_id Is correspondent to Customer's source_id
+     * @param string|null $trackingId Is correspondent to Customer's source_id
      *
      * @return self
      */
-    public function setTrackingId($tracking_id)
+    public function setTrackingId($trackingId)
     {
-        if (is_null($tracking_id)) {
-            array_push($this->openAPINullablesSetToNull, 'tracking_id');
+        if (is_null($trackingId)) {
+            array_push($this->openAPINullablesSetToNull, 'trackingId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tracking_id', $nullablesSetToNull);
+            $index = array_search('trackingId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['tracking_id'] = $tracking_id;
+        $this->container['trackingId'] = $trackingId;
 
         return $this;
     }

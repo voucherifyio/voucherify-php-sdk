@@ -60,7 +60,7 @@ class ValidationRulesUpdateResponseBodyApplicableTo implements ModelInterface, A
     protected static $openAPITypes = [
         'excluded' => '\OpenAPI\Client\Model\ApplicableTo[]',
         'included' => '\OpenAPI\Client\Model\ApplicableTo[]',
-        'included_all' => 'bool'
+        'includedAll' => 'bool'
     ];
 
     /**
@@ -73,7 +73,7 @@ class ValidationRulesUpdateResponseBodyApplicableTo implements ModelInterface, A
     protected static $openAPIFormats = [
         'excluded' => null,
         'included' => null,
-        'included_all' => null
+        'includedAll' => null
     ];
 
     /**
@@ -84,7 +84,7 @@ class ValidationRulesUpdateResponseBodyApplicableTo implements ModelInterface, A
     protected static array $openAPINullables = [
         'excluded' => true,
 		'included' => true,
-		'included_all' => true
+		'includedAll' => true
     ];
 
     /**
@@ -175,7 +175,7 @@ class ValidationRulesUpdateResponseBodyApplicableTo implements ModelInterface, A
     protected static $attributeMap = [
         'excluded' => 'excluded',
         'included' => 'included',
-        'included_all' => 'included_all'
+        'includedAll' => 'included_all'
     ];
 
     /**
@@ -186,7 +186,7 @@ class ValidationRulesUpdateResponseBodyApplicableTo implements ModelInterface, A
     protected static $setters = [
         'excluded' => 'setExcluded',
         'included' => 'setIncluded',
-        'included_all' => 'setIncludedAll'
+        'includedAll' => 'setIncludedAll'
     ];
 
     /**
@@ -197,7 +197,7 @@ class ValidationRulesUpdateResponseBodyApplicableTo implements ModelInterface, A
     protected static $getters = [
         'excluded' => 'getExcluded',
         'included' => 'getIncluded',
-        'included_all' => 'getIncludedAll'
+        'includedAll' => 'getIncludedAll'
     ];
 
     /**
@@ -259,7 +259,7 @@ class ValidationRulesUpdateResponseBodyApplicableTo implements ModelInterface, A
     {
         $this->setIfExists('excluded', $data ?? [], null);
         $this->setIfExists('included', $data ?? [], null);
-        $this->setIfExists('included_all', $data ?? [], null);
+        $this->setIfExists('includedAll', $data ?? [], null);
     }
 
     /**
@@ -373,35 +373,35 @@ class ValidationRulesUpdateResponseBodyApplicableTo implements ModelInterface, A
     }
 
     /**
-     * Gets included_all
+     * Gets includedAll
      *
      * @return bool|null
      */
     public function getIncludedAll()
     {
-        return $this->container['included_all'];
+        return $this->container['includedAll'];
     }
 
     /**
-     * Sets included_all
+     * Sets includedAll
      *
-     * @param bool|null $included_all Indicates whether all items are included in the discount.
+     * @param bool|null $includedAll Indicates whether all items are included in the discount.
      *
      * @return self
      */
-    public function setIncludedAll($included_all)
+    public function setIncludedAll($includedAll)
     {
-        if (is_null($included_all)) {
-            array_push($this->openAPINullablesSetToNull, 'included_all');
+        if (is_null($includedAll)) {
+            array_push($this->openAPINullablesSetToNull, 'includedAll');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('included_all', $nullablesSetToNull);
+            $index = array_search('includedAll', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['included_all'] = $included_all;
+        $this->container['includedAll'] = $includedAll;
 
         return $this;
     }

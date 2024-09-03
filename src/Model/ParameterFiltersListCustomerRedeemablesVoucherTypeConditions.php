@@ -59,13 +59,13 @@ class ParameterFiltersListCustomerRedeemablesVoucherTypeConditions implements Mo
       */
     protected static $openAPITypes = [
         'in' => 'string[]',
-        'not_in' => 'string[]',
+        'notIn' => 'string[]',
         'is' => 'string',
-        'is_not' => 'string',
-        'has_value' => 'string',
-        'is_unknown' => 'string',
-        'starts_with' => 'string',
-        'ends_with' => 'string'
+        'isNot' => 'string',
+        'hasValue' => 'string',
+        'isUnknown' => 'string',
+        'startsWith' => 'string',
+        'endsWith' => 'string'
     ];
 
     /**
@@ -77,13 +77,13 @@ class ParameterFiltersListCustomerRedeemablesVoucherTypeConditions implements Mo
       */
     protected static $openAPIFormats = [
         'in' => null,
-        'not_in' => null,
+        'notIn' => null,
         'is' => null,
-        'is_not' => null,
-        'has_value' => null,
-        'is_unknown' => null,
-        'starts_with' => null,
-        'ends_with' => null
+        'isNot' => null,
+        'hasValue' => null,
+        'isUnknown' => null,
+        'startsWith' => null,
+        'endsWith' => null
     ];
 
     /**
@@ -93,13 +93,13 @@ class ParameterFiltersListCustomerRedeemablesVoucherTypeConditions implements Mo
       */
     protected static array $openAPINullables = [
         'in' => true,
-		'not_in' => true,
+		'notIn' => true,
 		'is' => true,
-		'is_not' => true,
-		'has_value' => true,
-		'is_unknown' => true,
-		'starts_with' => true,
-		'ends_with' => true
+		'isNot' => true,
+		'hasValue' => true,
+		'isUnknown' => true,
+		'startsWith' => true,
+		'endsWith' => true
     ];
 
     /**
@@ -189,13 +189,13 @@ class ParameterFiltersListCustomerRedeemablesVoucherTypeConditions implements Mo
      */
     protected static $attributeMap = [
         'in' => '$in',
-        'not_in' => '$not_in',
+        'notIn' => '$not_in',
         'is' => '$is',
-        'is_not' => '$is_not',
-        'has_value' => '$has_value',
-        'is_unknown' => '$is_unknown',
-        'starts_with' => '$starts_with',
-        'ends_with' => '$ends_with'
+        'isNot' => '$is_not',
+        'hasValue' => '$has_value',
+        'isUnknown' => '$is_unknown',
+        'startsWith' => '$starts_with',
+        'endsWith' => '$ends_with'
     ];
 
     /**
@@ -205,13 +205,13 @@ class ParameterFiltersListCustomerRedeemablesVoucherTypeConditions implements Mo
      */
     protected static $setters = [
         'in' => 'setIn',
-        'not_in' => 'setNotIn',
+        'notIn' => 'setNotIn',
         'is' => 'setIs',
-        'is_not' => 'setIsNot',
-        'has_value' => 'setHasValue',
-        'is_unknown' => 'setIsUnknown',
-        'starts_with' => 'setStartsWith',
-        'ends_with' => 'setEndsWith'
+        'isNot' => 'setIsNot',
+        'hasValue' => 'setHasValue',
+        'isUnknown' => 'setIsUnknown',
+        'startsWith' => 'setStartsWith',
+        'endsWith' => 'setEndsWith'
     ];
 
     /**
@@ -221,13 +221,13 @@ class ParameterFiltersListCustomerRedeemablesVoucherTypeConditions implements Mo
      */
     protected static $getters = [
         'in' => 'getIn',
-        'not_in' => 'getNotIn',
+        'notIn' => 'getNotIn',
         'is' => 'getIs',
-        'is_not' => 'getIsNot',
-        'has_value' => 'getHasValue',
-        'is_unknown' => 'getIsUnknown',
-        'starts_with' => 'getStartsWith',
-        'ends_with' => 'getEndsWith'
+        'isNot' => 'getIsNot',
+        'hasValue' => 'getHasValue',
+        'isUnknown' => 'getIsUnknown',
+        'startsWith' => 'getStartsWith',
+        'endsWith' => 'getEndsWith'
     ];
 
     /**
@@ -356,13 +356,13 @@ class ParameterFiltersListCustomerRedeemablesVoucherTypeConditions implements Mo
     public function __construct(array $data = null)
     {
         $this->setIfExists('in', $data ?? [], null);
-        $this->setIfExists('not_in', $data ?? [], null);
+        $this->setIfExists('notIn', $data ?? [], null);
         $this->setIfExists('is', $data ?? [], null);
-        $this->setIfExists('is_not', $data ?? [], null);
-        $this->setIfExists('has_value', $data ?? [], null);
-        $this->setIfExists('is_unknown', $data ?? [], null);
-        $this->setIfExists('starts_with', $data ?? [], null);
-        $this->setIfExists('ends_with', $data ?? [], null);
+        $this->setIfExists('isNot', $data ?? [], null);
+        $this->setIfExists('hasValue', $data ?? [], null);
+        $this->setIfExists('isUnknown', $data ?? [], null);
+        $this->setIfExists('startsWith', $data ?? [], null);
+        $this->setIfExists('endsWith', $data ?? [], null);
     }
 
     /**
@@ -402,10 +402,10 @@ class ParameterFiltersListCustomerRedeemablesVoucherTypeConditions implements Mo
         }
 
         $allowedValues = $this->getIsNotAllowableValues();
-        if (!is_null($this->container['is_not']) && !in_array($this->container['is_not'], $allowedValues, true)) {
+        if (!is_null($this->container['isNot']) && !in_array($this->container['isNot'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'is_not', must be one of '%s'",
-                $this->container['is_not'],
+                "invalid value '%s' for 'isNot', must be one of '%s'",
+                $this->container['isNot'],
                 implode("', '", $allowedValues)
             );
         }
@@ -469,44 +469,44 @@ class ParameterFiltersListCustomerRedeemablesVoucherTypeConditions implements Mo
     }
 
     /**
-     * Gets not_in
+     * Gets notIn
      *
      * @return string[]|null
      */
     public function getNotIn()
     {
-        return $this->container['not_in'];
+        return $this->container['notIn'];
     }
 
     /**
-     * Sets not_in
+     * Sets notIn
      *
-     * @param string[]|null $not_in Array of resource values that should be included in the results (multiple values).
+     * @param string[]|null $notIn Array of resource values that should be included in the results (multiple values).
      *
      * @return self
      */
-    public function setNotIn($not_in)
+    public function setNotIn($notIn)
     {
-        if (is_null($not_in)) {
-            array_push($this->openAPINullablesSetToNull, 'not_in');
+        if (is_null($notIn)) {
+            array_push($this->openAPINullablesSetToNull, 'notIn');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('not_in', $nullablesSetToNull);
+            $index = array_search('notIn', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getNotInAllowableValues();
-        if (!is_null($not_in) && array_diff($not_in, $allowedValues)) {
+        if (!is_null($notIn) && array_diff($notIn, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'not_in', must be one of '%s'",
+                    "Invalid value for 'notIn', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['not_in'] = $not_in;
+        $this->container['notIn'] = $notIn;
 
         return $this;
     }
@@ -556,181 +556,181 @@ class ParameterFiltersListCustomerRedeemablesVoucherTypeConditions implements Mo
     }
 
     /**
-     * Gets is_not
+     * Gets isNot
      *
      * @return string|null
      */
     public function getIsNot()
     {
-        return $this->container['is_not'];
+        return $this->container['isNot'];
     }
 
     /**
-     * Sets is_not
+     * Sets isNot
      *
-     * @param string|null $is_not Results omit this value (single value).
+     * @param string|null $isNot Results omit this value (single value).
      *
      * @return self
      */
-    public function setIsNot($is_not)
+    public function setIsNot($isNot)
     {
-        if (is_null($is_not)) {
-            array_push($this->openAPINullablesSetToNull, 'is_not');
+        if (is_null($isNot)) {
+            array_push($this->openAPINullablesSetToNull, 'isNot');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_not', $nullablesSetToNull);
+            $index = array_search('isNot', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getIsNotAllowableValues();
-        if (!is_null($is_not) && !in_array($is_not, $allowedValues, true)) {
+        if (!is_null($isNot) && !in_array($isNot, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'is_not', must be one of '%s'",
-                    $is_not,
+                    "Invalid value '%s' for 'isNot', must be one of '%s'",
+                    $isNot,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['is_not'] = $is_not;
+        $this->container['isNot'] = $isNot;
 
         return $this;
     }
 
     /**
-     * Gets has_value
+     * Gets hasValue
      *
      * @return string|null
      */
     public function getHasValue()
     {
-        return $this->container['has_value'];
+        return $this->container['hasValue'];
     }
 
     /**
-     * Sets has_value
+     * Sets hasValue
      *
-     * @param string|null $has_value Value is NOT null. The value for this parameter is an empty string.
+     * @param string|null $hasValue Value is NOT null. The value for this parameter is an empty string.
      *
      * @return self
      */
-    public function setHasValue($has_value)
+    public function setHasValue($hasValue)
     {
-        if (is_null($has_value)) {
-            array_push($this->openAPINullablesSetToNull, 'has_value');
+        if (is_null($hasValue)) {
+            array_push($this->openAPINullablesSetToNull, 'hasValue');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('has_value', $nullablesSetToNull);
+            $index = array_search('hasValue', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['has_value'] = $has_value;
+        $this->container['hasValue'] = $hasValue;
 
         return $this;
     }
 
     /**
-     * Gets is_unknown
+     * Gets isUnknown
      *
      * @return string|null
      */
     public function getIsUnknown()
     {
-        return $this->container['is_unknown'];
+        return $this->container['isUnknown'];
     }
 
     /**
-     * Sets is_unknown
+     * Sets isUnknown
      *
-     * @param string|null $is_unknown Value is null. The value for this parameter is an empty string.
+     * @param string|null $isUnknown Value is null. The value for this parameter is an empty string.
      *
      * @return self
      */
-    public function setIsUnknown($is_unknown)
+    public function setIsUnknown($isUnknown)
     {
-        if (is_null($is_unknown)) {
-            array_push($this->openAPINullablesSetToNull, 'is_unknown');
+        if (is_null($isUnknown)) {
+            array_push($this->openAPINullablesSetToNull, 'isUnknown');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_unknown', $nullablesSetToNull);
+            $index = array_search('isUnknown', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['is_unknown'] = $is_unknown;
+        $this->container['isUnknown'] = $isUnknown;
 
         return $this;
     }
 
     /**
-     * Gets starts_with
+     * Gets startsWith
      *
      * @return string|null
      */
     public function getStartsWith()
     {
-        return $this->container['starts_with'];
+        return $this->container['startsWith'];
     }
 
     /**
-     * Sets starts_with
+     * Sets startsWith
      *
-     * @param string|null $starts_with Value starts with the specified string.
+     * @param string|null $startsWith Value starts with the specified string.
      *
      * @return self
      */
-    public function setStartsWith($starts_with)
+    public function setStartsWith($startsWith)
     {
-        if (is_null($starts_with)) {
-            array_push($this->openAPINullablesSetToNull, 'starts_with');
+        if (is_null($startsWith)) {
+            array_push($this->openAPINullablesSetToNull, 'startsWith');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('starts_with', $nullablesSetToNull);
+            $index = array_search('startsWith', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['starts_with'] = $starts_with;
+        $this->container['startsWith'] = $startsWith;
 
         return $this;
     }
 
     /**
-     * Gets ends_with
+     * Gets endsWith
      *
      * @return string|null
      */
     public function getEndsWith()
     {
-        return $this->container['ends_with'];
+        return $this->container['endsWith'];
     }
 
     /**
-     * Sets ends_with
+     * Sets endsWith
      *
-     * @param string|null $ends_with Value ends with the specified string.
+     * @param string|null $endsWith Value ends with the specified string.
      *
      * @return self
      */
-    public function setEndsWith($ends_with)
+    public function setEndsWith($endsWith)
     {
-        if (is_null($ends_with)) {
-            array_push($this->openAPINullablesSetToNull, 'ends_with');
+        if (is_null($endsWith)) {
+            array_push($this->openAPINullablesSetToNull, 'endsWith');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ends_with', $nullablesSetToNull);
+            $index = array_search('endsWith', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ends_with'] = $ends_with;
+        $this->container['endsWith'] = $endsWith;
 
         return $this;
     }

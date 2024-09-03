@@ -66,10 +66,10 @@ $apiInstance = new OpenAPI\Client\Api\AsyncActionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$async_action_id = 'async_action_id_example'; // string | Unique ID of the asynchronous operation.
+$asyncActionId = 'asyncActionId_example'; // string | Unique ID of the asynchronous operation.
 
 try {
-    $result = $apiInstance->getAsyncAction($async_action_id);
+    $result = $apiInstance->getAsyncAction($asyncActionId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AsyncActionsApi->getAsyncAction: ', $e->getMessage(), PHP_EOL;

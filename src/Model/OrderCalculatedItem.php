@@ -59,22 +59,22 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'sku_id' => 'string',
-        'product_id' => 'string',
-        'related_object' => 'string',
-        'source_id' => 'string',
+        'skuId' => 'string',
+        'productId' => 'string',
+        'relatedObject' => 'string',
+        'sourceId' => 'string',
         'quantity' => 'int',
-        'discount_quantity' => 'int',
-        'initial_quantity' => 'int',
+        'discountQuantity' => 'int',
+        'initialQuantity' => 'int',
         'amount' => 'int',
-        'discount_amount' => 'int',
-        'applied_discount_amount' => 'int',
-        'applied_discount_quantity' => 'int',
-        'applied_quantity' => 'int',
-        'applied_quantity_amount' => 'int',
-        'initial_amount' => 'int',
+        'discountAmount' => 'int',
+        'appliedDiscountAmount' => 'int',
+        'appliedDiscountQuantity' => 'int',
+        'appliedQuantity' => 'int',
+        'appliedQuantityAmount' => 'int',
+        'initialAmount' => 'int',
         'price' => 'int',
-        'subtotal_amount' => 'int',
+        'subtotalAmount' => 'int',
         'product' => '\OpenAPI\Client\Model\OrderCalculatedItemProduct',
         'sku' => '\OpenAPI\Client\Model\OrderCalculatedItemSku',
         'object' => 'string',
@@ -90,22 +90,22 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'sku_id' => null,
-        'product_id' => null,
-        'related_object' => null,
-        'source_id' => null,
+        'skuId' => null,
+        'productId' => null,
+        'relatedObject' => null,
+        'sourceId' => null,
         'quantity' => null,
-        'discount_quantity' => null,
-        'initial_quantity' => null,
+        'discountQuantity' => null,
+        'initialQuantity' => null,
         'amount' => null,
-        'discount_amount' => null,
-        'applied_discount_amount' => null,
-        'applied_discount_quantity' => null,
-        'applied_quantity' => null,
-        'applied_quantity_amount' => null,
-        'initial_amount' => null,
+        'discountAmount' => null,
+        'appliedDiscountAmount' => null,
+        'appliedDiscountQuantity' => null,
+        'appliedQuantity' => null,
+        'appliedQuantityAmount' => null,
+        'initialAmount' => null,
         'price' => null,
-        'subtotal_amount' => null,
+        'subtotalAmount' => null,
         'product' => null,
         'sku' => null,
         'object' => null,
@@ -119,22 +119,22 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'sku_id' => true,
-		'product_id' => true,
-		'related_object' => true,
-		'source_id' => true,
+		'skuId' => true,
+		'productId' => true,
+		'relatedObject' => true,
+		'sourceId' => true,
 		'quantity' => true,
-		'discount_quantity' => true,
-		'initial_quantity' => true,
+		'discountQuantity' => true,
+		'initialQuantity' => true,
 		'amount' => true,
-		'discount_amount' => true,
-		'applied_discount_amount' => true,
-		'applied_discount_quantity' => true,
-		'applied_quantity' => true,
-		'applied_quantity_amount' => true,
-		'initial_amount' => true,
+		'discountAmount' => true,
+		'appliedDiscountAmount' => true,
+		'appliedDiscountQuantity' => true,
+		'appliedQuantity' => true,
+		'appliedQuantityAmount' => true,
+		'initialAmount' => true,
 		'price' => true,
-		'subtotal_amount' => true,
+		'subtotalAmount' => true,
 		'product' => true,
 		'sku' => true,
 		'object' => true,
@@ -228,22 +228,22 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'sku_id' => 'sku_id',
-        'product_id' => 'product_id',
-        'related_object' => 'related_object',
-        'source_id' => 'source_id',
+        'skuId' => 'sku_id',
+        'productId' => 'product_id',
+        'relatedObject' => 'related_object',
+        'sourceId' => 'source_id',
         'quantity' => 'quantity',
-        'discount_quantity' => 'discount_quantity',
-        'initial_quantity' => 'initial_quantity',
+        'discountQuantity' => 'discount_quantity',
+        'initialQuantity' => 'initial_quantity',
         'amount' => 'amount',
-        'discount_amount' => 'discount_amount',
-        'applied_discount_amount' => 'applied_discount_amount',
-        'applied_discount_quantity' => 'applied_discount_quantity',
-        'applied_quantity' => 'applied_quantity',
-        'applied_quantity_amount' => 'applied_quantity_amount',
-        'initial_amount' => 'initial_amount',
+        'discountAmount' => 'discount_amount',
+        'appliedDiscountAmount' => 'applied_discount_amount',
+        'appliedDiscountQuantity' => 'applied_discount_quantity',
+        'appliedQuantity' => 'applied_quantity',
+        'appliedQuantityAmount' => 'applied_quantity_amount',
+        'initialAmount' => 'initial_amount',
         'price' => 'price',
-        'subtotal_amount' => 'subtotal_amount',
+        'subtotalAmount' => 'subtotal_amount',
         'product' => 'product',
         'sku' => 'sku',
         'object' => 'object',
@@ -257,22 +257,22 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'id' => 'setId',
-        'sku_id' => 'setSkuId',
-        'product_id' => 'setProductId',
-        'related_object' => 'setRelatedObject',
-        'source_id' => 'setSourceId',
+        'skuId' => 'setSkuId',
+        'productId' => 'setProductId',
+        'relatedObject' => 'setRelatedObject',
+        'sourceId' => 'setSourceId',
         'quantity' => 'setQuantity',
-        'discount_quantity' => 'setDiscountQuantity',
-        'initial_quantity' => 'setInitialQuantity',
+        'discountQuantity' => 'setDiscountQuantity',
+        'initialQuantity' => 'setInitialQuantity',
         'amount' => 'setAmount',
-        'discount_amount' => 'setDiscountAmount',
-        'applied_discount_amount' => 'setAppliedDiscountAmount',
-        'applied_discount_quantity' => 'setAppliedDiscountQuantity',
-        'applied_quantity' => 'setAppliedQuantity',
-        'applied_quantity_amount' => 'setAppliedQuantityAmount',
-        'initial_amount' => 'setInitialAmount',
+        'discountAmount' => 'setDiscountAmount',
+        'appliedDiscountAmount' => 'setAppliedDiscountAmount',
+        'appliedDiscountQuantity' => 'setAppliedDiscountQuantity',
+        'appliedQuantity' => 'setAppliedQuantity',
+        'appliedQuantityAmount' => 'setAppliedQuantityAmount',
+        'initialAmount' => 'setInitialAmount',
         'price' => 'setPrice',
-        'subtotal_amount' => 'setSubtotalAmount',
+        'subtotalAmount' => 'setSubtotalAmount',
         'product' => 'setProduct',
         'sku' => 'setSku',
         'object' => 'setObject',
@@ -286,22 +286,22 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'id' => 'getId',
-        'sku_id' => 'getSkuId',
-        'product_id' => 'getProductId',
-        'related_object' => 'getRelatedObject',
-        'source_id' => 'getSourceId',
+        'skuId' => 'getSkuId',
+        'productId' => 'getProductId',
+        'relatedObject' => 'getRelatedObject',
+        'sourceId' => 'getSourceId',
         'quantity' => 'getQuantity',
-        'discount_quantity' => 'getDiscountQuantity',
-        'initial_quantity' => 'getInitialQuantity',
+        'discountQuantity' => 'getDiscountQuantity',
+        'initialQuantity' => 'getInitialQuantity',
         'amount' => 'getAmount',
-        'discount_amount' => 'getDiscountAmount',
-        'applied_discount_amount' => 'getAppliedDiscountAmount',
-        'applied_discount_quantity' => 'getAppliedDiscountQuantity',
-        'applied_quantity' => 'getAppliedQuantity',
-        'applied_quantity_amount' => 'getAppliedQuantityAmount',
-        'initial_amount' => 'getInitialAmount',
+        'discountAmount' => 'getDiscountAmount',
+        'appliedDiscountAmount' => 'getAppliedDiscountAmount',
+        'appliedDiscountQuantity' => 'getAppliedDiscountQuantity',
+        'appliedQuantity' => 'getAppliedQuantity',
+        'appliedQuantityAmount' => 'getAppliedQuantityAmount',
+        'initialAmount' => 'getInitialAmount',
         'price' => 'getPrice',
-        'subtotal_amount' => 'getSubtotalAmount',
+        'subtotalAmount' => 'getSubtotalAmount',
         'product' => 'getProduct',
         'sku' => 'getSku',
         'object' => 'getObject',
@@ -394,22 +394,22 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('sku_id', $data ?? [], null);
-        $this->setIfExists('product_id', $data ?? [], null);
-        $this->setIfExists('related_object', $data ?? [], null);
-        $this->setIfExists('source_id', $data ?? [], null);
+        $this->setIfExists('skuId', $data ?? [], null);
+        $this->setIfExists('productId', $data ?? [], null);
+        $this->setIfExists('relatedObject', $data ?? [], null);
+        $this->setIfExists('sourceId', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], null);
-        $this->setIfExists('discount_quantity', $data ?? [], null);
-        $this->setIfExists('initial_quantity', $data ?? [], null);
+        $this->setIfExists('discountQuantity', $data ?? [], null);
+        $this->setIfExists('initialQuantity', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
-        $this->setIfExists('discount_amount', $data ?? [], null);
-        $this->setIfExists('applied_discount_amount', $data ?? [], null);
-        $this->setIfExists('applied_discount_quantity', $data ?? [], null);
-        $this->setIfExists('applied_quantity', $data ?? [], null);
-        $this->setIfExists('applied_quantity_amount', $data ?? [], null);
-        $this->setIfExists('initial_amount', $data ?? [], null);
+        $this->setIfExists('discountAmount', $data ?? [], null);
+        $this->setIfExists('appliedDiscountAmount', $data ?? [], null);
+        $this->setIfExists('appliedDiscountQuantity', $data ?? [], null);
+        $this->setIfExists('appliedQuantity', $data ?? [], null);
+        $this->setIfExists('appliedQuantityAmount', $data ?? [], null);
+        $this->setIfExists('initialAmount', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
-        $this->setIfExists('subtotal_amount', $data ?? [], null);
+        $this->setIfExists('subtotalAmount', $data ?? [], null);
         $this->setIfExists('product', $data ?? [], null);
         $this->setIfExists('sku', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'order_item');
@@ -444,10 +444,10 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
         $invalidProperties = [];
 
         $allowedValues = $this->getRelatedObjectAllowableValues();
-        if (!is_null($this->container['related_object']) && !in_array($this->container['related_object'], $allowedValues, true)) {
+        if (!is_null($this->container['relatedObject']) && !in_array($this->container['relatedObject'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'related_object', must be one of '%s'",
-                $this->container['related_object'],
+                "invalid value '%s' for 'relatedObject', must be one of '%s'",
+                $this->container['relatedObject'],
                 implode("', '", $allowedValues)
             );
         }
@@ -511,147 +511,147 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets sku_id
+     * Gets skuId
      *
      * @return string|null
      */
     public function getSkuId()
     {
-        return $this->container['sku_id'];
+        return $this->container['skuId'];
     }
 
     /**
-     * Sets sku_id
+     * Sets skuId
      *
-     * @param string|null $sku_id Unique identifier of the SKU. It is assigned by Voucherify.
+     * @param string|null $skuId Unique identifier of the SKU. It is assigned by Voucherify.
      *
      * @return self
      */
-    public function setSkuId($sku_id)
+    public function setSkuId($skuId)
     {
-        if (is_null($sku_id)) {
-            array_push($this->openAPINullablesSetToNull, 'sku_id');
+        if (is_null($skuId)) {
+            array_push($this->openAPINullablesSetToNull, 'skuId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sku_id', $nullablesSetToNull);
+            $index = array_search('skuId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sku_id'] = $sku_id;
+        $this->container['skuId'] = $skuId;
 
         return $this;
     }
 
     /**
-     * Gets product_id
+     * Gets productId
      *
      * @return string|null
      */
     public function getProductId()
     {
-        return $this->container['product_id'];
+        return $this->container['productId'];
     }
 
     /**
-     * Sets product_id
+     * Sets productId
      *
-     * @param string|null $product_id Unique identifier of the product. It is assigned by Voucherify.
+     * @param string|null $productId Unique identifier of the product. It is assigned by Voucherify.
      *
      * @return self
      */
-    public function setProductId($product_id)
+    public function setProductId($productId)
     {
-        if (is_null($product_id)) {
-            array_push($this->openAPINullablesSetToNull, 'product_id');
+        if (is_null($productId)) {
+            array_push($this->openAPINullablesSetToNull, 'productId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('product_id', $nullablesSetToNull);
+            $index = array_search('productId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['product_id'] = $product_id;
+        $this->container['productId'] = $productId;
 
         return $this;
     }
 
     /**
-     * Gets related_object
+     * Gets relatedObject
      *
      * @return string|null
      */
     public function getRelatedObject()
     {
-        return $this->container['related_object'];
+        return $this->container['relatedObject'];
     }
 
     /**
-     * Sets related_object
+     * Sets relatedObject
      *
-     * @param string|null $related_object Used along with the source_id property, can be set to either sku or product.
+     * @param string|null $relatedObject Used along with the source_id property, can be set to either sku or product.
      *
      * @return self
      */
-    public function setRelatedObject($related_object)
+    public function setRelatedObject($relatedObject)
     {
-        if (is_null($related_object)) {
-            array_push($this->openAPINullablesSetToNull, 'related_object');
+        if (is_null($relatedObject)) {
+            array_push($this->openAPINullablesSetToNull, 'relatedObject');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('related_object', $nullablesSetToNull);
+            $index = array_search('relatedObject', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getRelatedObjectAllowableValues();
-        if (!is_null($related_object) && !in_array($related_object, $allowedValues, true)) {
+        if (!is_null($relatedObject) && !in_array($relatedObject, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'related_object', must be one of '%s'",
-                    $related_object,
+                    "Invalid value '%s' for 'relatedObject', must be one of '%s'",
+                    $relatedObject,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['related_object'] = $related_object;
+        $this->container['relatedObject'] = $relatedObject;
 
         return $this;
     }
 
     /**
-     * Gets source_id
+     * Gets sourceId
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['source_id'];
+        return $this->container['sourceId'];
     }
 
     /**
-     * Sets source_id
+     * Sets sourceId
      *
-     * @param string|null $source_id The merchant's product/SKU ID (if it is different from the Voucherify product/SKU ID). It is useful in the integration between multiple systems. It can be an ID from an eCommerce site, a database, or a third-party service.
+     * @param string|null $sourceId The merchant's product/SKU ID (if it is different from the Voucherify product/SKU ID). It is useful in the integration between multiple systems. It can be an ID from an eCommerce site, a database, or a third-party service.
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setSourceId($sourceId)
     {
-        if (is_null($source_id)) {
-            array_push($this->openAPINullablesSetToNull, 'source_id');
+        if (is_null($sourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'sourceId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('source_id', $nullablesSetToNull);
+            $index = array_search('sourceId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['source_id'] = $source_id;
+        $this->container['sourceId'] = $sourceId;
 
         return $this;
     }
@@ -691,69 +691,69 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets discount_quantity
+     * Gets discountQuantity
      *
      * @return int|null
      */
     public function getDiscountQuantity()
     {
-        return $this->container['discount_quantity'];
+        return $this->container['discountQuantity'];
     }
 
     /**
-     * Sets discount_quantity
+     * Sets discountQuantity
      *
-     * @param int|null $discount_quantity Number of dicounted items.
+     * @param int|null $discountQuantity Number of dicounted items.
      *
      * @return self
      */
-    public function setDiscountQuantity($discount_quantity)
+    public function setDiscountQuantity($discountQuantity)
     {
-        if (is_null($discount_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'discount_quantity');
+        if (is_null($discountQuantity)) {
+            array_push($this->openAPINullablesSetToNull, 'discountQuantity');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('discount_quantity', $nullablesSetToNull);
+            $index = array_search('discountQuantity', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['discount_quantity'] = $discount_quantity;
+        $this->container['discountQuantity'] = $discountQuantity;
 
         return $this;
     }
 
     /**
-     * Gets initial_quantity
+     * Gets initialQuantity
      *
      * @return int|null
      */
     public function getInitialQuantity()
     {
-        return $this->container['initial_quantity'];
+        return $this->container['initialQuantity'];
     }
 
     /**
-     * Sets initial_quantity
+     * Sets initialQuantity
      *
-     * @param int|null $initial_quantity A positive integer in the smallest unit quantity representing the total amount of the order; this is the sum of the order items' quantity.
+     * @param int|null $initialQuantity A positive integer in the smallest unit quantity representing the total amount of the order; this is the sum of the order items' quantity.
      *
      * @return self
      */
-    public function setInitialQuantity($initial_quantity)
+    public function setInitialQuantity($initialQuantity)
     {
-        if (is_null($initial_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'initial_quantity');
+        if (is_null($initialQuantity)) {
+            array_push($this->openAPINullablesSetToNull, 'initialQuantity');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('initial_quantity', $nullablesSetToNull);
+            $index = array_search('initialQuantity', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['initial_quantity'] = $initial_quantity;
+        $this->container['initialQuantity'] = $initialQuantity;
 
         return $this;
     }
@@ -793,205 +793,205 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets discount_amount
+     * Gets discountAmount
      *
      * @return int|null
      */
     public function getDiscountAmount()
     {
-        return $this->container['discount_amount'];
+        return $this->container['discountAmount'];
     }
 
     /**
-     * Sets discount_amount
+     * Sets discountAmount
      *
-     * @param int|null $discount_amount Sum of all order-item-level discounts applied to the order.
+     * @param int|null $discountAmount Sum of all order-item-level discounts applied to the order.
      *
      * @return self
      */
-    public function setDiscountAmount($discount_amount)
+    public function setDiscountAmount($discountAmount)
     {
-        if (is_null($discount_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'discount_amount');
+        if (is_null($discountAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'discountAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('discount_amount', $nullablesSetToNull);
+            $index = array_search('discountAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['discount_amount'] = $discount_amount;
+        $this->container['discountAmount'] = $discountAmount;
 
         return $this;
     }
 
     /**
-     * Gets applied_discount_amount
+     * Gets appliedDiscountAmount
      *
      * @return int|null
      */
     public function getAppliedDiscountAmount()
     {
-        return $this->container['applied_discount_amount'];
+        return $this->container['appliedDiscountAmount'];
     }
 
     /**
-     * Sets applied_discount_amount
+     * Sets appliedDiscountAmount
      *
-     * @param int|null $applied_discount_amount This field shows the order-level discount applied.
+     * @param int|null $appliedDiscountAmount This field shows the order-level discount applied.
      *
      * @return self
      */
-    public function setAppliedDiscountAmount($applied_discount_amount)
+    public function setAppliedDiscountAmount($appliedDiscountAmount)
     {
-        if (is_null($applied_discount_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'applied_discount_amount');
+        if (is_null($appliedDiscountAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'appliedDiscountAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('applied_discount_amount', $nullablesSetToNull);
+            $index = array_search('appliedDiscountAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['applied_discount_amount'] = $applied_discount_amount;
+        $this->container['appliedDiscountAmount'] = $appliedDiscountAmount;
 
         return $this;
     }
 
     /**
-     * Gets applied_discount_quantity
+     * Gets appliedDiscountQuantity
      *
      * @return int|null
      */
     public function getAppliedDiscountQuantity()
     {
-        return $this->container['applied_discount_quantity'];
+        return $this->container['appliedDiscountQuantity'];
     }
 
     /**
-     * Sets applied_discount_quantity
+     * Sets appliedDiscountQuantity
      *
-     * @param int|null $applied_discount_quantity Number of the discounted items applied in the transaction.
+     * @param int|null $appliedDiscountQuantity Number of the discounted items applied in the transaction.
      *
      * @return self
      */
-    public function setAppliedDiscountQuantity($applied_discount_quantity)
+    public function setAppliedDiscountQuantity($appliedDiscountQuantity)
     {
-        if (is_null($applied_discount_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'applied_discount_quantity');
+        if (is_null($appliedDiscountQuantity)) {
+            array_push($this->openAPINullablesSetToNull, 'appliedDiscountQuantity');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('applied_discount_quantity', $nullablesSetToNull);
+            $index = array_search('appliedDiscountQuantity', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['applied_discount_quantity'] = $applied_discount_quantity;
+        $this->container['appliedDiscountQuantity'] = $appliedDiscountQuantity;
 
         return $this;
     }
 
     /**
-     * Gets applied_quantity
+     * Gets appliedQuantity
      *
      * @return int|null
      */
     public function getAppliedQuantity()
     {
-        return $this->container['applied_quantity'];
+        return $this->container['appliedQuantity'];
     }
 
     /**
-     * Sets applied_quantity
+     * Sets appliedQuantity
      *
-     * @param int|null $applied_quantity Quantity of items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
+     * @param int|null $appliedQuantity Quantity of items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
      *
      * @return self
      */
-    public function setAppliedQuantity($applied_quantity)
+    public function setAppliedQuantity($appliedQuantity)
     {
-        if (is_null($applied_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'applied_quantity');
+        if (is_null($appliedQuantity)) {
+            array_push($this->openAPINullablesSetToNull, 'appliedQuantity');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('applied_quantity', $nullablesSetToNull);
+            $index = array_search('appliedQuantity', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['applied_quantity'] = $applied_quantity;
+        $this->container['appliedQuantity'] = $appliedQuantity;
 
         return $this;
     }
 
     /**
-     * Gets applied_quantity_amount
+     * Gets appliedQuantityAmount
      *
      * @return int|null
      */
     public function getAppliedQuantityAmount()
     {
-        return $this->container['applied_quantity_amount'];
+        return $this->container['appliedQuantityAmount'];
     }
 
     /**
-     * Sets applied_quantity_amount
+     * Sets appliedQuantityAmount
      *
-     * @param int|null $applied_quantity_amount Amount for the items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
+     * @param int|null $appliedQuantityAmount Amount for the items changed by the application of a new quantity items. It can be positive when an item is added or negative if an item is replaced.
      *
      * @return self
      */
-    public function setAppliedQuantityAmount($applied_quantity_amount)
+    public function setAppliedQuantityAmount($appliedQuantityAmount)
     {
-        if (is_null($applied_quantity_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'applied_quantity_amount');
+        if (is_null($appliedQuantityAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'appliedQuantityAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('applied_quantity_amount', $nullablesSetToNull);
+            $index = array_search('appliedQuantityAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['applied_quantity_amount'] = $applied_quantity_amount;
+        $this->container['appliedQuantityAmount'] = $appliedQuantityAmount;
 
         return $this;
     }
 
     /**
-     * Gets initial_amount
+     * Gets initialAmount
      *
      * @return int|null
      */
     public function getInitialAmount()
     {
-        return $this->container['initial_amount'];
+        return $this->container['initialAmount'];
     }
 
     /**
-     * Sets initial_amount
+     * Sets initialAmount
      *
-     * @param int|null $initial_amount A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+     * @param int|null $initialAmount A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
      *
      * @return self
      */
-    public function setInitialAmount($initial_amount)
+    public function setInitialAmount($initialAmount)
     {
-        if (is_null($initial_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'initial_amount');
+        if (is_null($initialAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'initialAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('initial_amount', $nullablesSetToNull);
+            $index = array_search('initialAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['initial_amount'] = $initial_amount;
+        $this->container['initialAmount'] = $initialAmount;
 
         return $this;
     }
@@ -1031,35 +1031,35 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets subtotal_amount
+     * Gets subtotalAmount
      *
      * @return int|null
      */
     public function getSubtotalAmount()
     {
-        return $this->container['subtotal_amount'];
+        return $this->container['subtotalAmount'];
     }
 
     /**
-     * Sets subtotal_amount
+     * Sets subtotalAmount
      *
-     * @param int|null $subtotal_amount Final order item amount after the applied item-level discount.  If there are no item-level discounts applied, this item is equal to the `amount`.    `subtotal_amount`=`amount`-`applied_discount_amount`
+     * @param int|null $subtotalAmount Final order item amount after the applied item-level discount.  If there are no item-level discounts applied, this item is equal to the `amount`.    `subtotal_amount`=`amount`-`applied_discount_amount`
      *
      * @return self
      */
-    public function setSubtotalAmount($subtotal_amount)
+    public function setSubtotalAmount($subtotalAmount)
     {
-        if (is_null($subtotal_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'subtotal_amount');
+        if (is_null($subtotalAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'subtotalAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('subtotal_amount', $nullablesSetToNull);
+            $index = array_search('subtotalAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['subtotal_amount'] = $subtotal_amount;
+        $this->container['subtotalAmount'] = $subtotalAmount;
 
         return $this;
     }

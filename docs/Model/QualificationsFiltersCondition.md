@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **is** | **string[]** |  | [optional]
-**is_not** | **string[]** |  | [optional]
-**has_value** | **mixed** |  | [optional]
-**is_unknown** | **mixed** |  | [optional]
+**isNot** | **string[]** |  | [optional]
+**hasValue** | **mixed** |  | [optional]
+**isUnknown** | **mixed** |  | [optional]
 **in** | **string[]** |  | [optional]
-**not_in** | **string[]** |  | [optional]
+**notIn** | **string[]** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

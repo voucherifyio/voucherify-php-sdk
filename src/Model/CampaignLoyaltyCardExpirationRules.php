@@ -58,10 +58,10 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'period_type' => 'string',
-        'period_value' => 'int',
-        'rounding_type' => 'string',
-        'rounding_value' => 'int'
+        'periodType' => 'string',
+        'periodValue' => 'int',
+        'roundingType' => 'string',
+        'roundingValue' => 'int'
     ];
 
     /**
@@ -72,10 +72,10 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'period_type' => null,
-        'period_value' => null,
-        'rounding_type' => null,
-        'rounding_value' => null
+        'periodType' => null,
+        'periodValue' => null,
+        'roundingType' => null,
+        'roundingValue' => null
     ];
 
     /**
@@ -84,10 +84,10 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'period_type' => true,
-		'period_value' => true,
-		'rounding_type' => true,
-		'rounding_value' => true
+        'periodType' => true,
+		'periodValue' => true,
+		'roundingType' => true,
+		'roundingValue' => true
     ];
 
     /**
@@ -176,10 +176,10 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'period_type' => 'period_type',
-        'period_value' => 'period_value',
-        'rounding_type' => 'rounding_type',
-        'rounding_value' => 'rounding_value'
+        'periodType' => 'period_type',
+        'periodValue' => 'period_value',
+        'roundingType' => 'rounding_type',
+        'roundingValue' => 'rounding_value'
     ];
 
     /**
@@ -188,10 +188,10 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'period_type' => 'setPeriodType',
-        'period_value' => 'setPeriodValue',
-        'rounding_type' => 'setRoundingType',
-        'rounding_value' => 'setRoundingValue'
+        'periodType' => 'setPeriodType',
+        'periodValue' => 'setPeriodValue',
+        'roundingType' => 'setRoundingType',
+        'roundingValue' => 'setRoundingValue'
     ];
 
     /**
@@ -200,10 +200,10 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'period_type' => 'getPeriodType',
-        'period_value' => 'getPeriodValue',
-        'rounding_type' => 'getRoundingType',
-        'rounding_value' => 'getRoundingValue'
+        'periodType' => 'getPeriodType',
+        'periodValue' => 'getPeriodValue',
+        'roundingType' => 'getRoundingType',
+        'roundingValue' => 'getRoundingValue'
     ];
 
     /**
@@ -297,10 +297,10 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('period_type', $data ?? [], 'MONTH');
-        $this->setIfExists('period_value', $data ?? [], null);
-        $this->setIfExists('rounding_type', $data ?? [], null);
-        $this->setIfExists('rounding_value', $data ?? [], null);
+        $this->setIfExists('periodType', $data ?? [], 'MONTH');
+        $this->setIfExists('periodValue', $data ?? [], null);
+        $this->setIfExists('roundingType', $data ?? [], null);
+        $this->setIfExists('roundingValue', $data ?? [], null);
     }
 
     /**
@@ -331,19 +331,19 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
         $invalidProperties = [];
 
         $allowedValues = $this->getPeriodTypeAllowableValues();
-        if (!is_null($this->container['period_type']) && !in_array($this->container['period_type'], $allowedValues, true)) {
+        if (!is_null($this->container['periodType']) && !in_array($this->container['periodType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'period_type', must be one of '%s'",
-                $this->container['period_type'],
+                "invalid value '%s' for 'periodType', must be one of '%s'",
+                $this->container['periodType'],
                 implode("', '", $allowedValues)
             );
         }
 
         $allowedValues = $this->getRoundingTypeAllowableValues();
-        if (!is_null($this->container['rounding_type']) && !in_array($this->container['rounding_type'], $allowedValues, true)) {
+        if (!is_null($this->container['roundingType']) && !in_array($this->container['roundingType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'rounding_type', must be one of '%s'",
-                $this->container['rounding_type'],
+                "invalid value '%s' for 'roundingType', must be one of '%s'",
+                $this->container['roundingType'],
                 implode("', '", $allowedValues)
             );
         }
@@ -364,157 +364,157 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
 
 
     /**
-     * Gets period_type
+     * Gets periodType
      *
      * @return string|null
      */
     public function getPeriodType()
     {
-        return $this->container['period_type'];
+        return $this->container['periodType'];
     }
 
     /**
-     * Sets period_type
+     * Sets periodType
      *
-     * @param string|null $period_type Type of period
+     * @param string|null $periodType Type of period
      *
      * @return self
      */
-    public function setPeriodType($period_type)
+    public function setPeriodType($periodType)
     {
-        if (is_null($period_type)) {
-            array_push($this->openAPINullablesSetToNull, 'period_type');
+        if (is_null($periodType)) {
+            array_push($this->openAPINullablesSetToNull, 'periodType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('period_type', $nullablesSetToNull);
+            $index = array_search('periodType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getPeriodTypeAllowableValues();
-        if (!is_null($period_type) && !in_array($period_type, $allowedValues, true)) {
+        if (!is_null($periodType) && !in_array($periodType, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'period_type', must be one of '%s'",
-                    $period_type,
+                    "Invalid value '%s' for 'periodType', must be one of '%s'",
+                    $periodType,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['period_type'] = $period_type;
+        $this->container['periodType'] = $periodType;
 
         return $this;
     }
 
     /**
-     * Gets period_value
+     * Gets periodValue
      *
      * @return int|null
      */
     public function getPeriodValue()
     {
-        return $this->container['period_value'];
+        return $this->container['periodValue'];
     }
 
     /**
-     * Sets period_value
+     * Sets periodValue
      *
-     * @param int|null $period_value Value of the period
+     * @param int|null $periodValue Value of the period
      *
      * @return self
      */
-    public function setPeriodValue($period_value)
+    public function setPeriodValue($periodValue)
     {
-        if (is_null($period_value)) {
-            array_push($this->openAPINullablesSetToNull, 'period_value');
+        if (is_null($periodValue)) {
+            array_push($this->openAPINullablesSetToNull, 'periodValue');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('period_value', $nullablesSetToNull);
+            $index = array_search('periodValue', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['period_value'] = $period_value;
+        $this->container['periodValue'] = $periodValue;
 
         return $this;
     }
 
     /**
-     * Gets rounding_type
+     * Gets roundingType
      *
      * @return string|null
      */
     public function getRoundingType()
     {
-        return $this->container['rounding_type'];
+        return $this->container['roundingType'];
     }
 
     /**
-     * Sets rounding_type
+     * Sets roundingType
      *
-     * @param string|null $rounding_type Type of rounding
+     * @param string|null $roundingType Type of rounding
      *
      * @return self
      */
-    public function setRoundingType($rounding_type)
+    public function setRoundingType($roundingType)
     {
-        if (is_null($rounding_type)) {
-            array_push($this->openAPINullablesSetToNull, 'rounding_type');
+        if (is_null($roundingType)) {
+            array_push($this->openAPINullablesSetToNull, 'roundingType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rounding_type', $nullablesSetToNull);
+            $index = array_search('roundingType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getRoundingTypeAllowableValues();
-        if (!is_null($rounding_type) && !in_array($rounding_type, $allowedValues, true)) {
+        if (!is_null($roundingType) && !in_array($roundingType, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'rounding_type', must be one of '%s'",
-                    $rounding_type,
+                    "Invalid value '%s' for 'roundingType', must be one of '%s'",
+                    $roundingType,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['rounding_type'] = $rounding_type;
+        $this->container['roundingType'] = $roundingType;
 
         return $this;
     }
 
     /**
-     * Gets rounding_value
+     * Gets roundingValue
      *
      * @return int|null
      */
     public function getRoundingValue()
     {
-        return $this->container['rounding_value'];
+        return $this->container['roundingValue'];
     }
 
     /**
-     * Sets rounding_value
+     * Sets roundingValue
      *
-     * @param int|null $rounding_value Value of rounding
+     * @param int|null $roundingValue Value of rounding
      *
      * @return self
      */
-    public function setRoundingValue($rounding_value)
+    public function setRoundingValue($roundingValue)
     {
-        if (is_null($rounding_value)) {
-            array_push($this->openAPINullablesSetToNull, 'rounding_value');
+        if (is_null($roundingValue)) {
+            array_push($this->openAPINullablesSetToNull, 'roundingValue');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rounding_value', $nullablesSetToNull);
+            $index = array_search('roundingValue', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['rounding_value'] = $rounding_value;
+        $this->container['roundingValue'] = $roundingValue;
 
         return $this;
     }

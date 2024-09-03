@@ -60,14 +60,14 @@ class CustomerRedeemable implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'created_at' => '\DateTime',
-        'redeemable_id' => 'string',
-        'redeemable_object' => 'string',
-        'customer_id' => 'string',
-        'holder_role' => 'string',
-        'campaign_id' => 'string',
-        'campaign_type' => 'string',
-        'voucher_type' => 'string',
+        'createdAt' => '\DateTime',
+        'redeemableId' => 'string',
+        'redeemableObject' => 'string',
+        'customerId' => 'string',
+        'holderRole' => 'string',
+        'campaignId' => 'string',
+        'campaignType' => 'string',
+        'voucherType' => 'string',
         'redeemable' => '\OpenAPI\Client\Model\CustomerRedeemableRedeemable'
     ];
 
@@ -80,14 +80,14 @@ class CustomerRedeemable implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'created_at' => 'date-time',
-        'redeemable_id' => null,
-        'redeemable_object' => null,
-        'customer_id' => null,
-        'holder_role' => null,
-        'campaign_id' => null,
-        'campaign_type' => null,
-        'voucher_type' => null,
+        'createdAt' => 'date-time',
+        'redeemableId' => null,
+        'redeemableObject' => null,
+        'customerId' => null,
+        'holderRole' => null,
+        'campaignId' => null,
+        'campaignType' => null,
+        'voucherType' => null,
         'redeemable' => null
     ];
 
@@ -98,14 +98,14 @@ class CustomerRedeemable implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'created_at' => true,
-		'redeemable_id' => true,
-		'redeemable_object' => true,
-		'customer_id' => true,
-		'holder_role' => true,
-		'campaign_id' => true,
-		'campaign_type' => true,
-		'voucher_type' => true,
+		'createdAt' => true,
+		'redeemableId' => true,
+		'redeemableObject' => true,
+		'customerId' => true,
+		'holderRole' => true,
+		'campaignId' => true,
+		'campaignType' => true,
+		'voucherType' => true,
 		'redeemable' => true
     ];
 
@@ -196,14 +196,14 @@ class CustomerRedeemable implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'created_at' => 'created_at',
-        'redeemable_id' => 'redeemable_id',
-        'redeemable_object' => 'redeemable_object',
-        'customer_id' => 'customer_id',
-        'holder_role' => 'holder_role',
-        'campaign_id' => 'campaign_id',
-        'campaign_type' => 'campaign_type',
-        'voucher_type' => 'voucher_type',
+        'createdAt' => 'created_at',
+        'redeemableId' => 'redeemable_id',
+        'redeemableObject' => 'redeemable_object',
+        'customerId' => 'customer_id',
+        'holderRole' => 'holder_role',
+        'campaignId' => 'campaign_id',
+        'campaignType' => 'campaign_type',
+        'voucherType' => 'voucher_type',
         'redeemable' => 'redeemable'
     ];
 
@@ -214,14 +214,14 @@ class CustomerRedeemable implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'id' => 'setId',
-        'created_at' => 'setCreatedAt',
-        'redeemable_id' => 'setRedeemableId',
-        'redeemable_object' => 'setRedeemableObject',
-        'customer_id' => 'setCustomerId',
-        'holder_role' => 'setHolderRole',
-        'campaign_id' => 'setCampaignId',
-        'campaign_type' => 'setCampaignType',
-        'voucher_type' => 'setVoucherType',
+        'createdAt' => 'setCreatedAt',
+        'redeemableId' => 'setRedeemableId',
+        'redeemableObject' => 'setRedeemableObject',
+        'customerId' => 'setCustomerId',
+        'holderRole' => 'setHolderRole',
+        'campaignId' => 'setCampaignId',
+        'campaignType' => 'setCampaignType',
+        'voucherType' => 'setVoucherType',
         'redeemable' => 'setRedeemable'
     ];
 
@@ -232,14 +232,14 @@ class CustomerRedeemable implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'id' => 'getId',
-        'created_at' => 'getCreatedAt',
-        'redeemable_id' => 'getRedeemableId',
-        'redeemable_object' => 'getRedeemableObject',
-        'customer_id' => 'getCustomerId',
-        'holder_role' => 'getHolderRole',
-        'campaign_id' => 'getCampaignId',
-        'campaign_type' => 'getCampaignType',
-        'voucher_type' => 'getVoucherType',
+        'createdAt' => 'getCreatedAt',
+        'redeemableId' => 'getRedeemableId',
+        'redeemableObject' => 'getRedeemableObject',
+        'customerId' => 'getCustomerId',
+        'holderRole' => 'getHolderRole',
+        'campaignId' => 'getCampaignId',
+        'campaignType' => 'getCampaignType',
+        'voucherType' => 'getVoucherType',
         'redeemable' => 'getRedeemable'
     ];
 
@@ -360,14 +360,14 @@ class CustomerRedeemable implements ModelInterface, ArrayAccess, \JsonSerializab
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('redeemable_id', $data ?? [], null);
-        $this->setIfExists('redeemable_object', $data ?? [], null);
-        $this->setIfExists('customer_id', $data ?? [], null);
-        $this->setIfExists('holder_role', $data ?? [], 'OWNER');
-        $this->setIfExists('campaign_id', $data ?? [], null);
-        $this->setIfExists('campaign_type', $data ?? [], 'DISCOUNT_COUPONS');
-        $this->setIfExists('voucher_type', $data ?? [], 'DISCOUNT_VOUCHER');
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('redeemableId', $data ?? [], null);
+        $this->setIfExists('redeemableObject', $data ?? [], null);
+        $this->setIfExists('customerId', $data ?? [], null);
+        $this->setIfExists('holderRole', $data ?? [], 'OWNER');
+        $this->setIfExists('campaignId', $data ?? [], null);
+        $this->setIfExists('campaignType', $data ?? [], 'DISCOUNT_COUPONS');
+        $this->setIfExists('voucherType', $data ?? [], 'DISCOUNT_VOUCHER');
         $this->setIfExists('redeemable', $data ?? [], null);
     }
 
@@ -399,28 +399,28 @@ class CustomerRedeemable implements ModelInterface, ArrayAccess, \JsonSerializab
         $invalidProperties = [];
 
         $allowedValues = $this->getHolderRoleAllowableValues();
-        if (!is_null($this->container['holder_role']) && !in_array($this->container['holder_role'], $allowedValues, true)) {
+        if (!is_null($this->container['holderRole']) && !in_array($this->container['holderRole'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'holder_role', must be one of '%s'",
-                $this->container['holder_role'],
+                "invalid value '%s' for 'holderRole', must be one of '%s'",
+                $this->container['holderRole'],
                 implode("', '", $allowedValues)
             );
         }
 
         $allowedValues = $this->getCampaignTypeAllowableValues();
-        if (!is_null($this->container['campaign_type']) && !in_array($this->container['campaign_type'], $allowedValues, true)) {
+        if (!is_null($this->container['campaignType']) && !in_array($this->container['campaignType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'campaign_type', must be one of '%s'",
-                $this->container['campaign_type'],
+                "invalid value '%s' for 'campaignType', must be one of '%s'",
+                $this->container['campaignType'],
                 implode("', '", $allowedValues)
             );
         }
 
         $allowedValues = $this->getVoucherTypeAllowableValues();
-        if (!is_null($this->container['voucher_type']) && !in_array($this->container['voucher_type'], $allowedValues, true)) {
+        if (!is_null($this->container['voucherType']) && !in_array($this->container['voucherType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'voucher_type', must be one of '%s'",
-                $this->container['voucher_type'],
+                "invalid value '%s' for 'voucherType', must be one of '%s'",
+                $this->container['voucherType'],
                 implode("', '", $allowedValues)
             );
         }
@@ -475,303 +475,303 @@ class CustomerRedeemable implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the redeemable was assigned. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the redeemable was assigned. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets redeemable_id
+     * Gets redeemableId
      *
      * @return string|null
      */
     public function getRedeemableId()
     {
-        return $this->container['redeemable_id'];
+        return $this->container['redeemableId'];
     }
 
     /**
-     * Sets redeemable_id
+     * Sets redeemableId
      *
-     * @param string|null $redeemable_id Identifier of the redeemable item.
+     * @param string|null $redeemableId Identifier of the redeemable item.
      *
      * @return self
      */
-    public function setRedeemableId($redeemable_id)
+    public function setRedeemableId($redeemableId)
     {
-        if (is_null($redeemable_id)) {
-            array_push($this->openAPINullablesSetToNull, 'redeemable_id');
+        if (is_null($redeemableId)) {
+            array_push($this->openAPINullablesSetToNull, 'redeemableId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('redeemable_id', $nullablesSetToNull);
+            $index = array_search('redeemableId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['redeemable_id'] = $redeemable_id;
+        $this->container['redeemableId'] = $redeemableId;
 
         return $this;
     }
 
     /**
-     * Gets redeemable_object
+     * Gets redeemableObject
      *
      * @return string|null
      */
     public function getRedeemableObject()
     {
-        return $this->container['redeemable_object'];
+        return $this->container['redeemableObject'];
     }
 
     /**
-     * Sets redeemable_object
+     * Sets redeemableObject
      *
-     * @param string|null $redeemable_object Type of the redeemable.
+     * @param string|null $redeemableObject Type of the redeemable.
      *
      * @return self
      */
-    public function setRedeemableObject($redeemable_object)
+    public function setRedeemableObject($redeemableObject)
     {
-        if (is_null($redeemable_object)) {
-            array_push($this->openAPINullablesSetToNull, 'redeemable_object');
+        if (is_null($redeemableObject)) {
+            array_push($this->openAPINullablesSetToNull, 'redeemableObject');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('redeemable_object', $nullablesSetToNull);
+            $index = array_search('redeemableObject', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['redeemable_object'] = $redeemable_object;
+        $this->container['redeemableObject'] = $redeemableObject;
 
         return $this;
     }
 
     /**
-     * Gets customer_id
+     * Gets customerId
      *
      * @return string|null
      */
     public function getCustomerId()
     {
-        return $this->container['customer_id'];
+        return $this->container['customerId'];
     }
 
     /**
-     * Sets customer_id
+     * Sets customerId
      *
-     * @param string|null $customer_id Identifier of the customer.
+     * @param string|null $customerId Identifier of the customer.
      *
      * @return self
      */
-    public function setCustomerId($customer_id)
+    public function setCustomerId($customerId)
     {
-        if (is_null($customer_id)) {
-            array_push($this->openAPINullablesSetToNull, 'customer_id');
+        if (is_null($customerId)) {
+            array_push($this->openAPINullablesSetToNull, 'customerId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customer_id', $nullablesSetToNull);
+            $index = array_search('customerId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['customer_id'] = $customer_id;
+        $this->container['customerId'] = $customerId;
 
         return $this;
     }
 
     /**
-     * Gets holder_role
+     * Gets holderRole
      *
      * @return string|null
      */
     public function getHolderRole()
     {
-        return $this->container['holder_role'];
+        return $this->container['holderRole'];
     }
 
     /**
-     * Sets holder_role
+     * Sets holderRole
      *
-     * @param string|null $holder_role Role of the holder.
+     * @param string|null $holderRole Role of the holder.
      *
      * @return self
      */
-    public function setHolderRole($holder_role)
+    public function setHolderRole($holderRole)
     {
-        if (is_null($holder_role)) {
-            array_push($this->openAPINullablesSetToNull, 'holder_role');
+        if (is_null($holderRole)) {
+            array_push($this->openAPINullablesSetToNull, 'holderRole');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('holder_role', $nullablesSetToNull);
+            $index = array_search('holderRole', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getHolderRoleAllowableValues();
-        if (!is_null($holder_role) && !in_array($holder_role, $allowedValues, true)) {
+        if (!is_null($holderRole) && !in_array($holderRole, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'holder_role', must be one of '%s'",
-                    $holder_role,
+                    "Invalid value '%s' for 'holderRole', must be one of '%s'",
+                    $holderRole,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['holder_role'] = $holder_role;
+        $this->container['holderRole'] = $holderRole;
 
         return $this;
     }
 
     /**
-     * Gets campaign_id
+     * Gets campaignId
      *
      * @return string|null
      */
     public function getCampaignId()
     {
-        return $this->container['campaign_id'];
+        return $this->container['campaignId'];
     }
 
     /**
-     * Sets campaign_id
+     * Sets campaignId
      *
-     * @param string|null $campaign_id Unique campaign identifier, assigned by Voucherify.
+     * @param string|null $campaignId Unique campaign identifier, assigned by Voucherify.
      *
      * @return self
      */
-    public function setCampaignId($campaign_id)
+    public function setCampaignId($campaignId)
     {
-        if (is_null($campaign_id)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_id');
+        if (is_null($campaignId)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_id', $nullablesSetToNull);
+            $index = array_search('campaignId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaign_id'] = $campaign_id;
+        $this->container['campaignId'] = $campaignId;
 
         return $this;
     }
 
     /**
-     * Gets campaign_type
+     * Gets campaignType
      *
      * @return string|null
      */
     public function getCampaignType()
     {
-        return $this->container['campaign_type'];
+        return $this->container['campaignType'];
     }
 
     /**
-     * Sets campaign_type
+     * Sets campaignType
      *
-     * @param string|null $campaign_type Defines the type of the campaign.
+     * @param string|null $campaignType Defines the type of the campaign.
      *
      * @return self
      */
-    public function setCampaignType($campaign_type)
+    public function setCampaignType($campaignType)
     {
-        if (is_null($campaign_type)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_type');
+        if (is_null($campaignType)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_type', $nullablesSetToNull);
+            $index = array_search('campaignType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getCampaignTypeAllowableValues();
-        if (!is_null($campaign_type) && !in_array($campaign_type, $allowedValues, true)) {
+        if (!is_null($campaignType) && !in_array($campaignType, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'campaign_type', must be one of '%s'",
-                    $campaign_type,
+                    "Invalid value '%s' for 'campaignType', must be one of '%s'",
+                    $campaignType,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['campaign_type'] = $campaign_type;
+        $this->container['campaignType'] = $campaignType;
 
         return $this;
     }
 
     /**
-     * Gets voucher_type
+     * Gets voucherType
      *
      * @return string|null
      */
     public function getVoucherType()
     {
-        return $this->container['voucher_type'];
+        return $this->container['voucherType'];
     }
 
     /**
-     * Sets voucher_type
+     * Sets voucherType
      *
-     * @param string|null $voucher_type Defines the type of the voucher.
+     * @param string|null $voucherType Defines the type of the voucher.
      *
      * @return self
      */
-    public function setVoucherType($voucher_type)
+    public function setVoucherType($voucherType)
     {
-        if (is_null($voucher_type)) {
-            array_push($this->openAPINullablesSetToNull, 'voucher_type');
+        if (is_null($voucherType)) {
+            array_push($this->openAPINullablesSetToNull, 'voucherType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('voucher_type', $nullablesSetToNull);
+            $index = array_search('voucherType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getVoucherTypeAllowableValues();
-        if (!is_null($voucher_type) && !in_array($voucher_type, $allowedValues, true)) {
+        if (!is_null($voucherType) && !in_array($voucherType, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'voucher_type', must be one of '%s'",
-                    $voucher_type,
+                    "Invalid value '%s' for 'voucherType', must be one of '%s'",
+                    $voucherType,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['voucher_type'] = $voucher_type;
+        $this->container['voucherType'] = $voucherType;
 
         return $this;
     }

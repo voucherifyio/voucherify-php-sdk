@@ -131,16 +131,16 @@ class AsyncActionsApi
      *
      * Get Async Action
      *
-     * @param  string $async_action_id Unique ID of the asynchronous operation. (required)
+     * @param  string $asyncActionId Unique ID of the asynchronous operation. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAsyncAction'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AsyncActionGetResponseBody
      */
-    public function getAsyncAction($async_action_id, string $contentType = self::contentTypes['getAsyncAction'][0])
+    public function getAsyncAction($asyncActionId, string $contentType = self::contentTypes['getAsyncAction'][0])
     {
-        list($response) = $this->getAsyncActionWithHttpInfo($async_action_id, $contentType);
+        list($response) = $this->getAsyncActionWithHttpInfo($asyncActionId, $contentType);
         return $response;
     }
 
@@ -149,16 +149,16 @@ class AsyncActionsApi
      *
      * Get Async Action
      *
-     * @param  string $async_action_id Unique ID of the asynchronous operation. (required)
+     * @param  string $asyncActionId Unique ID of the asynchronous operation. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAsyncAction'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AsyncActionGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAsyncActionWithHttpInfo($async_action_id, string $contentType = self::contentTypes['getAsyncAction'][0])
+    public function getAsyncActionWithHttpInfo($asyncActionId, string $contentType = self::contentTypes['getAsyncAction'][0])
     {
-        $request = $this->getAsyncActionRequest($async_action_id, $contentType);
+        $request = $this->getAsyncActionRequest($asyncActionId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -249,15 +249,15 @@ class AsyncActionsApi
      *
      * Get Async Action
      *
-     * @param  string $async_action_id Unique ID of the asynchronous operation. (required)
+     * @param  string $asyncActionId Unique ID of the asynchronous operation. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAsyncAction'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAsyncActionAsync($async_action_id, string $contentType = self::contentTypes['getAsyncAction'][0])
+    public function getAsyncActionAsync($asyncActionId, string $contentType = self::contentTypes['getAsyncAction'][0])
     {
-        return $this->getAsyncActionAsyncWithHttpInfo($async_action_id, $contentType)
+        return $this->getAsyncActionAsyncWithHttpInfo($asyncActionId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -270,16 +270,16 @@ class AsyncActionsApi
      *
      * Get Async Action
      *
-     * @param  string $async_action_id Unique ID of the asynchronous operation. (required)
+     * @param  string $asyncActionId Unique ID of the asynchronous operation. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAsyncAction'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAsyncActionAsyncWithHttpInfo($async_action_id, string $contentType = self::contentTypes['getAsyncAction'][0])
+    public function getAsyncActionAsyncWithHttpInfo($asyncActionId, string $contentType = self::contentTypes['getAsyncAction'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AsyncActionGetResponseBody';
-        $request = $this->getAsyncActionRequest($async_action_id, $contentType);
+        $request = $this->getAsyncActionRequest($asyncActionId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -320,19 +320,19 @@ class AsyncActionsApi
     /**
      * Create request for operation 'getAsyncAction'
      *
-     * @param  string $async_action_id Unique ID of the asynchronous operation. (required)
+     * @param  string $asyncActionId Unique ID of the asynchronous operation. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAsyncAction'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAsyncActionRequest($async_action_id, string $contentType = self::contentTypes['getAsyncAction'][0])
+    public function getAsyncActionRequest($asyncActionId, string $contentType = self::contentTypes['getAsyncAction'][0])
     {
 
-        // verify the required parameter 'async_action_id' is set
-        if ($async_action_id === null || (is_array($async_action_id) && count($async_action_id) === 0)) {
+        // verify the required parameter 'asyncActionId' is set
+        if ($asyncActionId === null || (is_array($asyncActionId) && count($asyncActionId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $async_action_id when calling getAsyncAction'
+                'Missing the required parameter $asyncActionId when calling getAsyncAction'
             );
         }
 
@@ -347,10 +347,10 @@ class AsyncActionsApi
 
 
         // path params
-        if ($async_action_id !== null) {
+        if ($asyncActionId !== null) {
             $resourcePath = str_replace(
                 '{' . 'asyncActionId' . '}',
-                ObjectSerializer::toPathValue($async_action_id),
+                ObjectSerializer::toPathValue($asyncActionId),
                 $resourcePath
             );
         }
@@ -425,16 +425,16 @@ class AsyncActionsApi
      * List Async Actions
      *
      * @param  int $limit Limit the number of asynchronous actions that the API returns in the response. (optional)
-     * @param  \DateTime $end_date Limits results to actions scheduled before the end_date. The date format needs to be consistent with ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). (optional)
+     * @param  \DateTime $endDate Limits results to actions scheduled before the end_date. The date format needs to be consistent with ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAsyncActions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AsyncActionsListResponseBody
      */
-    public function listAsyncActions($limit = null, $end_date = null, string $contentType = self::contentTypes['listAsyncActions'][0])
+    public function listAsyncActions($limit = null, $endDate = null, string $contentType = self::contentTypes['listAsyncActions'][0])
     {
-        list($response) = $this->listAsyncActionsWithHttpInfo($limit, $end_date, $contentType);
+        list($response) = $this->listAsyncActionsWithHttpInfo($limit, $endDate, $contentType);
         return $response;
     }
 
@@ -444,16 +444,16 @@ class AsyncActionsApi
      * List Async Actions
      *
      * @param  int $limit Limit the number of asynchronous actions that the API returns in the response. (optional)
-     * @param  \DateTime $end_date Limits results to actions scheduled before the end_date. The date format needs to be consistent with ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). (optional)
+     * @param  \DateTime $endDate Limits results to actions scheduled before the end_date. The date format needs to be consistent with ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAsyncActions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AsyncActionsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAsyncActionsWithHttpInfo($limit = null, $end_date = null, string $contentType = self::contentTypes['listAsyncActions'][0])
+    public function listAsyncActionsWithHttpInfo($limit = null, $endDate = null, string $contentType = self::contentTypes['listAsyncActions'][0])
     {
-        $request = $this->listAsyncActionsRequest($limit, $end_date, $contentType);
+        $request = $this->listAsyncActionsRequest($limit, $endDate, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -545,15 +545,15 @@ class AsyncActionsApi
      * List Async Actions
      *
      * @param  int $limit Limit the number of asynchronous actions that the API returns in the response. (optional)
-     * @param  \DateTime $end_date Limits results to actions scheduled before the end_date. The date format needs to be consistent with ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). (optional)
+     * @param  \DateTime $endDate Limits results to actions scheduled before the end_date. The date format needs to be consistent with ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAsyncActions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAsyncActionsAsync($limit = null, $end_date = null, string $contentType = self::contentTypes['listAsyncActions'][0])
+    public function listAsyncActionsAsync($limit = null, $endDate = null, string $contentType = self::contentTypes['listAsyncActions'][0])
     {
-        return $this->listAsyncActionsAsyncWithHttpInfo($limit, $end_date, $contentType)
+        return $this->listAsyncActionsAsyncWithHttpInfo($limit, $endDate, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -567,16 +567,16 @@ class AsyncActionsApi
      * List Async Actions
      *
      * @param  int $limit Limit the number of asynchronous actions that the API returns in the response. (optional)
-     * @param  \DateTime $end_date Limits results to actions scheduled before the end_date. The date format needs to be consistent with ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). (optional)
+     * @param  \DateTime $endDate Limits results to actions scheduled before the end_date. The date format needs to be consistent with ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAsyncActions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAsyncActionsAsyncWithHttpInfo($limit = null, $end_date = null, string $contentType = self::contentTypes['listAsyncActions'][0])
+    public function listAsyncActionsAsyncWithHttpInfo($limit = null, $endDate = null, string $contentType = self::contentTypes['listAsyncActions'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AsyncActionsListResponseBody';
-        $request = $this->listAsyncActionsRequest($limit, $end_date, $contentType);
+        $request = $this->listAsyncActionsRequest($limit, $endDate, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -618,13 +618,13 @@ class AsyncActionsApi
      * Create request for operation 'listAsyncActions'
      *
      * @param  int $limit Limit the number of asynchronous actions that the API returns in the response. (optional)
-     * @param  \DateTime $end_date Limits results to actions scheduled before the end_date. The date format needs to be consistent with ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). (optional)
+     * @param  \DateTime $endDate Limits results to actions scheduled before the end_date. The date format needs to be consistent with ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAsyncActions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listAsyncActionsRequest($limit = null, $end_date = null, string $contentType = self::contentTypes['listAsyncActions'][0])
+    public function listAsyncActionsRequest($limit = null, $endDate = null, string $contentType = self::contentTypes['listAsyncActions'][0])
     {
 
         if ($limit !== null && $limit > 100) {
@@ -654,7 +654,7 @@ class AsyncActionsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $end_date,
+            $endDate,
             'end_date', // param base name
             'string', // openApiType
             'form', // style

@@ -61,12 +61,12 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     protected static $openAPITypes = [
         'valid' => 'bool',
         'redeemables' => '\OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItem[]',
-        'skipped_redeemables' => 'ValidationsRedeemableSkipped[]',
-        'inapplicable_redeemables' => 'ValidationsRedeemableInapplicable[]',
+        'skippedRedeemables' => 'ValidationsRedeemableSkipped[]',
+        'inapplicableRedeemables' => 'ValidationsRedeemableInapplicable[]',
         'order' => '\OpenAPI\Client\Model\OrderCalculated',
-        'tracking_id' => 'string',
+        'trackingId' => 'string',
         'session' => '\OpenAPI\Client\Model\Session',
-        'stacking_rules' => '\OpenAPI\Client\Model\StackingRules'
+        'stackingRules' => '\OpenAPI\Client\Model\StackingRules'
     ];
 
     /**
@@ -79,12 +79,12 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     protected static $openAPIFormats = [
         'valid' => null,
         'redeemables' => null,
-        'skipped_redeemables' => null,
-        'inapplicable_redeemables' => null,
+        'skippedRedeemables' => null,
+        'inapplicableRedeemables' => null,
         'order' => null,
-        'tracking_id' => null,
+        'trackingId' => null,
         'session' => null,
-        'stacking_rules' => null
+        'stackingRules' => null
     ];
 
     /**
@@ -95,12 +95,12 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     protected static array $openAPINullables = [
         'valid' => true,
 		'redeemables' => true,
-		'skipped_redeemables' => true,
-		'inapplicable_redeemables' => true,
+		'skippedRedeemables' => true,
+		'inapplicableRedeemables' => true,
 		'order' => false,
-		'tracking_id' => true,
+		'trackingId' => true,
 		'session' => false,
-		'stacking_rules' => false
+		'stackingRules' => false
     ];
 
     /**
@@ -191,12 +191,12 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     protected static $attributeMap = [
         'valid' => 'valid',
         'redeemables' => 'redeemables',
-        'skipped_redeemables' => 'skipped_redeemables',
-        'inapplicable_redeemables' => 'inapplicable_redeemables',
+        'skippedRedeemables' => 'skipped_redeemables',
+        'inapplicableRedeemables' => 'inapplicable_redeemables',
         'order' => 'order',
-        'tracking_id' => 'tracking_id',
+        'trackingId' => 'tracking_id',
         'session' => 'session',
-        'stacking_rules' => 'stacking_rules'
+        'stackingRules' => 'stacking_rules'
     ];
 
     /**
@@ -207,12 +207,12 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     protected static $setters = [
         'valid' => 'setValid',
         'redeemables' => 'setRedeemables',
-        'skipped_redeemables' => 'setSkippedRedeemables',
-        'inapplicable_redeemables' => 'setInapplicableRedeemables',
+        'skippedRedeemables' => 'setSkippedRedeemables',
+        'inapplicableRedeemables' => 'setInapplicableRedeemables',
         'order' => 'setOrder',
-        'tracking_id' => 'setTrackingId',
+        'trackingId' => 'setTrackingId',
         'session' => 'setSession',
-        'stacking_rules' => 'setStackingRules'
+        'stackingRules' => 'setStackingRules'
     ];
 
     /**
@@ -223,12 +223,12 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     protected static $getters = [
         'valid' => 'getValid',
         'redeemables' => 'getRedeemables',
-        'skipped_redeemables' => 'getSkippedRedeemables',
-        'inapplicable_redeemables' => 'getInapplicableRedeemables',
+        'skippedRedeemables' => 'getSkippedRedeemables',
+        'inapplicableRedeemables' => 'getInapplicableRedeemables',
         'order' => 'getOrder',
-        'tracking_id' => 'getTrackingId',
+        'trackingId' => 'getTrackingId',
         'session' => 'getSession',
-        'stacking_rules' => 'getStackingRules'
+        'stackingRules' => 'getStackingRules'
     ];
 
     /**
@@ -290,12 +290,12 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     {
         $this->setIfExists('valid', $data ?? [], null);
         $this->setIfExists('redeemables', $data ?? [], null);
-        $this->setIfExists('skipped_redeemables', $data ?? [], null);
-        $this->setIfExists('inapplicable_redeemables', $data ?? [], null);
+        $this->setIfExists('skippedRedeemables', $data ?? [], null);
+        $this->setIfExists('inapplicableRedeemables', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
-        $this->setIfExists('tracking_id', $data ?? [], null);
+        $this->setIfExists('trackingId', $data ?? [], null);
         $this->setIfExists('session', $data ?? [], null);
-        $this->setIfExists('stacking_rules', $data ?? [], null);
+        $this->setIfExists('stackingRules', $data ?? [], null);
     }
 
     /**
@@ -325,8 +325,8 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     {
         $invalidProperties = [];
 
-        if ($this->container['stacking_rules'] === null) {
-            $invalidProperties[] = "'stacking_rules' can't be null";
+        if ($this->container['stackingRules'] === null) {
+            $invalidProperties[] = "'stackingRules' can't be null";
         }
         return $invalidProperties;
     }
@@ -412,69 +412,69 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets skipped_redeemables
+     * Gets skippedRedeemables
      *
      * @return ValidationsRedeemableSkipped[]|null
      */
     public function getSkippedRedeemables()
     {
-        return $this->container['skipped_redeemables'];
+        return $this->container['skippedRedeemables'];
     }
 
     /**
-     * Sets skipped_redeemables
+     * Sets skippedRedeemables
      *
-     * @param ValidationsRedeemableSkipped[]|null $skipped_redeemables Lists validation results of each skipped redeemable.
+     * @param ValidationsRedeemableSkipped[]|null $skippedRedeemables Lists validation results of each skipped redeemable.
      *
      * @return self
      */
-    public function setSkippedRedeemables($skipped_redeemables)
+    public function setSkippedRedeemables($skippedRedeemables)
     {
-        if (is_null($skipped_redeemables)) {
-            array_push($this->openAPINullablesSetToNull, 'skipped_redeemables');
+        if (is_null($skippedRedeemables)) {
+            array_push($this->openAPINullablesSetToNull, 'skippedRedeemables');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('skipped_redeemables', $nullablesSetToNull);
+            $index = array_search('skippedRedeemables', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['skipped_redeemables'] = $skipped_redeemables;
+        $this->container['skippedRedeemables'] = $skippedRedeemables;
 
         return $this;
     }
 
     /**
-     * Gets inapplicable_redeemables
+     * Gets inapplicableRedeemables
      *
      * @return ValidationsRedeemableInapplicable[]|null
      */
     public function getInapplicableRedeemables()
     {
-        return $this->container['inapplicable_redeemables'];
+        return $this->container['inapplicableRedeemables'];
     }
 
     /**
-     * Sets inapplicable_redeemables
+     * Sets inapplicableRedeemables
      *
-     * @param ValidationsRedeemableInapplicable[]|null $inapplicable_redeemables Lists validation results of each inapplicable redeemable.
+     * @param ValidationsRedeemableInapplicable[]|null $inapplicableRedeemables Lists validation results of each inapplicable redeemable.
      *
      * @return self
      */
-    public function setInapplicableRedeemables($inapplicable_redeemables)
+    public function setInapplicableRedeemables($inapplicableRedeemables)
     {
-        if (is_null($inapplicable_redeemables)) {
-            array_push($this->openAPINullablesSetToNull, 'inapplicable_redeemables');
+        if (is_null($inapplicableRedeemables)) {
+            array_push($this->openAPINullablesSetToNull, 'inapplicableRedeemables');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('inapplicable_redeemables', $nullablesSetToNull);
+            $index = array_search('inapplicableRedeemables', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['inapplicable_redeemables'] = $inapplicable_redeemables;
+        $this->container['inapplicableRedeemables'] = $inapplicableRedeemables;
 
         return $this;
     }
@@ -507,35 +507,35 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets tracking_id
+     * Gets trackingId
      *
      * @return string|null
      */
     public function getTrackingId()
     {
-        return $this->container['tracking_id'];
+        return $this->container['trackingId'];
     }
 
     /**
-     * Sets tracking_id
+     * Sets trackingId
      *
-     * @param string|null $tracking_id Hashed customer source ID.
+     * @param string|null $trackingId Hashed customer source ID.
      *
      * @return self
      */
-    public function setTrackingId($tracking_id)
+    public function setTrackingId($trackingId)
     {
-        if (is_null($tracking_id)) {
-            array_push($this->openAPINullablesSetToNull, 'tracking_id');
+        if (is_null($trackingId)) {
+            array_push($this->openAPINullablesSetToNull, 'trackingId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tracking_id', $nullablesSetToNull);
+            $index = array_search('trackingId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['tracking_id'] = $tracking_id;
+        $this->container['trackingId'] = $trackingId;
 
         return $this;
     }
@@ -568,28 +568,28 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets stacking_rules
+     * Gets stackingRules
      *
      * @return \OpenAPI\Client\Model\StackingRules
      */
     public function getStackingRules()
     {
-        return $this->container['stacking_rules'];
+        return $this->container['stackingRules'];
     }
 
     /**
-     * Sets stacking_rules
+     * Sets stackingRules
      *
-     * @param \OpenAPI\Client\Model\StackingRules $stacking_rules stacking_rules
+     * @param \OpenAPI\Client\Model\StackingRules $stackingRules stackingRules
      *
      * @return self
      */
-    public function setStackingRules($stacking_rules)
+    public function setStackingRules($stackingRules)
     {
-        if (is_null($stacking_rules)) {
-            throw new \InvalidArgumentException('non-nullable stacking_rules cannot be null');
+        if (is_null($stackingRules)) {
+            throw new \InvalidArgumentException('non-nullable stackingRules cannot be null');
         }
-        $this->container['stacking_rules'] = $stacking_rules;
+        $this->container['stackingRules'] = $stackingRules;
 
         return $this;
     }

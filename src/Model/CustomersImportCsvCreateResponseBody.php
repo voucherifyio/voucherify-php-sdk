@@ -59,7 +59,7 @@ class CustomersImportCsvCreateResponseBody implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'async_action_id' => 'string'
+        'asyncActionId' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class CustomersImportCsvCreateResponseBody implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'async_action_id' => null
+        'asyncActionId' => null
     ];
 
     /**
@@ -79,7 +79,7 @@ class CustomersImportCsvCreateResponseBody implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'async_action_id' => true
+        'asyncActionId' => true
     ];
 
     /**
@@ -168,7 +168,7 @@ class CustomersImportCsvCreateResponseBody implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'async_action_id' => 'async_action_id'
+        'asyncActionId' => 'async_action_id'
     ];
 
     /**
@@ -177,7 +177,7 @@ class CustomersImportCsvCreateResponseBody implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'async_action_id' => 'setAsyncActionId'
+        'asyncActionId' => 'setAsyncActionId'
     ];
 
     /**
@@ -186,7 +186,7 @@ class CustomersImportCsvCreateResponseBody implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'async_action_id' => 'getAsyncActionId'
+        'asyncActionId' => 'getAsyncActionId'
     ];
 
     /**
@@ -246,7 +246,7 @@ class CustomersImportCsvCreateResponseBody implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('async_action_id', $data ?? [], null);
+        $this->setIfExists('asyncActionId', $data ?? [], null);
     }
 
     /**
@@ -292,35 +292,35 @@ class CustomersImportCsvCreateResponseBody implements ModelInterface, ArrayAcces
 
 
     /**
-     * Gets async_action_id
+     * Gets asyncActionId
      *
      * @return string|null
      */
     public function getAsyncActionId()
     {
-        return $this->container['async_action_id'];
+        return $this->container['asyncActionId'];
     }
 
     /**
-     * Sets async_action_id
+     * Sets asyncActionId
      *
-     * @param string|null $async_action_id The ID of the scheduled asynchronous action.
+     * @param string|null $asyncActionId The ID of the scheduled asynchronous action.
      *
      * @return self
      */
-    public function setAsyncActionId($async_action_id)
+    public function setAsyncActionId($asyncActionId)
     {
-        if (is_null($async_action_id)) {
-            array_push($this->openAPINullablesSetToNull, 'async_action_id');
+        if (is_null($asyncActionId)) {
+            array_push($this->openAPINullablesSetToNull, 'asyncActionId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('async_action_id', $nullablesSetToNull);
+            $index = array_search('asyncActionId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['async_action_id'] = $async_action_id;
+        $this->container['asyncActionId'] = $asyncActionId;
 
         return $this;
     }

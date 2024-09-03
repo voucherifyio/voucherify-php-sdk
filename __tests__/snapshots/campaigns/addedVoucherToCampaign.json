@@ -1,0 +1,86 @@
+{
+  "id": "v_XwOvBhxBKHDzDLuxUtJcf16E96iGOK9W",
+  "code": "Hmm6ZXif",
+  "campaign": "snr0Fo2Y6L",
+  "campaign_id": "camp_BSXV3FM3CrNun7ef2CmHagOF",
+  "category": null,
+  "category_id": null,
+  "type": "DISCOUNT_VOUCHER",
+  "discount": {
+    "type": "AMOUNT",
+    "amount_off": 1000,
+    "amount_off_formula": null,
+    "aggregated_amount_limit": null,
+    "effect": null,
+    "is_dynamic": null,
+    "unit_off": null,
+    "unit_off_formula": null,
+    "unit_type": null,
+    "product": null,
+    "sku": null,
+    "units": null,
+    "percent_off": null,
+    "percent_off_formula": null,
+    "amount_limit": null,
+    "fixed_amount": null,
+    "fixed_amount_formula": null
+  },
+  "gift": null,
+  "loyalty_card": null,
+  "start_date": null,
+  "expiration_date": null,
+  "validity_timeframe": null,
+  "validity_day_of_week": null,
+  "validity_hours": null,
+  "active": true,
+  "additional_info": null,
+  "metadata": {},
+  "assets": {
+    "qr": {
+      "id": "f8823017-eadb-4b79-a278-80b864c7eba1",
+      "url": "https://dl.voucherify.io/api/v1/assets/qr/f8823017-eadb-4b79-a278-80b864c7eba1"
+    },
+    "barcode": {
+      "id": "8f37caee-d5a8-444b-b88a-b1d77a1fb5f6",
+      "url": "https://dl.voucherify.io/api/v1/assets/barcode/8f37caee-d5a8-444b-b88a-b1d77a1fb5f6"
+    }
+  },
+  "is_referral_code": false,
+  "created_at": "2024-08-02T11:35:20+00:00",
+  "updated_at": null,
+  "holder_id": null,
+  "referrer_id": null,
+  "object": "voucher",
+  "publish": {
+    "object": "list",
+    "count": 0,
+    "url": "/v1/vouchers/Hmm6ZXif/publications?page=1&limit=10"
+  },
+  "redemption": {
+    "quantity": null,
+    "redeemed_quantity": 0,
+    "redeemed_points": null,
+    "object": "list",
+    "url": "/v1/vouchers/Hmm6ZXif/redemptions?page=1&limit=10"
+  },
+  "categories": [],
+  "validation_rules_assignments": {
+    "object": "list",
+    "data_ref": "data",
+    "data": [
+      {
+        "id": "asgm_fbLCr2TATp75OwBU",
+        "rule_id": "val_XO7j28r6k2Hp",
+        "related_object_id": "camp_BSXV3FM3CrNun7ef2CmHagOF",
+        "related_object_type": "campaign",
+        "created_at": "2024-08-02T11:35:19+00:00",
+        "updated_at": null,
+        "object": "validation_rules_assignment",
+        "validation_status": null,
+        "validation_omitted_rules": null
+      }
+    ],
+    "total": 1
+  },
+  "async_action_id": null
+}

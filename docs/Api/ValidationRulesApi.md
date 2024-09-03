@@ -18,7 +18,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `createValidationRuleAssignment()`
 
 ```php
-createValidationRuleAssignment($validation_rule_id, $force, $validation_rules_assignments_create_request_body): \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateResponseBody
+createValidationRuleAssignment($validationRuleId, $force, $validationRulesAssignmentsCreateRequestBody): \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateResponseBody
 ```
 
 Create Validation Rules Assignments
@@ -49,12 +49,12 @@ $apiInstance = new OpenAPI\Client\Api\ValidationRulesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$validation_rule_id = 'validation_rule_id_example'; // string | Unique validation rule ID.
+$validationRuleId = 'validationRuleId_example'; // string | Unique validation rule ID.
 $force = True; // bool | If this flag is set to true, the previous assignment with the same data will be deleted and a new one will be added.
-$validation_rules_assignments_create_request_body = {"voucher":"v_ssR6vhswwh5odSloN2Vc3O60w7aea018"}; // \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody | Specify the resource that you would like to assign the validation rule to.
+$validationRulesAssignmentsCreateRequestBody = {"voucher":"v_ssR6vhswwh5odSloN2Vc3O60w7aea018"}; // \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody | Specify the resource that you would like to assign the validation rule to.
 
 try {
-    $result = $apiInstance->createValidationRuleAssignment($validation_rule_id, $force, $validation_rules_assignments_create_request_body);
+    $result = $apiInstance->createValidationRuleAssignment($validationRuleId, $force, $validationRulesAssignmentsCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ValidationRulesApi->createValidationRuleAssignment: ', $e->getMessage(), PHP_EOL;
@@ -65,9 +65,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **validation_rule_id** | **string**| Unique validation rule ID. | |
+| **validationRuleId** | **string**| Unique validation rule ID. | |
 | **force** | **bool**| If this flag is set to true, the previous assignment with the same data will be deleted and a new one will be added. | [optional] |
-| **validation_rules_assignments_create_request_body** | [**\OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody**](../Model/ValidationRulesAssignmentsCreateRequestBody.md)| Specify the resource that you would like to assign the validation rule to. | [optional] |
+| **validationRulesAssignmentsCreateRequestBody** | [**\OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody**](../Model/ValidationRulesAssignmentsCreateRequestBody.md)| Specify the resource that you would like to assign the validation rule to. | [optional] |
 
 ### Return type
 
@@ -89,7 +89,7 @@ try {
 ## `createValidationRules()`
 
 ```php
-createValidationRules($validation_rules_create_request_body): \OpenAPI\Client\Model\ValidationRulesCreateResponseBody
+createValidationRules($validationRulesCreateRequestBody): \OpenAPI\Client\Model\ValidationRulesCreateResponseBody
 ```
 
 Create Validation Rules
@@ -120,10 +120,10 @@ $apiInstance = new OpenAPI\Client\Api\ValidationRulesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$validation_rules_create_request_body = {"name":"Set of Validation Rules","error":{"message":"Your order does not meet at least one of the required criteria."},"applicable_to":{"included_all":false,"excluded":[{"object":"product","id":"prod_0bae45ffc7003ffc52","source_id":"second_product","strict":false,"effect":"APPLY_TO_EVERY"}],"included":[{"object":"product","id":"prod_0b72b00ffed198e344","source_id":null,"effect":"APPLY_TO_MOST_EXPENSIVE","quantity_limit":1},{"object":"products_collection","id":"pc_4ndRXAsTOzwSdHcQcxf489uU","source_id":null,"effect":"APPLY_TO_EVERY","quantity_limit":5}]},"rules":{"1":{"name":"order.metadata","property":"location","rules":{},"conditions":{"$is":["Santorini"]},"error":{"message":"Your order must be placed at one of our Santorini shops."}},"2":{"name":"custom_event.metadata","property":"test","rules":{},"conditions":{"$greater_than_or_equal":[1]}},"3":{"name":"order.items.every","rules":{"1":{"name":"order.items.metadata","property":"test","rules":{},"conditions":{"$greater_than_or_equal":[1]}}},"conditions":{"$is":[{"id":"<PROD_ID>","effect":"APPLY_TO_EVERY","object":"product","source_id":"<SOURCE_ID>"}]}},"logic":"1 or 2"}}; // \OpenAPI\Client\Model\ValidationRulesCreateRequestBody | Specify the validation rules parameters.
+$validationRulesCreateRequestBody = {"name":"Set of Validation Rules","error":{"message":"Your order does not meet at least one of the required criteria."},"applicable_to":{"included_all":false,"excluded":[{"object":"product","id":"prod_0bae45ffc7003ffc52","source_id":"second_product","strict":false,"effect":"APPLY_TO_EVERY"}],"included":[{"object":"product","id":"prod_0b72b00ffed198e344","source_id":null,"effect":"APPLY_TO_MOST_EXPENSIVE","quantity_limit":1},{"object":"products_collection","id":"pc_4ndRXAsTOzwSdHcQcxf489uU","source_id":null,"effect":"APPLY_TO_EVERY","quantity_limit":5}]},"rules":{"1":{"name":"order.metadata","property":"location","rules":{},"conditions":{"$is":["Santorini"]},"error":{"message":"Your order must be placed at one of our Santorini shops."}},"2":{"name":"custom_event.metadata","property":"test","rules":{},"conditions":{"$greater_than_or_equal":[1]}},"3":{"name":"order.items.every","rules":{"1":{"name":"order.items.metadata","property":"test","rules":{},"conditions":{"$greater_than_or_equal":[1]}}},"conditions":{"$is":[{"id":"<PROD_ID>","effect":"APPLY_TO_EVERY","object":"product","source_id":"<SOURCE_ID>"}]}},"logic":"1 or 2"}}; // \OpenAPI\Client\Model\ValidationRulesCreateRequestBody | Specify the validation rules parameters.
 
 try {
-    $result = $apiInstance->createValidationRules($validation_rules_create_request_body);
+    $result = $apiInstance->createValidationRules($validationRulesCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ValidationRulesApi->createValidationRules: ', $e->getMessage(), PHP_EOL;
@@ -134,7 +134,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **validation_rules_create_request_body** | [**\OpenAPI\Client\Model\ValidationRulesCreateRequestBody**](../Model/ValidationRulesCreateRequestBody.md)| Specify the validation rules parameters. | [optional] |
+| **validationRulesCreateRequestBody** | [**\OpenAPI\Client\Model\ValidationRulesCreateRequestBody**](../Model/ValidationRulesCreateRequestBody.md)| Specify the validation rules parameters. | [optional] |
 
 ### Return type
 
@@ -156,7 +156,7 @@ try {
 ## `deleteValidationRuleAssignment()`
 
 ```php
-deleteValidationRuleAssignment($validation_rule_id, $assignment_id)
+deleteValidationRuleAssignment($validationRuleId, $assignmentId)
 ```
 
 Delete Validation Rule Assignment
@@ -187,11 +187,11 @@ $apiInstance = new OpenAPI\Client\Api\ValidationRulesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$validation_rule_id = 'validation_rule_id_example'; // string | A unique validation rule ID.
-$assignment_id = 'assignment_id_example'; // string | A unique validation rule assignment ID.
+$validationRuleId = 'validationRuleId_example'; // string | A unique validation rule ID.
+$assignmentId = 'assignmentId_example'; // string | A unique validation rule assignment ID.
 
 try {
-    $apiInstance->deleteValidationRuleAssignment($validation_rule_id, $assignment_id);
+    $apiInstance->deleteValidationRuleAssignment($validationRuleId, $assignmentId);
 } catch (Exception $e) {
     echo 'Exception when calling ValidationRulesApi->deleteValidationRuleAssignment: ', $e->getMessage(), PHP_EOL;
 }
@@ -201,8 +201,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **validation_rule_id** | **string**| A unique validation rule ID. | |
-| **assignment_id** | **string**| A unique validation rule assignment ID. | |
+| **validationRuleId** | **string**| A unique validation rule ID. | |
+| **assignmentId** | **string**| A unique validation rule assignment ID. | |
 
 ### Return type
 
@@ -224,7 +224,7 @@ void (empty response body)
 ## `deleteValidationRules()`
 
 ```php
-deleteValidationRules($validation_rule_id)
+deleteValidationRules($validationRuleId)
 ```
 
 Delete Validation Rule
@@ -255,10 +255,10 @@ $apiInstance = new OpenAPI\Client\Api\ValidationRulesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$validation_rule_id = 'validation_rule_id_example'; // string | A unique validation rule ID.
+$validationRuleId = 'validationRuleId_example'; // string | A unique validation rule ID.
 
 try {
-    $apiInstance->deleteValidationRules($validation_rule_id);
+    $apiInstance->deleteValidationRules($validationRuleId);
 } catch (Exception $e) {
     echo 'Exception when calling ValidationRulesApi->deleteValidationRules: ', $e->getMessage(), PHP_EOL;
 }
@@ -268,7 +268,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **validation_rule_id** | **string**| A unique validation rule ID. | |
+| **validationRuleId** | **string**| A unique validation rule ID. | |
 
 ### Return type
 
@@ -290,7 +290,7 @@ void (empty response body)
 ## `getValidationRule()`
 
 ```php
-getValidationRule($validation_rule_id): \OpenAPI\Client\Model\ValidationRulesGetResponseBody
+getValidationRule($validationRuleId): \OpenAPI\Client\Model\ValidationRulesGetResponseBody
 ```
 
 Get Validation Rule
@@ -321,10 +321,10 @@ $apiInstance = new OpenAPI\Client\Api\ValidationRulesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$validation_rule_id = 'validation_rule_id_example'; // string | A unique validation rule ID.
+$validationRuleId = 'validationRuleId_example'; // string | A unique validation rule ID.
 
 try {
-    $result = $apiInstance->getValidationRule($validation_rule_id);
+    $result = $apiInstance->getValidationRule($validationRuleId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ValidationRulesApi->getValidationRule: ', $e->getMessage(), PHP_EOL;
@@ -335,7 +335,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **validation_rule_id** | **string**| A unique validation rule ID. | |
+| **validationRuleId** | **string**| A unique validation rule ID. | |
 
 ### Return type
 
@@ -357,7 +357,7 @@ try {
 ## `listValidationRuleAssignments()`
 
 ```php
-listValidationRuleAssignments($validation_rule_id, $limit, $page, $order): \OpenAPI\Client\Model\ValidationRulesAssignmentsListResponseBody
+listValidationRuleAssignments($validationRuleId, $limit, $page, $order): \OpenAPI\Client\Model\ValidationRulesAssignmentsListResponseBody
 ```
 
 List Validation Rule Assignments
@@ -388,13 +388,13 @@ $apiInstance = new OpenAPI\Client\Api\ValidationRulesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$validation_rule_id = 'validation_rule_id_example'; // string | Unique validation rule ID.
+$validationRuleId = 'validationRuleId_example'; // string | Unique validation rule ID.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 $order = new \OpenAPI\Client\Model\ParameterOrderListValidationRuleAssignments(); // ParameterOrderListValidationRuleAssignments | This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
 
 try {
-    $result = $apiInstance->listValidationRuleAssignments($validation_rule_id, $limit, $page, $order);
+    $result = $apiInstance->listValidationRuleAssignments($validationRuleId, $limit, $page, $order);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ValidationRulesApi->listValidationRuleAssignments: ', $e->getMessage(), PHP_EOL;
@@ -405,7 +405,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **validation_rule_id** | **string**| Unique validation rule ID. | |
+| **validationRuleId** | **string**| Unique validation rule ID. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 | **order** | [**ParameterOrderListValidationRuleAssignments**](../Model/.md)| This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
@@ -430,7 +430,7 @@ try {
 ## `listValidationRules()`
 
 ```php
-listValidationRules($limit, $page, $order, $start_date, $end_date): \OpenAPI\Client\Model\ValidationRulesListResponseBody
+listValidationRules($limit, $page, $order, $startDate, $endDate): \OpenAPI\Client\Model\ValidationRulesListResponseBody
 ```
 
 List Validation Rules
@@ -464,11 +464,11 @@ $apiInstance = new OpenAPI\Client\Api\ValidationRulesApi(
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 $order = new \OpenAPI\Client\Model\ParameterOrderListValidationRules(); // ParameterOrderListValidationRules | This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must start on. Represented in ISO 8601 format.
-$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must start on. Represented in ISO 8601 format.
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
 
 try {
-    $result = $apiInstance->listValidationRules($limit, $page, $order, $start_date, $end_date);
+    $result = $apiInstance->listValidationRules($limit, $page, $order, $startDate, $endDate);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ValidationRulesApi->listValidationRules: ', $e->getMessage(), PHP_EOL;
@@ -482,8 +482,8 @@ try {
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 | **order** | [**ParameterOrderListValidationRules**](../Model/.md)| This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
-| **start_date** | **\DateTime**| Timestamp representing the date and time which results must start on. Represented in ISO 8601 format. | [optional] |
-| **end_date** | **\DateTime**| Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
+| **startDate** | **\DateTime**| Timestamp representing the date and time which results must start on. Represented in ISO 8601 format. | [optional] |
+| **endDate** | **\DateTime**| Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
 
 ### Return type
 
@@ -505,7 +505,7 @@ try {
 ## `listValidationRulesAssignments()`
 
 ```php
-listValidationRulesAssignments($related_object_id, $rule, $page, $limit, $order): \OpenAPI\Client\Model\ValidationRulesAssignmentsListResponseBody
+listValidationRulesAssignments($relatedObjectId, $rule, $page, $limit, $order): \OpenAPI\Client\Model\ValidationRulesAssignmentsListResponseBody
 ```
 
 List Validation Rules' Assignment(s)
@@ -536,14 +536,14 @@ $apiInstance = new OpenAPI\Client\Api\ValidationRulesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$related_object_id = 'related_object_id_example'; // string | The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution.
+$relatedObjectId = 'relatedObjectId_example'; // string | The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution.
 $rule = 'rule_example'; // string | Validation rule ID.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $order = 'order_example'; // string | Sorts the results using one of the filtering options: -created_at, created_at, where the dash - preceding a sorting option means sorting in a descending order.
 
 try {
-    $result = $apiInstance->listValidationRulesAssignments($related_object_id, $rule, $page, $limit, $order);
+    $result = $apiInstance->listValidationRulesAssignments($relatedObjectId, $rule, $page, $limit, $order);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ValidationRulesApi->listValidationRulesAssignments: ', $e->getMessage(), PHP_EOL;
@@ -554,7 +554,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **related_object_id** | **string**| The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution. | [optional] |
+| **relatedObjectId** | **string**| The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution. | [optional] |
 | **rule** | **string**| Validation rule ID. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
@@ -580,7 +580,7 @@ try {
 ## `updateValidationRule()`
 
 ```php
-updateValidationRule($validation_rule_id, $validation_rules_update_request_body): \OpenAPI\Client\Model\ValidationRulesUpdateResponseBody
+updateValidationRule($validationRuleId, $validationRulesUpdateRequestBody): \OpenAPI\Client\Model\ValidationRulesUpdateResponseBody
 ```
 
 Update Validation Rule
@@ -611,11 +611,11 @@ $apiInstance = new OpenAPI\Client\Api\ValidationRulesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$validation_rule_id = 'validation_rule_id_example'; // string | A unique validation rule ID.
-$validation_rules_update_request_body = {"name":"Set of Validation Rules Updated","error":{"message":"Your orders do not meet at least one of the required criteria."},"applicable_to":{"included_all":false,"excluded":[{"object":"product","id":"prod_0bae45ffc7003ffccc","source_id":"second_product","strict":false,"effect":"APPLY_TO_EVERY"}],"included":[{"object":"product","id":"prod_0b72b00ffed198e333","source_id":null,"effect":"APPLY_TO_CHEAPEST","quantity_limit":1},{"object":"products_collection","id":"pc_4ndRXAsTOzwSdHcQcxf489uU","source_id":null,"effect":"APPLY_TO_EVERY","quantity_limit":5}]},"rules":{"1":{"name":"order.metadata","property":"place","rules":{},"conditions":{"$is":["Santorini"]},"error":{"message":"Your order must be placed at one of our Santorini shops on the beach."}},"2":{"name":"custom_event.metadata","property":"lining","rules":{},"conditions":{"$greater_than_or_equal":[1]}},"3":{"name":"order.items.every","rules":{"1":{"name":"order.items.metadata","property":"test","rules":{},"conditions":{"$greater_than_or_equal":[1]}}},"conditions":{"$is":[{"id":"<PRODs_ID>","effect":"APPLY_TO_EVERY","object":"product","source_id":"<SOURCEs_ID>"}]}},"logic":"1 and 2"}}; // \OpenAPI\Client\Model\ValidationRulesUpdateRequestBody | Specify the parameters to be updated.
+$validationRuleId = 'validationRuleId_example'; // string | A unique validation rule ID.
+$validationRulesUpdateRequestBody = {"name":"Set of Validation Rules Updated","error":{"message":"Your orders do not meet at least one of the required criteria."},"applicable_to":{"included_all":false,"excluded":[{"object":"product","id":"prod_0bae45ffc7003ffccc","source_id":"second_product","strict":false,"effect":"APPLY_TO_EVERY"}],"included":[{"object":"product","id":"prod_0b72b00ffed198e333","source_id":null,"effect":"APPLY_TO_CHEAPEST","quantity_limit":1},{"object":"products_collection","id":"pc_4ndRXAsTOzwSdHcQcxf489uU","source_id":null,"effect":"APPLY_TO_EVERY","quantity_limit":5}]},"rules":{"1":{"name":"order.metadata","property":"place","rules":{},"conditions":{"$is":["Santorini"]},"error":{"message":"Your order must be placed at one of our Santorini shops on the beach."}},"2":{"name":"custom_event.metadata","property":"lining","rules":{},"conditions":{"$greater_than_or_equal":[1]}},"3":{"name":"order.items.every","rules":{"1":{"name":"order.items.metadata","property":"test","rules":{},"conditions":{"$greater_than_or_equal":[1]}}},"conditions":{"$is":[{"id":"<PRODs_ID>","effect":"APPLY_TO_EVERY","object":"product","source_id":"<SOURCEs_ID>"}]}},"logic":"1 and 2"}}; // \OpenAPI\Client\Model\ValidationRulesUpdateRequestBody | Specify the parameters to be updated.
 
 try {
-    $result = $apiInstance->updateValidationRule($validation_rule_id, $validation_rules_update_request_body);
+    $result = $apiInstance->updateValidationRule($validationRuleId, $validationRulesUpdateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ValidationRulesApi->updateValidationRule: ', $e->getMessage(), PHP_EOL;
@@ -626,8 +626,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **validation_rule_id** | **string**| A unique validation rule ID. | |
-| **validation_rules_update_request_body** | [**\OpenAPI\Client\Model\ValidationRulesUpdateRequestBody**](../Model/ValidationRulesUpdateRequestBody.md)| Specify the parameters to be updated. | [optional] |
+| **validationRuleId** | **string**| A unique validation rule ID. | |
+| **validationRulesUpdateRequestBody** | [**\OpenAPI\Client\Model\ValidationRulesUpdateRequestBody**](../Model/ValidationRulesUpdateRequestBody.md)| Specify the parameters to be updated. | [optional] |
 
 ### Return type
 

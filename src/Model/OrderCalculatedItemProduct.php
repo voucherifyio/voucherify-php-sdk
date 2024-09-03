@@ -60,7 +60,7 @@ class OrderCalculatedItemProduct implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'source_id' => 'string',
+        'sourceId' => 'string',
         'override' => 'bool',
         'name' => 'string',
         'metadata' => 'object',
@@ -76,7 +76,7 @@ class OrderCalculatedItemProduct implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'source_id' => null,
+        'sourceId' => null,
         'override' => null,
         'name' => null,
         'metadata' => null,
@@ -90,7 +90,7 @@ class OrderCalculatedItemProduct implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'source_id' => true,
+		'sourceId' => true,
 		'override' => true,
 		'name' => true,
 		'metadata' => true,
@@ -184,7 +184,7 @@ class OrderCalculatedItemProduct implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'source_id' => 'source_id',
+        'sourceId' => 'source_id',
         'override' => 'override',
         'name' => 'name',
         'metadata' => 'metadata',
@@ -198,7 +198,7 @@ class OrderCalculatedItemProduct implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $setters = [
         'id' => 'setId',
-        'source_id' => 'setSourceId',
+        'sourceId' => 'setSourceId',
         'override' => 'setOverride',
         'name' => 'setName',
         'metadata' => 'setMetadata',
@@ -212,7 +212,7 @@ class OrderCalculatedItemProduct implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $getters = [
         'id' => 'getId',
-        'source_id' => 'getSourceId',
+        'sourceId' => 'getSourceId',
         'override' => 'getOverride',
         'name' => 'getName',
         'metadata' => 'getMetadata',
@@ -277,7 +277,7 @@ class OrderCalculatedItemProduct implements ModelInterface, ArrayAccess, \JsonSe
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('source_id', $data ?? [], null);
+        $this->setIfExists('sourceId', $data ?? [], null);
         $this->setIfExists('override', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
@@ -361,35 +361,35 @@ class OrderCalculatedItemProduct implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets source_id
+     * Gets sourceId
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['source_id'];
+        return $this->container['sourceId'];
     }
 
     /**
-     * Sets source_id
+     * Sets sourceId
      *
-     * @param string|null $source_id The merchant's product ID (if it is different than Voucherify's product ID). It is really useful in case of integration between multiple systems. It can be an ID from an eCommerce site, a database or a 3rd party service.
+     * @param string|null $sourceId The merchant's product ID (if it is different than Voucherify's product ID). It is really useful in case of integration between multiple systems. It can be an ID from an eCommerce site, a database or a 3rd party service.
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setSourceId($sourceId)
     {
-        if (is_null($source_id)) {
-            array_push($this->openAPINullablesSetToNull, 'source_id');
+        if (is_null($sourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'sourceId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('source_id', $nullablesSetToNull);
+            $index = array_search('sourceId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['source_id'] = $source_id;
+        $this->container['sourceId'] = $sourceId;
 
         return $this;
     }

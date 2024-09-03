@@ -128,16 +128,16 @@ class EventsApi
      *
      * Track Custom Event
      *
-     * @param  \OpenAPI\Client\Model\EventsCreateRequestBody $events_create_request_body Specify the details of the custom event. (optional)
+     * @param  \OpenAPI\Client\Model\EventsCreateRequestBody $eventsCreateRequestBody Specify the details of the custom event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['trackCustomEvent'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\EventsCreateResponseBody
      */
-    public function trackCustomEvent($events_create_request_body = null, string $contentType = self::contentTypes['trackCustomEvent'][0])
+    public function trackCustomEvent($eventsCreateRequestBody = null, string $contentType = self::contentTypes['trackCustomEvent'][0])
     {
-        list($response) = $this->trackCustomEventWithHttpInfo($events_create_request_body, $contentType);
+        list($response) = $this->trackCustomEventWithHttpInfo($eventsCreateRequestBody, $contentType);
         return $response;
     }
 
@@ -146,16 +146,16 @@ class EventsApi
      *
      * Track Custom Event
      *
-     * @param  \OpenAPI\Client\Model\EventsCreateRequestBody $events_create_request_body Specify the details of the custom event. (optional)
+     * @param  \OpenAPI\Client\Model\EventsCreateRequestBody $eventsCreateRequestBody Specify the details of the custom event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['trackCustomEvent'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\EventsCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function trackCustomEventWithHttpInfo($events_create_request_body = null, string $contentType = self::contentTypes['trackCustomEvent'][0])
+    public function trackCustomEventWithHttpInfo($eventsCreateRequestBody = null, string $contentType = self::contentTypes['trackCustomEvent'][0])
     {
-        $request = $this->trackCustomEventRequest($events_create_request_body, $contentType);
+        $request = $this->trackCustomEventRequest($eventsCreateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -246,15 +246,15 @@ class EventsApi
      *
      * Track Custom Event
      *
-     * @param  \OpenAPI\Client\Model\EventsCreateRequestBody $events_create_request_body Specify the details of the custom event. (optional)
+     * @param  \OpenAPI\Client\Model\EventsCreateRequestBody $eventsCreateRequestBody Specify the details of the custom event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['trackCustomEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function trackCustomEventAsync($events_create_request_body = null, string $contentType = self::contentTypes['trackCustomEvent'][0])
+    public function trackCustomEventAsync($eventsCreateRequestBody = null, string $contentType = self::contentTypes['trackCustomEvent'][0])
     {
-        return $this->trackCustomEventAsyncWithHttpInfo($events_create_request_body, $contentType)
+        return $this->trackCustomEventAsyncWithHttpInfo($eventsCreateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -267,16 +267,16 @@ class EventsApi
      *
      * Track Custom Event
      *
-     * @param  \OpenAPI\Client\Model\EventsCreateRequestBody $events_create_request_body Specify the details of the custom event. (optional)
+     * @param  \OpenAPI\Client\Model\EventsCreateRequestBody $eventsCreateRequestBody Specify the details of the custom event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['trackCustomEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function trackCustomEventAsyncWithHttpInfo($events_create_request_body = null, string $contentType = self::contentTypes['trackCustomEvent'][0])
+    public function trackCustomEventAsyncWithHttpInfo($eventsCreateRequestBody = null, string $contentType = self::contentTypes['trackCustomEvent'][0])
     {
         $returnType = '\OpenAPI\Client\Model\EventsCreateResponseBody';
-        $request = $this->trackCustomEventRequest($events_create_request_body, $contentType);
+        $request = $this->trackCustomEventRequest($eventsCreateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -317,13 +317,13 @@ class EventsApi
     /**
      * Create request for operation 'trackCustomEvent'
      *
-     * @param  \OpenAPI\Client\Model\EventsCreateRequestBody $events_create_request_body Specify the details of the custom event. (optional)
+     * @param  \OpenAPI\Client\Model\EventsCreateRequestBody $eventsCreateRequestBody Specify the details of the custom event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['trackCustomEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function trackCustomEventRequest($events_create_request_body = null, string $contentType = self::contentTypes['trackCustomEvent'][0])
+    public function trackCustomEventRequest($eventsCreateRequestBody = null, string $contentType = self::contentTypes['trackCustomEvent'][0])
     {
 
 
@@ -346,12 +346,12 @@ class EventsApi
         );
 
         // for model (json/xml)
-        if (isset($events_create_request_body)) {
+        if (isset($eventsCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($events_create_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($eventsCreateRequestBody));
             } else {
-                $httpBody = $events_create_request_body;
+                $httpBody = $eventsCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

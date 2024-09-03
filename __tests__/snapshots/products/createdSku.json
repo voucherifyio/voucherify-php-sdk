@@ -1,0 +1,18 @@
+{
+  "id": "sku_0f26727288803aafdb",
+  "source_id": "kYSxiYSSyC",
+  "product_id": "prod_0f26727114803aafc7",
+  "sku": null,
+  "price": 5000,
+  "currency": null,
+  "attributes": {
+    "color": "red",
+    "memory": "16GB",
+    "processor": "Intel Core i7"
+  },
+  "image_url": null,
+  "metadata": {},
+  "created_at": "2024-08-02T11:29:36+00:00",
+  "updated_at": null,
+  "object": "sku"
+}

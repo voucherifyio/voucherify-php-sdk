@@ -59,13 +59,13 @@ class OrderRedemptionsEntry implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'date' => '\DateTime',
-        'rollback_id' => 'string',
-        'rollback_date' => '\DateTime',
-        'related_object_type' => 'string',
-        'related_object_id' => 'string',
-        'related_object_parent_id' => 'string',
+        'rollbackId' => 'string',
+        'rollbackDate' => '\DateTime',
+        'relatedObjectType' => 'string',
+        'relatedObjectId' => 'string',
+        'relatedObjectParentId' => 'string',
         'stacked' => 'string[]',
-        'rollback_stacked' => 'string[]'
+        'rollbackStacked' => 'string[]'
     ];
 
     /**
@@ -77,13 +77,13 @@ class OrderRedemptionsEntry implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPIFormats = [
         'date' => 'date-time',
-        'rollback_id' => null,
-        'rollback_date' => 'date-time',
-        'related_object_type' => null,
-        'related_object_id' => null,
-        'related_object_parent_id' => null,
+        'rollbackId' => null,
+        'rollbackDate' => 'date-time',
+        'relatedObjectType' => null,
+        'relatedObjectId' => null,
+        'relatedObjectParentId' => null,
         'stacked' => null,
-        'rollback_stacked' => null
+        'rollbackStacked' => null
     ];
 
     /**
@@ -93,13 +93,13 @@ class OrderRedemptionsEntry implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static array $openAPINullables = [
         'date' => true,
-		'rollback_id' => true,
-		'rollback_date' => true,
-		'related_object_type' => true,
-		'related_object_id' => true,
-		'related_object_parent_id' => true,
+		'rollbackId' => true,
+		'rollbackDate' => true,
+		'relatedObjectType' => true,
+		'relatedObjectId' => true,
+		'relatedObjectParentId' => true,
 		'stacked' => true,
-		'rollback_stacked' => true
+		'rollbackStacked' => true
     ];
 
     /**
@@ -189,13 +189,13 @@ class OrderRedemptionsEntry implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $attributeMap = [
         'date' => 'date',
-        'rollback_id' => 'rollback_id',
-        'rollback_date' => 'rollback_date',
-        'related_object_type' => 'related_object_type',
-        'related_object_id' => 'related_object_id',
-        'related_object_parent_id' => 'related_object_parent_id',
+        'rollbackId' => 'rollback_id',
+        'rollbackDate' => 'rollback_date',
+        'relatedObjectType' => 'related_object_type',
+        'relatedObjectId' => 'related_object_id',
+        'relatedObjectParentId' => 'related_object_parent_id',
         'stacked' => 'stacked',
-        'rollback_stacked' => 'rollback_stacked'
+        'rollbackStacked' => 'rollback_stacked'
     ];
 
     /**
@@ -205,13 +205,13 @@ class OrderRedemptionsEntry implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $setters = [
         'date' => 'setDate',
-        'rollback_id' => 'setRollbackId',
-        'rollback_date' => 'setRollbackDate',
-        'related_object_type' => 'setRelatedObjectType',
-        'related_object_id' => 'setRelatedObjectId',
-        'related_object_parent_id' => 'setRelatedObjectParentId',
+        'rollbackId' => 'setRollbackId',
+        'rollbackDate' => 'setRollbackDate',
+        'relatedObjectType' => 'setRelatedObjectType',
+        'relatedObjectId' => 'setRelatedObjectId',
+        'relatedObjectParentId' => 'setRelatedObjectParentId',
         'stacked' => 'setStacked',
-        'rollback_stacked' => 'setRollbackStacked'
+        'rollbackStacked' => 'setRollbackStacked'
     ];
 
     /**
@@ -221,13 +221,13 @@ class OrderRedemptionsEntry implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'date' => 'getDate',
-        'rollback_id' => 'getRollbackId',
-        'rollback_date' => 'getRollbackDate',
-        'related_object_type' => 'getRelatedObjectType',
-        'related_object_id' => 'getRelatedObjectId',
-        'related_object_parent_id' => 'getRelatedObjectParentId',
+        'rollbackId' => 'getRollbackId',
+        'rollbackDate' => 'getRollbackDate',
+        'relatedObjectType' => 'getRelatedObjectType',
+        'relatedObjectId' => 'getRelatedObjectId',
+        'relatedObjectParentId' => 'getRelatedObjectParentId',
         'stacked' => 'getStacked',
-        'rollback_stacked' => 'getRollbackStacked'
+        'rollbackStacked' => 'getRollbackStacked'
     ];
 
     /**
@@ -288,13 +288,13 @@ class OrderRedemptionsEntry implements ModelInterface, ArrayAccess, \JsonSeriali
     public function __construct(array $data = null)
     {
         $this->setIfExists('date', $data ?? [], null);
-        $this->setIfExists('rollback_id', $data ?? [], null);
-        $this->setIfExists('rollback_date', $data ?? [], null);
-        $this->setIfExists('related_object_type', $data ?? [], 'redemption');
-        $this->setIfExists('related_object_id', $data ?? [], null);
-        $this->setIfExists('related_object_parent_id', $data ?? [], null);
+        $this->setIfExists('rollbackId', $data ?? [], null);
+        $this->setIfExists('rollbackDate', $data ?? [], null);
+        $this->setIfExists('relatedObjectType', $data ?? [], 'redemption');
+        $this->setIfExists('relatedObjectId', $data ?? [], null);
+        $this->setIfExists('relatedObjectParentId', $data ?? [], null);
         $this->setIfExists('stacked', $data ?? [], null);
-        $this->setIfExists('rollback_stacked', $data ?? [], null);
+        $this->setIfExists('rollbackStacked', $data ?? [], null);
     }
 
     /**
@@ -374,171 +374,171 @@ class OrderRedemptionsEntry implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets rollback_id
+     * Gets rollbackId
      *
      * @return string|null
      */
     public function getRollbackId()
     {
-        return $this->container['rollback_id'];
+        return $this->container['rollbackId'];
     }
 
     /**
-     * Sets rollback_id
+     * Sets rollbackId
      *
-     * @param string|null $rollback_id Unique ID of the redemption rollback.
+     * @param string|null $rollbackId Unique ID of the redemption rollback.
      *
      * @return self
      */
-    public function setRollbackId($rollback_id)
+    public function setRollbackId($rollbackId)
     {
-        if (is_null($rollback_id)) {
-            array_push($this->openAPINullablesSetToNull, 'rollback_id');
+        if (is_null($rollbackId)) {
+            array_push($this->openAPINullablesSetToNull, 'rollbackId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rollback_id', $nullablesSetToNull);
+            $index = array_search('rollbackId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['rollback_id'] = $rollback_id;
+        $this->container['rollbackId'] = $rollbackId;
 
         return $this;
     }
 
     /**
-     * Gets rollback_date
+     * Gets rollbackDate
      *
      * @return \DateTime|null
      */
     public function getRollbackDate()
     {
-        return $this->container['rollback_date'];
+        return $this->container['rollbackDate'];
     }
 
     /**
-     * Sets rollback_date
+     * Sets rollbackDate
      *
-     * @param \DateTime|null $rollback_date Timestamp representing the date and tiem when the redemption rollback was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $rollbackDate Timestamp representing the date and tiem when the redemption rollback was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setRollbackDate($rollback_date)
+    public function setRollbackDate($rollbackDate)
     {
-        if (is_null($rollback_date)) {
-            array_push($this->openAPINullablesSetToNull, 'rollback_date');
+        if (is_null($rollbackDate)) {
+            array_push($this->openAPINullablesSetToNull, 'rollbackDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rollback_date', $nullablesSetToNull);
+            $index = array_search('rollbackDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['rollback_date'] = $rollback_date;
+        $this->container['rollbackDate'] = $rollbackDate;
 
         return $this;
     }
 
     /**
-     * Gets related_object_type
+     * Gets relatedObjectType
      *
      * @return string|null
      */
     public function getRelatedObjectType()
     {
-        return $this->container['related_object_type'];
+        return $this->container['relatedObjectType'];
     }
 
     /**
-     * Sets related_object_type
+     * Sets relatedObjectType
      *
-     * @param string|null $related_object_type The source of the incentive.
+     * @param string|null $relatedObjectType The source of the incentive.
      *
      * @return self
      */
-    public function setRelatedObjectType($related_object_type)
+    public function setRelatedObjectType($relatedObjectType)
     {
-        if (is_null($related_object_type)) {
-            array_push($this->openAPINullablesSetToNull, 'related_object_type');
+        if (is_null($relatedObjectType)) {
+            array_push($this->openAPINullablesSetToNull, 'relatedObjectType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('related_object_type', $nullablesSetToNull);
+            $index = array_search('relatedObjectType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['related_object_type'] = $related_object_type;
+        $this->container['relatedObjectType'] = $relatedObjectType;
 
         return $this;
     }
 
     /**
-     * Gets related_object_id
+     * Gets relatedObjectId
      *
      * @return string|null
      */
     public function getRelatedObjectId()
     {
-        return $this->container['related_object_id'];
+        return $this->container['relatedObjectId'];
     }
 
     /**
-     * Sets related_object_id
+     * Sets relatedObjectId
      *
-     * @param string|null $related_object_id Unique ID of the parent redemption.
+     * @param string|null $relatedObjectId Unique ID of the parent redemption.
      *
      * @return self
      */
-    public function setRelatedObjectId($related_object_id)
+    public function setRelatedObjectId($relatedObjectId)
     {
-        if (is_null($related_object_id)) {
-            array_push($this->openAPINullablesSetToNull, 'related_object_id');
+        if (is_null($relatedObjectId)) {
+            array_push($this->openAPINullablesSetToNull, 'relatedObjectId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('related_object_id', $nullablesSetToNull);
+            $index = array_search('relatedObjectId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['related_object_id'] = $related_object_id;
+        $this->container['relatedObjectId'] = $relatedObjectId;
 
         return $this;
     }
 
     /**
-     * Gets related_object_parent_id
+     * Gets relatedObjectParentId
      *
      * @return string|null
      */
     public function getRelatedObjectParentId()
     {
-        return $this->container['related_object_parent_id'];
+        return $this->container['relatedObjectParentId'];
     }
 
     /**
-     * Sets related_object_parent_id
+     * Sets relatedObjectParentId
      *
-     * @param string|null $related_object_parent_id Represent's the campaign ID of the voucher if the redemption was based on a voucher that was part of bulk codes generated within a campaign. In case of a promotion tier, this represents the campaign ID of the promotion tier's parent campaign.
+     * @param string|null $relatedObjectParentId Represent's the campaign ID of the voucher if the redemption was based on a voucher that was part of bulk codes generated within a campaign. In case of a promotion tier, this represents the campaign ID of the promotion tier's parent campaign.
      *
      * @return self
      */
-    public function setRelatedObjectParentId($related_object_parent_id)
+    public function setRelatedObjectParentId($relatedObjectParentId)
     {
-        if (is_null($related_object_parent_id)) {
-            array_push($this->openAPINullablesSetToNull, 'related_object_parent_id');
+        if (is_null($relatedObjectParentId)) {
+            array_push($this->openAPINullablesSetToNull, 'relatedObjectParentId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('related_object_parent_id', $nullablesSetToNull);
+            $index = array_search('relatedObjectParentId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['related_object_parent_id'] = $related_object_parent_id;
+        $this->container['relatedObjectParentId'] = $relatedObjectParentId;
 
         return $this;
     }
@@ -578,35 +578,35 @@ class OrderRedemptionsEntry implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets rollback_stacked
+     * Gets rollbackStacked
      *
      * @return string[]|null
      */
     public function getRollbackStacked()
     {
-        return $this->container['rollback_stacked'];
+        return $this->container['rollbackStacked'];
     }
 
     /**
-     * Sets rollback_stacked
+     * Sets rollbackStacked
      *
-     * @param string[]|null $rollback_stacked Lists the rollback redemption IDs of the particular child redemptions.
+     * @param string[]|null $rollbackStacked Lists the rollback redemption IDs of the particular child redemptions.
      *
      * @return self
      */
-    public function setRollbackStacked($rollback_stacked)
+    public function setRollbackStacked($rollbackStacked)
     {
-        if (is_null($rollback_stacked)) {
-            array_push($this->openAPINullablesSetToNull, 'rollback_stacked');
+        if (is_null($rollbackStacked)) {
+            array_push($this->openAPINullablesSetToNull, 'rollbackStacked');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rollback_stacked', $nullablesSetToNull);
+            $index = array_search('rollbackStacked', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['rollback_stacked'] = $rollback_stacked;
+        $this->container['rollbackStacked'] = $rollbackStacked;
 
         return $this;
     }

@@ -59,8 +59,8 @@ class RedemptionsRollbackCreateResponseBodyChannel implements ModelInterface, Ar
       * @var string[]
       */
     protected static $openAPITypes = [
-        'channel_id' => 'string',
-        'channel_type' => 'string'
+        'channelId' => 'string',
+        'channelType' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class RedemptionsRollbackCreateResponseBodyChannel implements ModelInterface, Ar
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'channel_id' => null,
-        'channel_type' => null
+        'channelId' => null,
+        'channelType' => null
     ];
 
     /**
@@ -81,8 +81,8 @@ class RedemptionsRollbackCreateResponseBodyChannel implements ModelInterface, Ar
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'channel_id' => true,
-		'channel_type' => true
+        'channelId' => true,
+		'channelType' => true
     ];
 
     /**
@@ -171,8 +171,8 @@ class RedemptionsRollbackCreateResponseBodyChannel implements ModelInterface, Ar
      * @var string[]
      */
     protected static $attributeMap = [
-        'channel_id' => 'channel_id',
-        'channel_type' => 'channel_type'
+        'channelId' => 'channel_id',
+        'channelType' => 'channel_type'
     ];
 
     /**
@@ -181,8 +181,8 @@ class RedemptionsRollbackCreateResponseBodyChannel implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-        'channel_id' => 'setChannelId',
-        'channel_type' => 'setChannelType'
+        'channelId' => 'setChannelId',
+        'channelType' => 'setChannelType'
     ];
 
     /**
@@ -191,8 +191,8 @@ class RedemptionsRollbackCreateResponseBodyChannel implements ModelInterface, Ar
      * @var string[]
      */
     protected static $getters = [
-        'channel_id' => 'getChannelId',
-        'channel_type' => 'getChannelType'
+        'channelId' => 'getChannelId',
+        'channelType' => 'getChannelType'
     ];
 
     /**
@@ -267,8 +267,8 @@ class RedemptionsRollbackCreateResponseBodyChannel implements ModelInterface, Ar
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('channel_id', $data ?? [], null);
-        $this->setIfExists('channel_type', $data ?? [], null);
+        $this->setIfExists('channelId', $data ?? [], null);
+        $this->setIfExists('channelType', $data ?? [], null);
     }
 
     /**
@@ -299,10 +299,10 @@ class RedemptionsRollbackCreateResponseBodyChannel implements ModelInterface, Ar
         $invalidProperties = [];
 
         $allowedValues = $this->getChannelTypeAllowableValues();
-        if (!is_null($this->container['channel_type']) && !in_array($this->container['channel_type'], $allowedValues, true)) {
+        if (!is_null($this->container['channelType']) && !in_array($this->container['channelType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'channel_type', must be one of '%s'",
-                $this->container['channel_type'],
+                "invalid value '%s' for 'channelType', must be one of '%s'",
+                $this->container['channelType'],
                 implode("', '", $allowedValues)
             );
         }
@@ -323,79 +323,79 @@ class RedemptionsRollbackCreateResponseBodyChannel implements ModelInterface, Ar
 
 
     /**
-     * Gets channel_id
+     * Gets channelId
      *
      * @return string|null
      */
     public function getChannelId()
     {
-        return $this->container['channel_id'];
+        return $this->container['channelId'];
     }
 
     /**
-     * Sets channel_id
+     * Sets channelId
      *
-     * @param string|null $channel_id Unique identifier of the channel which was used by the user performing the redemption rollback. This is either a user ID from the user using the Voucherify Dashboard or an X-APP-Id of a user using the API.
+     * @param string|null $channelId Unique identifier of the channel which was used by the user performing the redemption rollback. This is either a user ID from the user using the Voucherify Dashboard or an X-APP-Id of a user using the API.
      *
      * @return self
      */
-    public function setChannelId($channel_id)
+    public function setChannelId($channelId)
     {
-        if (is_null($channel_id)) {
-            array_push($this->openAPINullablesSetToNull, 'channel_id');
+        if (is_null($channelId)) {
+            array_push($this->openAPINullablesSetToNull, 'channelId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('channel_id', $nullablesSetToNull);
+            $index = array_search('channelId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['channel_id'] = $channel_id;
+        $this->container['channelId'] = $channelId;
 
         return $this;
     }
 
     /**
-     * Gets channel_type
+     * Gets channelType
      *
      * @return string|null
      */
     public function getChannelType()
     {
-        return $this->container['channel_type'];
+        return $this->container['channelType'];
     }
 
     /**
-     * Sets channel_type
+     * Sets channelType
      *
-     * @param string|null $channel_type The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard and an `API` corresponds to the API.
+     * @param string|null $channelType The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard and an `API` corresponds to the API.
      *
      * @return self
      */
-    public function setChannelType($channel_type)
+    public function setChannelType($channelType)
     {
-        if (is_null($channel_type)) {
-            array_push($this->openAPINullablesSetToNull, 'channel_type');
+        if (is_null($channelType)) {
+            array_push($this->openAPINullablesSetToNull, 'channelType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('channel_type', $nullablesSetToNull);
+            $index = array_search('channelType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getChannelTypeAllowableValues();
-        if (!is_null($channel_type) && !in_array($channel_type, $allowedValues, true)) {
+        if (!is_null($channelType) && !in_array($channelType, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'channel_type', must be one of '%s'",
-                    $channel_type,
+                    "Invalid value '%s' for 'channelType', must be one of '%s'",
+                    $channelType,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['channel_type'] = $channel_type;
+        $this->container['channelType'] = $channelType;
 
         return $this;
     }

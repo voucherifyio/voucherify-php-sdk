@@ -152,18 +152,18 @@ class ValidationRulesApi
      *
      * Create Validation Rules Assignments
      *
-     * @param  string $validation_rule_id Unique validation rule ID. (required)
+     * @param  string $validationRuleId Unique validation rule ID. (required)
      * @param  bool $force If this flag is set to true, the previous assignment with the same data will be deleted and a new one will be added. (optional)
-     * @param  \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody $validation_rules_assignments_create_request_body Specify the resource that you would like to assign the validation rule to. (optional)
+     * @param  \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody $validationRulesAssignmentsCreateRequestBody Specify the resource that you would like to assign the validation rule to. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createValidationRuleAssignment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateResponseBody
      */
-    public function createValidationRuleAssignment($validation_rule_id, $force = null, $validation_rules_assignments_create_request_body = null, string $contentType = self::contentTypes['createValidationRuleAssignment'][0])
+    public function createValidationRuleAssignment($validationRuleId, $force = null, $validationRulesAssignmentsCreateRequestBody = null, string $contentType = self::contentTypes['createValidationRuleAssignment'][0])
     {
-        list($response) = $this->createValidationRuleAssignmentWithHttpInfo($validation_rule_id, $force, $validation_rules_assignments_create_request_body, $contentType);
+        list($response) = $this->createValidationRuleAssignmentWithHttpInfo($validationRuleId, $force, $validationRulesAssignmentsCreateRequestBody, $contentType);
         return $response;
     }
 
@@ -172,18 +172,18 @@ class ValidationRulesApi
      *
      * Create Validation Rules Assignments
      *
-     * @param  string $validation_rule_id Unique validation rule ID. (required)
+     * @param  string $validationRuleId Unique validation rule ID. (required)
      * @param  bool $force If this flag is set to true, the previous assignment with the same data will be deleted and a new one will be added. (optional)
-     * @param  \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody $validation_rules_assignments_create_request_body Specify the resource that you would like to assign the validation rule to. (optional)
+     * @param  \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody $validationRulesAssignmentsCreateRequestBody Specify the resource that you would like to assign the validation rule to. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createValidationRuleAssignment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createValidationRuleAssignmentWithHttpInfo($validation_rule_id, $force = null, $validation_rules_assignments_create_request_body = null, string $contentType = self::contentTypes['createValidationRuleAssignment'][0])
+    public function createValidationRuleAssignmentWithHttpInfo($validationRuleId, $force = null, $validationRulesAssignmentsCreateRequestBody = null, string $contentType = self::contentTypes['createValidationRuleAssignment'][0])
     {
-        $request = $this->createValidationRuleAssignmentRequest($validation_rule_id, $force, $validation_rules_assignments_create_request_body, $contentType);
+        $request = $this->createValidationRuleAssignmentRequest($validationRuleId, $force, $validationRulesAssignmentsCreateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -274,17 +274,17 @@ class ValidationRulesApi
      *
      * Create Validation Rules Assignments
      *
-     * @param  string $validation_rule_id Unique validation rule ID. (required)
+     * @param  string $validationRuleId Unique validation rule ID. (required)
      * @param  bool $force If this flag is set to true, the previous assignment with the same data will be deleted and a new one will be added. (optional)
-     * @param  \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody $validation_rules_assignments_create_request_body Specify the resource that you would like to assign the validation rule to. (optional)
+     * @param  \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody $validationRulesAssignmentsCreateRequestBody Specify the resource that you would like to assign the validation rule to. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createValidationRuleAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createValidationRuleAssignmentAsync($validation_rule_id, $force = null, $validation_rules_assignments_create_request_body = null, string $contentType = self::contentTypes['createValidationRuleAssignment'][0])
+    public function createValidationRuleAssignmentAsync($validationRuleId, $force = null, $validationRulesAssignmentsCreateRequestBody = null, string $contentType = self::contentTypes['createValidationRuleAssignment'][0])
     {
-        return $this->createValidationRuleAssignmentAsyncWithHttpInfo($validation_rule_id, $force, $validation_rules_assignments_create_request_body, $contentType)
+        return $this->createValidationRuleAssignmentAsyncWithHttpInfo($validationRuleId, $force, $validationRulesAssignmentsCreateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -297,18 +297,18 @@ class ValidationRulesApi
      *
      * Create Validation Rules Assignments
      *
-     * @param  string $validation_rule_id Unique validation rule ID. (required)
+     * @param  string $validationRuleId Unique validation rule ID. (required)
      * @param  bool $force If this flag is set to true, the previous assignment with the same data will be deleted and a new one will be added. (optional)
-     * @param  \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody $validation_rules_assignments_create_request_body Specify the resource that you would like to assign the validation rule to. (optional)
+     * @param  \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody $validationRulesAssignmentsCreateRequestBody Specify the resource that you would like to assign the validation rule to. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createValidationRuleAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createValidationRuleAssignmentAsyncWithHttpInfo($validation_rule_id, $force = null, $validation_rules_assignments_create_request_body = null, string $contentType = self::contentTypes['createValidationRuleAssignment'][0])
+    public function createValidationRuleAssignmentAsyncWithHttpInfo($validationRuleId, $force = null, $validationRulesAssignmentsCreateRequestBody = null, string $contentType = self::contentTypes['createValidationRuleAssignment'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ValidationRulesAssignmentsCreateResponseBody';
-        $request = $this->createValidationRuleAssignmentRequest($validation_rule_id, $force, $validation_rules_assignments_create_request_body, $contentType);
+        $request = $this->createValidationRuleAssignmentRequest($validationRuleId, $force, $validationRulesAssignmentsCreateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -349,21 +349,21 @@ class ValidationRulesApi
     /**
      * Create request for operation 'createValidationRuleAssignment'
      *
-     * @param  string $validation_rule_id Unique validation rule ID. (required)
+     * @param  string $validationRuleId Unique validation rule ID. (required)
      * @param  bool $force If this flag is set to true, the previous assignment with the same data will be deleted and a new one will be added. (optional)
-     * @param  \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody $validation_rules_assignments_create_request_body Specify the resource that you would like to assign the validation rule to. (optional)
+     * @param  \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody $validationRulesAssignmentsCreateRequestBody Specify the resource that you would like to assign the validation rule to. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createValidationRuleAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createValidationRuleAssignmentRequest($validation_rule_id, $force = null, $validation_rules_assignments_create_request_body = null, string $contentType = self::contentTypes['createValidationRuleAssignment'][0])
+    public function createValidationRuleAssignmentRequest($validationRuleId, $force = null, $validationRulesAssignmentsCreateRequestBody = null, string $contentType = self::contentTypes['createValidationRuleAssignment'][0])
     {
 
-        // verify the required parameter 'validation_rule_id' is set
-        if ($validation_rule_id === null || (is_array($validation_rule_id) && count($validation_rule_id) === 0)) {
+        // verify the required parameter 'validationRuleId' is set
+        if ($validationRuleId === null || (is_array($validationRuleId) && count($validationRuleId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $validation_rule_id when calling createValidationRuleAssignment'
+                'Missing the required parameter $validationRuleId when calling createValidationRuleAssignment'
             );
         }
 
@@ -389,10 +389,10 @@ class ValidationRulesApi
 
 
         // path params
-        if ($validation_rule_id !== null) {
+        if ($validationRuleId !== null) {
             $resourcePath = str_replace(
                 '{' . 'validationRuleId' . '}',
-                ObjectSerializer::toPathValue($validation_rule_id),
+                ObjectSerializer::toPathValue($validationRuleId),
                 $resourcePath
             );
         }
@@ -405,12 +405,12 @@ class ValidationRulesApi
         );
 
         // for model (json/xml)
-        if (isset($validation_rules_assignments_create_request_body)) {
+        if (isset($validationRulesAssignmentsCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($validation_rules_assignments_create_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($validationRulesAssignmentsCreateRequestBody));
             } else {
-                $httpBody = $validation_rules_assignments_create_request_body;
+                $httpBody = $validationRulesAssignmentsCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -473,16 +473,16 @@ class ValidationRulesApi
      *
      * Create Validation Rules
      *
-     * @param  \OpenAPI\Client\Model\ValidationRulesCreateRequestBody $validation_rules_create_request_body Specify the validation rules parameters. (optional)
+     * @param  \OpenAPI\Client\Model\ValidationRulesCreateRequestBody $validationRulesCreateRequestBody Specify the validation rules parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createValidationRules'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ValidationRulesCreateResponseBody
      */
-    public function createValidationRules($validation_rules_create_request_body = null, string $contentType = self::contentTypes['createValidationRules'][0])
+    public function createValidationRules($validationRulesCreateRequestBody = null, string $contentType = self::contentTypes['createValidationRules'][0])
     {
-        list($response) = $this->createValidationRulesWithHttpInfo($validation_rules_create_request_body, $contentType);
+        list($response) = $this->createValidationRulesWithHttpInfo($validationRulesCreateRequestBody, $contentType);
         return $response;
     }
 
@@ -491,16 +491,16 @@ class ValidationRulesApi
      *
      * Create Validation Rules
      *
-     * @param  \OpenAPI\Client\Model\ValidationRulesCreateRequestBody $validation_rules_create_request_body Specify the validation rules parameters. (optional)
+     * @param  \OpenAPI\Client\Model\ValidationRulesCreateRequestBody $validationRulesCreateRequestBody Specify the validation rules parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createValidationRules'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ValidationRulesCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createValidationRulesWithHttpInfo($validation_rules_create_request_body = null, string $contentType = self::contentTypes['createValidationRules'][0])
+    public function createValidationRulesWithHttpInfo($validationRulesCreateRequestBody = null, string $contentType = self::contentTypes['createValidationRules'][0])
     {
-        $request = $this->createValidationRulesRequest($validation_rules_create_request_body, $contentType);
+        $request = $this->createValidationRulesRequest($validationRulesCreateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -591,15 +591,15 @@ class ValidationRulesApi
      *
      * Create Validation Rules
      *
-     * @param  \OpenAPI\Client\Model\ValidationRulesCreateRequestBody $validation_rules_create_request_body Specify the validation rules parameters. (optional)
+     * @param  \OpenAPI\Client\Model\ValidationRulesCreateRequestBody $validationRulesCreateRequestBody Specify the validation rules parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createValidationRules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createValidationRulesAsync($validation_rules_create_request_body = null, string $contentType = self::contentTypes['createValidationRules'][0])
+    public function createValidationRulesAsync($validationRulesCreateRequestBody = null, string $contentType = self::contentTypes['createValidationRules'][0])
     {
-        return $this->createValidationRulesAsyncWithHttpInfo($validation_rules_create_request_body, $contentType)
+        return $this->createValidationRulesAsyncWithHttpInfo($validationRulesCreateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -612,16 +612,16 @@ class ValidationRulesApi
      *
      * Create Validation Rules
      *
-     * @param  \OpenAPI\Client\Model\ValidationRulesCreateRequestBody $validation_rules_create_request_body Specify the validation rules parameters. (optional)
+     * @param  \OpenAPI\Client\Model\ValidationRulesCreateRequestBody $validationRulesCreateRequestBody Specify the validation rules parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createValidationRules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createValidationRulesAsyncWithHttpInfo($validation_rules_create_request_body = null, string $contentType = self::contentTypes['createValidationRules'][0])
+    public function createValidationRulesAsyncWithHttpInfo($validationRulesCreateRequestBody = null, string $contentType = self::contentTypes['createValidationRules'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ValidationRulesCreateResponseBody';
-        $request = $this->createValidationRulesRequest($validation_rules_create_request_body, $contentType);
+        $request = $this->createValidationRulesRequest($validationRulesCreateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -662,13 +662,13 @@ class ValidationRulesApi
     /**
      * Create request for operation 'createValidationRules'
      *
-     * @param  \OpenAPI\Client\Model\ValidationRulesCreateRequestBody $validation_rules_create_request_body Specify the validation rules parameters. (optional)
+     * @param  \OpenAPI\Client\Model\ValidationRulesCreateRequestBody $validationRulesCreateRequestBody Specify the validation rules parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createValidationRules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createValidationRulesRequest($validation_rules_create_request_body = null, string $contentType = self::contentTypes['createValidationRules'][0])
+    public function createValidationRulesRequest($validationRulesCreateRequestBody = null, string $contentType = self::contentTypes['createValidationRules'][0])
     {
 
 
@@ -691,12 +691,12 @@ class ValidationRulesApi
         );
 
         // for model (json/xml)
-        if (isset($validation_rules_create_request_body)) {
+        if (isset($validationRulesCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($validation_rules_create_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($validationRulesCreateRequestBody));
             } else {
-                $httpBody = $validation_rules_create_request_body;
+                $httpBody = $validationRulesCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -759,17 +759,17 @@ class ValidationRulesApi
      *
      * Delete Validation Rule Assignment
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
-     * @param  string $assignment_id A unique validation rule assignment ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
+     * @param  string $assignmentId A unique validation rule assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteValidationRuleAssignment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteValidationRuleAssignment($validation_rule_id, $assignment_id, string $contentType = self::contentTypes['deleteValidationRuleAssignment'][0])
+    public function deleteValidationRuleAssignment($validationRuleId, $assignmentId, string $contentType = self::contentTypes['deleteValidationRuleAssignment'][0])
     {
-        $this->deleteValidationRuleAssignmentWithHttpInfo($validation_rule_id, $assignment_id, $contentType);
+        $this->deleteValidationRuleAssignmentWithHttpInfo($validationRuleId, $assignmentId, $contentType);
     }
 
     /**
@@ -777,17 +777,17 @@ class ValidationRulesApi
      *
      * Delete Validation Rule Assignment
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
-     * @param  string $assignment_id A unique validation rule assignment ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
+     * @param  string $assignmentId A unique validation rule assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteValidationRuleAssignment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteValidationRuleAssignmentWithHttpInfo($validation_rule_id, $assignment_id, string $contentType = self::contentTypes['deleteValidationRuleAssignment'][0])
+    public function deleteValidationRuleAssignmentWithHttpInfo($validationRuleId, $assignmentId, string $contentType = self::contentTypes['deleteValidationRuleAssignment'][0])
     {
-        $request = $this->deleteValidationRuleAssignmentRequest($validation_rule_id, $assignment_id, $contentType);
+        $request = $this->deleteValidationRuleAssignmentRequest($validationRuleId, $assignmentId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -838,16 +838,16 @@ class ValidationRulesApi
      *
      * Delete Validation Rule Assignment
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
-     * @param  string $assignment_id A unique validation rule assignment ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
+     * @param  string $assignmentId A unique validation rule assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteValidationRuleAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteValidationRuleAssignmentAsync($validation_rule_id, $assignment_id, string $contentType = self::contentTypes['deleteValidationRuleAssignment'][0])
+    public function deleteValidationRuleAssignmentAsync($validationRuleId, $assignmentId, string $contentType = self::contentTypes['deleteValidationRuleAssignment'][0])
     {
-        return $this->deleteValidationRuleAssignmentAsyncWithHttpInfo($validation_rule_id, $assignment_id, $contentType)
+        return $this->deleteValidationRuleAssignmentAsyncWithHttpInfo($validationRuleId, $assignmentId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -860,17 +860,17 @@ class ValidationRulesApi
      *
      * Delete Validation Rule Assignment
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
-     * @param  string $assignment_id A unique validation rule assignment ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
+     * @param  string $assignmentId A unique validation rule assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteValidationRuleAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteValidationRuleAssignmentAsyncWithHttpInfo($validation_rule_id, $assignment_id, string $contentType = self::contentTypes['deleteValidationRuleAssignment'][0])
+    public function deleteValidationRuleAssignmentAsyncWithHttpInfo($validationRuleId, $assignmentId, string $contentType = self::contentTypes['deleteValidationRuleAssignment'][0])
     {
         $returnType = '';
-        $request = $this->deleteValidationRuleAssignmentRequest($validation_rule_id, $assignment_id, $contentType);
+        $request = $this->deleteValidationRuleAssignmentRequest($validationRuleId, $assignmentId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -898,27 +898,27 @@ class ValidationRulesApi
     /**
      * Create request for operation 'deleteValidationRuleAssignment'
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
-     * @param  string $assignment_id A unique validation rule assignment ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
+     * @param  string $assignmentId A unique validation rule assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteValidationRuleAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteValidationRuleAssignmentRequest($validation_rule_id, $assignment_id, string $contentType = self::contentTypes['deleteValidationRuleAssignment'][0])
+    public function deleteValidationRuleAssignmentRequest($validationRuleId, $assignmentId, string $contentType = self::contentTypes['deleteValidationRuleAssignment'][0])
     {
 
-        // verify the required parameter 'validation_rule_id' is set
-        if ($validation_rule_id === null || (is_array($validation_rule_id) && count($validation_rule_id) === 0)) {
+        // verify the required parameter 'validationRuleId' is set
+        if ($validationRuleId === null || (is_array($validationRuleId) && count($validationRuleId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $validation_rule_id when calling deleteValidationRuleAssignment'
+                'Missing the required parameter $validationRuleId when calling deleteValidationRuleAssignment'
             );
         }
 
-        // verify the required parameter 'assignment_id' is set
-        if ($assignment_id === null || (is_array($assignment_id) && count($assignment_id) === 0)) {
+        // verify the required parameter 'assignmentId' is set
+        if ($assignmentId === null || (is_array($assignmentId) && count($assignmentId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $assignment_id when calling deleteValidationRuleAssignment'
+                'Missing the required parameter $assignmentId when calling deleteValidationRuleAssignment'
             );
         }
 
@@ -933,18 +933,18 @@ class ValidationRulesApi
 
 
         // path params
-        if ($validation_rule_id !== null) {
+        if ($validationRuleId !== null) {
             $resourcePath = str_replace(
                 '{' . 'validationRuleId' . '}',
-                ObjectSerializer::toPathValue($validation_rule_id),
+                ObjectSerializer::toPathValue($validationRuleId),
                 $resourcePath
             );
         }
         // path params
-        if ($assignment_id !== null) {
+        if ($assignmentId !== null) {
             $resourcePath = str_replace(
                 '{' . 'assignmentId' . '}',
-                ObjectSerializer::toPathValue($assignment_id),
+                ObjectSerializer::toPathValue($assignmentId),
                 $resourcePath
             );
         }
@@ -1018,16 +1018,16 @@ class ValidationRulesApi
      *
      * Delete Validation Rule
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteValidationRules'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteValidationRules($validation_rule_id, string $contentType = self::contentTypes['deleteValidationRules'][0])
+    public function deleteValidationRules($validationRuleId, string $contentType = self::contentTypes['deleteValidationRules'][0])
     {
-        $this->deleteValidationRulesWithHttpInfo($validation_rule_id, $contentType);
+        $this->deleteValidationRulesWithHttpInfo($validationRuleId, $contentType);
     }
 
     /**
@@ -1035,16 +1035,16 @@ class ValidationRulesApi
      *
      * Delete Validation Rule
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteValidationRules'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteValidationRulesWithHttpInfo($validation_rule_id, string $contentType = self::contentTypes['deleteValidationRules'][0])
+    public function deleteValidationRulesWithHttpInfo($validationRuleId, string $contentType = self::contentTypes['deleteValidationRules'][0])
     {
-        $request = $this->deleteValidationRulesRequest($validation_rule_id, $contentType);
+        $request = $this->deleteValidationRulesRequest($validationRuleId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1095,15 +1095,15 @@ class ValidationRulesApi
      *
      * Delete Validation Rule
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteValidationRules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteValidationRulesAsync($validation_rule_id, string $contentType = self::contentTypes['deleteValidationRules'][0])
+    public function deleteValidationRulesAsync($validationRuleId, string $contentType = self::contentTypes['deleteValidationRules'][0])
     {
-        return $this->deleteValidationRulesAsyncWithHttpInfo($validation_rule_id, $contentType)
+        return $this->deleteValidationRulesAsyncWithHttpInfo($validationRuleId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1116,16 +1116,16 @@ class ValidationRulesApi
      *
      * Delete Validation Rule
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteValidationRules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteValidationRulesAsyncWithHttpInfo($validation_rule_id, string $contentType = self::contentTypes['deleteValidationRules'][0])
+    public function deleteValidationRulesAsyncWithHttpInfo($validationRuleId, string $contentType = self::contentTypes['deleteValidationRules'][0])
     {
         $returnType = '';
-        $request = $this->deleteValidationRulesRequest($validation_rule_id, $contentType);
+        $request = $this->deleteValidationRulesRequest($validationRuleId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1153,19 +1153,19 @@ class ValidationRulesApi
     /**
      * Create request for operation 'deleteValidationRules'
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteValidationRules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteValidationRulesRequest($validation_rule_id, string $contentType = self::contentTypes['deleteValidationRules'][0])
+    public function deleteValidationRulesRequest($validationRuleId, string $contentType = self::contentTypes['deleteValidationRules'][0])
     {
 
-        // verify the required parameter 'validation_rule_id' is set
-        if ($validation_rule_id === null || (is_array($validation_rule_id) && count($validation_rule_id) === 0)) {
+        // verify the required parameter 'validationRuleId' is set
+        if ($validationRuleId === null || (is_array($validationRuleId) && count($validationRuleId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $validation_rule_id when calling deleteValidationRules'
+                'Missing the required parameter $validationRuleId when calling deleteValidationRules'
             );
         }
 
@@ -1180,10 +1180,10 @@ class ValidationRulesApi
 
 
         // path params
-        if ($validation_rule_id !== null) {
+        if ($validationRuleId !== null) {
             $resourcePath = str_replace(
                 '{' . 'validationRuleId' . '}',
-                ObjectSerializer::toPathValue($validation_rule_id),
+                ObjectSerializer::toPathValue($validationRuleId),
                 $resourcePath
             );
         }
@@ -1257,16 +1257,16 @@ class ValidationRulesApi
      *
      * Get Validation Rule
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getValidationRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ValidationRulesGetResponseBody
      */
-    public function getValidationRule($validation_rule_id, string $contentType = self::contentTypes['getValidationRule'][0])
+    public function getValidationRule($validationRuleId, string $contentType = self::contentTypes['getValidationRule'][0])
     {
-        list($response) = $this->getValidationRuleWithHttpInfo($validation_rule_id, $contentType);
+        list($response) = $this->getValidationRuleWithHttpInfo($validationRuleId, $contentType);
         return $response;
     }
 
@@ -1275,16 +1275,16 @@ class ValidationRulesApi
      *
      * Get Validation Rule
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getValidationRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ValidationRulesGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getValidationRuleWithHttpInfo($validation_rule_id, string $contentType = self::contentTypes['getValidationRule'][0])
+    public function getValidationRuleWithHttpInfo($validationRuleId, string $contentType = self::contentTypes['getValidationRule'][0])
     {
-        $request = $this->getValidationRuleRequest($validation_rule_id, $contentType);
+        $request = $this->getValidationRuleRequest($validationRuleId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1375,15 +1375,15 @@ class ValidationRulesApi
      *
      * Get Validation Rule
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getValidationRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getValidationRuleAsync($validation_rule_id, string $contentType = self::contentTypes['getValidationRule'][0])
+    public function getValidationRuleAsync($validationRuleId, string $contentType = self::contentTypes['getValidationRule'][0])
     {
-        return $this->getValidationRuleAsyncWithHttpInfo($validation_rule_id, $contentType)
+        return $this->getValidationRuleAsyncWithHttpInfo($validationRuleId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1396,16 +1396,16 @@ class ValidationRulesApi
      *
      * Get Validation Rule
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getValidationRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getValidationRuleAsyncWithHttpInfo($validation_rule_id, string $contentType = self::contentTypes['getValidationRule'][0])
+    public function getValidationRuleAsyncWithHttpInfo($validationRuleId, string $contentType = self::contentTypes['getValidationRule'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ValidationRulesGetResponseBody';
-        $request = $this->getValidationRuleRequest($validation_rule_id, $contentType);
+        $request = $this->getValidationRuleRequest($validationRuleId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1446,19 +1446,19 @@ class ValidationRulesApi
     /**
      * Create request for operation 'getValidationRule'
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getValidationRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getValidationRuleRequest($validation_rule_id, string $contentType = self::contentTypes['getValidationRule'][0])
+    public function getValidationRuleRequest($validationRuleId, string $contentType = self::contentTypes['getValidationRule'][0])
     {
 
-        // verify the required parameter 'validation_rule_id' is set
-        if ($validation_rule_id === null || (is_array($validation_rule_id) && count($validation_rule_id) === 0)) {
+        // verify the required parameter 'validationRuleId' is set
+        if ($validationRuleId === null || (is_array($validationRuleId) && count($validationRuleId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $validation_rule_id when calling getValidationRule'
+                'Missing the required parameter $validationRuleId when calling getValidationRule'
             );
         }
 
@@ -1473,10 +1473,10 @@ class ValidationRulesApi
 
 
         // path params
-        if ($validation_rule_id !== null) {
+        if ($validationRuleId !== null) {
             $resourcePath = str_replace(
                 '{' . 'validationRuleId' . '}',
-                ObjectSerializer::toPathValue($validation_rule_id),
+                ObjectSerializer::toPathValue($validationRuleId),
                 $resourcePath
             );
         }
@@ -1550,7 +1550,7 @@ class ValidationRulesApi
      *
      * List Validation Rule Assignments
      *
-     * @param  string $validation_rule_id Unique validation rule ID. (required)
+     * @param  string $validationRuleId Unique validation rule ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListValidationRuleAssignments $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -1560,9 +1560,9 @@ class ValidationRulesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ValidationRulesAssignmentsListResponseBody
      */
-    public function listValidationRuleAssignments($validation_rule_id, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listValidationRuleAssignments'][0])
+    public function listValidationRuleAssignments($validationRuleId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listValidationRuleAssignments'][0])
     {
-        list($response) = $this->listValidationRuleAssignmentsWithHttpInfo($validation_rule_id, $limit, $page, $order, $contentType);
+        list($response) = $this->listValidationRuleAssignmentsWithHttpInfo($validationRuleId, $limit, $page, $order, $contentType);
         return $response;
     }
 
@@ -1571,7 +1571,7 @@ class ValidationRulesApi
      *
      * List Validation Rule Assignments
      *
-     * @param  string $validation_rule_id Unique validation rule ID. (required)
+     * @param  string $validationRuleId Unique validation rule ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListValidationRuleAssignments $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -1581,9 +1581,9 @@ class ValidationRulesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ValidationRulesAssignmentsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listValidationRuleAssignmentsWithHttpInfo($validation_rule_id, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listValidationRuleAssignments'][0])
+    public function listValidationRuleAssignmentsWithHttpInfo($validationRuleId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listValidationRuleAssignments'][0])
     {
-        $request = $this->listValidationRuleAssignmentsRequest($validation_rule_id, $limit, $page, $order, $contentType);
+        $request = $this->listValidationRuleAssignmentsRequest($validationRuleId, $limit, $page, $order, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1674,7 +1674,7 @@ class ValidationRulesApi
      *
      * List Validation Rule Assignments
      *
-     * @param  string $validation_rule_id Unique validation rule ID. (required)
+     * @param  string $validationRuleId Unique validation rule ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListValidationRuleAssignments $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -1683,9 +1683,9 @@ class ValidationRulesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listValidationRuleAssignmentsAsync($validation_rule_id, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listValidationRuleAssignments'][0])
+    public function listValidationRuleAssignmentsAsync($validationRuleId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listValidationRuleAssignments'][0])
     {
-        return $this->listValidationRuleAssignmentsAsyncWithHttpInfo($validation_rule_id, $limit, $page, $order, $contentType)
+        return $this->listValidationRuleAssignmentsAsyncWithHttpInfo($validationRuleId, $limit, $page, $order, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1698,7 +1698,7 @@ class ValidationRulesApi
      *
      * List Validation Rule Assignments
      *
-     * @param  string $validation_rule_id Unique validation rule ID. (required)
+     * @param  string $validationRuleId Unique validation rule ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListValidationRuleAssignments $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -1707,10 +1707,10 @@ class ValidationRulesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listValidationRuleAssignmentsAsyncWithHttpInfo($validation_rule_id, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listValidationRuleAssignments'][0])
+    public function listValidationRuleAssignmentsAsyncWithHttpInfo($validationRuleId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listValidationRuleAssignments'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ValidationRulesAssignmentsListResponseBody';
-        $request = $this->listValidationRuleAssignmentsRequest($validation_rule_id, $limit, $page, $order, $contentType);
+        $request = $this->listValidationRuleAssignmentsRequest($validationRuleId, $limit, $page, $order, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1751,7 +1751,7 @@ class ValidationRulesApi
     /**
      * Create request for operation 'listValidationRuleAssignments'
      *
-     * @param  string $validation_rule_id Unique validation rule ID. (required)
+     * @param  string $validationRuleId Unique validation rule ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListValidationRuleAssignments $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -1760,13 +1760,13 @@ class ValidationRulesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listValidationRuleAssignmentsRequest($validation_rule_id, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listValidationRuleAssignments'][0])
+    public function listValidationRuleAssignmentsRequest($validationRuleId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listValidationRuleAssignments'][0])
     {
 
-        // verify the required parameter 'validation_rule_id' is set
-        if ($validation_rule_id === null || (is_array($validation_rule_id) && count($validation_rule_id) === 0)) {
+        // verify the required parameter 'validationRuleId' is set
+        if ($validationRuleId === null || (is_array($validationRuleId) && count($validationRuleId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $validation_rule_id when calling listValidationRuleAssignments'
+                'Missing the required parameter $validationRuleId when calling listValidationRuleAssignments'
             );
         }
 
@@ -1823,10 +1823,10 @@ class ValidationRulesApi
 
 
         // path params
-        if ($validation_rule_id !== null) {
+        if ($validationRuleId !== null) {
             $resourcePath = str_replace(
                 '{' . 'validationRuleId' . '}',
-                ObjectSerializer::toPathValue($validation_rule_id),
+                ObjectSerializer::toPathValue($validationRuleId),
                 $resourcePath
             );
         }
@@ -1903,17 +1903,17 @@ class ValidationRulesApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListValidationRules $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $start_date Timestamp representing the date and time which results must start on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $startDate Timestamp representing the date and time which results must start on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listValidationRules'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ValidationRulesListResponseBody
      */
-    public function listValidationRules($limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listValidationRules'][0])
+    public function listValidationRules($limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listValidationRules'][0])
     {
-        list($response) = $this->listValidationRulesWithHttpInfo($limit, $page, $order, $start_date, $end_date, $contentType);
+        list($response) = $this->listValidationRulesWithHttpInfo($limit, $page, $order, $startDate, $endDate, $contentType);
         return $response;
     }
 
@@ -1925,17 +1925,17 @@ class ValidationRulesApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListValidationRules $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $start_date Timestamp representing the date and time which results must start on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $startDate Timestamp representing the date and time which results must start on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listValidationRules'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ValidationRulesListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listValidationRulesWithHttpInfo($limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listValidationRules'][0])
+    public function listValidationRulesWithHttpInfo($limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listValidationRules'][0])
     {
-        $request = $this->listValidationRulesRequest($limit, $page, $order, $start_date, $end_date, $contentType);
+        $request = $this->listValidationRulesRequest($limit, $page, $order, $startDate, $endDate, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2029,16 +2029,16 @@ class ValidationRulesApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListValidationRules $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $start_date Timestamp representing the date and time which results must start on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $startDate Timestamp representing the date and time which results must start on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listValidationRules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listValidationRulesAsync($limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listValidationRules'][0])
+    public function listValidationRulesAsync($limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listValidationRules'][0])
     {
-        return $this->listValidationRulesAsyncWithHttpInfo($limit, $page, $order, $start_date, $end_date, $contentType)
+        return $this->listValidationRulesAsyncWithHttpInfo($limit, $page, $order, $startDate, $endDate, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2054,17 +2054,17 @@ class ValidationRulesApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListValidationRules $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $start_date Timestamp representing the date and time which results must start on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $startDate Timestamp representing the date and time which results must start on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listValidationRules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listValidationRulesAsyncWithHttpInfo($limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listValidationRules'][0])
+    public function listValidationRulesAsyncWithHttpInfo($limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listValidationRules'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ValidationRulesListResponseBody';
-        $request = $this->listValidationRulesRequest($limit, $page, $order, $start_date, $end_date, $contentType);
+        $request = $this->listValidationRulesRequest($limit, $page, $order, $startDate, $endDate, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2108,14 +2108,14 @@ class ValidationRulesApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListValidationRules $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $start_date Timestamp representing the date and time which results must start on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $startDate Timestamp representing the date and time which results must start on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listValidationRules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listValidationRulesRequest($limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listValidationRules'][0])
+    public function listValidationRulesRequest($limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listValidationRules'][0])
     {
 
         if ($limit !== null && $limit > 100) {
@@ -2172,7 +2172,7 @@ class ValidationRulesApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $start_date,
+            $startDate,
             'start_date', // param base name
             'string', // openApiType
             'form', // style
@@ -2181,7 +2181,7 @@ class ValidationRulesApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $end_date,
+            $endDate,
             'end_date', // param base name
             'string', // openApiType
             'form', // style
@@ -2260,7 +2260,7 @@ class ValidationRulesApi
      *
      * List Validation Rules&#39; Assignment(s)
      *
-     * @param  string $related_object_id The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution. (optional)
+     * @param  string $relatedObjectId The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution. (optional)
      * @param  string $rule Validation rule ID. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
@@ -2271,9 +2271,9 @@ class ValidationRulesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ValidationRulesAssignmentsListResponseBody
      */
-    public function listValidationRulesAssignments($related_object_id = null, $rule = null, $page = null, $limit = null, $order = null, string $contentType = self::contentTypes['listValidationRulesAssignments'][0])
+    public function listValidationRulesAssignments($relatedObjectId = null, $rule = null, $page = null, $limit = null, $order = null, string $contentType = self::contentTypes['listValidationRulesAssignments'][0])
     {
-        list($response) = $this->listValidationRulesAssignmentsWithHttpInfo($related_object_id, $rule, $page, $limit, $order, $contentType);
+        list($response) = $this->listValidationRulesAssignmentsWithHttpInfo($relatedObjectId, $rule, $page, $limit, $order, $contentType);
         return $response;
     }
 
@@ -2282,7 +2282,7 @@ class ValidationRulesApi
      *
      * List Validation Rules&#39; Assignment(s)
      *
-     * @param  string $related_object_id The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution. (optional)
+     * @param  string $relatedObjectId The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution. (optional)
      * @param  string $rule Validation rule ID. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
@@ -2293,9 +2293,9 @@ class ValidationRulesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ValidationRulesAssignmentsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listValidationRulesAssignmentsWithHttpInfo($related_object_id = null, $rule = null, $page = null, $limit = null, $order = null, string $contentType = self::contentTypes['listValidationRulesAssignments'][0])
+    public function listValidationRulesAssignmentsWithHttpInfo($relatedObjectId = null, $rule = null, $page = null, $limit = null, $order = null, string $contentType = self::contentTypes['listValidationRulesAssignments'][0])
     {
-        $request = $this->listValidationRulesAssignmentsRequest($related_object_id, $rule, $page, $limit, $order, $contentType);
+        $request = $this->listValidationRulesAssignmentsRequest($relatedObjectId, $rule, $page, $limit, $order, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2386,7 +2386,7 @@ class ValidationRulesApi
      *
      * List Validation Rules&#39; Assignment(s)
      *
-     * @param  string $related_object_id The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution. (optional)
+     * @param  string $relatedObjectId The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution. (optional)
      * @param  string $rule Validation rule ID. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
@@ -2396,9 +2396,9 @@ class ValidationRulesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listValidationRulesAssignmentsAsync($related_object_id = null, $rule = null, $page = null, $limit = null, $order = null, string $contentType = self::contentTypes['listValidationRulesAssignments'][0])
+    public function listValidationRulesAssignmentsAsync($relatedObjectId = null, $rule = null, $page = null, $limit = null, $order = null, string $contentType = self::contentTypes['listValidationRulesAssignments'][0])
     {
-        return $this->listValidationRulesAssignmentsAsyncWithHttpInfo($related_object_id, $rule, $page, $limit, $order, $contentType)
+        return $this->listValidationRulesAssignmentsAsyncWithHttpInfo($relatedObjectId, $rule, $page, $limit, $order, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2411,7 +2411,7 @@ class ValidationRulesApi
      *
      * List Validation Rules&#39; Assignment(s)
      *
-     * @param  string $related_object_id The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution. (optional)
+     * @param  string $relatedObjectId The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution. (optional)
      * @param  string $rule Validation rule ID. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
@@ -2421,10 +2421,10 @@ class ValidationRulesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listValidationRulesAssignmentsAsyncWithHttpInfo($related_object_id = null, $rule = null, $page = null, $limit = null, $order = null, string $contentType = self::contentTypes['listValidationRulesAssignments'][0])
+    public function listValidationRulesAssignmentsAsyncWithHttpInfo($relatedObjectId = null, $rule = null, $page = null, $limit = null, $order = null, string $contentType = self::contentTypes['listValidationRulesAssignments'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ValidationRulesAssignmentsListResponseBody';
-        $request = $this->listValidationRulesAssignmentsRequest($related_object_id, $rule, $page, $limit, $order, $contentType);
+        $request = $this->listValidationRulesAssignmentsRequest($relatedObjectId, $rule, $page, $limit, $order, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2465,7 +2465,7 @@ class ValidationRulesApi
     /**
      * Create request for operation 'listValidationRulesAssignments'
      *
-     * @param  string $related_object_id The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution. (optional)
+     * @param  string $relatedObjectId The resource ID to which the validation rule was assigned; this could be, for example, a resource ID of a voucher, campaign, earning rule, reward assignment, promotion tier, or distribution. (optional)
      * @param  string $rule Validation rule ID. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
@@ -2475,7 +2475,7 @@ class ValidationRulesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listValidationRulesAssignmentsRequest($related_object_id = null, $rule = null, $page = null, $limit = null, $order = null, string $contentType = self::contentTypes['listValidationRulesAssignments'][0])
+    public function listValidationRulesAssignmentsRequest($relatedObjectId = null, $rule = null, $page = null, $limit = null, $order = null, string $contentType = self::contentTypes['listValidationRulesAssignments'][0])
     {
 
 
@@ -2505,7 +2505,7 @@ class ValidationRulesApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $related_object_id,
+            $relatedObjectId,
             'related_object_id', // param base name
             'string', // openApiType
             'form', // style
@@ -2620,17 +2620,17 @@ class ValidationRulesApi
      *
      * Update Validation Rule
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
-     * @param  \OpenAPI\Client\Model\ValidationRulesUpdateRequestBody $validation_rules_update_request_body Specify the parameters to be updated. (optional)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
+     * @param  \OpenAPI\Client\Model\ValidationRulesUpdateRequestBody $validationRulesUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateValidationRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ValidationRulesUpdateResponseBody
      */
-    public function updateValidationRule($validation_rule_id, $validation_rules_update_request_body = null, string $contentType = self::contentTypes['updateValidationRule'][0])
+    public function updateValidationRule($validationRuleId, $validationRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateValidationRule'][0])
     {
-        list($response) = $this->updateValidationRuleWithHttpInfo($validation_rule_id, $validation_rules_update_request_body, $contentType);
+        list($response) = $this->updateValidationRuleWithHttpInfo($validationRuleId, $validationRulesUpdateRequestBody, $contentType);
         return $response;
     }
 
@@ -2639,17 +2639,17 @@ class ValidationRulesApi
      *
      * Update Validation Rule
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
-     * @param  \OpenAPI\Client\Model\ValidationRulesUpdateRequestBody $validation_rules_update_request_body Specify the parameters to be updated. (optional)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
+     * @param  \OpenAPI\Client\Model\ValidationRulesUpdateRequestBody $validationRulesUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateValidationRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ValidationRulesUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateValidationRuleWithHttpInfo($validation_rule_id, $validation_rules_update_request_body = null, string $contentType = self::contentTypes['updateValidationRule'][0])
+    public function updateValidationRuleWithHttpInfo($validationRuleId, $validationRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateValidationRule'][0])
     {
-        $request = $this->updateValidationRuleRequest($validation_rule_id, $validation_rules_update_request_body, $contentType);
+        $request = $this->updateValidationRuleRequest($validationRuleId, $validationRulesUpdateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2740,16 +2740,16 @@ class ValidationRulesApi
      *
      * Update Validation Rule
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
-     * @param  \OpenAPI\Client\Model\ValidationRulesUpdateRequestBody $validation_rules_update_request_body Specify the parameters to be updated. (optional)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
+     * @param  \OpenAPI\Client\Model\ValidationRulesUpdateRequestBody $validationRulesUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateValidationRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateValidationRuleAsync($validation_rule_id, $validation_rules_update_request_body = null, string $contentType = self::contentTypes['updateValidationRule'][0])
+    public function updateValidationRuleAsync($validationRuleId, $validationRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateValidationRule'][0])
     {
-        return $this->updateValidationRuleAsyncWithHttpInfo($validation_rule_id, $validation_rules_update_request_body, $contentType)
+        return $this->updateValidationRuleAsyncWithHttpInfo($validationRuleId, $validationRulesUpdateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2762,17 +2762,17 @@ class ValidationRulesApi
      *
      * Update Validation Rule
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
-     * @param  \OpenAPI\Client\Model\ValidationRulesUpdateRequestBody $validation_rules_update_request_body Specify the parameters to be updated. (optional)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
+     * @param  \OpenAPI\Client\Model\ValidationRulesUpdateRequestBody $validationRulesUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateValidationRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateValidationRuleAsyncWithHttpInfo($validation_rule_id, $validation_rules_update_request_body = null, string $contentType = self::contentTypes['updateValidationRule'][0])
+    public function updateValidationRuleAsyncWithHttpInfo($validationRuleId, $validationRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateValidationRule'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ValidationRulesUpdateResponseBody';
-        $request = $this->updateValidationRuleRequest($validation_rule_id, $validation_rules_update_request_body, $contentType);
+        $request = $this->updateValidationRuleRequest($validationRuleId, $validationRulesUpdateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2813,20 +2813,20 @@ class ValidationRulesApi
     /**
      * Create request for operation 'updateValidationRule'
      *
-     * @param  string $validation_rule_id A unique validation rule ID. (required)
-     * @param  \OpenAPI\Client\Model\ValidationRulesUpdateRequestBody $validation_rules_update_request_body Specify the parameters to be updated. (optional)
+     * @param  string $validationRuleId A unique validation rule ID. (required)
+     * @param  \OpenAPI\Client\Model\ValidationRulesUpdateRequestBody $validationRulesUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateValidationRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateValidationRuleRequest($validation_rule_id, $validation_rules_update_request_body = null, string $contentType = self::contentTypes['updateValidationRule'][0])
+    public function updateValidationRuleRequest($validationRuleId, $validationRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateValidationRule'][0])
     {
 
-        // verify the required parameter 'validation_rule_id' is set
-        if ($validation_rule_id === null || (is_array($validation_rule_id) && count($validation_rule_id) === 0)) {
+        // verify the required parameter 'validationRuleId' is set
+        if ($validationRuleId === null || (is_array($validationRuleId) && count($validationRuleId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $validation_rule_id when calling updateValidationRule'
+                'Missing the required parameter $validationRuleId when calling updateValidationRule'
             );
         }
 
@@ -2842,10 +2842,10 @@ class ValidationRulesApi
 
 
         // path params
-        if ($validation_rule_id !== null) {
+        if ($validationRuleId !== null) {
             $resourcePath = str_replace(
                 '{' . 'validationRuleId' . '}',
-                ObjectSerializer::toPathValue($validation_rule_id),
+                ObjectSerializer::toPathValue($validationRuleId),
                 $resourcePath
             );
         }
@@ -2858,12 +2858,12 @@ class ValidationRulesApi
         );
 
         // for model (json/xml)
-        if (isset($validation_rules_update_request_body)) {
+        if (isset($validationRulesUpdateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($validation_rules_update_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($validationRulesUpdateRequestBody));
             } else {
-                $httpBody = $validation_rules_update_request_body;
+                $httpBody = $validationRulesUpdateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

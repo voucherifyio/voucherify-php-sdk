@@ -134,17 +134,17 @@ class PublicationsApi
      *
      * Create Publication
      *
-     * @param  bool $join_once Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
-     * @param  \OpenAPI\Client\Model\PublicationsCreateRequestBody $publications_create_request_body Specify the publication parameters. (optional)
+     * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
+     * @param  \OpenAPI\Client\Model\PublicationsCreateRequestBody $publicationsCreateRequestBody Specify the publication parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPublication'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PublicationsCreateResponseBody
      */
-    public function createPublication($join_once = null, $publications_create_request_body = null, string $contentType = self::contentTypes['createPublication'][0])
+    public function createPublication($joinOnce = null, $publicationsCreateRequestBody = null, string $contentType = self::contentTypes['createPublication'][0])
     {
-        list($response) = $this->createPublicationWithHttpInfo($join_once, $publications_create_request_body, $contentType);
+        list($response) = $this->createPublicationWithHttpInfo($joinOnce, $publicationsCreateRequestBody, $contentType);
         return $response;
     }
 
@@ -153,17 +153,17 @@ class PublicationsApi
      *
      * Create Publication
      *
-     * @param  bool $join_once Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
-     * @param  \OpenAPI\Client\Model\PublicationsCreateRequestBody $publications_create_request_body Specify the publication parameters. (optional)
+     * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
+     * @param  \OpenAPI\Client\Model\PublicationsCreateRequestBody $publicationsCreateRequestBody Specify the publication parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPublication'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PublicationsCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createPublicationWithHttpInfo($join_once = null, $publications_create_request_body = null, string $contentType = self::contentTypes['createPublication'][0])
+    public function createPublicationWithHttpInfo($joinOnce = null, $publicationsCreateRequestBody = null, string $contentType = self::contentTypes['createPublication'][0])
     {
-        $request = $this->createPublicationRequest($join_once, $publications_create_request_body, $contentType);
+        $request = $this->createPublicationRequest($joinOnce, $publicationsCreateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -254,16 +254,16 @@ class PublicationsApi
      *
      * Create Publication
      *
-     * @param  bool $join_once Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
-     * @param  \OpenAPI\Client\Model\PublicationsCreateRequestBody $publications_create_request_body Specify the publication parameters. (optional)
+     * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
+     * @param  \OpenAPI\Client\Model\PublicationsCreateRequestBody $publicationsCreateRequestBody Specify the publication parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPublication'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createPublicationAsync($join_once = null, $publications_create_request_body = null, string $contentType = self::contentTypes['createPublication'][0])
+    public function createPublicationAsync($joinOnce = null, $publicationsCreateRequestBody = null, string $contentType = self::contentTypes['createPublication'][0])
     {
-        return $this->createPublicationAsyncWithHttpInfo($join_once, $publications_create_request_body, $contentType)
+        return $this->createPublicationAsyncWithHttpInfo($joinOnce, $publicationsCreateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -276,17 +276,17 @@ class PublicationsApi
      *
      * Create Publication
      *
-     * @param  bool $join_once Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
-     * @param  \OpenAPI\Client\Model\PublicationsCreateRequestBody $publications_create_request_body Specify the publication parameters. (optional)
+     * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
+     * @param  \OpenAPI\Client\Model\PublicationsCreateRequestBody $publicationsCreateRequestBody Specify the publication parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPublication'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createPublicationAsyncWithHttpInfo($join_once = null, $publications_create_request_body = null, string $contentType = self::contentTypes['createPublication'][0])
+    public function createPublicationAsyncWithHttpInfo($joinOnce = null, $publicationsCreateRequestBody = null, string $contentType = self::contentTypes['createPublication'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PublicationsCreateResponseBody';
-        $request = $this->createPublicationRequest($join_once, $publications_create_request_body, $contentType);
+        $request = $this->createPublicationRequest($joinOnce, $publicationsCreateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -327,14 +327,14 @@ class PublicationsApi
     /**
      * Create request for operation 'createPublication'
      *
-     * @param  bool $join_once Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
-     * @param  \OpenAPI\Client\Model\PublicationsCreateRequestBody $publications_create_request_body Specify the publication parameters. (optional)
+     * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
+     * @param  \OpenAPI\Client\Model\PublicationsCreateRequestBody $publicationsCreateRequestBody Specify the publication parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPublication'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createPublicationRequest($join_once = null, $publications_create_request_body = null, string $contentType = self::contentTypes['createPublication'][0])
+    public function createPublicationRequest($joinOnce = null, $publicationsCreateRequestBody = null, string $contentType = self::contentTypes['createPublication'][0])
     {
 
 
@@ -349,7 +349,7 @@ class PublicationsApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $join_once,
+            $joinOnce,
             'join_once', // param base name
             'boolean', // openApiType
             'form', // style
@@ -367,12 +367,12 @@ class PublicationsApi
         );
 
         // for model (json/xml)
-        if (isset($publications_create_request_body)) {
+        if (isset($publicationsCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($publications_create_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($publicationsCreateRequestBody));
             } else {
-                $httpBody = $publications_create_request_body;
+                $httpBody = $publicationsCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -436,10 +436,10 @@ class PublicationsApi
      * Create Publication
      *
      * @param  Customer $customer Contains information about the customer to whom the publication was directed. (required)
-     * @param  bool $join_once Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
+     * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
      * @param  string $voucher Code of voucher being published. (optional)
      * @param  CreatePublicationCampaign $campaign Create publication with campaign. (optional)
-     * @param  string $source_id The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request. (optional)
+     * @param  string $sourceId The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request. (optional)
      * @param  object $metadata The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPublication1'] to see the possible values for this operation
      *
@@ -447,9 +447,9 @@ class PublicationsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PublicationsCreateResponseBody
      */
-    public function createPublication1($customer, $join_once = null, $voucher = null, $campaign = null, $source_id = null, $metadata = null, string $contentType = self::contentTypes['createPublication1'][0])
+    public function createPublication1($customer, $joinOnce = null, $voucher = null, $campaign = null, $sourceId = null, $metadata = null, string $contentType = self::contentTypes['createPublication1'][0])
     {
-        list($response) = $this->createPublication1WithHttpInfo($customer, $join_once, $voucher, $campaign, $source_id, $metadata, $contentType);
+        list($response) = $this->createPublication1WithHttpInfo($customer, $joinOnce, $voucher, $campaign, $sourceId, $metadata, $contentType);
         return $response;
     }
 
@@ -459,10 +459,10 @@ class PublicationsApi
      * Create Publication
      *
      * @param  Customer $customer Contains information about the customer to whom the publication was directed. (required)
-     * @param  bool $join_once Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
+     * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
      * @param  string $voucher Code of voucher being published. (optional)
      * @param  CreatePublicationCampaign $campaign Create publication with campaign. (optional)
-     * @param  string $source_id The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request. (optional)
+     * @param  string $sourceId The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request. (optional)
      * @param  object $metadata The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPublication1'] to see the possible values for this operation
      *
@@ -470,9 +470,9 @@ class PublicationsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PublicationsCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createPublication1WithHttpInfo($customer, $join_once = null, $voucher = null, $campaign = null, $source_id = null, $metadata = null, string $contentType = self::contentTypes['createPublication1'][0])
+    public function createPublication1WithHttpInfo($customer, $joinOnce = null, $voucher = null, $campaign = null, $sourceId = null, $metadata = null, string $contentType = self::contentTypes['createPublication1'][0])
     {
-        $request = $this->createPublication1Request($customer, $join_once, $voucher, $campaign, $source_id, $metadata, $contentType);
+        $request = $this->createPublication1Request($customer, $joinOnce, $voucher, $campaign, $sourceId, $metadata, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -564,19 +564,19 @@ class PublicationsApi
      * Create Publication
      *
      * @param  Customer $customer Contains information about the customer to whom the publication was directed. (required)
-     * @param  bool $join_once Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
+     * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
      * @param  string $voucher Code of voucher being published. (optional)
      * @param  CreatePublicationCampaign $campaign Create publication with campaign. (optional)
-     * @param  string $source_id The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request. (optional)
+     * @param  string $sourceId The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request. (optional)
      * @param  object $metadata The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPublication1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createPublication1Async($customer, $join_once = null, $voucher = null, $campaign = null, $source_id = null, $metadata = null, string $contentType = self::contentTypes['createPublication1'][0])
+    public function createPublication1Async($customer, $joinOnce = null, $voucher = null, $campaign = null, $sourceId = null, $metadata = null, string $contentType = self::contentTypes['createPublication1'][0])
     {
-        return $this->createPublication1AsyncWithHttpInfo($customer, $join_once, $voucher, $campaign, $source_id, $metadata, $contentType)
+        return $this->createPublication1AsyncWithHttpInfo($customer, $joinOnce, $voucher, $campaign, $sourceId, $metadata, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -590,20 +590,20 @@ class PublicationsApi
      * Create Publication
      *
      * @param  Customer $customer Contains information about the customer to whom the publication was directed. (required)
-     * @param  bool $join_once Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
+     * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
      * @param  string $voucher Code of voucher being published. (optional)
      * @param  CreatePublicationCampaign $campaign Create publication with campaign. (optional)
-     * @param  string $source_id The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request. (optional)
+     * @param  string $sourceId The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request. (optional)
      * @param  object $metadata The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPublication1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createPublication1AsyncWithHttpInfo($customer, $join_once = null, $voucher = null, $campaign = null, $source_id = null, $metadata = null, string $contentType = self::contentTypes['createPublication1'][0])
+    public function createPublication1AsyncWithHttpInfo($customer, $joinOnce = null, $voucher = null, $campaign = null, $sourceId = null, $metadata = null, string $contentType = self::contentTypes['createPublication1'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PublicationsCreateResponseBody';
-        $request = $this->createPublication1Request($customer, $join_once, $voucher, $campaign, $source_id, $metadata, $contentType);
+        $request = $this->createPublication1Request($customer, $joinOnce, $voucher, $campaign, $sourceId, $metadata, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -645,17 +645,17 @@ class PublicationsApi
      * Create request for operation 'createPublication1'
      *
      * @param  Customer $customer Contains information about the customer to whom the publication was directed. (required)
-     * @param  bool $join_once Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
+     * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
      * @param  string $voucher Code of voucher being published. (optional)
      * @param  CreatePublicationCampaign $campaign Create publication with campaign. (optional)
-     * @param  string $source_id The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request. (optional)
+     * @param  string $sourceId The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request. (optional)
      * @param  object $metadata The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPublication1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createPublication1Request($customer, $join_once = null, $voucher = null, $campaign = null, $source_id = null, $metadata = null, string $contentType = self::contentTypes['createPublication1'][0])
+    public function createPublication1Request($customer, $joinOnce = null, $voucher = null, $campaign = null, $sourceId = null, $metadata = null, string $contentType = self::contentTypes['createPublication1'][0])
     {
 
         // verify the required parameter 'customer' is set
@@ -680,7 +680,7 @@ class PublicationsApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $join_once,
+            $joinOnce,
             'join_once', // param base name
             'boolean', // openApiType
             'form', // style
@@ -707,7 +707,7 @@ class PublicationsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $source_id,
+            $sourceId,
             'source_id', // param base name
             'string', // openApiType
             'form', // style
@@ -811,19 +811,19 @@ class PublicationsApi
      * @param  string $customer Filters by a unique customer ID. (optional)
      * @param  string $voucher Filters by a given voucher code. (optional)
      * @param  ParameterResultListPublications $result Filters by a publication result. (optional)
-     * @param  ParameterVoucherTypeListPublications $voucher_type Filters by a voucher type. (optional)
-     * @param  bool $is_referral_code This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
+     * @param  ParameterVoucherTypeListPublications $voucherType Filters by a voucher type. (optional)
+     * @param  bool $isReferralCode This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
      * @param  string $filters Allows for combining the filters mentioned in the endpoint description. (optional)
-     * @param  string $source_id Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
+     * @param  string $sourceId Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPublications'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PublicationsListResponseBody
      */
-    public function listPublications($limit = null, $page = null, $order = null, $campaign = null, $customer = null, $voucher = null, $result = null, $voucher_type = null, $is_referral_code = null, $filters = null, $source_id = null, string $contentType = self::contentTypes['listPublications'][0])
+    public function listPublications($limit = null, $page = null, $order = null, $campaign = null, $customer = null, $voucher = null, $result = null, $voucherType = null, $isReferralCode = null, $filters = null, $sourceId = null, string $contentType = self::contentTypes['listPublications'][0])
     {
-        list($response) = $this->listPublicationsWithHttpInfo($limit, $page, $order, $campaign, $customer, $voucher, $result, $voucher_type, $is_referral_code, $filters, $source_id, $contentType);
+        list($response) = $this->listPublicationsWithHttpInfo($limit, $page, $order, $campaign, $customer, $voucher, $result, $voucherType, $isReferralCode, $filters, $sourceId, $contentType);
         return $response;
     }
 
@@ -839,19 +839,19 @@ class PublicationsApi
      * @param  string $customer Filters by a unique customer ID. (optional)
      * @param  string $voucher Filters by a given voucher code. (optional)
      * @param  ParameterResultListPublications $result Filters by a publication result. (optional)
-     * @param  ParameterVoucherTypeListPublications $voucher_type Filters by a voucher type. (optional)
-     * @param  bool $is_referral_code This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
+     * @param  ParameterVoucherTypeListPublications $voucherType Filters by a voucher type. (optional)
+     * @param  bool $isReferralCode This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
      * @param  string $filters Allows for combining the filters mentioned in the endpoint description. (optional)
-     * @param  string $source_id Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
+     * @param  string $sourceId Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPublications'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PublicationsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listPublicationsWithHttpInfo($limit = null, $page = null, $order = null, $campaign = null, $customer = null, $voucher = null, $result = null, $voucher_type = null, $is_referral_code = null, $filters = null, $source_id = null, string $contentType = self::contentTypes['listPublications'][0])
+    public function listPublicationsWithHttpInfo($limit = null, $page = null, $order = null, $campaign = null, $customer = null, $voucher = null, $result = null, $voucherType = null, $isReferralCode = null, $filters = null, $sourceId = null, string $contentType = self::contentTypes['listPublications'][0])
     {
-        $request = $this->listPublicationsRequest($limit, $page, $order, $campaign, $customer, $voucher, $result, $voucher_type, $is_referral_code, $filters, $source_id, $contentType);
+        $request = $this->listPublicationsRequest($limit, $page, $order, $campaign, $customer, $voucher, $result, $voucherType, $isReferralCode, $filters, $sourceId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -949,18 +949,18 @@ class PublicationsApi
      * @param  string $customer Filters by a unique customer ID. (optional)
      * @param  string $voucher Filters by a given voucher code. (optional)
      * @param  ParameterResultListPublications $result Filters by a publication result. (optional)
-     * @param  ParameterVoucherTypeListPublications $voucher_type Filters by a voucher type. (optional)
-     * @param  bool $is_referral_code This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
+     * @param  ParameterVoucherTypeListPublications $voucherType Filters by a voucher type. (optional)
+     * @param  bool $isReferralCode This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
      * @param  string $filters Allows for combining the filters mentioned in the endpoint description. (optional)
-     * @param  string $source_id Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
+     * @param  string $sourceId Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPublications'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPublicationsAsync($limit = null, $page = null, $order = null, $campaign = null, $customer = null, $voucher = null, $result = null, $voucher_type = null, $is_referral_code = null, $filters = null, $source_id = null, string $contentType = self::contentTypes['listPublications'][0])
+    public function listPublicationsAsync($limit = null, $page = null, $order = null, $campaign = null, $customer = null, $voucher = null, $result = null, $voucherType = null, $isReferralCode = null, $filters = null, $sourceId = null, string $contentType = self::contentTypes['listPublications'][0])
     {
-        return $this->listPublicationsAsyncWithHttpInfo($limit, $page, $order, $campaign, $customer, $voucher, $result, $voucher_type, $is_referral_code, $filters, $source_id, $contentType)
+        return $this->listPublicationsAsyncWithHttpInfo($limit, $page, $order, $campaign, $customer, $voucher, $result, $voucherType, $isReferralCode, $filters, $sourceId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -980,19 +980,19 @@ class PublicationsApi
      * @param  string $customer Filters by a unique customer ID. (optional)
      * @param  string $voucher Filters by a given voucher code. (optional)
      * @param  ParameterResultListPublications $result Filters by a publication result. (optional)
-     * @param  ParameterVoucherTypeListPublications $voucher_type Filters by a voucher type. (optional)
-     * @param  bool $is_referral_code This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
+     * @param  ParameterVoucherTypeListPublications $voucherType Filters by a voucher type. (optional)
+     * @param  bool $isReferralCode This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
      * @param  string $filters Allows for combining the filters mentioned in the endpoint description. (optional)
-     * @param  string $source_id Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
+     * @param  string $sourceId Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPublications'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPublicationsAsyncWithHttpInfo($limit = null, $page = null, $order = null, $campaign = null, $customer = null, $voucher = null, $result = null, $voucher_type = null, $is_referral_code = null, $filters = null, $source_id = null, string $contentType = self::contentTypes['listPublications'][0])
+    public function listPublicationsAsyncWithHttpInfo($limit = null, $page = null, $order = null, $campaign = null, $customer = null, $voucher = null, $result = null, $voucherType = null, $isReferralCode = null, $filters = null, $sourceId = null, string $contentType = self::contentTypes['listPublications'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PublicationsListResponseBody';
-        $request = $this->listPublicationsRequest($limit, $page, $order, $campaign, $customer, $voucher, $result, $voucher_type, $is_referral_code, $filters, $source_id, $contentType);
+        $request = $this->listPublicationsRequest($limit, $page, $order, $campaign, $customer, $voucher, $result, $voucherType, $isReferralCode, $filters, $sourceId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1040,16 +1040,16 @@ class PublicationsApi
      * @param  string $customer Filters by a unique customer ID. (optional)
      * @param  string $voucher Filters by a given voucher code. (optional)
      * @param  ParameterResultListPublications $result Filters by a publication result. (optional)
-     * @param  ParameterVoucherTypeListPublications $voucher_type Filters by a voucher type. (optional)
-     * @param  bool $is_referral_code This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
+     * @param  ParameterVoucherTypeListPublications $voucherType Filters by a voucher type. (optional)
+     * @param  bool $isReferralCode This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
      * @param  string $filters Allows for combining the filters mentioned in the endpoint description. (optional)
-     * @param  string $source_id Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
+     * @param  string $sourceId Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPublications'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listPublicationsRequest($limit = null, $page = null, $order = null, $campaign = null, $customer = null, $voucher = null, $result = null, $voucher_type = null, $is_referral_code = null, $filters = null, $source_id = null, string $contentType = self::contentTypes['listPublications'][0])
+    public function listPublicationsRequest($limit = null, $page = null, $order = null, $campaign = null, $customer = null, $voucher = null, $result = null, $voucherType = null, $isReferralCode = null, $filters = null, $sourceId = null, string $contentType = self::contentTypes['listPublications'][0])
     {
 
         if ($limit !== null && $limit > 100) {
@@ -1148,7 +1148,7 @@ class PublicationsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $voucher_type,
+            $voucherType,
             'voucher_type', // param base name
             'ParameterVoucherTypeListPublications', // openApiType
             'form', // style
@@ -1157,7 +1157,7 @@ class PublicationsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $is_referral_code,
+            $isReferralCode,
             'is_referral_code', // param base name
             'boolean', // openApiType
             'form', // style
@@ -1175,7 +1175,7 @@ class PublicationsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $source_id,
+            $sourceId,
             'source_id', // param base name
             'string', // openApiType
             'form', // style

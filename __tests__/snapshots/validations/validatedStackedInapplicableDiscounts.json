@@ -1,0 +1,72 @@
+{
+  "valid": false,
+  "redeemables": [
+    {
+      "status": "INAPPLICABLE",
+      "id": "khTrGMKa",
+      "object": "voucher",
+      "order": null,
+      "applicable_to": null,
+      "inapplicable_to": null,
+      "result": {
+        "discount": null,
+        "gift": null,
+        "loyalty_card": null,
+        "error": {
+          "code": 400,
+          "key": "order_rules_violated",
+          "message": "order does not match validation rules",
+          "details": "Discount Coupon cannot be redeemed because of violated validation rules: val_acR9Axj21rkX",
+          "request_id": "v-0f268eff5c829ffb2d",
+          "resource_id": null,
+          "resource_type": null
+        },
+        "details": {
+          "key": "order_rules_violated",
+          "message": "order does not match validation rules"
+        }
+      },
+      "metadata": {},
+      "categories": null
+    }
+  ],
+  "skipped_redeemables": null,
+  "inapplicable_redeemables": [
+    {
+      "status": "INAPPLICABLE",
+      "id": "khTrGMKa",
+      "object": "voucher",
+      "result": {
+        "error": {
+          "code": 400,
+          "key": "order_rules_violated",
+          "message": "order does not match validation rules",
+          "details": "Discount Coupon cannot be redeemed because of violated validation rules: val_acR9Axj21rkX",
+          "request_id": "v-0f268eff5c829ffb2d",
+          "resource_id": null,
+          "resource_type": null
+        },
+        "details": {
+          "message": "order does not match validation rules",
+          "key": "order_rules_violated"
+        }
+      },
+      "metadata": {},
+      "categories": null
+    }
+  ],
+  "order": null,
+  "tracking_id": "track_VR7fDQMAljUs6o7No986yA==",
+  "session": null,
+  "stacking_rules": {
+    "redeemables_limit": 30,
+    "applicable_redeemables_limit": 5,
+    "applicable_redeemables_per_category_limit": null,
+    "applicable_exclusive_redeemables_limit": 1,
+    "applicable_exclusive_redeemables_per_category_limit": null,
+    "exclusive_categories": [],
+    "joint_categories": [],
+    "redeemables_application_mode": "ALL",
+    "redeemables_sorting_rule": "REQUESTED_ORDER"
+  }
+}

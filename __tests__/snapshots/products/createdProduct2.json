@@ -1,0 +1,13 @@
+{
+  "id": "prod_0f2670a856803a81fa",
+  "source_id": "EQKK6DQjAY",
+  "name": "oAzru8dkVD",
+  "price": 60000,
+  "attributes": ["color", "memory", "processor"],
+  "metadata": {},
+  "image_url": null,
+  "created_at": "2024-08-02T11:21:47+00:00",
+  "updated_at": null,
+  "object": "product",
+  "skus": null
+}

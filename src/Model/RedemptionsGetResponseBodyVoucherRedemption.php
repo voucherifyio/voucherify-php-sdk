@@ -59,8 +59,8 @@ class RedemptionsGetResponseBodyVoucherRedemption implements ModelInterface, Arr
       */
     protected static $openAPITypes = [
         'quantity' => 'int',
-        'redeemed_quantity' => 'int',
-        'redeemed_points' => 'int',
+        'redeemedQuantity' => 'int',
+        'redeemedPoints' => 'int',
         'object' => 'string',
         'url' => 'string'
     ];
@@ -74,8 +74,8 @@ class RedemptionsGetResponseBodyVoucherRedemption implements ModelInterface, Arr
       */
     protected static $openAPIFormats = [
         'quantity' => null,
-        'redeemed_quantity' => null,
-        'redeemed_points' => null,
+        'redeemedQuantity' => null,
+        'redeemedPoints' => null,
         'object' => null,
         'url' => null
     ];
@@ -87,8 +87,8 @@ class RedemptionsGetResponseBodyVoucherRedemption implements ModelInterface, Arr
       */
     protected static array $openAPINullables = [
         'quantity' => true,
-		'redeemed_quantity' => true,
-		'redeemed_points' => true,
+		'redeemedQuantity' => true,
+		'redeemedPoints' => true,
 		'object' => true,
 		'url' => true
     ];
@@ -180,8 +180,8 @@ class RedemptionsGetResponseBodyVoucherRedemption implements ModelInterface, Arr
      */
     protected static $attributeMap = [
         'quantity' => 'quantity',
-        'redeemed_quantity' => 'redeemed_quantity',
-        'redeemed_points' => 'redeemed_points',
+        'redeemedQuantity' => 'redeemed_quantity',
+        'redeemedPoints' => 'redeemed_points',
         'object' => 'object',
         'url' => 'url'
     ];
@@ -193,8 +193,8 @@ class RedemptionsGetResponseBodyVoucherRedemption implements ModelInterface, Arr
      */
     protected static $setters = [
         'quantity' => 'setQuantity',
-        'redeemed_quantity' => 'setRedeemedQuantity',
-        'redeemed_points' => 'setRedeemedPoints',
+        'redeemedQuantity' => 'setRedeemedQuantity',
+        'redeemedPoints' => 'setRedeemedPoints',
         'object' => 'setObject',
         'url' => 'setUrl'
     ];
@@ -206,8 +206,8 @@ class RedemptionsGetResponseBodyVoucherRedemption implements ModelInterface, Arr
      */
     protected static $getters = [
         'quantity' => 'getQuantity',
-        'redeemed_quantity' => 'getRedeemedQuantity',
-        'redeemed_points' => 'getRedeemedPoints',
+        'redeemedQuantity' => 'getRedeemedQuantity',
+        'redeemedPoints' => 'getRedeemedPoints',
         'object' => 'getObject',
         'url' => 'getUrl'
     ];
@@ -270,8 +270,8 @@ class RedemptionsGetResponseBodyVoucherRedemption implements ModelInterface, Arr
     public function __construct(array $data = null)
     {
         $this->setIfExists('quantity', $data ?? [], null);
-        $this->setIfExists('redeemed_quantity', $data ?? [], null);
-        $this->setIfExists('redeemed_points', $data ?? [], null);
+        $this->setIfExists('redeemedQuantity', $data ?? [], null);
+        $this->setIfExists('redeemedPoints', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'list');
         $this->setIfExists('url', $data ?? [], null);
     }
@@ -353,69 +353,69 @@ class RedemptionsGetResponseBodyVoucherRedemption implements ModelInterface, Arr
     }
 
     /**
-     * Gets redeemed_quantity
+     * Gets redeemedQuantity
      *
      * @return int|null
      */
     public function getRedeemedQuantity()
     {
-        return $this->container['redeemed_quantity'];
+        return $this->container['redeemedQuantity'];
     }
 
     /**
-     * Sets redeemed_quantity
+     * Sets redeemedQuantity
      *
-     * @param int|null $redeemed_quantity How many times a voucher has already been redeemed.
+     * @param int|null $redeemedQuantity How many times a voucher has already been redeemed.
      *
      * @return self
      */
-    public function setRedeemedQuantity($redeemed_quantity)
+    public function setRedeemedQuantity($redeemedQuantity)
     {
-        if (is_null($redeemed_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'redeemed_quantity');
+        if (is_null($redeemedQuantity)) {
+            array_push($this->openAPINullablesSetToNull, 'redeemedQuantity');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('redeemed_quantity', $nullablesSetToNull);
+            $index = array_search('redeemedQuantity', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['redeemed_quantity'] = $redeemed_quantity;
+        $this->container['redeemedQuantity'] = $redeemedQuantity;
 
         return $this;
     }
 
     /**
-     * Gets redeemed_points
+     * Gets redeemedPoints
      *
      * @return int|null
      */
     public function getRedeemedPoints()
     {
-        return $this->container['redeemed_points'];
+        return $this->container['redeemedPoints'];
     }
 
     /**
-     * Sets redeemed_points
+     * Sets redeemedPoints
      *
-     * @param int|null $redeemed_points Total loyalty points redeemed.
+     * @param int|null $redeemedPoints Total loyalty points redeemed.
      *
      * @return self
      */
-    public function setRedeemedPoints($redeemed_points)
+    public function setRedeemedPoints($redeemedPoints)
     {
-        if (is_null($redeemed_points)) {
-            array_push($this->openAPINullablesSetToNull, 'redeemed_points');
+        if (is_null($redeemedPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'redeemedPoints');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('redeemed_points', $nullablesSetToNull);
+            $index = array_search('redeemedPoints', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['redeemed_points'] = $redeemed_points;
+        $this->container['redeemedPoints'] = $redeemedPoints;
 
         return $this;
     }

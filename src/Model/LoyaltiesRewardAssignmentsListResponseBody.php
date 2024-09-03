@@ -60,7 +60,7 @@ class LoyaltiesRewardAssignmentsListResponseBody implements ModelInterface, Arra
       */
     protected static $openAPITypes = [
         'object' => 'string',
-        'data_ref' => 'string',
+        'dataRef' => 'string',
         'data' => '\OpenAPI\Client\Model\RewardAssignment[]',
         'total' => 'int'
     ];
@@ -74,7 +74,7 @@ class LoyaltiesRewardAssignmentsListResponseBody implements ModelInterface, Arra
       */
     protected static $openAPIFormats = [
         'object' => null,
-        'data_ref' => null,
+        'dataRef' => null,
         'data' => null,
         'total' => null
     ];
@@ -86,7 +86,7 @@ class LoyaltiesRewardAssignmentsListResponseBody implements ModelInterface, Arra
       */
     protected static array $openAPINullables = [
         'object' => true,
-		'data_ref' => true,
+		'dataRef' => true,
 		'data' => true,
 		'total' => true
     ];
@@ -178,7 +178,7 @@ class LoyaltiesRewardAssignmentsListResponseBody implements ModelInterface, Arra
      */
     protected static $attributeMap = [
         'object' => 'object',
-        'data_ref' => 'data_ref',
+        'dataRef' => 'data_ref',
         'data' => 'data',
         'total' => 'total'
     ];
@@ -190,7 +190,7 @@ class LoyaltiesRewardAssignmentsListResponseBody implements ModelInterface, Arra
      */
     protected static $setters = [
         'object' => 'setObject',
-        'data_ref' => 'setDataRef',
+        'dataRef' => 'setDataRef',
         'data' => 'setData',
         'total' => 'setTotal'
     ];
@@ -202,7 +202,7 @@ class LoyaltiesRewardAssignmentsListResponseBody implements ModelInterface, Arra
      */
     protected static $getters = [
         'object' => 'getObject',
-        'data_ref' => 'getDataRef',
+        'dataRef' => 'getDataRef',
         'data' => 'getData',
         'total' => 'getTotal'
     ];
@@ -278,7 +278,7 @@ class LoyaltiesRewardAssignmentsListResponseBody implements ModelInterface, Arra
     public function __construct(array $data = null)
     {
         $this->setIfExists('object', $data ?? [], 'list');
-        $this->setIfExists('data_ref', $data ?? [], 'data');
+        $this->setIfExists('dataRef', $data ?? [], 'data');
         $this->setIfExists('data', $data ?? [], null);
         $this->setIfExists('total', $data ?? [], null);
     }
@@ -379,35 +379,35 @@ class LoyaltiesRewardAssignmentsListResponseBody implements ModelInterface, Arra
     }
 
     /**
-     * Gets data_ref
+     * Gets dataRef
      *
      * @return string|null
      */
     public function getDataRef()
     {
-        return $this->container['data_ref'];
+        return $this->container['dataRef'];
     }
 
     /**
-     * Sets data_ref
+     * Sets dataRef
      *
-     * @param string|null $data_ref Identifies the name of the attribute that contains the array of reward assignment objects.
+     * @param string|null $dataRef Identifies the name of the attribute that contains the array of reward assignment objects.
      *
      * @return self
      */
-    public function setDataRef($data_ref)
+    public function setDataRef($dataRef)
     {
-        if (is_null($data_ref)) {
-            array_push($this->openAPINullablesSetToNull, 'data_ref');
+        if (is_null($dataRef)) {
+            array_push($this->openAPINullablesSetToNull, 'dataRef');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('data_ref', $nullablesSetToNull);
+            $index = array_search('dataRef', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['data_ref'] = $data_ref;
+        $this->container['dataRef'] = $dataRef;
 
         return $this;
     }

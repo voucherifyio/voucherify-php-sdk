@@ -140,16 +140,16 @@ class ClientSideApi
      *
      * Check Eligibility (client-side)
      *
-     * @param  \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody $client_qualifications_check_eligibility_request_body Define order and customer context. (optional)
+     * @param  \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody $clientQualificationsCheckEligibilityRequestBody Define order and customer context. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkEligibilityClientSide'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityResponseBody
      */
-    public function checkEligibilityClientSide($client_qualifications_check_eligibility_request_body = null, string $contentType = self::contentTypes['checkEligibilityClientSide'][0])
+    public function checkEligibilityClientSide($clientQualificationsCheckEligibilityRequestBody = null, string $contentType = self::contentTypes['checkEligibilityClientSide'][0])
     {
-        list($response) = $this->checkEligibilityClientSideWithHttpInfo($client_qualifications_check_eligibility_request_body, $contentType);
+        list($response) = $this->checkEligibilityClientSideWithHttpInfo($clientQualificationsCheckEligibilityRequestBody, $contentType);
         return $response;
     }
 
@@ -158,16 +158,16 @@ class ClientSideApi
      *
      * Check Eligibility (client-side)
      *
-     * @param  \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody $client_qualifications_check_eligibility_request_body Define order and customer context. (optional)
+     * @param  \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody $clientQualificationsCheckEligibilityRequestBody Define order and customer context. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkEligibilityClientSide'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function checkEligibilityClientSideWithHttpInfo($client_qualifications_check_eligibility_request_body = null, string $contentType = self::contentTypes['checkEligibilityClientSide'][0])
+    public function checkEligibilityClientSideWithHttpInfo($clientQualificationsCheckEligibilityRequestBody = null, string $contentType = self::contentTypes['checkEligibilityClientSide'][0])
     {
-        $request = $this->checkEligibilityClientSideRequest($client_qualifications_check_eligibility_request_body, $contentType);
+        $request = $this->checkEligibilityClientSideRequest($clientQualificationsCheckEligibilityRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -258,15 +258,15 @@ class ClientSideApi
      *
      * Check Eligibility (client-side)
      *
-     * @param  \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody $client_qualifications_check_eligibility_request_body Define order and customer context. (optional)
+     * @param  \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody $clientQualificationsCheckEligibilityRequestBody Define order and customer context. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkEligibilityClientSide'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function checkEligibilityClientSideAsync($client_qualifications_check_eligibility_request_body = null, string $contentType = self::contentTypes['checkEligibilityClientSide'][0])
+    public function checkEligibilityClientSideAsync($clientQualificationsCheckEligibilityRequestBody = null, string $contentType = self::contentTypes['checkEligibilityClientSide'][0])
     {
-        return $this->checkEligibilityClientSideAsyncWithHttpInfo($client_qualifications_check_eligibility_request_body, $contentType)
+        return $this->checkEligibilityClientSideAsyncWithHttpInfo($clientQualificationsCheckEligibilityRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -279,16 +279,16 @@ class ClientSideApi
      *
      * Check Eligibility (client-side)
      *
-     * @param  \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody $client_qualifications_check_eligibility_request_body Define order and customer context. (optional)
+     * @param  \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody $clientQualificationsCheckEligibilityRequestBody Define order and customer context. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkEligibilityClientSide'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function checkEligibilityClientSideAsyncWithHttpInfo($client_qualifications_check_eligibility_request_body = null, string $contentType = self::contentTypes['checkEligibilityClientSide'][0])
+    public function checkEligibilityClientSideAsyncWithHttpInfo($clientQualificationsCheckEligibilityRequestBody = null, string $contentType = self::contentTypes['checkEligibilityClientSide'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ClientQualificationsCheckEligibilityResponseBody';
-        $request = $this->checkEligibilityClientSideRequest($client_qualifications_check_eligibility_request_body, $contentType);
+        $request = $this->checkEligibilityClientSideRequest($clientQualificationsCheckEligibilityRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -329,13 +329,13 @@ class ClientSideApi
     /**
      * Create request for operation 'checkEligibilityClientSide'
      *
-     * @param  \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody $client_qualifications_check_eligibility_request_body Define order and customer context. (optional)
+     * @param  \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody $clientQualificationsCheckEligibilityRequestBody Define order and customer context. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkEligibilityClientSide'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function checkEligibilityClientSideRequest($client_qualifications_check_eligibility_request_body = null, string $contentType = self::contentTypes['checkEligibilityClientSide'][0])
+    public function checkEligibilityClientSideRequest($clientQualificationsCheckEligibilityRequestBody = null, string $contentType = self::contentTypes['checkEligibilityClientSide'][0])
     {
 
 
@@ -358,12 +358,12 @@ class ClientSideApi
         );
 
         // for model (json/xml)
-        if (isset($client_qualifications_check_eligibility_request_body)) {
+        if (isset($clientQualificationsCheckEligibilityRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($client_qualifications_check_eligibility_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($clientQualificationsCheckEligibilityRequestBody));
             } else {
-                $httpBody = $client_qualifications_check_eligibility_request_body;
+                $httpBody = $clientQualificationsCheckEligibilityRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -427,7 +427,7 @@ class ClientSideApi
      * List Promotion Tiers (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  bool $is_available This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
+     * @param  bool $isAvailable This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListPromotionTiersClientSide $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -437,9 +437,9 @@ class ClientSideApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ClientPromotionsTiersListResponseBody
      */
-    public function listPromotionTiersClientSide($origin, $is_available = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiersClientSide'][0])
+    public function listPromotionTiersClientSide($origin, $isAvailable = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiersClientSide'][0])
     {
-        list($response) = $this->listPromotionTiersClientSideWithHttpInfo($origin, $is_available, $limit, $page, $order, $contentType);
+        list($response) = $this->listPromotionTiersClientSideWithHttpInfo($origin, $isAvailable, $limit, $page, $order, $contentType);
         return $response;
     }
 
@@ -449,7 +449,7 @@ class ClientSideApi
      * List Promotion Tiers (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  bool $is_available This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
+     * @param  bool $isAvailable This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListPromotionTiersClientSide $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -459,9 +459,9 @@ class ClientSideApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ClientPromotionsTiersListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listPromotionTiersClientSideWithHttpInfo($origin, $is_available = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiersClientSide'][0])
+    public function listPromotionTiersClientSideWithHttpInfo($origin, $isAvailable = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiersClientSide'][0])
     {
-        $request = $this->listPromotionTiersClientSideRequest($origin, $is_available, $limit, $page, $order, $contentType);
+        $request = $this->listPromotionTiersClientSideRequest($origin, $isAvailable, $limit, $page, $order, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -553,7 +553,7 @@ class ClientSideApi
      * List Promotion Tiers (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  bool $is_available This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
+     * @param  bool $isAvailable This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListPromotionTiersClientSide $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -562,9 +562,9 @@ class ClientSideApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPromotionTiersClientSideAsync($origin, $is_available = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiersClientSide'][0])
+    public function listPromotionTiersClientSideAsync($origin, $isAvailable = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiersClientSide'][0])
     {
-        return $this->listPromotionTiersClientSideAsyncWithHttpInfo($origin, $is_available, $limit, $page, $order, $contentType)
+        return $this->listPromotionTiersClientSideAsyncWithHttpInfo($origin, $isAvailable, $limit, $page, $order, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -578,7 +578,7 @@ class ClientSideApi
      * List Promotion Tiers (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  bool $is_available This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
+     * @param  bool $isAvailable This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListPromotionTiersClientSide $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -587,10 +587,10 @@ class ClientSideApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPromotionTiersClientSideAsyncWithHttpInfo($origin, $is_available = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiersClientSide'][0])
+    public function listPromotionTiersClientSideAsyncWithHttpInfo($origin, $isAvailable = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiersClientSide'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ClientPromotionsTiersListResponseBody';
-        $request = $this->listPromotionTiersClientSideRequest($origin, $is_available, $limit, $page, $order, $contentType);
+        $request = $this->listPromotionTiersClientSideRequest($origin, $isAvailable, $limit, $page, $order, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -632,7 +632,7 @@ class ClientSideApi
      * Create request for operation 'listPromotionTiersClientSide'
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  bool $is_available This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
+     * @param  bool $isAvailable This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListPromotionTiersClientSide $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -641,7 +641,7 @@ class ClientSideApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listPromotionTiersClientSideRequest($origin, $is_available = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiersClientSide'][0])
+    public function listPromotionTiersClientSideRequest($origin, $isAvailable = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiersClientSide'][0])
     {
 
         // verify the required parameter 'origin' is set
@@ -671,7 +671,7 @@ class ClientSideApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $is_available,
+            $isAvailable,
             'is_available', // param base name
             'boolean', // openApiType
             'form', // style
@@ -782,16 +782,16 @@ class ClientSideApi
      * Redeem Stackable Discounts (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientRedemptionsRedeemRequestBody $client_redemptions_redeem_request_body client_redemptions_redeem_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ClientRedemptionsRedeemRequestBody $clientRedemptionsRedeemRequestBody clientRedemptionsRedeemRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemStackedDiscountsClientSide'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ClientRedemptionsRedeemResponseBody
      */
-    public function redeemStackedDiscountsClientSide($origin, $client_redemptions_redeem_request_body = null, string $contentType = self::contentTypes['redeemStackedDiscountsClientSide'][0])
+    public function redeemStackedDiscountsClientSide($origin, $clientRedemptionsRedeemRequestBody = null, string $contentType = self::contentTypes['redeemStackedDiscountsClientSide'][0])
     {
-        list($response) = $this->redeemStackedDiscountsClientSideWithHttpInfo($origin, $client_redemptions_redeem_request_body, $contentType);
+        list($response) = $this->redeemStackedDiscountsClientSideWithHttpInfo($origin, $clientRedemptionsRedeemRequestBody, $contentType);
         return $response;
     }
 
@@ -801,16 +801,16 @@ class ClientSideApi
      * Redeem Stackable Discounts (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientRedemptionsRedeemRequestBody $client_redemptions_redeem_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ClientRedemptionsRedeemRequestBody $clientRedemptionsRedeemRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemStackedDiscountsClientSide'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ClientRedemptionsRedeemResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function redeemStackedDiscountsClientSideWithHttpInfo($origin, $client_redemptions_redeem_request_body = null, string $contentType = self::contentTypes['redeemStackedDiscountsClientSide'][0])
+    public function redeemStackedDiscountsClientSideWithHttpInfo($origin, $clientRedemptionsRedeemRequestBody = null, string $contentType = self::contentTypes['redeemStackedDiscountsClientSide'][0])
     {
-        $request = $this->redeemStackedDiscountsClientSideRequest($origin, $client_redemptions_redeem_request_body, $contentType);
+        $request = $this->redeemStackedDiscountsClientSideRequest($origin, $clientRedemptionsRedeemRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -902,15 +902,15 @@ class ClientSideApi
      * Redeem Stackable Discounts (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientRedemptionsRedeemRequestBody $client_redemptions_redeem_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ClientRedemptionsRedeemRequestBody $clientRedemptionsRedeemRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemStackedDiscountsClientSide'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function redeemStackedDiscountsClientSideAsync($origin, $client_redemptions_redeem_request_body = null, string $contentType = self::contentTypes['redeemStackedDiscountsClientSide'][0])
+    public function redeemStackedDiscountsClientSideAsync($origin, $clientRedemptionsRedeemRequestBody = null, string $contentType = self::contentTypes['redeemStackedDiscountsClientSide'][0])
     {
-        return $this->redeemStackedDiscountsClientSideAsyncWithHttpInfo($origin, $client_redemptions_redeem_request_body, $contentType)
+        return $this->redeemStackedDiscountsClientSideAsyncWithHttpInfo($origin, $clientRedemptionsRedeemRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -924,16 +924,16 @@ class ClientSideApi
      * Redeem Stackable Discounts (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientRedemptionsRedeemRequestBody $client_redemptions_redeem_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ClientRedemptionsRedeemRequestBody $clientRedemptionsRedeemRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemStackedDiscountsClientSide'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function redeemStackedDiscountsClientSideAsyncWithHttpInfo($origin, $client_redemptions_redeem_request_body = null, string $contentType = self::contentTypes['redeemStackedDiscountsClientSide'][0])
+    public function redeemStackedDiscountsClientSideAsyncWithHttpInfo($origin, $clientRedemptionsRedeemRequestBody = null, string $contentType = self::contentTypes['redeemStackedDiscountsClientSide'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ClientRedemptionsRedeemResponseBody';
-        $request = $this->redeemStackedDiscountsClientSideRequest($origin, $client_redemptions_redeem_request_body, $contentType);
+        $request = $this->redeemStackedDiscountsClientSideRequest($origin, $clientRedemptionsRedeemRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -975,13 +975,13 @@ class ClientSideApi
      * Create request for operation 'redeemStackedDiscountsClientSide'
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientRedemptionsRedeemRequestBody $client_redemptions_redeem_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ClientRedemptionsRedeemRequestBody $clientRedemptionsRedeemRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemStackedDiscountsClientSide'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function redeemStackedDiscountsClientSideRequest($origin, $client_redemptions_redeem_request_body = null, string $contentType = self::contentTypes['redeemStackedDiscountsClientSide'][0])
+    public function redeemStackedDiscountsClientSideRequest($origin, $clientRedemptionsRedeemRequestBody = null, string $contentType = self::contentTypes['redeemStackedDiscountsClientSide'][0])
     {
 
         // verify the required parameter 'origin' is set
@@ -1015,12 +1015,12 @@ class ClientSideApi
         );
 
         // for model (json/xml)
-        if (isset($client_redemptions_redeem_request_body)) {
+        if (isset($clientRedemptionsRedeemRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($client_redemptions_redeem_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($clientRedemptionsRedeemRequestBody));
             } else {
-                $httpBody = $client_redemptions_redeem_request_body;
+                $httpBody = $clientRedemptionsRedeemRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1084,16 +1084,16 @@ class ClientSideApi
      * Track Custom Event (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientEventsCreateRequestBody $client_events_create_request_body Specify the details of the custom event. (optional)
+     * @param  \OpenAPI\Client\Model\ClientEventsCreateRequestBody $clientEventsCreateRequestBody Specify the details of the custom event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['trackCustomEventClientSide'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ClientEventsCreateResponseBody
      */
-    public function trackCustomEventClientSide($origin, $client_events_create_request_body = null, string $contentType = self::contentTypes['trackCustomEventClientSide'][0])
+    public function trackCustomEventClientSide($origin, $clientEventsCreateRequestBody = null, string $contentType = self::contentTypes['trackCustomEventClientSide'][0])
     {
-        list($response) = $this->trackCustomEventClientSideWithHttpInfo($origin, $client_events_create_request_body, $contentType);
+        list($response) = $this->trackCustomEventClientSideWithHttpInfo($origin, $clientEventsCreateRequestBody, $contentType);
         return $response;
     }
 
@@ -1103,16 +1103,16 @@ class ClientSideApi
      * Track Custom Event (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientEventsCreateRequestBody $client_events_create_request_body Specify the details of the custom event. (optional)
+     * @param  \OpenAPI\Client\Model\ClientEventsCreateRequestBody $clientEventsCreateRequestBody Specify the details of the custom event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['trackCustomEventClientSide'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ClientEventsCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function trackCustomEventClientSideWithHttpInfo($origin, $client_events_create_request_body = null, string $contentType = self::contentTypes['trackCustomEventClientSide'][0])
+    public function trackCustomEventClientSideWithHttpInfo($origin, $clientEventsCreateRequestBody = null, string $contentType = self::contentTypes['trackCustomEventClientSide'][0])
     {
-        $request = $this->trackCustomEventClientSideRequest($origin, $client_events_create_request_body, $contentType);
+        $request = $this->trackCustomEventClientSideRequest($origin, $clientEventsCreateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1204,15 +1204,15 @@ class ClientSideApi
      * Track Custom Event (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientEventsCreateRequestBody $client_events_create_request_body Specify the details of the custom event. (optional)
+     * @param  \OpenAPI\Client\Model\ClientEventsCreateRequestBody $clientEventsCreateRequestBody Specify the details of the custom event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['trackCustomEventClientSide'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function trackCustomEventClientSideAsync($origin, $client_events_create_request_body = null, string $contentType = self::contentTypes['trackCustomEventClientSide'][0])
+    public function trackCustomEventClientSideAsync($origin, $clientEventsCreateRequestBody = null, string $contentType = self::contentTypes['trackCustomEventClientSide'][0])
     {
-        return $this->trackCustomEventClientSideAsyncWithHttpInfo($origin, $client_events_create_request_body, $contentType)
+        return $this->trackCustomEventClientSideAsyncWithHttpInfo($origin, $clientEventsCreateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1226,16 +1226,16 @@ class ClientSideApi
      * Track Custom Event (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientEventsCreateRequestBody $client_events_create_request_body Specify the details of the custom event. (optional)
+     * @param  \OpenAPI\Client\Model\ClientEventsCreateRequestBody $clientEventsCreateRequestBody Specify the details of the custom event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['trackCustomEventClientSide'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function trackCustomEventClientSideAsyncWithHttpInfo($origin, $client_events_create_request_body = null, string $contentType = self::contentTypes['trackCustomEventClientSide'][0])
+    public function trackCustomEventClientSideAsyncWithHttpInfo($origin, $clientEventsCreateRequestBody = null, string $contentType = self::contentTypes['trackCustomEventClientSide'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ClientEventsCreateResponseBody';
-        $request = $this->trackCustomEventClientSideRequest($origin, $client_events_create_request_body, $contentType);
+        $request = $this->trackCustomEventClientSideRequest($origin, $clientEventsCreateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1277,13 +1277,13 @@ class ClientSideApi
      * Create request for operation 'trackCustomEventClientSide'
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientEventsCreateRequestBody $client_events_create_request_body Specify the details of the custom event. (optional)
+     * @param  \OpenAPI\Client\Model\ClientEventsCreateRequestBody $clientEventsCreateRequestBody Specify the details of the custom event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['trackCustomEventClientSide'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function trackCustomEventClientSideRequest($origin, $client_events_create_request_body = null, string $contentType = self::contentTypes['trackCustomEventClientSide'][0])
+    public function trackCustomEventClientSideRequest($origin, $clientEventsCreateRequestBody = null, string $contentType = self::contentTypes['trackCustomEventClientSide'][0])
     {
 
         // verify the required parameter 'origin' is set
@@ -1317,12 +1317,12 @@ class ClientSideApi
         );
 
         // for model (json/xml)
-        if (isset($client_events_create_request_body)) {
+        if (isset($clientEventsCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($client_events_create_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($clientEventsCreateRequestBody));
             } else {
-                $httpBody = $client_events_create_request_body;
+                $httpBody = $clientEventsCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1386,16 +1386,16 @@ class ClientSideApi
      * Validate Stackable Discounts (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientValidationsValidateRequestBody $client_validations_validate_request_body client_validations_validate_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ClientValidationsValidateRequestBody $clientValidationsValidateRequestBody clientValidationsValidateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateStackedDiscountsClientSide'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ClientValidationsValidateResponseBody
      */
-    public function validateStackedDiscountsClientSide($origin, $client_validations_validate_request_body = null, string $contentType = self::contentTypes['validateStackedDiscountsClientSide'][0])
+    public function validateStackedDiscountsClientSide($origin, $clientValidationsValidateRequestBody = null, string $contentType = self::contentTypes['validateStackedDiscountsClientSide'][0])
     {
-        list($response) = $this->validateStackedDiscountsClientSideWithHttpInfo($origin, $client_validations_validate_request_body, $contentType);
+        list($response) = $this->validateStackedDiscountsClientSideWithHttpInfo($origin, $clientValidationsValidateRequestBody, $contentType);
         return $response;
     }
 
@@ -1405,16 +1405,16 @@ class ClientSideApi
      * Validate Stackable Discounts (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientValidationsValidateRequestBody $client_validations_validate_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ClientValidationsValidateRequestBody $clientValidationsValidateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateStackedDiscountsClientSide'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ClientValidationsValidateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function validateStackedDiscountsClientSideWithHttpInfo($origin, $client_validations_validate_request_body = null, string $contentType = self::contentTypes['validateStackedDiscountsClientSide'][0])
+    public function validateStackedDiscountsClientSideWithHttpInfo($origin, $clientValidationsValidateRequestBody = null, string $contentType = self::contentTypes['validateStackedDiscountsClientSide'][0])
     {
-        $request = $this->validateStackedDiscountsClientSideRequest($origin, $client_validations_validate_request_body, $contentType);
+        $request = $this->validateStackedDiscountsClientSideRequest($origin, $clientValidationsValidateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1506,15 +1506,15 @@ class ClientSideApi
      * Validate Stackable Discounts (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientValidationsValidateRequestBody $client_validations_validate_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ClientValidationsValidateRequestBody $clientValidationsValidateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateStackedDiscountsClientSide'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function validateStackedDiscountsClientSideAsync($origin, $client_validations_validate_request_body = null, string $contentType = self::contentTypes['validateStackedDiscountsClientSide'][0])
+    public function validateStackedDiscountsClientSideAsync($origin, $clientValidationsValidateRequestBody = null, string $contentType = self::contentTypes['validateStackedDiscountsClientSide'][0])
     {
-        return $this->validateStackedDiscountsClientSideAsyncWithHttpInfo($origin, $client_validations_validate_request_body, $contentType)
+        return $this->validateStackedDiscountsClientSideAsyncWithHttpInfo($origin, $clientValidationsValidateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1528,16 +1528,16 @@ class ClientSideApi
      * Validate Stackable Discounts (client-side)
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientValidationsValidateRequestBody $client_validations_validate_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ClientValidationsValidateRequestBody $clientValidationsValidateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateStackedDiscountsClientSide'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function validateStackedDiscountsClientSideAsyncWithHttpInfo($origin, $client_validations_validate_request_body = null, string $contentType = self::contentTypes['validateStackedDiscountsClientSide'][0])
+    public function validateStackedDiscountsClientSideAsyncWithHttpInfo($origin, $clientValidationsValidateRequestBody = null, string $contentType = self::contentTypes['validateStackedDiscountsClientSide'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ClientValidationsValidateResponseBody';
-        $request = $this->validateStackedDiscountsClientSideRequest($origin, $client_validations_validate_request_body, $contentType);
+        $request = $this->validateStackedDiscountsClientSideRequest($origin, $clientValidationsValidateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1579,13 +1579,13 @@ class ClientSideApi
      * Create request for operation 'validateStackedDiscountsClientSide'
      *
      * @param  string $origin Indicates the origin (scheme, hostname, and port). (required)
-     * @param  \OpenAPI\Client\Model\ClientValidationsValidateRequestBody $client_validations_validate_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ClientValidationsValidateRequestBody $clientValidationsValidateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateStackedDiscountsClientSide'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function validateStackedDiscountsClientSideRequest($origin, $client_validations_validate_request_body = null, string $contentType = self::contentTypes['validateStackedDiscountsClientSide'][0])
+    public function validateStackedDiscountsClientSideRequest($origin, $clientValidationsValidateRequestBody = null, string $contentType = self::contentTypes['validateStackedDiscountsClientSide'][0])
     {
 
         // verify the required parameter 'origin' is set
@@ -1619,12 +1619,12 @@ class ClientSideApi
         );
 
         // for model (json/xml)
-        if (isset($client_validations_validate_request_body)) {
+        if (isset($clientValidationsValidateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($client_validations_validate_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($clientValidationsValidateRequestBody));
             } else {
-                $httpBody = $client_validations_validate_request_body;
+                $httpBody = $clientValidationsValidateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

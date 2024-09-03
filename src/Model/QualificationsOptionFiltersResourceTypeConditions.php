@@ -60,9 +60,9 @@ class QualificationsOptionFiltersResourceTypeConditions implements ModelInterfac
       */
     protected static $openAPITypes = [
         'is' => 'string[]',
-        'is_not' => 'string[]',
+        'isNot' => 'string[]',
         'in' => 'string[]',
-        'not_in' => 'string[]'
+        'notIn' => 'string[]'
     ];
 
     /**
@@ -74,9 +74,9 @@ class QualificationsOptionFiltersResourceTypeConditions implements ModelInterfac
       */
     protected static $openAPIFormats = [
         'is' => null,
-        'is_not' => null,
+        'isNot' => null,
         'in' => null,
-        'not_in' => null
+        'notIn' => null
     ];
 
     /**
@@ -86,9 +86,9 @@ class QualificationsOptionFiltersResourceTypeConditions implements ModelInterfac
       */
     protected static array $openAPINullables = [
         'is' => true,
-		'is_not' => true,
+		'isNot' => true,
 		'in' => true,
-		'not_in' => true
+		'notIn' => true
     ];
 
     /**
@@ -178,9 +178,9 @@ class QualificationsOptionFiltersResourceTypeConditions implements ModelInterfac
      */
     protected static $attributeMap = [
         'is' => '$is',
-        'is_not' => '$is_not',
+        'isNot' => '$is_not',
         'in' => '$in',
-        'not_in' => '$not_in'
+        'notIn' => '$not_in'
     ];
 
     /**
@@ -190,9 +190,9 @@ class QualificationsOptionFiltersResourceTypeConditions implements ModelInterfac
      */
     protected static $setters = [
         'is' => 'setIs',
-        'is_not' => 'setIsNot',
+        'isNot' => 'setIsNot',
         'in' => 'setIn',
-        'not_in' => 'setNotIn'
+        'notIn' => 'setNotIn'
     ];
 
     /**
@@ -202,9 +202,9 @@ class QualificationsOptionFiltersResourceTypeConditions implements ModelInterfac
      */
     protected static $getters = [
         'is' => 'getIs',
-        'is_not' => 'getIsNot',
+        'isNot' => 'getIsNot',
         'in' => 'getIn',
-        'not_in' => 'getNotIn'
+        'notIn' => 'getNotIn'
     ];
 
     /**
@@ -333,9 +333,9 @@ class QualificationsOptionFiltersResourceTypeConditions implements ModelInterfac
     public function __construct(array $data = null)
     {
         $this->setIfExists('is', $data ?? [], null);
-        $this->setIfExists('is_not', $data ?? [], null);
+        $this->setIfExists('isNot', $data ?? [], null);
         $this->setIfExists('in', $data ?? [], null);
-        $this->setIfExists('not_in', $data ?? [], null);
+        $this->setIfExists('notIn', $data ?? [], null);
     }
 
     /**
@@ -424,44 +424,44 @@ class QualificationsOptionFiltersResourceTypeConditions implements ModelInterfac
     }
 
     /**
-     * Gets is_not
+     * Gets isNot
      *
      * @return string[]|null
      */
     public function getIsNot()
     {
-        return $this->container['is_not'];
+        return $this->container['isNot'];
     }
 
     /**
-     * Sets is_not
+     * Sets isNot
      *
-     * @param string[]|null $is_not is_not
+     * @param string[]|null $isNot isNot
      *
      * @return self
      */
-    public function setIsNot($is_not)
+    public function setIsNot($isNot)
     {
-        if (is_null($is_not)) {
-            array_push($this->openAPINullablesSetToNull, 'is_not');
+        if (is_null($isNot)) {
+            array_push($this->openAPINullablesSetToNull, 'isNot');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_not', $nullablesSetToNull);
+            $index = array_search('isNot', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getIsNotAllowableValues();
-        if (!is_null($is_not) && array_diff($is_not, $allowedValues)) {
+        if (!is_null($isNot) && array_diff($isNot, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'is_not', must be one of '%s'",
+                    "Invalid value for 'isNot', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['is_not'] = $is_not;
+        $this->container['isNot'] = $isNot;
 
         return $this;
     }
@@ -510,44 +510,44 @@ class QualificationsOptionFiltersResourceTypeConditions implements ModelInterfac
     }
 
     /**
-     * Gets not_in
+     * Gets notIn
      *
      * @return string[]|null
      */
     public function getNotIn()
     {
-        return $this->container['not_in'];
+        return $this->container['notIn'];
     }
 
     /**
-     * Sets not_in
+     * Sets notIn
      *
-     * @param string[]|null $not_in not_in
+     * @param string[]|null $notIn notIn
      *
      * @return self
      */
-    public function setNotIn($not_in)
+    public function setNotIn($notIn)
     {
-        if (is_null($not_in)) {
-            array_push($this->openAPINullablesSetToNull, 'not_in');
+        if (is_null($notIn)) {
+            array_push($this->openAPINullablesSetToNull, 'notIn');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('not_in', $nullablesSetToNull);
+            $index = array_search('notIn', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getNotInAllowableValues();
-        if (!is_null($not_in) && array_diff($not_in, $allowedValues)) {
+        if (!is_null($notIn) && array_diff($notIn, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'not_in', must be one of '%s'",
+                    "Invalid value for 'notIn', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['not_in'] = $not_in;
+        $this->container['notIn'] = $notIn;
 
         return $this;
     }

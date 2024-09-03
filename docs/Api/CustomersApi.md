@@ -22,7 +22,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `createCustomer()`
 
 ```php
-createCustomer($customers_create_request_body): \OpenAPI\Client\Model\CustomersCreateResponseBody
+createCustomer($customersCreateRequestBody): \OpenAPI\Client\Model\CustomersCreateResponseBody
 ```
 
 Create Customer
@@ -53,10 +53,10 @@ $apiInstance = new OpenAPI\Client\Api\CustomersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customers_create_request_body = {"source_id":"source_123","name":"Bob Smith","description":"A frequent customer","email":"bob.smith@email.com","phone":"+1 933 222 3333","address":{"city":"New York","country":"United States","line_1":"123 Main St.","line_2":"APT 3 BLG 4","postal_code":"10001","state":"NY"},"metadata":{"lang":"en","test":true},"birthdate":"2022-01-01"}; // \OpenAPI\Client\Model\CustomersCreateRequestBody | Create a customer with specified parameters.
+$customersCreateRequestBody = {"source_id":"source_123","name":"Bob Smith","description":"A frequent customer","email":"bob.smith@email.com","phone":"+1 933 222 3333","address":{"city":"New York","country":"United States","line_1":"123 Main St.","line_2":"APT 3 BLG 4","postal_code":"10001","state":"NY"},"metadata":{"lang":"en","test":true},"birthdate":"2022-01-01"}; // \OpenAPI\Client\Model\CustomersCreateRequestBody | Create a customer with specified parameters.
 
 try {
-    $result = $apiInstance->createCustomer($customers_create_request_body);
+    $result = $apiInstance->createCustomer($customersCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->createCustomer: ', $e->getMessage(), PHP_EOL;
@@ -67,7 +67,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **customers_create_request_body** | [**\OpenAPI\Client\Model\CustomersCreateRequestBody**](../Model/CustomersCreateRequestBody.md)| Create a customer with specified parameters. | [optional] |
+| **customersCreateRequestBody** | [**\OpenAPI\Client\Model\CustomersCreateRequestBody**](../Model/CustomersCreateRequestBody.md)| Create a customer with specified parameters. | [optional] |
 
 ### Return type
 
@@ -89,7 +89,7 @@ try {
 ## `customerPermanentlyDeletion()`
 
 ```php
-customerPermanentlyDeletion($customer_id): \OpenAPI\Client\Model\CustomersPermanentDeletionCreateResponseBody
+customerPermanentlyDeletion($customerId): \OpenAPI\Client\Model\CustomersPermanentDeletionCreateResponseBody
 ```
 
 Delete Customer Permanently
@@ -120,10 +120,10 @@ $apiInstance = new OpenAPI\Client\Api\CustomersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customer_id = 'customer_id_example'; // string | A Voucherify customers id or source_id.
+$customerId = 'customerId_example'; // string | A Voucherify customers id or source_id.
 
 try {
-    $result = $apiInstance->customerPermanentlyDeletion($customer_id);
+    $result = $apiInstance->customerPermanentlyDeletion($customerId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->customerPermanentlyDeletion: ', $e->getMessage(), PHP_EOL;
@@ -134,7 +134,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **customer_id** | **string**| A Voucherify customers id or source_id. | |
+| **customerId** | **string**| A Voucherify customers id or source_id. | |
 
 ### Return type
 
@@ -156,7 +156,7 @@ try {
 ## `deleteCustomer()`
 
 ```php
-deleteCustomer($customer_id)
+deleteCustomer($customerId)
 ```
 
 Delete Customer
@@ -187,10 +187,10 @@ $apiInstance = new OpenAPI\Client\Api\CustomersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customer_id = 'customer_id_example'; // string | A Voucherify customers id or source_id.
+$customerId = 'customerId_example'; // string | A Voucherify customers id or source_id.
 
 try {
-    $apiInstance->deleteCustomer($customer_id);
+    $apiInstance->deleteCustomer($customerId);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->deleteCustomer: ', $e->getMessage(), PHP_EOL;
 }
@@ -200,7 +200,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **customer_id** | **string**| A Voucherify customers id or source_id. | |
+| **customerId** | **string**| A Voucherify customers id or source_id. | |
 
 ### Return type
 
@@ -222,7 +222,7 @@ void (empty response body)
 ## `getCustomer()`
 
 ```php
-getCustomer($customer_id): \OpenAPI\Client\Model\CustomersGetResponseBody
+getCustomer($customerId): \OpenAPI\Client\Model\CustomersGetResponseBody
 ```
 
 Get Customer
@@ -253,10 +253,10 @@ $apiInstance = new OpenAPI\Client\Api\CustomersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customer_id = 'customer_id_example'; // string | A Voucherify customers id or source_id.
+$customerId = 'customerId_example'; // string | A Voucherify customers id or source_id.
 
 try {
-    $result = $apiInstance->getCustomer($customer_id);
+    $result = $apiInstance->getCustomer($customerId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->getCustomer: ', $e->getMessage(), PHP_EOL;
@@ -267,7 +267,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **customer_id** | **string**| A Voucherify customers id or source_id. | |
+| **customerId** | **string**| A Voucherify customers id or source_id. | |
 
 ### Return type
 
@@ -356,7 +356,7 @@ try {
 ## `listCustomerActivity()`
 
 ```php
-listCustomerActivity($customer_id, $limit, $order, $starting_after_id, $start_date, $end_date, $campaign_id, $campaign_type, $category, $type): \OpenAPI\Client\Model\CustomersActivityListResponseBody
+listCustomerActivity($customerId, $limit, $order, $startingAfterId, $startDate, $endDate, $campaignId, $campaignType, $category, $type): \OpenAPI\Client\Model\CustomersActivityListResponseBody
 ```
 
 List Customer Activity
@@ -387,19 +387,19 @@ $apiInstance = new OpenAPI\Client\Api\CustomersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customer_id = 'customer_id_example'; // string | A Voucherify customers id or source ID of the customer who performed the activities.
+$customerId = 'customerId_example'; // string | A Voucherify customers id or source ID of the customer who performed the activities.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $order = new \OpenAPI\Client\Model\ParameterOrderCreatedAt(); // ParameterOrderCreatedAt | Apply this filter to order the events according the date and time when it was created.
-$starting_after_id = 'starting_after_id_example'; // string | A cursor for pagination. It retrieves the events starting after an event with the given ID.
-$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format.
-$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
-$campaign_id = 'campaign_id_example'; // string | Requests only events related to specific campaign identified by its ID.
-$campaign_type = new \OpenAPI\Client\Model\ParameterCampaignType(); // ParameterCampaignType | Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM.
+$startingAfterId = 'startingAfterId_example'; // string | A cursor for pagination. It retrieves the events starting after an event with the given ID.
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format.
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
+$campaignId = 'campaignId_example'; // string | Requests only events related to specific campaign identified by its ID.
+$campaignType = new \OpenAPI\Client\Model\ParameterCampaignType(); // ParameterCampaignType | Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM.
 $category = new \OpenAPI\Client\Model\ParameterActivityCategory(); // ParameterActivityCategory | Filters activities for actions or effects. Allowed values:  ACTION, EFFECT.
 $type = 'type_example'; // string | Event name of the customer event.
 
 try {
-    $result = $apiInstance->listCustomerActivity($customer_id, $limit, $order, $starting_after_id, $start_date, $end_date, $campaign_id, $campaign_type, $category, $type);
+    $result = $apiInstance->listCustomerActivity($customerId, $limit, $order, $startingAfterId, $startDate, $endDate, $campaignId, $campaignType, $category, $type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->listCustomerActivity: ', $e->getMessage(), PHP_EOL;
@@ -410,14 +410,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **customer_id** | **string**| A Voucherify customers id or source ID of the customer who performed the activities. | |
+| **customerId** | **string**| A Voucherify customers id or source ID of the customer who performed the activities. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **order** | [**ParameterOrderCreatedAt**](../Model/.md)| Apply this filter to order the events according the date and time when it was created. | [optional] |
-| **starting_after_id** | **string**| A cursor for pagination. It retrieves the events starting after an event with the given ID. | [optional] |
-| **start_date** | **\DateTime**| Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. | [optional] |
-| **end_date** | **\DateTime**| Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
-| **campaign_id** | **string**| Requests only events related to specific campaign identified by its ID. | [optional] |
-| **campaign_type** | [**ParameterCampaignType**](../Model/.md)| Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. | [optional] |
+| **startingAfterId** | **string**| A cursor for pagination. It retrieves the events starting after an event with the given ID. | [optional] |
+| **startDate** | **\DateTime**| Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. | [optional] |
+| **endDate** | **\DateTime**| Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
+| **campaignId** | **string**| Requests only events related to specific campaign identified by its ID. | [optional] |
+| **campaignType** | [**ParameterCampaignType**](../Model/.md)| Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. | [optional] |
 | **category** | [**ParameterActivityCategory**](../Model/.md)| Filters activities for actions or effects. Allowed values:  ACTION, EFFECT. | [optional] |
 | **type** | **string**| Event name of the customer event. | [optional] |
 
@@ -441,7 +441,7 @@ try {
 ## `listCustomerRedeemables()`
 
 ```php
-listCustomerRedeemables($customer_id, $limit, $order, $starting_after_id, $filters): \OpenAPI\Client\Model\CustomersRedeemablesListResponseBody
+listCustomerRedeemables($customerId, $limit, $order, $startingAfterId, $filters): \OpenAPI\Client\Model\CustomersRedeemablesListResponseBody
 ```
 
 List Customer's Redeemables
@@ -472,14 +472,14 @@ $apiInstance = new OpenAPI\Client\Api\CustomersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customer_id = 'customer_id_example'; // string | Unique identifier of a customer represented by an internal customer ID or customer source ID.
+$customerId = 'customerId_example'; // string | Unique identifier of a customer represented by an internal customer ID or customer source ID.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $order = new \OpenAPI\Client\Model\ParameterOrderListRedeemables(); // ParameterOrderListRedeemables | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-$starting_after_id = 'starting_after_id_example'; // string | A cursor for pagination. It retrieves the events starting after an event with the given ID.
+$startingAfterId = 'startingAfterId_example'; // string | A cursor for pagination. It retrieves the events starting after an event with the given ID.
 $filters = new \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemables(); // ParameterFiltersListCustomerRedeemables | Filters for listing customer redeemables.
 
 try {
-    $result = $apiInstance->listCustomerRedeemables($customer_id, $limit, $order, $starting_after_id, $filters);
+    $result = $apiInstance->listCustomerRedeemables($customerId, $limit, $order, $startingAfterId, $filters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->listCustomerRedeemables: ', $e->getMessage(), PHP_EOL;
@@ -490,10 +490,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **customer_id** | **string**| Unique identifier of a customer represented by an internal customer ID or customer source ID. | |
+| **customerId** | **string**| Unique identifier of a customer represented by an internal customer ID or customer source ID. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **order** | [**ParameterOrderListRedeemables**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
-| **starting_after_id** | **string**| A cursor for pagination. It retrieves the events starting after an event with the given ID. | [optional] |
+| **startingAfterId** | **string**| A cursor for pagination. It retrieves the events starting after an event with the given ID. | [optional] |
 | **filters** | [**ParameterFiltersListCustomerRedeemables**](../Model/.md)| Filters for listing customer redeemables. | [optional] |
 
 ### Return type
@@ -516,7 +516,7 @@ try {
 ## `listCustomerSegments()`
 
 ```php
-listCustomerSegments($customer_id): \OpenAPI\Client\Model\CustomersSegmentsListResponseBody
+listCustomerSegments($customerId): \OpenAPI\Client\Model\CustomersSegmentsListResponseBody
 ```
 
 List Customer's Segments
@@ -547,10 +547,10 @@ $apiInstance = new OpenAPI\Client\Api\CustomersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customer_id = 'customer_id_example'; // string | Unique identifier of a customer represented by an internal customer ID or customer source ID.
+$customerId = 'customerId_example'; // string | Unique identifier of a customer represented by an internal customer ID or customer source ID.
 
 try {
-    $result = $apiInstance->listCustomerSegments($customer_id);
+    $result = $apiInstance->listCustomerSegments($customerId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->listCustomerSegments: ', $e->getMessage(), PHP_EOL;
@@ -561,7 +561,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **customer_id** | **string**| Unique identifier of a customer represented by an internal customer ID or customer source ID. | |
+| **customerId** | **string**| Unique identifier of a customer represented by an internal customer ID or customer source ID. | |
 
 ### Return type
 
@@ -583,7 +583,7 @@ try {
 ## `listCustomers()`
 
 ```php
-listCustomers($limit, $page, $email, $city, $name, $segment_id, $created_at_before, $created_at_after, $updated_at_before, $updated_at_after, $order, $starting_after): \OpenAPI\Client\Model\CustomersListResponseBody
+listCustomers($limit, $page, $email, $city, $name, $segmentId, $createdAtBefore, $createdAtAfter, $updatedAtBefore, $updatedAtAfter, $order, $startingAfter): \OpenAPI\Client\Model\CustomersListResponseBody
 ```
 
 List Customers
@@ -619,16 +619,16 @@ $page = 56; // int | Which page of results to return. The lowest value is 1.
 $email = 'email_example'; // string | Limit the customers to the ones that have this specific email address.
 $city = 'city_example'; // string | Limit the customers to the ones that are located in the specified city.
 $name = 'name_example'; // string | Filter customers by the name property.
-$segment_id = 'segment_id_example'; // string | Filter customers by the segment id.
-$created_at_before = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter customers by date customer was created.
-$created_at_after = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter customers by date customer was created.
-$updated_at_before = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter customers by date customer was updated last time.
-$updated_at_after = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter customers by date customer was updated last time.
+$segmentId = 'segmentId_example'; // string | Filter customers by the segment id.
+$createdAtBefore = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter customers by date customer was created.
+$createdAtAfter = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter customers by date customer was created.
+$updatedAtBefore = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter customers by date customer was updated last time.
+$updatedAtAfter = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter customers by date customer was updated last time.
 $order = new \OpenAPI\Client\Model\ParameterOrderListCustomers(); // ParameterOrderListCustomers | This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-$starting_after = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list.
+$startingAfter = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list.
 
 try {
-    $result = $apiInstance->listCustomers($limit, $page, $email, $city, $name, $segment_id, $created_at_before, $created_at_after, $updated_at_before, $updated_at_after, $order, $starting_after);
+    $result = $apiInstance->listCustomers($limit, $page, $email, $city, $name, $segmentId, $createdAtBefore, $createdAtAfter, $updatedAtBefore, $updatedAtAfter, $order, $startingAfter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->listCustomers: ', $e->getMessage(), PHP_EOL;
@@ -644,13 +644,13 @@ try {
 | **email** | **string**| Limit the customers to the ones that have this specific email address. | [optional] |
 | **city** | **string**| Limit the customers to the ones that are located in the specified city. | [optional] |
 | **name** | **string**| Filter customers by the name property. | [optional] |
-| **segment_id** | **string**| Filter customers by the segment id. | [optional] |
-| **created_at_before** | **\DateTime**| Filter customers by date customer was created. | [optional] |
-| **created_at_after** | **\DateTime**| Filter customers by date customer was created. | [optional] |
-| **updated_at_before** | **\DateTime**| Filter customers by date customer was updated last time. | [optional] |
-| **updated_at_after** | **\DateTime**| Filter customers by date customer was updated last time. | [optional] |
+| **segmentId** | **string**| Filter customers by the segment id. | [optional] |
+| **createdAtBefore** | **\DateTime**| Filter customers by date customer was created. | [optional] |
+| **createdAtAfter** | **\DateTime**| Filter customers by date customer was created. | [optional] |
+| **updatedAtBefore** | **\DateTime**| Filter customers by date customer was updated last time. | [optional] |
+| **updatedAtAfter** | **\DateTime**| Filter customers by date customer was updated last time. | [optional] |
 | **order** | [**ParameterOrderListCustomers**](../Model/.md)| This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
-| **starting_after** | **\DateTime**| A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. | [optional] |
+| **startingAfter** | **\DateTime**| A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. | [optional] |
 
 ### Return type
 
@@ -672,7 +672,7 @@ try {
 ## `updateCustomer()`
 
 ```php
-updateCustomer($customer_id, $customers_update_request_body): \OpenAPI\Client\Model\CustomersUpdateResponseBody
+updateCustomer($customerId, $customersUpdateRequestBody): \OpenAPI\Client\Model\CustomersUpdateResponseBody
 ```
 
 Update Customer
@@ -703,11 +703,11 @@ $apiInstance = new OpenAPI\Client\Api\CustomersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customer_id = 'customer_id_example'; // string | A Voucherify customers id or source_id.
-$customers_update_request_body = {"name":"Alice McDonald","email":"alice.mdconald@email.com","description":"Updating customer data","phone":"+1 (132) 222-2222","address":{"city":"New York","country":"United States","line_1":"123 Main St.","line_2":"APT 3 BLG 4","postal_code":"10001","state":"NY"},"metadata":{"lang":"en","test":true},"birthdate":"2022-01-01","birthday":"2022-01-02"}; // \OpenAPI\Client\Model\CustomersUpdateRequestBody | Specify the parameters to be updated.
+$customerId = 'customerId_example'; // string | A Voucherify customers id or source_id.
+$customersUpdateRequestBody = {"name":"Alice McDonald","email":"alice.mdconald@email.com","description":"Updating customer data","phone":"+1 (132) 222-2222","address":{"city":"New York","country":"United States","line_1":"123 Main St.","line_2":"APT 3 BLG 4","postal_code":"10001","state":"NY"},"metadata":{"lang":"en","test":true},"birthdate":"2022-01-01","birthday":"2022-01-02"}; // \OpenAPI\Client\Model\CustomersUpdateRequestBody | Specify the parameters to be updated.
 
 try {
-    $result = $apiInstance->updateCustomer($customer_id, $customers_update_request_body);
+    $result = $apiInstance->updateCustomer($customerId, $customersUpdateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->updateCustomer: ', $e->getMessage(), PHP_EOL;
@@ -718,8 +718,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **customer_id** | **string**| A Voucherify customers id or source_id. | |
-| **customers_update_request_body** | [**\OpenAPI\Client\Model\CustomersUpdateRequestBody**](../Model/CustomersUpdateRequestBody.md)| Specify the parameters to be updated. | [optional] |
+| **customerId** | **string**| A Voucherify customers id or source_id. | |
+| **customersUpdateRequestBody** | [**\OpenAPI\Client\Model\CustomersUpdateRequestBody**](../Model/CustomersUpdateRequestBody.md)| Specify the parameters to be updated. | [optional] |
 
 ### Return type
 
@@ -741,7 +741,7 @@ try {
 ## `updateCustomersConsents()`
 
 ```php
-updateCustomersConsents($customer_id, $body)
+updateCustomersConsents($customerId, $body)
 ```
 
 Update Customer's consents [Deprecated]
@@ -772,11 +772,11 @@ $apiInstance = new OpenAPI\Client\Api\CustomersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customer_id = 'customer_id_example'; // string | A Voucherify unique customer identifier or source ID.
+$customerId = 'customerId_example'; // string | A Voucherify unique customer identifier or source ID.
 $body = {"cnst_6jQ5XcUOLnj5L7ImQAdBsJ1I":true,"cnst_VCmucIvAsmDYw2PPAok6bcYy":false}; // object | Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use unsubscribed as a consent identifier and true as its value.   ## Examples  Opt-out from all communication:
 
 try {
-    $apiInstance->updateCustomersConsents($customer_id, $body);
+    $apiInstance->updateCustomersConsents($customerId, $body);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->updateCustomersConsents: ', $e->getMessage(), PHP_EOL;
 }
@@ -786,7 +786,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **customer_id** | **string**| A Voucherify unique customer identifier or source ID. | |
+| **customerId** | **string**| A Voucherify unique customer identifier or source ID. | |
 | **body** | **object**| Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use unsubscribed as a consent identifier and true as its value.   ## Examples  Opt-out from all communication: | [optional] |
 
 ### Return type
@@ -809,7 +809,7 @@ void (empty response body)
 ## `updateCustomersInBulk()`
 
 ```php
-updateCustomersInBulk($customers_update_in_bulk_request_body): \OpenAPI\Client\Model\CustomersUpdateInBulkResponseBody
+updateCustomersInBulk($customersUpdateInBulkRequestBody): \OpenAPI\Client\Model\CustomersUpdateInBulkResponseBody
 ```
 
 Update Customers in Bulk
@@ -840,10 +840,10 @@ $apiInstance = new OpenAPI\Client\Api\CustomersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customers_update_in_bulk_request_body = [{"source_id":"John.Smith@email.com","name":"John Smith","email":"john.smith@email.com","description":"Updating customer data","phone":"+1 (132) 222-2222","address":{"city":"New York","country":"United States","line_1":"123 Main St.","line_2":"APT 3 BLG 4","postal_code":"10001","state":"NY"},"metadata":{"lang":"en","test":true},"birthday":"2022-04-04"},{"source_id":"Jane.Smith@email.com","name":"Jane Smith","email":"Jane.Smith@email.com","description":"Updating customer data","phone":"+1 (132) 222-2222","address":{"city":"New York","country":"United States","line_1":"123 Main St.","line_2":"APT 3 BLG 4","postal_code":"10001","state":"NY"},"metadata":{"lang":"en","test":true},"birthday":"2022-03-03"},{"source_id":"Sally.Smith@email.com","name":"Sally Smith","email":"Sally.Smith@email.com","description":"Updating customer data","phone":"+1 (132) 222-2222","address":{"city":"New York","country":"United States","line_1":"123 Main St.","line_2":"APT 3 BLG 4","postal_code":"10001","state":"NY"},"metadata":{"lang":"en","test":true},"birthdate":"2022-02-02"}]; // \OpenAPI\Client\Model\CustomersUpdateInBulkRequestBody[] | List the customer fields to be updated in each customer object.
+$customersUpdateInBulkRequestBody = [{"source_id":"John.Smith@email.com","name":"John Smith","email":"john.smith@email.com","description":"Updating customer data","phone":"+1 (132) 222-2222","address":{"city":"New York","country":"United States","line_1":"123 Main St.","line_2":"APT 3 BLG 4","postal_code":"10001","state":"NY"},"metadata":{"lang":"en","test":true},"birthday":"2022-04-04"},{"source_id":"Jane.Smith@email.com","name":"Jane Smith","email":"Jane.Smith@email.com","description":"Updating customer data","phone":"+1 (132) 222-2222","address":{"city":"New York","country":"United States","line_1":"123 Main St.","line_2":"APT 3 BLG 4","postal_code":"10001","state":"NY"},"metadata":{"lang":"en","test":true},"birthday":"2022-03-03"},{"source_id":"Sally.Smith@email.com","name":"Sally Smith","email":"Sally.Smith@email.com","description":"Updating customer data","phone":"+1 (132) 222-2222","address":{"city":"New York","country":"United States","line_1":"123 Main St.","line_2":"APT 3 BLG 4","postal_code":"10001","state":"NY"},"metadata":{"lang":"en","test":true},"birthdate":"2022-02-02"}]; // \OpenAPI\Client\Model\CustomersUpdateInBulkRequestBody[] | List the customer fields to be updated in each customer object.
 
 try {
-    $result = $apiInstance->updateCustomersInBulk($customers_update_in_bulk_request_body);
+    $result = $apiInstance->updateCustomersInBulk($customersUpdateInBulkRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->updateCustomersInBulk: ', $e->getMessage(), PHP_EOL;
@@ -854,7 +854,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **customers_update_in_bulk_request_body** | [**\OpenAPI\Client\Model\CustomersUpdateInBulkRequestBody[]**](../Model/CustomersUpdateInBulkRequestBody.md)| List the customer fields to be updated in each customer object. | [optional] |
+| **customersUpdateInBulkRequestBody** | [**\OpenAPI\Client\Model\CustomersUpdateInBulkRequestBody[]**](../Model/CustomersUpdateInBulkRequestBody.md)| List the customer fields to be updated in each customer object. | [optional] |
 
 ### Return type
 
@@ -876,7 +876,7 @@ try {
 ## `updateCustomersMetadataInBulk()`
 
 ```php
-updateCustomersMetadataInBulk($customers_metadata_update_in_bulk_request_body): \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkResponseBody
+updateCustomersMetadataInBulk($customersMetadataUpdateInBulkRequestBody): \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkResponseBody
 ```
 
 Update Customers' Metadata in Bulk
@@ -907,10 +907,10 @@ $apiInstance = new OpenAPI\Client\Api\CustomersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customers_metadata_update_in_bulk_request_body = {"source_ids":["source_123","source_456"],"metadata":{"lang":"en","test":false}}; // \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkRequestBody | List the source_ids of the customers you would like to update with the metadata key/value pairs.
+$customersMetadataUpdateInBulkRequestBody = {"source_ids":["source_123","source_456"],"metadata":{"lang":"en","test":false}}; // \OpenAPI\Client\Model\CustomersMetadataUpdateInBulkRequestBody | List the source_ids of the customers you would like to update with the metadata key/value pairs.
 
 try {
-    $result = $apiInstance->updateCustomersMetadataInBulk($customers_metadata_update_in_bulk_request_body);
+    $result = $apiInstance->updateCustomersMetadataInBulk($customersMetadataUpdateInBulkRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->updateCustomersMetadataInBulk: ', $e->getMessage(), PHP_EOL;
@@ -921,7 +921,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **customers_metadata_update_in_bulk_request_body** | [**\OpenAPI\Client\Model\CustomersMetadataUpdateInBulkRequestBody**](../Model/CustomersMetadataUpdateInBulkRequestBody.md)| List the source_ids of the customers you would like to update with the metadata key/value pairs. | [optional] |
+| **customersMetadataUpdateInBulkRequestBody** | [**\OpenAPI\Client\Model\CustomersMetadataUpdateInBulkRequestBody**](../Model/CustomersMetadataUpdateInBulkRequestBody.md)| List the source_ids of the customers you would like to update with the metadata key/value pairs. | [optional] |
 
 ### Return type
 

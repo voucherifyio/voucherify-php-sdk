@@ -61,7 +61,7 @@ class PromotionsStacksCreateRequestBody implements ModelInterface, ArrayAccess, 
     protected static $openAPITypes = [
         'name' => 'string',
         'tiers' => '\OpenAPI\Client\Model\PromotionsStacksCreateRequestBodyTiers',
-        'category_id' => 'string'
+        'categoryId' => 'string'
     ];
 
     /**
@@ -74,7 +74,7 @@ class PromotionsStacksCreateRequestBody implements ModelInterface, ArrayAccess, 
     protected static $openAPIFormats = [
         'name' => null,
         'tiers' => null,
-        'category_id' => null
+        'categoryId' => null
     ];
 
     /**
@@ -85,7 +85,7 @@ class PromotionsStacksCreateRequestBody implements ModelInterface, ArrayAccess, 
     protected static array $openAPINullables = [
         'name' => true,
 		'tiers' => true,
-		'category_id' => true
+		'categoryId' => true
     ];
 
     /**
@@ -176,7 +176,7 @@ class PromotionsStacksCreateRequestBody implements ModelInterface, ArrayAccess, 
     protected static $attributeMap = [
         'name' => 'name',
         'tiers' => 'tiers',
-        'category_id' => 'category_id'
+        'categoryId' => 'category_id'
     ];
 
     /**
@@ -187,7 +187,7 @@ class PromotionsStacksCreateRequestBody implements ModelInterface, ArrayAccess, 
     protected static $setters = [
         'name' => 'setName',
         'tiers' => 'setTiers',
-        'category_id' => 'setCategoryId'
+        'categoryId' => 'setCategoryId'
     ];
 
     /**
@@ -198,7 +198,7 @@ class PromotionsStacksCreateRequestBody implements ModelInterface, ArrayAccess, 
     protected static $getters = [
         'name' => 'getName',
         'tiers' => 'getTiers',
-        'category_id' => 'getCategoryId'
+        'categoryId' => 'getCategoryId'
     ];
 
     /**
@@ -260,7 +260,7 @@ class PromotionsStacksCreateRequestBody implements ModelInterface, ArrayAccess, 
     {
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('tiers', $data ?? [], null);
-        $this->setIfExists('category_id', $data ?? [], null);
+        $this->setIfExists('categoryId', $data ?? [], null);
     }
 
     /**
@@ -374,35 +374,35 @@ class PromotionsStacksCreateRequestBody implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets category_id
+     * Gets categoryId
      *
      * @return string|null
      */
     public function getCategoryId()
     {
-        return $this->container['category_id'];
+        return $this->container['categoryId'];
     }
 
     /**
-     * Sets category_id
+     * Sets categoryId
      *
-     * @param string|null $category_id Promotion stack category ID.
+     * @param string|null $categoryId Promotion stack category ID.
      *
      * @return self
      */
-    public function setCategoryId($category_id)
+    public function setCategoryId($categoryId)
     {
-        if (is_null($category_id)) {
-            array_push($this->openAPINullablesSetToNull, 'category_id');
+        if (is_null($categoryId)) {
+            array_push($this->openAPINullablesSetToNull, 'categoryId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('category_id', $nullablesSetToNull);
+            $index = array_search('categoryId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['category_id'] = $category_id;
+        $this->container['categoryId'] = $categoryId;
 
         return $this;
     }

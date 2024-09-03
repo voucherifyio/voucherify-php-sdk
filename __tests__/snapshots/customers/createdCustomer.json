@@ -1,0 +1,58 @@
+{
+  "id": "cust_lx90NbayUfXq2HrnU5CS6yyh",
+  "source_id": "3aqjazWlPu",
+  "summary": {
+    "redemptions": {
+      "total_redeemed": 0,
+      "total_failed": 0,
+      "total_succeeded": 0,
+      "total_rolled_back": 0,
+      "total_rollback_failed": 0,
+      "total_rollback_succeeded": 0,
+      "gift": {
+        "redeemed_amount": 0,
+        "amount_to_go": 0
+      },
+      "loyalty_card": {
+        "redeemed_points": 0,
+        "points_to_go": 0
+      }
+    },
+    "orders": {
+      "total_amount": 0,
+      "total_count": 0,
+      "average_amount": 0,
+      "last_order_amount": 0,
+      "last_order_date": null
+    }
+  },
+  "loyalty": {
+    "points": 0,
+    "referred_customers": 0,
+    "campaigns": []
+  },
+  "referrals": {
+    "total": 0,
+    "campaigns": []
+  },
+  "system_metadata": {},
+  "created_at": "2024-08-02T11:41:31+00:00",
+  "updated_at": null,
+  "assets": null,
+  "object": "customer",
+  "name": "John Doe",
+  "description": null,
+  "email": null,
+  "phone": null,
+  "birthday": null,
+  "birthdate": null,
+  "address": {
+    "city": "New York",
+    "state": null,
+    "line_1": "5th Avenue",
+    "line_2": "1/2",
+    "country": "US",
+    "postal_code": "11-111"
+  },
+  "metadata": null
+}

@@ -59,16 +59,16 @@ class ProductCollectionsProductsListResponseBodyDataItem implements ModelInterfa
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'source_id' => 'string',
+        'sourceId' => 'string',
         'name' => 'string',
         'price' => 'int',
         'attributes' => 'string[]',
         'metadata' => 'object',
-        'image_url' => 'string',
-        'created_at' => 'string',
-        'updated_at' => 'string',
+        'imageUrl' => 'string',
+        'createdAt' => 'string',
+        'updatedAt' => 'string',
         'object' => 'string',
-        'product_id' => 'string',
+        'productId' => 'string',
         'sku' => 'string',
         'currency' => 'string',
         'product' => '\OpenAPI\Client\Model\ProductWithoutSkus'
@@ -83,16 +83,16 @@ class ProductCollectionsProductsListResponseBodyDataItem implements ModelInterfa
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'source_id' => null,
+        'sourceId' => null,
         'name' => null,
         'price' => null,
         'attributes' => null,
         'metadata' => null,
-        'image_url' => null,
-        'created_at' => null,
-        'updated_at' => null,
+        'imageUrl' => null,
+        'createdAt' => null,
+        'updatedAt' => null,
         'object' => null,
-        'product_id' => null,
+        'productId' => null,
         'sku' => null,
         'currency' => null,
         'product' => null
@@ -105,16 +105,16 @@ class ProductCollectionsProductsListResponseBodyDataItem implements ModelInterfa
       */
     protected static array $openAPINullables = [
         'id' => false,
-		'source_id' => false,
+		'sourceId' => false,
 		'name' => true,
 		'price' => true,
 		'attributes' => true,
 		'metadata' => false,
-		'image_url' => false,
-		'created_at' => false,
-		'updated_at' => false,
+		'imageUrl' => false,
+		'createdAt' => false,
+		'updatedAt' => false,
 		'object' => false,
-		'product_id' => true,
+		'productId' => true,
 		'sku' => true,
 		'currency' => true,
 		'product' => false
@@ -207,16 +207,16 @@ class ProductCollectionsProductsListResponseBodyDataItem implements ModelInterfa
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'source_id' => 'source_id',
+        'sourceId' => 'source_id',
         'name' => 'name',
         'price' => 'price',
         'attributes' => 'attributes',
         'metadata' => 'metadata',
-        'image_url' => 'image_url',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
+        'imageUrl' => 'image_url',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
         'object' => 'object',
-        'product_id' => 'product_id',
+        'productId' => 'product_id',
         'sku' => 'sku',
         'currency' => 'currency',
         'product' => 'product'
@@ -229,16 +229,16 @@ class ProductCollectionsProductsListResponseBodyDataItem implements ModelInterfa
      */
     protected static $setters = [
         'id' => 'setId',
-        'source_id' => 'setSourceId',
+        'sourceId' => 'setSourceId',
         'name' => 'setName',
         'price' => 'setPrice',
         'attributes' => 'setAttributes',
         'metadata' => 'setMetadata',
-        'image_url' => 'setImageUrl',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt',
+        'imageUrl' => 'setImageUrl',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
         'object' => 'setObject',
-        'product_id' => 'setProductId',
+        'productId' => 'setProductId',
         'sku' => 'setSku',
         'currency' => 'setCurrency',
         'product' => 'setProduct'
@@ -251,16 +251,16 @@ class ProductCollectionsProductsListResponseBodyDataItem implements ModelInterfa
      */
     protected static $getters = [
         'id' => 'getId',
-        'source_id' => 'getSourceId',
+        'sourceId' => 'getSourceId',
         'name' => 'getName',
         'price' => 'getPrice',
         'attributes' => 'getAttributes',
         'metadata' => 'getMetadata',
-        'image_url' => 'getImageUrl',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt',
+        'imageUrl' => 'getImageUrl',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
         'object' => 'getObject',
-        'product_id' => 'getProductId',
+        'productId' => 'getProductId',
         'sku' => 'getSku',
         'currency' => 'getCurrency',
         'product' => 'getProduct'
@@ -339,16 +339,16 @@ class ProductCollectionsProductsListResponseBodyDataItem implements ModelInterfa
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('source_id', $data ?? [], null);
+        $this->setIfExists('sourceId', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('attributes', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('image_url', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('imageUrl', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('updatedAt', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], null);
-        $this->setIfExists('product_id', $data ?? [], null);
+        $this->setIfExists('productId', $data ?? [], null);
         $this->setIfExists('sku', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('product', $data ?? [], null);
@@ -433,28 +433,28 @@ class ProductCollectionsProductsListResponseBodyDataItem implements ModelInterfa
     }
 
     /**
-     * Gets source_id
+     * Gets sourceId
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['source_id'];
+        return $this->container['sourceId'];
     }
 
     /**
-     * Sets source_id
+     * Sets sourceId
      *
-     * @param string|null $source_id source_id
+     * @param string|null $sourceId sourceId
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setSourceId($sourceId)
     {
-        if (is_null($source_id)) {
-            throw new \InvalidArgumentException('non-nullable source_id cannot be null');
+        if (is_null($sourceId)) {
+            throw new \InvalidArgumentException('non-nullable sourceId cannot be null');
         }
-        $this->container['source_id'] = $source_id;
+        $this->container['sourceId'] = $sourceId;
 
         return $this;
     }
@@ -589,82 +589,82 @@ class ProductCollectionsProductsListResponseBodyDataItem implements ModelInterfa
     }
 
     /**
-     * Gets image_url
+     * Gets imageUrl
      *
      * @return string|null
      */
     public function getImageUrl()
     {
-        return $this->container['image_url'];
+        return $this->container['imageUrl'];
     }
 
     /**
-     * Sets image_url
+     * Sets imageUrl
      *
-     * @param string|null $image_url image_url
+     * @param string|null $imageUrl imageUrl
      *
      * @return self
      */
-    public function setImageUrl($image_url)
+    public function setImageUrl($imageUrl)
     {
-        if (is_null($image_url)) {
-            throw new \InvalidArgumentException('non-nullable image_url cannot be null');
+        if (is_null($imageUrl)) {
+            throw new \InvalidArgumentException('non-nullable imageUrl cannot be null');
         }
-        $this->container['image_url'] = $image_url;
+        $this->container['imageUrl'] = $imageUrl;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return string|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param string|null $created_at created_at
+     * @param string|null $createdAt createdAt
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+        if (is_null($createdAt)) {
+            throw new \InvalidArgumentException('non-nullable createdAt cannot be null');
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return string|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param string|null $updated_at updated_at
+     * @param string|null $updatedAt updatedAt
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        if (is_null($updated_at)) {
-            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
+        if (is_null($updatedAt)) {
+            throw new \InvalidArgumentException('non-nullable updatedAt cannot be null');
         }
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }
@@ -707,35 +707,35 @@ class ProductCollectionsProductsListResponseBodyDataItem implements ModelInterfa
     }
 
     /**
-     * Gets product_id
+     * Gets productId
      *
      * @return string|null
      */
     public function getProductId()
     {
-        return $this->container['product_id'];
+        return $this->container['productId'];
     }
 
     /**
-     * Sets product_id
+     * Sets productId
      *
-     * @param string|null $product_id The parent product's unique ID.
+     * @param string|null $productId The parent product's unique ID.
      *
      * @return self
      */
-    public function setProductId($product_id)
+    public function setProductId($productId)
     {
-        if (is_null($product_id)) {
-            array_push($this->openAPINullablesSetToNull, 'product_id');
+        if (is_null($productId)) {
+            array_push($this->openAPINullablesSetToNull, 'productId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('product_id', $nullablesSetToNull);
+            $index = array_search('productId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['product_id'] = $product_id;
+        $this->container['productId'] = $productId;
 
         return $this;
     }

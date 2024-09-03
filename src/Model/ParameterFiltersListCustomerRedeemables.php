@@ -59,13 +59,13 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
       */
     protected static $openAPITypes = [
         'id' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesId',
-        'created_at' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAt',
-        'redeemable_id' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesRedeemableId',
-        'redeemable_object' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesRedeemableObject',
-        'holder_role' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesHolderRole',
-        'campaign_id' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCampaignId',
-        'campaign_type' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCampaignType',
-        'voucher_type' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesVoucherType'
+        'createdAt' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAt',
+        'redeemableId' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesRedeemableId',
+        'redeemableObject' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesRedeemableObject',
+        'holderRole' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesHolderRole',
+        'campaignId' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCampaignId',
+        'campaignType' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCampaignType',
+        'voucherType' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesVoucherType'
     ];
 
     /**
@@ -77,13 +77,13 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'created_at' => null,
-        'redeemable_id' => null,
-        'redeemable_object' => null,
-        'holder_role' => null,
-        'campaign_id' => null,
-        'campaign_type' => null,
-        'voucher_type' => null
+        'createdAt' => null,
+        'redeemableId' => null,
+        'redeemableObject' => null,
+        'holderRole' => null,
+        'campaignId' => null,
+        'campaignType' => null,
+        'voucherType' => null
     ];
 
     /**
@@ -93,13 +93,13 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'created_at' => true,
-		'redeemable_id' => true,
-		'redeemable_object' => true,
-		'holder_role' => true,
-		'campaign_id' => true,
-		'campaign_type' => true,
-		'voucher_type' => true
+		'createdAt' => true,
+		'redeemableId' => true,
+		'redeemableObject' => true,
+		'holderRole' => true,
+		'campaignId' => true,
+		'campaignType' => true,
+		'voucherType' => true
     ];
 
     /**
@@ -189,13 +189,13 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'created_at' => 'created_at',
-        'redeemable_id' => 'redeemable_id',
-        'redeemable_object' => 'redeemable_object',
-        'holder_role' => 'holder_role',
-        'campaign_id' => 'campaign_id',
-        'campaign_type' => 'campaign_type',
-        'voucher_type' => 'voucher_type'
+        'createdAt' => 'created_at',
+        'redeemableId' => 'redeemable_id',
+        'redeemableObject' => 'redeemable_object',
+        'holderRole' => 'holder_role',
+        'campaignId' => 'campaign_id',
+        'campaignType' => 'campaign_type',
+        'voucherType' => 'voucher_type'
     ];
 
     /**
@@ -205,13 +205,13 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
      */
     protected static $setters = [
         'id' => 'setId',
-        'created_at' => 'setCreatedAt',
-        'redeemable_id' => 'setRedeemableId',
-        'redeemable_object' => 'setRedeemableObject',
-        'holder_role' => 'setHolderRole',
-        'campaign_id' => 'setCampaignId',
-        'campaign_type' => 'setCampaignType',
-        'voucher_type' => 'setVoucherType'
+        'createdAt' => 'setCreatedAt',
+        'redeemableId' => 'setRedeemableId',
+        'redeemableObject' => 'setRedeemableObject',
+        'holderRole' => 'setHolderRole',
+        'campaignId' => 'setCampaignId',
+        'campaignType' => 'setCampaignType',
+        'voucherType' => 'setVoucherType'
     ];
 
     /**
@@ -221,13 +221,13 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
      */
     protected static $getters = [
         'id' => 'getId',
-        'created_at' => 'getCreatedAt',
-        'redeemable_id' => 'getRedeemableId',
-        'redeemable_object' => 'getRedeemableObject',
-        'holder_role' => 'getHolderRole',
-        'campaign_id' => 'getCampaignId',
-        'campaign_type' => 'getCampaignType',
-        'voucher_type' => 'getVoucherType'
+        'createdAt' => 'getCreatedAt',
+        'redeemableId' => 'getRedeemableId',
+        'redeemableObject' => 'getRedeemableObject',
+        'holderRole' => 'getHolderRole',
+        'campaignId' => 'getCampaignId',
+        'campaignType' => 'getCampaignType',
+        'voucherType' => 'getVoucherType'
     ];
 
     /**
@@ -288,13 +288,13 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('redeemable_id', $data ?? [], null);
-        $this->setIfExists('redeemable_object', $data ?? [], null);
-        $this->setIfExists('holder_role', $data ?? [], null);
-        $this->setIfExists('campaign_id', $data ?? [], null);
-        $this->setIfExists('campaign_type', $data ?? [], null);
-        $this->setIfExists('voucher_type', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('redeemableId', $data ?? [], null);
+        $this->setIfExists('redeemableObject', $data ?? [], null);
+        $this->setIfExists('holderRole', $data ?? [], null);
+        $this->setIfExists('campaignId', $data ?? [], null);
+        $this->setIfExists('campaignType', $data ?? [], null);
+        $this->setIfExists('voucherType', $data ?? [], null);
     }
 
     /**
@@ -374,239 +374,239 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAt|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAt|null $created_at created_at
+     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAt|null $createdAt createdAt
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets redeemable_id
+     * Gets redeemableId
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesRedeemableId|null
      */
     public function getRedeemableId()
     {
-        return $this->container['redeemable_id'];
+        return $this->container['redeemableId'];
     }
 
     /**
-     * Sets redeemable_id
+     * Sets redeemableId
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesRedeemableId|null $redeemable_id redeemable_id
+     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesRedeemableId|null $redeemableId redeemableId
      *
      * @return self
      */
-    public function setRedeemableId($redeemable_id)
+    public function setRedeemableId($redeemableId)
     {
-        if (is_null($redeemable_id)) {
-            array_push($this->openAPINullablesSetToNull, 'redeemable_id');
+        if (is_null($redeemableId)) {
+            array_push($this->openAPINullablesSetToNull, 'redeemableId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('redeemable_id', $nullablesSetToNull);
+            $index = array_search('redeemableId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['redeemable_id'] = $redeemable_id;
+        $this->container['redeemableId'] = $redeemableId;
 
         return $this;
     }
 
     /**
-     * Gets redeemable_object
+     * Gets redeemableObject
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesRedeemableObject|null
      */
     public function getRedeemableObject()
     {
-        return $this->container['redeemable_object'];
+        return $this->container['redeemableObject'];
     }
 
     /**
-     * Sets redeemable_object
+     * Sets redeemableObject
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesRedeemableObject|null $redeemable_object redeemable_object
+     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesRedeemableObject|null $redeemableObject redeemableObject
      *
      * @return self
      */
-    public function setRedeemableObject($redeemable_object)
+    public function setRedeemableObject($redeemableObject)
     {
-        if (is_null($redeemable_object)) {
-            array_push($this->openAPINullablesSetToNull, 'redeemable_object');
+        if (is_null($redeemableObject)) {
+            array_push($this->openAPINullablesSetToNull, 'redeemableObject');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('redeemable_object', $nullablesSetToNull);
+            $index = array_search('redeemableObject', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['redeemable_object'] = $redeemable_object;
+        $this->container['redeemableObject'] = $redeemableObject;
 
         return $this;
     }
 
     /**
-     * Gets holder_role
+     * Gets holderRole
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesHolderRole|null
      */
     public function getHolderRole()
     {
-        return $this->container['holder_role'];
+        return $this->container['holderRole'];
     }
 
     /**
-     * Sets holder_role
+     * Sets holderRole
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesHolderRole|null $holder_role holder_role
+     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesHolderRole|null $holderRole holderRole
      *
      * @return self
      */
-    public function setHolderRole($holder_role)
+    public function setHolderRole($holderRole)
     {
-        if (is_null($holder_role)) {
-            array_push($this->openAPINullablesSetToNull, 'holder_role');
+        if (is_null($holderRole)) {
+            array_push($this->openAPINullablesSetToNull, 'holderRole');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('holder_role', $nullablesSetToNull);
+            $index = array_search('holderRole', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['holder_role'] = $holder_role;
+        $this->container['holderRole'] = $holderRole;
 
         return $this;
     }
 
     /**
-     * Gets campaign_id
+     * Gets campaignId
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCampaignId|null
      */
     public function getCampaignId()
     {
-        return $this->container['campaign_id'];
+        return $this->container['campaignId'];
     }
 
     /**
-     * Sets campaign_id
+     * Sets campaignId
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCampaignId|null $campaign_id campaign_id
+     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCampaignId|null $campaignId campaignId
      *
      * @return self
      */
-    public function setCampaignId($campaign_id)
+    public function setCampaignId($campaignId)
     {
-        if (is_null($campaign_id)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_id');
+        if (is_null($campaignId)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_id', $nullablesSetToNull);
+            $index = array_search('campaignId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaign_id'] = $campaign_id;
+        $this->container['campaignId'] = $campaignId;
 
         return $this;
     }
 
     /**
-     * Gets campaign_type
+     * Gets campaignType
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCampaignType|null
      */
     public function getCampaignType()
     {
-        return $this->container['campaign_type'];
+        return $this->container['campaignType'];
     }
 
     /**
-     * Sets campaign_type
+     * Sets campaignType
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCampaignType|null $campaign_type campaign_type
+     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCampaignType|null $campaignType campaignType
      *
      * @return self
      */
-    public function setCampaignType($campaign_type)
+    public function setCampaignType($campaignType)
     {
-        if (is_null($campaign_type)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_type');
+        if (is_null($campaignType)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_type', $nullablesSetToNull);
+            $index = array_search('campaignType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaign_type'] = $campaign_type;
+        $this->container['campaignType'] = $campaignType;
 
         return $this;
     }
 
     /**
-     * Gets voucher_type
+     * Gets voucherType
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesVoucherType|null
      */
     public function getVoucherType()
     {
-        return $this->container['voucher_type'];
+        return $this->container['voucherType'];
     }
 
     /**
-     * Sets voucher_type
+     * Sets voucherType
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesVoucherType|null $voucher_type voucher_type
+     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesVoucherType|null $voucherType voucherType
      *
      * @return self
      */
-    public function setVoucherType($voucher_type)
+    public function setVoucherType($voucherType)
     {
-        if (is_null($voucher_type)) {
-            array_push($this->openAPINullablesSetToNull, 'voucher_type');
+        if (is_null($voucherType)) {
+            array_push($this->openAPINullablesSetToNull, 'voucherType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('voucher_type', $nullablesSetToNull);
+            $index = array_search('voucherType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['voucher_type'] = $voucher_type;
+        $this->container['voucherType'] = $voucherType;
 
         return $this;
     }

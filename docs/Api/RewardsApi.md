@@ -19,7 +19,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `createReward()`
 
 ```php
-createReward($rewards_create_request_body): \OpenAPI\Client\Model\RewardsCreateResponseBody
+createReward($rewardsCreateRequestBody): \OpenAPI\Client\Model\RewardsCreateResponseBody
 ```
 
 Create Reward
@@ -50,10 +50,10 @@ $apiInstance = new OpenAPI\Client\Api\RewardsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$rewards_create_request_body = {"name":"Digital - Gift Card Reward","type":"CAMPAIGN","metadata":{"Type":"Gift"},"parameters":{"campaign":{"id":"camp_hC2GdqYtOmTT45zfhib62cK1","balance":3000}}}; // \OpenAPI\Client\Model\RewardsCreateRequestBody | Define parameters of the new reward.
+$rewardsCreateRequestBody = {"name":"Digital - Gift Card Reward","type":"CAMPAIGN","metadata":{"Type":"Gift"},"parameters":{"campaign":{"id":"camp_hC2GdqYtOmTT45zfhib62cK1","balance":3000}}}; // \OpenAPI\Client\Model\RewardsCreateRequestBody | Define parameters of the new reward.
 
 try {
-    $result = $apiInstance->createReward($rewards_create_request_body);
+    $result = $apiInstance->createReward($rewardsCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RewardsApi->createReward: ', $e->getMessage(), PHP_EOL;
@@ -64,7 +64,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **rewards_create_request_body** | [**\OpenAPI\Client\Model\RewardsCreateRequestBody**](../Model/RewardsCreateRequestBody.md)| Define parameters of the new reward. | [optional] |
+| **rewardsCreateRequestBody** | [**\OpenAPI\Client\Model\RewardsCreateRequestBody**](../Model/RewardsCreateRequestBody.md)| Define parameters of the new reward. | [optional] |
 
 ### Return type
 
@@ -86,7 +86,7 @@ try {
 ## `createRewardAssignment()`
 
 ```php
-createRewardAssignment($reward_id, $rewards_assignments_create_request_body): \OpenAPI\Client\Model\RewardsAssignmentsCreateResponseBody
+createRewardAssignment($rewardId, $rewardsAssignmentsCreateRequestBody): \OpenAPI\Client\Model\RewardsAssignmentsCreateResponseBody
 ```
 
 Create Reward Assignment
@@ -117,11 +117,11 @@ $apiInstance = new OpenAPI\Client\Api\RewardsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$reward_id = 'reward_id_example'; // string | A unique reward ID.
-$rewards_assignments_create_request_body = {"campaign":"camp_OTuGGP90PivbvROsRvfM65El","parameters":{"loyalty":{"points":39}}}; // \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody | Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points.
+$rewardId = 'rewardId_example'; // string | A unique reward ID.
+$rewardsAssignmentsCreateRequestBody = {"campaign":"camp_OTuGGP90PivbvROsRvfM65El","parameters":{"loyalty":{"points":39}}}; // \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody | Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points.
 
 try {
-    $result = $apiInstance->createRewardAssignment($reward_id, $rewards_assignments_create_request_body);
+    $result = $apiInstance->createRewardAssignment($rewardId, $rewardsAssignmentsCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RewardsApi->createRewardAssignment: ', $e->getMessage(), PHP_EOL;
@@ -132,8 +132,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **reward_id** | **string**| A unique reward ID. | |
-| **rewards_assignments_create_request_body** | [**\OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody**](../Model/RewardsAssignmentsCreateRequestBody.md)| Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. | [optional] |
+| **rewardId** | **string**| A unique reward ID. | |
+| **rewardsAssignmentsCreateRequestBody** | [**\OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody**](../Model/RewardsAssignmentsCreateRequestBody.md)| Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. | [optional] |
 
 ### Return type
 
@@ -155,7 +155,7 @@ try {
 ## `deleteReward()`
 
 ```php
-deleteReward($reward_id)
+deleteReward($rewardId)
 ```
 
 Delete Reward
@@ -186,10 +186,10 @@ $apiInstance = new OpenAPI\Client\Api\RewardsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$reward_id = 'reward_id_example'; // string | A unique reward ID.
+$rewardId = 'rewardId_example'; // string | A unique reward ID.
 
 try {
-    $apiInstance->deleteReward($reward_id);
+    $apiInstance->deleteReward($rewardId);
 } catch (Exception $e) {
     echo 'Exception when calling RewardsApi->deleteReward: ', $e->getMessage(), PHP_EOL;
 }
@@ -199,7 +199,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **reward_id** | **string**| A unique reward ID. | |
+| **rewardId** | **string**| A unique reward ID. | |
 
 ### Return type
 
@@ -221,7 +221,7 @@ void (empty response body)
 ## `deleteRewardAssignment()`
 
 ```php
-deleteRewardAssignment($reward_id, $assignment_id)
+deleteRewardAssignment($rewardId, $assignmentId)
 ```
 
 Delete Reward Assignment
@@ -252,11 +252,11 @@ $apiInstance = new OpenAPI\Client\Api\RewardsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$reward_id = 'reward_id_example'; // string | A unique reward ID.
-$assignment_id = 'assignment_id_example'; // string | A unique reward assignment ID.
+$rewardId = 'rewardId_example'; // string | A unique reward ID.
+$assignmentId = 'assignmentId_example'; // string | A unique reward assignment ID.
 
 try {
-    $apiInstance->deleteRewardAssignment($reward_id, $assignment_id);
+    $apiInstance->deleteRewardAssignment($rewardId, $assignmentId);
 } catch (Exception $e) {
     echo 'Exception when calling RewardsApi->deleteRewardAssignment: ', $e->getMessage(), PHP_EOL;
 }
@@ -266,8 +266,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **reward_id** | **string**| A unique reward ID. | |
-| **assignment_id** | **string**| A unique reward assignment ID. | |
+| **rewardId** | **string**| A unique reward ID. | |
+| **assignmentId** | **string**| A unique reward assignment ID. | |
 
 ### Return type
 
@@ -289,7 +289,7 @@ void (empty response body)
 ## `getReward()`
 
 ```php
-getReward($reward_id): \OpenAPI\Client\Model\Reward
+getReward($rewardId): \OpenAPI\Client\Model\Reward
 ```
 
 Get Reward
@@ -320,10 +320,10 @@ $apiInstance = new OpenAPI\Client\Api\RewardsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$reward_id = 'reward_id_example'; // string | A unique reward ID.
+$rewardId = 'rewardId_example'; // string | A unique reward ID.
 
 try {
-    $result = $apiInstance->getReward($reward_id);
+    $result = $apiInstance->getReward($rewardId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RewardsApi->getReward: ', $e->getMessage(), PHP_EOL;
@@ -334,7 +334,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **reward_id** | **string**| A unique reward ID. | |
+| **rewardId** | **string**| A unique reward ID. | |
 
 ### Return type
 
@@ -356,7 +356,7 @@ try {
 ## `getRewardAssignment()`
 
 ```php
-getRewardAssignment($reward_id, $assignment_id): \OpenAPI\Client\Model\RewardsAssignmentsGetResponseBody
+getRewardAssignment($rewardId, $assignmentId): \OpenAPI\Client\Model\RewardsAssignmentsGetResponseBody
 ```
 
 Get Reward Assignment
@@ -387,11 +387,11 @@ $apiInstance = new OpenAPI\Client\Api\RewardsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$reward_id = 'reward_id_example'; // string | A unique reward ID.
-$assignment_id = 'assignment_id_example'; // string | A unique reward assignment ID.
+$rewardId = 'rewardId_example'; // string | A unique reward ID.
+$assignmentId = 'assignmentId_example'; // string | A unique reward assignment ID.
 
 try {
-    $result = $apiInstance->getRewardAssignment($reward_id, $assignment_id);
+    $result = $apiInstance->getRewardAssignment($rewardId, $assignmentId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RewardsApi->getRewardAssignment: ', $e->getMessage(), PHP_EOL;
@@ -402,8 +402,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **reward_id** | **string**| A unique reward ID. | |
-| **assignment_id** | **string**| A unique reward assignment ID. | |
+| **rewardId** | **string**| A unique reward ID. | |
+| **assignmentId** | **string**| A unique reward assignment ID. | |
 
 ### Return type
 
@@ -425,7 +425,7 @@ try {
 ## `listRewardAssignments()`
 
 ```php
-listRewardAssignments($reward_id, $limit, $page): \OpenAPI\Client\Model\RewardsAssignmentsListResponseBody
+listRewardAssignments($rewardId, $limit, $page): \OpenAPI\Client\Model\RewardsAssignmentsListResponseBody
 ```
 
 List Reward Assignments
@@ -456,12 +456,12 @@ $apiInstance = new OpenAPI\Client\Api\RewardsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$reward_id = 'reward_id_example'; // string | A unique reward ID.
+$rewardId = 'rewardId_example'; // string | A unique reward ID.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 
 try {
-    $result = $apiInstance->listRewardAssignments($reward_id, $limit, $page);
+    $result = $apiInstance->listRewardAssignments($rewardId, $limit, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RewardsApi->listRewardAssignments: ', $e->getMessage(), PHP_EOL;
@@ -472,7 +472,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **reward_id** | **string**| A unique reward ID. | |
+| **rewardId** | **string**| A unique reward ID. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 
@@ -496,7 +496,7 @@ try {
 ## `listRewards()`
 
 ```php
-listRewards($limit, $page, $assignment_id): \OpenAPI\Client\Model\RewardsListResponseBody
+listRewards($limit, $page, $assignmentId): \OpenAPI\Client\Model\RewardsListResponseBody
 ```
 
 List Rewards
@@ -529,10 +529,10 @@ $apiInstance = new OpenAPI\Client\Api\RewardsApi(
 );
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
-$assignment_id = 'assignment_id_example'; // string | A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID.
+$assignmentId = 'assignmentId_example'; // string | A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID.
 
 try {
-    $result = $apiInstance->listRewards($limit, $page, $assignment_id);
+    $result = $apiInstance->listRewards($limit, $page, $assignmentId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RewardsApi->listRewards: ', $e->getMessage(), PHP_EOL;
@@ -545,7 +545,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
-| **assignment_id** | **string**| A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID. | [optional] |
+| **assignmentId** | **string**| A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID. | [optional] |
 
 ### Return type
 
@@ -567,7 +567,7 @@ try {
 ## `updateReward()`
 
 ```php
-updateReward($reward_id, $rewards_update_request_body): \OpenAPI\Client\Model\RewardsUpdateResponseBody
+updateReward($rewardId, $rewardsUpdateRequestBody): \OpenAPI\Client\Model\RewardsUpdateResponseBody
 ```
 
 Update Reward
@@ -598,11 +598,11 @@ $apiInstance = new OpenAPI\Client\Api\RewardsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$reward_id = 'reward_id_example'; // string | A unique reward ID.
-$rewards_update_request_body = {"name":"Digital - Gift Card Reward","metadata":{"Type":"Gift"},"parameters":{"campaign":{"id":"camp_hC2GdqYtOmTT45zfhib62cK1","balance":3000}}}; // \OpenAPI\Client\Model\RewardsUpdateRequestBody | Define the parameters to be updated for the reward.
+$rewardId = 'rewardId_example'; // string | A unique reward ID.
+$rewardsUpdateRequestBody = {"name":"Digital - Gift Card Reward","metadata":{"Type":"Gift"},"parameters":{"campaign":{"id":"camp_hC2GdqYtOmTT45zfhib62cK1","balance":3000}}}; // \OpenAPI\Client\Model\RewardsUpdateRequestBody | Define the parameters to be updated for the reward.
 
 try {
-    $result = $apiInstance->updateReward($reward_id, $rewards_update_request_body);
+    $result = $apiInstance->updateReward($rewardId, $rewardsUpdateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RewardsApi->updateReward: ', $e->getMessage(), PHP_EOL;
@@ -613,8 +613,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **reward_id** | **string**| A unique reward ID. | |
-| **rewards_update_request_body** | [**\OpenAPI\Client\Model\RewardsUpdateRequestBody**](../Model/RewardsUpdateRequestBody.md)| Define the parameters to be updated for the reward. | [optional] |
+| **rewardId** | **string**| A unique reward ID. | |
+| **rewardsUpdateRequestBody** | [**\OpenAPI\Client\Model\RewardsUpdateRequestBody**](../Model/RewardsUpdateRequestBody.md)| Define the parameters to be updated for the reward. | [optional] |
 
 ### Return type
 
@@ -636,7 +636,7 @@ try {
 ## `updateRewardAssignment()`
 
 ```php
-updateRewardAssignment($reward_id, $assignment_id, $rewards_assignments_update_request_body): \OpenAPI\Client\Model\RewardsAssignmentsUpdateResponseBody
+updateRewardAssignment($rewardId, $assignmentId, $rewardsAssignmentsUpdateRequestBody): \OpenAPI\Client\Model\RewardsAssignmentsUpdateResponseBody
 ```
 
 Update Reward Assignment
@@ -667,12 +667,12 @@ $apiInstance = new OpenAPI\Client\Api\RewardsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$reward_id = 'reward_id_example'; // string | A unique reward ID.
-$assignment_id = 'assignment_id_example'; // string | A unique reward assignment ID.
-$rewards_assignments_update_request_body = {"parameters":{"loyalty":{"points":35}}}; // \OpenAPI\Client\Model\RewardsAssignmentsUpdateRequestBody | Define the number of points required to exchange for the reward.
+$rewardId = 'rewardId_example'; // string | A unique reward ID.
+$assignmentId = 'assignmentId_example'; // string | A unique reward assignment ID.
+$rewardsAssignmentsUpdateRequestBody = {"parameters":{"loyalty":{"points":35}}}; // \OpenAPI\Client\Model\RewardsAssignmentsUpdateRequestBody | Define the number of points required to exchange for the reward.
 
 try {
-    $result = $apiInstance->updateRewardAssignment($reward_id, $assignment_id, $rewards_assignments_update_request_body);
+    $result = $apiInstance->updateRewardAssignment($rewardId, $assignmentId, $rewardsAssignmentsUpdateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RewardsApi->updateRewardAssignment: ', $e->getMessage(), PHP_EOL;
@@ -683,9 +683,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **reward_id** | **string**| A unique reward ID. | |
-| **assignment_id** | **string**| A unique reward assignment ID. | |
-| **rewards_assignments_update_request_body** | [**\OpenAPI\Client\Model\RewardsAssignmentsUpdateRequestBody**](../Model/RewardsAssignmentsUpdateRequestBody.md)| Define the number of points required to exchange for the reward. | [optional] |
+| **rewardId** | **string**| A unique reward ID. | |
+| **assignmentId** | **string**| A unique reward assignment ID. | |
+| **rewardsAssignmentsUpdateRequestBody** | [**\OpenAPI\Client\Model\RewardsAssignmentsUpdateRequestBody**](../Model/RewardsAssignmentsUpdateRequestBody.md)| Define the number of points required to exchange for the reward. | [optional] |
 
 ### Return type
 

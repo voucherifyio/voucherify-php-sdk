@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **prefix** | **string** | A text appended before the code. | [optional]
 **postfix** | **string** | A text appended after the code. | [optional]
 **pattern** | **string** | A pattern for codes where hashes (#) will be replaced with random characters. Overrides &#x60;length&#x60;. | [optional]
-**initial_count** | **int** | Internal value, does not change anything if provided. | [optional]
+**initialCount** | **int** | Internal value, does not change anything if provided. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

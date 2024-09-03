@@ -61,17 +61,17 @@ class ProductCollectionsItemFilter implements ModelInterface, ArrayAccess, \Json
     protected static $openAPITypes = [
         'junction' => 'string',
         'id' => '\OpenAPI\Client\Model\FieldConditions',
-        'product_id' => '\OpenAPI\Client\Model\FieldConditions',
-        'source_id' => '\OpenAPI\Client\Model\FieldConditions',
+        'productId' => '\OpenAPI\Client\Model\FieldConditions',
+        'sourceId' => '\OpenAPI\Client\Model\FieldConditions',
         'name' => '\OpenAPI\Client\Model\FieldConditions',
         'price' => '\OpenAPI\Client\Model\FieldConditions',
         'object' => '\OpenAPI\Client\Model\FieldConditions',
         'attributes' => '\OpenAPI\Client\Model\FieldConditions',
         'metadata' => '\OpenAPI\Client\Model\FieldConditions',
-        'image_url' => '\OpenAPI\Client\Model\FieldConditions',
+        'imageUrl' => '\OpenAPI\Client\Model\FieldConditions',
         'skus' => '\OpenAPI\Client\Model\FieldConditions',
-        'created_at' => '\OpenAPI\Client\Model\FieldConditions',
-        'updated_at' => '\OpenAPI\Client\Model\FieldConditions'
+        'createdAt' => '\OpenAPI\Client\Model\FieldConditions',
+        'updatedAt' => '\OpenAPI\Client\Model\FieldConditions'
     ];
 
     /**
@@ -84,17 +84,17 @@ class ProductCollectionsItemFilter implements ModelInterface, ArrayAccess, \Json
     protected static $openAPIFormats = [
         'junction' => null,
         'id' => null,
-        'product_id' => null,
-        'source_id' => null,
+        'productId' => null,
+        'sourceId' => null,
         'name' => null,
         'price' => null,
         'object' => null,
         'attributes' => null,
         'metadata' => null,
-        'image_url' => null,
+        'imageUrl' => null,
         'skus' => null,
-        'created_at' => null,
-        'updated_at' => null
+        'createdAt' => null,
+        'updatedAt' => null
     ];
 
     /**
@@ -105,17 +105,17 @@ class ProductCollectionsItemFilter implements ModelInterface, ArrayAccess, \Json
     protected static array $openAPINullables = [
         'junction' => true,
 		'id' => false,
-		'product_id' => false,
-		'source_id' => false,
+		'productId' => false,
+		'sourceId' => false,
 		'name' => false,
 		'price' => false,
 		'object' => false,
 		'attributes' => false,
 		'metadata' => false,
-		'image_url' => false,
+		'imageUrl' => false,
 		'skus' => false,
-		'created_at' => false,
-		'updated_at' => false
+		'createdAt' => false,
+		'updatedAt' => false
     ];
 
     /**
@@ -206,17 +206,17 @@ class ProductCollectionsItemFilter implements ModelInterface, ArrayAccess, \Json
     protected static $attributeMap = [
         'junction' => 'junction',
         'id' => 'id',
-        'product_id' => 'product_id',
-        'source_id' => 'source_id',
+        'productId' => 'product_id',
+        'sourceId' => 'source_id',
         'name' => 'name',
         'price' => 'price',
         'object' => 'object',
         'attributes' => 'attributes',
         'metadata' => 'metadata',
-        'image_url' => 'image_url',
+        'imageUrl' => 'image_url',
         'skus' => 'skus',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at'
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at'
     ];
 
     /**
@@ -227,17 +227,17 @@ class ProductCollectionsItemFilter implements ModelInterface, ArrayAccess, \Json
     protected static $setters = [
         'junction' => 'setJunction',
         'id' => 'setId',
-        'product_id' => 'setProductId',
-        'source_id' => 'setSourceId',
+        'productId' => 'setProductId',
+        'sourceId' => 'setSourceId',
         'name' => 'setName',
         'price' => 'setPrice',
         'object' => 'setObject',
         'attributes' => 'setAttributes',
         'metadata' => 'setMetadata',
-        'image_url' => 'setImageUrl',
+        'imageUrl' => 'setImageUrl',
         'skus' => 'setSkus',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt'
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt'
     ];
 
     /**
@@ -248,17 +248,17 @@ class ProductCollectionsItemFilter implements ModelInterface, ArrayAccess, \Json
     protected static $getters = [
         'junction' => 'getJunction',
         'id' => 'getId',
-        'product_id' => 'getProductId',
-        'source_id' => 'getSourceId',
+        'productId' => 'getProductId',
+        'sourceId' => 'getSourceId',
         'name' => 'getName',
         'price' => 'getPrice',
         'object' => 'getObject',
         'attributes' => 'getAttributes',
         'metadata' => 'getMetadata',
-        'image_url' => 'getImageUrl',
+        'imageUrl' => 'getImageUrl',
         'skus' => 'getSkus',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt'
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt'
     ];
 
     /**
@@ -335,17 +335,17 @@ class ProductCollectionsItemFilter implements ModelInterface, ArrayAccess, \Json
     {
         $this->setIfExists('junction', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('product_id', $data ?? [], null);
-        $this->setIfExists('source_id', $data ?? [], null);
+        $this->setIfExists('productId', $data ?? [], null);
+        $this->setIfExists('sourceId', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], null);
         $this->setIfExists('attributes', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('image_url', $data ?? [], null);
+        $this->setIfExists('imageUrl', $data ?? [], null);
         $this->setIfExists('skus', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('updatedAt', $data ?? [], null);
     }
 
     /**
@@ -471,55 +471,55 @@ class ProductCollectionsItemFilter implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets product_id
+     * Gets productId
      *
      * @return \OpenAPI\Client\Model\FieldConditions|null
      */
     public function getProductId()
     {
-        return $this->container['product_id'];
+        return $this->container['productId'];
     }
 
     /**
-     * Sets product_id
+     * Sets productId
      *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $product_id product_id
+     * @param \OpenAPI\Client\Model\FieldConditions|null $productId productId
      *
      * @return self
      */
-    public function setProductId($product_id)
+    public function setProductId($productId)
     {
-        if (is_null($product_id)) {
-            throw new \InvalidArgumentException('non-nullable product_id cannot be null');
+        if (is_null($productId)) {
+            throw new \InvalidArgumentException('non-nullable productId cannot be null');
         }
-        $this->container['product_id'] = $product_id;
+        $this->container['productId'] = $productId;
 
         return $this;
     }
 
     /**
-     * Gets source_id
+     * Gets sourceId
      *
      * @return \OpenAPI\Client\Model\FieldConditions|null
      */
     public function getSourceId()
     {
-        return $this->container['source_id'];
+        return $this->container['sourceId'];
     }
 
     /**
-     * Sets source_id
+     * Sets sourceId
      *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $source_id source_id
+     * @param \OpenAPI\Client\Model\FieldConditions|null $sourceId sourceId
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setSourceId($sourceId)
     {
-        if (is_null($source_id)) {
-            throw new \InvalidArgumentException('non-nullable source_id cannot be null');
+        if (is_null($sourceId)) {
+            throw new \InvalidArgumentException('non-nullable sourceId cannot be null');
         }
-        $this->container['source_id'] = $source_id;
+        $this->container['sourceId'] = $sourceId;
 
         return $this;
     }
@@ -660,28 +660,28 @@ class ProductCollectionsItemFilter implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets image_url
+     * Gets imageUrl
      *
      * @return \OpenAPI\Client\Model\FieldConditions|null
      */
     public function getImageUrl()
     {
-        return $this->container['image_url'];
+        return $this->container['imageUrl'];
     }
 
     /**
-     * Sets image_url
+     * Sets imageUrl
      *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $image_url image_url
+     * @param \OpenAPI\Client\Model\FieldConditions|null $imageUrl imageUrl
      *
      * @return self
      */
-    public function setImageUrl($image_url)
+    public function setImageUrl($imageUrl)
     {
-        if (is_null($image_url)) {
-            throw new \InvalidArgumentException('non-nullable image_url cannot be null');
+        if (is_null($imageUrl)) {
+            throw new \InvalidArgumentException('non-nullable imageUrl cannot be null');
         }
-        $this->container['image_url'] = $image_url;
+        $this->container['imageUrl'] = $imageUrl;
 
         return $this;
     }
@@ -714,55 +714,55 @@ class ProductCollectionsItemFilter implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \OpenAPI\Client\Model\FieldConditions|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $created_at created_at
+     * @param \OpenAPI\Client\Model\FieldConditions|null $createdAt createdAt
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+        if (is_null($createdAt)) {
+            throw new \InvalidArgumentException('non-nullable createdAt cannot be null');
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \OpenAPI\Client\Model\FieldConditions|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $updated_at updated_at
+     * @param \OpenAPI\Client\Model\FieldConditions|null $updatedAt updatedAt
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        if (is_null($updated_at)) {
-            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
+        if (is_null($updatedAt)) {
+            throw new \InvalidArgumentException('non-nullable updatedAt cannot be null');
         }
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }

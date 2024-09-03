@@ -61,10 +61,10 @@ class SegmentsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'id' => 'string',
         'name' => 'string',
-        'created_at' => '\DateTime',
+        'createdAt' => '\DateTime',
         'type' => 'string',
         'filter' => 'object',
-        'initial_sync_status' => 'string',
+        'initialSyncStatus' => 'string',
         'object' => 'string'
     ];
 
@@ -78,10 +78,10 @@ class SegmentsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
-        'created_at' => 'date-time',
+        'createdAt' => 'date-time',
         'type' => null,
         'filter' => null,
-        'initial_sync_status' => null,
+        'initialSyncStatus' => null,
         'object' => null
     ];
 
@@ -93,10 +93,10 @@ class SegmentsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeria
     protected static array $openAPINullables = [
         'id' => true,
 		'name' => true,
-		'created_at' => true,
+		'createdAt' => true,
 		'type' => true,
 		'filter' => true,
-		'initial_sync_status' => true,
+		'initialSyncStatus' => true,
 		'object' => true
     ];
 
@@ -188,10 +188,10 @@ class SegmentsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'created_at' => 'created_at',
+        'createdAt' => 'created_at',
         'type' => 'type',
         'filter' => 'filter',
-        'initial_sync_status' => 'initial_sync_status',
+        'initialSyncStatus' => 'initial_sync_status',
         'object' => 'object'
     ];
 
@@ -203,10 +203,10 @@ class SegmentsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'created_at' => 'setCreatedAt',
+        'createdAt' => 'setCreatedAt',
         'type' => 'setType',
         'filter' => 'setFilter',
-        'initial_sync_status' => 'setInitialSyncStatus',
+        'initialSyncStatus' => 'setInitialSyncStatus',
         'object' => 'setObject'
     ];
 
@@ -218,10 +218,10 @@ class SegmentsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'created_at' => 'getCreatedAt',
+        'createdAt' => 'getCreatedAt',
         'type' => 'getType',
         'filter' => 'getFilter',
-        'initial_sync_status' => 'getInitialSyncStatus',
+        'initialSyncStatus' => 'getInitialSyncStatus',
         'object' => 'getObject'
     ];
 
@@ -327,10 +327,10 @@ class SegmentsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('filter', $data ?? [], null);
-        $this->setIfExists('initial_sync_status', $data ?? [], null);
+        $this->setIfExists('initialSyncStatus', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'segment');
     }
 
@@ -371,10 +371,10 @@ class SegmentsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeria
         }
 
         $allowedValues = $this->getInitialSyncStatusAllowableValues();
-        if (!is_null($this->container['initial_sync_status']) && !in_array($this->container['initial_sync_status'], $allowedValues, true)) {
+        if (!is_null($this->container['initialSyncStatus']) && !in_array($this->container['initialSyncStatus'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'initial_sync_status', must be one of '%s'",
-                $this->container['initial_sync_status'],
+                "invalid value '%s' for 'initialSyncStatus', must be one of '%s'",
+                $this->container['initialSyncStatus'],
                 implode("', '", $allowedValues)
             );
         }
@@ -472,35 +472,35 @@ class SegmentsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the segment was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the segment was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
@@ -584,45 +584,45 @@ class SegmentsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets initial_sync_status
+     * Gets initialSyncStatus
      *
      * @return string|null
      */
     public function getInitialSyncStatus()
     {
-        return $this->container['initial_sync_status'];
+        return $this->container['initialSyncStatus'];
     }
 
     /**
-     * Sets initial_sync_status
+     * Sets initialSyncStatus
      *
-     * @param string|null $initial_sync_status initial_sync_status
+     * @param string|null $initialSyncStatus initialSyncStatus
      *
      * @return self
      */
-    public function setInitialSyncStatus($initial_sync_status)
+    public function setInitialSyncStatus($initialSyncStatus)
     {
-        if (is_null($initial_sync_status)) {
-            array_push($this->openAPINullablesSetToNull, 'initial_sync_status');
+        if (is_null($initialSyncStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'initialSyncStatus');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('initial_sync_status', $nullablesSetToNull);
+            $index = array_search('initialSyncStatus', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getInitialSyncStatusAllowableValues();
-        if (!is_null($initial_sync_status) && !in_array($initial_sync_status, $allowedValues, true)) {
+        if (!is_null($initialSyncStatus) && !in_array($initialSyncStatus, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'initial_sync_status', must be one of '%s'",
-                    $initial_sync_status,
+                    "Invalid value '%s' for 'initialSyncStatus', must be one of '%s'",
+                    $initialSyncStatus,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['initial_sync_status'] = $initial_sync_status;
+        $this->container['initialSyncStatus'] = $initialSyncStatus;
 
         return $this;
     }

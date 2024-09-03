@@ -59,7 +59,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder implements ModelInt
       */
     protected static $openAPITypes = [
         'amount' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderAmount',
-        'total_amount' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderTotalAmount',
+        'totalAmount' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderTotalAmount',
         'metadata' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderMetadata'
     ];
 
@@ -72,7 +72,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder implements ModelInt
       */
     protected static $openAPIFormats = [
         'amount' => null,
-        'total_amount' => null,
+        'totalAmount' => null,
         'metadata' => null
     ];
 
@@ -83,7 +83,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder implements ModelInt
       */
     protected static array $openAPINullables = [
         'amount' => true,
-		'total_amount' => true,
+		'totalAmount' => true,
 		'metadata' => true
     ];
 
@@ -174,7 +174,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder implements ModelInt
      */
     protected static $attributeMap = [
         'amount' => 'amount',
-        'total_amount' => 'total_amount',
+        'totalAmount' => 'total_amount',
         'metadata' => 'metadata'
     ];
 
@@ -185,7 +185,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder implements ModelInt
      */
     protected static $setters = [
         'amount' => 'setAmount',
-        'total_amount' => 'setTotalAmount',
+        'totalAmount' => 'setTotalAmount',
         'metadata' => 'setMetadata'
     ];
 
@@ -196,7 +196,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder implements ModelInt
      */
     protected static $getters = [
         'amount' => 'getAmount',
-        'total_amount' => 'getTotalAmount',
+        'totalAmount' => 'getTotalAmount',
         'metadata' => 'getMetadata'
     ];
 
@@ -258,7 +258,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder implements ModelInt
     public function __construct(array $data = null)
     {
         $this->setIfExists('amount', $data ?? [], null);
-        $this->setIfExists('total_amount', $data ?? [], null);
+        $this->setIfExists('totalAmount', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
     }
 
@@ -339,35 +339,35 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder implements ModelInt
     }
 
     /**
-     * Gets total_amount
+     * Gets totalAmount
      *
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderTotalAmount|null
      */
     public function getTotalAmount()
     {
-        return $this->container['total_amount'];
+        return $this->container['totalAmount'];
     }
 
     /**
-     * Sets total_amount
+     * Sets totalAmount
      *
-     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderTotalAmount|null $total_amount total_amount
+     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderTotalAmount|null $totalAmount totalAmount
      *
      * @return self
      */
-    public function setTotalAmount($total_amount)
+    public function setTotalAmount($totalAmount)
     {
-        if (is_null($total_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'total_amount');
+        if (is_null($totalAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'totalAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_amount', $nullablesSetToNull);
+            $index = array_search('totalAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['total_amount'] = $total_amount;
+        $this->container['totalAmount'] = $totalAmount;
 
         return $this;
     }

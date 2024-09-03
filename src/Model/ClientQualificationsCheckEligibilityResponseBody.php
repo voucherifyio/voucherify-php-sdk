@@ -60,9 +60,9 @@ class ClientQualificationsCheckEligibilityResponseBody implements ModelInterface
       */
     protected static $openAPITypes = [
         'redeemables' => '\OpenAPI\Client\Model\QualificationsRedeemables',
-        'tracking_id' => 'string',
+        'trackingId' => 'string',
         'order' => '\OpenAPI\Client\Model\OrderCalculated',
-        'stacking_rules' => '\OpenAPI\Client\Model\StackingRules'
+        'stackingRules' => '\OpenAPI\Client\Model\StackingRules'
     ];
 
     /**
@@ -74,9 +74,9 @@ class ClientQualificationsCheckEligibilityResponseBody implements ModelInterface
       */
     protected static $openAPIFormats = [
         'redeemables' => null,
-        'tracking_id' => null,
+        'trackingId' => null,
         'order' => null,
-        'stacking_rules' => null
+        'stackingRules' => null
     ];
 
     /**
@@ -86,9 +86,9 @@ class ClientQualificationsCheckEligibilityResponseBody implements ModelInterface
       */
     protected static array $openAPINullables = [
         'redeemables' => false,
-		'tracking_id' => true,
+		'trackingId' => true,
 		'order' => false,
-		'stacking_rules' => false
+		'stackingRules' => false
     ];
 
     /**
@@ -178,9 +178,9 @@ class ClientQualificationsCheckEligibilityResponseBody implements ModelInterface
      */
     protected static $attributeMap = [
         'redeemables' => 'redeemables',
-        'tracking_id' => 'tracking_id',
+        'trackingId' => 'tracking_id',
         'order' => 'order',
-        'stacking_rules' => 'stacking_rules'
+        'stackingRules' => 'stacking_rules'
     ];
 
     /**
@@ -190,9 +190,9 @@ class ClientQualificationsCheckEligibilityResponseBody implements ModelInterface
      */
     protected static $setters = [
         'redeemables' => 'setRedeemables',
-        'tracking_id' => 'setTrackingId',
+        'trackingId' => 'setTrackingId',
         'order' => 'setOrder',
-        'stacking_rules' => 'setStackingRules'
+        'stackingRules' => 'setStackingRules'
     ];
 
     /**
@@ -202,9 +202,9 @@ class ClientQualificationsCheckEligibilityResponseBody implements ModelInterface
      */
     protected static $getters = [
         'redeemables' => 'getRedeemables',
-        'tracking_id' => 'getTrackingId',
+        'trackingId' => 'getTrackingId',
         'order' => 'getOrder',
-        'stacking_rules' => 'getStackingRules'
+        'stackingRules' => 'getStackingRules'
     ];
 
     /**
@@ -265,9 +265,9 @@ class ClientQualificationsCheckEligibilityResponseBody implements ModelInterface
     public function __construct(array $data = null)
     {
         $this->setIfExists('redeemables', $data ?? [], null);
-        $this->setIfExists('tracking_id', $data ?? [], null);
+        $this->setIfExists('trackingId', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
-        $this->setIfExists('stacking_rules', $data ?? [], null);
+        $this->setIfExists('stackingRules', $data ?? [], null);
     }
 
     /**
@@ -340,35 +340,35 @@ class ClientQualificationsCheckEligibilityResponseBody implements ModelInterface
     }
 
     /**
-     * Gets tracking_id
+     * Gets trackingId
      *
      * @return string|null
      */
     public function getTrackingId()
     {
-        return $this->container['tracking_id'];
+        return $this->container['trackingId'];
     }
 
     /**
-     * Sets tracking_id
+     * Sets trackingId
      *
-     * @param string|null $tracking_id This identifier is generated during voucher qualification based on your internal id (e.g., email, database ID). This is a hashed customer source ID.
+     * @param string|null $trackingId This identifier is generated during voucher qualification based on your internal id (e.g., email, database ID). This is a hashed customer source ID.
      *
      * @return self
      */
-    public function setTrackingId($tracking_id)
+    public function setTrackingId($trackingId)
     {
-        if (is_null($tracking_id)) {
-            array_push($this->openAPINullablesSetToNull, 'tracking_id');
+        if (is_null($trackingId)) {
+            array_push($this->openAPINullablesSetToNull, 'trackingId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tracking_id', $nullablesSetToNull);
+            $index = array_search('trackingId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['tracking_id'] = $tracking_id;
+        $this->container['trackingId'] = $trackingId;
 
         return $this;
     }
@@ -401,28 +401,28 @@ class ClientQualificationsCheckEligibilityResponseBody implements ModelInterface
     }
 
     /**
-     * Gets stacking_rules
+     * Gets stackingRules
      *
      * @return \OpenAPI\Client\Model\StackingRules|null
      */
     public function getStackingRules()
     {
-        return $this->container['stacking_rules'];
+        return $this->container['stackingRules'];
     }
 
     /**
-     * Sets stacking_rules
+     * Sets stackingRules
      *
-     * @param \OpenAPI\Client\Model\StackingRules|null $stacking_rules stacking_rules
+     * @param \OpenAPI\Client\Model\StackingRules|null $stackingRules stackingRules
      *
      * @return self
      */
-    public function setStackingRules($stacking_rules)
+    public function setStackingRules($stackingRules)
     {
-        if (is_null($stacking_rules)) {
-            throw new \InvalidArgumentException('non-nullable stacking_rules cannot be null');
+        if (is_null($stackingRules)) {
+            throw new \InvalidArgumentException('non-nullable stackingRules cannot be null');
         }
-        $this->container['stacking_rules'] = $stacking_rules;
+        $this->container['stackingRules'] = $stackingRules;
 
         return $this;
     }

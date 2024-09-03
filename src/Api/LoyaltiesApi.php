@@ -257,17 +257,17 @@ class LoyaltiesApi
      *
      * Add Member
      *
-     * @param  string $campaign_id Unique campaign ID of the loyalty program. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyalties_members_create_request_body Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
+     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersCreateResponseBody
      */
-    public function addMember($campaign_id, $loyalties_members_create_request_body = null, string $contentType = self::contentTypes['addMember'][0])
+    public function addMember($campaignId, $loyaltiesMembersCreateRequestBody = null, string $contentType = self::contentTypes['addMember'][0])
     {
-        list($response) = $this->addMemberWithHttpInfo($campaign_id, $loyalties_members_create_request_body, $contentType);
+        list($response) = $this->addMemberWithHttpInfo($campaignId, $loyaltiesMembersCreateRequestBody, $contentType);
         return $response;
     }
 
@@ -276,17 +276,17 @@ class LoyaltiesApi
      *
      * Add Member
      *
-     * @param  string $campaign_id Unique campaign ID of the loyalty program. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyalties_members_create_request_body Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
+     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addMemberWithHttpInfo($campaign_id, $loyalties_members_create_request_body = null, string $contentType = self::contentTypes['addMember'][0])
+    public function addMemberWithHttpInfo($campaignId, $loyaltiesMembersCreateRequestBody = null, string $contentType = self::contentTypes['addMember'][0])
     {
-        $request = $this->addMemberRequest($campaign_id, $loyalties_members_create_request_body, $contentType);
+        $request = $this->addMemberRequest($campaignId, $loyaltiesMembersCreateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -377,16 +377,16 @@ class LoyaltiesApi
      *
      * Add Member
      *
-     * @param  string $campaign_id Unique campaign ID of the loyalty program. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyalties_members_create_request_body Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
+     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addMemberAsync($campaign_id, $loyalties_members_create_request_body = null, string $contentType = self::contentTypes['addMember'][0])
+    public function addMemberAsync($campaignId, $loyaltiesMembersCreateRequestBody = null, string $contentType = self::contentTypes['addMember'][0])
     {
-        return $this->addMemberAsyncWithHttpInfo($campaign_id, $loyalties_members_create_request_body, $contentType)
+        return $this->addMemberAsyncWithHttpInfo($campaignId, $loyaltiesMembersCreateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -399,17 +399,17 @@ class LoyaltiesApi
      *
      * Add Member
      *
-     * @param  string $campaign_id Unique campaign ID of the loyalty program. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyalties_members_create_request_body Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
+     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addMemberAsyncWithHttpInfo($campaign_id, $loyalties_members_create_request_body = null, string $contentType = self::contentTypes['addMember'][0])
+    public function addMemberAsyncWithHttpInfo($campaignId, $loyaltiesMembersCreateRequestBody = null, string $contentType = self::contentTypes['addMember'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersCreateResponseBody';
-        $request = $this->addMemberRequest($campaign_id, $loyalties_members_create_request_body, $contentType);
+        $request = $this->addMemberRequest($campaignId, $loyaltiesMembersCreateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -450,20 +450,20 @@ class LoyaltiesApi
     /**
      * Create request for operation 'addMember'
      *
-     * @param  string $campaign_id Unique campaign ID of the loyalty program. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyalties_members_create_request_body Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
+     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function addMemberRequest($campaign_id, $loyalties_members_create_request_body = null, string $contentType = self::contentTypes['addMember'][0])
+    public function addMemberRequest($campaignId, $loyaltiesMembersCreateRequestBody = null, string $contentType = self::contentTypes['addMember'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling addMember'
+                'Missing the required parameter $campaignId when calling addMember'
             );
         }
 
@@ -479,10 +479,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -495,12 +495,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_members_create_request_body)) {
+        if (isset($loyaltiesMembersCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_members_create_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesMembersCreateRequestBody));
             } else {
-                $httpBody = $loyalties_members_create_request_body;
+                $httpBody = $loyaltiesMembersCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -563,17 +563,17 @@ class LoyaltiesApi
      *
      * Create Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItem[] $loyalties_earning_rules_create_request_body_item Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItem[] $loyaltiesEarningRulesCreateRequestBodyItem Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateResponseBody[]
      */
-    public function createEarningRule($campaign_id, $loyalties_earning_rules_create_request_body_item = null, string $contentType = self::contentTypes['createEarningRule'][0])
+    public function createEarningRule($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem = null, string $contentType = self::contentTypes['createEarningRule'][0])
     {
-        list($response) = $this->createEarningRuleWithHttpInfo($campaign_id, $loyalties_earning_rules_create_request_body_item, $contentType);
+        list($response) = $this->createEarningRuleWithHttpInfo($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem, $contentType);
         return $response;
     }
 
@@ -582,17 +582,17 @@ class LoyaltiesApi
      *
      * Create Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItem[] $loyalties_earning_rules_create_request_body_item Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItem[] $loyaltiesEarningRulesCreateRequestBodyItem Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateResponseBody[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function createEarningRuleWithHttpInfo($campaign_id, $loyalties_earning_rules_create_request_body_item = null, string $contentType = self::contentTypes['createEarningRule'][0])
+    public function createEarningRuleWithHttpInfo($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem = null, string $contentType = self::contentTypes['createEarningRule'][0])
     {
-        $request = $this->createEarningRuleRequest($campaign_id, $loyalties_earning_rules_create_request_body_item, $contentType);
+        $request = $this->createEarningRuleRequest($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -683,16 +683,16 @@ class LoyaltiesApi
      *
      * Create Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItem[] $loyalties_earning_rules_create_request_body_item Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItem[] $loyaltiesEarningRulesCreateRequestBodyItem Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createEarningRuleAsync($campaign_id, $loyalties_earning_rules_create_request_body_item = null, string $contentType = self::contentTypes['createEarningRule'][0])
+    public function createEarningRuleAsync($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem = null, string $contentType = self::contentTypes['createEarningRule'][0])
     {
-        return $this->createEarningRuleAsyncWithHttpInfo($campaign_id, $loyalties_earning_rules_create_request_body_item, $contentType)
+        return $this->createEarningRuleAsyncWithHttpInfo($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -705,17 +705,17 @@ class LoyaltiesApi
      *
      * Create Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItem[] $loyalties_earning_rules_create_request_body_item Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItem[] $loyaltiesEarningRulesCreateRequestBodyItem Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createEarningRuleAsyncWithHttpInfo($campaign_id, $loyalties_earning_rules_create_request_body_item = null, string $contentType = self::contentTypes['createEarningRule'][0])
+    public function createEarningRuleAsyncWithHttpInfo($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem = null, string $contentType = self::contentTypes['createEarningRule'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateResponseBody[]';
-        $request = $this->createEarningRuleRequest($campaign_id, $loyalties_earning_rules_create_request_body_item, $contentType);
+        $request = $this->createEarningRuleRequest($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -756,20 +756,20 @@ class LoyaltiesApi
     /**
      * Create request for operation 'createEarningRule'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItem[] $loyalties_earning_rules_create_request_body_item Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItem[] $loyaltiesEarningRulesCreateRequestBodyItem Customize the request body based on the type of earning rules you would like to create. The request body is an array of objects. The required minimum properties to include in the payload for each object are event and loyalty. Additionally, if you choose to add a validity_timeframe, you must include a start_date. Furthermore, an earning rule event type:   - customer.segment.entered requires a segment object - a custom event requires a custom_event object - a customer.loyalty.tier.joined, customer.loyalty.tier.left, customer.loyalty.tier.upgraded, customer.loyalty.tier.downgraded, customer.loyalty.tier.prolonged requires a loyalty_tier object (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createEarningRuleRequest($campaign_id, $loyalties_earning_rules_create_request_body_item = null, string $contentType = self::contentTypes['createEarningRule'][0])
+    public function createEarningRuleRequest($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem = null, string $contentType = self::contentTypes['createEarningRule'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling createEarningRule'
+                'Missing the required parameter $campaignId when calling createEarningRule'
             );
         }
 
@@ -785,10 +785,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -801,12 +801,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_earning_rules_create_request_body_item)) {
+        if (isset($loyaltiesEarningRulesCreateRequestBodyItem)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_earning_rules_create_request_body_item));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesEarningRulesCreateRequestBodyItem));
             } else {
-                $httpBody = $loyalties_earning_rules_create_request_body_item;
+                $httpBody = $loyaltiesEarningRulesCreateRequestBodyItem;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -869,17 +869,17 @@ class LoyaltiesApi
      *
      * Create loyalty tiers
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem[] $loyalties_tiers_create_in_bulk_request_body_item Provide tier definitions you want to add to existing loyalty campaign. (optional)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem[] $loyaltiesTiersCreateInBulkRequestBodyItem Provide tier definitions you want to add to existing loyalty campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInBulkLoyaltyTiers'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltyTier[]
      */
-    public function createInBulkLoyaltyTiers($campaign_id, $loyalties_tiers_create_in_bulk_request_body_item = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
+    public function createInBulkLoyaltyTiers($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
     {
-        list($response) = $this->createInBulkLoyaltyTiersWithHttpInfo($campaign_id, $loyalties_tiers_create_in_bulk_request_body_item, $contentType);
+        list($response) = $this->createInBulkLoyaltyTiersWithHttpInfo($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem, $contentType);
         return $response;
     }
 
@@ -888,17 +888,17 @@ class LoyaltiesApi
      *
      * Create loyalty tiers
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem[] $loyalties_tiers_create_in_bulk_request_body_item Provide tier definitions you want to add to existing loyalty campaign. (optional)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem[] $loyaltiesTiersCreateInBulkRequestBodyItem Provide tier definitions you want to add to existing loyalty campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInBulkLoyaltyTiers'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltyTier[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function createInBulkLoyaltyTiersWithHttpInfo($campaign_id, $loyalties_tiers_create_in_bulk_request_body_item = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
+    public function createInBulkLoyaltyTiersWithHttpInfo($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
     {
-        $request = $this->createInBulkLoyaltyTiersRequest($campaign_id, $loyalties_tiers_create_in_bulk_request_body_item, $contentType);
+        $request = $this->createInBulkLoyaltyTiersRequest($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -989,16 +989,16 @@ class LoyaltiesApi
      *
      * Create loyalty tiers
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem[] $loyalties_tiers_create_in_bulk_request_body_item Provide tier definitions you want to add to existing loyalty campaign. (optional)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem[] $loyaltiesTiersCreateInBulkRequestBodyItem Provide tier definitions you want to add to existing loyalty campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInBulkLoyaltyTiers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createInBulkLoyaltyTiersAsync($campaign_id, $loyalties_tiers_create_in_bulk_request_body_item = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
+    public function createInBulkLoyaltyTiersAsync($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
     {
-        return $this->createInBulkLoyaltyTiersAsyncWithHttpInfo($campaign_id, $loyalties_tiers_create_in_bulk_request_body_item, $contentType)
+        return $this->createInBulkLoyaltyTiersAsyncWithHttpInfo($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1011,17 +1011,17 @@ class LoyaltiesApi
      *
      * Create loyalty tiers
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem[] $loyalties_tiers_create_in_bulk_request_body_item Provide tier definitions you want to add to existing loyalty campaign. (optional)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem[] $loyaltiesTiersCreateInBulkRequestBodyItem Provide tier definitions you want to add to existing loyalty campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInBulkLoyaltyTiers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createInBulkLoyaltyTiersAsyncWithHttpInfo($campaign_id, $loyalties_tiers_create_in_bulk_request_body_item = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
+    public function createInBulkLoyaltyTiersAsyncWithHttpInfo($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltyTier[]';
-        $request = $this->createInBulkLoyaltyTiersRequest($campaign_id, $loyalties_tiers_create_in_bulk_request_body_item, $contentType);
+        $request = $this->createInBulkLoyaltyTiersRequest($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1062,20 +1062,20 @@ class LoyaltiesApi
     /**
      * Create request for operation 'createInBulkLoyaltyTiers'
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem[] $loyalties_tiers_create_in_bulk_request_body_item Provide tier definitions you want to add to existing loyalty campaign. (optional)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTiersCreateInBulkRequestBodyItem[] $loyaltiesTiersCreateInBulkRequestBodyItem Provide tier definitions you want to add to existing loyalty campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInBulkLoyaltyTiers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createInBulkLoyaltyTiersRequest($campaign_id, $loyalties_tiers_create_in_bulk_request_body_item = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
+    public function createInBulkLoyaltyTiersRequest($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling createInBulkLoyaltyTiers'
+                'Missing the required parameter $campaignId when calling createInBulkLoyaltyTiers'
             );
         }
 
@@ -1091,10 +1091,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -1107,12 +1107,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_tiers_create_in_bulk_request_body_item)) {
+        if (isset($loyaltiesTiersCreateInBulkRequestBodyItem)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_tiers_create_in_bulk_request_body_item));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesTiersCreateInBulkRequestBodyItem));
             } else {
-                $httpBody = $loyalties_tiers_create_in_bulk_request_body_item;
+                $httpBody = $loyaltiesTiersCreateInBulkRequestBodyItem;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1175,16 +1175,16 @@ class LoyaltiesApi
      *
      * Create Loyalty Campaign
      *
-     * @param  \OpenAPI\Client\Model\LoyaltiesCreateCampaignRequestBody $loyalties_create_campaign_request_body Specify the loyalty campaign details. (optional)
+     * @param  \OpenAPI\Client\Model\LoyaltiesCreateCampaignRequestBody $loyaltiesCreateCampaignRequestBody Specify the loyalty campaign details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesCreateCampaignResponseBody
      */
-    public function createLoyaltyProgram($loyalties_create_campaign_request_body = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
+    public function createLoyaltyProgram($loyaltiesCreateCampaignRequestBody = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
     {
-        list($response) = $this->createLoyaltyProgramWithHttpInfo($loyalties_create_campaign_request_body, $contentType);
+        list($response) = $this->createLoyaltyProgramWithHttpInfo($loyaltiesCreateCampaignRequestBody, $contentType);
         return $response;
     }
 
@@ -1193,16 +1193,16 @@ class LoyaltiesApi
      *
      * Create Loyalty Campaign
      *
-     * @param  \OpenAPI\Client\Model\LoyaltiesCreateCampaignRequestBody $loyalties_create_campaign_request_body Specify the loyalty campaign details. (optional)
+     * @param  \OpenAPI\Client\Model\LoyaltiesCreateCampaignRequestBody $loyaltiesCreateCampaignRequestBody Specify the loyalty campaign details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesCreateCampaignResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createLoyaltyProgramWithHttpInfo($loyalties_create_campaign_request_body = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
+    public function createLoyaltyProgramWithHttpInfo($loyaltiesCreateCampaignRequestBody = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
     {
-        $request = $this->createLoyaltyProgramRequest($loyalties_create_campaign_request_body, $contentType);
+        $request = $this->createLoyaltyProgramRequest($loyaltiesCreateCampaignRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1293,15 +1293,15 @@ class LoyaltiesApi
      *
      * Create Loyalty Campaign
      *
-     * @param  \OpenAPI\Client\Model\LoyaltiesCreateCampaignRequestBody $loyalties_create_campaign_request_body Specify the loyalty campaign details. (optional)
+     * @param  \OpenAPI\Client\Model\LoyaltiesCreateCampaignRequestBody $loyaltiesCreateCampaignRequestBody Specify the loyalty campaign details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createLoyaltyProgramAsync($loyalties_create_campaign_request_body = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
+    public function createLoyaltyProgramAsync($loyaltiesCreateCampaignRequestBody = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
     {
-        return $this->createLoyaltyProgramAsyncWithHttpInfo($loyalties_create_campaign_request_body, $contentType)
+        return $this->createLoyaltyProgramAsyncWithHttpInfo($loyaltiesCreateCampaignRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1314,16 +1314,16 @@ class LoyaltiesApi
      *
      * Create Loyalty Campaign
      *
-     * @param  \OpenAPI\Client\Model\LoyaltiesCreateCampaignRequestBody $loyalties_create_campaign_request_body Specify the loyalty campaign details. (optional)
+     * @param  \OpenAPI\Client\Model\LoyaltiesCreateCampaignRequestBody $loyaltiesCreateCampaignRequestBody Specify the loyalty campaign details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createLoyaltyProgramAsyncWithHttpInfo($loyalties_create_campaign_request_body = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
+    public function createLoyaltyProgramAsyncWithHttpInfo($loyaltiesCreateCampaignRequestBody = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesCreateCampaignResponseBody';
-        $request = $this->createLoyaltyProgramRequest($loyalties_create_campaign_request_body, $contentType);
+        $request = $this->createLoyaltyProgramRequest($loyaltiesCreateCampaignRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1364,13 +1364,13 @@ class LoyaltiesApi
     /**
      * Create request for operation 'createLoyaltyProgram'
      *
-     * @param  \OpenAPI\Client\Model\LoyaltiesCreateCampaignRequestBody $loyalties_create_campaign_request_body Specify the loyalty campaign details. (optional)
+     * @param  \OpenAPI\Client\Model\LoyaltiesCreateCampaignRequestBody $loyaltiesCreateCampaignRequestBody Specify the loyalty campaign details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createLoyaltyProgramRequest($loyalties_create_campaign_request_body = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
+    public function createLoyaltyProgramRequest($loyaltiesCreateCampaignRequestBody = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
     {
 
 
@@ -1393,12 +1393,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_create_campaign_request_body)) {
+        if (isset($loyaltiesCreateCampaignRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_create_campaign_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesCreateCampaignRequestBody));
             } else {
-                $httpBody = $loyalties_create_campaign_request_body;
+                $httpBody = $loyaltiesCreateCampaignRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1461,17 +1461,17 @@ class LoyaltiesApi
      *
      * Create Points Expiration Export
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody $loyalties_points_expiration_export_create_request_body Specify the data filters, types of data to return and order in which the results should be returned. (optional)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody $loyaltiesPointsExpirationExportCreateRequestBody Specify the data filters, types of data to return and order in which the results should be returned. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPointsExpirationExport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBody
      */
-    public function createPointsExpirationExport($campaign_id, $loyalties_points_expiration_export_create_request_body = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
+    public function createPointsExpirationExport($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
     {
-        list($response) = $this->createPointsExpirationExportWithHttpInfo($campaign_id, $loyalties_points_expiration_export_create_request_body, $contentType);
+        list($response) = $this->createPointsExpirationExportWithHttpInfo($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody, $contentType);
         return $response;
     }
 
@@ -1480,17 +1480,17 @@ class LoyaltiesApi
      *
      * Create Points Expiration Export
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody $loyalties_points_expiration_export_create_request_body Specify the data filters, types of data to return and order in which the results should be returned. (optional)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody $loyaltiesPointsExpirationExportCreateRequestBody Specify the data filters, types of data to return and order in which the results should be returned. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPointsExpirationExport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createPointsExpirationExportWithHttpInfo($campaign_id, $loyalties_points_expiration_export_create_request_body = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
+    public function createPointsExpirationExportWithHttpInfo($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
     {
-        $request = $this->createPointsExpirationExportRequest($campaign_id, $loyalties_points_expiration_export_create_request_body, $contentType);
+        $request = $this->createPointsExpirationExportRequest($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1581,16 +1581,16 @@ class LoyaltiesApi
      *
      * Create Points Expiration Export
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody $loyalties_points_expiration_export_create_request_body Specify the data filters, types of data to return and order in which the results should be returned. (optional)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody $loyaltiesPointsExpirationExportCreateRequestBody Specify the data filters, types of data to return and order in which the results should be returned. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPointsExpirationExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createPointsExpirationExportAsync($campaign_id, $loyalties_points_expiration_export_create_request_body = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
+    public function createPointsExpirationExportAsync($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
     {
-        return $this->createPointsExpirationExportAsyncWithHttpInfo($campaign_id, $loyalties_points_expiration_export_create_request_body, $contentType)
+        return $this->createPointsExpirationExportAsyncWithHttpInfo($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1603,17 +1603,17 @@ class LoyaltiesApi
      *
      * Create Points Expiration Export
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody $loyalties_points_expiration_export_create_request_body Specify the data filters, types of data to return and order in which the results should be returned. (optional)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody $loyaltiesPointsExpirationExportCreateRequestBody Specify the data filters, types of data to return and order in which the results should be returned. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPointsExpirationExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createPointsExpirationExportAsyncWithHttpInfo($campaign_id, $loyalties_points_expiration_export_create_request_body = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
+    public function createPointsExpirationExportAsyncWithHttpInfo($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBody';
-        $request = $this->createPointsExpirationExportRequest($campaign_id, $loyalties_points_expiration_export_create_request_body, $contentType);
+        $request = $this->createPointsExpirationExportRequest($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1654,20 +1654,20 @@ class LoyaltiesApi
     /**
      * Create request for operation 'createPointsExpirationExport'
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody $loyalties_points_expiration_export_create_request_body Specify the data filters, types of data to return and order in which the results should be returned. (optional)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody $loyaltiesPointsExpirationExportCreateRequestBody Specify the data filters, types of data to return and order in which the results should be returned. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPointsExpirationExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createPointsExpirationExportRequest($campaign_id, $loyalties_points_expiration_export_create_request_body = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
+    public function createPointsExpirationExportRequest($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling createPointsExpirationExport'
+                'Missing the required parameter $campaignId when calling createPointsExpirationExport'
             );
         }
 
@@ -1683,10 +1683,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -1699,12 +1699,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_points_expiration_export_create_request_body)) {
+        if (isset($loyaltiesPointsExpirationExportCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_points_expiration_export_create_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesPointsExpirationExportCreateRequestBody));
             } else {
-                $httpBody = $loyalties_points_expiration_export_create_request_body;
+                $httpBody = $loyaltiesPointsExpirationExportCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1767,17 +1767,17 @@ class LoyaltiesApi
      *
      * Create Reward Assignment
      *
-     * @param  string $campaign_id Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] $loyalties_rewards_create_assignment_item_request_body Define the cost of the rewards in loyalty points. (optional)
+     * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] $loyaltiesRewardsCreateAssignmentItemRequestBody Define the cost of the rewards in loyalty points. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentResponseBody
      */
-    public function createRewardAssignment1($campaign_id, $loyalties_rewards_create_assignment_item_request_body = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
+    public function createRewardAssignment1($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
     {
-        list($response) = $this->createRewardAssignment1WithHttpInfo($campaign_id, $loyalties_rewards_create_assignment_item_request_body, $contentType);
+        list($response) = $this->createRewardAssignment1WithHttpInfo($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody, $contentType);
         return $response;
     }
 
@@ -1786,17 +1786,17 @@ class LoyaltiesApi
      *
      * Create Reward Assignment
      *
-     * @param  string $campaign_id Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] $loyalties_rewards_create_assignment_item_request_body Define the cost of the rewards in loyalty points. (optional)
+     * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] $loyaltiesRewardsCreateAssignmentItemRequestBody Define the cost of the rewards in loyalty points. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createRewardAssignment1WithHttpInfo($campaign_id, $loyalties_rewards_create_assignment_item_request_body = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
+    public function createRewardAssignment1WithHttpInfo($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
     {
-        $request = $this->createRewardAssignment1Request($campaign_id, $loyalties_rewards_create_assignment_item_request_body, $contentType);
+        $request = $this->createRewardAssignment1Request($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1887,16 +1887,16 @@ class LoyaltiesApi
      *
      * Create Reward Assignment
      *
-     * @param  string $campaign_id Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] $loyalties_rewards_create_assignment_item_request_body Define the cost of the rewards in loyalty points. (optional)
+     * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] $loyaltiesRewardsCreateAssignmentItemRequestBody Define the cost of the rewards in loyalty points. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createRewardAssignment1Async($campaign_id, $loyalties_rewards_create_assignment_item_request_body = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
+    public function createRewardAssignment1Async($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
     {
-        return $this->createRewardAssignment1AsyncWithHttpInfo($campaign_id, $loyalties_rewards_create_assignment_item_request_body, $contentType)
+        return $this->createRewardAssignment1AsyncWithHttpInfo($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1909,17 +1909,17 @@ class LoyaltiesApi
      *
      * Create Reward Assignment
      *
-     * @param  string $campaign_id Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] $loyalties_rewards_create_assignment_item_request_body Define the cost of the rewards in loyalty points. (optional)
+     * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] $loyaltiesRewardsCreateAssignmentItemRequestBody Define the cost of the rewards in loyalty points. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createRewardAssignment1AsyncWithHttpInfo($campaign_id, $loyalties_rewards_create_assignment_item_request_body = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
+    public function createRewardAssignment1AsyncWithHttpInfo($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentResponseBody';
-        $request = $this->createRewardAssignment1Request($campaign_id, $loyalties_rewards_create_assignment_item_request_body, $contentType);
+        $request = $this->createRewardAssignment1Request($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1960,20 +1960,20 @@ class LoyaltiesApi
     /**
      * Create request for operation 'createRewardAssignment1'
      *
-     * @param  string $campaign_id Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] $loyalties_rewards_create_assignment_item_request_body Define the cost of the rewards in loyalty points. (optional)
+     * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] $loyaltiesRewardsCreateAssignmentItemRequestBody Define the cost of the rewards in loyalty points. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createRewardAssignment1Request($campaign_id, $loyalties_rewards_create_assignment_item_request_body = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
+    public function createRewardAssignment1Request($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling createRewardAssignment1'
+                'Missing the required parameter $campaignId when calling createRewardAssignment1'
             );
         }
 
@@ -1989,10 +1989,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -2005,12 +2005,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_rewards_create_assignment_item_request_body)) {
+        if (isset($loyaltiesRewardsCreateAssignmentItemRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_rewards_create_assignment_item_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesRewardsCreateAssignmentItemRequestBody));
             } else {
-                $httpBody = $loyalties_rewards_create_assignment_item_request_body;
+                $httpBody = $loyaltiesRewardsCreateAssignmentItemRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2073,17 +2073,17 @@ class LoyaltiesApi
      *
      * Delete Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteEarningRule($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['deleteEarningRule'][0])
+    public function deleteEarningRule($campaignId, $earningRuleId, string $contentType = self::contentTypes['deleteEarningRule'][0])
     {
-        $this->deleteEarningRuleWithHttpInfo($campaign_id, $earning_rule_id, $contentType);
+        $this->deleteEarningRuleWithHttpInfo($campaignId, $earningRuleId, $contentType);
     }
 
     /**
@@ -2091,17 +2091,17 @@ class LoyaltiesApi
      *
      * Delete Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteEarningRuleWithHttpInfo($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['deleteEarningRule'][0])
+    public function deleteEarningRuleWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['deleteEarningRule'][0])
     {
-        $request = $this->deleteEarningRuleRequest($campaign_id, $earning_rule_id, $contentType);
+        $request = $this->deleteEarningRuleRequest($campaignId, $earningRuleId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2152,16 +2152,16 @@ class LoyaltiesApi
      *
      * Delete Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEarningRuleAsync($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['deleteEarningRule'][0])
+    public function deleteEarningRuleAsync($campaignId, $earningRuleId, string $contentType = self::contentTypes['deleteEarningRule'][0])
     {
-        return $this->deleteEarningRuleAsyncWithHttpInfo($campaign_id, $earning_rule_id, $contentType)
+        return $this->deleteEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2174,17 +2174,17 @@ class LoyaltiesApi
      *
      * Delete Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEarningRuleAsyncWithHttpInfo($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['deleteEarningRule'][0])
+    public function deleteEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['deleteEarningRule'][0])
     {
         $returnType = '';
-        $request = $this->deleteEarningRuleRequest($campaign_id, $earning_rule_id, $contentType);
+        $request = $this->deleteEarningRuleRequest($campaignId, $earningRuleId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2212,27 +2212,27 @@ class LoyaltiesApi
     /**
      * Create request for operation 'deleteEarningRule'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteEarningRuleRequest($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['deleteEarningRule'][0])
+    public function deleteEarningRuleRequest($campaignId, $earningRuleId, string $contentType = self::contentTypes['deleteEarningRule'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling deleteEarningRule'
+                'Missing the required parameter $campaignId when calling deleteEarningRule'
             );
         }
 
-        // verify the required parameter 'earning_rule_id' is set
-        if ($earning_rule_id === null || (is_array($earning_rule_id) && count($earning_rule_id) === 0)) {
+        // verify the required parameter 'earningRuleId' is set
+        if ($earningRuleId === null || (is_array($earningRuleId) && count($earningRuleId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $earning_rule_id when calling deleteEarningRule'
+                'Missing the required parameter $earningRuleId when calling deleteEarningRule'
             );
         }
 
@@ -2247,18 +2247,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($earning_rule_id !== null) {
+        if ($earningRuleId !== null) {
             $resourcePath = str_replace(
                 '{' . 'earningRuleId' . '}',
-                ObjectSerializer::toPathValue($earning_rule_id),
+                ObjectSerializer::toPathValue($earningRuleId),
                 $resourcePath
             );
         }
@@ -2332,7 +2332,7 @@ class LoyaltiesApi
      *
      * Delete Loyalty Campaign
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  bool $force If this flag is set to true, the campaign and related vouchers will be removed permanently. If it is set to false or not set at all, the loyalty campaign and all related loyalty cards will be moved to the bin. Going forward, the user will be able to create the next campaign with the same name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLoyaltyProgram'] to see the possible values for this operation
      *
@@ -2340,9 +2340,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesDeleteResponseBody
      */
-    public function deleteLoyaltyProgram($campaign_id, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
+    public function deleteLoyaltyProgram($campaignId, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
     {
-        list($response) = $this->deleteLoyaltyProgramWithHttpInfo($campaign_id, $force, $contentType);
+        list($response) = $this->deleteLoyaltyProgramWithHttpInfo($campaignId, $force, $contentType);
         return $response;
     }
 
@@ -2351,7 +2351,7 @@ class LoyaltiesApi
      *
      * Delete Loyalty Campaign
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  bool $force If this flag is set to true, the campaign and related vouchers will be removed permanently. If it is set to false or not set at all, the loyalty campaign and all related loyalty cards will be moved to the bin. Going forward, the user will be able to create the next campaign with the same name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLoyaltyProgram'] to see the possible values for this operation
      *
@@ -2359,9 +2359,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesDeleteResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteLoyaltyProgramWithHttpInfo($campaign_id, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
+    public function deleteLoyaltyProgramWithHttpInfo($campaignId, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
     {
-        $request = $this->deleteLoyaltyProgramRequest($campaign_id, $force, $contentType);
+        $request = $this->deleteLoyaltyProgramRequest($campaignId, $force, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2452,16 +2452,16 @@ class LoyaltiesApi
      *
      * Delete Loyalty Campaign
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  bool $force If this flag is set to true, the campaign and related vouchers will be removed permanently. If it is set to false or not set at all, the loyalty campaign and all related loyalty cards will be moved to the bin. Going forward, the user will be able to create the next campaign with the same name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteLoyaltyProgramAsync($campaign_id, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
+    public function deleteLoyaltyProgramAsync($campaignId, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
     {
-        return $this->deleteLoyaltyProgramAsyncWithHttpInfo($campaign_id, $force, $contentType)
+        return $this->deleteLoyaltyProgramAsyncWithHttpInfo($campaignId, $force, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2474,17 +2474,17 @@ class LoyaltiesApi
      *
      * Delete Loyalty Campaign
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  bool $force If this flag is set to true, the campaign and related vouchers will be removed permanently. If it is set to false or not set at all, the loyalty campaign and all related loyalty cards will be moved to the bin. Going forward, the user will be able to create the next campaign with the same name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteLoyaltyProgramAsyncWithHttpInfo($campaign_id, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
+    public function deleteLoyaltyProgramAsyncWithHttpInfo($campaignId, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesDeleteResponseBody';
-        $request = $this->deleteLoyaltyProgramRequest($campaign_id, $force, $contentType);
+        $request = $this->deleteLoyaltyProgramRequest($campaignId, $force, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2525,20 +2525,20 @@ class LoyaltiesApi
     /**
      * Create request for operation 'deleteLoyaltyProgram'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  bool $force If this flag is set to true, the campaign and related vouchers will be removed permanently. If it is set to false or not set at all, the loyalty campaign and all related loyalty cards will be moved to the bin. Going forward, the user will be able to create the next campaign with the same name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteLoyaltyProgramRequest($campaign_id, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
+    public function deleteLoyaltyProgramRequest($campaignId, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling deleteLoyaltyProgram'
+                'Missing the required parameter $campaignId when calling deleteLoyaltyProgram'
             );
         }
 
@@ -2563,10 +2563,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -2640,17 +2640,17 @@ class LoyaltiesApi
      *
      * Delete Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteRewardAssignment1($campaign_id, $assignment_id, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
+    public function deleteRewardAssignment1($campaignId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
     {
-        $this->deleteRewardAssignment1WithHttpInfo($campaign_id, $assignment_id, $contentType);
+        $this->deleteRewardAssignment1WithHttpInfo($campaignId, $assignmentId, $contentType);
     }
 
     /**
@@ -2658,17 +2658,17 @@ class LoyaltiesApi
      *
      * Delete Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteRewardAssignment1WithHttpInfo($campaign_id, $assignment_id, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
+    public function deleteRewardAssignment1WithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
     {
-        $request = $this->deleteRewardAssignment1Request($campaign_id, $assignment_id, $contentType);
+        $request = $this->deleteRewardAssignment1Request($campaignId, $assignmentId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2719,16 +2719,16 @@ class LoyaltiesApi
      *
      * Delete Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteRewardAssignment1Async($campaign_id, $assignment_id, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
+    public function deleteRewardAssignment1Async($campaignId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
     {
-        return $this->deleteRewardAssignment1AsyncWithHttpInfo($campaign_id, $assignment_id, $contentType)
+        return $this->deleteRewardAssignment1AsyncWithHttpInfo($campaignId, $assignmentId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2741,17 +2741,17 @@ class LoyaltiesApi
      *
      * Delete Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteRewardAssignment1AsyncWithHttpInfo($campaign_id, $assignment_id, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
+    public function deleteRewardAssignment1AsyncWithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
     {
         $returnType = '';
-        $request = $this->deleteRewardAssignment1Request($campaign_id, $assignment_id, $contentType);
+        $request = $this->deleteRewardAssignment1Request($campaignId, $assignmentId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2779,27 +2779,27 @@ class LoyaltiesApi
     /**
      * Create request for operation 'deleteRewardAssignment1'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteRewardAssignment1Request($campaign_id, $assignment_id, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
+    public function deleteRewardAssignment1Request($campaignId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling deleteRewardAssignment1'
+                'Missing the required parameter $campaignId when calling deleteRewardAssignment1'
             );
         }
 
-        // verify the required parameter 'assignment_id' is set
-        if ($assignment_id === null || (is_array($assignment_id) && count($assignment_id) === 0)) {
+        // verify the required parameter 'assignmentId' is set
+        if ($assignmentId === null || (is_array($assignmentId) && count($assignmentId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $assignment_id when calling deleteRewardAssignment1'
+                'Missing the required parameter $assignmentId when calling deleteRewardAssignment1'
             );
         }
 
@@ -2814,18 +2814,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($assignment_id !== null) {
+        if ($assignmentId !== null) {
             $resourcePath = str_replace(
                 '{' . 'assignmentId' . '}',
-                ObjectSerializer::toPathValue($assignment_id),
+                ObjectSerializer::toPathValue($assignmentId),
                 $resourcePath
             );
         }
@@ -2899,17 +2899,17 @@ class LoyaltiesApi
      *
      * Disable Earning Rule
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $earning_rule_id Unique earning rule ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $earningRuleId Unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBody
      */
-    public function disableEarningRule($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['disableEarningRule'][0])
+    public function disableEarningRule($campaignId, $earningRuleId, string $contentType = self::contentTypes['disableEarningRule'][0])
     {
-        list($response) = $this->disableEarningRuleWithHttpInfo($campaign_id, $earning_rule_id, $contentType);
+        list($response) = $this->disableEarningRuleWithHttpInfo($campaignId, $earningRuleId, $contentType);
         return $response;
     }
 
@@ -2918,17 +2918,17 @@ class LoyaltiesApi
      *
      * Disable Earning Rule
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $earning_rule_id Unique earning rule ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $earningRuleId Unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function disableEarningRuleWithHttpInfo($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['disableEarningRule'][0])
+    public function disableEarningRuleWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['disableEarningRule'][0])
     {
-        $request = $this->disableEarningRuleRequest($campaign_id, $earning_rule_id, $contentType);
+        $request = $this->disableEarningRuleRequest($campaignId, $earningRuleId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3019,16 +3019,16 @@ class LoyaltiesApi
      *
      * Disable Earning Rule
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $earning_rule_id Unique earning rule ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $earningRuleId Unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function disableEarningRuleAsync($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['disableEarningRule'][0])
+    public function disableEarningRuleAsync($campaignId, $earningRuleId, string $contentType = self::contentTypes['disableEarningRule'][0])
     {
-        return $this->disableEarningRuleAsyncWithHttpInfo($campaign_id, $earning_rule_id, $contentType)
+        return $this->disableEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3041,17 +3041,17 @@ class LoyaltiesApi
      *
      * Disable Earning Rule
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $earning_rule_id Unique earning rule ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $earningRuleId Unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function disableEarningRuleAsyncWithHttpInfo($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['disableEarningRule'][0])
+    public function disableEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['disableEarningRule'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBody';
-        $request = $this->disableEarningRuleRequest($campaign_id, $earning_rule_id, $contentType);
+        $request = $this->disableEarningRuleRequest($campaignId, $earningRuleId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3092,27 +3092,27 @@ class LoyaltiesApi
     /**
      * Create request for operation 'disableEarningRule'
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $earning_rule_id Unique earning rule ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $earningRuleId Unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function disableEarningRuleRequest($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['disableEarningRule'][0])
+    public function disableEarningRuleRequest($campaignId, $earningRuleId, string $contentType = self::contentTypes['disableEarningRule'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling disableEarningRule'
+                'Missing the required parameter $campaignId when calling disableEarningRule'
             );
         }
 
-        // verify the required parameter 'earning_rule_id' is set
-        if ($earning_rule_id === null || (is_array($earning_rule_id) && count($earning_rule_id) === 0)) {
+        // verify the required parameter 'earningRuleId' is set
+        if ($earningRuleId === null || (is_array($earningRuleId) && count($earningRuleId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $earning_rule_id when calling disableEarningRule'
+                'Missing the required parameter $earningRuleId when calling disableEarningRule'
             );
         }
 
@@ -3127,18 +3127,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($earning_rule_id !== null) {
+        if ($earningRuleId !== null) {
             $resourcePath = str_replace(
                 '{' . 'earningRuleId' . '}',
-                ObjectSerializer::toPathValue($earning_rule_id),
+                ObjectSerializer::toPathValue($earningRuleId),
                 $resourcePath
             );
         }
@@ -3212,17 +3212,17 @@ class LoyaltiesApi
      *
      * Enable Earning Rule
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $earning_rule_id Unique earning rule ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $earningRuleId Unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBody
      */
-    public function enableEarningRule($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['enableEarningRule'][0])
+    public function enableEarningRule($campaignId, $earningRuleId, string $contentType = self::contentTypes['enableEarningRule'][0])
     {
-        list($response) = $this->enableEarningRuleWithHttpInfo($campaign_id, $earning_rule_id, $contentType);
+        list($response) = $this->enableEarningRuleWithHttpInfo($campaignId, $earningRuleId, $contentType);
         return $response;
     }
 
@@ -3231,17 +3231,17 @@ class LoyaltiesApi
      *
      * Enable Earning Rule
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $earning_rule_id Unique earning rule ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $earningRuleId Unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function enableEarningRuleWithHttpInfo($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['enableEarningRule'][0])
+    public function enableEarningRuleWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['enableEarningRule'][0])
     {
-        $request = $this->enableEarningRuleRequest($campaign_id, $earning_rule_id, $contentType);
+        $request = $this->enableEarningRuleRequest($campaignId, $earningRuleId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3332,16 +3332,16 @@ class LoyaltiesApi
      *
      * Enable Earning Rule
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $earning_rule_id Unique earning rule ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $earningRuleId Unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enableEarningRuleAsync($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['enableEarningRule'][0])
+    public function enableEarningRuleAsync($campaignId, $earningRuleId, string $contentType = self::contentTypes['enableEarningRule'][0])
     {
-        return $this->enableEarningRuleAsyncWithHttpInfo($campaign_id, $earning_rule_id, $contentType)
+        return $this->enableEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3354,17 +3354,17 @@ class LoyaltiesApi
      *
      * Enable Earning Rule
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $earning_rule_id Unique earning rule ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $earningRuleId Unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enableEarningRuleAsyncWithHttpInfo($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['enableEarningRule'][0])
+    public function enableEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['enableEarningRule'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBody';
-        $request = $this->enableEarningRuleRequest($campaign_id, $earning_rule_id, $contentType);
+        $request = $this->enableEarningRuleRequest($campaignId, $earningRuleId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3405,27 +3405,27 @@ class LoyaltiesApi
     /**
      * Create request for operation 'enableEarningRule'
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $earning_rule_id Unique earning rule ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $earningRuleId Unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function enableEarningRuleRequest($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['enableEarningRule'][0])
+    public function enableEarningRuleRequest($campaignId, $earningRuleId, string $contentType = self::contentTypes['enableEarningRule'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling enableEarningRule'
+                'Missing the required parameter $campaignId when calling enableEarningRule'
             );
         }
 
-        // verify the required parameter 'earning_rule_id' is set
-        if ($earning_rule_id === null || (is_array($earning_rule_id) && count($earning_rule_id) === 0)) {
+        // verify the required parameter 'earningRuleId' is set
+        if ($earningRuleId === null || (is_array($earningRuleId) && count($earningRuleId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $earning_rule_id when calling enableEarningRule'
+                'Missing the required parameter $earningRuleId when calling enableEarningRule'
             );
         }
 
@@ -3440,18 +3440,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($earning_rule_id !== null) {
+        if ($earningRuleId !== null) {
             $resourcePath = str_replace(
                 '{' . 'earningRuleId' . '}',
-                ObjectSerializer::toPathValue($earning_rule_id),
+                ObjectSerializer::toPathValue($earningRuleId),
                 $resourcePath
             );
         }
@@ -3525,17 +3525,17 @@ class LoyaltiesApi
      *
      * Export Loyalty Card Transactions
      *
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyalties_members_transactions_export_create_request_body Specify the parameters and filters for the transaction export. (optional)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyaltiesMembersTransactionsExportCreateRequestBody Specify the parameters and filters for the transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCardTransactions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBody
      */
-    public function exportLoyaltyCardTransactions($member_id, $loyalties_members_transactions_export_create_request_body = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
+    public function exportLoyaltyCardTransactions($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
     {
-        list($response) = $this->exportLoyaltyCardTransactionsWithHttpInfo($member_id, $loyalties_members_transactions_export_create_request_body, $contentType);
+        list($response) = $this->exportLoyaltyCardTransactionsWithHttpInfo($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody, $contentType);
         return $response;
     }
 
@@ -3544,17 +3544,17 @@ class LoyaltiesApi
      *
      * Export Loyalty Card Transactions
      *
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyalties_members_transactions_export_create_request_body Specify the parameters and filters for the transaction export. (optional)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyaltiesMembersTransactionsExportCreateRequestBody Specify the parameters and filters for the transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCardTransactions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function exportLoyaltyCardTransactionsWithHttpInfo($member_id, $loyalties_members_transactions_export_create_request_body = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
+    public function exportLoyaltyCardTransactionsWithHttpInfo($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
     {
-        $request = $this->exportLoyaltyCardTransactionsRequest($member_id, $loyalties_members_transactions_export_create_request_body, $contentType);
+        $request = $this->exportLoyaltyCardTransactionsRequest($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3645,16 +3645,16 @@ class LoyaltiesApi
      *
      * Export Loyalty Card Transactions
      *
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyalties_members_transactions_export_create_request_body Specify the parameters and filters for the transaction export. (optional)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyaltiesMembersTransactionsExportCreateRequestBody Specify the parameters and filters for the transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCardTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function exportLoyaltyCardTransactionsAsync($member_id, $loyalties_members_transactions_export_create_request_body = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
+    public function exportLoyaltyCardTransactionsAsync($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
     {
-        return $this->exportLoyaltyCardTransactionsAsyncWithHttpInfo($member_id, $loyalties_members_transactions_export_create_request_body, $contentType)
+        return $this->exportLoyaltyCardTransactionsAsyncWithHttpInfo($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3667,17 +3667,17 @@ class LoyaltiesApi
      *
      * Export Loyalty Card Transactions
      *
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyalties_members_transactions_export_create_request_body Specify the parameters and filters for the transaction export. (optional)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyaltiesMembersTransactionsExportCreateRequestBody Specify the parameters and filters for the transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCardTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function exportLoyaltyCardTransactionsAsyncWithHttpInfo($member_id, $loyalties_members_transactions_export_create_request_body = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
+    public function exportLoyaltyCardTransactionsAsyncWithHttpInfo($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBody';
-        $request = $this->exportLoyaltyCardTransactionsRequest($member_id, $loyalties_members_transactions_export_create_request_body, $contentType);
+        $request = $this->exportLoyaltyCardTransactionsRequest($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3718,20 +3718,20 @@ class LoyaltiesApi
     /**
      * Create request for operation 'exportLoyaltyCardTransactions'
      *
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyalties_members_transactions_export_create_request_body Specify the parameters and filters for the transaction export. (optional)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyaltiesMembersTransactionsExportCreateRequestBody Specify the parameters and filters for the transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCardTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function exportLoyaltyCardTransactionsRequest($member_id, $loyalties_members_transactions_export_create_request_body = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
+    public function exportLoyaltyCardTransactionsRequest($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
     {
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling exportLoyaltyCardTransactions'
+                'Missing the required parameter $memberId when calling exportLoyaltyCardTransactions'
             );
         }
 
@@ -3747,10 +3747,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -3763,12 +3763,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_members_transactions_export_create_request_body)) {
+        if (isset($loyaltiesMembersTransactionsExportCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_members_transactions_export_create_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesMembersTransactionsExportCreateRequestBody));
             } else {
-                $httpBody = $loyalties_members_transactions_export_create_request_body;
+                $httpBody = $loyaltiesMembersTransactionsExportCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3831,18 +3831,18 @@ class LoyaltiesApi
      *
      * Export Loyalty Card Transactions
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. (required)
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyalties_members_transactions_export_create_request_body Specify the parameters and filters for the transaction export. (optional)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyaltiesMembersTransactionsExportCreateRequestBody Specify the parameters and filters for the transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCardTransactions1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBody
      */
-    public function exportLoyaltyCardTransactions1($campaign_id, $member_id, $loyalties_members_transactions_export_create_request_body = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
+    public function exportLoyaltyCardTransactions1($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
     {
-        list($response) = $this->exportLoyaltyCardTransactions1WithHttpInfo($campaign_id, $member_id, $loyalties_members_transactions_export_create_request_body, $contentType);
+        list($response) = $this->exportLoyaltyCardTransactions1WithHttpInfo($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody, $contentType);
         return $response;
     }
 
@@ -3851,18 +3851,18 @@ class LoyaltiesApi
      *
      * Export Loyalty Card Transactions
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. (required)
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyalties_members_transactions_export_create_request_body Specify the parameters and filters for the transaction export. (optional)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyaltiesMembersTransactionsExportCreateRequestBody Specify the parameters and filters for the transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCardTransactions1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function exportLoyaltyCardTransactions1WithHttpInfo($campaign_id, $member_id, $loyalties_members_transactions_export_create_request_body = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
+    public function exportLoyaltyCardTransactions1WithHttpInfo($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
     {
-        $request = $this->exportLoyaltyCardTransactions1Request($campaign_id, $member_id, $loyalties_members_transactions_export_create_request_body, $contentType);
+        $request = $this->exportLoyaltyCardTransactions1Request($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3953,17 +3953,17 @@ class LoyaltiesApi
      *
      * Export Loyalty Card Transactions
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. (required)
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyalties_members_transactions_export_create_request_body Specify the parameters and filters for the transaction export. (optional)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyaltiesMembersTransactionsExportCreateRequestBody Specify the parameters and filters for the transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCardTransactions1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function exportLoyaltyCardTransactions1Async($campaign_id, $member_id, $loyalties_members_transactions_export_create_request_body = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
+    public function exportLoyaltyCardTransactions1Async($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
     {
-        return $this->exportLoyaltyCardTransactions1AsyncWithHttpInfo($campaign_id, $member_id, $loyalties_members_transactions_export_create_request_body, $contentType)
+        return $this->exportLoyaltyCardTransactions1AsyncWithHttpInfo($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3976,18 +3976,18 @@ class LoyaltiesApi
      *
      * Export Loyalty Card Transactions
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. (required)
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyalties_members_transactions_export_create_request_body Specify the parameters and filters for the transaction export. (optional)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyaltiesMembersTransactionsExportCreateRequestBody Specify the parameters and filters for the transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCardTransactions1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function exportLoyaltyCardTransactions1AsyncWithHttpInfo($campaign_id, $member_id, $loyalties_members_transactions_export_create_request_body = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
+    public function exportLoyaltyCardTransactions1AsyncWithHttpInfo($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBody';
-        $request = $this->exportLoyaltyCardTransactions1Request($campaign_id, $member_id, $loyalties_members_transactions_export_create_request_body, $contentType);
+        $request = $this->exportLoyaltyCardTransactions1Request($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4028,28 +4028,28 @@ class LoyaltiesApi
     /**
      * Create request for operation 'exportLoyaltyCardTransactions1'
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. (required)
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyalties_members_transactions_export_create_request_body Specify the parameters and filters for the transaction export. (optional)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateRequestBody $loyaltiesMembersTransactionsExportCreateRequestBody Specify the parameters and filters for the transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCardTransactions1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function exportLoyaltyCardTransactions1Request($campaign_id, $member_id, $loyalties_members_transactions_export_create_request_body = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
+    public function exportLoyaltyCardTransactions1Request($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling exportLoyaltyCardTransactions1'
+                'Missing the required parameter $campaignId when calling exportLoyaltyCardTransactions1'
             );
         }
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling exportLoyaltyCardTransactions1'
+                'Missing the required parameter $memberId when calling exportLoyaltyCardTransactions1'
             );
         }
 
@@ -4065,18 +4065,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -4089,12 +4089,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_members_transactions_export_create_request_body)) {
+        if (isset($loyaltiesMembersTransactionsExportCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_members_transactions_export_create_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesMembersTransactionsExportCreateRequestBody));
             } else {
-                $httpBody = $loyalties_members_transactions_export_create_request_body;
+                $httpBody = $loyaltiesMembersTransactionsExportCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4157,17 +4157,17 @@ class LoyaltiesApi
      *
      * Get Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesGetResponseBody
      */
-    public function getEarningRule($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['getEarningRule'][0])
+    public function getEarningRule($campaignId, $earningRuleId, string $contentType = self::contentTypes['getEarningRule'][0])
     {
-        list($response) = $this->getEarningRuleWithHttpInfo($campaign_id, $earning_rule_id, $contentType);
+        list($response) = $this->getEarningRuleWithHttpInfo($campaignId, $earningRuleId, $contentType);
         return $response;
     }
 
@@ -4176,17 +4176,17 @@ class LoyaltiesApi
      *
      * Get Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesEarningRulesGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEarningRuleWithHttpInfo($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['getEarningRule'][0])
+    public function getEarningRuleWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['getEarningRule'][0])
     {
-        $request = $this->getEarningRuleRequest($campaign_id, $earning_rule_id, $contentType);
+        $request = $this->getEarningRuleRequest($campaignId, $earningRuleId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4277,16 +4277,16 @@ class LoyaltiesApi
      *
      * Get Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEarningRuleAsync($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['getEarningRule'][0])
+    public function getEarningRuleAsync($campaignId, $earningRuleId, string $contentType = self::contentTypes['getEarningRule'][0])
     {
-        return $this->getEarningRuleAsyncWithHttpInfo($campaign_id, $earning_rule_id, $contentType)
+        return $this->getEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4299,17 +4299,17 @@ class LoyaltiesApi
      *
      * Get Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEarningRuleAsyncWithHttpInfo($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['getEarningRule'][0])
+    public function getEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['getEarningRule'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesEarningRulesGetResponseBody';
-        $request = $this->getEarningRuleRequest($campaign_id, $earning_rule_id, $contentType);
+        $request = $this->getEarningRuleRequest($campaignId, $earningRuleId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4350,27 +4350,27 @@ class LoyaltiesApi
     /**
      * Create request for operation 'getEarningRule'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEarningRuleRequest($campaign_id, $earning_rule_id, string $contentType = self::contentTypes['getEarningRule'][0])
+    public function getEarningRuleRequest($campaignId, $earningRuleId, string $contentType = self::contentTypes['getEarningRule'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling getEarningRule'
+                'Missing the required parameter $campaignId when calling getEarningRule'
             );
         }
 
-        // verify the required parameter 'earning_rule_id' is set
-        if ($earning_rule_id === null || (is_array($earning_rule_id) && count($earning_rule_id) === 0)) {
+        // verify the required parameter 'earningRuleId' is set
+        if ($earningRuleId === null || (is_array($earningRuleId) && count($earningRuleId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $earning_rule_id when calling getEarningRule'
+                'Missing the required parameter $earningRuleId when calling getEarningRule'
             );
         }
 
@@ -4385,18 +4385,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($earning_rule_id !== null) {
+        if ($earningRuleId !== null) {
             $resourcePath = str_replace(
                 '{' . 'earningRuleId' . '}',
-                ObjectSerializer::toPathValue($earning_rule_id),
+                ObjectSerializer::toPathValue($earningRuleId),
                 $resourcePath
             );
         }
@@ -4470,16 +4470,16 @@ class LoyaltiesApi
      *
      * Get Loyalty Campaign
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesGetCampaignResponseBody
      */
-    public function getLoyaltyProgram($campaign_id, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
+    public function getLoyaltyProgram($campaignId, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
     {
-        list($response) = $this->getLoyaltyProgramWithHttpInfo($campaign_id, $contentType);
+        list($response) = $this->getLoyaltyProgramWithHttpInfo($campaignId, $contentType);
         return $response;
     }
 
@@ -4488,16 +4488,16 @@ class LoyaltiesApi
      *
      * Get Loyalty Campaign
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesGetCampaignResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getLoyaltyProgramWithHttpInfo($campaign_id, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
+    public function getLoyaltyProgramWithHttpInfo($campaignId, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
     {
-        $request = $this->getLoyaltyProgramRequest($campaign_id, $contentType);
+        $request = $this->getLoyaltyProgramRequest($campaignId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4588,15 +4588,15 @@ class LoyaltiesApi
      *
      * Get Loyalty Campaign
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLoyaltyProgramAsync($campaign_id, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
+    public function getLoyaltyProgramAsync($campaignId, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
     {
-        return $this->getLoyaltyProgramAsyncWithHttpInfo($campaign_id, $contentType)
+        return $this->getLoyaltyProgramAsyncWithHttpInfo($campaignId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4609,16 +4609,16 @@ class LoyaltiesApi
      *
      * Get Loyalty Campaign
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLoyaltyProgramAsyncWithHttpInfo($campaign_id, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
+    public function getLoyaltyProgramAsyncWithHttpInfo($campaignId, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesGetCampaignResponseBody';
-        $request = $this->getLoyaltyProgramRequest($campaign_id, $contentType);
+        $request = $this->getLoyaltyProgramRequest($campaignId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4659,19 +4659,19 @@ class LoyaltiesApi
     /**
      * Create request for operation 'getLoyaltyProgram'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getLoyaltyProgramRequest($campaign_id, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
+    public function getLoyaltyProgramRequest($campaignId, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling getLoyaltyProgram'
+                'Missing the required parameter $campaignId when calling getLoyaltyProgram'
             );
         }
 
@@ -4686,10 +4686,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -4763,17 +4763,17 @@ class LoyaltiesApi
      *
      * Get Loyalty Tier
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoyaltyTier'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesTiersGetResponseBody
      */
-    public function getLoyaltyTier($campaign_id, $loyalty_tier_id, string $contentType = self::contentTypes['getLoyaltyTier'][0])
+    public function getLoyaltyTier($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['getLoyaltyTier'][0])
     {
-        list($response) = $this->getLoyaltyTierWithHttpInfo($campaign_id, $loyalty_tier_id, $contentType);
+        list($response) = $this->getLoyaltyTierWithHttpInfo($campaignId, $loyaltyTierId, $contentType);
         return $response;
     }
 
@@ -4782,17 +4782,17 @@ class LoyaltiesApi
      *
      * Get Loyalty Tier
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoyaltyTier'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesTiersGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getLoyaltyTierWithHttpInfo($campaign_id, $loyalty_tier_id, string $contentType = self::contentTypes['getLoyaltyTier'][0])
+    public function getLoyaltyTierWithHttpInfo($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['getLoyaltyTier'][0])
     {
-        $request = $this->getLoyaltyTierRequest($campaign_id, $loyalty_tier_id, $contentType);
+        $request = $this->getLoyaltyTierRequest($campaignId, $loyaltyTierId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4883,16 +4883,16 @@ class LoyaltiesApi
      *
      * Get Loyalty Tier
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoyaltyTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLoyaltyTierAsync($campaign_id, $loyalty_tier_id, string $contentType = self::contentTypes['getLoyaltyTier'][0])
+    public function getLoyaltyTierAsync($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['getLoyaltyTier'][0])
     {
-        return $this->getLoyaltyTierAsyncWithHttpInfo($campaign_id, $loyalty_tier_id, $contentType)
+        return $this->getLoyaltyTierAsyncWithHttpInfo($campaignId, $loyaltyTierId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4905,17 +4905,17 @@ class LoyaltiesApi
      *
      * Get Loyalty Tier
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoyaltyTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLoyaltyTierAsyncWithHttpInfo($campaign_id, $loyalty_tier_id, string $contentType = self::contentTypes['getLoyaltyTier'][0])
+    public function getLoyaltyTierAsyncWithHttpInfo($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['getLoyaltyTier'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesTiersGetResponseBody';
-        $request = $this->getLoyaltyTierRequest($campaign_id, $loyalty_tier_id, $contentType);
+        $request = $this->getLoyaltyTierRequest($campaignId, $loyaltyTierId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4956,27 +4956,27 @@ class LoyaltiesApi
     /**
      * Create request for operation 'getLoyaltyTier'
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoyaltyTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getLoyaltyTierRequest($campaign_id, $loyalty_tier_id, string $contentType = self::contentTypes['getLoyaltyTier'][0])
+    public function getLoyaltyTierRequest($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['getLoyaltyTier'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling getLoyaltyTier'
+                'Missing the required parameter $campaignId when calling getLoyaltyTier'
             );
         }
 
-        // verify the required parameter 'loyalty_tier_id' is set
-        if ($loyalty_tier_id === null || (is_array($loyalty_tier_id) && count($loyalty_tier_id) === 0)) {
+        // verify the required parameter 'loyaltyTierId' is set
+        if ($loyaltyTierId === null || (is_array($loyaltyTierId) && count($loyaltyTierId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $loyalty_tier_id when calling getLoyaltyTier'
+                'Missing the required parameter $loyaltyTierId when calling getLoyaltyTier'
             );
         }
 
@@ -4991,18 +4991,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($loyalty_tier_id !== null) {
+        if ($loyaltyTierId !== null) {
             $resourcePath = str_replace(
                 '{' . 'loyaltyTierId' . '}',
-                ObjectSerializer::toPathValue($loyalty_tier_id),
+                ObjectSerializer::toPathValue($loyaltyTierId),
                 $resourcePath
             );
         }
@@ -5076,16 +5076,16 @@ class LoyaltiesApi
      *
      * Get Member
      *
-     * @param  string $member_id Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersGetResponseBody
      */
-    public function getMember($member_id, string $contentType = self::contentTypes['getMember'][0])
+    public function getMember($memberId, string $contentType = self::contentTypes['getMember'][0])
     {
-        list($response) = $this->getMemberWithHttpInfo($member_id, $contentType);
+        list($response) = $this->getMemberWithHttpInfo($memberId, $contentType);
         return $response;
     }
 
@@ -5094,16 +5094,16 @@ class LoyaltiesApi
      *
      * Get Member
      *
-     * @param  string $member_id Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMemberWithHttpInfo($member_id, string $contentType = self::contentTypes['getMember'][0])
+    public function getMemberWithHttpInfo($memberId, string $contentType = self::contentTypes['getMember'][0])
     {
-        $request = $this->getMemberRequest($member_id, $contentType);
+        $request = $this->getMemberRequest($memberId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5194,15 +5194,15 @@ class LoyaltiesApi
      *
      * Get Member
      *
-     * @param  string $member_id Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMemberAsync($member_id, string $contentType = self::contentTypes['getMember'][0])
+    public function getMemberAsync($memberId, string $contentType = self::contentTypes['getMember'][0])
     {
-        return $this->getMemberAsyncWithHttpInfo($member_id, $contentType)
+        return $this->getMemberAsyncWithHttpInfo($memberId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5215,16 +5215,16 @@ class LoyaltiesApi
      *
      * Get Member
      *
-     * @param  string $member_id Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMemberAsyncWithHttpInfo($member_id, string $contentType = self::contentTypes['getMember'][0])
+    public function getMemberAsyncWithHttpInfo($memberId, string $contentType = self::contentTypes['getMember'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersGetResponseBody';
-        $request = $this->getMemberRequest($member_id, $contentType);
+        $request = $this->getMemberRequest($memberId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5265,19 +5265,19 @@ class LoyaltiesApi
     /**
      * Create request for operation 'getMember'
      *
-     * @param  string $member_id Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getMemberRequest($member_id, string $contentType = self::contentTypes['getMember'][0])
+    public function getMemberRequest($memberId, string $contentType = self::contentTypes['getMember'][0])
     {
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling getMember'
+                'Missing the required parameter $memberId when calling getMember'
             );
         }
 
@@ -5292,10 +5292,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -5369,17 +5369,17 @@ class LoyaltiesApi
      *
      * Get Member
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id Unique code that identifies the loyalty card. (required)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId Unique code that identifies the loyalty card. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersGetResponseBody
      */
-    public function getMember1($campaign_id, $member_id, string $contentType = self::contentTypes['getMember1'][0])
+    public function getMember1($campaignId, $memberId, string $contentType = self::contentTypes['getMember1'][0])
     {
-        list($response) = $this->getMember1WithHttpInfo($campaign_id, $member_id, $contentType);
+        list($response) = $this->getMember1WithHttpInfo($campaignId, $memberId, $contentType);
         return $response;
     }
 
@@ -5388,17 +5388,17 @@ class LoyaltiesApi
      *
      * Get Member
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id Unique code that identifies the loyalty card. (required)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId Unique code that identifies the loyalty card. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMember1WithHttpInfo($campaign_id, $member_id, string $contentType = self::contentTypes['getMember1'][0])
+    public function getMember1WithHttpInfo($campaignId, $memberId, string $contentType = self::contentTypes['getMember1'][0])
     {
-        $request = $this->getMember1Request($campaign_id, $member_id, $contentType);
+        $request = $this->getMember1Request($campaignId, $memberId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5489,16 +5489,16 @@ class LoyaltiesApi
      *
      * Get Member
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id Unique code that identifies the loyalty card. (required)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId Unique code that identifies the loyalty card. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMember1Async($campaign_id, $member_id, string $contentType = self::contentTypes['getMember1'][0])
+    public function getMember1Async($campaignId, $memberId, string $contentType = self::contentTypes['getMember1'][0])
     {
-        return $this->getMember1AsyncWithHttpInfo($campaign_id, $member_id, $contentType)
+        return $this->getMember1AsyncWithHttpInfo($campaignId, $memberId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5511,17 +5511,17 @@ class LoyaltiesApi
      *
      * Get Member
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id Unique code that identifies the loyalty card. (required)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId Unique code that identifies the loyalty card. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMember1AsyncWithHttpInfo($campaign_id, $member_id, string $contentType = self::contentTypes['getMember1'][0])
+    public function getMember1AsyncWithHttpInfo($campaignId, $memberId, string $contentType = self::contentTypes['getMember1'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersGetResponseBody';
-        $request = $this->getMember1Request($campaign_id, $member_id, $contentType);
+        $request = $this->getMember1Request($campaignId, $memberId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5562,27 +5562,27 @@ class LoyaltiesApi
     /**
      * Create request for operation 'getMember1'
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id Unique code that identifies the loyalty card. (required)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId Unique code that identifies the loyalty card. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getMember1Request($campaign_id, $member_id, string $contentType = self::contentTypes['getMember1'][0])
+    public function getMember1Request($campaignId, $memberId, string $contentType = self::contentTypes['getMember1'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling getMember1'
+                'Missing the required parameter $campaignId when calling getMember1'
             );
         }
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling getMember1'
+                'Missing the required parameter $memberId when calling getMember1'
             );
         }
 
@@ -5597,18 +5597,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -5682,17 +5682,17 @@ class LoyaltiesApi
      *
      * Get Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id Unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId Unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsGetResponseBody
      */
-    public function getRewardAssignment1($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment1'][0])
+    public function getRewardAssignment1($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment1'][0])
     {
-        list($response) = $this->getRewardAssignment1WithHttpInfo($campaign_id, $assignment_id, $contentType);
+        list($response) = $this->getRewardAssignment1WithHttpInfo($campaignId, $assignmentId, $contentType);
         return $response;
     }
 
@@ -5701,17 +5701,17 @@ class LoyaltiesApi
      *
      * Get Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id Unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId Unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRewardAssignment1WithHttpInfo($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment1'][0])
+    public function getRewardAssignment1WithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment1'][0])
     {
-        $request = $this->getRewardAssignment1Request($campaign_id, $assignment_id, $contentType);
+        $request = $this->getRewardAssignment1Request($campaignId, $assignmentId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5802,16 +5802,16 @@ class LoyaltiesApi
      *
      * Get Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id Unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId Unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRewardAssignment1Async($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment1'][0])
+    public function getRewardAssignment1Async($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment1'][0])
     {
-        return $this->getRewardAssignment1AsyncWithHttpInfo($campaign_id, $assignment_id, $contentType)
+        return $this->getRewardAssignment1AsyncWithHttpInfo($campaignId, $assignmentId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5824,17 +5824,17 @@ class LoyaltiesApi
      *
      * Get Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id Unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId Unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRewardAssignment1AsyncWithHttpInfo($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment1'][0])
+    public function getRewardAssignment1AsyncWithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment1'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesRewardAssignmentsGetResponseBody';
-        $request = $this->getRewardAssignment1Request($campaign_id, $assignment_id, $contentType);
+        $request = $this->getRewardAssignment1Request($campaignId, $assignmentId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5875,27 +5875,27 @@ class LoyaltiesApi
     /**
      * Create request for operation 'getRewardAssignment1'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id Unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId Unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getRewardAssignment1Request($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment1'][0])
+    public function getRewardAssignment1Request($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment1'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling getRewardAssignment1'
+                'Missing the required parameter $campaignId when calling getRewardAssignment1'
             );
         }
 
-        // verify the required parameter 'assignment_id' is set
-        if ($assignment_id === null || (is_array($assignment_id) && count($assignment_id) === 0)) {
+        // verify the required parameter 'assignmentId' is set
+        if ($assignmentId === null || (is_array($assignmentId) && count($assignmentId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $assignment_id when calling getRewardAssignment1'
+                'Missing the required parameter $assignmentId when calling getRewardAssignment1'
             );
         }
 
@@ -5910,18 +5910,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($assignment_id !== null) {
+        if ($assignmentId !== null) {
             $resourcePath = str_replace(
                 '{' . 'assignmentId' . '}',
-                ObjectSerializer::toPathValue($assignment_id),
+                ObjectSerializer::toPathValue($assignmentId),
                 $resourcePath
             );
         }
@@ -5995,17 +5995,17 @@ class LoyaltiesApi
      *
      * Get Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment2'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesRewardsGetResponseBody
      */
-    public function getRewardAssignment2($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment2'][0])
+    public function getRewardAssignment2($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment2'][0])
     {
-        list($response) = $this->getRewardAssignment2WithHttpInfo($campaign_id, $assignment_id, $contentType);
+        list($response) = $this->getRewardAssignment2WithHttpInfo($campaignId, $assignmentId, $contentType);
         return $response;
     }
 
@@ -6014,17 +6014,17 @@ class LoyaltiesApi
      *
      * Get Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment2'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesRewardsGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRewardAssignment2WithHttpInfo($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment2'][0])
+    public function getRewardAssignment2WithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment2'][0])
     {
-        $request = $this->getRewardAssignment2Request($campaign_id, $assignment_id, $contentType);
+        $request = $this->getRewardAssignment2Request($campaignId, $assignmentId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6115,16 +6115,16 @@ class LoyaltiesApi
      *
      * Get Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRewardAssignment2Async($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment2'][0])
+    public function getRewardAssignment2Async($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment2'][0])
     {
-        return $this->getRewardAssignment2AsyncWithHttpInfo($campaign_id, $assignment_id, $contentType)
+        return $this->getRewardAssignment2AsyncWithHttpInfo($campaignId, $assignmentId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6137,17 +6137,17 @@ class LoyaltiesApi
      *
      * Get Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRewardAssignment2AsyncWithHttpInfo($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment2'][0])
+    public function getRewardAssignment2AsyncWithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment2'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesRewardsGetResponseBody';
-        $request = $this->getRewardAssignment2Request($campaign_id, $assignment_id, $contentType);
+        $request = $this->getRewardAssignment2Request($campaignId, $assignmentId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6188,27 +6188,27 @@ class LoyaltiesApi
     /**
      * Create request for operation 'getRewardAssignment2'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getRewardAssignment2Request($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment2'][0])
+    public function getRewardAssignment2Request($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment2'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling getRewardAssignment2'
+                'Missing the required parameter $campaignId when calling getRewardAssignment2'
             );
         }
 
-        // verify the required parameter 'assignment_id' is set
-        if ($assignment_id === null || (is_array($assignment_id) && count($assignment_id) === 0)) {
+        // verify the required parameter 'assignmentId' is set
+        if ($assignmentId === null || (is_array($assignmentId) && count($assignmentId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $assignment_id when calling getRewardAssignment2'
+                'Missing the required parameter $assignmentId when calling getRewardAssignment2'
             );
         }
 
@@ -6223,18 +6223,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($assignment_id !== null) {
+        if ($assignmentId !== null) {
             $resourcePath = str_replace(
                 '{' . 'assignmentId' . '}',
-                ObjectSerializer::toPathValue($assignment_id),
+                ObjectSerializer::toPathValue($assignmentId),
                 $resourcePath
             );
         }
@@ -6308,17 +6308,17 @@ class LoyaltiesApi
      *
      * Get Reward Details
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id Unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId Unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardDetails'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsRewardGetResponseBody
      */
-    public function getRewardDetails($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardDetails'][0])
+    public function getRewardDetails($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardDetails'][0])
     {
-        list($response) = $this->getRewardDetailsWithHttpInfo($campaign_id, $assignment_id, $contentType);
+        list($response) = $this->getRewardDetailsWithHttpInfo($campaignId, $assignmentId, $contentType);
         return $response;
     }
 
@@ -6327,17 +6327,17 @@ class LoyaltiesApi
      *
      * Get Reward Details
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id Unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId Unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardDetails'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsRewardGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRewardDetailsWithHttpInfo($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardDetails'][0])
+    public function getRewardDetailsWithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardDetails'][0])
     {
-        $request = $this->getRewardDetailsRequest($campaign_id, $assignment_id, $contentType);
+        $request = $this->getRewardDetailsRequest($campaignId, $assignmentId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6428,16 +6428,16 @@ class LoyaltiesApi
      *
      * Get Reward Details
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id Unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId Unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardDetails'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRewardDetailsAsync($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardDetails'][0])
+    public function getRewardDetailsAsync($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardDetails'][0])
     {
-        return $this->getRewardDetailsAsyncWithHttpInfo($campaign_id, $assignment_id, $contentType)
+        return $this->getRewardDetailsAsyncWithHttpInfo($campaignId, $assignmentId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6450,17 +6450,17 @@ class LoyaltiesApi
      *
      * Get Reward Details
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id Unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId Unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardDetails'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRewardDetailsAsyncWithHttpInfo($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardDetails'][0])
+    public function getRewardDetailsAsyncWithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardDetails'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesRewardAssignmentsRewardGetResponseBody';
-        $request = $this->getRewardDetailsRequest($campaign_id, $assignment_id, $contentType);
+        $request = $this->getRewardDetailsRequest($campaignId, $assignmentId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6501,27 +6501,27 @@ class LoyaltiesApi
     /**
      * Create request for operation 'getRewardDetails'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id Unique reward assignment ID. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId Unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardDetails'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getRewardDetailsRequest($campaign_id, $assignment_id, string $contentType = self::contentTypes['getRewardDetails'][0])
+    public function getRewardDetailsRequest($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardDetails'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling getRewardDetails'
+                'Missing the required parameter $campaignId when calling getRewardDetails'
             );
         }
 
-        // verify the required parameter 'assignment_id' is set
-        if ($assignment_id === null || (is_array($assignment_id) && count($assignment_id) === 0)) {
+        // verify the required parameter 'assignmentId' is set
+        if ($assignmentId === null || (is_array($assignmentId) && count($assignmentId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $assignment_id when calling getRewardDetails'
+                'Missing the required parameter $assignmentId when calling getRewardDetails'
             );
         }
 
@@ -6536,18 +6536,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($assignment_id !== null) {
+        if ($assignmentId !== null) {
             $resourcePath = str_replace(
                 '{' . 'assignmentId' . '}',
-                ObjectSerializer::toPathValue($assignment_id),
+                ObjectSerializer::toPathValue($assignmentId),
                 $resourcePath
             );
         }
@@ -6621,7 +6621,7 @@ class LoyaltiesApi
      *
      * List Earning Rules
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListEarningRules $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -6631,9 +6631,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesListResponseBody
      */
-    public function listEarningRules($campaign_id, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
+    public function listEarningRules($campaignId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
     {
-        list($response) = $this->listEarningRulesWithHttpInfo($campaign_id, $limit, $page, $order, $contentType);
+        list($response) = $this->listEarningRulesWithHttpInfo($campaignId, $limit, $page, $order, $contentType);
         return $response;
     }
 
@@ -6642,7 +6642,7 @@ class LoyaltiesApi
      *
      * List Earning Rules
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListEarningRules $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -6652,9 +6652,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesEarningRulesListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listEarningRulesWithHttpInfo($campaign_id, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
+    public function listEarningRulesWithHttpInfo($campaignId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
     {
-        $request = $this->listEarningRulesRequest($campaign_id, $limit, $page, $order, $contentType);
+        $request = $this->listEarningRulesRequest($campaignId, $limit, $page, $order, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6745,7 +6745,7 @@ class LoyaltiesApi
      *
      * List Earning Rules
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListEarningRules $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -6754,9 +6754,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listEarningRulesAsync($campaign_id, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
+    public function listEarningRulesAsync($campaignId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
     {
-        return $this->listEarningRulesAsyncWithHttpInfo($campaign_id, $limit, $page, $order, $contentType)
+        return $this->listEarningRulesAsyncWithHttpInfo($campaignId, $limit, $page, $order, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6769,7 +6769,7 @@ class LoyaltiesApi
      *
      * List Earning Rules
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListEarningRules $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -6778,10 +6778,10 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listEarningRulesAsyncWithHttpInfo($campaign_id, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
+    public function listEarningRulesAsyncWithHttpInfo($campaignId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesEarningRulesListResponseBody';
-        $request = $this->listEarningRulesRequest($campaign_id, $limit, $page, $order, $contentType);
+        $request = $this->listEarningRulesRequest($campaignId, $limit, $page, $order, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6822,7 +6822,7 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listEarningRules'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListEarningRules $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -6831,13 +6831,13 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listEarningRulesRequest($campaign_id, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
+    public function listEarningRulesRequest($campaignId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling listEarningRules'
+                'Missing the required parameter $campaignId when calling listEarningRules'
             );
         }
 
@@ -6894,10 +6894,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -6971,7 +6971,7 @@ class LoyaltiesApi
      *
      * List Loyalty Card Transactions
      *
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions'] to see the possible values for this operation
      *
@@ -6979,9 +6979,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody
      */
-    public function listLoyaltyCardTransactions($member_id, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
+    public function listLoyaltyCardTransactions($memberId, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
-        list($response) = $this->listLoyaltyCardTransactionsWithHttpInfo($member_id, $limit, $contentType);
+        list($response) = $this->listLoyaltyCardTransactionsWithHttpInfo($memberId, $limit, $contentType);
         return $response;
     }
 
@@ -6990,7 +6990,7 @@ class LoyaltiesApi
      *
      * List Loyalty Card Transactions
      *
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions'] to see the possible values for this operation
      *
@@ -6998,9 +6998,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listLoyaltyCardTransactionsWithHttpInfo($member_id, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
+    public function listLoyaltyCardTransactionsWithHttpInfo($memberId, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
-        $request = $this->listLoyaltyCardTransactionsRequest($member_id, $limit, $contentType);
+        $request = $this->listLoyaltyCardTransactionsRequest($memberId, $limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7091,16 +7091,16 @@ class LoyaltiesApi
      *
      * List Loyalty Card Transactions
      *
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLoyaltyCardTransactionsAsync($member_id, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
+    public function listLoyaltyCardTransactionsAsync($memberId, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
-        return $this->listLoyaltyCardTransactionsAsyncWithHttpInfo($member_id, $limit, $contentType)
+        return $this->listLoyaltyCardTransactionsAsyncWithHttpInfo($memberId, $limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7113,17 +7113,17 @@ class LoyaltiesApi
      *
      * List Loyalty Card Transactions
      *
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLoyaltyCardTransactionsAsyncWithHttpInfo($member_id, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
+    public function listLoyaltyCardTransactionsAsyncWithHttpInfo($memberId, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody';
-        $request = $this->listLoyaltyCardTransactionsRequest($member_id, $limit, $contentType);
+        $request = $this->listLoyaltyCardTransactionsRequest($memberId, $limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7164,20 +7164,20 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listLoyaltyCardTransactions'
      *
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listLoyaltyCardTransactionsRequest($member_id, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
+    public function listLoyaltyCardTransactionsRequest($memberId, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling listLoyaltyCardTransactions'
+                'Missing the required parameter $memberId when calling listLoyaltyCardTransactions'
             );
         }
 
@@ -7208,10 +7208,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -7285,8 +7285,8 @@ class LoyaltiesApi
      *
      * List Loyalty Card Transactions
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions1'] to see the possible values for this operation
@@ -7295,9 +7295,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody
      */
-    public function listLoyaltyCardTransactions1($campaign_id, $member_id, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
+    public function listLoyaltyCardTransactions1($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
-        list($response) = $this->listLoyaltyCardTransactions1WithHttpInfo($campaign_id, $member_id, $limit, $page, $contentType);
+        list($response) = $this->listLoyaltyCardTransactions1WithHttpInfo($campaignId, $memberId, $limit, $page, $contentType);
         return $response;
     }
 
@@ -7306,8 +7306,8 @@ class LoyaltiesApi
      *
      * List Loyalty Card Transactions
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions1'] to see the possible values for this operation
@@ -7316,9 +7316,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listLoyaltyCardTransactions1WithHttpInfo($campaign_id, $member_id, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
+    public function listLoyaltyCardTransactions1WithHttpInfo($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
-        $request = $this->listLoyaltyCardTransactions1Request($campaign_id, $member_id, $limit, $page, $contentType);
+        $request = $this->listLoyaltyCardTransactions1Request($campaignId, $memberId, $limit, $page, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7409,8 +7409,8 @@ class LoyaltiesApi
      *
      * List Loyalty Card Transactions
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions1'] to see the possible values for this operation
@@ -7418,9 +7418,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLoyaltyCardTransactions1Async($campaign_id, $member_id, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
+    public function listLoyaltyCardTransactions1Async($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
-        return $this->listLoyaltyCardTransactions1AsyncWithHttpInfo($campaign_id, $member_id, $limit, $page, $contentType)
+        return $this->listLoyaltyCardTransactions1AsyncWithHttpInfo($campaignId, $memberId, $limit, $page, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7433,8 +7433,8 @@ class LoyaltiesApi
      *
      * List Loyalty Card Transactions
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions1'] to see the possible values for this operation
@@ -7442,10 +7442,10 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLoyaltyCardTransactions1AsyncWithHttpInfo($campaign_id, $member_id, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
+    public function listLoyaltyCardTransactions1AsyncWithHttpInfo($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody';
-        $request = $this->listLoyaltyCardTransactions1Request($campaign_id, $member_id, $limit, $page, $contentType);
+        $request = $this->listLoyaltyCardTransactions1Request($campaignId, $memberId, $limit, $page, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7486,8 +7486,8 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listLoyaltyCardTransactions1'
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
-     * @param  string $member_id A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
+     * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions1'] to see the possible values for this operation
@@ -7495,20 +7495,20 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listLoyaltyCardTransactions1Request($campaign_id, $member_id, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
+    public function listLoyaltyCardTransactions1Request($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling listLoyaltyCardTransactions1'
+                'Missing the required parameter $campaignId when calling listLoyaltyCardTransactions1'
             );
         }
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling listLoyaltyCardTransactions1'
+                'Missing the required parameter $memberId when calling listLoyaltyCardTransactions1'
             );
         }
 
@@ -7555,18 +7555,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -7970,8 +7970,8 @@ class LoyaltiesApi
      *
      * List Loyalty Tier Earning Rules
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTierEarningRules'] to see the possible values for this operation
@@ -7980,9 +7980,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesTiersEarningRulesListResponseBody
      */
-    public function listLoyaltyTierEarningRules($campaign_id, $loyalty_tier_id, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
+    public function listLoyaltyTierEarningRules($campaignId, $loyaltyTierId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
     {
-        list($response) = $this->listLoyaltyTierEarningRulesWithHttpInfo($campaign_id, $loyalty_tier_id, $limit, $page, $contentType);
+        list($response) = $this->listLoyaltyTierEarningRulesWithHttpInfo($campaignId, $loyaltyTierId, $limit, $page, $contentType);
         return $response;
     }
 
@@ -7991,8 +7991,8 @@ class LoyaltiesApi
      *
      * List Loyalty Tier Earning Rules
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTierEarningRules'] to see the possible values for this operation
@@ -8001,9 +8001,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesTiersEarningRulesListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listLoyaltyTierEarningRulesWithHttpInfo($campaign_id, $loyalty_tier_id, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
+    public function listLoyaltyTierEarningRulesWithHttpInfo($campaignId, $loyaltyTierId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
     {
-        $request = $this->listLoyaltyTierEarningRulesRequest($campaign_id, $loyalty_tier_id, $limit, $page, $contentType);
+        $request = $this->listLoyaltyTierEarningRulesRequest($campaignId, $loyaltyTierId, $limit, $page, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8094,8 +8094,8 @@ class LoyaltiesApi
      *
      * List Loyalty Tier Earning Rules
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTierEarningRules'] to see the possible values for this operation
@@ -8103,9 +8103,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLoyaltyTierEarningRulesAsync($campaign_id, $loyalty_tier_id, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
+    public function listLoyaltyTierEarningRulesAsync($campaignId, $loyaltyTierId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
     {
-        return $this->listLoyaltyTierEarningRulesAsyncWithHttpInfo($campaign_id, $loyalty_tier_id, $limit, $page, $contentType)
+        return $this->listLoyaltyTierEarningRulesAsyncWithHttpInfo($campaignId, $loyaltyTierId, $limit, $page, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8118,8 +8118,8 @@ class LoyaltiesApi
      *
      * List Loyalty Tier Earning Rules
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTierEarningRules'] to see the possible values for this operation
@@ -8127,10 +8127,10 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLoyaltyTierEarningRulesAsyncWithHttpInfo($campaign_id, $loyalty_tier_id, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
+    public function listLoyaltyTierEarningRulesAsyncWithHttpInfo($campaignId, $loyaltyTierId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesTiersEarningRulesListResponseBody';
-        $request = $this->listLoyaltyTierEarningRulesRequest($campaign_id, $loyalty_tier_id, $limit, $page, $contentType);
+        $request = $this->listLoyaltyTierEarningRulesRequest($campaignId, $loyaltyTierId, $limit, $page, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8171,8 +8171,8 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listLoyaltyTierEarningRules'
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTierEarningRules'] to see the possible values for this operation
@@ -8180,20 +8180,20 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listLoyaltyTierEarningRulesRequest($campaign_id, $loyalty_tier_id, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
+    public function listLoyaltyTierEarningRulesRequest($campaignId, $loyaltyTierId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling listLoyaltyTierEarningRules'
+                'Missing the required parameter $campaignId when calling listLoyaltyTierEarningRules'
             );
         }
 
-        // verify the required parameter 'loyalty_tier_id' is set
-        if ($loyalty_tier_id === null || (is_array($loyalty_tier_id) && count($loyalty_tier_id) === 0)) {
+        // verify the required parameter 'loyaltyTierId' is set
+        if ($loyaltyTierId === null || (is_array($loyaltyTierId) && count($loyaltyTierId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $loyalty_tier_id when calling listLoyaltyTierEarningRules'
+                'Missing the required parameter $loyaltyTierId when calling listLoyaltyTierEarningRules'
             );
         }
 
@@ -8240,18 +8240,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($loyalty_tier_id !== null) {
+        if ($loyaltyTierId !== null) {
             $resourcePath = str_replace(
                 '{' . 'loyaltyTierId' . '}',
-                ObjectSerializer::toPathValue($loyalty_tier_id),
+                ObjectSerializer::toPathValue($loyaltyTierId),
                 $resourcePath
             );
         }
@@ -8325,17 +8325,17 @@ class LoyaltiesApi
      *
      * List Loyalty Tier Rewards
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTierRewards'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesTiersRewardsListResponseBody
      */
-    public function listLoyaltyTierRewards($campaign_id, $loyalty_tier_id, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
+    public function listLoyaltyTierRewards($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
     {
-        list($response) = $this->listLoyaltyTierRewardsWithHttpInfo($campaign_id, $loyalty_tier_id, $contentType);
+        list($response) = $this->listLoyaltyTierRewardsWithHttpInfo($campaignId, $loyaltyTierId, $contentType);
         return $response;
     }
 
@@ -8344,17 +8344,17 @@ class LoyaltiesApi
      *
      * List Loyalty Tier Rewards
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTierRewards'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesTiersRewardsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listLoyaltyTierRewardsWithHttpInfo($campaign_id, $loyalty_tier_id, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
+    public function listLoyaltyTierRewardsWithHttpInfo($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
     {
-        $request = $this->listLoyaltyTierRewardsRequest($campaign_id, $loyalty_tier_id, $contentType);
+        $request = $this->listLoyaltyTierRewardsRequest($campaignId, $loyaltyTierId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8445,16 +8445,16 @@ class LoyaltiesApi
      *
      * List Loyalty Tier Rewards
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTierRewards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLoyaltyTierRewardsAsync($campaign_id, $loyalty_tier_id, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
+    public function listLoyaltyTierRewardsAsync($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
     {
-        return $this->listLoyaltyTierRewardsAsyncWithHttpInfo($campaign_id, $loyalty_tier_id, $contentType)
+        return $this->listLoyaltyTierRewardsAsyncWithHttpInfo($campaignId, $loyaltyTierId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8467,17 +8467,17 @@ class LoyaltiesApi
      *
      * List Loyalty Tier Rewards
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTierRewards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLoyaltyTierRewardsAsyncWithHttpInfo($campaign_id, $loyalty_tier_id, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
+    public function listLoyaltyTierRewardsAsyncWithHttpInfo($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesTiersRewardsListResponseBody';
-        $request = $this->listLoyaltyTierRewardsRequest($campaign_id, $loyalty_tier_id, $contentType);
+        $request = $this->listLoyaltyTierRewardsRequest($campaignId, $loyaltyTierId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8518,27 +8518,27 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listLoyaltyTierRewards'
      *
-     * @param  string $campaign_id Unique campaign ID or name. (required)
-     * @param  string $loyalty_tier_id Unique loyalty tier ID. (required)
+     * @param  string $campaignId Unique campaign ID or name. (required)
+     * @param  string $loyaltyTierId Unique loyalty tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTierRewards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listLoyaltyTierRewardsRequest($campaign_id, $loyalty_tier_id, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
+    public function listLoyaltyTierRewardsRequest($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling listLoyaltyTierRewards'
+                'Missing the required parameter $campaignId when calling listLoyaltyTierRewards'
             );
         }
 
-        // verify the required parameter 'loyalty_tier_id' is set
-        if ($loyalty_tier_id === null || (is_array($loyalty_tier_id) && count($loyalty_tier_id) === 0)) {
+        // verify the required parameter 'loyaltyTierId' is set
+        if ($loyaltyTierId === null || (is_array($loyaltyTierId) && count($loyaltyTierId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $loyalty_tier_id when calling listLoyaltyTierRewards'
+                'Missing the required parameter $loyaltyTierId when calling listLoyaltyTierRewards'
             );
         }
 
@@ -8553,18 +8553,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($loyalty_tier_id !== null) {
+        if ($loyaltyTierId !== null) {
             $resourcePath = str_replace(
                 '{' . 'loyaltyTierId' . '}',
-                ObjectSerializer::toPathValue($loyalty_tier_id),
+                ObjectSerializer::toPathValue($loyaltyTierId),
                 $resourcePath
             );
         }
@@ -8638,7 +8638,7 @@ class LoyaltiesApi
      *
      * List Loyalty Tiers
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderListLoyaltyTiers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTiers'] to see the possible values for this operation
@@ -8647,9 +8647,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesTiersListResponseBody
      */
-    public function listLoyaltyTiers($campaign_id, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
+    public function listLoyaltyTiers($campaignId, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
     {
-        list($response) = $this->listLoyaltyTiersWithHttpInfo($campaign_id, $limit, $order, $contentType);
+        list($response) = $this->listLoyaltyTiersWithHttpInfo($campaignId, $limit, $order, $contentType);
         return $response;
     }
 
@@ -8658,7 +8658,7 @@ class LoyaltiesApi
      *
      * List Loyalty Tiers
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderListLoyaltyTiers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTiers'] to see the possible values for this operation
@@ -8667,9 +8667,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesTiersListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listLoyaltyTiersWithHttpInfo($campaign_id, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
+    public function listLoyaltyTiersWithHttpInfo($campaignId, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
     {
-        $request = $this->listLoyaltyTiersRequest($campaign_id, $limit, $order, $contentType);
+        $request = $this->listLoyaltyTiersRequest($campaignId, $limit, $order, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8760,7 +8760,7 @@ class LoyaltiesApi
      *
      * List Loyalty Tiers
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderListLoyaltyTiers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTiers'] to see the possible values for this operation
@@ -8768,9 +8768,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLoyaltyTiersAsync($campaign_id, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
+    public function listLoyaltyTiersAsync($campaignId, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
     {
-        return $this->listLoyaltyTiersAsyncWithHttpInfo($campaign_id, $limit, $order, $contentType)
+        return $this->listLoyaltyTiersAsyncWithHttpInfo($campaignId, $limit, $order, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8783,7 +8783,7 @@ class LoyaltiesApi
      *
      * List Loyalty Tiers
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderListLoyaltyTiers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTiers'] to see the possible values for this operation
@@ -8791,10 +8791,10 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLoyaltyTiersAsyncWithHttpInfo($campaign_id, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
+    public function listLoyaltyTiersAsyncWithHttpInfo($campaignId, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesTiersListResponseBody';
-        $request = $this->listLoyaltyTiersRequest($campaign_id, $limit, $order, $contentType);
+        $request = $this->listLoyaltyTiersRequest($campaignId, $limit, $order, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8835,7 +8835,7 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listLoyaltyTiers'
      *
-     * @param  string $campaign_id Unique loyalty campaign ID or name. (required)
+     * @param  string $campaignId Unique loyalty campaign ID or name. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderListLoyaltyTiers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyTiers'] to see the possible values for this operation
@@ -8843,13 +8843,13 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listLoyaltyTiersRequest($campaign_id, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
+    public function listLoyaltyTiersRequest($campaignId, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling listLoyaltyTiers'
+                'Missing the required parameter $campaignId when calling listLoyaltyTiers'
             );
         }
 
@@ -8890,10 +8890,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -8967,19 +8967,19 @@ class LoyaltiesApi
      *
      * List Member Activity
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberActivity'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMemberActivityListResponseBody
      */
-    public function listMemberActivity($member_id, $limit = null, $order = null, $starting_after_id = null, string $contentType = self::contentTypes['listMemberActivity'][0])
+    public function listMemberActivity($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity'][0])
     {
-        list($response) = $this->listMemberActivityWithHttpInfo($member_id, $limit, $order, $starting_after_id, $contentType);
+        list($response) = $this->listMemberActivityWithHttpInfo($memberId, $limit, $order, $startingAfterId, $contentType);
         return $response;
     }
 
@@ -8988,19 +8988,19 @@ class LoyaltiesApi
      *
      * List Member Activity
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberActivity'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMemberActivityListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listMemberActivityWithHttpInfo($member_id, $limit = null, $order = null, $starting_after_id = null, string $contentType = self::contentTypes['listMemberActivity'][0])
+    public function listMemberActivityWithHttpInfo($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity'][0])
     {
-        $request = $this->listMemberActivityRequest($member_id, $limit, $order, $starting_after_id, $contentType);
+        $request = $this->listMemberActivityRequest($memberId, $limit, $order, $startingAfterId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9091,18 +9091,18 @@ class LoyaltiesApi
      *
      * List Member Activity
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberActivity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMemberActivityAsync($member_id, $limit = null, $order = null, $starting_after_id = null, string $contentType = self::contentTypes['listMemberActivity'][0])
+    public function listMemberActivityAsync($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity'][0])
     {
-        return $this->listMemberActivityAsyncWithHttpInfo($member_id, $limit, $order, $starting_after_id, $contentType)
+        return $this->listMemberActivityAsyncWithHttpInfo($memberId, $limit, $order, $startingAfterId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9115,19 +9115,19 @@ class LoyaltiesApi
      *
      * List Member Activity
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberActivity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMemberActivityAsyncWithHttpInfo($member_id, $limit = null, $order = null, $starting_after_id = null, string $contentType = self::contentTypes['listMemberActivity'][0])
+    public function listMemberActivityAsyncWithHttpInfo($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMemberActivityListResponseBody';
-        $request = $this->listMemberActivityRequest($member_id, $limit, $order, $starting_after_id, $contentType);
+        $request = $this->listMemberActivityRequest($memberId, $limit, $order, $startingAfterId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9168,22 +9168,22 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listMemberActivity'
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberActivity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listMemberActivityRequest($member_id, $limit = null, $order = null, $starting_after_id = null, string $contentType = self::contentTypes['listMemberActivity'][0])
+    public function listMemberActivityRequest($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity'][0])
     {
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling listMemberActivity'
+                'Missing the required parameter $memberId when calling listMemberActivity'
             );
         }
 
@@ -9224,7 +9224,7 @@ class LoyaltiesApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $starting_after_id,
+            $startingAfterId,
             'starting_after_id', // param base name
             'string', // openApiType
             'form', // style
@@ -9234,10 +9234,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -9311,20 +9311,20 @@ class LoyaltiesApi
      *
      * List Member Activity
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberActivity1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMemberActivityListResponseBody
      */
-    public function listMemberActivity1($campaign_id, $member_id, $limit = null, $order = null, $starting_after_id = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
+    public function listMemberActivity1($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
     {
-        list($response) = $this->listMemberActivity1WithHttpInfo($campaign_id, $member_id, $limit, $order, $starting_after_id, $contentType);
+        list($response) = $this->listMemberActivity1WithHttpInfo($campaignId, $memberId, $limit, $order, $startingAfterId, $contentType);
         return $response;
     }
 
@@ -9333,20 +9333,20 @@ class LoyaltiesApi
      *
      * List Member Activity
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberActivity1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMemberActivityListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listMemberActivity1WithHttpInfo($campaign_id, $member_id, $limit = null, $order = null, $starting_after_id = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
+    public function listMemberActivity1WithHttpInfo($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
     {
-        $request = $this->listMemberActivity1Request($campaign_id, $member_id, $limit, $order, $starting_after_id, $contentType);
+        $request = $this->listMemberActivity1Request($campaignId, $memberId, $limit, $order, $startingAfterId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9437,19 +9437,19 @@ class LoyaltiesApi
      *
      * List Member Activity
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberActivity1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMemberActivity1Async($campaign_id, $member_id, $limit = null, $order = null, $starting_after_id = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
+    public function listMemberActivity1Async($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
     {
-        return $this->listMemberActivity1AsyncWithHttpInfo($campaign_id, $member_id, $limit, $order, $starting_after_id, $contentType)
+        return $this->listMemberActivity1AsyncWithHttpInfo($campaignId, $memberId, $limit, $order, $startingAfterId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9462,20 +9462,20 @@ class LoyaltiesApi
      *
      * List Member Activity
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberActivity1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMemberActivity1AsyncWithHttpInfo($campaign_id, $member_id, $limit = null, $order = null, $starting_after_id = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
+    public function listMemberActivity1AsyncWithHttpInfo($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMemberActivityListResponseBody';
-        $request = $this->listMemberActivity1Request($campaign_id, $member_id, $limit, $order, $starting_after_id, $contentType);
+        $request = $this->listMemberActivity1Request($campaignId, $memberId, $limit, $order, $startingAfterId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9516,30 +9516,30 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listMemberActivity1'
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  ParameterOrderCreatedAt $order Apply this filter to order the events according the date and time when it was created. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $starting_after_id A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberActivity1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listMemberActivity1Request($campaign_id, $member_id, $limit = null, $order = null, $starting_after_id = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
+    public function listMemberActivity1Request($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling listMemberActivity1'
+                'Missing the required parameter $campaignId when calling listMemberActivity1'
             );
         }
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling listMemberActivity1'
+                'Missing the required parameter $memberId when calling listMemberActivity1'
             );
         }
 
@@ -9580,7 +9580,7 @@ class LoyaltiesApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $starting_after_id,
+            $startingAfterId,
             'starting_after_id', // param base name
             'string', // openApiType
             'form', // style
@@ -9590,18 +9590,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -9675,16 +9675,16 @@ class LoyaltiesApi
      *
      * List Member&#39;s Loyalty Tiers
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberLoyaltyTier'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTiersListResponseBody
      */
-    public function listMemberLoyaltyTier($member_id, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
+    public function listMemberLoyaltyTier($memberId, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
     {
-        list($response) = $this->listMemberLoyaltyTierWithHttpInfo($member_id, $contentType);
+        list($response) = $this->listMemberLoyaltyTierWithHttpInfo($memberId, $contentType);
         return $response;
     }
 
@@ -9693,16 +9693,16 @@ class LoyaltiesApi
      *
      * List Member&#39;s Loyalty Tiers
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberLoyaltyTier'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersTiersListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listMemberLoyaltyTierWithHttpInfo($member_id, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
+    public function listMemberLoyaltyTierWithHttpInfo($memberId, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
     {
-        $request = $this->listMemberLoyaltyTierRequest($member_id, $contentType);
+        $request = $this->listMemberLoyaltyTierRequest($memberId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9793,15 +9793,15 @@ class LoyaltiesApi
      *
      * List Member&#39;s Loyalty Tiers
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberLoyaltyTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMemberLoyaltyTierAsync($member_id, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
+    public function listMemberLoyaltyTierAsync($memberId, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
     {
-        return $this->listMemberLoyaltyTierAsyncWithHttpInfo($member_id, $contentType)
+        return $this->listMemberLoyaltyTierAsyncWithHttpInfo($memberId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9814,16 +9814,16 @@ class LoyaltiesApi
      *
      * List Member&#39;s Loyalty Tiers
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberLoyaltyTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMemberLoyaltyTierAsyncWithHttpInfo($member_id, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
+    public function listMemberLoyaltyTierAsyncWithHttpInfo($memberId, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersTiersListResponseBody';
-        $request = $this->listMemberLoyaltyTierRequest($member_id, $contentType);
+        $request = $this->listMemberLoyaltyTierRequest($memberId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9864,19 +9864,19 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listMemberLoyaltyTier'
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberLoyaltyTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listMemberLoyaltyTierRequest($member_id, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
+    public function listMemberLoyaltyTierRequest($memberId, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
     {
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling listMemberLoyaltyTier'
+                'Missing the required parameter $memberId when calling listMemberLoyaltyTier'
             );
         }
 
@@ -9891,10 +9891,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -9968,17 +9968,17 @@ class LoyaltiesApi
      *
      * List Member Rewards
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  bool $affordable_only Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  bool $affordableOnly Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberRewards'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersRewardsListResponseBody
      */
-    public function listMemberRewards($member_id, $affordable_only = null, string $contentType = self::contentTypes['listMemberRewards'][0])
+    public function listMemberRewards($memberId, $affordableOnly = null, string $contentType = self::contentTypes['listMemberRewards'][0])
     {
-        list($response) = $this->listMemberRewardsWithHttpInfo($member_id, $affordable_only, $contentType);
+        list($response) = $this->listMemberRewardsWithHttpInfo($memberId, $affordableOnly, $contentType);
         return $response;
     }
 
@@ -9987,17 +9987,17 @@ class LoyaltiesApi
      *
      * List Member Rewards
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  bool $affordable_only Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  bool $affordableOnly Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberRewards'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersRewardsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listMemberRewardsWithHttpInfo($member_id, $affordable_only = null, string $contentType = self::contentTypes['listMemberRewards'][0])
+    public function listMemberRewardsWithHttpInfo($memberId, $affordableOnly = null, string $contentType = self::contentTypes['listMemberRewards'][0])
     {
-        $request = $this->listMemberRewardsRequest($member_id, $affordable_only, $contentType);
+        $request = $this->listMemberRewardsRequest($memberId, $affordableOnly, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10088,16 +10088,16 @@ class LoyaltiesApi
      *
      * List Member Rewards
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  bool $affordable_only Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  bool $affordableOnly Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberRewards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMemberRewardsAsync($member_id, $affordable_only = null, string $contentType = self::contentTypes['listMemberRewards'][0])
+    public function listMemberRewardsAsync($memberId, $affordableOnly = null, string $contentType = self::contentTypes['listMemberRewards'][0])
     {
-        return $this->listMemberRewardsAsyncWithHttpInfo($member_id, $affordable_only, $contentType)
+        return $this->listMemberRewardsAsyncWithHttpInfo($memberId, $affordableOnly, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10110,17 +10110,17 @@ class LoyaltiesApi
      *
      * List Member Rewards
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  bool $affordable_only Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  bool $affordableOnly Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberRewards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMemberRewardsAsyncWithHttpInfo($member_id, $affordable_only = null, string $contentType = self::contentTypes['listMemberRewards'][0])
+    public function listMemberRewardsAsyncWithHttpInfo($memberId, $affordableOnly = null, string $contentType = self::contentTypes['listMemberRewards'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersRewardsListResponseBody';
-        $request = $this->listMemberRewardsRequest($member_id, $affordable_only, $contentType);
+        $request = $this->listMemberRewardsRequest($memberId, $affordableOnly, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10161,20 +10161,20 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listMemberRewards'
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  bool $affordable_only Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  bool $affordableOnly Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberRewards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listMemberRewardsRequest($member_id, $affordable_only = null, string $contentType = self::contentTypes['listMemberRewards'][0])
+    public function listMemberRewardsRequest($memberId, $affordableOnly = null, string $contentType = self::contentTypes['listMemberRewards'][0])
     {
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling listMemberRewards'
+                'Missing the required parameter $memberId when calling listMemberRewards'
             );
         }
 
@@ -10189,7 +10189,7 @@ class LoyaltiesApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $affordable_only,
+            $affordableOnly,
             'affordable_only', // param base name
             'boolean', // openApiType
             'form', // style
@@ -10199,10 +10199,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -10276,12 +10276,12 @@ class LoyaltiesApi
      *
      * List Members
      *
-     * @param  string $campaign_id Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $customer A tracking identifier of a customer who is the holder of the vouchers. It can be an id generated by Voucherify or the source_id. Remember to use the proper URL escape codes if the source_id contains special characters. (optional)
-     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
-     * @param  ParameterUpdatedBeforeAfter $updated_at A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterUpdatedBeforeAfter $updatedAt A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  ParameterOrderVouchers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $code code (optional)
      * @param  string[] $ids ids (optional)
@@ -10291,9 +10291,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesListMembersResponseBody
      */
-    public function listMembers($campaign_id, $limit = null, $page = null, $customer = null, $created_at = null, $updated_at = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
+    public function listMembers($campaignId, $limit = null, $page = null, $customer = null, $createdAt = null, $updatedAt = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
     {
-        list($response) = $this->listMembersWithHttpInfo($campaign_id, $limit, $page, $customer, $created_at, $updated_at, $order, $code, $ids, $contentType);
+        list($response) = $this->listMembersWithHttpInfo($campaignId, $limit, $page, $customer, $createdAt, $updatedAt, $order, $code, $ids, $contentType);
         return $response;
     }
 
@@ -10302,12 +10302,12 @@ class LoyaltiesApi
      *
      * List Members
      *
-     * @param  string $campaign_id Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $customer A tracking identifier of a customer who is the holder of the vouchers. It can be an id generated by Voucherify or the source_id. Remember to use the proper URL escape codes if the source_id contains special characters. (optional)
-     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
-     * @param  ParameterUpdatedBeforeAfter $updated_at A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterUpdatedBeforeAfter $updatedAt A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  ParameterOrderVouchers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $code (optional)
      * @param  string[] $ids (optional)
@@ -10317,9 +10317,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesListMembersResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listMembersWithHttpInfo($campaign_id, $limit = null, $page = null, $customer = null, $created_at = null, $updated_at = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
+    public function listMembersWithHttpInfo($campaignId, $limit = null, $page = null, $customer = null, $createdAt = null, $updatedAt = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
     {
-        $request = $this->listMembersRequest($campaign_id, $limit, $page, $customer, $created_at, $updated_at, $order, $code, $ids, $contentType);
+        $request = $this->listMembersRequest($campaignId, $limit, $page, $customer, $createdAt, $updatedAt, $order, $code, $ids, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10410,12 +10410,12 @@ class LoyaltiesApi
      *
      * List Members
      *
-     * @param  string $campaign_id Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $customer A tracking identifier of a customer who is the holder of the vouchers. It can be an id generated by Voucherify or the source_id. Remember to use the proper URL escape codes if the source_id contains special characters. (optional)
-     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
-     * @param  ParameterUpdatedBeforeAfter $updated_at A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterUpdatedBeforeAfter $updatedAt A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  ParameterOrderVouchers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $code (optional)
      * @param  string[] $ids (optional)
@@ -10424,9 +10424,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMembersAsync($campaign_id, $limit = null, $page = null, $customer = null, $created_at = null, $updated_at = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
+    public function listMembersAsync($campaignId, $limit = null, $page = null, $customer = null, $createdAt = null, $updatedAt = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
     {
-        return $this->listMembersAsyncWithHttpInfo($campaign_id, $limit, $page, $customer, $created_at, $updated_at, $order, $code, $ids, $contentType)
+        return $this->listMembersAsyncWithHttpInfo($campaignId, $limit, $page, $customer, $createdAt, $updatedAt, $order, $code, $ids, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10439,12 +10439,12 @@ class LoyaltiesApi
      *
      * List Members
      *
-     * @param  string $campaign_id Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $customer A tracking identifier of a customer who is the holder of the vouchers. It can be an id generated by Voucherify or the source_id. Remember to use the proper URL escape codes if the source_id contains special characters. (optional)
-     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
-     * @param  ParameterUpdatedBeforeAfter $updated_at A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterUpdatedBeforeAfter $updatedAt A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  ParameterOrderVouchers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $code (optional)
      * @param  string[] $ids (optional)
@@ -10453,10 +10453,10 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMembersAsyncWithHttpInfo($campaign_id, $limit = null, $page = null, $customer = null, $created_at = null, $updated_at = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
+    public function listMembersAsyncWithHttpInfo($campaignId, $limit = null, $page = null, $customer = null, $createdAt = null, $updatedAt = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesListMembersResponseBody';
-        $request = $this->listMembersRequest($campaign_id, $limit, $page, $customer, $created_at, $updated_at, $order, $code, $ids, $contentType);
+        $request = $this->listMembersRequest($campaignId, $limit, $page, $customer, $createdAt, $updatedAt, $order, $code, $ids, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10497,12 +10497,12 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listMembers'
      *
-     * @param  string $campaign_id Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $customer A tracking identifier of a customer who is the holder of the vouchers. It can be an id generated by Voucherify or the source_id. Remember to use the proper URL escape codes if the source_id contains special characters. (optional)
-     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
-     * @param  ParameterUpdatedBeforeAfter $updated_at A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterUpdatedBeforeAfter $updatedAt A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  ParameterOrderVouchers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $code (optional)
      * @param  string[] $ids (optional)
@@ -10511,13 +10511,13 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listMembersRequest($campaign_id, $limit = null, $page = null, $customer = null, $created_at = null, $updated_at = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
+    public function listMembersRequest($campaignId, $limit = null, $page = null, $customer = null, $createdAt = null, $updatedAt = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling listMembers'
+                'Missing the required parameter $campaignId when calling listMembers'
             );
         }
 
@@ -10578,7 +10578,7 @@ class LoyaltiesApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $created_at,
+            $createdAt,
             'created_at', // param base name
             'object', // openApiType
             'deepObject', // style
@@ -10587,7 +10587,7 @@ class LoyaltiesApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $updated_at,
+            $updatedAt,
             'updated_at', // param base name
             'object', // openApiType
             'deepObject', // style
@@ -10624,10 +10624,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -10701,8 +10701,8 @@ class LoyaltiesApi
      *
      * Get Points Expiration
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $member_id Loyalty card code. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $memberId Loyalty card code. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPointsExpiration'] to see the possible values for this operation
@@ -10711,9 +10711,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersPointsExpirationListResponseBody
      */
-    public function listPointsExpiration($campaign_id, $member_id, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
+    public function listPointsExpiration($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
     {
-        list($response) = $this->listPointsExpirationWithHttpInfo($campaign_id, $member_id, $limit, $page, $contentType);
+        list($response) = $this->listPointsExpirationWithHttpInfo($campaignId, $memberId, $limit, $page, $contentType);
         return $response;
     }
 
@@ -10722,8 +10722,8 @@ class LoyaltiesApi
      *
      * Get Points Expiration
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $member_id Loyalty card code. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $memberId Loyalty card code. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPointsExpiration'] to see the possible values for this operation
@@ -10732,9 +10732,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersPointsExpirationListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listPointsExpirationWithHttpInfo($campaign_id, $member_id, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
+    public function listPointsExpirationWithHttpInfo($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
     {
-        $request = $this->listPointsExpirationRequest($campaign_id, $member_id, $limit, $page, $contentType);
+        $request = $this->listPointsExpirationRequest($campaignId, $memberId, $limit, $page, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10825,8 +10825,8 @@ class LoyaltiesApi
      *
      * Get Points Expiration
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $member_id Loyalty card code. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $memberId Loyalty card code. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPointsExpiration'] to see the possible values for this operation
@@ -10834,9 +10834,9 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPointsExpirationAsync($campaign_id, $member_id, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
+    public function listPointsExpirationAsync($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
     {
-        return $this->listPointsExpirationAsyncWithHttpInfo($campaign_id, $member_id, $limit, $page, $contentType)
+        return $this->listPointsExpirationAsyncWithHttpInfo($campaignId, $memberId, $limit, $page, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10849,8 +10849,8 @@ class LoyaltiesApi
      *
      * Get Points Expiration
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $member_id Loyalty card code. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $memberId Loyalty card code. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPointsExpiration'] to see the possible values for this operation
@@ -10858,10 +10858,10 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPointsExpirationAsyncWithHttpInfo($campaign_id, $member_id, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
+    public function listPointsExpirationAsyncWithHttpInfo($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersPointsExpirationListResponseBody';
-        $request = $this->listPointsExpirationRequest($campaign_id, $member_id, $limit, $page, $contentType);
+        $request = $this->listPointsExpirationRequest($campaignId, $memberId, $limit, $page, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10902,8 +10902,8 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listPointsExpiration'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $member_id Loyalty card code. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $memberId Loyalty card code. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPointsExpiration'] to see the possible values for this operation
@@ -10911,20 +10911,20 @@ class LoyaltiesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listPointsExpirationRequest($campaign_id, $member_id, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
+    public function listPointsExpirationRequest($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling listPointsExpiration'
+                'Missing the required parameter $campaignId when calling listPointsExpiration'
             );
         }
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling listPointsExpiration'
+                'Missing the required parameter $memberId when calling listPointsExpiration'
             );
         }
 
@@ -10971,18 +10971,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -11056,19 +11056,19 @@ class LoyaltiesApi
      *
      * List Reward Assignments
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignment_id A unique reward assignment ID. (optional)
+     * @param  string $assignmentId A unique reward assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsListResponseBody
      */
-    public function listRewardAssignments1($campaign_id, $limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
+    public function listRewardAssignments1($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
     {
-        list($response) = $this->listRewardAssignments1WithHttpInfo($campaign_id, $limit, $page, $assignment_id, $contentType);
+        list($response) = $this->listRewardAssignments1WithHttpInfo($campaignId, $limit, $page, $assignmentId, $contentType);
         return $response;
     }
 
@@ -11077,19 +11077,19 @@ class LoyaltiesApi
      *
      * List Reward Assignments
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignment_id A unique reward assignment ID. (optional)
+     * @param  string $assignmentId A unique reward assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listRewardAssignments1WithHttpInfo($campaign_id, $limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
+    public function listRewardAssignments1WithHttpInfo($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
     {
-        $request = $this->listRewardAssignments1Request($campaign_id, $limit, $page, $assignment_id, $contentType);
+        $request = $this->listRewardAssignments1Request($campaignId, $limit, $page, $assignmentId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11180,18 +11180,18 @@ class LoyaltiesApi
      *
      * List Reward Assignments
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignment_id A unique reward assignment ID. (optional)
+     * @param  string $assignmentId A unique reward assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listRewardAssignments1Async($campaign_id, $limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
+    public function listRewardAssignments1Async($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
     {
-        return $this->listRewardAssignments1AsyncWithHttpInfo($campaign_id, $limit, $page, $assignment_id, $contentType)
+        return $this->listRewardAssignments1AsyncWithHttpInfo($campaignId, $limit, $page, $assignmentId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11204,19 +11204,19 @@ class LoyaltiesApi
      *
      * List Reward Assignments
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignment_id A unique reward assignment ID. (optional)
+     * @param  string $assignmentId A unique reward assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listRewardAssignments1AsyncWithHttpInfo($campaign_id, $limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
+    public function listRewardAssignments1AsyncWithHttpInfo($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesRewardAssignmentsListResponseBody';
-        $request = $this->listRewardAssignments1Request($campaign_id, $limit, $page, $assignment_id, $contentType);
+        $request = $this->listRewardAssignments1Request($campaignId, $limit, $page, $assignmentId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11257,22 +11257,22 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listRewardAssignments1'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignment_id A unique reward assignment ID. (optional)
+     * @param  string $assignmentId A unique reward assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listRewardAssignments1Request($campaign_id, $limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
+    public function listRewardAssignments1Request($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling listRewardAssignments1'
+                'Missing the required parameter $campaignId when calling listRewardAssignments1'
             );
         }
 
@@ -11319,7 +11319,7 @@ class LoyaltiesApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $assignment_id,
+            $assignmentId,
             'assignmentId', // param base name
             'string', // openApiType
             'form', // style
@@ -11329,10 +11329,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -11406,19 +11406,19 @@ class LoyaltiesApi
      *
      * List Reward Assignments
      *
-     * @param  string $campaign_id Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignment_id A unique reward assignment ID. (optional)
+     * @param  string $assignmentId A unique reward assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments2'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesRewardsListAssignmentsResponseBody
      */
-    public function listRewardAssignments2($campaign_id, $limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
+    public function listRewardAssignments2($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
     {
-        list($response) = $this->listRewardAssignments2WithHttpInfo($campaign_id, $limit, $page, $assignment_id, $contentType);
+        list($response) = $this->listRewardAssignments2WithHttpInfo($campaignId, $limit, $page, $assignmentId, $contentType);
         return $response;
     }
 
@@ -11427,19 +11427,19 @@ class LoyaltiesApi
      *
      * List Reward Assignments
      *
-     * @param  string $campaign_id Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignment_id A unique reward assignment ID. (optional)
+     * @param  string $assignmentId A unique reward assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments2'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesRewardsListAssignmentsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listRewardAssignments2WithHttpInfo($campaign_id, $limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
+    public function listRewardAssignments2WithHttpInfo($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
     {
-        $request = $this->listRewardAssignments2Request($campaign_id, $limit, $page, $assignment_id, $contentType);
+        $request = $this->listRewardAssignments2Request($campaignId, $limit, $page, $assignmentId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11530,18 +11530,18 @@ class LoyaltiesApi
      *
      * List Reward Assignments
      *
-     * @param  string $campaign_id Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignment_id A unique reward assignment ID. (optional)
+     * @param  string $assignmentId A unique reward assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listRewardAssignments2Async($campaign_id, $limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
+    public function listRewardAssignments2Async($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
     {
-        return $this->listRewardAssignments2AsyncWithHttpInfo($campaign_id, $limit, $page, $assignment_id, $contentType)
+        return $this->listRewardAssignments2AsyncWithHttpInfo($campaignId, $limit, $page, $assignmentId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11554,19 +11554,19 @@ class LoyaltiesApi
      *
      * List Reward Assignments
      *
-     * @param  string $campaign_id Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignment_id A unique reward assignment ID. (optional)
+     * @param  string $assignmentId A unique reward assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listRewardAssignments2AsyncWithHttpInfo($campaign_id, $limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
+    public function listRewardAssignments2AsyncWithHttpInfo($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesRewardsListAssignmentsResponseBody';
-        $request = $this->listRewardAssignments2Request($campaign_id, $limit, $page, $assignment_id, $contentType);
+        $request = $this->listRewardAssignments2Request($campaignId, $limit, $page, $assignmentId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11607,22 +11607,22 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listRewardAssignments2'
      *
-     * @param  string $campaign_id Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignment_id A unique reward assignment ID. (optional)
+     * @param  string $assignmentId A unique reward assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listRewardAssignments2Request($campaign_id, $limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
+    public function listRewardAssignments2Request($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling listRewardAssignments2'
+                'Missing the required parameter $campaignId when calling listRewardAssignments2'
             );
         }
 
@@ -11669,7 +11669,7 @@ class LoyaltiesApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $assignment_id,
+            $assignmentId,
             'assignment_id', // param base name
             'string', // openApiType
             'form', // style
@@ -11679,10 +11679,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -11756,17 +11756,17 @@ class LoyaltiesApi
      *
      * Redeem Reward
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyaltiesMembersRedemptionRedeemRequestBody Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemReward'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBody
      */
-    public function redeemReward($member_id, $loyalties_members_redemption_redeem_request_body = null, string $contentType = self::contentTypes['redeemReward'][0])
+    public function redeemReward($memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward'][0])
     {
-        list($response) = $this->redeemRewardWithHttpInfo($member_id, $loyalties_members_redemption_redeem_request_body, $contentType);
+        list($response) = $this->redeemRewardWithHttpInfo($memberId, $loyaltiesMembersRedemptionRedeemRequestBody, $contentType);
         return $response;
     }
 
@@ -11775,17 +11775,17 @@ class LoyaltiesApi
      *
      * Redeem Reward
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyaltiesMembersRedemptionRedeemRequestBody Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemReward'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function redeemRewardWithHttpInfo($member_id, $loyalties_members_redemption_redeem_request_body = null, string $contentType = self::contentTypes['redeemReward'][0])
+    public function redeemRewardWithHttpInfo($memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward'][0])
     {
-        $request = $this->redeemRewardRequest($member_id, $loyalties_members_redemption_redeem_request_body, $contentType);
+        $request = $this->redeemRewardRequest($memberId, $loyaltiesMembersRedemptionRedeemRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11876,16 +11876,16 @@ class LoyaltiesApi
      *
      * Redeem Reward
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyaltiesMembersRedemptionRedeemRequestBody Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function redeemRewardAsync($member_id, $loyalties_members_redemption_redeem_request_body = null, string $contentType = self::contentTypes['redeemReward'][0])
+    public function redeemRewardAsync($memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward'][0])
     {
-        return $this->redeemRewardAsyncWithHttpInfo($member_id, $loyalties_members_redemption_redeem_request_body, $contentType)
+        return $this->redeemRewardAsyncWithHttpInfo($memberId, $loyaltiesMembersRedemptionRedeemRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11898,17 +11898,17 @@ class LoyaltiesApi
      *
      * Redeem Reward
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyaltiesMembersRedemptionRedeemRequestBody Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function redeemRewardAsyncWithHttpInfo($member_id, $loyalties_members_redemption_redeem_request_body = null, string $contentType = self::contentTypes['redeemReward'][0])
+    public function redeemRewardAsyncWithHttpInfo($memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBody';
-        $request = $this->redeemRewardRequest($member_id, $loyalties_members_redemption_redeem_request_body, $contentType);
+        $request = $this->redeemRewardRequest($memberId, $loyaltiesMembersRedemptionRedeemRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11949,20 +11949,20 @@ class LoyaltiesApi
     /**
      * Create request for operation 'redeemReward'
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyaltiesMembersRedemptionRedeemRequestBody Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function redeemRewardRequest($member_id, $loyalties_members_redemption_redeem_request_body = null, string $contentType = self::contentTypes['redeemReward'][0])
+    public function redeemRewardRequest($memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward'][0])
     {
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling redeemReward'
+                'Missing the required parameter $memberId when calling redeemReward'
             );
         }
 
@@ -11978,10 +11978,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -11994,12 +11994,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_members_redemption_redeem_request_body)) {
+        if (isset($loyaltiesMembersRedemptionRedeemRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_members_redemption_redeem_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesMembersRedemptionRedeemRequestBody));
             } else {
-                $httpBody = $loyalties_members_redemption_redeem_request_body;
+                $httpBody = $loyaltiesMembersRedemptionRedeemRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -12062,18 +12062,18 @@ class LoyaltiesApi
      *
      * Redeem Reward
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyaltiesMembersRedemptionRedeemRequestBody Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemReward1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBody
      */
-    public function redeemReward1($campaign_id, $member_id, $loyalties_members_redemption_redeem_request_body = null, string $contentType = self::contentTypes['redeemReward1'][0])
+    public function redeemReward1($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward1'][0])
     {
-        list($response) = $this->redeemReward1WithHttpInfo($campaign_id, $member_id, $loyalties_members_redemption_redeem_request_body, $contentType);
+        list($response) = $this->redeemReward1WithHttpInfo($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody, $contentType);
         return $response;
     }
 
@@ -12082,18 +12082,18 @@ class LoyaltiesApi
      *
      * Redeem Reward
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyaltiesMembersRedemptionRedeemRequestBody Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemReward1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function redeemReward1WithHttpInfo($campaign_id, $member_id, $loyalties_members_redemption_redeem_request_body = null, string $contentType = self::contentTypes['redeemReward1'][0])
+    public function redeemReward1WithHttpInfo($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward1'][0])
     {
-        $request = $this->redeemReward1Request($campaign_id, $member_id, $loyalties_members_redemption_redeem_request_body, $contentType);
+        $request = $this->redeemReward1Request($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12184,17 +12184,17 @@ class LoyaltiesApi
      *
      * Redeem Reward
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyaltiesMembersRedemptionRedeemRequestBody Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemReward1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function redeemReward1Async($campaign_id, $member_id, $loyalties_members_redemption_redeem_request_body = null, string $contentType = self::contentTypes['redeemReward1'][0])
+    public function redeemReward1Async($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward1'][0])
     {
-        return $this->redeemReward1AsyncWithHttpInfo($campaign_id, $member_id, $loyalties_members_redemption_redeem_request_body, $contentType)
+        return $this->redeemReward1AsyncWithHttpInfo($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12207,18 +12207,18 @@ class LoyaltiesApi
      *
      * Redeem Reward
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyaltiesMembersRedemptionRedeemRequestBody Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemReward1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function redeemReward1AsyncWithHttpInfo($campaign_id, $member_id, $loyalties_members_redemption_redeem_request_body = null, string $contentType = self::contentTypes['redeemReward1'][0])
+    public function redeemReward1AsyncWithHttpInfo($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward1'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBody';
-        $request = $this->redeemReward1Request($campaign_id, $member_id, $loyalties_members_redemption_redeem_request_body, $contentType);
+        $request = $this->redeemReward1Request($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12259,28 +12259,28 @@ class LoyaltiesApi
     /**
      * Create request for operation 'redeemReward1'
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBody $loyaltiesMembersRedemptionRedeemRequestBody Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemReward1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function redeemReward1Request($campaign_id, $member_id, $loyalties_members_redemption_redeem_request_body = null, string $contentType = self::contentTypes['redeemReward1'][0])
+    public function redeemReward1Request($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward1'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling redeemReward1'
+                'Missing the required parameter $campaignId when calling redeemReward1'
             );
         }
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling redeemReward1'
+                'Missing the required parameter $memberId when calling redeemReward1'
             );
         }
 
@@ -12296,18 +12296,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -12320,12 +12320,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_members_redemption_redeem_request_body)) {
+        if (isset($loyaltiesMembersRedemptionRedeemRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_members_redemption_redeem_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesMembersRedemptionRedeemRequestBody));
             } else {
-                $httpBody = $loyalties_members_redemption_redeem_request_body;
+                $httpBody = $loyaltiesMembersRedemptionRedeemRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -12388,18 +12388,18 @@ class LoyaltiesApi
      *
      * Transfer Loyalty Points
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination). (required)
-     * @param  string $member_id A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination). (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesTransferPoints[] $loyalties_transfer_points Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card. (optional)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination). (required)
+     * @param  string $memberId A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination). (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTransferPoints[] $loyaltiesTransferPoints Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferPoints'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBody
      */
-    public function transferPoints($campaign_id, $member_id, $loyalties_transfer_points = null, string $contentType = self::contentTypes['transferPoints'][0])
+    public function transferPoints($campaignId, $memberId, $loyaltiesTransferPoints = null, string $contentType = self::contentTypes['transferPoints'][0])
     {
-        list($response) = $this->transferPointsWithHttpInfo($campaign_id, $member_id, $loyalties_transfer_points, $contentType);
+        list($response) = $this->transferPointsWithHttpInfo($campaignId, $memberId, $loyaltiesTransferPoints, $contentType);
         return $response;
     }
 
@@ -12408,18 +12408,18 @@ class LoyaltiesApi
      *
      * Transfer Loyalty Points
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination). (required)
-     * @param  string $member_id A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination). (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesTransferPoints[] $loyalties_transfer_points Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card. (optional)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination). (required)
+     * @param  string $memberId A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination). (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTransferPoints[] $loyaltiesTransferPoints Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferPoints'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transferPointsWithHttpInfo($campaign_id, $member_id, $loyalties_transfer_points = null, string $contentType = self::contentTypes['transferPoints'][0])
+    public function transferPointsWithHttpInfo($campaignId, $memberId, $loyaltiesTransferPoints = null, string $contentType = self::contentTypes['transferPoints'][0])
     {
-        $request = $this->transferPointsRequest($campaign_id, $member_id, $loyalties_transfer_points, $contentType);
+        $request = $this->transferPointsRequest($campaignId, $memberId, $loyaltiesTransferPoints, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12510,17 +12510,17 @@ class LoyaltiesApi
      *
      * Transfer Loyalty Points
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination). (required)
-     * @param  string $member_id A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination). (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesTransferPoints[] $loyalties_transfer_points Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card. (optional)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination). (required)
+     * @param  string $memberId A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination). (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTransferPoints[] $loyaltiesTransferPoints Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferPoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferPointsAsync($campaign_id, $member_id, $loyalties_transfer_points = null, string $contentType = self::contentTypes['transferPoints'][0])
+    public function transferPointsAsync($campaignId, $memberId, $loyaltiesTransferPoints = null, string $contentType = self::contentTypes['transferPoints'][0])
     {
-        return $this->transferPointsAsyncWithHttpInfo($campaign_id, $member_id, $loyalties_transfer_points, $contentType)
+        return $this->transferPointsAsyncWithHttpInfo($campaignId, $memberId, $loyaltiesTransferPoints, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12533,18 +12533,18 @@ class LoyaltiesApi
      *
      * Transfer Loyalty Points
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination). (required)
-     * @param  string $member_id A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination). (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesTransferPoints[] $loyalties_transfer_points Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card. (optional)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination). (required)
+     * @param  string $memberId A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination). (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTransferPoints[] $loyaltiesTransferPoints Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferPoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferPointsAsyncWithHttpInfo($campaign_id, $member_id, $loyalties_transfer_points = null, string $contentType = self::contentTypes['transferPoints'][0])
+    public function transferPointsAsyncWithHttpInfo($campaignId, $memberId, $loyaltiesTransferPoints = null, string $contentType = self::contentTypes['transferPoints'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBody';
-        $request = $this->transferPointsRequest($campaign_id, $member_id, $loyalties_transfer_points, $contentType);
+        $request = $this->transferPointsRequest($campaignId, $memberId, $loyaltiesTransferPoints, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12585,28 +12585,28 @@ class LoyaltiesApi
     /**
      * Create request for operation 'transferPoints'
      *
-     * @param  string $campaign_id A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination). (required)
-     * @param  string $member_id A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination). (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesTransferPoints[] $loyalties_transfer_points Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card. (optional)
+     * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher to which the loyalty points will be sent (destination). (required)
+     * @param  string $memberId A unique code identifying the loyalty card to which the user wants to transfer loyalty points (destination). (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTransferPoints[] $loyaltiesTransferPoints Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferPoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function transferPointsRequest($campaign_id, $member_id, $loyalties_transfer_points = null, string $contentType = self::contentTypes['transferPoints'][0])
+    public function transferPointsRequest($campaignId, $memberId, $loyaltiesTransferPoints = null, string $contentType = self::contentTypes['transferPoints'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling transferPoints'
+                'Missing the required parameter $campaignId when calling transferPoints'
             );
         }
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling transferPoints'
+                'Missing the required parameter $memberId when calling transferPoints'
             );
         }
 
@@ -12622,18 +12622,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -12646,12 +12646,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_transfer_points)) {
+        if (isset($loyaltiesTransferPoints)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_transfer_points));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesTransferPoints));
             } else {
-                $httpBody = $loyalties_transfer_points;
+                $httpBody = $loyaltiesTransferPoints;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -12714,18 +12714,18 @@ class LoyaltiesApi
      *
      * Update Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBody $loyalties_earning_rules_update_request_body Specify the parameters that you would like to update for the given earning rule. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBody $loyaltiesEarningRulesUpdateRequestBody Specify the parameters that you would like to update for the given earning rule. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBody
      */
-    public function updateEarningRule($campaign_id, $earning_rule_id, $loyalties_earning_rules_update_request_body = null, string $contentType = self::contentTypes['updateEarningRule'][0])
+    public function updateEarningRule($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateEarningRule'][0])
     {
-        list($response) = $this->updateEarningRuleWithHttpInfo($campaign_id, $earning_rule_id, $loyalties_earning_rules_update_request_body, $contentType);
+        list($response) = $this->updateEarningRuleWithHttpInfo($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody, $contentType);
         return $response;
     }
 
@@ -12734,18 +12734,18 @@ class LoyaltiesApi
      *
      * Update Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBody $loyalties_earning_rules_update_request_body Specify the parameters that you would like to update for the given earning rule. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBody $loyaltiesEarningRulesUpdateRequestBody Specify the parameters that you would like to update for the given earning rule. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateEarningRuleWithHttpInfo($campaign_id, $earning_rule_id, $loyalties_earning_rules_update_request_body = null, string $contentType = self::contentTypes['updateEarningRule'][0])
+    public function updateEarningRuleWithHttpInfo($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateEarningRule'][0])
     {
-        $request = $this->updateEarningRuleRequest($campaign_id, $earning_rule_id, $loyalties_earning_rules_update_request_body, $contentType);
+        $request = $this->updateEarningRuleRequest($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12836,17 +12836,17 @@ class LoyaltiesApi
      *
      * Update Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBody $loyalties_earning_rules_update_request_body Specify the parameters that you would like to update for the given earning rule. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBody $loyaltiesEarningRulesUpdateRequestBody Specify the parameters that you would like to update for the given earning rule. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateEarningRuleAsync($campaign_id, $earning_rule_id, $loyalties_earning_rules_update_request_body = null, string $contentType = self::contentTypes['updateEarningRule'][0])
+    public function updateEarningRuleAsync($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateEarningRule'][0])
     {
-        return $this->updateEarningRuleAsyncWithHttpInfo($campaign_id, $earning_rule_id, $loyalties_earning_rules_update_request_body, $contentType)
+        return $this->updateEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12859,18 +12859,18 @@ class LoyaltiesApi
      *
      * Update Earning Rule
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBody $loyalties_earning_rules_update_request_body Specify the parameters that you would like to update for the given earning rule. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBody $loyaltiesEarningRulesUpdateRequestBody Specify the parameters that you would like to update for the given earning rule. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateEarningRuleAsyncWithHttpInfo($campaign_id, $earning_rule_id, $loyalties_earning_rules_update_request_body = null, string $contentType = self::contentTypes['updateEarningRule'][0])
+    public function updateEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateEarningRule'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBody';
-        $request = $this->updateEarningRuleRequest($campaign_id, $earning_rule_id, $loyalties_earning_rules_update_request_body, $contentType);
+        $request = $this->updateEarningRuleRequest($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12911,28 +12911,28 @@ class LoyaltiesApi
     /**
      * Create request for operation 'updateEarningRule'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $earning_rule_id A unique earning rule ID. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBody $loyalties_earning_rules_update_request_body Specify the parameters that you would like to update for the given earning rule. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $earningRuleId A unique earning rule ID. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBody $loyaltiesEarningRulesUpdateRequestBody Specify the parameters that you would like to update for the given earning rule. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateEarningRuleRequest($campaign_id, $earning_rule_id, $loyalties_earning_rules_update_request_body = null, string $contentType = self::contentTypes['updateEarningRule'][0])
+    public function updateEarningRuleRequest($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateEarningRule'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling updateEarningRule'
+                'Missing the required parameter $campaignId when calling updateEarningRule'
             );
         }
 
-        // verify the required parameter 'earning_rule_id' is set
-        if ($earning_rule_id === null || (is_array($earning_rule_id) && count($earning_rule_id) === 0)) {
+        // verify the required parameter 'earningRuleId' is set
+        if ($earningRuleId === null || (is_array($earningRuleId) && count($earningRuleId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $earning_rule_id when calling updateEarningRule'
+                'Missing the required parameter $earningRuleId when calling updateEarningRule'
             );
         }
 
@@ -12948,18 +12948,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($earning_rule_id !== null) {
+        if ($earningRuleId !== null) {
             $resourcePath = str_replace(
                 '{' . 'earningRuleId' . '}',
-                ObjectSerializer::toPathValue($earning_rule_id),
+                ObjectSerializer::toPathValue($earningRuleId),
                 $resourcePath
             );
         }
@@ -12972,12 +12972,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_earning_rules_update_request_body)) {
+        if (isset($loyaltiesEarningRulesUpdateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_earning_rules_update_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesEarningRulesUpdateRequestBody));
             } else {
-                $httpBody = $loyalties_earning_rules_update_request_body;
+                $httpBody = $loyaltiesEarningRulesUpdateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -13040,17 +13040,17 @@ class LoyaltiesApi
      *
      * Add or Remove Loyalty Card Balance
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyCardBalance'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBody
      */
-    public function updateLoyaltyCardBalance($member_id, $loyalties_members_balance_update_request_body = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
+    public function updateLoyaltyCardBalance($memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
     {
-        list($response) = $this->updateLoyaltyCardBalanceWithHttpInfo($member_id, $loyalties_members_balance_update_request_body, $contentType);
+        list($response) = $this->updateLoyaltyCardBalanceWithHttpInfo($memberId, $loyaltiesMembersBalanceUpdateRequestBody, $contentType);
         return $response;
     }
 
@@ -13059,17 +13059,17 @@ class LoyaltiesApi
      *
      * Add or Remove Loyalty Card Balance
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyCardBalance'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateLoyaltyCardBalanceWithHttpInfo($member_id, $loyalties_members_balance_update_request_body = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
+    public function updateLoyaltyCardBalanceWithHttpInfo($memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
     {
-        $request = $this->updateLoyaltyCardBalanceRequest($member_id, $loyalties_members_balance_update_request_body, $contentType);
+        $request = $this->updateLoyaltyCardBalanceRequest($memberId, $loyaltiesMembersBalanceUpdateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13160,16 +13160,16 @@ class LoyaltiesApi
      *
      * Add or Remove Loyalty Card Balance
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyCardBalance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateLoyaltyCardBalanceAsync($member_id, $loyalties_members_balance_update_request_body = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
+    public function updateLoyaltyCardBalanceAsync($memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
     {
-        return $this->updateLoyaltyCardBalanceAsyncWithHttpInfo($member_id, $loyalties_members_balance_update_request_body, $contentType)
+        return $this->updateLoyaltyCardBalanceAsyncWithHttpInfo($memberId, $loyaltiesMembersBalanceUpdateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13182,17 +13182,17 @@ class LoyaltiesApi
      *
      * Add or Remove Loyalty Card Balance
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyCardBalance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateLoyaltyCardBalanceAsyncWithHttpInfo($member_id, $loyalties_members_balance_update_request_body = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
+    public function updateLoyaltyCardBalanceAsyncWithHttpInfo($memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBody';
-        $request = $this->updateLoyaltyCardBalanceRequest($member_id, $loyalties_members_balance_update_request_body, $contentType);
+        $request = $this->updateLoyaltyCardBalanceRequest($memberId, $loyaltiesMembersBalanceUpdateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13233,20 +13233,20 @@ class LoyaltiesApi
     /**
      * Create request for operation 'updateLoyaltyCardBalance'
      *
-     * @param  string $member_id Unique loyalty card assigned to a particular customer. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism. (optional)
+     * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyCardBalance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateLoyaltyCardBalanceRequest($member_id, $loyalties_members_balance_update_request_body = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
+    public function updateLoyaltyCardBalanceRequest($memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
     {
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling updateLoyaltyCardBalance'
+                'Missing the required parameter $memberId when calling updateLoyaltyCardBalance'
             );
         }
 
@@ -13262,10 +13262,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -13278,12 +13278,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_members_balance_update_request_body)) {
+        if (isset($loyaltiesMembersBalanceUpdateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_members_balance_update_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesMembersBalanceUpdateRequestBody));
             } else {
-                $httpBody = $loyalties_members_balance_update_request_body;
+                $httpBody = $loyaltiesMembersBalanceUpdateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -13346,18 +13346,18 @@ class LoyaltiesApi
      *
      * Add or Remove Loyalty Card Balance
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism. (optional)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyCardBalance1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBody
      */
-    public function updateLoyaltyCardBalance1($campaign_id, $member_id, $loyalties_members_balance_update_request_body = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
+    public function updateLoyaltyCardBalance1($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
     {
-        list($response) = $this->updateLoyaltyCardBalance1WithHttpInfo($campaign_id, $member_id, $loyalties_members_balance_update_request_body, $contentType);
+        list($response) = $this->updateLoyaltyCardBalance1WithHttpInfo($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody, $contentType);
         return $response;
     }
 
@@ -13366,18 +13366,18 @@ class LoyaltiesApi
      *
      * Add or Remove Loyalty Card Balance
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism. (optional)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyCardBalance1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateLoyaltyCardBalance1WithHttpInfo($campaign_id, $member_id, $loyalties_members_balance_update_request_body = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
+    public function updateLoyaltyCardBalance1WithHttpInfo($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
     {
-        $request = $this->updateLoyaltyCardBalance1Request($campaign_id, $member_id, $loyalties_members_balance_update_request_body, $contentType);
+        $request = $this->updateLoyaltyCardBalance1Request($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13468,17 +13468,17 @@ class LoyaltiesApi
      *
      * Add or Remove Loyalty Card Balance
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism. (optional)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyCardBalance1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateLoyaltyCardBalance1Async($campaign_id, $member_id, $loyalties_members_balance_update_request_body = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
+    public function updateLoyaltyCardBalance1Async($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
     {
-        return $this->updateLoyaltyCardBalance1AsyncWithHttpInfo($campaign_id, $member_id, $loyalties_members_balance_update_request_body, $contentType)
+        return $this->updateLoyaltyCardBalance1AsyncWithHttpInfo($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13491,18 +13491,18 @@ class LoyaltiesApi
      *
      * Add or Remove Loyalty Card Balance
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism. (optional)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyCardBalance1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateLoyaltyCardBalance1AsyncWithHttpInfo($campaign_id, $member_id, $loyalties_members_balance_update_request_body = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
+    public function updateLoyaltyCardBalance1AsyncWithHttpInfo($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBody';
-        $request = $this->updateLoyaltyCardBalance1Request($campaign_id, $member_id, $loyalties_members_balance_update_request_body, $contentType);
+        $request = $this->updateLoyaltyCardBalance1Request($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13543,28 +13543,28 @@ class LoyaltiesApi
     /**
      * Create request for operation 'updateLoyaltyCardBalance1'
      *
-     * @param  string $campaign_id Unique campaign ID. (required)
-     * @param  string $member_id A code that identifies the loyalty card. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism. (optional)
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId A code that identifies the loyalty card. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyCardBalance1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateLoyaltyCardBalance1Request($campaign_id, $member_id, $loyalties_members_balance_update_request_body = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
+    public function updateLoyaltyCardBalance1Request($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling updateLoyaltyCardBalance1'
+                'Missing the required parameter $campaignId when calling updateLoyaltyCardBalance1'
             );
         }
 
-        // verify the required parameter 'member_id' is set
-        if ($member_id === null || (is_array($member_id) && count($member_id) === 0)) {
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $member_id when calling updateLoyaltyCardBalance1'
+                'Missing the required parameter $memberId when calling updateLoyaltyCardBalance1'
             );
         }
 
@@ -13580,18 +13580,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($member_id !== null) {
+        if ($memberId !== null) {
             $resourcePath = str_replace(
                 '{' . 'memberId' . '}',
-                ObjectSerializer::toPathValue($member_id),
+                ObjectSerializer::toPathValue($memberId),
                 $resourcePath
             );
         }
@@ -13604,12 +13604,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_members_balance_update_request_body)) {
+        if (isset($loyaltiesMembersBalanceUpdateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_members_balance_update_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesMembersBalanceUpdateRequestBody));
             } else {
-                $httpBody = $loyalties_members_balance_update_request_body;
+                $httpBody = $loyaltiesMembersBalanceUpdateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -13672,17 +13672,17 @@ class LoyaltiesApi
      *
      * Update Loyalty Campaign
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesUpdateCampaignRequestBody $loyalties_update_campaign_request_body Specify the new values for the parameters that you would like to update for the given loyalty campaign. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesUpdateCampaignRequestBody $loyaltiesUpdateCampaignRequestBody Specify the new values for the parameters that you would like to update for the given loyalty campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesUpdateCampaignResponseBody
      */
-    public function updateLoyaltyProgram($campaign_id, $loyalties_update_campaign_request_body = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
+    public function updateLoyaltyProgram($campaignId, $loyaltiesUpdateCampaignRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
     {
-        list($response) = $this->updateLoyaltyProgramWithHttpInfo($campaign_id, $loyalties_update_campaign_request_body, $contentType);
+        list($response) = $this->updateLoyaltyProgramWithHttpInfo($campaignId, $loyaltiesUpdateCampaignRequestBody, $contentType);
         return $response;
     }
 
@@ -13691,17 +13691,17 @@ class LoyaltiesApi
      *
      * Update Loyalty Campaign
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesUpdateCampaignRequestBody $loyalties_update_campaign_request_body Specify the new values for the parameters that you would like to update for the given loyalty campaign. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesUpdateCampaignRequestBody $loyaltiesUpdateCampaignRequestBody Specify the new values for the parameters that you would like to update for the given loyalty campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesUpdateCampaignResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateLoyaltyProgramWithHttpInfo($campaign_id, $loyalties_update_campaign_request_body = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
+    public function updateLoyaltyProgramWithHttpInfo($campaignId, $loyaltiesUpdateCampaignRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
     {
-        $request = $this->updateLoyaltyProgramRequest($campaign_id, $loyalties_update_campaign_request_body, $contentType);
+        $request = $this->updateLoyaltyProgramRequest($campaignId, $loyaltiesUpdateCampaignRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13792,16 +13792,16 @@ class LoyaltiesApi
      *
      * Update Loyalty Campaign
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesUpdateCampaignRequestBody $loyalties_update_campaign_request_body Specify the new values for the parameters that you would like to update for the given loyalty campaign. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesUpdateCampaignRequestBody $loyaltiesUpdateCampaignRequestBody Specify the new values for the parameters that you would like to update for the given loyalty campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateLoyaltyProgramAsync($campaign_id, $loyalties_update_campaign_request_body = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
+    public function updateLoyaltyProgramAsync($campaignId, $loyaltiesUpdateCampaignRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
     {
-        return $this->updateLoyaltyProgramAsyncWithHttpInfo($campaign_id, $loyalties_update_campaign_request_body, $contentType)
+        return $this->updateLoyaltyProgramAsyncWithHttpInfo($campaignId, $loyaltiesUpdateCampaignRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13814,17 +13814,17 @@ class LoyaltiesApi
      *
      * Update Loyalty Campaign
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesUpdateCampaignRequestBody $loyalties_update_campaign_request_body Specify the new values for the parameters that you would like to update for the given loyalty campaign. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesUpdateCampaignRequestBody $loyaltiesUpdateCampaignRequestBody Specify the new values for the parameters that you would like to update for the given loyalty campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateLoyaltyProgramAsyncWithHttpInfo($campaign_id, $loyalties_update_campaign_request_body = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
+    public function updateLoyaltyProgramAsyncWithHttpInfo($campaignId, $loyaltiesUpdateCampaignRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesUpdateCampaignResponseBody';
-        $request = $this->updateLoyaltyProgramRequest($campaign_id, $loyalties_update_campaign_request_body, $contentType);
+        $request = $this->updateLoyaltyProgramRequest($campaignId, $loyaltiesUpdateCampaignRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13865,20 +13865,20 @@ class LoyaltiesApi
     /**
      * Create request for operation 'updateLoyaltyProgram'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesUpdateCampaignRequestBody $loyalties_update_campaign_request_body Specify the new values for the parameters that you would like to update for the given loyalty campaign. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesUpdateCampaignRequestBody $loyaltiesUpdateCampaignRequestBody Specify the new values for the parameters that you would like to update for the given loyalty campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoyaltyProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateLoyaltyProgramRequest($campaign_id, $loyalties_update_campaign_request_body = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
+    public function updateLoyaltyProgramRequest($campaignId, $loyaltiesUpdateCampaignRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling updateLoyaltyProgram'
+                'Missing the required parameter $campaignId when calling updateLoyaltyProgram'
             );
         }
 
@@ -13894,10 +13894,10 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -13910,12 +13910,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_update_campaign_request_body)) {
+        if (isset($loyaltiesUpdateCampaignRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_update_campaign_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesUpdateCampaignRequestBody));
             } else {
-                $httpBody = $loyalties_update_campaign_request_body;
+                $httpBody = $loyaltiesUpdateCampaignRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -13978,18 +13978,18 @@ class LoyaltiesApi
      *
      * Update Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentRequestBody $loyalties_rewards_update_assignment_request_body Update the points cost for the reward assignment. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentRequestBody $loyaltiesRewardsUpdateAssignmentRequestBody Update the points cost for the reward assignment. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentResponseBody
      */
-    public function updateRewardAssignment1($campaign_id, $assignment_id, $loyalties_rewards_update_assignment_request_body = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
+    public function updateRewardAssignment1($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
     {
-        list($response) = $this->updateRewardAssignment1WithHttpInfo($campaign_id, $assignment_id, $loyalties_rewards_update_assignment_request_body, $contentType);
+        list($response) = $this->updateRewardAssignment1WithHttpInfo($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody, $contentType);
         return $response;
     }
 
@@ -13998,18 +13998,18 @@ class LoyaltiesApi
      *
      * Update Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentRequestBody $loyalties_rewards_update_assignment_request_body Update the points cost for the reward assignment. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentRequestBody $loyaltiesRewardsUpdateAssignmentRequestBody Update the points cost for the reward assignment. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateRewardAssignment1WithHttpInfo($campaign_id, $assignment_id, $loyalties_rewards_update_assignment_request_body = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
+    public function updateRewardAssignment1WithHttpInfo($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
     {
-        $request = $this->updateRewardAssignment1Request($campaign_id, $assignment_id, $loyalties_rewards_update_assignment_request_body, $contentType);
+        $request = $this->updateRewardAssignment1Request($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -14100,17 +14100,17 @@ class LoyaltiesApi
      *
      * Update Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentRequestBody $loyalties_rewards_update_assignment_request_body Update the points cost for the reward assignment. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentRequestBody $loyaltiesRewardsUpdateAssignmentRequestBody Update the points cost for the reward assignment. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateRewardAssignment1Async($campaign_id, $assignment_id, $loyalties_rewards_update_assignment_request_body = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
+    public function updateRewardAssignment1Async($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
     {
-        return $this->updateRewardAssignment1AsyncWithHttpInfo($campaign_id, $assignment_id, $loyalties_rewards_update_assignment_request_body, $contentType)
+        return $this->updateRewardAssignment1AsyncWithHttpInfo($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -14123,18 +14123,18 @@ class LoyaltiesApi
      *
      * Update Reward Assignment
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentRequestBody $loyalties_rewards_update_assignment_request_body Update the points cost for the reward assignment. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentRequestBody $loyaltiesRewardsUpdateAssignmentRequestBody Update the points cost for the reward assignment. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateRewardAssignment1AsyncWithHttpInfo($campaign_id, $assignment_id, $loyalties_rewards_update_assignment_request_body = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
+    public function updateRewardAssignment1AsyncWithHttpInfo($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentResponseBody';
-        $request = $this->updateRewardAssignment1Request($campaign_id, $assignment_id, $loyalties_rewards_update_assignment_request_body, $contentType);
+        $request = $this->updateRewardAssignment1Request($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -14175,28 +14175,28 @@ class LoyaltiesApi
     /**
      * Create request for operation 'updateRewardAssignment1'
      *
-     * @param  string $campaign_id The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
-     * @param  string $assignment_id A unique reward assignment ID. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentRequestBody $loyalties_rewards_update_assignment_request_body Update the points cost for the reward assignment. (optional)
+     * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
+     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentRequestBody $loyaltiesRewardsUpdateAssignmentRequestBody Update the points cost for the reward assignment. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRewardAssignment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateRewardAssignment1Request($campaign_id, $assignment_id, $loyalties_rewards_update_assignment_request_body = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
+    public function updateRewardAssignment1Request($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
     {
 
-        // verify the required parameter 'campaign_id' is set
-        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaign_id when calling updateRewardAssignment1'
+                'Missing the required parameter $campaignId when calling updateRewardAssignment1'
             );
         }
 
-        // verify the required parameter 'assignment_id' is set
-        if ($assignment_id === null || (is_array($assignment_id) && count($assignment_id) === 0)) {
+        // verify the required parameter 'assignmentId' is set
+        if ($assignmentId === null || (is_array($assignmentId) && count($assignmentId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $assignment_id when calling updateRewardAssignment1'
+                'Missing the required parameter $assignmentId when calling updateRewardAssignment1'
             );
         }
 
@@ -14212,18 +14212,18 @@ class LoyaltiesApi
 
 
         // path params
-        if ($campaign_id !== null) {
+        if ($campaignId !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaign_id),
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
         // path params
-        if ($assignment_id !== null) {
+        if ($assignmentId !== null) {
             $resourcePath = str_replace(
                 '{' . 'assignmentId' . '}',
-                ObjectSerializer::toPathValue($assignment_id),
+                ObjectSerializer::toPathValue($assignmentId),
                 $resourcePath
             );
         }
@@ -14236,12 +14236,12 @@ class LoyaltiesApi
         );
 
         // for model (json/xml)
-        if (isset($loyalties_rewards_update_assignment_request_body)) {
+        if (isset($loyaltiesRewardsUpdateAssignmentRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyalties_rewards_update_assignment_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesRewardsUpdateAssignmentRequestBody));
             } else {
-                $httpBody = $loyalties_rewards_update_assignment_request_body;
+                $httpBody = $loyaltiesRewardsUpdateAssignmentRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

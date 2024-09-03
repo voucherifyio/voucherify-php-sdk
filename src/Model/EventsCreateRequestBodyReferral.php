@@ -60,7 +60,7 @@ class EventsCreateRequestBodyReferral implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPITypes = [
         'code' => 'string',
-        'referrer_id' => 'string'
+        'referrerId' => 'string'
     ];
 
     /**
@@ -72,7 +72,7 @@ class EventsCreateRequestBodyReferral implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPIFormats = [
         'code' => null,
-        'referrer_id' => null
+        'referrerId' => null
     ];
 
     /**
@@ -82,7 +82,7 @@ class EventsCreateRequestBodyReferral implements ModelInterface, ArrayAccess, \J
       */
     protected static array $openAPINullables = [
         'code' => true,
-		'referrer_id' => true
+		'referrerId' => true
     ];
 
     /**
@@ -172,7 +172,7 @@ class EventsCreateRequestBodyReferral implements ModelInterface, ArrayAccess, \J
      */
     protected static $attributeMap = [
         'code' => 'code',
-        'referrer_id' => 'referrer_id'
+        'referrerId' => 'referrer_id'
     ];
 
     /**
@@ -182,7 +182,7 @@ class EventsCreateRequestBodyReferral implements ModelInterface, ArrayAccess, \J
      */
     protected static $setters = [
         'code' => 'setCode',
-        'referrer_id' => 'setReferrerId'
+        'referrerId' => 'setReferrerId'
     ];
 
     /**
@@ -192,7 +192,7 @@ class EventsCreateRequestBodyReferral implements ModelInterface, ArrayAccess, \J
      */
     protected static $getters = [
         'code' => 'getCode',
-        'referrer_id' => 'getReferrerId'
+        'referrerId' => 'getReferrerId'
     ];
 
     /**
@@ -253,7 +253,7 @@ class EventsCreateRequestBodyReferral implements ModelInterface, ArrayAccess, \J
     public function __construct(array $data = null)
     {
         $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('referrer_id', $data ?? [], null);
+        $this->setIfExists('referrerId', $data ?? [], null);
     }
 
     /**
@@ -333,35 +333,35 @@ class EventsCreateRequestBodyReferral implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets referrer_id
+     * Gets referrerId
      *
      * @return string|null
      */
     public function getReferrerId()
     {
-        return $this->container['referrer_id'];
+        return $this->container['referrerId'];
     }
 
     /**
-     * Sets referrer_id
+     * Sets referrerId
      *
-     * @param string|null $referrer_id Unique ID of the referring person - it is optional and not required if the referral **code** is provided.
+     * @param string|null $referrerId Unique ID of the referring person - it is optional and not required if the referral **code** is provided.
      *
      * @return self
      */
-    public function setReferrerId($referrer_id)
+    public function setReferrerId($referrerId)
     {
-        if (is_null($referrer_id)) {
-            array_push($this->openAPINullablesSetToNull, 'referrer_id');
+        if (is_null($referrerId)) {
+            array_push($this->openAPINullablesSetToNull, 'referrerId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('referrer_id', $nullablesSetToNull);
+            $index = array_search('referrerId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['referrer_id'] = $referrer_id;
+        $this->container['referrerId'] = $referrerId;
 
         return $this;
     }

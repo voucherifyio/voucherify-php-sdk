@@ -59,7 +59,7 @@ class CustomerLoyalty implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'points' => 'int',
-        'referred_customers' => 'int',
+        'referredCustomers' => 'int',
         'campaigns' => 'array<string,\OpenAPI\Client\Model\CustomerLoyaltyCampaignsEntry>'
     ];
 
@@ -72,7 +72,7 @@ class CustomerLoyalty implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'points' => null,
-        'referred_customers' => null,
+        'referredCustomers' => null,
         'campaigns' => null
     ];
 
@@ -83,7 +83,7 @@ class CustomerLoyalty implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'points' => true,
-		'referred_customers' => true,
+		'referredCustomers' => true,
 		'campaigns' => true
     ];
 
@@ -174,7 +174,7 @@ class CustomerLoyalty implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'points' => 'points',
-        'referred_customers' => 'referred_customers',
+        'referredCustomers' => 'referred_customers',
         'campaigns' => 'campaigns'
     ];
 
@@ -185,7 +185,7 @@ class CustomerLoyalty implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'points' => 'setPoints',
-        'referred_customers' => 'setReferredCustomers',
+        'referredCustomers' => 'setReferredCustomers',
         'campaigns' => 'setCampaigns'
     ];
 
@@ -196,7 +196,7 @@ class CustomerLoyalty implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'points' => 'getPoints',
-        'referred_customers' => 'getReferredCustomers',
+        'referredCustomers' => 'getReferredCustomers',
         'campaigns' => 'getCampaigns'
     ];
 
@@ -258,7 +258,7 @@ class CustomerLoyalty implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('points', $data ?? [], null);
-        $this->setIfExists('referred_customers', $data ?? [], null);
+        $this->setIfExists('referredCustomers', $data ?? [], null);
         $this->setIfExists('campaigns', $data ?? [], null);
     }
 
@@ -339,35 +339,35 @@ class CustomerLoyalty implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets referred_customers
+     * Gets referredCustomers
      *
      * @return int|null
      */
     public function getReferredCustomers()
     {
-        return $this->container['referred_customers'];
+        return $this->container['referredCustomers'];
     }
 
     /**
-     * Sets referred_customers
+     * Sets referredCustomers
      *
-     * @param int|null $referred_customers Total number of customers referred by the customer.
+     * @param int|null $referredCustomers Total number of customers referred by the customer.
      *
      * @return self
      */
-    public function setReferredCustomers($referred_customers)
+    public function setReferredCustomers($referredCustomers)
     {
-        if (is_null($referred_customers)) {
-            array_push($this->openAPINullablesSetToNull, 'referred_customers');
+        if (is_null($referredCustomers)) {
+            array_push($this->openAPINullablesSetToNull, 'referredCustomers');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('referred_customers', $nullablesSetToNull);
+            $index = array_search('referredCustomers', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['referred_customers'] = $referred_customers;
+        $this->container['referredCustomers'] = $referredCustomers;
 
         return $this;
     }

@@ -62,8 +62,8 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
         'id' => 'string',
         'object' => 'string',
         'order' => '\OpenAPI\Client\Model\OrderCalculated',
-        'applicable_to' => '\OpenAPI\Client\Model\ApplicableToResultList',
-        'inapplicable_to' => '\OpenAPI\Client\Model\InapplicableToResultList',
+        'applicableTo' => '\OpenAPI\Client\Model\ApplicableToResultList',
+        'inapplicableTo' => '\OpenAPI\Client\Model\InapplicableToResultList',
         'result' => '\OpenAPI\Client\Model\ValidationsValidateResponseBodyRedeemablesItemResult',
         'metadata' => 'object',
         'categories' => '\OpenAPI\Client\Model\Category[]'
@@ -81,8 +81,8 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
         'id' => null,
         'object' => null,
         'order' => null,
-        'applicable_to' => null,
-        'inapplicable_to' => null,
+        'applicableTo' => null,
+        'inapplicableTo' => null,
         'result' => null,
         'metadata' => null,
         'categories' => null
@@ -98,8 +98,8 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
 		'id' => true,
 		'object' => true,
 		'order' => false,
-		'applicable_to' => false,
-		'inapplicable_to' => false,
+		'applicableTo' => false,
+		'inapplicableTo' => false,
 		'result' => false,
 		'metadata' => false,
 		'categories' => true
@@ -195,8 +195,8 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
         'id' => 'id',
         'object' => 'object',
         'order' => 'order',
-        'applicable_to' => 'applicable_to',
-        'inapplicable_to' => 'inapplicable_to',
+        'applicableTo' => 'applicable_to',
+        'inapplicableTo' => 'inapplicable_to',
         'result' => 'result',
         'metadata' => 'metadata',
         'categories' => 'categories'
@@ -212,8 +212,8 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
         'id' => 'setId',
         'object' => 'setObject',
         'order' => 'setOrder',
-        'applicable_to' => 'setApplicableTo',
-        'inapplicable_to' => 'setInapplicableTo',
+        'applicableTo' => 'setApplicableTo',
+        'inapplicableTo' => 'setInapplicableTo',
         'result' => 'setResult',
         'metadata' => 'setMetadata',
         'categories' => 'setCategories'
@@ -229,8 +229,8 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
         'id' => 'getId',
         'object' => 'getObject',
         'order' => 'getOrder',
-        'applicable_to' => 'getApplicableTo',
-        'inapplicable_to' => 'getInapplicableTo',
+        'applicableTo' => 'getApplicableTo',
+        'inapplicableTo' => 'getInapplicableTo',
         'result' => 'getResult',
         'metadata' => 'getMetadata',
         'categories' => 'getCategories'
@@ -329,8 +329,8 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
-        $this->setIfExists('applicable_to', $data ?? [], null);
-        $this->setIfExists('inapplicable_to', $data ?? [], null);
+        $this->setIfExists('applicableTo', $data ?? [], null);
+        $this->setIfExists('inapplicableTo', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('categories', $data ?? [], null);
@@ -539,55 +539,55 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
     }
 
     /**
-     * Gets applicable_to
+     * Gets applicableTo
      *
      * @return \OpenAPI\Client\Model\ApplicableToResultList|null
      */
     public function getApplicableTo()
     {
-        return $this->container['applicable_to'];
+        return $this->container['applicableTo'];
     }
 
     /**
-     * Sets applicable_to
+     * Sets applicableTo
      *
-     * @param \OpenAPI\Client\Model\ApplicableToResultList|null $applicable_to applicable_to
+     * @param \OpenAPI\Client\Model\ApplicableToResultList|null $applicableTo applicableTo
      *
      * @return self
      */
-    public function setApplicableTo($applicable_to)
+    public function setApplicableTo($applicableTo)
     {
-        if (is_null($applicable_to)) {
-            throw new \InvalidArgumentException('non-nullable applicable_to cannot be null');
+        if (is_null($applicableTo)) {
+            throw new \InvalidArgumentException('non-nullable applicableTo cannot be null');
         }
-        $this->container['applicable_to'] = $applicable_to;
+        $this->container['applicableTo'] = $applicableTo;
 
         return $this;
     }
 
     /**
-     * Gets inapplicable_to
+     * Gets inapplicableTo
      *
      * @return \OpenAPI\Client\Model\InapplicableToResultList|null
      */
     public function getInapplicableTo()
     {
-        return $this->container['inapplicable_to'];
+        return $this->container['inapplicableTo'];
     }
 
     /**
-     * Sets inapplicable_to
+     * Sets inapplicableTo
      *
-     * @param \OpenAPI\Client\Model\InapplicableToResultList|null $inapplicable_to inapplicable_to
+     * @param \OpenAPI\Client\Model\InapplicableToResultList|null $inapplicableTo inapplicableTo
      *
      * @return self
      */
-    public function setInapplicableTo($inapplicable_to)
+    public function setInapplicableTo($inapplicableTo)
     {
-        if (is_null($inapplicable_to)) {
-            throw new \InvalidArgumentException('non-nullable inapplicable_to cannot be null');
+        if (is_null($inapplicableTo)) {
+            throw new \InvalidArgumentException('non-nullable inapplicableTo cannot be null');
         }
-        $this->container['inapplicable_to'] = $inapplicable_to;
+        $this->container['inapplicableTo'] = $inapplicableTo;
 
         return $this;
     }
