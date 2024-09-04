@@ -61,7 +61,7 @@ class InapplicableToResultList implements ModelInterface, ArrayAccess, \JsonSeri
         'data' => '\OpenAPI\Client\Model\InapplicableTo[]',
         'total' => 'int',
         'object' => 'string',
-        'dataRef' => 'string'
+        'data_ref' => 'string'
     ];
 
     /**
@@ -75,7 +75,7 @@ class InapplicableToResultList implements ModelInterface, ArrayAccess, \JsonSeri
         'data' => null,
         'total' => null,
         'object' => null,
-        'dataRef' => null
+        'data_ref' => null
     ];
 
     /**
@@ -87,7 +87,7 @@ class InapplicableToResultList implements ModelInterface, ArrayAccess, \JsonSeri
         'data' => true,
 		'total' => true,
 		'object' => true,
-		'dataRef' => true
+		'data_ref' => true
     ];
 
     /**
@@ -179,7 +179,7 @@ class InapplicableToResultList implements ModelInterface, ArrayAccess, \JsonSeri
         'data' => 'data',
         'total' => 'total',
         'object' => 'object',
-        'dataRef' => 'data_ref'
+        'data_ref' => 'data_ref'
     ];
 
     /**
@@ -191,7 +191,7 @@ class InapplicableToResultList implements ModelInterface, ArrayAccess, \JsonSeri
         'data' => 'setData',
         'total' => 'setTotal',
         'object' => 'setObject',
-        'dataRef' => 'setDataRef'
+        'data_ref' => 'setDataRef'
     ];
 
     /**
@@ -203,7 +203,7 @@ class InapplicableToResultList implements ModelInterface, ArrayAccess, \JsonSeri
         'data' => 'getData',
         'total' => 'getTotal',
         'object' => 'getObject',
-        'dataRef' => 'getDataRef'
+        'data_ref' => 'getDataRef'
     ];
 
     /**
@@ -292,7 +292,7 @@ class InapplicableToResultList implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('data', $data ?? [], null);
         $this->setIfExists('total', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'list');
-        $this->setIfExists('dataRef', $data ?? [], 'data');
+        $this->setIfExists('data_ref', $data ?? [], 'data');
     }
 
     /**
@@ -336,10 +336,10 @@ class InapplicableToResultList implements ModelInterface, ArrayAccess, \JsonSeri
         }
 
         $allowedValues = $this->getDataRefAllowableValues();
-        if (!is_null($this->container['dataRef']) && !in_array($this->container['dataRef'], $allowedValues, true)) {
+        if (!is_null($this->container['data_ref']) && !in_array($this->container['data_ref'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'dataRef', must be one of '%s'",
-                $this->container['dataRef'],
+                "invalid value '%s' for 'data_ref', must be one of '%s'",
+                $this->container['data_ref'],
                 implode("', '", $allowedValues)
             );
         }
@@ -477,45 +477,45 @@ class InapplicableToResultList implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets dataRef
+     * Gets data_ref
      *
      * @return string|null
      */
     public function getDataRef()
     {
-        return $this->container['dataRef'];
+        return $this->container['data_ref'];
     }
 
     /**
-     * Sets dataRef
+     * Sets data_ref
      *
-     * @param string|null $dataRef The type of the object represented by JSON.
+     * @param string|null $data_ref The type of the object represented by JSON.
      *
      * @return self
      */
-    public function setDataRef($dataRef)
+    public function setDataRef($data_ref)
     {
-        if (is_null($dataRef)) {
-            array_push($this->openAPINullablesSetToNull, 'dataRef');
+        if (is_null($data_ref)) {
+            array_push($this->openAPINullablesSetToNull, 'data_ref');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dataRef', $nullablesSetToNull);
+            $index = array_search('data_ref', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getDataRefAllowableValues();
-        if (!is_null($dataRef) && !in_array($dataRef, $allowedValues, true)) {
+        if (!is_null($data_ref) && !in_array($data_ref, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'dataRef', must be one of '%s'",
-                    $dataRef,
+                    "Invalid value '%s' for 'data_ref', must be one of '%s'",
+                    $data_ref,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['dataRef'] = $dataRef;
+        $this->container['data_ref'] = $data_ref;
 
         return $this;
     }

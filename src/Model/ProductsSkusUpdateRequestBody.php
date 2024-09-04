@@ -63,7 +63,7 @@ class ProductsSkusUpdateRequestBody implements ModelInterface, ArrayAccess, \Jso
         'price' => 'int',
         'currency' => 'string',
         'attributes' => 'object',
-        'imageUrl' => 'string',
+        'image_url' => 'string',
         'metadata' => 'object'
     ];
 
@@ -79,7 +79,7 @@ class ProductsSkusUpdateRequestBody implements ModelInterface, ArrayAccess, \Jso
         'price' => null,
         'currency' => null,
         'attributes' => null,
-        'imageUrl' => null,
+        'image_url' => null,
         'metadata' => null
     ];
 
@@ -93,7 +93,7 @@ class ProductsSkusUpdateRequestBody implements ModelInterface, ArrayAccess, \Jso
 		'price' => true,
 		'currency' => true,
 		'attributes' => true,
-		'imageUrl' => true,
+		'image_url' => true,
 		'metadata' => true
     ];
 
@@ -187,7 +187,7 @@ class ProductsSkusUpdateRequestBody implements ModelInterface, ArrayAccess, \Jso
         'price' => 'price',
         'currency' => 'currency',
         'attributes' => 'attributes',
-        'imageUrl' => 'image_url',
+        'image_url' => 'image_url',
         'metadata' => 'metadata'
     ];
 
@@ -201,7 +201,7 @@ class ProductsSkusUpdateRequestBody implements ModelInterface, ArrayAccess, \Jso
         'price' => 'setPrice',
         'currency' => 'setCurrency',
         'attributes' => 'setAttributes',
-        'imageUrl' => 'setImageUrl',
+        'image_url' => 'setImageUrl',
         'metadata' => 'setMetadata'
     ];
 
@@ -215,7 +215,7 @@ class ProductsSkusUpdateRequestBody implements ModelInterface, ArrayAccess, \Jso
         'price' => 'getPrice',
         'currency' => 'getCurrency',
         'attributes' => 'getAttributes',
-        'imageUrl' => 'getImageUrl',
+        'image_url' => 'getImageUrl',
         'metadata' => 'getMetadata'
     ];
 
@@ -280,7 +280,7 @@ class ProductsSkusUpdateRequestBody implements ModelInterface, ArrayAccess, \Jso
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('attributes', $data ?? [], null);
-        $this->setIfExists('imageUrl', $data ?? [], null);
+        $this->setIfExists('image_url', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
     }
 
@@ -463,35 +463,35 @@ class ProductsSkusUpdateRequestBody implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets imageUrl
+     * Gets image_url
      *
      * @return string|null
      */
     public function getImageUrl()
     {
-        return $this->container['imageUrl'];
+        return $this->container['image_url'];
     }
 
     /**
-     * Sets imageUrl
+     * Sets image_url
      *
-     * @param string|null $imageUrl The HTTPS URL pointing to the .png or .jpg file that will be used to render the SKU image.
+     * @param string|null $image_url The HTTPS URL pointing to the .png or .jpg file that will be used to render the SKU image.
      *
      * @return self
      */
-    public function setImageUrl($imageUrl)
+    public function setImageUrl($image_url)
     {
-        if (is_null($imageUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'imageUrl');
+        if (is_null($image_url)) {
+            array_push($this->openAPINullablesSetToNull, 'image_url');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('imageUrl', $nullablesSetToNull);
+            $index = array_search('image_url', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['imageUrl'] = $imageUrl;
+        $this->container['image_url'] = $image_url;
 
         return $this;
     }

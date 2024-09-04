@@ -60,11 +60,11 @@ class CustomersPermanentDeletionCreateResponseBody implements ModelInterface, Ar
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'createdAt' => '\DateTime',
-        'relatedObjectId' => 'string',
-        'relatedObject' => 'string',
+        'created_at' => '\DateTime',
+        'related_object_id' => 'string',
+        'related_object' => 'string',
         'status' => 'string',
-        'dataJson' => '\OpenAPI\Client\Model\CustomersPermanentDeletionCreateResponseBodyDataJson',
+        'data_json' => '\OpenAPI\Client\Model\CustomersPermanentDeletionCreateResponseBodyDataJson',
         'object' => 'string'
     ];
 
@@ -77,11 +77,11 @@ class CustomersPermanentDeletionCreateResponseBody implements ModelInterface, Ar
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'createdAt' => 'date-time',
-        'relatedObjectId' => null,
-        'relatedObject' => null,
+        'created_at' => 'date-time',
+        'related_object_id' => null,
+        'related_object' => null,
         'status' => null,
-        'dataJson' => null,
+        'data_json' => null,
         'object' => null
     ];
 
@@ -92,11 +92,11 @@ class CustomersPermanentDeletionCreateResponseBody implements ModelInterface, Ar
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'createdAt' => true,
-		'relatedObjectId' => true,
-		'relatedObject' => true,
+		'created_at' => true,
+		'related_object_id' => true,
+		'related_object' => true,
 		'status' => true,
-		'dataJson' => true,
+		'data_json' => true,
 		'object' => true
     ];
 
@@ -187,11 +187,11 @@ class CustomersPermanentDeletionCreateResponseBody implements ModelInterface, Ar
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'createdAt' => 'created_at',
-        'relatedObjectId' => 'related_object_id',
-        'relatedObject' => 'related_object',
+        'created_at' => 'created_at',
+        'related_object_id' => 'related_object_id',
+        'related_object' => 'related_object',
         'status' => 'status',
-        'dataJson' => 'data_json',
+        'data_json' => 'data_json',
         'object' => 'object'
     ];
 
@@ -202,11 +202,11 @@ class CustomersPermanentDeletionCreateResponseBody implements ModelInterface, Ar
      */
     protected static $setters = [
         'id' => 'setId',
-        'createdAt' => 'setCreatedAt',
-        'relatedObjectId' => 'setRelatedObjectId',
-        'relatedObject' => 'setRelatedObject',
+        'created_at' => 'setCreatedAt',
+        'related_object_id' => 'setRelatedObjectId',
+        'related_object' => 'setRelatedObject',
         'status' => 'setStatus',
-        'dataJson' => 'setDataJson',
+        'data_json' => 'setDataJson',
         'object' => 'setObject'
     ];
 
@@ -217,11 +217,11 @@ class CustomersPermanentDeletionCreateResponseBody implements ModelInterface, Ar
      */
     protected static $getters = [
         'id' => 'getId',
-        'createdAt' => 'getCreatedAt',
-        'relatedObjectId' => 'getRelatedObjectId',
-        'relatedObject' => 'getRelatedObject',
+        'created_at' => 'getCreatedAt',
+        'related_object_id' => 'getRelatedObjectId',
+        'related_object' => 'getRelatedObject',
         'status' => 'getStatus',
-        'dataJson' => 'getDataJson',
+        'data_json' => 'getDataJson',
         'object' => 'getObject'
     ];
 
@@ -283,11 +283,11 @@ class CustomersPermanentDeletionCreateResponseBody implements ModelInterface, Ar
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
-        $this->setIfExists('relatedObjectId', $data ?? [], null);
-        $this->setIfExists('relatedObject', $data ?? [], 'customer');
+        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('related_object_id', $data ?? [], null);
+        $this->setIfExists('related_object', $data ?? [], 'customer');
         $this->setIfExists('status', $data ?? [], 'DONE');
-        $this->setIfExists('dataJson', $data ?? [], null);
+        $this->setIfExists('data_json', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'pernament_deletion');
     }
 
@@ -368,103 +368,103 @@ class CustomersPermanentDeletionCreateResponseBody implements ModelInterface, Ar
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the customer was requested to be deleted in ISO 8601 format.
+     * @param \DateTime|null $created_at Timestamp representing the date and time when the customer was requested to be deleted in ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        if (is_null($created_at)) {
+            array_push($this->openAPINullablesSetToNull, 'created_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
+            $index = array_search('created_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }
 
     /**
-     * Gets relatedObjectId
+     * Gets related_object_id
      *
      * @return string|null
      */
     public function getRelatedObjectId()
     {
-        return $this->container['relatedObjectId'];
+        return $this->container['related_object_id'];
     }
 
     /**
-     * Sets relatedObjectId
+     * Sets related_object_id
      *
-     * @param string|null $relatedObjectId Unique customer ID that is being deleted.
+     * @param string|null $related_object_id Unique customer ID that is being deleted.
      *
      * @return self
      */
-    public function setRelatedObjectId($relatedObjectId)
+    public function setRelatedObjectId($related_object_id)
     {
-        if (is_null($relatedObjectId)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObjectId');
+        if (is_null($related_object_id)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObjectId', $nullablesSetToNull);
+            $index = array_search('related_object_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['relatedObjectId'] = $relatedObjectId;
+        $this->container['related_object_id'] = $related_object_id;
 
         return $this;
     }
 
     /**
-     * Gets relatedObject
+     * Gets related_object
      *
      * @return string|null
      */
     public function getRelatedObject()
     {
-        return $this->container['relatedObject'];
+        return $this->container['related_object'];
     }
 
     /**
-     * Sets relatedObject
+     * Sets related_object
      *
-     * @param string|null $relatedObject Object being deleted.
+     * @param string|null $related_object Object being deleted.
      *
      * @return self
      */
-    public function setRelatedObject($relatedObject)
+    public function setRelatedObject($related_object)
     {
-        if (is_null($relatedObject)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObject');
+        if (is_null($related_object)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObject', $nullablesSetToNull);
+            $index = array_search('related_object', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['relatedObject'] = $relatedObject;
+        $this->container['related_object'] = $related_object;
 
         return $this;
     }
@@ -504,35 +504,35 @@ class CustomersPermanentDeletionCreateResponseBody implements ModelInterface, Ar
     }
 
     /**
-     * Gets dataJson
+     * Gets data_json
      *
      * @return \OpenAPI\Client\Model\CustomersPermanentDeletionCreateResponseBodyDataJson|null
      */
     public function getDataJson()
     {
-        return $this->container['dataJson'];
+        return $this->container['data_json'];
     }
 
     /**
-     * Sets dataJson
+     * Sets data_json
      *
-     * @param \OpenAPI\Client\Model\CustomersPermanentDeletionCreateResponseBodyDataJson|null $dataJson dataJson
+     * @param \OpenAPI\Client\Model\CustomersPermanentDeletionCreateResponseBodyDataJson|null $data_json data_json
      *
      * @return self
      */
-    public function setDataJson($dataJson)
+    public function setDataJson($data_json)
     {
-        if (is_null($dataJson)) {
-            array_push($this->openAPINullablesSetToNull, 'dataJson');
+        if (is_null($data_json)) {
+            array_push($this->openAPINullablesSetToNull, 'data_json');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dataJson', $nullablesSetToNull);
+            $index = array_search('data_json', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['dataJson'] = $dataJson;
+        $this->container['data_json'] = $data_json;
 
         return $this;
     }

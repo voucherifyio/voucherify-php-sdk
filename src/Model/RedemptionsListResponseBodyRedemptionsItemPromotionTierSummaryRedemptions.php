@@ -58,7 +58,7 @@ class RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryRedemptions 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'totalRedeemed' => 'int'
+        'total_redeemed' => 'int'
     ];
 
     /**
@@ -69,7 +69,7 @@ class RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryRedemptions 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'totalRedeemed' => null
+        'total_redeemed' => null
     ];
 
     /**
@@ -78,7 +78,7 @@ class RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryRedemptions 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'totalRedeemed' => true
+        'total_redeemed' => true
     ];
 
     /**
@@ -167,7 +167,7 @@ class RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryRedemptions 
      * @var string[]
      */
     protected static $attributeMap = [
-        'totalRedeemed' => 'total_redeemed'
+        'total_redeemed' => 'total_redeemed'
     ];
 
     /**
@@ -176,7 +176,7 @@ class RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryRedemptions 
      * @var string[]
      */
     protected static $setters = [
-        'totalRedeemed' => 'setTotalRedeemed'
+        'total_redeemed' => 'setTotalRedeemed'
     ];
 
     /**
@@ -185,7 +185,7 @@ class RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryRedemptions 
      * @var string[]
      */
     protected static $getters = [
-        'totalRedeemed' => 'getTotalRedeemed'
+        'total_redeemed' => 'getTotalRedeemed'
     ];
 
     /**
@@ -245,7 +245,7 @@ class RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryRedemptions 
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('totalRedeemed', $data ?? [], null);
+        $this->setIfExists('total_redeemed', $data ?? [], null);
     }
 
     /**
@@ -291,35 +291,35 @@ class RedemptionsListResponseBodyRedemptionsItemPromotionTierSummaryRedemptions 
 
 
     /**
-     * Gets totalRedeemed
+     * Gets total_redeemed
      *
      * @return int|null
      */
     public function getTotalRedeemed()
     {
-        return $this->container['totalRedeemed'];
+        return $this->container['total_redeemed'];
     }
 
     /**
-     * Sets totalRedeemed
+     * Sets total_redeemed
      *
-     * @param int|null $totalRedeemed Number of times the promotion tier was redeemed.
+     * @param int|null $total_redeemed Number of times the promotion tier was redeemed.
      *
      * @return self
      */
-    public function setTotalRedeemed($totalRedeemed)
+    public function setTotalRedeemed($total_redeemed)
     {
-        if (is_null($totalRedeemed)) {
-            array_push($this->openAPINullablesSetToNull, 'totalRedeemed');
+        if (is_null($total_redeemed)) {
+            array_push($this->openAPINullablesSetToNull, 'total_redeemed');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('totalRedeemed', $nullablesSetToNull);
+            $index = array_search('total_redeemed', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['totalRedeemed'] = $totalRedeemed;
+        $this->container['total_redeemed'] = $total_redeemed;
 
         return $this;
     }

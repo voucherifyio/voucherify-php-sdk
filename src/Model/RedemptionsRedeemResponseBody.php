@@ -60,10 +60,10 @@ class RedemptionsRedeemResponseBody implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'redemptions' => '\OpenAPI\Client\Model\Redemption[]',
-        'parentRedemption' => '\OpenAPI\Client\Model\Redemption',
+        'parent_redemption' => '\OpenAPI\Client\Model\Redemption',
         'order' => '\OpenAPI\Client\Model\OrderCalculated',
-        'inapplicableRedeemables' => '\OpenAPI\Client\Model\ValidationsRedeemableInapplicable[]',
-        'skippedRedeemables' => '\OpenAPI\Client\Model\ValidationsRedeemableSkipped[]'
+        'inapplicable_redeemables' => '\OpenAPI\Client\Model\ValidationsRedeemableInapplicable[]',
+        'skipped_redeemables' => '\OpenAPI\Client\Model\ValidationsRedeemableSkipped[]'
     ];
 
     /**
@@ -75,10 +75,10 @@ class RedemptionsRedeemResponseBody implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPIFormats = [
         'redemptions' => null,
-        'parentRedemption' => null,
+        'parent_redemption' => null,
         'order' => null,
-        'inapplicableRedeemables' => null,
-        'skippedRedeemables' => null
+        'inapplicable_redeemables' => null,
+        'skipped_redeemables' => null
     ];
 
     /**
@@ -88,10 +88,10 @@ class RedemptionsRedeemResponseBody implements ModelInterface, ArrayAccess, \Jso
       */
     protected static array $openAPINullables = [
         'redemptions' => true,
-		'parentRedemption' => false,
+		'parent_redemption' => false,
 		'order' => false,
-		'inapplicableRedeemables' => true,
-		'skippedRedeemables' => true
+		'inapplicable_redeemables' => true,
+		'skipped_redeemables' => true
     ];
 
     /**
@@ -181,10 +181,10 @@ class RedemptionsRedeemResponseBody implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $attributeMap = [
         'redemptions' => 'redemptions',
-        'parentRedemption' => 'parent_redemption',
+        'parent_redemption' => 'parent_redemption',
         'order' => 'order',
-        'inapplicableRedeemables' => 'inapplicable_redeemables',
-        'skippedRedeemables' => 'skipped_redeemables'
+        'inapplicable_redeemables' => 'inapplicable_redeemables',
+        'skipped_redeemables' => 'skipped_redeemables'
     ];
 
     /**
@@ -194,10 +194,10 @@ class RedemptionsRedeemResponseBody implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $setters = [
         'redemptions' => 'setRedemptions',
-        'parentRedemption' => 'setParentRedemption',
+        'parent_redemption' => 'setParentRedemption',
         'order' => 'setOrder',
-        'inapplicableRedeemables' => 'setInapplicableRedeemables',
-        'skippedRedeemables' => 'setSkippedRedeemables'
+        'inapplicable_redeemables' => 'setInapplicableRedeemables',
+        'skipped_redeemables' => 'setSkippedRedeemables'
     ];
 
     /**
@@ -207,10 +207,10 @@ class RedemptionsRedeemResponseBody implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $getters = [
         'redemptions' => 'getRedemptions',
-        'parentRedemption' => 'getParentRedemption',
+        'parent_redemption' => 'getParentRedemption',
         'order' => 'getOrder',
-        'inapplicableRedeemables' => 'getInapplicableRedeemables',
-        'skippedRedeemables' => 'getSkippedRedeemables'
+        'inapplicable_redeemables' => 'getInapplicableRedeemables',
+        'skipped_redeemables' => 'getSkippedRedeemables'
     ];
 
     /**
@@ -271,10 +271,10 @@ class RedemptionsRedeemResponseBody implements ModelInterface, ArrayAccess, \Jso
     public function __construct(array $data = null)
     {
         $this->setIfExists('redemptions', $data ?? [], null);
-        $this->setIfExists('parentRedemption', $data ?? [], null);
+        $this->setIfExists('parent_redemption', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
-        $this->setIfExists('inapplicableRedeemables', $data ?? [], null);
-        $this->setIfExists('skippedRedeemables', $data ?? [], null);
+        $this->setIfExists('inapplicable_redeemables', $data ?? [], null);
+        $this->setIfExists('skipped_redeemables', $data ?? [], null);
     }
 
     /**
@@ -354,28 +354,28 @@ class RedemptionsRedeemResponseBody implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets parentRedemption
+     * Gets parent_redemption
      *
      * @return \OpenAPI\Client\Model\Redemption|null
      */
     public function getParentRedemption()
     {
-        return $this->container['parentRedemption'];
+        return $this->container['parent_redemption'];
     }
 
     /**
-     * Sets parentRedemption
+     * Sets parent_redemption
      *
-     * @param \OpenAPI\Client\Model\Redemption|null $parentRedemption parentRedemption
+     * @param \OpenAPI\Client\Model\Redemption|null $parent_redemption parent_redemption
      *
      * @return self
      */
-    public function setParentRedemption($parentRedemption)
+    public function setParentRedemption($parent_redemption)
     {
-        if (is_null($parentRedemption)) {
-            throw new \InvalidArgumentException('non-nullable parentRedemption cannot be null');
+        if (is_null($parent_redemption)) {
+            throw new \InvalidArgumentException('non-nullable parent_redemption cannot be null');
         }
-        $this->container['parentRedemption'] = $parentRedemption;
+        $this->container['parent_redemption'] = $parent_redemption;
 
         return $this;
     }
@@ -408,69 +408,69 @@ class RedemptionsRedeemResponseBody implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets inapplicableRedeemables
+     * Gets inapplicable_redeemables
      *
      * @return \OpenAPI\Client\Model\ValidationsRedeemableInapplicable[]|null
      */
     public function getInapplicableRedeemables()
     {
-        return $this->container['inapplicableRedeemables'];
+        return $this->container['inapplicable_redeemables'];
     }
 
     /**
-     * Sets inapplicableRedeemables
+     * Sets inapplicable_redeemables
      *
-     * @param \OpenAPI\Client\Model\ValidationsRedeemableInapplicable[]|null $inapplicableRedeemables Lists validation results of each inapplicable redeemable.
+     * @param \OpenAPI\Client\Model\ValidationsRedeemableInapplicable[]|null $inapplicable_redeemables Lists validation results of each inapplicable redeemable.
      *
      * @return self
      */
-    public function setInapplicableRedeemables($inapplicableRedeemables)
+    public function setInapplicableRedeemables($inapplicable_redeemables)
     {
-        if (is_null($inapplicableRedeemables)) {
-            array_push($this->openAPINullablesSetToNull, 'inapplicableRedeemables');
+        if (is_null($inapplicable_redeemables)) {
+            array_push($this->openAPINullablesSetToNull, 'inapplicable_redeemables');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('inapplicableRedeemables', $nullablesSetToNull);
+            $index = array_search('inapplicable_redeemables', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['inapplicableRedeemables'] = $inapplicableRedeemables;
+        $this->container['inapplicable_redeemables'] = $inapplicable_redeemables;
 
         return $this;
     }
 
     /**
-     * Gets skippedRedeemables
+     * Gets skipped_redeemables
      *
      * @return \OpenAPI\Client\Model\ValidationsRedeemableSkipped[]|null
      */
     public function getSkippedRedeemables()
     {
-        return $this->container['skippedRedeemables'];
+        return $this->container['skipped_redeemables'];
     }
 
     /**
-     * Sets skippedRedeemables
+     * Sets skipped_redeemables
      *
-     * @param \OpenAPI\Client\Model\ValidationsRedeemableSkipped[]|null $skippedRedeemables Lists validation results of each redeemable. If a redeemable can be applied, the API returns `\"status\": \"APPLICABLE\"`.
+     * @param \OpenAPI\Client\Model\ValidationsRedeemableSkipped[]|null $skipped_redeemables Lists validation results of each redeemable. If a redeemable can be applied, the API returns `\"status\": \"APPLICABLE\"`.
      *
      * @return self
      */
-    public function setSkippedRedeemables($skippedRedeemables)
+    public function setSkippedRedeemables($skipped_redeemables)
     {
-        if (is_null($skippedRedeemables)) {
-            array_push($this->openAPINullablesSetToNull, 'skippedRedeemables');
+        if (is_null($skipped_redeemables)) {
+            array_push($this->openAPINullablesSetToNull, 'skipped_redeemables');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('skippedRedeemables', $nullablesSetToNull);
+            $index = array_search('skipped_redeemables', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['skippedRedeemables'] = $skippedRedeemables;
+        $this->container['skipped_redeemables'] = $skipped_redeemables;
 
         return $this;
     }

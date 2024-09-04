@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **object** | **string** | The type of the object represented by JSON. This object stores information about redemptions in a dictionary. | [optional] [default to 'list']
-**dataRef** | **string** | Identifies the name of the attribute that contains the array of redemption objects. | [optional] [default to 'redemptions']
+**data_ref** | **string** | Identifies the name of the attribute that contains the array of redemption objects. | [optional] [default to 'redemptions']
 **redemptions** | [**\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItem[]**](RedemptionsListResponseBodyRedemptionsItem.md) |  | [optional]
 **total** | **int** | Total number of redemptions. | [optional]
 

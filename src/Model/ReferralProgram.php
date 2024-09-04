@@ -59,9 +59,9 @@ class ReferralProgram implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'conversionEventType' => 'string',
-        'customEvent' => '\OpenAPI\Client\Model\ReferralProgramCustomEvent',
-        'refereeReward' => '\OpenAPI\Client\Model\ReferralProgramRefereeReward'
+        'conversion_event_type' => 'string',
+        'custom_event' => '\OpenAPI\Client\Model\ReferralProgramCustomEvent',
+        'referee_reward' => '\OpenAPI\Client\Model\ReferralProgramRefereeReward'
     ];
 
     /**
@@ -72,9 +72,9 @@ class ReferralProgram implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'conversionEventType' => null,
-        'customEvent' => null,
-        'refereeReward' => null
+        'conversion_event_type' => null,
+        'custom_event' => null,
+        'referee_reward' => null
     ];
 
     /**
@@ -83,9 +83,9 @@ class ReferralProgram implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'conversionEventType' => true,
-		'customEvent' => true,
-		'refereeReward' => true
+        'conversion_event_type' => true,
+		'custom_event' => true,
+		'referee_reward' => true
     ];
 
     /**
@@ -174,9 +174,9 @@ class ReferralProgram implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'conversionEventType' => 'conversion_event_type',
-        'customEvent' => 'custom_event',
-        'refereeReward' => 'referee_reward'
+        'conversion_event_type' => 'conversion_event_type',
+        'custom_event' => 'custom_event',
+        'referee_reward' => 'referee_reward'
     ];
 
     /**
@@ -185,9 +185,9 @@ class ReferralProgram implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'conversionEventType' => 'setConversionEventType',
-        'customEvent' => 'setCustomEvent',
-        'refereeReward' => 'setRefereeReward'
+        'conversion_event_type' => 'setConversionEventType',
+        'custom_event' => 'setCustomEvent',
+        'referee_reward' => 'setRefereeReward'
     ];
 
     /**
@@ -196,9 +196,9 @@ class ReferralProgram implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'conversionEventType' => 'getConversionEventType',
-        'customEvent' => 'getCustomEvent',
-        'refereeReward' => 'getRefereeReward'
+        'conversion_event_type' => 'getConversionEventType',
+        'custom_event' => 'getCustomEvent',
+        'referee_reward' => 'getRefereeReward'
     ];
 
     /**
@@ -273,9 +273,9 @@ class ReferralProgram implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('conversionEventType', $data ?? [], null);
-        $this->setIfExists('customEvent', $data ?? [], null);
-        $this->setIfExists('refereeReward', $data ?? [], null);
+        $this->setIfExists('conversion_event_type', $data ?? [], null);
+        $this->setIfExists('custom_event', $data ?? [], null);
+        $this->setIfExists('referee_reward', $data ?? [], null);
     }
 
     /**
@@ -306,10 +306,10 @@ class ReferralProgram implements ModelInterface, ArrayAccess, \JsonSerializable
         $invalidProperties = [];
 
         $allowedValues = $this->getConversionEventTypeAllowableValues();
-        if (!is_null($this->container['conversionEventType']) && !in_array($this->container['conversionEventType'], $allowedValues, true)) {
+        if (!is_null($this->container['conversion_event_type']) && !in_array($this->container['conversion_event_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'conversionEventType', must be one of '%s'",
-                $this->container['conversionEventType'],
+                "invalid value '%s' for 'conversion_event_type', must be one of '%s'",
+                $this->container['conversion_event_type'],
                 implode("', '", $allowedValues)
             );
         }
@@ -330,113 +330,113 @@ class ReferralProgram implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets conversionEventType
+     * Gets conversion_event_type
      *
      * @return string|null
      */
     public function getConversionEventType()
     {
-        return $this->container['conversionEventType'];
+        return $this->container['conversion_event_type'];
     }
 
     /**
-     * Sets conversionEventType
+     * Sets conversion_event_type
      *
-     * @param string|null $conversionEventType Define how a referral is triggered.
+     * @param string|null $conversion_event_type Define how a referral is triggered.
      *
      * @return self
      */
-    public function setConversionEventType($conversionEventType)
+    public function setConversionEventType($conversion_event_type)
     {
-        if (is_null($conversionEventType)) {
-            array_push($this->openAPINullablesSetToNull, 'conversionEventType');
+        if (is_null($conversion_event_type)) {
+            array_push($this->openAPINullablesSetToNull, 'conversion_event_type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('conversionEventType', $nullablesSetToNull);
+            $index = array_search('conversion_event_type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getConversionEventTypeAllowableValues();
-        if (!is_null($conversionEventType) && !in_array($conversionEventType, $allowedValues, true)) {
+        if (!is_null($conversion_event_type) && !in_array($conversion_event_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'conversionEventType', must be one of '%s'",
-                    $conversionEventType,
+                    "Invalid value '%s' for 'conversion_event_type', must be one of '%s'",
+                    $conversion_event_type,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['conversionEventType'] = $conversionEventType;
+        $this->container['conversion_event_type'] = $conversion_event_type;
 
         return $this;
     }
 
     /**
-     * Gets customEvent
+     * Gets custom_event
      *
      * @return \OpenAPI\Client\Model\ReferralProgramCustomEvent|null
      */
     public function getCustomEvent()
     {
-        return $this->container['customEvent'];
+        return $this->container['custom_event'];
     }
 
     /**
-     * Sets customEvent
+     * Sets custom_event
      *
-     * @param \OpenAPI\Client\Model\ReferralProgramCustomEvent|null $customEvent customEvent
+     * @param \OpenAPI\Client\Model\ReferralProgramCustomEvent|null $custom_event custom_event
      *
      * @return self
      */
-    public function setCustomEvent($customEvent)
+    public function setCustomEvent($custom_event)
     {
-        if (is_null($customEvent)) {
-            array_push($this->openAPINullablesSetToNull, 'customEvent');
+        if (is_null($custom_event)) {
+            array_push($this->openAPINullablesSetToNull, 'custom_event');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customEvent', $nullablesSetToNull);
+            $index = array_search('custom_event', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['customEvent'] = $customEvent;
+        $this->container['custom_event'] = $custom_event;
 
         return $this;
     }
 
     /**
-     * Gets refereeReward
+     * Gets referee_reward
      *
      * @return \OpenAPI\Client\Model\ReferralProgramRefereeReward|null
      */
     public function getRefereeReward()
     {
-        return $this->container['refereeReward'];
+        return $this->container['referee_reward'];
     }
 
     /**
-     * Sets refereeReward
+     * Sets referee_reward
      *
-     * @param \OpenAPI\Client\Model\ReferralProgramRefereeReward|null $refereeReward refereeReward
+     * @param \OpenAPI\Client\Model\ReferralProgramRefereeReward|null $referee_reward referee_reward
      *
      * @return self
      */
-    public function setRefereeReward($refereeReward)
+    public function setRefereeReward($referee_reward)
     {
-        if (is_null($refereeReward)) {
-            array_push($this->openAPINullablesSetToNull, 'refereeReward');
+        if (is_null($referee_reward)) {
+            array_push($this->openAPINullablesSetToNull, 'referee_reward');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('refereeReward', $nullablesSetToNull);
+            $index = array_search('referee_reward', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['refereeReward'] = $refereeReward;
+        $this->container['referee_reward'] = $referee_reward;
 
         return $this;
     }

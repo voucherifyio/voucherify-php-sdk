@@ -60,8 +60,8 @@ class CustomerLoyaltyCampaignsEntry implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'points' => 'int',
-        'loyaltyTier' => 'string',
-        'referredCustomers' => 'int'
+        'loyalty_tier' => 'string',
+        'referred_customers' => 'int'
     ];
 
     /**
@@ -73,8 +73,8 @@ class CustomerLoyaltyCampaignsEntry implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPIFormats = [
         'points' => null,
-        'loyaltyTier' => null,
-        'referredCustomers' => null
+        'loyalty_tier' => null,
+        'referred_customers' => null
     ];
 
     /**
@@ -84,8 +84,8 @@ class CustomerLoyaltyCampaignsEntry implements ModelInterface, ArrayAccess, \Jso
       */
     protected static array $openAPINullables = [
         'points' => false,
-		'loyaltyTier' => false,
-		'referredCustomers' => false
+		'loyalty_tier' => false,
+		'referred_customers' => false
     ];
 
     /**
@@ -175,8 +175,8 @@ class CustomerLoyaltyCampaignsEntry implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $attributeMap = [
         'points' => 'points',
-        'loyaltyTier' => 'loyalty_tier',
-        'referredCustomers' => 'referred_customers'
+        'loyalty_tier' => 'loyalty_tier',
+        'referred_customers' => 'referred_customers'
     ];
 
     /**
@@ -186,8 +186,8 @@ class CustomerLoyaltyCampaignsEntry implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $setters = [
         'points' => 'setPoints',
-        'loyaltyTier' => 'setLoyaltyTier',
-        'referredCustomers' => 'setReferredCustomers'
+        'loyalty_tier' => 'setLoyaltyTier',
+        'referred_customers' => 'setReferredCustomers'
     ];
 
     /**
@@ -197,8 +197,8 @@ class CustomerLoyaltyCampaignsEntry implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $getters = [
         'points' => 'getPoints',
-        'loyaltyTier' => 'getLoyaltyTier',
-        'referredCustomers' => 'getReferredCustomers'
+        'loyalty_tier' => 'getLoyaltyTier',
+        'referred_customers' => 'getReferredCustomers'
     ];
 
     /**
@@ -259,8 +259,8 @@ class CustomerLoyaltyCampaignsEntry implements ModelInterface, ArrayAccess, \Jso
     public function __construct(array $data = null)
     {
         $this->setIfExists('points', $data ?? [], null);
-        $this->setIfExists('loyaltyTier', $data ?? [], null);
-        $this->setIfExists('referredCustomers', $data ?? [], null);
+        $this->setIfExists('loyalty_tier', $data ?? [], null);
+        $this->setIfExists('referred_customers', $data ?? [], null);
     }
 
     /**
@@ -333,55 +333,55 @@ class CustomerLoyaltyCampaignsEntry implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets loyaltyTier
+     * Gets loyalty_tier
      *
      * @return string|null
      */
     public function getLoyaltyTier()
     {
-        return $this->container['loyaltyTier'];
+        return $this->container['loyalty_tier'];
     }
 
     /**
-     * Sets loyaltyTier
+     * Sets loyalty_tier
      *
-     * @param string|null $loyaltyTier Customer's loyalty tier within the campaign.
+     * @param string|null $loyalty_tier Customer's loyalty tier within the campaign.
      *
      * @return self
      */
-    public function setLoyaltyTier($loyaltyTier)
+    public function setLoyaltyTier($loyalty_tier)
     {
-        if (is_null($loyaltyTier)) {
-            throw new \InvalidArgumentException('non-nullable loyaltyTier cannot be null');
+        if (is_null($loyalty_tier)) {
+            throw new \InvalidArgumentException('non-nullable loyalty_tier cannot be null');
         }
-        $this->container['loyaltyTier'] = $loyaltyTier;
+        $this->container['loyalty_tier'] = $loyalty_tier;
 
         return $this;
     }
 
     /**
-     * Gets referredCustomers
+     * Gets referred_customers
      *
      * @return int|null
      */
     public function getReferredCustomers()
     {
-        return $this->container['referredCustomers'];
+        return $this->container['referred_customers'];
     }
 
     /**
-     * Sets referredCustomers
+     * Sets referred_customers
      *
-     * @param int|null $referredCustomers Number of customers referred by the customer in campaign.
+     * @param int|null $referred_customers Number of customers referred by the customer in campaign.
      *
      * @return self
      */
-    public function setReferredCustomers($referredCustomers)
+    public function setReferredCustomers($referred_customers)
     {
-        if (is_null($referredCustomers)) {
-            throw new \InvalidArgumentException('non-nullable referredCustomers cannot be null');
+        if (is_null($referred_customers)) {
+            throw new \InvalidArgumentException('non-nullable referred_customers cannot be null');
         }
-        $this->container['referredCustomers'] = $referredCustomers;
+        $this->container['referred_customers'] = $referred_customers;
 
         return $this;
     }

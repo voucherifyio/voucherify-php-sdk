@@ -59,7 +59,7 @@ class PromotionsTiersCreateResponseBodySummaryRedemptions implements ModelInterf
       * @var string[]
       */
     protected static $openAPITypes = [
-        'totalRedeemed' => 'int'
+        'total_redeemed' => 'int'
     ];
 
     /**
@@ -70,7 +70,7 @@ class PromotionsTiersCreateResponseBodySummaryRedemptions implements ModelInterf
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'totalRedeemed' => null
+        'total_redeemed' => null
     ];
 
     /**
@@ -79,7 +79,7 @@ class PromotionsTiersCreateResponseBodySummaryRedemptions implements ModelInterf
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'totalRedeemed' => true
+        'total_redeemed' => true
     ];
 
     /**
@@ -168,7 +168,7 @@ class PromotionsTiersCreateResponseBodySummaryRedemptions implements ModelInterf
      * @var string[]
      */
     protected static $attributeMap = [
-        'totalRedeemed' => 'total_redeemed'
+        'total_redeemed' => 'total_redeemed'
     ];
 
     /**
@@ -177,7 +177,7 @@ class PromotionsTiersCreateResponseBodySummaryRedemptions implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-        'totalRedeemed' => 'setTotalRedeemed'
+        'total_redeemed' => 'setTotalRedeemed'
     ];
 
     /**
@@ -186,7 +186,7 @@ class PromotionsTiersCreateResponseBodySummaryRedemptions implements ModelInterf
      * @var string[]
      */
     protected static $getters = [
-        'totalRedeemed' => 'getTotalRedeemed'
+        'total_redeemed' => 'getTotalRedeemed'
     ];
 
     /**
@@ -246,7 +246,7 @@ class PromotionsTiersCreateResponseBodySummaryRedemptions implements ModelInterf
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('totalRedeemed', $data ?? [], null);
+        $this->setIfExists('total_redeemed', $data ?? [], null);
     }
 
     /**
@@ -292,35 +292,35 @@ class PromotionsTiersCreateResponseBodySummaryRedemptions implements ModelInterf
 
 
     /**
-     * Gets totalRedeemed
+     * Gets total_redeemed
      *
      * @return int|null
      */
     public function getTotalRedeemed()
     {
-        return $this->container['totalRedeemed'];
+        return $this->container['total_redeemed'];
     }
 
     /**
-     * Sets totalRedeemed
+     * Sets total_redeemed
      *
-     * @param int|null $totalRedeemed Number of times the promotion tier was redeemed.
+     * @param int|null $total_redeemed Number of times the promotion tier was redeemed.
      *
      * @return self
      */
-    public function setTotalRedeemed($totalRedeemed)
+    public function setTotalRedeemed($total_redeemed)
     {
-        if (is_null($totalRedeemed)) {
-            array_push($this->openAPINullablesSetToNull, 'totalRedeemed');
+        if (is_null($total_redeemed)) {
+            array_push($this->openAPINullablesSetToNull, 'total_redeemed');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('totalRedeemed', $nullablesSetToNull);
+            $index = array_search('total_redeemed', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['totalRedeemed'] = $totalRedeemed;
+        $this->container['total_redeemed'] = $total_redeemed;
 
         return $this;
     }

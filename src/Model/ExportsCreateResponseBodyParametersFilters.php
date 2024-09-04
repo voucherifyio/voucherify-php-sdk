@@ -59,9 +59,9 @@ class ExportsCreateResponseBodyParametersFilters implements ModelInterface, Arra
       */
     protected static $openAPITypes = [
         'junction' => 'string',
-        'campaignId' => '\OpenAPI\Client\Model\FieldConditions',
-        'voucherId' => '\OpenAPI\Client\Model\FieldConditions',
-        'createdAt' => '\OpenAPI\Client\Model\FieldConditions'
+        'campaign_id' => '\OpenAPI\Client\Model\FieldConditions',
+        'voucher_id' => '\OpenAPI\Client\Model\FieldConditions',
+        'created_at' => '\OpenAPI\Client\Model\FieldConditions'
     ];
 
     /**
@@ -73,9 +73,9 @@ class ExportsCreateResponseBodyParametersFilters implements ModelInterface, Arra
       */
     protected static $openAPIFormats = [
         'junction' => null,
-        'campaignId' => null,
-        'voucherId' => null,
-        'createdAt' => null
+        'campaign_id' => null,
+        'voucher_id' => null,
+        'created_at' => null
     ];
 
     /**
@@ -85,9 +85,9 @@ class ExportsCreateResponseBodyParametersFilters implements ModelInterface, Arra
       */
     protected static array $openAPINullables = [
         'junction' => true,
-		'campaignId' => false,
-		'voucherId' => false,
-		'createdAt' => false
+		'campaign_id' => false,
+		'voucher_id' => false,
+		'created_at' => false
     ];
 
     /**
@@ -177,9 +177,9 @@ class ExportsCreateResponseBodyParametersFilters implements ModelInterface, Arra
      */
     protected static $attributeMap = [
         'junction' => 'junction',
-        'campaignId' => 'campaign_id',
-        'voucherId' => 'voucher_id',
-        'createdAt' => 'created_at'
+        'campaign_id' => 'campaign_id',
+        'voucher_id' => 'voucher_id',
+        'created_at' => 'created_at'
     ];
 
     /**
@@ -189,9 +189,9 @@ class ExportsCreateResponseBodyParametersFilters implements ModelInterface, Arra
      */
     protected static $setters = [
         'junction' => 'setJunction',
-        'campaignId' => 'setCampaignId',
-        'voucherId' => 'setVoucherId',
-        'createdAt' => 'setCreatedAt'
+        'campaign_id' => 'setCampaignId',
+        'voucher_id' => 'setVoucherId',
+        'created_at' => 'setCreatedAt'
     ];
 
     /**
@@ -201,9 +201,9 @@ class ExportsCreateResponseBodyParametersFilters implements ModelInterface, Arra
      */
     protected static $getters = [
         'junction' => 'getJunction',
-        'campaignId' => 'getCampaignId',
-        'voucherId' => 'getVoucherId',
-        'createdAt' => 'getCreatedAt'
+        'campaign_id' => 'getCampaignId',
+        'voucher_id' => 'getVoucherId',
+        'created_at' => 'getCreatedAt'
     ];
 
     /**
@@ -279,9 +279,9 @@ class ExportsCreateResponseBodyParametersFilters implements ModelInterface, Arra
     public function __construct(array $data = null)
     {
         $this->setIfExists('junction', $data ?? [], null);
-        $this->setIfExists('campaignId', $data ?? [], null);
-        $this->setIfExists('voucherId', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('campaign_id', $data ?? [], null);
+        $this->setIfExists('voucher_id', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
     }
 
     /**
@@ -380,82 +380,82 @@ class ExportsCreateResponseBodyParametersFilters implements ModelInterface, Arra
     }
 
     /**
-     * Gets campaignId
+     * Gets campaign_id
      *
      * @return \OpenAPI\Client\Model\FieldConditions|null
      */
     public function getCampaignId()
     {
-        return $this->container['campaignId'];
+        return $this->container['campaign_id'];
     }
 
     /**
-     * Sets campaignId
+     * Sets campaign_id
      *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $campaignId campaignId
+     * @param \OpenAPI\Client\Model\FieldConditions|null $campaign_id campaign_id
      *
      * @return self
      */
-    public function setCampaignId($campaignId)
+    public function setCampaignId($campaign_id)
     {
-        if (is_null($campaignId)) {
-            throw new \InvalidArgumentException('non-nullable campaignId cannot be null');
+        if (is_null($campaign_id)) {
+            throw new \InvalidArgumentException('non-nullable campaign_id cannot be null');
         }
-        $this->container['campaignId'] = $campaignId;
+        $this->container['campaign_id'] = $campaign_id;
 
         return $this;
     }
 
     /**
-     * Gets voucherId
+     * Gets voucher_id
      *
      * @return \OpenAPI\Client\Model\FieldConditions|null
      */
     public function getVoucherId()
     {
-        return $this->container['voucherId'];
+        return $this->container['voucher_id'];
     }
 
     /**
-     * Sets voucherId
+     * Sets voucher_id
      *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $voucherId voucherId
+     * @param \OpenAPI\Client\Model\FieldConditions|null $voucher_id voucher_id
      *
      * @return self
      */
-    public function setVoucherId($voucherId)
+    public function setVoucherId($voucher_id)
     {
-        if (is_null($voucherId)) {
-            throw new \InvalidArgumentException('non-nullable voucherId cannot be null');
+        if (is_null($voucher_id)) {
+            throw new \InvalidArgumentException('non-nullable voucher_id cannot be null');
         }
-        $this->container['voucherId'] = $voucherId;
+        $this->container['voucher_id'] = $voucher_id;
 
         return $this;
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \OpenAPI\Client\Model\FieldConditions|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $createdAt createdAt
+     * @param \OpenAPI\Client\Model\FieldConditions|null $created_at created_at
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            throw new \InvalidArgumentException('non-nullable createdAt cannot be null');
+        if (is_null($created_at)) {
+            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }

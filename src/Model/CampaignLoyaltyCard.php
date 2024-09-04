@@ -60,7 +60,7 @@ class CampaignLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'points' => 'int',
-        'expirationRules' => '\OpenAPI\Client\Model\CampaignLoyaltyCardExpirationRules'
+        'expiration_rules' => '\OpenAPI\Client\Model\CampaignLoyaltyCardExpirationRules'
     ];
 
     /**
@@ -72,7 +72,7 @@ class CampaignLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'points' => null,
-        'expirationRules' => null
+        'expiration_rules' => null
     ];
 
     /**
@@ -82,7 +82,7 @@ class CampaignLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPINullables = [
         'points' => true,
-		'expirationRules' => true
+		'expiration_rules' => true
     ];
 
     /**
@@ -172,7 +172,7 @@ class CampaignLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'points' => 'points',
-        'expirationRules' => 'expiration_rules'
+        'expiration_rules' => 'expiration_rules'
     ];
 
     /**
@@ -182,7 +182,7 @@ class CampaignLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'points' => 'setPoints',
-        'expirationRules' => 'setExpirationRules'
+        'expiration_rules' => 'setExpirationRules'
     ];
 
     /**
@@ -192,7 +192,7 @@ class CampaignLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'points' => 'getPoints',
-        'expirationRules' => 'getExpirationRules'
+        'expiration_rules' => 'getExpirationRules'
     ];
 
     /**
@@ -253,7 +253,7 @@ class CampaignLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(array $data = null)
     {
         $this->setIfExists('points', $data ?? [], null);
-        $this->setIfExists('expirationRules', $data ?? [], null);
+        $this->setIfExists('expiration_rules', $data ?? [], null);
     }
 
     /**
@@ -333,35 +333,35 @@ class CampaignLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets expirationRules
+     * Gets expiration_rules
      *
      * @return \OpenAPI\Client\Model\CampaignLoyaltyCardExpirationRules|null
      */
     public function getExpirationRules()
     {
-        return $this->container['expirationRules'];
+        return $this->container['expiration_rules'];
     }
 
     /**
-     * Sets expirationRules
+     * Sets expiration_rules
      *
-     * @param \OpenAPI\Client\Model\CampaignLoyaltyCardExpirationRules|null $expirationRules expirationRules
+     * @param \OpenAPI\Client\Model\CampaignLoyaltyCardExpirationRules|null $expiration_rules expiration_rules
      *
      * @return self
      */
-    public function setExpirationRules($expirationRules)
+    public function setExpirationRules($expiration_rules)
     {
-        if (is_null($expirationRules)) {
-            array_push($this->openAPINullablesSetToNull, 'expirationRules');
+        if (is_null($expiration_rules)) {
+            array_push($this->openAPINullablesSetToNull, 'expiration_rules');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expirationRules', $nullablesSetToNull);
+            $index = array_search('expiration_rules', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['expirationRules'] = $expirationRules;
+        $this->container['expiration_rules'] = $expiration_rules;
 
         return $this;
     }

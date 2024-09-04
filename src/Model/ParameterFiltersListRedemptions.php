@@ -58,16 +58,16 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'voucherCode' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsVoucherCode',
-        'relatedObjectId' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsRelatedObjectId',
-        'relatedObjectParentId' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsRelatedObjectParentId',
-        'parentRedemptionId' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsParentRedemptionId',
-        'failureCode' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsFailureCode',
+        'voucher_code' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsVoucherCode',
+        'related_object_id' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsRelatedObjectId',
+        'related_object_parent_id' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsRelatedObjectParentId',
+        'parent_redemption_id' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsParentRedemptionId',
+        'failure_code' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsFailureCode',
         'result' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsResult',
         'object' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsObject',
-        'customerId' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsCustomerId',
-        'campaignName' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsCampaignName',
-        'userLogin' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsUserLogin'
+        'customer_id' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsCustomerId',
+        'campaign_name' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsCampaignName',
+        'user_login' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsUserLogin'
     ];
 
     /**
@@ -78,16 +78,16 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'voucherCode' => null,
-        'relatedObjectId' => null,
-        'relatedObjectParentId' => null,
-        'parentRedemptionId' => null,
-        'failureCode' => null,
+        'voucher_code' => null,
+        'related_object_id' => null,
+        'related_object_parent_id' => null,
+        'parent_redemption_id' => null,
+        'failure_code' => null,
         'result' => null,
         'object' => null,
-        'customerId' => null,
-        'campaignName' => null,
-        'userLogin' => null
+        'customer_id' => null,
+        'campaign_name' => null,
+        'user_login' => null
     ];
 
     /**
@@ -96,16 +96,16 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'voucherCode' => true,
-		'relatedObjectId' => true,
-		'relatedObjectParentId' => true,
-		'parentRedemptionId' => true,
-		'failureCode' => true,
+        'voucher_code' => true,
+		'related_object_id' => true,
+		'related_object_parent_id' => true,
+		'parent_redemption_id' => true,
+		'failure_code' => true,
 		'result' => true,
 		'object' => true,
-		'customerId' => true,
-		'campaignName' => true,
-		'userLogin' => true
+		'customer_id' => true,
+		'campaign_name' => true,
+		'user_login' => true
     ];
 
     /**
@@ -194,16 +194,16 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'voucherCode' => 'voucher_code',
-        'relatedObjectId' => 'related_object_id',
-        'relatedObjectParentId' => 'related_object_parent_id',
-        'parentRedemptionId' => 'parent_redemption_id',
-        'failureCode' => 'failure_code',
+        'voucher_code' => 'voucher_code',
+        'related_object_id' => 'related_object_id',
+        'related_object_parent_id' => 'related_object_parent_id',
+        'parent_redemption_id' => 'parent_redemption_id',
+        'failure_code' => 'failure_code',
         'result' => 'result',
         'object' => 'object',
-        'customerId' => 'customer_id',
-        'campaignName' => 'campaign_name',
-        'userLogin' => 'user_login'
+        'customer_id' => 'customer_id',
+        'campaign_name' => 'campaign_name',
+        'user_login' => 'user_login'
     ];
 
     /**
@@ -212,16 +212,16 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'voucherCode' => 'setVoucherCode',
-        'relatedObjectId' => 'setRelatedObjectId',
-        'relatedObjectParentId' => 'setRelatedObjectParentId',
-        'parentRedemptionId' => 'setParentRedemptionId',
-        'failureCode' => 'setFailureCode',
+        'voucher_code' => 'setVoucherCode',
+        'related_object_id' => 'setRelatedObjectId',
+        'related_object_parent_id' => 'setRelatedObjectParentId',
+        'parent_redemption_id' => 'setParentRedemptionId',
+        'failure_code' => 'setFailureCode',
         'result' => 'setResult',
         'object' => 'setObject',
-        'customerId' => 'setCustomerId',
-        'campaignName' => 'setCampaignName',
-        'userLogin' => 'setUserLogin'
+        'customer_id' => 'setCustomerId',
+        'campaign_name' => 'setCampaignName',
+        'user_login' => 'setUserLogin'
     ];
 
     /**
@@ -230,16 +230,16 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'voucherCode' => 'getVoucherCode',
-        'relatedObjectId' => 'getRelatedObjectId',
-        'relatedObjectParentId' => 'getRelatedObjectParentId',
-        'parentRedemptionId' => 'getParentRedemptionId',
-        'failureCode' => 'getFailureCode',
+        'voucher_code' => 'getVoucherCode',
+        'related_object_id' => 'getRelatedObjectId',
+        'related_object_parent_id' => 'getRelatedObjectParentId',
+        'parent_redemption_id' => 'getParentRedemptionId',
+        'failure_code' => 'getFailureCode',
         'result' => 'getResult',
         'object' => 'getObject',
-        'customerId' => 'getCustomerId',
-        'campaignName' => 'getCampaignName',
-        'userLogin' => 'getUserLogin'
+        'customer_id' => 'getCustomerId',
+        'campaign_name' => 'getCampaignName',
+        'user_login' => 'getUserLogin'
     ];
 
     /**
@@ -299,16 +299,16 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('voucherCode', $data ?? [], null);
-        $this->setIfExists('relatedObjectId', $data ?? [], null);
-        $this->setIfExists('relatedObjectParentId', $data ?? [], null);
-        $this->setIfExists('parentRedemptionId', $data ?? [], null);
-        $this->setIfExists('failureCode', $data ?? [], null);
+        $this->setIfExists('voucher_code', $data ?? [], null);
+        $this->setIfExists('related_object_id', $data ?? [], null);
+        $this->setIfExists('related_object_parent_id', $data ?? [], null);
+        $this->setIfExists('parent_redemption_id', $data ?? [], null);
+        $this->setIfExists('failure_code', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], null);
-        $this->setIfExists('customerId', $data ?? [], null);
-        $this->setIfExists('campaignName', $data ?? [], null);
-        $this->setIfExists('userLogin', $data ?? [], null);
+        $this->setIfExists('customer_id', $data ?? [], null);
+        $this->setIfExists('campaign_name', $data ?? [], null);
+        $this->setIfExists('user_login', $data ?? [], null);
     }
 
     /**
@@ -354,171 +354,171 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets voucherCode
+     * Gets voucher_code
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListRedemptionsVoucherCode|null
      */
     public function getVoucherCode()
     {
-        return $this->container['voucherCode'];
+        return $this->container['voucher_code'];
     }
 
     /**
-     * Sets voucherCode
+     * Sets voucher_code
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsVoucherCode|null $voucherCode voucherCode
+     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsVoucherCode|null $voucher_code voucher_code
      *
      * @return self
      */
-    public function setVoucherCode($voucherCode)
+    public function setVoucherCode($voucher_code)
     {
-        if (is_null($voucherCode)) {
-            array_push($this->openAPINullablesSetToNull, 'voucherCode');
+        if (is_null($voucher_code)) {
+            array_push($this->openAPINullablesSetToNull, 'voucher_code');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('voucherCode', $nullablesSetToNull);
+            $index = array_search('voucher_code', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['voucherCode'] = $voucherCode;
+        $this->container['voucher_code'] = $voucher_code;
 
         return $this;
     }
 
     /**
-     * Gets relatedObjectId
+     * Gets related_object_id
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListRedemptionsRelatedObjectId|null
      */
     public function getRelatedObjectId()
     {
-        return $this->container['relatedObjectId'];
+        return $this->container['related_object_id'];
     }
 
     /**
-     * Sets relatedObjectId
+     * Sets related_object_id
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsRelatedObjectId|null $relatedObjectId relatedObjectId
+     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsRelatedObjectId|null $related_object_id related_object_id
      *
      * @return self
      */
-    public function setRelatedObjectId($relatedObjectId)
+    public function setRelatedObjectId($related_object_id)
     {
-        if (is_null($relatedObjectId)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObjectId');
+        if (is_null($related_object_id)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObjectId', $nullablesSetToNull);
+            $index = array_search('related_object_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['relatedObjectId'] = $relatedObjectId;
+        $this->container['related_object_id'] = $related_object_id;
 
         return $this;
     }
 
     /**
-     * Gets relatedObjectParentId
+     * Gets related_object_parent_id
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListRedemptionsRelatedObjectParentId|null
      */
     public function getRelatedObjectParentId()
     {
-        return $this->container['relatedObjectParentId'];
+        return $this->container['related_object_parent_id'];
     }
 
     /**
-     * Sets relatedObjectParentId
+     * Sets related_object_parent_id
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsRelatedObjectParentId|null $relatedObjectParentId relatedObjectParentId
+     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsRelatedObjectParentId|null $related_object_parent_id related_object_parent_id
      *
      * @return self
      */
-    public function setRelatedObjectParentId($relatedObjectParentId)
+    public function setRelatedObjectParentId($related_object_parent_id)
     {
-        if (is_null($relatedObjectParentId)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObjectParentId');
+        if (is_null($related_object_parent_id)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object_parent_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObjectParentId', $nullablesSetToNull);
+            $index = array_search('related_object_parent_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['relatedObjectParentId'] = $relatedObjectParentId;
+        $this->container['related_object_parent_id'] = $related_object_parent_id;
 
         return $this;
     }
 
     /**
-     * Gets parentRedemptionId
+     * Gets parent_redemption_id
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListRedemptionsParentRedemptionId|null
      */
     public function getParentRedemptionId()
     {
-        return $this->container['parentRedemptionId'];
+        return $this->container['parent_redemption_id'];
     }
 
     /**
-     * Sets parentRedemptionId
+     * Sets parent_redemption_id
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsParentRedemptionId|null $parentRedemptionId parentRedemptionId
+     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsParentRedemptionId|null $parent_redemption_id parent_redemption_id
      *
      * @return self
      */
-    public function setParentRedemptionId($parentRedemptionId)
+    public function setParentRedemptionId($parent_redemption_id)
     {
-        if (is_null($parentRedemptionId)) {
-            array_push($this->openAPINullablesSetToNull, 'parentRedemptionId');
+        if (is_null($parent_redemption_id)) {
+            array_push($this->openAPINullablesSetToNull, 'parent_redemption_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('parentRedemptionId', $nullablesSetToNull);
+            $index = array_search('parent_redemption_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['parentRedemptionId'] = $parentRedemptionId;
+        $this->container['parent_redemption_id'] = $parent_redemption_id;
 
         return $this;
     }
 
     /**
-     * Gets failureCode
+     * Gets failure_code
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListRedemptionsFailureCode|null
      */
     public function getFailureCode()
     {
-        return $this->container['failureCode'];
+        return $this->container['failure_code'];
     }
 
     /**
-     * Sets failureCode
+     * Sets failure_code
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsFailureCode|null $failureCode failureCode
+     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsFailureCode|null $failure_code failure_code
      *
      * @return self
      */
-    public function setFailureCode($failureCode)
+    public function setFailureCode($failure_code)
     {
-        if (is_null($failureCode)) {
-            array_push($this->openAPINullablesSetToNull, 'failureCode');
+        if (is_null($failure_code)) {
+            array_push($this->openAPINullablesSetToNull, 'failure_code');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('failureCode', $nullablesSetToNull);
+            $index = array_search('failure_code', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['failureCode'] = $failureCode;
+        $this->container['failure_code'] = $failure_code;
 
         return $this;
     }
@@ -592,103 +592,103 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets customerId
+     * Gets customer_id
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListRedemptionsCustomerId|null
      */
     public function getCustomerId()
     {
-        return $this->container['customerId'];
+        return $this->container['customer_id'];
     }
 
     /**
-     * Sets customerId
+     * Sets customer_id
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsCustomerId|null $customerId customerId
+     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsCustomerId|null $customer_id customer_id
      *
      * @return self
      */
-    public function setCustomerId($customerId)
+    public function setCustomerId($customer_id)
     {
-        if (is_null($customerId)) {
-            array_push($this->openAPINullablesSetToNull, 'customerId');
+        if (is_null($customer_id)) {
+            array_push($this->openAPINullablesSetToNull, 'customer_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customerId', $nullablesSetToNull);
+            $index = array_search('customer_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['customerId'] = $customerId;
+        $this->container['customer_id'] = $customer_id;
 
         return $this;
     }
 
     /**
-     * Gets campaignName
+     * Gets campaign_name
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListRedemptionsCampaignName|null
      */
     public function getCampaignName()
     {
-        return $this->container['campaignName'];
+        return $this->container['campaign_name'];
     }
 
     /**
-     * Sets campaignName
+     * Sets campaign_name
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsCampaignName|null $campaignName campaignName
+     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsCampaignName|null $campaign_name campaign_name
      *
      * @return self
      */
-    public function setCampaignName($campaignName)
+    public function setCampaignName($campaign_name)
     {
-        if (is_null($campaignName)) {
-            array_push($this->openAPINullablesSetToNull, 'campaignName');
+        if (is_null($campaign_name)) {
+            array_push($this->openAPINullablesSetToNull, 'campaign_name');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaignName', $nullablesSetToNull);
+            $index = array_search('campaign_name', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaignName'] = $campaignName;
+        $this->container['campaign_name'] = $campaign_name;
 
         return $this;
     }
 
     /**
-     * Gets userLogin
+     * Gets user_login
      *
      * @return \OpenAPI\Client\Model\ParameterFiltersListRedemptionsUserLogin|null
      */
     public function getUserLogin()
     {
-        return $this->container['userLogin'];
+        return $this->container['user_login'];
     }
 
     /**
-     * Sets userLogin
+     * Sets user_login
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsUserLogin|null $userLogin userLogin
+     * @param \OpenAPI\Client\Model\ParameterFiltersListRedemptionsUserLogin|null $user_login user_login
      *
      * @return self
      */
-    public function setUserLogin($userLogin)
+    public function setUserLogin($user_login)
     {
-        if (is_null($userLogin)) {
-            array_push($this->openAPINullablesSetToNull, 'userLogin');
+        if (is_null($user_login)) {
+            array_push($this->openAPINullablesSetToNull, 'user_login');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('userLogin', $nullablesSetToNull);
+            $index = array_search('user_login', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['userLogin'] = $userLogin;
+        $this->container['user_login'] = $user_login;
 
         return $this;
     }

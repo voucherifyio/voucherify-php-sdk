@@ -60,8 +60,8 @@ class OrdersListResponseBody implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'object' => 'string',
-        'dataRef' => 'string',
-        'orders' => '\OpenAPI\Client\Model\OrderCalculated[]',
+        'data_ref' => 'string',
+        'orders' => '\OpenAPI\Client\Model\OrderCalculatedNoCustomerData[]',
         'total' => 'int'
     ];
 
@@ -74,7 +74,7 @@ class OrdersListResponseBody implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPIFormats = [
         'object' => null,
-        'dataRef' => null,
+        'data_ref' => null,
         'orders' => null,
         'total' => null
     ];
@@ -86,7 +86,7 @@ class OrdersListResponseBody implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static array $openAPINullables = [
         'object' => true,
-		'dataRef' => true,
+		'data_ref' => true,
 		'orders' => true,
 		'total' => true
     ];
@@ -178,7 +178,7 @@ class OrdersListResponseBody implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $attributeMap = [
         'object' => 'object',
-        'dataRef' => 'data_ref',
+        'data_ref' => 'data_ref',
         'orders' => 'orders',
         'total' => 'total'
     ];
@@ -190,7 +190,7 @@ class OrdersListResponseBody implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $setters = [
         'object' => 'setObject',
-        'dataRef' => 'setDataRef',
+        'data_ref' => 'setDataRef',
         'orders' => 'setOrders',
         'total' => 'setTotal'
     ];
@@ -202,7 +202,7 @@ class OrdersListResponseBody implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'object' => 'getObject',
-        'dataRef' => 'getDataRef',
+        'data_ref' => 'getDataRef',
         'orders' => 'getOrders',
         'total' => 'getTotal'
     ];
@@ -291,7 +291,7 @@ class OrdersListResponseBody implements ModelInterface, ArrayAccess, \JsonSerial
     public function __construct(array $data = null)
     {
         $this->setIfExists('object', $data ?? [], 'list');
-        $this->setIfExists('dataRef', $data ?? [], 'orders');
+        $this->setIfExists('data_ref', $data ?? [], 'orders');
         $this->setIfExists('orders', $data ?? [], null);
         $this->setIfExists('total', $data ?? [], null);
     }
@@ -333,10 +333,10 @@ class OrdersListResponseBody implements ModelInterface, ArrayAccess, \JsonSerial
         }
 
         $allowedValues = $this->getDataRefAllowableValues();
-        if (!is_null($this->container['dataRef']) && !in_array($this->container['dataRef'], $allowedValues, true)) {
+        if (!is_null($this->container['data_ref']) && !in_array($this->container['data_ref'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'dataRef', must be one of '%s'",
-                $this->container['dataRef'],
+                "invalid value '%s' for 'data_ref', must be one of '%s'",
+                $this->container['data_ref'],
                 implode("', '", $allowedValues)
             );
         }
@@ -401,45 +401,45 @@ class OrdersListResponseBody implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets dataRef
+     * Gets data_ref
      *
      * @return string|null
      */
     public function getDataRef()
     {
-        return $this->container['dataRef'];
+        return $this->container['data_ref'];
     }
 
     /**
-     * Sets dataRef
+     * Sets data_ref
      *
-     * @param string|null $dataRef Identifies the name of the attribute that contains the array of order objects.
+     * @param string|null $data_ref Identifies the name of the attribute that contains the array of order objects.
      *
      * @return self
      */
-    public function setDataRef($dataRef)
+    public function setDataRef($data_ref)
     {
-        if (is_null($dataRef)) {
-            array_push($this->openAPINullablesSetToNull, 'dataRef');
+        if (is_null($data_ref)) {
+            array_push($this->openAPINullablesSetToNull, 'data_ref');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dataRef', $nullablesSetToNull);
+            $index = array_search('data_ref', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getDataRefAllowableValues();
-        if (!is_null($dataRef) && !in_array($dataRef, $allowedValues, true)) {
+        if (!is_null($data_ref) && !in_array($data_ref, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'dataRef', must be one of '%s'",
-                    $dataRef,
+                    "Invalid value '%s' for 'data_ref', must be one of '%s'",
+                    $data_ref,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['dataRef'] = $dataRef;
+        $this->container['data_ref'] = $data_ref;
 
         return $this;
     }
@@ -447,7 +447,7 @@ class OrdersListResponseBody implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets orders
      *
-     * @return \OpenAPI\Client\Model\OrderCalculated[]|null
+     * @return \OpenAPI\Client\Model\OrderCalculatedNoCustomerData[]|null
      */
     public function getOrders()
     {
@@ -457,7 +457,7 @@ class OrdersListResponseBody implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets orders
      *
-     * @param \OpenAPI\Client\Model\OrderCalculated[]|null $orders Contains array of order objects.
+     * @param \OpenAPI\Client\Model\OrderCalculatedNoCustomerData[]|null $orders Contains array of order objects.
      *
      * @return self
      */

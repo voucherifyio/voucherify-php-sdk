@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**periodType** | **string** | Type of period | [optional] [default to 'MONTH']
-**periodValue** | **int** | Value of the period | [optional]
-**roundingType** | **string** | Type of rounding | [optional]
-**roundingValue** | **int** | Value of rounding | [optional]
+**period_type** | **string** | Type of period | [optional] [default to 'MONTH']
+**period_value** | **int** | Value of the period | [optional]
+**rounding_type** | **string** | Type of rounding | [optional]
+**rounding_value** | **int** | Value of rounding | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

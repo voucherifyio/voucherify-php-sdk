@@ -64,8 +64,8 @@ class LoyaltiesMembersBalanceUpdateResponseBody implements ModelInterface, Array
         'balance' => 'int',
         'type' => 'string',
         'object' => 'string',
-        'relatedObject' => '\OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject',
-        'operationType' => 'string'
+        'related_object' => '\OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject',
+        'operation_type' => 'string'
     ];
 
     /**
@@ -81,8 +81,8 @@ class LoyaltiesMembersBalanceUpdateResponseBody implements ModelInterface, Array
         'balance' => null,
         'type' => null,
         'object' => null,
-        'relatedObject' => null,
-        'operationType' => null
+        'related_object' => null,
+        'operation_type' => null
     ];
 
     /**
@@ -96,8 +96,8 @@ class LoyaltiesMembersBalanceUpdateResponseBody implements ModelInterface, Array
 		'balance' => true,
 		'type' => true,
 		'object' => true,
-		'relatedObject' => true,
-		'operationType' => true
+		'related_object' => true,
+		'operation_type' => true
     ];
 
     /**
@@ -191,8 +191,8 @@ class LoyaltiesMembersBalanceUpdateResponseBody implements ModelInterface, Array
         'balance' => 'balance',
         'type' => 'type',
         'object' => 'object',
-        'relatedObject' => 'related_object',
-        'operationType' => 'operation_type'
+        'related_object' => 'related_object',
+        'operation_type' => 'operation_type'
     ];
 
     /**
@@ -206,8 +206,8 @@ class LoyaltiesMembersBalanceUpdateResponseBody implements ModelInterface, Array
         'balance' => 'setBalance',
         'type' => 'setType',
         'object' => 'setObject',
-        'relatedObject' => 'setRelatedObject',
-        'operationType' => 'setOperationType'
+        'related_object' => 'setRelatedObject',
+        'operation_type' => 'setOperationType'
     ];
 
     /**
@@ -221,8 +221,8 @@ class LoyaltiesMembersBalanceUpdateResponseBody implements ModelInterface, Array
         'balance' => 'getBalance',
         'type' => 'getType',
         'object' => 'getObject',
-        'relatedObject' => 'getRelatedObject',
-        'operationType' => 'getOperationType'
+        'related_object' => 'getRelatedObject',
+        'operation_type' => 'getOperationType'
     ];
 
     /**
@@ -330,8 +330,8 @@ class LoyaltiesMembersBalanceUpdateResponseBody implements ModelInterface, Array
         $this->setIfExists('balance', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'balance');
-        $this->setIfExists('relatedObject', $data ?? [], null);
-        $this->setIfExists('operationType', $data ?? [], null);
+        $this->setIfExists('related_object', $data ?? [], null);
+        $this->setIfExists('operation_type', $data ?? [], null);
     }
 
     /**
@@ -388,10 +388,10 @@ class LoyaltiesMembersBalanceUpdateResponseBody implements ModelInterface, Array
         }
 
         $allowedValues = $this->getOperationTypeAllowableValues();
-        if (!is_null($this->container['operationType']) && !in_array($this->container['operationType'], $allowedValues, true)) {
+        if (!is_null($this->container['operation_type']) && !in_array($this->container['operation_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'operationType', must be one of '%s'",
-                $this->container['operationType'],
+                "invalid value '%s' for 'operation_type', must be one of '%s'",
+                $this->container['operation_type'],
                 implode("', '", $allowedValues)
             );
         }
@@ -612,79 +612,79 @@ class LoyaltiesMembersBalanceUpdateResponseBody implements ModelInterface, Array
     }
 
     /**
-     * Gets relatedObject
+     * Gets related_object
      *
      * @return \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject|null
      */
     public function getRelatedObject()
     {
-        return $this->container['relatedObject'];
+        return $this->container['related_object'];
     }
 
     /**
-     * Sets relatedObject
+     * Sets related_object
      *
-     * @param \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject|null $relatedObject relatedObject
+     * @param \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject|null $related_object related_object
      *
      * @return self
      */
-    public function setRelatedObject($relatedObject)
+    public function setRelatedObject($related_object)
     {
-        if (is_null($relatedObject)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObject');
+        if (is_null($related_object)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObject', $nullablesSetToNull);
+            $index = array_search('related_object', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['relatedObject'] = $relatedObject;
+        $this->container['related_object'] = $related_object;
 
         return $this;
     }
 
     /**
-     * Gets operationType
+     * Gets operation_type
      *
      * @return string|null
      */
     public function getOperationType()
     {
-        return $this->container['operationType'];
+        return $this->container['operation_type'];
     }
 
     /**
-     * Sets operationType
+     * Sets operation_type
      *
-     * @param string|null $operationType operationType
+     * @param string|null $operation_type operation_type
      *
      * @return self
      */
-    public function setOperationType($operationType)
+    public function setOperationType($operation_type)
     {
-        if (is_null($operationType)) {
-            array_push($this->openAPINullablesSetToNull, 'operationType');
+        if (is_null($operation_type)) {
+            array_push($this->openAPINullablesSetToNull, 'operation_type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('operationType', $nullablesSetToNull);
+            $index = array_search('operation_type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getOperationTypeAllowableValues();
-        if (!is_null($operationType) && !in_array($operationType, $allowedValues, true)) {
+        if (!is_null($operation_type) && !in_array($operation_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'operationType', must be one of '%s'",
-                    $operationType,
+                    "Invalid value '%s' for 'operation_type', must be one of '%s'",
+                    $operation_type,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['operationType'] = $operationType;
+        $this->container['operation_type'] = $operation_type;
 
         return $this;
     }

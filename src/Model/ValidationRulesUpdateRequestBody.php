@@ -62,9 +62,9 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
         'name' => 'string',
         'rules' => 'object',
         'error' => '\OpenAPI\Client\Model\ValidationRulesUpdateRequestBodyError',
-        'applicableTo' => '\OpenAPI\Client\Model\ValidationRulesUpdateRequestBodyApplicableTo',
+        'applicable_to' => '\OpenAPI\Client\Model\ValidationRulesUpdateRequestBodyApplicableTo',
         'type' => 'string',
-        'contextType' => 'string'
+        'context_type' => 'string'
     ];
 
     /**
@@ -78,9 +78,9 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
         'name' => null,
         'rules' => null,
         'error' => null,
-        'applicableTo' => null,
+        'applicable_to' => null,
         'type' => null,
-        'contextType' => null
+        'context_type' => null
     ];
 
     /**
@@ -92,9 +92,9 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
         'name' => true,
 		'rules' => false,
 		'error' => true,
-		'applicableTo' => true,
+		'applicable_to' => true,
 		'type' => true,
-		'contextType' => true
+		'context_type' => true
     ];
 
     /**
@@ -186,9 +186,9 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
         'name' => 'name',
         'rules' => 'rules',
         'error' => 'error',
-        'applicableTo' => 'applicable_to',
+        'applicable_to' => 'applicable_to',
         'type' => 'type',
-        'contextType' => 'context_type'
+        'context_type' => 'context_type'
     ];
 
     /**
@@ -200,9 +200,9 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
         'name' => 'setName',
         'rules' => 'setRules',
         'error' => 'setError',
-        'applicableTo' => 'setApplicableTo',
+        'applicable_to' => 'setApplicableTo',
         'type' => 'setType',
-        'contextType' => 'setContextType'
+        'context_type' => 'setContextType'
     ];
 
     /**
@@ -214,9 +214,9 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
         'name' => 'getName',
         'rules' => 'getRules',
         'error' => 'getError',
-        'applicableTo' => 'getApplicableTo',
+        'applicable_to' => 'getApplicableTo',
         'type' => 'getType',
-        'contextType' => 'getContextType'
+        'context_type' => 'getContextType'
     ];
 
     /**
@@ -423,9 +423,9 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('rules', $data ?? [], null);
         $this->setIfExists('error', $data ?? [], null);
-        $this->setIfExists('applicableTo', $data ?? [], null);
+        $this->setIfExists('applicable_to', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], 'expression');
-        $this->setIfExists('contextType', $data ?? [], 'global');
+        $this->setIfExists('context_type', $data ?? [], 'global');
     }
 
     /**
@@ -465,10 +465,10 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
         }
 
         $allowedValues = $this->getContextTypeAllowableValues();
-        if (!is_null($this->container['contextType']) && !in_array($this->container['contextType'], $allowedValues, true)) {
+        if (!is_null($this->container['context_type']) && !in_array($this->container['context_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'contextType', must be one of '%s'",
-                $this->container['contextType'],
+                "invalid value '%s' for 'context_type', must be one of '%s'",
+                $this->container['context_type'],
                 implode("', '", $allowedValues)
             );
         }
@@ -584,35 +584,35 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets applicableTo
+     * Gets applicable_to
      *
      * @return \OpenAPI\Client\Model\ValidationRulesUpdateRequestBodyApplicableTo|null
      */
     public function getApplicableTo()
     {
-        return $this->container['applicableTo'];
+        return $this->container['applicable_to'];
     }
 
     /**
-     * Sets applicableTo
+     * Sets applicable_to
      *
-     * @param \OpenAPI\Client\Model\ValidationRulesUpdateRequestBodyApplicableTo|null $applicableTo applicableTo
+     * @param \OpenAPI\Client\Model\ValidationRulesUpdateRequestBodyApplicableTo|null $applicable_to applicable_to
      *
      * @return self
      */
-    public function setApplicableTo($applicableTo)
+    public function setApplicableTo($applicable_to)
     {
-        if (is_null($applicableTo)) {
-            array_push($this->openAPINullablesSetToNull, 'applicableTo');
+        if (is_null($applicable_to)) {
+            array_push($this->openAPINullablesSetToNull, 'applicable_to');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('applicableTo', $nullablesSetToNull);
+            $index = array_search('applicable_to', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['applicableTo'] = $applicableTo;
+        $this->container['applicable_to'] = $applicable_to;
 
         return $this;
     }
@@ -662,45 +662,45 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets contextType
+     * Gets context_type
      *
      * @return string|null
      */
     public function getContextType()
     {
-        return $this->container['contextType'];
+        return $this->container['context_type'];
     }
 
     /**
-     * Sets contextType
+     * Sets context_type
      *
-     * @param string|null $contextType Validation rule context type.    | **Context Type** | **Definition** | |:---|:---| | earning_rule.order.paid |  | | earning_rule.custom_event |  | | earning_rule.customer.segment.entered |  | | campaign.discount_coupons |  | | campaign.discount_coupons.discount.apply_to_order |  | | campaign.discount_coupons.discount.apply_to_items |  | | campaign.discount_coupons.discount.apply_to_items_proportionally |  | | campaign.discount_coupons.discount.apply_to_items_proportionally_by_quantity |  | | campaign.discount_coupons.discount.fixed.apply_to_items |  | | campaign.gift_vouchers |  | | campaign.gift_vouchers.gift.apply_to_order |  | | campaign.gift_vouchers.gift.apply_to_items |  | | campaign.referral_program |  | | campaign.referral_program.discount.apply_to_order |  | | campaign.referral_program.discount.apply_to_items |  | | campaign.referral_program.discount.apply_to_items_proportionally |  | | campaign.referral_program.discount.apply_to_items_proportionally_by_quantity |  | | campaign.referral_program.discount.fixed.apply_to_items |  | | campaign.promotion |  | | campaign.promotion.discount.apply_to_order |  | | campaign.promotion.discount.apply_to_items |  | | campaign.promotion.discount.apply_to_items_proportionally |  | | campaign.promotion.discount.apply_to_items_proportionally_by_quantity |  | | campaign.promotion.discount.fixed.apply_to_items |  | | campaign.loyalty_program |  | | campaign.lucky_draw |  | | voucher.discount_voucher |  | | voucher.discount_voucher.discount.apply_to_order |  | | voucher.discount_voucher.discount.apply_to_items |  | | voucher.discount_voucher.discount.apply_to_items_proportionally |  | | voucher.discount_voucher.discount.apply_to_items_proportionally_by_quantity |  | | voucher.discount_voucher.discount.fixed.apply_to_items |  | | voucher.gift_voucher |  | | voucher.gift_voucher.gift.apply_to_order |  | | voucher.gift_voucher.gift.apply_to_items |  | | voucher.loyalty_card |  | | voucher.lucky_draw_code |  | | distribution.custom_event |  | | reward_assignment.pay_with_points |  | | global |  |
+     * @param string|null $context_type Validation rule context type.    | **Context Type** | **Definition** | |:---|:---| | earning_rule.order.paid |  | | earning_rule.custom_event |  | | earning_rule.customer.segment.entered |  | | campaign.discount_coupons |  | | campaign.discount_coupons.discount.apply_to_order |  | | campaign.discount_coupons.discount.apply_to_items |  | | campaign.discount_coupons.discount.apply_to_items_proportionally |  | | campaign.discount_coupons.discount.apply_to_items_proportionally_by_quantity |  | | campaign.discount_coupons.discount.fixed.apply_to_items |  | | campaign.gift_vouchers |  | | campaign.gift_vouchers.gift.apply_to_order |  | | campaign.gift_vouchers.gift.apply_to_items |  | | campaign.referral_program |  | | campaign.referral_program.discount.apply_to_order |  | | campaign.referral_program.discount.apply_to_items |  | | campaign.referral_program.discount.apply_to_items_proportionally |  | | campaign.referral_program.discount.apply_to_items_proportionally_by_quantity |  | | campaign.referral_program.discount.fixed.apply_to_items |  | | campaign.promotion |  | | campaign.promotion.discount.apply_to_order |  | | campaign.promotion.discount.apply_to_items |  | | campaign.promotion.discount.apply_to_items_proportionally |  | | campaign.promotion.discount.apply_to_items_proportionally_by_quantity |  | | campaign.promotion.discount.fixed.apply_to_items |  | | campaign.loyalty_program |  | | campaign.lucky_draw |  | | voucher.discount_voucher |  | | voucher.discount_voucher.discount.apply_to_order |  | | voucher.discount_voucher.discount.apply_to_items |  | | voucher.discount_voucher.discount.apply_to_items_proportionally |  | | voucher.discount_voucher.discount.apply_to_items_proportionally_by_quantity |  | | voucher.discount_voucher.discount.fixed.apply_to_items |  | | voucher.gift_voucher |  | | voucher.gift_voucher.gift.apply_to_order |  | | voucher.gift_voucher.gift.apply_to_items |  | | voucher.loyalty_card |  | | voucher.lucky_draw_code |  | | distribution.custom_event |  | | reward_assignment.pay_with_points |  | | global |  |
      *
      * @return self
      */
-    public function setContextType($contextType)
+    public function setContextType($context_type)
     {
-        if (is_null($contextType)) {
-            array_push($this->openAPINullablesSetToNull, 'contextType');
+        if (is_null($context_type)) {
+            array_push($this->openAPINullablesSetToNull, 'context_type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('contextType', $nullablesSetToNull);
+            $index = array_search('context_type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getContextTypeAllowableValues();
-        if (!is_null($contextType) && !in_array($contextType, $allowedValues, true)) {
+        if (!is_null($context_type) && !in_array($context_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'contextType', must be one of '%s'",
-                    $contextType,
+                    "Invalid value '%s' for 'context_type', must be one of '%s'",
+                    $context_type,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['contextType'] = $contextType;
+        $this->container['context_type'] = $context_type;
 
         return $this;
     }

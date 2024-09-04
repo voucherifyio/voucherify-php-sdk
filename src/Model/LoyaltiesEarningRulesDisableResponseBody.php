@@ -60,22 +60,22 @@ class LoyaltiesEarningRulesDisableResponseBody implements ModelInterface, ArrayA
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'createdAt' => '\DateTime',
+        'created_at' => '\DateTime',
         'loyalty' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyLoyalty',
         'event' => 'string',
-        'customEvent' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyCustomEvent',
+        'custom_event' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyCustomEvent',
         'segment' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodySegment',
-        'loyaltyTier' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyLoyaltyTier',
+        'loyalty_tier' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyLoyaltyTier',
         'source' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodySource',
         'object' => 'string',
-        'automationId' => 'string',
-        'startDate' => 'string',
-        'expirationDate' => 'string',
-        'validityTimeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
-        'validityDayOfWeek' => 'int[]',
-        'validityHours' => '\OpenAPI\Client\Model\ValidityHours',
+        'automation_id' => 'string',
+        'start_date' => 'string',
+        'expiration_date' => 'string',
+        'validity_timeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
+        'validity_day_of_week' => 'int[]',
+        'validity_hours' => '\OpenAPI\Client\Model\ValidityHours',
         'metadata' => 'object',
-        'updatedAt' => '\DateTime',
+        'updated_at' => '\DateTime',
         'active' => 'bool'
     ];
 
@@ -88,22 +88,22 @@ class LoyaltiesEarningRulesDisableResponseBody implements ModelInterface, ArrayA
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'createdAt' => 'date-time',
+        'created_at' => 'date-time',
         'loyalty' => null,
         'event' => null,
-        'customEvent' => null,
+        'custom_event' => null,
         'segment' => null,
-        'loyaltyTier' => null,
+        'loyalty_tier' => null,
         'source' => null,
         'object' => null,
-        'automationId' => null,
-        'startDate' => null,
-        'expirationDate' => null,
-        'validityTimeframe' => null,
-        'validityDayOfWeek' => null,
-        'validityHours' => null,
+        'automation_id' => null,
+        'start_date' => null,
+        'expiration_date' => null,
+        'validity_timeframe' => null,
+        'validity_day_of_week' => null,
+        'validity_hours' => null,
         'metadata' => null,
-        'updatedAt' => 'date-time',
+        'updated_at' => 'date-time',
         'active' => null
     ];
 
@@ -114,22 +114,22 @@ class LoyaltiesEarningRulesDisableResponseBody implements ModelInterface, ArrayA
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'createdAt' => true,
+		'created_at' => true,
 		'loyalty' => true,
 		'event' => true,
-		'customEvent' => true,
+		'custom_event' => true,
 		'segment' => true,
-		'loyaltyTier' => true,
+		'loyalty_tier' => true,
 		'source' => true,
 		'object' => true,
-		'automationId' => true,
-		'startDate' => true,
-		'expirationDate' => true,
-		'validityTimeframe' => false,
-		'validityDayOfWeek' => true,
-		'validityHours' => false,
+		'automation_id' => true,
+		'start_date' => true,
+		'expiration_date' => true,
+		'validity_timeframe' => false,
+		'validity_day_of_week' => true,
+		'validity_hours' => false,
 		'metadata' => true,
-		'updatedAt' => true,
+		'updated_at' => true,
 		'active' => true
     ];
 
@@ -220,22 +220,22 @@ class LoyaltiesEarningRulesDisableResponseBody implements ModelInterface, ArrayA
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'createdAt' => 'created_at',
+        'created_at' => 'created_at',
         'loyalty' => 'loyalty',
         'event' => 'event',
-        'customEvent' => 'custom_event',
+        'custom_event' => 'custom_event',
         'segment' => 'segment',
-        'loyaltyTier' => 'loyalty_tier',
+        'loyalty_tier' => 'loyalty_tier',
         'source' => 'source',
         'object' => 'object',
-        'automationId' => 'automation_id',
-        'startDate' => 'start_date',
-        'expirationDate' => 'expiration_date',
-        'validityTimeframe' => 'validity_timeframe',
-        'validityDayOfWeek' => 'validity_day_of_week',
-        'validityHours' => 'validity_hours',
+        'automation_id' => 'automation_id',
+        'start_date' => 'start_date',
+        'expiration_date' => 'expiration_date',
+        'validity_timeframe' => 'validity_timeframe',
+        'validity_day_of_week' => 'validity_day_of_week',
+        'validity_hours' => 'validity_hours',
         'metadata' => 'metadata',
-        'updatedAt' => 'updated_at',
+        'updated_at' => 'updated_at',
         'active' => 'active'
     ];
 
@@ -246,22 +246,22 @@ class LoyaltiesEarningRulesDisableResponseBody implements ModelInterface, ArrayA
      */
     protected static $setters = [
         'id' => 'setId',
-        'createdAt' => 'setCreatedAt',
+        'created_at' => 'setCreatedAt',
         'loyalty' => 'setLoyalty',
         'event' => 'setEvent',
-        'customEvent' => 'setCustomEvent',
+        'custom_event' => 'setCustomEvent',
         'segment' => 'setSegment',
-        'loyaltyTier' => 'setLoyaltyTier',
+        'loyalty_tier' => 'setLoyaltyTier',
         'source' => 'setSource',
         'object' => 'setObject',
-        'automationId' => 'setAutomationId',
-        'startDate' => 'setStartDate',
-        'expirationDate' => 'setExpirationDate',
-        'validityTimeframe' => 'setValidityTimeframe',
-        'validityDayOfWeek' => 'setValidityDayOfWeek',
-        'validityHours' => 'setValidityHours',
+        'automation_id' => 'setAutomationId',
+        'start_date' => 'setStartDate',
+        'expiration_date' => 'setExpirationDate',
+        'validity_timeframe' => 'setValidityTimeframe',
+        'validity_day_of_week' => 'setValidityDayOfWeek',
+        'validity_hours' => 'setValidityHours',
         'metadata' => 'setMetadata',
-        'updatedAt' => 'setUpdatedAt',
+        'updated_at' => 'setUpdatedAt',
         'active' => 'setActive'
     ];
 
@@ -272,22 +272,22 @@ class LoyaltiesEarningRulesDisableResponseBody implements ModelInterface, ArrayA
      */
     protected static $getters = [
         'id' => 'getId',
-        'createdAt' => 'getCreatedAt',
+        'created_at' => 'getCreatedAt',
         'loyalty' => 'getLoyalty',
         'event' => 'getEvent',
-        'customEvent' => 'getCustomEvent',
+        'custom_event' => 'getCustomEvent',
         'segment' => 'getSegment',
-        'loyaltyTier' => 'getLoyaltyTier',
+        'loyalty_tier' => 'getLoyaltyTier',
         'source' => 'getSource',
         'object' => 'getObject',
-        'automationId' => 'getAutomationId',
-        'startDate' => 'getStartDate',
-        'expirationDate' => 'getExpirationDate',
-        'validityTimeframe' => 'getValidityTimeframe',
-        'validityDayOfWeek' => 'getValidityDayOfWeek',
-        'validityHours' => 'getValidityHours',
+        'automation_id' => 'getAutomationId',
+        'start_date' => 'getStartDate',
+        'expiration_date' => 'getExpirationDate',
+        'validity_timeframe' => 'getValidityTimeframe',
+        'validity_day_of_week' => 'getValidityDayOfWeek',
+        'validity_hours' => 'getValidityHours',
         'metadata' => 'getMetadata',
-        'updatedAt' => 'getUpdatedAt',
+        'updated_at' => 'getUpdatedAt',
         'active' => 'getActive'
     ];
 
@@ -387,22 +387,22 @@ class LoyaltiesEarningRulesDisableResponseBody implements ModelInterface, ArrayA
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('loyalty', $data ?? [], null);
         $this->setIfExists('event', $data ?? [], null);
-        $this->setIfExists('customEvent', $data ?? [], null);
+        $this->setIfExists('custom_event', $data ?? [], null);
         $this->setIfExists('segment', $data ?? [], null);
-        $this->setIfExists('loyaltyTier', $data ?? [], null);
+        $this->setIfExists('loyalty_tier', $data ?? [], null);
         $this->setIfExists('source', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'earning_rule');
-        $this->setIfExists('automationId', $data ?? [], null);
-        $this->setIfExists('startDate', $data ?? [], null);
-        $this->setIfExists('expirationDate', $data ?? [], null);
-        $this->setIfExists('validityTimeframe', $data ?? [], null);
-        $this->setIfExists('validityDayOfWeek', $data ?? [], null);
-        $this->setIfExists('validityHours', $data ?? [], null);
+        $this->setIfExists('automation_id', $data ?? [], null);
+        $this->setIfExists('start_date', $data ?? [], null);
+        $this->setIfExists('expiration_date', $data ?? [], null);
+        $this->setIfExists('validity_timeframe', $data ?? [], null);
+        $this->setIfExists('validity_day_of_week', $data ?? [], null);
+        $this->setIfExists('validity_hours', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('updatedAt', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], false);
     }
 
@@ -492,35 +492,35 @@ class LoyaltiesEarningRulesDisableResponseBody implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the earning rule was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $created_at Timestamp representing the date and time when the earning rule was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        if (is_null($created_at)) {
+            array_push($this->openAPINullablesSetToNull, 'created_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
+            $index = array_search('created_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }
@@ -594,35 +594,35 @@ class LoyaltiesEarningRulesDisableResponseBody implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets customEvent
+     * Gets custom_event
      *
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyCustomEvent|null
      */
     public function getCustomEvent()
     {
-        return $this->container['customEvent'];
+        return $this->container['custom_event'];
     }
 
     /**
-     * Sets customEvent
+     * Sets custom_event
      *
-     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyCustomEvent|null $customEvent customEvent
+     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyCustomEvent|null $custom_event custom_event
      *
      * @return self
      */
-    public function setCustomEvent($customEvent)
+    public function setCustomEvent($custom_event)
     {
-        if (is_null($customEvent)) {
-            array_push($this->openAPINullablesSetToNull, 'customEvent');
+        if (is_null($custom_event)) {
+            array_push($this->openAPINullablesSetToNull, 'custom_event');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customEvent', $nullablesSetToNull);
+            $index = array_search('custom_event', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['customEvent'] = $customEvent;
+        $this->container['custom_event'] = $custom_event;
 
         return $this;
     }
@@ -662,35 +662,35 @@ class LoyaltiesEarningRulesDisableResponseBody implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets loyaltyTier
+     * Gets loyalty_tier
      *
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyLoyaltyTier|null
      */
     public function getLoyaltyTier()
     {
-        return $this->container['loyaltyTier'];
+        return $this->container['loyalty_tier'];
     }
 
     /**
-     * Sets loyaltyTier
+     * Sets loyalty_tier
      *
-     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyLoyaltyTier|null $loyaltyTier loyaltyTier
+     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyLoyaltyTier|null $loyalty_tier loyalty_tier
      *
      * @return self
      */
-    public function setLoyaltyTier($loyaltyTier)
+    public function setLoyaltyTier($loyalty_tier)
     {
-        if (is_null($loyaltyTier)) {
-            array_push($this->openAPINullablesSetToNull, 'loyaltyTier');
+        if (is_null($loyalty_tier)) {
+            array_push($this->openAPINullablesSetToNull, 'loyalty_tier');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('loyaltyTier', $nullablesSetToNull);
+            $index = array_search('loyalty_tier', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['loyaltyTier'] = $loyaltyTier;
+        $this->container['loyalty_tier'] = $loyalty_tier;
 
         return $this;
     }
@@ -774,200 +774,200 @@ class LoyaltiesEarningRulesDisableResponseBody implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets automationId
+     * Gets automation_id
      *
      * @return string|null
      */
     public function getAutomationId()
     {
-        return $this->container['automationId'];
+        return $this->container['automation_id'];
     }
 
     /**
-     * Sets automationId
+     * Sets automation_id
      *
-     * @param string|null $automationId For internal use by Voucherify.
+     * @param string|null $automation_id For internal use by Voucherify.
      *
      * @return self
      */
-    public function setAutomationId($automationId)
+    public function setAutomationId($automation_id)
     {
-        if (is_null($automationId)) {
-            array_push($this->openAPINullablesSetToNull, 'automationId');
+        if (is_null($automation_id)) {
+            array_push($this->openAPINullablesSetToNull, 'automation_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('automationId', $nullablesSetToNull);
+            $index = array_search('automation_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['automationId'] = $automationId;
+        $this->container['automation_id'] = $automation_id;
 
         return $this;
     }
 
     /**
-     * Gets startDate
+     * Gets start_date
      *
      * @return string|null
      */
     public function getStartDate()
     {
-        return $this->container['startDate'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets startDate
+     * Sets start_date
      *
-     * @param string|null $startDate Start date defines when the earning rule starts to be active. Activation timestamp is presented in the ISO 8601 format. The earning rule is inactive before this date. If you do not define the start date for an earning rule, it will inherit the campaign start date by default.
+     * @param string|null $start_date Start date defines when the earning rule starts to be active. Activation timestamp is presented in the ISO 8601 format. The earning rule is inactive before this date. If you do not define the start date for an earning rule, it will inherit the campaign start date by default.
      *
      * @return self
      */
-    public function setStartDate($startDate)
+    public function setStartDate($start_date)
     {
-        if (is_null($startDate)) {
-            array_push($this->openAPINullablesSetToNull, 'startDate');
+        if (is_null($start_date)) {
+            array_push($this->openAPINullablesSetToNull, 'start_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('startDate', $nullablesSetToNull);
+            $index = array_search('start_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['startDate'] = $startDate;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets expirationDate
+     * Gets expiration_date
      *
      * @return string|null
      */
     public function getExpirationDate()
     {
-        return $this->container['expirationDate'];
+        return $this->container['expiration_date'];
     }
 
     /**
-     * Sets expirationDate
+     * Sets expiration_date
      *
-     * @param string|null $expirationDate Expiration date defines when the earning rule expires. Expiration timestamp is presented in the ISO 8601 format. The earning rule is inactive after this date. If you do not define the expiration date for an earning rule, it will inherit the campaign expiration date by default.
+     * @param string|null $expiration_date Expiration date defines when the earning rule expires. Expiration timestamp is presented in the ISO 8601 format. The earning rule is inactive after this date. If you do not define the expiration date for an earning rule, it will inherit the campaign expiration date by default.
      *
      * @return self
      */
-    public function setExpirationDate($expirationDate)
+    public function setExpirationDate($expiration_date)
     {
-        if (is_null($expirationDate)) {
-            array_push($this->openAPINullablesSetToNull, 'expirationDate');
+        if (is_null($expiration_date)) {
+            array_push($this->openAPINullablesSetToNull, 'expiration_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expirationDate', $nullablesSetToNull);
+            $index = array_search('expiration_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['expirationDate'] = $expirationDate;
+        $this->container['expiration_date'] = $expiration_date;
 
         return $this;
     }
 
     /**
-     * Gets validityTimeframe
+     * Gets validity_timeframe
      *
      * @return \OpenAPI\Client\Model\ValidityTimeframe|null
      */
     public function getValidityTimeframe()
     {
-        return $this->container['validityTimeframe'];
+        return $this->container['validity_timeframe'];
     }
 
     /**
-     * Sets validityTimeframe
+     * Sets validity_timeframe
      *
-     * @param \OpenAPI\Client\Model\ValidityTimeframe|null $validityTimeframe validityTimeframe
+     * @param \OpenAPI\Client\Model\ValidityTimeframe|null $validity_timeframe validity_timeframe
      *
      * @return self
      */
-    public function setValidityTimeframe($validityTimeframe)
+    public function setValidityTimeframe($validity_timeframe)
     {
-        if (is_null($validityTimeframe)) {
-            throw new \InvalidArgumentException('non-nullable validityTimeframe cannot be null');
+        if (is_null($validity_timeframe)) {
+            throw new \InvalidArgumentException('non-nullable validity_timeframe cannot be null');
         }
-        $this->container['validityTimeframe'] = $validityTimeframe;
+        $this->container['validity_timeframe'] = $validity_timeframe;
 
         return $this;
     }
 
     /**
-     * Gets validityDayOfWeek
+     * Gets validity_day_of_week
      *
      * @return int[]|null
      */
     public function getValidityDayOfWeek()
     {
-        return $this->container['validityDayOfWeek'];
+        return $this->container['validity_day_of_week'];
     }
 
     /**
-     * Sets validityDayOfWeek
+     * Sets validity_day_of_week
      *
-     * @param int[]|null $validityDayOfWeek Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+     * @param int[]|null $validity_day_of_week Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
      *
      * @return self
      */
-    public function setValidityDayOfWeek($validityDayOfWeek)
+    public function setValidityDayOfWeek($validity_day_of_week)
     {
-        if (is_null($validityDayOfWeek)) {
-            array_push($this->openAPINullablesSetToNull, 'validityDayOfWeek');
+        if (is_null($validity_day_of_week)) {
+            array_push($this->openAPINullablesSetToNull, 'validity_day_of_week');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validityDayOfWeek', $nullablesSetToNull);
+            $index = array_search('validity_day_of_week', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getValidityDayOfWeekAllowableValues();
-        if (!is_null($validityDayOfWeek) && array_diff($validityDayOfWeek, $allowedValues)) {
+        if (!is_null($validity_day_of_week) && array_diff($validity_day_of_week, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'validityDayOfWeek', must be one of '%s'",
+                    "Invalid value for 'validity_day_of_week', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['validityDayOfWeek'] = $validityDayOfWeek;
+        $this->container['validity_day_of_week'] = $validity_day_of_week;
 
         return $this;
     }
 
     /**
-     * Gets validityHours
+     * Gets validity_hours
      *
      * @return \OpenAPI\Client\Model\ValidityHours|null
      */
     public function getValidityHours()
     {
-        return $this->container['validityHours'];
+        return $this->container['validity_hours'];
     }
 
     /**
-     * Sets validityHours
+     * Sets validity_hours
      *
-     * @param \OpenAPI\Client\Model\ValidityHours|null $validityHours validityHours
+     * @param \OpenAPI\Client\Model\ValidityHours|null $validity_hours validity_hours
      *
      * @return self
      */
-    public function setValidityHours($validityHours)
+    public function setValidityHours($validity_hours)
     {
-        if (is_null($validityHours)) {
-            throw new \InvalidArgumentException('non-nullable validityHours cannot be null');
+        if (is_null($validity_hours)) {
+            throw new \InvalidArgumentException('non-nullable validity_hours cannot be null');
         }
-        $this->container['validityHours'] = $validityHours;
+        $this->container['validity_hours'] = $validity_hours;
 
         return $this;
     }
@@ -1007,35 +1007,35 @@ class LoyaltiesEarningRulesDisableResponseBody implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets updatedAt
+     * Gets updated_at
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updatedAt'];
+        return $this->container['updated_at'];
     }
 
     /**
-     * Sets updatedAt
+     * Sets updated_at
      *
-     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the earning rule was last updated in ISO 8601 format.
+     * @param \DateTime|null $updated_at Timestamp representing the date and time when the earning rule was last updated in ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updated_at)
     {
-        if (is_null($updatedAt)) {
-            array_push($this->openAPINullablesSetToNull, 'updatedAt');
+        if (is_null($updated_at)) {
+            array_push($this->openAPINullablesSetToNull, 'updated_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updatedAt', $nullablesSetToNull);
+            $index = array_search('updated_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updatedAt'] = $updatedAt;
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }

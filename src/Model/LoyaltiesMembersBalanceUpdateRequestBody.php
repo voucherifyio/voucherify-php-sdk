@@ -60,10 +60,10 @@ class LoyaltiesMembersBalanceUpdateRequestBody implements ModelInterface, ArrayA
       */
     protected static $openAPITypes = [
         'points' => 'int',
-        'expirationType' => 'string',
-        'expirationDate' => '\DateTime',
+        'expiration_type' => 'string',
+        'expiration_date' => '\DateTime',
         'reason' => 'string',
-        'sourceId' => 'string'
+        'source_id' => 'string'
     ];
 
     /**
@@ -75,10 +75,10 @@ class LoyaltiesMembersBalanceUpdateRequestBody implements ModelInterface, ArrayA
       */
     protected static $openAPIFormats = [
         'points' => null,
-        'expirationType' => null,
-        'expirationDate' => 'date-time',
+        'expiration_type' => null,
+        'expiration_date' => 'date-time',
         'reason' => null,
-        'sourceId' => null
+        'source_id' => null
     ];
 
     /**
@@ -88,10 +88,10 @@ class LoyaltiesMembersBalanceUpdateRequestBody implements ModelInterface, ArrayA
       */
     protected static array $openAPINullables = [
         'points' => true,
-		'expirationType' => true,
-		'expirationDate' => true,
+		'expiration_type' => true,
+		'expiration_date' => true,
 		'reason' => true,
-		'sourceId' => true
+		'source_id' => true
     ];
 
     /**
@@ -181,10 +181,10 @@ class LoyaltiesMembersBalanceUpdateRequestBody implements ModelInterface, ArrayA
      */
     protected static $attributeMap = [
         'points' => 'points',
-        'expirationType' => 'expiration_type',
-        'expirationDate' => 'expiration_date',
+        'expiration_type' => 'expiration_type',
+        'expiration_date' => 'expiration_date',
         'reason' => 'reason',
-        'sourceId' => 'source_id'
+        'source_id' => 'source_id'
     ];
 
     /**
@@ -194,10 +194,10 @@ class LoyaltiesMembersBalanceUpdateRequestBody implements ModelInterface, ArrayA
      */
     protected static $setters = [
         'points' => 'setPoints',
-        'expirationType' => 'setExpirationType',
-        'expirationDate' => 'setExpirationDate',
+        'expiration_type' => 'setExpirationType',
+        'expiration_date' => 'setExpirationDate',
         'reason' => 'setReason',
-        'sourceId' => 'setSourceId'
+        'source_id' => 'setSourceId'
     ];
 
     /**
@@ -207,10 +207,10 @@ class LoyaltiesMembersBalanceUpdateRequestBody implements ModelInterface, ArrayA
      */
     protected static $getters = [
         'points' => 'getPoints',
-        'expirationType' => 'getExpirationType',
-        'expirationDate' => 'getExpirationDate',
+        'expiration_type' => 'getExpirationType',
+        'expiration_date' => 'getExpirationDate',
         'reason' => 'getReason',
-        'sourceId' => 'getSourceId'
+        'source_id' => 'getSourceId'
     ];
 
     /**
@@ -288,10 +288,10 @@ class LoyaltiesMembersBalanceUpdateRequestBody implements ModelInterface, ArrayA
     public function __construct(array $data = null)
     {
         $this->setIfExists('points', $data ?? [], null);
-        $this->setIfExists('expirationType', $data ?? [], null);
-        $this->setIfExists('expirationDate', $data ?? [], null);
+        $this->setIfExists('expiration_type', $data ?? [], null);
+        $this->setIfExists('expiration_date', $data ?? [], null);
         $this->setIfExists('reason', $data ?? [], null);
-        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('source_id', $data ?? [], null);
     }
 
     /**
@@ -322,10 +322,10 @@ class LoyaltiesMembersBalanceUpdateRequestBody implements ModelInterface, ArrayA
         $invalidProperties = [];
 
         $allowedValues = $this->getExpirationTypeAllowableValues();
-        if (!is_null($this->container['expirationType']) && !in_array($this->container['expirationType'], $allowedValues, true)) {
+        if (!is_null($this->container['expiration_type']) && !in_array($this->container['expiration_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'expirationType', must be one of '%s'",
-                $this->container['expirationType'],
+                "invalid value '%s' for 'expiration_type', must be one of '%s'",
+                $this->container['expiration_type'],
                 implode("', '", $allowedValues)
             );
         }
@@ -380,79 +380,79 @@ class LoyaltiesMembersBalanceUpdateRequestBody implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets expirationType
+     * Gets expiration_type
      *
      * @return string|null
      */
     public function getExpirationType()
     {
-        return $this->container['expirationType'];
+        return $this->container['expiration_type'];
     }
 
     /**
-     * Sets expirationType
+     * Sets expiration_type
      *
-     * @param string|null $expirationType expirationType
+     * @param string|null $expiration_type expiration_type
      *
      * @return self
      */
-    public function setExpirationType($expirationType)
+    public function setExpirationType($expiration_type)
     {
-        if (is_null($expirationType)) {
-            array_push($this->openAPINullablesSetToNull, 'expirationType');
+        if (is_null($expiration_type)) {
+            array_push($this->openAPINullablesSetToNull, 'expiration_type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expirationType', $nullablesSetToNull);
+            $index = array_search('expiration_type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getExpirationTypeAllowableValues();
-        if (!is_null($expirationType) && !in_array($expirationType, $allowedValues, true)) {
+        if (!is_null($expiration_type) && !in_array($expiration_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'expirationType', must be one of '%s'",
-                    $expirationType,
+                    "Invalid value '%s' for 'expiration_type', must be one of '%s'",
+                    $expiration_type,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['expirationType'] = $expirationType;
+        $this->container['expiration_type'] = $expiration_type;
 
         return $this;
     }
 
     /**
-     * Gets expirationDate
+     * Gets expiration_date
      *
      * @return \DateTime|null
      */
     public function getExpirationDate()
     {
-        return $this->container['expirationDate'];
+        return $this->container['expiration_date'];
     }
 
     /**
-     * Sets expirationDate
+     * Sets expiration_date
      *
-     * @param \DateTime|null $expirationDate Set expiration date for added points, i.e. `YYYY-MM-DD`. This parameter is required only when expiration_type is set to `CUSTOM_DATE`.
+     * @param \DateTime|null $expiration_date Set expiration date for added points, i.e. `YYYY-MM-DD`. This parameter is required only when expiration_type is set to `CUSTOM_DATE`.
      *
      * @return self
      */
-    public function setExpirationDate($expirationDate)
+    public function setExpirationDate($expiration_date)
     {
-        if (is_null($expirationDate)) {
-            array_push($this->openAPINullablesSetToNull, 'expirationDate');
+        if (is_null($expiration_date)) {
+            array_push($this->openAPINullablesSetToNull, 'expiration_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expirationDate', $nullablesSetToNull);
+            $index = array_search('expiration_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['expirationDate'] = $expirationDate;
+        $this->container['expiration_date'] = $expiration_date;
 
         return $this;
     }
@@ -492,35 +492,35 @@ class LoyaltiesMembersBalanceUpdateRequestBody implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets sourceId
+     * Gets source_id
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['sourceId'];
+        return $this->container['source_id'];
     }
 
     /**
-     * Sets sourceId
+     * Sets source_id
      *
-     * @param string|null $sourceId The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service.
+     * @param string|null $source_id The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service.
      *
      * @return self
      */
-    public function setSourceId($sourceId)
+    public function setSourceId($source_id)
     {
-        if (is_null($sourceId)) {
-            array_push($this->openAPINullablesSetToNull, 'sourceId');
+        if (is_null($source_id)) {
+            array_push($this->openAPINullablesSetToNull, 'source_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sourceId', $nullablesSetToNull);
+            $index = array_search('source_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sourceId'] = $sourceId;
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }

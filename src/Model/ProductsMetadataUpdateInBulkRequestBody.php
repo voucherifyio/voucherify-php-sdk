@@ -59,7 +59,7 @@ class ProductsMetadataUpdateInBulkRequestBody implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sourceIds' => 'string[]',
+        'source_ids' => 'string[]',
         'metadata' => 'object'
     ];
 
@@ -71,7 +71,7 @@ class ProductsMetadataUpdateInBulkRequestBody implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sourceIds' => null,
+        'source_ids' => null,
         'metadata' => null
     ];
 
@@ -81,7 +81,7 @@ class ProductsMetadataUpdateInBulkRequestBody implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'sourceIds' => true,
+        'source_ids' => true,
 		'metadata' => true
     ];
 
@@ -171,7 +171,7 @@ class ProductsMetadataUpdateInBulkRequestBody implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'sourceIds' => 'source_ids',
+        'source_ids' => 'source_ids',
         'metadata' => 'metadata'
     ];
 
@@ -181,7 +181,7 @@ class ProductsMetadataUpdateInBulkRequestBody implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'sourceIds' => 'setSourceIds',
+        'source_ids' => 'setSourceIds',
         'metadata' => 'setMetadata'
     ];
 
@@ -191,7 +191,7 @@ class ProductsMetadataUpdateInBulkRequestBody implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'sourceIds' => 'getSourceIds',
+        'source_ids' => 'getSourceIds',
         'metadata' => 'getMetadata'
     ];
 
@@ -252,7 +252,7 @@ class ProductsMetadataUpdateInBulkRequestBody implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('sourceIds', $data ?? [], null);
+        $this->setIfExists('source_ids', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
     }
 
@@ -299,35 +299,35 @@ class ProductsMetadataUpdateInBulkRequestBody implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets sourceIds
+     * Gets source_ids
      *
      * @return string[]|null
      */
     public function getSourceIds()
     {
-        return $this->container['sourceIds'];
+        return $this->container['source_ids'];
     }
 
     /**
-     * Sets sourceIds
+     * Sets source_ids
      *
-     * @param string[]|null $sourceIds Array of unique product source IDs.
+     * @param string[]|null $source_ids Array of unique product source IDs.
      *
      * @return self
      */
-    public function setSourceIds($sourceIds)
+    public function setSourceIds($source_ids)
     {
-        if (is_null($sourceIds)) {
-            array_push($this->openAPINullablesSetToNull, 'sourceIds');
+        if (is_null($source_ids)) {
+            array_push($this->openAPINullablesSetToNull, 'source_ids');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sourceIds', $nullablesSetToNull);
+            $index = array_search('source_ids', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sourceIds'] = $sourceIds;
+        $this->container['source_ids'] = $source_ids;
 
         return $this;
     }

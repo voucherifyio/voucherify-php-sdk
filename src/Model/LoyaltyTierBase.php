@@ -59,7 +59,7 @@ class LoyaltyTierBase implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'earningRules' => 'array<string,\OpenAPI\Client\Model\MappingPoints>',
+        'earning_rules' => 'array<string,\OpenAPI\Client\Model\MappingPoints>',
         'rewards' => 'array<string,\OpenAPI\Client\Model\MappingPoints>',
         'points' => '\OpenAPI\Client\Model\LoyaltyTierBasePoints'
     ];
@@ -73,7 +73,7 @@ class LoyaltyTierBase implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'earningRules' => null,
+        'earning_rules' => null,
         'rewards' => null,
         'points' => null
     ];
@@ -85,7 +85,7 @@ class LoyaltyTierBase implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'name' => true,
-		'earningRules' => true,
+		'earning_rules' => true,
 		'rewards' => true,
 		'points' => true
     ];
@@ -177,7 +177,7 @@ class LoyaltyTierBase implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'earningRules' => 'earning_rules',
+        'earning_rules' => 'earning_rules',
         'rewards' => 'rewards',
         'points' => 'points'
     ];
@@ -189,7 +189,7 @@ class LoyaltyTierBase implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'name' => 'setName',
-        'earningRules' => 'setEarningRules',
+        'earning_rules' => 'setEarningRules',
         'rewards' => 'setRewards',
         'points' => 'setPoints'
     ];
@@ -201,7 +201,7 @@ class LoyaltyTierBase implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'name' => 'getName',
-        'earningRules' => 'getEarningRules',
+        'earning_rules' => 'getEarningRules',
         'rewards' => 'getRewards',
         'points' => 'getPoints'
     ];
@@ -264,7 +264,7 @@ class LoyaltyTierBase implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('earningRules', $data ?? [], null);
+        $this->setIfExists('earning_rules', $data ?? [], null);
         $this->setIfExists('rewards', $data ?? [], null);
         $this->setIfExists('points', $data ?? [], null);
     }
@@ -346,35 +346,35 @@ class LoyaltyTierBase implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets earningRules
+     * Gets earning_rules
      *
      * @return array<string,\OpenAPI\Client\Model\MappingPoints>|null
      */
     public function getEarningRules()
     {
-        return $this->container['earningRules'];
+        return $this->container['earning_rules'];
     }
 
     /**
-     * Sets earningRules
+     * Sets earning_rules
      *
-     * @param array<string,\OpenAPI\Client\Model\MappingPoints>|null $earningRules Contains a list of earning rule IDs and their points mapping for the given earning rule.
+     * @param array<string,\OpenAPI\Client\Model\MappingPoints>|null $earning_rules Contains a list of earning rule IDs and their points mapping for the given earning rule.
      *
      * @return self
      */
-    public function setEarningRules($earningRules)
+    public function setEarningRules($earning_rules)
     {
-        if (is_null($earningRules)) {
-            array_push($this->openAPINullablesSetToNull, 'earningRules');
+        if (is_null($earning_rules)) {
+            array_push($this->openAPINullablesSetToNull, 'earning_rules');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('earningRules', $nullablesSetToNull);
+            $index = array_search('earning_rules', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['earningRules'] = $earningRules;
+        $this->container['earning_rules'] = $earning_rules;
 
         return $this;
     }

@@ -59,11 +59,11 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyalty implements ModelInterface, 
       */
     protected static $openAPITypes = [
         'type' => 'string',
-        'calculationType' => 'string',
+        'calculation_type' => 'string',
         'order' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrder',
-        'orderItems' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItems',
+        'order_items' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItems',
         'customer' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomer',
-        'customEvent' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEvent',
+        'custom_event' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEvent',
         'points' => 'int'
     ];
 
@@ -76,11 +76,11 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyalty implements ModelInterface, 
       */
     protected static $openAPIFormats = [
         'type' => null,
-        'calculationType' => null,
+        'calculation_type' => null,
         'order' => null,
-        'orderItems' => null,
+        'order_items' => null,
         'customer' => null,
-        'customEvent' => null,
+        'custom_event' => null,
         'points' => null
     ];
 
@@ -91,11 +91,11 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyalty implements ModelInterface, 
       */
     protected static array $openAPINullables = [
         'type' => true,
-		'calculationType' => true,
+		'calculation_type' => true,
 		'order' => true,
-		'orderItems' => true,
+		'order_items' => true,
 		'customer' => true,
-		'customEvent' => true,
+		'custom_event' => true,
 		'points' => true
     ];
 
@@ -186,11 +186,11 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyalty implements ModelInterface, 
      */
     protected static $attributeMap = [
         'type' => 'type',
-        'calculationType' => 'calculation_type',
+        'calculation_type' => 'calculation_type',
         'order' => 'order',
-        'orderItems' => 'order_items',
+        'order_items' => 'order_items',
         'customer' => 'customer',
-        'customEvent' => 'custom_event',
+        'custom_event' => 'custom_event',
         'points' => 'points'
     ];
 
@@ -201,11 +201,11 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyalty implements ModelInterface, 
      */
     protected static $setters = [
         'type' => 'setType',
-        'calculationType' => 'setCalculationType',
+        'calculation_type' => 'setCalculationType',
         'order' => 'setOrder',
-        'orderItems' => 'setOrderItems',
+        'order_items' => 'setOrderItems',
         'customer' => 'setCustomer',
-        'customEvent' => 'setCustomEvent',
+        'custom_event' => 'setCustomEvent',
         'points' => 'setPoints'
     ];
 
@@ -216,11 +216,11 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyalty implements ModelInterface, 
      */
     protected static $getters = [
         'type' => 'getType',
-        'calculationType' => 'getCalculationType',
+        'calculation_type' => 'getCalculationType',
         'order' => 'getOrder',
-        'orderItems' => 'getOrderItems',
+        'order_items' => 'getOrderItems',
         'customer' => 'getCustomer',
-        'customEvent' => 'getCustomEvent',
+        'custom_event' => 'getCustomEvent',
         'points' => 'getPoints'
     ];
 
@@ -324,11 +324,11 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyalty implements ModelInterface, 
     public function __construct(array $data = null)
     {
         $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('calculationType', $data ?? [], null);
+        $this->setIfExists('calculation_type', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
-        $this->setIfExists('orderItems', $data ?? [], null);
+        $this->setIfExists('order_items', $data ?? [], null);
         $this->setIfExists('customer', $data ?? [], null);
-        $this->setIfExists('customEvent', $data ?? [], null);
+        $this->setIfExists('custom_event', $data ?? [], null);
         $this->setIfExists('points', $data ?? [], null);
     }
 
@@ -369,10 +369,10 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyalty implements ModelInterface, 
         }
 
         $allowedValues = $this->getCalculationTypeAllowableValues();
-        if (!is_null($this->container['calculationType']) && !in_array($this->container['calculationType'], $allowedValues, true)) {
+        if (!is_null($this->container['calculation_type']) && !in_array($this->container['calculation_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'calculationType', must be one of '%s'",
-                $this->container['calculationType'],
+                "invalid value '%s' for 'calculation_type', must be one of '%s'",
+                $this->container['calculation_type'],
                 implode("', '", $allowedValues)
             );
         }
@@ -437,45 +437,45 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyalty implements ModelInterface, 
     }
 
     /**
-     * Gets calculationType
+     * Gets calculation_type
      *
      * @return string|null
      */
     public function getCalculationType()
     {
-        return $this->container['calculationType'];
+        return $this->container['calculation_type'];
     }
 
     /**
-     * Sets calculationType
+     * Sets calculation_type
      *
-     * @param string|null $calculationType calculationType
+     * @param string|null $calculation_type calculation_type
      *
      * @return self
      */
-    public function setCalculationType($calculationType)
+    public function setCalculationType($calculation_type)
     {
-        if (is_null($calculationType)) {
-            array_push($this->openAPINullablesSetToNull, 'calculationType');
+        if (is_null($calculation_type)) {
+            array_push($this->openAPINullablesSetToNull, 'calculation_type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('calculationType', $nullablesSetToNull);
+            $index = array_search('calculation_type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getCalculationTypeAllowableValues();
-        if (!is_null($calculationType) && !in_array($calculationType, $allowedValues, true)) {
+        if (!is_null($calculation_type) && !in_array($calculation_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'calculationType', must be one of '%s'",
-                    $calculationType,
+                    "Invalid value '%s' for 'calculation_type', must be one of '%s'",
+                    $calculation_type,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['calculationType'] = $calculationType;
+        $this->container['calculation_type'] = $calculation_type;
 
         return $this;
     }
@@ -515,35 +515,35 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyalty implements ModelInterface, 
     }
 
     /**
-     * Gets orderItems
+     * Gets order_items
      *
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItems|null
      */
     public function getOrderItems()
     {
-        return $this->container['orderItems'];
+        return $this->container['order_items'];
     }
 
     /**
-     * Sets orderItems
+     * Sets order_items
      *
-     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItems|null $orderItems orderItems
+     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItems|null $order_items order_items
      *
      * @return self
      */
-    public function setOrderItems($orderItems)
+    public function setOrderItems($order_items)
     {
-        if (is_null($orderItems)) {
-            array_push($this->openAPINullablesSetToNull, 'orderItems');
+        if (is_null($order_items)) {
+            array_push($this->openAPINullablesSetToNull, 'order_items');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('orderItems', $nullablesSetToNull);
+            $index = array_search('order_items', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['orderItems'] = $orderItems;
+        $this->container['order_items'] = $order_items;
 
         return $this;
     }
@@ -583,35 +583,35 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyalty implements ModelInterface, 
     }
 
     /**
-     * Gets customEvent
+     * Gets custom_event
      *
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEvent|null
      */
     public function getCustomEvent()
     {
-        return $this->container['customEvent'];
+        return $this->container['custom_event'];
     }
 
     /**
-     * Sets customEvent
+     * Sets custom_event
      *
-     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEvent|null $customEvent customEvent
+     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyCustomEvent|null $custom_event custom_event
      *
      * @return self
      */
-    public function setCustomEvent($customEvent)
+    public function setCustomEvent($custom_event)
     {
-        if (is_null($customEvent)) {
-            array_push($this->openAPINullablesSetToNull, 'customEvent');
+        if (is_null($custom_event)) {
+            array_push($this->openAPINullablesSetToNull, 'custom_event');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customEvent', $nullablesSetToNull);
+            $index = array_search('custom_event', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['customEvent'] = $customEvent;
+        $this->container['custom_event'] = $custom_event;
 
         return $this;
     }

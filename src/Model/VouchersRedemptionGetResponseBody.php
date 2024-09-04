@@ -60,12 +60,12 @@ class VouchersRedemptionGetResponseBody implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPITypes = [
         'quantity' => 'int',
-        'redeemedQuantity' => 'int',
+        'redeemed_quantity' => 'int',
         'object' => 'string',
         'url' => 'string',
-        'dataRef' => 'string',
+        'data_ref' => 'string',
         'total' => 'int',
-        'redemptionEntries' => 'RedemptionEntry[]'
+        'redemption_entries' => 'RedemptionEntry[]'
     ];
 
     /**
@@ -77,12 +77,12 @@ class VouchersRedemptionGetResponseBody implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPIFormats = [
         'quantity' => null,
-        'redeemedQuantity' => null,
+        'redeemed_quantity' => null,
         'object' => null,
         'url' => null,
-        'dataRef' => null,
+        'data_ref' => null,
         'total' => null,
-        'redemptionEntries' => null
+        'redemption_entries' => null
     ];
 
     /**
@@ -92,12 +92,12 @@ class VouchersRedemptionGetResponseBody implements ModelInterface, ArrayAccess, 
       */
     protected static array $openAPINullables = [
         'quantity' => true,
-		'redeemedQuantity' => true,
+		'redeemed_quantity' => true,
 		'object' => true,
 		'url' => true,
-		'dataRef' => true,
+		'data_ref' => true,
 		'total' => true,
-		'redemptionEntries' => false
+		'redemption_entries' => false
     ];
 
     /**
@@ -187,12 +187,12 @@ class VouchersRedemptionGetResponseBody implements ModelInterface, ArrayAccess, 
      */
     protected static $attributeMap = [
         'quantity' => 'quantity',
-        'redeemedQuantity' => 'redeemed_quantity',
+        'redeemed_quantity' => 'redeemed_quantity',
         'object' => 'object',
         'url' => 'url',
-        'dataRef' => 'data_ref',
+        'data_ref' => 'data_ref',
         'total' => 'total',
-        'redemptionEntries' => 'redemption_entries'
+        'redemption_entries' => 'redemption_entries'
     ];
 
     /**
@@ -202,12 +202,12 @@ class VouchersRedemptionGetResponseBody implements ModelInterface, ArrayAccess, 
      */
     protected static $setters = [
         'quantity' => 'setQuantity',
-        'redeemedQuantity' => 'setRedeemedQuantity',
+        'redeemed_quantity' => 'setRedeemedQuantity',
         'object' => 'setObject',
         'url' => 'setUrl',
-        'dataRef' => 'setDataRef',
+        'data_ref' => 'setDataRef',
         'total' => 'setTotal',
-        'redemptionEntries' => 'setRedemptionEntries'
+        'redemption_entries' => 'setRedemptionEntries'
     ];
 
     /**
@@ -217,12 +217,12 @@ class VouchersRedemptionGetResponseBody implements ModelInterface, ArrayAccess, 
      */
     protected static $getters = [
         'quantity' => 'getQuantity',
-        'redeemedQuantity' => 'getRedeemedQuantity',
+        'redeemed_quantity' => 'getRedeemedQuantity',
         'object' => 'getObject',
         'url' => 'getUrl',
-        'dataRef' => 'getDataRef',
+        'data_ref' => 'getDataRef',
         'total' => 'getTotal',
-        'redemptionEntries' => 'getRedemptionEntries'
+        'redemption_entries' => 'getRedemptionEntries'
     ];
 
     /**
@@ -283,12 +283,12 @@ class VouchersRedemptionGetResponseBody implements ModelInterface, ArrayAccess, 
     public function __construct(array $data = null)
     {
         $this->setIfExists('quantity', $data ?? [], null);
-        $this->setIfExists('redeemedQuantity', $data ?? [], null);
+        $this->setIfExists('redeemed_quantity', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'list');
         $this->setIfExists('url', $data ?? [], null);
-        $this->setIfExists('dataRef', $data ?? [], 'redemption_entries');
+        $this->setIfExists('data_ref', $data ?? [], 'redemption_entries');
         $this->setIfExists('total', $data ?? [], null);
-        $this->setIfExists('redemptionEntries', $data ?? [], null);
+        $this->setIfExists('redemption_entries', $data ?? [], null);
     }
 
     /**
@@ -318,8 +318,8 @@ class VouchersRedemptionGetResponseBody implements ModelInterface, ArrayAccess, 
     {
         $invalidProperties = [];
 
-        if ($this->container['redemptionEntries'] === null) {
-            $invalidProperties[] = "'redemptionEntries' can't be null";
+        if ($this->container['redemption_entries'] === null) {
+            $invalidProperties[] = "'redemption_entries' can't be null";
         }
         return $invalidProperties;
     }
@@ -371,35 +371,35 @@ class VouchersRedemptionGetResponseBody implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets redeemedQuantity
+     * Gets redeemed_quantity
      *
      * @return int|null
      */
     public function getRedeemedQuantity()
     {
-        return $this->container['redeemedQuantity'];
+        return $this->container['redeemed_quantity'];
     }
 
     /**
-     * Sets redeemedQuantity
+     * Sets redeemed_quantity
      *
-     * @param int|null $redeemedQuantity The number of times the voucher was redeemed successfully.
+     * @param int|null $redeemed_quantity The number of times the voucher was redeemed successfully.
      *
      * @return self
      */
-    public function setRedeemedQuantity($redeemedQuantity)
+    public function setRedeemedQuantity($redeemed_quantity)
     {
-        if (is_null($redeemedQuantity)) {
-            array_push($this->openAPINullablesSetToNull, 'redeemedQuantity');
+        if (is_null($redeemed_quantity)) {
+            array_push($this->openAPINullablesSetToNull, 'redeemed_quantity');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('redeemedQuantity', $nullablesSetToNull);
+            $index = array_search('redeemed_quantity', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['redeemedQuantity'] = $redeemedQuantity;
+        $this->container['redeemed_quantity'] = $redeemed_quantity;
 
         return $this;
     }
@@ -473,35 +473,35 @@ class VouchersRedemptionGetResponseBody implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets dataRef
+     * Gets data_ref
      *
      * @return string|null
      */
     public function getDataRef()
     {
-        return $this->container['dataRef'];
+        return $this->container['data_ref'];
     }
 
     /**
-     * Sets dataRef
+     * Sets data_ref
      *
-     * @param string|null $dataRef Identifies the name of the attribute that contains the array of `redemption_entries`.
+     * @param string|null $data_ref Identifies the name of the attribute that contains the array of `redemption_entries`.
      *
      * @return self
      */
-    public function setDataRef($dataRef)
+    public function setDataRef($data_ref)
     {
-        if (is_null($dataRef)) {
-            array_push($this->openAPINullablesSetToNull, 'dataRef');
+        if (is_null($data_ref)) {
+            array_push($this->openAPINullablesSetToNull, 'data_ref');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dataRef', $nullablesSetToNull);
+            $index = array_search('data_ref', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['dataRef'] = $dataRef;
+        $this->container['data_ref'] = $data_ref;
 
         return $this;
     }
@@ -541,28 +541,28 @@ class VouchersRedemptionGetResponseBody implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets redemptionEntries
+     * Gets redemption_entries
      *
      * @return RedemptionEntry[]
      */
     public function getRedemptionEntries()
     {
-        return $this->container['redemptionEntries'];
+        return $this->container['redemption_entries'];
     }
 
     /**
-     * Sets redemptionEntries
+     * Sets redemption_entries
      *
-     * @param RedemptionEntry[] $redemptionEntries Contains the array of successful and failed redemption objects.
+     * @param RedemptionEntry[] $redemption_entries Contains the array of successful and failed redemption objects.
      *
      * @return self
      */
-    public function setRedemptionEntries($redemptionEntries)
+    public function setRedemptionEntries($redemption_entries)
     {
-        if (is_null($redemptionEntries)) {
-            throw new \InvalidArgumentException('non-nullable redemptionEntries cannot be null');
+        if (is_null($redemption_entries)) {
+            throw new \InvalidArgumentException('non-nullable redemption_entries cannot be null');
         }
-        $this->container['redemptionEntries'] = $redemptionEntries;
+        $this->container['redemption_entries'] = $redemption_entries;
 
         return $this;
     }

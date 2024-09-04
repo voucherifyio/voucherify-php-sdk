@@ -59,8 +59,8 @@ class ValidationRulesAssignmentsCreateRequestBody implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
-        'relatedObjectType' => 'string',
-        'relatedObjectId' => 'string'
+        'related_object_type' => 'string',
+        'related_object_id' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class ValidationRulesAssignmentsCreateRequestBody implements ModelInterface, Arr
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'relatedObjectType' => null,
-        'relatedObjectId' => null
+        'related_object_type' => null,
+        'related_object_id' => null
     ];
 
     /**
@@ -81,8 +81,8 @@ class ValidationRulesAssignmentsCreateRequestBody implements ModelInterface, Arr
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'relatedObjectType' => true,
-		'relatedObjectId' => true
+        'related_object_type' => true,
+		'related_object_id' => true
     ];
 
     /**
@@ -171,8 +171,8 @@ class ValidationRulesAssignmentsCreateRequestBody implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
-        'relatedObjectType' => 'related_object_type',
-        'relatedObjectId' => 'related_object_id'
+        'related_object_type' => 'related_object_type',
+        'related_object_id' => 'related_object_id'
     ];
 
     /**
@@ -181,8 +181,8 @@ class ValidationRulesAssignmentsCreateRequestBody implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-        'relatedObjectType' => 'setRelatedObjectType',
-        'relatedObjectId' => 'setRelatedObjectId'
+        'related_object_type' => 'setRelatedObjectType',
+        'related_object_id' => 'setRelatedObjectId'
     ];
 
     /**
@@ -191,8 +191,8 @@ class ValidationRulesAssignmentsCreateRequestBody implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
-        'relatedObjectType' => 'getRelatedObjectType',
-        'relatedObjectId' => 'getRelatedObjectId'
+        'related_object_type' => 'getRelatedObjectType',
+        'related_object_id' => 'getRelatedObjectId'
     ];
 
     /**
@@ -275,8 +275,8 @@ class ValidationRulesAssignmentsCreateRequestBody implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('relatedObjectType', $data ?? [], 'voucher');
-        $this->setIfExists('relatedObjectId', $data ?? [], null);
+        $this->setIfExists('related_object_type', $data ?? [], 'voucher');
+        $this->setIfExists('related_object_id', $data ?? [], null);
     }
 
     /**
@@ -307,10 +307,10 @@ class ValidationRulesAssignmentsCreateRequestBody implements ModelInterface, Arr
         $invalidProperties = [];
 
         $allowedValues = $this->getRelatedObjectTypeAllowableValues();
-        if (!is_null($this->container['relatedObjectType']) && !in_array($this->container['relatedObjectType'], $allowedValues, true)) {
+        if (!is_null($this->container['related_object_type']) && !in_array($this->container['related_object_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'relatedObjectType', must be one of '%s'",
-                $this->container['relatedObjectType'],
+                "invalid value '%s' for 'related_object_type', must be one of '%s'",
+                $this->container['related_object_type'],
                 implode("', '", $allowedValues)
             );
         }
@@ -331,79 +331,79 @@ class ValidationRulesAssignmentsCreateRequestBody implements ModelInterface, Arr
 
 
     /**
-     * Gets relatedObjectType
+     * Gets related_object_type
      *
      * @return string|null
      */
     public function getRelatedObjectType()
     {
-        return $this->container['relatedObjectType'];
+        return $this->container['related_object_type'];
     }
 
     /**
-     * Sets relatedObjectType
+     * Sets related_object_type
      *
-     * @param string|null $relatedObjectType Defines the related object, e.g. `voucher`.
+     * @param string|null $related_object_type Defines the related object, e.g. `voucher`.
      *
      * @return self
      */
-    public function setRelatedObjectType($relatedObjectType)
+    public function setRelatedObjectType($related_object_type)
     {
-        if (is_null($relatedObjectType)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObjectType');
+        if (is_null($related_object_type)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object_type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObjectType', $nullablesSetToNull);
+            $index = array_search('related_object_type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getRelatedObjectTypeAllowableValues();
-        if (!is_null($relatedObjectType) && !in_array($relatedObjectType, $allowedValues, true)) {
+        if (!is_null($related_object_type) && !in_array($related_object_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'relatedObjectType', must be one of '%s'",
-                    $relatedObjectType,
+                    "Invalid value '%s' for 'related_object_type', must be one of '%s'",
+                    $related_object_type,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['relatedObjectType'] = $relatedObjectType;
+        $this->container['related_object_type'] = $related_object_type;
 
         return $this;
     }
 
     /**
-     * Gets relatedObjectId
+     * Gets related_object_id
      *
      * @return string|null
      */
     public function getRelatedObjectId()
     {
-        return $this->container['relatedObjectId'];
+        return $this->container['related_object_id'];
     }
 
     /**
-     * Sets relatedObjectId
+     * Sets related_object_id
      *
-     * @param string|null $relatedObjectId Unique related object ID assigned by Voucherify, e.g. `v_lfZi4rcEGe0sN9gmnj40bzwK2FH6QUno` for a voucher.
+     * @param string|null $related_object_id Unique related object ID assigned by Voucherify, e.g. `v_lfZi4rcEGe0sN9gmnj40bzwK2FH6QUno` for a voucher.
      *
      * @return self
      */
-    public function setRelatedObjectId($relatedObjectId)
+    public function setRelatedObjectId($related_object_id)
     {
-        if (is_null($relatedObjectId)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObjectId');
+        if (is_null($related_object_id)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObjectId', $nullablesSetToNull);
+            $index = array_search('related_object_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['relatedObjectId'] = $relatedObjectId;
+        $this->container['related_object_id'] = $related_object_id;
 
         return $this;
     }

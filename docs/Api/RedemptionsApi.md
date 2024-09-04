@@ -15,7 +15,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `getRedemption()`
 
 ```php
-getRedemption($redemptionId): \OpenAPI\Client\Model\RedemptionsGetResponseBody
+getRedemption($redemption_id): \OpenAPI\Client\Model\RedemptionsGetResponseBody
 ```
 
 Get Redemption
@@ -46,10 +46,10 @@ $apiInstance = new OpenAPI\Client\Api\RedemptionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$redemptionId = 'redemptionId_example'; // string | ID of previously created redemption.
+$redemption_id = 'redemption_id_example'; // string | ID of previously created redemption.
 
 try {
-    $result = $apiInstance->getRedemption($redemptionId);
+    $result = $apiInstance->getRedemption($redemption_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RedemptionsApi->getRedemption: ', $e->getMessage(), PHP_EOL;
@@ -60,7 +60,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **redemptionId** | **string**| ID of previously created redemption. | |
+| **redemption_id** | **string**| ID of previously created redemption. | |
 
 ### Return type
 
@@ -149,7 +149,7 @@ try {
 ## `listRedemptions()`
 
 ```php
-listRedemptions($limit, $page, $result, $campaign, $customer, $order, $createdAt, $filters): \OpenAPI\Client\Model\RedemptionsListResponseBody
+listRedemptions($limit, $page, $result, $campaign, $customer, $order, $created_at, $filters): \OpenAPI\Client\Model\RedemptionsListResponseBody
 ```
 
 List Redemptions
@@ -186,11 +186,11 @@ $result = 'result_example'; // string | A filter on the list based on the redemp
 $campaign = 'campaign_example'; // string | A filter by the campaign **name** that the redemption resources originate from.
 $customer = 'customer_example'; // string | Return redemptions performed by the customer with given id or source_id.
 $order = new \OpenAPI\Client\Model\ParameterOrderListRedemptions(); // ParameterOrderListRedemptions | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-$createdAt = new \OpenAPI\Client\Model\ParameterCreatedBeforeAfter(); // ParameterCreatedBeforeAfter | A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z
+$created_at = new \OpenAPI\Client\Model\ParameterCreatedBeforeAfter(); // ParameterCreatedBeforeAfter | A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z
 $filters = new \OpenAPI\Client\Model\ParameterFiltersListRedemptions(); // ParameterFiltersListRedemptions | Filters for listing responses.
 
 try {
-    $result = $apiInstance->listRedemptions($limit, $page, $result, $campaign, $customer, $order, $createdAt, $filters);
+    $result = $apiInstance->listRedemptions($limit, $page, $result, $campaign, $customer, $order, $created_at, $filters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RedemptionsApi->listRedemptions: ', $e->getMessage(), PHP_EOL;
@@ -207,7 +207,7 @@ try {
 | **campaign** | **string**| A filter by the campaign **name** that the redemption resources originate from. | [optional] |
 | **customer** | **string**| Return redemptions performed by the customer with given id or source_id. | [optional] |
 | **order** | [**ParameterOrderListRedemptions**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
-| **createdAt** | [**ParameterCreatedBeforeAfter**](../Model/.md)| A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z | [optional] |
+| **created_at** | [**ParameterCreatedBeforeAfter**](../Model/.md)| A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z | [optional] |
 | **filters** | [**ParameterFiltersListRedemptions**](../Model/.md)| Filters for listing responses. | [optional] |
 
 ### Return type
@@ -230,7 +230,7 @@ try {
 ## `redeemStackedDiscounts()`
 
 ```php
-redeemStackedDiscounts($redemptionsRedeemRequestBody): \OpenAPI\Client\Model\RedemptionsRedeemResponseBody
+redeemStackedDiscounts($redemptions_redeem_request_body): \OpenAPI\Client\Model\RedemptionsRedeemResponseBody
 ```
 
 Redeem Stackable Discounts
@@ -261,10 +261,10 @@ $apiInstance = new OpenAPI\Client\Api\RedemptionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$redemptionsRedeemRequestBody = {"customer":{"source_id":"sample_customer","metadata":{"key":"value"}},"options":{"expand":["order","redeemable","category"]},"redeemables":[{"object":"voucher","id":"voucher-code"}],"session":{"type":"LOCK","key":"session_key"},"order":{"amount":55000,"status":"PAID","items":[{"quantity":2,"price":20000,"source_id":"sample product1","related_object":"product","product":{"metadata":{"key":"value"}}},{"quantity":1,"price":15000,"source_id":"sample product2","related_object":"product","product":{"metadata":{"key":"value"}}}],"metadata":{"key":"value"}}}; // \OpenAPI\Client\Model\RedemptionsRedeemRequestBody
+$redemptions_redeem_request_body = {"customer":{"source_id":"sample_customer","metadata":{"key":"value"}},"options":{"expand":["order","redeemable","category"]},"redeemables":[{"object":"voucher","id":"voucher-code"}],"session":{"type":"LOCK","key":"session_key"},"order":{"amount":55000,"status":"PAID","items":[{"quantity":2,"price":20000,"source_id":"sample product1","related_object":"product","product":{"metadata":{"key":"value"}}},{"quantity":1,"price":15000,"source_id":"sample product2","related_object":"product","product":{"metadata":{"key":"value"}}}],"metadata":{"key":"value"}}}; // \OpenAPI\Client\Model\RedemptionsRedeemRequestBody
 
 try {
-    $result = $apiInstance->redeemStackedDiscounts($redemptionsRedeemRequestBody);
+    $result = $apiInstance->redeemStackedDiscounts($redemptions_redeem_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RedemptionsApi->redeemStackedDiscounts: ', $e->getMessage(), PHP_EOL;
@@ -275,7 +275,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **redemptionsRedeemRequestBody** | [**\OpenAPI\Client\Model\RedemptionsRedeemRequestBody**](../Model/RedemptionsRedeemRequestBody.md)|  | [optional] |
+| **redemptions_redeem_request_body** | [**\OpenAPI\Client\Model\RedemptionsRedeemRequestBody**](../Model/RedemptionsRedeemRequestBody.md)|  | [optional] |
 
 ### Return type
 
@@ -297,7 +297,7 @@ try {
 ## `rollbackRedemption()`
 
 ```php
-rollbackRedemption($redemptionId, $reason, $trackingId, $redemptionsRollbackCreateRequestBody): \OpenAPI\Client\Model\RedemptionsRollbackCreateResponseBody
+rollbackRedemption($redemption_id, $reason, $tracking_id, $redemptions_rollback_create_request_body): \OpenAPI\Client\Model\RedemptionsRollbackCreateResponseBody
 ```
 
 Rollback Redemption
@@ -328,13 +328,13 @@ $apiInstance = new OpenAPI\Client\Api\RedemptionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$redemptionId = 'redemptionId_example'; // string | The original redemption ID to be rolled back (undone).
+$redemption_id = 'redemption_id_example'; // string | The original redemption ID to be rolled back (undone).
 $reason = 'reason_example'; // string | Reason for the rollback.
-$trackingId = 'trackingId_example'; // string | Customers source_id.
-$redemptionsRollbackCreateRequestBody = {"customer":{"id":"cust_SolpIN5N4oZbCnrxZ5NHrbVB","name":"Annie Lemons","email":"annie@lemon.com","phone":"+1 933 222 3334","birthday":"1900-12-02","birthdate":"1900-12-01","address":{"city":"New York","state":"NY","line_1":"123 Main St.","line_2":"APT 3 BLG 5","country":"United States","postal_code":"100012"},"metadata":{"age":23}},"order":{"source_id":"test_rollback_8"},"metadata":{"location_id":["L2"]}}; // \OpenAPI\Client\Model\RedemptionsRollbackCreateRequestBody | Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
+$tracking_id = 'tracking_id_example'; // string | Customers source_id.
+$redemptions_rollback_create_request_body = {"customer":{"id":"cust_SolpIN5N4oZbCnrxZ5NHrbVB","name":"Annie Lemons","email":"annie@lemon.com","phone":"+1 933 222 3334","birthday":"1900-12-02","birthdate":"1900-12-01","address":{"city":"New York","state":"NY","line_1":"123 Main St.","line_2":"APT 3 BLG 5","country":"United States","postal_code":"100012"},"metadata":{"age":23}},"order":{"source_id":"test_rollback_8"},"metadata":{"location_id":["L2"]}}; // \OpenAPI\Client\Model\RedemptionsRollbackCreateRequestBody | Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
 
 try {
-    $result = $apiInstance->rollbackRedemption($redemptionId, $reason, $trackingId, $redemptionsRollbackCreateRequestBody);
+    $result = $apiInstance->rollbackRedemption($redemption_id, $reason, $tracking_id, $redemptions_rollback_create_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RedemptionsApi->rollbackRedemption: ', $e->getMessage(), PHP_EOL;
@@ -345,10 +345,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **redemptionId** | **string**| The original redemption ID to be rolled back (undone). | |
+| **redemption_id** | **string**| The original redemption ID to be rolled back (undone). | |
 | **reason** | **string**| Reason for the rollback. | [optional] |
-| **trackingId** | **string**| Customers source_id. | [optional] |
-| **redemptionsRollbackCreateRequestBody** | [**\OpenAPI\Client\Model\RedemptionsRollbackCreateRequestBody**](../Model/RedemptionsRollbackCreateRequestBody.md)| Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. | [optional] |
+| **tracking_id** | **string**| Customers source_id. | [optional] |
+| **redemptions_rollback_create_request_body** | [**\OpenAPI\Client\Model\RedemptionsRollbackCreateRequestBody**](../Model/RedemptionsRollbackCreateRequestBody.md)| Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. | [optional] |
 
 ### Return type
 
@@ -370,7 +370,7 @@ try {
 ## `rollbackStackedRedemptions()`
 
 ```php
-rollbackStackedRedemptions($parentRedemptionId, $reason, $trackingId, $redemptionsRollbacksCreateRequestBody): \OpenAPI\Client\Model\RedemptionsRollbacksCreateResponseBody
+rollbackStackedRedemptions($parent_redemption_id, $reason, $tracking_id, $redemptions_rollbacks_create_request_body): \OpenAPI\Client\Model\RedemptionsRollbacksCreateResponseBody
 ```
 
 Rollback Stackable Redemptions
@@ -401,13 +401,13 @@ $apiInstance = new OpenAPI\Client\Api\RedemptionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$parentRedemptionId = 'parentRedemptionId_example'; // string | Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm.
+$parent_redemption_id = 'parent_redemption_id_example'; // string | Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm.
 $reason = 'reason_example'; // string | Reason for the rollback.
-$trackingId = 'trackingId_example'; // string | Customers source_id.
-$redemptionsRollbacksCreateRequestBody = {"customer":{"id":"cust_SolpIN5N4oZbCnrxZ5NHrbVB","name":"Annie Lemons","email":"annie@lemon.com","phone":"+1 933 222 3334","birthday":"1900-12-02","birthdate":"1900-12-01","address":{"city":"New York","state":"NY","line_1":"123 Main St.","line_2":"APT 3 BLG 5","country":"United States","postal_code":"100012"},"metadata":{"age":23}},"order":{"source_id":"test_rollback_8"},"metadata":{"location_id":["L2"]}}; // \OpenAPI\Client\Model\RedemptionsRollbacksCreateRequestBody | Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
+$tracking_id = 'tracking_id_example'; // string | Customers source_id.
+$redemptions_rollbacks_create_request_body = {"customer":{"id":"cust_SolpIN5N4oZbCnrxZ5NHrbVB","name":"Annie Lemons","email":"annie@lemon.com","phone":"+1 933 222 3334","birthday":"1900-12-02","birthdate":"1900-12-01","address":{"city":"New York","state":"NY","line_1":"123 Main St.","line_2":"APT 3 BLG 5","country":"United States","postal_code":"100012"},"metadata":{"age":23}},"order":{"source_id":"test_rollback_8"},"metadata":{"location_id":["L2"]}}; // \OpenAPI\Client\Model\RedemptionsRollbacksCreateRequestBody | Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
 
 try {
-    $result = $apiInstance->rollbackStackedRedemptions($parentRedemptionId, $reason, $trackingId, $redemptionsRollbacksCreateRequestBody);
+    $result = $apiInstance->rollbackStackedRedemptions($parent_redemption_id, $reason, $tracking_id, $redemptions_rollbacks_create_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RedemptionsApi->rollbackStackedRedemptions: ', $e->getMessage(), PHP_EOL;
@@ -418,10 +418,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **parentRedemptionId** | **string**| Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm. | |
+| **parent_redemption_id** | **string**| Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm. | |
 | **reason** | **string**| Reason for the rollback. | [optional] |
-| **trackingId** | **string**| Customers source_id. | [optional] |
-| **redemptionsRollbacksCreateRequestBody** | [**\OpenAPI\Client\Model\RedemptionsRollbacksCreateRequestBody**](../Model/RedemptionsRollbacksCreateRequestBody.md)| Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. | [optional] |
+| **tracking_id** | **string**| Customers source_id. | [optional] |
+| **redemptions_rollbacks_create_request_body** | [**\OpenAPI\Client\Model\RedemptionsRollbacksCreateRequestBody**](../Model/RedemptionsRollbacksCreateRequestBody.md)| Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. | [optional] |
 
 ### Return type
 

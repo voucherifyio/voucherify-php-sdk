@@ -60,8 +60,8 @@ class RedemptionsRollbacksCreateResponseBody implements ModelInterface, ArrayAcc
       */
     protected static $openAPITypes = [
         'rollbacks' => '\OpenAPI\Client\Model\RedemptionRollback[]',
-        'parentRollback' => '\OpenAPI\Client\Model\RedemptionRollback',
-        'order' => '\OpenAPI\Client\Model\OrderCalculated'
+        'parent_rollback' => '\OpenAPI\Client\Model\RedemptionRollback',
+        'order' => '\OpenAPI\Client\Model\OrderCalculatedNoCustomerData'
     ];
 
     /**
@@ -73,7 +73,7 @@ class RedemptionsRollbacksCreateResponseBody implements ModelInterface, ArrayAcc
       */
     protected static $openAPIFormats = [
         'rollbacks' => null,
-        'parentRollback' => null,
+        'parent_rollback' => null,
         'order' => null
     ];
 
@@ -84,7 +84,7 @@ class RedemptionsRollbacksCreateResponseBody implements ModelInterface, ArrayAcc
       */
     protected static array $openAPINullables = [
         'rollbacks' => true,
-		'parentRollback' => false,
+		'parent_rollback' => false,
 		'order' => false
     ];
 
@@ -175,7 +175,7 @@ class RedemptionsRollbacksCreateResponseBody implements ModelInterface, ArrayAcc
      */
     protected static $attributeMap = [
         'rollbacks' => 'rollbacks',
-        'parentRollback' => 'parent_rollback',
+        'parent_rollback' => 'parent_rollback',
         'order' => 'order'
     ];
 
@@ -186,7 +186,7 @@ class RedemptionsRollbacksCreateResponseBody implements ModelInterface, ArrayAcc
      */
     protected static $setters = [
         'rollbacks' => 'setRollbacks',
-        'parentRollback' => 'setParentRollback',
+        'parent_rollback' => 'setParentRollback',
         'order' => 'setOrder'
     ];
 
@@ -197,7 +197,7 @@ class RedemptionsRollbacksCreateResponseBody implements ModelInterface, ArrayAcc
      */
     protected static $getters = [
         'rollbacks' => 'getRollbacks',
-        'parentRollback' => 'getParentRollback',
+        'parent_rollback' => 'getParentRollback',
         'order' => 'getOrder'
     ];
 
@@ -259,7 +259,7 @@ class RedemptionsRollbacksCreateResponseBody implements ModelInterface, ArrayAcc
     public function __construct(array $data = null)
     {
         $this->setIfExists('rollbacks', $data ?? [], null);
-        $this->setIfExists('parentRollback', $data ?? [], null);
+        $this->setIfExists('parent_rollback', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
     }
 
@@ -340,28 +340,28 @@ class RedemptionsRollbacksCreateResponseBody implements ModelInterface, ArrayAcc
     }
 
     /**
-     * Gets parentRollback
+     * Gets parent_rollback
      *
      * @return \OpenAPI\Client\Model\RedemptionRollback|null
      */
     public function getParentRollback()
     {
-        return $this->container['parentRollback'];
+        return $this->container['parent_rollback'];
     }
 
     /**
-     * Sets parentRollback
+     * Sets parent_rollback
      *
-     * @param \OpenAPI\Client\Model\RedemptionRollback|null $parentRollback parentRollback
+     * @param \OpenAPI\Client\Model\RedemptionRollback|null $parent_rollback parent_rollback
      *
      * @return self
      */
-    public function setParentRollback($parentRollback)
+    public function setParentRollback($parent_rollback)
     {
-        if (is_null($parentRollback)) {
-            throw new \InvalidArgumentException('non-nullable parentRollback cannot be null');
+        if (is_null($parent_rollback)) {
+            throw new \InvalidArgumentException('non-nullable parent_rollback cannot be null');
         }
-        $this->container['parentRollback'] = $parentRollback;
+        $this->container['parent_rollback'] = $parent_rollback;
 
         return $this;
     }
@@ -369,7 +369,7 @@ class RedemptionsRollbacksCreateResponseBody implements ModelInterface, ArrayAcc
     /**
      * Gets order
      *
-     * @return \OpenAPI\Client\Model\OrderCalculated|null
+     * @return \OpenAPI\Client\Model\OrderCalculatedNoCustomerData|null
      */
     public function getOrder()
     {
@@ -379,7 +379,7 @@ class RedemptionsRollbacksCreateResponseBody implements ModelInterface, ArrayAcc
     /**
      * Sets order
      *
-     * @param \OpenAPI\Client\Model\OrderCalculated|null $order order
+     * @param \OpenAPI\Client\Model\OrderCalculatedNoCustomerData|null $order order
      *
      * @return self
      */

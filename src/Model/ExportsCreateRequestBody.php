@@ -58,7 +58,7 @@ class ExportsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'exportedObject' => 'string',
+        'exported_object' => 'string',
         'parameters' => '\OpenAPI\Client\Model\ExportsCreateRequestBodyParameters'
     ];
 
@@ -70,7 +70,7 @@ class ExportsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'exportedObject' => null,
+        'exported_object' => null,
         'parameters' => null
     ];
 
@@ -80,7 +80,7 @@ class ExportsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'exportedObject' => true,
+        'exported_object' => true,
 		'parameters' => true
     ];
 
@@ -170,7 +170,7 @@ class ExportsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'exportedObject' => 'exported_object',
+        'exported_object' => 'exported_object',
         'parameters' => 'parameters'
     ];
 
@@ -180,7 +180,7 @@ class ExportsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'exportedObject' => 'setExportedObject',
+        'exported_object' => 'setExportedObject',
         'parameters' => 'setParameters'
     ];
 
@@ -190,7 +190,7 @@ class ExportsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'exportedObject' => 'getExportedObject',
+        'exported_object' => 'getExportedObject',
         'parameters' => 'getParameters'
     ];
 
@@ -276,7 +276,7 @@ class ExportsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('exportedObject', $data ?? [], null);
+        $this->setIfExists('exported_object', $data ?? [], null);
         $this->setIfExists('parameters', $data ?? [], null);
     }
 
@@ -308,10 +308,10 @@ class ExportsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
         $invalidProperties = [];
 
         $allowedValues = $this->getExportedObjectAllowableValues();
-        if (!is_null($this->container['exportedObject']) && !in_array($this->container['exportedObject'], $allowedValues, true)) {
+        if (!is_null($this->container['exported_object']) && !in_array($this->container['exported_object'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'exportedObject', must be one of '%s'",
-                $this->container['exportedObject'],
+                "invalid value '%s' for 'exported_object', must be one of '%s'",
+                $this->container['exported_object'],
                 implode("', '", $allowedValues)
             );
         }
@@ -332,45 +332,45 @@ class ExportsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets exportedObject
+     * Gets exported_object
      *
      * @return string|null
      */
     public function getExportedObject()
     {
-        return $this->container['exportedObject'];
+        return $this->container['exported_object'];
     }
 
     /**
-     * Sets exportedObject
+     * Sets exported_object
      *
-     * @param string|null $exportedObject exportedObject
+     * @param string|null $exported_object exported_object
      *
      * @return self
      */
-    public function setExportedObject($exportedObject)
+    public function setExportedObject($exported_object)
     {
-        if (is_null($exportedObject)) {
-            array_push($this->openAPINullablesSetToNull, 'exportedObject');
+        if (is_null($exported_object)) {
+            array_push($this->openAPINullablesSetToNull, 'exported_object');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('exportedObject', $nullablesSetToNull);
+            $index = array_search('exported_object', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getExportedObjectAllowableValues();
-        if (!is_null($exportedObject) && !in_array($exportedObject, $allowedValues, true)) {
+        if (!is_null($exported_object) && !in_array($exported_object, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'exportedObject', must be one of '%s'",
-                    $exportedObject,
+                    "Invalid value '%s' for 'exported_object', must be one of '%s'",
+                    $exported_object,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['exportedObject'] = $exportedObject;
+        $this->container['exported_object'] = $exported_object;
 
         return $this;
     }

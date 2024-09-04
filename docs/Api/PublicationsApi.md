@@ -12,7 +12,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `createPublication()`
 
 ```php
-createPublication($joinOnce, $publicationsCreateRequestBody): \OpenAPI\Client\Model\PublicationsCreateResponseBody
+createPublication($join_once, $publications_create_request_body): \OpenAPI\Client\Model\PublicationsCreateResponseBody
 ```
 
 Create Publication
@@ -43,11 +43,11 @@ $apiInstance = new OpenAPI\Client\Api\PublicationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$joinOnce = True; // bool | Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer.
-$publicationsCreateRequestBody = {"campaign":{"name":"campaign-name"},"customer":{"source_id":"source-id","Name":"Customer Name","email":"customer email"},"voucher":"voucher-code","metadata":{"key":"value"}}; // \OpenAPI\Client\Model\PublicationsCreateRequestBody | Specify the publication parameters.
+$join_once = True; // bool | Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer.
+$publications_create_request_body = {"campaign":{"name":"campaign-name"},"customer":{"source_id":"source-id","Name":"Customer Name","email":"customer email"},"voucher":"voucher-code","metadata":{"key":"value"}}; // \OpenAPI\Client\Model\PublicationsCreateRequestBody | Specify the publication parameters.
 
 try {
-    $result = $apiInstance->createPublication($joinOnce, $publicationsCreateRequestBody);
+    $result = $apiInstance->createPublication($join_once, $publications_create_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicationsApi->createPublication: ', $e->getMessage(), PHP_EOL;
@@ -58,8 +58,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **joinOnce** | **bool**| Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. | [optional] |
-| **publicationsCreateRequestBody** | [**\OpenAPI\Client\Model\PublicationsCreateRequestBody**](../Model/PublicationsCreateRequestBody.md)| Specify the publication parameters. | [optional] |
+| **join_once** | **bool**| Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. | [optional] |
+| **publications_create_request_body** | [**\OpenAPI\Client\Model\PublicationsCreateRequestBody**](../Model/PublicationsCreateRequestBody.md)| Specify the publication parameters. | [optional] |
 
 ### Return type
 
@@ -81,7 +81,7 @@ try {
 ## `createPublication1()`
 
 ```php
-createPublication1($customer, $joinOnce, $voucher, $campaign, $sourceId, $metadata): \OpenAPI\Client\Model\PublicationsCreateResponseBody
+createPublication1($customer, $join_once, $voucher, $campaign, $source_id, $metadata): \OpenAPI\Client\Model\PublicationsCreateResponseBody
 ```
 
 Create Publication
@@ -113,14 +113,14 @@ $apiInstance = new OpenAPI\Client\Api\PublicationsApi(
     $config
 );
 $customer = new \OpenAPI\Client\Model\Customer(); // Customer | Contains information about the customer to whom the publication was directed.
-$joinOnce = True; // bool | Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer.
+$join_once = True; // bool | Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer.
 $voucher = 'voucher_example'; // string | Code of voucher being published.
 $campaign = new \OpenAPI\Client\Model\CreatePublicationCampaign(); // CreatePublicationCampaign | Create publication with campaign.
-$sourceId = 'sourceId_example'; // string | The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request.
+$source_id = 'source_id_example'; // string | The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request.
 $metadata = array('key' => new \stdClass); // object | The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format.
 
 try {
-    $result = $apiInstance->createPublication1($customer, $joinOnce, $voucher, $campaign, $sourceId, $metadata);
+    $result = $apiInstance->createPublication1($customer, $join_once, $voucher, $campaign, $source_id, $metadata);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicationsApi->createPublication1: ', $e->getMessage(), PHP_EOL;
@@ -132,10 +132,10 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **customer** | [**Customer**](../Model/.md)| Contains information about the customer to whom the publication was directed. | |
-| **joinOnce** | **bool**| Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. | [optional] |
+| **join_once** | **bool**| Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. | [optional] |
 | **voucher** | **string**| Code of voucher being published. | [optional] |
 | **campaign** | [**CreatePublicationCampaign**](../Model/.md)| Create publication with campaign. | [optional] |
-| **sourceId** | **string**| The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request. | [optional] |
+| **source_id** | **string**| The merchants publication ID if it is different from the Voucherify publication ID. Its an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If source_id is provided only 1 voucher can be published per request. | [optional] |
 | **metadata** | [**object**](../Model/.md)| The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format. | [optional] |
 
 ### Return type
@@ -158,7 +158,7 @@ try {
 ## `listPublications()`
 
 ```php
-listPublications($limit, $page, $order, $campaign, $customer, $voucher, $result, $voucherType, $isReferralCode, $filters, $sourceId): \OpenAPI\Client\Model\PublicationsListResponseBody
+listPublications($limit, $page, $order, $campaign, $customer, $voucher, $result, $voucher_type, $is_referral_code, $filters, $source_id): \OpenAPI\Client\Model\PublicationsListResponseBody
 ```
 
 List Publications
@@ -196,13 +196,13 @@ $campaign = 'campaign_example'; // string | Filters by a given campaign name.
 $customer = 'customer_example'; // string | Filters by a unique customer ID.
 $voucher = 'voucher_example'; // string | Filters by a given voucher code.
 $result = new \OpenAPI\Client\Model\ParameterResultListPublications(); // ParameterResultListPublications | Filters by a publication result.
-$voucherType = new \OpenAPI\Client\Model\ParameterVoucherTypeListPublications(); // ParameterVoucherTypeListPublications | Filters by a voucher type.
-$isReferralCode = True; // bool | This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns.
+$voucher_type = new \OpenAPI\Client\Model\ParameterVoucherTypeListPublications(); // ParameterVoucherTypeListPublications | Filters by a voucher type.
+$is_referral_code = True; // bool | This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns.
 $filters = 'filters_example'; // string | Allows for combining the filters mentioned in the endpoint description.
-$sourceId = 'sourceId_example'; // string | Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id.
+$source_id = 'source_id_example'; // string | Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id.
 
 try {
-    $result = $apiInstance->listPublications($limit, $page, $order, $campaign, $customer, $voucher, $result, $voucherType, $isReferralCode, $filters, $sourceId);
+    $result = $apiInstance->listPublications($limit, $page, $order, $campaign, $customer, $voucher, $result, $voucher_type, $is_referral_code, $filters, $source_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicationsApi->listPublications: ', $e->getMessage(), PHP_EOL;
@@ -220,10 +220,10 @@ try {
 | **customer** | **string**| Filters by a unique customer ID. | [optional] |
 | **voucher** | **string**| Filters by a given voucher code. | [optional] |
 | **result** | [**ParameterResultListPublications**](../Model/.md)| Filters by a publication result. | [optional] |
-| **voucherType** | [**ParameterVoucherTypeListPublications**](../Model/.md)| Filters by a voucher type. | [optional] |
-| **isReferralCode** | **bool**| This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. | [optional] |
+| **voucher_type** | [**ParameterVoucherTypeListPublications**](../Model/.md)| Filters by a voucher type. | [optional] |
+| **is_referral_code** | **bool**| This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. | [optional] |
 | **filters** | **string**| Allows for combining the filters mentioned in the endpoint description. | [optional] |
-| **sourceId** | **string**| Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. | [optional] |
+| **source_id** | **string**| Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. | [optional] |
 
 ### Return type
 

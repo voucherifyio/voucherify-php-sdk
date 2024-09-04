@@ -61,17 +61,17 @@ class ProductCollectionsCreateResponseBodyFilter implements ModelInterface, Arra
     protected static $openAPITypes = [
         'junction' => 'string',
         'id' => '\OpenAPI\Client\Model\FieldConditions',
-        'productId' => '\OpenAPI\Client\Model\FieldConditions',
-        'sourceId' => '\OpenAPI\Client\Model\FieldConditions',
+        'product_id' => '\OpenAPI\Client\Model\FieldConditions',
+        'source_id' => '\OpenAPI\Client\Model\FieldConditions',
         'name' => '\OpenAPI\Client\Model\FieldConditions',
         'price' => '\OpenAPI\Client\Model\FieldConditions',
         'object' => '\OpenAPI\Client\Model\FieldConditions',
         'attributes' => '\OpenAPI\Client\Model\FieldConditions',
         'metadata' => '\OpenAPI\Client\Model\FieldConditions',
-        'imageUrl' => '\OpenAPI\Client\Model\FieldConditions',
+        'image_url' => '\OpenAPI\Client\Model\FieldConditions',
         'skus' => '\OpenAPI\Client\Model\FieldConditions',
-        'createdAt' => '\OpenAPI\Client\Model\FieldConditions',
-        'updatedAt' => '\OpenAPI\Client\Model\FieldConditions'
+        'created_at' => '\OpenAPI\Client\Model\FieldConditions',
+        'updated_at' => '\OpenAPI\Client\Model\FieldConditions'
     ];
 
     /**
@@ -84,17 +84,17 @@ class ProductCollectionsCreateResponseBodyFilter implements ModelInterface, Arra
     protected static $openAPIFormats = [
         'junction' => null,
         'id' => null,
-        'productId' => null,
-        'sourceId' => null,
+        'product_id' => null,
+        'source_id' => null,
         'name' => null,
         'price' => null,
         'object' => null,
         'attributes' => null,
         'metadata' => null,
-        'imageUrl' => null,
+        'image_url' => null,
         'skus' => null,
-        'createdAt' => null,
-        'updatedAt' => null
+        'created_at' => null,
+        'updated_at' => null
     ];
 
     /**
@@ -105,17 +105,17 @@ class ProductCollectionsCreateResponseBodyFilter implements ModelInterface, Arra
     protected static array $openAPINullables = [
         'junction' => true,
 		'id' => false,
-		'productId' => false,
-		'sourceId' => false,
+		'product_id' => false,
+		'source_id' => false,
 		'name' => false,
 		'price' => false,
 		'object' => false,
 		'attributes' => false,
 		'metadata' => false,
-		'imageUrl' => false,
+		'image_url' => false,
 		'skus' => false,
-		'createdAt' => false,
-		'updatedAt' => false
+		'created_at' => false,
+		'updated_at' => false
     ];
 
     /**
@@ -206,17 +206,17 @@ class ProductCollectionsCreateResponseBodyFilter implements ModelInterface, Arra
     protected static $attributeMap = [
         'junction' => 'junction',
         'id' => 'id',
-        'productId' => 'product_id',
-        'sourceId' => 'source_id',
+        'product_id' => 'product_id',
+        'source_id' => 'source_id',
         'name' => 'name',
         'price' => 'price',
         'object' => 'object',
         'attributes' => 'attributes',
         'metadata' => 'metadata',
-        'imageUrl' => 'image_url',
+        'image_url' => 'image_url',
         'skus' => 'skus',
-        'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at'
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at'
     ];
 
     /**
@@ -227,17 +227,17 @@ class ProductCollectionsCreateResponseBodyFilter implements ModelInterface, Arra
     protected static $setters = [
         'junction' => 'setJunction',
         'id' => 'setId',
-        'productId' => 'setProductId',
-        'sourceId' => 'setSourceId',
+        'product_id' => 'setProductId',
+        'source_id' => 'setSourceId',
         'name' => 'setName',
         'price' => 'setPrice',
         'object' => 'setObject',
         'attributes' => 'setAttributes',
         'metadata' => 'setMetadata',
-        'imageUrl' => 'setImageUrl',
+        'image_url' => 'setImageUrl',
         'skus' => 'setSkus',
-        'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt'
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt'
     ];
 
     /**
@@ -248,17 +248,17 @@ class ProductCollectionsCreateResponseBodyFilter implements ModelInterface, Arra
     protected static $getters = [
         'junction' => 'getJunction',
         'id' => 'getId',
-        'productId' => 'getProductId',
-        'sourceId' => 'getSourceId',
+        'product_id' => 'getProductId',
+        'source_id' => 'getSourceId',
         'name' => 'getName',
         'price' => 'getPrice',
         'object' => 'getObject',
         'attributes' => 'getAttributes',
         'metadata' => 'getMetadata',
-        'imageUrl' => 'getImageUrl',
+        'image_url' => 'getImageUrl',
         'skus' => 'getSkus',
-        'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt'
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt'
     ];
 
     /**
@@ -335,17 +335,17 @@ class ProductCollectionsCreateResponseBodyFilter implements ModelInterface, Arra
     {
         $this->setIfExists('junction', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('productId', $data ?? [], null);
-        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('product_id', $data ?? [], null);
+        $this->setIfExists('source_id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], null);
         $this->setIfExists('attributes', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('imageUrl', $data ?? [], null);
+        $this->setIfExists('image_url', $data ?? [], null);
         $this->setIfExists('skus', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
-        $this->setIfExists('updatedAt', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
     }
 
     /**
@@ -471,55 +471,55 @@ class ProductCollectionsCreateResponseBodyFilter implements ModelInterface, Arra
     }
 
     /**
-     * Gets productId
+     * Gets product_id
      *
      * @return \OpenAPI\Client\Model\FieldConditions|null
      */
     public function getProductId()
     {
-        return $this->container['productId'];
+        return $this->container['product_id'];
     }
 
     /**
-     * Sets productId
+     * Sets product_id
      *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $productId productId
+     * @param \OpenAPI\Client\Model\FieldConditions|null $product_id product_id
      *
      * @return self
      */
-    public function setProductId($productId)
+    public function setProductId($product_id)
     {
-        if (is_null($productId)) {
-            throw new \InvalidArgumentException('non-nullable productId cannot be null');
+        if (is_null($product_id)) {
+            throw new \InvalidArgumentException('non-nullable product_id cannot be null');
         }
-        $this->container['productId'] = $productId;
+        $this->container['product_id'] = $product_id;
 
         return $this;
     }
 
     /**
-     * Gets sourceId
+     * Gets source_id
      *
      * @return \OpenAPI\Client\Model\FieldConditions|null
      */
     public function getSourceId()
     {
-        return $this->container['sourceId'];
+        return $this->container['source_id'];
     }
 
     /**
-     * Sets sourceId
+     * Sets source_id
      *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $sourceId sourceId
+     * @param \OpenAPI\Client\Model\FieldConditions|null $source_id source_id
      *
      * @return self
      */
-    public function setSourceId($sourceId)
+    public function setSourceId($source_id)
     {
-        if (is_null($sourceId)) {
-            throw new \InvalidArgumentException('non-nullable sourceId cannot be null');
+        if (is_null($source_id)) {
+            throw new \InvalidArgumentException('non-nullable source_id cannot be null');
         }
-        $this->container['sourceId'] = $sourceId;
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }
@@ -660,28 +660,28 @@ class ProductCollectionsCreateResponseBodyFilter implements ModelInterface, Arra
     }
 
     /**
-     * Gets imageUrl
+     * Gets image_url
      *
      * @return \OpenAPI\Client\Model\FieldConditions|null
      */
     public function getImageUrl()
     {
-        return $this->container['imageUrl'];
+        return $this->container['image_url'];
     }
 
     /**
-     * Sets imageUrl
+     * Sets image_url
      *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $imageUrl imageUrl
+     * @param \OpenAPI\Client\Model\FieldConditions|null $image_url image_url
      *
      * @return self
      */
-    public function setImageUrl($imageUrl)
+    public function setImageUrl($image_url)
     {
-        if (is_null($imageUrl)) {
-            throw new \InvalidArgumentException('non-nullable imageUrl cannot be null');
+        if (is_null($image_url)) {
+            throw new \InvalidArgumentException('non-nullable image_url cannot be null');
         }
-        $this->container['imageUrl'] = $imageUrl;
+        $this->container['image_url'] = $image_url;
 
         return $this;
     }
@@ -714,55 +714,55 @@ class ProductCollectionsCreateResponseBodyFilter implements ModelInterface, Arra
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \OpenAPI\Client\Model\FieldConditions|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $createdAt createdAt
+     * @param \OpenAPI\Client\Model\FieldConditions|null $created_at created_at
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            throw new \InvalidArgumentException('non-nullable createdAt cannot be null');
+        if (is_null($created_at)) {
+            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }
 
     /**
-     * Gets updatedAt
+     * Gets updated_at
      *
      * @return \OpenAPI\Client\Model\FieldConditions|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updatedAt'];
+        return $this->container['updated_at'];
     }
 
     /**
-     * Sets updatedAt
+     * Sets updated_at
      *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $updatedAt updatedAt
+     * @param \OpenAPI\Client\Model\FieldConditions|null $updated_at updated_at
      *
      * @return self
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updated_at)
     {
-        if (is_null($updatedAt)) {
-            throw new \InvalidArgumentException('non-nullable updatedAt cannot be null');
+        if (is_null($updated_at)) {
+            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
         }
-        $this->container['updatedAt'] = $updatedAt;
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }

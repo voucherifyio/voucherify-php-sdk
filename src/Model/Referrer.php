@@ -59,7 +59,7 @@ class Referrer implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'sourceId' => 'string',
+        'source_id' => 'string',
         'name' => 'string',
         'description' => 'string',
         'email' => 'string',
@@ -79,7 +79,7 @@ class Referrer implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'sourceId' => null,
+        'source_id' => null,
         'name' => null,
         'description' => null,
         'email' => null,
@@ -97,7 +97,7 @@ class Referrer implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'sourceId' => true,
+		'source_id' => true,
 		'name' => true,
 		'description' => true,
 		'email' => true,
@@ -195,7 +195,7 @@ class Referrer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'sourceId' => 'source_id',
+        'source_id' => 'source_id',
         'name' => 'name',
         'description' => 'description',
         'email' => 'email',
@@ -213,7 +213,7 @@ class Referrer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
-        'sourceId' => 'setSourceId',
+        'source_id' => 'setSourceId',
         'name' => 'setName',
         'description' => 'setDescription',
         'email' => 'setEmail',
@@ -231,7 +231,7 @@ class Referrer implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
-        'sourceId' => 'getSourceId',
+        'source_id' => 'getSourceId',
         'name' => 'getName',
         'description' => 'getDescription',
         'email' => 'getEmail',
@@ -300,7 +300,7 @@ class Referrer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('source_id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('email', $data ?? [], null);
@@ -388,35 +388,35 @@ class Referrer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets sourceId
+     * Gets source_id
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['sourceId'];
+        return $this->container['source_id'];
     }
 
     /**
-     * Sets sourceId
+     * Sets source_id
      *
-     * @param string|null $sourceId A unique identifier of the customer who validates a voucher. It can be a customer ID or email from a CRM system, database, or a third-party service. If you also pass a customer ID (unique ID assigned by Voucherify), the source ID will be ignored.
+     * @param string|null $source_id A unique identifier of the customer who validates a voucher. It can be a customer ID or email from a CRM system, database, or a third-party service. If you also pass a customer ID (unique ID assigned by Voucherify), the source ID will be ignored.
      *
      * @return self
      */
-    public function setSourceId($sourceId)
+    public function setSourceId($source_id)
     {
-        if (is_null($sourceId)) {
-            array_push($this->openAPINullablesSetToNull, 'sourceId');
+        if (is_null($source_id)) {
+            array_push($this->openAPINullablesSetToNull, 'source_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sourceId', $nullablesSetToNull);
+            $index = array_search('source_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sourceId'] = $sourceId;
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }

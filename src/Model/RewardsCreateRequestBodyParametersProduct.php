@@ -60,7 +60,7 @@ class RewardsCreateRequestBodyParametersProduct implements ModelInterface, Array
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'skuId' => 'string'
+        'sku_id' => 'string'
     ];
 
     /**
@@ -72,7 +72,7 @@ class RewardsCreateRequestBodyParametersProduct implements ModelInterface, Array
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'skuId' => null
+        'sku_id' => null
     ];
 
     /**
@@ -82,7 +82,7 @@ class RewardsCreateRequestBodyParametersProduct implements ModelInterface, Array
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'skuId' => true
+		'sku_id' => true
     ];
 
     /**
@@ -172,7 +172,7 @@ class RewardsCreateRequestBodyParametersProduct implements ModelInterface, Array
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'skuId' => 'sku_id'
+        'sku_id' => 'sku_id'
     ];
 
     /**
@@ -182,7 +182,7 @@ class RewardsCreateRequestBodyParametersProduct implements ModelInterface, Array
      */
     protected static $setters = [
         'id' => 'setId',
-        'skuId' => 'setSkuId'
+        'sku_id' => 'setSkuId'
     ];
 
     /**
@@ -192,7 +192,7 @@ class RewardsCreateRequestBodyParametersProduct implements ModelInterface, Array
      */
     protected static $getters = [
         'id' => 'getId',
-        'skuId' => 'getSkuId'
+        'sku_id' => 'getSkuId'
     ];
 
     /**
@@ -253,7 +253,7 @@ class RewardsCreateRequestBodyParametersProduct implements ModelInterface, Array
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('skuId', $data ?? [], null);
+        $this->setIfExists('sku_id', $data ?? [], null);
     }
 
     /**
@@ -333,35 +333,35 @@ class RewardsCreateRequestBodyParametersProduct implements ModelInterface, Array
     }
 
     /**
-     * Gets skuId
+     * Gets sku_id
      *
      * @return string|null
      */
     public function getSkuId()
     {
-        return $this->container['skuId'];
+        return $this->container['sku_id'];
     }
 
     /**
-     * Sets skuId
+     * Sets sku_id
      *
-     * @param string|null $skuId Unique SKU ID, assigned by Voucherify, of the SKU given as a reward.
+     * @param string|null $sku_id Unique SKU ID, assigned by Voucherify, of the SKU given as a reward.
      *
      * @return self
      */
-    public function setSkuId($skuId)
+    public function setSkuId($sku_id)
     {
-        if (is_null($skuId)) {
-            array_push($this->openAPINullablesSetToNull, 'skuId');
+        if (is_null($sku_id)) {
+            array_push($this->openAPINullablesSetToNull, 'sku_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('skuId', $nullablesSetToNull);
+            $index = array_search('sku_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['skuId'] = $skuId;
+        $this->container['sku_id'] = $sku_id;
 
         return $this;
     }

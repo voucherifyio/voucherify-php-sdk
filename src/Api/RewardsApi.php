@@ -155,16 +155,16 @@ class RewardsApi
      *
      * Create Reward
      *
-     * @param  \OpenAPI\Client\Model\RewardsCreateRequestBody $rewardsCreateRequestBody Define parameters of the new reward. (optional)
+     * @param  \OpenAPI\Client\Model\RewardsCreateRequestBody $rewards_create_request_body Define parameters of the new reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createReward'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\RewardsCreateResponseBody
      */
-    public function createReward($rewardsCreateRequestBody = null, string $contentType = self::contentTypes['createReward'][0])
+    public function createReward($rewards_create_request_body = null, string $contentType = self::contentTypes['createReward'][0])
     {
-        list($response) = $this->createRewardWithHttpInfo($rewardsCreateRequestBody, $contentType);
+        list($response) = $this->createRewardWithHttpInfo($rewards_create_request_body, $contentType);
         return $response;
     }
 
@@ -173,16 +173,16 @@ class RewardsApi
      *
      * Create Reward
      *
-     * @param  \OpenAPI\Client\Model\RewardsCreateRequestBody $rewardsCreateRequestBody Define parameters of the new reward. (optional)
+     * @param  \OpenAPI\Client\Model\RewardsCreateRequestBody $rewards_create_request_body Define parameters of the new reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createReward'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\RewardsCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createRewardWithHttpInfo($rewardsCreateRequestBody = null, string $contentType = self::contentTypes['createReward'][0])
+    public function createRewardWithHttpInfo($rewards_create_request_body = null, string $contentType = self::contentTypes['createReward'][0])
     {
-        $request = $this->createRewardRequest($rewardsCreateRequestBody, $contentType);
+        $request = $this->createRewardRequest($rewards_create_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -273,15 +273,15 @@ class RewardsApi
      *
      * Create Reward
      *
-     * @param  \OpenAPI\Client\Model\RewardsCreateRequestBody $rewardsCreateRequestBody Define parameters of the new reward. (optional)
+     * @param  \OpenAPI\Client\Model\RewardsCreateRequestBody $rewards_create_request_body Define parameters of the new reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createRewardAsync($rewardsCreateRequestBody = null, string $contentType = self::contentTypes['createReward'][0])
+    public function createRewardAsync($rewards_create_request_body = null, string $contentType = self::contentTypes['createReward'][0])
     {
-        return $this->createRewardAsyncWithHttpInfo($rewardsCreateRequestBody, $contentType)
+        return $this->createRewardAsyncWithHttpInfo($rewards_create_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -294,16 +294,16 @@ class RewardsApi
      *
      * Create Reward
      *
-     * @param  \OpenAPI\Client\Model\RewardsCreateRequestBody $rewardsCreateRequestBody Define parameters of the new reward. (optional)
+     * @param  \OpenAPI\Client\Model\RewardsCreateRequestBody $rewards_create_request_body Define parameters of the new reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createRewardAsyncWithHttpInfo($rewardsCreateRequestBody = null, string $contentType = self::contentTypes['createReward'][0])
+    public function createRewardAsyncWithHttpInfo($rewards_create_request_body = null, string $contentType = self::contentTypes['createReward'][0])
     {
         $returnType = '\OpenAPI\Client\Model\RewardsCreateResponseBody';
-        $request = $this->createRewardRequest($rewardsCreateRequestBody, $contentType);
+        $request = $this->createRewardRequest($rewards_create_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -344,13 +344,13 @@ class RewardsApi
     /**
      * Create request for operation 'createReward'
      *
-     * @param  \OpenAPI\Client\Model\RewardsCreateRequestBody $rewardsCreateRequestBody Define parameters of the new reward. (optional)
+     * @param  \OpenAPI\Client\Model\RewardsCreateRequestBody $rewards_create_request_body Define parameters of the new reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createRewardRequest($rewardsCreateRequestBody = null, string $contentType = self::contentTypes['createReward'][0])
+    public function createRewardRequest($rewards_create_request_body = null, string $contentType = self::contentTypes['createReward'][0])
     {
 
 
@@ -373,12 +373,12 @@ class RewardsApi
         );
 
         // for model (json/xml)
-        if (isset($rewardsCreateRequestBody)) {
+        if (isset($rewards_create_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($rewardsCreateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($rewards_create_request_body));
             } else {
-                $httpBody = $rewardsCreateRequestBody;
+                $httpBody = $rewards_create_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -441,17 +441,17 @@ class RewardsApi
      *
      * Create Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewards_assignments_create_request_body Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\RewardsAssignmentsCreateResponseBody
      */
-    public function createRewardAssignment($rewardId, $rewardsAssignmentsCreateRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment'][0])
+    public function createRewardAssignment($reward_id, $rewards_assignments_create_request_body = null, string $contentType = self::contentTypes['createRewardAssignment'][0])
     {
-        list($response) = $this->createRewardAssignmentWithHttpInfo($rewardId, $rewardsAssignmentsCreateRequestBody, $contentType);
+        list($response) = $this->createRewardAssignmentWithHttpInfo($reward_id, $rewards_assignments_create_request_body, $contentType);
         return $response;
     }
 
@@ -460,17 +460,17 @@ class RewardsApi
      *
      * Create Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewards_assignments_create_request_body Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\RewardsAssignmentsCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createRewardAssignmentWithHttpInfo($rewardId, $rewardsAssignmentsCreateRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment'][0])
+    public function createRewardAssignmentWithHttpInfo($reward_id, $rewards_assignments_create_request_body = null, string $contentType = self::contentTypes['createRewardAssignment'][0])
     {
-        $request = $this->createRewardAssignmentRequest($rewardId, $rewardsAssignmentsCreateRequestBody, $contentType);
+        $request = $this->createRewardAssignmentRequest($reward_id, $rewards_assignments_create_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -561,16 +561,16 @@ class RewardsApi
      *
      * Create Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewards_assignments_create_request_body Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createRewardAssignmentAsync($rewardId, $rewardsAssignmentsCreateRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment'][0])
+    public function createRewardAssignmentAsync($reward_id, $rewards_assignments_create_request_body = null, string $contentType = self::contentTypes['createRewardAssignment'][0])
     {
-        return $this->createRewardAssignmentAsyncWithHttpInfo($rewardId, $rewardsAssignmentsCreateRequestBody, $contentType)
+        return $this->createRewardAssignmentAsyncWithHttpInfo($reward_id, $rewards_assignments_create_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -583,17 +583,17 @@ class RewardsApi
      *
      * Create Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewards_assignments_create_request_body Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createRewardAssignmentAsyncWithHttpInfo($rewardId, $rewardsAssignmentsCreateRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment'][0])
+    public function createRewardAssignmentAsyncWithHttpInfo($reward_id, $rewards_assignments_create_request_body = null, string $contentType = self::contentTypes['createRewardAssignment'][0])
     {
         $returnType = '\OpenAPI\Client\Model\RewardsAssignmentsCreateResponseBody';
-        $request = $this->createRewardAssignmentRequest($rewardId, $rewardsAssignmentsCreateRequestBody, $contentType);
+        $request = $this->createRewardAssignmentRequest($reward_id, $rewards_assignments_create_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -634,20 +634,20 @@ class RewardsApi
     /**
      * Create request for operation 'createRewardAssignment'
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewards_assignments_create_request_body Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createRewardAssignmentRequest($rewardId, $rewardsAssignmentsCreateRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment'][0])
+    public function createRewardAssignmentRequest($reward_id, $rewards_assignments_create_request_body = null, string $contentType = self::contentTypes['createRewardAssignment'][0])
     {
 
-        // verify the required parameter 'rewardId' is set
-        if ($rewardId === null || (is_array($rewardId) && count($rewardId) === 0)) {
+        // verify the required parameter 'reward_id' is set
+        if ($reward_id === null || (is_array($reward_id) && count($reward_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $rewardId when calling createRewardAssignment'
+                'Missing the required parameter $reward_id when calling createRewardAssignment'
             );
         }
 
@@ -663,10 +663,10 @@ class RewardsApi
 
 
         // path params
-        if ($rewardId !== null) {
+        if ($reward_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'rewardId' . '}',
-                ObjectSerializer::toPathValue($rewardId),
+                ObjectSerializer::toPathValue($reward_id),
                 $resourcePath
             );
         }
@@ -679,12 +679,12 @@ class RewardsApi
         );
 
         // for model (json/xml)
-        if (isset($rewardsAssignmentsCreateRequestBody)) {
+        if (isset($rewards_assignments_create_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($rewardsAssignmentsCreateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($rewards_assignments_create_request_body));
             } else {
-                $httpBody = $rewardsAssignmentsCreateRequestBody;
+                $httpBody = $rewards_assignments_create_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -747,16 +747,16 @@ class RewardsApi
      *
      * Delete Reward
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteReward'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteReward($rewardId, string $contentType = self::contentTypes['deleteReward'][0])
+    public function deleteReward($reward_id, string $contentType = self::contentTypes['deleteReward'][0])
     {
-        $this->deleteRewardWithHttpInfo($rewardId, $contentType);
+        $this->deleteRewardWithHttpInfo($reward_id, $contentType);
     }
 
     /**
@@ -764,16 +764,16 @@ class RewardsApi
      *
      * Delete Reward
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteReward'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteRewardWithHttpInfo($rewardId, string $contentType = self::contentTypes['deleteReward'][0])
+    public function deleteRewardWithHttpInfo($reward_id, string $contentType = self::contentTypes['deleteReward'][0])
     {
-        $request = $this->deleteRewardRequest($rewardId, $contentType);
+        $request = $this->deleteRewardRequest($reward_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -824,15 +824,15 @@ class RewardsApi
      *
      * Delete Reward
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteRewardAsync($rewardId, string $contentType = self::contentTypes['deleteReward'][0])
+    public function deleteRewardAsync($reward_id, string $contentType = self::contentTypes['deleteReward'][0])
     {
-        return $this->deleteRewardAsyncWithHttpInfo($rewardId, $contentType)
+        return $this->deleteRewardAsyncWithHttpInfo($reward_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -845,16 +845,16 @@ class RewardsApi
      *
      * Delete Reward
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteRewardAsyncWithHttpInfo($rewardId, string $contentType = self::contentTypes['deleteReward'][0])
+    public function deleteRewardAsyncWithHttpInfo($reward_id, string $contentType = self::contentTypes['deleteReward'][0])
     {
         $returnType = '';
-        $request = $this->deleteRewardRequest($rewardId, $contentType);
+        $request = $this->deleteRewardRequest($reward_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -882,19 +882,19 @@ class RewardsApi
     /**
      * Create request for operation 'deleteReward'
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteRewardRequest($rewardId, string $contentType = self::contentTypes['deleteReward'][0])
+    public function deleteRewardRequest($reward_id, string $contentType = self::contentTypes['deleteReward'][0])
     {
 
-        // verify the required parameter 'rewardId' is set
-        if ($rewardId === null || (is_array($rewardId) && count($rewardId) === 0)) {
+        // verify the required parameter 'reward_id' is set
+        if ($reward_id === null || (is_array($reward_id) && count($reward_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $rewardId when calling deleteReward'
+                'Missing the required parameter $reward_id when calling deleteReward'
             );
         }
 
@@ -909,10 +909,10 @@ class RewardsApi
 
 
         // path params
-        if ($rewardId !== null) {
+        if ($reward_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'rewardId' . '}',
-                ObjectSerializer::toPathValue($rewardId),
+                ObjectSerializer::toPathValue($reward_id),
                 $resourcePath
             );
         }
@@ -986,17 +986,17 @@ class RewardsApi
      *
      * Delete Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRewardAssignment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteRewardAssignment($rewardId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment'][0])
+    public function deleteRewardAssignment($reward_id, $assignment_id, string $contentType = self::contentTypes['deleteRewardAssignment'][0])
     {
-        $this->deleteRewardAssignmentWithHttpInfo($rewardId, $assignmentId, $contentType);
+        $this->deleteRewardAssignmentWithHttpInfo($reward_id, $assignment_id, $contentType);
     }
 
     /**
@@ -1004,17 +1004,17 @@ class RewardsApi
      *
      * Delete Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRewardAssignment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteRewardAssignmentWithHttpInfo($rewardId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment'][0])
+    public function deleteRewardAssignmentWithHttpInfo($reward_id, $assignment_id, string $contentType = self::contentTypes['deleteRewardAssignment'][0])
     {
-        $request = $this->deleteRewardAssignmentRequest($rewardId, $assignmentId, $contentType);
+        $request = $this->deleteRewardAssignmentRequest($reward_id, $assignment_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1065,16 +1065,16 @@ class RewardsApi
      *
      * Delete Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteRewardAssignmentAsync($rewardId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment'][0])
+    public function deleteRewardAssignmentAsync($reward_id, $assignment_id, string $contentType = self::contentTypes['deleteRewardAssignment'][0])
     {
-        return $this->deleteRewardAssignmentAsyncWithHttpInfo($rewardId, $assignmentId, $contentType)
+        return $this->deleteRewardAssignmentAsyncWithHttpInfo($reward_id, $assignment_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1087,17 +1087,17 @@ class RewardsApi
      *
      * Delete Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteRewardAssignmentAsyncWithHttpInfo($rewardId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment'][0])
+    public function deleteRewardAssignmentAsyncWithHttpInfo($reward_id, $assignment_id, string $contentType = self::contentTypes['deleteRewardAssignment'][0])
     {
         $returnType = '';
-        $request = $this->deleteRewardAssignmentRequest($rewardId, $assignmentId, $contentType);
+        $request = $this->deleteRewardAssignmentRequest($reward_id, $assignment_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1125,27 +1125,27 @@ class RewardsApi
     /**
      * Create request for operation 'deleteRewardAssignment'
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteRewardAssignmentRequest($rewardId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment'][0])
+    public function deleteRewardAssignmentRequest($reward_id, $assignment_id, string $contentType = self::contentTypes['deleteRewardAssignment'][0])
     {
 
-        // verify the required parameter 'rewardId' is set
-        if ($rewardId === null || (is_array($rewardId) && count($rewardId) === 0)) {
+        // verify the required parameter 'reward_id' is set
+        if ($reward_id === null || (is_array($reward_id) && count($reward_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $rewardId when calling deleteRewardAssignment'
+                'Missing the required parameter $reward_id when calling deleteRewardAssignment'
             );
         }
 
-        // verify the required parameter 'assignmentId' is set
-        if ($assignmentId === null || (is_array($assignmentId) && count($assignmentId) === 0)) {
+        // verify the required parameter 'assignment_id' is set
+        if ($assignment_id === null || (is_array($assignment_id) && count($assignment_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $assignmentId when calling deleteRewardAssignment'
+                'Missing the required parameter $assignment_id when calling deleteRewardAssignment'
             );
         }
 
@@ -1160,18 +1160,18 @@ class RewardsApi
 
 
         // path params
-        if ($rewardId !== null) {
+        if ($reward_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'rewardId' . '}',
-                ObjectSerializer::toPathValue($rewardId),
+                ObjectSerializer::toPathValue($reward_id),
                 $resourcePath
             );
         }
         // path params
-        if ($assignmentId !== null) {
+        if ($assignment_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'assignmentId' . '}',
-                ObjectSerializer::toPathValue($assignmentId),
+                ObjectSerializer::toPathValue($assignment_id),
                 $resourcePath
             );
         }
@@ -1245,16 +1245,16 @@ class RewardsApi
      *
      * Get Reward
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReward'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Reward
      */
-    public function getReward($rewardId, string $contentType = self::contentTypes['getReward'][0])
+    public function getReward($reward_id, string $contentType = self::contentTypes['getReward'][0])
     {
-        list($response) = $this->getRewardWithHttpInfo($rewardId, $contentType);
+        list($response) = $this->getRewardWithHttpInfo($reward_id, $contentType);
         return $response;
     }
 
@@ -1263,16 +1263,16 @@ class RewardsApi
      *
      * Get Reward
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReward'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Reward, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRewardWithHttpInfo($rewardId, string $contentType = self::contentTypes['getReward'][0])
+    public function getRewardWithHttpInfo($reward_id, string $contentType = self::contentTypes['getReward'][0])
     {
-        $request = $this->getRewardRequest($rewardId, $contentType);
+        $request = $this->getRewardRequest($reward_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1363,15 +1363,15 @@ class RewardsApi
      *
      * Get Reward
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRewardAsync($rewardId, string $contentType = self::contentTypes['getReward'][0])
+    public function getRewardAsync($reward_id, string $contentType = self::contentTypes['getReward'][0])
     {
-        return $this->getRewardAsyncWithHttpInfo($rewardId, $contentType)
+        return $this->getRewardAsyncWithHttpInfo($reward_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1384,16 +1384,16 @@ class RewardsApi
      *
      * Get Reward
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRewardAsyncWithHttpInfo($rewardId, string $contentType = self::contentTypes['getReward'][0])
+    public function getRewardAsyncWithHttpInfo($reward_id, string $contentType = self::contentTypes['getReward'][0])
     {
         $returnType = '\OpenAPI\Client\Model\Reward';
-        $request = $this->getRewardRequest($rewardId, $contentType);
+        $request = $this->getRewardRequest($reward_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1434,19 +1434,19 @@ class RewardsApi
     /**
      * Create request for operation 'getReward'
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getRewardRequest($rewardId, string $contentType = self::contentTypes['getReward'][0])
+    public function getRewardRequest($reward_id, string $contentType = self::contentTypes['getReward'][0])
     {
 
-        // verify the required parameter 'rewardId' is set
-        if ($rewardId === null || (is_array($rewardId) && count($rewardId) === 0)) {
+        // verify the required parameter 'reward_id' is set
+        if ($reward_id === null || (is_array($reward_id) && count($reward_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $rewardId when calling getReward'
+                'Missing the required parameter $reward_id when calling getReward'
             );
         }
 
@@ -1461,10 +1461,10 @@ class RewardsApi
 
 
         // path params
-        if ($rewardId !== null) {
+        if ($reward_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'rewardId' . '}',
-                ObjectSerializer::toPathValue($rewardId),
+                ObjectSerializer::toPathValue($reward_id),
                 $resourcePath
             );
         }
@@ -1538,17 +1538,17 @@ class RewardsApi
      *
      * Get Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\RewardsAssignmentsGetResponseBody
      */
-    public function getRewardAssignment($rewardId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment'][0])
+    public function getRewardAssignment($reward_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment'][0])
     {
-        list($response) = $this->getRewardAssignmentWithHttpInfo($rewardId, $assignmentId, $contentType);
+        list($response) = $this->getRewardAssignmentWithHttpInfo($reward_id, $assignment_id, $contentType);
         return $response;
     }
 
@@ -1557,17 +1557,17 @@ class RewardsApi
      *
      * Get Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\RewardsAssignmentsGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRewardAssignmentWithHttpInfo($rewardId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment'][0])
+    public function getRewardAssignmentWithHttpInfo($reward_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment'][0])
     {
-        $request = $this->getRewardAssignmentRequest($rewardId, $assignmentId, $contentType);
+        $request = $this->getRewardAssignmentRequest($reward_id, $assignment_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1658,16 +1658,16 @@ class RewardsApi
      *
      * Get Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRewardAssignmentAsync($rewardId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment'][0])
+    public function getRewardAssignmentAsync($reward_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment'][0])
     {
-        return $this->getRewardAssignmentAsyncWithHttpInfo($rewardId, $assignmentId, $contentType)
+        return $this->getRewardAssignmentAsyncWithHttpInfo($reward_id, $assignment_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1680,17 +1680,17 @@ class RewardsApi
      *
      * Get Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRewardAssignmentAsyncWithHttpInfo($rewardId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment'][0])
+    public function getRewardAssignmentAsyncWithHttpInfo($reward_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment'][0])
     {
         $returnType = '\OpenAPI\Client\Model\RewardsAssignmentsGetResponseBody';
-        $request = $this->getRewardAssignmentRequest($rewardId, $assignmentId, $contentType);
+        $request = $this->getRewardAssignmentRequest($reward_id, $assignment_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1731,27 +1731,27 @@ class RewardsApi
     /**
      * Create request for operation 'getRewardAssignment'
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getRewardAssignmentRequest($rewardId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment'][0])
+    public function getRewardAssignmentRequest($reward_id, $assignment_id, string $contentType = self::contentTypes['getRewardAssignment'][0])
     {
 
-        // verify the required parameter 'rewardId' is set
-        if ($rewardId === null || (is_array($rewardId) && count($rewardId) === 0)) {
+        // verify the required parameter 'reward_id' is set
+        if ($reward_id === null || (is_array($reward_id) && count($reward_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $rewardId when calling getRewardAssignment'
+                'Missing the required parameter $reward_id when calling getRewardAssignment'
             );
         }
 
-        // verify the required parameter 'assignmentId' is set
-        if ($assignmentId === null || (is_array($assignmentId) && count($assignmentId) === 0)) {
+        // verify the required parameter 'assignment_id' is set
+        if ($assignment_id === null || (is_array($assignment_id) && count($assignment_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $assignmentId when calling getRewardAssignment'
+                'Missing the required parameter $assignment_id when calling getRewardAssignment'
             );
         }
 
@@ -1766,18 +1766,18 @@ class RewardsApi
 
 
         // path params
-        if ($rewardId !== null) {
+        if ($reward_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'rewardId' . '}',
-                ObjectSerializer::toPathValue($rewardId),
+                ObjectSerializer::toPathValue($reward_id),
                 $resourcePath
             );
         }
         // path params
-        if ($assignmentId !== null) {
+        if ($assignment_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'assignmentId' . '}',
-                ObjectSerializer::toPathValue($assignmentId),
+                ObjectSerializer::toPathValue($assignment_id),
                 $resourcePath
             );
         }
@@ -1851,7 +1851,7 @@ class RewardsApi
      *
      * List Reward Assignments
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments'] to see the possible values for this operation
@@ -1860,9 +1860,9 @@ class RewardsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\RewardsAssignmentsListResponseBody
      */
-    public function listRewardAssignments($rewardId, $limit = null, $page = null, string $contentType = self::contentTypes['listRewardAssignments'][0])
+    public function listRewardAssignments($reward_id, $limit = null, $page = null, string $contentType = self::contentTypes['listRewardAssignments'][0])
     {
-        list($response) = $this->listRewardAssignmentsWithHttpInfo($rewardId, $limit, $page, $contentType);
+        list($response) = $this->listRewardAssignmentsWithHttpInfo($reward_id, $limit, $page, $contentType);
         return $response;
     }
 
@@ -1871,7 +1871,7 @@ class RewardsApi
      *
      * List Reward Assignments
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments'] to see the possible values for this operation
@@ -1880,9 +1880,9 @@ class RewardsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\RewardsAssignmentsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listRewardAssignmentsWithHttpInfo($rewardId, $limit = null, $page = null, string $contentType = self::contentTypes['listRewardAssignments'][0])
+    public function listRewardAssignmentsWithHttpInfo($reward_id, $limit = null, $page = null, string $contentType = self::contentTypes['listRewardAssignments'][0])
     {
-        $request = $this->listRewardAssignmentsRequest($rewardId, $limit, $page, $contentType);
+        $request = $this->listRewardAssignmentsRequest($reward_id, $limit, $page, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1973,7 +1973,7 @@ class RewardsApi
      *
      * List Reward Assignments
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments'] to see the possible values for this operation
@@ -1981,9 +1981,9 @@ class RewardsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listRewardAssignmentsAsync($rewardId, $limit = null, $page = null, string $contentType = self::contentTypes['listRewardAssignments'][0])
+    public function listRewardAssignmentsAsync($reward_id, $limit = null, $page = null, string $contentType = self::contentTypes['listRewardAssignments'][0])
     {
-        return $this->listRewardAssignmentsAsyncWithHttpInfo($rewardId, $limit, $page, $contentType)
+        return $this->listRewardAssignmentsAsyncWithHttpInfo($reward_id, $limit, $page, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1996,7 +1996,7 @@ class RewardsApi
      *
      * List Reward Assignments
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments'] to see the possible values for this operation
@@ -2004,10 +2004,10 @@ class RewardsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listRewardAssignmentsAsyncWithHttpInfo($rewardId, $limit = null, $page = null, string $contentType = self::contentTypes['listRewardAssignments'][0])
+    public function listRewardAssignmentsAsyncWithHttpInfo($reward_id, $limit = null, $page = null, string $contentType = self::contentTypes['listRewardAssignments'][0])
     {
         $returnType = '\OpenAPI\Client\Model\RewardsAssignmentsListResponseBody';
-        $request = $this->listRewardAssignmentsRequest($rewardId, $limit, $page, $contentType);
+        $request = $this->listRewardAssignmentsRequest($reward_id, $limit, $page, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2048,7 +2048,7 @@ class RewardsApi
     /**
      * Create request for operation 'listRewardAssignments'
      *
-     * @param  string $rewardId A unique reward ID. (required)
+     * @param  string $reward_id A unique reward ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewardAssignments'] to see the possible values for this operation
@@ -2056,13 +2056,13 @@ class RewardsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listRewardAssignmentsRequest($rewardId, $limit = null, $page = null, string $contentType = self::contentTypes['listRewardAssignments'][0])
+    public function listRewardAssignmentsRequest($reward_id, $limit = null, $page = null, string $contentType = self::contentTypes['listRewardAssignments'][0])
     {
 
-        // verify the required parameter 'rewardId' is set
-        if ($rewardId === null || (is_array($rewardId) && count($rewardId) === 0)) {
+        // verify the required parameter 'reward_id' is set
+        if ($reward_id === null || (is_array($reward_id) && count($reward_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $rewardId when calling listRewardAssignments'
+                'Missing the required parameter $reward_id when calling listRewardAssignments'
             );
         }
 
@@ -2109,10 +2109,10 @@ class RewardsApi
 
 
         // path params
-        if ($rewardId !== null) {
+        if ($reward_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'rewardId' . '}',
-                ObjectSerializer::toPathValue($rewardId),
+                ObjectSerializer::toPathValue($reward_id),
                 $resourcePath
             );
         }
@@ -2188,16 +2188,16 @@ class RewardsApi
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignmentId A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID. (optional)
+     * @param  string $assignment_id A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewards'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\RewardsListResponseBody
      */
-    public function listRewards($limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewards'][0])
+    public function listRewards($limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewards'][0])
     {
-        list($response) = $this->listRewardsWithHttpInfo($limit, $page, $assignmentId, $contentType);
+        list($response) = $this->listRewardsWithHttpInfo($limit, $page, $assignment_id, $contentType);
         return $response;
     }
 
@@ -2208,16 +2208,16 @@ class RewardsApi
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignmentId A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID. (optional)
+     * @param  string $assignment_id A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewards'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\RewardsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listRewardsWithHttpInfo($limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewards'][0])
+    public function listRewardsWithHttpInfo($limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewards'][0])
     {
-        $request = $this->listRewardsRequest($limit, $page, $assignmentId, $contentType);
+        $request = $this->listRewardsRequest($limit, $page, $assignment_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2310,15 +2310,15 @@ class RewardsApi
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignmentId A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID. (optional)
+     * @param  string $assignment_id A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listRewardsAsync($limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewards'][0])
+    public function listRewardsAsync($limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewards'][0])
     {
-        return $this->listRewardsAsyncWithHttpInfo($limit, $page, $assignmentId, $contentType)
+        return $this->listRewardsAsyncWithHttpInfo($limit, $page, $assignment_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2333,16 +2333,16 @@ class RewardsApi
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignmentId A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID. (optional)
+     * @param  string $assignment_id A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listRewardsAsyncWithHttpInfo($limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewards'][0])
+    public function listRewardsAsyncWithHttpInfo($limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewards'][0])
     {
         $returnType = '\OpenAPI\Client\Model\RewardsListResponseBody';
-        $request = $this->listRewardsRequest($limit, $page, $assignmentId, $contentType);
+        $request = $this->listRewardsRequest($limit, $page, $assignment_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2385,13 +2385,13 @@ class RewardsApi
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  string $assignmentId A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID. (optional)
+     * @param  string $assignment_id A unique reward assignment ID. Use this parameter to get the reward details in the context of an assignment ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRewards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listRewardsRequest($limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewards'][0])
+    public function listRewardsRequest($limit = null, $page = null, $assignment_id = null, string $contentType = self::contentTypes['listRewards'][0])
     {
 
         if ($limit !== null && $limit > 100) {
@@ -2437,7 +2437,7 @@ class RewardsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $assignmentId,
+            $assignment_id,
             'assignment_id', // param base name
             'string', // openApiType
             'form', // style
@@ -2516,17 +2516,17 @@ class RewardsApi
      *
      * Update Reward
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsUpdateRequestBody $rewardsUpdateRequestBody Define the parameters to be updated for the reward. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsUpdateRequestBody $rewards_update_request_body Define the parameters to be updated for the reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateReward'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\RewardsUpdateResponseBody
      */
-    public function updateReward($rewardId, $rewardsUpdateRequestBody = null, string $contentType = self::contentTypes['updateReward'][0])
+    public function updateReward($reward_id, $rewards_update_request_body = null, string $contentType = self::contentTypes['updateReward'][0])
     {
-        list($response) = $this->updateRewardWithHttpInfo($rewardId, $rewardsUpdateRequestBody, $contentType);
+        list($response) = $this->updateRewardWithHttpInfo($reward_id, $rewards_update_request_body, $contentType);
         return $response;
     }
 
@@ -2535,17 +2535,17 @@ class RewardsApi
      *
      * Update Reward
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsUpdateRequestBody $rewardsUpdateRequestBody Define the parameters to be updated for the reward. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsUpdateRequestBody $rewards_update_request_body Define the parameters to be updated for the reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateReward'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\RewardsUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateRewardWithHttpInfo($rewardId, $rewardsUpdateRequestBody = null, string $contentType = self::contentTypes['updateReward'][0])
+    public function updateRewardWithHttpInfo($reward_id, $rewards_update_request_body = null, string $contentType = self::contentTypes['updateReward'][0])
     {
-        $request = $this->updateRewardRequest($rewardId, $rewardsUpdateRequestBody, $contentType);
+        $request = $this->updateRewardRequest($reward_id, $rewards_update_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2636,16 +2636,16 @@ class RewardsApi
      *
      * Update Reward
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsUpdateRequestBody $rewardsUpdateRequestBody Define the parameters to be updated for the reward. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsUpdateRequestBody $rewards_update_request_body Define the parameters to be updated for the reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateRewardAsync($rewardId, $rewardsUpdateRequestBody = null, string $contentType = self::contentTypes['updateReward'][0])
+    public function updateRewardAsync($reward_id, $rewards_update_request_body = null, string $contentType = self::contentTypes['updateReward'][0])
     {
-        return $this->updateRewardAsyncWithHttpInfo($rewardId, $rewardsUpdateRequestBody, $contentType)
+        return $this->updateRewardAsyncWithHttpInfo($reward_id, $rewards_update_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2658,17 +2658,17 @@ class RewardsApi
      *
      * Update Reward
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsUpdateRequestBody $rewardsUpdateRequestBody Define the parameters to be updated for the reward. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsUpdateRequestBody $rewards_update_request_body Define the parameters to be updated for the reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateRewardAsyncWithHttpInfo($rewardId, $rewardsUpdateRequestBody = null, string $contentType = self::contentTypes['updateReward'][0])
+    public function updateRewardAsyncWithHttpInfo($reward_id, $rewards_update_request_body = null, string $contentType = self::contentTypes['updateReward'][0])
     {
         $returnType = '\OpenAPI\Client\Model\RewardsUpdateResponseBody';
-        $request = $this->updateRewardRequest($rewardId, $rewardsUpdateRequestBody, $contentType);
+        $request = $this->updateRewardRequest($reward_id, $rewards_update_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2709,20 +2709,20 @@ class RewardsApi
     /**
      * Create request for operation 'updateReward'
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsUpdateRequestBody $rewardsUpdateRequestBody Define the parameters to be updated for the reward. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsUpdateRequestBody $rewards_update_request_body Define the parameters to be updated for the reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateRewardRequest($rewardId, $rewardsUpdateRequestBody = null, string $contentType = self::contentTypes['updateReward'][0])
+    public function updateRewardRequest($reward_id, $rewards_update_request_body = null, string $contentType = self::contentTypes['updateReward'][0])
     {
 
-        // verify the required parameter 'rewardId' is set
-        if ($rewardId === null || (is_array($rewardId) && count($rewardId) === 0)) {
+        // verify the required parameter 'reward_id' is set
+        if ($reward_id === null || (is_array($reward_id) && count($reward_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $rewardId when calling updateReward'
+                'Missing the required parameter $reward_id when calling updateReward'
             );
         }
 
@@ -2738,10 +2738,10 @@ class RewardsApi
 
 
         // path params
-        if ($rewardId !== null) {
+        if ($reward_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'rewardId' . '}',
-                ObjectSerializer::toPathValue($rewardId),
+                ObjectSerializer::toPathValue($reward_id),
                 $resourcePath
             );
         }
@@ -2754,12 +2754,12 @@ class RewardsApi
         );
 
         // for model (json/xml)
-        if (isset($rewardsUpdateRequestBody)) {
+        if (isset($rewards_update_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($rewardsUpdateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($rewards_update_request_body));
             } else {
-                $httpBody = $rewardsUpdateRequestBody;
+                $httpBody = $rewards_update_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2822,18 +2822,18 @@ class RewardsApi
      *
      * Update Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsUpdateRequestBody $rewardsAssignmentsUpdateRequestBody Define the number of points required to exchange for the reward. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsUpdateRequestBody $rewards_assignments_update_request_body Define the number of points required to exchange for the reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRewardAssignment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\RewardsAssignmentsUpdateResponseBody
      */
-    public function updateRewardAssignment($rewardId, $assignmentId, $rewardsAssignmentsUpdateRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment'][0])
+    public function updateRewardAssignment($reward_id, $assignment_id, $rewards_assignments_update_request_body = null, string $contentType = self::contentTypes['updateRewardAssignment'][0])
     {
-        list($response) = $this->updateRewardAssignmentWithHttpInfo($rewardId, $assignmentId, $rewardsAssignmentsUpdateRequestBody, $contentType);
+        list($response) = $this->updateRewardAssignmentWithHttpInfo($reward_id, $assignment_id, $rewards_assignments_update_request_body, $contentType);
         return $response;
     }
 
@@ -2842,18 +2842,18 @@ class RewardsApi
      *
      * Update Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsUpdateRequestBody $rewardsAssignmentsUpdateRequestBody Define the number of points required to exchange for the reward. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsUpdateRequestBody $rewards_assignments_update_request_body Define the number of points required to exchange for the reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRewardAssignment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\RewardsAssignmentsUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateRewardAssignmentWithHttpInfo($rewardId, $assignmentId, $rewardsAssignmentsUpdateRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment'][0])
+    public function updateRewardAssignmentWithHttpInfo($reward_id, $assignment_id, $rewards_assignments_update_request_body = null, string $contentType = self::contentTypes['updateRewardAssignment'][0])
     {
-        $request = $this->updateRewardAssignmentRequest($rewardId, $assignmentId, $rewardsAssignmentsUpdateRequestBody, $contentType);
+        $request = $this->updateRewardAssignmentRequest($reward_id, $assignment_id, $rewards_assignments_update_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2944,17 +2944,17 @@ class RewardsApi
      *
      * Update Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsUpdateRequestBody $rewardsAssignmentsUpdateRequestBody Define the number of points required to exchange for the reward. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsUpdateRequestBody $rewards_assignments_update_request_body Define the number of points required to exchange for the reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateRewardAssignmentAsync($rewardId, $assignmentId, $rewardsAssignmentsUpdateRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment'][0])
+    public function updateRewardAssignmentAsync($reward_id, $assignment_id, $rewards_assignments_update_request_body = null, string $contentType = self::contentTypes['updateRewardAssignment'][0])
     {
-        return $this->updateRewardAssignmentAsyncWithHttpInfo($rewardId, $assignmentId, $rewardsAssignmentsUpdateRequestBody, $contentType)
+        return $this->updateRewardAssignmentAsyncWithHttpInfo($reward_id, $assignment_id, $rewards_assignments_update_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2967,18 +2967,18 @@ class RewardsApi
      *
      * Update Reward Assignment
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsUpdateRequestBody $rewardsAssignmentsUpdateRequestBody Define the number of points required to exchange for the reward. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsUpdateRequestBody $rewards_assignments_update_request_body Define the number of points required to exchange for the reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateRewardAssignmentAsyncWithHttpInfo($rewardId, $assignmentId, $rewardsAssignmentsUpdateRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment'][0])
+    public function updateRewardAssignmentAsyncWithHttpInfo($reward_id, $assignment_id, $rewards_assignments_update_request_body = null, string $contentType = self::contentTypes['updateRewardAssignment'][0])
     {
         $returnType = '\OpenAPI\Client\Model\RewardsAssignmentsUpdateResponseBody';
-        $request = $this->updateRewardAssignmentRequest($rewardId, $assignmentId, $rewardsAssignmentsUpdateRequestBody, $contentType);
+        $request = $this->updateRewardAssignmentRequest($reward_id, $assignment_id, $rewards_assignments_update_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3019,28 +3019,28 @@ class RewardsApi
     /**
      * Create request for operation 'updateRewardAssignment'
      *
-     * @param  string $rewardId A unique reward ID. (required)
-     * @param  string $assignmentId A unique reward assignment ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsUpdateRequestBody $rewardsAssignmentsUpdateRequestBody Define the number of points required to exchange for the reward. (optional)
+     * @param  string $reward_id A unique reward ID. (required)
+     * @param  string $assignment_id A unique reward assignment ID. (required)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsUpdateRequestBody $rewards_assignments_update_request_body Define the number of points required to exchange for the reward. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateRewardAssignmentRequest($rewardId, $assignmentId, $rewardsAssignmentsUpdateRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment'][0])
+    public function updateRewardAssignmentRequest($reward_id, $assignment_id, $rewards_assignments_update_request_body = null, string $contentType = self::contentTypes['updateRewardAssignment'][0])
     {
 
-        // verify the required parameter 'rewardId' is set
-        if ($rewardId === null || (is_array($rewardId) && count($rewardId) === 0)) {
+        // verify the required parameter 'reward_id' is set
+        if ($reward_id === null || (is_array($reward_id) && count($reward_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $rewardId when calling updateRewardAssignment'
+                'Missing the required parameter $reward_id when calling updateRewardAssignment'
             );
         }
 
-        // verify the required parameter 'assignmentId' is set
-        if ($assignmentId === null || (is_array($assignmentId) && count($assignmentId) === 0)) {
+        // verify the required parameter 'assignment_id' is set
+        if ($assignment_id === null || (is_array($assignment_id) && count($assignment_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $assignmentId when calling updateRewardAssignment'
+                'Missing the required parameter $assignment_id when calling updateRewardAssignment'
             );
         }
 
@@ -3056,18 +3056,18 @@ class RewardsApi
 
 
         // path params
-        if ($rewardId !== null) {
+        if ($reward_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'rewardId' . '}',
-                ObjectSerializer::toPathValue($rewardId),
+                ObjectSerializer::toPathValue($reward_id),
                 $resourcePath
             );
         }
         // path params
-        if ($assignmentId !== null) {
+        if ($assignment_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'assignmentId' . '}',
-                ObjectSerializer::toPathValue($assignmentId),
+                ObjectSerializer::toPathValue($assignment_id),
                 $resourcePath
             );
         }
@@ -3080,12 +3080,12 @@ class RewardsApi
         );
 
         // for model (json/xml)
-        if (isset($rewardsAssignmentsUpdateRequestBody)) {
+        if (isset($rewards_assignments_update_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($rewardsAssignmentsUpdateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($rewards_assignments_update_request_body));
             } else {
-                $httpBody = $rewardsAssignmentsUpdateRequestBody;
+                $httpBody = $rewards_assignments_update_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

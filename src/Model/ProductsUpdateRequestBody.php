@@ -63,7 +63,7 @@ class ProductsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSer
         'price' => 'int',
         'attributes' => 'string[]',
         'metadata' => 'object',
-        'imageUrl' => 'string'
+        'image_url' => 'string'
     ];
 
     /**
@@ -78,7 +78,7 @@ class ProductsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSer
         'price' => null,
         'attributes' => null,
         'metadata' => null,
-        'imageUrl' => null
+        'image_url' => null
     ];
 
     /**
@@ -91,7 +91,7 @@ class ProductsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSer
 		'price' => true,
 		'attributes' => true,
 		'metadata' => true,
-		'imageUrl' => true
+		'image_url' => true
     ];
 
     /**
@@ -184,7 +184,7 @@ class ProductsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSer
         'price' => 'price',
         'attributes' => 'attributes',
         'metadata' => 'metadata',
-        'imageUrl' => 'image_url'
+        'image_url' => 'image_url'
     ];
 
     /**
@@ -197,7 +197,7 @@ class ProductsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSer
         'price' => 'setPrice',
         'attributes' => 'setAttributes',
         'metadata' => 'setMetadata',
-        'imageUrl' => 'setImageUrl'
+        'image_url' => 'setImageUrl'
     ];
 
     /**
@@ -210,7 +210,7 @@ class ProductsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSer
         'price' => 'getPrice',
         'attributes' => 'getAttributes',
         'metadata' => 'getMetadata',
-        'imageUrl' => 'getImageUrl'
+        'image_url' => 'getImageUrl'
     ];
 
     /**
@@ -274,7 +274,7 @@ class ProductsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('attributes', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('imageUrl', $data ?? [], null);
+        $this->setIfExists('image_url', $data ?? [], null);
     }
 
     /**
@@ -456,35 +456,35 @@ class ProductsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets imageUrl
+     * Gets image_url
      *
      * @return string|null
      */
     public function getImageUrl()
     {
-        return $this->container['imageUrl'];
+        return $this->container['image_url'];
     }
 
     /**
-     * Sets imageUrl
+     * Sets image_url
      *
-     * @param string|null $imageUrl The HTTPS URL pointing to the .png or .jpg file that will be used to render the product image.
+     * @param string|null $image_url The HTTPS URL pointing to the .png or .jpg file that will be used to render the product image.
      *
      * @return self
      */
-    public function setImageUrl($imageUrl)
+    public function setImageUrl($image_url)
     {
-        if (is_null($imageUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'imageUrl');
+        if (is_null($image_url)) {
+            array_push($this->openAPINullablesSetToNull, 'image_url');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('imageUrl', $nullablesSetToNull);
+            $index = array_search('image_url', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['imageUrl'] = $imageUrl;
+        $this->container['image_url'] = $image_url;
 
         return $this;
     }

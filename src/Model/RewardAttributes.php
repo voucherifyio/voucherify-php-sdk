@@ -59,7 +59,7 @@ class RewardAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'imageUrl' => 'string',
+        'image_url' => 'string',
         'description' => 'string'
     ];
 
@@ -71,7 +71,7 @@ class RewardAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'imageUrl' => null,
+        'image_url' => null,
         'description' => null
     ];
 
@@ -81,7 +81,7 @@ class RewardAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'imageUrl' => true,
+        'image_url' => true,
 		'description' => true
     ];
 
@@ -171,7 +171,7 @@ class RewardAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'imageUrl' => 'image_url',
+        'image_url' => 'image_url',
         'description' => 'description'
     ];
 
@@ -181,7 +181,7 @@ class RewardAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'imageUrl' => 'setImageUrl',
+        'image_url' => 'setImageUrl',
         'description' => 'setDescription'
     ];
 
@@ -191,7 +191,7 @@ class RewardAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'imageUrl' => 'getImageUrl',
+        'image_url' => 'getImageUrl',
         'description' => 'getDescription'
     ];
 
@@ -252,7 +252,7 @@ class RewardAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('imageUrl', $data ?? [], null);
+        $this->setIfExists('image_url', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
     }
 
@@ -299,35 +299,35 @@ class RewardAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets imageUrl
+     * Gets image_url
      *
      * @return string|null
      */
     public function getImageUrl()
     {
-        return $this->container['imageUrl'];
+        return $this->container['image_url'];
     }
 
     /**
-     * Sets imageUrl
+     * Sets image_url
      *
-     * @param string|null $imageUrl The HTTPS URL pointing to the .png or .jpg file.
+     * @param string|null $image_url The HTTPS URL pointing to the .png or .jpg file.
      *
      * @return self
      */
-    public function setImageUrl($imageUrl)
+    public function setImageUrl($image_url)
     {
-        if (is_null($imageUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'imageUrl');
+        if (is_null($image_url)) {
+            array_push($this->openAPINullablesSetToNull, 'image_url');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('imageUrl', $nullablesSetToNull);
+            $index = array_search('image_url', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['imageUrl'] = $imageUrl;
+        $this->container['image_url'] = $image_url;
 
         return $this;
     }

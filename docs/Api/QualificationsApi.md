@@ -10,7 +10,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `checkEligibility()`
 
 ```php
-checkEligibility($qualificationsCheckEligibilityRequestBody): \OpenAPI\Client\Model\QualificationsCheckEligibilityResponseBody
+checkEligibility($qualifications_check_eligibility_request_body): \OpenAPI\Client\Model\QualificationsCheckEligibilityResponseBody
 ```
 
 Check Eligibility
@@ -41,10 +41,10 @@ $apiInstance = new OpenAPI\Client\Api\QualificationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$qualificationsCheckEligibilityRequestBody = new \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody(); // \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody | Define order and customer context.
+$qualifications_check_eligibility_request_body = new \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody(); // \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody | Define order and customer context.
 
 try {
-    $result = $apiInstance->checkEligibility($qualificationsCheckEligibilityRequestBody);
+    $result = $apiInstance->checkEligibility($qualifications_check_eligibility_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QualificationsApi->checkEligibility: ', $e->getMessage(), PHP_EOL;
@@ -55,7 +55,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **qualificationsCheckEligibilityRequestBody** | [**\OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody**](../Model/QualificationsCheckEligibilityRequestBody.md)| Define order and customer context. | [optional] |
+| **qualifications_check_eligibility_request_body** | [**\OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody**](../Model/QualificationsCheckEligibilityRequestBody.md)| Define order and customer context. | [optional] |
 
 ### Return type
 

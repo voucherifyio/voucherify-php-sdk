@@ -60,9 +60,9 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
       */
     protected static $openAPITypes = [
         'object' => 'string',
-        'dataRef' => 'string',
+        'data_ref' => 'string',
         'data' => '\OpenAPI\Client\Model\VoucherTransaction[]',
-        'hasMore' => 'bool'
+        'has_more' => 'bool'
     ];
 
     /**
@@ -74,9 +74,9 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
       */
     protected static $openAPIFormats = [
         'object' => null,
-        'dataRef' => null,
+        'data_ref' => null,
         'data' => null,
-        'hasMore' => null
+        'has_more' => null
     ];
 
     /**
@@ -86,9 +86,9 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
       */
     protected static array $openAPINullables = [
         'object' => true,
-		'dataRef' => true,
+		'data_ref' => true,
 		'data' => true,
-		'hasMore' => true
+		'has_more' => true
     ];
 
     /**
@@ -178,9 +178,9 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
      */
     protected static $attributeMap = [
         'object' => 'object',
-        'dataRef' => 'data_ref',
+        'data_ref' => 'data_ref',
         'data' => 'data',
-        'hasMore' => 'has_more'
+        'has_more' => 'has_more'
     ];
 
     /**
@@ -190,9 +190,9 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
      */
     protected static $setters = [
         'object' => 'setObject',
-        'dataRef' => 'setDataRef',
+        'data_ref' => 'setDataRef',
         'data' => 'setData',
-        'hasMore' => 'setHasMore'
+        'has_more' => 'setHasMore'
     ];
 
     /**
@@ -202,9 +202,9 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
      */
     protected static $getters = [
         'object' => 'getObject',
-        'dataRef' => 'getDataRef',
+        'data_ref' => 'getDataRef',
         'data' => 'getData',
-        'hasMore' => 'getHasMore'
+        'has_more' => 'getHasMore'
     ];
 
     /**
@@ -265,9 +265,9 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
     public function __construct(array $data = null)
     {
         $this->setIfExists('object', $data ?? [], 'list');
-        $this->setIfExists('dataRef', $data ?? [], 'data');
+        $this->setIfExists('data_ref', $data ?? [], 'data');
         $this->setIfExists('data', $data ?? [], null);
-        $this->setIfExists('hasMore', $data ?? [], null);
+        $this->setIfExists('has_more', $data ?? [], null);
     }
 
     /**
@@ -347,35 +347,35 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets dataRef
+     * Gets data_ref
      *
      * @return string|null
      */
     public function getDataRef()
     {
-        return $this->container['dataRef'];
+        return $this->container['data_ref'];
     }
 
     /**
-     * Sets dataRef
+     * Sets data_ref
      *
-     * @param string|null $dataRef Identifies the name of the attribute that contains the array of transaction objects.
+     * @param string|null $data_ref Identifies the name of the attribute that contains the array of transaction objects.
      *
      * @return self
      */
-    public function setDataRef($dataRef)
+    public function setDataRef($data_ref)
     {
-        if (is_null($dataRef)) {
-            array_push($this->openAPINullablesSetToNull, 'dataRef');
+        if (is_null($data_ref)) {
+            array_push($this->openAPINullablesSetToNull, 'data_ref');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dataRef', $nullablesSetToNull);
+            $index = array_search('data_ref', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['dataRef'] = $dataRef;
+        $this->container['data_ref'] = $data_ref;
 
         return $this;
     }
@@ -415,35 +415,35 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets hasMore
+     * Gets has_more
      *
      * @return bool|null
      */
     public function getHasMore()
     {
-        return $this->container['hasMore'];
+        return $this->container['has_more'];
     }
 
     /**
-     * Sets hasMore
+     * Sets has_more
      *
-     * @param bool|null $hasMore As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different page or a different start date filter) to get more records returned in the results.
+     * @param bool|null $has_more As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different page or a different start date filter) to get more records returned in the results.
      *
      * @return self
      */
-    public function setHasMore($hasMore)
+    public function setHasMore($has_more)
     {
-        if (is_null($hasMore)) {
-            array_push($this->openAPINullablesSetToNull, 'hasMore');
+        if (is_null($has_more)) {
+            array_push($this->openAPINullablesSetToNull, 'has_more');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('hasMore', $nullablesSetToNull);
+            $index = array_search('has_more', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['hasMore'] = $hasMore;
+        $this->container['has_more'] = $has_more;
 
         return $this;
     }

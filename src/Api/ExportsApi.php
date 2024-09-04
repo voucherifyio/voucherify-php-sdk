@@ -140,16 +140,16 @@ class ExportsApi
      *
      * Create Export
      *
-     * @param  \OpenAPI\Client\Model\ExportsCreateRequestBody $exportsCreateRequestBody Specify the details of the export that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\ExportsCreateRequestBody $exports_create_request_body Specify the details of the export that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createExport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ExportsCreateResponseBody
      */
-    public function createExport($exportsCreateRequestBody = null, string $contentType = self::contentTypes['createExport'][0])
+    public function createExport($exports_create_request_body = null, string $contentType = self::contentTypes['createExport'][0])
     {
-        list($response) = $this->createExportWithHttpInfo($exportsCreateRequestBody, $contentType);
+        list($response) = $this->createExportWithHttpInfo($exports_create_request_body, $contentType);
         return $response;
     }
 
@@ -158,16 +158,16 @@ class ExportsApi
      *
      * Create Export
      *
-     * @param  \OpenAPI\Client\Model\ExportsCreateRequestBody $exportsCreateRequestBody Specify the details of the export that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\ExportsCreateRequestBody $exports_create_request_body Specify the details of the export that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createExport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ExportsCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createExportWithHttpInfo($exportsCreateRequestBody = null, string $contentType = self::contentTypes['createExport'][0])
+    public function createExportWithHttpInfo($exports_create_request_body = null, string $contentType = self::contentTypes['createExport'][0])
     {
-        $request = $this->createExportRequest($exportsCreateRequestBody, $contentType);
+        $request = $this->createExportRequest($exports_create_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -258,15 +258,15 @@ class ExportsApi
      *
      * Create Export
      *
-     * @param  \OpenAPI\Client\Model\ExportsCreateRequestBody $exportsCreateRequestBody Specify the details of the export that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\ExportsCreateRequestBody $exports_create_request_body Specify the details of the export that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createExportAsync($exportsCreateRequestBody = null, string $contentType = self::contentTypes['createExport'][0])
+    public function createExportAsync($exports_create_request_body = null, string $contentType = self::contentTypes['createExport'][0])
     {
-        return $this->createExportAsyncWithHttpInfo($exportsCreateRequestBody, $contentType)
+        return $this->createExportAsyncWithHttpInfo($exports_create_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -279,16 +279,16 @@ class ExportsApi
      *
      * Create Export
      *
-     * @param  \OpenAPI\Client\Model\ExportsCreateRequestBody $exportsCreateRequestBody Specify the details of the export that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\ExportsCreateRequestBody $exports_create_request_body Specify the details of the export that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createExportAsyncWithHttpInfo($exportsCreateRequestBody = null, string $contentType = self::contentTypes['createExport'][0])
+    public function createExportAsyncWithHttpInfo($exports_create_request_body = null, string $contentType = self::contentTypes['createExport'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ExportsCreateResponseBody';
-        $request = $this->createExportRequest($exportsCreateRequestBody, $contentType);
+        $request = $this->createExportRequest($exports_create_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -329,13 +329,13 @@ class ExportsApi
     /**
      * Create request for operation 'createExport'
      *
-     * @param  \OpenAPI\Client\Model\ExportsCreateRequestBody $exportsCreateRequestBody Specify the details of the export that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\ExportsCreateRequestBody $exports_create_request_body Specify the details of the export that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createExportRequest($exportsCreateRequestBody = null, string $contentType = self::contentTypes['createExport'][0])
+    public function createExportRequest($exports_create_request_body = null, string $contentType = self::contentTypes['createExport'][0])
     {
 
 
@@ -358,12 +358,12 @@ class ExportsApi
         );
 
         // for model (json/xml)
-        if (isset($exportsCreateRequestBody)) {
+        if (isset($exports_create_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($exportsCreateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($exports_create_request_body));
             } else {
-                $httpBody = $exportsCreateRequestBody;
+                $httpBody = $exports_create_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -426,16 +426,16 @@ class ExportsApi
      *
      * Delete Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $export_id Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteExport($exportId, string $contentType = self::contentTypes['deleteExport'][0])
+    public function deleteExport($export_id, string $contentType = self::contentTypes['deleteExport'][0])
     {
-        $this->deleteExportWithHttpInfo($exportId, $contentType);
+        $this->deleteExportWithHttpInfo($export_id, $contentType);
     }
 
     /**
@@ -443,16 +443,16 @@ class ExportsApi
      *
      * Delete Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $export_id Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteExportWithHttpInfo($exportId, string $contentType = self::contentTypes['deleteExport'][0])
+    public function deleteExportWithHttpInfo($export_id, string $contentType = self::contentTypes['deleteExport'][0])
     {
-        $request = $this->deleteExportRequest($exportId, $contentType);
+        $request = $this->deleteExportRequest($export_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -503,15 +503,15 @@ class ExportsApi
      *
      * Delete Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $export_id Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteExportAsync($exportId, string $contentType = self::contentTypes['deleteExport'][0])
+    public function deleteExportAsync($export_id, string $contentType = self::contentTypes['deleteExport'][0])
     {
-        return $this->deleteExportAsyncWithHttpInfo($exportId, $contentType)
+        return $this->deleteExportAsyncWithHttpInfo($export_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -524,16 +524,16 @@ class ExportsApi
      *
      * Delete Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $export_id Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteExportAsyncWithHttpInfo($exportId, string $contentType = self::contentTypes['deleteExport'][0])
+    public function deleteExportAsyncWithHttpInfo($export_id, string $contentType = self::contentTypes['deleteExport'][0])
     {
         $returnType = '';
-        $request = $this->deleteExportRequest($exportId, $contentType);
+        $request = $this->deleteExportRequest($export_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -561,19 +561,19 @@ class ExportsApi
     /**
      * Create request for operation 'deleteExport'
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $export_id Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteExportRequest($exportId, string $contentType = self::contentTypes['deleteExport'][0])
+    public function deleteExportRequest($export_id, string $contentType = self::contentTypes['deleteExport'][0])
     {
 
-        // verify the required parameter 'exportId' is set
-        if ($exportId === null || (is_array($exportId) && count($exportId) === 0)) {
+        // verify the required parameter 'export_id' is set
+        if ($export_id === null || (is_array($export_id) && count($export_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $exportId when calling deleteExport'
+                'Missing the required parameter $export_id when calling deleteExport'
             );
         }
 
@@ -588,10 +588,10 @@ class ExportsApi
 
 
         // path params
-        if ($exportId !== null) {
+        if ($export_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'exportId' . '}',
-                ObjectSerializer::toPathValue($exportId),
+                ObjectSerializer::toPathValue($export_id),
                 $resourcePath
             );
         }
@@ -665,7 +665,7 @@ class ExportsApi
      *
      * Download Export
      *
-     * @param  string $exportId Unique export object ID. (required)
+     * @param  string $export_id Unique export object ID. (required)
      * @param  string $token Token that was issued to the export, to get this token, get the export first (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadExport'] to see the possible values for this operation
      *
@@ -673,9 +673,9 @@ class ExportsApi
      * @throws \InvalidArgumentException
      * @return string
      */
-    public function downloadExport($exportId, $token = null, string $contentType = self::contentTypes['downloadExport'][0])
+    public function downloadExport($export_id, $token = null, string $contentType = self::contentTypes['downloadExport'][0])
     {
-        list($response) = $this->downloadExportWithHttpInfo($exportId, $token, $contentType);
+        list($response) = $this->downloadExportWithHttpInfo($export_id, $token, $contentType);
         return $response;
     }
 
@@ -684,7 +684,7 @@ class ExportsApi
      *
      * Download Export
      *
-     * @param  string $exportId Unique export object ID. (required)
+     * @param  string $export_id Unique export object ID. (required)
      * @param  string $token Token that was issued to the export, to get this token, get the export first (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadExport'] to see the possible values for this operation
      *
@@ -692,9 +692,9 @@ class ExportsApi
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function downloadExportWithHttpInfo($exportId, $token = null, string $contentType = self::contentTypes['downloadExport'][0])
+    public function downloadExportWithHttpInfo($export_id, $token = null, string $contentType = self::contentTypes['downloadExport'][0])
     {
-        $request = $this->downloadExportRequest($exportId, $token, $contentType);
+        $request = $this->downloadExportRequest($export_id, $token, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -785,16 +785,16 @@ class ExportsApi
      *
      * Download Export
      *
-     * @param  string $exportId Unique export object ID. (required)
+     * @param  string $export_id Unique export object ID. (required)
      * @param  string $token Token that was issued to the export, to get this token, get the export first (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadExportAsync($exportId, $token = null, string $contentType = self::contentTypes['downloadExport'][0])
+    public function downloadExportAsync($export_id, $token = null, string $contentType = self::contentTypes['downloadExport'][0])
     {
-        return $this->downloadExportAsyncWithHttpInfo($exportId, $token, $contentType)
+        return $this->downloadExportAsyncWithHttpInfo($export_id, $token, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -807,17 +807,17 @@ class ExportsApi
      *
      * Download Export
      *
-     * @param  string $exportId Unique export object ID. (required)
+     * @param  string $export_id Unique export object ID. (required)
      * @param  string $token Token that was issued to the export, to get this token, get the export first (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadExportAsyncWithHttpInfo($exportId, $token = null, string $contentType = self::contentTypes['downloadExport'][0])
+    public function downloadExportAsyncWithHttpInfo($export_id, $token = null, string $contentType = self::contentTypes['downloadExport'][0])
     {
         $returnType = 'string';
-        $request = $this->downloadExportRequest($exportId, $token, $contentType);
+        $request = $this->downloadExportRequest($export_id, $token, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -858,20 +858,20 @@ class ExportsApi
     /**
      * Create request for operation 'downloadExport'
      *
-     * @param  string $exportId Unique export object ID. (required)
+     * @param  string $export_id Unique export object ID. (required)
      * @param  string $token Token that was issued to the export, to get this token, get the export first (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function downloadExportRequest($exportId, $token = null, string $contentType = self::contentTypes['downloadExport'][0])
+    public function downloadExportRequest($export_id, $token = null, string $contentType = self::contentTypes['downloadExport'][0])
     {
 
-        // verify the required parameter 'exportId' is set
-        if ($exportId === null || (is_array($exportId) && count($exportId) === 0)) {
+        // verify the required parameter 'export_id' is set
+        if ($export_id === null || (is_array($export_id) && count($export_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $exportId when calling downloadExport'
+                'Missing the required parameter $export_id when calling downloadExport'
             );
         }
 
@@ -896,10 +896,10 @@ class ExportsApi
 
 
         // path params
-        if ($exportId !== null) {
+        if ($export_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'export_Id' . '}',
-                ObjectSerializer::toPathValue($exportId),
+                ObjectSerializer::toPathValue($export_id),
                 $resourcePath
             );
         }
@@ -963,16 +963,16 @@ class ExportsApi
      *
      * Get Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $export_id Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ExportsGetResponseBody
      */
-    public function getExport($exportId, string $contentType = self::contentTypes['getExport'][0])
+    public function getExport($export_id, string $contentType = self::contentTypes['getExport'][0])
     {
-        list($response) = $this->getExportWithHttpInfo($exportId, $contentType);
+        list($response) = $this->getExportWithHttpInfo($export_id, $contentType);
         return $response;
     }
 
@@ -981,16 +981,16 @@ class ExportsApi
      *
      * Get Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $export_id Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ExportsGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getExportWithHttpInfo($exportId, string $contentType = self::contentTypes['getExport'][0])
+    public function getExportWithHttpInfo($export_id, string $contentType = self::contentTypes['getExport'][0])
     {
-        $request = $this->getExportRequest($exportId, $contentType);
+        $request = $this->getExportRequest($export_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1081,15 +1081,15 @@ class ExportsApi
      *
      * Get Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $export_id Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getExportAsync($exportId, string $contentType = self::contentTypes['getExport'][0])
+    public function getExportAsync($export_id, string $contentType = self::contentTypes['getExport'][0])
     {
-        return $this->getExportAsyncWithHttpInfo($exportId, $contentType)
+        return $this->getExportAsyncWithHttpInfo($export_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1102,16 +1102,16 @@ class ExportsApi
      *
      * Get Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $export_id Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getExportAsyncWithHttpInfo($exportId, string $contentType = self::contentTypes['getExport'][0])
+    public function getExportAsyncWithHttpInfo($export_id, string $contentType = self::contentTypes['getExport'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ExportsGetResponseBody';
-        $request = $this->getExportRequest($exportId, $contentType);
+        $request = $this->getExportRequest($export_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1152,19 +1152,19 @@ class ExportsApi
     /**
      * Create request for operation 'getExport'
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $export_id Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getExportRequest($exportId, string $contentType = self::contentTypes['getExport'][0])
+    public function getExportRequest($export_id, string $contentType = self::contentTypes['getExport'][0])
     {
 
-        // verify the required parameter 'exportId' is set
-        if ($exportId === null || (is_array($exportId) && count($exportId) === 0)) {
+        // verify the required parameter 'export_id' is set
+        if ($export_id === null || (is_array($export_id) && count($export_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $exportId when calling getExport'
+                'Missing the required parameter $export_id when calling getExport'
             );
         }
 
@@ -1179,10 +1179,10 @@ class ExportsApi
 
 
         // path params
-        if ($exportId !== null) {
+        if ($export_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'exportId' . '}',
-                ObjectSerializer::toPathValue($exportId),
+                ObjectSerializer::toPathValue($export_id),
                 $resourcePath
             );
         }

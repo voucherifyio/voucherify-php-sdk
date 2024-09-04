@@ -60,7 +60,7 @@ class ValidationRulesAssignmentsList implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'object' => 'string',
-        'dataRef' => 'string',
+        'data_ref' => 'string',
         'data' => '\OpenAPI\Client\Model\BusValRuleAssignment[]',
         'total' => 'int'
     ];
@@ -74,7 +74,7 @@ class ValidationRulesAssignmentsList implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'object' => null,
-        'dataRef' => null,
+        'data_ref' => null,
         'data' => null,
         'total' => null
     ];
@@ -86,7 +86,7 @@ class ValidationRulesAssignmentsList implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPINullables = [
         'object' => true,
-		'dataRef' => true,
+		'data_ref' => true,
 		'data' => true,
 		'total' => true
     ];
@@ -178,7 +178,7 @@ class ValidationRulesAssignmentsList implements ModelInterface, ArrayAccess, \Js
      */
     protected static $attributeMap = [
         'object' => 'object',
-        'dataRef' => 'data_ref',
+        'data_ref' => 'data_ref',
         'data' => 'data',
         'total' => 'total'
     ];
@@ -190,7 +190,7 @@ class ValidationRulesAssignmentsList implements ModelInterface, ArrayAccess, \Js
      */
     protected static $setters = [
         'object' => 'setObject',
-        'dataRef' => 'setDataRef',
+        'data_ref' => 'setDataRef',
         'data' => 'setData',
         'total' => 'setTotal'
     ];
@@ -202,7 +202,7 @@ class ValidationRulesAssignmentsList implements ModelInterface, ArrayAccess, \Js
      */
     protected static $getters = [
         'object' => 'getObject',
-        'dataRef' => 'getDataRef',
+        'data_ref' => 'getDataRef',
         'data' => 'getData',
         'total' => 'getTotal'
     ];
@@ -291,7 +291,7 @@ class ValidationRulesAssignmentsList implements ModelInterface, ArrayAccess, \Js
     public function __construct(array $data = null)
     {
         $this->setIfExists('object', $data ?? [], 'list');
-        $this->setIfExists('dataRef', $data ?? [], 'data');
+        $this->setIfExists('data_ref', $data ?? [], 'data');
         $this->setIfExists('data', $data ?? [], null);
         $this->setIfExists('total', $data ?? [], null);
     }
@@ -333,10 +333,10 @@ class ValidationRulesAssignmentsList implements ModelInterface, ArrayAccess, \Js
         }
 
         $allowedValues = $this->getDataRefAllowableValues();
-        if (!is_null($this->container['dataRef']) && !in_array($this->container['dataRef'], $allowedValues, true)) {
+        if (!is_null($this->container['data_ref']) && !in_array($this->container['data_ref'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'dataRef', must be one of '%s'",
-                $this->container['dataRef'],
+                "invalid value '%s' for 'data_ref', must be one of '%s'",
+                $this->container['data_ref'],
                 implode("', '", $allowedValues)
             );
         }
@@ -405,45 +405,45 @@ class ValidationRulesAssignmentsList implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets dataRef
+     * Gets data_ref
      *
      * @return string|null
      */
     public function getDataRef()
     {
-        return $this->container['dataRef'];
+        return $this->container['data_ref'];
     }
 
     /**
-     * Sets dataRef
+     * Sets data_ref
      *
-     * @param string|null $dataRef Identifies the name of the attribute that contains the array of validation rules assignments.
+     * @param string|null $data_ref Identifies the name of the attribute that contains the array of validation rules assignments.
      *
      * @return self
      */
-    public function setDataRef($dataRef)
+    public function setDataRef($data_ref)
     {
-        if (is_null($dataRef)) {
-            array_push($this->openAPINullablesSetToNull, 'dataRef');
+        if (is_null($data_ref)) {
+            array_push($this->openAPINullablesSetToNull, 'data_ref');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dataRef', $nullablesSetToNull);
+            $index = array_search('data_ref', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getDataRefAllowableValues();
-        if (!is_null($dataRef) && !in_array($dataRef, $allowedValues, true)) {
+        if (!is_null($data_ref) && !in_array($data_ref, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'dataRef', must be one of '%s'",
-                    $dataRef,
+                    "Invalid value '%s' for 'data_ref', must be one of '%s'",
+                    $data_ref,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['dataRef'] = $dataRef;
+        $this->container['data_ref'] = $data_ref;
 
         return $this;
     }

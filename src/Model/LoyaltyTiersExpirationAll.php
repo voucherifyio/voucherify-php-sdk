@@ -59,10 +59,10 @@ class LoyaltyTiersExpirationAll implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'qualificationType' => 'string',
-        'qualificationPeriod' => 'string',
-        'startDate' => '\OpenAPI\Client\Model\LoyaltyTiersExpirationAllStartDate',
-        'expirationDate' => '\OpenAPI\Client\Model\LoyaltyTiersExpirationAllExpirationDate'
+        'qualification_type' => 'string',
+        'qualification_period' => 'string',
+        'start_date' => '\OpenAPI\Client\Model\LoyaltyTiersExpirationAllStartDate',
+        'expiration_date' => '\OpenAPI\Client\Model\LoyaltyTiersExpirationAllExpirationDate'
     ];
 
     /**
@@ -73,10 +73,10 @@ class LoyaltyTiersExpirationAll implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'qualificationType' => null,
-        'qualificationPeriod' => null,
-        'startDate' => null,
-        'expirationDate' => null
+        'qualification_type' => null,
+        'qualification_period' => null,
+        'start_date' => null,
+        'expiration_date' => null
     ];
 
     /**
@@ -85,10 +85,10 @@ class LoyaltyTiersExpirationAll implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'qualificationType' => true,
-		'qualificationPeriod' => true,
-		'startDate' => true,
-		'expirationDate' => true
+        'qualification_type' => true,
+		'qualification_period' => true,
+		'start_date' => true,
+		'expiration_date' => true
     ];
 
     /**
@@ -177,10 +177,10 @@ class LoyaltyTiersExpirationAll implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'qualificationType' => 'qualification_type',
-        'qualificationPeriod' => 'qualification_period',
-        'startDate' => 'start_date',
-        'expirationDate' => 'expiration_date'
+        'qualification_type' => 'qualification_type',
+        'qualification_period' => 'qualification_period',
+        'start_date' => 'start_date',
+        'expiration_date' => 'expiration_date'
     ];
 
     /**
@@ -189,10 +189,10 @@ class LoyaltyTiersExpirationAll implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'qualificationType' => 'setQualificationType',
-        'qualificationPeriod' => 'setQualificationPeriod',
-        'startDate' => 'setStartDate',
-        'expirationDate' => 'setExpirationDate'
+        'qualification_type' => 'setQualificationType',
+        'qualification_period' => 'setQualificationPeriod',
+        'start_date' => 'setStartDate',
+        'expiration_date' => 'setExpirationDate'
     ];
 
     /**
@@ -201,10 +201,10 @@ class LoyaltyTiersExpirationAll implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'qualificationType' => 'getQualificationType',
-        'qualificationPeriod' => 'getQualificationPeriod',
-        'startDate' => 'getStartDate',
-        'expirationDate' => 'getExpirationDate'
+        'qualification_type' => 'getQualificationType',
+        'qualification_period' => 'getQualificationPeriod',
+        'start_date' => 'getStartDate',
+        'expiration_date' => 'getExpirationDate'
     ];
 
     /**
@@ -298,10 +298,10 @@ class LoyaltyTiersExpirationAll implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('qualificationType', $data ?? [], null);
-        $this->setIfExists('qualificationPeriod', $data ?? [], null);
-        $this->setIfExists('startDate', $data ?? [], null);
-        $this->setIfExists('expirationDate', $data ?? [], null);
+        $this->setIfExists('qualification_type', $data ?? [], null);
+        $this->setIfExists('qualification_period', $data ?? [], null);
+        $this->setIfExists('start_date', $data ?? [], null);
+        $this->setIfExists('expiration_date', $data ?? [], null);
     }
 
     /**
@@ -332,19 +332,19 @@ class LoyaltyTiersExpirationAll implements ModelInterface, ArrayAccess, \JsonSer
         $invalidProperties = [];
 
         $allowedValues = $this->getQualificationTypeAllowableValues();
-        if (!is_null($this->container['qualificationType']) && !in_array($this->container['qualificationType'], $allowedValues, true)) {
+        if (!is_null($this->container['qualification_type']) && !in_array($this->container['qualification_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'qualificationType', must be one of '%s'",
-                $this->container['qualificationType'],
+                "invalid value '%s' for 'qualification_type', must be one of '%s'",
+                $this->container['qualification_type'],
                 implode("', '", $allowedValues)
             );
         }
 
         $allowedValues = $this->getQualificationPeriodAllowableValues();
-        if (!is_null($this->container['qualificationPeriod']) && !in_array($this->container['qualificationPeriod'], $allowedValues, true)) {
+        if (!is_null($this->container['qualification_period']) && !in_array($this->container['qualification_period'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'qualificationPeriod', must be one of '%s'",
-                $this->container['qualificationPeriod'],
+                "invalid value '%s' for 'qualification_period', must be one of '%s'",
+                $this->container['qualification_period'],
                 implode("', '", $allowedValues)
             );
         }
@@ -365,157 +365,157 @@ class LoyaltyTiersExpirationAll implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets qualificationType
+     * Gets qualification_type
      *
      * @return string|null
      */
     public function getQualificationType()
     {
-        return $this->container['qualificationType'];
+        return $this->container['qualification_type'];
     }
 
     /**
-     * Sets qualificationType
+     * Sets qualification_type
      *
-     * @param string|null $qualificationType Tier qualification.     `BALANCE`: Points balance is based on the customer's current points balance. Customers qualify for the tier if their points balance is in the points range of the tier.   `POINTS_IN_PERIOD`: A customer qualifies for the tier only if the sum of the accumulated points in a **defined time interval** reaches the tier threshold.
+     * @param string|null $qualification_type Tier qualification.     `BALANCE`: Points balance is based on the customer's current points balance. Customers qualify for the tier if their points balance is in the points range of the tier.   `POINTS_IN_PERIOD`: A customer qualifies for the tier only if the sum of the accumulated points in a **defined time interval** reaches the tier threshold.
      *
      * @return self
      */
-    public function setQualificationType($qualificationType)
+    public function setQualificationType($qualification_type)
     {
-        if (is_null($qualificationType)) {
-            array_push($this->openAPINullablesSetToNull, 'qualificationType');
+        if (is_null($qualification_type)) {
+            array_push($this->openAPINullablesSetToNull, 'qualification_type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('qualificationType', $nullablesSetToNull);
+            $index = array_search('qualification_type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getQualificationTypeAllowableValues();
-        if (!is_null($qualificationType) && !in_array($qualificationType, $allowedValues, true)) {
+        if (!is_null($qualification_type) && !in_array($qualification_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'qualificationType', must be one of '%s'",
-                    $qualificationType,
+                    "Invalid value '%s' for 'qualification_type', must be one of '%s'",
+                    $qualification_type,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['qualificationType'] = $qualificationType;
+        $this->container['qualification_type'] = $qualification_type;
 
         return $this;
     }
 
     /**
-     * Gets qualificationPeriod
+     * Gets qualification_period
      *
      * @return string|null
      */
     public function getQualificationPeriod()
     {
-        return $this->container['qualificationPeriod'];
+        return $this->container['qualification_period'];
     }
 
     /**
-     * Sets qualificationPeriod
+     * Sets qualification_period
      *
-     * @param string|null $qualificationPeriod Customers can qualify for the tier if they collected enough points in a given time period. So, in addition to the customer having to reach a points range, they also need to have collected the points within a set time period.      | **Period** | **Definition** | |:---|:---| | **Calendar Month** | Points collected in one calendar month<br>January, February, March, etc. | | **Calendar Quarter** | Points collected in the quarter<br>- January - March<br>- April - June<br>- July - September<br>- October - December | | **Calendar Half-year** | Points collected in the half-year<br>- January - June<br>- July - December | | **Calendar Year** | Points collected in one calendar year<br>January - December |
+     * @param string|null $qualification_period Customers can qualify for the tier if they collected enough points in a given time period. So, in addition to the customer having to reach a points range, they also need to have collected the points within a set time period.      | **Period** | **Definition** | |:---|:---| | **Calendar Month** | Points collected in one calendar month<br>January, February, March, etc. | | **Calendar Quarter** | Points collected in the quarter<br>- January - March<br>- April - June<br>- July - September<br>- October - December | | **Calendar Half-year** | Points collected in the half-year<br>- January - June<br>- July - December | | **Calendar Year** | Points collected in one calendar year<br>January - December |
      *
      * @return self
      */
-    public function setQualificationPeriod($qualificationPeriod)
+    public function setQualificationPeriod($qualification_period)
     {
-        if (is_null($qualificationPeriod)) {
-            array_push($this->openAPINullablesSetToNull, 'qualificationPeriod');
+        if (is_null($qualification_period)) {
+            array_push($this->openAPINullablesSetToNull, 'qualification_period');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('qualificationPeriod', $nullablesSetToNull);
+            $index = array_search('qualification_period', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getQualificationPeriodAllowableValues();
-        if (!is_null($qualificationPeriod) && !in_array($qualificationPeriod, $allowedValues, true)) {
+        if (!is_null($qualification_period) && !in_array($qualification_period, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'qualificationPeriod', must be one of '%s'",
-                    $qualificationPeriod,
+                    "Invalid value '%s' for 'qualification_period', must be one of '%s'",
+                    $qualification_period,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['qualificationPeriod'] = $qualificationPeriod;
+        $this->container['qualification_period'] = $qualification_period;
 
         return $this;
     }
 
     /**
-     * Gets startDate
+     * Gets start_date
      *
      * @return \OpenAPI\Client\Model\LoyaltyTiersExpirationAllStartDate|null
      */
     public function getStartDate()
     {
-        return $this->container['startDate'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets startDate
+     * Sets start_date
      *
-     * @param \OpenAPI\Client\Model\LoyaltyTiersExpirationAllStartDate|null $startDate startDate
+     * @param \OpenAPI\Client\Model\LoyaltyTiersExpirationAllStartDate|null $start_date start_date
      *
      * @return self
      */
-    public function setStartDate($startDate)
+    public function setStartDate($start_date)
     {
-        if (is_null($startDate)) {
-            array_push($this->openAPINullablesSetToNull, 'startDate');
+        if (is_null($start_date)) {
+            array_push($this->openAPINullablesSetToNull, 'start_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('startDate', $nullablesSetToNull);
+            $index = array_search('start_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['startDate'] = $startDate;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets expirationDate
+     * Gets expiration_date
      *
      * @return \OpenAPI\Client\Model\LoyaltyTiersExpirationAllExpirationDate|null
      */
     public function getExpirationDate()
     {
-        return $this->container['expirationDate'];
+        return $this->container['expiration_date'];
     }
 
     /**
-     * Sets expirationDate
+     * Sets expiration_date
      *
-     * @param \OpenAPI\Client\Model\LoyaltyTiersExpirationAllExpirationDate|null $expirationDate expirationDate
+     * @param \OpenAPI\Client\Model\LoyaltyTiersExpirationAllExpirationDate|null $expiration_date expiration_date
      *
      * @return self
      */
-    public function setExpirationDate($expirationDate)
+    public function setExpirationDate($expiration_date)
     {
-        if (is_null($expirationDate)) {
-            array_push($this->openAPINullablesSetToNull, 'expirationDate');
+        if (is_null($expiration_date)) {
+            array_push($this->openAPINullablesSetToNull, 'expiration_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expirationDate', $nullablesSetToNull);
+            $index = array_search('expiration_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['expirationDate'] = $expirationDate;
+        $this->container['expiration_date'] = $expiration_date;
 
         return $this;
     }

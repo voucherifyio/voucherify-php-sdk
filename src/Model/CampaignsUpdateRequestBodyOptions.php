@@ -58,7 +58,7 @@ class CampaignsUpdateRequestBodyOptions implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'recalculateTiers' => 'bool'
+        'recalculate_tiers' => 'bool'
     ];
 
     /**
@@ -69,7 +69,7 @@ class CampaignsUpdateRequestBodyOptions implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'recalculateTiers' => null
+        'recalculate_tiers' => null
     ];
 
     /**
@@ -78,7 +78,7 @@ class CampaignsUpdateRequestBodyOptions implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'recalculateTiers' => true
+        'recalculate_tiers' => true
     ];
 
     /**
@@ -167,7 +167,7 @@ class CampaignsUpdateRequestBodyOptions implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'recalculateTiers' => 'recalculate_tiers'
+        'recalculate_tiers' => 'recalculate_tiers'
     ];
 
     /**
@@ -176,7 +176,7 @@ class CampaignsUpdateRequestBodyOptions implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'recalculateTiers' => 'setRecalculateTiers'
+        'recalculate_tiers' => 'setRecalculateTiers'
     ];
 
     /**
@@ -185,7 +185,7 @@ class CampaignsUpdateRequestBodyOptions implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'recalculateTiers' => 'getRecalculateTiers'
+        'recalculate_tiers' => 'getRecalculateTiers'
     ];
 
     /**
@@ -245,7 +245,7 @@ class CampaignsUpdateRequestBodyOptions implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('recalculateTiers', $data ?? [], null);
+        $this->setIfExists('recalculate_tiers', $data ?? [], null);
     }
 
     /**
@@ -291,35 +291,35 @@ class CampaignsUpdateRequestBodyOptions implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets recalculateTiers
+     * Gets recalculate_tiers
      *
      * @return bool|null
      */
     public function getRecalculateTiers()
     {
-        return $this->container['recalculateTiers'];
+        return $this->container['recalculate_tiers'];
     }
 
     /**
-     * Sets recalculateTiers
+     * Sets recalculate_tiers
      *
-     * @param bool|null $recalculateTiers Determine if tiers should be recalculated or no.
+     * @param bool|null $recalculate_tiers Determine if tiers should be recalculated or no.
      *
      * @return self
      */
-    public function setRecalculateTiers($recalculateTiers)
+    public function setRecalculateTiers($recalculate_tiers)
     {
-        if (is_null($recalculateTiers)) {
-            array_push($this->openAPINullablesSetToNull, 'recalculateTiers');
+        if (is_null($recalculate_tiers)) {
+            array_push($this->openAPINullablesSetToNull, 'recalculate_tiers');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('recalculateTiers', $nullablesSetToNull);
+            $index = array_search('recalculate_tiers', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['recalculateTiers'] = $recalculateTiers;
+        $this->container['recalculate_tiers'] = $recalculate_tiers;
 
         return $this;
     }

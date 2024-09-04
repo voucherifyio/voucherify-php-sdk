@@ -61,10 +61,10 @@ class CustomersUpdateInBulkRequestBodyAddress implements ModelInterface, ArrayAc
     protected static $openAPITypes = [
         'city' => 'string',
         'state' => 'string',
-        'line1' => 'string',
-        'line2' => 'string',
+        'line_1' => 'string',
+        'line_2' => 'string',
         'country' => 'string',
-        'postalCode' => 'string'
+        'postal_code' => 'string'
     ];
 
     /**
@@ -77,10 +77,10 @@ class CustomersUpdateInBulkRequestBodyAddress implements ModelInterface, ArrayAc
     protected static $openAPIFormats = [
         'city' => null,
         'state' => null,
-        'line1' => null,
-        'line2' => null,
+        'line_1' => null,
+        'line_2' => null,
         'country' => null,
-        'postalCode' => null
+        'postal_code' => null
     ];
 
     /**
@@ -91,10 +91,10 @@ class CustomersUpdateInBulkRequestBodyAddress implements ModelInterface, ArrayAc
     protected static array $openAPINullables = [
         'city' => true,
 		'state' => true,
-		'line1' => true,
-		'line2' => true,
+		'line_1' => true,
+		'line_2' => true,
 		'country' => true,
-		'postalCode' => true
+		'postal_code' => true
     ];
 
     /**
@@ -185,10 +185,10 @@ class CustomersUpdateInBulkRequestBodyAddress implements ModelInterface, ArrayAc
     protected static $attributeMap = [
         'city' => 'city',
         'state' => 'state',
-        'line1' => 'line_1',
-        'line2' => 'line_2',
+        'line_1' => 'line_1',
+        'line_2' => 'line_2',
         'country' => 'country',
-        'postalCode' => 'postal_code'
+        'postal_code' => 'postal_code'
     ];
 
     /**
@@ -199,10 +199,10 @@ class CustomersUpdateInBulkRequestBodyAddress implements ModelInterface, ArrayAc
     protected static $setters = [
         'city' => 'setCity',
         'state' => 'setState',
-        'line1' => 'setLine1',
-        'line2' => 'setLine2',
+        'line_1' => 'setLine1',
+        'line_2' => 'setLine2',
         'country' => 'setCountry',
-        'postalCode' => 'setPostalCode'
+        'postal_code' => 'setPostalCode'
     ];
 
     /**
@@ -213,10 +213,10 @@ class CustomersUpdateInBulkRequestBodyAddress implements ModelInterface, ArrayAc
     protected static $getters = [
         'city' => 'getCity',
         'state' => 'getState',
-        'line1' => 'getLine1',
-        'line2' => 'getLine2',
+        'line_1' => 'getLine1',
+        'line_2' => 'getLine2',
         'country' => 'getCountry',
-        'postalCode' => 'getPostalCode'
+        'postal_code' => 'getPostalCode'
     ];
 
     /**
@@ -278,10 +278,10 @@ class CustomersUpdateInBulkRequestBodyAddress implements ModelInterface, ArrayAc
     {
         $this->setIfExists('city', $data ?? [], null);
         $this->setIfExists('state', $data ?? [], null);
-        $this->setIfExists('line1', $data ?? [], null);
-        $this->setIfExists('line2', $data ?? [], null);
+        $this->setIfExists('line_1', $data ?? [], null);
+        $this->setIfExists('line_2', $data ?? [], null);
         $this->setIfExists('country', $data ?? [], null);
-        $this->setIfExists('postalCode', $data ?? [], null);
+        $this->setIfExists('postal_code', $data ?? [], null);
     }
 
     /**
@@ -395,69 +395,69 @@ class CustomersUpdateInBulkRequestBodyAddress implements ModelInterface, ArrayAc
     }
 
     /**
-     * Gets line1
+     * Gets line_1
      *
      * @return string|null
      */
     public function getLine1()
     {
-        return $this->container['line1'];
+        return $this->container['line_1'];
     }
 
     /**
-     * Sets line1
+     * Sets line_1
      *
-     * @param string|null $line1 First line of address.
+     * @param string|null $line_1 First line of address.
      *
      * @return self
      */
-    public function setLine1($line1)
+    public function setLine1($line_1)
     {
-        if (is_null($line1)) {
-            array_push($this->openAPINullablesSetToNull, 'line1');
+        if (is_null($line_1)) {
+            array_push($this->openAPINullablesSetToNull, 'line_1');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('line1', $nullablesSetToNull);
+            $index = array_search('line_1', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['line1'] = $line1;
+        $this->container['line_1'] = $line_1;
 
         return $this;
     }
 
     /**
-     * Gets line2
+     * Gets line_2
      *
      * @return string|null
      */
     public function getLine2()
     {
-        return $this->container['line2'];
+        return $this->container['line_2'];
     }
 
     /**
-     * Sets line2
+     * Sets line_2
      *
-     * @param string|null $line2 Second line of address.
+     * @param string|null $line_2 Second line of address.
      *
      * @return self
      */
-    public function setLine2($line2)
+    public function setLine2($line_2)
     {
-        if (is_null($line2)) {
-            array_push($this->openAPINullablesSetToNull, 'line2');
+        if (is_null($line_2)) {
+            array_push($this->openAPINullablesSetToNull, 'line_2');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('line2', $nullablesSetToNull);
+            $index = array_search('line_2', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['line2'] = $line2;
+        $this->container['line_2'] = $line_2;
 
         return $this;
     }
@@ -497,35 +497,35 @@ class CustomersUpdateInBulkRequestBodyAddress implements ModelInterface, ArrayAc
     }
 
     /**
-     * Gets postalCode
+     * Gets postal_code
      *
      * @return string|null
      */
     public function getPostalCode()
     {
-        return $this->container['postalCode'];
+        return $this->container['postal_code'];
     }
 
     /**
-     * Sets postalCode
+     * Sets postal_code
      *
-     * @param string|null $postalCode Postal code.
+     * @param string|null $postal_code Postal code.
      *
      * @return self
      */
-    public function setPostalCode($postalCode)
+    public function setPostalCode($postal_code)
     {
-        if (is_null($postalCode)) {
-            array_push($this->openAPINullablesSetToNull, 'postalCode');
+        if (is_null($postal_code)) {
+            array_push($this->openAPINullablesSetToNull, 'postal_code');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('postalCode', $nullablesSetToNull);
+            $index = array_search('postal_code', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['postalCode'] = $postalCode;
+        $this->container['postal_code'] = $postal_code;
 
         return $this;
     }

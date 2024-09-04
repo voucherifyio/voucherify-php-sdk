@@ -66,8 +66,8 @@ class Reward implements ModelInterface, ArrayAccess, \JsonSerializable
         'metadata' => 'object',
         'type' => 'string',
         'parameters' => '\OpenAPI\Client\Model\RewardType',
-        'createdAt' => '\DateTime',
-        'updatedAt' => '\DateTime',
+        'created_at' => '\DateTime',
+        'updated_at' => '\DateTime',
         'object' => 'string'
     ];
 
@@ -87,8 +87,8 @@ class Reward implements ModelInterface, ArrayAccess, \JsonSerializable
         'metadata' => null,
         'type' => null,
         'parameters' => null,
-        'createdAt' => 'date-time',
-        'updatedAt' => 'date-time',
+        'created_at' => 'date-time',
+        'updated_at' => 'date-time',
         'object' => null
     ];
 
@@ -106,8 +106,8 @@ class Reward implements ModelInterface, ArrayAccess, \JsonSerializable
 		'metadata' => true,
 		'type' => true,
 		'parameters' => false,
-		'createdAt' => true,
-		'updatedAt' => true,
+		'created_at' => true,
+		'updated_at' => true,
 		'object' => false
     ];
 
@@ -205,8 +205,8 @@ class Reward implements ModelInterface, ArrayAccess, \JsonSerializable
         'metadata' => 'metadata',
         'type' => 'type',
         'parameters' => 'parameters',
-        'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at',
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at',
         'object' => 'object'
     ];
 
@@ -224,8 +224,8 @@ class Reward implements ModelInterface, ArrayAccess, \JsonSerializable
         'metadata' => 'setMetadata',
         'type' => 'setType',
         'parameters' => 'setParameters',
-        'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt',
         'object' => 'setObject'
     ];
 
@@ -243,8 +243,8 @@ class Reward implements ModelInterface, ArrayAccess, \JsonSerializable
         'metadata' => 'getMetadata',
         'type' => 'getType',
         'parameters' => 'getParameters',
-        'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt',
         'object' => 'getObject'
     ];
 
@@ -343,8 +343,8 @@ class Reward implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('parameters', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
-        $this->setIfExists('updatedAt', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'reward');
     }
 
@@ -687,69 +687,69 @@ class Reward implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the reward was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $created_at Timestamp representing the date and time when the reward was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        if (is_null($created_at)) {
+            array_push($this->openAPINullablesSetToNull, 'created_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
+            $index = array_search('created_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }
 
     /**
-     * Gets updatedAt
+     * Gets updated_at
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updatedAt'];
+        return $this->container['updated_at'];
     }
 
     /**
-     * Sets updatedAt
+     * Sets updated_at
      *
-     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the reward was updated. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updated_at Timestamp representing the date and time when the reward was updated. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updated_at)
     {
-        if (is_null($updatedAt)) {
-            array_push($this->openAPINullablesSetToNull, 'updatedAt');
+        if (is_null($updated_at)) {
+            array_push($this->openAPINullablesSetToNull, 'updated_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updatedAt', $nullablesSetToNull);
+            $index = array_search('updated_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updatedAt'] = $updatedAt;
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }

@@ -59,21 +59,21 @@ class VouchersCreateWithSpecificCodeRequestBody implements ModelInterface, Array
       */
     protected static $openAPITypes = [
         'campaign' => 'string',
-        'campaignId' => 'string',
+        'campaign_id' => 'string',
         'category' => 'string',
-        'categoryId' => 'string',
-        'startDate' => '\DateTime',
-        'expirationDate' => '\DateTime',
-        'validityTimeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
-        'validityDayOfWeek' => 'int[]',
-        'validityHours' => '\OpenAPI\Client\Model\ValidityHours',
+        'category_id' => 'string',
+        'start_date' => '\DateTime',
+        'expiration_date' => '\DateTime',
+        'validity_timeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
+        'validity_day_of_week' => 'int[]',
+        'validity_hours' => '\OpenAPI\Client\Model\ValidityHours',
         'active' => 'bool',
-        'additionalInfo' => 'string',
+        'additional_info' => 'string',
         'metadata' => 'object',
-        'validationRules' => 'string[]',
+        'validation_rules' => 'string[]',
         'redemption' => '\OpenAPI\Client\Model\VouchersCreateWithSpecificCodeRequestBodyRedemption',
         'type' => 'string',
-        'loyaltyCard' => '\OpenAPI\Client\Model\SimpleLoyaltyCard',
+        'loyalty_card' => '\OpenAPI\Client\Model\SimpleLoyaltyCard',
         'gift' => '\OpenAPI\Client\Model\Gift',
         'discount' => '\OpenAPI\Client\Model\Discount'
     ];
@@ -87,21 +87,21 @@ class VouchersCreateWithSpecificCodeRequestBody implements ModelInterface, Array
       */
     protected static $openAPIFormats = [
         'campaign' => null,
-        'campaignId' => null,
+        'campaign_id' => null,
         'category' => null,
-        'categoryId' => null,
-        'startDate' => 'date-time',
-        'expirationDate' => 'date-time',
-        'validityTimeframe' => null,
-        'validityDayOfWeek' => null,
-        'validityHours' => null,
+        'category_id' => null,
+        'start_date' => 'date-time',
+        'expiration_date' => 'date-time',
+        'validity_timeframe' => null,
+        'validity_day_of_week' => null,
+        'validity_hours' => null,
         'active' => null,
-        'additionalInfo' => null,
+        'additional_info' => null,
         'metadata' => null,
-        'validationRules' => null,
+        'validation_rules' => null,
         'redemption' => null,
         'type' => null,
-        'loyaltyCard' => null,
+        'loyalty_card' => null,
         'gift' => null,
         'discount' => null
     ];
@@ -113,21 +113,21 @@ class VouchersCreateWithSpecificCodeRequestBody implements ModelInterface, Array
       */
     protected static array $openAPINullables = [
         'campaign' => true,
-		'campaignId' => true,
+		'campaign_id' => true,
 		'category' => true,
-		'categoryId' => true,
-		'startDate' => true,
-		'expirationDate' => true,
-		'validityTimeframe' => false,
-		'validityDayOfWeek' => true,
-		'validityHours' => false,
+		'category_id' => true,
+		'start_date' => true,
+		'expiration_date' => true,
+		'validity_timeframe' => false,
+		'validity_day_of_week' => true,
+		'validity_hours' => false,
 		'active' => true,
-		'additionalInfo' => true,
+		'additional_info' => true,
 		'metadata' => true,
-		'validationRules' => true,
+		'validation_rules' => true,
 		'redemption' => true,
 		'type' => true,
-		'loyaltyCard' => false,
+		'loyalty_card' => false,
 		'gift' => false,
 		'discount' => false
     ];
@@ -219,21 +219,21 @@ class VouchersCreateWithSpecificCodeRequestBody implements ModelInterface, Array
      */
     protected static $attributeMap = [
         'campaign' => 'campaign',
-        'campaignId' => 'campaign_id',
+        'campaign_id' => 'campaign_id',
         'category' => 'category',
-        'categoryId' => 'category_id',
-        'startDate' => 'start_date',
-        'expirationDate' => 'expiration_date',
-        'validityTimeframe' => 'validity_timeframe',
-        'validityDayOfWeek' => 'validity_day_of_week',
-        'validityHours' => 'validity_hours',
+        'category_id' => 'category_id',
+        'start_date' => 'start_date',
+        'expiration_date' => 'expiration_date',
+        'validity_timeframe' => 'validity_timeframe',
+        'validity_day_of_week' => 'validity_day_of_week',
+        'validity_hours' => 'validity_hours',
         'active' => 'active',
-        'additionalInfo' => 'additional_info',
+        'additional_info' => 'additional_info',
         'metadata' => 'metadata',
-        'validationRules' => 'validation_rules',
+        'validation_rules' => 'validation_rules',
         'redemption' => 'redemption',
         'type' => 'type',
-        'loyaltyCard' => 'loyalty_card',
+        'loyalty_card' => 'loyalty_card',
         'gift' => 'gift',
         'discount' => 'discount'
     ];
@@ -245,21 +245,21 @@ class VouchersCreateWithSpecificCodeRequestBody implements ModelInterface, Array
      */
     protected static $setters = [
         'campaign' => 'setCampaign',
-        'campaignId' => 'setCampaignId',
+        'campaign_id' => 'setCampaignId',
         'category' => 'setCategory',
-        'categoryId' => 'setCategoryId',
-        'startDate' => 'setStartDate',
-        'expirationDate' => 'setExpirationDate',
-        'validityTimeframe' => 'setValidityTimeframe',
-        'validityDayOfWeek' => 'setValidityDayOfWeek',
-        'validityHours' => 'setValidityHours',
+        'category_id' => 'setCategoryId',
+        'start_date' => 'setStartDate',
+        'expiration_date' => 'setExpirationDate',
+        'validity_timeframe' => 'setValidityTimeframe',
+        'validity_day_of_week' => 'setValidityDayOfWeek',
+        'validity_hours' => 'setValidityHours',
         'active' => 'setActive',
-        'additionalInfo' => 'setAdditionalInfo',
+        'additional_info' => 'setAdditionalInfo',
         'metadata' => 'setMetadata',
-        'validationRules' => 'setValidationRules',
+        'validation_rules' => 'setValidationRules',
         'redemption' => 'setRedemption',
         'type' => 'setType',
-        'loyaltyCard' => 'setLoyaltyCard',
+        'loyalty_card' => 'setLoyaltyCard',
         'gift' => 'setGift',
         'discount' => 'setDiscount'
     ];
@@ -271,21 +271,21 @@ class VouchersCreateWithSpecificCodeRequestBody implements ModelInterface, Array
      */
     protected static $getters = [
         'campaign' => 'getCampaign',
-        'campaignId' => 'getCampaignId',
+        'campaign_id' => 'getCampaignId',
         'category' => 'getCategory',
-        'categoryId' => 'getCategoryId',
-        'startDate' => 'getStartDate',
-        'expirationDate' => 'getExpirationDate',
-        'validityTimeframe' => 'getValidityTimeframe',
-        'validityDayOfWeek' => 'getValidityDayOfWeek',
-        'validityHours' => 'getValidityHours',
+        'category_id' => 'getCategoryId',
+        'start_date' => 'getStartDate',
+        'expiration_date' => 'getExpirationDate',
+        'validity_timeframe' => 'getValidityTimeframe',
+        'validity_day_of_week' => 'getValidityDayOfWeek',
+        'validity_hours' => 'getValidityHours',
         'active' => 'getActive',
-        'additionalInfo' => 'getAdditionalInfo',
+        'additional_info' => 'getAdditionalInfo',
         'metadata' => 'getMetadata',
-        'validationRules' => 'getValidationRules',
+        'validation_rules' => 'getValidationRules',
         'redemption' => 'getRedemption',
         'type' => 'getType',
-        'loyaltyCard' => 'getLoyaltyCard',
+        'loyalty_card' => 'getLoyaltyCard',
         'gift' => 'getGift',
         'discount' => 'getDiscount'
     ];
@@ -390,21 +390,21 @@ class VouchersCreateWithSpecificCodeRequestBody implements ModelInterface, Array
     public function __construct(array $data = null)
     {
         $this->setIfExists('campaign', $data ?? [], null);
-        $this->setIfExists('campaignId', $data ?? [], null);
+        $this->setIfExists('campaign_id', $data ?? [], null);
         $this->setIfExists('category', $data ?? [], null);
-        $this->setIfExists('categoryId', $data ?? [], null);
-        $this->setIfExists('startDate', $data ?? [], null);
-        $this->setIfExists('expirationDate', $data ?? [], null);
-        $this->setIfExists('validityTimeframe', $data ?? [], null);
-        $this->setIfExists('validityDayOfWeek', $data ?? [], null);
-        $this->setIfExists('validityHours', $data ?? [], null);
+        $this->setIfExists('category_id', $data ?? [], null);
+        $this->setIfExists('start_date', $data ?? [], null);
+        $this->setIfExists('expiration_date', $data ?? [], null);
+        $this->setIfExists('validity_timeframe', $data ?? [], null);
+        $this->setIfExists('validity_day_of_week', $data ?? [], null);
+        $this->setIfExists('validity_hours', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
-        $this->setIfExists('additionalInfo', $data ?? [], null);
+        $this->setIfExists('additional_info', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('validationRules', $data ?? [], null);
+        $this->setIfExists('validation_rules', $data ?? [], null);
         $this->setIfExists('redemption', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('loyaltyCard', $data ?? [], null);
+        $this->setIfExists('loyalty_card', $data ?? [], null);
         $this->setIfExists('gift', $data ?? [], null);
         $this->setIfExists('discount', $data ?? [], null);
     }
@@ -495,35 +495,35 @@ class VouchersCreateWithSpecificCodeRequestBody implements ModelInterface, Array
     }
 
     /**
-     * Gets campaignId
+     * Gets campaign_id
      *
      * @return string|null
      */
     public function getCampaignId()
     {
-        return $this->container['campaignId'];
+        return $this->container['campaign_id'];
     }
 
     /**
-     * Sets campaignId
+     * Sets campaign_id
      *
-     * @param string|null $campaignId Identifies the voucher's parent campaign using a unique campaign ID assigned by the Voucherify API.
+     * @param string|null $campaign_id Identifies the voucher's parent campaign using a unique campaign ID assigned by the Voucherify API.
      *
      * @return self
      */
-    public function setCampaignId($campaignId)
+    public function setCampaignId($campaign_id)
     {
-        if (is_null($campaignId)) {
-            array_push($this->openAPINullablesSetToNull, 'campaignId');
+        if (is_null($campaign_id)) {
+            array_push($this->openAPINullablesSetToNull, 'campaign_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaignId', $nullablesSetToNull);
+            $index = array_search('campaign_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaignId'] = $campaignId;
+        $this->container['campaign_id'] = $campaign_id;
 
         return $this;
     }
@@ -563,200 +563,200 @@ class VouchersCreateWithSpecificCodeRequestBody implements ModelInterface, Array
     }
 
     /**
-     * Gets categoryId
+     * Gets category_id
      *
      * @return string|null
      */
     public function getCategoryId()
     {
-        return $this->container['categoryId'];
+        return $this->container['category_id'];
     }
 
     /**
-     * Sets categoryId
+     * Sets category_id
      *
-     * @param string|null $categoryId Unique identifier assigned by Voucherify to the name of the category that this voucher belongs to. Useful when listing vouchers with the [List Vouchers](ref:list-vouchers) endpoint.
+     * @param string|null $category_id Unique identifier assigned by Voucherify to the name of the category that this voucher belongs to. Useful when listing vouchers with the [List Vouchers](ref:list-vouchers) endpoint.
      *
      * @return self
      */
-    public function setCategoryId($categoryId)
+    public function setCategoryId($category_id)
     {
-        if (is_null($categoryId)) {
-            array_push($this->openAPINullablesSetToNull, 'categoryId');
+        if (is_null($category_id)) {
+            array_push($this->openAPINullablesSetToNull, 'category_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('categoryId', $nullablesSetToNull);
+            $index = array_search('category_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['categoryId'] = $categoryId;
+        $this->container['category_id'] = $category_id;
 
         return $this;
     }
 
     /**
-     * Gets startDate
+     * Gets start_date
      *
      * @return \DateTime|null
      */
     public function getStartDate()
     {
-        return $this->container['startDate'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets startDate
+     * Sets start_date
      *
-     * @param \DateTime|null $startDate Start date defines when the code starts to be active. Activation timestamp is presented in the ISO 8601 format. Voucher is *inactive before* this date.
+     * @param \DateTime|null $start_date Start date defines when the code starts to be active. Activation timestamp is presented in the ISO 8601 format. Voucher is *inactive before* this date.
      *
      * @return self
      */
-    public function setStartDate($startDate)
+    public function setStartDate($start_date)
     {
-        if (is_null($startDate)) {
-            array_push($this->openAPINullablesSetToNull, 'startDate');
+        if (is_null($start_date)) {
+            array_push($this->openAPINullablesSetToNull, 'start_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('startDate', $nullablesSetToNull);
+            $index = array_search('start_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['startDate'] = $startDate;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets expirationDate
+     * Gets expiration_date
      *
      * @return \DateTime|null
      */
     public function getExpirationDate()
     {
-        return $this->container['expirationDate'];
+        return $this->container['expiration_date'];
     }
 
     /**
-     * Sets expirationDate
+     * Sets expiration_date
      *
-     * @param \DateTime|null $expirationDate Expiration date defines when the code expires. Expiration timestamp is presented in the ISO 8601 format.  Voucher is *inactive after* this date.
+     * @param \DateTime|null $expiration_date Expiration date defines when the code expires. Expiration timestamp is presented in the ISO 8601 format.  Voucher is *inactive after* this date.
      *
      * @return self
      */
-    public function setExpirationDate($expirationDate)
+    public function setExpirationDate($expiration_date)
     {
-        if (is_null($expirationDate)) {
-            array_push($this->openAPINullablesSetToNull, 'expirationDate');
+        if (is_null($expiration_date)) {
+            array_push($this->openAPINullablesSetToNull, 'expiration_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expirationDate', $nullablesSetToNull);
+            $index = array_search('expiration_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['expirationDate'] = $expirationDate;
+        $this->container['expiration_date'] = $expiration_date;
 
         return $this;
     }
 
     /**
-     * Gets validityTimeframe
+     * Gets validity_timeframe
      *
      * @return \OpenAPI\Client\Model\ValidityTimeframe|null
      */
     public function getValidityTimeframe()
     {
-        return $this->container['validityTimeframe'];
+        return $this->container['validity_timeframe'];
     }
 
     /**
-     * Sets validityTimeframe
+     * Sets validity_timeframe
      *
-     * @param \OpenAPI\Client\Model\ValidityTimeframe|null $validityTimeframe validityTimeframe
+     * @param \OpenAPI\Client\Model\ValidityTimeframe|null $validity_timeframe validity_timeframe
      *
      * @return self
      */
-    public function setValidityTimeframe($validityTimeframe)
+    public function setValidityTimeframe($validity_timeframe)
     {
-        if (is_null($validityTimeframe)) {
-            throw new \InvalidArgumentException('non-nullable validityTimeframe cannot be null');
+        if (is_null($validity_timeframe)) {
+            throw new \InvalidArgumentException('non-nullable validity_timeframe cannot be null');
         }
-        $this->container['validityTimeframe'] = $validityTimeframe;
+        $this->container['validity_timeframe'] = $validity_timeframe;
 
         return $this;
     }
 
     /**
-     * Gets validityDayOfWeek
+     * Gets validity_day_of_week
      *
      * @return int[]|null
      */
     public function getValidityDayOfWeek()
     {
-        return $this->container['validityDayOfWeek'];
+        return $this->container['validity_day_of_week'];
     }
 
     /**
-     * Sets validityDayOfWeek
+     * Sets validity_day_of_week
      *
-     * @param int[]|null $validityDayOfWeek Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+     * @param int[]|null $validity_day_of_week Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
      *
      * @return self
      */
-    public function setValidityDayOfWeek($validityDayOfWeek)
+    public function setValidityDayOfWeek($validity_day_of_week)
     {
-        if (is_null($validityDayOfWeek)) {
-            array_push($this->openAPINullablesSetToNull, 'validityDayOfWeek');
+        if (is_null($validity_day_of_week)) {
+            array_push($this->openAPINullablesSetToNull, 'validity_day_of_week');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validityDayOfWeek', $nullablesSetToNull);
+            $index = array_search('validity_day_of_week', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getValidityDayOfWeekAllowableValues();
-        if (!is_null($validityDayOfWeek) && array_diff($validityDayOfWeek, $allowedValues)) {
+        if (!is_null($validity_day_of_week) && array_diff($validity_day_of_week, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'validityDayOfWeek', must be one of '%s'",
+                    "Invalid value for 'validity_day_of_week', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['validityDayOfWeek'] = $validityDayOfWeek;
+        $this->container['validity_day_of_week'] = $validity_day_of_week;
 
         return $this;
     }
 
     /**
-     * Gets validityHours
+     * Gets validity_hours
      *
      * @return \OpenAPI\Client\Model\ValidityHours|null
      */
     public function getValidityHours()
     {
-        return $this->container['validityHours'];
+        return $this->container['validity_hours'];
     }
 
     /**
-     * Sets validityHours
+     * Sets validity_hours
      *
-     * @param \OpenAPI\Client\Model\ValidityHours|null $validityHours validityHours
+     * @param \OpenAPI\Client\Model\ValidityHours|null $validity_hours validity_hours
      *
      * @return self
      */
-    public function setValidityHours($validityHours)
+    public function setValidityHours($validity_hours)
     {
-        if (is_null($validityHours)) {
-            throw new \InvalidArgumentException('non-nullable validityHours cannot be null');
+        if (is_null($validity_hours)) {
+            throw new \InvalidArgumentException('non-nullable validity_hours cannot be null');
         }
-        $this->container['validityHours'] = $validityHours;
+        $this->container['validity_hours'] = $validity_hours;
 
         return $this;
     }
@@ -796,35 +796,35 @@ class VouchersCreateWithSpecificCodeRequestBody implements ModelInterface, Array
     }
 
     /**
-     * Gets additionalInfo
+     * Gets additional_info
      *
      * @return string|null
      */
     public function getAdditionalInfo()
     {
-        return $this->container['additionalInfo'];
+        return $this->container['additional_info'];
     }
 
     /**
-     * Sets additionalInfo
+     * Sets additional_info
      *
-     * @param string|null $additionalInfo An optional field to keep any extra textual information about the code such as a code description and details.
+     * @param string|null $additional_info An optional field to keep any extra textual information about the code such as a code description and details.
      *
      * @return self
      */
-    public function setAdditionalInfo($additionalInfo)
+    public function setAdditionalInfo($additional_info)
     {
-        if (is_null($additionalInfo)) {
-            array_push($this->openAPINullablesSetToNull, 'additionalInfo');
+        if (is_null($additional_info)) {
+            array_push($this->openAPINullablesSetToNull, 'additional_info');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('additionalInfo', $nullablesSetToNull);
+            $index = array_search('additional_info', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['additionalInfo'] = $additionalInfo;
+        $this->container['additional_info'] = $additional_info;
 
         return $this;
     }
@@ -864,35 +864,35 @@ class VouchersCreateWithSpecificCodeRequestBody implements ModelInterface, Array
     }
 
     /**
-     * Gets validationRules
+     * Gets validation_rules
      *
      * @return string[]|null
      */
     public function getValidationRules()
     {
-        return $this->container['validationRules'];
+        return $this->container['validation_rules'];
     }
 
     /**
-     * Sets validationRules
+     * Sets validation_rules
      *
-     * @param string[]|null $validationRules Array containing the ID of the validation rule associated with the voucher.
+     * @param string[]|null $validation_rules Array containing the ID of the validation rule associated with the voucher.
      *
      * @return self
      */
-    public function setValidationRules($validationRules)
+    public function setValidationRules($validation_rules)
     {
-        if (is_null($validationRules)) {
-            array_push($this->openAPINullablesSetToNull, 'validationRules');
+        if (is_null($validation_rules)) {
+            array_push($this->openAPINullablesSetToNull, 'validation_rules');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validationRules', $nullablesSetToNull);
+            $index = array_search('validation_rules', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['validationRules'] = $validationRules;
+        $this->container['validation_rules'] = $validation_rules;
 
         return $this;
     }
@@ -976,28 +976,28 @@ class VouchersCreateWithSpecificCodeRequestBody implements ModelInterface, Array
     }
 
     /**
-     * Gets loyaltyCard
+     * Gets loyalty_card
      *
      * @return \OpenAPI\Client\Model\SimpleLoyaltyCard|null
      */
     public function getLoyaltyCard()
     {
-        return $this->container['loyaltyCard'];
+        return $this->container['loyalty_card'];
     }
 
     /**
-     * Sets loyaltyCard
+     * Sets loyalty_card
      *
-     * @param \OpenAPI\Client\Model\SimpleLoyaltyCard|null $loyaltyCard loyaltyCard
+     * @param \OpenAPI\Client\Model\SimpleLoyaltyCard|null $loyalty_card loyalty_card
      *
      * @return self
      */
-    public function setLoyaltyCard($loyaltyCard)
+    public function setLoyaltyCard($loyalty_card)
     {
-        if (is_null($loyaltyCard)) {
-            throw new \InvalidArgumentException('non-nullable loyaltyCard cannot be null');
+        if (is_null($loyalty_card)) {
+            throw new \InvalidArgumentException('non-nullable loyalty_card cannot be null');
         }
-        $this->container['loyaltyCard'] = $loyaltyCard;
+        $this->container['loyalty_card'] = $loyalty_card;
 
         return $this;
     }

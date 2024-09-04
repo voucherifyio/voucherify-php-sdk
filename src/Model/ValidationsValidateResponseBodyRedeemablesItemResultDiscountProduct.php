@@ -59,7 +59,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct implem
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'sourceId' => 'string',
+        'source_id' => 'string',
         'name' => 'string'
     ];
 
@@ -72,7 +72,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct implem
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'sourceId' => null,
+        'source_id' => null,
         'name' => null
     ];
 
@@ -83,7 +83,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct implem
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'sourceId' => true,
+		'source_id' => true,
 		'name' => true
     ];
 
@@ -174,7 +174,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct implem
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'sourceId' => 'source_id',
+        'source_id' => 'source_id',
         'name' => 'name'
     ];
 
@@ -185,7 +185,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct implem
      */
     protected static $setters = [
         'id' => 'setId',
-        'sourceId' => 'setSourceId',
+        'source_id' => 'setSourceId',
         'name' => 'setName'
     ];
 
@@ -196,7 +196,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct implem
      */
     protected static $getters = [
         'id' => 'getId',
-        'sourceId' => 'getSourceId',
+        'source_id' => 'getSourceId',
         'name' => 'getName'
     ];
 
@@ -258,7 +258,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct implem
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('source_id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
     }
 
@@ -339,35 +339,35 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct implem
     }
 
     /**
-     * Gets sourceId
+     * Gets source_id
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['sourceId'];
+        return $this->container['source_id'];
     }
 
     /**
-     * Sets sourceId
+     * Sets source_id
      *
-     * @param string|null $sourceId Product's source ID.
+     * @param string|null $source_id Product's source ID.
      *
      * @return self
      */
-    public function setSourceId($sourceId)
+    public function setSourceId($source_id)
     {
-        if (is_null($sourceId)) {
-            array_push($this->openAPINullablesSetToNull, 'sourceId');
+        if (is_null($source_id)) {
+            array_push($this->openAPINullablesSetToNull, 'source_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sourceId', $nullablesSetToNull);
+            $index = array_search('source_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sourceId'] = $sourceId;
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }

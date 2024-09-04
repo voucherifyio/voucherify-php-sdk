@@ -59,22 +59,22 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
       */
     protected static $openAPITypes = [
         'type' => 'string',
-        'amountOff' => 'float',
-        'amountOffFormula' => 'string',
-        'aggregatedAmountLimit' => 'int',
+        'amount_off' => 'float',
+        'amount_off_formula' => 'string',
+        'aggregated_amount_limit' => 'int',
         'effect' => 'string',
-        'isDynamic' => 'bool',
-        'unitOff' => 'int',
-        'unitOffFormula' => 'string',
-        'unitType' => 'string',
+        'is_dynamic' => 'bool',
+        'unit_off' => 'int',
+        'unit_off_formula' => 'string',
+        'unit_type' => 'string',
         'product' => '\OpenAPI\Client\Model\ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct',
         'sku' => '\OpenAPI\Client\Model\SimpleSkuDiscountUnit',
         'units' => '\OpenAPI\Client\Model\DiscountUnitMultipleOneUnit[]',
-        'percentOff' => 'float',
-        'percentOffFormula' => 'string',
-        'amountLimit' => 'float',
-        'fixedAmount' => 'float',
-        'fixedAmountFormula' => 'string'
+        'percent_off' => 'float',
+        'percent_off_formula' => 'string',
+        'amount_limit' => 'float',
+        'fixed_amount' => 'float',
+        'fixed_amount_formula' => 'string'
     ];
 
     /**
@@ -86,22 +86,22 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
       */
     protected static $openAPIFormats = [
         'type' => null,
-        'amountOff' => null,
-        'amountOffFormula' => null,
-        'aggregatedAmountLimit' => null,
+        'amount_off' => null,
+        'amount_off_formula' => null,
+        'aggregated_amount_limit' => null,
         'effect' => null,
-        'isDynamic' => null,
-        'unitOff' => null,
-        'unitOffFormula' => null,
-        'unitType' => null,
+        'is_dynamic' => null,
+        'unit_off' => null,
+        'unit_off_formula' => null,
+        'unit_type' => null,
         'product' => null,
         'sku' => null,
         'units' => null,
-        'percentOff' => null,
-        'percentOffFormula' => null,
-        'amountLimit' => null,
-        'fixedAmount' => null,
-        'fixedAmountFormula' => null
+        'percent_off' => null,
+        'percent_off_formula' => null,
+        'amount_limit' => null,
+        'fixed_amount' => null,
+        'fixed_amount_formula' => null
     ];
 
     /**
@@ -111,22 +111,22 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
       */
     protected static array $openAPINullables = [
         'type' => false,
-		'amountOff' => true,
-		'amountOffFormula' => true,
-		'aggregatedAmountLimit' => true,
+		'amount_off' => true,
+		'amount_off_formula' => true,
+		'aggregated_amount_limit' => true,
 		'effect' => false,
-		'isDynamic' => true,
-		'unitOff' => true,
-		'unitOffFormula' => true,
-		'unitType' => true,
+		'is_dynamic' => true,
+		'unit_off' => true,
+		'unit_off_formula' => true,
+		'unit_type' => true,
 		'product' => false,
 		'sku' => false,
 		'units' => true,
-		'percentOff' => true,
-		'percentOffFormula' => true,
-		'amountLimit' => true,
-		'fixedAmount' => true,
-		'fixedAmountFormula' => true
+		'percent_off' => true,
+		'percent_off_formula' => true,
+		'amount_limit' => true,
+		'fixed_amount' => true,
+		'fixed_amount_formula' => true
     ];
 
     /**
@@ -216,22 +216,22 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
      */
     protected static $attributeMap = [
         'type' => 'type',
-        'amountOff' => 'amount_off',
-        'amountOffFormula' => 'amount_off_formula',
-        'aggregatedAmountLimit' => 'aggregated_amount_limit',
+        'amount_off' => 'amount_off',
+        'amount_off_formula' => 'amount_off_formula',
+        'aggregated_amount_limit' => 'aggregated_amount_limit',
         'effect' => 'effect',
-        'isDynamic' => 'is_dynamic',
-        'unitOff' => 'unit_off',
-        'unitOffFormula' => 'unit_off_formula',
-        'unitType' => 'unit_type',
+        'is_dynamic' => 'is_dynamic',
+        'unit_off' => 'unit_off',
+        'unit_off_formula' => 'unit_off_formula',
+        'unit_type' => 'unit_type',
         'product' => 'product',
         'sku' => 'sku',
         'units' => 'units',
-        'percentOff' => 'percent_off',
-        'percentOffFormula' => 'percent_off_formula',
-        'amountLimit' => 'amount_limit',
-        'fixedAmount' => 'fixed_amount',
-        'fixedAmountFormula' => 'fixed_amount_formula'
+        'percent_off' => 'percent_off',
+        'percent_off_formula' => 'percent_off_formula',
+        'amount_limit' => 'amount_limit',
+        'fixed_amount' => 'fixed_amount',
+        'fixed_amount_formula' => 'fixed_amount_formula'
     ];
 
     /**
@@ -241,22 +241,22 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
      */
     protected static $setters = [
         'type' => 'setType',
-        'amountOff' => 'setAmountOff',
-        'amountOffFormula' => 'setAmountOffFormula',
-        'aggregatedAmountLimit' => 'setAggregatedAmountLimit',
+        'amount_off' => 'setAmountOff',
+        'amount_off_formula' => 'setAmountOffFormula',
+        'aggregated_amount_limit' => 'setAggregatedAmountLimit',
         'effect' => 'setEffect',
-        'isDynamic' => 'setIsDynamic',
-        'unitOff' => 'setUnitOff',
-        'unitOffFormula' => 'setUnitOffFormula',
-        'unitType' => 'setUnitType',
+        'is_dynamic' => 'setIsDynamic',
+        'unit_off' => 'setUnitOff',
+        'unit_off_formula' => 'setUnitOffFormula',
+        'unit_type' => 'setUnitType',
         'product' => 'setProduct',
         'sku' => 'setSku',
         'units' => 'setUnits',
-        'percentOff' => 'setPercentOff',
-        'percentOffFormula' => 'setPercentOffFormula',
-        'amountLimit' => 'setAmountLimit',
-        'fixedAmount' => 'setFixedAmount',
-        'fixedAmountFormula' => 'setFixedAmountFormula'
+        'percent_off' => 'setPercentOff',
+        'percent_off_formula' => 'setPercentOffFormula',
+        'amount_limit' => 'setAmountLimit',
+        'fixed_amount' => 'setFixedAmount',
+        'fixed_amount_formula' => 'setFixedAmountFormula'
     ];
 
     /**
@@ -266,22 +266,22 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
      */
     protected static $getters = [
         'type' => 'getType',
-        'amountOff' => 'getAmountOff',
-        'amountOffFormula' => 'getAmountOffFormula',
-        'aggregatedAmountLimit' => 'getAggregatedAmountLimit',
+        'amount_off' => 'getAmountOff',
+        'amount_off_formula' => 'getAmountOffFormula',
+        'aggregated_amount_limit' => 'getAggregatedAmountLimit',
         'effect' => 'getEffect',
-        'isDynamic' => 'getIsDynamic',
-        'unitOff' => 'getUnitOff',
-        'unitOffFormula' => 'getUnitOffFormula',
-        'unitType' => 'getUnitType',
+        'is_dynamic' => 'getIsDynamic',
+        'unit_off' => 'getUnitOff',
+        'unit_off_formula' => 'getUnitOffFormula',
+        'unit_type' => 'getUnitType',
         'product' => 'getProduct',
         'sku' => 'getSku',
         'units' => 'getUnits',
-        'percentOff' => 'getPercentOff',
-        'percentOffFormula' => 'getPercentOffFormula',
-        'amountLimit' => 'getAmountLimit',
-        'fixedAmount' => 'getFixedAmount',
-        'fixedAmountFormula' => 'getFixedAmountFormula'
+        'percent_off' => 'getPercentOff',
+        'percent_off_formula' => 'getPercentOffFormula',
+        'amount_limit' => 'getAmountLimit',
+        'fixed_amount' => 'getFixedAmount',
+        'fixed_amount_formula' => 'getFixedAmountFormula'
     ];
 
     /**
@@ -388,22 +388,22 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
     public function __construct(array $data = null)
     {
         $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('amountOff', $data ?? [], null);
-        $this->setIfExists('amountOffFormula', $data ?? [], null);
-        $this->setIfExists('aggregatedAmountLimit', $data ?? [], null);
+        $this->setIfExists('amount_off', $data ?? [], null);
+        $this->setIfExists('amount_off_formula', $data ?? [], null);
+        $this->setIfExists('aggregated_amount_limit', $data ?? [], null);
         $this->setIfExists('effect', $data ?? [], null);
-        $this->setIfExists('isDynamic', $data ?? [], null);
-        $this->setIfExists('unitOff', $data ?? [], null);
-        $this->setIfExists('unitOffFormula', $data ?? [], null);
-        $this->setIfExists('unitType', $data ?? [], null);
+        $this->setIfExists('is_dynamic', $data ?? [], null);
+        $this->setIfExists('unit_off', $data ?? [], null);
+        $this->setIfExists('unit_off_formula', $data ?? [], null);
+        $this->setIfExists('unit_type', $data ?? [], null);
         $this->setIfExists('product', $data ?? [], null);
         $this->setIfExists('sku', $data ?? [], null);
         $this->setIfExists('units', $data ?? [], null);
-        $this->setIfExists('percentOff', $data ?? [], null);
-        $this->setIfExists('percentOffFormula', $data ?? [], null);
-        $this->setIfExists('amountLimit', $data ?? [], null);
-        $this->setIfExists('fixedAmount', $data ?? [], null);
-        $this->setIfExists('fixedAmountFormula', $data ?? [], null);
+        $this->setIfExists('percent_off', $data ?? [], null);
+        $this->setIfExists('percent_off_formula', $data ?? [], null);
+        $this->setIfExists('amount_limit', $data ?? [], null);
+        $this->setIfExists('fixed_amount', $data ?? [], null);
+        $this->setIfExists('fixed_amount_formula', $data ?? [], null);
     }
 
     /**
@@ -504,103 +504,103 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
     }
 
     /**
-     * Gets amountOff
+     * Gets amount_off
      *
      * @return float|null
      */
     public function getAmountOff()
     {
-        return $this->container['amountOff'];
+        return $this->container['amount_off'];
     }
 
     /**
-     * Sets amountOff
+     * Sets amount_off
      *
-     * @param float|null $amountOff Amount taken off the subtotal of a price. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $10 discount is written as 1000.
+     * @param float|null $amount_off Amount taken off the subtotal of a price. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $10 discount is written as 1000.
      *
      * @return self
      */
-    public function setAmountOff($amountOff)
+    public function setAmountOff($amount_off)
     {
-        if (is_null($amountOff)) {
-            array_push($this->openAPINullablesSetToNull, 'amountOff');
+        if (is_null($amount_off)) {
+            array_push($this->openAPINullablesSetToNull, 'amount_off');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amountOff', $nullablesSetToNull);
+            $index = array_search('amount_off', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['amountOff'] = $amountOff;
+        $this->container['amount_off'] = $amount_off;
 
         return $this;
     }
 
     /**
-     * Gets amountOffFormula
+     * Gets amount_off_formula
      *
      * @return string|null
      */
     public function getAmountOffFormula()
     {
-        return $this->container['amountOffFormula'];
+        return $this->container['amount_off_formula'];
     }
 
     /**
-     * Sets amountOffFormula
+     * Sets amount_off_formula
      *
-     * @param string|null $amountOffFormula amountOffFormula
+     * @param string|null $amount_off_formula amount_off_formula
      *
      * @return self
      */
-    public function setAmountOffFormula($amountOffFormula)
+    public function setAmountOffFormula($amount_off_formula)
     {
-        if (is_null($amountOffFormula)) {
-            array_push($this->openAPINullablesSetToNull, 'amountOffFormula');
+        if (is_null($amount_off_formula)) {
+            array_push($this->openAPINullablesSetToNull, 'amount_off_formula');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amountOffFormula', $nullablesSetToNull);
+            $index = array_search('amount_off_formula', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['amountOffFormula'] = $amountOffFormula;
+        $this->container['amount_off_formula'] = $amount_off_formula;
 
         return $this;
     }
 
     /**
-     * Gets aggregatedAmountLimit
+     * Gets aggregated_amount_limit
      *
      * @return int|null
      */
     public function getAggregatedAmountLimit()
     {
-        return $this->container['aggregatedAmountLimit'];
+        return $this->container['aggregated_amount_limit'];
     }
 
     /**
-     * Sets aggregatedAmountLimit
+     * Sets aggregated_amount_limit
      *
-     * @param int|null $aggregatedAmountLimit Maximum discount amount per order.
+     * @param int|null $aggregated_amount_limit Maximum discount amount per order.
      *
      * @return self
      */
-    public function setAggregatedAmountLimit($aggregatedAmountLimit)
+    public function setAggregatedAmountLimit($aggregated_amount_limit)
     {
-        if (is_null($aggregatedAmountLimit)) {
-            array_push($this->openAPINullablesSetToNull, 'aggregatedAmountLimit');
+        if (is_null($aggregated_amount_limit)) {
+            array_push($this->openAPINullablesSetToNull, 'aggregated_amount_limit');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('aggregatedAmountLimit', $nullablesSetToNull);
+            $index = array_search('aggregated_amount_limit', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['aggregatedAmountLimit'] = $aggregatedAmountLimit;
+        $this->container['aggregated_amount_limit'] = $aggregated_amount_limit;
 
         return $this;
     }
@@ -643,137 +643,137 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
     }
 
     /**
-     * Gets isDynamic
+     * Gets is_dynamic
      *
      * @return bool|null
      */
     public function getIsDynamic()
     {
-        return $this->container['isDynamic'];
+        return $this->container['is_dynamic'];
     }
 
     /**
-     * Sets isDynamic
+     * Sets is_dynamic
      *
-     * @param bool|null $isDynamic Flag indicating whether the discount was calculated using a formula.
+     * @param bool|null $is_dynamic Flag indicating whether the discount was calculated using a formula.
      *
      * @return self
      */
-    public function setIsDynamic($isDynamic)
+    public function setIsDynamic($is_dynamic)
     {
-        if (is_null($isDynamic)) {
-            array_push($this->openAPINullablesSetToNull, 'isDynamic');
+        if (is_null($is_dynamic)) {
+            array_push($this->openAPINullablesSetToNull, 'is_dynamic');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('isDynamic', $nullablesSetToNull);
+            $index = array_search('is_dynamic', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['isDynamic'] = $isDynamic;
+        $this->container['is_dynamic'] = $is_dynamic;
 
         return $this;
     }
 
     /**
-     * Gets unitOff
+     * Gets unit_off
      *
      * @return int|null
      */
     public function getUnitOff()
     {
-        return $this->container['unitOff'];
+        return $this->container['unit_off'];
     }
 
     /**
-     * Sets unitOff
+     * Sets unit_off
      *
-     * @param int|null $unitOff Number of units to be granted a full value discount.
+     * @param int|null $unit_off Number of units to be granted a full value discount.
      *
      * @return self
      */
-    public function setUnitOff($unitOff)
+    public function setUnitOff($unit_off)
     {
-        if (is_null($unitOff)) {
-            array_push($this->openAPINullablesSetToNull, 'unitOff');
+        if (is_null($unit_off)) {
+            array_push($this->openAPINullablesSetToNull, 'unit_off');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unitOff', $nullablesSetToNull);
+            $index = array_search('unit_off', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['unitOff'] = $unitOff;
+        $this->container['unit_off'] = $unit_off;
 
         return $this;
     }
 
     /**
-     * Gets unitOffFormula
+     * Gets unit_off_formula
      *
      * @return string|null
      */
     public function getUnitOffFormula()
     {
-        return $this->container['unitOffFormula'];
+        return $this->container['unit_off_formula'];
     }
 
     /**
-     * Sets unitOffFormula
+     * Sets unit_off_formula
      *
-     * @param string|null $unitOffFormula unitOffFormula
+     * @param string|null $unit_off_formula unit_off_formula
      *
      * @return self
      */
-    public function setUnitOffFormula($unitOffFormula)
+    public function setUnitOffFormula($unit_off_formula)
     {
-        if (is_null($unitOffFormula)) {
-            array_push($this->openAPINullablesSetToNull, 'unitOffFormula');
+        if (is_null($unit_off_formula)) {
+            array_push($this->openAPINullablesSetToNull, 'unit_off_formula');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unitOffFormula', $nullablesSetToNull);
+            $index = array_search('unit_off_formula', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['unitOffFormula'] = $unitOffFormula;
+        $this->container['unit_off_formula'] = $unit_off_formula;
 
         return $this;
     }
 
     /**
-     * Gets unitType
+     * Gets unit_type
      *
      * @return string|null
      */
     public function getUnitType()
     {
-        return $this->container['unitType'];
+        return $this->container['unit_type'];
     }
 
     /**
-     * Sets unitType
+     * Sets unit_type
      *
-     * @param string|null $unitType The product deemed as free, chosen from product inventory (e.g. time, items).
+     * @param string|null $unit_type The product deemed as free, chosen from product inventory (e.g. time, items).
      *
      * @return self
      */
-    public function setUnitType($unitType)
+    public function setUnitType($unit_type)
     {
-        if (is_null($unitType)) {
-            array_push($this->openAPINullablesSetToNull, 'unitType');
+        if (is_null($unit_type)) {
+            array_push($this->openAPINullablesSetToNull, 'unit_type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unitType', $nullablesSetToNull);
+            $index = array_search('unit_type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['unitType'] = $unitType;
+        $this->container['unit_type'] = $unit_type;
 
         return $this;
     }
@@ -867,171 +867,171 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
     }
 
     /**
-     * Gets percentOff
+     * Gets percent_off
      *
      * @return float|null
      */
     public function getPercentOff()
     {
-        return $this->container['percentOff'];
+        return $this->container['percent_off'];
     }
 
     /**
-     * Sets percentOff
+     * Sets percent_off
      *
-     * @param float|null $percentOff The percent discount that the customer will receive.
+     * @param float|null $percent_off The percent discount that the customer will receive.
      *
      * @return self
      */
-    public function setPercentOff($percentOff)
+    public function setPercentOff($percent_off)
     {
-        if (is_null($percentOff)) {
-            array_push($this->openAPINullablesSetToNull, 'percentOff');
+        if (is_null($percent_off)) {
+            array_push($this->openAPINullablesSetToNull, 'percent_off');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('percentOff', $nullablesSetToNull);
+            $index = array_search('percent_off', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['percentOff'] = $percentOff;
+        $this->container['percent_off'] = $percent_off;
 
         return $this;
     }
 
     /**
-     * Gets percentOffFormula
+     * Gets percent_off_formula
      *
      * @return string|null
      */
     public function getPercentOffFormula()
     {
-        return $this->container['percentOffFormula'];
+        return $this->container['percent_off_formula'];
     }
 
     /**
-     * Sets percentOffFormula
+     * Sets percent_off_formula
      *
-     * @param string|null $percentOffFormula percentOffFormula
+     * @param string|null $percent_off_formula percent_off_formula
      *
      * @return self
      */
-    public function setPercentOffFormula($percentOffFormula)
+    public function setPercentOffFormula($percent_off_formula)
     {
-        if (is_null($percentOffFormula)) {
-            array_push($this->openAPINullablesSetToNull, 'percentOffFormula');
+        if (is_null($percent_off_formula)) {
+            array_push($this->openAPINullablesSetToNull, 'percent_off_formula');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('percentOffFormula', $nullablesSetToNull);
+            $index = array_search('percent_off_formula', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['percentOffFormula'] = $percentOffFormula;
+        $this->container['percent_off_formula'] = $percent_off_formula;
 
         return $this;
     }
 
     /**
-     * Gets amountLimit
+     * Gets amount_limit
      *
      * @return float|null
      */
     public function getAmountLimit()
     {
-        return $this->container['amountLimit'];
+        return $this->container['amount_limit'];
     }
 
     /**
-     * Sets amountLimit
+     * Sets amount_limit
      *
-     * @param float|null $amountLimit Upper limit allowed to be applied as a discount. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $6 maximum discount is written as 600.
+     * @param float|null $amount_limit Upper limit allowed to be applied as a discount. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $6 maximum discount is written as 600.
      *
      * @return self
      */
-    public function setAmountLimit($amountLimit)
+    public function setAmountLimit($amount_limit)
     {
-        if (is_null($amountLimit)) {
-            array_push($this->openAPINullablesSetToNull, 'amountLimit');
+        if (is_null($amount_limit)) {
+            array_push($this->openAPINullablesSetToNull, 'amount_limit');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amountLimit', $nullablesSetToNull);
+            $index = array_search('amount_limit', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['amountLimit'] = $amountLimit;
+        $this->container['amount_limit'] = $amount_limit;
 
         return $this;
     }
 
     /**
-     * Gets fixedAmount
+     * Gets fixed_amount
      *
      * @return float|null
      */
     public function getFixedAmount()
     {
-        return $this->container['fixedAmount'];
+        return $this->container['fixed_amount'];
     }
 
     /**
-     * Sets fixedAmount
+     * Sets fixed_amount
      *
-     * @param float|null $fixedAmount Sets a fixed value for an order total or the item price. The value is multiplied by 100 to precisely represent 2 decimal places. For example, a $10 discount is written as 1000. If the fixed amount is calculated by the formula, i.e. the `fixed_amount_formula` parameter is present in the fixed amount definition, this value becomes the **fallback value**. As a result, if the formula cannot be calculated due to missing metadata, for example, this value will be used as the fixed value.
+     * @param float|null $fixed_amount Sets a fixed value for an order total or the item price. The value is multiplied by 100 to precisely represent 2 decimal places. For example, a $10 discount is written as 1000. If the fixed amount is calculated by the formula, i.e. the `fixed_amount_formula` parameter is present in the fixed amount definition, this value becomes the **fallback value**. As a result, if the formula cannot be calculated due to missing metadata, for example, this value will be used as the fixed value.
      *
      * @return self
      */
-    public function setFixedAmount($fixedAmount)
+    public function setFixedAmount($fixed_amount)
     {
-        if (is_null($fixedAmount)) {
-            array_push($this->openAPINullablesSetToNull, 'fixedAmount');
+        if (is_null($fixed_amount)) {
+            array_push($this->openAPINullablesSetToNull, 'fixed_amount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fixedAmount', $nullablesSetToNull);
+            $index = array_search('fixed_amount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['fixedAmount'] = $fixedAmount;
+        $this->container['fixed_amount'] = $fixed_amount;
 
         return $this;
     }
 
     /**
-     * Gets fixedAmountFormula
+     * Gets fixed_amount_formula
      *
      * @return string|null
      */
     public function getFixedAmountFormula()
     {
-        return $this->container['fixedAmountFormula'];
+        return $this->container['fixed_amount_formula'];
     }
 
     /**
-     * Sets fixedAmountFormula
+     * Sets fixed_amount_formula
      *
-     * @param string|null $fixedAmountFormula fixedAmountFormula
+     * @param string|null $fixed_amount_formula fixed_amount_formula
      *
      * @return self
      */
-    public function setFixedAmountFormula($fixedAmountFormula)
+    public function setFixedAmountFormula($fixed_amount_formula)
     {
-        if (is_null($fixedAmountFormula)) {
-            array_push($this->openAPINullablesSetToNull, 'fixedAmountFormula');
+        if (is_null($fixed_amount_formula)) {
+            array_push($this->openAPINullablesSetToNull, 'fixed_amount_formula');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fixedAmountFormula', $nullablesSetToNull);
+            $index = array_search('fixed_amount_formula', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['fixedAmountFormula'] = $fixedAmountFormula;
+        $this->container['fixed_amount_formula'] = $fixed_amount_formula;
 
         return $this;
     }

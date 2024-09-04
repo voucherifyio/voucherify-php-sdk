@@ -143,16 +143,16 @@ class RedemptionsApi
      *
      * Get Redemption
      *
-     * @param  string $redemptionId ID of previously created redemption. (required)
+     * @param  string $redemption_id ID of previously created redemption. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRedemption'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\RedemptionsGetResponseBody
      */
-    public function getRedemption($redemptionId, string $contentType = self::contentTypes['getRedemption'][0])
+    public function getRedemption($redemption_id, string $contentType = self::contentTypes['getRedemption'][0])
     {
-        list($response) = $this->getRedemptionWithHttpInfo($redemptionId, $contentType);
+        list($response) = $this->getRedemptionWithHttpInfo($redemption_id, $contentType);
         return $response;
     }
 
@@ -161,16 +161,16 @@ class RedemptionsApi
      *
      * Get Redemption
      *
-     * @param  string $redemptionId ID of previously created redemption. (required)
+     * @param  string $redemption_id ID of previously created redemption. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRedemption'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\RedemptionsGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getRedemptionWithHttpInfo($redemptionId, string $contentType = self::contentTypes['getRedemption'][0])
+    public function getRedemptionWithHttpInfo($redemption_id, string $contentType = self::contentTypes['getRedemption'][0])
     {
-        $request = $this->getRedemptionRequest($redemptionId, $contentType);
+        $request = $this->getRedemptionRequest($redemption_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -261,15 +261,15 @@ class RedemptionsApi
      *
      * Get Redemption
      *
-     * @param  string $redemptionId ID of previously created redemption. (required)
+     * @param  string $redemption_id ID of previously created redemption. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRedemption'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRedemptionAsync($redemptionId, string $contentType = self::contentTypes['getRedemption'][0])
+    public function getRedemptionAsync($redemption_id, string $contentType = self::contentTypes['getRedemption'][0])
     {
-        return $this->getRedemptionAsyncWithHttpInfo($redemptionId, $contentType)
+        return $this->getRedemptionAsyncWithHttpInfo($redemption_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -282,16 +282,16 @@ class RedemptionsApi
      *
      * Get Redemption
      *
-     * @param  string $redemptionId ID of previously created redemption. (required)
+     * @param  string $redemption_id ID of previously created redemption. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRedemption'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getRedemptionAsyncWithHttpInfo($redemptionId, string $contentType = self::contentTypes['getRedemption'][0])
+    public function getRedemptionAsyncWithHttpInfo($redemption_id, string $contentType = self::contentTypes['getRedemption'][0])
     {
         $returnType = '\OpenAPI\Client\Model\RedemptionsGetResponseBody';
-        $request = $this->getRedemptionRequest($redemptionId, $contentType);
+        $request = $this->getRedemptionRequest($redemption_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -332,19 +332,19 @@ class RedemptionsApi
     /**
      * Create request for operation 'getRedemption'
      *
-     * @param  string $redemptionId ID of previously created redemption. (required)
+     * @param  string $redemption_id ID of previously created redemption. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRedemption'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getRedemptionRequest($redemptionId, string $contentType = self::contentTypes['getRedemption'][0])
+    public function getRedemptionRequest($redemption_id, string $contentType = self::contentTypes['getRedemption'][0])
     {
 
-        // verify the required parameter 'redemptionId' is set
-        if ($redemptionId === null || (is_array($redemptionId) && count($redemptionId) === 0)) {
+        // verify the required parameter 'redemption_id' is set
+        if ($redemption_id === null || (is_array($redemption_id) && count($redemption_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $redemptionId when calling getRedemption'
+                'Missing the required parameter $redemption_id when calling getRedemption'
             );
         }
 
@@ -359,10 +359,10 @@ class RedemptionsApi
 
 
         // path params
-        if ($redemptionId !== null) {
+        if ($redemption_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'redemptionId' . '}',
-                ObjectSerializer::toPathValue($redemptionId),
+                ObjectSerializer::toPathValue($redemption_id),
                 $resourcePath
             );
         }
@@ -735,7 +735,7 @@ class RedemptionsApi
      * @param  string $campaign A filter by the campaign **name** that the redemption resources originate from. (optional)
      * @param  string $customer Return redemptions performed by the customer with given id or source_id. (optional)
      * @param  ParameterOrderListRedemptions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  ParameterFiltersListRedemptions $filters Filters for listing responses. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRedemptions'] to see the possible values for this operation
      *
@@ -743,9 +743,9 @@ class RedemptionsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\RedemptionsListResponseBody
      */
-    public function listRedemptions($limit = null, $page = null, $result = null, $campaign = null, $customer = null, $order = null, $createdAt = null, $filters = null, string $contentType = self::contentTypes['listRedemptions'][0])
+    public function listRedemptions($limit = null, $page = null, $result = null, $campaign = null, $customer = null, $order = null, $created_at = null, $filters = null, string $contentType = self::contentTypes['listRedemptions'][0])
     {
-        list($response) = $this->listRedemptionsWithHttpInfo($limit, $page, $result, $campaign, $customer, $order, $createdAt, $filters, $contentType);
+        list($response) = $this->listRedemptionsWithHttpInfo($limit, $page, $result, $campaign, $customer, $order, $created_at, $filters, $contentType);
         return $response;
     }
 
@@ -760,7 +760,7 @@ class RedemptionsApi
      * @param  string $campaign A filter by the campaign **name** that the redemption resources originate from. (optional)
      * @param  string $customer Return redemptions performed by the customer with given id or source_id. (optional)
      * @param  ParameterOrderListRedemptions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  ParameterFiltersListRedemptions $filters Filters for listing responses. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRedemptions'] to see the possible values for this operation
      *
@@ -768,9 +768,9 @@ class RedemptionsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\RedemptionsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listRedemptionsWithHttpInfo($limit = null, $page = null, $result = null, $campaign = null, $customer = null, $order = null, $createdAt = null, $filters = null, string $contentType = self::contentTypes['listRedemptions'][0])
+    public function listRedemptionsWithHttpInfo($limit = null, $page = null, $result = null, $campaign = null, $customer = null, $order = null, $created_at = null, $filters = null, string $contentType = self::contentTypes['listRedemptions'][0])
     {
-        $request = $this->listRedemptionsRequest($limit, $page, $result, $campaign, $customer, $order, $createdAt, $filters, $contentType);
+        $request = $this->listRedemptionsRequest($limit, $page, $result, $campaign, $customer, $order, $created_at, $filters, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -867,16 +867,16 @@ class RedemptionsApi
      * @param  string $campaign A filter by the campaign **name** that the redemption resources originate from. (optional)
      * @param  string $customer Return redemptions performed by the customer with given id or source_id. (optional)
      * @param  ParameterOrderListRedemptions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  ParameterFiltersListRedemptions $filters Filters for listing responses. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRedemptions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listRedemptionsAsync($limit = null, $page = null, $result = null, $campaign = null, $customer = null, $order = null, $createdAt = null, $filters = null, string $contentType = self::contentTypes['listRedemptions'][0])
+    public function listRedemptionsAsync($limit = null, $page = null, $result = null, $campaign = null, $customer = null, $order = null, $created_at = null, $filters = null, string $contentType = self::contentTypes['listRedemptions'][0])
     {
-        return $this->listRedemptionsAsyncWithHttpInfo($limit, $page, $result, $campaign, $customer, $order, $createdAt, $filters, $contentType)
+        return $this->listRedemptionsAsyncWithHttpInfo($limit, $page, $result, $campaign, $customer, $order, $created_at, $filters, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -895,17 +895,17 @@ class RedemptionsApi
      * @param  string $campaign A filter by the campaign **name** that the redemption resources originate from. (optional)
      * @param  string $customer Return redemptions performed by the customer with given id or source_id. (optional)
      * @param  ParameterOrderListRedemptions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  ParameterFiltersListRedemptions $filters Filters for listing responses. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRedemptions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listRedemptionsAsyncWithHttpInfo($limit = null, $page = null, $result = null, $campaign = null, $customer = null, $order = null, $createdAt = null, $filters = null, string $contentType = self::contentTypes['listRedemptions'][0])
+    public function listRedemptionsAsyncWithHttpInfo($limit = null, $page = null, $result = null, $campaign = null, $customer = null, $order = null, $created_at = null, $filters = null, string $contentType = self::contentTypes['listRedemptions'][0])
     {
         $returnType = '\OpenAPI\Client\Model\RedemptionsListResponseBody';
-        $request = $this->listRedemptionsRequest($limit, $page, $result, $campaign, $customer, $order, $createdAt, $filters, $contentType);
+        $request = $this->listRedemptionsRequest($limit, $page, $result, $campaign, $customer, $order, $created_at, $filters, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -952,14 +952,14 @@ class RedemptionsApi
      * @param  string $campaign A filter by the campaign **name** that the redemption resources originate from. (optional)
      * @param  string $customer Return redemptions performed by the customer with given id or source_id. (optional)
      * @param  ParameterOrderListRedemptions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  ParameterFiltersListRedemptions $filters Filters for listing responses. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listRedemptions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listRedemptionsRequest($limit = null, $page = null, $result = null, $campaign = null, $customer = null, $order = null, $createdAt = null, $filters = null, string $contentType = self::contentTypes['listRedemptions'][0])
+    public function listRedemptionsRequest($limit = null, $page = null, $result = null, $campaign = null, $customer = null, $order = null, $created_at = null, $filters = null, string $contentType = self::contentTypes['listRedemptions'][0])
     {
 
         if ($limit !== null && $limit > 100) {
@@ -1046,7 +1046,7 @@ class RedemptionsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $createdAt,
+            $created_at,
             'created_at', // param base name
             'object', // openApiType
             'deepObject', // style
@@ -1134,16 +1134,16 @@ class RedemptionsApi
      *
      * Redeem Stackable Discounts
      *
-     * @param  \OpenAPI\Client\Model\RedemptionsRedeemRequestBody $redemptionsRedeemRequestBody redemptionsRedeemRequestBody (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRedeemRequestBody $redemptions_redeem_request_body redemptions_redeem_request_body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemStackedDiscounts'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\RedemptionsRedeemResponseBody
      */
-    public function redeemStackedDiscounts($redemptionsRedeemRequestBody = null, string $contentType = self::contentTypes['redeemStackedDiscounts'][0])
+    public function redeemStackedDiscounts($redemptions_redeem_request_body = null, string $contentType = self::contentTypes['redeemStackedDiscounts'][0])
     {
-        list($response) = $this->redeemStackedDiscountsWithHttpInfo($redemptionsRedeemRequestBody, $contentType);
+        list($response) = $this->redeemStackedDiscountsWithHttpInfo($redemptions_redeem_request_body, $contentType);
         return $response;
     }
 
@@ -1152,16 +1152,16 @@ class RedemptionsApi
      *
      * Redeem Stackable Discounts
      *
-     * @param  \OpenAPI\Client\Model\RedemptionsRedeemRequestBody $redemptionsRedeemRequestBody (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRedeemRequestBody $redemptions_redeem_request_body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemStackedDiscounts'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\RedemptionsRedeemResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function redeemStackedDiscountsWithHttpInfo($redemptionsRedeemRequestBody = null, string $contentType = self::contentTypes['redeemStackedDiscounts'][0])
+    public function redeemStackedDiscountsWithHttpInfo($redemptions_redeem_request_body = null, string $contentType = self::contentTypes['redeemStackedDiscounts'][0])
     {
-        $request = $this->redeemStackedDiscountsRequest($redemptionsRedeemRequestBody, $contentType);
+        $request = $this->redeemStackedDiscountsRequest($redemptions_redeem_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1252,15 +1252,15 @@ class RedemptionsApi
      *
      * Redeem Stackable Discounts
      *
-     * @param  \OpenAPI\Client\Model\RedemptionsRedeemRequestBody $redemptionsRedeemRequestBody (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRedeemRequestBody $redemptions_redeem_request_body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemStackedDiscounts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function redeemStackedDiscountsAsync($redemptionsRedeemRequestBody = null, string $contentType = self::contentTypes['redeemStackedDiscounts'][0])
+    public function redeemStackedDiscountsAsync($redemptions_redeem_request_body = null, string $contentType = self::contentTypes['redeemStackedDiscounts'][0])
     {
-        return $this->redeemStackedDiscountsAsyncWithHttpInfo($redemptionsRedeemRequestBody, $contentType)
+        return $this->redeemStackedDiscountsAsyncWithHttpInfo($redemptions_redeem_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1273,16 +1273,16 @@ class RedemptionsApi
      *
      * Redeem Stackable Discounts
      *
-     * @param  \OpenAPI\Client\Model\RedemptionsRedeemRequestBody $redemptionsRedeemRequestBody (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRedeemRequestBody $redemptions_redeem_request_body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemStackedDiscounts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function redeemStackedDiscountsAsyncWithHttpInfo($redemptionsRedeemRequestBody = null, string $contentType = self::contentTypes['redeemStackedDiscounts'][0])
+    public function redeemStackedDiscountsAsyncWithHttpInfo($redemptions_redeem_request_body = null, string $contentType = self::contentTypes['redeemStackedDiscounts'][0])
     {
         $returnType = '\OpenAPI\Client\Model\RedemptionsRedeemResponseBody';
-        $request = $this->redeemStackedDiscountsRequest($redemptionsRedeemRequestBody, $contentType);
+        $request = $this->redeemStackedDiscountsRequest($redemptions_redeem_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1323,13 +1323,13 @@ class RedemptionsApi
     /**
      * Create request for operation 'redeemStackedDiscounts'
      *
-     * @param  \OpenAPI\Client\Model\RedemptionsRedeemRequestBody $redemptionsRedeemRequestBody (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRedeemRequestBody $redemptions_redeem_request_body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['redeemStackedDiscounts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function redeemStackedDiscountsRequest($redemptionsRedeemRequestBody = null, string $contentType = self::contentTypes['redeemStackedDiscounts'][0])
+    public function redeemStackedDiscountsRequest($redemptions_redeem_request_body = null, string $contentType = self::contentTypes['redeemStackedDiscounts'][0])
     {
 
 
@@ -1352,12 +1352,12 @@ class RedemptionsApi
         );
 
         // for model (json/xml)
-        if (isset($redemptionsRedeemRequestBody)) {
+        if (isset($redemptions_redeem_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($redemptionsRedeemRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($redemptions_redeem_request_body));
             } else {
-                $httpBody = $redemptionsRedeemRequestBody;
+                $httpBody = $redemptions_redeem_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1420,19 +1420,19 @@ class RedemptionsApi
      *
      * Rollback Redemption
      *
-     * @param  string $redemptionId The original redemption ID to be rolled back (undone). (required)
+     * @param  string $redemption_id The original redemption ID to be rolled back (undone). (required)
      * @param  string $reason Reason for the rollback. (optional)
-     * @param  string $trackingId Customers source_id. (optional)
-     * @param  \OpenAPI\Client\Model\RedemptionsRollbackCreateRequestBody $redemptionsRollbackCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
+     * @param  string $tracking_id Customers source_id. (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRollbackCreateRequestBody $redemptions_rollback_create_request_body Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rollbackRedemption'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\RedemptionsRollbackCreateResponseBody
      */
-    public function rollbackRedemption($redemptionId, $reason = null, $trackingId = null, $redemptionsRollbackCreateRequestBody = null, string $contentType = self::contentTypes['rollbackRedemption'][0])
+    public function rollbackRedemption($redemption_id, $reason = null, $tracking_id = null, $redemptions_rollback_create_request_body = null, string $contentType = self::contentTypes['rollbackRedemption'][0])
     {
-        list($response) = $this->rollbackRedemptionWithHttpInfo($redemptionId, $reason, $trackingId, $redemptionsRollbackCreateRequestBody, $contentType);
+        list($response) = $this->rollbackRedemptionWithHttpInfo($redemption_id, $reason, $tracking_id, $redemptions_rollback_create_request_body, $contentType);
         return $response;
     }
 
@@ -1441,19 +1441,19 @@ class RedemptionsApi
      *
      * Rollback Redemption
      *
-     * @param  string $redemptionId The original redemption ID to be rolled back (undone). (required)
+     * @param  string $redemption_id The original redemption ID to be rolled back (undone). (required)
      * @param  string $reason Reason for the rollback. (optional)
-     * @param  string $trackingId Customers source_id. (optional)
-     * @param  \OpenAPI\Client\Model\RedemptionsRollbackCreateRequestBody $redemptionsRollbackCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
+     * @param  string $tracking_id Customers source_id. (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRollbackCreateRequestBody $redemptions_rollback_create_request_body Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rollbackRedemption'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\RedemptionsRollbackCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function rollbackRedemptionWithHttpInfo($redemptionId, $reason = null, $trackingId = null, $redemptionsRollbackCreateRequestBody = null, string $contentType = self::contentTypes['rollbackRedemption'][0])
+    public function rollbackRedemptionWithHttpInfo($redemption_id, $reason = null, $tracking_id = null, $redemptions_rollback_create_request_body = null, string $contentType = self::contentTypes['rollbackRedemption'][0])
     {
-        $request = $this->rollbackRedemptionRequest($redemptionId, $reason, $trackingId, $redemptionsRollbackCreateRequestBody, $contentType);
+        $request = $this->rollbackRedemptionRequest($redemption_id, $reason, $tracking_id, $redemptions_rollback_create_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1544,18 +1544,18 @@ class RedemptionsApi
      *
      * Rollback Redemption
      *
-     * @param  string $redemptionId The original redemption ID to be rolled back (undone). (required)
+     * @param  string $redemption_id The original redemption ID to be rolled back (undone). (required)
      * @param  string $reason Reason for the rollback. (optional)
-     * @param  string $trackingId Customers source_id. (optional)
-     * @param  \OpenAPI\Client\Model\RedemptionsRollbackCreateRequestBody $redemptionsRollbackCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
+     * @param  string $tracking_id Customers source_id. (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRollbackCreateRequestBody $redemptions_rollback_create_request_body Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rollbackRedemption'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function rollbackRedemptionAsync($redemptionId, $reason = null, $trackingId = null, $redemptionsRollbackCreateRequestBody = null, string $contentType = self::contentTypes['rollbackRedemption'][0])
+    public function rollbackRedemptionAsync($redemption_id, $reason = null, $tracking_id = null, $redemptions_rollback_create_request_body = null, string $contentType = self::contentTypes['rollbackRedemption'][0])
     {
-        return $this->rollbackRedemptionAsyncWithHttpInfo($redemptionId, $reason, $trackingId, $redemptionsRollbackCreateRequestBody, $contentType)
+        return $this->rollbackRedemptionAsyncWithHttpInfo($redemption_id, $reason, $tracking_id, $redemptions_rollback_create_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1568,19 +1568,19 @@ class RedemptionsApi
      *
      * Rollback Redemption
      *
-     * @param  string $redemptionId The original redemption ID to be rolled back (undone). (required)
+     * @param  string $redemption_id The original redemption ID to be rolled back (undone). (required)
      * @param  string $reason Reason for the rollback. (optional)
-     * @param  string $trackingId Customers source_id. (optional)
-     * @param  \OpenAPI\Client\Model\RedemptionsRollbackCreateRequestBody $redemptionsRollbackCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
+     * @param  string $tracking_id Customers source_id. (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRollbackCreateRequestBody $redemptions_rollback_create_request_body Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rollbackRedemption'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function rollbackRedemptionAsyncWithHttpInfo($redemptionId, $reason = null, $trackingId = null, $redemptionsRollbackCreateRequestBody = null, string $contentType = self::contentTypes['rollbackRedemption'][0])
+    public function rollbackRedemptionAsyncWithHttpInfo($redemption_id, $reason = null, $tracking_id = null, $redemptions_rollback_create_request_body = null, string $contentType = self::contentTypes['rollbackRedemption'][0])
     {
         $returnType = '\OpenAPI\Client\Model\RedemptionsRollbackCreateResponseBody';
-        $request = $this->rollbackRedemptionRequest($redemptionId, $reason, $trackingId, $redemptionsRollbackCreateRequestBody, $contentType);
+        $request = $this->rollbackRedemptionRequest($redemption_id, $reason, $tracking_id, $redemptions_rollback_create_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1621,22 +1621,22 @@ class RedemptionsApi
     /**
      * Create request for operation 'rollbackRedemption'
      *
-     * @param  string $redemptionId The original redemption ID to be rolled back (undone). (required)
+     * @param  string $redemption_id The original redemption ID to be rolled back (undone). (required)
      * @param  string $reason Reason for the rollback. (optional)
-     * @param  string $trackingId Customers source_id. (optional)
-     * @param  \OpenAPI\Client\Model\RedemptionsRollbackCreateRequestBody $redemptionsRollbackCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
+     * @param  string $tracking_id Customers source_id. (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRollbackCreateRequestBody $redemptions_rollback_create_request_body Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rollbackRedemption'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function rollbackRedemptionRequest($redemptionId, $reason = null, $trackingId = null, $redemptionsRollbackCreateRequestBody = null, string $contentType = self::contentTypes['rollbackRedemption'][0])
+    public function rollbackRedemptionRequest($redemption_id, $reason = null, $tracking_id = null, $redemptions_rollback_create_request_body = null, string $contentType = self::contentTypes['rollbackRedemption'][0])
     {
 
-        // verify the required parameter 'redemptionId' is set
-        if ($redemptionId === null || (is_array($redemptionId) && count($redemptionId) === 0)) {
+        // verify the required parameter 'redemption_id' is set
+        if ($redemption_id === null || (is_array($redemption_id) && count($redemption_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $redemptionId when calling rollbackRedemption'
+                'Missing the required parameter $redemption_id when calling rollbackRedemption'
             );
         }
 
@@ -1662,7 +1662,7 @@ class RedemptionsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $trackingId,
+            $tracking_id,
             'tracking_id', // param base name
             'string', // openApiType
             'form', // style
@@ -1672,10 +1672,10 @@ class RedemptionsApi
 
 
         // path params
-        if ($redemptionId !== null) {
+        if ($redemption_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'redemptionId' . '}',
-                ObjectSerializer::toPathValue($redemptionId),
+                ObjectSerializer::toPathValue($redemption_id),
                 $resourcePath
             );
         }
@@ -1688,12 +1688,12 @@ class RedemptionsApi
         );
 
         // for model (json/xml)
-        if (isset($redemptionsRollbackCreateRequestBody)) {
+        if (isset($redemptions_rollback_create_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($redemptionsRollbackCreateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($redemptions_rollback_create_request_body));
             } else {
-                $httpBody = $redemptionsRollbackCreateRequestBody;
+                $httpBody = $redemptions_rollback_create_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1756,19 +1756,19 @@ class RedemptionsApi
      *
      * Rollback Stackable Redemptions
      *
-     * @param  string $parentRedemptionId Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm. (required)
+     * @param  string $parent_redemption_id Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm. (required)
      * @param  string $reason Reason for the rollback. (optional)
-     * @param  string $trackingId Customers source_id. (optional)
-     * @param  \OpenAPI\Client\Model\RedemptionsRollbacksCreateRequestBody $redemptionsRollbacksCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
+     * @param  string $tracking_id Customers source_id. (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRollbacksCreateRequestBody $redemptions_rollbacks_create_request_body Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rollbackStackedRedemptions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\RedemptionsRollbacksCreateResponseBody
      */
-    public function rollbackStackedRedemptions($parentRedemptionId, $reason = null, $trackingId = null, $redemptionsRollbacksCreateRequestBody = null, string $contentType = self::contentTypes['rollbackStackedRedemptions'][0])
+    public function rollbackStackedRedemptions($parent_redemption_id, $reason = null, $tracking_id = null, $redemptions_rollbacks_create_request_body = null, string $contentType = self::contentTypes['rollbackStackedRedemptions'][0])
     {
-        list($response) = $this->rollbackStackedRedemptionsWithHttpInfo($parentRedemptionId, $reason, $trackingId, $redemptionsRollbacksCreateRequestBody, $contentType);
+        list($response) = $this->rollbackStackedRedemptionsWithHttpInfo($parent_redemption_id, $reason, $tracking_id, $redemptions_rollbacks_create_request_body, $contentType);
         return $response;
     }
 
@@ -1777,19 +1777,19 @@ class RedemptionsApi
      *
      * Rollback Stackable Redemptions
      *
-     * @param  string $parentRedemptionId Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm. (required)
+     * @param  string $parent_redemption_id Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm. (required)
      * @param  string $reason Reason for the rollback. (optional)
-     * @param  string $trackingId Customers source_id. (optional)
-     * @param  \OpenAPI\Client\Model\RedemptionsRollbacksCreateRequestBody $redemptionsRollbacksCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
+     * @param  string $tracking_id Customers source_id. (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRollbacksCreateRequestBody $redemptions_rollbacks_create_request_body Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rollbackStackedRedemptions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\RedemptionsRollbacksCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function rollbackStackedRedemptionsWithHttpInfo($parentRedemptionId, $reason = null, $trackingId = null, $redemptionsRollbacksCreateRequestBody = null, string $contentType = self::contentTypes['rollbackStackedRedemptions'][0])
+    public function rollbackStackedRedemptionsWithHttpInfo($parent_redemption_id, $reason = null, $tracking_id = null, $redemptions_rollbacks_create_request_body = null, string $contentType = self::contentTypes['rollbackStackedRedemptions'][0])
     {
-        $request = $this->rollbackStackedRedemptionsRequest($parentRedemptionId, $reason, $trackingId, $redemptionsRollbacksCreateRequestBody, $contentType);
+        $request = $this->rollbackStackedRedemptionsRequest($parent_redemption_id, $reason, $tracking_id, $redemptions_rollbacks_create_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1880,18 +1880,18 @@ class RedemptionsApi
      *
      * Rollback Stackable Redemptions
      *
-     * @param  string $parentRedemptionId Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm. (required)
+     * @param  string $parent_redemption_id Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm. (required)
      * @param  string $reason Reason for the rollback. (optional)
-     * @param  string $trackingId Customers source_id. (optional)
-     * @param  \OpenAPI\Client\Model\RedemptionsRollbacksCreateRequestBody $redemptionsRollbacksCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
+     * @param  string $tracking_id Customers source_id. (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRollbacksCreateRequestBody $redemptions_rollbacks_create_request_body Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rollbackStackedRedemptions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function rollbackStackedRedemptionsAsync($parentRedemptionId, $reason = null, $trackingId = null, $redemptionsRollbacksCreateRequestBody = null, string $contentType = self::contentTypes['rollbackStackedRedemptions'][0])
+    public function rollbackStackedRedemptionsAsync($parent_redemption_id, $reason = null, $tracking_id = null, $redemptions_rollbacks_create_request_body = null, string $contentType = self::contentTypes['rollbackStackedRedemptions'][0])
     {
-        return $this->rollbackStackedRedemptionsAsyncWithHttpInfo($parentRedemptionId, $reason, $trackingId, $redemptionsRollbacksCreateRequestBody, $contentType)
+        return $this->rollbackStackedRedemptionsAsyncWithHttpInfo($parent_redemption_id, $reason, $tracking_id, $redemptions_rollbacks_create_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1904,19 +1904,19 @@ class RedemptionsApi
      *
      * Rollback Stackable Redemptions
      *
-     * @param  string $parentRedemptionId Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm. (required)
+     * @param  string $parent_redemption_id Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm. (required)
      * @param  string $reason Reason for the rollback. (optional)
-     * @param  string $trackingId Customers source_id. (optional)
-     * @param  \OpenAPI\Client\Model\RedemptionsRollbacksCreateRequestBody $redemptionsRollbacksCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
+     * @param  string $tracking_id Customers source_id. (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRollbacksCreateRequestBody $redemptions_rollbacks_create_request_body Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rollbackStackedRedemptions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function rollbackStackedRedemptionsAsyncWithHttpInfo($parentRedemptionId, $reason = null, $trackingId = null, $redemptionsRollbacksCreateRequestBody = null, string $contentType = self::contentTypes['rollbackStackedRedemptions'][0])
+    public function rollbackStackedRedemptionsAsyncWithHttpInfo($parent_redemption_id, $reason = null, $tracking_id = null, $redemptions_rollbacks_create_request_body = null, string $contentType = self::contentTypes['rollbackStackedRedemptions'][0])
     {
         $returnType = '\OpenAPI\Client\Model\RedemptionsRollbacksCreateResponseBody';
-        $request = $this->rollbackStackedRedemptionsRequest($parentRedemptionId, $reason, $trackingId, $redemptionsRollbacksCreateRequestBody, $contentType);
+        $request = $this->rollbackStackedRedemptionsRequest($parent_redemption_id, $reason, $tracking_id, $redemptions_rollbacks_create_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1957,22 +1957,22 @@ class RedemptionsApi
     /**
      * Create request for operation 'rollbackStackedRedemptions'
      *
-     * @param  string $parentRedemptionId Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm. (required)
+     * @param  string $parent_redemption_id Unique identifier of a parent redemption, e.g. r_JQfm73zWSJFQxs3bGxweYjgm. (required)
      * @param  string $reason Reason for the rollback. (optional)
-     * @param  string $trackingId Customers source_id. (optional)
-     * @param  \OpenAPI\Client\Model\RedemptionsRollbacksCreateRequestBody $redemptionsRollbacksCreateRequestBody Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
+     * @param  string $tracking_id Customers source_id. (optional)
+     * @param  \OpenAPI\Client\Model\RedemptionsRollbacksCreateRequestBody $redemptions_rollbacks_create_request_body Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rollbackStackedRedemptions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function rollbackStackedRedemptionsRequest($parentRedemptionId, $reason = null, $trackingId = null, $redemptionsRollbacksCreateRequestBody = null, string $contentType = self::contentTypes['rollbackStackedRedemptions'][0])
+    public function rollbackStackedRedemptionsRequest($parent_redemption_id, $reason = null, $tracking_id = null, $redemptions_rollbacks_create_request_body = null, string $contentType = self::contentTypes['rollbackStackedRedemptions'][0])
     {
 
-        // verify the required parameter 'parentRedemptionId' is set
-        if ($parentRedemptionId === null || (is_array($parentRedemptionId) && count($parentRedemptionId) === 0)) {
+        // verify the required parameter 'parent_redemption_id' is set
+        if ($parent_redemption_id === null || (is_array($parent_redemption_id) && count($parent_redemption_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $parentRedemptionId when calling rollbackStackedRedemptions'
+                'Missing the required parameter $parent_redemption_id when calling rollbackStackedRedemptions'
             );
         }
 
@@ -1998,7 +1998,7 @@ class RedemptionsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $trackingId,
+            $tracking_id,
             'tracking_id', // param base name
             'string', // openApiType
             'form', // style
@@ -2008,10 +2008,10 @@ class RedemptionsApi
 
 
         // path params
-        if ($parentRedemptionId !== null) {
+        if ($parent_redemption_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'parentRedemptionId' . '}',
-                ObjectSerializer::toPathValue($parentRedemptionId),
+                ObjectSerializer::toPathValue($parent_redemption_id),
                 $resourcePath
             );
         }
@@ -2024,12 +2024,12 @@ class RedemptionsApi
         );
 
         // for model (json/xml)
-        if (isset($redemptionsRollbacksCreateRequestBody)) {
+        if (isset($redemptions_rollbacks_create_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($redemptionsRollbacksCreateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($redemptions_rollbacks_create_request_body));
             } else {
-                $httpBody = $redemptionsRollbacksCreateRequestBody;
+                $httpBody = $redemptions_rollbacks_create_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

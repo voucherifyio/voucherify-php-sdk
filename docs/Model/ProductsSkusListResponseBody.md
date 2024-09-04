@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **object** | **string** | The type of the object represented by JSON. This object stores information about SKUs. | [optional] [default to 'list']
-**dataRef** | **string** | Identifies the name of the JSON property that contains the array of SKUs. | [optional] [default to 'data']
+**data_ref** | **string** | Identifies the name of the JSON property that contains the array of SKUs. | [optional] [default to 'data']
 **skus** | [**\OpenAPI\Client\Model\Sku[]**](Sku.md) | A dictionary that contains an array of SKUs. | [optional]
 **total** | **int** | Total number of SKUs in the product. | [optional]
 

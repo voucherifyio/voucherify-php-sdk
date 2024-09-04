@@ -59,7 +59,7 @@ class VoucherTransactionsExportFilterConditions implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'voucherId' => '\OpenAPI\Client\Model\VoucherTransactionsExportFilterConditionsVoucherId'
+        'voucher_id' => '\OpenAPI\Client\Model\VoucherTransactionsExportFilterConditionsVoucherId'
     ];
 
     /**
@@ -70,7 +70,7 @@ class VoucherTransactionsExportFilterConditions implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'voucherId' => null
+        'voucher_id' => null
     ];
 
     /**
@@ -79,7 +79,7 @@ class VoucherTransactionsExportFilterConditions implements ModelInterface, Array
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'voucherId' => true
+        'voucher_id' => true
     ];
 
     /**
@@ -168,7 +168,7 @@ class VoucherTransactionsExportFilterConditions implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'voucherId' => 'voucher_id'
+        'voucher_id' => 'voucher_id'
     ];
 
     /**
@@ -177,7 +177,7 @@ class VoucherTransactionsExportFilterConditions implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-        'voucherId' => 'setVoucherId'
+        'voucher_id' => 'setVoucherId'
     ];
 
     /**
@@ -186,7 +186,7 @@ class VoucherTransactionsExportFilterConditions implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
-        'voucherId' => 'getVoucherId'
+        'voucher_id' => 'getVoucherId'
     ];
 
     /**
@@ -246,7 +246,7 @@ class VoucherTransactionsExportFilterConditions implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('voucherId', $data ?? [], null);
+        $this->setIfExists('voucher_id', $data ?? [], null);
     }
 
     /**
@@ -292,35 +292,35 @@ class VoucherTransactionsExportFilterConditions implements ModelInterface, Array
 
 
     /**
-     * Gets voucherId
+     * Gets voucher_id
      *
      * @return \OpenAPI\Client\Model\VoucherTransactionsExportFilterConditionsVoucherId|null
      */
     public function getVoucherId()
     {
-        return $this->container['voucherId'];
+        return $this->container['voucher_id'];
     }
 
     /**
-     * Sets voucherId
+     * Sets voucher_id
      *
-     * @param \OpenAPI\Client\Model\VoucherTransactionsExportFilterConditionsVoucherId|null $voucherId voucherId
+     * @param \OpenAPI\Client\Model\VoucherTransactionsExportFilterConditionsVoucherId|null $voucher_id voucher_id
      *
      * @return self
      */
-    public function setVoucherId($voucherId)
+    public function setVoucherId($voucher_id)
     {
-        if (is_null($voucherId)) {
-            array_push($this->openAPINullablesSetToNull, 'voucherId');
+        if (is_null($voucher_id)) {
+            array_push($this->openAPINullablesSetToNull, 'voucher_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('voucherId', $nullablesSetToNull);
+            $index = array_search('voucher_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['voucherId'] = $voucherId;
+        $this->container['voucher_id'] = $voucher_id;
 
         return $this;
     }

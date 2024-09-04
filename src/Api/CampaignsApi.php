@@ -158,18 +158,18 @@ class CampaignsApi
      *
      * Add Voucher with Specific Code to Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $code A custom **code** that identifies the voucher. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateRequestBody $campaignsVouchersCreateRequestBody Specify the voucher parameters that you would like to overwrite. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateRequestBody $campaigns_vouchers_create_request_body Specify the voucher parameters that you would like to overwrite. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addVoucherWithSpecificCodeToCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CampaignsVouchersCreateResponseBody
      */
-    public function addVoucherWithSpecificCodeToCampaign($campaignId, $code, $campaignsVouchersCreateRequestBody = null, string $contentType = self::contentTypes['addVoucherWithSpecificCodeToCampaign'][0])
+    public function addVoucherWithSpecificCodeToCampaign($campaign_id, $code, $campaigns_vouchers_create_request_body = null, string $contentType = self::contentTypes['addVoucherWithSpecificCodeToCampaign'][0])
     {
-        list($response) = $this->addVoucherWithSpecificCodeToCampaignWithHttpInfo($campaignId, $code, $campaignsVouchersCreateRequestBody, $contentType);
+        list($response) = $this->addVoucherWithSpecificCodeToCampaignWithHttpInfo($campaign_id, $code, $campaigns_vouchers_create_request_body, $contentType);
         return $response;
     }
 
@@ -178,18 +178,18 @@ class CampaignsApi
      *
      * Add Voucher with Specific Code to Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $code A custom **code** that identifies the voucher. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateRequestBody $campaignsVouchersCreateRequestBody Specify the voucher parameters that you would like to overwrite. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateRequestBody $campaigns_vouchers_create_request_body Specify the voucher parameters that you would like to overwrite. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addVoucherWithSpecificCodeToCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CampaignsVouchersCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addVoucherWithSpecificCodeToCampaignWithHttpInfo($campaignId, $code, $campaignsVouchersCreateRequestBody = null, string $contentType = self::contentTypes['addVoucherWithSpecificCodeToCampaign'][0])
+    public function addVoucherWithSpecificCodeToCampaignWithHttpInfo($campaign_id, $code, $campaigns_vouchers_create_request_body = null, string $contentType = self::contentTypes['addVoucherWithSpecificCodeToCampaign'][0])
     {
-        $request = $this->addVoucherWithSpecificCodeToCampaignRequest($campaignId, $code, $campaignsVouchersCreateRequestBody, $contentType);
+        $request = $this->addVoucherWithSpecificCodeToCampaignRequest($campaign_id, $code, $campaigns_vouchers_create_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -280,17 +280,17 @@ class CampaignsApi
      *
      * Add Voucher with Specific Code to Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $code A custom **code** that identifies the voucher. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateRequestBody $campaignsVouchersCreateRequestBody Specify the voucher parameters that you would like to overwrite. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateRequestBody $campaigns_vouchers_create_request_body Specify the voucher parameters that you would like to overwrite. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addVoucherWithSpecificCodeToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addVoucherWithSpecificCodeToCampaignAsync($campaignId, $code, $campaignsVouchersCreateRequestBody = null, string $contentType = self::contentTypes['addVoucherWithSpecificCodeToCampaign'][0])
+    public function addVoucherWithSpecificCodeToCampaignAsync($campaign_id, $code, $campaigns_vouchers_create_request_body = null, string $contentType = self::contentTypes['addVoucherWithSpecificCodeToCampaign'][0])
     {
-        return $this->addVoucherWithSpecificCodeToCampaignAsyncWithHttpInfo($campaignId, $code, $campaignsVouchersCreateRequestBody, $contentType)
+        return $this->addVoucherWithSpecificCodeToCampaignAsyncWithHttpInfo($campaign_id, $code, $campaigns_vouchers_create_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -303,18 +303,18 @@ class CampaignsApi
      *
      * Add Voucher with Specific Code to Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $code A custom **code** that identifies the voucher. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateRequestBody $campaignsVouchersCreateRequestBody Specify the voucher parameters that you would like to overwrite. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateRequestBody $campaigns_vouchers_create_request_body Specify the voucher parameters that you would like to overwrite. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addVoucherWithSpecificCodeToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addVoucherWithSpecificCodeToCampaignAsyncWithHttpInfo($campaignId, $code, $campaignsVouchersCreateRequestBody = null, string $contentType = self::contentTypes['addVoucherWithSpecificCodeToCampaign'][0])
+    public function addVoucherWithSpecificCodeToCampaignAsyncWithHttpInfo($campaign_id, $code, $campaigns_vouchers_create_request_body = null, string $contentType = self::contentTypes['addVoucherWithSpecificCodeToCampaign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CampaignsVouchersCreateResponseBody';
-        $request = $this->addVoucherWithSpecificCodeToCampaignRequest($campaignId, $code, $campaignsVouchersCreateRequestBody, $contentType);
+        $request = $this->addVoucherWithSpecificCodeToCampaignRequest($campaign_id, $code, $campaigns_vouchers_create_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -355,21 +355,21 @@ class CampaignsApi
     /**
      * Create request for operation 'addVoucherWithSpecificCodeToCampaign'
      *
-     * @param  string $campaignId The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $code A custom **code** that identifies the voucher. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateRequestBody $campaignsVouchersCreateRequestBody Specify the voucher parameters that you would like to overwrite. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateRequestBody $campaigns_vouchers_create_request_body Specify the voucher parameters that you would like to overwrite. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addVoucherWithSpecificCodeToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function addVoucherWithSpecificCodeToCampaignRequest($campaignId, $code, $campaignsVouchersCreateRequestBody = null, string $contentType = self::contentTypes['addVoucherWithSpecificCodeToCampaign'][0])
+    public function addVoucherWithSpecificCodeToCampaignRequest($campaign_id, $code, $campaigns_vouchers_create_request_body = null, string $contentType = self::contentTypes['addVoucherWithSpecificCodeToCampaign'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling addVoucherWithSpecificCodeToCampaign'
+                'Missing the required parameter $campaign_id when calling addVoucherWithSpecificCodeToCampaign'
             );
         }
 
@@ -392,10 +392,10 @@ class CampaignsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
@@ -416,12 +416,12 @@ class CampaignsApi
         );
 
         // for model (json/xml)
-        if (isset($campaignsVouchersCreateRequestBody)) {
+        if (isset($campaigns_vouchers_create_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaignsVouchersCreateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaigns_vouchers_create_request_body));
             } else {
-                $httpBody = $campaignsVouchersCreateRequestBody;
+                $httpBody = $campaigns_vouchers_create_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -484,18 +484,18 @@ class CampaignsApi
      *
      * Add Vouchers to Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  int $vouchersCount Number of vouchers that should be added. (optional)
-     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody $campaignsVouchersCreateInBulkRequestBody Specify the voucher parameters that you would like to overwrite. (optional)
+     * @param  string $campaign_id The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $vouchers_count Number of vouchers that should be added. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody $campaigns_vouchers_create_in_bulk_request_body Specify the voucher parameters that you would like to overwrite. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CampaignsVouchersCreateCombinedResponseBody
      */
-    public function addVouchersToCampaign($campaignId, $vouchersCount = null, $campaignsVouchersCreateInBulkRequestBody = null, string $contentType = self::contentTypes['addVouchersToCampaign'][0])
+    public function addVouchersToCampaign($campaign_id, $vouchers_count = null, $campaigns_vouchers_create_in_bulk_request_body = null, string $contentType = self::contentTypes['addVouchersToCampaign'][0])
     {
-        list($response) = $this->addVouchersToCampaignWithHttpInfo($campaignId, $vouchersCount, $campaignsVouchersCreateInBulkRequestBody, $contentType);
+        list($response) = $this->addVouchersToCampaignWithHttpInfo($campaign_id, $vouchers_count, $campaigns_vouchers_create_in_bulk_request_body, $contentType);
         return $response;
     }
 
@@ -504,18 +504,18 @@ class CampaignsApi
      *
      * Add Vouchers to Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  int $vouchersCount Number of vouchers that should be added. (optional)
-     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody $campaignsVouchersCreateInBulkRequestBody Specify the voucher parameters that you would like to overwrite. (optional)
+     * @param  string $campaign_id The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $vouchers_count Number of vouchers that should be added. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody $campaigns_vouchers_create_in_bulk_request_body Specify the voucher parameters that you would like to overwrite. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CampaignsVouchersCreateCombinedResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addVouchersToCampaignWithHttpInfo($campaignId, $vouchersCount = null, $campaignsVouchersCreateInBulkRequestBody = null, string $contentType = self::contentTypes['addVouchersToCampaign'][0])
+    public function addVouchersToCampaignWithHttpInfo($campaign_id, $vouchers_count = null, $campaigns_vouchers_create_in_bulk_request_body = null, string $contentType = self::contentTypes['addVouchersToCampaign'][0])
     {
-        $request = $this->addVouchersToCampaignRequest($campaignId, $vouchersCount, $campaignsVouchersCreateInBulkRequestBody, $contentType);
+        $request = $this->addVouchersToCampaignRequest($campaign_id, $vouchers_count, $campaigns_vouchers_create_in_bulk_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -606,17 +606,17 @@ class CampaignsApi
      *
      * Add Vouchers to Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  int $vouchersCount Number of vouchers that should be added. (optional)
-     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody $campaignsVouchersCreateInBulkRequestBody Specify the voucher parameters that you would like to overwrite. (optional)
+     * @param  string $campaign_id The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $vouchers_count Number of vouchers that should be added. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody $campaigns_vouchers_create_in_bulk_request_body Specify the voucher parameters that you would like to overwrite. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addVouchersToCampaignAsync($campaignId, $vouchersCount = null, $campaignsVouchersCreateInBulkRequestBody = null, string $contentType = self::contentTypes['addVouchersToCampaign'][0])
+    public function addVouchersToCampaignAsync($campaign_id, $vouchers_count = null, $campaigns_vouchers_create_in_bulk_request_body = null, string $contentType = self::contentTypes['addVouchersToCampaign'][0])
     {
-        return $this->addVouchersToCampaignAsyncWithHttpInfo($campaignId, $vouchersCount, $campaignsVouchersCreateInBulkRequestBody, $contentType)
+        return $this->addVouchersToCampaignAsyncWithHttpInfo($campaign_id, $vouchers_count, $campaigns_vouchers_create_in_bulk_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -629,18 +629,18 @@ class CampaignsApi
      *
      * Add Vouchers to Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  int $vouchersCount Number of vouchers that should be added. (optional)
-     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody $campaignsVouchersCreateInBulkRequestBody Specify the voucher parameters that you would like to overwrite. (optional)
+     * @param  string $campaign_id The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $vouchers_count Number of vouchers that should be added. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody $campaigns_vouchers_create_in_bulk_request_body Specify the voucher parameters that you would like to overwrite. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addVouchersToCampaignAsyncWithHttpInfo($campaignId, $vouchersCount = null, $campaignsVouchersCreateInBulkRequestBody = null, string $contentType = self::contentTypes['addVouchersToCampaign'][0])
+    public function addVouchersToCampaignAsyncWithHttpInfo($campaign_id, $vouchers_count = null, $campaigns_vouchers_create_in_bulk_request_body = null, string $contentType = self::contentTypes['addVouchersToCampaign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CampaignsVouchersCreateCombinedResponseBody';
-        $request = $this->addVouchersToCampaignRequest($campaignId, $vouchersCount, $campaignsVouchersCreateInBulkRequestBody, $contentType);
+        $request = $this->addVouchersToCampaignRequest($campaign_id, $vouchers_count, $campaigns_vouchers_create_in_bulk_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -681,21 +681,21 @@ class CampaignsApi
     /**
      * Create request for operation 'addVouchersToCampaign'
      *
-     * @param  string $campaignId The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  int $vouchersCount Number of vouchers that should be added. (optional)
-     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody $campaignsVouchersCreateInBulkRequestBody Specify the voucher parameters that you would like to overwrite. (optional)
+     * @param  string $campaign_id The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $vouchers_count Number of vouchers that should be added. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody $campaigns_vouchers_create_in_bulk_request_body Specify the voucher parameters that you would like to overwrite. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function addVouchersToCampaignRequest($campaignId, $vouchersCount = null, $campaignsVouchersCreateInBulkRequestBody = null, string $contentType = self::contentTypes['addVouchersToCampaign'][0])
+    public function addVouchersToCampaignRequest($campaign_id, $vouchers_count = null, $campaigns_vouchers_create_in_bulk_request_body = null, string $contentType = self::contentTypes['addVouchersToCampaign'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling addVouchersToCampaign'
+                'Missing the required parameter $campaign_id when calling addVouchersToCampaign'
             );
         }
 
@@ -711,7 +711,7 @@ class CampaignsApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $vouchersCount,
+            $vouchers_count,
             'vouchers_count', // param base name
             'integer', // openApiType
             'form', // style
@@ -721,10 +721,10 @@ class CampaignsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
@@ -737,12 +737,12 @@ class CampaignsApi
         );
 
         // for model (json/xml)
-        if (isset($campaignsVouchersCreateInBulkRequestBody)) {
+        if (isset($campaigns_vouchers_create_in_bulk_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaignsVouchersCreateInBulkRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaigns_vouchers_create_in_bulk_request_body));
             } else {
-                $httpBody = $campaignsVouchersCreateInBulkRequestBody;
+                $httpBody = $campaigns_vouchers_create_in_bulk_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -805,16 +805,16 @@ class CampaignsApi
      *
      * Create Campaign
      *
-     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaigns_create_request_body Specify the details of the campaign that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CampaignsCreateResponseBody
      */
-    public function createCampaign($campaignsCreateRequestBody = null, string $contentType = self::contentTypes['createCampaign'][0])
+    public function createCampaign($campaigns_create_request_body = null, string $contentType = self::contentTypes['createCampaign'][0])
     {
-        list($response) = $this->createCampaignWithHttpInfo($campaignsCreateRequestBody, $contentType);
+        list($response) = $this->createCampaignWithHttpInfo($campaigns_create_request_body, $contentType);
         return $response;
     }
 
@@ -823,16 +823,16 @@ class CampaignsApi
      *
      * Create Campaign
      *
-     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaigns_create_request_body Specify the details of the campaign that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CampaignsCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createCampaignWithHttpInfo($campaignsCreateRequestBody = null, string $contentType = self::contentTypes['createCampaign'][0])
+    public function createCampaignWithHttpInfo($campaigns_create_request_body = null, string $contentType = self::contentTypes['createCampaign'][0])
     {
-        $request = $this->createCampaignRequest($campaignsCreateRequestBody, $contentType);
+        $request = $this->createCampaignRequest($campaigns_create_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -923,15 +923,15 @@ class CampaignsApi
      *
      * Create Campaign
      *
-     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaigns_create_request_body Specify the details of the campaign that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createCampaignAsync($campaignsCreateRequestBody = null, string $contentType = self::contentTypes['createCampaign'][0])
+    public function createCampaignAsync($campaigns_create_request_body = null, string $contentType = self::contentTypes['createCampaign'][0])
     {
-        return $this->createCampaignAsyncWithHttpInfo($campaignsCreateRequestBody, $contentType)
+        return $this->createCampaignAsyncWithHttpInfo($campaigns_create_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -944,16 +944,16 @@ class CampaignsApi
      *
      * Create Campaign
      *
-     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaigns_create_request_body Specify the details of the campaign that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createCampaignAsyncWithHttpInfo($campaignsCreateRequestBody = null, string $contentType = self::contentTypes['createCampaign'][0])
+    public function createCampaignAsyncWithHttpInfo($campaigns_create_request_body = null, string $contentType = self::contentTypes['createCampaign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CampaignsCreateResponseBody';
-        $request = $this->createCampaignRequest($campaignsCreateRequestBody, $contentType);
+        $request = $this->createCampaignRequest($campaigns_create_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -994,13 +994,13 @@ class CampaignsApi
     /**
      * Create request for operation 'createCampaign'
      *
-     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaigns_create_request_body Specify the details of the campaign that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createCampaignRequest($campaignsCreateRequestBody = null, string $contentType = self::contentTypes['createCampaign'][0])
+    public function createCampaignRequest($campaigns_create_request_body = null, string $contentType = self::contentTypes['createCampaign'][0])
     {
 
 
@@ -1023,12 +1023,12 @@ class CampaignsApi
         );
 
         // for model (json/xml)
-        if (isset($campaignsCreateRequestBody)) {
+        if (isset($campaigns_create_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaignsCreateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaigns_create_request_body));
             } else {
-                $httpBody = $campaignsCreateRequestBody;
+                $httpBody = $campaigns_create_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1091,7 +1091,7 @@ class CampaignsApi
      *
      * Delete Campaign
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  bool $force If this flag is set to true, the campaign and related vouchers will be removed permanently. If it is set to false or not set at all, the campaign and related vouchers will be moved to the bin. Going forward, the user will be able to create the next campaign with exactly the same name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCampaign'] to see the possible values for this operation
      *
@@ -1099,9 +1099,9 @@ class CampaignsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CampaignsDeleteResponseBody
      */
-    public function deleteCampaign($campaignId, $force = null, string $contentType = self::contentTypes['deleteCampaign'][0])
+    public function deleteCampaign($campaign_id, $force = null, string $contentType = self::contentTypes['deleteCampaign'][0])
     {
-        list($response) = $this->deleteCampaignWithHttpInfo($campaignId, $force, $contentType);
+        list($response) = $this->deleteCampaignWithHttpInfo($campaign_id, $force, $contentType);
         return $response;
     }
 
@@ -1110,7 +1110,7 @@ class CampaignsApi
      *
      * Delete Campaign
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  bool $force If this flag is set to true, the campaign and related vouchers will be removed permanently. If it is set to false or not set at all, the campaign and related vouchers will be moved to the bin. Going forward, the user will be able to create the next campaign with exactly the same name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCampaign'] to see the possible values for this operation
      *
@@ -1118,9 +1118,9 @@ class CampaignsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CampaignsDeleteResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteCampaignWithHttpInfo($campaignId, $force = null, string $contentType = self::contentTypes['deleteCampaign'][0])
+    public function deleteCampaignWithHttpInfo($campaign_id, $force = null, string $contentType = self::contentTypes['deleteCampaign'][0])
     {
-        $request = $this->deleteCampaignRequest($campaignId, $force, $contentType);
+        $request = $this->deleteCampaignRequest($campaign_id, $force, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1211,16 +1211,16 @@ class CampaignsApi
      *
      * Delete Campaign
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  bool $force If this flag is set to true, the campaign and related vouchers will be removed permanently. If it is set to false or not set at all, the campaign and related vouchers will be moved to the bin. Going forward, the user will be able to create the next campaign with exactly the same name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCampaignAsync($campaignId, $force = null, string $contentType = self::contentTypes['deleteCampaign'][0])
+    public function deleteCampaignAsync($campaign_id, $force = null, string $contentType = self::contentTypes['deleteCampaign'][0])
     {
-        return $this->deleteCampaignAsyncWithHttpInfo($campaignId, $force, $contentType)
+        return $this->deleteCampaignAsyncWithHttpInfo($campaign_id, $force, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1233,17 +1233,17 @@ class CampaignsApi
      *
      * Delete Campaign
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  bool $force If this flag is set to true, the campaign and related vouchers will be removed permanently. If it is set to false or not set at all, the campaign and related vouchers will be moved to the bin. Going forward, the user will be able to create the next campaign with exactly the same name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCampaignAsyncWithHttpInfo($campaignId, $force = null, string $contentType = self::contentTypes['deleteCampaign'][0])
+    public function deleteCampaignAsyncWithHttpInfo($campaign_id, $force = null, string $contentType = self::contentTypes['deleteCampaign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CampaignsDeleteResponseBody';
-        $request = $this->deleteCampaignRequest($campaignId, $force, $contentType);
+        $request = $this->deleteCampaignRequest($campaign_id, $force, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1284,20 +1284,20 @@ class CampaignsApi
     /**
      * Create request for operation 'deleteCampaign'
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  bool $force If this flag is set to true, the campaign and related vouchers will be removed permanently. If it is set to false or not set at all, the campaign and related vouchers will be moved to the bin. Going forward, the user will be able to create the next campaign with exactly the same name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteCampaignRequest($campaignId, $force = null, string $contentType = self::contentTypes['deleteCampaign'][0])
+    public function deleteCampaignRequest($campaign_id, $force = null, string $contentType = self::contentTypes['deleteCampaign'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling deleteCampaign'
+                'Missing the required parameter $campaign_id when calling deleteCampaign'
             );
         }
 
@@ -1322,10 +1322,10 @@ class CampaignsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
@@ -1399,16 +1399,16 @@ class CampaignsApi
      *
      * Disable Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
-    public function disableCampaign($campaignId, string $contentType = self::contentTypes['disableCampaign'][0])
+    public function disableCampaign($campaign_id, string $contentType = self::contentTypes['disableCampaign'][0])
     {
-        list($response) = $this->disableCampaignWithHttpInfo($campaignId, $contentType);
+        list($response) = $this->disableCampaignWithHttpInfo($campaign_id, $contentType);
         return $response;
     }
 
@@ -1417,16 +1417,16 @@ class CampaignsApi
      *
      * Disable Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function disableCampaignWithHttpInfo($campaignId, string $contentType = self::contentTypes['disableCampaign'][0])
+    public function disableCampaignWithHttpInfo($campaign_id, string $contentType = self::contentTypes['disableCampaign'][0])
     {
-        $request = $this->disableCampaignRequest($campaignId, $contentType);
+        $request = $this->disableCampaignRequest($campaign_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1517,15 +1517,15 @@ class CampaignsApi
      *
      * Disable Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function disableCampaignAsync($campaignId, string $contentType = self::contentTypes['disableCampaign'][0])
+    public function disableCampaignAsync($campaign_id, string $contentType = self::contentTypes['disableCampaign'][0])
     {
-        return $this->disableCampaignAsyncWithHttpInfo($campaignId, $contentType)
+        return $this->disableCampaignAsyncWithHttpInfo($campaign_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1538,16 +1538,16 @@ class CampaignsApi
      *
      * Disable Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function disableCampaignAsyncWithHttpInfo($campaignId, string $contentType = self::contentTypes['disableCampaign'][0])
+    public function disableCampaignAsyncWithHttpInfo($campaign_id, string $contentType = self::contentTypes['disableCampaign'][0])
     {
         $returnType = 'object';
-        $request = $this->disableCampaignRequest($campaignId, $contentType);
+        $request = $this->disableCampaignRequest($campaign_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1588,19 +1588,19 @@ class CampaignsApi
     /**
      * Create request for operation 'disableCampaign'
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function disableCampaignRequest($campaignId, string $contentType = self::contentTypes['disableCampaign'][0])
+    public function disableCampaignRequest($campaign_id, string $contentType = self::contentTypes['disableCampaign'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling disableCampaign'
+                'Missing the required parameter $campaign_id when calling disableCampaign'
             );
         }
 
@@ -1615,10 +1615,10 @@ class CampaignsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
@@ -1692,16 +1692,16 @@ class CampaignsApi
      *
      * Enable Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
-    public function enableCampaign($campaignId, string $contentType = self::contentTypes['enableCampaign'][0])
+    public function enableCampaign($campaign_id, string $contentType = self::contentTypes['enableCampaign'][0])
     {
-        list($response) = $this->enableCampaignWithHttpInfo($campaignId, $contentType);
+        list($response) = $this->enableCampaignWithHttpInfo($campaign_id, $contentType);
         return $response;
     }
 
@@ -1710,16 +1710,16 @@ class CampaignsApi
      *
      * Enable Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function enableCampaignWithHttpInfo($campaignId, string $contentType = self::contentTypes['enableCampaign'][0])
+    public function enableCampaignWithHttpInfo($campaign_id, string $contentType = self::contentTypes['enableCampaign'][0])
     {
-        $request = $this->enableCampaignRequest($campaignId, $contentType);
+        $request = $this->enableCampaignRequest($campaign_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1810,15 +1810,15 @@ class CampaignsApi
      *
      * Enable Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enableCampaignAsync($campaignId, string $contentType = self::contentTypes['enableCampaign'][0])
+    public function enableCampaignAsync($campaign_id, string $contentType = self::contentTypes['enableCampaign'][0])
     {
-        return $this->enableCampaignAsyncWithHttpInfo($campaignId, $contentType)
+        return $this->enableCampaignAsyncWithHttpInfo($campaign_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1831,16 +1831,16 @@ class CampaignsApi
      *
      * Enable Campaign
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enableCampaignAsyncWithHttpInfo($campaignId, string $contentType = self::contentTypes['enableCampaign'][0])
+    public function enableCampaignAsyncWithHttpInfo($campaign_id, string $contentType = self::contentTypes['enableCampaign'][0])
     {
         $returnType = 'object';
-        $request = $this->enableCampaignRequest($campaignId, $contentType);
+        $request = $this->enableCampaignRequest($campaign_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1881,19 +1881,19 @@ class CampaignsApi
     /**
      * Create request for operation 'enableCampaign'
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function enableCampaignRequest($campaignId, string $contentType = self::contentTypes['enableCampaign'][0])
+    public function enableCampaignRequest($campaign_id, string $contentType = self::contentTypes['enableCampaign'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling enableCampaign'
+                'Missing the required parameter $campaign_id when calling enableCampaign'
             );
         }
 
@@ -1908,10 +1908,10 @@ class CampaignsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
@@ -1985,16 +1985,16 @@ class CampaignsApi
      *
      * Get Campaign
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CampaignsGetResponseBody
      */
-    public function getCampaign($campaignId, string $contentType = self::contentTypes['getCampaign'][0])
+    public function getCampaign($campaign_id, string $contentType = self::contentTypes['getCampaign'][0])
     {
-        list($response) = $this->getCampaignWithHttpInfo($campaignId, $contentType);
+        list($response) = $this->getCampaignWithHttpInfo($campaign_id, $contentType);
         return $response;
     }
 
@@ -2003,16 +2003,16 @@ class CampaignsApi
      *
      * Get Campaign
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CampaignsGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCampaignWithHttpInfo($campaignId, string $contentType = self::contentTypes['getCampaign'][0])
+    public function getCampaignWithHttpInfo($campaign_id, string $contentType = self::contentTypes['getCampaign'][0])
     {
-        $request = $this->getCampaignRequest($campaignId, $contentType);
+        $request = $this->getCampaignRequest($campaign_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2103,15 +2103,15 @@ class CampaignsApi
      *
      * Get Campaign
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCampaignAsync($campaignId, string $contentType = self::contentTypes['getCampaign'][0])
+    public function getCampaignAsync($campaign_id, string $contentType = self::contentTypes['getCampaign'][0])
     {
-        return $this->getCampaignAsyncWithHttpInfo($campaignId, $contentType)
+        return $this->getCampaignAsyncWithHttpInfo($campaign_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2124,16 +2124,16 @@ class CampaignsApi
      *
      * Get Campaign
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCampaignAsyncWithHttpInfo($campaignId, string $contentType = self::contentTypes['getCampaign'][0])
+    public function getCampaignAsyncWithHttpInfo($campaign_id, string $contentType = self::contentTypes['getCampaign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CampaignsGetResponseBody';
-        $request = $this->getCampaignRequest($campaignId, $contentType);
+        $request = $this->getCampaignRequest($campaign_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2174,19 +2174,19 @@ class CampaignsApi
     /**
      * Create request for operation 'getCampaign'
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCampaignRequest($campaignId, string $contentType = self::contentTypes['getCampaign'][0])
+    public function getCampaignRequest($campaign_id, string $contentType = self::contentTypes['getCampaign'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling getCampaign'
+                'Missing the required parameter $campaign_id when calling getCampaign'
             );
         }
 
@@ -2201,10 +2201,10 @@ class CampaignsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
@@ -2278,17 +2278,17 @@ class CampaignsApi
      *
      * Import Vouchers to Campaign
      *
-     * @param  string $campaignId The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
+     * @param  string $campaign_id The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaigns_import_voucher_item Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CampaignsImportCreateResponseBody
      */
-    public function importVouchersToCampaign($campaignId, $campaignsImportVoucherItem = null, string $contentType = self::contentTypes['importVouchersToCampaign'][0])
+    public function importVouchersToCampaign($campaign_id, $campaigns_import_voucher_item = null, string $contentType = self::contentTypes['importVouchersToCampaign'][0])
     {
-        list($response) = $this->importVouchersToCampaignWithHttpInfo($campaignId, $campaignsImportVoucherItem, $contentType);
+        list($response) = $this->importVouchersToCampaignWithHttpInfo($campaign_id, $campaigns_import_voucher_item, $contentType);
         return $response;
     }
 
@@ -2297,17 +2297,17 @@ class CampaignsApi
      *
      * Import Vouchers to Campaign
      *
-     * @param  string $campaignId The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
+     * @param  string $campaign_id The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaigns_import_voucher_item Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CampaignsImportCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function importVouchersToCampaignWithHttpInfo($campaignId, $campaignsImportVoucherItem = null, string $contentType = self::contentTypes['importVouchersToCampaign'][0])
+    public function importVouchersToCampaignWithHttpInfo($campaign_id, $campaigns_import_voucher_item = null, string $contentType = self::contentTypes['importVouchersToCampaign'][0])
     {
-        $request = $this->importVouchersToCampaignRequest($campaignId, $campaignsImportVoucherItem, $contentType);
+        $request = $this->importVouchersToCampaignRequest($campaign_id, $campaigns_import_voucher_item, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2398,16 +2398,16 @@ class CampaignsApi
      *
      * Import Vouchers to Campaign
      *
-     * @param  string $campaignId The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
+     * @param  string $campaign_id The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaigns_import_voucher_item Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function importVouchersToCampaignAsync($campaignId, $campaignsImportVoucherItem = null, string $contentType = self::contentTypes['importVouchersToCampaign'][0])
+    public function importVouchersToCampaignAsync($campaign_id, $campaigns_import_voucher_item = null, string $contentType = self::contentTypes['importVouchersToCampaign'][0])
     {
-        return $this->importVouchersToCampaignAsyncWithHttpInfo($campaignId, $campaignsImportVoucherItem, $contentType)
+        return $this->importVouchersToCampaignAsyncWithHttpInfo($campaign_id, $campaigns_import_voucher_item, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2420,17 +2420,17 @@ class CampaignsApi
      *
      * Import Vouchers to Campaign
      *
-     * @param  string $campaignId The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
+     * @param  string $campaign_id The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaigns_import_voucher_item Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function importVouchersToCampaignAsyncWithHttpInfo($campaignId, $campaignsImportVoucherItem = null, string $contentType = self::contentTypes['importVouchersToCampaign'][0])
+    public function importVouchersToCampaignAsyncWithHttpInfo($campaign_id, $campaigns_import_voucher_item = null, string $contentType = self::contentTypes['importVouchersToCampaign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CampaignsImportCreateResponseBody';
-        $request = $this->importVouchersToCampaignRequest($campaignId, $campaignsImportVoucherItem, $contentType);
+        $request = $this->importVouchersToCampaignRequest($campaign_id, $campaigns_import_voucher_item, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2471,20 +2471,20 @@ class CampaignsApi
     /**
      * Create request for operation 'importVouchersToCampaign'
      *
-     * @param  string $campaignId The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
+     * @param  string $campaign_id The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaigns_import_voucher_item Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function importVouchersToCampaignRequest($campaignId, $campaignsImportVoucherItem = null, string $contentType = self::contentTypes['importVouchersToCampaign'][0])
+    public function importVouchersToCampaignRequest($campaign_id, $campaigns_import_voucher_item = null, string $contentType = self::contentTypes['importVouchersToCampaign'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling importVouchersToCampaign'
+                'Missing the required parameter $campaign_id when calling importVouchersToCampaign'
             );
         }
 
@@ -2500,10 +2500,10 @@ class CampaignsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
@@ -2516,12 +2516,12 @@ class CampaignsApi
         );
 
         // for model (json/xml)
-        if (isset($campaignsImportVoucherItem)) {
+        if (isset($campaigns_import_voucher_item)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaignsImportVoucherItem));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaigns_import_voucher_item));
             } else {
-                $httpBody = $campaignsImportVoucherItem;
+                $httpBody = $campaigns_import_voucher_item;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2584,7 +2584,7 @@ class CampaignsApi
      *
      * Import Vouchers to Campaign by CSV
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
      * @param  \SplFileObject $file File path. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaignUsingCsv'] to see the possible values for this operation
      *
@@ -2592,9 +2592,9 @@ class CampaignsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CampaignsImportCsvCreateResponseBody
      */
-    public function importVouchersToCampaignUsingCsv($campaignId, $file = null, string $contentType = self::contentTypes['importVouchersToCampaignUsingCsv'][0])
+    public function importVouchersToCampaignUsingCsv($campaign_id, $file = null, string $contentType = self::contentTypes['importVouchersToCampaignUsingCsv'][0])
     {
-        list($response) = $this->importVouchersToCampaignUsingCsvWithHttpInfo($campaignId, $file, $contentType);
+        list($response) = $this->importVouchersToCampaignUsingCsvWithHttpInfo($campaign_id, $file, $contentType);
         return $response;
     }
 
@@ -2603,7 +2603,7 @@ class CampaignsApi
      *
      * Import Vouchers to Campaign by CSV
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
      * @param  \SplFileObject $file File path. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaignUsingCsv'] to see the possible values for this operation
      *
@@ -2611,9 +2611,9 @@ class CampaignsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CampaignsImportCsvCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function importVouchersToCampaignUsingCsvWithHttpInfo($campaignId, $file = null, string $contentType = self::contentTypes['importVouchersToCampaignUsingCsv'][0])
+    public function importVouchersToCampaignUsingCsvWithHttpInfo($campaign_id, $file = null, string $contentType = self::contentTypes['importVouchersToCampaignUsingCsv'][0])
     {
-        $request = $this->importVouchersToCampaignUsingCsvRequest($campaignId, $file, $contentType);
+        $request = $this->importVouchersToCampaignUsingCsvRequest($campaign_id, $file, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2704,16 +2704,16 @@ class CampaignsApi
      *
      * Import Vouchers to Campaign by CSV
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
      * @param  \SplFileObject $file File path. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaignUsingCsv'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function importVouchersToCampaignUsingCsvAsync($campaignId, $file = null, string $contentType = self::contentTypes['importVouchersToCampaignUsingCsv'][0])
+    public function importVouchersToCampaignUsingCsvAsync($campaign_id, $file = null, string $contentType = self::contentTypes['importVouchersToCampaignUsingCsv'][0])
     {
-        return $this->importVouchersToCampaignUsingCsvAsyncWithHttpInfo($campaignId, $file, $contentType)
+        return $this->importVouchersToCampaignUsingCsvAsyncWithHttpInfo($campaign_id, $file, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2726,17 +2726,17 @@ class CampaignsApi
      *
      * Import Vouchers to Campaign by CSV
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
      * @param  \SplFileObject $file File path. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaignUsingCsv'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function importVouchersToCampaignUsingCsvAsyncWithHttpInfo($campaignId, $file = null, string $contentType = self::contentTypes['importVouchersToCampaignUsingCsv'][0])
+    public function importVouchersToCampaignUsingCsvAsyncWithHttpInfo($campaign_id, $file = null, string $contentType = self::contentTypes['importVouchersToCampaignUsingCsv'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CampaignsImportCsvCreateResponseBody';
-        $request = $this->importVouchersToCampaignUsingCsvRequest($campaignId, $file, $contentType);
+        $request = $this->importVouchersToCampaignUsingCsvRequest($campaign_id, $file, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2777,20 +2777,20 @@ class CampaignsApi
     /**
      * Create request for operation 'importVouchersToCampaignUsingCsv'
      *
-     * @param  string $campaignId The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
+     * @param  string $campaign_id The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. (required)
      * @param  \SplFileObject $file File path. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaignUsingCsv'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function importVouchersToCampaignUsingCsvRequest($campaignId, $file = null, string $contentType = self::contentTypes['importVouchersToCampaignUsingCsv'][0])
+    public function importVouchersToCampaignUsingCsvRequest($campaign_id, $file = null, string $contentType = self::contentTypes['importVouchersToCampaignUsingCsv'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling importVouchersToCampaignUsingCsv'
+                'Missing the required parameter $campaign_id when calling importVouchersToCampaignUsingCsv'
             );
         }
 
@@ -2806,10 +2806,10 @@ class CampaignsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
@@ -2897,7 +2897,7 @@ class CampaignsApi
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
+     * @param  ParameterCampaignType $campaign_type This attribute allows filtering by campaign type. (optional)
      * @param  ParameterExpandListCampaigns $expand Include an expanded categories object in the response. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
@@ -2906,9 +2906,9 @@ class CampaignsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CampaignsListResponseBody
      */
-    public function listCampaigns($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
+    public function listCampaigns($limit = null, $page = null, $campaign_type = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
     {
-        list($response) = $this->listCampaignsWithHttpInfo($limit, $page, $campaignType, $expand, $order, $contentType);
+        list($response) = $this->listCampaignsWithHttpInfo($limit, $page, $campaign_type, $expand, $order, $contentType);
         return $response;
     }
 
@@ -2919,7 +2919,7 @@ class CampaignsApi
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
+     * @param  ParameterCampaignType $campaign_type This attribute allows filtering by campaign type. (optional)
      * @param  ParameterExpandListCampaigns $expand Include an expanded categories object in the response. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
@@ -2928,9 +2928,9 @@ class CampaignsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CampaignsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCampaignsWithHttpInfo($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
+    public function listCampaignsWithHttpInfo($limit = null, $page = null, $campaign_type = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
     {
-        $request = $this->listCampaignsRequest($limit, $page, $campaignType, $expand, $order, $contentType);
+        $request = $this->listCampaignsRequest($limit, $page, $campaign_type, $expand, $order, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3023,7 +3023,7 @@ class CampaignsApi
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
+     * @param  ParameterCampaignType $campaign_type This attribute allows filtering by campaign type. (optional)
      * @param  ParameterExpandListCampaigns $expand Include an expanded categories object in the response. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
@@ -3031,9 +3031,9 @@ class CampaignsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCampaignsAsync($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
+    public function listCampaignsAsync($limit = null, $page = null, $campaign_type = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
     {
-        return $this->listCampaignsAsyncWithHttpInfo($limit, $page, $campaignType, $expand, $order, $contentType)
+        return $this->listCampaignsAsyncWithHttpInfo($limit, $page, $campaign_type, $expand, $order, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3048,7 +3048,7 @@ class CampaignsApi
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
+     * @param  ParameterCampaignType $campaign_type This attribute allows filtering by campaign type. (optional)
      * @param  ParameterExpandListCampaigns $expand Include an expanded categories object in the response. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
@@ -3056,10 +3056,10 @@ class CampaignsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCampaignsAsyncWithHttpInfo($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
+    public function listCampaignsAsyncWithHttpInfo($limit = null, $page = null, $campaign_type = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CampaignsListResponseBody';
-        $request = $this->listCampaignsRequest($limit, $page, $campaignType, $expand, $order, $contentType);
+        $request = $this->listCampaignsRequest($limit, $page, $campaign_type, $expand, $order, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3102,7 +3102,7 @@ class CampaignsApi
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
-     * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
+     * @param  ParameterCampaignType $campaign_type This attribute allows filtering by campaign type. (optional)
      * @param  ParameterExpandListCampaigns $expand Include an expanded categories object in the response. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
@@ -3110,7 +3110,7 @@ class CampaignsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listCampaignsRequest($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
+    public function listCampaignsRequest($limit = null, $page = null, $campaign_type = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
     {
 
         if ($limit !== null && $limit > 100) {
@@ -3158,7 +3158,7 @@ class CampaignsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $campaignType,
+            $campaign_type,
             'campaign_type', // param base name
             'ParameterCampaignType', // openApiType
             'form', // style
@@ -3255,17 +3255,17 @@ class CampaignsApi
      *
      * Update Campaign
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsUpdateRequestBody $campaignsUpdateRequestBody Specify the campaign parameters to be updated. (optional)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsUpdateRequestBody $campaigns_update_request_body Specify the campaign parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CampaignsUpdateResponseBody
      */
-    public function updateCampaign($campaignId, $campaignsUpdateRequestBody = null, string $contentType = self::contentTypes['updateCampaign'][0])
+    public function updateCampaign($campaign_id, $campaigns_update_request_body = null, string $contentType = self::contentTypes['updateCampaign'][0])
     {
-        list($response) = $this->updateCampaignWithHttpInfo($campaignId, $campaignsUpdateRequestBody, $contentType);
+        list($response) = $this->updateCampaignWithHttpInfo($campaign_id, $campaigns_update_request_body, $contentType);
         return $response;
     }
 
@@ -3274,17 +3274,17 @@ class CampaignsApi
      *
      * Update Campaign
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsUpdateRequestBody $campaignsUpdateRequestBody Specify the campaign parameters to be updated. (optional)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsUpdateRequestBody $campaigns_update_request_body Specify the campaign parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CampaignsUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateCampaignWithHttpInfo($campaignId, $campaignsUpdateRequestBody = null, string $contentType = self::contentTypes['updateCampaign'][0])
+    public function updateCampaignWithHttpInfo($campaign_id, $campaigns_update_request_body = null, string $contentType = self::contentTypes['updateCampaign'][0])
     {
-        $request = $this->updateCampaignRequest($campaignId, $campaignsUpdateRequestBody, $contentType);
+        $request = $this->updateCampaignRequest($campaign_id, $campaigns_update_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3375,16 +3375,16 @@ class CampaignsApi
      *
      * Update Campaign
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsUpdateRequestBody $campaignsUpdateRequestBody Specify the campaign parameters to be updated. (optional)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsUpdateRequestBody $campaigns_update_request_body Specify the campaign parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateCampaignAsync($campaignId, $campaignsUpdateRequestBody = null, string $contentType = self::contentTypes['updateCampaign'][0])
+    public function updateCampaignAsync($campaign_id, $campaigns_update_request_body = null, string $contentType = self::contentTypes['updateCampaign'][0])
     {
-        return $this->updateCampaignAsyncWithHttpInfo($campaignId, $campaignsUpdateRequestBody, $contentType)
+        return $this->updateCampaignAsyncWithHttpInfo($campaign_id, $campaigns_update_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3397,17 +3397,17 @@ class CampaignsApi
      *
      * Update Campaign
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsUpdateRequestBody $campaignsUpdateRequestBody Specify the campaign parameters to be updated. (optional)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsUpdateRequestBody $campaigns_update_request_body Specify the campaign parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateCampaignAsyncWithHttpInfo($campaignId, $campaignsUpdateRequestBody = null, string $contentType = self::contentTypes['updateCampaign'][0])
+    public function updateCampaignAsyncWithHttpInfo($campaign_id, $campaigns_update_request_body = null, string $contentType = self::contentTypes['updateCampaign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CampaignsUpdateResponseBody';
-        $request = $this->updateCampaignRequest($campaignId, $campaignsUpdateRequestBody, $contentType);
+        $request = $this->updateCampaignRequest($campaign_id, $campaigns_update_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3448,20 +3448,20 @@ class CampaignsApi
     /**
      * Create request for operation 'updateCampaign'
      *
-     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsUpdateRequestBody $campaignsUpdateRequestBody Specify the campaign parameters to be updated. (optional)
+     * @param  string $campaign_id You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsUpdateRequestBody $campaigns_update_request_body Specify the campaign parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateCampaignRequest($campaignId, $campaignsUpdateRequestBody = null, string $contentType = self::contentTypes['updateCampaign'][0])
+    public function updateCampaignRequest($campaign_id, $campaigns_update_request_body = null, string $contentType = self::contentTypes['updateCampaign'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling updateCampaign'
+                'Missing the required parameter $campaign_id when calling updateCampaign'
             );
         }
 
@@ -3477,10 +3477,10 @@ class CampaignsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
@@ -3493,12 +3493,12 @@ class CampaignsApi
         );
 
         // for model (json/xml)
-        if (isset($campaignsUpdateRequestBody)) {
+        if (isset($campaigns_update_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaignsUpdateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaigns_update_request_body));
             } else {
-                $httpBody = $campaignsUpdateRequestBody;
+                $httpBody = $campaigns_update_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

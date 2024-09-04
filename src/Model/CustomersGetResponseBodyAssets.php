@@ -59,7 +59,7 @@ class CustomersGetResponseBodyAssets implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'cockpitUrl' => 'string'
+        'cockpit_url' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class CustomersGetResponseBodyAssets implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'cockpitUrl' => null
+        'cockpit_url' => null
     ];
 
     /**
@@ -79,7 +79,7 @@ class CustomersGetResponseBodyAssets implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'cockpitUrl' => true
+        'cockpit_url' => true
     ];
 
     /**
@@ -168,7 +168,7 @@ class CustomersGetResponseBodyAssets implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'cockpitUrl' => 'cockpit_url'
+        'cockpit_url' => 'cockpit_url'
     ];
 
     /**
@@ -177,7 +177,7 @@ class CustomersGetResponseBodyAssets implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'cockpitUrl' => 'setCockpitUrl'
+        'cockpit_url' => 'setCockpitUrl'
     ];
 
     /**
@@ -186,7 +186,7 @@ class CustomersGetResponseBodyAssets implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'cockpitUrl' => 'getCockpitUrl'
+        'cockpit_url' => 'getCockpitUrl'
     ];
 
     /**
@@ -246,7 +246,7 @@ class CustomersGetResponseBodyAssets implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('cockpitUrl', $data ?? [], null);
+        $this->setIfExists('cockpit_url', $data ?? [], null);
     }
 
     /**
@@ -292,35 +292,35 @@ class CustomersGetResponseBodyAssets implements ModelInterface, ArrayAccess, \Js
 
 
     /**
-     * Gets cockpitUrl
+     * Gets cockpit_url
      *
      * @return string|null
      */
     public function getCockpitUrl()
     {
-        return $this->container['cockpitUrl'];
+        return $this->container['cockpit_url'];
     }
 
     /**
-     * Sets cockpitUrl
+     * Sets cockpit_url
      *
-     * @param string|null $cockpitUrl Customer's cockpit URL address.
+     * @param string|null $cockpit_url Customer's cockpit URL address.
      *
      * @return self
      */
-    public function setCockpitUrl($cockpitUrl)
+    public function setCockpitUrl($cockpit_url)
     {
-        if (is_null($cockpitUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'cockpitUrl');
+        if (is_null($cockpit_url)) {
+            array_push($this->openAPINullablesSetToNull, 'cockpit_url');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('cockpitUrl', $nullablesSetToNull);
+            $index = array_search('cockpit_url', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['cockpitUrl'] = $cockpitUrl;
+        $this->container['cockpit_url'] = $cockpit_url;
 
         return $this;
     }

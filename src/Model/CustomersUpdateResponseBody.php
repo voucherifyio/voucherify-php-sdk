@@ -60,13 +60,13 @@ class CustomersUpdateResponseBody implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'sourceId' => 'string',
+        'source_id' => 'string',
         'summary' => '\OpenAPI\Client\Model\CustomerSummary',
         'loyalty' => '\OpenAPI\Client\Model\CustomerLoyalty',
         'referrals' => '\OpenAPI\Client\Model\CustomerReferrals',
-        'systemMetadata' => 'object',
-        'createdAt' => '\DateTime',
-        'updatedAt' => '\DateTime',
+        'system_metadata' => 'object',
+        'created_at' => '\DateTime',
+        'updated_at' => '\DateTime',
         'assets' => '\OpenAPI\Client\Model\CustomersUpdateResponseBodyAssets',
         'object' => 'string',
         'name' => 'string',
@@ -88,13 +88,13 @@ class CustomersUpdateResponseBody implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'sourceId' => null,
+        'source_id' => null,
         'summary' => null,
         'loyalty' => null,
         'referrals' => null,
-        'systemMetadata' => null,
-        'createdAt' => 'date-time',
-        'updatedAt' => 'date-time',
+        'system_metadata' => null,
+        'created_at' => 'date-time',
+        'updated_at' => 'date-time',
         'assets' => null,
         'object' => null,
         'name' => null,
@@ -114,13 +114,13 @@ class CustomersUpdateResponseBody implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'sourceId' => true,
-		'summary' => false,
-		'loyalty' => false,
-		'referrals' => false,
-		'systemMetadata' => true,
-		'createdAt' => true,
-		'updatedAt' => true,
+		'source_id' => true,
+		'summary' => true,
+		'loyalty' => true,
+		'referrals' => true,
+		'system_metadata' => true,
+		'created_at' => true,
+		'updated_at' => true,
 		'assets' => true,
 		'object' => true,
 		'name' => true,
@@ -220,13 +220,13 @@ class CustomersUpdateResponseBody implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'sourceId' => 'source_id',
+        'source_id' => 'source_id',
         'summary' => 'summary',
         'loyalty' => 'loyalty',
         'referrals' => 'referrals',
-        'systemMetadata' => 'system_metadata',
-        'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at',
+        'system_metadata' => 'system_metadata',
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at',
         'assets' => 'assets',
         'object' => 'object',
         'name' => 'name',
@@ -246,13 +246,13 @@ class CustomersUpdateResponseBody implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $setters = [
         'id' => 'setId',
-        'sourceId' => 'setSourceId',
+        'source_id' => 'setSourceId',
         'summary' => 'setSummary',
         'loyalty' => 'setLoyalty',
         'referrals' => 'setReferrals',
-        'systemMetadata' => 'setSystemMetadata',
-        'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt',
+        'system_metadata' => 'setSystemMetadata',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt',
         'assets' => 'setAssets',
         'object' => 'setObject',
         'name' => 'setName',
@@ -272,13 +272,13 @@ class CustomersUpdateResponseBody implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $getters = [
         'id' => 'getId',
-        'sourceId' => 'getSourceId',
+        'source_id' => 'getSourceId',
         'summary' => 'getSummary',
         'loyalty' => 'getLoyalty',
         'referrals' => 'getReferrals',
-        'systemMetadata' => 'getSystemMetadata',
-        'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt',
+        'system_metadata' => 'getSystemMetadata',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt',
         'assets' => 'getAssets',
         'object' => 'getObject',
         'name' => 'getName',
@@ -362,13 +362,13 @@ class CustomersUpdateResponseBody implements ModelInterface, ArrayAccess, \JsonS
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('source_id', $data ?? [], null);
         $this->setIfExists('summary', $data ?? [], null);
         $this->setIfExists('loyalty', $data ?? [], null);
         $this->setIfExists('referrals', $data ?? [], null);
-        $this->setIfExists('systemMetadata', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
-        $this->setIfExists('updatedAt', $data ?? [], null);
+        $this->setIfExists('system_metadata', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
         $this->setIfExists('assets', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'customer');
         $this->setIfExists('name', $data ?? [], null);
@@ -467,35 +467,35 @@ class CustomersUpdateResponseBody implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets sourceId
+     * Gets source_id
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['sourceId'];
+        return $this->container['source_id'];
     }
 
     /**
-     * Sets sourceId
+     * Sets source_id
      *
-     * @param string|null $sourceId A unique identifier of the customer who validates a voucher. It can be a customer ID or email from a CRM system, database, or a third-party service. If you also pass a customer ID (unique ID assigned by Voucherify), the source ID will be ignored.
+     * @param string|null $source_id A unique identifier of the customer who validates a voucher. It can be a customer ID or email from a CRM system, database, or a third-party service. If you also pass a customer ID (unique ID assigned by Voucherify), the source ID will be ignored.
      *
      * @return self
      */
-    public function setSourceId($sourceId)
+    public function setSourceId($source_id)
     {
-        if (is_null($sourceId)) {
-            array_push($this->openAPINullablesSetToNull, 'sourceId');
+        if (is_null($source_id)) {
+            array_push($this->openAPINullablesSetToNull, 'source_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sourceId', $nullablesSetToNull);
+            $index = array_search('source_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sourceId'] = $sourceId;
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }
@@ -520,7 +520,14 @@ class CustomersUpdateResponseBody implements ModelInterface, ArrayAccess, \JsonS
     public function setSummary($summary)
     {
         if (is_null($summary)) {
-            throw new \InvalidArgumentException('non-nullable summary cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'summary');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('summary', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['summary'] = $summary;
 
@@ -547,7 +554,14 @@ class CustomersUpdateResponseBody implements ModelInterface, ArrayAccess, \JsonS
     public function setLoyalty($loyalty)
     {
         if (is_null($loyalty)) {
-            throw new \InvalidArgumentException('non-nullable loyalty cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'loyalty');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('loyalty', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['loyalty'] = $loyalty;
 
@@ -574,7 +588,14 @@ class CustomersUpdateResponseBody implements ModelInterface, ArrayAccess, \JsonS
     public function setReferrals($referrals)
     {
         if (is_null($referrals)) {
-            throw new \InvalidArgumentException('non-nullable referrals cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'referrals');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('referrals', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['referrals'] = $referrals;
 
@@ -582,103 +603,103 @@ class CustomersUpdateResponseBody implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets systemMetadata
+     * Gets system_metadata
      *
      * @return object|null
      */
     public function getSystemMetadata()
     {
-        return $this->container['systemMetadata'];
+        return $this->container['system_metadata'];
     }
 
     /**
-     * Sets systemMetadata
+     * Sets system_metadata
      *
-     * @param object|null $systemMetadata Object used to store system metadata information.
+     * @param object|null $system_metadata Object used to store system metadata information.
      *
      * @return self
      */
-    public function setSystemMetadata($systemMetadata)
+    public function setSystemMetadata($system_metadata)
     {
-        if (is_null($systemMetadata)) {
-            array_push($this->openAPINullablesSetToNull, 'systemMetadata');
+        if (is_null($system_metadata)) {
+            array_push($this->openAPINullablesSetToNull, 'system_metadata');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('systemMetadata', $nullablesSetToNull);
+            $index = array_search('system_metadata', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['systemMetadata'] = $systemMetadata;
+        $this->container['system_metadata'] = $system_metadata;
 
         return $this;
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the customer was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $created_at Timestamp representing the date and time when the customer was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        if (is_null($created_at)) {
+            array_push($this->openAPINullablesSetToNull, 'created_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
+            $index = array_search('created_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }
 
     /**
-     * Gets updatedAt
+     * Gets updated_at
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updatedAt'];
+        return $this->container['updated_at'];
     }
 
     /**
-     * Sets updatedAt
+     * Sets updated_at
      *
-     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the customer was updated. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updated_at Timestamp representing the date and time when the customer was updated. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updated_at)
     {
-        if (is_null($updatedAt)) {
-            array_push($this->openAPINullablesSetToNull, 'updatedAt');
+        if (is_null($updated_at)) {
+            array_push($this->openAPINullablesSetToNull, 'updated_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updatedAt', $nullablesSetToNull);
+            $index = array_search('updated_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updatedAt'] = $updatedAt;
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }

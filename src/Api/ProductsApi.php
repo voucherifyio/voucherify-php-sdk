@@ -167,16 +167,16 @@ class ProductsApi
      *
      * Create Product
      *
-     * @param  \OpenAPI\Client\Model\ProductsCreateRequestBody $productsCreateRequestBody Specify the product parameters. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsCreateRequestBody $products_create_request_body Specify the product parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProduct'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductsCreateResponseBody
      */
-    public function createProduct($productsCreateRequestBody = null, string $contentType = self::contentTypes['createProduct'][0])
+    public function createProduct($products_create_request_body = null, string $contentType = self::contentTypes['createProduct'][0])
     {
-        list($response) = $this->createProductWithHttpInfo($productsCreateRequestBody, $contentType);
+        list($response) = $this->createProductWithHttpInfo($products_create_request_body, $contentType);
         return $response;
     }
 
@@ -185,16 +185,16 @@ class ProductsApi
      *
      * Create Product
      *
-     * @param  \OpenAPI\Client\Model\ProductsCreateRequestBody $productsCreateRequestBody Specify the product parameters. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsCreateRequestBody $products_create_request_body Specify the product parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProduct'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductsCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createProductWithHttpInfo($productsCreateRequestBody = null, string $contentType = self::contentTypes['createProduct'][0])
+    public function createProductWithHttpInfo($products_create_request_body = null, string $contentType = self::contentTypes['createProduct'][0])
     {
-        $request = $this->createProductRequest($productsCreateRequestBody, $contentType);
+        $request = $this->createProductRequest($products_create_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -285,15 +285,15 @@ class ProductsApi
      *
      * Create Product
      *
-     * @param  \OpenAPI\Client\Model\ProductsCreateRequestBody $productsCreateRequestBody Specify the product parameters. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsCreateRequestBody $products_create_request_body Specify the product parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createProductAsync($productsCreateRequestBody = null, string $contentType = self::contentTypes['createProduct'][0])
+    public function createProductAsync($products_create_request_body = null, string $contentType = self::contentTypes['createProduct'][0])
     {
-        return $this->createProductAsyncWithHttpInfo($productsCreateRequestBody, $contentType)
+        return $this->createProductAsyncWithHttpInfo($products_create_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -306,16 +306,16 @@ class ProductsApi
      *
      * Create Product
      *
-     * @param  \OpenAPI\Client\Model\ProductsCreateRequestBody $productsCreateRequestBody Specify the product parameters. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsCreateRequestBody $products_create_request_body Specify the product parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createProductAsyncWithHttpInfo($productsCreateRequestBody = null, string $contentType = self::contentTypes['createProduct'][0])
+    public function createProductAsyncWithHttpInfo($products_create_request_body = null, string $contentType = self::contentTypes['createProduct'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductsCreateResponseBody';
-        $request = $this->createProductRequest($productsCreateRequestBody, $contentType);
+        $request = $this->createProductRequest($products_create_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -356,13 +356,13 @@ class ProductsApi
     /**
      * Create request for operation 'createProduct'
      *
-     * @param  \OpenAPI\Client\Model\ProductsCreateRequestBody $productsCreateRequestBody Specify the product parameters. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsCreateRequestBody $products_create_request_body Specify the product parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createProductRequest($productsCreateRequestBody = null, string $contentType = self::contentTypes['createProduct'][0])
+    public function createProductRequest($products_create_request_body = null, string $contentType = self::contentTypes['createProduct'][0])
     {
 
 
@@ -385,12 +385,12 @@ class ProductsApi
         );
 
         // for model (json/xml)
-        if (isset($productsCreateRequestBody)) {
+        if (isset($products_create_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($productsCreateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($products_create_request_body));
             } else {
-                $httpBody = $productsCreateRequestBody;
+                $httpBody = $products_create_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -453,17 +453,17 @@ class ProductsApi
      *
      * Create SKU
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $productsSkusCreateRequestBody Specify the SKU parameters to be created. (optional)
+     * @param  string $product_id A Voucherify product ID or product source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $products_skus_create_request_body Specify the SKU parameters to be created. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSku'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductsSkusCreateResponseBody
      */
-    public function createSku($productId, $productsSkusCreateRequestBody = null, string $contentType = self::contentTypes['createSku'][0])
+    public function createSku($product_id, $products_skus_create_request_body = null, string $contentType = self::contentTypes['createSku'][0])
     {
-        list($response) = $this->createSkuWithHttpInfo($productId, $productsSkusCreateRequestBody, $contentType);
+        list($response) = $this->createSkuWithHttpInfo($product_id, $products_skus_create_request_body, $contentType);
         return $response;
     }
 
@@ -472,17 +472,17 @@ class ProductsApi
      *
      * Create SKU
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $productsSkusCreateRequestBody Specify the SKU parameters to be created. (optional)
+     * @param  string $product_id A Voucherify product ID or product source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $products_skus_create_request_body Specify the SKU parameters to be created. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSku'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductsSkusCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createSkuWithHttpInfo($productId, $productsSkusCreateRequestBody = null, string $contentType = self::contentTypes['createSku'][0])
+    public function createSkuWithHttpInfo($product_id, $products_skus_create_request_body = null, string $contentType = self::contentTypes['createSku'][0])
     {
-        $request = $this->createSkuRequest($productId, $productsSkusCreateRequestBody, $contentType);
+        $request = $this->createSkuRequest($product_id, $products_skus_create_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -573,16 +573,16 @@ class ProductsApi
      *
      * Create SKU
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $productsSkusCreateRequestBody Specify the SKU parameters to be created. (optional)
+     * @param  string $product_id A Voucherify product ID or product source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $products_skus_create_request_body Specify the SKU parameters to be created. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSku'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createSkuAsync($productId, $productsSkusCreateRequestBody = null, string $contentType = self::contentTypes['createSku'][0])
+    public function createSkuAsync($product_id, $products_skus_create_request_body = null, string $contentType = self::contentTypes['createSku'][0])
     {
-        return $this->createSkuAsyncWithHttpInfo($productId, $productsSkusCreateRequestBody, $contentType)
+        return $this->createSkuAsyncWithHttpInfo($product_id, $products_skus_create_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -595,17 +595,17 @@ class ProductsApi
      *
      * Create SKU
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $productsSkusCreateRequestBody Specify the SKU parameters to be created. (optional)
+     * @param  string $product_id A Voucherify product ID or product source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $products_skus_create_request_body Specify the SKU parameters to be created. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSku'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createSkuAsyncWithHttpInfo($productId, $productsSkusCreateRequestBody = null, string $contentType = self::contentTypes['createSku'][0])
+    public function createSkuAsyncWithHttpInfo($product_id, $products_skus_create_request_body = null, string $contentType = self::contentTypes['createSku'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductsSkusCreateResponseBody';
-        $request = $this->createSkuRequest($productId, $productsSkusCreateRequestBody, $contentType);
+        $request = $this->createSkuRequest($product_id, $products_skus_create_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -646,20 +646,20 @@ class ProductsApi
     /**
      * Create request for operation 'createSku'
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $productsSkusCreateRequestBody Specify the SKU parameters to be created. (optional)
+     * @param  string $product_id A Voucherify product ID or product source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $products_skus_create_request_body Specify the SKU parameters to be created. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSku'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createSkuRequest($productId, $productsSkusCreateRequestBody = null, string $contentType = self::contentTypes['createSku'][0])
+    public function createSkuRequest($product_id, $products_skus_create_request_body = null, string $contentType = self::contentTypes['createSku'][0])
     {
 
-        // verify the required parameter 'productId' is set
-        if ($productId === null || (is_array($productId) && count($productId) === 0)) {
+        // verify the required parameter 'product_id' is set
+        if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $productId when calling createSku'
+                'Missing the required parameter $product_id when calling createSku'
             );
         }
 
@@ -675,10 +675,10 @@ class ProductsApi
 
 
         // path params
-        if ($productId !== null) {
+        if ($product_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'productId' . '}',
-                ObjectSerializer::toPathValue($productId),
+                ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
         }
@@ -691,12 +691,12 @@ class ProductsApi
         );
 
         // for model (json/xml)
-        if (isset($productsSkusCreateRequestBody)) {
+        if (isset($products_skus_create_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($productsSkusCreateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($products_skus_create_request_body));
             } else {
-                $httpBody = $productsSkusCreateRequestBody;
+                $httpBody = $products_skus_create_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -759,7 +759,7 @@ class ProductsApi
      *
      * Delete Product
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
      * @param  bool $force If this flag is set to true, the product and all related SKUs will be removed permanently. If it is set to false or not set at all, the product and all related SKUs will be moved to the bin. Going forward, the user will be able to create another product with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProduct'] to see the possible values for this operation
      *
@@ -767,9 +767,9 @@ class ProductsApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteProduct($productId, $force = null, string $contentType = self::contentTypes['deleteProduct'][0])
+    public function deleteProduct($product_id, $force = null, string $contentType = self::contentTypes['deleteProduct'][0])
     {
-        $this->deleteProductWithHttpInfo($productId, $force, $contentType);
+        $this->deleteProductWithHttpInfo($product_id, $force, $contentType);
     }
 
     /**
@@ -777,7 +777,7 @@ class ProductsApi
      *
      * Delete Product
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
      * @param  bool $force If this flag is set to true, the product and all related SKUs will be removed permanently. If it is set to false or not set at all, the product and all related SKUs will be moved to the bin. Going forward, the user will be able to create another product with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProduct'] to see the possible values for this operation
      *
@@ -785,9 +785,9 @@ class ProductsApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteProductWithHttpInfo($productId, $force = null, string $contentType = self::contentTypes['deleteProduct'][0])
+    public function deleteProductWithHttpInfo($product_id, $force = null, string $contentType = self::contentTypes['deleteProduct'][0])
     {
-        $request = $this->deleteProductRequest($productId, $force, $contentType);
+        $request = $this->deleteProductRequest($product_id, $force, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -838,16 +838,16 @@ class ProductsApi
      *
      * Delete Product
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
      * @param  bool $force If this flag is set to true, the product and all related SKUs will be removed permanently. If it is set to false or not set at all, the product and all related SKUs will be moved to the bin. Going forward, the user will be able to create another product with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteProductAsync($productId, $force = null, string $contentType = self::contentTypes['deleteProduct'][0])
+    public function deleteProductAsync($product_id, $force = null, string $contentType = self::contentTypes['deleteProduct'][0])
     {
-        return $this->deleteProductAsyncWithHttpInfo($productId, $force, $contentType)
+        return $this->deleteProductAsyncWithHttpInfo($product_id, $force, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -860,17 +860,17 @@ class ProductsApi
      *
      * Delete Product
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
      * @param  bool $force If this flag is set to true, the product and all related SKUs will be removed permanently. If it is set to false or not set at all, the product and all related SKUs will be moved to the bin. Going forward, the user will be able to create another product with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteProductAsyncWithHttpInfo($productId, $force = null, string $contentType = self::contentTypes['deleteProduct'][0])
+    public function deleteProductAsyncWithHttpInfo($product_id, $force = null, string $contentType = self::contentTypes['deleteProduct'][0])
     {
         $returnType = '';
-        $request = $this->deleteProductRequest($productId, $force, $contentType);
+        $request = $this->deleteProductRequest($product_id, $force, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -898,20 +898,20 @@ class ProductsApi
     /**
      * Create request for operation 'deleteProduct'
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
      * @param  bool $force If this flag is set to true, the product and all related SKUs will be removed permanently. If it is set to false or not set at all, the product and all related SKUs will be moved to the bin. Going forward, the user will be able to create another product with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteProductRequest($productId, $force = null, string $contentType = self::contentTypes['deleteProduct'][0])
+    public function deleteProductRequest($product_id, $force = null, string $contentType = self::contentTypes['deleteProduct'][0])
     {
 
-        // verify the required parameter 'productId' is set
-        if ($productId === null || (is_array($productId) && count($productId) === 0)) {
+        // verify the required parameter 'product_id' is set
+        if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $productId when calling deleteProduct'
+                'Missing the required parameter $product_id when calling deleteProduct'
             );
         }
 
@@ -936,10 +936,10 @@ class ProductsApi
 
 
         // path params
-        if ($productId !== null) {
+        if ($product_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'productId' . '}',
-                ObjectSerializer::toPathValue($productId),
+                ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
         }
@@ -1013,8 +1013,8 @@ class ProductsApi
      *
      * Delete SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $product_id A unique Voucherify product ID or product source ID. (required)
+     * @param  string $sku_id A Voucherify SKU ID or SKU source ID. (required)
      * @param  bool $force If this flag is set to true, the SKU will be removed permanently. If it is set to false or not set at all, the SKU will be moved to the bin. Going forward, the user will be able to create another SKU with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSku'] to see the possible values for this operation
      *
@@ -1022,9 +1022,9 @@ class ProductsApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteSku($productId, $skuId, $force = null, string $contentType = self::contentTypes['deleteSku'][0])
+    public function deleteSku($product_id, $sku_id, $force = null, string $contentType = self::contentTypes['deleteSku'][0])
     {
-        $this->deleteSkuWithHttpInfo($productId, $skuId, $force, $contentType);
+        $this->deleteSkuWithHttpInfo($product_id, $sku_id, $force, $contentType);
     }
 
     /**
@@ -1032,8 +1032,8 @@ class ProductsApi
      *
      * Delete SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $product_id A unique Voucherify product ID or product source ID. (required)
+     * @param  string $sku_id A Voucherify SKU ID or SKU source ID. (required)
      * @param  bool $force If this flag is set to true, the SKU will be removed permanently. If it is set to false or not set at all, the SKU will be moved to the bin. Going forward, the user will be able to create another SKU with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSku'] to see the possible values for this operation
      *
@@ -1041,9 +1041,9 @@ class ProductsApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteSkuWithHttpInfo($productId, $skuId, $force = null, string $contentType = self::contentTypes['deleteSku'][0])
+    public function deleteSkuWithHttpInfo($product_id, $sku_id, $force = null, string $contentType = self::contentTypes['deleteSku'][0])
     {
-        $request = $this->deleteSkuRequest($productId, $skuId, $force, $contentType);
+        $request = $this->deleteSkuRequest($product_id, $sku_id, $force, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1094,17 +1094,17 @@ class ProductsApi
      *
      * Delete SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $product_id A unique Voucherify product ID or product source ID. (required)
+     * @param  string $sku_id A Voucherify SKU ID or SKU source ID. (required)
      * @param  bool $force If this flag is set to true, the SKU will be removed permanently. If it is set to false or not set at all, the SKU will be moved to the bin. Going forward, the user will be able to create another SKU with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSku'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteSkuAsync($productId, $skuId, $force = null, string $contentType = self::contentTypes['deleteSku'][0])
+    public function deleteSkuAsync($product_id, $sku_id, $force = null, string $contentType = self::contentTypes['deleteSku'][0])
     {
-        return $this->deleteSkuAsyncWithHttpInfo($productId, $skuId, $force, $contentType)
+        return $this->deleteSkuAsyncWithHttpInfo($product_id, $sku_id, $force, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1117,18 +1117,18 @@ class ProductsApi
      *
      * Delete SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $product_id A unique Voucherify product ID or product source ID. (required)
+     * @param  string $sku_id A Voucherify SKU ID or SKU source ID. (required)
      * @param  bool $force If this flag is set to true, the SKU will be removed permanently. If it is set to false or not set at all, the SKU will be moved to the bin. Going forward, the user will be able to create another SKU with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSku'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteSkuAsyncWithHttpInfo($productId, $skuId, $force = null, string $contentType = self::contentTypes['deleteSku'][0])
+    public function deleteSkuAsyncWithHttpInfo($product_id, $sku_id, $force = null, string $contentType = self::contentTypes['deleteSku'][0])
     {
         $returnType = '';
-        $request = $this->deleteSkuRequest($productId, $skuId, $force, $contentType);
+        $request = $this->deleteSkuRequest($product_id, $sku_id, $force, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1156,28 +1156,28 @@ class ProductsApi
     /**
      * Create request for operation 'deleteSku'
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $product_id A unique Voucherify product ID or product source ID. (required)
+     * @param  string $sku_id A Voucherify SKU ID or SKU source ID. (required)
      * @param  bool $force If this flag is set to true, the SKU will be removed permanently. If it is set to false or not set at all, the SKU will be moved to the bin. Going forward, the user will be able to create another SKU with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSku'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteSkuRequest($productId, $skuId, $force = null, string $contentType = self::contentTypes['deleteSku'][0])
+    public function deleteSkuRequest($product_id, $sku_id, $force = null, string $contentType = self::contentTypes['deleteSku'][0])
     {
 
-        // verify the required parameter 'productId' is set
-        if ($productId === null || (is_array($productId) && count($productId) === 0)) {
+        // verify the required parameter 'product_id' is set
+        if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $productId when calling deleteSku'
+                'Missing the required parameter $product_id when calling deleteSku'
             );
         }
 
-        // verify the required parameter 'skuId' is set
-        if ($skuId === null || (is_array($skuId) && count($skuId) === 0)) {
+        // verify the required parameter 'sku_id' is set
+        if ($sku_id === null || (is_array($sku_id) && count($sku_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $skuId when calling deleteSku'
+                'Missing the required parameter $sku_id when calling deleteSku'
             );
         }
 
@@ -1202,18 +1202,18 @@ class ProductsApi
 
 
         // path params
-        if ($productId !== null) {
+        if ($product_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'productId' . '}',
-                ObjectSerializer::toPathValue($productId),
+                ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
         }
         // path params
-        if ($skuId !== null) {
+        if ($sku_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'skuId' . '}',
-                ObjectSerializer::toPathValue($skuId),
+                ObjectSerializer::toPathValue($sku_id),
                 $resourcePath
             );
         }
@@ -1287,16 +1287,16 @@ class ProductsApi
      *
      * Get Product
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProduct'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductsGetResponseBody
      */
-    public function getProduct($productId, string $contentType = self::contentTypes['getProduct'][0])
+    public function getProduct($product_id, string $contentType = self::contentTypes['getProduct'][0])
     {
-        list($response) = $this->getProductWithHttpInfo($productId, $contentType);
+        list($response) = $this->getProductWithHttpInfo($product_id, $contentType);
         return $response;
     }
 
@@ -1305,16 +1305,16 @@ class ProductsApi
      *
      * Get Product
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProduct'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductsGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getProductWithHttpInfo($productId, string $contentType = self::contentTypes['getProduct'][0])
+    public function getProductWithHttpInfo($product_id, string $contentType = self::contentTypes['getProduct'][0])
     {
-        $request = $this->getProductRequest($productId, $contentType);
+        $request = $this->getProductRequest($product_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1405,15 +1405,15 @@ class ProductsApi
      *
      * Get Product
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProductAsync($productId, string $contentType = self::contentTypes['getProduct'][0])
+    public function getProductAsync($product_id, string $contentType = self::contentTypes['getProduct'][0])
     {
-        return $this->getProductAsyncWithHttpInfo($productId, $contentType)
+        return $this->getProductAsyncWithHttpInfo($product_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1426,16 +1426,16 @@ class ProductsApi
      *
      * Get Product
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProductAsyncWithHttpInfo($productId, string $contentType = self::contentTypes['getProduct'][0])
+    public function getProductAsyncWithHttpInfo($product_id, string $contentType = self::contentTypes['getProduct'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductsGetResponseBody';
-        $request = $this->getProductRequest($productId, $contentType);
+        $request = $this->getProductRequest($product_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1476,19 +1476,19 @@ class ProductsApi
     /**
      * Create request for operation 'getProduct'
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getProductRequest($productId, string $contentType = self::contentTypes['getProduct'][0])
+    public function getProductRequest($product_id, string $contentType = self::contentTypes['getProduct'][0])
     {
 
-        // verify the required parameter 'productId' is set
-        if ($productId === null || (is_array($productId) && count($productId) === 0)) {
+        // verify the required parameter 'product_id' is set
+        if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $productId when calling getProduct'
+                'Missing the required parameter $product_id when calling getProduct'
             );
         }
 
@@ -1503,10 +1503,10 @@ class ProductsApi
 
 
         // path params
-        if ($productId !== null) {
+        if ($product_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'productId' . '}',
-                ObjectSerializer::toPathValue($productId),
+                ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
         }
@@ -1580,16 +1580,16 @@ class ProductsApi
      *
      * Get SKU
      *
-     * @param  string $skuId A Voucherify SKU identifier or SKU source ID. (required)
+     * @param  string $sku_id A Voucherify SKU identifier or SKU source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSku'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\SkusGetResponseBody
      */
-    public function getSku($skuId, string $contentType = self::contentTypes['getSku'][0])
+    public function getSku($sku_id, string $contentType = self::contentTypes['getSku'][0])
     {
-        list($response) = $this->getSkuWithHttpInfo($skuId, $contentType);
+        list($response) = $this->getSkuWithHttpInfo($sku_id, $contentType);
         return $response;
     }
 
@@ -1598,16 +1598,16 @@ class ProductsApi
      *
      * Get SKU
      *
-     * @param  string $skuId A Voucherify SKU identifier or SKU source ID. (required)
+     * @param  string $sku_id A Voucherify SKU identifier or SKU source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSku'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\SkusGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSkuWithHttpInfo($skuId, string $contentType = self::contentTypes['getSku'][0])
+    public function getSkuWithHttpInfo($sku_id, string $contentType = self::contentTypes['getSku'][0])
     {
-        $request = $this->getSkuRequest($skuId, $contentType);
+        $request = $this->getSkuRequest($sku_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1698,15 +1698,15 @@ class ProductsApi
      *
      * Get SKU
      *
-     * @param  string $skuId A Voucherify SKU identifier or SKU source ID. (required)
+     * @param  string $sku_id A Voucherify SKU identifier or SKU source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSku'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSkuAsync($skuId, string $contentType = self::contentTypes['getSku'][0])
+    public function getSkuAsync($sku_id, string $contentType = self::contentTypes['getSku'][0])
     {
-        return $this->getSkuAsyncWithHttpInfo($skuId, $contentType)
+        return $this->getSkuAsyncWithHttpInfo($sku_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1719,16 +1719,16 @@ class ProductsApi
      *
      * Get SKU
      *
-     * @param  string $skuId A Voucherify SKU identifier or SKU source ID. (required)
+     * @param  string $sku_id A Voucherify SKU identifier or SKU source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSku'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSkuAsyncWithHttpInfo($skuId, string $contentType = self::contentTypes['getSku'][0])
+    public function getSkuAsyncWithHttpInfo($sku_id, string $contentType = self::contentTypes['getSku'][0])
     {
         $returnType = '\OpenAPI\Client\Model\SkusGetResponseBody';
-        $request = $this->getSkuRequest($skuId, $contentType);
+        $request = $this->getSkuRequest($sku_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1769,19 +1769,19 @@ class ProductsApi
     /**
      * Create request for operation 'getSku'
      *
-     * @param  string $skuId A Voucherify SKU identifier or SKU source ID. (required)
+     * @param  string $sku_id A Voucherify SKU identifier or SKU source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSku'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getSkuRequest($skuId, string $contentType = self::contentTypes['getSku'][0])
+    public function getSkuRequest($sku_id, string $contentType = self::contentTypes['getSku'][0])
     {
 
-        // verify the required parameter 'skuId' is set
-        if ($skuId === null || (is_array($skuId) && count($skuId) === 0)) {
+        // verify the required parameter 'sku_id' is set
+        if ($sku_id === null || (is_array($sku_id) && count($sku_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $skuId when calling getSku'
+                'Missing the required parameter $sku_id when calling getSku'
             );
         }
 
@@ -1796,10 +1796,10 @@ class ProductsApi
 
 
         // path params
-        if ($skuId !== null) {
+        if ($sku_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'skuId' . '}',
-                ObjectSerializer::toPathValue($skuId),
+                ObjectSerializer::toPathValue($sku_id),
                 $resourcePath
             );
         }
@@ -2458,17 +2458,17 @@ class ProductsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProducts'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductsListResponseBody
      */
-    public function listProducts($limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listProducts'][0])
+    public function listProducts($limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listProducts'][0])
     {
-        list($response) = $this->listProductsWithHttpInfo($limit, $page, $order, $startDate, $endDate, $contentType);
+        list($response) = $this->listProductsWithHttpInfo($limit, $page, $order, $start_date, $end_date, $contentType);
         return $response;
     }
 
@@ -2480,17 +2480,17 @@ class ProductsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProducts'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listProductsWithHttpInfo($limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listProducts'][0])
+    public function listProductsWithHttpInfo($limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listProducts'][0])
     {
-        $request = $this->listProductsRequest($limit, $page, $order, $startDate, $endDate, $contentType);
+        $request = $this->listProductsRequest($limit, $page, $order, $start_date, $end_date, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2584,16 +2584,16 @@ class ProductsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProducts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProductsAsync($limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listProducts'][0])
+    public function listProductsAsync($limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listProducts'][0])
     {
-        return $this->listProductsAsyncWithHttpInfo($limit, $page, $order, $startDate, $endDate, $contentType)
+        return $this->listProductsAsyncWithHttpInfo($limit, $page, $order, $start_date, $end_date, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2609,17 +2609,17 @@ class ProductsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProducts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProductsAsyncWithHttpInfo($limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listProducts'][0])
+    public function listProductsAsyncWithHttpInfo($limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listProducts'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductsListResponseBody';
-        $request = $this->listProductsRequest($limit, $page, $order, $startDate, $endDate, $contentType);
+        $request = $this->listProductsRequest($limit, $page, $order, $start_date, $end_date, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2663,14 +2663,14 @@ class ProductsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProducts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listProductsRequest($limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listProducts'][0])
+    public function listProductsRequest($limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listProducts'][0])
     {
 
         if ($limit !== null && $limit > 100) {
@@ -2727,7 +2727,7 @@ class ProductsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $startDate,
+            $start_date,
             'start_date', // param base name
             'string', // openApiType
             'form', // style
@@ -2736,7 +2736,7 @@ class ProductsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $endDate,
+            $end_date,
             'end_date', // param base name
             'string', // openApiType
             'form', // style
@@ -2815,21 +2815,21 @@ class ProductsApi
      *
      * List SKUs in Product
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $product_id A Voucherify product ID or product source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listSkusInProduct'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductsSkusListResponseBody
      */
-    public function listSkusInProduct($productId, $limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listSkusInProduct'][0])
+    public function listSkusInProduct($product_id, $limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listSkusInProduct'][0])
     {
-        list($response) = $this->listSkusInProductWithHttpInfo($productId, $limit, $page, $order, $startDate, $endDate, $contentType);
+        list($response) = $this->listSkusInProductWithHttpInfo($product_id, $limit, $page, $order, $start_date, $end_date, $contentType);
         return $response;
     }
 
@@ -2838,21 +2838,21 @@ class ProductsApi
      *
      * List SKUs in Product
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $product_id A Voucherify product ID or product source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listSkusInProduct'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductsSkusListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listSkusInProductWithHttpInfo($productId, $limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listSkusInProduct'][0])
+    public function listSkusInProductWithHttpInfo($product_id, $limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listSkusInProduct'][0])
     {
-        $request = $this->listSkusInProductRequest($productId, $limit, $page, $order, $startDate, $endDate, $contentType);
+        $request = $this->listSkusInProductRequest($product_id, $limit, $page, $order, $start_date, $end_date, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2943,20 +2943,20 @@ class ProductsApi
      *
      * List SKUs in Product
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $product_id A Voucherify product ID or product source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listSkusInProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listSkusInProductAsync($productId, $limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listSkusInProduct'][0])
+    public function listSkusInProductAsync($product_id, $limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listSkusInProduct'][0])
     {
-        return $this->listSkusInProductAsyncWithHttpInfo($productId, $limit, $page, $order, $startDate, $endDate, $contentType)
+        return $this->listSkusInProductAsyncWithHttpInfo($product_id, $limit, $page, $order, $start_date, $end_date, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2969,21 +2969,21 @@ class ProductsApi
      *
      * List SKUs in Product
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $product_id A Voucherify product ID or product source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listSkusInProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listSkusInProductAsyncWithHttpInfo($productId, $limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listSkusInProduct'][0])
+    public function listSkusInProductAsyncWithHttpInfo($product_id, $limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listSkusInProduct'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductsSkusListResponseBody';
-        $request = $this->listSkusInProductRequest($productId, $limit, $page, $order, $startDate, $endDate, $contentType);
+        $request = $this->listSkusInProductRequest($product_id, $limit, $page, $order, $start_date, $end_date, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3024,24 +3024,24 @@ class ProductsApi
     /**
      * Create request for operation 'listSkusInProduct'
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $product_id A Voucherify product ID or product source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
-     * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listSkusInProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listSkusInProductRequest($productId, $limit = null, $page = null, $order = null, $startDate = null, $endDate = null, string $contentType = self::contentTypes['listSkusInProduct'][0])
+    public function listSkusInProductRequest($product_id, $limit = null, $page = null, $order = null, $start_date = null, $end_date = null, string $contentType = self::contentTypes['listSkusInProduct'][0])
     {
 
-        // verify the required parameter 'productId' is set
-        if ($productId === null || (is_array($productId) && count($productId) === 0)) {
+        // verify the required parameter 'product_id' is set
+        if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $productId when calling listSkusInProduct'
+                'Missing the required parameter $product_id when calling listSkusInProduct'
             );
         }
 
@@ -3099,7 +3099,7 @@ class ProductsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $startDate,
+            $start_date,
             'start_date', // param base name
             'string', // openApiType
             'form', // style
@@ -3108,7 +3108,7 @@ class ProductsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $endDate,
+            $end_date,
             'end_date', // param base name
             'string', // openApiType
             'form', // style
@@ -3118,10 +3118,10 @@ class ProductsApi
 
 
         // path params
-        if ($productId !== null) {
+        if ($product_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'productId' . '}',
-                ObjectSerializer::toPathValue($productId),
+                ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
         }
@@ -3195,17 +3195,17 @@ class ProductsApi
      *
      * Update Product
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsUpdateRequestBody $productsUpdateRequestBody Specify the parameters of the product that are to be updated. (optional)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateRequestBody $products_update_request_body Specify the parameters of the product that are to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProduct'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductsUpdateResponseBody
      */
-    public function updateProduct($productId, $productsUpdateRequestBody = null, string $contentType = self::contentTypes['updateProduct'][0])
+    public function updateProduct($product_id, $products_update_request_body = null, string $contentType = self::contentTypes['updateProduct'][0])
     {
-        list($response) = $this->updateProductWithHttpInfo($productId, $productsUpdateRequestBody, $contentType);
+        list($response) = $this->updateProductWithHttpInfo($product_id, $products_update_request_body, $contentType);
         return $response;
     }
 
@@ -3214,17 +3214,17 @@ class ProductsApi
      *
      * Update Product
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsUpdateRequestBody $productsUpdateRequestBody Specify the parameters of the product that are to be updated. (optional)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateRequestBody $products_update_request_body Specify the parameters of the product that are to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProduct'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductsUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateProductWithHttpInfo($productId, $productsUpdateRequestBody = null, string $contentType = self::contentTypes['updateProduct'][0])
+    public function updateProductWithHttpInfo($product_id, $products_update_request_body = null, string $contentType = self::contentTypes['updateProduct'][0])
     {
-        $request = $this->updateProductRequest($productId, $productsUpdateRequestBody, $contentType);
+        $request = $this->updateProductRequest($product_id, $products_update_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3315,16 +3315,16 @@ class ProductsApi
      *
      * Update Product
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsUpdateRequestBody $productsUpdateRequestBody Specify the parameters of the product that are to be updated. (optional)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateRequestBody $products_update_request_body Specify the parameters of the product that are to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateProductAsync($productId, $productsUpdateRequestBody = null, string $contentType = self::contentTypes['updateProduct'][0])
+    public function updateProductAsync($product_id, $products_update_request_body = null, string $contentType = self::contentTypes['updateProduct'][0])
     {
-        return $this->updateProductAsyncWithHttpInfo($productId, $productsUpdateRequestBody, $contentType)
+        return $this->updateProductAsyncWithHttpInfo($product_id, $products_update_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3337,17 +3337,17 @@ class ProductsApi
      *
      * Update Product
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsUpdateRequestBody $productsUpdateRequestBody Specify the parameters of the product that are to be updated. (optional)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateRequestBody $products_update_request_body Specify the parameters of the product that are to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateProductAsyncWithHttpInfo($productId, $productsUpdateRequestBody = null, string $contentType = self::contentTypes['updateProduct'][0])
+    public function updateProductAsyncWithHttpInfo($product_id, $products_update_request_body = null, string $contentType = self::contentTypes['updateProduct'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductsUpdateResponseBody';
-        $request = $this->updateProductRequest($productId, $productsUpdateRequestBody, $contentType);
+        $request = $this->updateProductRequest($product_id, $products_update_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3388,20 +3388,20 @@ class ProductsApi
     /**
      * Create request for operation 'updateProduct'
      *
-     * @param  string $productId A Voucherify product ID or source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsUpdateRequestBody $productsUpdateRequestBody Specify the parameters of the product that are to be updated. (optional)
+     * @param  string $product_id A Voucherify product ID or source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateRequestBody $products_update_request_body Specify the parameters of the product that are to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateProductRequest($productId, $productsUpdateRequestBody = null, string $contentType = self::contentTypes['updateProduct'][0])
+    public function updateProductRequest($product_id, $products_update_request_body = null, string $contentType = self::contentTypes['updateProduct'][0])
     {
 
-        // verify the required parameter 'productId' is set
-        if ($productId === null || (is_array($productId) && count($productId) === 0)) {
+        // verify the required parameter 'product_id' is set
+        if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $productId when calling updateProduct'
+                'Missing the required parameter $product_id when calling updateProduct'
             );
         }
 
@@ -3417,10 +3417,10 @@ class ProductsApi
 
 
         // path params
-        if ($productId !== null) {
+        if ($product_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'productId' . '}',
-                ObjectSerializer::toPathValue($productId),
+                ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
         }
@@ -3433,12 +3433,12 @@ class ProductsApi
         );
 
         // for model (json/xml)
-        if (isset($productsUpdateRequestBody)) {
+        if (isset($products_update_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($productsUpdateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($products_update_request_body));
             } else {
-                $httpBody = $productsUpdateRequestBody;
+                $httpBody = $products_update_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3501,16 +3501,16 @@ class ProductsApi
      *
      * Update Products in Bulk
      *
-     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $products_update_in_bulk_request_body List the product fields to be updated in each customer object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsInBulk'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductsUpdateInBulkResponseBody
      */
-    public function updateProductsInBulk($productsUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateProductsInBulk'][0])
+    public function updateProductsInBulk($products_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateProductsInBulk'][0])
     {
-        list($response) = $this->updateProductsInBulkWithHttpInfo($productsUpdateInBulkRequestBody, $contentType);
+        list($response) = $this->updateProductsInBulkWithHttpInfo($products_update_in_bulk_request_body, $contentType);
         return $response;
     }
 
@@ -3519,16 +3519,16 @@ class ProductsApi
      *
      * Update Products in Bulk
      *
-     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $products_update_in_bulk_request_body List the product fields to be updated in each customer object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsInBulk'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductsUpdateInBulkResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateProductsInBulkWithHttpInfo($productsUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateProductsInBulk'][0])
+    public function updateProductsInBulkWithHttpInfo($products_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateProductsInBulk'][0])
     {
-        $request = $this->updateProductsInBulkRequest($productsUpdateInBulkRequestBody, $contentType);
+        $request = $this->updateProductsInBulkRequest($products_update_in_bulk_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3619,15 +3619,15 @@ class ProductsApi
      *
      * Update Products in Bulk
      *
-     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $products_update_in_bulk_request_body List the product fields to be updated in each customer object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateProductsInBulkAsync($productsUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateProductsInBulk'][0])
+    public function updateProductsInBulkAsync($products_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateProductsInBulk'][0])
     {
-        return $this->updateProductsInBulkAsyncWithHttpInfo($productsUpdateInBulkRequestBody, $contentType)
+        return $this->updateProductsInBulkAsyncWithHttpInfo($products_update_in_bulk_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3640,16 +3640,16 @@ class ProductsApi
      *
      * Update Products in Bulk
      *
-     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $products_update_in_bulk_request_body List the product fields to be updated in each customer object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateProductsInBulkAsyncWithHttpInfo($productsUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateProductsInBulk'][0])
+    public function updateProductsInBulkAsyncWithHttpInfo($products_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateProductsInBulk'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductsUpdateInBulkResponseBody';
-        $request = $this->updateProductsInBulkRequest($productsUpdateInBulkRequestBody, $contentType);
+        $request = $this->updateProductsInBulkRequest($products_update_in_bulk_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3690,13 +3690,13 @@ class ProductsApi
     /**
      * Create request for operation 'updateProductsInBulk'
      *
-     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $products_update_in_bulk_request_body List the product fields to be updated in each customer object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateProductsInBulkRequest($productsUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateProductsInBulk'][0])
+    public function updateProductsInBulkRequest($products_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateProductsInBulk'][0])
     {
 
 
@@ -3719,12 +3719,12 @@ class ProductsApi
         );
 
         // for model (json/xml)
-        if (isset($productsUpdateInBulkRequestBody)) {
+        if (isset($products_update_in_bulk_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($productsUpdateInBulkRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($products_update_in_bulk_request_body));
             } else {
-                $httpBody = $productsUpdateInBulkRequestBody;
+                $httpBody = $products_update_in_bulk_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3787,16 +3787,16 @@ class ProductsApi
      *
      * Update Products&#39; Metadata in Bulk
      *
-     * @param  \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkRequestBody $productsMetadataUpdateInBulkRequestBody List the source_ids of the products you would like to update with the metadata key/value pairs. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkRequestBody $products_metadata_update_in_bulk_request_body List the source_ids of the products you would like to update with the metadata key/value pairs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsMetadataInBulk'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkResponseBody
      */
-    public function updateProductsMetadataInBulk($productsMetadataUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateProductsMetadataInBulk'][0])
+    public function updateProductsMetadataInBulk($products_metadata_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateProductsMetadataInBulk'][0])
     {
-        list($response) = $this->updateProductsMetadataInBulkWithHttpInfo($productsMetadataUpdateInBulkRequestBody, $contentType);
+        list($response) = $this->updateProductsMetadataInBulkWithHttpInfo($products_metadata_update_in_bulk_request_body, $contentType);
         return $response;
     }
 
@@ -3805,16 +3805,16 @@ class ProductsApi
      *
      * Update Products&#39; Metadata in Bulk
      *
-     * @param  \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkRequestBody $productsMetadataUpdateInBulkRequestBody List the source_ids of the products you would like to update with the metadata key/value pairs. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkRequestBody $products_metadata_update_in_bulk_request_body List the source_ids of the products you would like to update with the metadata key/value pairs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsMetadataInBulk'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateProductsMetadataInBulkWithHttpInfo($productsMetadataUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateProductsMetadataInBulk'][0])
+    public function updateProductsMetadataInBulkWithHttpInfo($products_metadata_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateProductsMetadataInBulk'][0])
     {
-        $request = $this->updateProductsMetadataInBulkRequest($productsMetadataUpdateInBulkRequestBody, $contentType);
+        $request = $this->updateProductsMetadataInBulkRequest($products_metadata_update_in_bulk_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3905,15 +3905,15 @@ class ProductsApi
      *
      * Update Products&#39; Metadata in Bulk
      *
-     * @param  \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkRequestBody $productsMetadataUpdateInBulkRequestBody List the source_ids of the products you would like to update with the metadata key/value pairs. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkRequestBody $products_metadata_update_in_bulk_request_body List the source_ids of the products you would like to update with the metadata key/value pairs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsMetadataInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateProductsMetadataInBulkAsync($productsMetadataUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateProductsMetadataInBulk'][0])
+    public function updateProductsMetadataInBulkAsync($products_metadata_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateProductsMetadataInBulk'][0])
     {
-        return $this->updateProductsMetadataInBulkAsyncWithHttpInfo($productsMetadataUpdateInBulkRequestBody, $contentType)
+        return $this->updateProductsMetadataInBulkAsyncWithHttpInfo($products_metadata_update_in_bulk_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3926,16 +3926,16 @@ class ProductsApi
      *
      * Update Products&#39; Metadata in Bulk
      *
-     * @param  \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkRequestBody $productsMetadataUpdateInBulkRequestBody List the source_ids of the products you would like to update with the metadata key/value pairs. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkRequestBody $products_metadata_update_in_bulk_request_body List the source_ids of the products you would like to update with the metadata key/value pairs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsMetadataInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateProductsMetadataInBulkAsyncWithHttpInfo($productsMetadataUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateProductsMetadataInBulk'][0])
+    public function updateProductsMetadataInBulkAsyncWithHttpInfo($products_metadata_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateProductsMetadataInBulk'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductsMetadataUpdateInBulkResponseBody';
-        $request = $this->updateProductsMetadataInBulkRequest($productsMetadataUpdateInBulkRequestBody, $contentType);
+        $request = $this->updateProductsMetadataInBulkRequest($products_metadata_update_in_bulk_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3976,13 +3976,13 @@ class ProductsApi
     /**
      * Create request for operation 'updateProductsMetadataInBulk'
      *
-     * @param  \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkRequestBody $productsMetadataUpdateInBulkRequestBody List the source_ids of the products you would like to update with the metadata key/value pairs. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkRequestBody $products_metadata_update_in_bulk_request_body List the source_ids of the products you would like to update with the metadata key/value pairs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsMetadataInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateProductsMetadataInBulkRequest($productsMetadataUpdateInBulkRequestBody = null, string $contentType = self::contentTypes['updateProductsMetadataInBulk'][0])
+    public function updateProductsMetadataInBulkRequest($products_metadata_update_in_bulk_request_body = null, string $contentType = self::contentTypes['updateProductsMetadataInBulk'][0])
     {
 
 
@@ -4005,12 +4005,12 @@ class ProductsApi
         );
 
         // for model (json/xml)
-        if (isset($productsMetadataUpdateInBulkRequestBody)) {
+        if (isset($products_metadata_update_in_bulk_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($productsMetadataUpdateInBulkRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($products_metadata_update_in_bulk_request_body));
             } else {
-                $httpBody = $productsMetadataUpdateInBulkRequestBody;
+                $httpBody = $products_metadata_update_in_bulk_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4073,18 +4073,18 @@ class ProductsApi
      *
      * Update SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $productsSkusUpdateRequestBody Specify the parameters to be updated. (optional)
+     * @param  string $product_id A unique Voucherify product ID or product source ID. (required)
+     * @param  string $sku_id A Voucherify SKU ID or SKU source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $products_skus_update_request_body Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSku'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductsSkusUpdateResponseBody
      */
-    public function updateSku($productId, $skuId, $productsSkusUpdateRequestBody = null, string $contentType = self::contentTypes['updateSku'][0])
+    public function updateSku($product_id, $sku_id, $products_skus_update_request_body = null, string $contentType = self::contentTypes['updateSku'][0])
     {
-        list($response) = $this->updateSkuWithHttpInfo($productId, $skuId, $productsSkusUpdateRequestBody, $contentType);
+        list($response) = $this->updateSkuWithHttpInfo($product_id, $sku_id, $products_skus_update_request_body, $contentType);
         return $response;
     }
 
@@ -4093,18 +4093,18 @@ class ProductsApi
      *
      * Update SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $productsSkusUpdateRequestBody Specify the parameters to be updated. (optional)
+     * @param  string $product_id A unique Voucherify product ID or product source ID. (required)
+     * @param  string $sku_id A Voucherify SKU ID or SKU source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $products_skus_update_request_body Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSku'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductsSkusUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateSkuWithHttpInfo($productId, $skuId, $productsSkusUpdateRequestBody = null, string $contentType = self::contentTypes['updateSku'][0])
+    public function updateSkuWithHttpInfo($product_id, $sku_id, $products_skus_update_request_body = null, string $contentType = self::contentTypes['updateSku'][0])
     {
-        $request = $this->updateSkuRequest($productId, $skuId, $productsSkusUpdateRequestBody, $contentType);
+        $request = $this->updateSkuRequest($product_id, $sku_id, $products_skus_update_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4195,17 +4195,17 @@ class ProductsApi
      *
      * Update SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $productsSkusUpdateRequestBody Specify the parameters to be updated. (optional)
+     * @param  string $product_id A unique Voucherify product ID or product source ID. (required)
+     * @param  string $sku_id A Voucherify SKU ID or SKU source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $products_skus_update_request_body Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSku'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateSkuAsync($productId, $skuId, $productsSkusUpdateRequestBody = null, string $contentType = self::contentTypes['updateSku'][0])
+    public function updateSkuAsync($product_id, $sku_id, $products_skus_update_request_body = null, string $contentType = self::contentTypes['updateSku'][0])
     {
-        return $this->updateSkuAsyncWithHttpInfo($productId, $skuId, $productsSkusUpdateRequestBody, $contentType)
+        return $this->updateSkuAsyncWithHttpInfo($product_id, $sku_id, $products_skus_update_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4218,18 +4218,18 @@ class ProductsApi
      *
      * Update SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $productsSkusUpdateRequestBody Specify the parameters to be updated. (optional)
+     * @param  string $product_id A unique Voucherify product ID or product source ID. (required)
+     * @param  string $sku_id A Voucherify SKU ID or SKU source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $products_skus_update_request_body Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSku'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateSkuAsyncWithHttpInfo($productId, $skuId, $productsSkusUpdateRequestBody = null, string $contentType = self::contentTypes['updateSku'][0])
+    public function updateSkuAsyncWithHttpInfo($product_id, $sku_id, $products_skus_update_request_body = null, string $contentType = self::contentTypes['updateSku'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductsSkusUpdateResponseBody';
-        $request = $this->updateSkuRequest($productId, $skuId, $productsSkusUpdateRequestBody, $contentType);
+        $request = $this->updateSkuRequest($product_id, $sku_id, $products_skus_update_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4270,28 +4270,28 @@ class ProductsApi
     /**
      * Create request for operation 'updateSku'
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
-     * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $productsSkusUpdateRequestBody Specify the parameters to be updated. (optional)
+     * @param  string $product_id A unique Voucherify product ID or product source ID. (required)
+     * @param  string $sku_id A Voucherify SKU ID or SKU source ID. (required)
+     * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $products_skus_update_request_body Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSku'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateSkuRequest($productId, $skuId, $productsSkusUpdateRequestBody = null, string $contentType = self::contentTypes['updateSku'][0])
+    public function updateSkuRequest($product_id, $sku_id, $products_skus_update_request_body = null, string $contentType = self::contentTypes['updateSku'][0])
     {
 
-        // verify the required parameter 'productId' is set
-        if ($productId === null || (is_array($productId) && count($productId) === 0)) {
+        // verify the required parameter 'product_id' is set
+        if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $productId when calling updateSku'
+                'Missing the required parameter $product_id when calling updateSku'
             );
         }
 
-        // verify the required parameter 'skuId' is set
-        if ($skuId === null || (is_array($skuId) && count($skuId) === 0)) {
+        // verify the required parameter 'sku_id' is set
+        if ($sku_id === null || (is_array($sku_id) && count($sku_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $skuId when calling updateSku'
+                'Missing the required parameter $sku_id when calling updateSku'
             );
         }
 
@@ -4307,18 +4307,18 @@ class ProductsApi
 
 
         // path params
-        if ($productId !== null) {
+        if ($product_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'productId' . '}',
-                ObjectSerializer::toPathValue($productId),
+                ObjectSerializer::toPathValue($product_id),
                 $resourcePath
             );
         }
         // path params
-        if ($skuId !== null) {
+        if ($sku_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'skuId' . '}',
-                ObjectSerializer::toPathValue($skuId),
+                ObjectSerializer::toPathValue($sku_id),
                 $resourcePath
             );
         }
@@ -4331,12 +4331,12 @@ class ProductsApi
         );
 
         // for model (json/xml)
-        if (isset($productsSkusUpdateRequestBody)) {
+        if (isset($products_skus_update_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($productsSkusUpdateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($products_skus_update_request_body));
             } else {
-                $httpBody = $productsSkusUpdateRequestBody;
+                $httpBody = $products_skus_update_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

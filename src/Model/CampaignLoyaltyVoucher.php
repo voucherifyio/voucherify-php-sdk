@@ -60,9 +60,9 @@ class CampaignLoyaltyVoucher implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'type' => 'string',
-        'loyaltyCard' => '\OpenAPI\Client\Model\CampaignLoyaltyCard',
+        'loyalty_card' => '\OpenAPI\Client\Model\CampaignLoyaltyCard',
         'redemption' => '\OpenAPI\Client\Model\CampaignLoyaltyVoucherRedemption',
-        'codeConfig' => '\OpenAPI\Client\Model\CodeConfig'
+        'code_config' => '\OpenAPI\Client\Model\CodeConfig'
     ];
 
     /**
@@ -74,9 +74,9 @@ class CampaignLoyaltyVoucher implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPIFormats = [
         'type' => null,
-        'loyaltyCard' => null,
+        'loyalty_card' => null,
         'redemption' => null,
-        'codeConfig' => null
+        'code_config' => null
     ];
 
     /**
@@ -86,9 +86,9 @@ class CampaignLoyaltyVoucher implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static array $openAPINullables = [
         'type' => true,
-		'loyaltyCard' => false,
+		'loyalty_card' => false,
 		'redemption' => true,
-		'codeConfig' => false
+		'code_config' => false
     ];
 
     /**
@@ -178,9 +178,9 @@ class CampaignLoyaltyVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $attributeMap = [
         'type' => 'type',
-        'loyaltyCard' => 'loyalty_card',
+        'loyalty_card' => 'loyalty_card',
         'redemption' => 'redemption',
-        'codeConfig' => 'code_config'
+        'code_config' => 'code_config'
     ];
 
     /**
@@ -190,9 +190,9 @@ class CampaignLoyaltyVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $setters = [
         'type' => 'setType',
-        'loyaltyCard' => 'setLoyaltyCard',
+        'loyalty_card' => 'setLoyaltyCard',
         'redemption' => 'setRedemption',
-        'codeConfig' => 'setCodeConfig'
+        'code_config' => 'setCodeConfig'
     ];
 
     /**
@@ -202,9 +202,9 @@ class CampaignLoyaltyVoucher implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'type' => 'getType',
-        'loyaltyCard' => 'getLoyaltyCard',
+        'loyalty_card' => 'getLoyaltyCard',
         'redemption' => 'getRedemption',
-        'codeConfig' => 'getCodeConfig'
+        'code_config' => 'getCodeConfig'
     ];
 
     /**
@@ -278,9 +278,9 @@ class CampaignLoyaltyVoucher implements ModelInterface, ArrayAccess, \JsonSerial
     public function __construct(array $data = null)
     {
         $this->setIfExists('type', $data ?? [], 'LOYALTY_CARD');
-        $this->setIfExists('loyaltyCard', $data ?? [], null);
+        $this->setIfExists('loyalty_card', $data ?? [], null);
         $this->setIfExists('redemption', $data ?? [], null);
-        $this->setIfExists('codeConfig', $data ?? [], null);
+        $this->setIfExists('code_config', $data ?? [], null);
     }
 
     /**
@@ -319,8 +319,8 @@ class CampaignLoyaltyVoucher implements ModelInterface, ArrayAccess, \JsonSerial
             );
         }
 
-        if ($this->container['loyaltyCard'] === null) {
-            $invalidProperties[] = "'loyaltyCard' can't be null";
+        if ($this->container['loyalty_card'] === null) {
+            $invalidProperties[] = "'loyalty_card' can't be null";
         }
         return $invalidProperties;
     }
@@ -382,28 +382,28 @@ class CampaignLoyaltyVoucher implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets loyaltyCard
+     * Gets loyalty_card
      *
      * @return \OpenAPI\Client\Model\CampaignLoyaltyCard
      */
     public function getLoyaltyCard()
     {
-        return $this->container['loyaltyCard'];
+        return $this->container['loyalty_card'];
     }
 
     /**
-     * Sets loyaltyCard
+     * Sets loyalty_card
      *
-     * @param \OpenAPI\Client\Model\CampaignLoyaltyCard $loyaltyCard loyaltyCard
+     * @param \OpenAPI\Client\Model\CampaignLoyaltyCard $loyalty_card loyalty_card
      *
      * @return self
      */
-    public function setLoyaltyCard($loyaltyCard)
+    public function setLoyaltyCard($loyalty_card)
     {
-        if (is_null($loyaltyCard)) {
-            throw new \InvalidArgumentException('non-nullable loyaltyCard cannot be null');
+        if (is_null($loyalty_card)) {
+            throw new \InvalidArgumentException('non-nullable loyalty_card cannot be null');
         }
-        $this->container['loyaltyCard'] = $loyaltyCard;
+        $this->container['loyalty_card'] = $loyalty_card;
 
         return $this;
     }
@@ -443,28 +443,28 @@ class CampaignLoyaltyVoucher implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets codeConfig
+     * Gets code_config
      *
      * @return \OpenAPI\Client\Model\CodeConfig|null
      */
     public function getCodeConfig()
     {
-        return $this->container['codeConfig'];
+        return $this->container['code_config'];
     }
 
     /**
-     * Sets codeConfig
+     * Sets code_config
      *
-     * @param \OpenAPI\Client\Model\CodeConfig|null $codeConfig codeConfig
+     * @param \OpenAPI\Client\Model\CodeConfig|null $code_config code_config
      *
      * @return self
      */
-    public function setCodeConfig($codeConfig)
+    public function setCodeConfig($code_config)
     {
-        if (is_null($codeConfig)) {
-            throw new \InvalidArgumentException('non-nullable codeConfig cannot be null');
+        if (is_null($code_config)) {
+            throw new \InvalidArgumentException('non-nullable code_config cannot be null');
         }
-        $this->container['codeConfig'] = $codeConfig;
+        $this->container['code_config'] = $code_config;
 
         return $this;
     }

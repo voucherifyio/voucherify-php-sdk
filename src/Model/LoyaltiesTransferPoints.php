@@ -61,7 +61,7 @@ class LoyaltiesTransferPoints implements ModelInterface, ArrayAccess, \JsonSeria
         'code' => 'string',
         'points' => 'int',
         'reason' => 'string',
-        'sourceId' => 'string'
+        'source_id' => 'string'
     ];
 
     /**
@@ -75,7 +75,7 @@ class LoyaltiesTransferPoints implements ModelInterface, ArrayAccess, \JsonSeria
         'code' => null,
         'points' => null,
         'reason' => null,
-        'sourceId' => null
+        'source_id' => null
     ];
 
     /**
@@ -87,7 +87,7 @@ class LoyaltiesTransferPoints implements ModelInterface, ArrayAccess, \JsonSeria
         'code' => true,
 		'points' => true,
 		'reason' => true,
-		'sourceId' => true
+		'source_id' => true
     ];
 
     /**
@@ -179,7 +179,7 @@ class LoyaltiesTransferPoints implements ModelInterface, ArrayAccess, \JsonSeria
         'code' => 'code',
         'points' => 'points',
         'reason' => 'reason',
-        'sourceId' => 'source_id'
+        'source_id' => 'source_id'
     ];
 
     /**
@@ -191,7 +191,7 @@ class LoyaltiesTransferPoints implements ModelInterface, ArrayAccess, \JsonSeria
         'code' => 'setCode',
         'points' => 'setPoints',
         'reason' => 'setReason',
-        'sourceId' => 'setSourceId'
+        'source_id' => 'setSourceId'
     ];
 
     /**
@@ -203,7 +203,7 @@ class LoyaltiesTransferPoints implements ModelInterface, ArrayAccess, \JsonSeria
         'code' => 'getCode',
         'points' => 'getPoints',
         'reason' => 'getReason',
-        'sourceId' => 'getSourceId'
+        'source_id' => 'getSourceId'
     ];
 
     /**
@@ -266,7 +266,7 @@ class LoyaltiesTransferPoints implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('code', $data ?? [], null);
         $this->setIfExists('points', $data ?? [], null);
         $this->setIfExists('reason', $data ?? [], null);
-        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('source_id', $data ?? [], null);
     }
 
     /**
@@ -414,35 +414,35 @@ class LoyaltiesTransferPoints implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets sourceId
+     * Gets source_id
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['sourceId'];
+        return $this->container['source_id'];
     }
 
     /**
-     * Sets sourceId
+     * Sets source_id
      *
-     * @param string|null $sourceId The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service.
+     * @param string|null $source_id The merchant's transaction ID if it is different from the Voucherify transaction ID. It is really useful in case of an integration between multiple systems. It can be a transaction ID from a CRM system, database or 3rd-party service.
      *
      * @return self
      */
-    public function setSourceId($sourceId)
+    public function setSourceId($source_id)
     {
-        if (is_null($sourceId)) {
-            array_push($this->openAPINullablesSetToNull, 'sourceId');
+        if (is_null($source_id)) {
+            array_push($this->openAPINullablesSetToNull, 'source_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sourceId', $nullablesSetToNull);
+            $index = array_search('source_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sourceId'] = $sourceId;
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }

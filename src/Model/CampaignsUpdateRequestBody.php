@@ -58,28 +58,28 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'startDate' => '\DateTime',
-        'expirationDate' => '\DateTime',
-        'validityTimeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
-        'validityDayOfWeek' => 'int[]',
-        'validityHours' => '\OpenAPI\Client\Model\ValidityHours',
+        'start_date' => '\DateTime',
+        'expiration_date' => '\DateTime',
+        'validity_timeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
+        'validity_day_of_week' => 'int[]',
+        'validity_hours' => '\OpenAPI\Client\Model\ValidityHours',
         'description' => 'string',
         'category' => 'string',
         'metadata' => 'object',
-        'unsetMetadataFields' => 'string[]',
-        'categoryId' => 'string',
-        'activityDurationAfterPublishing' => 'string',
-        'joinOnce' => 'bool',
-        'autoJoin' => 'bool',
+        'unset_metadata_fields' => 'string[]',
+        'category_id' => 'string',
+        'activity_duration_after_publishing' => 'string',
+        'join_once' => 'bool',
+        'auto_join' => 'bool',
         'type' => 'string',
         'discount' => 'object',
-        'referralProgram' => '\OpenAPI\Client\Model\ReferralProgram',
+        'referral_program' => '\OpenAPI\Client\Model\ReferralProgram',
         'gift' => '\OpenAPI\Client\Model\Gift',
-        'loyaltyTiersExpiration' => '\OpenAPI\Client\Model\LoyaltyTiersExpirationAll',
+        'loyalty_tiers_expiration' => '\OpenAPI\Client\Model\LoyaltyTiersExpirationAll',
         'options' => '\OpenAPI\Client\Model\CampaignsUpdateRequestBodyOptions',
-        'winnersCount' => 'string',
-        'uniqueWinnersPerDraw' => 'string',
-        'uniqueWinners' => 'string'
+        'winners_count' => 'string',
+        'unique_winners_per_draw' => 'string',
+        'unique_winners' => 'string'
     ];
 
     /**
@@ -90,28 +90,28 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'startDate' => 'date-time',
-        'expirationDate' => 'date-time',
-        'validityTimeframe' => null,
-        'validityDayOfWeek' => null,
-        'validityHours' => null,
+        'start_date' => 'date-time',
+        'expiration_date' => 'date-time',
+        'validity_timeframe' => null,
+        'validity_day_of_week' => null,
+        'validity_hours' => null,
         'description' => null,
         'category' => null,
         'metadata' => null,
-        'unsetMetadataFields' => null,
-        'categoryId' => null,
-        'activityDurationAfterPublishing' => null,
-        'joinOnce' => null,
-        'autoJoin' => null,
+        'unset_metadata_fields' => null,
+        'category_id' => null,
+        'activity_duration_after_publishing' => null,
+        'join_once' => null,
+        'auto_join' => null,
         'type' => null,
         'discount' => null,
-        'referralProgram' => null,
+        'referral_program' => null,
         'gift' => null,
-        'loyaltyTiersExpiration' => null,
+        'loyalty_tiers_expiration' => null,
         'options' => null,
-        'winnersCount' => null,
-        'uniqueWinnersPerDraw' => null,
-        'uniqueWinners' => null
+        'winners_count' => null,
+        'unique_winners_per_draw' => null,
+        'unique_winners' => null
     ];
 
     /**
@@ -120,28 +120,28 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'startDate' => true,
-		'expirationDate' => true,
-		'validityTimeframe' => false,
-		'validityDayOfWeek' => true,
-		'validityHours' => false,
+        'start_date' => true,
+		'expiration_date' => true,
+		'validity_timeframe' => false,
+		'validity_day_of_week' => true,
+		'validity_hours' => false,
 		'description' => true,
 		'category' => true,
 		'metadata' => true,
-		'unsetMetadataFields' => true,
-		'categoryId' => true,
-		'activityDurationAfterPublishing' => true,
-		'joinOnce' => true,
-		'autoJoin' => true,
+		'unset_metadata_fields' => true,
+		'category_id' => true,
+		'activity_duration_after_publishing' => true,
+		'join_once' => true,
+		'auto_join' => true,
 		'type' => true,
 		'discount' => true,
-		'referralProgram' => false,
+		'referral_program' => false,
 		'gift' => false,
-		'loyaltyTiersExpiration' => false,
+		'loyalty_tiers_expiration' => false,
 		'options' => true,
-		'winnersCount' => true,
-		'uniqueWinnersPerDraw' => true,
-		'uniqueWinners' => true
+		'winners_count' => true,
+		'unique_winners_per_draw' => true,
+		'unique_winners' => true
     ];
 
     /**
@@ -230,28 +230,28 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'startDate' => 'start_date',
-        'expirationDate' => 'expiration_date',
-        'validityTimeframe' => 'validity_timeframe',
-        'validityDayOfWeek' => 'validity_day_of_week',
-        'validityHours' => 'validity_hours',
+        'start_date' => 'start_date',
+        'expiration_date' => 'expiration_date',
+        'validity_timeframe' => 'validity_timeframe',
+        'validity_day_of_week' => 'validity_day_of_week',
+        'validity_hours' => 'validity_hours',
         'description' => 'description',
         'category' => 'category',
         'metadata' => 'metadata',
-        'unsetMetadataFields' => 'unset_metadata_fields',
-        'categoryId' => 'category_id',
-        'activityDurationAfterPublishing' => 'activity_duration_after_publishing',
-        'joinOnce' => 'join_once',
-        'autoJoin' => 'auto_join',
+        'unset_metadata_fields' => 'unset_metadata_fields',
+        'category_id' => 'category_id',
+        'activity_duration_after_publishing' => 'activity_duration_after_publishing',
+        'join_once' => 'join_once',
+        'auto_join' => 'auto_join',
         'type' => 'type',
         'discount' => 'discount',
-        'referralProgram' => 'referral_program',
+        'referral_program' => 'referral_program',
         'gift' => 'gift',
-        'loyaltyTiersExpiration' => 'loyalty_tiers_expiration',
+        'loyalty_tiers_expiration' => 'loyalty_tiers_expiration',
         'options' => 'options',
-        'winnersCount' => 'winners_count',
-        'uniqueWinnersPerDraw' => 'unique_winners_per_draw',
-        'uniqueWinners' => 'unique_winners'
+        'winners_count' => 'winners_count',
+        'unique_winners_per_draw' => 'unique_winners_per_draw',
+        'unique_winners' => 'unique_winners'
     ];
 
     /**
@@ -260,28 +260,28 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'startDate' => 'setStartDate',
-        'expirationDate' => 'setExpirationDate',
-        'validityTimeframe' => 'setValidityTimeframe',
-        'validityDayOfWeek' => 'setValidityDayOfWeek',
-        'validityHours' => 'setValidityHours',
+        'start_date' => 'setStartDate',
+        'expiration_date' => 'setExpirationDate',
+        'validity_timeframe' => 'setValidityTimeframe',
+        'validity_day_of_week' => 'setValidityDayOfWeek',
+        'validity_hours' => 'setValidityHours',
         'description' => 'setDescription',
         'category' => 'setCategory',
         'metadata' => 'setMetadata',
-        'unsetMetadataFields' => 'setUnsetMetadataFields',
-        'categoryId' => 'setCategoryId',
-        'activityDurationAfterPublishing' => 'setActivityDurationAfterPublishing',
-        'joinOnce' => 'setJoinOnce',
-        'autoJoin' => 'setAutoJoin',
+        'unset_metadata_fields' => 'setUnsetMetadataFields',
+        'category_id' => 'setCategoryId',
+        'activity_duration_after_publishing' => 'setActivityDurationAfterPublishing',
+        'join_once' => 'setJoinOnce',
+        'auto_join' => 'setAutoJoin',
         'type' => 'setType',
         'discount' => 'setDiscount',
-        'referralProgram' => 'setReferralProgram',
+        'referral_program' => 'setReferralProgram',
         'gift' => 'setGift',
-        'loyaltyTiersExpiration' => 'setLoyaltyTiersExpiration',
+        'loyalty_tiers_expiration' => 'setLoyaltyTiersExpiration',
         'options' => 'setOptions',
-        'winnersCount' => 'setWinnersCount',
-        'uniqueWinnersPerDraw' => 'setUniqueWinnersPerDraw',
-        'uniqueWinners' => 'setUniqueWinners'
+        'winners_count' => 'setWinnersCount',
+        'unique_winners_per_draw' => 'setUniqueWinnersPerDraw',
+        'unique_winners' => 'setUniqueWinners'
     ];
 
     /**
@@ -290,28 +290,28 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'startDate' => 'getStartDate',
-        'expirationDate' => 'getExpirationDate',
-        'validityTimeframe' => 'getValidityTimeframe',
-        'validityDayOfWeek' => 'getValidityDayOfWeek',
-        'validityHours' => 'getValidityHours',
+        'start_date' => 'getStartDate',
+        'expiration_date' => 'getExpirationDate',
+        'validity_timeframe' => 'getValidityTimeframe',
+        'validity_day_of_week' => 'getValidityDayOfWeek',
+        'validity_hours' => 'getValidityHours',
         'description' => 'getDescription',
         'category' => 'getCategory',
         'metadata' => 'getMetadata',
-        'unsetMetadataFields' => 'getUnsetMetadataFields',
-        'categoryId' => 'getCategoryId',
-        'activityDurationAfterPublishing' => 'getActivityDurationAfterPublishing',
-        'joinOnce' => 'getJoinOnce',
-        'autoJoin' => 'getAutoJoin',
+        'unset_metadata_fields' => 'getUnsetMetadataFields',
+        'category_id' => 'getCategoryId',
+        'activity_duration_after_publishing' => 'getActivityDurationAfterPublishing',
+        'join_once' => 'getJoinOnce',
+        'auto_join' => 'getAutoJoin',
         'type' => 'getType',
         'discount' => 'getDiscount',
-        'referralProgram' => 'getReferralProgram',
+        'referral_program' => 'getReferralProgram',
         'gift' => 'getGift',
-        'loyaltyTiersExpiration' => 'getLoyaltyTiersExpiration',
+        'loyalty_tiers_expiration' => 'getLoyaltyTiersExpiration',
         'options' => 'getOptions',
-        'winnersCount' => 'getWinnersCount',
-        'uniqueWinnersPerDraw' => 'getUniqueWinnersPerDraw',
-        'uniqueWinners' => 'getUniqueWinners'
+        'winners_count' => 'getWinnersCount',
+        'unique_winners_per_draw' => 'getUniqueWinnersPerDraw',
+        'unique_winners' => 'getUniqueWinners'
     ];
 
     /**
@@ -411,28 +411,28 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('startDate', $data ?? [], null);
-        $this->setIfExists('expirationDate', $data ?? [], null);
-        $this->setIfExists('validityTimeframe', $data ?? [], null);
-        $this->setIfExists('validityDayOfWeek', $data ?? [], null);
-        $this->setIfExists('validityHours', $data ?? [], null);
+        $this->setIfExists('start_date', $data ?? [], null);
+        $this->setIfExists('expiration_date', $data ?? [], null);
+        $this->setIfExists('validity_timeframe', $data ?? [], null);
+        $this->setIfExists('validity_day_of_week', $data ?? [], null);
+        $this->setIfExists('validity_hours', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('category', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('unsetMetadataFields', $data ?? [], null);
-        $this->setIfExists('categoryId', $data ?? [], null);
-        $this->setIfExists('activityDurationAfterPublishing', $data ?? [], null);
-        $this->setIfExists('joinOnce', $data ?? [], null);
-        $this->setIfExists('autoJoin', $data ?? [], null);
+        $this->setIfExists('unset_metadata_fields', $data ?? [], null);
+        $this->setIfExists('category_id', $data ?? [], null);
+        $this->setIfExists('activity_duration_after_publishing', $data ?? [], null);
+        $this->setIfExists('join_once', $data ?? [], null);
+        $this->setIfExists('auto_join', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('discount', $data ?? [], null);
-        $this->setIfExists('referralProgram', $data ?? [], null);
+        $this->setIfExists('referral_program', $data ?? [], null);
         $this->setIfExists('gift', $data ?? [], null);
-        $this->setIfExists('loyaltyTiersExpiration', $data ?? [], null);
+        $this->setIfExists('loyalty_tiers_expiration', $data ?? [], null);
         $this->setIfExists('options', $data ?? [], null);
-        $this->setIfExists('winnersCount', $data ?? [], null);
-        $this->setIfExists('uniqueWinnersPerDraw', $data ?? [], null);
-        $this->setIfExists('uniqueWinners', $data ?? [], null);
+        $this->setIfExists('winners_count', $data ?? [], null);
+        $this->setIfExists('unique_winners_per_draw', $data ?? [], null);
+        $this->setIfExists('unique_winners', $data ?? [], null);
     }
 
     /**
@@ -487,166 +487,166 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets startDate
+     * Gets start_date
      *
      * @return \DateTime|null
      */
     public function getStartDate()
     {
-        return $this->container['startDate'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets startDate
+     * Sets start_date
      *
-     * @param \DateTime|null $startDate Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date.
+     * @param \DateTime|null $start_date Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date.
      *
      * @return self
      */
-    public function setStartDate($startDate)
+    public function setStartDate($start_date)
     {
-        if (is_null($startDate)) {
-            array_push($this->openAPINullablesSetToNull, 'startDate');
+        if (is_null($start_date)) {
+            array_push($this->openAPINullablesSetToNull, 'start_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('startDate', $nullablesSetToNull);
+            $index = array_search('start_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['startDate'] = $startDate;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets expirationDate
+     * Gets expiration_date
      *
      * @return \DateTime|null
      */
     public function getExpirationDate()
     {
-        return $this->container['expirationDate'];
+        return $this->container['expiration_date'];
     }
 
     /**
-     * Sets expirationDate
+     * Sets expiration_date
      *
-     * @param \DateTime|null $expirationDate Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
+     * @param \DateTime|null $expiration_date Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
      *
      * @return self
      */
-    public function setExpirationDate($expirationDate)
+    public function setExpirationDate($expiration_date)
     {
-        if (is_null($expirationDate)) {
-            array_push($this->openAPINullablesSetToNull, 'expirationDate');
+        if (is_null($expiration_date)) {
+            array_push($this->openAPINullablesSetToNull, 'expiration_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expirationDate', $nullablesSetToNull);
+            $index = array_search('expiration_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['expirationDate'] = $expirationDate;
+        $this->container['expiration_date'] = $expiration_date;
 
         return $this;
     }
 
     /**
-     * Gets validityTimeframe
+     * Gets validity_timeframe
      *
      * @return \OpenAPI\Client\Model\ValidityTimeframe|null
      */
     public function getValidityTimeframe()
     {
-        return $this->container['validityTimeframe'];
+        return $this->container['validity_timeframe'];
     }
 
     /**
-     * Sets validityTimeframe
+     * Sets validity_timeframe
      *
-     * @param \OpenAPI\Client\Model\ValidityTimeframe|null $validityTimeframe validityTimeframe
+     * @param \OpenAPI\Client\Model\ValidityTimeframe|null $validity_timeframe validity_timeframe
      *
      * @return self
      */
-    public function setValidityTimeframe($validityTimeframe)
+    public function setValidityTimeframe($validity_timeframe)
     {
-        if (is_null($validityTimeframe)) {
-            throw new \InvalidArgumentException('non-nullable validityTimeframe cannot be null');
+        if (is_null($validity_timeframe)) {
+            throw new \InvalidArgumentException('non-nullable validity_timeframe cannot be null');
         }
-        $this->container['validityTimeframe'] = $validityTimeframe;
+        $this->container['validity_timeframe'] = $validity_timeframe;
 
         return $this;
     }
 
     /**
-     * Gets validityDayOfWeek
+     * Gets validity_day_of_week
      *
      * @return int[]|null
      */
     public function getValidityDayOfWeek()
     {
-        return $this->container['validityDayOfWeek'];
+        return $this->container['validity_day_of_week'];
     }
 
     /**
-     * Sets validityDayOfWeek
+     * Sets validity_day_of_week
      *
-     * @param int[]|null $validityDayOfWeek Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+     * @param int[]|null $validity_day_of_week Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
      *
      * @return self
      */
-    public function setValidityDayOfWeek($validityDayOfWeek)
+    public function setValidityDayOfWeek($validity_day_of_week)
     {
-        if (is_null($validityDayOfWeek)) {
-            array_push($this->openAPINullablesSetToNull, 'validityDayOfWeek');
+        if (is_null($validity_day_of_week)) {
+            array_push($this->openAPINullablesSetToNull, 'validity_day_of_week');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validityDayOfWeek', $nullablesSetToNull);
+            $index = array_search('validity_day_of_week', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getValidityDayOfWeekAllowableValues();
-        if (!is_null($validityDayOfWeek) && array_diff($validityDayOfWeek, $allowedValues)) {
+        if (!is_null($validity_day_of_week) && array_diff($validity_day_of_week, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'validityDayOfWeek', must be one of '%s'",
+                    "Invalid value for 'validity_day_of_week', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['validityDayOfWeek'] = $validityDayOfWeek;
+        $this->container['validity_day_of_week'] = $validity_day_of_week;
 
         return $this;
     }
 
     /**
-     * Gets validityHours
+     * Gets validity_hours
      *
      * @return \OpenAPI\Client\Model\ValidityHours|null
      */
     public function getValidityHours()
     {
-        return $this->container['validityHours'];
+        return $this->container['validity_hours'];
     }
 
     /**
-     * Sets validityHours
+     * Sets validity_hours
      *
-     * @param \OpenAPI\Client\Model\ValidityHours|null $validityHours validityHours
+     * @param \OpenAPI\Client\Model\ValidityHours|null $validity_hours validity_hours
      *
      * @return self
      */
-    public function setValidityHours($validityHours)
+    public function setValidityHours($validity_hours)
     {
-        if (is_null($validityHours)) {
-            throw new \InvalidArgumentException('non-nullable validityHours cannot be null');
+        if (is_null($validity_hours)) {
+            throw new \InvalidArgumentException('non-nullable validity_hours cannot be null');
         }
-        $this->container['validityHours'] = $validityHours;
+        $this->container['validity_hours'] = $validity_hours;
 
         return $this;
     }
@@ -754,171 +754,171 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets unsetMetadataFields
+     * Gets unset_metadata_fields
      *
      * @return string[]|null
      */
     public function getUnsetMetadataFields()
     {
-        return $this->container['unsetMetadataFields'];
+        return $this->container['unset_metadata_fields'];
     }
 
     /**
-     * Sets unsetMetadataFields
+     * Sets unset_metadata_fields
      *
-     * @param string[]|null $unsetMetadataFields Determine which metadata should be removed from campaign.
+     * @param string[]|null $unset_metadata_fields Determine which metadata should be removed from campaign.
      *
      * @return self
      */
-    public function setUnsetMetadataFields($unsetMetadataFields)
+    public function setUnsetMetadataFields($unset_metadata_fields)
     {
-        if (is_null($unsetMetadataFields)) {
-            array_push($this->openAPINullablesSetToNull, 'unsetMetadataFields');
+        if (is_null($unset_metadata_fields)) {
+            array_push($this->openAPINullablesSetToNull, 'unset_metadata_fields');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unsetMetadataFields', $nullablesSetToNull);
+            $index = array_search('unset_metadata_fields', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['unsetMetadataFields'] = $unsetMetadataFields;
+        $this->container['unset_metadata_fields'] = $unset_metadata_fields;
 
         return $this;
     }
 
     /**
-     * Gets categoryId
+     * Gets category_id
      *
      * @return string|null
      */
     public function getCategoryId()
     {
-        return $this->container['categoryId'];
+        return $this->container['category_id'];
     }
 
     /**
-     * Sets categoryId
+     * Sets category_id
      *
-     * @param string|null $categoryId Unique category ID that this campaign belongs to. Either pass this parameter OR the `category`.
+     * @param string|null $category_id Unique category ID that this campaign belongs to. Either pass this parameter OR the `category`.
      *
      * @return self
      */
-    public function setCategoryId($categoryId)
+    public function setCategoryId($category_id)
     {
-        if (is_null($categoryId)) {
-            array_push($this->openAPINullablesSetToNull, 'categoryId');
+        if (is_null($category_id)) {
+            array_push($this->openAPINullablesSetToNull, 'category_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('categoryId', $nullablesSetToNull);
+            $index = array_search('category_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['categoryId'] = $categoryId;
+        $this->container['category_id'] = $category_id;
 
         return $this;
     }
 
     /**
-     * Gets activityDurationAfterPublishing
+     * Gets activity_duration_after_publishing
      *
      * @return string|null
      */
     public function getActivityDurationAfterPublishing()
     {
-        return $this->container['activityDurationAfterPublishing'];
+        return $this->container['activity_duration_after_publishing'];
     }
 
     /**
-     * Sets activityDurationAfterPublishing
+     * Sets activity_duration_after_publishing
      *
-     * @param string|null $activityDurationAfterPublishing Defines the amount of time the vouchers will be active after publishing. The value is shown in the ISO 8601 format. For example, a voucher with the value of P24D will be valid for a duration of 24 days.
+     * @param string|null $activity_duration_after_publishing Defines the amount of time the vouchers will be active after publishing. The value is shown in the ISO 8601 format. For example, a voucher with the value of P24D will be valid for a duration of 24 days.
      *
      * @return self
      */
-    public function setActivityDurationAfterPublishing($activityDurationAfterPublishing)
+    public function setActivityDurationAfterPublishing($activity_duration_after_publishing)
     {
-        if (is_null($activityDurationAfterPublishing)) {
-            array_push($this->openAPINullablesSetToNull, 'activityDurationAfterPublishing');
+        if (is_null($activity_duration_after_publishing)) {
+            array_push($this->openAPINullablesSetToNull, 'activity_duration_after_publishing');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('activityDurationAfterPublishing', $nullablesSetToNull);
+            $index = array_search('activity_duration_after_publishing', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['activityDurationAfterPublishing'] = $activityDurationAfterPublishing;
+        $this->container['activity_duration_after_publishing'] = $activity_duration_after_publishing;
 
         return $this;
     }
 
     /**
-     * Gets joinOnce
+     * Gets join_once
      *
      * @return bool|null
      */
     public function getJoinOnce()
     {
-        return $this->container['joinOnce'];
+        return $this->container['join_once'];
     }
 
     /**
-     * Sets joinOnce
+     * Sets join_once
      *
-     * @param bool|null $joinOnce If this value is set to `true`, customers will be able to join the campaign only once.
+     * @param bool|null $join_once If this value is set to `true`, customers will be able to join the campaign only once.
      *
      * @return self
      */
-    public function setJoinOnce($joinOnce)
+    public function setJoinOnce($join_once)
     {
-        if (is_null($joinOnce)) {
-            array_push($this->openAPINullablesSetToNull, 'joinOnce');
+        if (is_null($join_once)) {
+            array_push($this->openAPINullablesSetToNull, 'join_once');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('joinOnce', $nullablesSetToNull);
+            $index = array_search('join_once', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['joinOnce'] = $joinOnce;
+        $this->container['join_once'] = $join_once;
 
         return $this;
     }
 
     /**
-     * Gets autoJoin
+     * Gets auto_join
      *
      * @return bool|null
      */
     public function getAutoJoin()
     {
-        return $this->container['autoJoin'];
+        return $this->container['auto_join'];
     }
 
     /**
-     * Sets autoJoin
+     * Sets auto_join
      *
-     * @param bool|null $autoJoin Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
+     * @param bool|null $auto_join Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
      *
      * @return self
      */
-    public function setAutoJoin($autoJoin)
+    public function setAutoJoin($auto_join)
     {
-        if (is_null($autoJoin)) {
-            array_push($this->openAPINullablesSetToNull, 'autoJoin');
+        if (is_null($auto_join)) {
+            array_push($this->openAPINullablesSetToNull, 'auto_join');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('autoJoin', $nullablesSetToNull);
+            $index = array_search('auto_join', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['autoJoin'] = $autoJoin;
+        $this->container['auto_join'] = $auto_join;
 
         return $this;
     }
@@ -1002,28 +1002,28 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets referralProgram
+     * Gets referral_program
      *
      * @return \OpenAPI\Client\Model\ReferralProgram|null
      */
     public function getReferralProgram()
     {
-        return $this->container['referralProgram'];
+        return $this->container['referral_program'];
     }
 
     /**
-     * Sets referralProgram
+     * Sets referral_program
      *
-     * @param \OpenAPI\Client\Model\ReferralProgram|null $referralProgram referralProgram
+     * @param \OpenAPI\Client\Model\ReferralProgram|null $referral_program referral_program
      *
      * @return self
      */
-    public function setReferralProgram($referralProgram)
+    public function setReferralProgram($referral_program)
     {
-        if (is_null($referralProgram)) {
-            throw new \InvalidArgumentException('non-nullable referralProgram cannot be null');
+        if (is_null($referral_program)) {
+            throw new \InvalidArgumentException('non-nullable referral_program cannot be null');
         }
-        $this->container['referralProgram'] = $referralProgram;
+        $this->container['referral_program'] = $referral_program;
 
         return $this;
     }
@@ -1056,28 +1056,28 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets loyaltyTiersExpiration
+     * Gets loyalty_tiers_expiration
      *
      * @return \OpenAPI\Client\Model\LoyaltyTiersExpirationAll|null
      */
     public function getLoyaltyTiersExpiration()
     {
-        return $this->container['loyaltyTiersExpiration'];
+        return $this->container['loyalty_tiers_expiration'];
     }
 
     /**
-     * Sets loyaltyTiersExpiration
+     * Sets loyalty_tiers_expiration
      *
-     * @param \OpenAPI\Client\Model\LoyaltyTiersExpirationAll|null $loyaltyTiersExpiration loyaltyTiersExpiration
+     * @param \OpenAPI\Client\Model\LoyaltyTiersExpirationAll|null $loyalty_tiers_expiration loyalty_tiers_expiration
      *
      * @return self
      */
-    public function setLoyaltyTiersExpiration($loyaltyTiersExpiration)
+    public function setLoyaltyTiersExpiration($loyalty_tiers_expiration)
     {
-        if (is_null($loyaltyTiersExpiration)) {
-            throw new \InvalidArgumentException('non-nullable loyaltyTiersExpiration cannot be null');
+        if (is_null($loyalty_tiers_expiration)) {
+            throw new \InvalidArgumentException('non-nullable loyalty_tiers_expiration cannot be null');
         }
-        $this->container['loyaltyTiersExpiration'] = $loyaltyTiersExpiration;
+        $this->container['loyalty_tiers_expiration'] = $loyalty_tiers_expiration;
 
         return $this;
     }
@@ -1117,29 +1117,29 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets winnersCount
+     * Gets winners_count
      *
      * @return string|null
      */
     public function getWinnersCount()
     {
-        return $this->container['winnersCount'];
+        return $this->container['winners_count'];
     }
 
     /**
-     * Sets winnersCount
+     * Sets winners_count
      *
-     * @param string|null $winnersCount It represents the total number of winners in a lucky draw.
+     * @param string|null $winners_count It represents the total number of winners in a lucky draw.
      *
      * @return self
      */
-    public function setWinnersCount($winnersCount)
+    public function setWinnersCount($winners_count)
     {
-        if (is_null($winnersCount)) {
-            array_push($this->openAPINullablesSetToNull, 'winnersCount');
+        if (is_null($winners_count)) {
+            array_push($this->openAPINullablesSetToNull, 'winners_count');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('winnersCount', $nullablesSetToNull);
+            $index = array_search('winners_count', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
@@ -1147,75 +1147,75 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         }
 
 
-        $this->container['winnersCount'] = $winnersCount;
+        $this->container['winners_count'] = $winners_count;
 
         return $this;
     }
 
     /**
-     * Gets uniqueWinnersPerDraw
+     * Gets unique_winners_per_draw
      *
      * @return string|null
      */
     public function getUniqueWinnersPerDraw()
     {
-        return $this->container['uniqueWinnersPerDraw'];
+        return $this->container['unique_winners_per_draw'];
     }
 
     /**
-     * Sets uniqueWinnersPerDraw
+     * Sets unique_winners_per_draw
      *
-     * @param string|null $uniqueWinnersPerDraw It indicates whether each winner in a draw is unique or not.
+     * @param string|null $unique_winners_per_draw It indicates whether each winner in a draw is unique or not.
      *
      * @return self
      */
-    public function setUniqueWinnersPerDraw($uniqueWinnersPerDraw)
+    public function setUniqueWinnersPerDraw($unique_winners_per_draw)
     {
-        if (is_null($uniqueWinnersPerDraw)) {
-            array_push($this->openAPINullablesSetToNull, 'uniqueWinnersPerDraw');
+        if (is_null($unique_winners_per_draw)) {
+            array_push($this->openAPINullablesSetToNull, 'unique_winners_per_draw');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('uniqueWinnersPerDraw', $nullablesSetToNull);
+            $index = array_search('unique_winners_per_draw', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['uniqueWinnersPerDraw'] = $uniqueWinnersPerDraw;
+        $this->container['unique_winners_per_draw'] = $unique_winners_per_draw;
 
         return $this;
     }
 
     /**
-     * Gets uniqueWinners
+     * Gets unique_winners
      *
      * @return string|null
      */
     public function getUniqueWinners()
     {
-        return $this->container['uniqueWinners'];
+        return $this->container['unique_winners'];
     }
 
     /**
-     * Sets uniqueWinners
+     * Sets unique_winners
      *
-     * @param string|null $uniqueWinners Specifies whether each participant can win only once across multiple draws.
+     * @param string|null $unique_winners Specifies whether each participant can win only once across multiple draws.
      *
      * @return self
      */
-    public function setUniqueWinners($uniqueWinners)
+    public function setUniqueWinners($unique_winners)
     {
-        if (is_null($uniqueWinners)) {
-            array_push($this->openAPINullablesSetToNull, 'uniqueWinners');
+        if (is_null($unique_winners)) {
+            array_push($this->openAPINullablesSetToNull, 'unique_winners');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('uniqueWinners', $nullablesSetToNull);
+            $index = array_search('unique_winners', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['uniqueWinners'] = $uniqueWinners;
+        $this->container['unique_winners'] = $unique_winners;
 
         return $this;
     }

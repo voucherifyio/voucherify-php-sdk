@@ -61,12 +61,12 @@ class LoyaltiesMembersTransactionsExportCreateResponseBody implements ModelInter
     protected static $openAPITypes = [
         'id' => 'string',
         'object' => 'string',
-        'createdAt' => '\DateTime',
+        'created_at' => '\DateTime',
         'status' => 'string',
         'channel' => 'string',
         'result' => 'object',
-        'userId' => 'string',
-        'exportedObject' => 'string',
+        'user_id' => 'string',
+        'exported_object' => 'string',
         'parameters' => '\OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBodyParameters'
     ];
 
@@ -80,12 +80,12 @@ class LoyaltiesMembersTransactionsExportCreateResponseBody implements ModelInter
     protected static $openAPIFormats = [
         'id' => null,
         'object' => null,
-        'createdAt' => 'date-time',
+        'created_at' => 'date-time',
         'status' => null,
         'channel' => null,
         'result' => null,
-        'userId' => null,
-        'exportedObject' => null,
+        'user_id' => null,
+        'exported_object' => null,
         'parameters' => null
     ];
 
@@ -97,12 +97,12 @@ class LoyaltiesMembersTransactionsExportCreateResponseBody implements ModelInter
     protected static array $openAPINullables = [
         'id' => true,
 		'object' => true,
-		'createdAt' => true,
+		'created_at' => true,
 		'status' => true,
 		'channel' => true,
 		'result' => true,
-		'userId' => true,
-		'exportedObject' => true,
+		'user_id' => true,
+		'exported_object' => true,
 		'parameters' => true
     ];
 
@@ -194,12 +194,12 @@ class LoyaltiesMembersTransactionsExportCreateResponseBody implements ModelInter
     protected static $attributeMap = [
         'id' => 'id',
         'object' => 'object',
-        'createdAt' => 'created_at',
+        'created_at' => 'created_at',
         'status' => 'status',
         'channel' => 'channel',
         'result' => 'result',
-        'userId' => 'user_id',
-        'exportedObject' => 'exported_object',
+        'user_id' => 'user_id',
+        'exported_object' => 'exported_object',
         'parameters' => 'parameters'
     ];
 
@@ -211,12 +211,12 @@ class LoyaltiesMembersTransactionsExportCreateResponseBody implements ModelInter
     protected static $setters = [
         'id' => 'setId',
         'object' => 'setObject',
-        'createdAt' => 'setCreatedAt',
+        'created_at' => 'setCreatedAt',
         'status' => 'setStatus',
         'channel' => 'setChannel',
         'result' => 'setResult',
-        'userId' => 'setUserId',
-        'exportedObject' => 'setExportedObject',
+        'user_id' => 'setUserId',
+        'exported_object' => 'setExportedObject',
         'parameters' => 'setParameters'
     ];
 
@@ -228,12 +228,12 @@ class LoyaltiesMembersTransactionsExportCreateResponseBody implements ModelInter
     protected static $getters = [
         'id' => 'getId',
         'object' => 'getObject',
-        'createdAt' => 'getCreatedAt',
+        'created_at' => 'getCreatedAt',
         'status' => 'getStatus',
         'channel' => 'getChannel',
         'result' => 'getResult',
-        'userId' => 'getUserId',
-        'exportedObject' => 'getExportedObject',
+        'user_id' => 'getUserId',
+        'exported_object' => 'getExportedObject',
         'parameters' => 'getParameters'
     ];
 
@@ -335,12 +335,12 @@ class LoyaltiesMembersTransactionsExportCreateResponseBody implements ModelInter
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'export');
-        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], 'SCHEDULED');
         $this->setIfExists('channel', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
-        $this->setIfExists('userId', $data ?? [], null);
-        $this->setIfExists('exportedObject', $data ?? [], 'voucher_transactions');
+        $this->setIfExists('user_id', $data ?? [], null);
+        $this->setIfExists('exported_object', $data ?? [], 'voucher_transactions');
         $this->setIfExists('parameters', $data ?? [], null);
     }
 
@@ -390,10 +390,10 @@ class LoyaltiesMembersTransactionsExportCreateResponseBody implements ModelInter
         }
 
         $allowedValues = $this->getExportedObjectAllowableValues();
-        if (!is_null($this->container['exportedObject']) && !in_array($this->container['exportedObject'], $allowedValues, true)) {
+        if (!is_null($this->container['exported_object']) && !in_array($this->container['exported_object'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'exportedObject', must be one of '%s'",
-                $this->container['exportedObject'],
+                "invalid value '%s' for 'exported_object', must be one of '%s'",
+                $this->container['exported_object'],
                 implode("', '", $allowedValues)
             );
         }
@@ -492,35 +492,35 @@ class LoyaltiesMembersTransactionsExportCreateResponseBody implements ModelInter
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the export was scheduled in ISO 8601 format.
+     * @param \DateTime|null $created_at Timestamp representing the date and time when the export was scheduled in ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        if (is_null($created_at)) {
+            array_push($this->openAPINullablesSetToNull, 'created_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
+            $index = array_search('created_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }
@@ -638,79 +638,79 @@ class LoyaltiesMembersTransactionsExportCreateResponseBody implements ModelInter
     }
 
     /**
-     * Gets userId
+     * Gets user_id
      *
      * @return string|null
      */
     public function getUserId()
     {
-        return $this->container['userId'];
+        return $this->container['user_id'];
     }
 
     /**
-     * Sets userId
+     * Sets user_id
      *
-     * @param string|null $userId Identifies the specific user who initiated the export through the Voucherify Dashboard; returned when the channel value is WEBSITE.
+     * @param string|null $user_id Identifies the specific user who initiated the export through the Voucherify Dashboard; returned when the channel value is WEBSITE.
      *
      * @return self
      */
-    public function setUserId($userId)
+    public function setUserId($user_id)
     {
-        if (is_null($userId)) {
-            array_push($this->openAPINullablesSetToNull, 'userId');
+        if (is_null($user_id)) {
+            array_push($this->openAPINullablesSetToNull, 'user_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('userId', $nullablesSetToNull);
+            $index = array_search('user_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['userId'] = $userId;
+        $this->container['user_id'] = $user_id;
 
         return $this;
     }
 
     /**
-     * Gets exportedObject
+     * Gets exported_object
      *
      * @return string|null
      */
     public function getExportedObject()
     {
-        return $this->container['exportedObject'];
+        return $this->container['exported_object'];
     }
 
     /**
-     * Sets exportedObject
+     * Sets exported_object
      *
-     * @param string|null $exportedObject The type of object to be exported.
+     * @param string|null $exported_object The type of object to be exported.
      *
      * @return self
      */
-    public function setExportedObject($exportedObject)
+    public function setExportedObject($exported_object)
     {
-        if (is_null($exportedObject)) {
-            array_push($this->openAPINullablesSetToNull, 'exportedObject');
+        if (is_null($exported_object)) {
+            array_push($this->openAPINullablesSetToNull, 'exported_object');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('exportedObject', $nullablesSetToNull);
+            $index = array_search('exported_object', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getExportedObjectAllowableValues();
-        if (!is_null($exportedObject) && !in_array($exportedObject, $allowedValues, true)) {
+        if (!is_null($exported_object) && !in_array($exported_object, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'exportedObject', must be one of '%s'",
-                    $exportedObject,
+                    "Invalid value '%s' for 'exported_object', must be one of '%s'",
+                    $exported_object,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['exportedObject'] = $exportedObject;
+        $this->container['exported_object'] = $exported_object;
 
         return $this;
     }

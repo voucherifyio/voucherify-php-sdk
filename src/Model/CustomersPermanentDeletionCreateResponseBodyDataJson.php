@@ -60,11 +60,11 @@ class CustomersPermanentDeletionCreateResponseBodyDataJson implements ModelInter
       */
     protected static $openAPITypes = [
         'events' => 'int',
-        'customerEvents' => 'int',
-        'dailyEvents' => 'int',
+        'customer_events' => 'int',
+        'daily_events' => 'int',
         'segments' => 'int',
         'orders' => 'int',
-        'orderEvents' => 'int',
+        'order_events' => 'int',
         'customer' => 'int'
     ];
 
@@ -77,11 +77,11 @@ class CustomersPermanentDeletionCreateResponseBodyDataJson implements ModelInter
       */
     protected static $openAPIFormats = [
         'events' => null,
-        'customerEvents' => null,
-        'dailyEvents' => null,
+        'customer_events' => null,
+        'daily_events' => null,
         'segments' => null,
         'orders' => null,
-        'orderEvents' => null,
+        'order_events' => null,
         'customer' => null
     ];
 
@@ -92,11 +92,11 @@ class CustomersPermanentDeletionCreateResponseBodyDataJson implements ModelInter
       */
     protected static array $openAPINullables = [
         'events' => true,
-		'customerEvents' => true,
-		'dailyEvents' => true,
+		'customer_events' => true,
+		'daily_events' => true,
 		'segments' => true,
 		'orders' => true,
-		'orderEvents' => true,
+		'order_events' => true,
 		'customer' => true
     ];
 
@@ -187,11 +187,11 @@ class CustomersPermanentDeletionCreateResponseBodyDataJson implements ModelInter
      */
     protected static $attributeMap = [
         'events' => 'events',
-        'customerEvents' => 'customer_events',
-        'dailyEvents' => 'daily_events',
+        'customer_events' => 'customer_events',
+        'daily_events' => 'daily_events',
         'segments' => 'segments',
         'orders' => 'orders',
-        'orderEvents' => 'order_events',
+        'order_events' => 'order_events',
         'customer' => 'customer'
     ];
 
@@ -202,11 +202,11 @@ class CustomersPermanentDeletionCreateResponseBodyDataJson implements ModelInter
      */
     protected static $setters = [
         'events' => 'setEvents',
-        'customerEvents' => 'setCustomerEvents',
-        'dailyEvents' => 'setDailyEvents',
+        'customer_events' => 'setCustomerEvents',
+        'daily_events' => 'setDailyEvents',
         'segments' => 'setSegments',
         'orders' => 'setOrders',
-        'orderEvents' => 'setOrderEvents',
+        'order_events' => 'setOrderEvents',
         'customer' => 'setCustomer'
     ];
 
@@ -217,11 +217,11 @@ class CustomersPermanentDeletionCreateResponseBodyDataJson implements ModelInter
      */
     protected static $getters = [
         'events' => 'getEvents',
-        'customerEvents' => 'getCustomerEvents',
-        'dailyEvents' => 'getDailyEvents',
+        'customer_events' => 'getCustomerEvents',
+        'daily_events' => 'getDailyEvents',
         'segments' => 'getSegments',
         'orders' => 'getOrders',
-        'orderEvents' => 'getOrderEvents',
+        'order_events' => 'getOrderEvents',
         'customer' => 'getCustomer'
     ];
 
@@ -283,11 +283,11 @@ class CustomersPermanentDeletionCreateResponseBodyDataJson implements ModelInter
     public function __construct(array $data = null)
     {
         $this->setIfExists('events', $data ?? [], null);
-        $this->setIfExists('customerEvents', $data ?? [], null);
-        $this->setIfExists('dailyEvents', $data ?? [], null);
+        $this->setIfExists('customer_events', $data ?? [], null);
+        $this->setIfExists('daily_events', $data ?? [], null);
         $this->setIfExists('segments', $data ?? [], null);
         $this->setIfExists('orders', $data ?? [], null);
-        $this->setIfExists('orderEvents', $data ?? [], null);
+        $this->setIfExists('order_events', $data ?? [], null);
         $this->setIfExists('customer', $data ?? [], 1);
     }
 
@@ -368,69 +368,69 @@ class CustomersPermanentDeletionCreateResponseBodyDataJson implements ModelInter
     }
 
     /**
-     * Gets customerEvents
+     * Gets customer_events
      *
      * @return int|null
      */
     public function getCustomerEvents()
     {
-        return $this->container['customerEvents'];
+        return $this->container['customer_events'];
     }
 
     /**
-     * Sets customerEvents
+     * Sets customer_events
      *
-     * @param int|null $customerEvents Number of customer events deleted.
+     * @param int|null $customer_events Number of customer events deleted.
      *
      * @return self
      */
-    public function setCustomerEvents($customerEvents)
+    public function setCustomerEvents($customer_events)
     {
-        if (is_null($customerEvents)) {
-            array_push($this->openAPINullablesSetToNull, 'customerEvents');
+        if (is_null($customer_events)) {
+            array_push($this->openAPINullablesSetToNull, 'customer_events');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customerEvents', $nullablesSetToNull);
+            $index = array_search('customer_events', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['customerEvents'] = $customerEvents;
+        $this->container['customer_events'] = $customer_events;
 
         return $this;
     }
 
     /**
-     * Gets dailyEvents
+     * Gets daily_events
      *
      * @return int|null
      */
     public function getDailyEvents()
     {
-        return $this->container['dailyEvents'];
+        return $this->container['daily_events'];
     }
 
     /**
-     * Sets dailyEvents
+     * Sets daily_events
      *
-     * @param int|null $dailyEvents Number of daily events deleted.
+     * @param int|null $daily_events Number of daily events deleted.
      *
      * @return self
      */
-    public function setDailyEvents($dailyEvents)
+    public function setDailyEvents($daily_events)
     {
-        if (is_null($dailyEvents)) {
-            array_push($this->openAPINullablesSetToNull, 'dailyEvents');
+        if (is_null($daily_events)) {
+            array_push($this->openAPINullablesSetToNull, 'daily_events');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dailyEvents', $nullablesSetToNull);
+            $index = array_search('daily_events', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['dailyEvents'] = $dailyEvents;
+        $this->container['daily_events'] = $daily_events;
 
         return $this;
     }
@@ -504,35 +504,35 @@ class CustomersPermanentDeletionCreateResponseBodyDataJson implements ModelInter
     }
 
     /**
-     * Gets orderEvents
+     * Gets order_events
      *
      * @return int|null
      */
     public function getOrderEvents()
     {
-        return $this->container['orderEvents'];
+        return $this->container['order_events'];
     }
 
     /**
-     * Sets orderEvents
+     * Sets order_events
      *
-     * @param int|null $orderEvents Number of order events deleted.
+     * @param int|null $order_events Number of order events deleted.
      *
      * @return self
      */
-    public function setOrderEvents($orderEvents)
+    public function setOrderEvents($order_events)
     {
-        if (is_null($orderEvents)) {
-            array_push($this->openAPINullablesSetToNull, 'orderEvents');
+        if (is_null($order_events)) {
+            array_push($this->openAPINullablesSetToNull, 'order_events');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('orderEvents', $nullablesSetToNull);
+            $index = array_search('order_events', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['orderEvents'] = $orderEvents;
+        $this->container['order_events'] = $order_events;
 
         return $this;
     }

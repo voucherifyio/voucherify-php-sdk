@@ -60,7 +60,7 @@ class VoucherTransactionDetailsOrder implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'sourceId' => 'string'
+        'source_id' => 'string'
     ];
 
     /**
@@ -72,7 +72,7 @@ class VoucherTransactionDetailsOrder implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'sourceId' => null
+        'source_id' => null
     ];
 
     /**
@@ -82,7 +82,7 @@ class VoucherTransactionDetailsOrder implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'sourceId' => true
+		'source_id' => true
     ];
 
     /**
@@ -172,7 +172,7 @@ class VoucherTransactionDetailsOrder implements ModelInterface, ArrayAccess, \Js
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'sourceId' => 'source_id'
+        'source_id' => 'source_id'
     ];
 
     /**
@@ -182,7 +182,7 @@ class VoucherTransactionDetailsOrder implements ModelInterface, ArrayAccess, \Js
      */
     protected static $setters = [
         'id' => 'setId',
-        'sourceId' => 'setSourceId'
+        'source_id' => 'setSourceId'
     ];
 
     /**
@@ -192,7 +192,7 @@ class VoucherTransactionDetailsOrder implements ModelInterface, ArrayAccess, \Js
      */
     protected static $getters = [
         'id' => 'getId',
-        'sourceId' => 'getSourceId'
+        'source_id' => 'getSourceId'
     ];
 
     /**
@@ -253,7 +253,7 @@ class VoucherTransactionDetailsOrder implements ModelInterface, ArrayAccess, \Js
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('source_id', $data ?? [], null);
     }
 
     /**
@@ -333,35 +333,35 @@ class VoucherTransactionDetailsOrder implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets sourceId
+     * Gets source_id
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['sourceId'];
+        return $this->container['source_id'];
     }
 
     /**
-     * Sets sourceId
+     * Sets source_id
      *
-     * @param string|null $sourceId The merchant's order ID if it is different from the Voucherify order ID. It is really useful in case of integration between multiple systems. It can be an order ID from CRM, database or 3rd party service.
+     * @param string|null $source_id The merchant's order ID if it is different from the Voucherify order ID. It is really useful in case of integration between multiple systems. It can be an order ID from CRM, database or 3rd party service.
      *
      * @return self
      */
-    public function setSourceId($sourceId)
+    public function setSourceId($source_id)
     {
-        if (is_null($sourceId)) {
-            array_push($this->openAPINullablesSetToNull, 'sourceId');
+        if (is_null($source_id)) {
+            array_push($this->openAPINullablesSetToNull, 'source_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sourceId', $nullablesSetToNull);
+            $index = array_search('source_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sourceId'] = $sourceId;
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }

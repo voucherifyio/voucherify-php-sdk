@@ -59,7 +59,7 @@ class ProductCollectionsCreateResponseBodyProductsItem implements ModelInterface
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'productId' => 'string',
+        'product_id' => 'string',
         'object' => 'string'
     ];
 
@@ -72,7 +72,7 @@ class ProductCollectionsCreateResponseBodyProductsItem implements ModelInterface
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'productId' => null,
+        'product_id' => null,
         'object' => null
     ];
 
@@ -83,7 +83,7 @@ class ProductCollectionsCreateResponseBodyProductsItem implements ModelInterface
       */
     protected static array $openAPINullables = [
         'id' => false,
-		'productId' => false,
+		'product_id' => false,
 		'object' => false
     ];
 
@@ -174,7 +174,7 @@ class ProductCollectionsCreateResponseBodyProductsItem implements ModelInterface
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'productId' => 'product_id',
+        'product_id' => 'product_id',
         'object' => 'object'
     ];
 
@@ -185,7 +185,7 @@ class ProductCollectionsCreateResponseBodyProductsItem implements ModelInterface
      */
     protected static $setters = [
         'id' => 'setId',
-        'productId' => 'setProductId',
+        'product_id' => 'setProductId',
         'object' => 'setObject'
     ];
 
@@ -196,7 +196,7 @@ class ProductCollectionsCreateResponseBodyProductsItem implements ModelInterface
      */
     protected static $getters = [
         'id' => 'getId',
-        'productId' => 'getProductId',
+        'product_id' => 'getProductId',
         'object' => 'getObject'
     ];
 
@@ -273,7 +273,7 @@ class ProductCollectionsCreateResponseBodyProductsItem implements ModelInterface
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('productId', $data ?? [], null);
+        $this->setIfExists('product_id', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], null);
     }
 
@@ -362,28 +362,28 @@ class ProductCollectionsCreateResponseBodyProductsItem implements ModelInterface
     }
 
     /**
-     * Gets productId
+     * Gets product_id
      *
      * @return string|null
      */
     public function getProductId()
     {
-        return $this->container['productId'];
+        return $this->container['product_id'];
     }
 
     /**
-     * Sets productId
+     * Sets product_id
      *
-     * @param string|null $productId Product ID for SKUs.
+     * @param string|null $product_id Product ID for SKUs.
      *
      * @return self
      */
-    public function setProductId($productId)
+    public function setProductId($product_id)
     {
-        if (is_null($productId)) {
-            throw new \InvalidArgumentException('non-nullable productId cannot be null');
+        if (is_null($product_id)) {
+            throw new \InvalidArgumentException('non-nullable product_id cannot be null');
         }
-        $this->container['productId'] = $productId;
+        $this->container['product_id'] = $product_id;
 
         return $this;
     }

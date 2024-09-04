@@ -59,11 +59,11 @@ class QualificationsFiltersCondition implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'is' => 'string[]',
-        'isNot' => 'string[]',
-        'hasValue' => 'mixed',
-        'isUnknown' => 'mixed',
+        'is_not' => 'string[]',
+        'has_value' => 'mixed',
+        'is_unknown' => 'mixed',
         'in' => 'string[]',
-        'notIn' => 'string[]'
+        'not_in' => 'string[]'
     ];
 
     /**
@@ -75,11 +75,11 @@ class QualificationsFiltersCondition implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'is' => null,
-        'isNot' => null,
-        'hasValue' => null,
-        'isUnknown' => null,
+        'is_not' => null,
+        'has_value' => null,
+        'is_unknown' => null,
         'in' => null,
-        'notIn' => null
+        'not_in' => null
     ];
 
     /**
@@ -89,11 +89,11 @@ class QualificationsFiltersCondition implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPINullables = [
         'is' => true,
-		'isNot' => true,
-		'hasValue' => true,
-		'isUnknown' => true,
+		'is_not' => true,
+		'has_value' => true,
+		'is_unknown' => true,
 		'in' => true,
-		'notIn' => true
+		'not_in' => true
     ];
 
     /**
@@ -183,11 +183,11 @@ class QualificationsFiltersCondition implements ModelInterface, ArrayAccess, \Js
      */
     protected static $attributeMap = [
         'is' => '$is',
-        'isNot' => '$is_not',
-        'hasValue' => '$has_value',
-        'isUnknown' => '$is_unknown',
+        'is_not' => '$is_not',
+        'has_value' => '$has_value',
+        'is_unknown' => '$is_unknown',
         'in' => '$in',
-        'notIn' => '$not_in'
+        'not_in' => '$not_in'
     ];
 
     /**
@@ -197,11 +197,11 @@ class QualificationsFiltersCondition implements ModelInterface, ArrayAccess, \Js
      */
     protected static $setters = [
         'is' => 'setIs',
-        'isNot' => 'setIsNot',
-        'hasValue' => 'setHasValue',
-        'isUnknown' => 'setIsUnknown',
+        'is_not' => 'setIsNot',
+        'has_value' => 'setHasValue',
+        'is_unknown' => 'setIsUnknown',
         'in' => 'setIn',
-        'notIn' => 'setNotIn'
+        'not_in' => 'setNotIn'
     ];
 
     /**
@@ -211,11 +211,11 @@ class QualificationsFiltersCondition implements ModelInterface, ArrayAccess, \Js
      */
     protected static $getters = [
         'is' => 'getIs',
-        'isNot' => 'getIsNot',
-        'hasValue' => 'getHasValue',
-        'isUnknown' => 'getIsUnknown',
+        'is_not' => 'getIsNot',
+        'has_value' => 'getHasValue',
+        'is_unknown' => 'getIsUnknown',
         'in' => 'getIn',
-        'notIn' => 'getNotIn'
+        'not_in' => 'getNotIn'
     ];
 
     /**
@@ -276,11 +276,11 @@ class QualificationsFiltersCondition implements ModelInterface, ArrayAccess, \Js
     public function __construct(array $data = null)
     {
         $this->setIfExists('is', $data ?? [], null);
-        $this->setIfExists('isNot', $data ?? [], null);
-        $this->setIfExists('hasValue', $data ?? [], null);
-        $this->setIfExists('isUnknown', $data ?? [], null);
+        $this->setIfExists('is_not', $data ?? [], null);
+        $this->setIfExists('has_value', $data ?? [], null);
+        $this->setIfExists('is_unknown', $data ?? [], null);
         $this->setIfExists('in', $data ?? [], null);
-        $this->setIfExists('notIn', $data ?? [], null);
+        $this->setIfExists('not_in', $data ?? [], null);
     }
 
     /**
@@ -360,103 +360,103 @@ class QualificationsFiltersCondition implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets isNot
+     * Gets is_not
      *
      * @return string[]|null
      */
     public function getIsNot()
     {
-        return $this->container['isNot'];
+        return $this->container['is_not'];
     }
 
     /**
-     * Sets isNot
+     * Sets is_not
      *
-     * @param string[]|null $isNot isNot
+     * @param string[]|null $is_not is_not
      *
      * @return self
      */
-    public function setIsNot($isNot)
+    public function setIsNot($is_not)
     {
-        if (is_null($isNot)) {
-            array_push($this->openAPINullablesSetToNull, 'isNot');
+        if (is_null($is_not)) {
+            array_push($this->openAPINullablesSetToNull, 'is_not');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('isNot', $nullablesSetToNull);
+            $index = array_search('is_not', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['isNot'] = $isNot;
+        $this->container['is_not'] = $is_not;
 
         return $this;
     }
 
     /**
-     * Gets hasValue
+     * Gets has_value
      *
      * @return mixed|null
      */
     public function getHasValue()
     {
-        return $this->container['hasValue'];
+        return $this->container['has_value'];
     }
 
     /**
-     * Sets hasValue
+     * Sets has_value
      *
-     * @param mixed|null $hasValue hasValue
+     * @param mixed|null $has_value has_value
      *
      * @return self
      */
-    public function setHasValue($hasValue)
+    public function setHasValue($has_value)
     {
-        if (is_null($hasValue)) {
-            array_push($this->openAPINullablesSetToNull, 'hasValue');
+        if (is_null($has_value)) {
+            array_push($this->openAPINullablesSetToNull, 'has_value');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('hasValue', $nullablesSetToNull);
+            $index = array_search('has_value', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['hasValue'] = $hasValue;
+        $this->container['has_value'] = $has_value;
 
         return $this;
     }
 
     /**
-     * Gets isUnknown
+     * Gets is_unknown
      *
      * @return mixed|null
      */
     public function getIsUnknown()
     {
-        return $this->container['isUnknown'];
+        return $this->container['is_unknown'];
     }
 
     /**
-     * Sets isUnknown
+     * Sets is_unknown
      *
-     * @param mixed|null $isUnknown isUnknown
+     * @param mixed|null $is_unknown is_unknown
      *
      * @return self
      */
-    public function setIsUnknown($isUnknown)
+    public function setIsUnknown($is_unknown)
     {
-        if (is_null($isUnknown)) {
-            array_push($this->openAPINullablesSetToNull, 'isUnknown');
+        if (is_null($is_unknown)) {
+            array_push($this->openAPINullablesSetToNull, 'is_unknown');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('isUnknown', $nullablesSetToNull);
+            $index = array_search('is_unknown', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['isUnknown'] = $isUnknown;
+        $this->container['is_unknown'] = $is_unknown;
 
         return $this;
     }
@@ -496,35 +496,35 @@ class QualificationsFiltersCondition implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets notIn
+     * Gets not_in
      *
      * @return string[]|null
      */
     public function getNotIn()
     {
-        return $this->container['notIn'];
+        return $this->container['not_in'];
     }
 
     /**
-     * Sets notIn
+     * Sets not_in
      *
-     * @param string[]|null $notIn notIn
+     * @param string[]|null $not_in not_in
      *
      * @return self
      */
-    public function setNotIn($notIn)
+    public function setNotIn($not_in)
     {
-        if (is_null($notIn)) {
-            array_push($this->openAPINullablesSetToNull, 'notIn');
+        if (is_null($not_in)) {
+            array_push($this->openAPINullablesSetToNull, 'not_in');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('notIn', $nullablesSetToNull);
+            $index = array_search('not_in', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['notIn'] = $notIn;
+        $this->container['not_in'] = $not_in;
 
         return $this;
     }

@@ -25,7 +25,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `createVoucher()`
 
 ```php
-createVoucher($code, $vouchersCreateWithSpecificCodeRequestBody): \OpenAPI\Client\Model\VouchersCreateResponseBody
+createVoucher($code, $vouchers_create_with_specific_code_request_body): \OpenAPI\Client\Model\VouchersCreateResponseBody
 ```
 
 Create Voucher
@@ -57,10 +57,10 @@ $apiInstance = new OpenAPI\Client\Api\VouchersApi(
     $config
 );
 $code = 'code_example'; // string | A unique **code** that identifies the voucher.
-$vouchersCreateWithSpecificCodeRequestBody = {"category":"New Customers","type":"DISCOUNT_VOUCHER","discount":{"percent_off":10,"type":"PERCENT","effect":"APPLY_TO_ORDER"},"start_date":"2022-01-01T00:00:00Z","expiration_date":"2022-12-31T23:59:59Z","validity_timeframe":{"duration":"PT1H","interval":"P2D"},"validity_day_of_week":[1,2,3,4,5],"active":false,"additional_info":"This voucher will remain inactive until enabled.","redemption":{"quantity":10},"metadata":{"test":true,"locale":"de-en"},"validation_rules":["val_4j7DCRm2IS59"]}; // \OpenAPI\Client\Model\VouchersCreateWithSpecificCodeRequestBody | Specify the details of the voucher that you would like to create.
+$vouchers_create_with_specific_code_request_body = {"category":"New Customers","type":"DISCOUNT_VOUCHER","discount":{"percent_off":10,"type":"PERCENT","effect":"APPLY_TO_ORDER"},"start_date":"2022-01-01T00:00:00Z","expiration_date":"2022-12-31T23:59:59Z","validity_timeframe":{"duration":"PT1H","interval":"P2D"},"validity_day_of_week":[1,2,3,4,5],"active":false,"additional_info":"This voucher will remain inactive until enabled.","redemption":{"quantity":10},"metadata":{"test":true,"locale":"de-en"},"validation_rules":["val_4j7DCRm2IS59"]}; // \OpenAPI\Client\Model\VouchersCreateWithSpecificCodeRequestBody | Specify the details of the voucher that you would like to create.
 
 try {
-    $result = $apiInstance->createVoucher($code, $vouchersCreateWithSpecificCodeRequestBody);
+    $result = $apiInstance->createVoucher($code, $vouchers_create_with_specific_code_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VouchersApi->createVoucher: ', $e->getMessage(), PHP_EOL;
@@ -72,7 +72,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| A unique **code** that identifies the voucher. | |
-| **vouchersCreateWithSpecificCodeRequestBody** | [**\OpenAPI\Client\Model\VouchersCreateWithSpecificCodeRequestBody**](../Model/VouchersCreateWithSpecificCodeRequestBody.md)| Specify the details of the voucher that you would like to create. | [optional] |
+| **vouchers_create_with_specific_code_request_body** | [**\OpenAPI\Client\Model\VouchersCreateWithSpecificCodeRequestBody**](../Model/VouchersCreateWithSpecificCodeRequestBody.md)| Specify the details of the voucher that you would like to create. | [optional] |
 
 ### Return type
 
@@ -296,7 +296,7 @@ try {
 ## `exportVoucherTransactions()`
 
 ```php
-exportVoucherTransactions($code, $vouchersTransactionsExportCreateRequestBody): \OpenAPI\Client\Model\VouchersTransactionsExportCreateResponseBody
+exportVoucherTransactions($code, $vouchers_transactions_export_create_request_body): \OpenAPI\Client\Model\VouchersTransactionsExportCreateResponseBody
 ```
 
 Export Voucher Transactions
@@ -328,10 +328,10 @@ $apiInstance = new OpenAPI\Client\Api\VouchersApi(
     $config
 );
 $code = GIFT-CARD-1; // string | A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u.
-$vouchersTransactionsExportCreateRequestBody = {"parameters":{"order":"-created_at","fields":["id","type","source_id","reason","balance","amount","created_at","voucher_id","campaign_id","details","source"]}}; // \OpenAPI\Client\Model\VouchersTransactionsExportCreateRequestBody | Specify the parameters for the transaction export.
+$vouchers_transactions_export_create_request_body = {"parameters":{"order":"-created_at","fields":["id","type","source_id","reason","balance","amount","created_at","voucher_id","campaign_id","details","source"]}}; // \OpenAPI\Client\Model\VouchersTransactionsExportCreateRequestBody | Specify the parameters for the transaction export.
 
 try {
-    $result = $apiInstance->exportVoucherTransactions($code, $vouchersTransactionsExportCreateRequestBody);
+    $result = $apiInstance->exportVoucherTransactions($code, $vouchers_transactions_export_create_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VouchersApi->exportVoucherTransactions: ', $e->getMessage(), PHP_EOL;
@@ -343,7 +343,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. | |
-| **vouchersTransactionsExportCreateRequestBody** | [**\OpenAPI\Client\Model\VouchersTransactionsExportCreateRequestBody**](../Model/VouchersTransactionsExportCreateRequestBody.md)| Specify the parameters for the transaction export. | [optional] |
+| **vouchers_transactions_export_create_request_body** | [**\OpenAPI\Client\Model\VouchersTransactionsExportCreateRequestBody**](../Model/VouchersTransactionsExportCreateRequestBody.md)| Specify the parameters for the transaction export. | [optional] |
 
 ### Return type
 
@@ -499,7 +499,7 @@ try {
 ## `importVouchers()`
 
 ```php
-importVouchers($vouchersImportCreateItemRequestBody): \OpenAPI\Client\Model\VouchersImportCreateResponseBody
+importVouchers($vouchers_import_create_item_request_body): \OpenAPI\Client\Model\VouchersImportCreateResponseBody
 ```
 
 Import Vouchers
@@ -530,10 +530,10 @@ $apiInstance = new OpenAPI\Client\Api\VouchersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$vouchersImportCreateItemRequestBody = [{"code":"PROMO-CODE30OFF-NO-EFFECT","category":"new customer acquisition","type":"DISCOUNT_VOUCHER","active":true,"discount":{"amount_off":3000,"type":"AMOUNT"},"start_date":"2020-12-01T23:00:00Z","expiration_date":"2023-12-19T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code1"},{"code":"PROMO-CODE30-PERCENT-NO-EFFECT","type":"DISCOUNT_VOUCHER","active":false,"discount":{"percent_off":30,"type":"PERCENT"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"GIFT-CARD-100","type":"GIFT_VOUCHER","active":true,"category":"new customer acquisition","gift":{"amount":10000},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":5},"metadata":{"unit":"EUR"},"additional_info":"secret-GIFT-code2"},{"code":"PROMO-CODE1-PERCENT-EFFECT-ORDER","type":"DISCOUNT_VOUCHER","active":false,"discount":{"percent_off":30,"type":"PERCENT","effect":"APPLY_TO_ORDER"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"PROMO-CODE2-PERCENT-EFFECT-ITEM","type":"DISCOUNT_VOUCHER","active":false,"discount":{"percent_off":30,"type":"PERCENT","effect":"APPLY_TO_ITEMS"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"PROMO-CODE1-PERCENT-NO-EFFECT-REDEEMED-QUANTITY-ATTRIBUTE-DOESNT-GET-PASSED","type":"DISCOUNT_VOUCHER","active":false,"discount":{"percent_off":30,"type":"PERCENT"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1,"redeemed_quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"PROMO-CODE1-AMOUNT-EFFECT-ITEMS-PROPORTIONALLY","type":"DISCOUNT_VOUCHER","active":false,"discount":{"amount_off":30,"type":"AMOUNT","effect":"APPLY_TO_ITEMS_PROPORTIONALLY"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"PROMO-CODE1-FIXED-EFFECT-ORDER","type":"DISCOUNT_VOUCHER","active":false,"discount":{"fixed_amount":30,"type":"FIXED","effect":"APPLY_TO_ORDER"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"PROMO-CODE1-UNIT-SINGLE-ITEM-EFFECT-MISSING","type":"DISCOUNT_VOUCHER","active":false,"discount":{"unit_off":1,"unit_type":"prod_0a9f9aeddb019a42db","type":"UNIT","effect":"ADD_MISSING_ITEMS"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"PROMO-CODE2-UNIT-MULTIPLE-ITEMS","type":"DISCOUNT_VOUCHER","active":true,"discount":{"type":"UNIT","effect":"ADD_MANY_ITEMS","units":[{"unit_off":1,"unit_type":"prod_0a9f9aeddb019a42db","effect":"ADD_MISSING_ITEMS"},{"unit_off":1,"unit_type":"prod_0a9f9aeddb019a42db","effect":"ADD_NEW_ITEMS"}]},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"PROMO-CODE1-SHIPPING","type":"DISCOUNT_VOUCHER","active":false,"discount":{"type":"UNIT","unit_off":1,"unit_type":"prod_5h1pp1ng","effect":"ADD_MISSING_ITEMS"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"}]; // \OpenAPI\Client\Model\VouchersImportCreateItemRequestBody[] | The request body is an array of objects. Each object contains details about a specific voucher.
+$vouchers_import_create_item_request_body = [{"code":"PROMO-CODE30OFF-NO-EFFECT","category":"new customer acquisition","type":"DISCOUNT_VOUCHER","active":true,"discount":{"amount_off":3000,"type":"AMOUNT"},"start_date":"2020-12-01T23:00:00Z","expiration_date":"2023-12-19T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code1"},{"code":"PROMO-CODE30-PERCENT-NO-EFFECT","type":"DISCOUNT_VOUCHER","active":false,"discount":{"percent_off":30,"type":"PERCENT"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"GIFT-CARD-100","type":"GIFT_VOUCHER","active":true,"category":"new customer acquisition","gift":{"amount":10000},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":5},"metadata":{"unit":"EUR"},"additional_info":"secret-GIFT-code2"},{"code":"PROMO-CODE1-PERCENT-EFFECT-ORDER","type":"DISCOUNT_VOUCHER","active":false,"discount":{"percent_off":30,"type":"PERCENT","effect":"APPLY_TO_ORDER"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"PROMO-CODE2-PERCENT-EFFECT-ITEM","type":"DISCOUNT_VOUCHER","active":false,"discount":{"percent_off":30,"type":"PERCENT","effect":"APPLY_TO_ITEMS"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"PROMO-CODE1-PERCENT-NO-EFFECT-REDEEMED-QUANTITY-ATTRIBUTE-DOESNT-GET-PASSED","type":"DISCOUNT_VOUCHER","active":false,"discount":{"percent_off":30,"type":"PERCENT"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1,"redeemed_quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"PROMO-CODE1-AMOUNT-EFFECT-ITEMS-PROPORTIONALLY","type":"DISCOUNT_VOUCHER","active":false,"discount":{"amount_off":30,"type":"AMOUNT","effect":"APPLY_TO_ITEMS_PROPORTIONALLY"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"PROMO-CODE1-FIXED-EFFECT-ORDER","type":"DISCOUNT_VOUCHER","active":false,"discount":{"fixed_amount":30,"type":"FIXED","effect":"APPLY_TO_ORDER"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"PROMO-CODE1-UNIT-SINGLE-ITEM-EFFECT-MISSING","type":"DISCOUNT_VOUCHER","active":false,"discount":{"unit_off":1,"unit_type":"prod_0a9f9aeddb019a42db","type":"UNIT","effect":"ADD_MISSING_ITEMS"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"PROMO-CODE2-UNIT-MULTIPLE-ITEMS","type":"DISCOUNT_VOUCHER","active":true,"discount":{"type":"UNIT","effect":"ADD_MANY_ITEMS","units":[{"unit_off":1,"unit_type":"prod_0a9f9aeddb019a42db","effect":"ADD_MISSING_ITEMS"},{"unit_off":1,"unit_type":"prod_0a9f9aeddb019a42db","effect":"ADD_NEW_ITEMS"}]},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"},{"code":"PROMO-CODE1-SHIPPING","type":"DISCOUNT_VOUCHER","active":false,"discount":{"type":"UNIT","unit_off":1,"unit_type":"prod_5h1pp1ng","effect":"ADD_MISSING_ITEMS"},"start_date":"2020-12-10T23:00:00Z","expiration_date":"2023-12-31T23:00:00Z","redemption":{"quantity":1},"metadata":{"unit":"EUR"},"additional_info":"secret-code2"}]; // \OpenAPI\Client\Model\VouchersImportCreateItemRequestBody[] | The request body is an array of objects. Each object contains details about a specific voucher.
 
 try {
-    $result = $apiInstance->importVouchers($vouchersImportCreateItemRequestBody);
+    $result = $apiInstance->importVouchers($vouchers_import_create_item_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VouchersApi->importVouchers: ', $e->getMessage(), PHP_EOL;
@@ -544,7 +544,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **vouchersImportCreateItemRequestBody** | [**\OpenAPI\Client\Model\VouchersImportCreateItemRequestBody[]**](../Model/VouchersImportCreateItemRequestBody.md)| The request body is an array of objects. Each object contains details about a specific voucher. | |
+| **vouchers_import_create_item_request_body** | [**\OpenAPI\Client\Model\VouchersImportCreateItemRequestBody[]**](../Model/VouchersImportCreateItemRequestBody.md)| The request body is an array of objects. Each object contains details about a specific voucher. | |
 
 ### Return type
 
@@ -704,7 +704,7 @@ try {
 ## `listVouchers()`
 
 ```php
-listVouchers($limit, $page, $category, $campaignId, $customer, $campaign, $createdAt, $updatedAt, $order, $code, $ids): \OpenAPI\Client\Model\VouchersListResponseBody
+listVouchers($limit, $page, $category, $campaign_id, $customer, $campaign, $created_at, $updated_at, $order, $code, $ids): \OpenAPI\Client\Model\VouchersListResponseBody
 ```
 
 List Vouchers
@@ -738,17 +738,17 @@ $apiInstance = new OpenAPI\Client\Api\VouchersApi(
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 $category = 'category_example'; // string | Limit search results to vouchers within the specified category.
-$campaignId = 'campaignId_example'; // string | Limit search results to vouchers within the specified campaign
+$campaign_id = 'campaign_id_example'; // string | Limit search results to vouchers within the specified campaign
 $customer = 'customer_example'; // string | A tracking identifier of a customer who is the holder of the vouchers. It can be an id generated by Voucherify or the source_id. Remember to use the proper URL escape codes if the source_id contains special characters.
 $campaign = 'campaign_example'; // string | A unique campaign name, identifies the parent campaign.
-$createdAt = new \OpenAPI\Client\Model\ParameterCreatedBeforeAfter(); // ParameterCreatedBeforeAfter | A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z
-$updatedAt = new \OpenAPI\Client\Model\ParameterUpdatedBeforeAfter(); // ParameterUpdatedBeforeAfter | A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z
+$created_at = new \OpenAPI\Client\Model\ParameterCreatedBeforeAfter(); // ParameterCreatedBeforeAfter | A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z
+$updated_at = new \OpenAPI\Client\Model\ParameterUpdatedBeforeAfter(); // ParameterUpdatedBeforeAfter | A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z
 $order = new \OpenAPI\Client\Model\ParameterOrderVouchers(); // ParameterOrderVouchers | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
 $code = 'code_example'; // string
 $ids = array('ids_example'); // string[]
 
 try {
-    $result = $apiInstance->listVouchers($limit, $page, $category, $campaignId, $customer, $campaign, $createdAt, $updatedAt, $order, $code, $ids);
+    $result = $apiInstance->listVouchers($limit, $page, $category, $campaign_id, $customer, $campaign, $created_at, $updated_at, $order, $code, $ids);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VouchersApi->listVouchers: ', $e->getMessage(), PHP_EOL;
@@ -762,11 +762,11 @@ try {
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 | **category** | **string**| Limit search results to vouchers within the specified category. | [optional] |
-| **campaignId** | **string**| Limit search results to vouchers within the specified campaign | [optional] |
+| **campaign_id** | **string**| Limit search results to vouchers within the specified campaign | [optional] |
 | **customer** | **string**| A tracking identifier of a customer who is the holder of the vouchers. It can be an id generated by Voucherify or the source_id. Remember to use the proper URL escape codes if the source_id contains special characters. | [optional] |
 | **campaign** | **string**| A unique campaign name, identifies the parent campaign. | [optional] |
-| **createdAt** | [**ParameterCreatedBeforeAfter**](../Model/.md)| A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z | [optional] |
-| **updatedAt** | [**ParameterUpdatedBeforeAfter**](../Model/.md)| A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z | [optional] |
+| **created_at** | [**ParameterCreatedBeforeAfter**](../Model/.md)| A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z | [optional] |
+| **updated_at** | [**ParameterUpdatedBeforeAfter**](../Model/.md)| A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z | [optional] |
 | **order** | [**ParameterOrderVouchers**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
 | **code** | **string**|  | [optional] |
 | **ids** | [**string[]**](../Model/string.md)|  | [optional] |
@@ -791,7 +791,7 @@ try {
 ## `releaseValidationSession()`
 
 ```php
-releaseValidationSession($code, $sessionKey)
+releaseValidationSession($code, $session_key)
 ```
 
 Release Validation Session
@@ -823,10 +823,10 @@ $apiInstance = new OpenAPI\Client\Api\VouchersApi(
     $config
 );
 $code = 'code_example'; // string | A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify.
-$sessionKey = ssn_yQGMTeKBSw8OOuFPwlBEjzGy8d8VA9Ts; // string | A unique session identifier.
+$session_key = ssn_yQGMTeKBSw8OOuFPwlBEjzGy8d8VA9Ts; // string | A unique session identifier.
 
 try {
-    $apiInstance->releaseValidationSession($code, $sessionKey);
+    $apiInstance->releaseValidationSession($code, $session_key);
 } catch (Exception $e) {
     echo 'Exception when calling VouchersApi->releaseValidationSession: ', $e->getMessage(), PHP_EOL;
 }
@@ -837,7 +837,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify. | |
-| **sessionKey** | **string**| A unique session identifier. | |
+| **session_key** | **string**| A unique session identifier. | |
 
 ### Return type
 
@@ -859,7 +859,7 @@ void (empty response body)
 ## `updateVoucher()`
 
 ```php
-updateVoucher($code, $vouchersUpdateRequestBody): \OpenAPI\Client\Model\VouchersUpdateResponseBody
+updateVoucher($code, $vouchers_update_request_body): \OpenAPI\Client\Model\VouchersUpdateResponseBody
 ```
 
 Update Voucher
@@ -891,10 +891,10 @@ $apiInstance = new OpenAPI\Client\Api\VouchersApi(
     $config
 );
 $code = 'code_example'; // string | A unique **code** that identifies the voucher.
-$vouchersUpdateRequestBody = {"category":"Second","type":"DISCOUNT_VOUCHER","discount":{"type":"PERCENT","percent_off":45,"percent_off_formula":"IF(ORDER_AMOUNT > 100;CUSTOMER_METADATA(\"age\");CUSTOMER_METADATA(\"age\") / 2)","amount_limit":1800,"effect":"APPLY_TO_ORDER"},"start_date":"2020-02-01T00:00:00Z","expiration_date":"2023-12-31T23:59:59Z","validity_timeframe":{"duration":"PT2H","interval":"P3D"},"validity_day_of_week":[0,1,2],"active":false,"additional_info":"This voucher can be used with other coupons. Please feel free to do so.","metadata":{"Season":"Winter"}}; // \OpenAPI\Client\Model\VouchersUpdateRequestBody | Specify the parameters to be updated.
+$vouchers_update_request_body = {"category":"Second","type":"DISCOUNT_VOUCHER","discount":{"type":"PERCENT","percent_off":45,"percent_off_formula":"IF(ORDER_AMOUNT > 100;CUSTOMER_METADATA(\"age\");CUSTOMER_METADATA(\"age\") / 2)","amount_limit":1800,"effect":"APPLY_TO_ORDER"},"start_date":"2020-02-01T00:00:00Z","expiration_date":"2023-12-31T23:59:59Z","validity_timeframe":{"duration":"PT2H","interval":"P3D"},"validity_day_of_week":[0,1,2],"active":false,"additional_info":"This voucher can be used with other coupons. Please feel free to do so.","metadata":{"Season":"Winter"}}; // \OpenAPI\Client\Model\VouchersUpdateRequestBody | Specify the parameters to be updated.
 
 try {
-    $result = $apiInstance->updateVoucher($code, $vouchersUpdateRequestBody);
+    $result = $apiInstance->updateVoucher($code, $vouchers_update_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VouchersApi->updateVoucher: ', $e->getMessage(), PHP_EOL;
@@ -906,7 +906,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| A unique **code** that identifies the voucher. | |
-| **vouchersUpdateRequestBody** | [**\OpenAPI\Client\Model\VouchersUpdateRequestBody**](../Model/VouchersUpdateRequestBody.md)| Specify the parameters to be updated. | |
+| **vouchers_update_request_body** | [**\OpenAPI\Client\Model\VouchersUpdateRequestBody**](../Model/VouchersUpdateRequestBody.md)| Specify the parameters to be updated. | |
 
 ### Return type
 
@@ -928,7 +928,7 @@ try {
 ## `updateVoucherBalance()`
 
 ```php
-updateVoucherBalance($code, $vouchersBalanceUpdateRequestBody): \OpenAPI\Client\Model\VouchersBalanceUpdateResponseBody
+updateVoucherBalance($code, $vouchers_balance_update_request_body): \OpenAPI\Client\Model\VouchersBalanceUpdateResponseBody
 ```
 
 Add or Remove Voucher Balance
@@ -960,10 +960,10 @@ $apiInstance = new OpenAPI\Client\Api\VouchersApi(
     $config
 );
 $code = 'code_example'; // string | A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u.
-$vouchersBalanceUpdateRequestBody = {"amount":10000}; // \OpenAPI\Client\Model\VouchersBalanceUpdateRequestBody | Provide the amount to be added to/subtracted from the voucher.
+$vouchers_balance_update_request_body = {"amount":10000}; // \OpenAPI\Client\Model\VouchersBalanceUpdateRequestBody | Provide the amount to be added to/subtracted from the voucher.
 
 try {
-    $result = $apiInstance->updateVoucherBalance($code, $vouchersBalanceUpdateRequestBody);
+    $result = $apiInstance->updateVoucherBalance($code, $vouchers_balance_update_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VouchersApi->updateVoucherBalance: ', $e->getMessage(), PHP_EOL;
@@ -975,7 +975,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. | |
-| **vouchersBalanceUpdateRequestBody** | [**\OpenAPI\Client\Model\VouchersBalanceUpdateRequestBody**](../Model/VouchersBalanceUpdateRequestBody.md)| Provide the amount to be added to/subtracted from the voucher. | |
+| **vouchers_balance_update_request_body** | [**\OpenAPI\Client\Model\VouchersBalanceUpdateRequestBody**](../Model/VouchersBalanceUpdateRequestBody.md)| Provide the amount to be added to/subtracted from the voucher. | |
 
 ### Return type
 
@@ -997,7 +997,7 @@ try {
 ## `updateVouchersInBulk()`
 
 ```php
-updateVouchersInBulk($vouchersUpdateInBulkItemRequestBody): \OpenAPI\Client\Model\VouchersUpdateInBulkResponseBody
+updateVouchersInBulk($vouchers_update_in_bulk_item_request_body): \OpenAPI\Client\Model\VouchersUpdateInBulkResponseBody
 ```
 
 Update Vouchers in Bulk
@@ -1028,10 +1028,10 @@ $apiInstance = new OpenAPI\Client\Api\VouchersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$vouchersUpdateInBulkItemRequestBody = [{"code":"example_code","metadata":{"lang":"en","test":false,"MetadataTest":"Update metadata","update_value":1,"next_update_date":"2022-11-11T09:00:00.000Z"}},{"code":"example_code2","metadata":{"lang":"pl","test":false,"MetadataTest":"Update metadata","update_value":2}}]; // \OpenAPI\Client\Model\VouchersUpdateInBulkItemRequestBody[] | List the codes to be updated with the metadata key/value pairs for that code.
+$vouchers_update_in_bulk_item_request_body = [{"code":"example_code","metadata":{"lang":"en","test":false,"MetadataTest":"Update metadata","update_value":1,"next_update_date":"2022-11-11T09:00:00.000Z"}},{"code":"example_code2","metadata":{"lang":"pl","test":false,"MetadataTest":"Update metadata","update_value":2}}]; // \OpenAPI\Client\Model\VouchersUpdateInBulkItemRequestBody[] | List the codes to be updated with the metadata key/value pairs for that code.
 
 try {
-    $result = $apiInstance->updateVouchersInBulk($vouchersUpdateInBulkItemRequestBody);
+    $result = $apiInstance->updateVouchersInBulk($vouchers_update_in_bulk_item_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VouchersApi->updateVouchersInBulk: ', $e->getMessage(), PHP_EOL;
@@ -1042,7 +1042,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **vouchersUpdateInBulkItemRequestBody** | [**\OpenAPI\Client\Model\VouchersUpdateInBulkItemRequestBody[]**](../Model/VouchersUpdateInBulkItemRequestBody.md)| List the codes to be updated with the metadata key/value pairs for that code. | |
+| **vouchers_update_in_bulk_item_request_body** | [**\OpenAPI\Client\Model\VouchersUpdateInBulkItemRequestBody[]**](../Model/VouchersUpdateInBulkItemRequestBody.md)| List the codes to be updated with the metadata key/value pairs for that code. | |
 
 ### Return type
 
@@ -1064,7 +1064,7 @@ try {
 ## `updateVouchersMetadataInBulk()`
 
 ```php
-updateVouchersMetadataInBulk($vouchersMetadataUpdateInBulkRequestBody): \OpenAPI\Client\Model\VouchersMetadataUpdateInBulkResponseBody
+updateVouchersMetadataInBulk($vouchers_metadata_update_in_bulk_request_body): \OpenAPI\Client\Model\VouchersMetadataUpdateInBulkResponseBody
 ```
 
 Update Vouchers' Metadata in Bulk
@@ -1095,10 +1095,10 @@ $apiInstance = new OpenAPI\Client\Api\VouchersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$vouchersMetadataUpdateInBulkRequestBody = {"codes":["PROMO-CODE810","PROMO-CODE726"],"metadata":{"lang":"en","authorized_internally":true}}; // \OpenAPI\Client\Model\VouchersMetadataUpdateInBulkRequestBody | List the codes of the vouchers you would like to update with the metadata key/value pairs.
+$vouchers_metadata_update_in_bulk_request_body = {"codes":["PROMO-CODE810","PROMO-CODE726"],"metadata":{"lang":"en","authorized_internally":true}}; // \OpenAPI\Client\Model\VouchersMetadataUpdateInBulkRequestBody | List the codes of the vouchers you would like to update with the metadata key/value pairs.
 
 try {
-    $result = $apiInstance->updateVouchersMetadataInBulk($vouchersMetadataUpdateInBulkRequestBody);
+    $result = $apiInstance->updateVouchersMetadataInBulk($vouchers_metadata_update_in_bulk_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VouchersApi->updateVouchersMetadataInBulk: ', $e->getMessage(), PHP_EOL;
@@ -1109,7 +1109,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **vouchersMetadataUpdateInBulkRequestBody** | [**\OpenAPI\Client\Model\VouchersMetadataUpdateInBulkRequestBody**](../Model/VouchersMetadataUpdateInBulkRequestBody.md)| List the codes of the vouchers you would like to update with the metadata key/value pairs. | |
+| **vouchers_metadata_update_in_bulk_request_body** | [**\OpenAPI\Client\Model\VouchersMetadataUpdateInBulkRequestBody**](../Model/VouchersMetadataUpdateInBulkRequestBody.md)| List the codes of the vouchers you would like to update with the metadata key/value pairs. | |
 
 ### Return type
 

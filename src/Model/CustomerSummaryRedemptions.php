@@ -58,14 +58,14 @@ class CustomerSummaryRedemptions implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'totalRedeemed' => 'int',
-        'totalFailed' => 'int',
-        'totalSucceeded' => 'int',
-        'totalRolledBack' => 'int',
-        'totalRollbackFailed' => 'int',
-        'totalRollbackSucceeded' => 'int',
+        'total_redeemed' => 'int',
+        'total_failed' => 'int',
+        'total_succeeded' => 'int',
+        'total_rolled_back' => 'int',
+        'total_rollback_failed' => 'int',
+        'total_rollback_succeeded' => 'int',
         'gift' => '\OpenAPI\Client\Model\CustomerSummaryRedemptionsGift',
-        'loyaltyCard' => '\OpenAPI\Client\Model\CustomerSummaryRedemptionsLoyaltyCard'
+        'loyalty_card' => '\OpenAPI\Client\Model\CustomerSummaryRedemptionsLoyaltyCard'
     ];
 
     /**
@@ -76,14 +76,14 @@ class CustomerSummaryRedemptions implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'totalRedeemed' => null,
-        'totalFailed' => null,
-        'totalSucceeded' => null,
-        'totalRolledBack' => null,
-        'totalRollbackFailed' => null,
-        'totalRollbackSucceeded' => null,
+        'total_redeemed' => null,
+        'total_failed' => null,
+        'total_succeeded' => null,
+        'total_rolled_back' => null,
+        'total_rollback_failed' => null,
+        'total_rollback_succeeded' => null,
         'gift' => null,
-        'loyaltyCard' => null
+        'loyalty_card' => null
     ];
 
     /**
@@ -92,14 +92,14 @@ class CustomerSummaryRedemptions implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'totalRedeemed' => true,
-		'totalFailed' => true,
-		'totalSucceeded' => true,
-		'totalRolledBack' => true,
-		'totalRollbackFailed' => true,
-		'totalRollbackSucceeded' => true,
+        'total_redeemed' => true,
+		'total_failed' => true,
+		'total_succeeded' => true,
+		'total_rolled_back' => true,
+		'total_rollback_failed' => true,
+		'total_rollback_succeeded' => true,
 		'gift' => true,
-		'loyaltyCard' => true
+		'loyalty_card' => true
     ];
 
     /**
@@ -188,14 +188,14 @@ class CustomerSummaryRedemptions implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'totalRedeemed' => 'total_redeemed',
-        'totalFailed' => 'total_failed',
-        'totalSucceeded' => 'total_succeeded',
-        'totalRolledBack' => 'total_rolled_back',
-        'totalRollbackFailed' => 'total_rollback_failed',
-        'totalRollbackSucceeded' => 'total_rollback_succeeded',
+        'total_redeemed' => 'total_redeemed',
+        'total_failed' => 'total_failed',
+        'total_succeeded' => 'total_succeeded',
+        'total_rolled_back' => 'total_rolled_back',
+        'total_rollback_failed' => 'total_rollback_failed',
+        'total_rollback_succeeded' => 'total_rollback_succeeded',
         'gift' => 'gift',
-        'loyaltyCard' => 'loyalty_card'
+        'loyalty_card' => 'loyalty_card'
     ];
 
     /**
@@ -204,14 +204,14 @@ class CustomerSummaryRedemptions implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'totalRedeemed' => 'setTotalRedeemed',
-        'totalFailed' => 'setTotalFailed',
-        'totalSucceeded' => 'setTotalSucceeded',
-        'totalRolledBack' => 'setTotalRolledBack',
-        'totalRollbackFailed' => 'setTotalRollbackFailed',
-        'totalRollbackSucceeded' => 'setTotalRollbackSucceeded',
+        'total_redeemed' => 'setTotalRedeemed',
+        'total_failed' => 'setTotalFailed',
+        'total_succeeded' => 'setTotalSucceeded',
+        'total_rolled_back' => 'setTotalRolledBack',
+        'total_rollback_failed' => 'setTotalRollbackFailed',
+        'total_rollback_succeeded' => 'setTotalRollbackSucceeded',
         'gift' => 'setGift',
-        'loyaltyCard' => 'setLoyaltyCard'
+        'loyalty_card' => 'setLoyaltyCard'
     ];
 
     /**
@@ -220,14 +220,14 @@ class CustomerSummaryRedemptions implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'totalRedeemed' => 'getTotalRedeemed',
-        'totalFailed' => 'getTotalFailed',
-        'totalSucceeded' => 'getTotalSucceeded',
-        'totalRolledBack' => 'getTotalRolledBack',
-        'totalRollbackFailed' => 'getTotalRollbackFailed',
-        'totalRollbackSucceeded' => 'getTotalRollbackSucceeded',
+        'total_redeemed' => 'getTotalRedeemed',
+        'total_failed' => 'getTotalFailed',
+        'total_succeeded' => 'getTotalSucceeded',
+        'total_rolled_back' => 'getTotalRolledBack',
+        'total_rollback_failed' => 'getTotalRollbackFailed',
+        'total_rollback_succeeded' => 'getTotalRollbackSucceeded',
         'gift' => 'getGift',
-        'loyaltyCard' => 'getLoyaltyCard'
+        'loyalty_card' => 'getLoyaltyCard'
     ];
 
     /**
@@ -287,14 +287,14 @@ class CustomerSummaryRedemptions implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('totalRedeemed', $data ?? [], null);
-        $this->setIfExists('totalFailed', $data ?? [], null);
-        $this->setIfExists('totalSucceeded', $data ?? [], null);
-        $this->setIfExists('totalRolledBack', $data ?? [], null);
-        $this->setIfExists('totalRollbackFailed', $data ?? [], null);
-        $this->setIfExists('totalRollbackSucceeded', $data ?? [], null);
+        $this->setIfExists('total_redeemed', $data ?? [], null);
+        $this->setIfExists('total_failed', $data ?? [], null);
+        $this->setIfExists('total_succeeded', $data ?? [], null);
+        $this->setIfExists('total_rolled_back', $data ?? [], null);
+        $this->setIfExists('total_rollback_failed', $data ?? [], null);
+        $this->setIfExists('total_rollback_succeeded', $data ?? [], null);
         $this->setIfExists('gift', $data ?? [], null);
-        $this->setIfExists('loyaltyCard', $data ?? [], null);
+        $this->setIfExists('loyalty_card', $data ?? [], null);
     }
 
     /**
@@ -340,205 +340,205 @@ class CustomerSummaryRedemptions implements ModelInterface, ArrayAccess, \JsonSe
 
 
     /**
-     * Gets totalRedeemed
+     * Gets total_redeemed
      *
      * @return int|null
      */
     public function getTotalRedeemed()
     {
-        return $this->container['totalRedeemed'];
+        return $this->container['total_redeemed'];
     }
 
     /**
-     * Sets totalRedeemed
+     * Sets total_redeemed
      *
-     * @param int|null $totalRedeemed Total number of redemptions made by the customer.
+     * @param int|null $total_redeemed Total number of redemptions made by the customer.
      *
      * @return self
      */
-    public function setTotalRedeemed($totalRedeemed)
+    public function setTotalRedeemed($total_redeemed)
     {
-        if (is_null($totalRedeemed)) {
-            array_push($this->openAPINullablesSetToNull, 'totalRedeemed');
+        if (is_null($total_redeemed)) {
+            array_push($this->openAPINullablesSetToNull, 'total_redeemed');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('totalRedeemed', $nullablesSetToNull);
+            $index = array_search('total_redeemed', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['totalRedeemed'] = $totalRedeemed;
+        $this->container['total_redeemed'] = $total_redeemed;
 
         return $this;
     }
 
     /**
-     * Gets totalFailed
+     * Gets total_failed
      *
      * @return int|null
      */
     public function getTotalFailed()
     {
-        return $this->container['totalFailed'];
+        return $this->container['total_failed'];
     }
 
     /**
-     * Sets totalFailed
+     * Sets total_failed
      *
-     * @param int|null $totalFailed Total number of redemptions that failed.
+     * @param int|null $total_failed Total number of redemptions that failed.
      *
      * @return self
      */
-    public function setTotalFailed($totalFailed)
+    public function setTotalFailed($total_failed)
     {
-        if (is_null($totalFailed)) {
-            array_push($this->openAPINullablesSetToNull, 'totalFailed');
+        if (is_null($total_failed)) {
+            array_push($this->openAPINullablesSetToNull, 'total_failed');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('totalFailed', $nullablesSetToNull);
+            $index = array_search('total_failed', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['totalFailed'] = $totalFailed;
+        $this->container['total_failed'] = $total_failed;
 
         return $this;
     }
 
     /**
-     * Gets totalSucceeded
+     * Gets total_succeeded
      *
      * @return int|null
      */
     public function getTotalSucceeded()
     {
-        return $this->container['totalSucceeded'];
+        return $this->container['total_succeeded'];
     }
 
     /**
-     * Sets totalSucceeded
+     * Sets total_succeeded
      *
-     * @param int|null $totalSucceeded Total number of redemptions that succeeded.
+     * @param int|null $total_succeeded Total number of redemptions that succeeded.
      *
      * @return self
      */
-    public function setTotalSucceeded($totalSucceeded)
+    public function setTotalSucceeded($total_succeeded)
     {
-        if (is_null($totalSucceeded)) {
-            array_push($this->openAPINullablesSetToNull, 'totalSucceeded');
+        if (is_null($total_succeeded)) {
+            array_push($this->openAPINullablesSetToNull, 'total_succeeded');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('totalSucceeded', $nullablesSetToNull);
+            $index = array_search('total_succeeded', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['totalSucceeded'] = $totalSucceeded;
+        $this->container['total_succeeded'] = $total_succeeded;
 
         return $this;
     }
 
     /**
-     * Gets totalRolledBack
+     * Gets total_rolled_back
      *
      * @return int|null
      */
     public function getTotalRolledBack()
     {
-        return $this->container['totalRolledBack'];
+        return $this->container['total_rolled_back'];
     }
 
     /**
-     * Sets totalRolledBack
+     * Sets total_rolled_back
      *
-     * @param int|null $totalRolledBack Total number of redemptions that were rolled back for the customer.
+     * @param int|null $total_rolled_back Total number of redemptions that were rolled back for the customer.
      *
      * @return self
      */
-    public function setTotalRolledBack($totalRolledBack)
+    public function setTotalRolledBack($total_rolled_back)
     {
-        if (is_null($totalRolledBack)) {
-            array_push($this->openAPINullablesSetToNull, 'totalRolledBack');
+        if (is_null($total_rolled_back)) {
+            array_push($this->openAPINullablesSetToNull, 'total_rolled_back');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('totalRolledBack', $nullablesSetToNull);
+            $index = array_search('total_rolled_back', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['totalRolledBack'] = $totalRolledBack;
+        $this->container['total_rolled_back'] = $total_rolled_back;
 
         return $this;
     }
 
     /**
-     * Gets totalRollbackFailed
+     * Gets total_rollback_failed
      *
      * @return int|null
      */
     public function getTotalRollbackFailed()
     {
-        return $this->container['totalRollbackFailed'];
+        return $this->container['total_rollback_failed'];
     }
 
     /**
-     * Sets totalRollbackFailed
+     * Sets total_rollback_failed
      *
-     * @param int|null $totalRollbackFailed Total number of redemption rollbacks that failed.
+     * @param int|null $total_rollback_failed Total number of redemption rollbacks that failed.
      *
      * @return self
      */
-    public function setTotalRollbackFailed($totalRollbackFailed)
+    public function setTotalRollbackFailed($total_rollback_failed)
     {
-        if (is_null($totalRollbackFailed)) {
-            array_push($this->openAPINullablesSetToNull, 'totalRollbackFailed');
+        if (is_null($total_rollback_failed)) {
+            array_push($this->openAPINullablesSetToNull, 'total_rollback_failed');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('totalRollbackFailed', $nullablesSetToNull);
+            $index = array_search('total_rollback_failed', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['totalRollbackFailed'] = $totalRollbackFailed;
+        $this->container['total_rollback_failed'] = $total_rollback_failed;
 
         return $this;
     }
 
     /**
-     * Gets totalRollbackSucceeded
+     * Gets total_rollback_succeeded
      *
      * @return int|null
      */
     public function getTotalRollbackSucceeded()
     {
-        return $this->container['totalRollbackSucceeded'];
+        return $this->container['total_rollback_succeeded'];
     }
 
     /**
-     * Sets totalRollbackSucceeded
+     * Sets total_rollback_succeeded
      *
-     * @param int|null $totalRollbackSucceeded Total number of redemption rollbacks that succeeded.
+     * @param int|null $total_rollback_succeeded Total number of redemption rollbacks that succeeded.
      *
      * @return self
      */
-    public function setTotalRollbackSucceeded($totalRollbackSucceeded)
+    public function setTotalRollbackSucceeded($total_rollback_succeeded)
     {
-        if (is_null($totalRollbackSucceeded)) {
-            array_push($this->openAPINullablesSetToNull, 'totalRollbackSucceeded');
+        if (is_null($total_rollback_succeeded)) {
+            array_push($this->openAPINullablesSetToNull, 'total_rollback_succeeded');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('totalRollbackSucceeded', $nullablesSetToNull);
+            $index = array_search('total_rollback_succeeded', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['totalRollbackSucceeded'] = $totalRollbackSucceeded;
+        $this->container['total_rollback_succeeded'] = $total_rollback_succeeded;
 
         return $this;
     }
@@ -578,35 +578,35 @@ class CustomerSummaryRedemptions implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets loyaltyCard
+     * Gets loyalty_card
      *
      * @return \OpenAPI\Client\Model\CustomerSummaryRedemptionsLoyaltyCard|null
      */
     public function getLoyaltyCard()
     {
-        return $this->container['loyaltyCard'];
+        return $this->container['loyalty_card'];
     }
 
     /**
-     * Sets loyaltyCard
+     * Sets loyalty_card
      *
-     * @param \OpenAPI\Client\Model\CustomerSummaryRedemptionsLoyaltyCard|null $loyaltyCard loyaltyCard
+     * @param \OpenAPI\Client\Model\CustomerSummaryRedemptionsLoyaltyCard|null $loyalty_card loyalty_card
      *
      * @return self
      */
-    public function setLoyaltyCard($loyaltyCard)
+    public function setLoyaltyCard($loyalty_card)
     {
-        if (is_null($loyaltyCard)) {
-            array_push($this->openAPINullablesSetToNull, 'loyaltyCard');
+        if (is_null($loyalty_card)) {
+            array_push($this->openAPINullablesSetToNull, 'loyalty_card');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('loyaltyCard', $nullablesSetToNull);
+            $index = array_search('loyalty_card', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['loyaltyCard'] = $loyaltyCard;
+        $this->container['loyalty_card'] = $loyalty_card;
 
         return $this;
     }

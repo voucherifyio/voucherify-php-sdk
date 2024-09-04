@@ -62,27 +62,27 @@ class LoyaltiesMembersTransfersCreateResponseBody implements ModelInterface, Arr
         'id' => 'string',
         'code' => 'string',
         'campaign' => 'string',
-        'campaignId' => 'string',
+        'campaign_id' => 'string',
         'category' => 'string',
-        'categoryId' => 'string',
+        'category_id' => 'string',
         'categories' => '\OpenAPI\Client\Model\Category[]',
         'type' => 'string',
-        'loyaltyCard' => '\OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard',
-        'startDate' => '\DateTime',
-        'expirationDate' => '\DateTime',
-        'validityTimeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
-        'validityDayOfWeek' => 'int[]',
-        'validityHours' => '\OpenAPI\Client\Model\ValidityHours',
+        'loyalty_card' => '\OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard',
+        'start_date' => '\DateTime',
+        'expiration_date' => '\DateTime',
+        'validity_timeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
+        'validity_day_of_week' => 'int[]',
+        'validity_hours' => '\OpenAPI\Client\Model\ValidityHours',
         'publish' => '\OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBodyPublish',
         'redemption' => '\OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBodyRedemption',
         'active' => 'string',
-        'additionalInfo' => 'string',
+        'additional_info' => 'string',
         'metadata' => 'object',
         'assets' => '\OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBodyAssets',
-        'isReferralCode' => 'bool',
-        'holderId' => 'string',
-        'updatedAt' => '\DateTime',
-        'createdAt' => '\DateTime'
+        'is_referral_code' => 'bool',
+        'holder_id' => 'string',
+        'updated_at' => '\DateTime',
+        'created_at' => '\DateTime'
     ];
 
     /**
@@ -96,27 +96,27 @@ class LoyaltiesMembersTransfersCreateResponseBody implements ModelInterface, Arr
         'id' => null,
         'code' => null,
         'campaign' => null,
-        'campaignId' => null,
+        'campaign_id' => null,
         'category' => null,
-        'categoryId' => null,
+        'category_id' => null,
         'categories' => null,
         'type' => null,
-        'loyaltyCard' => null,
-        'startDate' => 'date-time',
-        'expirationDate' => 'date-time',
-        'validityTimeframe' => null,
-        'validityDayOfWeek' => null,
-        'validityHours' => null,
+        'loyalty_card' => null,
+        'start_date' => 'date-time',
+        'expiration_date' => 'date-time',
+        'validity_timeframe' => null,
+        'validity_day_of_week' => null,
+        'validity_hours' => null,
         'publish' => null,
         'redemption' => null,
         'active' => null,
-        'additionalInfo' => null,
+        'additional_info' => null,
         'metadata' => null,
         'assets' => null,
-        'isReferralCode' => null,
-        'holderId' => null,
-        'updatedAt' => 'date-time',
-        'createdAt' => 'date-time'
+        'is_referral_code' => null,
+        'holder_id' => null,
+        'updated_at' => 'date-time',
+        'created_at' => 'date-time'
     ];
 
     /**
@@ -128,27 +128,27 @@ class LoyaltiesMembersTransfersCreateResponseBody implements ModelInterface, Arr
         'id' => true,
 		'code' => true,
 		'campaign' => true,
-		'campaignId' => true,
+		'campaign_id' => true,
 		'category' => true,
-		'categoryId' => true,
+		'category_id' => true,
 		'categories' => true,
 		'type' => true,
-		'loyaltyCard' => true,
-		'startDate' => true,
-		'expirationDate' => true,
-		'validityTimeframe' => false,
-		'validityDayOfWeek' => true,
-		'validityHours' => false,
+		'loyalty_card' => true,
+		'start_date' => true,
+		'expiration_date' => true,
+		'validity_timeframe' => false,
+		'validity_day_of_week' => true,
+		'validity_hours' => false,
 		'publish' => true,
 		'redemption' => true,
 		'active' => true,
-		'additionalInfo' => true,
+		'additional_info' => true,
 		'metadata' => true,
 		'assets' => true,
-		'isReferralCode' => true,
-		'holderId' => true,
-		'updatedAt' => true,
-		'createdAt' => true
+		'is_referral_code' => true,
+		'holder_id' => true,
+		'updated_at' => true,
+		'created_at' => true
     ];
 
     /**
@@ -240,27 +240,27 @@ class LoyaltiesMembersTransfersCreateResponseBody implements ModelInterface, Arr
         'id' => 'id',
         'code' => 'code',
         'campaign' => 'campaign',
-        'campaignId' => 'campaign_id',
+        'campaign_id' => 'campaign_id',
         'category' => 'category',
-        'categoryId' => 'category_id',
+        'category_id' => 'category_id',
         'categories' => 'categories',
         'type' => 'type',
-        'loyaltyCard' => 'loyalty_card',
-        'startDate' => 'start_date',
-        'expirationDate' => 'expiration_date',
-        'validityTimeframe' => 'validity_timeframe',
-        'validityDayOfWeek' => 'validity_day_of_week',
-        'validityHours' => 'validity_hours',
+        'loyalty_card' => 'loyalty_card',
+        'start_date' => 'start_date',
+        'expiration_date' => 'expiration_date',
+        'validity_timeframe' => 'validity_timeframe',
+        'validity_day_of_week' => 'validity_day_of_week',
+        'validity_hours' => 'validity_hours',
         'publish' => 'publish',
         'redemption' => 'redemption',
         'active' => 'active',
-        'additionalInfo' => 'additional_info',
+        'additional_info' => 'additional_info',
         'metadata' => 'metadata',
         'assets' => 'assets',
-        'isReferralCode' => 'is_referral_code',
-        'holderId' => 'holder_id',
-        'updatedAt' => 'updated_at',
-        'createdAt' => 'created_at'
+        'is_referral_code' => 'is_referral_code',
+        'holder_id' => 'holder_id',
+        'updated_at' => 'updated_at',
+        'created_at' => 'created_at'
     ];
 
     /**
@@ -272,27 +272,27 @@ class LoyaltiesMembersTransfersCreateResponseBody implements ModelInterface, Arr
         'id' => 'setId',
         'code' => 'setCode',
         'campaign' => 'setCampaign',
-        'campaignId' => 'setCampaignId',
+        'campaign_id' => 'setCampaignId',
         'category' => 'setCategory',
-        'categoryId' => 'setCategoryId',
+        'category_id' => 'setCategoryId',
         'categories' => 'setCategories',
         'type' => 'setType',
-        'loyaltyCard' => 'setLoyaltyCard',
-        'startDate' => 'setStartDate',
-        'expirationDate' => 'setExpirationDate',
-        'validityTimeframe' => 'setValidityTimeframe',
-        'validityDayOfWeek' => 'setValidityDayOfWeek',
-        'validityHours' => 'setValidityHours',
+        'loyalty_card' => 'setLoyaltyCard',
+        'start_date' => 'setStartDate',
+        'expiration_date' => 'setExpirationDate',
+        'validity_timeframe' => 'setValidityTimeframe',
+        'validity_day_of_week' => 'setValidityDayOfWeek',
+        'validity_hours' => 'setValidityHours',
         'publish' => 'setPublish',
         'redemption' => 'setRedemption',
         'active' => 'setActive',
-        'additionalInfo' => 'setAdditionalInfo',
+        'additional_info' => 'setAdditionalInfo',
         'metadata' => 'setMetadata',
         'assets' => 'setAssets',
-        'isReferralCode' => 'setIsReferralCode',
-        'holderId' => 'setHolderId',
-        'updatedAt' => 'setUpdatedAt',
-        'createdAt' => 'setCreatedAt'
+        'is_referral_code' => 'setIsReferralCode',
+        'holder_id' => 'setHolderId',
+        'updated_at' => 'setUpdatedAt',
+        'created_at' => 'setCreatedAt'
     ];
 
     /**
@@ -304,27 +304,27 @@ class LoyaltiesMembersTransfersCreateResponseBody implements ModelInterface, Arr
         'id' => 'getId',
         'code' => 'getCode',
         'campaign' => 'getCampaign',
-        'campaignId' => 'getCampaignId',
+        'campaign_id' => 'getCampaignId',
         'category' => 'getCategory',
-        'categoryId' => 'getCategoryId',
+        'category_id' => 'getCategoryId',
         'categories' => 'getCategories',
         'type' => 'getType',
-        'loyaltyCard' => 'getLoyaltyCard',
-        'startDate' => 'getStartDate',
-        'expirationDate' => 'getExpirationDate',
-        'validityTimeframe' => 'getValidityTimeframe',
-        'validityDayOfWeek' => 'getValidityDayOfWeek',
-        'validityHours' => 'getValidityHours',
+        'loyalty_card' => 'getLoyaltyCard',
+        'start_date' => 'getStartDate',
+        'expiration_date' => 'getExpirationDate',
+        'validity_timeframe' => 'getValidityTimeframe',
+        'validity_day_of_week' => 'getValidityDayOfWeek',
+        'validity_hours' => 'getValidityHours',
         'publish' => 'getPublish',
         'redemption' => 'getRedemption',
         'active' => 'getActive',
-        'additionalInfo' => 'getAdditionalInfo',
+        'additional_info' => 'getAdditionalInfo',
         'metadata' => 'getMetadata',
         'assets' => 'getAssets',
-        'isReferralCode' => 'getIsReferralCode',
-        'holderId' => 'getHolderId',
-        'updatedAt' => 'getUpdatedAt',
-        'createdAt' => 'getCreatedAt'
+        'is_referral_code' => 'getIsReferralCode',
+        'holder_id' => 'getHolderId',
+        'updated_at' => 'getUpdatedAt',
+        'created_at' => 'getCreatedAt'
     ];
 
     /**
@@ -425,27 +425,27 @@ class LoyaltiesMembersTransfersCreateResponseBody implements ModelInterface, Arr
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('code', $data ?? [], null);
         $this->setIfExists('campaign', $data ?? [], null);
-        $this->setIfExists('campaignId', $data ?? [], null);
+        $this->setIfExists('campaign_id', $data ?? [], null);
         $this->setIfExists('category', $data ?? [], null);
-        $this->setIfExists('categoryId', $data ?? [], null);
+        $this->setIfExists('category_id', $data ?? [], null);
         $this->setIfExists('categories', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], 'LOYALTY_CARD');
-        $this->setIfExists('loyaltyCard', $data ?? [], null);
-        $this->setIfExists('startDate', $data ?? [], null);
-        $this->setIfExists('expirationDate', $data ?? [], null);
-        $this->setIfExists('validityTimeframe', $data ?? [], null);
-        $this->setIfExists('validityDayOfWeek', $data ?? [], null);
-        $this->setIfExists('validityHours', $data ?? [], null);
+        $this->setIfExists('loyalty_card', $data ?? [], null);
+        $this->setIfExists('start_date', $data ?? [], null);
+        $this->setIfExists('expiration_date', $data ?? [], null);
+        $this->setIfExists('validity_timeframe', $data ?? [], null);
+        $this->setIfExists('validity_day_of_week', $data ?? [], null);
+        $this->setIfExists('validity_hours', $data ?? [], null);
         $this->setIfExists('publish', $data ?? [], null);
         $this->setIfExists('redemption', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
-        $this->setIfExists('additionalInfo', $data ?? [], null);
+        $this->setIfExists('additional_info', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('assets', $data ?? [], null);
-        $this->setIfExists('isReferralCode', $data ?? [], null);
-        $this->setIfExists('holderId', $data ?? [], null);
-        $this->setIfExists('updatedAt', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('is_referral_code', $data ?? [], null);
+        $this->setIfExists('holder_id', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
     }
 
     /**
@@ -484,8 +484,8 @@ class LoyaltiesMembersTransfersCreateResponseBody implements ModelInterface, Arr
             );
         }
 
-        if ($this->container['validityTimeframe'] === null) {
-            $invalidProperties[] = "'validityTimeframe' can't be null";
+        if ($this->container['validity_timeframe'] === null) {
+            $invalidProperties[] = "'validity_timeframe' can't be null";
         }
         return $invalidProperties;
     }
@@ -605,35 +605,35 @@ class LoyaltiesMembersTransfersCreateResponseBody implements ModelInterface, Arr
     }
 
     /**
-     * Gets campaignId
+     * Gets campaign_id
      *
      * @return string|null
      */
     public function getCampaignId()
     {
-        return $this->container['campaignId'];
+        return $this->container['campaign_id'];
     }
 
     /**
-     * Sets campaignId
+     * Sets campaign_id
      *
-     * @param string|null $campaignId Assigned by the Voucherify API, identifies the voucher's parent campaign.
+     * @param string|null $campaign_id Assigned by the Voucherify API, identifies the voucher's parent campaign.
      *
      * @return self
      */
-    public function setCampaignId($campaignId)
+    public function setCampaignId($campaign_id)
     {
-        if (is_null($campaignId)) {
-            array_push($this->openAPINullablesSetToNull, 'campaignId');
+        if (is_null($campaign_id)) {
+            array_push($this->openAPINullablesSetToNull, 'campaign_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaignId', $nullablesSetToNull);
+            $index = array_search('campaign_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaignId'] = $campaignId;
+        $this->container['campaign_id'] = $campaign_id;
 
         return $this;
     }
@@ -673,35 +673,35 @@ class LoyaltiesMembersTransfersCreateResponseBody implements ModelInterface, Arr
     }
 
     /**
-     * Gets categoryId
+     * Gets category_id
      *
      * @return string|null
      */
     public function getCategoryId()
     {
-        return $this->container['categoryId'];
+        return $this->container['category_id'];
     }
 
     /**
-     * Sets categoryId
+     * Sets category_id
      *
-     * @param string|null $categoryId Unique category ID assigned by Voucherify.
+     * @param string|null $category_id Unique category ID assigned by Voucherify.
      *
      * @return self
      */
-    public function setCategoryId($categoryId)
+    public function setCategoryId($category_id)
     {
-        if (is_null($categoryId)) {
-            array_push($this->openAPINullablesSetToNull, 'categoryId');
+        if (is_null($category_id)) {
+            array_push($this->openAPINullablesSetToNull, 'category_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('categoryId', $nullablesSetToNull);
+            $index = array_search('category_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['categoryId'] = $categoryId;
+        $this->container['category_id'] = $category_id;
 
         return $this;
     }
@@ -785,200 +785,200 @@ class LoyaltiesMembersTransfersCreateResponseBody implements ModelInterface, Arr
     }
 
     /**
-     * Gets loyaltyCard
+     * Gets loyalty_card
      *
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard|null
      */
     public function getLoyaltyCard()
     {
-        return $this->container['loyaltyCard'];
+        return $this->container['loyalty_card'];
     }
 
     /**
-     * Sets loyaltyCard
+     * Sets loyalty_card
      *
-     * @param \OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard|null $loyaltyCard loyaltyCard
+     * @param \OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBodyLoyaltyCard|null $loyalty_card loyalty_card
      *
      * @return self
      */
-    public function setLoyaltyCard($loyaltyCard)
+    public function setLoyaltyCard($loyalty_card)
     {
-        if (is_null($loyaltyCard)) {
-            array_push($this->openAPINullablesSetToNull, 'loyaltyCard');
+        if (is_null($loyalty_card)) {
+            array_push($this->openAPINullablesSetToNull, 'loyalty_card');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('loyaltyCard', $nullablesSetToNull);
+            $index = array_search('loyalty_card', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['loyaltyCard'] = $loyaltyCard;
+        $this->container['loyalty_card'] = $loyalty_card;
 
         return $this;
     }
 
     /**
-     * Gets startDate
+     * Gets start_date
      *
      * @return \DateTime|null
      */
     public function getStartDate()
     {
-        return $this->container['startDate'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets startDate
+     * Sets start_date
      *
-     * @param \DateTime|null $startDate Activation timestamp defines when the code starts to be active in ISO 8601 format. Voucher is inactive before this date.
+     * @param \DateTime|null $start_date Activation timestamp defines when the code starts to be active in ISO 8601 format. Voucher is inactive before this date.
      *
      * @return self
      */
-    public function setStartDate($startDate)
+    public function setStartDate($start_date)
     {
-        if (is_null($startDate)) {
-            array_push($this->openAPINullablesSetToNull, 'startDate');
+        if (is_null($start_date)) {
+            array_push($this->openAPINullablesSetToNull, 'start_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('startDate', $nullablesSetToNull);
+            $index = array_search('start_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['startDate'] = $startDate;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets expirationDate
+     * Gets expiration_date
      *
      * @return \DateTime|null
      */
     public function getExpirationDate()
     {
-        return $this->container['expirationDate'];
+        return $this->container['expiration_date'];
     }
 
     /**
-     * Sets expirationDate
+     * Sets expiration_date
      *
-     * @param \DateTime|null $expirationDate Expiration timestamp defines when the code expires in ISO 8601 format. Voucher is inactive after this date.
+     * @param \DateTime|null $expiration_date Expiration timestamp defines when the code expires in ISO 8601 format. Voucher is inactive after this date.
      *
      * @return self
      */
-    public function setExpirationDate($expirationDate)
+    public function setExpirationDate($expiration_date)
     {
-        if (is_null($expirationDate)) {
-            array_push($this->openAPINullablesSetToNull, 'expirationDate');
+        if (is_null($expiration_date)) {
+            array_push($this->openAPINullablesSetToNull, 'expiration_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expirationDate', $nullablesSetToNull);
+            $index = array_search('expiration_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['expirationDate'] = $expirationDate;
+        $this->container['expiration_date'] = $expiration_date;
 
         return $this;
     }
 
     /**
-     * Gets validityTimeframe
+     * Gets validity_timeframe
      *
      * @return \OpenAPI\Client\Model\ValidityTimeframe
      */
     public function getValidityTimeframe()
     {
-        return $this->container['validityTimeframe'];
+        return $this->container['validity_timeframe'];
     }
 
     /**
-     * Sets validityTimeframe
+     * Sets validity_timeframe
      *
-     * @param \OpenAPI\Client\Model\ValidityTimeframe $validityTimeframe validityTimeframe
+     * @param \OpenAPI\Client\Model\ValidityTimeframe $validity_timeframe validity_timeframe
      *
      * @return self
      */
-    public function setValidityTimeframe($validityTimeframe)
+    public function setValidityTimeframe($validity_timeframe)
     {
-        if (is_null($validityTimeframe)) {
-            throw new \InvalidArgumentException('non-nullable validityTimeframe cannot be null');
+        if (is_null($validity_timeframe)) {
+            throw new \InvalidArgumentException('non-nullable validity_timeframe cannot be null');
         }
-        $this->container['validityTimeframe'] = $validityTimeframe;
+        $this->container['validity_timeframe'] = $validity_timeframe;
 
         return $this;
     }
 
     /**
-     * Gets validityDayOfWeek
+     * Gets validity_day_of_week
      *
      * @return int[]|null
      */
     public function getValidityDayOfWeek()
     {
-        return $this->container['validityDayOfWeek'];
+        return $this->container['validity_day_of_week'];
     }
 
     /**
-     * Sets validityDayOfWeek
+     * Sets validity_day_of_week
      *
-     * @param int[]|null $validityDayOfWeek Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+     * @param int[]|null $validity_day_of_week Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
      *
      * @return self
      */
-    public function setValidityDayOfWeek($validityDayOfWeek)
+    public function setValidityDayOfWeek($validity_day_of_week)
     {
-        if (is_null($validityDayOfWeek)) {
-            array_push($this->openAPINullablesSetToNull, 'validityDayOfWeek');
+        if (is_null($validity_day_of_week)) {
+            array_push($this->openAPINullablesSetToNull, 'validity_day_of_week');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validityDayOfWeek', $nullablesSetToNull);
+            $index = array_search('validity_day_of_week', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getValidityDayOfWeekAllowableValues();
-        if (!is_null($validityDayOfWeek) && array_diff($validityDayOfWeek, $allowedValues)) {
+        if (!is_null($validity_day_of_week) && array_diff($validity_day_of_week, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'validityDayOfWeek', must be one of '%s'",
+                    "Invalid value for 'validity_day_of_week', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['validityDayOfWeek'] = $validityDayOfWeek;
+        $this->container['validity_day_of_week'] = $validity_day_of_week;
 
         return $this;
     }
 
     /**
-     * Gets validityHours
+     * Gets validity_hours
      *
      * @return \OpenAPI\Client\Model\ValidityHours|null
      */
     public function getValidityHours()
     {
-        return $this->container['validityHours'];
+        return $this->container['validity_hours'];
     }
 
     /**
-     * Sets validityHours
+     * Sets validity_hours
      *
-     * @param \OpenAPI\Client\Model\ValidityHours|null $validityHours validityHours
+     * @param \OpenAPI\Client\Model\ValidityHours|null $validity_hours validity_hours
      *
      * @return self
      */
-    public function setValidityHours($validityHours)
+    public function setValidityHours($validity_hours)
     {
-        if (is_null($validityHours)) {
-            throw new \InvalidArgumentException('non-nullable validityHours cannot be null');
+        if (is_null($validity_hours)) {
+            throw new \InvalidArgumentException('non-nullable validity_hours cannot be null');
         }
-        $this->container['validityHours'] = $validityHours;
+        $this->container['validity_hours'] = $validity_hours;
 
         return $this;
     }
@@ -1086,35 +1086,35 @@ class LoyaltiesMembersTransfersCreateResponseBody implements ModelInterface, Arr
     }
 
     /**
-     * Gets additionalInfo
+     * Gets additional_info
      *
      * @return string|null
      */
     public function getAdditionalInfo()
     {
-        return $this->container['additionalInfo'];
+        return $this->container['additional_info'];
     }
 
     /**
-     * Sets additionalInfo
+     * Sets additional_info
      *
-     * @param string|null $additionalInfo An optional field to keep any extra textual information about the code such as a code description and details.
+     * @param string|null $additional_info An optional field to keep any extra textual information about the code such as a code description and details.
      *
      * @return self
      */
-    public function setAdditionalInfo($additionalInfo)
+    public function setAdditionalInfo($additional_info)
     {
-        if (is_null($additionalInfo)) {
-            array_push($this->openAPINullablesSetToNull, 'additionalInfo');
+        if (is_null($additional_info)) {
+            array_push($this->openAPINullablesSetToNull, 'additional_info');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('additionalInfo', $nullablesSetToNull);
+            $index = array_search('additional_info', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['additionalInfo'] = $additionalInfo;
+        $this->container['additional_info'] = $additional_info;
 
         return $this;
     }
@@ -1188,137 +1188,137 @@ class LoyaltiesMembersTransfersCreateResponseBody implements ModelInterface, Arr
     }
 
     /**
-     * Gets isReferralCode
+     * Gets is_referral_code
      *
      * @return bool|null
      */
     public function getIsReferralCode()
     {
-        return $this->container['isReferralCode'];
+        return $this->container['is_referral_code'];
     }
 
     /**
-     * Sets isReferralCode
+     * Sets is_referral_code
      *
-     * @param bool|null $isReferralCode Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
+     * @param bool|null $is_referral_code Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
      *
      * @return self
      */
-    public function setIsReferralCode($isReferralCode)
+    public function setIsReferralCode($is_referral_code)
     {
-        if (is_null($isReferralCode)) {
-            array_push($this->openAPINullablesSetToNull, 'isReferralCode');
+        if (is_null($is_referral_code)) {
+            array_push($this->openAPINullablesSetToNull, 'is_referral_code');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('isReferralCode', $nullablesSetToNull);
+            $index = array_search('is_referral_code', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['isReferralCode'] = $isReferralCode;
+        $this->container['is_referral_code'] = $is_referral_code;
 
         return $this;
     }
 
     /**
-     * Gets holderId
+     * Gets holder_id
      *
      * @return string|null
      */
     public function getHolderId()
     {
-        return $this->container['holderId'];
+        return $this->container['holder_id'];
     }
 
     /**
-     * Sets holderId
+     * Sets holder_id
      *
-     * @param string|null $holderId Unique customer identifier of the redeemable holder. It equals to the customer ID assigned by Voucherify.
+     * @param string|null $holder_id Unique customer identifier of the redeemable holder. It equals to the customer ID assigned by Voucherify.
      *
      * @return self
      */
-    public function setHolderId($holderId)
+    public function setHolderId($holder_id)
     {
-        if (is_null($holderId)) {
-            array_push($this->openAPINullablesSetToNull, 'holderId');
+        if (is_null($holder_id)) {
+            array_push($this->openAPINullablesSetToNull, 'holder_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('holderId', $nullablesSetToNull);
+            $index = array_search('holder_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['holderId'] = $holderId;
+        $this->container['holder_id'] = $holder_id;
 
         return $this;
     }
 
     /**
-     * Gets updatedAt
+     * Gets updated_at
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updatedAt'];
+        return $this->container['updated_at'];
     }
 
     /**
-     * Sets updatedAt
+     * Sets updated_at
      *
-     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the voucher was last updated in ISO 8601 format.
+     * @param \DateTime|null $updated_at Timestamp representing the date and time when the voucher was last updated in ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updated_at)
     {
-        if (is_null($updatedAt)) {
-            array_push($this->openAPINullablesSetToNull, 'updatedAt');
+        if (is_null($updated_at)) {
+            array_push($this->openAPINullablesSetToNull, 'updated_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updatedAt', $nullablesSetToNull);
+            $index = array_search('updated_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updatedAt'] = $updatedAt;
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \DateTime|null $createdAt createdAt
+     * @param \DateTime|null $created_at created_at
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        if (is_null($created_at)) {
+            array_push($this->openAPINullablesSetToNull, 'created_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
+            $index = array_search('created_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }

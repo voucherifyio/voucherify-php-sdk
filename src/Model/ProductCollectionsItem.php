@@ -64,7 +64,7 @@ class ProductCollectionsItem implements ModelInterface, ArrayAccess, \JsonSerial
         'type' => 'string',
         'filter' => '\OpenAPI\Client\Model\ProductCollectionsItemFilter',
         'products' => '\OpenAPI\Client\Model\ProductCollectionsItemProductsItem[]',
-        'createdAt' => '\DateTime',
+        'created_at' => '\DateTime',
         'object' => 'string'
     ];
 
@@ -81,7 +81,7 @@ class ProductCollectionsItem implements ModelInterface, ArrayAccess, \JsonSerial
         'type' => null,
         'filter' => null,
         'products' => null,
-        'createdAt' => 'date-time',
+        'created_at' => 'date-time',
         'object' => null
     ];
 
@@ -96,7 +96,7 @@ class ProductCollectionsItem implements ModelInterface, ArrayAccess, \JsonSerial
 		'type' => true,
 		'filter' => true,
 		'products' => true,
-		'createdAt' => true,
+		'created_at' => true,
 		'object' => true
     ];
 
@@ -191,7 +191,7 @@ class ProductCollectionsItem implements ModelInterface, ArrayAccess, \JsonSerial
         'type' => 'type',
         'filter' => 'filter',
         'products' => 'products',
-        'createdAt' => 'created_at',
+        'created_at' => 'created_at',
         'object' => 'object'
     ];
 
@@ -206,7 +206,7 @@ class ProductCollectionsItem implements ModelInterface, ArrayAccess, \JsonSerial
         'type' => 'setType',
         'filter' => 'setFilter',
         'products' => 'setProducts',
-        'createdAt' => 'setCreatedAt',
+        'created_at' => 'setCreatedAt',
         'object' => 'setObject'
     ];
 
@@ -221,7 +221,7 @@ class ProductCollectionsItem implements ModelInterface, ArrayAccess, \JsonSerial
         'type' => 'getType',
         'filter' => 'getFilter',
         'products' => 'getProducts',
-        'createdAt' => 'getCreatedAt',
+        'created_at' => 'getCreatedAt',
         'object' => 'getObject'
     ];
 
@@ -315,7 +315,7 @@ class ProductCollectionsItem implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('filter', $data ?? [], null);
         $this->setIfExists('products', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'products_collection');
     }
 
@@ -560,35 +560,35 @@ class ProductCollectionsItem implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the product collection was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $created_at Timestamp representing the date and time when the product collection was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        if (is_null($created_at)) {
+            array_push($this->openAPINullablesSetToNull, 'created_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
+            $index = array_search('created_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }

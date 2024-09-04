@@ -60,14 +60,14 @@ class QualificationsOptionFilters implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'junction' => 'string',
-        'categoryId' => '\OpenAPI\Client\Model\QualificationsFieldConditions',
-        'campaignId' => '\OpenAPI\Client\Model\QualificationsFieldConditions',
-        'campaignType' => '\OpenAPI\Client\Model\QualificationsOptionFiltersCampaignType',
-        'resourceId' => '\OpenAPI\Client\Model\QualificationsFieldConditions',
-        'resourceType' => '\OpenAPI\Client\Model\QualificationsOptionFiltersResourceType',
-        'voucherType' => '\OpenAPI\Client\Model\QualificationsFieldConditions',
+        'category_id' => '\OpenAPI\Client\Model\QualificationsFieldConditions',
+        'campaign_id' => '\OpenAPI\Client\Model\QualificationsFieldConditions',
+        'campaign_type' => '\OpenAPI\Client\Model\QualificationsOptionFiltersCampaignType',
+        'resource_id' => '\OpenAPI\Client\Model\QualificationsFieldConditions',
+        'resource_type' => '\OpenAPI\Client\Model\QualificationsOptionFiltersResourceType',
+        'voucher_type' => '\OpenAPI\Client\Model\QualificationsFieldConditions',
         'code' => '\OpenAPI\Client\Model\QualificationsFieldConditions',
-        'holderRole' => '\OpenAPI\Client\Model\QualificationsOptionFiltersHolderRole'
+        'holder_role' => '\OpenAPI\Client\Model\QualificationsOptionFiltersHolderRole'
     ];
 
     /**
@@ -79,14 +79,14 @@ class QualificationsOptionFilters implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPIFormats = [
         'junction' => null,
-        'categoryId' => null,
-        'campaignId' => null,
-        'campaignType' => null,
-        'resourceId' => null,
-        'resourceType' => null,
-        'voucherType' => null,
+        'category_id' => null,
+        'campaign_id' => null,
+        'campaign_type' => null,
+        'resource_id' => null,
+        'resource_type' => null,
+        'voucher_type' => null,
         'code' => null,
-        'holderRole' => null
+        'holder_role' => null
     ];
 
     /**
@@ -96,14 +96,14 @@ class QualificationsOptionFilters implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static array $openAPINullables = [
         'junction' => true,
-		'categoryId' => false,
-		'campaignId' => false,
-		'campaignType' => true,
-		'resourceId' => false,
-		'resourceType' => true,
-		'voucherType' => false,
+		'category_id' => false,
+		'campaign_id' => false,
+		'campaign_type' => true,
+		'resource_id' => false,
+		'resource_type' => true,
+		'voucher_type' => false,
 		'code' => false,
-		'holderRole' => true
+		'holder_role' => true
     ];
 
     /**
@@ -193,14 +193,14 @@ class QualificationsOptionFilters implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $attributeMap = [
         'junction' => 'junction',
-        'categoryId' => 'category_id',
-        'campaignId' => 'campaign_id',
-        'campaignType' => 'campaign_type',
-        'resourceId' => 'resource_id',
-        'resourceType' => 'resource_type',
-        'voucherType' => 'voucher_type',
+        'category_id' => 'category_id',
+        'campaign_id' => 'campaign_id',
+        'campaign_type' => 'campaign_type',
+        'resource_id' => 'resource_id',
+        'resource_type' => 'resource_type',
+        'voucher_type' => 'voucher_type',
         'code' => 'code',
-        'holderRole' => 'holder_role'
+        'holder_role' => 'holder_role'
     ];
 
     /**
@@ -210,14 +210,14 @@ class QualificationsOptionFilters implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $setters = [
         'junction' => 'setJunction',
-        'categoryId' => 'setCategoryId',
-        'campaignId' => 'setCampaignId',
-        'campaignType' => 'setCampaignType',
-        'resourceId' => 'setResourceId',
-        'resourceType' => 'setResourceType',
-        'voucherType' => 'setVoucherType',
+        'category_id' => 'setCategoryId',
+        'campaign_id' => 'setCampaignId',
+        'campaign_type' => 'setCampaignType',
+        'resource_id' => 'setResourceId',
+        'resource_type' => 'setResourceType',
+        'voucher_type' => 'setVoucherType',
         'code' => 'setCode',
-        'holderRole' => 'setHolderRole'
+        'holder_role' => 'setHolderRole'
     ];
 
     /**
@@ -227,14 +227,14 @@ class QualificationsOptionFilters implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $getters = [
         'junction' => 'getJunction',
-        'categoryId' => 'getCategoryId',
-        'campaignId' => 'getCampaignId',
-        'campaignType' => 'getCampaignType',
-        'resourceId' => 'getResourceId',
-        'resourceType' => 'getResourceType',
-        'voucherType' => 'getVoucherType',
+        'category_id' => 'getCategoryId',
+        'campaign_id' => 'getCampaignId',
+        'campaign_type' => 'getCampaignType',
+        'resource_id' => 'getResourceId',
+        'resource_type' => 'getResourceType',
+        'voucher_type' => 'getVoucherType',
         'code' => 'getCode',
-        'holderRole' => 'getHolderRole'
+        'holder_role' => 'getHolderRole'
     ];
 
     /**
@@ -310,14 +310,14 @@ class QualificationsOptionFilters implements ModelInterface, ArrayAccess, \JsonS
     public function __construct(array $data = null)
     {
         $this->setIfExists('junction', $data ?? [], null);
-        $this->setIfExists('categoryId', $data ?? [], null);
-        $this->setIfExists('campaignId', $data ?? [], null);
-        $this->setIfExists('campaignType', $data ?? [], null);
-        $this->setIfExists('resourceId', $data ?? [], null);
-        $this->setIfExists('resourceType', $data ?? [], null);
-        $this->setIfExists('voucherType', $data ?? [], null);
+        $this->setIfExists('category_id', $data ?? [], null);
+        $this->setIfExists('campaign_id', $data ?? [], null);
+        $this->setIfExists('campaign_type', $data ?? [], null);
+        $this->setIfExists('resource_id', $data ?? [], null);
+        $this->setIfExists('resource_type', $data ?? [], null);
+        $this->setIfExists('voucher_type', $data ?? [], null);
         $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('holderRole', $data ?? [], null);
+        $this->setIfExists('holder_role', $data ?? [], null);
     }
 
     /**
@@ -416,177 +416,177 @@ class QualificationsOptionFilters implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets categoryId
+     * Gets category_id
      *
      * @return \OpenAPI\Client\Model\QualificationsFieldConditions|null
      */
     public function getCategoryId()
     {
-        return $this->container['categoryId'];
+        return $this->container['category_id'];
     }
 
     /**
-     * Sets categoryId
+     * Sets category_id
      *
-     * @param \OpenAPI\Client\Model\QualificationsFieldConditions|null $categoryId categoryId
+     * @param \OpenAPI\Client\Model\QualificationsFieldConditions|null $category_id category_id
      *
      * @return self
      */
-    public function setCategoryId($categoryId)
+    public function setCategoryId($category_id)
     {
-        if (is_null($categoryId)) {
-            throw new \InvalidArgumentException('non-nullable categoryId cannot be null');
+        if (is_null($category_id)) {
+            throw new \InvalidArgumentException('non-nullable category_id cannot be null');
         }
-        $this->container['categoryId'] = $categoryId;
+        $this->container['category_id'] = $category_id;
 
         return $this;
     }
 
     /**
-     * Gets campaignId
+     * Gets campaign_id
      *
      * @return \OpenAPI\Client\Model\QualificationsFieldConditions|null
      */
     public function getCampaignId()
     {
-        return $this->container['campaignId'];
+        return $this->container['campaign_id'];
     }
 
     /**
-     * Sets campaignId
+     * Sets campaign_id
      *
-     * @param \OpenAPI\Client\Model\QualificationsFieldConditions|null $campaignId campaignId
+     * @param \OpenAPI\Client\Model\QualificationsFieldConditions|null $campaign_id campaign_id
      *
      * @return self
      */
-    public function setCampaignId($campaignId)
+    public function setCampaignId($campaign_id)
     {
-        if (is_null($campaignId)) {
-            throw new \InvalidArgumentException('non-nullable campaignId cannot be null');
+        if (is_null($campaign_id)) {
+            throw new \InvalidArgumentException('non-nullable campaign_id cannot be null');
         }
-        $this->container['campaignId'] = $campaignId;
+        $this->container['campaign_id'] = $campaign_id;
 
         return $this;
     }
 
     /**
-     * Gets campaignType
+     * Gets campaign_type
      *
      * @return \OpenAPI\Client\Model\QualificationsOptionFiltersCampaignType|null
      */
     public function getCampaignType()
     {
-        return $this->container['campaignType'];
+        return $this->container['campaign_type'];
     }
 
     /**
-     * Sets campaignType
+     * Sets campaign_type
      *
-     * @param \OpenAPI\Client\Model\QualificationsOptionFiltersCampaignType|null $campaignType campaignType
+     * @param \OpenAPI\Client\Model\QualificationsOptionFiltersCampaignType|null $campaign_type campaign_type
      *
      * @return self
      */
-    public function setCampaignType($campaignType)
+    public function setCampaignType($campaign_type)
     {
-        if (is_null($campaignType)) {
-            array_push($this->openAPINullablesSetToNull, 'campaignType');
+        if (is_null($campaign_type)) {
+            array_push($this->openAPINullablesSetToNull, 'campaign_type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaignType', $nullablesSetToNull);
+            $index = array_search('campaign_type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaignType'] = $campaignType;
+        $this->container['campaign_type'] = $campaign_type;
 
         return $this;
     }
 
     /**
-     * Gets resourceId
+     * Gets resource_id
      *
      * @return \OpenAPI\Client\Model\QualificationsFieldConditions|null
      */
     public function getResourceId()
     {
-        return $this->container['resourceId'];
+        return $this->container['resource_id'];
     }
 
     /**
-     * Sets resourceId
+     * Sets resource_id
      *
-     * @param \OpenAPI\Client\Model\QualificationsFieldConditions|null $resourceId resourceId
+     * @param \OpenAPI\Client\Model\QualificationsFieldConditions|null $resource_id resource_id
      *
      * @return self
      */
-    public function setResourceId($resourceId)
+    public function setResourceId($resource_id)
     {
-        if (is_null($resourceId)) {
-            throw new \InvalidArgumentException('non-nullable resourceId cannot be null');
+        if (is_null($resource_id)) {
+            throw new \InvalidArgumentException('non-nullable resource_id cannot be null');
         }
-        $this->container['resourceId'] = $resourceId;
+        $this->container['resource_id'] = $resource_id;
 
         return $this;
     }
 
     /**
-     * Gets resourceType
+     * Gets resource_type
      *
      * @return \OpenAPI\Client\Model\QualificationsOptionFiltersResourceType|null
      */
     public function getResourceType()
     {
-        return $this->container['resourceType'];
+        return $this->container['resource_type'];
     }
 
     /**
-     * Sets resourceType
+     * Sets resource_type
      *
-     * @param \OpenAPI\Client\Model\QualificationsOptionFiltersResourceType|null $resourceType resourceType
+     * @param \OpenAPI\Client\Model\QualificationsOptionFiltersResourceType|null $resource_type resource_type
      *
      * @return self
      */
-    public function setResourceType($resourceType)
+    public function setResourceType($resource_type)
     {
-        if (is_null($resourceType)) {
-            array_push($this->openAPINullablesSetToNull, 'resourceType');
+        if (is_null($resource_type)) {
+            array_push($this->openAPINullablesSetToNull, 'resource_type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('resourceType', $nullablesSetToNull);
+            $index = array_search('resource_type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['resourceType'] = $resourceType;
+        $this->container['resource_type'] = $resource_type;
 
         return $this;
     }
 
     /**
-     * Gets voucherType
+     * Gets voucher_type
      *
      * @return \OpenAPI\Client\Model\QualificationsFieldConditions|null
      */
     public function getVoucherType()
     {
-        return $this->container['voucherType'];
+        return $this->container['voucher_type'];
     }
 
     /**
-     * Sets voucherType
+     * Sets voucher_type
      *
-     * @param \OpenAPI\Client\Model\QualificationsFieldConditions|null $voucherType voucherType
+     * @param \OpenAPI\Client\Model\QualificationsFieldConditions|null $voucher_type voucher_type
      *
      * @return self
      */
-    public function setVoucherType($voucherType)
+    public function setVoucherType($voucher_type)
     {
-        if (is_null($voucherType)) {
-            throw new \InvalidArgumentException('non-nullable voucherType cannot be null');
+        if (is_null($voucher_type)) {
+            throw new \InvalidArgumentException('non-nullable voucher_type cannot be null');
         }
-        $this->container['voucherType'] = $voucherType;
+        $this->container['voucher_type'] = $voucher_type;
 
         return $this;
     }
@@ -619,35 +619,35 @@ class QualificationsOptionFilters implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets holderRole
+     * Gets holder_role
      *
      * @return \OpenAPI\Client\Model\QualificationsOptionFiltersHolderRole|null
      */
     public function getHolderRole()
     {
-        return $this->container['holderRole'];
+        return $this->container['holder_role'];
     }
 
     /**
-     * Sets holderRole
+     * Sets holder_role
      *
-     * @param \OpenAPI\Client\Model\QualificationsOptionFiltersHolderRole|null $holderRole holderRole
+     * @param \OpenAPI\Client\Model\QualificationsOptionFiltersHolderRole|null $holder_role holder_role
      *
      * @return self
      */
-    public function setHolderRole($holderRole)
+    public function setHolderRole($holder_role)
     {
-        if (is_null($holderRole)) {
-            array_push($this->openAPINullablesSetToNull, 'holderRole');
+        if (is_null($holder_role)) {
+            array_push($this->openAPINullablesSetToNull, 'holder_role');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('holderRole', $nullablesSetToNull);
+            $index = array_search('holder_role', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['holderRole'] = $holderRole;
+        $this->container['holder_role'] = $holder_role;
 
         return $this;
     }

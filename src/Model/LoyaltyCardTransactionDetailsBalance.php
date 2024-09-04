@@ -64,7 +64,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
         'object' => 'string',
         'points' => 'int',
         'balance' => 'int',
-        'relatedObject' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsBalanceRelatedObject'
+        'related_object' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsBalanceRelatedObject'
     ];
 
     /**
@@ -80,7 +80,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
         'object' => null,
         'points' => null,
         'balance' => null,
-        'relatedObject' => null
+        'related_object' => null
     ];
 
     /**
@@ -94,7 +94,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
 		'object' => true,
 		'points' => true,
 		'balance' => true,
-		'relatedObject' => true
+		'related_object' => true
     ];
 
     /**
@@ -188,7 +188,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
         'object' => 'object',
         'points' => 'points',
         'balance' => 'balance',
-        'relatedObject' => 'related_object'
+        'related_object' => 'related_object'
     ];
 
     /**
@@ -202,7 +202,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
         'object' => 'setObject',
         'points' => 'setPoints',
         'balance' => 'setBalance',
-        'relatedObject' => 'setRelatedObject'
+        'related_object' => 'setRelatedObject'
     ];
 
     /**
@@ -216,7 +216,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
         'object' => 'getObject',
         'points' => 'getPoints',
         'balance' => 'getBalance',
-        'relatedObject' => 'getRelatedObject'
+        'related_object' => 'getRelatedObject'
     ];
 
     /**
@@ -307,7 +307,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
         $this->setIfExists('object', $data ?? [], 'balance');
         $this->setIfExists('points', $data ?? [], null);
         $this->setIfExists('balance', $data ?? [], null);
-        $this->setIfExists('relatedObject', $data ?? [], null);
+        $this->setIfExists('related_object', $data ?? [], null);
     }
 
     /**
@@ -579,35 +579,35 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets relatedObject
+     * Gets related_object
      *
      * @return \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsBalanceRelatedObject|null
      */
     public function getRelatedObject()
     {
-        return $this->container['relatedObject'];
+        return $this->container['related_object'];
     }
 
     /**
-     * Sets relatedObject
+     * Sets related_object
      *
-     * @param \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsBalanceRelatedObject|null $relatedObject relatedObject
+     * @param \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsBalanceRelatedObject|null $related_object related_object
      *
      * @return self
      */
-    public function setRelatedObject($relatedObject)
+    public function setRelatedObject($related_object)
     {
-        if (is_null($relatedObject)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObject');
+        if (is_null($related_object)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObject', $nullablesSetToNull);
+            $index = array_search('related_object', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['relatedObject'] = $relatedObject;
+        $this->container['related_object'] = $related_object;
 
         return $this;
     }

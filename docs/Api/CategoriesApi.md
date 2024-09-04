@@ -14,7 +14,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `createCategory()`
 
 ```php
-createCategory($categoriesCreateRequestBody): \OpenAPI\Client\Model\CategoriesCreateResponseBody
+createCategory($categories_create_request_body): \OpenAPI\Client\Model\CategoriesCreateResponseBody
 ```
 
 Create Category
@@ -45,10 +45,10 @@ $apiInstance = new OpenAPI\Client\Api\CategoriesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$categoriesCreateRequestBody = {"name":"Eighth","hierarchy":8}; // \OpenAPI\Client\Model\CategoriesCreateRequestBody | Specify the details of the category that you would like to create.
+$categories_create_request_body = {"name":"Eighth","hierarchy":8}; // \OpenAPI\Client\Model\CategoriesCreateRequestBody | Specify the details of the category that you would like to create.
 
 try {
-    $result = $apiInstance->createCategory($categoriesCreateRequestBody);
+    $result = $apiInstance->createCategory($categories_create_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoriesApi->createCategory: ', $e->getMessage(), PHP_EOL;
@@ -59,7 +59,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **categoriesCreateRequestBody** | [**\OpenAPI\Client\Model\CategoriesCreateRequestBody**](../Model/CategoriesCreateRequestBody.md)| Specify the details of the category that you would like to create. | [optional] |
+| **categories_create_request_body** | [**\OpenAPI\Client\Model\CategoriesCreateRequestBody**](../Model/CategoriesCreateRequestBody.md)| Specify the details of the category that you would like to create. | [optional] |
 
 ### Return type
 
@@ -81,7 +81,7 @@ try {
 ## `deleteCategory()`
 
 ```php
-deleteCategory($categoryId)
+deleteCategory($category_id)
 ```
 
 Delete Category
@@ -112,10 +112,10 @@ $apiInstance = new OpenAPI\Client\Api\CategoriesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$categoryId = 'categoryId_example'; // string | Unique category ID assigned by Voucherify.
+$category_id = 'category_id_example'; // string | Unique category ID assigned by Voucherify.
 
 try {
-    $apiInstance->deleteCategory($categoryId);
+    $apiInstance->deleteCategory($category_id);
 } catch (Exception $e) {
     echo 'Exception when calling CategoriesApi->deleteCategory: ', $e->getMessage(), PHP_EOL;
 }
@@ -125,7 +125,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **categoryId** | **string**| Unique category ID assigned by Voucherify. | |
+| **category_id** | **string**| Unique category ID assigned by Voucherify. | |
 
 ### Return type
 
@@ -147,7 +147,7 @@ void (empty response body)
 ## `getCategory()`
 
 ```php
-getCategory($categoryId): \OpenAPI\Client\Model\CategoriesGetResponseBody
+getCategory($category_id): \OpenAPI\Client\Model\CategoriesGetResponseBody
 ```
 
 Get Category
@@ -178,10 +178,10 @@ $apiInstance = new OpenAPI\Client\Api\CategoriesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$categoryId = 'categoryId_example'; // string | Unique category ID assigned by Voucherify.
+$category_id = 'category_id_example'; // string | Unique category ID assigned by Voucherify.
 
 try {
-    $result = $apiInstance->getCategory($categoryId);
+    $result = $apiInstance->getCategory($category_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoriesApi->getCategory: ', $e->getMessage(), PHP_EOL;
@@ -192,7 +192,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **categoryId** | **string**| Unique category ID assigned by Voucherify. | |
+| **category_id** | **string**| Unique category ID assigned by Voucherify. | |
 
 ### Return type
 
@@ -278,7 +278,7 @@ This endpoint does not need any parameter.
 ## `updateCategory()`
 
 ```php
-updateCategory($categoryId, $categoriesUpdateRequestBody): \OpenAPI\Client\Model\CategoriesUpdateResponseBody
+updateCategory($category_id, $categories_update_request_body): \OpenAPI\Client\Model\CategoriesUpdateResponseBody
 ```
 
 Update Category
@@ -309,11 +309,11 @@ $apiInstance = new OpenAPI\Client\Api\CategoriesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$categoryId = 'categoryId_example'; // string | Unique category ID assigned by Voucherify.
-$categoriesUpdateRequestBody = {"name":"Summer","hierarchy":1}; // \OpenAPI\Client\Model\CategoriesUpdateRequestBody | Specify the details of the category that you would like to update.
+$category_id = 'category_id_example'; // string | Unique category ID assigned by Voucherify.
+$categories_update_request_body = {"name":"Summer","hierarchy":1}; // \OpenAPI\Client\Model\CategoriesUpdateRequestBody | Specify the details of the category that you would like to update.
 
 try {
-    $result = $apiInstance->updateCategory($categoryId, $categoriesUpdateRequestBody);
+    $result = $apiInstance->updateCategory($category_id, $categories_update_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoriesApi->updateCategory: ', $e->getMessage(), PHP_EOL;
@@ -324,8 +324,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **categoryId** | **string**| Unique category ID assigned by Voucherify. | |
-| **categoriesUpdateRequestBody** | [**\OpenAPI\Client\Model\CategoriesUpdateRequestBody**](../Model/CategoriesUpdateRequestBody.md)| Specify the details of the category that you would like to update. | [optional] |
+| **category_id** | **string**| Unique category ID assigned by Voucherify. | |
+| **categories_update_request_body** | [**\OpenAPI\Client\Model\CategoriesUpdateRequestBody**](../Model/CategoriesUpdateRequestBody.md)| Specify the details of the category that you would like to update. | [optional] |
 
 ### Return type
 

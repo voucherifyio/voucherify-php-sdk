@@ -14,7 +14,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `createExport()`
 
 ```php
-createExport($exportsCreateRequestBody): \OpenAPI\Client\Model\ExportsCreateResponseBody
+createExport($exports_create_request_body): \OpenAPI\Client\Model\ExportsCreateResponseBody
 ```
 
 Create Export
@@ -45,10 +45,10 @@ $apiInstance = new OpenAPI\Client\Api\ExportsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$exportsCreateRequestBody = new \OpenAPI\Client\Model\ExportsCreateRequestBody(); // \OpenAPI\Client\Model\ExportsCreateRequestBody | Specify the details of the export that you would like to create.
+$exports_create_request_body = new \OpenAPI\Client\Model\ExportsCreateRequestBody(); // \OpenAPI\Client\Model\ExportsCreateRequestBody | Specify the details of the export that you would like to create.
 
 try {
-    $result = $apiInstance->createExport($exportsCreateRequestBody);
+    $result = $apiInstance->createExport($exports_create_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExportsApi->createExport: ', $e->getMessage(), PHP_EOL;
@@ -59,7 +59,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **exportsCreateRequestBody** | [**\OpenAPI\Client\Model\ExportsCreateRequestBody**](../Model/ExportsCreateRequestBody.md)| Specify the details of the export that you would like to create. | [optional] |
+| **exports_create_request_body** | [**\OpenAPI\Client\Model\ExportsCreateRequestBody**](../Model/ExportsCreateRequestBody.md)| Specify the details of the export that you would like to create. | [optional] |
 
 ### Return type
 
@@ -81,7 +81,7 @@ try {
 ## `deleteExport()`
 
 ```php
-deleteExport($exportId)
+deleteExport($export_id)
 ```
 
 Delete Export
@@ -112,10 +112,10 @@ $apiInstance = new OpenAPI\Client\Api\ExportsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$exportId = 'exportId_example'; // string | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.
+$export_id = 'export_id_example'; // string | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.
 
 try {
-    $apiInstance->deleteExport($exportId);
+    $apiInstance->deleteExport($export_id);
 } catch (Exception $e) {
     echo 'Exception when calling ExportsApi->deleteExport: ', $e->getMessage(), PHP_EOL;
 }
@@ -125,7 +125,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **exportId** | **string**| Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. | |
+| **export_id** | **string**| Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. | |
 
 ### Return type
 
@@ -147,7 +147,7 @@ void (empty response body)
 ## `downloadExport()`
 
 ```php
-downloadExport($exportId, $token): string
+downloadExport($export_id, $token): string
 ```
 
 Download Export
@@ -167,11 +167,11 @@ $apiInstance = new OpenAPI\Client\Api\ExportsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$exportId = exp_ex6zq0x0EEa9S0N68QcqhxcQ; // string | Unique export object ID.
+$export_id = exp_ex6zq0x0EEa9S0N68QcqhxcQ; // string | Unique export object ID.
 $token = 'token_example'; // string | Token that was issued to the export, to get this token, get the export first
 
 try {
-    $result = $apiInstance->downloadExport($exportId, $token);
+    $result = $apiInstance->downloadExport($export_id, $token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExportsApi->downloadExport: ', $e->getMessage(), PHP_EOL;
@@ -182,7 +182,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **exportId** | **string**| Unique export object ID. | |
+| **export_id** | **string**| Unique export object ID. | |
 | **token** | **string**| Token that was issued to the export, to get this token, get the export first | [optional] |
 
 ### Return type
@@ -205,7 +205,7 @@ No authorization required
 ## `getExport()`
 
 ```php
-getExport($exportId): \OpenAPI\Client\Model\ExportsGetResponseBody
+getExport($export_id): \OpenAPI\Client\Model\ExportsGetResponseBody
 ```
 
 Get Export
@@ -236,10 +236,10 @@ $apiInstance = new OpenAPI\Client\Api\ExportsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$exportId = 'exportId_example'; // string | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.
+$export_id = 'export_id_example'; // string | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.
 
 try {
-    $result = $apiInstance->getExport($exportId);
+    $result = $apiInstance->getExport($export_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExportsApi->getExport: ', $e->getMessage(), PHP_EOL;
@@ -250,7 +250,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **exportId** | **string**| Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. | |
+| **export_id** | **string**| Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. | |
 
 ### Return type
 

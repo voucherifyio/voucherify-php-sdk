@@ -60,12 +60,12 @@ class ProductsSkusCreateRequestBody implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'sourceId' => 'string',
+        'source_id' => 'string',
         'sku' => 'string',
         'price' => 'int',
         'currency' => 'string',
         'attributes' => 'object',
-        'imageUrl' => 'string',
+        'image_url' => 'string',
         'metadata' => 'object'
     ];
 
@@ -78,12 +78,12 @@ class ProductsSkusCreateRequestBody implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'sourceId' => null,
+        'source_id' => null,
         'sku' => null,
         'price' => null,
         'currency' => null,
         'attributes' => null,
-        'imageUrl' => null,
+        'image_url' => null,
         'metadata' => null
     ];
 
@@ -94,12 +94,12 @@ class ProductsSkusCreateRequestBody implements ModelInterface, ArrayAccess, \Jso
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'sourceId' => true,
+		'source_id' => true,
 		'sku' => true,
 		'price' => true,
 		'currency' => true,
 		'attributes' => true,
-		'imageUrl' => true,
+		'image_url' => true,
 		'metadata' => true
     ];
 
@@ -190,12 +190,12 @@ class ProductsSkusCreateRequestBody implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'sourceId' => 'source_id',
+        'source_id' => 'source_id',
         'sku' => 'sku',
         'price' => 'price',
         'currency' => 'currency',
         'attributes' => 'attributes',
-        'imageUrl' => 'image_url',
+        'image_url' => 'image_url',
         'metadata' => 'metadata'
     ];
 
@@ -206,12 +206,12 @@ class ProductsSkusCreateRequestBody implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $setters = [
         'id' => 'setId',
-        'sourceId' => 'setSourceId',
+        'source_id' => 'setSourceId',
         'sku' => 'setSku',
         'price' => 'setPrice',
         'currency' => 'setCurrency',
         'attributes' => 'setAttributes',
-        'imageUrl' => 'setImageUrl',
+        'image_url' => 'setImageUrl',
         'metadata' => 'setMetadata'
     ];
 
@@ -222,12 +222,12 @@ class ProductsSkusCreateRequestBody implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $getters = [
         'id' => 'getId',
-        'sourceId' => 'getSourceId',
+        'source_id' => 'getSourceId',
         'sku' => 'getSku',
         'price' => 'getPrice',
         'currency' => 'getCurrency',
         'attributes' => 'getAttributes',
-        'imageUrl' => 'getImageUrl',
+        'image_url' => 'getImageUrl',
         'metadata' => 'getMetadata'
     ];
 
@@ -289,12 +289,12 @@ class ProductsSkusCreateRequestBody implements ModelInterface, ArrayAccess, \Jso
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('source_id', $data ?? [], null);
         $this->setIfExists('sku', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('attributes', $data ?? [], null);
-        $this->setIfExists('imageUrl', $data ?? [], null);
+        $this->setIfExists('image_url', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
     }
 
@@ -375,35 +375,35 @@ class ProductsSkusCreateRequestBody implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets sourceId
+     * Gets source_id
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['sourceId'];
+        return $this->container['source_id'];
     }
 
     /**
-     * Sets sourceId
+     * Sets source_id
      *
-     * @param string|null $sourceId A unique SKU identifier from your inventory system.
+     * @param string|null $source_id A unique SKU identifier from your inventory system.
      *
      * @return self
      */
-    public function setSourceId($sourceId)
+    public function setSourceId($source_id)
     {
-        if (is_null($sourceId)) {
-            array_push($this->openAPINullablesSetToNull, 'sourceId');
+        if (is_null($source_id)) {
+            array_push($this->openAPINullablesSetToNull, 'source_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sourceId', $nullablesSetToNull);
+            $index = array_search('source_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sourceId'] = $sourceId;
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }
@@ -545,35 +545,35 @@ class ProductsSkusCreateRequestBody implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets imageUrl
+     * Gets image_url
      *
      * @return string|null
      */
     public function getImageUrl()
     {
-        return $this->container['imageUrl'];
+        return $this->container['image_url'];
     }
 
     /**
-     * Sets imageUrl
+     * Sets image_url
      *
-     * @param string|null $imageUrl The HTTPS URL pointing to the .png or .jpg file that will be used to render the SKU image.
+     * @param string|null $image_url The HTTPS URL pointing to the .png or .jpg file that will be used to render the SKU image.
      *
      * @return self
      */
-    public function setImageUrl($imageUrl)
+    public function setImageUrl($image_url)
     {
-        if (is_null($imageUrl)) {
-            array_push($this->openAPINullablesSetToNull, 'imageUrl');
+        if (is_null($image_url)) {
+            array_push($this->openAPINullablesSetToNull, 'image_url');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('imageUrl', $nullablesSetToNull);
+            $index = array_search('image_url', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['imageUrl'] = $imageUrl;
+        $this->container['image_url'] = $image_url;
 
         return $this;
     }

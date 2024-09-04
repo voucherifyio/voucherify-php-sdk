@@ -60,14 +60,14 @@ class BusValRuleAssignment implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'ruleId' => 'string',
-        'relatedObjectId' => 'string',
-        'relatedObjectType' => 'string',
-        'createdAt' => '\DateTime',
-        'updatedAt' => '\DateTime',
+        'rule_id' => 'string',
+        'related_object_id' => 'string',
+        'related_object_type' => 'string',
+        'created_at' => '\DateTime',
+        'updated_at' => '\DateTime',
         'object' => 'string',
-        'validationStatus' => 'string',
-        'validationOmittedRules' => 'string[]'
+        'validation_status' => 'string',
+        'validation_omitted_rules' => 'string[]'
     ];
 
     /**
@@ -79,14 +79,14 @@ class BusValRuleAssignment implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'ruleId' => null,
-        'relatedObjectId' => null,
-        'relatedObjectType' => null,
-        'createdAt' => 'date-time',
-        'updatedAt' => 'date-time',
+        'rule_id' => null,
+        'related_object_id' => null,
+        'related_object_type' => null,
+        'created_at' => 'date-time',
+        'updated_at' => 'date-time',
         'object' => null,
-        'validationStatus' => null,
-        'validationOmittedRules' => null
+        'validation_status' => null,
+        'validation_omitted_rules' => null
     ];
 
     /**
@@ -96,14 +96,14 @@ class BusValRuleAssignment implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'ruleId' => true,
-		'relatedObjectId' => true,
-		'relatedObjectType' => true,
-		'createdAt' => true,
-		'updatedAt' => true,
+		'rule_id' => true,
+		'related_object_id' => true,
+		'related_object_type' => true,
+		'created_at' => true,
+		'updated_at' => true,
 		'object' => true,
-		'validationStatus' => true,
-		'validationOmittedRules' => true
+		'validation_status' => true,
+		'validation_omitted_rules' => true
     ];
 
     /**
@@ -193,14 +193,14 @@ class BusValRuleAssignment implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'ruleId' => 'rule_id',
-        'relatedObjectId' => 'related_object_id',
-        'relatedObjectType' => 'related_object_type',
-        'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at',
+        'rule_id' => 'rule_id',
+        'related_object_id' => 'related_object_id',
+        'related_object_type' => 'related_object_type',
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at',
         'object' => 'object',
-        'validationStatus' => 'validation_status',
-        'validationOmittedRules' => 'validation_omitted_rules'
+        'validation_status' => 'validation_status',
+        'validation_omitted_rules' => 'validation_omitted_rules'
     ];
 
     /**
@@ -210,14 +210,14 @@ class BusValRuleAssignment implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $setters = [
         'id' => 'setId',
-        'ruleId' => 'setRuleId',
-        'relatedObjectId' => 'setRelatedObjectId',
-        'relatedObjectType' => 'setRelatedObjectType',
-        'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt',
+        'rule_id' => 'setRuleId',
+        'related_object_id' => 'setRelatedObjectId',
+        'related_object_type' => 'setRelatedObjectType',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt',
         'object' => 'setObject',
-        'validationStatus' => 'setValidationStatus',
-        'validationOmittedRules' => 'setValidationOmittedRules'
+        'validation_status' => 'setValidationStatus',
+        'validation_omitted_rules' => 'setValidationOmittedRules'
     ];
 
     /**
@@ -227,14 +227,14 @@ class BusValRuleAssignment implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'id' => 'getId',
-        'ruleId' => 'getRuleId',
-        'relatedObjectId' => 'getRelatedObjectId',
-        'relatedObjectType' => 'getRelatedObjectType',
-        'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt',
+        'rule_id' => 'getRuleId',
+        'related_object_id' => 'getRelatedObjectId',
+        'related_object_type' => 'getRelatedObjectType',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt',
         'object' => 'getObject',
-        'validationStatus' => 'getValidationStatus',
-        'validationOmittedRules' => 'getValidationOmittedRules'
+        'validation_status' => 'getValidationStatus',
+        'validation_omitted_rules' => 'getValidationOmittedRules'
     ];
 
     /**
@@ -325,14 +325,14 @@ class BusValRuleAssignment implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('ruleId', $data ?? [], null);
-        $this->setIfExists('relatedObjectId', $data ?? [], null);
-        $this->setIfExists('relatedObjectType', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
-        $this->setIfExists('updatedAt', $data ?? [], null);
+        $this->setIfExists('rule_id', $data ?? [], null);
+        $this->setIfExists('related_object_id', $data ?? [], null);
+        $this->setIfExists('related_object_type', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'validation_rules_assignment');
-        $this->setIfExists('validationStatus', $data ?? [], null);
-        $this->setIfExists('validationOmittedRules', $data ?? [], null);
+        $this->setIfExists('validation_status', $data ?? [], null);
+        $this->setIfExists('validation_omitted_rules', $data ?? [], null);
     }
 
     /**
@@ -372,10 +372,10 @@ class BusValRuleAssignment implements ModelInterface, ArrayAccess, \JsonSerializ
         }
 
         $allowedValues = $this->getValidationStatusAllowableValues();
-        if (!is_null($this->container['validationStatus']) && !in_array($this->container['validationStatus'], $allowedValues, true)) {
+        if (!is_null($this->container['validation_status']) && !in_array($this->container['validation_status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'validationStatus', must be one of '%s'",
-                $this->container['validationStatus'],
+                "invalid value '%s' for 'validation_status', must be one of '%s'",
+                $this->container['validation_status'],
                 implode("', '", $allowedValues)
             );
         }
@@ -430,171 +430,171 @@ class BusValRuleAssignment implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets ruleId
+     * Gets rule_id
      *
      * @return string|null
      */
     public function getRuleId()
     {
-        return $this->container['ruleId'];
+        return $this->container['rule_id'];
     }
 
     /**
-     * Sets ruleId
+     * Sets rule_id
      *
-     * @param string|null $ruleId The unique identifier for a rule
+     * @param string|null $rule_id The unique identifier for a rule
      *
      * @return self
      */
-    public function setRuleId($ruleId)
+    public function setRuleId($rule_id)
     {
-        if (is_null($ruleId)) {
-            array_push($this->openAPINullablesSetToNull, 'ruleId');
+        if (is_null($rule_id)) {
+            array_push($this->openAPINullablesSetToNull, 'rule_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ruleId', $nullablesSetToNull);
+            $index = array_search('rule_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ruleId'] = $ruleId;
+        $this->container['rule_id'] = $rule_id;
 
         return $this;
     }
 
     /**
-     * Gets relatedObjectId
+     * Gets related_object_id
      *
      * @return string|null
      */
     public function getRelatedObjectId()
     {
-        return $this->container['relatedObjectId'];
+        return $this->container['related_object_id'];
     }
 
     /**
-     * Sets relatedObjectId
+     * Sets related_object_id
      *
-     * @param string|null $relatedObjectId The unique identifier for a related object
+     * @param string|null $related_object_id The unique identifier for a related object
      *
      * @return self
      */
-    public function setRelatedObjectId($relatedObjectId)
+    public function setRelatedObjectId($related_object_id)
     {
-        if (is_null($relatedObjectId)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObjectId');
+        if (is_null($related_object_id)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObjectId', $nullablesSetToNull);
+            $index = array_search('related_object_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['relatedObjectId'] = $relatedObjectId;
+        $this->container['related_object_id'] = $related_object_id;
 
         return $this;
     }
 
     /**
-     * Gets relatedObjectType
+     * Gets related_object_type
      *
      * @return string|null
      */
     public function getRelatedObjectType()
     {
-        return $this->container['relatedObjectType'];
+        return $this->container['related_object_type'];
     }
 
     /**
-     * Sets relatedObjectType
+     * Sets related_object_type
      *
-     * @param string|null $relatedObjectType The type of related object
+     * @param string|null $related_object_type The type of related object
      *
      * @return self
      */
-    public function setRelatedObjectType($relatedObjectType)
+    public function setRelatedObjectType($related_object_type)
     {
-        if (is_null($relatedObjectType)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObjectType');
+        if (is_null($related_object_type)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object_type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObjectType', $nullablesSetToNull);
+            $index = array_search('related_object_type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['relatedObjectType'] = $relatedObjectType;
+        $this->container['related_object_type'] = $related_object_type;
 
         return $this;
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $created_at Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        if (is_null($created_at)) {
+            array_push($this->openAPINullablesSetToNull, 'created_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
+            $index = array_search('created_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }
 
     /**
-     * Gets updatedAt
+     * Gets updated_at
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updatedAt'];
+        return $this->container['updated_at'];
     }
 
     /**
-     * Sets updatedAt
+     * Sets updated_at
      *
-     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the object was last updated in ISO 8601 format.
+     * @param \DateTime|null $updated_at Timestamp representing the date and time when the object was last updated in ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updated_at)
     {
-        if (is_null($updatedAt)) {
-            array_push($this->openAPINullablesSetToNull, 'updatedAt');
+        if (is_null($updated_at)) {
+            array_push($this->openAPINullablesSetToNull, 'updated_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updatedAt', $nullablesSetToNull);
+            $index = array_search('updated_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updatedAt'] = $updatedAt;
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }
@@ -644,79 +644,79 @@ class BusValRuleAssignment implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets validationStatus
+     * Gets validation_status
      *
      * @return string|null
      */
     public function getValidationStatus()
     {
-        return $this->container['validationStatus'];
+        return $this->container['validation_status'];
     }
 
     /**
-     * Sets validationStatus
+     * Sets validation_status
      *
-     * @param string|null $validationStatus The validation status of the assignment
+     * @param string|null $validation_status The validation status of the assignment
      *
      * @return self
      */
-    public function setValidationStatus($validationStatus)
+    public function setValidationStatus($validation_status)
     {
-        if (is_null($validationStatus)) {
-            array_push($this->openAPINullablesSetToNull, 'validationStatus');
+        if (is_null($validation_status)) {
+            array_push($this->openAPINullablesSetToNull, 'validation_status');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validationStatus', $nullablesSetToNull);
+            $index = array_search('validation_status', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getValidationStatusAllowableValues();
-        if (!is_null($validationStatus) && !in_array($validationStatus, $allowedValues, true)) {
+        if (!is_null($validation_status) && !in_array($validation_status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'validationStatus', must be one of '%s'",
-                    $validationStatus,
+                    "Invalid value '%s' for 'validation_status', must be one of '%s'",
+                    $validation_status,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['validationStatus'] = $validationStatus;
+        $this->container['validation_status'] = $validation_status;
 
         return $this;
     }
 
     /**
-     * Gets validationOmittedRules
+     * Gets validation_omitted_rules
      *
      * @return string[]|null
      */
     public function getValidationOmittedRules()
     {
-        return $this->container['validationOmittedRules'];
+        return $this->container['validation_omitted_rules'];
     }
 
     /**
-     * Sets validationOmittedRules
+     * Sets validation_omitted_rules
      *
-     * @param string[]|null $validationOmittedRules The list of omitted rules
+     * @param string[]|null $validation_omitted_rules The list of omitted rules
      *
      * @return self
      */
-    public function setValidationOmittedRules($validationOmittedRules)
+    public function setValidationOmittedRules($validation_omitted_rules)
     {
-        if (is_null($validationOmittedRules)) {
-            array_push($this->openAPINullablesSetToNull, 'validationOmittedRules');
+        if (is_null($validation_omitted_rules)) {
+            array_push($this->openAPINullablesSetToNull, 'validation_omitted_rules');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validationOmittedRules', $nullablesSetToNull);
+            $index = array_search('validation_omitted_rules', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['validationOmittedRules'] = $validationOmittedRules;
+        $this->container['validation_omitted_rules'] = $validation_omitted_rules;
 
         return $this;
     }

@@ -60,7 +60,7 @@ class LoyaltiesMembersCreateRequestBody implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPITypes = [
         'voucher' => 'string',
-        'sourceId' => 'string',
+        'source_id' => 'string',
         'customer' => '\OpenAPI\Client\Model\Customer',
         'metadata' => 'object',
         'channel' => 'string'
@@ -75,7 +75,7 @@ class LoyaltiesMembersCreateRequestBody implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPIFormats = [
         'voucher' => null,
-        'sourceId' => null,
+        'source_id' => null,
         'customer' => null,
         'metadata' => null,
         'channel' => null
@@ -88,7 +88,7 @@ class LoyaltiesMembersCreateRequestBody implements ModelInterface, ArrayAccess, 
       */
     protected static array $openAPINullables = [
         'voucher' => true,
-		'sourceId' => true,
+		'source_id' => true,
 		'customer' => false,
 		'metadata' => true,
 		'channel' => true
@@ -181,7 +181,7 @@ class LoyaltiesMembersCreateRequestBody implements ModelInterface, ArrayAccess, 
      */
     protected static $attributeMap = [
         'voucher' => 'voucher',
-        'sourceId' => 'source_id',
+        'source_id' => 'source_id',
         'customer' => 'customer',
         'metadata' => 'metadata',
         'channel' => 'channel'
@@ -194,7 +194,7 @@ class LoyaltiesMembersCreateRequestBody implements ModelInterface, ArrayAccess, 
      */
     protected static $setters = [
         'voucher' => 'setVoucher',
-        'sourceId' => 'setSourceId',
+        'source_id' => 'setSourceId',
         'customer' => 'setCustomer',
         'metadata' => 'setMetadata',
         'channel' => 'setChannel'
@@ -207,7 +207,7 @@ class LoyaltiesMembersCreateRequestBody implements ModelInterface, ArrayAccess, 
      */
     protected static $getters = [
         'voucher' => 'getVoucher',
-        'sourceId' => 'getSourceId',
+        'source_id' => 'getSourceId',
         'customer' => 'getCustomer',
         'metadata' => 'getMetadata',
         'channel' => 'getChannel'
@@ -271,7 +271,7 @@ class LoyaltiesMembersCreateRequestBody implements ModelInterface, ArrayAccess, 
     public function __construct(array $data = null)
     {
         $this->setIfExists('voucher', $data ?? [], null);
-        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('source_id', $data ?? [], null);
         $this->setIfExists('customer', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('channel', $data ?? [], null);
@@ -354,35 +354,35 @@ class LoyaltiesMembersCreateRequestBody implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets sourceId
+     * Gets source_id
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['sourceId'];
+        return $this->container['source_id'];
     }
 
     /**
-     * Sets sourceId
+     * Sets source_id
      *
-     * @param string|null $sourceId The merchant's publication ID if it is different from the Voucherify publication ID. It's an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If `source_id` is provided only 1 voucher can be published per request.
+     * @param string|null $source_id The merchant's publication ID if it is different from the Voucherify publication ID. It's an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If `source_id` is provided only 1 voucher can be published per request.
      *
      * @return self
      */
-    public function setSourceId($sourceId)
+    public function setSourceId($source_id)
     {
-        if (is_null($sourceId)) {
-            array_push($this->openAPINullablesSetToNull, 'sourceId');
+        if (is_null($source_id)) {
+            array_push($this->openAPINullablesSetToNull, 'source_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sourceId', $nullablesSetToNull);
+            $index = array_search('source_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sourceId'] = $sourceId;
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }

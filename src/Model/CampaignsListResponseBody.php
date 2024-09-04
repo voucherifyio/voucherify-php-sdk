@@ -60,7 +60,7 @@ class CampaignsListResponseBody implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPITypes = [
         'object' => 'string',
-        'dataRef' => 'string',
+        'data_ref' => 'string',
         'campaigns' => '\OpenAPI\Client\Model\CampaignBase[]',
         'total' => 'int'
     ];
@@ -74,7 +74,7 @@ class CampaignsListResponseBody implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPIFormats = [
         'object' => null,
-        'dataRef' => null,
+        'data_ref' => null,
         'campaigns' => null,
         'total' => null
     ];
@@ -86,7 +86,7 @@ class CampaignsListResponseBody implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static array $openAPINullables = [
         'object' => true,
-		'dataRef' => true,
+		'data_ref' => true,
 		'campaigns' => true,
 		'total' => true
     ];
@@ -178,7 +178,7 @@ class CampaignsListResponseBody implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $attributeMap = [
         'object' => 'object',
-        'dataRef' => 'data_ref',
+        'data_ref' => 'data_ref',
         'campaigns' => 'campaigns',
         'total' => 'total'
     ];
@@ -190,7 +190,7 @@ class CampaignsListResponseBody implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $setters = [
         'object' => 'setObject',
-        'dataRef' => 'setDataRef',
+        'data_ref' => 'setDataRef',
         'campaigns' => 'setCampaigns',
         'total' => 'setTotal'
     ];
@@ -202,7 +202,7 @@ class CampaignsListResponseBody implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $getters = [
         'object' => 'getObject',
-        'dataRef' => 'getDataRef',
+        'data_ref' => 'getDataRef',
         'campaigns' => 'getCampaigns',
         'total' => 'getTotal'
     ];
@@ -265,7 +265,7 @@ class CampaignsListResponseBody implements ModelInterface, ArrayAccess, \JsonSer
     public function __construct(array $data = null)
     {
         $this->setIfExists('object', $data ?? [], 'list');
-        $this->setIfExists('dataRef', $data ?? [], 'campaigns');
+        $this->setIfExists('data_ref', $data ?? [], 'campaigns');
         $this->setIfExists('campaigns', $data ?? [], null);
         $this->setIfExists('total', $data ?? [], null);
     }
@@ -347,35 +347,35 @@ class CampaignsListResponseBody implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets dataRef
+     * Gets data_ref
      *
      * @return string|null
      */
     public function getDataRef()
     {
-        return $this->container['dataRef'];
+        return $this->container['data_ref'];
     }
 
     /**
-     * Sets dataRef
+     * Sets data_ref
      *
-     * @param string|null $dataRef Identifies the name of the attribute that contains the array of campaign objects.
+     * @param string|null $data_ref Identifies the name of the attribute that contains the array of campaign objects.
      *
      * @return self
      */
-    public function setDataRef($dataRef)
+    public function setDataRef($data_ref)
     {
-        if (is_null($dataRef)) {
-            array_push($this->openAPINullablesSetToNull, 'dataRef');
+        if (is_null($data_ref)) {
+            array_push($this->openAPINullablesSetToNull, 'data_ref');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dataRef', $nullablesSetToNull);
+            $index = array_search('data_ref', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['dataRef'] = $dataRef;
+        $this->container['data_ref'] = $data_ref;
 
         return $this;
     }

@@ -60,8 +60,8 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'object' => 'string',
-        'dataRef' => 'string',
-        'asyncActions' => '\OpenAPI\Client\Model\AsyncActionBase[]'
+        'data_ref' => 'string',
+        'async_actions' => '\OpenAPI\Client\Model\AsyncActionBase[]'
     ];
 
     /**
@@ -73,8 +73,8 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPIFormats = [
         'object' => null,
-        'dataRef' => null,
-        'asyncActions' => null
+        'data_ref' => null,
+        'async_actions' => null
     ];
 
     /**
@@ -84,8 +84,8 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
       */
     protected static array $openAPINullables = [
         'object' => true,
-		'dataRef' => true,
-		'asyncActions' => true
+		'data_ref' => true,
+		'async_actions' => true
     ];
 
     /**
@@ -175,8 +175,8 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
      */
     protected static $attributeMap = [
         'object' => 'object',
-        'dataRef' => 'data_ref',
-        'asyncActions' => 'async_actions'
+        'data_ref' => 'data_ref',
+        'async_actions' => 'async_actions'
     ];
 
     /**
@@ -186,8 +186,8 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
      */
     protected static $setters = [
         'object' => 'setObject',
-        'dataRef' => 'setDataRef',
-        'asyncActions' => 'setAsyncActions'
+        'data_ref' => 'setDataRef',
+        'async_actions' => 'setAsyncActions'
     ];
 
     /**
@@ -197,8 +197,8 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
      */
     protected static $getters = [
         'object' => 'getObject',
-        'dataRef' => 'getDataRef',
-        'asyncActions' => 'getAsyncActions'
+        'data_ref' => 'getDataRef',
+        'async_actions' => 'getAsyncActions'
     ];
 
     /**
@@ -285,8 +285,8 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
     public function __construct(array $data = null)
     {
         $this->setIfExists('object', $data ?? [], 'list');
-        $this->setIfExists('dataRef', $data ?? [], 'async_actions');
-        $this->setIfExists('asyncActions', $data ?? [], null);
+        $this->setIfExists('data_ref', $data ?? [], 'async_actions');
+        $this->setIfExists('async_actions', $data ?? [], null);
     }
 
     /**
@@ -326,10 +326,10 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
         }
 
         $allowedValues = $this->getDataRefAllowableValues();
-        if (!is_null($this->container['dataRef']) && !in_array($this->container['dataRef'], $allowedValues, true)) {
+        if (!is_null($this->container['data_ref']) && !in_array($this->container['data_ref'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'dataRef', must be one of '%s'",
-                $this->container['dataRef'],
+                "invalid value '%s' for 'data_ref', must be one of '%s'",
+                $this->container['data_ref'],
                 implode("', '", $allowedValues)
             );
         }
@@ -394,79 +394,79 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets dataRef
+     * Gets data_ref
      *
      * @return string|null
      */
     public function getDataRef()
     {
-        return $this->container['dataRef'];
+        return $this->container['data_ref'];
     }
 
     /**
-     * Sets dataRef
+     * Sets data_ref
      *
-     * @param string|null $dataRef Identifies the name of the JSON property that contains the array of asynchronous actions.
+     * @param string|null $data_ref Identifies the name of the JSON property that contains the array of asynchronous actions.
      *
      * @return self
      */
-    public function setDataRef($dataRef)
+    public function setDataRef($data_ref)
     {
-        if (is_null($dataRef)) {
-            array_push($this->openAPINullablesSetToNull, 'dataRef');
+        if (is_null($data_ref)) {
+            array_push($this->openAPINullablesSetToNull, 'data_ref');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dataRef', $nullablesSetToNull);
+            $index = array_search('data_ref', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getDataRefAllowableValues();
-        if (!is_null($dataRef) && !in_array($dataRef, $allowedValues, true)) {
+        if (!is_null($data_ref) && !in_array($data_ref, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'dataRef', must be one of '%s'",
-                    $dataRef,
+                    "Invalid value '%s' for 'data_ref', must be one of '%s'",
+                    $data_ref,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['dataRef'] = $dataRef;
+        $this->container['data_ref'] = $data_ref;
 
         return $this;
     }
 
     /**
-     * Gets asyncActions
+     * Gets async_actions
      *
      * @return \OpenAPI\Client\Model\AsyncActionBase[]|null
      */
     public function getAsyncActions()
     {
-        return $this->container['asyncActions'];
+        return $this->container['async_actions'];
     }
 
     /**
-     * Sets asyncActions
+     * Sets async_actions
      *
-     * @param \OpenAPI\Client\Model\AsyncActionBase[]|null $asyncActions asyncActions
+     * @param \OpenAPI\Client\Model\AsyncActionBase[]|null $async_actions async_actions
      *
      * @return self
      */
-    public function setAsyncActions($asyncActions)
+    public function setAsyncActions($async_actions)
     {
-        if (is_null($asyncActions)) {
-            array_push($this->openAPINullablesSetToNull, 'asyncActions');
+        if (is_null($async_actions)) {
+            array_push($this->openAPINullablesSetToNull, 'async_actions');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asyncActions', $nullablesSetToNull);
+            $index = array_search('async_actions', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['asyncActions'] = $asyncActions;
+        $this->container['async_actions'] = $async_actions;
 
         return $this;
     }

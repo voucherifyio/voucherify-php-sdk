@@ -61,7 +61,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
         'key' => 'string',
         'type' => 'string',
         'ttl' => 'float',
-        'ttlUnit' => 'string'
+        'ttl_unit' => 'string'
     ];
 
     /**
@@ -75,7 +75,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
         'key' => null,
         'type' => null,
         'ttl' => null,
-        'ttlUnit' => null
+        'ttl_unit' => null
     ];
 
     /**
@@ -87,7 +87,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
         'key' => true,
 		'type' => true,
 		'ttl' => true,
-		'ttlUnit' => true
+		'ttl_unit' => true
     ];
 
     /**
@@ -179,7 +179,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
         'key' => 'key',
         'type' => 'type',
         'ttl' => 'ttl',
-        'ttlUnit' => 'ttl_unit'
+        'ttl_unit' => 'ttl_unit'
     ];
 
     /**
@@ -191,7 +191,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
         'key' => 'setKey',
         'type' => 'setType',
         'ttl' => 'setTtl',
-        'ttlUnit' => 'setTtlUnit'
+        'ttl_unit' => 'setTtlUnit'
     ];
 
     /**
@@ -203,7 +203,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
         'key' => 'getKey',
         'type' => 'getType',
         'ttl' => 'getTtl',
-        'ttlUnit' => 'getTtlUnit'
+        'ttl_unit' => 'getTtlUnit'
     ];
 
     /**
@@ -304,7 +304,7 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('key', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], 'LOCK');
         $this->setIfExists('ttl', $data ?? [], null);
-        $this->setIfExists('ttlUnit', $data ?? [], null);
+        $this->setIfExists('ttl_unit', $data ?? [], null);
     }
 
     /**
@@ -344,10 +344,10 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $allowedValues = $this->getTtlUnitAllowableValues();
-        if (!is_null($this->container['ttlUnit']) && !in_array($this->container['ttlUnit'], $allowedValues, true)) {
+        if (!is_null($this->container['ttl_unit']) && !in_array($this->container['ttl_unit'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'ttlUnit', must be one of '%s'",
-                $this->container['ttlUnit'],
+                "invalid value '%s' for 'ttl_unit', must be one of '%s'",
+                $this->container['ttl_unit'],
                 implode("', '", $allowedValues)
             );
         }
@@ -480,45 +480,45 @@ class Session implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets ttlUnit
+     * Gets ttl_unit
      *
      * @return string|null
      */
     public function getTtlUnit()
     {
-        return $this->container['ttlUnit'];
+        return $this->container['ttl_unit'];
     }
 
     /**
-     * Sets ttlUnit
+     * Sets ttl_unit
      *
-     * @param string|null $ttlUnit Defines the type of unit in which the session time is counted.
+     * @param string|null $ttl_unit Defines the type of unit in which the session time is counted.
      *
      * @return self
      */
-    public function setTtlUnit($ttlUnit)
+    public function setTtlUnit($ttl_unit)
     {
-        if (is_null($ttlUnit)) {
-            array_push($this->openAPINullablesSetToNull, 'ttlUnit');
+        if (is_null($ttl_unit)) {
+            array_push($this->openAPINullablesSetToNull, 'ttl_unit');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ttlUnit', $nullablesSetToNull);
+            $index = array_search('ttl_unit', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getTtlUnitAllowableValues();
-        if (!is_null($ttlUnit) && !in_array($ttlUnit, $allowedValues, true)) {
+        if (!is_null($ttl_unit) && !in_array($ttl_unit, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'ttlUnit', must be one of '%s'",
-                    $ttlUnit,
+                    "Invalid value '%s' for 'ttl_unit', must be one of '%s'",
+                    $ttl_unit,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['ttlUnit'] = $ttlUnit;
+        $this->container['ttl_unit'] = $ttl_unit;
 
         return $this;
     }

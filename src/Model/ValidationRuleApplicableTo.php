@@ -60,7 +60,7 @@ class ValidationRuleApplicableTo implements ModelInterface, ArrayAccess, \JsonSe
     protected static $openAPITypes = [
         'excluded' => '\OpenAPI\Client\Model\ApplicableTo[]',
         'included' => '\OpenAPI\Client\Model\ApplicableTo[]',
-        'includedAll' => 'bool'
+        'included_all' => 'bool'
     ];
 
     /**
@@ -73,7 +73,7 @@ class ValidationRuleApplicableTo implements ModelInterface, ArrayAccess, \JsonSe
     protected static $openAPIFormats = [
         'excluded' => null,
         'included' => null,
-        'includedAll' => null
+        'included_all' => null
     ];
 
     /**
@@ -84,7 +84,7 @@ class ValidationRuleApplicableTo implements ModelInterface, ArrayAccess, \JsonSe
     protected static array $openAPINullables = [
         'excluded' => true,
 		'included' => true,
-		'includedAll' => true
+		'included_all' => true
     ];
 
     /**
@@ -175,7 +175,7 @@ class ValidationRuleApplicableTo implements ModelInterface, ArrayAccess, \JsonSe
     protected static $attributeMap = [
         'excluded' => 'excluded',
         'included' => 'included',
-        'includedAll' => 'included_all'
+        'included_all' => 'included_all'
     ];
 
     /**
@@ -186,7 +186,7 @@ class ValidationRuleApplicableTo implements ModelInterface, ArrayAccess, \JsonSe
     protected static $setters = [
         'excluded' => 'setExcluded',
         'included' => 'setIncluded',
-        'includedAll' => 'setIncludedAll'
+        'included_all' => 'setIncludedAll'
     ];
 
     /**
@@ -197,7 +197,7 @@ class ValidationRuleApplicableTo implements ModelInterface, ArrayAccess, \JsonSe
     protected static $getters = [
         'excluded' => 'getExcluded',
         'included' => 'getIncluded',
-        'includedAll' => 'getIncludedAll'
+        'included_all' => 'getIncludedAll'
     ];
 
     /**
@@ -259,7 +259,7 @@ class ValidationRuleApplicableTo implements ModelInterface, ArrayAccess, \JsonSe
     {
         $this->setIfExists('excluded', $data ?? [], null);
         $this->setIfExists('included', $data ?? [], null);
-        $this->setIfExists('includedAll', $data ?? [], null);
+        $this->setIfExists('included_all', $data ?? [], null);
     }
 
     /**
@@ -373,35 +373,35 @@ class ValidationRuleApplicableTo implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets includedAll
+     * Gets included_all
      *
      * @return bool|null
      */
     public function getIncludedAll()
     {
-        return $this->container['includedAll'];
+        return $this->container['included_all'];
     }
 
     /**
-     * Sets includedAll
+     * Sets included_all
      *
-     * @param bool|null $includedAll Indicates whether all items are included in the discount.
+     * @param bool|null $included_all Indicates whether all items are included in the discount.
      *
      * @return self
      */
-    public function setIncludedAll($includedAll)
+    public function setIncludedAll($included_all)
     {
-        if (is_null($includedAll)) {
-            array_push($this->openAPINullablesSetToNull, 'includedAll');
+        if (is_null($included_all)) {
+            array_push($this->openAPINullablesSetToNull, 'included_all');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('includedAll', $nullablesSetToNull);
+            $index = array_search('included_all', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['includedAll'] = $includedAll;
+        $this->container['included_all'] = $included_all;
 
         return $this;
     }

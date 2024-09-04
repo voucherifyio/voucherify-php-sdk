@@ -10,7 +10,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `validateStackedDiscounts()`
 
 ```php
-validateStackedDiscounts($validationsValidateRequestBody): \OpenAPI\Client\Model\ValidationsValidateResponseBody
+validateStackedDiscounts($validations_validate_request_body): \OpenAPI\Client\Model\ValidationsValidateResponseBody
 ```
 
 Validate Stackable Discounts
@@ -41,10 +41,10 @@ $apiInstance = new OpenAPI\Client\Api\ValidationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$validationsValidateRequestBody = {"customer":{"source_id":"sample_customer","metadata":{"key":"value"}},"options":{"expand":["order","redeemable","category"]},"redeemables":[{"object":"voucher","id":"voucher-code"}],"session":{"type":"LOCK"},"order":{"amount":55000,"status":"PAID","items":[{"quantity":2,"price":20000,"source_id":"sample product1","related_object":"product","product":{"metadata":{"key":"value"}}},{"quantity":1,"price":15000,"source_id":"sample product2","related_object":"product","product":{"metadata":{"key":"value"}}}],"metadata":{"key":"value"}}}; // \OpenAPI\Client\Model\ValidationsValidateRequestBody
+$validations_validate_request_body = {"customer":{"source_id":"sample_customer","metadata":{"key":"value"}},"options":{"expand":["order","redeemable","category"]},"redeemables":[{"object":"voucher","id":"voucher-code"}],"session":{"type":"LOCK"},"order":{"amount":55000,"status":"PAID","items":[{"quantity":2,"price":20000,"source_id":"sample product1","related_object":"product","product":{"metadata":{"key":"value"}}},{"quantity":1,"price":15000,"source_id":"sample product2","related_object":"product","product":{"metadata":{"key":"value"}}}],"metadata":{"key":"value"}}}; // \OpenAPI\Client\Model\ValidationsValidateRequestBody
 
 try {
-    $result = $apiInstance->validateStackedDiscounts($validationsValidateRequestBody);
+    $result = $apiInstance->validateStackedDiscounts($validations_validate_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ValidationsApi->validateStackedDiscounts: ', $e->getMessage(), PHP_EOL;
@@ -55,7 +55,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **validationsValidateRequestBody** | [**\OpenAPI\Client\Model\ValidationsValidateRequestBody**](../Model/ValidationsValidateRequestBody.md)|  | [optional] |
+| **validations_validate_request_body** | [**\OpenAPI\Client\Model\ValidationsValidateRequestBody**](../Model/ValidationsValidateRequestBody.md)|  | [optional] |
 
 ### Return type
 

@@ -59,13 +59,13 @@ class LoyaltyTierExpiration implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'customerId' => 'string',
-        'campaignId' => 'string',
-        'tierId' => 'string',
-        'startDate' => 'string',
-        'expirationDate' => 'string',
-        'createdAt' => '\DateTime',
-        'updatedAt' => '\DateTime'
+        'customer_id' => 'string',
+        'campaign_id' => 'string',
+        'tier_id' => 'string',
+        'start_date' => 'string',
+        'expiration_date' => 'string',
+        'created_at' => '\DateTime',
+        'updated_at' => '\DateTime'
     ];
 
     /**
@@ -76,13 +76,13 @@ class LoyaltyTierExpiration implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'customerId' => null,
-        'campaignId' => null,
-        'tierId' => null,
-        'startDate' => null,
-        'expirationDate' => null,
-        'createdAt' => 'date-time',
-        'updatedAt' => 'date-time'
+        'customer_id' => null,
+        'campaign_id' => null,
+        'tier_id' => null,
+        'start_date' => null,
+        'expiration_date' => null,
+        'created_at' => 'date-time',
+        'updated_at' => 'date-time'
     ];
 
     /**
@@ -91,13 +91,13 @@ class LoyaltyTierExpiration implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'customerId' => true,
-		'campaignId' => true,
-		'tierId' => true,
-		'startDate' => true,
-		'expirationDate' => true,
-		'createdAt' => true,
-		'updatedAt' => true
+        'customer_id' => true,
+		'campaign_id' => true,
+		'tier_id' => true,
+		'start_date' => true,
+		'expiration_date' => true,
+		'created_at' => true,
+		'updated_at' => true
     ];
 
     /**
@@ -186,13 +186,13 @@ class LoyaltyTierExpiration implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'customerId' => 'customer_id',
-        'campaignId' => 'campaign_id',
-        'tierId' => 'tier_id',
-        'startDate' => 'start_date',
-        'expirationDate' => 'expiration_date',
-        'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at'
+        'customer_id' => 'customer_id',
+        'campaign_id' => 'campaign_id',
+        'tier_id' => 'tier_id',
+        'start_date' => 'start_date',
+        'expiration_date' => 'expiration_date',
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at'
     ];
 
     /**
@@ -201,13 +201,13 @@ class LoyaltyTierExpiration implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'customerId' => 'setCustomerId',
-        'campaignId' => 'setCampaignId',
-        'tierId' => 'setTierId',
-        'startDate' => 'setStartDate',
-        'expirationDate' => 'setExpirationDate',
-        'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt'
+        'customer_id' => 'setCustomerId',
+        'campaign_id' => 'setCampaignId',
+        'tier_id' => 'setTierId',
+        'start_date' => 'setStartDate',
+        'expiration_date' => 'setExpirationDate',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt'
     ];
 
     /**
@@ -216,13 +216,13 @@ class LoyaltyTierExpiration implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'customerId' => 'getCustomerId',
-        'campaignId' => 'getCampaignId',
-        'tierId' => 'getTierId',
-        'startDate' => 'getStartDate',
-        'expirationDate' => 'getExpirationDate',
-        'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt'
+        'customer_id' => 'getCustomerId',
+        'campaign_id' => 'getCampaignId',
+        'tier_id' => 'getTierId',
+        'start_date' => 'getStartDate',
+        'expiration_date' => 'getExpirationDate',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt'
     ];
 
     /**
@@ -282,13 +282,13 @@ class LoyaltyTierExpiration implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('customerId', $data ?? [], null);
-        $this->setIfExists('campaignId', $data ?? [], null);
-        $this->setIfExists('tierId', $data ?? [], null);
-        $this->setIfExists('startDate', $data ?? [], null);
-        $this->setIfExists('expirationDate', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
-        $this->setIfExists('updatedAt', $data ?? [], null);
+        $this->setIfExists('customer_id', $data ?? [], null);
+        $this->setIfExists('campaign_id', $data ?? [], null);
+        $this->setIfExists('tier_id', $data ?? [], null);
+        $this->setIfExists('start_date', $data ?? [], null);
+        $this->setIfExists('expiration_date', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
     }
 
     /**
@@ -334,239 +334,239 @@ class LoyaltyTierExpiration implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets customerId
+     * Gets customer_id
      *
      * @return string|null
      */
     public function getCustomerId()
     {
-        return $this->container['customerId'];
+        return $this->container['customer_id'];
     }
 
     /**
-     * Sets customerId
+     * Sets customer_id
      *
-     * @param string|null $customerId Unique customer ID of the customer making the purchase.
+     * @param string|null $customer_id Unique customer ID of the customer making the purchase.
      *
      * @return self
      */
-    public function setCustomerId($customerId)
+    public function setCustomerId($customer_id)
     {
-        if (is_null($customerId)) {
-            array_push($this->openAPINullablesSetToNull, 'customerId');
+        if (is_null($customer_id)) {
+            array_push($this->openAPINullablesSetToNull, 'customer_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customerId', $nullablesSetToNull);
+            $index = array_search('customer_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['customerId'] = $customerId;
+        $this->container['customer_id'] = $customer_id;
 
         return $this;
     }
 
     /**
-     * Gets campaignId
+     * Gets campaign_id
      *
      * @return string|null
      */
     public function getCampaignId()
     {
-        return $this->container['campaignId'];
+        return $this->container['campaign_id'];
     }
 
     /**
-     * Sets campaignId
+     * Sets campaign_id
      *
-     * @param string|null $campaignId Unique campaign ID, assigned by Voucherify.
+     * @param string|null $campaign_id Unique campaign ID, assigned by Voucherify.
      *
      * @return self
      */
-    public function setCampaignId($campaignId)
+    public function setCampaignId($campaign_id)
     {
-        if (is_null($campaignId)) {
-            array_push($this->openAPINullablesSetToNull, 'campaignId');
+        if (is_null($campaign_id)) {
+            array_push($this->openAPINullablesSetToNull, 'campaign_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaignId', $nullablesSetToNull);
+            $index = array_search('campaign_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaignId'] = $campaignId;
+        $this->container['campaign_id'] = $campaign_id;
 
         return $this;
     }
 
     /**
-     * Gets tierId
+     * Gets tier_id
      *
      * @return string|null
      */
     public function getTierId()
     {
-        return $this->container['tierId'];
+        return $this->container['tier_id'];
     }
 
     /**
-     * Sets tierId
+     * Sets tier_id
      *
-     * @param string|null $tierId Unique tier ID, assigned by Voucherify.
+     * @param string|null $tier_id Unique tier ID, assigned by Voucherify.
      *
      * @return self
      */
-    public function setTierId($tierId)
+    public function setTierId($tier_id)
     {
-        if (is_null($tierId)) {
-            array_push($this->openAPINullablesSetToNull, 'tierId');
+        if (is_null($tier_id)) {
+            array_push($this->openAPINullablesSetToNull, 'tier_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tierId', $nullablesSetToNull);
+            $index = array_search('tier_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['tierId'] = $tierId;
+        $this->container['tier_id'] = $tier_id;
 
         return $this;
     }
 
     /**
-     * Gets startDate
+     * Gets start_date
      *
      * @return string|null
      */
     public function getStartDate()
     {
-        return $this->container['startDate'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets startDate
+     * Sets start_date
      *
-     * @param string|null $startDate Activation timestamp defines when the loyalty tier starts to be active in ISO 8601 format. Loyalty tier is inactive before this date.
+     * @param string|null $start_date Activation timestamp defines when the loyalty tier starts to be active in ISO 8601 format. Loyalty tier is inactive before this date.
      *
      * @return self
      */
-    public function setStartDate($startDate)
+    public function setStartDate($start_date)
     {
-        if (is_null($startDate)) {
-            array_push($this->openAPINullablesSetToNull, 'startDate');
+        if (is_null($start_date)) {
+            array_push($this->openAPINullablesSetToNull, 'start_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('startDate', $nullablesSetToNull);
+            $index = array_search('start_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['startDate'] = $startDate;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets expirationDate
+     * Gets expiration_date
      *
      * @return string|null
      */
     public function getExpirationDate()
     {
-        return $this->container['expirationDate'];
+        return $this->container['expiration_date'];
     }
 
     /**
-     * Sets expirationDate
+     * Sets expiration_date
      *
-     * @param string|null $expirationDate Expiration timestamp defines when the loyalty tier expires in ISO 8601 format. Loyalty tier is inactive after this date.
+     * @param string|null $expiration_date Expiration timestamp defines when the loyalty tier expires in ISO 8601 format. Loyalty tier is inactive after this date.
      *
      * @return self
      */
-    public function setExpirationDate($expirationDate)
+    public function setExpirationDate($expiration_date)
     {
-        if (is_null($expirationDate)) {
-            array_push($this->openAPINullablesSetToNull, 'expirationDate');
+        if (is_null($expiration_date)) {
+            array_push($this->openAPINullablesSetToNull, 'expiration_date');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expirationDate', $nullablesSetToNull);
+            $index = array_search('expiration_date', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['expirationDate'] = $expirationDate;
+        $this->container['expiration_date'] = $expiration_date;
 
         return $this;
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the loyalty tier was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $created_at Timestamp representing the date and time when the loyalty tier was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        if (is_null($created_at)) {
+            array_push($this->openAPINullablesSetToNull, 'created_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
+            $index = array_search('created_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }
 
     /**
-     * Gets updatedAt
+     * Gets updated_at
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updatedAt'];
+        return $this->container['updated_at'];
     }
 
     /**
-     * Sets updatedAt
+     * Sets updated_at
      *
-     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the loyalty tier was updated. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updated_at Timestamp representing the date and time when the loyalty tier was updated. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updated_at)
     {
-        if (is_null($updatedAt)) {
-            array_push($this->openAPINullablesSetToNull, 'updatedAt');
+        if (is_null($updated_at)) {
+            array_push($this->openAPINullablesSetToNull, 'updated_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updatedAt', $nullablesSetToNull);
+            $index = array_search('updated_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updatedAt'] = $updatedAt;
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }

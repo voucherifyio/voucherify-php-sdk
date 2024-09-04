@@ -60,8 +60,8 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
       */
     protected static $openAPITypes = [
         'customer' => '\OpenAPI\Client\Model\Customer',
-        'order' => '\OpenAPI\Client\Model\Order',
-        'trackingId' => 'string',
+        'order' => '\OpenAPI\Client\Model\OrderCalculatedEssential',
+        'tracking_id' => 'string',
         'scenario' => 'string',
         'options' => '\OpenAPI\Client\Model\QualificationsOption',
         'metadata' => 'object'
@@ -77,7 +77,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
     protected static $openAPIFormats = [
         'customer' => null,
         'order' => null,
-        'trackingId' => null,
+        'tracking_id' => null,
         'scenario' => null,
         'options' => null,
         'metadata' => null
@@ -91,7 +91,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
     protected static array $openAPINullables = [
         'customer' => false,
 		'order' => false,
-		'trackingId' => true,
+		'tracking_id' => true,
 		'scenario' => true,
 		'options' => false,
 		'metadata' => true
@@ -185,7 +185,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
     protected static $attributeMap = [
         'customer' => 'customer',
         'order' => 'order',
-        'trackingId' => 'tracking_id',
+        'tracking_id' => 'tracking_id',
         'scenario' => 'scenario',
         'options' => 'options',
         'metadata' => 'metadata'
@@ -199,7 +199,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
     protected static $setters = [
         'customer' => 'setCustomer',
         'order' => 'setOrder',
-        'trackingId' => 'setTrackingId',
+        'tracking_id' => 'setTrackingId',
         'scenario' => 'setScenario',
         'options' => 'setOptions',
         'metadata' => 'setMetadata'
@@ -213,7 +213,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
     protected static $getters = [
         'customer' => 'getCustomer',
         'order' => 'getOrder',
-        'trackingId' => 'getTrackingId',
+        'tracking_id' => 'getTrackingId',
         'scenario' => 'getScenario',
         'options' => 'getOptions',
         'metadata' => 'getMetadata'
@@ -305,7 +305,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
     {
         $this->setIfExists('customer', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
-        $this->setIfExists('trackingId', $data ?? [], null);
+        $this->setIfExists('tracking_id', $data ?? [], null);
         $this->setIfExists('scenario', $data ?? [], null);
         $this->setIfExists('options', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
@@ -392,7 +392,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
     /**
      * Gets order
      *
-     * @return \OpenAPI\Client\Model\Order|null
+     * @return \OpenAPI\Client\Model\OrderCalculatedEssential|null
      */
     public function getOrder()
     {
@@ -402,7 +402,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
     /**
      * Sets order
      *
-     * @param \OpenAPI\Client\Model\Order|null $order order
+     * @param \OpenAPI\Client\Model\OrderCalculatedEssential|null $order order
      *
      * @return self
      */
@@ -417,35 +417,35 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
     }
 
     /**
-     * Gets trackingId
+     * Gets tracking_id
      *
      * @return string|null
      */
     public function getTrackingId()
     {
-        return $this->container['trackingId'];
+        return $this->container['tracking_id'];
     }
 
     /**
-     * Sets trackingId
+     * Sets tracking_id
      *
-     * @param string|null $trackingId Is correspondent to Customer's source_id
+     * @param string|null $tracking_id Is correspondent to Customer's source_id
      *
      * @return self
      */
-    public function setTrackingId($trackingId)
+    public function setTrackingId($tracking_id)
     {
-        if (is_null($trackingId)) {
-            array_push($this->openAPINullablesSetToNull, 'trackingId');
+        if (is_null($tracking_id)) {
+            array_push($this->openAPINullablesSetToNull, 'tracking_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('trackingId', $nullablesSetToNull);
+            $index = array_search('tracking_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['trackingId'] = $trackingId;
+        $this->container['tracking_id'] = $tracking_id;
 
         return $this;
     }

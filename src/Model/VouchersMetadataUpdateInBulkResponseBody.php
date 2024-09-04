@@ -59,7 +59,7 @@ class VouchersMetadataUpdateInBulkResponseBody implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'asyncActionId' => 'string'
+        'async_action_id' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class VouchersMetadataUpdateInBulkResponseBody implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'asyncActionId' => null
+        'async_action_id' => null
     ];
 
     /**
@@ -79,7 +79,7 @@ class VouchersMetadataUpdateInBulkResponseBody implements ModelInterface, ArrayA
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'asyncActionId' => true
+        'async_action_id' => true
     ];
 
     /**
@@ -168,7 +168,7 @@ class VouchersMetadataUpdateInBulkResponseBody implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
-        'asyncActionId' => 'async_action_id'
+        'async_action_id' => 'async_action_id'
     ];
 
     /**
@@ -177,7 +177,7 @@ class VouchersMetadataUpdateInBulkResponseBody implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'asyncActionId' => 'setAsyncActionId'
+        'async_action_id' => 'setAsyncActionId'
     ];
 
     /**
@@ -186,7 +186,7 @@ class VouchersMetadataUpdateInBulkResponseBody implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'asyncActionId' => 'getAsyncActionId'
+        'async_action_id' => 'getAsyncActionId'
     ];
 
     /**
@@ -246,7 +246,7 @@ class VouchersMetadataUpdateInBulkResponseBody implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('asyncActionId', $data ?? [], null);
+        $this->setIfExists('async_action_id', $data ?? [], null);
     }
 
     /**
@@ -292,35 +292,35 @@ class VouchersMetadataUpdateInBulkResponseBody implements ModelInterface, ArrayA
 
 
     /**
-     * Gets asyncActionId
+     * Gets async_action_id
      *
      * @return string|null
      */
     public function getAsyncActionId()
     {
-        return $this->container['asyncActionId'];
+        return $this->container['async_action_id'];
     }
 
     /**
-     * Sets asyncActionId
+     * Sets async_action_id
      *
-     * @param string|null $asyncActionId The ID of the scheduled asynchronous action.
+     * @param string|null $async_action_id The ID of the scheduled asynchronous action.
      *
      * @return self
      */
-    public function setAsyncActionId($asyncActionId)
+    public function setAsyncActionId($async_action_id)
     {
-        if (is_null($asyncActionId)) {
-            array_push($this->openAPINullablesSetToNull, 'asyncActionId');
+        if (is_null($async_action_id)) {
+            array_push($this->openAPINullablesSetToNull, 'async_action_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asyncActionId', $nullablesSetToNull);
+            $index = array_search('async_action_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['asyncActionId'] = $asyncActionId;
+        $this->container['async_action_id'] = $async_action_id;
 
         return $this;
     }

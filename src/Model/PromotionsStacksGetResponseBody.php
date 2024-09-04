@@ -62,11 +62,11 @@ class PromotionsStacksGetResponseBody implements ModelInterface, ArrayAccess, \J
         'name' => 'string',
         'tiers' => '\OpenAPI\Client\Model\PromotionsStacksGetResponseBodyTiers',
         'id' => 'string',
-        'createdAt' => '\DateTime',
-        'updatedAt' => '\DateTime',
-        'campaignId' => 'string',
+        'created_at' => '\DateTime',
+        'updated_at' => '\DateTime',
+        'campaign_id' => 'string',
         'object' => 'string',
-        'categoryId' => 'string',
+        'category_id' => 'string',
         'categories' => '\OpenAPI\Client\Model\Category[]'
     ];
 
@@ -81,11 +81,11 @@ class PromotionsStacksGetResponseBody implements ModelInterface, ArrayAccess, \J
         'name' => null,
         'tiers' => null,
         'id' => null,
-        'createdAt' => 'date-time',
-        'updatedAt' => 'date-time',
-        'campaignId' => null,
+        'created_at' => 'date-time',
+        'updated_at' => 'date-time',
+        'campaign_id' => null,
         'object' => null,
-        'categoryId' => null,
+        'category_id' => null,
         'categories' => null
     ];
 
@@ -98,11 +98,11 @@ class PromotionsStacksGetResponseBody implements ModelInterface, ArrayAccess, \J
         'name' => true,
 		'tiers' => true,
 		'id' => true,
-		'createdAt' => true,
-		'updatedAt' => true,
-		'campaignId' => true,
+		'created_at' => true,
+		'updated_at' => true,
+		'campaign_id' => true,
 		'object' => true,
-		'categoryId' => true,
+		'category_id' => true,
 		'categories' => true
     ];
 
@@ -195,11 +195,11 @@ class PromotionsStacksGetResponseBody implements ModelInterface, ArrayAccess, \J
         'name' => 'name',
         'tiers' => 'tiers',
         'id' => 'id',
-        'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at',
-        'campaignId' => 'campaign_id',
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at',
+        'campaign_id' => 'campaign_id',
         'object' => 'object',
-        'categoryId' => 'category_id',
+        'category_id' => 'category_id',
         'categories' => 'categories'
     ];
 
@@ -212,11 +212,11 @@ class PromotionsStacksGetResponseBody implements ModelInterface, ArrayAccess, \J
         'name' => 'setName',
         'tiers' => 'setTiers',
         'id' => 'setId',
-        'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt',
-        'campaignId' => 'setCampaignId',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt',
+        'campaign_id' => 'setCampaignId',
         'object' => 'setObject',
-        'categoryId' => 'setCategoryId',
+        'category_id' => 'setCategoryId',
         'categories' => 'setCategories'
     ];
 
@@ -229,11 +229,11 @@ class PromotionsStacksGetResponseBody implements ModelInterface, ArrayAccess, \J
         'name' => 'getName',
         'tiers' => 'getTiers',
         'id' => 'getId',
-        'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt',
-        'campaignId' => 'getCampaignId',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt',
+        'campaign_id' => 'getCampaignId',
         'object' => 'getObject',
-        'categoryId' => 'getCategoryId',
+        'category_id' => 'getCategoryId',
         'categories' => 'getCategories'
     ];
 
@@ -310,11 +310,11 @@ class PromotionsStacksGetResponseBody implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('tiers', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
-        $this->setIfExists('updatedAt', $data ?? [], null);
-        $this->setIfExists('campaignId', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('campaign_id', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'promotion_stack');
-        $this->setIfExists('categoryId', $data ?? [], null);
+        $this->setIfExists('category_id', $data ?? [], null);
         $this->setIfExists('categories', $data ?? [], null);
     }
 
@@ -472,103 +472,103 @@ class PromotionsStacksGetResponseBody implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the promotion stack was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $created_at Timestamp representing the date and time when the promotion stack was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        if (is_null($created_at)) {
+            array_push($this->openAPINullablesSetToNull, 'created_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
+            $index = array_search('created_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }
 
     /**
-     * Gets updatedAt
+     * Gets updated_at
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updatedAt'];
+        return $this->container['updated_at'];
     }
 
     /**
-     * Sets updatedAt
+     * Sets updated_at
      *
-     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the promotion stack was updated. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updated_at Timestamp representing the date and time when the promotion stack was updated. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updated_at)
     {
-        if (is_null($updatedAt)) {
-            array_push($this->openAPINullablesSetToNull, 'updatedAt');
+        if (is_null($updated_at)) {
+            array_push($this->openAPINullablesSetToNull, 'updated_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updatedAt', $nullablesSetToNull);
+            $index = array_search('updated_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updatedAt'] = $updatedAt;
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }
 
     /**
-     * Gets campaignId
+     * Gets campaign_id
      *
      * @return string|null
      */
     public function getCampaignId()
     {
-        return $this->container['campaignId'];
+        return $this->container['campaign_id'];
     }
 
     /**
-     * Sets campaignId
+     * Sets campaign_id
      *
-     * @param string|null $campaignId Promotion stack's parent campaign's unique ID.
+     * @param string|null $campaign_id Promotion stack's parent campaign's unique ID.
      *
      * @return self
      */
-    public function setCampaignId($campaignId)
+    public function setCampaignId($campaign_id)
     {
-        if (is_null($campaignId)) {
-            array_push($this->openAPINullablesSetToNull, 'campaignId');
+        if (is_null($campaign_id)) {
+            array_push($this->openAPINullablesSetToNull, 'campaign_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaignId', $nullablesSetToNull);
+            $index = array_search('campaign_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaignId'] = $campaignId;
+        $this->container['campaign_id'] = $campaign_id;
 
         return $this;
     }
@@ -618,35 +618,35 @@ class PromotionsStacksGetResponseBody implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets categoryId
+     * Gets category_id
      *
      * @return string|null
      */
     public function getCategoryId()
     {
-        return $this->container['categoryId'];
+        return $this->container['category_id'];
     }
 
     /**
-     * Sets categoryId
+     * Sets category_id
      *
-     * @param string|null $categoryId Promotion stack category ID.
+     * @param string|null $category_id Promotion stack category ID.
      *
      * @return self
      */
-    public function setCategoryId($categoryId)
+    public function setCategoryId($category_id)
     {
-        if (is_null($categoryId)) {
-            array_push($this->openAPINullablesSetToNull, 'categoryId');
+        if (is_null($category_id)) {
+            array_push($this->openAPINullablesSetToNull, 'category_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('categoryId', $nullablesSetToNull);
+            $index = array_search('category_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['categoryId'] = $categoryId;
+        $this->container['category_id'] = $category_id;
 
         return $this;
     }

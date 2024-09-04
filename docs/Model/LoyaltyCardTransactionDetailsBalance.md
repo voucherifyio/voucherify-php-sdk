@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **object** | **string** | The type of the object represented by the JSON. | [optional] [default to 'balance']
 **points** | **int** | Points added or subtracted in the transaction. | [optional]
 **balance** | **int** | The available points on the card after the transaction as affected by redemption or rollback. | [optional]
-**relatedObject** | [**\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsBalanceRelatedObject**](LoyaltyCardTransactionDetailsBalanceRelatedObject.md) |  | [optional]
+**related_object** | [**\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsBalanceRelatedObject**](LoyaltyCardTransactionDetailsBalanceRelatedObject.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

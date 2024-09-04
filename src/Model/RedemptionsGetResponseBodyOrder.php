@@ -59,24 +59,24 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'sourceId' => 'string',
+        'source_id' => 'string',
         'status' => 'string',
         'amount' => 'int',
-        'initialAmount' => 'int',
-        'discountAmount' => 'int',
-        'itemsDiscountAmount' => 'int',
-        'totalDiscountAmount' => 'int',
-        'totalAmount' => 'int',
-        'appliedDiscountAmount' => 'int',
-        'itemsAppliedDiscountAmount' => 'int',
-        'totalAppliedDiscountAmount' => 'int',
-        'items' => '\OpenAPI\Client\Model\OrderCalculatedItem[]',
+        'initial_amount' => 'int',
+        'discount_amount' => 'int',
+        'items_discount_amount' => 'int',
+        'total_discount_amount' => 'int',
+        'total_amount' => 'int',
+        'applied_discount_amount' => 'int',
+        'items_applied_discount_amount' => 'int',
+        'total_applied_discount_amount' => 'int',
+        'items' => '\OpenAPI\Client\Model\OrderItemCalculated[]',
         'metadata' => 'object',
         'object' => 'string',
-        'createdAt' => '\DateTime',
-        'updatedAt' => '\DateTime',
-        'customerId' => 'string',
-        'referrerId' => 'string',
+        'created_at' => '\DateTime',
+        'updated_at' => '\DateTime',
+        'customer_id' => 'string',
+        'referrer_id' => 'string',
         'customer' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyOrderCustomer',
         'referrer' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyOrderReferrer',
         'redemptions' => 'object'
@@ -91,24 +91,24 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'sourceId' => null,
+        'source_id' => null,
         'status' => null,
         'amount' => null,
-        'initialAmount' => null,
-        'discountAmount' => null,
-        'itemsDiscountAmount' => null,
-        'totalDiscountAmount' => null,
-        'totalAmount' => null,
-        'appliedDiscountAmount' => null,
-        'itemsAppliedDiscountAmount' => null,
-        'totalAppliedDiscountAmount' => null,
+        'initial_amount' => null,
+        'discount_amount' => null,
+        'items_discount_amount' => null,
+        'total_discount_amount' => null,
+        'total_amount' => null,
+        'applied_discount_amount' => null,
+        'items_applied_discount_amount' => null,
+        'total_applied_discount_amount' => null,
         'items' => null,
         'metadata' => null,
         'object' => null,
-        'createdAt' => 'date-time',
-        'updatedAt' => 'date-time',
-        'customerId' => null,
-        'referrerId' => null,
+        'created_at' => 'date-time',
+        'updated_at' => 'date-time',
+        'customer_id' => null,
+        'referrer_id' => null,
         'customer' => null,
         'referrer' => null,
         'redemptions' => null
@@ -121,24 +121,24 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'sourceId' => true,
+		'source_id' => true,
 		'status' => true,
 		'amount' => true,
-		'initialAmount' => true,
-		'discountAmount' => true,
-		'itemsDiscountAmount' => true,
-		'totalDiscountAmount' => true,
-		'totalAmount' => true,
-		'appliedDiscountAmount' => true,
-		'itemsAppliedDiscountAmount' => true,
-		'totalAppliedDiscountAmount' => true,
+		'initial_amount' => true,
+		'discount_amount' => true,
+		'items_discount_amount' => true,
+		'total_discount_amount' => true,
+		'total_amount' => true,
+		'applied_discount_amount' => true,
+		'items_applied_discount_amount' => true,
+		'total_applied_discount_amount' => true,
 		'items' => true,
 		'metadata' => true,
 		'object' => true,
-		'createdAt' => true,
-		'updatedAt' => true,
-		'customerId' => true,
-		'referrerId' => true,
+		'created_at' => true,
+		'updated_at' => true,
+		'customer_id' => true,
+		'referrer_id' => true,
 		'customer' => true,
 		'referrer' => true,
 		'redemptions' => true
@@ -231,24 +231,24 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'sourceId' => 'source_id',
+        'source_id' => 'source_id',
         'status' => 'status',
         'amount' => 'amount',
-        'initialAmount' => 'initial_amount',
-        'discountAmount' => 'discount_amount',
-        'itemsDiscountAmount' => 'items_discount_amount',
-        'totalDiscountAmount' => 'total_discount_amount',
-        'totalAmount' => 'total_amount',
-        'appliedDiscountAmount' => 'applied_discount_amount',
-        'itemsAppliedDiscountAmount' => 'items_applied_discount_amount',
-        'totalAppliedDiscountAmount' => 'total_applied_discount_amount',
+        'initial_amount' => 'initial_amount',
+        'discount_amount' => 'discount_amount',
+        'items_discount_amount' => 'items_discount_amount',
+        'total_discount_amount' => 'total_discount_amount',
+        'total_amount' => 'total_amount',
+        'applied_discount_amount' => 'applied_discount_amount',
+        'items_applied_discount_amount' => 'items_applied_discount_amount',
+        'total_applied_discount_amount' => 'total_applied_discount_amount',
         'items' => 'items',
         'metadata' => 'metadata',
         'object' => 'object',
-        'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at',
-        'customerId' => 'customer_id',
-        'referrerId' => 'referrer_id',
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at',
+        'customer_id' => 'customer_id',
+        'referrer_id' => 'referrer_id',
         'customer' => 'customer',
         'referrer' => 'referrer',
         'redemptions' => 'redemptions'
@@ -261,24 +261,24 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
      */
     protected static $setters = [
         'id' => 'setId',
-        'sourceId' => 'setSourceId',
+        'source_id' => 'setSourceId',
         'status' => 'setStatus',
         'amount' => 'setAmount',
-        'initialAmount' => 'setInitialAmount',
-        'discountAmount' => 'setDiscountAmount',
-        'itemsDiscountAmount' => 'setItemsDiscountAmount',
-        'totalDiscountAmount' => 'setTotalDiscountAmount',
-        'totalAmount' => 'setTotalAmount',
-        'appliedDiscountAmount' => 'setAppliedDiscountAmount',
-        'itemsAppliedDiscountAmount' => 'setItemsAppliedDiscountAmount',
-        'totalAppliedDiscountAmount' => 'setTotalAppliedDiscountAmount',
+        'initial_amount' => 'setInitialAmount',
+        'discount_amount' => 'setDiscountAmount',
+        'items_discount_amount' => 'setItemsDiscountAmount',
+        'total_discount_amount' => 'setTotalDiscountAmount',
+        'total_amount' => 'setTotalAmount',
+        'applied_discount_amount' => 'setAppliedDiscountAmount',
+        'items_applied_discount_amount' => 'setItemsAppliedDiscountAmount',
+        'total_applied_discount_amount' => 'setTotalAppliedDiscountAmount',
         'items' => 'setItems',
         'metadata' => 'setMetadata',
         'object' => 'setObject',
-        'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt',
-        'customerId' => 'setCustomerId',
-        'referrerId' => 'setReferrerId',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt',
+        'customer_id' => 'setCustomerId',
+        'referrer_id' => 'setReferrerId',
         'customer' => 'setCustomer',
         'referrer' => 'setReferrer',
         'redemptions' => 'setRedemptions'
@@ -291,24 +291,24 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
      */
     protected static $getters = [
         'id' => 'getId',
-        'sourceId' => 'getSourceId',
+        'source_id' => 'getSourceId',
         'status' => 'getStatus',
         'amount' => 'getAmount',
-        'initialAmount' => 'getInitialAmount',
-        'discountAmount' => 'getDiscountAmount',
-        'itemsDiscountAmount' => 'getItemsDiscountAmount',
-        'totalDiscountAmount' => 'getTotalDiscountAmount',
-        'totalAmount' => 'getTotalAmount',
-        'appliedDiscountAmount' => 'getAppliedDiscountAmount',
-        'itemsAppliedDiscountAmount' => 'getItemsAppliedDiscountAmount',
-        'totalAppliedDiscountAmount' => 'getTotalAppliedDiscountAmount',
+        'initial_amount' => 'getInitialAmount',
+        'discount_amount' => 'getDiscountAmount',
+        'items_discount_amount' => 'getItemsDiscountAmount',
+        'total_discount_amount' => 'getTotalDiscountAmount',
+        'total_amount' => 'getTotalAmount',
+        'applied_discount_amount' => 'getAppliedDiscountAmount',
+        'items_applied_discount_amount' => 'getItemsAppliedDiscountAmount',
+        'total_applied_discount_amount' => 'getTotalAppliedDiscountAmount',
         'items' => 'getItems',
         'metadata' => 'getMetadata',
         'object' => 'getObject',
-        'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt',
-        'customerId' => 'getCustomerId',
-        'referrerId' => 'getReferrerId',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt',
+        'customer_id' => 'getCustomerId',
+        'referrer_id' => 'getReferrerId',
         'customer' => 'getCustomer',
         'referrer' => 'getReferrer',
         'redemptions' => 'getRedemptions'
@@ -404,24 +404,24 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('source_id', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
-        $this->setIfExists('initialAmount', $data ?? [], null);
-        $this->setIfExists('discountAmount', $data ?? [], null);
-        $this->setIfExists('itemsDiscountAmount', $data ?? [], null);
-        $this->setIfExists('totalDiscountAmount', $data ?? [], null);
-        $this->setIfExists('totalAmount', $data ?? [], null);
-        $this->setIfExists('appliedDiscountAmount', $data ?? [], null);
-        $this->setIfExists('itemsAppliedDiscountAmount', $data ?? [], null);
-        $this->setIfExists('totalAppliedDiscountAmount', $data ?? [], null);
+        $this->setIfExists('initial_amount', $data ?? [], null);
+        $this->setIfExists('discount_amount', $data ?? [], null);
+        $this->setIfExists('items_discount_amount', $data ?? [], null);
+        $this->setIfExists('total_discount_amount', $data ?? [], null);
+        $this->setIfExists('total_amount', $data ?? [], null);
+        $this->setIfExists('applied_discount_amount', $data ?? [], null);
+        $this->setIfExists('items_applied_discount_amount', $data ?? [], null);
+        $this->setIfExists('total_applied_discount_amount', $data ?? [], null);
         $this->setIfExists('items', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'order');
-        $this->setIfExists('createdAt', $data ?? [], null);
-        $this->setIfExists('updatedAt', $data ?? [], null);
-        $this->setIfExists('customerId', $data ?? [], null);
-        $this->setIfExists('referrerId', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('customer_id', $data ?? [], null);
+        $this->setIfExists('referrer_id', $data ?? [], null);
         $this->setIfExists('customer', $data ?? [], null);
         $this->setIfExists('referrer', $data ?? [], null);
         $this->setIfExists('redemptions', $data ?? [], null);
@@ -522,35 +522,35 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets sourceId
+     * Gets source_id
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['sourceId'];
+        return $this->container['source_id'];
     }
 
     /**
-     * Sets sourceId
+     * Sets source_id
      *
-     * @param string|null $sourceId Unique source ID of an existing order that will be linked to the redemption of this request.
+     * @param string|null $source_id Unique source ID of an existing order that will be linked to the redemption of this request.
      *
      * @return self
      */
-    public function setSourceId($sourceId)
+    public function setSourceId($source_id)
     {
-        if (is_null($sourceId)) {
-            array_push($this->openAPINullablesSetToNull, 'sourceId');
+        if (is_null($source_id)) {
+            array_push($this->openAPINullablesSetToNull, 'source_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sourceId', $nullablesSetToNull);
+            $index = array_search('source_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sourceId'] = $sourceId;
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }
@@ -634,273 +634,273 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets initialAmount
+     * Gets initial_amount
      *
      * @return int|null
      */
     public function getInitialAmount()
     {
-        return $this->container['initialAmount'];
+        return $this->container['initial_amount'];
     }
 
     /**
-     * Sets initialAmount
+     * Sets initial_amount
      *
-     * @param int|null $initialAmount A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+     * @param int|null $initial_amount A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
      *
      * @return self
      */
-    public function setInitialAmount($initialAmount)
+    public function setInitialAmount($initial_amount)
     {
-        if (is_null($initialAmount)) {
-            array_push($this->openAPINullablesSetToNull, 'initialAmount');
+        if (is_null($initial_amount)) {
+            array_push($this->openAPINullablesSetToNull, 'initial_amount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('initialAmount', $nullablesSetToNull);
+            $index = array_search('initial_amount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['initialAmount'] = $initialAmount;
+        $this->container['initial_amount'] = $initial_amount;
 
         return $this;
     }
 
     /**
-     * Gets discountAmount
+     * Gets discount_amount
      *
      * @return int|null
      */
     public function getDiscountAmount()
     {
-        return $this->container['discountAmount'];
+        return $this->container['discount_amount'];
     }
 
     /**
-     * Sets discountAmount
+     * Sets discount_amount
      *
-     * @param int|null $discountAmount Sum of all order-level discounts applied to the order.
+     * @param int|null $discount_amount Sum of all order-level discounts applied to the order.
      *
      * @return self
      */
-    public function setDiscountAmount($discountAmount)
+    public function setDiscountAmount($discount_amount)
     {
-        if (is_null($discountAmount)) {
-            array_push($this->openAPINullablesSetToNull, 'discountAmount');
+        if (is_null($discount_amount)) {
+            array_push($this->openAPINullablesSetToNull, 'discount_amount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('discountAmount', $nullablesSetToNull);
+            $index = array_search('discount_amount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['discountAmount'] = $discountAmount;
+        $this->container['discount_amount'] = $discount_amount;
 
         return $this;
     }
 
     /**
-     * Gets itemsDiscountAmount
+     * Gets items_discount_amount
      *
      * @return int|null
      */
     public function getItemsDiscountAmount()
     {
-        return $this->container['itemsDiscountAmount'];
+        return $this->container['items_discount_amount'];
     }
 
     /**
-     * Sets itemsDiscountAmount
+     * Sets items_discount_amount
      *
-     * @param int|null $itemsDiscountAmount Sum of all product-specific discounts applied to the order.
+     * @param int|null $items_discount_amount Sum of all product-specific discounts applied to the order.
      *
      * @return self
      */
-    public function setItemsDiscountAmount($itemsDiscountAmount)
+    public function setItemsDiscountAmount($items_discount_amount)
     {
-        if (is_null($itemsDiscountAmount)) {
-            array_push($this->openAPINullablesSetToNull, 'itemsDiscountAmount');
+        if (is_null($items_discount_amount)) {
+            array_push($this->openAPINullablesSetToNull, 'items_discount_amount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('itemsDiscountAmount', $nullablesSetToNull);
+            $index = array_search('items_discount_amount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['itemsDiscountAmount'] = $itemsDiscountAmount;
+        $this->container['items_discount_amount'] = $items_discount_amount;
 
         return $this;
     }
 
     /**
-     * Gets totalDiscountAmount
+     * Gets total_discount_amount
      *
      * @return int|null
      */
     public function getTotalDiscountAmount()
     {
-        return $this->container['totalDiscountAmount'];
+        return $this->container['total_discount_amount'];
     }
 
     /**
-     * Sets totalDiscountAmount
+     * Sets total_discount_amount
      *
-     * @param int|null $totalDiscountAmount Sum of all order-level AND all product-specific discounts applied to the order.
+     * @param int|null $total_discount_amount Sum of all order-level AND all product-specific discounts applied to the order.
      *
      * @return self
      */
-    public function setTotalDiscountAmount($totalDiscountAmount)
+    public function setTotalDiscountAmount($total_discount_amount)
     {
-        if (is_null($totalDiscountAmount)) {
-            array_push($this->openAPINullablesSetToNull, 'totalDiscountAmount');
+        if (is_null($total_discount_amount)) {
+            array_push($this->openAPINullablesSetToNull, 'total_discount_amount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('totalDiscountAmount', $nullablesSetToNull);
+            $index = array_search('total_discount_amount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['totalDiscountAmount'] = $totalDiscountAmount;
+        $this->container['total_discount_amount'] = $total_discount_amount;
 
         return $this;
     }
 
     /**
-     * Gets totalAmount
+     * Gets total_amount
      *
      * @return int|null
      */
     public function getTotalAmount()
     {
-        return $this->container['totalAmount'];
+        return $this->container['total_amount'];
     }
 
     /**
-     * Sets totalAmount
+     * Sets total_amount
      *
-     * @param int|null $totalAmount Order amount after undoing all the discounts through the rollback redemption.
+     * @param int|null $total_amount Order amount after undoing all the discounts through the rollback redemption.
      *
      * @return self
      */
-    public function setTotalAmount($totalAmount)
+    public function setTotalAmount($total_amount)
     {
-        if (is_null($totalAmount)) {
-            array_push($this->openAPINullablesSetToNull, 'totalAmount');
+        if (is_null($total_amount)) {
+            array_push($this->openAPINullablesSetToNull, 'total_amount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('totalAmount', $nullablesSetToNull);
+            $index = array_search('total_amount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['totalAmount'] = $totalAmount;
+        $this->container['total_amount'] = $total_amount;
 
         return $this;
     }
 
     /**
-     * Gets appliedDiscountAmount
+     * Gets applied_discount_amount
      *
      * @return int|null
      */
     public function getAppliedDiscountAmount()
     {
-        return $this->container['appliedDiscountAmount'];
+        return $this->container['applied_discount_amount'];
     }
 
     /**
-     * Sets appliedDiscountAmount
+     * Sets applied_discount_amount
      *
-     * @param int|null $appliedDiscountAmount This field shows the order-level discount applied.
+     * @param int|null $applied_discount_amount This field shows the order-level discount applied.
      *
      * @return self
      */
-    public function setAppliedDiscountAmount($appliedDiscountAmount)
+    public function setAppliedDiscountAmount($applied_discount_amount)
     {
-        if (is_null($appliedDiscountAmount)) {
-            array_push($this->openAPINullablesSetToNull, 'appliedDiscountAmount');
+        if (is_null($applied_discount_amount)) {
+            array_push($this->openAPINullablesSetToNull, 'applied_discount_amount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('appliedDiscountAmount', $nullablesSetToNull);
+            $index = array_search('applied_discount_amount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['appliedDiscountAmount'] = $appliedDiscountAmount;
+        $this->container['applied_discount_amount'] = $applied_discount_amount;
 
         return $this;
     }
 
     /**
-     * Gets itemsAppliedDiscountAmount
+     * Gets items_applied_discount_amount
      *
      * @return int|null
      */
     public function getItemsAppliedDiscountAmount()
     {
-        return $this->container['itemsAppliedDiscountAmount'];
+        return $this->container['items_applied_discount_amount'];
     }
 
     /**
-     * Sets itemsAppliedDiscountAmount
+     * Sets items_applied_discount_amount
      *
-     * @param int|null $itemsAppliedDiscountAmount Sum of all product-specific discounts applied in a particular request.   `sum(items, i => i.applied_discount_amount)`
+     * @param int|null $items_applied_discount_amount Sum of all product-specific discounts applied in a particular request.   `sum(items, i => i.applied_discount_amount)`
      *
      * @return self
      */
-    public function setItemsAppliedDiscountAmount($itemsAppliedDiscountAmount)
+    public function setItemsAppliedDiscountAmount($items_applied_discount_amount)
     {
-        if (is_null($itemsAppliedDiscountAmount)) {
-            array_push($this->openAPINullablesSetToNull, 'itemsAppliedDiscountAmount');
+        if (is_null($items_applied_discount_amount)) {
+            array_push($this->openAPINullablesSetToNull, 'items_applied_discount_amount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('itemsAppliedDiscountAmount', $nullablesSetToNull);
+            $index = array_search('items_applied_discount_amount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['itemsAppliedDiscountAmount'] = $itemsAppliedDiscountAmount;
+        $this->container['items_applied_discount_amount'] = $items_applied_discount_amount;
 
         return $this;
     }
 
     /**
-     * Gets totalAppliedDiscountAmount
+     * Gets total_applied_discount_amount
      *
      * @return int|null
      */
     public function getTotalAppliedDiscountAmount()
     {
-        return $this->container['totalAppliedDiscountAmount'];
+        return $this->container['total_applied_discount_amount'];
     }
 
     /**
-     * Sets totalAppliedDiscountAmount
+     * Sets total_applied_discount_amount
      *
-     * @param int|null $totalAppliedDiscountAmount Sum of all order-level AND all product-specific discounts applied in a particular request.   `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount`
+     * @param int|null $total_applied_discount_amount Sum of all order-level AND all product-specific discounts applied in a particular request.   `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount`
      *
      * @return self
      */
-    public function setTotalAppliedDiscountAmount($totalAppliedDiscountAmount)
+    public function setTotalAppliedDiscountAmount($total_applied_discount_amount)
     {
-        if (is_null($totalAppliedDiscountAmount)) {
-            array_push($this->openAPINullablesSetToNull, 'totalAppliedDiscountAmount');
+        if (is_null($total_applied_discount_amount)) {
+            array_push($this->openAPINullablesSetToNull, 'total_applied_discount_amount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('totalAppliedDiscountAmount', $nullablesSetToNull);
+            $index = array_search('total_applied_discount_amount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['totalAppliedDiscountAmount'] = $totalAppliedDiscountAmount;
+        $this->container['total_applied_discount_amount'] = $total_applied_discount_amount;
 
         return $this;
     }
@@ -908,7 +908,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Gets items
      *
-     * @return \OpenAPI\Client\Model\OrderCalculatedItem[]|null
+     * @return \OpenAPI\Client\Model\OrderItemCalculated[]|null
      */
     public function getItems()
     {
@@ -918,7 +918,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Sets items
      *
-     * @param \OpenAPI\Client\Model\OrderCalculatedItem[]|null $items Array of items applied to the order.
+     * @param \OpenAPI\Client\Model\OrderItemCalculated[]|null $items Array of items applied to the order.
      *
      * @return self
      */
@@ -1018,137 +1018,137 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $created_at Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        if (is_null($created_at)) {
+            array_push($this->openAPINullablesSetToNull, 'created_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
+            $index = array_search('created_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }
 
     /**
-     * Gets updatedAt
+     * Gets updated_at
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updatedAt'];
+        return $this->container['updated_at'];
     }
 
     /**
-     * Sets updatedAt
+     * Sets updated_at
      *
-     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the order was last updated in ISO 8601 format.
+     * @param \DateTime|null $updated_at Timestamp representing the date and time when the order was last updated in ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updated_at)
     {
-        if (is_null($updatedAt)) {
-            array_push($this->openAPINullablesSetToNull, 'updatedAt');
+        if (is_null($updated_at)) {
+            array_push($this->openAPINullablesSetToNull, 'updated_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updatedAt', $nullablesSetToNull);
+            $index = array_search('updated_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updatedAt'] = $updatedAt;
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }
 
     /**
-     * Gets customerId
+     * Gets customer_id
      *
      * @return string|null
      */
     public function getCustomerId()
     {
-        return $this->container['customerId'];
+        return $this->container['customer_id'];
     }
 
     /**
-     * Sets customerId
+     * Sets customer_id
      *
-     * @param string|null $customerId Unique customer ID of the customer making the purchase.
+     * @param string|null $customer_id Unique customer ID of the customer making the purchase.
      *
      * @return self
      */
-    public function setCustomerId($customerId)
+    public function setCustomerId($customer_id)
     {
-        if (is_null($customerId)) {
-            array_push($this->openAPINullablesSetToNull, 'customerId');
+        if (is_null($customer_id)) {
+            array_push($this->openAPINullablesSetToNull, 'customer_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customerId', $nullablesSetToNull);
+            $index = array_search('customer_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['customerId'] = $customerId;
+        $this->container['customer_id'] = $customer_id;
 
         return $this;
     }
 
     /**
-     * Gets referrerId
+     * Gets referrer_id
      *
      * @return string|null
      */
     public function getReferrerId()
     {
-        return $this->container['referrerId'];
+        return $this->container['referrer_id'];
     }
 
     /**
-     * Sets referrerId
+     * Sets referrer_id
      *
-     * @param string|null $referrerId Unique referrer ID.
+     * @param string|null $referrer_id Unique referrer ID.
      *
      * @return self
      */
-    public function setReferrerId($referrerId)
+    public function setReferrerId($referrer_id)
     {
-        if (is_null($referrerId)) {
-            array_push($this->openAPINullablesSetToNull, 'referrerId');
+        if (is_null($referrer_id)) {
+            array_push($this->openAPINullablesSetToNull, 'referrer_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('referrerId', $nullablesSetToNull);
+            $index = array_search('referrer_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['referrerId'] = $referrerId;
+        $this->container['referrer_id'] = $referrer_id;
 
         return $this;
     }

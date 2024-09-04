@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sourceId** | **string** | Unique customer source ID. | [optional]
+**source_id** | **string** | Unique customer source ID. | [optional]
 **name** | **string** | Customer&#39;s first and last name. | [optional]
 **description** | **string** | An arbitrary string that you can attach to a customer object. | [optional]
 **email** | **string** | Customer&#39;s email address. | [optional]

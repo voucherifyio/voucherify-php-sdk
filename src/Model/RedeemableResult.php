@@ -61,7 +61,7 @@ class RedeemableResult implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'discount' => '\OpenAPI\Client\Model\Discount',
         'gift' => '\OpenAPI\Client\Model\RedeemableGift',
-        'loyaltyCard' => '\OpenAPI\Client\Model\RedeemableLoyaltyCard',
+        'loyalty_card' => '\OpenAPI\Client\Model\RedeemableLoyaltyCard',
         'error' => '\OpenAPI\Client\Model\Error'
     ];
 
@@ -75,7 +75,7 @@ class RedeemableResult implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'discount' => null,
         'gift' => null,
-        'loyaltyCard' => null,
+        'loyalty_card' => null,
         'error' => null
     ];
 
@@ -87,7 +87,7 @@ class RedeemableResult implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'discount' => false,
 		'gift' => false,
-		'loyaltyCard' => false,
+		'loyalty_card' => false,
 		'error' => false
     ];
 
@@ -179,7 +179,7 @@ class RedeemableResult implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'discount' => 'discount',
         'gift' => 'gift',
-        'loyaltyCard' => 'loyalty_card',
+        'loyalty_card' => 'loyalty_card',
         'error' => 'error'
     ];
 
@@ -191,7 +191,7 @@ class RedeemableResult implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'discount' => 'setDiscount',
         'gift' => 'setGift',
-        'loyaltyCard' => 'setLoyaltyCard',
+        'loyalty_card' => 'setLoyaltyCard',
         'error' => 'setError'
     ];
 
@@ -203,7 +203,7 @@ class RedeemableResult implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'discount' => 'getDiscount',
         'gift' => 'getGift',
-        'loyaltyCard' => 'getLoyaltyCard',
+        'loyalty_card' => 'getLoyaltyCard',
         'error' => 'getError'
     ];
 
@@ -266,7 +266,7 @@ class RedeemableResult implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('discount', $data ?? [], null);
         $this->setIfExists('gift', $data ?? [], null);
-        $this->setIfExists('loyaltyCard', $data ?? [], null);
+        $this->setIfExists('loyalty_card', $data ?? [], null);
         $this->setIfExists('error', $data ?? [], null);
     }
 
@@ -367,28 +367,28 @@ class RedeemableResult implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets loyaltyCard
+     * Gets loyalty_card
      *
      * @return \OpenAPI\Client\Model\RedeemableLoyaltyCard|null
      */
     public function getLoyaltyCard()
     {
-        return $this->container['loyaltyCard'];
+        return $this->container['loyalty_card'];
     }
 
     /**
-     * Sets loyaltyCard
+     * Sets loyalty_card
      *
-     * @param \OpenAPI\Client\Model\RedeemableLoyaltyCard|null $loyaltyCard loyaltyCard
+     * @param \OpenAPI\Client\Model\RedeemableLoyaltyCard|null $loyalty_card loyalty_card
      *
      * @return self
      */
-    public function setLoyaltyCard($loyaltyCard)
+    public function setLoyaltyCard($loyalty_card)
     {
-        if (is_null($loyaltyCard)) {
-            throw new \InvalidArgumentException('non-nullable loyaltyCard cannot be null');
+        if (is_null($loyalty_card)) {
+            throw new \InvalidArgumentException('non-nullable loyalty_card cannot be null');
         }
-        $this->container['loyaltyCard'] = $loyaltyCard;
+        $this->container['loyalty_card'] = $loyalty_card;
 
         return $this;
     }

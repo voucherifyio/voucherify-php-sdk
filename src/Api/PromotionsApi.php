@@ -167,17 +167,17 @@ class PromotionsApi
      *
      * Add Promotion Tier to Campaign
      *
-     * @param  string $campaignId Unique campaign ID assigned by Voucherify. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsTiersCreateRequestBody $promotionsTiersCreateRequestBody Specify the promotion tier parameters. (optional)
+     * @param  string $campaign_id Unique campaign ID assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsTiersCreateRequestBody $promotions_tiers_create_request_body Specify the promotion tier parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addPromotionTierToCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PromotionsTiersCreateResponseBody
      */
-    public function addPromotionTierToCampaign($campaignId, $promotionsTiersCreateRequestBody = null, string $contentType = self::contentTypes['addPromotionTierToCampaign'][0])
+    public function addPromotionTierToCampaign($campaign_id, $promotions_tiers_create_request_body = null, string $contentType = self::contentTypes['addPromotionTierToCampaign'][0])
     {
-        list($response) = $this->addPromotionTierToCampaignWithHttpInfo($campaignId, $promotionsTiersCreateRequestBody, $contentType);
+        list($response) = $this->addPromotionTierToCampaignWithHttpInfo($campaign_id, $promotions_tiers_create_request_body, $contentType);
         return $response;
     }
 
@@ -186,17 +186,17 @@ class PromotionsApi
      *
      * Add Promotion Tier to Campaign
      *
-     * @param  string $campaignId Unique campaign ID assigned by Voucherify. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsTiersCreateRequestBody $promotionsTiersCreateRequestBody Specify the promotion tier parameters. (optional)
+     * @param  string $campaign_id Unique campaign ID assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsTiersCreateRequestBody $promotions_tiers_create_request_body Specify the promotion tier parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addPromotionTierToCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PromotionsTiersCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addPromotionTierToCampaignWithHttpInfo($campaignId, $promotionsTiersCreateRequestBody = null, string $contentType = self::contentTypes['addPromotionTierToCampaign'][0])
+    public function addPromotionTierToCampaignWithHttpInfo($campaign_id, $promotions_tiers_create_request_body = null, string $contentType = self::contentTypes['addPromotionTierToCampaign'][0])
     {
-        $request = $this->addPromotionTierToCampaignRequest($campaignId, $promotionsTiersCreateRequestBody, $contentType);
+        $request = $this->addPromotionTierToCampaignRequest($campaign_id, $promotions_tiers_create_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -287,16 +287,16 @@ class PromotionsApi
      *
      * Add Promotion Tier to Campaign
      *
-     * @param  string $campaignId Unique campaign ID assigned by Voucherify. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsTiersCreateRequestBody $promotionsTiersCreateRequestBody Specify the promotion tier parameters. (optional)
+     * @param  string $campaign_id Unique campaign ID assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsTiersCreateRequestBody $promotions_tiers_create_request_body Specify the promotion tier parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addPromotionTierToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addPromotionTierToCampaignAsync($campaignId, $promotionsTiersCreateRequestBody = null, string $contentType = self::contentTypes['addPromotionTierToCampaign'][0])
+    public function addPromotionTierToCampaignAsync($campaign_id, $promotions_tiers_create_request_body = null, string $contentType = self::contentTypes['addPromotionTierToCampaign'][0])
     {
-        return $this->addPromotionTierToCampaignAsyncWithHttpInfo($campaignId, $promotionsTiersCreateRequestBody, $contentType)
+        return $this->addPromotionTierToCampaignAsyncWithHttpInfo($campaign_id, $promotions_tiers_create_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -309,17 +309,17 @@ class PromotionsApi
      *
      * Add Promotion Tier to Campaign
      *
-     * @param  string $campaignId Unique campaign ID assigned by Voucherify. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsTiersCreateRequestBody $promotionsTiersCreateRequestBody Specify the promotion tier parameters. (optional)
+     * @param  string $campaign_id Unique campaign ID assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsTiersCreateRequestBody $promotions_tiers_create_request_body Specify the promotion tier parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addPromotionTierToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addPromotionTierToCampaignAsyncWithHttpInfo($campaignId, $promotionsTiersCreateRequestBody = null, string $contentType = self::contentTypes['addPromotionTierToCampaign'][0])
+    public function addPromotionTierToCampaignAsyncWithHttpInfo($campaign_id, $promotions_tiers_create_request_body = null, string $contentType = self::contentTypes['addPromotionTierToCampaign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PromotionsTiersCreateResponseBody';
-        $request = $this->addPromotionTierToCampaignRequest($campaignId, $promotionsTiersCreateRequestBody, $contentType);
+        $request = $this->addPromotionTierToCampaignRequest($campaign_id, $promotions_tiers_create_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -360,20 +360,20 @@ class PromotionsApi
     /**
      * Create request for operation 'addPromotionTierToCampaign'
      *
-     * @param  string $campaignId Unique campaign ID assigned by Voucherify. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsTiersCreateRequestBody $promotionsTiersCreateRequestBody Specify the promotion tier parameters. (optional)
+     * @param  string $campaign_id Unique campaign ID assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsTiersCreateRequestBody $promotions_tiers_create_request_body Specify the promotion tier parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addPromotionTierToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function addPromotionTierToCampaignRequest($campaignId, $promotionsTiersCreateRequestBody = null, string $contentType = self::contentTypes['addPromotionTierToCampaign'][0])
+    public function addPromotionTierToCampaignRequest($campaign_id, $promotions_tiers_create_request_body = null, string $contentType = self::contentTypes['addPromotionTierToCampaign'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling addPromotionTierToCampaign'
+                'Missing the required parameter $campaign_id when calling addPromotionTierToCampaign'
             );
         }
 
@@ -389,10 +389,10 @@ class PromotionsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
@@ -405,12 +405,12 @@ class PromotionsApi
         );
 
         // for model (json/xml)
-        if (isset($promotionsTiersCreateRequestBody)) {
+        if (isset($promotions_tiers_create_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($promotionsTiersCreateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($promotions_tiers_create_request_body));
             } else {
-                $httpBody = $promotionsTiersCreateRequestBody;
+                $httpBody = $promotions_tiers_create_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -473,17 +473,17 @@ class PromotionsApi
      *
      * Create Promotion Stack
      *
-     * @param  string $campaignId Unique campaign ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsStacksCreateRequestBody $promotionsStacksCreateRequestBody Specify the order of promotion tiers for the promotion stack. (optional)
+     * @param  string $campaign_id Unique campaign ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsStacksCreateRequestBody $promotions_stacks_create_request_body Specify the order of promotion tiers for the promotion stack. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPromotionStack'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PromotionsStacksCreateResponseBody
      */
-    public function createPromotionStack($campaignId, $promotionsStacksCreateRequestBody = null, string $contentType = self::contentTypes['createPromotionStack'][0])
+    public function createPromotionStack($campaign_id, $promotions_stacks_create_request_body = null, string $contentType = self::contentTypes['createPromotionStack'][0])
     {
-        list($response) = $this->createPromotionStackWithHttpInfo($campaignId, $promotionsStacksCreateRequestBody, $contentType);
+        list($response) = $this->createPromotionStackWithHttpInfo($campaign_id, $promotions_stacks_create_request_body, $contentType);
         return $response;
     }
 
@@ -492,17 +492,17 @@ class PromotionsApi
      *
      * Create Promotion Stack
      *
-     * @param  string $campaignId Unique campaign ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsStacksCreateRequestBody $promotionsStacksCreateRequestBody Specify the order of promotion tiers for the promotion stack. (optional)
+     * @param  string $campaign_id Unique campaign ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsStacksCreateRequestBody $promotions_stacks_create_request_body Specify the order of promotion tiers for the promotion stack. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPromotionStack'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PromotionsStacksCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createPromotionStackWithHttpInfo($campaignId, $promotionsStacksCreateRequestBody = null, string $contentType = self::contentTypes['createPromotionStack'][0])
+    public function createPromotionStackWithHttpInfo($campaign_id, $promotions_stacks_create_request_body = null, string $contentType = self::contentTypes['createPromotionStack'][0])
     {
-        $request = $this->createPromotionStackRequest($campaignId, $promotionsStacksCreateRequestBody, $contentType);
+        $request = $this->createPromotionStackRequest($campaign_id, $promotions_stacks_create_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -593,16 +593,16 @@ class PromotionsApi
      *
      * Create Promotion Stack
      *
-     * @param  string $campaignId Unique campaign ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsStacksCreateRequestBody $promotionsStacksCreateRequestBody Specify the order of promotion tiers for the promotion stack. (optional)
+     * @param  string $campaign_id Unique campaign ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsStacksCreateRequestBody $promotions_stacks_create_request_body Specify the order of promotion tiers for the promotion stack. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPromotionStack'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createPromotionStackAsync($campaignId, $promotionsStacksCreateRequestBody = null, string $contentType = self::contentTypes['createPromotionStack'][0])
+    public function createPromotionStackAsync($campaign_id, $promotions_stacks_create_request_body = null, string $contentType = self::contentTypes['createPromotionStack'][0])
     {
-        return $this->createPromotionStackAsyncWithHttpInfo($campaignId, $promotionsStacksCreateRequestBody, $contentType)
+        return $this->createPromotionStackAsyncWithHttpInfo($campaign_id, $promotions_stacks_create_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -615,17 +615,17 @@ class PromotionsApi
      *
      * Create Promotion Stack
      *
-     * @param  string $campaignId Unique campaign ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsStacksCreateRequestBody $promotionsStacksCreateRequestBody Specify the order of promotion tiers for the promotion stack. (optional)
+     * @param  string $campaign_id Unique campaign ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsStacksCreateRequestBody $promotions_stacks_create_request_body Specify the order of promotion tiers for the promotion stack. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPromotionStack'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createPromotionStackAsyncWithHttpInfo($campaignId, $promotionsStacksCreateRequestBody = null, string $contentType = self::contentTypes['createPromotionStack'][0])
+    public function createPromotionStackAsyncWithHttpInfo($campaign_id, $promotions_stacks_create_request_body = null, string $contentType = self::contentTypes['createPromotionStack'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PromotionsStacksCreateResponseBody';
-        $request = $this->createPromotionStackRequest($campaignId, $promotionsStacksCreateRequestBody, $contentType);
+        $request = $this->createPromotionStackRequest($campaign_id, $promotions_stacks_create_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -666,20 +666,20 @@ class PromotionsApi
     /**
      * Create request for operation 'createPromotionStack'
      *
-     * @param  string $campaignId Unique campaign ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsStacksCreateRequestBody $promotionsStacksCreateRequestBody Specify the order of promotion tiers for the promotion stack. (optional)
+     * @param  string $campaign_id Unique campaign ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsStacksCreateRequestBody $promotions_stacks_create_request_body Specify the order of promotion tiers for the promotion stack. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPromotionStack'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createPromotionStackRequest($campaignId, $promotionsStacksCreateRequestBody = null, string $contentType = self::contentTypes['createPromotionStack'][0])
+    public function createPromotionStackRequest($campaign_id, $promotions_stacks_create_request_body = null, string $contentType = self::contentTypes['createPromotionStack'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling createPromotionStack'
+                'Missing the required parameter $campaign_id when calling createPromotionStack'
             );
         }
 
@@ -695,10 +695,10 @@ class PromotionsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
@@ -711,12 +711,12 @@ class PromotionsApi
         );
 
         // for model (json/xml)
-        if (isset($promotionsStacksCreateRequestBody)) {
+        if (isset($promotions_stacks_create_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($promotionsStacksCreateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($promotions_stacks_create_request_body));
             } else {
-                $httpBody = $promotionsStacksCreateRequestBody;
+                $httpBody = $promotions_stacks_create_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -779,17 +779,17 @@ class PromotionsApi
      *
      * Delete Promotion Stack
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePromotionStack'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deletePromotionStack($campaignId, $stackId, string $contentType = self::contentTypes['deletePromotionStack'][0])
+    public function deletePromotionStack($campaign_id, $stack_id, string $contentType = self::contentTypes['deletePromotionStack'][0])
     {
-        $this->deletePromotionStackWithHttpInfo($campaignId, $stackId, $contentType);
+        $this->deletePromotionStackWithHttpInfo($campaign_id, $stack_id, $contentType);
     }
 
     /**
@@ -797,17 +797,17 @@ class PromotionsApi
      *
      * Delete Promotion Stack
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePromotionStack'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletePromotionStackWithHttpInfo($campaignId, $stackId, string $contentType = self::contentTypes['deletePromotionStack'][0])
+    public function deletePromotionStackWithHttpInfo($campaign_id, $stack_id, string $contentType = self::contentTypes['deletePromotionStack'][0])
     {
-        $request = $this->deletePromotionStackRequest($campaignId, $stackId, $contentType);
+        $request = $this->deletePromotionStackRequest($campaign_id, $stack_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -858,16 +858,16 @@ class PromotionsApi
      *
      * Delete Promotion Stack
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePromotionStack'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletePromotionStackAsync($campaignId, $stackId, string $contentType = self::contentTypes['deletePromotionStack'][0])
+    public function deletePromotionStackAsync($campaign_id, $stack_id, string $contentType = self::contentTypes['deletePromotionStack'][0])
     {
-        return $this->deletePromotionStackAsyncWithHttpInfo($campaignId, $stackId, $contentType)
+        return $this->deletePromotionStackAsyncWithHttpInfo($campaign_id, $stack_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -880,17 +880,17 @@ class PromotionsApi
      *
      * Delete Promotion Stack
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePromotionStack'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletePromotionStackAsyncWithHttpInfo($campaignId, $stackId, string $contentType = self::contentTypes['deletePromotionStack'][0])
+    public function deletePromotionStackAsyncWithHttpInfo($campaign_id, $stack_id, string $contentType = self::contentTypes['deletePromotionStack'][0])
     {
         $returnType = '';
-        $request = $this->deletePromotionStackRequest($campaignId, $stackId, $contentType);
+        $request = $this->deletePromotionStackRequest($campaign_id, $stack_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -918,27 +918,27 @@ class PromotionsApi
     /**
      * Create request for operation 'deletePromotionStack'
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePromotionStack'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletePromotionStackRequest($campaignId, $stackId, string $contentType = self::contentTypes['deletePromotionStack'][0])
+    public function deletePromotionStackRequest($campaign_id, $stack_id, string $contentType = self::contentTypes['deletePromotionStack'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling deletePromotionStack'
+                'Missing the required parameter $campaign_id when calling deletePromotionStack'
             );
         }
 
-        // verify the required parameter 'stackId' is set
-        if ($stackId === null || (is_array($stackId) && count($stackId) === 0)) {
+        // verify the required parameter 'stack_id' is set
+        if ($stack_id === null || (is_array($stack_id) && count($stack_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $stackId when calling deletePromotionStack'
+                'Missing the required parameter $stack_id when calling deletePromotionStack'
             );
         }
 
@@ -953,18 +953,18 @@ class PromotionsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
         // path params
-        if ($stackId !== null) {
+        if ($stack_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'stackId' . '}',
-                ObjectSerializer::toPathValue($stackId),
+                ObjectSerializer::toPathValue($stack_id),
                 $resourcePath
             );
         }
@@ -1038,16 +1038,16 @@ class PromotionsApi
      *
      * Delete Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePromotionTier'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deletePromotionTier($promotionTierId, string $contentType = self::contentTypes['deletePromotionTier'][0])
+    public function deletePromotionTier($promotion_tier_id, string $contentType = self::contentTypes['deletePromotionTier'][0])
     {
-        $this->deletePromotionTierWithHttpInfo($promotionTierId, $contentType);
+        $this->deletePromotionTierWithHttpInfo($promotion_tier_id, $contentType);
     }
 
     /**
@@ -1055,16 +1055,16 @@ class PromotionsApi
      *
      * Delete Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePromotionTier'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletePromotionTierWithHttpInfo($promotionTierId, string $contentType = self::contentTypes['deletePromotionTier'][0])
+    public function deletePromotionTierWithHttpInfo($promotion_tier_id, string $contentType = self::contentTypes['deletePromotionTier'][0])
     {
-        $request = $this->deletePromotionTierRequest($promotionTierId, $contentType);
+        $request = $this->deletePromotionTierRequest($promotion_tier_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1115,15 +1115,15 @@ class PromotionsApi
      *
      * Delete Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletePromotionTierAsync($promotionTierId, string $contentType = self::contentTypes['deletePromotionTier'][0])
+    public function deletePromotionTierAsync($promotion_tier_id, string $contentType = self::contentTypes['deletePromotionTier'][0])
     {
-        return $this->deletePromotionTierAsyncWithHttpInfo($promotionTierId, $contentType)
+        return $this->deletePromotionTierAsyncWithHttpInfo($promotion_tier_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1136,16 +1136,16 @@ class PromotionsApi
      *
      * Delete Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletePromotionTierAsyncWithHttpInfo($promotionTierId, string $contentType = self::contentTypes['deletePromotionTier'][0])
+    public function deletePromotionTierAsyncWithHttpInfo($promotion_tier_id, string $contentType = self::contentTypes['deletePromotionTier'][0])
     {
         $returnType = '';
-        $request = $this->deletePromotionTierRequest($promotionTierId, $contentType);
+        $request = $this->deletePromotionTierRequest($promotion_tier_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1173,19 +1173,19 @@ class PromotionsApi
     /**
      * Create request for operation 'deletePromotionTier'
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletePromotionTierRequest($promotionTierId, string $contentType = self::contentTypes['deletePromotionTier'][0])
+    public function deletePromotionTierRequest($promotion_tier_id, string $contentType = self::contentTypes['deletePromotionTier'][0])
     {
 
-        // verify the required parameter 'promotionTierId' is set
-        if ($promotionTierId === null || (is_array($promotionTierId) && count($promotionTierId) === 0)) {
+        // verify the required parameter 'promotion_tier_id' is set
+        if ($promotion_tier_id === null || (is_array($promotion_tier_id) && count($promotion_tier_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $promotionTierId when calling deletePromotionTier'
+                'Missing the required parameter $promotion_tier_id when calling deletePromotionTier'
             );
         }
 
@@ -1200,10 +1200,10 @@ class PromotionsApi
 
 
         // path params
-        if ($promotionTierId !== null) {
+        if ($promotion_tier_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'promotionTierId' . '}',
-                ObjectSerializer::toPathValue($promotionTierId),
+                ObjectSerializer::toPathValue($promotion_tier_id),
                 $resourcePath
             );
         }
@@ -1277,16 +1277,16 @@ class PromotionsApi
      *
      * Disable Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disablePromotionTier'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PromotionsTiersDisableResponseBody
      */
-    public function disablePromotionTier($promotionTierId, string $contentType = self::contentTypes['disablePromotionTier'][0])
+    public function disablePromotionTier($promotion_tier_id, string $contentType = self::contentTypes['disablePromotionTier'][0])
     {
-        list($response) = $this->disablePromotionTierWithHttpInfo($promotionTierId, $contentType);
+        list($response) = $this->disablePromotionTierWithHttpInfo($promotion_tier_id, $contentType);
         return $response;
     }
 
@@ -1295,16 +1295,16 @@ class PromotionsApi
      *
      * Disable Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disablePromotionTier'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PromotionsTiersDisableResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function disablePromotionTierWithHttpInfo($promotionTierId, string $contentType = self::contentTypes['disablePromotionTier'][0])
+    public function disablePromotionTierWithHttpInfo($promotion_tier_id, string $contentType = self::contentTypes['disablePromotionTier'][0])
     {
-        $request = $this->disablePromotionTierRequest($promotionTierId, $contentType);
+        $request = $this->disablePromotionTierRequest($promotion_tier_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1395,15 +1395,15 @@ class PromotionsApi
      *
      * Disable Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disablePromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function disablePromotionTierAsync($promotionTierId, string $contentType = self::contentTypes['disablePromotionTier'][0])
+    public function disablePromotionTierAsync($promotion_tier_id, string $contentType = self::contentTypes['disablePromotionTier'][0])
     {
-        return $this->disablePromotionTierAsyncWithHttpInfo($promotionTierId, $contentType)
+        return $this->disablePromotionTierAsyncWithHttpInfo($promotion_tier_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1416,16 +1416,16 @@ class PromotionsApi
      *
      * Disable Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disablePromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function disablePromotionTierAsyncWithHttpInfo($promotionTierId, string $contentType = self::contentTypes['disablePromotionTier'][0])
+    public function disablePromotionTierAsyncWithHttpInfo($promotion_tier_id, string $contentType = self::contentTypes['disablePromotionTier'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PromotionsTiersDisableResponseBody';
-        $request = $this->disablePromotionTierRequest($promotionTierId, $contentType);
+        $request = $this->disablePromotionTierRequest($promotion_tier_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1466,19 +1466,19 @@ class PromotionsApi
     /**
      * Create request for operation 'disablePromotionTier'
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disablePromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function disablePromotionTierRequest($promotionTierId, string $contentType = self::contentTypes['disablePromotionTier'][0])
+    public function disablePromotionTierRequest($promotion_tier_id, string $contentType = self::contentTypes['disablePromotionTier'][0])
     {
 
-        // verify the required parameter 'promotionTierId' is set
-        if ($promotionTierId === null || (is_array($promotionTierId) && count($promotionTierId) === 0)) {
+        // verify the required parameter 'promotion_tier_id' is set
+        if ($promotion_tier_id === null || (is_array($promotion_tier_id) && count($promotion_tier_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $promotionTierId when calling disablePromotionTier'
+                'Missing the required parameter $promotion_tier_id when calling disablePromotionTier'
             );
         }
 
@@ -1493,10 +1493,10 @@ class PromotionsApi
 
 
         // path params
-        if ($promotionTierId !== null) {
+        if ($promotion_tier_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'promotionTierId' . '}',
-                ObjectSerializer::toPathValue($promotionTierId),
+                ObjectSerializer::toPathValue($promotion_tier_id),
                 $resourcePath
             );
         }
@@ -1570,16 +1570,16 @@ class PromotionsApi
      *
      * Enable Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enablePromotionTier'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PromotionsTiersEnableResponseBody
      */
-    public function enablePromotionTier($promotionTierId, string $contentType = self::contentTypes['enablePromotionTier'][0])
+    public function enablePromotionTier($promotion_tier_id, string $contentType = self::contentTypes['enablePromotionTier'][0])
     {
-        list($response) = $this->enablePromotionTierWithHttpInfo($promotionTierId, $contentType);
+        list($response) = $this->enablePromotionTierWithHttpInfo($promotion_tier_id, $contentType);
         return $response;
     }
 
@@ -1588,16 +1588,16 @@ class PromotionsApi
      *
      * Enable Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enablePromotionTier'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PromotionsTiersEnableResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function enablePromotionTierWithHttpInfo($promotionTierId, string $contentType = self::contentTypes['enablePromotionTier'][0])
+    public function enablePromotionTierWithHttpInfo($promotion_tier_id, string $contentType = self::contentTypes['enablePromotionTier'][0])
     {
-        $request = $this->enablePromotionTierRequest($promotionTierId, $contentType);
+        $request = $this->enablePromotionTierRequest($promotion_tier_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1688,15 +1688,15 @@ class PromotionsApi
      *
      * Enable Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enablePromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enablePromotionTierAsync($promotionTierId, string $contentType = self::contentTypes['enablePromotionTier'][0])
+    public function enablePromotionTierAsync($promotion_tier_id, string $contentType = self::contentTypes['enablePromotionTier'][0])
     {
-        return $this->enablePromotionTierAsyncWithHttpInfo($promotionTierId, $contentType)
+        return $this->enablePromotionTierAsyncWithHttpInfo($promotion_tier_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1709,16 +1709,16 @@ class PromotionsApi
      *
      * Enable Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enablePromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enablePromotionTierAsyncWithHttpInfo($promotionTierId, string $contentType = self::contentTypes['enablePromotionTier'][0])
+    public function enablePromotionTierAsyncWithHttpInfo($promotion_tier_id, string $contentType = self::contentTypes['enablePromotionTier'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PromotionsTiersEnableResponseBody';
-        $request = $this->enablePromotionTierRequest($promotionTierId, $contentType);
+        $request = $this->enablePromotionTierRequest($promotion_tier_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1759,19 +1759,19 @@ class PromotionsApi
     /**
      * Create request for operation 'enablePromotionTier'
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enablePromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function enablePromotionTierRequest($promotionTierId, string $contentType = self::contentTypes['enablePromotionTier'][0])
+    public function enablePromotionTierRequest($promotion_tier_id, string $contentType = self::contentTypes['enablePromotionTier'][0])
     {
 
-        // verify the required parameter 'promotionTierId' is set
-        if ($promotionTierId === null || (is_array($promotionTierId) && count($promotionTierId) === 0)) {
+        // verify the required parameter 'promotion_tier_id' is set
+        if ($promotion_tier_id === null || (is_array($promotion_tier_id) && count($promotion_tier_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $promotionTierId when calling enablePromotionTier'
+                'Missing the required parameter $promotion_tier_id when calling enablePromotionTier'
             );
         }
 
@@ -1786,10 +1786,10 @@ class PromotionsApi
 
 
         // path params
-        if ($promotionTierId !== null) {
+        if ($promotion_tier_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'promotionTierId' . '}',
-                ObjectSerializer::toPathValue($promotionTierId),
+                ObjectSerializer::toPathValue($promotion_tier_id),
                 $resourcePath
             );
         }
@@ -1863,17 +1863,17 @@ class PromotionsApi
      *
      * Get Promotion Stack
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPromotionStack'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PromotionsStacksGetResponseBody
      */
-    public function getPromotionStack($campaignId, $stackId, string $contentType = self::contentTypes['getPromotionStack'][0])
+    public function getPromotionStack($campaign_id, $stack_id, string $contentType = self::contentTypes['getPromotionStack'][0])
     {
-        list($response) = $this->getPromotionStackWithHttpInfo($campaignId, $stackId, $contentType);
+        list($response) = $this->getPromotionStackWithHttpInfo($campaign_id, $stack_id, $contentType);
         return $response;
     }
 
@@ -1882,17 +1882,17 @@ class PromotionsApi
      *
      * Get Promotion Stack
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPromotionStack'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PromotionsStacksGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPromotionStackWithHttpInfo($campaignId, $stackId, string $contentType = self::contentTypes['getPromotionStack'][0])
+    public function getPromotionStackWithHttpInfo($campaign_id, $stack_id, string $contentType = self::contentTypes['getPromotionStack'][0])
     {
-        $request = $this->getPromotionStackRequest($campaignId, $stackId, $contentType);
+        $request = $this->getPromotionStackRequest($campaign_id, $stack_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1983,16 +1983,16 @@ class PromotionsApi
      *
      * Get Promotion Stack
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPromotionStack'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPromotionStackAsync($campaignId, $stackId, string $contentType = self::contentTypes['getPromotionStack'][0])
+    public function getPromotionStackAsync($campaign_id, $stack_id, string $contentType = self::contentTypes['getPromotionStack'][0])
     {
-        return $this->getPromotionStackAsyncWithHttpInfo($campaignId, $stackId, $contentType)
+        return $this->getPromotionStackAsyncWithHttpInfo($campaign_id, $stack_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2005,17 +2005,17 @@ class PromotionsApi
      *
      * Get Promotion Stack
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPromotionStack'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPromotionStackAsyncWithHttpInfo($campaignId, $stackId, string $contentType = self::contentTypes['getPromotionStack'][0])
+    public function getPromotionStackAsyncWithHttpInfo($campaign_id, $stack_id, string $contentType = self::contentTypes['getPromotionStack'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PromotionsStacksGetResponseBody';
-        $request = $this->getPromotionStackRequest($campaignId, $stackId, $contentType);
+        $request = $this->getPromotionStackRequest($campaign_id, $stack_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2056,27 +2056,27 @@ class PromotionsApi
     /**
      * Create request for operation 'getPromotionStack'
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPromotionStack'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPromotionStackRequest($campaignId, $stackId, string $contentType = self::contentTypes['getPromotionStack'][0])
+    public function getPromotionStackRequest($campaign_id, $stack_id, string $contentType = self::contentTypes['getPromotionStack'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling getPromotionStack'
+                'Missing the required parameter $campaign_id when calling getPromotionStack'
             );
         }
 
-        // verify the required parameter 'stackId' is set
-        if ($stackId === null || (is_array($stackId) && count($stackId) === 0)) {
+        // verify the required parameter 'stack_id' is set
+        if ($stack_id === null || (is_array($stack_id) && count($stack_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $stackId when calling getPromotionStack'
+                'Missing the required parameter $stack_id when calling getPromotionStack'
             );
         }
 
@@ -2091,18 +2091,18 @@ class PromotionsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
         // path params
-        if ($stackId !== null) {
+        if ($stack_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'stackId' . '}',
-                ObjectSerializer::toPathValue($stackId),
+                ObjectSerializer::toPathValue($stack_id),
                 $resourcePath
             );
         }
@@ -2176,16 +2176,16 @@ class PromotionsApi
      *
      * Get Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPromotionTier'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PromotionsTiersGetResponseBody
      */
-    public function getPromotionTier($promotionTierId, string $contentType = self::contentTypes['getPromotionTier'][0])
+    public function getPromotionTier($promotion_tier_id, string $contentType = self::contentTypes['getPromotionTier'][0])
     {
-        list($response) = $this->getPromotionTierWithHttpInfo($promotionTierId, $contentType);
+        list($response) = $this->getPromotionTierWithHttpInfo($promotion_tier_id, $contentType);
         return $response;
     }
 
@@ -2194,16 +2194,16 @@ class PromotionsApi
      *
      * Get Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPromotionTier'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PromotionsTiersGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPromotionTierWithHttpInfo($promotionTierId, string $contentType = self::contentTypes['getPromotionTier'][0])
+    public function getPromotionTierWithHttpInfo($promotion_tier_id, string $contentType = self::contentTypes['getPromotionTier'][0])
     {
-        $request = $this->getPromotionTierRequest($promotionTierId, $contentType);
+        $request = $this->getPromotionTierRequest($promotion_tier_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2294,15 +2294,15 @@ class PromotionsApi
      *
      * Get Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPromotionTierAsync($promotionTierId, string $contentType = self::contentTypes['getPromotionTier'][0])
+    public function getPromotionTierAsync($promotion_tier_id, string $contentType = self::contentTypes['getPromotionTier'][0])
     {
-        return $this->getPromotionTierAsyncWithHttpInfo($promotionTierId, $contentType)
+        return $this->getPromotionTierAsyncWithHttpInfo($promotion_tier_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2315,16 +2315,16 @@ class PromotionsApi
      *
      * Get Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPromotionTierAsyncWithHttpInfo($promotionTierId, string $contentType = self::contentTypes['getPromotionTier'][0])
+    public function getPromotionTierAsyncWithHttpInfo($promotion_tier_id, string $contentType = self::contentTypes['getPromotionTier'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PromotionsTiersGetResponseBody';
-        $request = $this->getPromotionTierRequest($promotionTierId, $contentType);
+        $request = $this->getPromotionTierRequest($promotion_tier_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2365,19 +2365,19 @@ class PromotionsApi
     /**
      * Create request for operation 'getPromotionTier'
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPromotionTierRequest($promotionTierId, string $contentType = self::contentTypes['getPromotionTier'][0])
+    public function getPromotionTierRequest($promotion_tier_id, string $contentType = self::contentTypes['getPromotionTier'][0])
     {
 
-        // verify the required parameter 'promotionTierId' is set
-        if ($promotionTierId === null || (is_array($promotionTierId) && count($promotionTierId) === 0)) {
+        // verify the required parameter 'promotion_tier_id' is set
+        if ($promotion_tier_id === null || (is_array($promotion_tier_id) && count($promotion_tier_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $promotionTierId when calling getPromotionTier'
+                'Missing the required parameter $promotion_tier_id when calling getPromotionTier'
             );
         }
 
@@ -2392,10 +2392,10 @@ class PromotionsApi
 
 
         // path params
-        if ($promotionTierId !== null) {
+        if ($promotion_tier_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'promotionTierId' . '}',
-                ObjectSerializer::toPathValue($promotionTierId),
+                ObjectSerializer::toPathValue($promotion_tier_id),
                 $resourcePath
             );
         }
@@ -2472,17 +2472,17 @@ class PromotionsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListAllPromotionStacks $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
-     * @param  ParameterUpdatedBeforeAfter $updatedAt A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterUpdatedBeforeAfter $updated_at A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAllPromotionStacks'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PromotionsStacksListResponseBody
      */
-    public function listAllPromotionStacks($limit = null, $page = null, $order = null, $createdAt = null, $updatedAt = null, string $contentType = self::contentTypes['listAllPromotionStacks'][0])
+    public function listAllPromotionStacks($limit = null, $page = null, $order = null, $created_at = null, $updated_at = null, string $contentType = self::contentTypes['listAllPromotionStacks'][0])
     {
-        list($response) = $this->listAllPromotionStacksWithHttpInfo($limit, $page, $order, $createdAt, $updatedAt, $contentType);
+        list($response) = $this->listAllPromotionStacksWithHttpInfo($limit, $page, $order, $created_at, $updated_at, $contentType);
         return $response;
     }
 
@@ -2494,17 +2494,17 @@ class PromotionsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListAllPromotionStacks $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
-     * @param  ParameterUpdatedBeforeAfter $updatedAt A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterUpdatedBeforeAfter $updated_at A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAllPromotionStacks'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PromotionsStacksListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAllPromotionStacksWithHttpInfo($limit = null, $page = null, $order = null, $createdAt = null, $updatedAt = null, string $contentType = self::contentTypes['listAllPromotionStacks'][0])
+    public function listAllPromotionStacksWithHttpInfo($limit = null, $page = null, $order = null, $created_at = null, $updated_at = null, string $contentType = self::contentTypes['listAllPromotionStacks'][0])
     {
-        $request = $this->listAllPromotionStacksRequest($limit, $page, $order, $createdAt, $updatedAt, $contentType);
+        $request = $this->listAllPromotionStacksRequest($limit, $page, $order, $created_at, $updated_at, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2598,16 +2598,16 @@ class PromotionsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListAllPromotionStacks $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
-     * @param  ParameterUpdatedBeforeAfter $updatedAt A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterUpdatedBeforeAfter $updated_at A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAllPromotionStacks'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAllPromotionStacksAsync($limit = null, $page = null, $order = null, $createdAt = null, $updatedAt = null, string $contentType = self::contentTypes['listAllPromotionStacks'][0])
+    public function listAllPromotionStacksAsync($limit = null, $page = null, $order = null, $created_at = null, $updated_at = null, string $contentType = self::contentTypes['listAllPromotionStacks'][0])
     {
-        return $this->listAllPromotionStacksAsyncWithHttpInfo($limit, $page, $order, $createdAt, $updatedAt, $contentType)
+        return $this->listAllPromotionStacksAsyncWithHttpInfo($limit, $page, $order, $created_at, $updated_at, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2623,17 +2623,17 @@ class PromotionsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListAllPromotionStacks $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
-     * @param  ParameterUpdatedBeforeAfter $updatedAt A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterUpdatedBeforeAfter $updated_at A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAllPromotionStacks'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAllPromotionStacksAsyncWithHttpInfo($limit = null, $page = null, $order = null, $createdAt = null, $updatedAt = null, string $contentType = self::contentTypes['listAllPromotionStacks'][0])
+    public function listAllPromotionStacksAsyncWithHttpInfo($limit = null, $page = null, $order = null, $created_at = null, $updated_at = null, string $contentType = self::contentTypes['listAllPromotionStacks'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PromotionsStacksListResponseBody';
-        $request = $this->listAllPromotionStacksRequest($limit, $page, $order, $createdAt, $updatedAt, $contentType);
+        $request = $this->listAllPromotionStacksRequest($limit, $page, $order, $created_at, $updated_at, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2677,14 +2677,14 @@ class PromotionsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListAllPromotionStacks $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterCreatedBeforeAfter $createdAt A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
-     * @param  ParameterUpdatedBeforeAfter $updatedAt A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterCreatedBeforeAfter $created_at A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z (optional)
+     * @param  ParameterUpdatedBeforeAfter $updated_at A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAllPromotionStacks'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listAllPromotionStacksRequest($limit = null, $page = null, $order = null, $createdAt = null, $updatedAt = null, string $contentType = self::contentTypes['listAllPromotionStacks'][0])
+    public function listAllPromotionStacksRequest($limit = null, $page = null, $order = null, $created_at = null, $updated_at = null, string $contentType = self::contentTypes['listAllPromotionStacks'][0])
     {
 
         if ($limit !== null && $limit > 100) {
@@ -2741,7 +2741,7 @@ class PromotionsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $createdAt,
+            $created_at,
             'created_at', // param base name
             'object', // openApiType
             'deepObject', // style
@@ -2750,7 +2750,7 @@ class PromotionsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $updatedAt,
+            $updated_at,
             'updated_at', // param base name
             'object', // openApiType
             'deepObject', // style
@@ -2829,16 +2829,16 @@ class PromotionsApi
      *
      * List Promotion Stacks in Campaign
      *
-     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $campaign_id Unique campaign ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPromotionStacksInCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PromotionsStacksListResponseBody
      */
-    public function listPromotionStacksInCampaign($campaignId, string $contentType = self::contentTypes['listPromotionStacksInCampaign'][0])
+    public function listPromotionStacksInCampaign($campaign_id, string $contentType = self::contentTypes['listPromotionStacksInCampaign'][0])
     {
-        list($response) = $this->listPromotionStacksInCampaignWithHttpInfo($campaignId, $contentType);
+        list($response) = $this->listPromotionStacksInCampaignWithHttpInfo($campaign_id, $contentType);
         return $response;
     }
 
@@ -2847,16 +2847,16 @@ class PromotionsApi
      *
      * List Promotion Stacks in Campaign
      *
-     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $campaign_id Unique campaign ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPromotionStacksInCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PromotionsStacksListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listPromotionStacksInCampaignWithHttpInfo($campaignId, string $contentType = self::contentTypes['listPromotionStacksInCampaign'][0])
+    public function listPromotionStacksInCampaignWithHttpInfo($campaign_id, string $contentType = self::contentTypes['listPromotionStacksInCampaign'][0])
     {
-        $request = $this->listPromotionStacksInCampaignRequest($campaignId, $contentType);
+        $request = $this->listPromotionStacksInCampaignRequest($campaign_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2947,15 +2947,15 @@ class PromotionsApi
      *
      * List Promotion Stacks in Campaign
      *
-     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $campaign_id Unique campaign ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPromotionStacksInCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPromotionStacksInCampaignAsync($campaignId, string $contentType = self::contentTypes['listPromotionStacksInCampaign'][0])
+    public function listPromotionStacksInCampaignAsync($campaign_id, string $contentType = self::contentTypes['listPromotionStacksInCampaign'][0])
     {
-        return $this->listPromotionStacksInCampaignAsyncWithHttpInfo($campaignId, $contentType)
+        return $this->listPromotionStacksInCampaignAsyncWithHttpInfo($campaign_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2968,16 +2968,16 @@ class PromotionsApi
      *
      * List Promotion Stacks in Campaign
      *
-     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $campaign_id Unique campaign ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPromotionStacksInCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPromotionStacksInCampaignAsyncWithHttpInfo($campaignId, string $contentType = self::contentTypes['listPromotionStacksInCampaign'][0])
+    public function listPromotionStacksInCampaignAsyncWithHttpInfo($campaign_id, string $contentType = self::contentTypes['listPromotionStacksInCampaign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PromotionsStacksListResponseBody';
-        $request = $this->listPromotionStacksInCampaignRequest($campaignId, $contentType);
+        $request = $this->listPromotionStacksInCampaignRequest($campaign_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3018,19 +3018,19 @@ class PromotionsApi
     /**
      * Create request for operation 'listPromotionStacksInCampaign'
      *
-     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $campaign_id Unique campaign ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPromotionStacksInCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listPromotionStacksInCampaignRequest($campaignId, string $contentType = self::contentTypes['listPromotionStacksInCampaign'][0])
+    public function listPromotionStacksInCampaignRequest($campaign_id, string $contentType = self::contentTypes['listPromotionStacksInCampaign'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling listPromotionStacksInCampaign'
+                'Missing the required parameter $campaign_id when calling listPromotionStacksInCampaign'
             );
         }
 
@@ -3045,10 +3045,10 @@ class PromotionsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
@@ -3122,7 +3122,7 @@ class PromotionsApi
      *
      * List Promotion Tiers
      *
-     * @param  bool $isAvailable This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
+     * @param  bool $is_available This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListPromotionTiers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -3132,9 +3132,9 @@ class PromotionsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PromotionsTiersListResponseBody
      */
-    public function listPromotionTiers($isAvailable = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiers'][0])
+    public function listPromotionTiers($is_available = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiers'][0])
     {
-        list($response) = $this->listPromotionTiersWithHttpInfo($isAvailable, $limit, $page, $order, $contentType);
+        list($response) = $this->listPromotionTiersWithHttpInfo($is_available, $limit, $page, $order, $contentType);
         return $response;
     }
 
@@ -3143,7 +3143,7 @@ class PromotionsApi
      *
      * List Promotion Tiers
      *
-     * @param  bool $isAvailable This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
+     * @param  bool $is_available This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListPromotionTiers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -3153,9 +3153,9 @@ class PromotionsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PromotionsTiersListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listPromotionTiersWithHttpInfo($isAvailable = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiers'][0])
+    public function listPromotionTiersWithHttpInfo($is_available = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiers'][0])
     {
-        $request = $this->listPromotionTiersRequest($isAvailable, $limit, $page, $order, $contentType);
+        $request = $this->listPromotionTiersRequest($is_available, $limit, $page, $order, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3246,7 +3246,7 @@ class PromotionsApi
      *
      * List Promotion Tiers
      *
-     * @param  bool $isAvailable This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
+     * @param  bool $is_available This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListPromotionTiers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -3255,9 +3255,9 @@ class PromotionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPromotionTiersAsync($isAvailable = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiers'][0])
+    public function listPromotionTiersAsync($is_available = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiers'][0])
     {
-        return $this->listPromotionTiersAsyncWithHttpInfo($isAvailable, $limit, $page, $order, $contentType)
+        return $this->listPromotionTiersAsyncWithHttpInfo($is_available, $limit, $page, $order, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3270,7 +3270,7 @@ class PromotionsApi
      *
      * List Promotion Tiers
      *
-     * @param  bool $isAvailable This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
+     * @param  bool $is_available This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListPromotionTiers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -3279,10 +3279,10 @@ class PromotionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPromotionTiersAsyncWithHttpInfo($isAvailable = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiers'][0])
+    public function listPromotionTiersAsyncWithHttpInfo($is_available = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiers'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PromotionsTiersListResponseBody';
-        $request = $this->listPromotionTiersRequest($isAvailable, $limit, $page, $order, $contentType);
+        $request = $this->listPromotionTiersRequest($is_available, $limit, $page, $order, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3323,7 +3323,7 @@ class PromotionsApi
     /**
      * Create request for operation 'listPromotionTiers'
      *
-     * @param  bool $isAvailable This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
+     * @param  bool $is_available This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. (optional)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrderListPromotionTiers $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -3332,7 +3332,7 @@ class PromotionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listPromotionTiersRequest($isAvailable = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiers'][0])
+    public function listPromotionTiersRequest($is_available = null, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listPromotionTiers'][0])
     {
 
 
@@ -3361,7 +3361,7 @@ class PromotionsApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $isAvailable,
+            $is_available,
             'is_available', // param base name
             'boolean', // openApiType
             'form', // style
@@ -3467,16 +3467,16 @@ class PromotionsApi
      *
      * List Promotion Tiers from Campaign
      *
-     * @param  string $campaignId Unique campaign ID assigned by Voucherify. (required)
+     * @param  string $campaign_id Unique campaign ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPromotionTiersFromCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PromotionsTiersListResponseBody
      */
-    public function listPromotionTiersFromCampaign($campaignId, string $contentType = self::contentTypes['listPromotionTiersFromCampaign'][0])
+    public function listPromotionTiersFromCampaign($campaign_id, string $contentType = self::contentTypes['listPromotionTiersFromCampaign'][0])
     {
-        list($response) = $this->listPromotionTiersFromCampaignWithHttpInfo($campaignId, $contentType);
+        list($response) = $this->listPromotionTiersFromCampaignWithHttpInfo($campaign_id, $contentType);
         return $response;
     }
 
@@ -3485,16 +3485,16 @@ class PromotionsApi
      *
      * List Promotion Tiers from Campaign
      *
-     * @param  string $campaignId Unique campaign ID assigned by Voucherify. (required)
+     * @param  string $campaign_id Unique campaign ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPromotionTiersFromCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PromotionsTiersListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listPromotionTiersFromCampaignWithHttpInfo($campaignId, string $contentType = self::contentTypes['listPromotionTiersFromCampaign'][0])
+    public function listPromotionTiersFromCampaignWithHttpInfo($campaign_id, string $contentType = self::contentTypes['listPromotionTiersFromCampaign'][0])
     {
-        $request = $this->listPromotionTiersFromCampaignRequest($campaignId, $contentType);
+        $request = $this->listPromotionTiersFromCampaignRequest($campaign_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3585,15 +3585,15 @@ class PromotionsApi
      *
      * List Promotion Tiers from Campaign
      *
-     * @param  string $campaignId Unique campaign ID assigned by Voucherify. (required)
+     * @param  string $campaign_id Unique campaign ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPromotionTiersFromCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPromotionTiersFromCampaignAsync($campaignId, string $contentType = self::contentTypes['listPromotionTiersFromCampaign'][0])
+    public function listPromotionTiersFromCampaignAsync($campaign_id, string $contentType = self::contentTypes['listPromotionTiersFromCampaign'][0])
     {
-        return $this->listPromotionTiersFromCampaignAsyncWithHttpInfo($campaignId, $contentType)
+        return $this->listPromotionTiersFromCampaignAsyncWithHttpInfo($campaign_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3606,16 +3606,16 @@ class PromotionsApi
      *
      * List Promotion Tiers from Campaign
      *
-     * @param  string $campaignId Unique campaign ID assigned by Voucherify. (required)
+     * @param  string $campaign_id Unique campaign ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPromotionTiersFromCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPromotionTiersFromCampaignAsyncWithHttpInfo($campaignId, string $contentType = self::contentTypes['listPromotionTiersFromCampaign'][0])
+    public function listPromotionTiersFromCampaignAsyncWithHttpInfo($campaign_id, string $contentType = self::contentTypes['listPromotionTiersFromCampaign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PromotionsTiersListResponseBody';
-        $request = $this->listPromotionTiersFromCampaignRequest($campaignId, $contentType);
+        $request = $this->listPromotionTiersFromCampaignRequest($campaign_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3656,19 +3656,19 @@ class PromotionsApi
     /**
      * Create request for operation 'listPromotionTiersFromCampaign'
      *
-     * @param  string $campaignId Unique campaign ID assigned by Voucherify. (required)
+     * @param  string $campaign_id Unique campaign ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPromotionTiersFromCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listPromotionTiersFromCampaignRequest($campaignId, string $contentType = self::contentTypes['listPromotionTiersFromCampaign'][0])
+    public function listPromotionTiersFromCampaignRequest($campaign_id, string $contentType = self::contentTypes['listPromotionTiersFromCampaign'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling listPromotionTiersFromCampaign'
+                'Missing the required parameter $campaign_id when calling listPromotionTiersFromCampaign'
             );
         }
 
@@ -3683,10 +3683,10 @@ class PromotionsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
@@ -3760,18 +3760,18 @@ class PromotionsApi
      *
      * Update Promotion Stack
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsStacksUpdateRequestBody $promotionsStacksUpdateRequestBody Specify the promotion stack parameters that you would like to update. (optional)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsStacksUpdateRequestBody $promotions_stacks_update_request_body Specify the promotion stack parameters that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePromotionStack'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PromotionsStacksUpdateResponseBody
      */
-    public function updatePromotionStack($campaignId, $stackId, $promotionsStacksUpdateRequestBody = null, string $contentType = self::contentTypes['updatePromotionStack'][0])
+    public function updatePromotionStack($campaign_id, $stack_id, $promotions_stacks_update_request_body = null, string $contentType = self::contentTypes['updatePromotionStack'][0])
     {
-        list($response) = $this->updatePromotionStackWithHttpInfo($campaignId, $stackId, $promotionsStacksUpdateRequestBody, $contentType);
+        list($response) = $this->updatePromotionStackWithHttpInfo($campaign_id, $stack_id, $promotions_stacks_update_request_body, $contentType);
         return $response;
     }
 
@@ -3780,18 +3780,18 @@ class PromotionsApi
      *
      * Update Promotion Stack
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsStacksUpdateRequestBody $promotionsStacksUpdateRequestBody Specify the promotion stack parameters that you would like to update. (optional)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsStacksUpdateRequestBody $promotions_stacks_update_request_body Specify the promotion stack parameters that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePromotionStack'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PromotionsStacksUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updatePromotionStackWithHttpInfo($campaignId, $stackId, $promotionsStacksUpdateRequestBody = null, string $contentType = self::contentTypes['updatePromotionStack'][0])
+    public function updatePromotionStackWithHttpInfo($campaign_id, $stack_id, $promotions_stacks_update_request_body = null, string $contentType = self::contentTypes['updatePromotionStack'][0])
     {
-        $request = $this->updatePromotionStackRequest($campaignId, $stackId, $promotionsStacksUpdateRequestBody, $contentType);
+        $request = $this->updatePromotionStackRequest($campaign_id, $stack_id, $promotions_stacks_update_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3882,17 +3882,17 @@ class PromotionsApi
      *
      * Update Promotion Stack
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsStacksUpdateRequestBody $promotionsStacksUpdateRequestBody Specify the promotion stack parameters that you would like to update. (optional)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsStacksUpdateRequestBody $promotions_stacks_update_request_body Specify the promotion stack parameters that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePromotionStack'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updatePromotionStackAsync($campaignId, $stackId, $promotionsStacksUpdateRequestBody = null, string $contentType = self::contentTypes['updatePromotionStack'][0])
+    public function updatePromotionStackAsync($campaign_id, $stack_id, $promotions_stacks_update_request_body = null, string $contentType = self::contentTypes['updatePromotionStack'][0])
     {
-        return $this->updatePromotionStackAsyncWithHttpInfo($campaignId, $stackId, $promotionsStacksUpdateRequestBody, $contentType)
+        return $this->updatePromotionStackAsyncWithHttpInfo($campaign_id, $stack_id, $promotions_stacks_update_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3905,18 +3905,18 @@ class PromotionsApi
      *
      * Update Promotion Stack
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsStacksUpdateRequestBody $promotionsStacksUpdateRequestBody Specify the promotion stack parameters that you would like to update. (optional)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsStacksUpdateRequestBody $promotions_stacks_update_request_body Specify the promotion stack parameters that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePromotionStack'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updatePromotionStackAsyncWithHttpInfo($campaignId, $stackId, $promotionsStacksUpdateRequestBody = null, string $contentType = self::contentTypes['updatePromotionStack'][0])
+    public function updatePromotionStackAsyncWithHttpInfo($campaign_id, $stack_id, $promotions_stacks_update_request_body = null, string $contentType = self::contentTypes['updatePromotionStack'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PromotionsStacksUpdateResponseBody';
-        $request = $this->updatePromotionStackRequest($campaignId, $stackId, $promotionsStacksUpdateRequestBody, $contentType);
+        $request = $this->updatePromotionStackRequest($campaign_id, $stack_id, $promotions_stacks_update_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3957,28 +3957,28 @@ class PromotionsApi
     /**
      * Create request for operation 'updatePromotionStack'
      *
-     * @param  string $campaignId ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
-     * @param  string $stackId Promotion stack ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsStacksUpdateRequestBody $promotionsStacksUpdateRequestBody Specify the promotion stack parameters that you would like to update. (optional)
+     * @param  string $campaign_id ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. (required)
+     * @param  string $stack_id Promotion stack ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsStacksUpdateRequestBody $promotions_stacks_update_request_body Specify the promotion stack parameters that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePromotionStack'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updatePromotionStackRequest($campaignId, $stackId, $promotionsStacksUpdateRequestBody = null, string $contentType = self::contentTypes['updatePromotionStack'][0])
+    public function updatePromotionStackRequest($campaign_id, $stack_id, $promotions_stacks_update_request_body = null, string $contentType = self::contentTypes['updatePromotionStack'][0])
     {
 
-        // verify the required parameter 'campaignId' is set
-        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+        // verify the required parameter 'campaign_id' is set
+        if ($campaign_id === null || (is_array($campaign_id) && count($campaign_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $campaignId when calling updatePromotionStack'
+                'Missing the required parameter $campaign_id when calling updatePromotionStack'
             );
         }
 
-        // verify the required parameter 'stackId' is set
-        if ($stackId === null || (is_array($stackId) && count($stackId) === 0)) {
+        // verify the required parameter 'stack_id' is set
+        if ($stack_id === null || (is_array($stack_id) && count($stack_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $stackId when calling updatePromotionStack'
+                'Missing the required parameter $stack_id when calling updatePromotionStack'
             );
         }
 
@@ -3994,18 +3994,18 @@ class PromotionsApi
 
 
         // path params
-        if ($campaignId !== null) {
+        if ($campaign_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'campaignId' . '}',
-                ObjectSerializer::toPathValue($campaignId),
+                ObjectSerializer::toPathValue($campaign_id),
                 $resourcePath
             );
         }
         // path params
-        if ($stackId !== null) {
+        if ($stack_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'stackId' . '}',
-                ObjectSerializer::toPathValue($stackId),
+                ObjectSerializer::toPathValue($stack_id),
                 $resourcePath
             );
         }
@@ -4018,12 +4018,12 @@ class PromotionsApi
         );
 
         // for model (json/xml)
-        if (isset($promotionsStacksUpdateRequestBody)) {
+        if (isset($promotions_stacks_update_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($promotionsStacksUpdateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($promotions_stacks_update_request_body));
             } else {
-                $httpBody = $promotionsStacksUpdateRequestBody;
+                $httpBody = $promotions_stacks_update_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -4086,17 +4086,17 @@ class PromotionsApi
      *
      * Update Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsTiersUpdateRequestBody $promotionsTiersUpdateRequestBody Specify the promotion tier parameters that you would like to update. (optional)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsTiersUpdateRequestBody $promotions_tiers_update_request_body Specify the promotion tier parameters that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePromotionTier'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\PromotionsTiersUpdateResponseBody
      */
-    public function updatePromotionTier($promotionTierId, $promotionsTiersUpdateRequestBody = null, string $contentType = self::contentTypes['updatePromotionTier'][0])
+    public function updatePromotionTier($promotion_tier_id, $promotions_tiers_update_request_body = null, string $contentType = self::contentTypes['updatePromotionTier'][0])
     {
-        list($response) = $this->updatePromotionTierWithHttpInfo($promotionTierId, $promotionsTiersUpdateRequestBody, $contentType);
+        list($response) = $this->updatePromotionTierWithHttpInfo($promotion_tier_id, $promotions_tiers_update_request_body, $contentType);
         return $response;
     }
 
@@ -4105,17 +4105,17 @@ class PromotionsApi
      *
      * Update Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsTiersUpdateRequestBody $promotionsTiersUpdateRequestBody Specify the promotion tier parameters that you would like to update. (optional)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsTiersUpdateRequestBody $promotions_tiers_update_request_body Specify the promotion tier parameters that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePromotionTier'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\PromotionsTiersUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updatePromotionTierWithHttpInfo($promotionTierId, $promotionsTiersUpdateRequestBody = null, string $contentType = self::contentTypes['updatePromotionTier'][0])
+    public function updatePromotionTierWithHttpInfo($promotion_tier_id, $promotions_tiers_update_request_body = null, string $contentType = self::contentTypes['updatePromotionTier'][0])
     {
-        $request = $this->updatePromotionTierRequest($promotionTierId, $promotionsTiersUpdateRequestBody, $contentType);
+        $request = $this->updatePromotionTierRequest($promotion_tier_id, $promotions_tiers_update_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4206,16 +4206,16 @@ class PromotionsApi
      *
      * Update Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsTiersUpdateRequestBody $promotionsTiersUpdateRequestBody Specify the promotion tier parameters that you would like to update. (optional)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsTiersUpdateRequestBody $promotions_tiers_update_request_body Specify the promotion tier parameters that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updatePromotionTierAsync($promotionTierId, $promotionsTiersUpdateRequestBody = null, string $contentType = self::contentTypes['updatePromotionTier'][0])
+    public function updatePromotionTierAsync($promotion_tier_id, $promotions_tiers_update_request_body = null, string $contentType = self::contentTypes['updatePromotionTier'][0])
     {
-        return $this->updatePromotionTierAsyncWithHttpInfo($promotionTierId, $promotionsTiersUpdateRequestBody, $contentType)
+        return $this->updatePromotionTierAsyncWithHttpInfo($promotion_tier_id, $promotions_tiers_update_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4228,17 +4228,17 @@ class PromotionsApi
      *
      * Update Promotion Tier
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsTiersUpdateRequestBody $promotionsTiersUpdateRequestBody Specify the promotion tier parameters that you would like to update. (optional)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsTiersUpdateRequestBody $promotions_tiers_update_request_body Specify the promotion tier parameters that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updatePromotionTierAsyncWithHttpInfo($promotionTierId, $promotionsTiersUpdateRequestBody = null, string $contentType = self::contentTypes['updatePromotionTier'][0])
+    public function updatePromotionTierAsyncWithHttpInfo($promotion_tier_id, $promotions_tiers_update_request_body = null, string $contentType = self::contentTypes['updatePromotionTier'][0])
     {
         $returnType = '\OpenAPI\Client\Model\PromotionsTiersUpdateResponseBody';
-        $request = $this->updatePromotionTierRequest($promotionTierId, $promotionsTiersUpdateRequestBody, $contentType);
+        $request = $this->updatePromotionTierRequest($promotion_tier_id, $promotions_tiers_update_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4279,20 +4279,20 @@ class PromotionsApi
     /**
      * Create request for operation 'updatePromotionTier'
      *
-     * @param  string $promotionTierId Unique promotion tier ID. (required)
-     * @param  \OpenAPI\Client\Model\PromotionsTiersUpdateRequestBody $promotionsTiersUpdateRequestBody Specify the promotion tier parameters that you would like to update. (optional)
+     * @param  string $promotion_tier_id Unique promotion tier ID. (required)
+     * @param  \OpenAPI\Client\Model\PromotionsTiersUpdateRequestBody $promotions_tiers_update_request_body Specify the promotion tier parameters that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePromotionTier'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updatePromotionTierRequest($promotionTierId, $promotionsTiersUpdateRequestBody = null, string $contentType = self::contentTypes['updatePromotionTier'][0])
+    public function updatePromotionTierRequest($promotion_tier_id, $promotions_tiers_update_request_body = null, string $contentType = self::contentTypes['updatePromotionTier'][0])
     {
 
-        // verify the required parameter 'promotionTierId' is set
-        if ($promotionTierId === null || (is_array($promotionTierId) && count($promotionTierId) === 0)) {
+        // verify the required parameter 'promotion_tier_id' is set
+        if ($promotion_tier_id === null || (is_array($promotion_tier_id) && count($promotion_tier_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $promotionTierId when calling updatePromotionTier'
+                'Missing the required parameter $promotion_tier_id when calling updatePromotionTier'
             );
         }
 
@@ -4308,10 +4308,10 @@ class PromotionsApi
 
 
         // path params
-        if ($promotionTierId !== null) {
+        if ($promotion_tier_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'promotionTierId' . '}',
-                ObjectSerializer::toPathValue($promotionTierId),
+                ObjectSerializer::toPathValue($promotion_tier_id),
                 $resourcePath
             );
         }
@@ -4324,12 +4324,12 @@ class PromotionsApi
         );
 
         // for model (json/xml)
-        if (isset($promotionsTiersUpdateRequestBody)) {
+        if (isset($promotions_tiers_update_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($promotionsTiersUpdateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($promotions_tiers_update_request_body));
             } else {
-                $httpBody = $promotionsTiersUpdateRequestBody;
+                $httpBody = $promotions_tiers_update_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

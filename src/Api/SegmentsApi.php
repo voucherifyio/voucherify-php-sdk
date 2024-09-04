@@ -134,16 +134,16 @@ class SegmentsApi
      *
      * Create Segment
      *
-     * @param  \OpenAPI\Client\Model\SegmentsCreateRequestBody $segmentsCreateRequestBody Specify the boundary conditions for the customer segment. (optional)
+     * @param  \OpenAPI\Client\Model\SegmentsCreateRequestBody $segments_create_request_body Specify the boundary conditions for the customer segment. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSegment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\SegmentsCreateResponseBody
      */
-    public function createSegment($segmentsCreateRequestBody = null, string $contentType = self::contentTypes['createSegment'][0])
+    public function createSegment($segments_create_request_body = null, string $contentType = self::contentTypes['createSegment'][0])
     {
-        list($response) = $this->createSegmentWithHttpInfo($segmentsCreateRequestBody, $contentType);
+        list($response) = $this->createSegmentWithHttpInfo($segments_create_request_body, $contentType);
         return $response;
     }
 
@@ -152,16 +152,16 @@ class SegmentsApi
      *
      * Create Segment
      *
-     * @param  \OpenAPI\Client\Model\SegmentsCreateRequestBody $segmentsCreateRequestBody Specify the boundary conditions for the customer segment. (optional)
+     * @param  \OpenAPI\Client\Model\SegmentsCreateRequestBody $segments_create_request_body Specify the boundary conditions for the customer segment. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSegment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\SegmentsCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createSegmentWithHttpInfo($segmentsCreateRequestBody = null, string $contentType = self::contentTypes['createSegment'][0])
+    public function createSegmentWithHttpInfo($segments_create_request_body = null, string $contentType = self::contentTypes['createSegment'][0])
     {
-        $request = $this->createSegmentRequest($segmentsCreateRequestBody, $contentType);
+        $request = $this->createSegmentRequest($segments_create_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -252,15 +252,15 @@ class SegmentsApi
      *
      * Create Segment
      *
-     * @param  \OpenAPI\Client\Model\SegmentsCreateRequestBody $segmentsCreateRequestBody Specify the boundary conditions for the customer segment. (optional)
+     * @param  \OpenAPI\Client\Model\SegmentsCreateRequestBody $segments_create_request_body Specify the boundary conditions for the customer segment. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSegment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createSegmentAsync($segmentsCreateRequestBody = null, string $contentType = self::contentTypes['createSegment'][0])
+    public function createSegmentAsync($segments_create_request_body = null, string $contentType = self::contentTypes['createSegment'][0])
     {
-        return $this->createSegmentAsyncWithHttpInfo($segmentsCreateRequestBody, $contentType)
+        return $this->createSegmentAsyncWithHttpInfo($segments_create_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -273,16 +273,16 @@ class SegmentsApi
      *
      * Create Segment
      *
-     * @param  \OpenAPI\Client\Model\SegmentsCreateRequestBody $segmentsCreateRequestBody Specify the boundary conditions for the customer segment. (optional)
+     * @param  \OpenAPI\Client\Model\SegmentsCreateRequestBody $segments_create_request_body Specify the boundary conditions for the customer segment. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSegment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createSegmentAsyncWithHttpInfo($segmentsCreateRequestBody = null, string $contentType = self::contentTypes['createSegment'][0])
+    public function createSegmentAsyncWithHttpInfo($segments_create_request_body = null, string $contentType = self::contentTypes['createSegment'][0])
     {
         $returnType = '\OpenAPI\Client\Model\SegmentsCreateResponseBody';
-        $request = $this->createSegmentRequest($segmentsCreateRequestBody, $contentType);
+        $request = $this->createSegmentRequest($segments_create_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -323,13 +323,13 @@ class SegmentsApi
     /**
      * Create request for operation 'createSegment'
      *
-     * @param  \OpenAPI\Client\Model\SegmentsCreateRequestBody $segmentsCreateRequestBody Specify the boundary conditions for the customer segment. (optional)
+     * @param  \OpenAPI\Client\Model\SegmentsCreateRequestBody $segments_create_request_body Specify the boundary conditions for the customer segment. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSegment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createSegmentRequest($segmentsCreateRequestBody = null, string $contentType = self::contentTypes['createSegment'][0])
+    public function createSegmentRequest($segments_create_request_body = null, string $contentType = self::contentTypes['createSegment'][0])
     {
 
 
@@ -352,12 +352,12 @@ class SegmentsApi
         );
 
         // for model (json/xml)
-        if (isset($segmentsCreateRequestBody)) {
+        if (isset($segments_create_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($segmentsCreateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($segments_create_request_body));
             } else {
-                $httpBody = $segmentsCreateRequestBody;
+                $httpBody = $segments_create_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -420,16 +420,16 @@ class SegmentsApi
      *
      * Delete Segment
      *
-     * @param  string $segmentId A unique customer segment ID. (required)
+     * @param  string $segment_id A unique customer segment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSegment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteSegment($segmentId, string $contentType = self::contentTypes['deleteSegment'][0])
+    public function deleteSegment($segment_id, string $contentType = self::contentTypes['deleteSegment'][0])
     {
-        $this->deleteSegmentWithHttpInfo($segmentId, $contentType);
+        $this->deleteSegmentWithHttpInfo($segment_id, $contentType);
     }
 
     /**
@@ -437,16 +437,16 @@ class SegmentsApi
      *
      * Delete Segment
      *
-     * @param  string $segmentId A unique customer segment ID. (required)
+     * @param  string $segment_id A unique customer segment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSegment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteSegmentWithHttpInfo($segmentId, string $contentType = self::contentTypes['deleteSegment'][0])
+    public function deleteSegmentWithHttpInfo($segment_id, string $contentType = self::contentTypes['deleteSegment'][0])
     {
-        $request = $this->deleteSegmentRequest($segmentId, $contentType);
+        $request = $this->deleteSegmentRequest($segment_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -497,15 +497,15 @@ class SegmentsApi
      *
      * Delete Segment
      *
-     * @param  string $segmentId A unique customer segment ID. (required)
+     * @param  string $segment_id A unique customer segment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSegment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteSegmentAsync($segmentId, string $contentType = self::contentTypes['deleteSegment'][0])
+    public function deleteSegmentAsync($segment_id, string $contentType = self::contentTypes['deleteSegment'][0])
     {
-        return $this->deleteSegmentAsyncWithHttpInfo($segmentId, $contentType)
+        return $this->deleteSegmentAsyncWithHttpInfo($segment_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -518,16 +518,16 @@ class SegmentsApi
      *
      * Delete Segment
      *
-     * @param  string $segmentId A unique customer segment ID. (required)
+     * @param  string $segment_id A unique customer segment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSegment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteSegmentAsyncWithHttpInfo($segmentId, string $contentType = self::contentTypes['deleteSegment'][0])
+    public function deleteSegmentAsyncWithHttpInfo($segment_id, string $contentType = self::contentTypes['deleteSegment'][0])
     {
         $returnType = '';
-        $request = $this->deleteSegmentRequest($segmentId, $contentType);
+        $request = $this->deleteSegmentRequest($segment_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -555,19 +555,19 @@ class SegmentsApi
     /**
      * Create request for operation 'deleteSegment'
      *
-     * @param  string $segmentId A unique customer segment ID. (required)
+     * @param  string $segment_id A unique customer segment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSegment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteSegmentRequest($segmentId, string $contentType = self::contentTypes['deleteSegment'][0])
+    public function deleteSegmentRequest($segment_id, string $contentType = self::contentTypes['deleteSegment'][0])
     {
 
-        // verify the required parameter 'segmentId' is set
-        if ($segmentId === null || (is_array($segmentId) && count($segmentId) === 0)) {
+        // verify the required parameter 'segment_id' is set
+        if ($segment_id === null || (is_array($segment_id) && count($segment_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $segmentId when calling deleteSegment'
+                'Missing the required parameter $segment_id when calling deleteSegment'
             );
         }
 
@@ -582,10 +582,10 @@ class SegmentsApi
 
 
         // path params
-        if ($segmentId !== null) {
+        if ($segment_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'segmentId' . '}',
-                ObjectSerializer::toPathValue($segmentId),
+                ObjectSerializer::toPathValue($segment_id),
                 $resourcePath
             );
         }
@@ -659,16 +659,16 @@ class SegmentsApi
      *
      * Get Segment
      *
-     * @param  string $segmentId A unique customer segment ID. (required)
+     * @param  string $segment_id A unique customer segment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSegment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\SegmentsGetResponseBody
      */
-    public function getSegment($segmentId, string $contentType = self::contentTypes['getSegment'][0])
+    public function getSegment($segment_id, string $contentType = self::contentTypes['getSegment'][0])
     {
-        list($response) = $this->getSegmentWithHttpInfo($segmentId, $contentType);
+        list($response) = $this->getSegmentWithHttpInfo($segment_id, $contentType);
         return $response;
     }
 
@@ -677,16 +677,16 @@ class SegmentsApi
      *
      * Get Segment
      *
-     * @param  string $segmentId A unique customer segment ID. (required)
+     * @param  string $segment_id A unique customer segment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSegment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\SegmentsGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSegmentWithHttpInfo($segmentId, string $contentType = self::contentTypes['getSegment'][0])
+    public function getSegmentWithHttpInfo($segment_id, string $contentType = self::contentTypes['getSegment'][0])
     {
-        $request = $this->getSegmentRequest($segmentId, $contentType);
+        $request = $this->getSegmentRequest($segment_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -777,15 +777,15 @@ class SegmentsApi
      *
      * Get Segment
      *
-     * @param  string $segmentId A unique customer segment ID. (required)
+     * @param  string $segment_id A unique customer segment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSegment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSegmentAsync($segmentId, string $contentType = self::contentTypes['getSegment'][0])
+    public function getSegmentAsync($segment_id, string $contentType = self::contentTypes['getSegment'][0])
     {
-        return $this->getSegmentAsyncWithHttpInfo($segmentId, $contentType)
+        return $this->getSegmentAsyncWithHttpInfo($segment_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -798,16 +798,16 @@ class SegmentsApi
      *
      * Get Segment
      *
-     * @param  string $segmentId A unique customer segment ID. (required)
+     * @param  string $segment_id A unique customer segment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSegment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSegmentAsyncWithHttpInfo($segmentId, string $contentType = self::contentTypes['getSegment'][0])
+    public function getSegmentAsyncWithHttpInfo($segment_id, string $contentType = self::contentTypes['getSegment'][0])
     {
         $returnType = '\OpenAPI\Client\Model\SegmentsGetResponseBody';
-        $request = $this->getSegmentRequest($segmentId, $contentType);
+        $request = $this->getSegmentRequest($segment_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -848,19 +848,19 @@ class SegmentsApi
     /**
      * Create request for operation 'getSegment'
      *
-     * @param  string $segmentId A unique customer segment ID. (required)
+     * @param  string $segment_id A unique customer segment ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSegment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getSegmentRequest($segmentId, string $contentType = self::contentTypes['getSegment'][0])
+    public function getSegmentRequest($segment_id, string $contentType = self::contentTypes['getSegment'][0])
     {
 
-        // verify the required parameter 'segmentId' is set
-        if ($segmentId === null || (is_array($segmentId) && count($segmentId) === 0)) {
+        // verify the required parameter 'segment_id' is set
+        if ($segment_id === null || (is_array($segment_id) && count($segment_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $segmentId when calling getSegment'
+                'Missing the required parameter $segment_id when calling getSegment'
             );
         }
 
@@ -875,10 +875,10 @@ class SegmentsApi
 
 
         // path params
-        if ($segmentId !== null) {
+        if ($segment_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'segmentId' . '}',
-                ObjectSerializer::toPathValue($segmentId),
+                ObjectSerializer::toPathValue($segment_id),
                 $resourcePath
             );
         }

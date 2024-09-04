@@ -59,9 +59,9 @@ class ValidityHoursDailyItem implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'startTime' => 'string',
-        'daysOfWeek' => 'int[]',
-        'expirationTime' => 'string'
+        'start_time' => 'string',
+        'days_of_week' => 'int[]',
+        'expiration_time' => 'string'
     ];
 
     /**
@@ -72,9 +72,9 @@ class ValidityHoursDailyItem implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'startTime' => 'time',
-        'daysOfWeek' => null,
-        'expirationTime' => 'time'
+        'start_time' => 'time',
+        'days_of_week' => null,
+        'expiration_time' => 'time'
     ];
 
     /**
@@ -83,9 +83,9 @@ class ValidityHoursDailyItem implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'startTime' => false,
-		'daysOfWeek' => false,
-		'expirationTime' => false
+        'start_time' => false,
+		'days_of_week' => false,
+		'expiration_time' => false
     ];
 
     /**
@@ -174,9 +174,9 @@ class ValidityHoursDailyItem implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'startTime' => 'start_time',
-        'daysOfWeek' => 'days_of_week',
-        'expirationTime' => 'expiration_time'
+        'start_time' => 'start_time',
+        'days_of_week' => 'days_of_week',
+        'expiration_time' => 'expiration_time'
     ];
 
     /**
@@ -185,9 +185,9 @@ class ValidityHoursDailyItem implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'startTime' => 'setStartTime',
-        'daysOfWeek' => 'setDaysOfWeek',
-        'expirationTime' => 'setExpirationTime'
+        'start_time' => 'setStartTime',
+        'days_of_week' => 'setDaysOfWeek',
+        'expiration_time' => 'setExpirationTime'
     ];
 
     /**
@@ -196,9 +196,9 @@ class ValidityHoursDailyItem implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'startTime' => 'getStartTime',
-        'daysOfWeek' => 'getDaysOfWeek',
-        'expirationTime' => 'getExpirationTime'
+        'start_time' => 'getStartTime',
+        'days_of_week' => 'getDaysOfWeek',
+        'expiration_time' => 'getExpirationTime'
     ];
 
     /**
@@ -283,9 +283,9 @@ class ValidityHoursDailyItem implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('startTime', $data ?? [], null);
-        $this->setIfExists('daysOfWeek', $data ?? [], null);
-        $this->setIfExists('expirationTime', $data ?? [], null);
+        $this->setIfExists('start_time', $data ?? [], null);
+        $this->setIfExists('days_of_week', $data ?? [], null);
+        $this->setIfExists('expiration_time', $data ?? [], null);
     }
 
     /**
@@ -331,91 +331,91 @@ class ValidityHoursDailyItem implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets startTime
+     * Gets start_time
      *
      * @return string|null
      */
     public function getStartTime()
     {
-        return $this->container['startTime'];
+        return $this->container['start_time'];
     }
 
     /**
-     * Sets startTime
+     * Sets start_time
      *
-     * @param string|null $startTime Defines the starting hour of validity in the HH:mm format. The resource is *inactive before* this time.
+     * @param string|null $start_time Defines the starting hour of validity in the HH:mm format. The resource is *inactive before* this time.
      *
      * @return self
      */
-    public function setStartTime($startTime)
+    public function setStartTime($start_time)
     {
-        if (is_null($startTime)) {
-            throw new \InvalidArgumentException('non-nullable startTime cannot be null');
+        if (is_null($start_time)) {
+            throw new \InvalidArgumentException('non-nullable start_time cannot be null');
         }
-        $this->container['startTime'] = $startTime;
+        $this->container['start_time'] = $start_time;
 
         return $this;
     }
 
     /**
-     * Gets daysOfWeek
+     * Gets days_of_week
      *
      * @return int[]|null
      */
     public function getDaysOfWeek()
     {
-        return $this->container['daysOfWeek'];
+        return $this->container['days_of_week'];
     }
 
     /**
-     * Sets daysOfWeek
+     * Sets days_of_week
      *
-     * @param int[]|null $daysOfWeek Integer array corresponding to the particular days of the week in which the resource is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3`  Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+     * @param int[]|null $days_of_week Integer array corresponding to the particular days of the week in which the resource is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3`  Wednesday - `4` Thursday - `5` Friday - `6` Saturday
      *
      * @return self
      */
-    public function setDaysOfWeek($daysOfWeek)
+    public function setDaysOfWeek($days_of_week)
     {
-        if (is_null($daysOfWeek)) {
-            throw new \InvalidArgumentException('non-nullable daysOfWeek cannot be null');
+        if (is_null($days_of_week)) {
+            throw new \InvalidArgumentException('non-nullable days_of_week cannot be null');
         }
         $allowedValues = $this->getDaysOfWeekAllowableValues();
-        if (array_diff($daysOfWeek, $allowedValues)) {
+        if (array_diff($days_of_week, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'daysOfWeek', must be one of '%s'",
+                    "Invalid value for 'days_of_week', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['daysOfWeek'] = $daysOfWeek;
+        $this->container['days_of_week'] = $days_of_week;
 
         return $this;
     }
 
     /**
-     * Gets expirationTime
+     * Gets expiration_time
      *
      * @return string|null
      */
     public function getExpirationTime()
     {
-        return $this->container['expirationTime'];
+        return $this->container['expiration_time'];
     }
 
     /**
-     * Sets expirationTime
+     * Sets expiration_time
      *
-     * @param string|null $expirationTime Defines the ending hour of validity in the HH:mm format. The resource is *inactive after* this time.
+     * @param string|null $expiration_time Defines the ending hour of validity in the HH:mm format. The resource is *inactive after* this time.
      *
      * @return self
      */
-    public function setExpirationTime($expirationTime)
+    public function setExpirationTime($expiration_time)
     {
-        if (is_null($expirationTime)) {
-            throw new \InvalidArgumentException('non-nullable expirationTime cannot be null');
+        if (is_null($expiration_time)) {
+            throw new \InvalidArgumentException('non-nullable expiration_time cannot be null');
         }
-        $this->container['expirationTime'] = $expirationTime;
+        $this->container['expiration_time'] = $expiration_time;
 
         return $this;
     }

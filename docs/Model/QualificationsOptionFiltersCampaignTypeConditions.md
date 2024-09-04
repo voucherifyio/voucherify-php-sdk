@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **is** | **string[]** |  | [optional]
-**isNot** | **string[]** |  | [optional]
+**is_not** | **string[]** |  | [optional]
 **in** | **string[]** |  | [optional]
-**notIn** | **string[]** |  | [optional]
+**not_in** | **string[]** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

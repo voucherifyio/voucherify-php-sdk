@@ -60,12 +60,12 @@ class RewardsAssignmentsCreateResponseBody implements ModelInterface, ArrayAcces
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'rewardId' => 'string',
-        'createdAt' => '\DateTime',
-        'updatedAt' => '\DateTime',
+        'reward_id' => 'string',
+        'created_at' => '\DateTime',
+        'updated_at' => '\DateTime',
         'object' => 'string',
-        'relatedObjectId' => 'string',
-        'relatedObjectType' => 'string',
+        'related_object_id' => 'string',
+        'related_object_type' => 'string',
         'parameters' => '\OpenAPI\Client\Model\RewardsAssignmentsCreateResponseBodyParameters'
     ];
 
@@ -78,12 +78,12 @@ class RewardsAssignmentsCreateResponseBody implements ModelInterface, ArrayAcces
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'rewardId' => null,
-        'createdAt' => 'date-time',
-        'updatedAt' => 'date-time',
+        'reward_id' => null,
+        'created_at' => 'date-time',
+        'updated_at' => 'date-time',
         'object' => null,
-        'relatedObjectId' => null,
-        'relatedObjectType' => null,
+        'related_object_id' => null,
+        'related_object_type' => null,
         'parameters' => null
     ];
 
@@ -94,12 +94,12 @@ class RewardsAssignmentsCreateResponseBody implements ModelInterface, ArrayAcces
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'rewardId' => true,
-		'createdAt' => true,
-		'updatedAt' => true,
+		'reward_id' => true,
+		'created_at' => true,
+		'updated_at' => true,
 		'object' => true,
-		'relatedObjectId' => true,
-		'relatedObjectType' => true,
+		'related_object_id' => true,
+		'related_object_type' => true,
 		'parameters' => true
     ];
 
@@ -190,12 +190,12 @@ class RewardsAssignmentsCreateResponseBody implements ModelInterface, ArrayAcces
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'rewardId' => 'reward_id',
-        'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at',
+        'reward_id' => 'reward_id',
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at',
         'object' => 'object',
-        'relatedObjectId' => 'related_object_id',
-        'relatedObjectType' => 'related_object_type',
+        'related_object_id' => 'related_object_id',
+        'related_object_type' => 'related_object_type',
         'parameters' => 'parameters'
     ];
 
@@ -206,12 +206,12 @@ class RewardsAssignmentsCreateResponseBody implements ModelInterface, ArrayAcces
      */
     protected static $setters = [
         'id' => 'setId',
-        'rewardId' => 'setRewardId',
-        'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt',
+        'reward_id' => 'setRewardId',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt',
         'object' => 'setObject',
-        'relatedObjectId' => 'setRelatedObjectId',
-        'relatedObjectType' => 'setRelatedObjectType',
+        'related_object_id' => 'setRelatedObjectId',
+        'related_object_type' => 'setRelatedObjectType',
         'parameters' => 'setParameters'
     ];
 
@@ -222,12 +222,12 @@ class RewardsAssignmentsCreateResponseBody implements ModelInterface, ArrayAcces
      */
     protected static $getters = [
         'id' => 'getId',
-        'rewardId' => 'getRewardId',
-        'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt',
+        'reward_id' => 'getRewardId',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt',
         'object' => 'getObject',
-        'relatedObjectId' => 'getRelatedObjectId',
-        'relatedObjectType' => 'getRelatedObjectType',
+        'related_object_id' => 'getRelatedObjectId',
+        'related_object_type' => 'getRelatedObjectType',
         'parameters' => 'getParameters'
     ];
 
@@ -315,12 +315,12 @@ class RewardsAssignmentsCreateResponseBody implements ModelInterface, ArrayAcces
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('rewardId', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
-        $this->setIfExists('updatedAt', $data ?? [], null);
+        $this->setIfExists('reward_id', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'reward_assignment');
-        $this->setIfExists('relatedObjectId', $data ?? [], null);
-        $this->setIfExists('relatedObjectType', $data ?? [], 'campaign');
+        $this->setIfExists('related_object_id', $data ?? [], null);
+        $this->setIfExists('related_object_type', $data ?? [], 'campaign');
         $this->setIfExists('parameters', $data ?? [], null);
     }
 
@@ -361,10 +361,10 @@ class RewardsAssignmentsCreateResponseBody implements ModelInterface, ArrayAcces
         }
 
         $allowedValues = $this->getRelatedObjectTypeAllowableValues();
-        if (!is_null($this->container['relatedObjectType']) && !in_array($this->container['relatedObjectType'], $allowedValues, true)) {
+        if (!is_null($this->container['related_object_type']) && !in_array($this->container['related_object_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'relatedObjectType', must be one of '%s'",
-                $this->container['relatedObjectType'],
+                "invalid value '%s' for 'related_object_type', must be one of '%s'",
+                $this->container['related_object_type'],
                 implode("', '", $allowedValues)
             );
         }
@@ -419,103 +419,103 @@ class RewardsAssignmentsCreateResponseBody implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets rewardId
+     * Gets reward_id
      *
      * @return string|null
      */
     public function getRewardId()
     {
-        return $this->container['rewardId'];
+        return $this->container['reward_id'];
     }
 
     /**
-     * Sets rewardId
+     * Sets reward_id
      *
-     * @param string|null $rewardId Associated reward ID.
+     * @param string|null $reward_id Associated reward ID.
      *
      * @return self
      */
-    public function setRewardId($rewardId)
+    public function setRewardId($reward_id)
     {
-        if (is_null($rewardId)) {
-            array_push($this->openAPINullablesSetToNull, 'rewardId');
+        if (is_null($reward_id)) {
+            array_push($this->openAPINullablesSetToNull, 'reward_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rewardId', $nullablesSetToNull);
+            $index = array_search('reward_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['rewardId'] = $rewardId;
+        $this->container['reward_id'] = $reward_id;
 
         return $this;
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the reward assignment was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $created_at Timestamp representing the date and time when the reward assignment was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        if (is_null($created_at)) {
+            array_push($this->openAPINullablesSetToNull, 'created_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
+            $index = array_search('created_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }
 
     /**
-     * Gets updatedAt
+     * Gets updated_at
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updatedAt'];
+        return $this->container['updated_at'];
     }
 
     /**
-     * Sets updatedAt
+     * Sets updated_at
      *
-     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the reward assignment was updated. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updated_at Timestamp representing the date and time when the reward assignment was updated. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updated_at)
     {
-        if (is_null($updatedAt)) {
-            array_push($this->openAPINullablesSetToNull, 'updatedAt');
+        if (is_null($updated_at)) {
+            array_push($this->openAPINullablesSetToNull, 'updated_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updatedAt', $nullablesSetToNull);
+            $index = array_search('updated_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updatedAt'] = $updatedAt;
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }
@@ -565,79 +565,79 @@ class RewardsAssignmentsCreateResponseBody implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets relatedObjectId
+     * Gets related_object_id
      *
      * @return string|null
      */
     public function getRelatedObjectId()
     {
-        return $this->container['relatedObjectId'];
+        return $this->container['related_object_id'];
     }
 
     /**
-     * Sets relatedObjectId
+     * Sets related_object_id
      *
-     * @param string|null $relatedObjectId Related object ID to which the reward was assigned.
+     * @param string|null $related_object_id Related object ID to which the reward was assigned.
      *
      * @return self
      */
-    public function setRelatedObjectId($relatedObjectId)
+    public function setRelatedObjectId($related_object_id)
     {
-        if (is_null($relatedObjectId)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObjectId');
+        if (is_null($related_object_id)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObjectId', $nullablesSetToNull);
+            $index = array_search('related_object_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['relatedObjectId'] = $relatedObjectId;
+        $this->container['related_object_id'] = $related_object_id;
 
         return $this;
     }
 
     /**
-     * Gets relatedObjectType
+     * Gets related_object_type
      *
      * @return string|null
      */
     public function getRelatedObjectType()
     {
-        return $this->container['relatedObjectType'];
+        return $this->container['related_object_type'];
     }
 
     /**
-     * Sets relatedObjectType
+     * Sets related_object_type
      *
-     * @param string|null $relatedObjectType Related object type to which the reward was assigned.
+     * @param string|null $related_object_type Related object type to which the reward was assigned.
      *
      * @return self
      */
-    public function setRelatedObjectType($relatedObjectType)
+    public function setRelatedObjectType($related_object_type)
     {
-        if (is_null($relatedObjectType)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObjectType');
+        if (is_null($related_object_type)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object_type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObjectType', $nullablesSetToNull);
+            $index = array_search('related_object_type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getRelatedObjectTypeAllowableValues();
-        if (!is_null($relatedObjectType) && !in_array($relatedObjectType, $allowedValues, true)) {
+        if (!is_null($related_object_type) && !in_array($related_object_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'relatedObjectType', must be one of '%s'",
-                    $relatedObjectType,
+                    "Invalid value '%s' for 'related_object_type', must be one of '%s'",
+                    $related_object_type,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['relatedObjectType'] = $relatedObjectType;
+        $this->container['related_object_type'] = $related_object_type;
 
         return $this;
     }

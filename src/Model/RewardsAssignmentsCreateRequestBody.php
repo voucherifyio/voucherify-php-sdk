@@ -60,7 +60,7 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'campaign' => 'string',
         'parameters' => '\OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBodyParameters',
-        'validationRules' => 'string[]'
+        'validation_rules' => 'string[]'
     ];
 
     /**
@@ -73,7 +73,7 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'campaign' => null,
         'parameters' => null,
-        'validationRules' => null
+        'validation_rules' => null
     ];
 
     /**
@@ -84,7 +84,7 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
     protected static array $openAPINullables = [
         'campaign' => true,
 		'parameters' => true,
-		'validationRules' => true
+		'validation_rules' => true
     ];
 
     /**
@@ -175,7 +175,7 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'campaign' => 'campaign',
         'parameters' => 'parameters',
-        'validationRules' => 'validation_rules'
+        'validation_rules' => 'validation_rules'
     ];
 
     /**
@@ -186,7 +186,7 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
     protected static $setters = [
         'campaign' => 'setCampaign',
         'parameters' => 'setParameters',
-        'validationRules' => 'setValidationRules'
+        'validation_rules' => 'setValidationRules'
     ];
 
     /**
@@ -197,7 +197,7 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
     protected static $getters = [
         'campaign' => 'getCampaign',
         'parameters' => 'getParameters',
-        'validationRules' => 'getValidationRules'
+        'validation_rules' => 'getValidationRules'
     ];
 
     /**
@@ -259,7 +259,7 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
     {
         $this->setIfExists('campaign', $data ?? [], null);
         $this->setIfExists('parameters', $data ?? [], null);
-        $this->setIfExists('validationRules', $data ?? [], null);
+        $this->setIfExists('validation_rules', $data ?? [], null);
     }
 
     /**
@@ -373,35 +373,35 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets validationRules
+     * Gets validation_rules
      *
      * @return string[]|null
      */
     public function getValidationRules()
     {
-        return $this->container['validationRules'];
+        return $this->container['validation_rules'];
     }
 
     /**
-     * Sets validationRules
+     * Sets validation_rules
      *
-     * @param string[]|null $validationRules validationRules
+     * @param string[]|null $validation_rules validation_rules
      *
      * @return self
      */
-    public function setValidationRules($validationRules)
+    public function setValidationRules($validation_rules)
     {
-        if (is_null($validationRules)) {
-            array_push($this->openAPINullablesSetToNull, 'validationRules');
+        if (is_null($validation_rules)) {
+            array_push($this->openAPINullablesSetToNull, 'validation_rules');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validationRules', $nullablesSetToNull);
+            $index = array_search('validation_rules', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['validationRules'] = $validationRules;
+        $this->container['validation_rules'] = $validation_rules;
 
         return $this;
     }

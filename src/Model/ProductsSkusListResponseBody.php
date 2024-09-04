@@ -60,7 +60,7 @@ class ProductsSkusListResponseBody implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'object' => 'string',
-        'dataRef' => 'string',
+        'data_ref' => 'string',
         'skus' => '\OpenAPI\Client\Model\Sku[]',
         'total' => 'int'
     ];
@@ -74,7 +74,7 @@ class ProductsSkusListResponseBody implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPIFormats = [
         'object' => null,
-        'dataRef' => null,
+        'data_ref' => null,
         'skus' => null,
         'total' => null
     ];
@@ -86,7 +86,7 @@ class ProductsSkusListResponseBody implements ModelInterface, ArrayAccess, \Json
       */
     protected static array $openAPINullables = [
         'object' => true,
-		'dataRef' => true,
+		'data_ref' => true,
 		'skus' => true,
 		'total' => true
     ];
@@ -178,7 +178,7 @@ class ProductsSkusListResponseBody implements ModelInterface, ArrayAccess, \Json
      */
     protected static $attributeMap = [
         'object' => 'object',
-        'dataRef' => 'data_ref',
+        'data_ref' => 'data_ref',
         'skus' => 'skus',
         'total' => 'total'
     ];
@@ -190,7 +190,7 @@ class ProductsSkusListResponseBody implements ModelInterface, ArrayAccess, \Json
      */
     protected static $setters = [
         'object' => 'setObject',
-        'dataRef' => 'setDataRef',
+        'data_ref' => 'setDataRef',
         'skus' => 'setSkus',
         'total' => 'setTotal'
     ];
@@ -202,7 +202,7 @@ class ProductsSkusListResponseBody implements ModelInterface, ArrayAccess, \Json
      */
     protected static $getters = [
         'object' => 'getObject',
-        'dataRef' => 'getDataRef',
+        'data_ref' => 'getDataRef',
         'skus' => 'getSkus',
         'total' => 'getTotal'
     ];
@@ -265,7 +265,7 @@ class ProductsSkusListResponseBody implements ModelInterface, ArrayAccess, \Json
     public function __construct(array $data = null)
     {
         $this->setIfExists('object', $data ?? [], 'list');
-        $this->setIfExists('dataRef', $data ?? [], 'data');
+        $this->setIfExists('data_ref', $data ?? [], 'data');
         $this->setIfExists('skus', $data ?? [], null);
         $this->setIfExists('total', $data ?? [], null);
     }
@@ -347,35 +347,35 @@ class ProductsSkusListResponseBody implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets dataRef
+     * Gets data_ref
      *
      * @return string|null
      */
     public function getDataRef()
     {
-        return $this->container['dataRef'];
+        return $this->container['data_ref'];
     }
 
     /**
-     * Sets dataRef
+     * Sets data_ref
      *
-     * @param string|null $dataRef Identifies the name of the JSON property that contains the array of SKUs.
+     * @param string|null $data_ref Identifies the name of the JSON property that contains the array of SKUs.
      *
      * @return self
      */
-    public function setDataRef($dataRef)
+    public function setDataRef($data_ref)
     {
-        if (is_null($dataRef)) {
-            array_push($this->openAPINullablesSetToNull, 'dataRef');
+        if (is_null($data_ref)) {
+            array_push($this->openAPINullablesSetToNull, 'data_ref');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dataRef', $nullablesSetToNull);
+            $index = array_search('data_ref', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['dataRef'] = $dataRef;
+        $this->container['data_ref'] = $data_ref;
 
         return $this;
     }

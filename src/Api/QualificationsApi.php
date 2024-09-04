@@ -128,16 +128,16 @@ class QualificationsApi
      *
      * Check Eligibility
      *
-     * @param  \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody $qualificationsCheckEligibilityRequestBody Define order and customer context. (optional)
+     * @param  \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody $qualifications_check_eligibility_request_body Define order and customer context. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkEligibility'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\QualificationsCheckEligibilityResponseBody
      */
-    public function checkEligibility($qualificationsCheckEligibilityRequestBody = null, string $contentType = self::contentTypes['checkEligibility'][0])
+    public function checkEligibility($qualifications_check_eligibility_request_body = null, string $contentType = self::contentTypes['checkEligibility'][0])
     {
-        list($response) = $this->checkEligibilityWithHttpInfo($qualificationsCheckEligibilityRequestBody, $contentType);
+        list($response) = $this->checkEligibilityWithHttpInfo($qualifications_check_eligibility_request_body, $contentType);
         return $response;
     }
 
@@ -146,16 +146,16 @@ class QualificationsApi
      *
      * Check Eligibility
      *
-     * @param  \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody $qualificationsCheckEligibilityRequestBody Define order and customer context. (optional)
+     * @param  \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody $qualifications_check_eligibility_request_body Define order and customer context. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkEligibility'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\QualificationsCheckEligibilityResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function checkEligibilityWithHttpInfo($qualificationsCheckEligibilityRequestBody = null, string $contentType = self::contentTypes['checkEligibility'][0])
+    public function checkEligibilityWithHttpInfo($qualifications_check_eligibility_request_body = null, string $contentType = self::contentTypes['checkEligibility'][0])
     {
-        $request = $this->checkEligibilityRequest($qualificationsCheckEligibilityRequestBody, $contentType);
+        $request = $this->checkEligibilityRequest($qualifications_check_eligibility_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -246,15 +246,15 @@ class QualificationsApi
      *
      * Check Eligibility
      *
-     * @param  \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody $qualificationsCheckEligibilityRequestBody Define order and customer context. (optional)
+     * @param  \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody $qualifications_check_eligibility_request_body Define order and customer context. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkEligibility'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function checkEligibilityAsync($qualificationsCheckEligibilityRequestBody = null, string $contentType = self::contentTypes['checkEligibility'][0])
+    public function checkEligibilityAsync($qualifications_check_eligibility_request_body = null, string $contentType = self::contentTypes['checkEligibility'][0])
     {
-        return $this->checkEligibilityAsyncWithHttpInfo($qualificationsCheckEligibilityRequestBody, $contentType)
+        return $this->checkEligibilityAsyncWithHttpInfo($qualifications_check_eligibility_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -267,16 +267,16 @@ class QualificationsApi
      *
      * Check Eligibility
      *
-     * @param  \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody $qualificationsCheckEligibilityRequestBody Define order and customer context. (optional)
+     * @param  \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody $qualifications_check_eligibility_request_body Define order and customer context. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkEligibility'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function checkEligibilityAsyncWithHttpInfo($qualificationsCheckEligibilityRequestBody = null, string $contentType = self::contentTypes['checkEligibility'][0])
+    public function checkEligibilityAsyncWithHttpInfo($qualifications_check_eligibility_request_body = null, string $contentType = self::contentTypes['checkEligibility'][0])
     {
         $returnType = '\OpenAPI\Client\Model\QualificationsCheckEligibilityResponseBody';
-        $request = $this->checkEligibilityRequest($qualificationsCheckEligibilityRequestBody, $contentType);
+        $request = $this->checkEligibilityRequest($qualifications_check_eligibility_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -317,13 +317,13 @@ class QualificationsApi
     /**
      * Create request for operation 'checkEligibility'
      *
-     * @param  \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody $qualificationsCheckEligibilityRequestBody Define order and customer context. (optional)
+     * @param  \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBody $qualifications_check_eligibility_request_body Define order and customer context. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkEligibility'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function checkEligibilityRequest($qualificationsCheckEligibilityRequestBody = null, string $contentType = self::contentTypes['checkEligibility'][0])
+    public function checkEligibilityRequest($qualifications_check_eligibility_request_body = null, string $contentType = self::contentTypes['checkEligibility'][0])
     {
 
 
@@ -346,12 +346,12 @@ class QualificationsApi
         );
 
         // for model (json/xml)
-        if (isset($qualificationsCheckEligibilityRequestBody)) {
+        if (isset($qualifications_check_eligibility_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($qualificationsCheckEligibilityRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($qualifications_check_eligibility_request_body));
             } else {
-                $httpBody = $qualificationsCheckEligibilityRequestBody;
+                $httpBody = $qualifications_check_eligibility_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

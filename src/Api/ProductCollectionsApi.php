@@ -140,16 +140,16 @@ class ProductCollectionsApi
      *
      * Create Product Collection
      *
-     * @param  \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody $productCollectionsCreateRequestBody productCollectionsCreateRequestBody (optional)
+     * @param  \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody $product_collections_create_request_body product_collections_create_request_body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProductCollection'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductCollectionsCreateResponseBody
      */
-    public function createProductCollection($productCollectionsCreateRequestBody = null, string $contentType = self::contentTypes['createProductCollection'][0])
+    public function createProductCollection($product_collections_create_request_body = null, string $contentType = self::contentTypes['createProductCollection'][0])
     {
-        list($response) = $this->createProductCollectionWithHttpInfo($productCollectionsCreateRequestBody, $contentType);
+        list($response) = $this->createProductCollectionWithHttpInfo($product_collections_create_request_body, $contentType);
         return $response;
     }
 
@@ -158,16 +158,16 @@ class ProductCollectionsApi
      *
      * Create Product Collection
      *
-     * @param  \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody $productCollectionsCreateRequestBody (optional)
+     * @param  \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody $product_collections_create_request_body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProductCollection'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductCollectionsCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createProductCollectionWithHttpInfo($productCollectionsCreateRequestBody = null, string $contentType = self::contentTypes['createProductCollection'][0])
+    public function createProductCollectionWithHttpInfo($product_collections_create_request_body = null, string $contentType = self::contentTypes['createProductCollection'][0])
     {
-        $request = $this->createProductCollectionRequest($productCollectionsCreateRequestBody, $contentType);
+        $request = $this->createProductCollectionRequest($product_collections_create_request_body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -258,15 +258,15 @@ class ProductCollectionsApi
      *
      * Create Product Collection
      *
-     * @param  \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody $productCollectionsCreateRequestBody (optional)
+     * @param  \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody $product_collections_create_request_body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createProductCollectionAsync($productCollectionsCreateRequestBody = null, string $contentType = self::contentTypes['createProductCollection'][0])
+    public function createProductCollectionAsync($product_collections_create_request_body = null, string $contentType = self::contentTypes['createProductCollection'][0])
     {
-        return $this->createProductCollectionAsyncWithHttpInfo($productCollectionsCreateRequestBody, $contentType)
+        return $this->createProductCollectionAsyncWithHttpInfo($product_collections_create_request_body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -279,16 +279,16 @@ class ProductCollectionsApi
      *
      * Create Product Collection
      *
-     * @param  \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody $productCollectionsCreateRequestBody (optional)
+     * @param  \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody $product_collections_create_request_body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createProductCollectionAsyncWithHttpInfo($productCollectionsCreateRequestBody = null, string $contentType = self::contentTypes['createProductCollection'][0])
+    public function createProductCollectionAsyncWithHttpInfo($product_collections_create_request_body = null, string $contentType = self::contentTypes['createProductCollection'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductCollectionsCreateResponseBody';
-        $request = $this->createProductCollectionRequest($productCollectionsCreateRequestBody, $contentType);
+        $request = $this->createProductCollectionRequest($product_collections_create_request_body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -329,13 +329,13 @@ class ProductCollectionsApi
     /**
      * Create request for operation 'createProductCollection'
      *
-     * @param  \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody $productCollectionsCreateRequestBody (optional)
+     * @param  \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody $product_collections_create_request_body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createProductCollectionRequest($productCollectionsCreateRequestBody = null, string $contentType = self::contentTypes['createProductCollection'][0])
+    public function createProductCollectionRequest($product_collections_create_request_body = null, string $contentType = self::contentTypes['createProductCollection'][0])
     {
 
 
@@ -358,12 +358,12 @@ class ProductCollectionsApi
         );
 
         // for model (json/xml)
-        if (isset($productCollectionsCreateRequestBody)) {
+        if (isset($product_collections_create_request_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($productCollectionsCreateRequestBody));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($product_collections_create_request_body));
             } else {
-                $httpBody = $productCollectionsCreateRequestBody;
+                $httpBody = $product_collections_create_request_body;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -426,16 +426,16 @@ class ProductCollectionsApi
      *
      * Delete Product Collection
      *
-     * @param  string $productCollectionId A unique product collection ID. (required)
+     * @param  string $product_collection_id A unique product collection ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProductCollection'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteProductCollection($productCollectionId, string $contentType = self::contentTypes['deleteProductCollection'][0])
+    public function deleteProductCollection($product_collection_id, string $contentType = self::contentTypes['deleteProductCollection'][0])
     {
-        $this->deleteProductCollectionWithHttpInfo($productCollectionId, $contentType);
+        $this->deleteProductCollectionWithHttpInfo($product_collection_id, $contentType);
     }
 
     /**
@@ -443,16 +443,16 @@ class ProductCollectionsApi
      *
      * Delete Product Collection
      *
-     * @param  string $productCollectionId A unique product collection ID. (required)
+     * @param  string $product_collection_id A unique product collection ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProductCollection'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteProductCollectionWithHttpInfo($productCollectionId, string $contentType = self::contentTypes['deleteProductCollection'][0])
+    public function deleteProductCollectionWithHttpInfo($product_collection_id, string $contentType = self::contentTypes['deleteProductCollection'][0])
     {
-        $request = $this->deleteProductCollectionRequest($productCollectionId, $contentType);
+        $request = $this->deleteProductCollectionRequest($product_collection_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -503,15 +503,15 @@ class ProductCollectionsApi
      *
      * Delete Product Collection
      *
-     * @param  string $productCollectionId A unique product collection ID. (required)
+     * @param  string $product_collection_id A unique product collection ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteProductCollectionAsync($productCollectionId, string $contentType = self::contentTypes['deleteProductCollection'][0])
+    public function deleteProductCollectionAsync($product_collection_id, string $contentType = self::contentTypes['deleteProductCollection'][0])
     {
-        return $this->deleteProductCollectionAsyncWithHttpInfo($productCollectionId, $contentType)
+        return $this->deleteProductCollectionAsyncWithHttpInfo($product_collection_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -524,16 +524,16 @@ class ProductCollectionsApi
      *
      * Delete Product Collection
      *
-     * @param  string $productCollectionId A unique product collection ID. (required)
+     * @param  string $product_collection_id A unique product collection ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteProductCollectionAsyncWithHttpInfo($productCollectionId, string $contentType = self::contentTypes['deleteProductCollection'][0])
+    public function deleteProductCollectionAsyncWithHttpInfo($product_collection_id, string $contentType = self::contentTypes['deleteProductCollection'][0])
     {
         $returnType = '';
-        $request = $this->deleteProductCollectionRequest($productCollectionId, $contentType);
+        $request = $this->deleteProductCollectionRequest($product_collection_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -561,19 +561,19 @@ class ProductCollectionsApi
     /**
      * Create request for operation 'deleteProductCollection'
      *
-     * @param  string $productCollectionId A unique product collection ID. (required)
+     * @param  string $product_collection_id A unique product collection ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteProductCollectionRequest($productCollectionId, string $contentType = self::contentTypes['deleteProductCollection'][0])
+    public function deleteProductCollectionRequest($product_collection_id, string $contentType = self::contentTypes['deleteProductCollection'][0])
     {
 
-        // verify the required parameter 'productCollectionId' is set
-        if ($productCollectionId === null || (is_array($productCollectionId) && count($productCollectionId) === 0)) {
+        // verify the required parameter 'product_collection_id' is set
+        if ($product_collection_id === null || (is_array($product_collection_id) && count($product_collection_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $productCollectionId when calling deleteProductCollection'
+                'Missing the required parameter $product_collection_id when calling deleteProductCollection'
             );
         }
 
@@ -588,10 +588,10 @@ class ProductCollectionsApi
 
 
         // path params
-        if ($productCollectionId !== null) {
+        if ($product_collection_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'productCollectionId' . '}',
-                ObjectSerializer::toPathValue($productCollectionId),
+                ObjectSerializer::toPathValue($product_collection_id),
                 $resourcePath
             );
         }
@@ -665,16 +665,16 @@ class ProductCollectionsApi
      *
      * Get Product Collection
      *
-     * @param  string $productCollectionId A unique product collection ID. (required)
+     * @param  string $product_collection_id A unique product collection ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProductCollection'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductCollectionsGetResponseBody
      */
-    public function getProductCollection($productCollectionId, string $contentType = self::contentTypes['getProductCollection'][0])
+    public function getProductCollection($product_collection_id, string $contentType = self::contentTypes['getProductCollection'][0])
     {
-        list($response) = $this->getProductCollectionWithHttpInfo($productCollectionId, $contentType);
+        list($response) = $this->getProductCollectionWithHttpInfo($product_collection_id, $contentType);
         return $response;
     }
 
@@ -683,16 +683,16 @@ class ProductCollectionsApi
      *
      * Get Product Collection
      *
-     * @param  string $productCollectionId A unique product collection ID. (required)
+     * @param  string $product_collection_id A unique product collection ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProductCollection'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductCollectionsGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getProductCollectionWithHttpInfo($productCollectionId, string $contentType = self::contentTypes['getProductCollection'][0])
+    public function getProductCollectionWithHttpInfo($product_collection_id, string $contentType = self::contentTypes['getProductCollection'][0])
     {
-        $request = $this->getProductCollectionRequest($productCollectionId, $contentType);
+        $request = $this->getProductCollectionRequest($product_collection_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -783,15 +783,15 @@ class ProductCollectionsApi
      *
      * Get Product Collection
      *
-     * @param  string $productCollectionId A unique product collection ID. (required)
+     * @param  string $product_collection_id A unique product collection ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProductCollectionAsync($productCollectionId, string $contentType = self::contentTypes['getProductCollection'][0])
+    public function getProductCollectionAsync($product_collection_id, string $contentType = self::contentTypes['getProductCollection'][0])
     {
-        return $this->getProductCollectionAsyncWithHttpInfo($productCollectionId, $contentType)
+        return $this->getProductCollectionAsyncWithHttpInfo($product_collection_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -804,16 +804,16 @@ class ProductCollectionsApi
      *
      * Get Product Collection
      *
-     * @param  string $productCollectionId A unique product collection ID. (required)
+     * @param  string $product_collection_id A unique product collection ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProductCollectionAsyncWithHttpInfo($productCollectionId, string $contentType = self::contentTypes['getProductCollection'][0])
+    public function getProductCollectionAsyncWithHttpInfo($product_collection_id, string $contentType = self::contentTypes['getProductCollection'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductCollectionsGetResponseBody';
-        $request = $this->getProductCollectionRequest($productCollectionId, $contentType);
+        $request = $this->getProductCollectionRequest($product_collection_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -854,19 +854,19 @@ class ProductCollectionsApi
     /**
      * Create request for operation 'getProductCollection'
      *
-     * @param  string $productCollectionId A unique product collection ID. (required)
+     * @param  string $product_collection_id A unique product collection ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProductCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getProductCollectionRequest($productCollectionId, string $contentType = self::contentTypes['getProductCollection'][0])
+    public function getProductCollectionRequest($product_collection_id, string $contentType = self::contentTypes['getProductCollection'][0])
     {
 
-        // verify the required parameter 'productCollectionId' is set
-        if ($productCollectionId === null || (is_array($productCollectionId) && count($productCollectionId) === 0)) {
+        // verify the required parameter 'product_collection_id' is set
+        if ($product_collection_id === null || (is_array($product_collection_id) && count($product_collection_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $productCollectionId when calling getProductCollection'
+                'Missing the required parameter $product_collection_id when calling getProductCollection'
             );
         }
 
@@ -881,10 +881,10 @@ class ProductCollectionsApi
 
 
         // path params
-        if ($productCollectionId !== null) {
+        if ($product_collection_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'productCollectionId' . '}',
-                ObjectSerializer::toPathValue($productCollectionId),
+                ObjectSerializer::toPathValue($product_collection_id),
                 $resourcePath
             );
         }
@@ -1288,20 +1288,20 @@ class ProductCollectionsApi
      *
      * List Products in Collection
      *
-     * @param  string $productCollectionId Unique product collection ID. (required)
+     * @param  string $product_collection_id Unique product collection ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startingAfter Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $starting_after Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProductsInCollection'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductCollectionsProductsListResponseBody
      */
-    public function listProductsInCollection($productCollectionId, $limit = null, $page = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listProductsInCollection'][0])
+    public function listProductsInCollection($product_collection_id, $limit = null, $page = null, $order = null, $starting_after = null, string $contentType = self::contentTypes['listProductsInCollection'][0])
     {
-        list($response) = $this->listProductsInCollectionWithHttpInfo($productCollectionId, $limit, $page, $order, $startingAfter, $contentType);
+        list($response) = $this->listProductsInCollectionWithHttpInfo($product_collection_id, $limit, $page, $order, $starting_after, $contentType);
         return $response;
     }
 
@@ -1310,20 +1310,20 @@ class ProductCollectionsApi
      *
      * List Products in Collection
      *
-     * @param  string $productCollectionId Unique product collection ID. (required)
+     * @param  string $product_collection_id Unique product collection ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startingAfter Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $starting_after Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProductsInCollection'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductCollectionsProductsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listProductsInCollectionWithHttpInfo($productCollectionId, $limit = null, $page = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listProductsInCollection'][0])
+    public function listProductsInCollectionWithHttpInfo($product_collection_id, $limit = null, $page = null, $order = null, $starting_after = null, string $contentType = self::contentTypes['listProductsInCollection'][0])
     {
-        $request = $this->listProductsInCollectionRequest($productCollectionId, $limit, $page, $order, $startingAfter, $contentType);
+        $request = $this->listProductsInCollectionRequest($product_collection_id, $limit, $page, $order, $starting_after, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1414,19 +1414,19 @@ class ProductCollectionsApi
      *
      * List Products in Collection
      *
-     * @param  string $productCollectionId Unique product collection ID. (required)
+     * @param  string $product_collection_id Unique product collection ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startingAfter Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $starting_after Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProductsInCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProductsInCollectionAsync($productCollectionId, $limit = null, $page = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listProductsInCollection'][0])
+    public function listProductsInCollectionAsync($product_collection_id, $limit = null, $page = null, $order = null, $starting_after = null, string $contentType = self::contentTypes['listProductsInCollection'][0])
     {
-        return $this->listProductsInCollectionAsyncWithHttpInfo($productCollectionId, $limit, $page, $order, $startingAfter, $contentType)
+        return $this->listProductsInCollectionAsyncWithHttpInfo($product_collection_id, $limit, $page, $order, $starting_after, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1439,20 +1439,20 @@ class ProductCollectionsApi
      *
      * List Products in Collection
      *
-     * @param  string $productCollectionId Unique product collection ID. (required)
+     * @param  string $product_collection_id Unique product collection ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startingAfter Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $starting_after Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProductsInCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listProductsInCollectionAsyncWithHttpInfo($productCollectionId, $limit = null, $page = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listProductsInCollection'][0])
+    public function listProductsInCollectionAsyncWithHttpInfo($product_collection_id, $limit = null, $page = null, $order = null, $starting_after = null, string $contentType = self::contentTypes['listProductsInCollection'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductCollectionsProductsListResponseBody';
-        $request = $this->listProductsInCollectionRequest($productCollectionId, $limit, $page, $order, $startingAfter, $contentType);
+        $request = $this->listProductsInCollectionRequest($product_collection_id, $limit, $page, $order, $starting_after, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1493,23 +1493,23 @@ class ProductCollectionsApi
     /**
      * Create request for operation 'listProductsInCollection'
      *
-     * @param  string $productCollectionId Unique product collection ID. (required)
+     * @param  string $product_collection_id Unique product collection ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  \DateTime $startingAfter Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $starting_after Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProductsInCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listProductsInCollectionRequest($productCollectionId, $limit = null, $page = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listProductsInCollection'][0])
+    public function listProductsInCollectionRequest($product_collection_id, $limit = null, $page = null, $order = null, $starting_after = null, string $contentType = self::contentTypes['listProductsInCollection'][0])
     {
 
-        // verify the required parameter 'productCollectionId' is set
-        if ($productCollectionId === null || (is_array($productCollectionId) && count($productCollectionId) === 0)) {
+        // verify the required parameter 'product_collection_id' is set
+        if ($product_collection_id === null || (is_array($product_collection_id) && count($product_collection_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $productCollectionId when calling listProductsInCollection'
+                'Missing the required parameter $product_collection_id when calling listProductsInCollection'
             );
         }
 
@@ -1566,7 +1566,7 @@ class ProductCollectionsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $startingAfter,
+            $starting_after,
             'starting_after', // param base name
             'string', // openApiType
             'form', // style
@@ -1576,10 +1576,10 @@ class ProductCollectionsApi
 
 
         // path params
-        if ($productCollectionId !== null) {
+        if ($product_collection_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'productCollectionId' . '}',
-                ObjectSerializer::toPathValue($productCollectionId),
+                ObjectSerializer::toPathValue($product_collection_id),
                 $resourcePath
             );
         }

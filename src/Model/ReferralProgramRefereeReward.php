@@ -59,7 +59,7 @@ class ReferralProgramRefereeReward implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'relatedObjectParent' => '\OpenAPI\Client\Model\ReferralProgramRefereeRewardRelatedObjectParent',
+        'related_object_parent' => '\OpenAPI\Client\Model\ReferralProgramRefereeRewardRelatedObjectParent',
         'type' => 'string',
         'amount' => 'string'
     ];
@@ -72,7 +72,7 @@ class ReferralProgramRefereeReward implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'relatedObjectParent' => null,
+        'related_object_parent' => null,
         'type' => null,
         'amount' => null
     ];
@@ -83,7 +83,7 @@ class ReferralProgramRefereeReward implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'relatedObjectParent' => true,
+        'related_object_parent' => true,
 		'type' => true,
 		'amount' => true
     ];
@@ -174,7 +174,7 @@ class ReferralProgramRefereeReward implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'relatedObjectParent' => 'related_object_parent',
+        'related_object_parent' => 'related_object_parent',
         'type' => 'type',
         'amount' => 'amount'
     ];
@@ -185,7 +185,7 @@ class ReferralProgramRefereeReward implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'relatedObjectParent' => 'setRelatedObjectParent',
+        'related_object_parent' => 'setRelatedObjectParent',
         'type' => 'setType',
         'amount' => 'setAmount'
     ];
@@ -196,7 +196,7 @@ class ReferralProgramRefereeReward implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'relatedObjectParent' => 'getRelatedObjectParent',
+        'related_object_parent' => 'getRelatedObjectParent',
         'type' => 'getType',
         'amount' => 'getAmount'
     ];
@@ -277,7 +277,7 @@ class ReferralProgramRefereeReward implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('relatedObjectParent', $data ?? [], null);
+        $this->setIfExists('related_object_parent', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
     }
@@ -334,35 +334,35 @@ class ReferralProgramRefereeReward implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets relatedObjectParent
+     * Gets related_object_parent
      *
      * @return \OpenAPI\Client\Model\ReferralProgramRefereeRewardRelatedObjectParent|null
      */
     public function getRelatedObjectParent()
     {
-        return $this->container['relatedObjectParent'];
+        return $this->container['related_object_parent'];
     }
 
     /**
-     * Sets relatedObjectParent
+     * Sets related_object_parent
      *
-     * @param \OpenAPI\Client\Model\ReferralProgramRefereeRewardRelatedObjectParent|null $relatedObjectParent relatedObjectParent
+     * @param \OpenAPI\Client\Model\ReferralProgramRefereeRewardRelatedObjectParent|null $related_object_parent related_object_parent
      *
      * @return self
      */
-    public function setRelatedObjectParent($relatedObjectParent)
+    public function setRelatedObjectParent($related_object_parent)
     {
-        if (is_null($relatedObjectParent)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObjectParent');
+        if (is_null($related_object_parent)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object_parent');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObjectParent', $nullablesSetToNull);
+            $index = array_search('related_object_parent', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['relatedObjectParent'] = $relatedObjectParent;
+        $this->container['related_object_parent'] = $related_object_parent;
 
         return $this;
     }

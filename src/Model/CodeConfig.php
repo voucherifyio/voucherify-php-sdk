@@ -64,7 +64,7 @@ class CodeConfig implements ModelInterface, ArrayAccess, \JsonSerializable
         'prefix' => 'string',
         'postfix' => 'string',
         'pattern' => 'string',
-        'initialCount' => 'int'
+        'initial_count' => 'int'
     ];
 
     /**
@@ -80,7 +80,7 @@ class CodeConfig implements ModelInterface, ArrayAccess, \JsonSerializable
         'prefix' => null,
         'postfix' => null,
         'pattern' => null,
-        'initialCount' => null
+        'initial_count' => null
     ];
 
     /**
@@ -94,7 +94,7 @@ class CodeConfig implements ModelInterface, ArrayAccess, \JsonSerializable
 		'prefix' => true,
 		'postfix' => true,
 		'pattern' => true,
-		'initialCount' => true
+		'initial_count' => true
     ];
 
     /**
@@ -188,7 +188,7 @@ class CodeConfig implements ModelInterface, ArrayAccess, \JsonSerializable
         'prefix' => 'prefix',
         'postfix' => 'postfix',
         'pattern' => 'pattern',
-        'initialCount' => 'initial_count'
+        'initial_count' => 'initial_count'
     ];
 
     /**
@@ -202,7 +202,7 @@ class CodeConfig implements ModelInterface, ArrayAccess, \JsonSerializable
         'prefix' => 'setPrefix',
         'postfix' => 'setPostfix',
         'pattern' => 'setPattern',
-        'initialCount' => 'setInitialCount'
+        'initial_count' => 'setInitialCount'
     ];
 
     /**
@@ -216,7 +216,7 @@ class CodeConfig implements ModelInterface, ArrayAccess, \JsonSerializable
         'prefix' => 'getPrefix',
         'postfix' => 'getPostfix',
         'pattern' => 'getPattern',
-        'initialCount' => 'getInitialCount'
+        'initial_count' => 'getInitialCount'
     ];
 
     /**
@@ -281,7 +281,7 @@ class CodeConfig implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('prefix', $data ?? [], null);
         $this->setIfExists('postfix', $data ?? [], null);
         $this->setIfExists('pattern', $data ?? [], null);
-        $this->setIfExists('initialCount', $data ?? [], null);
+        $this->setIfExists('initial_count', $data ?? [], null);
     }
 
     /**
@@ -497,35 +497,35 @@ class CodeConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets initialCount
+     * Gets initial_count
      *
      * @return int|null
      */
     public function getInitialCount()
     {
-        return $this->container['initialCount'];
+        return $this->container['initial_count'];
     }
 
     /**
-     * Sets initialCount
+     * Sets initial_count
      *
-     * @param int|null $initialCount Internal value, does not change anything if provided.
+     * @param int|null $initial_count Internal value, does not change anything if provided.
      *
      * @return self
      */
-    public function setInitialCount($initialCount)
+    public function setInitialCount($initial_count)
     {
-        if (is_null($initialCount)) {
-            array_push($this->openAPINullablesSetToNull, 'initialCount');
+        if (is_null($initial_count)) {
+            array_push($this->openAPINullablesSetToNull, 'initial_count');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('initialCount', $nullablesSetToNull);
+            $index = array_search('initial_count', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['initialCount'] = $initialCount;
+        $this->container['initial_count'] = $initial_count;
 
         return $this;
     }

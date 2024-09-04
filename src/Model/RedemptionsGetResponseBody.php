@@ -61,26 +61,26 @@ class RedemptionsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSe
         'id' => 'string',
         'object' => 'string',
         'date' => '\DateTime',
-        'customerId' => 'string',
-        'trackingId' => 'string',
+        'customer_id' => 'string',
+        'tracking_id' => 'string',
         'metadata' => 'object',
         'amount' => 'int',
         'redemption' => 'string',
         'result' => 'string',
         'status' => 'string',
-        'relatedRedemptions' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyRelatedRedemptions',
-        'failureCode' => 'string',
-        'failureMessage' => 'string',
+        'related_redemptions' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyRelatedRedemptions',
+        'failure_code' => 'string',
+        'failure_message' => 'string',
         'order' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyOrder',
         'channel' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyChannel',
         'customer' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyCustomer',
-        'relatedObjectType' => 'string',
-        'relatedObjectId' => 'string',
+        'related_object_type' => 'string',
+        'related_object_id' => 'string',
         'voucher' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyVoucher',
-        'promotionTier' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyPromotionTier',
+        'promotion_tier' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyPromotionTier',
         'reward' => '\OpenAPI\Client\Model\RedemptionRewardResult',
         'gift' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyGift',
-        'loyaltyCard' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyLoyaltyCard',
+        'loyalty_card' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyLoyaltyCard',
         'reason' => 'string'
     ];
 
@@ -95,26 +95,26 @@ class RedemptionsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSe
         'id' => null,
         'object' => null,
         'date' => 'date-time',
-        'customerId' => null,
-        'trackingId' => null,
+        'customer_id' => null,
+        'tracking_id' => null,
         'metadata' => null,
         'amount' => null,
         'redemption' => null,
         'result' => null,
         'status' => null,
-        'relatedRedemptions' => null,
-        'failureCode' => null,
-        'failureMessage' => null,
+        'related_redemptions' => null,
+        'failure_code' => null,
+        'failure_message' => null,
         'order' => null,
         'channel' => null,
         'customer' => null,
-        'relatedObjectType' => null,
-        'relatedObjectId' => null,
+        'related_object_type' => null,
+        'related_object_id' => null,
         'voucher' => null,
-        'promotionTier' => null,
+        'promotion_tier' => null,
         'reward' => null,
         'gift' => null,
-        'loyaltyCard' => null,
+        'loyalty_card' => null,
         'reason' => null
     ];
 
@@ -127,26 +127,26 @@ class RedemptionsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSe
         'id' => true,
 		'object' => true,
 		'date' => true,
-		'customerId' => true,
-		'trackingId' => true,
+		'customer_id' => true,
+		'tracking_id' => true,
 		'metadata' => true,
 		'amount' => true,
 		'redemption' => true,
 		'result' => true,
 		'status' => true,
-		'relatedRedemptions' => true,
-		'failureCode' => true,
-		'failureMessage' => true,
+		'related_redemptions' => true,
+		'failure_code' => true,
+		'failure_message' => true,
 		'order' => true,
 		'channel' => true,
 		'customer' => true,
-		'relatedObjectType' => true,
-		'relatedObjectId' => true,
+		'related_object_type' => true,
+		'related_object_id' => true,
 		'voucher' => true,
-		'promotionTier' => true,
+		'promotion_tier' => true,
 		'reward' => false,
 		'gift' => true,
-		'loyaltyCard' => true,
+		'loyalty_card' => true,
 		'reason' => true
     ];
 
@@ -239,26 +239,26 @@ class RedemptionsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSe
         'id' => 'id',
         'object' => 'object',
         'date' => 'date',
-        'customerId' => 'customer_id',
-        'trackingId' => 'tracking_id',
+        'customer_id' => 'customer_id',
+        'tracking_id' => 'tracking_id',
         'metadata' => 'metadata',
         'amount' => 'amount',
         'redemption' => 'redemption',
         'result' => 'result',
         'status' => 'status',
-        'relatedRedemptions' => 'related_redemptions',
-        'failureCode' => 'failure_code',
-        'failureMessage' => 'failure_message',
+        'related_redemptions' => 'related_redemptions',
+        'failure_code' => 'failure_code',
+        'failure_message' => 'failure_message',
         'order' => 'order',
         'channel' => 'channel',
         'customer' => 'customer',
-        'relatedObjectType' => 'related_object_type',
-        'relatedObjectId' => 'related_object_id',
+        'related_object_type' => 'related_object_type',
+        'related_object_id' => 'related_object_id',
         'voucher' => 'voucher',
-        'promotionTier' => 'promotion_tier',
+        'promotion_tier' => 'promotion_tier',
         'reward' => 'reward',
         'gift' => 'gift',
-        'loyaltyCard' => 'loyalty_card',
+        'loyalty_card' => 'loyalty_card',
         'reason' => 'reason'
     ];
 
@@ -271,26 +271,26 @@ class RedemptionsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSe
         'id' => 'setId',
         'object' => 'setObject',
         'date' => 'setDate',
-        'customerId' => 'setCustomerId',
-        'trackingId' => 'setTrackingId',
+        'customer_id' => 'setCustomerId',
+        'tracking_id' => 'setTrackingId',
         'metadata' => 'setMetadata',
         'amount' => 'setAmount',
         'redemption' => 'setRedemption',
         'result' => 'setResult',
         'status' => 'setStatus',
-        'relatedRedemptions' => 'setRelatedRedemptions',
-        'failureCode' => 'setFailureCode',
-        'failureMessage' => 'setFailureMessage',
+        'related_redemptions' => 'setRelatedRedemptions',
+        'failure_code' => 'setFailureCode',
+        'failure_message' => 'setFailureMessage',
         'order' => 'setOrder',
         'channel' => 'setChannel',
         'customer' => 'setCustomer',
-        'relatedObjectType' => 'setRelatedObjectType',
-        'relatedObjectId' => 'setRelatedObjectId',
+        'related_object_type' => 'setRelatedObjectType',
+        'related_object_id' => 'setRelatedObjectId',
         'voucher' => 'setVoucher',
-        'promotionTier' => 'setPromotionTier',
+        'promotion_tier' => 'setPromotionTier',
         'reward' => 'setReward',
         'gift' => 'setGift',
-        'loyaltyCard' => 'setLoyaltyCard',
+        'loyalty_card' => 'setLoyaltyCard',
         'reason' => 'setReason'
     ];
 
@@ -303,26 +303,26 @@ class RedemptionsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSe
         'id' => 'getId',
         'object' => 'getObject',
         'date' => 'getDate',
-        'customerId' => 'getCustomerId',
-        'trackingId' => 'getTrackingId',
+        'customer_id' => 'getCustomerId',
+        'tracking_id' => 'getTrackingId',
         'metadata' => 'getMetadata',
         'amount' => 'getAmount',
         'redemption' => 'getRedemption',
         'result' => 'getResult',
         'status' => 'getStatus',
-        'relatedRedemptions' => 'getRelatedRedemptions',
-        'failureCode' => 'getFailureCode',
-        'failureMessage' => 'getFailureMessage',
+        'related_redemptions' => 'getRelatedRedemptions',
+        'failure_code' => 'getFailureCode',
+        'failure_message' => 'getFailureMessage',
         'order' => 'getOrder',
         'channel' => 'getChannel',
         'customer' => 'getCustomer',
-        'relatedObjectType' => 'getRelatedObjectType',
-        'relatedObjectId' => 'getRelatedObjectId',
+        'related_object_type' => 'getRelatedObjectType',
+        'related_object_id' => 'getRelatedObjectId',
         'voucher' => 'getVoucher',
-        'promotionTier' => 'getPromotionTier',
+        'promotion_tier' => 'getPromotionTier',
         'reward' => 'getReward',
         'gift' => 'getGift',
-        'loyaltyCard' => 'getLoyaltyCard',
+        'loyalty_card' => 'getLoyaltyCard',
         'reason' => 'getReason'
     ];
 
@@ -450,26 +450,26 @@ class RedemptionsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSe
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], null);
         $this->setIfExists('date', $data ?? [], null);
-        $this->setIfExists('customerId', $data ?? [], null);
-        $this->setIfExists('trackingId', $data ?? [], null);
+        $this->setIfExists('customer_id', $data ?? [], null);
+        $this->setIfExists('tracking_id', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
         $this->setIfExists('redemption', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('relatedRedemptions', $data ?? [], null);
-        $this->setIfExists('failureCode', $data ?? [], null);
-        $this->setIfExists('failureMessage', $data ?? [], null);
+        $this->setIfExists('related_redemptions', $data ?? [], null);
+        $this->setIfExists('failure_code', $data ?? [], null);
+        $this->setIfExists('failure_message', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
         $this->setIfExists('channel', $data ?? [], null);
         $this->setIfExists('customer', $data ?? [], null);
-        $this->setIfExists('relatedObjectType', $data ?? [], null);
-        $this->setIfExists('relatedObjectId', $data ?? [], null);
+        $this->setIfExists('related_object_type', $data ?? [], null);
+        $this->setIfExists('related_object_id', $data ?? [], null);
         $this->setIfExists('voucher', $data ?? [], null);
-        $this->setIfExists('promotionTier', $data ?? [], null);
+        $this->setIfExists('promotion_tier', $data ?? [], null);
         $this->setIfExists('reward', $data ?? [], null);
         $this->setIfExists('gift', $data ?? [], null);
-        $this->setIfExists('loyaltyCard', $data ?? [], null);
+        $this->setIfExists('loyalty_card', $data ?? [], null);
         $this->setIfExists('reason', $data ?? [], null);
     }
 
@@ -528,10 +528,10 @@ class RedemptionsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSe
         }
 
         $allowedValues = $this->getRelatedObjectTypeAllowableValues();
-        if (!is_null($this->container['relatedObjectType']) && !in_array($this->container['relatedObjectType'], $allowedValues, true)) {
+        if (!is_null($this->container['related_object_type']) && !in_array($this->container['related_object_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'relatedObjectType', must be one of '%s'",
-                $this->container['relatedObjectType'],
+                "invalid value '%s' for 'related_object_type', must be one of '%s'",
+                $this->container['related_object_type'],
                 implode("', '", $allowedValues)
             );
         }
@@ -664,69 +664,69 @@ class RedemptionsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets customerId
+     * Gets customer_id
      *
      * @return string|null
      */
     public function getCustomerId()
     {
-        return $this->container['customerId'];
+        return $this->container['customer_id'];
     }
 
     /**
-     * Sets customerId
+     * Sets customer_id
      *
-     * @param string|null $customerId Unique customer ID of the redeeming customer.
+     * @param string|null $customer_id Unique customer ID of the redeeming customer.
      *
      * @return self
      */
-    public function setCustomerId($customerId)
+    public function setCustomerId($customer_id)
     {
-        if (is_null($customerId)) {
-            array_push($this->openAPINullablesSetToNull, 'customerId');
+        if (is_null($customer_id)) {
+            array_push($this->openAPINullablesSetToNull, 'customer_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customerId', $nullablesSetToNull);
+            $index = array_search('customer_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['customerId'] = $customerId;
+        $this->container['customer_id'] = $customer_id;
 
         return $this;
     }
 
     /**
-     * Gets trackingId
+     * Gets tracking_id
      *
      * @return string|null
      */
     public function getTrackingId()
     {
-        return $this->container['trackingId'];
+        return $this->container['tracking_id'];
     }
 
     /**
-     * Sets trackingId
+     * Sets tracking_id
      *
-     * @param string|null $trackingId Hashed customer source ID.
+     * @param string|null $tracking_id Hashed customer source ID.
      *
      * @return self
      */
-    public function setTrackingId($trackingId)
+    public function setTrackingId($tracking_id)
     {
-        if (is_null($trackingId)) {
-            array_push($this->openAPINullablesSetToNull, 'trackingId');
+        if (is_null($tracking_id)) {
+            array_push($this->openAPINullablesSetToNull, 'tracking_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('trackingId', $nullablesSetToNull);
+            $index = array_search('tracking_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['trackingId'] = $trackingId;
+        $this->container['tracking_id'] = $tracking_id;
 
         return $this;
     }
@@ -922,103 +922,103 @@ class RedemptionsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets relatedRedemptions
+     * Gets related_redemptions
      *
      * @return \OpenAPI\Client\Model\RedemptionsGetResponseBodyRelatedRedemptions|null
      */
     public function getRelatedRedemptions()
     {
-        return $this->container['relatedRedemptions'];
+        return $this->container['related_redemptions'];
     }
 
     /**
-     * Sets relatedRedemptions
+     * Sets related_redemptions
      *
-     * @param \OpenAPI\Client\Model\RedemptionsGetResponseBodyRelatedRedemptions|null $relatedRedemptions relatedRedemptions
+     * @param \OpenAPI\Client\Model\RedemptionsGetResponseBodyRelatedRedemptions|null $related_redemptions related_redemptions
      *
      * @return self
      */
-    public function setRelatedRedemptions($relatedRedemptions)
+    public function setRelatedRedemptions($related_redemptions)
     {
-        if (is_null($relatedRedemptions)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedRedemptions');
+        if (is_null($related_redemptions)) {
+            array_push($this->openAPINullablesSetToNull, 'related_redemptions');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedRedemptions', $nullablesSetToNull);
+            $index = array_search('related_redemptions', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['relatedRedemptions'] = $relatedRedemptions;
+        $this->container['related_redemptions'] = $related_redemptions;
 
         return $this;
     }
 
     /**
-     * Gets failureCode
+     * Gets failure_code
      *
      * @return string|null
      */
     public function getFailureCode()
     {
-        return $this->container['failureCode'];
+        return $this->container['failure_code'];
     }
 
     /**
-     * Sets failureCode
+     * Sets failure_code
      *
-     * @param string|null $failureCode If the result is `FAILURE`, this parameter will provide a generic reason as to why the redemption failed.
+     * @param string|null $failure_code If the result is `FAILURE`, this parameter will provide a generic reason as to why the redemption failed.
      *
      * @return self
      */
-    public function setFailureCode($failureCode)
+    public function setFailureCode($failure_code)
     {
-        if (is_null($failureCode)) {
-            array_push($this->openAPINullablesSetToNull, 'failureCode');
+        if (is_null($failure_code)) {
+            array_push($this->openAPINullablesSetToNull, 'failure_code');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('failureCode', $nullablesSetToNull);
+            $index = array_search('failure_code', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['failureCode'] = $failureCode;
+        $this->container['failure_code'] = $failure_code;
 
         return $this;
     }
 
     /**
-     * Gets failureMessage
+     * Gets failure_message
      *
      * @return string|null
      */
     public function getFailureMessage()
     {
-        return $this->container['failureMessage'];
+        return $this->container['failure_message'];
     }
 
     /**
-     * Sets failureMessage
+     * Sets failure_message
      *
-     * @param string|null $failureMessage If the result is `FAILURE`, this parameter will provide a more expanded reason as to why the redemption failed.
+     * @param string|null $failure_message If the result is `FAILURE`, this parameter will provide a more expanded reason as to why the redemption failed.
      *
      * @return self
      */
-    public function setFailureMessage($failureMessage)
+    public function setFailureMessage($failure_message)
     {
-        if (is_null($failureMessage)) {
-            array_push($this->openAPINullablesSetToNull, 'failureMessage');
+        if (is_null($failure_message)) {
+            array_push($this->openAPINullablesSetToNull, 'failure_message');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('failureMessage', $nullablesSetToNull);
+            $index = array_search('failure_message', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['failureMessage'] = $failureMessage;
+        $this->container['failure_message'] = $failure_message;
 
         return $this;
     }
@@ -1126,79 +1126,79 @@ class RedemptionsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets relatedObjectType
+     * Gets related_object_type
      *
      * @return string|null
      */
     public function getRelatedObjectType()
     {
-        return $this->container['relatedObjectType'];
+        return $this->container['related_object_type'];
     }
 
     /**
-     * Sets relatedObjectType
+     * Sets related_object_type
      *
-     * @param string|null $relatedObjectType Defines the related object.
+     * @param string|null $related_object_type Defines the related object.
      *
      * @return self
      */
-    public function setRelatedObjectType($relatedObjectType)
+    public function setRelatedObjectType($related_object_type)
     {
-        if (is_null($relatedObjectType)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObjectType');
+        if (is_null($related_object_type)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object_type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObjectType', $nullablesSetToNull);
+            $index = array_search('related_object_type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getRelatedObjectTypeAllowableValues();
-        if (!is_null($relatedObjectType) && !in_array($relatedObjectType, $allowedValues, true)) {
+        if (!is_null($related_object_type) && !in_array($related_object_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'relatedObjectType', must be one of '%s'",
-                    $relatedObjectType,
+                    "Invalid value '%s' for 'related_object_type', must be one of '%s'",
+                    $related_object_type,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['relatedObjectType'] = $relatedObjectType;
+        $this->container['related_object_type'] = $related_object_type;
 
         return $this;
     }
 
     /**
-     * Gets relatedObjectId
+     * Gets related_object_id
      *
      * @return string|null
      */
     public function getRelatedObjectId()
     {
-        return $this->container['relatedObjectId'];
+        return $this->container['related_object_id'];
     }
 
     /**
-     * Sets relatedObjectId
+     * Sets related_object_id
      *
-     * @param string|null $relatedObjectId relatedObjectId
+     * @param string|null $related_object_id related_object_id
      *
      * @return self
      */
-    public function setRelatedObjectId($relatedObjectId)
+    public function setRelatedObjectId($related_object_id)
     {
-        if (is_null($relatedObjectId)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObjectId');
+        if (is_null($related_object_id)) {
+            array_push($this->openAPINullablesSetToNull, 'related_object_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObjectId', $nullablesSetToNull);
+            $index = array_search('related_object_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['relatedObjectId'] = $relatedObjectId;
+        $this->container['related_object_id'] = $related_object_id;
 
         return $this;
     }
@@ -1238,35 +1238,35 @@ class RedemptionsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets promotionTier
+     * Gets promotion_tier
      *
      * @return \OpenAPI\Client\Model\RedemptionsGetResponseBodyPromotionTier|null
      */
     public function getPromotionTier()
     {
-        return $this->container['promotionTier'];
+        return $this->container['promotion_tier'];
     }
 
     /**
-     * Sets promotionTier
+     * Sets promotion_tier
      *
-     * @param \OpenAPI\Client\Model\RedemptionsGetResponseBodyPromotionTier|null $promotionTier promotionTier
+     * @param \OpenAPI\Client\Model\RedemptionsGetResponseBodyPromotionTier|null $promotion_tier promotion_tier
      *
      * @return self
      */
-    public function setPromotionTier($promotionTier)
+    public function setPromotionTier($promotion_tier)
     {
-        if (is_null($promotionTier)) {
-            array_push($this->openAPINullablesSetToNull, 'promotionTier');
+        if (is_null($promotion_tier)) {
+            array_push($this->openAPINullablesSetToNull, 'promotion_tier');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('promotionTier', $nullablesSetToNull);
+            $index = array_search('promotion_tier', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['promotionTier'] = $promotionTier;
+        $this->container['promotion_tier'] = $promotion_tier;
 
         return $this;
     }
@@ -1333,35 +1333,35 @@ class RedemptionsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets loyaltyCard
+     * Gets loyalty_card
      *
      * @return \OpenAPI\Client\Model\RedemptionsGetResponseBodyLoyaltyCard|null
      */
     public function getLoyaltyCard()
     {
-        return $this->container['loyaltyCard'];
+        return $this->container['loyalty_card'];
     }
 
     /**
-     * Sets loyaltyCard
+     * Sets loyalty_card
      *
-     * @param \OpenAPI\Client\Model\RedemptionsGetResponseBodyLoyaltyCard|null $loyaltyCard loyaltyCard
+     * @param \OpenAPI\Client\Model\RedemptionsGetResponseBodyLoyaltyCard|null $loyalty_card loyalty_card
      *
      * @return self
      */
-    public function setLoyaltyCard($loyaltyCard)
+    public function setLoyaltyCard($loyalty_card)
     {
-        if (is_null($loyaltyCard)) {
-            array_push($this->openAPINullablesSetToNull, 'loyaltyCard');
+        if (is_null($loyalty_card)) {
+            array_push($this->openAPINullablesSetToNull, 'loyalty_card');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('loyaltyCard', $nullablesSetToNull);
+            $index = array_search('loyalty_card', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['loyaltyCard'] = $loyaltyCard;
+        $this->container['loyalty_card'] = $loyalty_card;
 
         return $this;
     }

@@ -63,8 +63,8 @@ class CategoriesUpdateResponseBody implements ModelInterface, ArrayAccess, \Json
         'name' => 'string',
         'hierarchy' => 'int',
         'object' => 'string',
-        'createdAt' => '\DateTime',
-        'updatedAt' => '\DateTime'
+        'created_at' => '\DateTime',
+        'updated_at' => '\DateTime'
     ];
 
     /**
@@ -79,8 +79,8 @@ class CategoriesUpdateResponseBody implements ModelInterface, ArrayAccess, \Json
         'name' => null,
         'hierarchy' => null,
         'object' => null,
-        'createdAt' => 'date-time',
-        'updatedAt' => 'date-time'
+        'created_at' => 'date-time',
+        'updated_at' => 'date-time'
     ];
 
     /**
@@ -93,8 +93,8 @@ class CategoriesUpdateResponseBody implements ModelInterface, ArrayAccess, \Json
 		'name' => true,
 		'hierarchy' => true,
 		'object' => true,
-		'createdAt' => true,
-		'updatedAt' => true
+		'created_at' => true,
+		'updated_at' => true
     ];
 
     /**
@@ -187,8 +187,8 @@ class CategoriesUpdateResponseBody implements ModelInterface, ArrayAccess, \Json
         'name' => 'name',
         'hierarchy' => 'hierarchy',
         'object' => 'object',
-        'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at'
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at'
     ];
 
     /**
@@ -201,8 +201,8 @@ class CategoriesUpdateResponseBody implements ModelInterface, ArrayAccess, \Json
         'name' => 'setName',
         'hierarchy' => 'setHierarchy',
         'object' => 'setObject',
-        'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt'
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt'
     ];
 
     /**
@@ -215,8 +215,8 @@ class CategoriesUpdateResponseBody implements ModelInterface, ArrayAccess, \Json
         'name' => 'getName',
         'hierarchy' => 'getHierarchy',
         'object' => 'getObject',
-        'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt'
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt'
     ];
 
     /**
@@ -293,8 +293,8 @@ class CategoriesUpdateResponseBody implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('hierarchy', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'category');
-        $this->setIfExists('createdAt', $data ?? [], null);
-        $this->setIfExists('updatedAt', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
     }
 
     /**
@@ -495,69 +495,69 @@ class CategoriesUpdateResponseBody implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets createdAt
+     * Gets created_at
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['createdAt'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets createdAt
+     * Sets created_at
      *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $created_at Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        if (is_null($created_at)) {
+            array_push($this->openAPINullablesSetToNull, 'created_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
+            $index = array_search('created_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }
 
     /**
-     * Gets updatedAt
+     * Gets updated_at
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updatedAt'];
+        return $this->container['updated_at'];
     }
 
     /**
-     * Sets updatedAt
+     * Sets updated_at
      *
-     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the category was updated. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updated_at Timestamp representing the date and time when the category was updated. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updated_at)
     {
-        if (is_null($updatedAt)) {
-            array_push($this->openAPINullablesSetToNull, 'updatedAt');
+        if (is_null($updated_at)) {
+            array_push($this->openAPINullablesSetToNull, 'updated_at');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updatedAt', $nullablesSetToNull);
+            $index = array_search('updated_at', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updatedAt'] = $updatedAt;
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }

@@ -62,7 +62,7 @@ class SimpleCustomer implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'string',
         'name' => 'string',
         'email' => 'string',
-        'sourceId' => 'string',
+        'source_id' => 'string',
         'metadata' => 'object',
         'object' => 'string'
     ];
@@ -78,7 +78,7 @@ class SimpleCustomer implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => null,
         'name' => null,
         'email' => null,
-        'sourceId' => null,
+        'source_id' => null,
         'metadata' => null,
         'object' => null
     ];
@@ -92,7 +92,7 @@ class SimpleCustomer implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => true,
 		'name' => true,
 		'email' => true,
-		'sourceId' => true,
+		'source_id' => true,
 		'metadata' => true,
 		'object' => true
     ];
@@ -186,7 +186,7 @@ class SimpleCustomer implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'name' => 'name',
         'email' => 'email',
-        'sourceId' => 'source_id',
+        'source_id' => 'source_id',
         'metadata' => 'metadata',
         'object' => 'object'
     ];
@@ -200,7 +200,7 @@ class SimpleCustomer implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'name' => 'setName',
         'email' => 'setEmail',
-        'sourceId' => 'setSourceId',
+        'source_id' => 'setSourceId',
         'metadata' => 'setMetadata',
         'object' => 'setObject'
     ];
@@ -214,7 +214,7 @@ class SimpleCustomer implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'name' => 'getName',
         'email' => 'getEmail',
-        'sourceId' => 'getSourceId',
+        'source_id' => 'getSourceId',
         'metadata' => 'getMetadata',
         'object' => 'getObject'
     ];
@@ -292,7 +292,7 @@ class SimpleCustomer implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('email', $data ?? [], null);
-        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('source_id', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'customer');
     }
@@ -451,35 +451,35 @@ class SimpleCustomer implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets sourceId
+     * Gets source_id
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['sourceId'];
+        return $this->container['source_id'];
     }
 
     /**
-     * Sets sourceId
+     * Sets source_id
      *
-     * @param string|null $sourceId A unique identifier of the customer. It can be a customer ID or email from a CRM system, database, or a third-party service.
+     * @param string|null $source_id A unique identifier of the customer. It can be a customer ID or email from a CRM system, database, or a third-party service.
      *
      * @return self
      */
-    public function setSourceId($sourceId)
+    public function setSourceId($source_id)
     {
-        if (is_null($sourceId)) {
-            array_push($this->openAPINullablesSetToNull, 'sourceId');
+        if (is_null($source_id)) {
+            array_push($this->openAPINullablesSetToNull, 'source_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sourceId', $nullablesSetToNull);
+            $index = array_search('source_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['sourceId'] = $sourceId;
+        $this->container['source_id'] = $source_id;
 
         return $this;
     }
