@@ -23,7 +23,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `addPromotionTierToCampaign()`
 
 ```php
-addPromotionTierToCampaign($campaign_id, $promotions_tiers_create_request_body): \OpenAPI\Client\Model\PromotionsTiersCreateResponseBody
+addPromotionTierToCampaign($campaignId, $promotionsTiersCreateRequestBody): \OpenAPI\Client\Model\PromotionsTiersCreateResponseBody
 ```
 
 Add Promotion Tier to Campaign
@@ -54,11 +54,11 @@ $apiInstance = new OpenAPI\Client\Api\PromotionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID assigned by Voucherify.
-$promotions_tiers_create_request_body = {"name":"Order more than $100","banner":"Order more than $100","action":{"discount":{"type":"AMOUNT","amount_off":3000,"effect":"APPLY_TO_ORDER"}},"metadata":{},"active":true,"start_date":"2022-09-21T00:00:00.000Z","expiration_date":"2022-09-30T00:00:00.000Z","validity_timeframe":{"interval":"P2D","duration":"P1D"},"validity_day_of_week":[1,2,3,4],"validation_rules":["val_q8qUBMOh5qIQ"]}; // \OpenAPI\Client\Model\PromotionsTiersCreateRequestBody | Specify the promotion tier parameters.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID assigned by Voucherify.
+$promotionsTiersCreateRequestBody = {"name":"Order more than $100","banner":"Order more than $100","action":{"discount":{"type":"AMOUNT","amount_off":3000,"effect":"APPLY_TO_ORDER"}},"metadata":{},"active":true,"start_date":"2022-09-21T00:00:00.000Z","expiration_date":"2022-09-30T00:00:00.000Z","validity_timeframe":{"interval":"P2D","duration":"P1D"},"validity_day_of_week":[1,2,3,4],"validation_rules":["val_q8qUBMOh5qIQ"]}; // \OpenAPI\Client\Model\PromotionsTiersCreateRequestBody | Specify the promotion tier parameters.
 
 try {
-    $result = $apiInstance->addPromotionTierToCampaign($campaign_id, $promotions_tiers_create_request_body);
+    $result = $apiInstance->addPromotionTierToCampaign($campaignId, $promotionsTiersCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PromotionsApi->addPromotionTierToCampaign: ', $e->getMessage(), PHP_EOL;
@@ -69,8 +69,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID assigned by Voucherify. | |
-| **promotions_tiers_create_request_body** | [**\OpenAPI\Client\Model\PromotionsTiersCreateRequestBody**](../Model/PromotionsTiersCreateRequestBody.md)| Specify the promotion tier parameters. | [optional] |
+| **campaignId** | **string**| Unique campaign ID assigned by Voucherify. | |
+| **promotionsTiersCreateRequestBody** | [**\OpenAPI\Client\Model\PromotionsTiersCreateRequestBody**](../Model/PromotionsTiersCreateRequestBody.md)| Specify the promotion tier parameters. | [optional] |
 
 ### Return type
 
@@ -92,7 +92,7 @@ try {
 ## `createPromotionStack()`
 
 ```php
-createPromotionStack($campaign_id, $promotions_stacks_create_request_body): \OpenAPI\Client\Model\PromotionsStacksCreateResponseBody
+createPromotionStack($campaignId, $promotionsStacksCreateRequestBody): \OpenAPI\Client\Model\PromotionsStacksCreateResponseBody
 ```
 
 Create Promotion Stack
@@ -123,11 +123,11 @@ $apiInstance = new OpenAPI\Client\Api\PromotionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID.
-$promotions_stacks_create_request_body = {"name":"Fifth Stack","tiers":{"ids":["promo_aaAF8mVAzA0PF1igia2OC63d","promo_t9zdL6XMFk7B8fQ23zxELtdE","promo_dJNhAEeV5sR5oPQq1UrUdnMC"],"hierarchy_mode":"MANUAL"}}; // \OpenAPI\Client\Model\PromotionsStacksCreateRequestBody | Specify the order of promotion tiers for the promotion stack.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID.
+$promotionsStacksCreateRequestBody = {"name":"Fifth Stack","tiers":{"ids":["promo_aaAF8mVAzA0PF1igia2OC63d","promo_t9zdL6XMFk7B8fQ23zxELtdE","promo_dJNhAEeV5sR5oPQq1UrUdnMC"],"hierarchy_mode":"MANUAL"}}; // \OpenAPI\Client\Model\PromotionsStacksCreateRequestBody | Specify the order of promotion tiers for the promotion stack.
 
 try {
-    $result = $apiInstance->createPromotionStack($campaign_id, $promotions_stacks_create_request_body);
+    $result = $apiInstance->createPromotionStack($campaignId, $promotionsStacksCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PromotionsApi->createPromotionStack: ', $e->getMessage(), PHP_EOL;
@@ -138,8 +138,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID. | |
-| **promotions_stacks_create_request_body** | [**\OpenAPI\Client\Model\PromotionsStacksCreateRequestBody**](../Model/PromotionsStacksCreateRequestBody.md)| Specify the order of promotion tiers for the promotion stack. | [optional] |
+| **campaignId** | **string**| Unique campaign ID. | |
+| **promotionsStacksCreateRequestBody** | [**\OpenAPI\Client\Model\PromotionsStacksCreateRequestBody**](../Model/PromotionsStacksCreateRequestBody.md)| Specify the order of promotion tiers for the promotion stack. | [optional] |
 
 ### Return type
 
@@ -161,7 +161,7 @@ try {
 ## `deletePromotionStack()`
 
 ```php
-deletePromotionStack($campaign_id, $stack_id)
+deletePromotionStack($campaignId, $stackId)
 ```
 
 Delete Promotion Stack
@@ -192,11 +192,11 @@ $apiInstance = new OpenAPI\Client\Api\PromotionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign.
-$stack_id = 'stack_id_example'; // string | Promotion stack ID.
+$campaignId = 'campaignId_example'; // string | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign.
+$stackId = 'stackId_example'; // string | Promotion stack ID.
 
 try {
-    $apiInstance->deletePromotionStack($campaign_id, $stack_id);
+    $apiInstance->deletePromotionStack($campaignId, $stackId);
 } catch (Exception $e) {
     echo 'Exception when calling PromotionsApi->deletePromotionStack: ', $e->getMessage(), PHP_EOL;
 }
@@ -206,8 +206,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. | |
-| **stack_id** | **string**| Promotion stack ID. | |
+| **campaignId** | **string**| ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. | |
+| **stackId** | **string**| Promotion stack ID. | |
 
 ### Return type
 
@@ -229,7 +229,7 @@ void (empty response body)
 ## `deletePromotionTier()`
 
 ```php
-deletePromotionTier($promotion_tier_id)
+deletePromotionTier($promotionTierId)
 ```
 
 Delete Promotion Tier
@@ -260,10 +260,10 @@ $apiInstance = new OpenAPI\Client\Api\PromotionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$promotion_tier_id = 'promotion_tier_id_example'; // string | Unique promotion tier ID.
+$promotionTierId = 'promotionTierId_example'; // string | Unique promotion tier ID.
 
 try {
-    $apiInstance->deletePromotionTier($promotion_tier_id);
+    $apiInstance->deletePromotionTier($promotionTierId);
 } catch (Exception $e) {
     echo 'Exception when calling PromotionsApi->deletePromotionTier: ', $e->getMessage(), PHP_EOL;
 }
@@ -273,7 +273,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **promotion_tier_id** | **string**| Unique promotion tier ID. | |
+| **promotionTierId** | **string**| Unique promotion tier ID. | |
 
 ### Return type
 
@@ -295,7 +295,7 @@ void (empty response body)
 ## `disablePromotionTier()`
 
 ```php
-disablePromotionTier($promotion_tier_id): \OpenAPI\Client\Model\PromotionsTiersDisableResponseBody
+disablePromotionTier($promotionTierId): \OpenAPI\Client\Model\PromotionsTiersDisableResponseBody
 ```
 
 Disable Promotion Tier
@@ -326,10 +326,10 @@ $apiInstance = new OpenAPI\Client\Api\PromotionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$promotion_tier_id = 'promotion_tier_id_example'; // string | Unique promotion tier ID.
+$promotionTierId = 'promotionTierId_example'; // string | Unique promotion tier ID.
 
 try {
-    $result = $apiInstance->disablePromotionTier($promotion_tier_id);
+    $result = $apiInstance->disablePromotionTier($promotionTierId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PromotionsApi->disablePromotionTier: ', $e->getMessage(), PHP_EOL;
@@ -340,7 +340,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **promotion_tier_id** | **string**| Unique promotion tier ID. | |
+| **promotionTierId** | **string**| Unique promotion tier ID. | |
 
 ### Return type
 
@@ -362,7 +362,7 @@ try {
 ## `enablePromotionTier()`
 
 ```php
-enablePromotionTier($promotion_tier_id): \OpenAPI\Client\Model\PromotionsTiersEnableResponseBody
+enablePromotionTier($promotionTierId): \OpenAPI\Client\Model\PromotionsTiersEnableResponseBody
 ```
 
 Enable Promotion Tier
@@ -393,10 +393,10 @@ $apiInstance = new OpenAPI\Client\Api\PromotionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$promotion_tier_id = 'promotion_tier_id_example'; // string | Unique promotion tier ID.
+$promotionTierId = 'promotionTierId_example'; // string | Unique promotion tier ID.
 
 try {
-    $result = $apiInstance->enablePromotionTier($promotion_tier_id);
+    $result = $apiInstance->enablePromotionTier($promotionTierId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PromotionsApi->enablePromotionTier: ', $e->getMessage(), PHP_EOL;
@@ -407,7 +407,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **promotion_tier_id** | **string**| Unique promotion tier ID. | |
+| **promotionTierId** | **string**| Unique promotion tier ID. | |
 
 ### Return type
 
@@ -429,7 +429,7 @@ try {
 ## `getPromotionStack()`
 
 ```php
-getPromotionStack($campaign_id, $stack_id): \OpenAPI\Client\Model\PromotionsStacksGetResponseBody
+getPromotionStack($campaignId, $stackId): \OpenAPI\Client\Model\PromotionsStacksGetResponseBody
 ```
 
 Get Promotion Stack
@@ -460,11 +460,11 @@ $apiInstance = new OpenAPI\Client\Api\PromotionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign.
-$stack_id = 'stack_id_example'; // string | Promotion stack ID.
+$campaignId = 'campaignId_example'; // string | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign.
+$stackId = 'stackId_example'; // string | Promotion stack ID.
 
 try {
-    $result = $apiInstance->getPromotionStack($campaign_id, $stack_id);
+    $result = $apiInstance->getPromotionStack($campaignId, $stackId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PromotionsApi->getPromotionStack: ', $e->getMessage(), PHP_EOL;
@@ -475,8 +475,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. | |
-| **stack_id** | **string**| Promotion stack ID. | |
+| **campaignId** | **string**| ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. | |
+| **stackId** | **string**| Promotion stack ID. | |
 
 ### Return type
 
@@ -498,7 +498,7 @@ try {
 ## `getPromotionTier()`
 
 ```php
-getPromotionTier($promotion_tier_id): \OpenAPI\Client\Model\PromotionsTiersGetResponseBody
+getPromotionTier($promotionTierId): \OpenAPI\Client\Model\PromotionsTiersGetResponseBody
 ```
 
 Get Promotion Tier
@@ -529,10 +529,10 @@ $apiInstance = new OpenAPI\Client\Api\PromotionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$promotion_tier_id = 'promotion_tier_id_example'; // string | Unique promotion tier ID.
+$promotionTierId = 'promotionTierId_example'; // string | Unique promotion tier ID.
 
 try {
-    $result = $apiInstance->getPromotionTier($promotion_tier_id);
+    $result = $apiInstance->getPromotionTier($promotionTierId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PromotionsApi->getPromotionTier: ', $e->getMessage(), PHP_EOL;
@@ -543,7 +543,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **promotion_tier_id** | **string**| Unique promotion tier ID. | |
+| **promotionTierId** | **string**| Unique promotion tier ID. | |
 
 ### Return type
 
@@ -565,7 +565,7 @@ try {
 ## `listAllPromotionStacks()`
 
 ```php
-listAllPromotionStacks($limit, $page, $order, $created_at, $updated_at): \OpenAPI\Client\Model\PromotionsStacksListResponseBody
+listAllPromotionStacks($limit, $page, $order, $createdAt, $updatedAt): \OpenAPI\Client\Model\PromotionsStacksListResponseBody
 ```
 
 List Promotion Stacks
@@ -599,11 +599,11 @@ $apiInstance = new OpenAPI\Client\Api\PromotionsApi(
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 $order = new \OpenAPI\Client\Model\ParameterOrderListAllPromotionStacks(); // ParameterOrderListAllPromotionStacks | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-$created_at = new \OpenAPI\Client\Model\ParameterCreatedBeforeAfter(); // ParameterCreatedBeforeAfter | A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z
-$updated_at = new \OpenAPI\Client\Model\ParameterUpdatedBeforeAfter(); // ParameterUpdatedBeforeAfter | A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z
+$createdAt = new \OpenAPI\Client\Model\ParameterCreatedBeforeAfter(); // ParameterCreatedBeforeAfter | A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z
+$updatedAt = new \OpenAPI\Client\Model\ParameterUpdatedBeforeAfter(); // ParameterUpdatedBeforeAfter | A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z
 
 try {
-    $result = $apiInstance->listAllPromotionStacks($limit, $page, $order, $created_at, $updated_at);
+    $result = $apiInstance->listAllPromotionStacks($limit, $page, $order, $createdAt, $updatedAt);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PromotionsApi->listAllPromotionStacks: ', $e->getMessage(), PHP_EOL;
@@ -617,8 +617,8 @@ try {
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 | **order** | [**ParameterOrderListAllPromotionStacks**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
-| **created_at** | [**ParameterCreatedBeforeAfter**](../Model/.md)| A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z | [optional] |
-| **updated_at** | [**ParameterUpdatedBeforeAfter**](../Model/.md)| A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z | [optional] |
+| **createdAt** | [**ParameterCreatedBeforeAfter**](../Model/.md)| A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z | [optional] |
+| **updatedAt** | [**ParameterUpdatedBeforeAfter**](../Model/.md)| A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z | [optional] |
 
 ### Return type
 
@@ -640,7 +640,7 @@ try {
 ## `listPromotionStacksInCampaign()`
 
 ```php
-listPromotionStacksInCampaign($campaign_id): \OpenAPI\Client\Model\PromotionsStacksListResponseBody
+listPromotionStacksInCampaign($campaignId): \OpenAPI\Client\Model\PromotionsStacksListResponseBody
 ```
 
 List Promotion Stacks in Campaign
@@ -671,10 +671,10 @@ $apiInstance = new OpenAPI\Client\Api\PromotionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID.
 
 try {
-    $result = $apiInstance->listPromotionStacksInCampaign($campaign_id);
+    $result = $apiInstance->listPromotionStacksInCampaign($campaignId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PromotionsApi->listPromotionStacksInCampaign: ', $e->getMessage(), PHP_EOL;
@@ -685,7 +685,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID. | |
+| **campaignId** | **string**| Unique campaign ID. | |
 
 ### Return type
 
@@ -707,7 +707,7 @@ try {
 ## `listPromotionTiers()`
 
 ```php
-listPromotionTiers($is_available, $limit, $page, $order): \OpenAPI\Client\Model\PromotionsTiersListResponseBody
+listPromotionTiers($isAvailable, $limit, $page, $order): \OpenAPI\Client\Model\PromotionsTiersListResponseBody
 ```
 
 List Promotion Tiers
@@ -738,13 +738,13 @@ $apiInstance = new OpenAPI\Client\Api\PromotionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$is_available = True; // bool | This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions.
+$isAvailable = True; // bool | This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 $order = new \OpenAPI\Client\Model\ParameterOrderListPromotionTiers(); // ParameterOrderListPromotionTiers | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
 
 try {
-    $result = $apiInstance->listPromotionTiers($is_available, $limit, $page, $order);
+    $result = $apiInstance->listPromotionTiers($isAvailable, $limit, $page, $order);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PromotionsApi->listPromotionTiers: ', $e->getMessage(), PHP_EOL;
@@ -755,7 +755,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **is_available** | **bool**| This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. | [optional] |
+| **isAvailable** | **bool**| This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. | [optional] |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 | **order** | [**ParameterOrderListPromotionTiers**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
@@ -780,7 +780,7 @@ try {
 ## `listPromotionTiersFromCampaign()`
 
 ```php
-listPromotionTiersFromCampaign($campaign_id): \OpenAPI\Client\Model\PromotionsTiersListResponseBody
+listPromotionTiersFromCampaign($campaignId): \OpenAPI\Client\Model\PromotionsTiersListResponseBody
 ```
 
 List Promotion Tiers from Campaign
@@ -811,10 +811,10 @@ $apiInstance = new OpenAPI\Client\Api\PromotionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | Unique campaign ID assigned by Voucherify.
+$campaignId = 'campaignId_example'; // string | Unique campaign ID assigned by Voucherify.
 
 try {
-    $result = $apiInstance->listPromotionTiersFromCampaign($campaign_id);
+    $result = $apiInstance->listPromotionTiersFromCampaign($campaignId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PromotionsApi->listPromotionTiersFromCampaign: ', $e->getMessage(), PHP_EOL;
@@ -825,7 +825,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| Unique campaign ID assigned by Voucherify. | |
+| **campaignId** | **string**| Unique campaign ID assigned by Voucherify. | |
 
 ### Return type
 
@@ -847,7 +847,7 @@ try {
 ## `updatePromotionStack()`
 
 ```php
-updatePromotionStack($campaign_id, $stack_id, $promotions_stacks_update_request_body): \OpenAPI\Client\Model\PromotionsStacksUpdateResponseBody
+updatePromotionStack($campaignId, $stackId, $promotionsStacksUpdateRequestBody): \OpenAPI\Client\Model\PromotionsStacksUpdateResponseBody
 ```
 
 Update Promotion Stack
@@ -878,12 +878,12 @@ $apiInstance = new OpenAPI\Client\Api\PromotionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign.
-$stack_id = 'stack_id_example'; // string | Promotion stack ID.
-$promotions_stacks_update_request_body = {"name":"Fifth Stack Modified","tiers":{"ids":["promo_aaAF8mVAzA0PF1igia2OC63d","promo_t9zdL6XMFk7B8fQ23zxELtdE"],"hierarchy_mode":"MANUAL"}}; // \OpenAPI\Client\Model\PromotionsStacksUpdateRequestBody | Specify the promotion stack parameters that you would like to update.
+$campaignId = 'campaignId_example'; // string | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign.
+$stackId = 'stackId_example'; // string | Promotion stack ID.
+$promotionsStacksUpdateRequestBody = {"name":"Fifth Stack Modified","tiers":{"ids":["promo_aaAF8mVAzA0PF1igia2OC63d","promo_t9zdL6XMFk7B8fQ23zxELtdE"],"hierarchy_mode":"MANUAL"}}; // \OpenAPI\Client\Model\PromotionsStacksUpdateRequestBody | Specify the promotion stack parameters that you would like to update.
 
 try {
-    $result = $apiInstance->updatePromotionStack($campaign_id, $stack_id, $promotions_stacks_update_request_body);
+    $result = $apiInstance->updatePromotionStack($campaignId, $stackId, $promotionsStacksUpdateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PromotionsApi->updatePromotionStack: ', $e->getMessage(), PHP_EOL;
@@ -894,9 +894,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. | |
-| **stack_id** | **string**| Promotion stack ID. | |
-| **promotions_stacks_update_request_body** | [**\OpenAPI\Client\Model\PromotionsStacksUpdateRequestBody**](../Model/PromotionsStacksUpdateRequestBody.md)| Specify the promotion stack parameters that you would like to update. | [optional] |
+| **campaignId** | **string**| ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. | |
+| **stackId** | **string**| Promotion stack ID. | |
+| **promotionsStacksUpdateRequestBody** | [**\OpenAPI\Client\Model\PromotionsStacksUpdateRequestBody**](../Model/PromotionsStacksUpdateRequestBody.md)| Specify the promotion stack parameters that you would like to update. | [optional] |
 
 ### Return type
 
@@ -918,7 +918,7 @@ try {
 ## `updatePromotionTier()`
 
 ```php
-updatePromotionTier($promotion_tier_id, $promotions_tiers_update_request_body): \OpenAPI\Client\Model\PromotionsTiersUpdateResponseBody
+updatePromotionTier($promotionTierId, $promotionsTiersUpdateRequestBody): \OpenAPI\Client\Model\PromotionsTiersUpdateResponseBody
 ```
 
 Update Promotion Tier
@@ -949,11 +949,11 @@ $apiInstance = new OpenAPI\Client\Api\PromotionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$promotion_tier_id = 'promotion_tier_id_example'; // string | Unique promotion tier ID.
-$promotions_tiers_update_request_body = {"name":"Order more than $100 USD","banner":"Order more than $100 USD","action":{"discount":{"type":"PERCENT","percent_off":25,"effect":"APPLY_TO_ORDER"}},"metadata":{"level":"A-21"},"hierarchy":1,"start_date":"2022-09-22T00:00:00.000Z","expiration_date":"2022-09-29T00:00:00.000Z","validity_timeframe":{"interval":"P3D","duration":"P2D"},"validity_day_of_week":[1,2,3]}; // \OpenAPI\Client\Model\PromotionsTiersUpdateRequestBody | Specify the promotion tier parameters that you would like to update.
+$promotionTierId = 'promotionTierId_example'; // string | Unique promotion tier ID.
+$promotionsTiersUpdateRequestBody = {"name":"Order more than $100 USD","banner":"Order more than $100 USD","action":{"discount":{"type":"PERCENT","percent_off":25,"effect":"APPLY_TO_ORDER"}},"metadata":{"level":"A-21"},"hierarchy":1,"start_date":"2022-09-22T00:00:00.000Z","expiration_date":"2022-09-29T00:00:00.000Z","validity_timeframe":{"interval":"P3D","duration":"P2D"},"validity_day_of_week":[1,2,3]}; // \OpenAPI\Client\Model\PromotionsTiersUpdateRequestBody | Specify the promotion tier parameters that you would like to update.
 
 try {
-    $result = $apiInstance->updatePromotionTier($promotion_tier_id, $promotions_tiers_update_request_body);
+    $result = $apiInstance->updatePromotionTier($promotionTierId, $promotionsTiersUpdateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PromotionsApi->updatePromotionTier: ', $e->getMessage(), PHP_EOL;
@@ -964,8 +964,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **promotion_tier_id** | **string**| Unique promotion tier ID. | |
-| **promotions_tiers_update_request_body** | [**\OpenAPI\Client\Model\PromotionsTiersUpdateRequestBody**](../Model/PromotionsTiersUpdateRequestBody.md)| Specify the promotion tier parameters that you would like to update. | [optional] |
+| **promotionTierId** | **string**| Unique promotion tier ID. | |
+| **promotionsTiersUpdateRequestBody** | [**\OpenAPI\Client\Model\PromotionsTiersUpdateRequestBody**](../Model/PromotionsTiersUpdateRequestBody.md)| Specify the promotion tier parameters that you would like to update. | [optional] |
 
 ### Return type
 

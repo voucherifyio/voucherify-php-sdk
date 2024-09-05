@@ -59,11 +59,11 @@ class ProductsUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'source_id' => 'string',
+        'sourceId' => 'string',
         'name' => 'string',
         'price' => 'int',
         'attributes' => 'string[]',
-        'image_url' => 'string',
+        'imageUrl' => 'string',
         'metadata' => 'object'
     ];
 
@@ -75,11 +75,11 @@ class ProductsUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'source_id' => null,
+        'sourceId' => null,
         'name' => null,
         'price' => null,
         'attributes' => null,
-        'image_url' => null,
+        'imageUrl' => null,
         'metadata' => null
     ];
 
@@ -89,11 +89,11 @@ class ProductsUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'source_id' => true,
+        'sourceId' => true,
 		'name' => true,
 		'price' => true,
 		'attributes' => true,
-		'image_url' => true,
+		'imageUrl' => true,
 		'metadata' => true
     ];
 
@@ -183,11 +183,11 @@ class ProductsUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'source_id' => 'source_id',
+        'sourceId' => 'source_id',
         'name' => 'name',
         'price' => 'price',
         'attributes' => 'attributes',
-        'image_url' => 'image_url',
+        'imageUrl' => 'image_url',
         'metadata' => 'metadata'
     ];
 
@@ -197,11 +197,11 @@ class ProductsUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'source_id' => 'setSourceId',
+        'sourceId' => 'setSourceId',
         'name' => 'setName',
         'price' => 'setPrice',
         'attributes' => 'setAttributes',
-        'image_url' => 'setImageUrl',
+        'imageUrl' => 'setImageUrl',
         'metadata' => 'setMetadata'
     ];
 
@@ -211,11 +211,11 @@ class ProductsUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'source_id' => 'getSourceId',
+        'sourceId' => 'getSourceId',
         'name' => 'getName',
         'price' => 'getPrice',
         'attributes' => 'getAttributes',
-        'image_url' => 'getImageUrl',
+        'imageUrl' => 'getImageUrl',
         'metadata' => 'getMetadata'
     ];
 
@@ -276,11 +276,11 @@ class ProductsUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('source_id', $data ?? [], null);
+        $this->setIfExists('sourceId', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('attributes', $data ?? [], null);
-        $this->setIfExists('image_url', $data ?? [], null);
+        $this->setIfExists('imageUrl', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
     }
 
@@ -327,35 +327,35 @@ class ProductsUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets source_id
+     * Gets sourceId
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['source_id'];
+        return $this->container['sourceId'];
     }
 
     /**
-     * Sets source_id
+     * Sets sourceId
      *
-     * @param string|null $source_id Unique product source ID from your inventory system.
+     * @param string|null $sourceId Unique product source ID from your inventory system.
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setSourceId($sourceId)
     {
-        if (is_null($source_id)) {
-            array_push($this->openAPINullablesSetToNull, 'source_id');
+        if (is_null($sourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'sourceId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('source_id', $nullablesSetToNull);
+            $index = array_search('sourceId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['source_id'] = $source_id;
+        $this->container['sourceId'] = $sourceId;
 
         return $this;
     }
@@ -463,35 +463,35 @@ class ProductsUpdateInBulkRequestBody implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets image_url
+     * Gets imageUrl
      *
      * @return string|null
      */
     public function getImageUrl()
     {
-        return $this->container['image_url'];
+        return $this->container['imageUrl'];
     }
 
     /**
-     * Sets image_url
+     * Sets imageUrl
      *
-     * @param string|null $image_url The HTTPS URL pointing to the .png or .jpg file that will be used to render the product image.
+     * @param string|null $imageUrl The HTTPS URL pointing to the .png or .jpg file that will be used to render the product image.
      *
      * @return self
      */
-    public function setImageUrl($image_url)
+    public function setImageUrl($imageUrl)
     {
-        if (is_null($image_url)) {
-            array_push($this->openAPINullablesSetToNull, 'image_url');
+        if (is_null($imageUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'imageUrl');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('image_url', $nullablesSetToNull);
+            $index = array_search('imageUrl', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['image_url'] = $image_url;
+        $this->container['imageUrl'] = $imageUrl;
 
         return $this;
     }

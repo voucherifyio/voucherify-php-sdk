@@ -58,10 +58,10 @@ class DiscountUnitMultipleOneUnit implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'unit_off' => 'float',
-        'unit_off_formula' => 'string',
+        'unitOff' => 'float',
+        'unitOffFormula' => 'string',
         'effect' => 'string',
-        'unit_type' => 'string',
+        'unitType' => 'string',
         'product' => '\OpenAPI\Client\Model\SimpleProductDiscountUnit',
         'sku' => '\OpenAPI\Client\Model\SimpleSkuDiscountUnit'
     ];
@@ -74,10 +74,10 @@ class DiscountUnitMultipleOneUnit implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'unit_off' => null,
-        'unit_off_formula' => null,
+        'unitOff' => null,
+        'unitOffFormula' => null,
         'effect' => null,
-        'unit_type' => null,
+        'unitType' => null,
         'product' => null,
         'sku' => null
     ];
@@ -88,10 +88,10 @@ class DiscountUnitMultipleOneUnit implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'unit_off' => true,
-		'unit_off_formula' => true,
+        'unitOff' => true,
+		'unitOffFormula' => true,
 		'effect' => true,
-		'unit_type' => true,
+		'unitType' => true,
 		'product' => false,
 		'sku' => false
     ];
@@ -182,10 +182,10 @@ class DiscountUnitMultipleOneUnit implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'unit_off' => 'unit_off',
-        'unit_off_formula' => 'unit_off_formula',
+        'unitOff' => 'unit_off',
+        'unitOffFormula' => 'unit_off_formula',
         'effect' => 'effect',
-        'unit_type' => 'unit_type',
+        'unitType' => 'unit_type',
         'product' => 'product',
         'sku' => 'sku'
     ];
@@ -196,10 +196,10 @@ class DiscountUnitMultipleOneUnit implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'unit_off' => 'setUnitOff',
-        'unit_off_formula' => 'setUnitOffFormula',
+        'unitOff' => 'setUnitOff',
+        'unitOffFormula' => 'setUnitOffFormula',
         'effect' => 'setEffect',
-        'unit_type' => 'setUnitType',
+        'unitType' => 'setUnitType',
         'product' => 'setProduct',
         'sku' => 'setSku'
     ];
@@ -210,10 +210,10 @@ class DiscountUnitMultipleOneUnit implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'unit_off' => 'getUnitOff',
-        'unit_off_formula' => 'getUnitOffFormula',
+        'unitOff' => 'getUnitOff',
+        'unitOffFormula' => 'getUnitOffFormula',
         'effect' => 'getEffect',
-        'unit_type' => 'getUnitType',
+        'unitType' => 'getUnitType',
         'product' => 'getProduct',
         'sku' => 'getSku'
     ];
@@ -290,10 +290,10 @@ class DiscountUnitMultipleOneUnit implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('unit_off', $data ?? [], null);
-        $this->setIfExists('unit_off_formula', $data ?? [], null);
+        $this->setIfExists('unitOff', $data ?? [], null);
+        $this->setIfExists('unitOffFormula', $data ?? [], null);
         $this->setIfExists('effect', $data ?? [], null);
-        $this->setIfExists('unit_type', $data ?? [], null);
+        $this->setIfExists('unitType', $data ?? [], null);
         $this->setIfExists('product', $data ?? [], null);
         $this->setIfExists('sku', $data ?? [], null);
     }
@@ -350,69 +350,69 @@ class DiscountUnitMultipleOneUnit implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets unit_off
+     * Gets unitOff
      *
      * @return float|null
      */
     public function getUnitOff()
     {
-        return $this->container['unit_off'];
+        return $this->container['unitOff'];
     }
 
     /**
-     * Sets unit_off
+     * Sets unitOff
      *
-     * @param float|null $unit_off Number of units to be granted a full value discount.
+     * @param float|null $unitOff Number of units to be granted a full value discount.
      *
      * @return self
      */
-    public function setUnitOff($unit_off)
+    public function setUnitOff($unitOff)
     {
-        if (is_null($unit_off)) {
-            array_push($this->openAPINullablesSetToNull, 'unit_off');
+        if (is_null($unitOff)) {
+            array_push($this->openAPINullablesSetToNull, 'unitOff');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unit_off', $nullablesSetToNull);
+            $index = array_search('unitOff', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['unit_off'] = $unit_off;
+        $this->container['unitOff'] = $unitOff;
 
         return $this;
     }
 
     /**
-     * Gets unit_off_formula
+     * Gets unitOffFormula
      *
      * @return string|null
      */
     public function getUnitOffFormula()
     {
-        return $this->container['unit_off_formula'];
+        return $this->container['unitOffFormula'];
     }
 
     /**
-     * Sets unit_off_formula
+     * Sets unitOffFormula
      *
-     * @param string|null $unit_off_formula unit_off_formula
+     * @param string|null $unitOffFormula unitOffFormula
      *
      * @return self
      */
-    public function setUnitOffFormula($unit_off_formula)
+    public function setUnitOffFormula($unitOffFormula)
     {
-        if (is_null($unit_off_formula)) {
-            array_push($this->openAPINullablesSetToNull, 'unit_off_formula');
+        if (is_null($unitOffFormula)) {
+            array_push($this->openAPINullablesSetToNull, 'unitOffFormula');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unit_off_formula', $nullablesSetToNull);
+            $index = array_search('unitOffFormula', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['unit_off_formula'] = $unit_off_formula;
+        $this->container['unitOffFormula'] = $unitOffFormula;
 
         return $this;
     }
@@ -462,35 +462,35 @@ class DiscountUnitMultipleOneUnit implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets unit_type
+     * Gets unitType
      *
      * @return string|null
      */
     public function getUnitType()
     {
-        return $this->container['unit_type'];
+        return $this->container['unitType'];
     }
 
     /**
-     * Sets unit_type
+     * Sets unitType
      *
-     * @param string|null $unit_type The product deemed as free, chosen from product inventory (e.g. time, items).
+     * @param string|null $unitType The product deemed as free, chosen from product inventory (e.g. time, items).
      *
      * @return self
      */
-    public function setUnitType($unit_type)
+    public function setUnitType($unitType)
     {
-        if (is_null($unit_type)) {
-            array_push($this->openAPINullablesSetToNull, 'unit_type');
+        if (is_null($unitType)) {
+            array_push($this->openAPINullablesSetToNull, 'unitType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unit_type', $nullablesSetToNull);
+            $index = array_search('unitType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['unit_type'] = $unit_type;
+        $this->container['unitType'] = $unitType;
 
         return $this;
     }

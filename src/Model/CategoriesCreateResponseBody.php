@@ -63,7 +63,7 @@ class CategoriesCreateResponseBody implements ModelInterface, ArrayAccess, \Json
         'name' => 'string',
         'hierarchy' => 'int',
         'object' => 'string',
-        'created_at' => '\DateTime'
+        'createdAt' => '\DateTime'
     ];
 
     /**
@@ -78,7 +78,7 @@ class CategoriesCreateResponseBody implements ModelInterface, ArrayAccess, \Json
         'name' => null,
         'hierarchy' => null,
         'object' => null,
-        'created_at' => 'date-time'
+        'createdAt' => 'date-time'
     ];
 
     /**
@@ -91,7 +91,7 @@ class CategoriesCreateResponseBody implements ModelInterface, ArrayAccess, \Json
 		'name' => true,
 		'hierarchy' => true,
 		'object' => true,
-		'created_at' => true
+		'createdAt' => true
     ];
 
     /**
@@ -184,7 +184,7 @@ class CategoriesCreateResponseBody implements ModelInterface, ArrayAccess, \Json
         'name' => 'name',
         'hierarchy' => 'hierarchy',
         'object' => 'object',
-        'created_at' => 'created_at'
+        'createdAt' => 'created_at'
     ];
 
     /**
@@ -197,7 +197,7 @@ class CategoriesCreateResponseBody implements ModelInterface, ArrayAccess, \Json
         'name' => 'setName',
         'hierarchy' => 'setHierarchy',
         'object' => 'setObject',
-        'created_at' => 'setCreatedAt'
+        'createdAt' => 'setCreatedAt'
     ];
 
     /**
@@ -210,7 +210,7 @@ class CategoriesCreateResponseBody implements ModelInterface, ArrayAccess, \Json
         'name' => 'getName',
         'hierarchy' => 'getHierarchy',
         'object' => 'getObject',
-        'created_at' => 'getCreatedAt'
+        'createdAt' => 'getCreatedAt'
     ];
 
     /**
@@ -287,7 +287,7 @@ class CategoriesCreateResponseBody implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('hierarchy', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'category');
-        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
     }
 
     /**
@@ -488,35 +488,35 @@ class CategoriesCreateResponseBody implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the category was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }

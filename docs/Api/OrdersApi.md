@@ -15,7 +15,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `createOrder()`
 
 ```php
-createOrder($orders_create_request_body): \OpenAPI\Client\Model\OrdersCreateResponseBody
+createOrder($ordersCreateRequestBody): \OpenAPI\Client\Model\OrdersCreateResponseBody
 ```
 
 Create Order
@@ -46,10 +46,10 @@ $apiInstance = new OpenAPI\Client\Api\OrdersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$orders_create_request_body = {"amount":20000,"customer":{"source_id":"sample_customer"},"status":"PAID","items":[{"quantity":1,"price":20000,"source_id":"sample product1","related_object":"product","product":{"metadata":{"key":"value"}}}]}; // \OpenAPI\Client\Model\OrdersCreateRequestBody | Specify the order parameters.
+$ordersCreateRequestBody = {"amount":20000,"customer":{"source_id":"sample_customer"},"status":"PAID","items":[{"quantity":1,"price":20000,"source_id":"sample product1","related_object":"product","product":{"metadata":{"key":"value"}}}]}; // \OpenAPI\Client\Model\OrdersCreateRequestBody | Specify the order parameters.
 
 try {
-    $result = $apiInstance->createOrder($orders_create_request_body);
+    $result = $apiInstance->createOrder($ordersCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->createOrder: ', $e->getMessage(), PHP_EOL;
@@ -60,7 +60,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **orders_create_request_body** | [**\OpenAPI\Client\Model\OrdersCreateRequestBody**](../Model/OrdersCreateRequestBody.md)| Specify the order parameters. | [optional] |
+| **ordersCreateRequestBody** | [**\OpenAPI\Client\Model\OrdersCreateRequestBody**](../Model/OrdersCreateRequestBody.md)| Specify the order parameters. | [optional] |
 
 ### Return type
 
@@ -82,7 +82,7 @@ try {
 ## `createOrderExport()`
 
 ```php
-createOrderExport($orders_export_create_request_body): \OpenAPI\Client\Model\OrdersExportCreateResponseBody
+createOrderExport($ordersExportCreateRequestBody): \OpenAPI\Client\Model\OrdersExportCreateResponseBody
 ```
 
 Create Orders Export
@@ -113,10 +113,10 @@ $apiInstance = new OpenAPI\Client\Api\OrdersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$orders_export_create_request_body = {"parameters":{"fields":["id","source_id","status","created_at","updated_at","amount","discount_amount","items_discount_amount","total_discount_amount","total_amount","customer_id","referrer_id","metadata.payment_mean"]}}; // \OpenAPI\Client\Model\OrdersExportCreateRequestBody | Specify which order parameters you would like to export.
+$ordersExportCreateRequestBody = {"parameters":{"fields":["id","source_id","status","created_at","updated_at","amount","discount_amount","items_discount_amount","total_discount_amount","total_amount","customer_id","referrer_id","metadata.payment_mean"]}}; // \OpenAPI\Client\Model\OrdersExportCreateRequestBody | Specify which order parameters you would like to export.
 
 try {
-    $result = $apiInstance->createOrderExport($orders_export_create_request_body);
+    $result = $apiInstance->createOrderExport($ordersExportCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->createOrderExport: ', $e->getMessage(), PHP_EOL;
@@ -127,7 +127,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **orders_export_create_request_body** | [**\OpenAPI\Client\Model\OrdersExportCreateRequestBody**](../Model/OrdersExportCreateRequestBody.md)| Specify which order parameters you would like to export. | [optional] |
+| **ordersExportCreateRequestBody** | [**\OpenAPI\Client\Model\OrdersExportCreateRequestBody**](../Model/OrdersExportCreateRequestBody.md)| Specify which order parameters you would like to export. | [optional] |
 
 ### Return type
 
@@ -149,7 +149,7 @@ try {
 ## `getOrder()`
 
 ```php
-getOrder($order_id): \OpenAPI\Client\Model\OrdersGetResponseBody
+getOrder($orderId): \OpenAPI\Client\Model\OrdersGetResponseBody
 ```
 
 Get Order
@@ -180,10 +180,10 @@ $apiInstance = new OpenAPI\Client\Api\OrdersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$order_id = 'order_id_example'; // string | Unique Voucherify order ID or order source ID.
+$orderId = 'orderId_example'; // string | Unique Voucherify order ID or order source ID.
 
 try {
-    $result = $apiInstance->getOrder($order_id);
+    $result = $apiInstance->getOrder($orderId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->getOrder: ', $e->getMessage(), PHP_EOL;
@@ -194,7 +194,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **order_id** | **string**| Unique Voucherify order ID or order source ID. | |
+| **orderId** | **string**| Unique Voucherify order ID or order source ID. | |
 
 ### Return type
 
@@ -216,7 +216,7 @@ try {
 ## `importOrders()`
 
 ```php
-importOrders($orders_import_create_request_body_item): \OpenAPI\Client\Model\OrdersImportCreateResponseBody
+importOrders($ordersImportCreateRequestBodyItem): \OpenAPI\Client\Model\OrdersImportCreateResponseBody
 ```
 
 Import Orders
@@ -247,10 +247,10 @@ $apiInstance = new OpenAPI\Client\Api\OrdersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$orders_import_create_request_body_item = [{"source_id":"orderImport14","status":"PAID","metadata":{"location_id":["L1","L2"],"payment_mean":["paypal","credit-card"]},"customer":{"source_id":"bob2.smith@email.com","name":"Bob Smith","description":"A nice customer","email":"bob.smith@email.com","phone":"+1 933 222 3333","address":{"city":"New York","country":"United States","line_1":"123 Main St.","line_2":"APT 3 BLG 4","postal_code":"10001","state":"NY"},"metadata":{"lang":"en","test":true},"birthdate":"2022-01-01"},"referrer":{"source_id":"jane.smith@email.com","name":"Jane Smith","description":"A really nice customer","email":"jane.smith@email.com","phone":"+1 933 222 3334","address":{"city":"New York","country":"United States","line_1":"123 Main St.","line_2":"APT 3 BLG 4","postal_code":"10001","state":"NY"},"metadata":{"lang":"en","test":false},"birthday":"2022-03-03"},"items":[{"source_id":"prod_1","related_object":"product","quantity":2,"product":{"name":"Apple iPhone 12","price":70000,"metadata":{"color":["silver"],"vendor":"mall"},"override":true}},{"source_id":"ComicBook_1","related_object":"sku","quantity":1,"product":{"source_id":"Books","name":"Comic Books1","price":1600,"metadata":{"color":["silver"],"vendor":"Bookstore1"},"override":true},"sku":{"sku":"Comics1","source_id":"ComicBook_1","price":1600,"metadata":{"color":["golden"],"vendor":"islands"},"override":true}}]},{"source_id":"orderImport15","status":"PAID","metadata":{"location_id":["L3"],"payment_mean":["wire-transfer"]},"customer":{"source_id":"bob2.smith@email.com"},"referrer":{"source_id":"jane.smith@email.com"},"items":[{"source_id":"ComicBook_1","quantity":4,"related_object":"sku","sku":{"source_id":"ComicBook_1"}},{"source_id":"vase_1","quantity":1,"related_object":"product","product":{"source_id":"vase_1"}}]},{"source_id":"orderImport16","status":"FULFILLED","metadata":{"location_id":["L3"],"payment_mean":["wire-transfer"]},"customer":{"id":"cust_LMY4ZylSdUYB1J4tzqNcl5VV"},"referrer":{"id":"cust_Vzck5i8U3OhcEUFY6MKhN9Rv"},"items":[{"product_id":"prod_0b72b0bd64d198e3ae","quantity":2},{"sku_id":"sku_0b1621b319d248b79f","quantity":2}]},{"source_id":"orderImport17","status":"CANCELED","amount":7000,"metadata":{"location_id":["L3"],"payment_mean":["wire-transfer"]}},{"source_id":"orderImport18","status":"CREATED","metadata":{"location_id":["L3"],"payment_mean":["wire-transfer"]},"items":[{"source_id":"ComicBook_1","amount":900,"related_object":"sku"},{"source_id":"vase_1","amount":2000,"related_object":"product"}]},{"source_id":"orderImport19","status":"CREATED","metadata":{"location_id":["L3"],"payment_mean":["wire-transfer"]},"items":[{"amount":900},{"amount":2000}]},{"source_id":"orderImport20","status":"CREATED","metadata":{"location_id":["L3"],"payment_mean":["wire-transfer"]},"items":[{"price":900,"quantity":2},{"price":2000,"quantity":3}]}]; // \OpenAPI\Client\Model\OrdersImportCreateRequestBodyItem[] | The request body is sent in the form of an array of order objects.
+$ordersImportCreateRequestBodyItem = [{"source_id":"orderImport14","status":"PAID","metadata":{"location_id":["L1","L2"],"payment_mean":["paypal","credit-card"]},"customer":{"source_id":"bob2.smith@email.com","name":"Bob Smith","description":"A nice customer","email":"bob.smith@email.com","phone":"+1 933 222 3333","address":{"city":"New York","country":"United States","line_1":"123 Main St.","line_2":"APT 3 BLG 4","postal_code":"10001","state":"NY"},"metadata":{"lang":"en","test":true},"birthdate":"2022-01-01"},"referrer":{"source_id":"jane.smith@email.com","name":"Jane Smith","description":"A really nice customer","email":"jane.smith@email.com","phone":"+1 933 222 3334","address":{"city":"New York","country":"United States","line_1":"123 Main St.","line_2":"APT 3 BLG 4","postal_code":"10001","state":"NY"},"metadata":{"lang":"en","test":false},"birthday":"2022-03-03"},"items":[{"source_id":"prod_1","related_object":"product","quantity":2,"product":{"name":"Apple iPhone 12","price":70000,"metadata":{"color":["silver"],"vendor":"mall"},"override":true}},{"source_id":"ComicBook_1","related_object":"sku","quantity":1,"product":{"source_id":"Books","name":"Comic Books1","price":1600,"metadata":{"color":["silver"],"vendor":"Bookstore1"},"override":true},"sku":{"sku":"Comics1","source_id":"ComicBook_1","price":1600,"metadata":{"color":["golden"],"vendor":"islands"},"override":true}}]},{"source_id":"orderImport15","status":"PAID","metadata":{"location_id":["L3"],"payment_mean":["wire-transfer"]},"customer":{"source_id":"bob2.smith@email.com"},"referrer":{"source_id":"jane.smith@email.com"},"items":[{"source_id":"ComicBook_1","quantity":4,"related_object":"sku","sku":{"source_id":"ComicBook_1"}},{"source_id":"vase_1","quantity":1,"related_object":"product","product":{"source_id":"vase_1"}}]},{"source_id":"orderImport16","status":"FULFILLED","metadata":{"location_id":["L3"],"payment_mean":["wire-transfer"]},"customer":{"id":"cust_LMY4ZylSdUYB1J4tzqNcl5VV"},"referrer":{"id":"cust_Vzck5i8U3OhcEUFY6MKhN9Rv"},"items":[{"product_id":"prod_0b72b0bd64d198e3ae","quantity":2},{"sku_id":"sku_0b1621b319d248b79f","quantity":2}]},{"source_id":"orderImport17","status":"CANCELED","amount":7000,"metadata":{"location_id":["L3"],"payment_mean":["wire-transfer"]}},{"source_id":"orderImport18","status":"CREATED","metadata":{"location_id":["L3"],"payment_mean":["wire-transfer"]},"items":[{"source_id":"ComicBook_1","amount":900,"related_object":"sku"},{"source_id":"vase_1","amount":2000,"related_object":"product"}]},{"source_id":"orderImport19","status":"CREATED","metadata":{"location_id":["L3"],"payment_mean":["wire-transfer"]},"items":[{"amount":900},{"amount":2000}]},{"source_id":"orderImport20","status":"CREATED","metadata":{"location_id":["L3"],"payment_mean":["wire-transfer"]},"items":[{"price":900,"quantity":2},{"price":2000,"quantity":3}]}]; // \OpenAPI\Client\Model\OrdersImportCreateRequestBodyItem[] | The request body is sent in the form of an array of order objects.
 
 try {
-    $result = $apiInstance->importOrders($orders_import_create_request_body_item);
+    $result = $apiInstance->importOrders($ordersImportCreateRequestBodyItem);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->importOrders: ', $e->getMessage(), PHP_EOL;
@@ -261,7 +261,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **orders_import_create_request_body_item** | [**\OpenAPI\Client\Model\OrdersImportCreateRequestBodyItem[]**](../Model/OrdersImportCreateRequestBodyItem.md)| The request body is sent in the form of an array of order objects. | [optional] |
+| **ordersImportCreateRequestBodyItem** | [**\OpenAPI\Client\Model\OrdersImportCreateRequestBodyItem[]**](../Model/OrdersImportCreateRequestBodyItem.md)| The request body is sent in the form of an array of order objects. | [optional] |
 
 ### Return type
 
@@ -354,7 +354,7 @@ try {
 ## `updateOrder()`
 
 ```php
-updateOrder($order_id, $orders_update_request_body): \OpenAPI\Client\Model\OrdersUpdateResponseBody
+updateOrder($orderId, $ordersUpdateRequestBody): \OpenAPI\Client\Model\OrdersUpdateResponseBody
 ```
 
 Update Order
@@ -385,11 +385,11 @@ $apiInstance = new OpenAPI\Client\Api\OrdersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$order_id = 'order_id_example'; // string | Unique Voucherify order ID or order source ID.
-$orders_update_request_body = {"status":"CANCELED"}; // \OpenAPI\Client\Model\OrdersUpdateRequestBody | Specify the parameters of the order that are to be updated.
+$orderId = 'orderId_example'; // string | Unique Voucherify order ID or order source ID.
+$ordersUpdateRequestBody = {"status":"CANCELED"}; // \OpenAPI\Client\Model\OrdersUpdateRequestBody | Specify the parameters of the order that are to be updated.
 
 try {
-    $result = $apiInstance->updateOrder($order_id, $orders_update_request_body);
+    $result = $apiInstance->updateOrder($orderId, $ordersUpdateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->updateOrder: ', $e->getMessage(), PHP_EOL;
@@ -400,8 +400,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **order_id** | **string**| Unique Voucherify order ID or order source ID. | |
-| **orders_update_request_body** | [**\OpenAPI\Client\Model\OrdersUpdateRequestBody**](../Model/OrdersUpdateRequestBody.md)| Specify the parameters of the order that are to be updated. | [optional] |
+| **orderId** | **string**| Unique Voucherify order ID or order source ID. | |
+| **ordersUpdateRequestBody** | [**\OpenAPI\Client\Model\OrdersUpdateRequestBody**](../Model/OrdersUpdateRequestBody.md)| Specify the parameters of the order that are to be updated. | [optional] |
 
 ### Return type
 

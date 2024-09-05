@@ -60,9 +60,9 @@ class LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherId
       */
     protected static $openAPITypes = [
         'in' => 'string[]',
-        'not_in' => 'string[]',
+        'notIn' => 'string[]',
         'is' => 'string',
-        'is_not' => 'string'
+        'isNot' => 'string'
     ];
 
     /**
@@ -74,9 +74,9 @@ class LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherId
       */
     protected static $openAPIFormats = [
         'in' => null,
-        'not_in' => null,
+        'notIn' => null,
         'is' => null,
-        'is_not' => null
+        'isNot' => null
     ];
 
     /**
@@ -86,9 +86,9 @@ class LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherId
       */
     protected static array $openAPINullables = [
         'in' => true,
-		'not_in' => true,
+		'notIn' => true,
 		'is' => true,
-		'is_not' => true
+		'isNot' => true
     ];
 
     /**
@@ -178,9 +178,9 @@ class LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherId
      */
     protected static $attributeMap = [
         'in' => '$in',
-        'not_in' => '$not_in',
+        'notIn' => '$not_in',
         'is' => '$is',
-        'is_not' => '$is_not'
+        'isNot' => '$is_not'
     ];
 
     /**
@@ -190,9 +190,9 @@ class LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherId
      */
     protected static $setters = [
         'in' => 'setIn',
-        'not_in' => 'setNotIn',
+        'notIn' => 'setNotIn',
         'is' => 'setIs',
-        'is_not' => 'setIsNot'
+        'isNot' => 'setIsNot'
     ];
 
     /**
@@ -202,9 +202,9 @@ class LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherId
      */
     protected static $getters = [
         'in' => 'getIn',
-        'not_in' => 'getNotIn',
+        'notIn' => 'getNotIn',
         'is' => 'getIs',
-        'is_not' => 'getIsNot'
+        'isNot' => 'getIsNot'
     ];
 
     /**
@@ -265,9 +265,9 @@ class LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherId
     public function __construct(array $data = null)
     {
         $this->setIfExists('in', $data ?? [], null);
-        $this->setIfExists('not_in', $data ?? [], null);
+        $this->setIfExists('notIn', $data ?? [], null);
         $this->setIfExists('is', $data ?? [], null);
-        $this->setIfExists('is_not', $data ?? [], null);
+        $this->setIfExists('isNot', $data ?? [], null);
     }
 
     /**
@@ -347,35 +347,35 @@ class LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherId
     }
 
     /**
-     * Gets not_in
+     * Gets notIn
      *
      * @return string[]|null
      */
     public function getNotIn()
     {
-        return $this->container['not_in'];
+        return $this->container['notIn'];
     }
 
     /**
-     * Sets not_in
+     * Sets notIn
      *
-     * @param string[]|null $not_in Array of the resource values that should be included in the results.
+     * @param string[]|null $notIn Array of the resource values that should be included in the results.
      *
      * @return self
      */
-    public function setNotIn($not_in)
+    public function setNotIn($notIn)
     {
-        if (is_null($not_in)) {
-            array_push($this->openAPINullablesSetToNull, 'not_in');
+        if (is_null($notIn)) {
+            array_push($this->openAPINullablesSetToNull, 'notIn');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('not_in', $nullablesSetToNull);
+            $index = array_search('notIn', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['not_in'] = $not_in;
+        $this->container['notIn'] = $notIn;
 
         return $this;
     }
@@ -415,35 +415,35 @@ class LoyaltiesPointsExpirationExportCreateRequestBodyParametersFiltersVoucherId
     }
 
     /**
-     * Gets is_not
+     * Gets isNot
      *
      * @return string|null
      */
     public function getIsNot()
     {
-        return $this->container['is_not'];
+        return $this->container['isNot'];
     }
 
     /**
-     * Sets is_not
+     * Sets isNot
      *
-     * @param string|null $is_not Results should omit this value.
+     * @param string|null $isNot Results should omit this value.
      *
      * @return self
      */
-    public function setIsNot($is_not)
+    public function setIsNot($isNot)
     {
-        if (is_null($is_not)) {
-            array_push($this->openAPINullablesSetToNull, 'is_not');
+        if (is_null($isNot)) {
+            array_push($this->openAPINullablesSetToNull, 'isNot');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_not', $nullablesSetToNull);
+            $index = array_search('isNot', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['is_not'] = $is_not;
+        $this->container['isNot'] = $isNot;
 
         return $this;
     }

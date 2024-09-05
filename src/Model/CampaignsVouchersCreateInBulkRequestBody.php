@@ -60,13 +60,13 @@ class CampaignsVouchersCreateInBulkRequestBody implements ModelInterface, ArrayA
       */
     protected static $openAPITypes = [
         'code' => 'string',
-        'code_config' => '\OpenAPI\Client\Model\CodeConfig',
+        'codeConfig' => '\OpenAPI\Client\Model\CodeConfig',
         'category' => 'string',
         'metadata' => 'object',
         'redemption' => '\OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBodyRedemption',
-        'additional_info' => 'string',
-        'start_date' => '\DateTime',
-        'expiration_date' => '\DateTime'
+        'additionalInfo' => 'string',
+        'startDate' => '\DateTime',
+        'expirationDate' => '\DateTime'
     ];
 
     /**
@@ -78,13 +78,13 @@ class CampaignsVouchersCreateInBulkRequestBody implements ModelInterface, ArrayA
       */
     protected static $openAPIFormats = [
         'code' => null,
-        'code_config' => null,
+        'codeConfig' => null,
         'category' => null,
         'metadata' => null,
         'redemption' => null,
-        'additional_info' => null,
-        'start_date' => 'date-time',
-        'expiration_date' => 'date-time'
+        'additionalInfo' => null,
+        'startDate' => 'date-time',
+        'expirationDate' => 'date-time'
     ];
 
     /**
@@ -94,13 +94,13 @@ class CampaignsVouchersCreateInBulkRequestBody implements ModelInterface, ArrayA
       */
     protected static array $openAPINullables = [
         'code' => true,
-		'code_config' => false,
+		'codeConfig' => false,
 		'category' => true,
 		'metadata' => true,
 		'redemption' => true,
-		'additional_info' => true,
-		'start_date' => true,
-		'expiration_date' => true
+		'additionalInfo' => true,
+		'startDate' => true,
+		'expirationDate' => true
     ];
 
     /**
@@ -190,13 +190,13 @@ class CampaignsVouchersCreateInBulkRequestBody implements ModelInterface, ArrayA
      */
     protected static $attributeMap = [
         'code' => 'code',
-        'code_config' => 'code_config',
+        'codeConfig' => 'code_config',
         'category' => 'category',
         'metadata' => 'metadata',
         'redemption' => 'redemption',
-        'additional_info' => 'additional_info',
-        'start_date' => 'start_date',
-        'expiration_date' => 'expiration_date'
+        'additionalInfo' => 'additional_info',
+        'startDate' => 'start_date',
+        'expirationDate' => 'expiration_date'
     ];
 
     /**
@@ -206,13 +206,13 @@ class CampaignsVouchersCreateInBulkRequestBody implements ModelInterface, ArrayA
      */
     protected static $setters = [
         'code' => 'setCode',
-        'code_config' => 'setCodeConfig',
+        'codeConfig' => 'setCodeConfig',
         'category' => 'setCategory',
         'metadata' => 'setMetadata',
         'redemption' => 'setRedemption',
-        'additional_info' => 'setAdditionalInfo',
-        'start_date' => 'setStartDate',
-        'expiration_date' => 'setExpirationDate'
+        'additionalInfo' => 'setAdditionalInfo',
+        'startDate' => 'setStartDate',
+        'expirationDate' => 'setExpirationDate'
     ];
 
     /**
@@ -222,13 +222,13 @@ class CampaignsVouchersCreateInBulkRequestBody implements ModelInterface, ArrayA
      */
     protected static $getters = [
         'code' => 'getCode',
-        'code_config' => 'getCodeConfig',
+        'codeConfig' => 'getCodeConfig',
         'category' => 'getCategory',
         'metadata' => 'getMetadata',
         'redemption' => 'getRedemption',
-        'additional_info' => 'getAdditionalInfo',
-        'start_date' => 'getStartDate',
-        'expiration_date' => 'getExpirationDate'
+        'additionalInfo' => 'getAdditionalInfo',
+        'startDate' => 'getStartDate',
+        'expirationDate' => 'getExpirationDate'
     ];
 
     /**
@@ -289,13 +289,13 @@ class CampaignsVouchersCreateInBulkRequestBody implements ModelInterface, ArrayA
     public function __construct(array $data = null)
     {
         $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('code_config', $data ?? [], null);
+        $this->setIfExists('codeConfig', $data ?? [], null);
         $this->setIfExists('category', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('redemption', $data ?? [], null);
-        $this->setIfExists('additional_info', $data ?? [], null);
-        $this->setIfExists('start_date', $data ?? [], null);
-        $this->setIfExists('expiration_date', $data ?? [], null);
+        $this->setIfExists('additionalInfo', $data ?? [], null);
+        $this->setIfExists('startDate', $data ?? [], null);
+        $this->setIfExists('expirationDate', $data ?? [], null);
     }
 
     /**
@@ -375,28 +375,28 @@ class CampaignsVouchersCreateInBulkRequestBody implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets code_config
+     * Gets codeConfig
      *
      * @return \OpenAPI\Client\Model\CodeConfig|null
      */
     public function getCodeConfig()
     {
-        return $this->container['code_config'];
+        return $this->container['codeConfig'];
     }
 
     /**
-     * Sets code_config
+     * Sets codeConfig
      *
-     * @param \OpenAPI\Client\Model\CodeConfig|null $code_config code_config
+     * @param \OpenAPI\Client\Model\CodeConfig|null $codeConfig codeConfig
      *
      * @return self
      */
-    public function setCodeConfig($code_config)
+    public function setCodeConfig($codeConfig)
     {
-        if (is_null($code_config)) {
-            throw new \InvalidArgumentException('non-nullable code_config cannot be null');
+        if (is_null($codeConfig)) {
+            throw new \InvalidArgumentException('non-nullable codeConfig cannot be null');
         }
-        $this->container['code_config'] = $code_config;
+        $this->container['codeConfig'] = $codeConfig;
 
         return $this;
     }
@@ -504,103 +504,103 @@ class CampaignsVouchersCreateInBulkRequestBody implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets additional_info
+     * Gets additionalInfo
      *
      * @return string|null
      */
     public function getAdditionalInfo()
     {
-        return $this->container['additional_info'];
+        return $this->container['additionalInfo'];
     }
 
     /**
-     * Sets additional_info
+     * Sets additionalInfo
      *
-     * @param string|null $additional_info An optional field to keep any extra textual information about the code such as a code description and details.
+     * @param string|null $additionalInfo An optional field to keep any extra textual information about the code such as a code description and details.
      *
      * @return self
      */
-    public function setAdditionalInfo($additional_info)
+    public function setAdditionalInfo($additionalInfo)
     {
-        if (is_null($additional_info)) {
-            array_push($this->openAPINullablesSetToNull, 'additional_info');
+        if (is_null($additionalInfo)) {
+            array_push($this->openAPINullablesSetToNull, 'additionalInfo');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('additional_info', $nullablesSetToNull);
+            $index = array_search('additionalInfo', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['additional_info'] = $additional_info;
+        $this->container['additionalInfo'] = $additionalInfo;
 
         return $this;
     }
 
     /**
-     * Gets start_date
+     * Gets startDate
      *
      * @return \DateTime|null
      */
     public function getStartDate()
     {
-        return $this->container['start_date'];
+        return $this->container['startDate'];
     }
 
     /**
-     * Sets start_date
+     * Sets startDate
      *
-     * @param \DateTime|null $start_date Activation timestamp defines when the voucher starts to be active in ISO 8601 format. Voucher is *inactive before* this date.
+     * @param \DateTime|null $startDate Activation timestamp defines when the voucher starts to be active in ISO 8601 format. Voucher is *inactive before* this date.
      *
      * @return self
      */
-    public function setStartDate($start_date)
+    public function setStartDate($startDate)
     {
-        if (is_null($start_date)) {
-            array_push($this->openAPINullablesSetToNull, 'start_date');
+        if (is_null($startDate)) {
+            array_push($this->openAPINullablesSetToNull, 'startDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('start_date', $nullablesSetToNull);
+            $index = array_search('startDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['start_date'] = $start_date;
+        $this->container['startDate'] = $startDate;
 
         return $this;
     }
 
     /**
-     * Gets expiration_date
+     * Gets expirationDate
      *
      * @return \DateTime|null
      */
     public function getExpirationDate()
     {
-        return $this->container['expiration_date'];
+        return $this->container['expirationDate'];
     }
 
     /**
-     * Sets expiration_date
+     * Sets expirationDate
      *
-     * @param \DateTime|null $expiration_date Expiration timestamp defines when the voucher expires in ISO 8601 format.  Voucher is *inactive after* this date.
+     * @param \DateTime|null $expirationDate Expiration timestamp defines when the voucher expires in ISO 8601 format.  Voucher is *inactive after* this date.
      *
      * @return self
      */
-    public function setExpirationDate($expiration_date)
+    public function setExpirationDate($expirationDate)
     {
-        if (is_null($expiration_date)) {
-            array_push($this->openAPINullablesSetToNull, 'expiration_date');
+        if (is_null($expirationDate)) {
+            array_push($this->openAPINullablesSetToNull, 'expirationDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiration_date', $nullablesSetToNull);
+            $index = array_search('expirationDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['expiration_date'] = $expiration_date;
+        $this->container['expirationDate'] = $expirationDate;
 
         return $this;
     }

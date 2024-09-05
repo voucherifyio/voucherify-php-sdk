@@ -12,7 +12,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `createSegment()`
 
 ```php
-createSegment($segments_create_request_body): \OpenAPI\Client\Model\SegmentsCreateResponseBody
+createSegment($segmentsCreateRequestBody): \OpenAPI\Client\Model\SegmentsCreateResponseBody
 ```
 
 Create Segment
@@ -43,10 +43,10 @@ $apiInstance = new OpenAPI\Client\Api\SegmentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$segments_create_request_body = {"name":"Customers in a new Segment","type":"static","customers":["cust_iajsExT2QB4sGWzABY85WRqV","cust_sehkNIi8Uq2qQuRqSr7xn4Zi"]}; // \OpenAPI\Client\Model\SegmentsCreateRequestBody | Specify the boundary conditions for the customer segment.
+$segmentsCreateRequestBody = {"name":"Customers in a new Segment","type":"static","customers":["cust_iajsExT2QB4sGWzABY85WRqV","cust_sehkNIi8Uq2qQuRqSr7xn4Zi"]}; // \OpenAPI\Client\Model\SegmentsCreateRequestBody | Specify the boundary conditions for the customer segment.
 
 try {
-    $result = $apiInstance->createSegment($segments_create_request_body);
+    $result = $apiInstance->createSegment($segmentsCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SegmentsApi->createSegment: ', $e->getMessage(), PHP_EOL;
@@ -57,7 +57,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **segments_create_request_body** | [**\OpenAPI\Client\Model\SegmentsCreateRequestBody**](../Model/SegmentsCreateRequestBody.md)| Specify the boundary conditions for the customer segment. | [optional] |
+| **segmentsCreateRequestBody** | [**\OpenAPI\Client\Model\SegmentsCreateRequestBody**](../Model/SegmentsCreateRequestBody.md)| Specify the boundary conditions for the customer segment. | [optional] |
 
 ### Return type
 
@@ -79,7 +79,7 @@ try {
 ## `deleteSegment()`
 
 ```php
-deleteSegment($segment_id)
+deleteSegment($segmentId)
 ```
 
 Delete Segment
@@ -110,10 +110,10 @@ $apiInstance = new OpenAPI\Client\Api\SegmentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$segment_id = 'segment_id_example'; // string | A unique customer segment ID.
+$segmentId = 'segmentId_example'; // string | A unique customer segment ID.
 
 try {
-    $apiInstance->deleteSegment($segment_id);
+    $apiInstance->deleteSegment($segmentId);
 } catch (Exception $e) {
     echo 'Exception when calling SegmentsApi->deleteSegment: ', $e->getMessage(), PHP_EOL;
 }
@@ -123,7 +123,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **segment_id** | **string**| A unique customer segment ID. | |
+| **segmentId** | **string**| A unique customer segment ID. | |
 
 ### Return type
 
@@ -145,7 +145,7 @@ void (empty response body)
 ## `getSegment()`
 
 ```php
-getSegment($segment_id): \OpenAPI\Client\Model\SegmentsGetResponseBody
+getSegment($segmentId): \OpenAPI\Client\Model\SegmentsGetResponseBody
 ```
 
 Get Segment
@@ -176,10 +176,10 @@ $apiInstance = new OpenAPI\Client\Api\SegmentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$segment_id = 'segment_id_example'; // string | A unique customer segment ID.
+$segmentId = 'segmentId_example'; // string | A unique customer segment ID.
 
 try {
-    $result = $apiInstance->getSegment($segment_id);
+    $result = $apiInstance->getSegment($segmentId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SegmentsApi->getSegment: ', $e->getMessage(), PHP_EOL;
@@ -190,7 +190,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **segment_id** | **string**| A unique customer segment ID. | |
+| **segmentId** | **string**| A unique customer segment ID. | |
 
 ### Return type
 

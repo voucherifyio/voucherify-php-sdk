@@ -60,9 +60,9 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'area_id' => 'string',
-        'area_store_id' => 'string',
-        'created_at' => '\DateTime',
+        'areaId' => 'string',
+        'areaStoreId' => 'string',
+        'createdAt' => '\DateTime',
         'object' => 'string'
     ];
 
@@ -75,9 +75,9 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'area_id' => null,
-        'area_store_id' => null,
-        'created_at' => 'date-time',
+        'areaId' => null,
+        'areaStoreId' => null,
+        'createdAt' => 'date-time',
         'object' => null
     ];
 
@@ -88,9 +88,9 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'area_id' => true,
-		'area_store_id' => true,
-		'created_at' => true,
+		'areaId' => true,
+		'areaStoreId' => true,
+		'createdAt' => true,
 		'object' => true
     ];
 
@@ -181,9 +181,9 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'area_id' => 'area_id',
-        'area_store_id' => 'area_store_id',
-        'created_at' => 'created_at',
+        'areaId' => 'area_id',
+        'areaStoreId' => 'area_store_id',
+        'createdAt' => 'created_at',
         'object' => 'object'
     ];
 
@@ -194,9 +194,9 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $setters = [
         'id' => 'setId',
-        'area_id' => 'setAreaId',
-        'area_store_id' => 'setAreaStoreId',
-        'created_at' => 'setCreatedAt',
+        'areaId' => 'setAreaId',
+        'areaStoreId' => 'setAreaStoreId',
+        'createdAt' => 'setCreatedAt',
         'object' => 'setObject'
     ];
 
@@ -207,9 +207,9 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $getters = [
         'id' => 'getId',
-        'area_id' => 'getAreaId',
-        'area_store_id' => 'getAreaStoreId',
-        'created_at' => 'getCreatedAt',
+        'areaId' => 'getAreaId',
+        'areaStoreId' => 'getAreaStoreId',
+        'createdAt' => 'getCreatedAt',
         'object' => 'getObject'
     ];
 
@@ -284,9 +284,9 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('area_id', $data ?? [], null);
-        $this->setIfExists('area_store_id', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('areaId', $data ?? [], null);
+        $this->setIfExists('areaStoreId', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'area_store_campaign_assignment');
     }
 
@@ -376,103 +376,103 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets area_id
+     * Gets areaId
      *
      * @return string|null
      */
     public function getAreaId()
     {
-        return $this->container['area_id'];
+        return $this->container['areaId'];
     }
 
     /**
-     * Sets area_id
+     * Sets areaId
      *
-     * @param string|null $area_id Unique identifier of the area to which the campaign is assigned.
+     * @param string|null $areaId Unique identifier of the area to which the campaign is assigned.
      *
      * @return self
      */
-    public function setAreaId($area_id)
+    public function setAreaId($areaId)
     {
-        if (is_null($area_id)) {
-            array_push($this->openAPINullablesSetToNull, 'area_id');
+        if (is_null($areaId)) {
+            array_push($this->openAPINullablesSetToNull, 'areaId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('area_id', $nullablesSetToNull);
+            $index = array_search('areaId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['area_id'] = $area_id;
+        $this->container['areaId'] = $areaId;
 
         return $this;
     }
 
     /**
-     * Gets area_store_id
+     * Gets areaStoreId
      *
      * @return string|null
      */
     public function getAreaStoreId()
     {
-        return $this->container['area_store_id'];
+        return $this->container['areaStoreId'];
     }
 
     /**
-     * Sets area_store_id
+     * Sets areaStoreId
      *
-     * @param string|null $area_store_id Unique identifier of the store to which the campaign is assigned.
+     * @param string|null $areaStoreId Unique identifier of the store to which the campaign is assigned.
      *
      * @return self
      */
-    public function setAreaStoreId($area_store_id)
+    public function setAreaStoreId($areaStoreId)
     {
-        if (is_null($area_store_id)) {
-            array_push($this->openAPINullablesSetToNull, 'area_store_id');
+        if (is_null($areaStoreId)) {
+            array_push($this->openAPINullablesSetToNull, 'areaStoreId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('area_store_id', $nullablesSetToNull);
+            $index = array_search('areaStoreId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['area_store_id'] = $area_store_id;
+        $this->container['areaStoreId'] = $areaStoreId;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Date and time when the assignment was made. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Date and time when the assignment was made. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }

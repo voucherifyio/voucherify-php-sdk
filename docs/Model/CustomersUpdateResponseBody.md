@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | The ID of an existing customer that will be linked to redemption in this request. | [optional]
-**source_id** | **string** | A unique identifier of the customer who validates a voucher. It can be a customer ID or email from a CRM system, database, or a third-party service. If you also pass a customer ID (unique ID assigned by Voucherify), the source ID will be ignored. | [optional]
+**sourceId** | **string** | A unique identifier of the customer who validates a voucher. It can be a customer ID or email from a CRM system, database, or a third-party service. If you also pass a customer ID (unique ID assigned by Voucherify), the source ID will be ignored. | [optional]
 **summary** | [**\OpenAPI\Client\Model\CustomerSummary**](CustomerSummary.md) |  | [optional]
 **loyalty** | [**\OpenAPI\Client\Model\CustomerLoyalty**](CustomerLoyalty.md) |  | [optional]
 **referrals** | [**\OpenAPI\Client\Model\CustomerReferrals**](CustomerReferrals.md) |  | [optional]
-**system_metadata** | **object** | Object used to store system metadata information. | [optional]
-**created_at** | **\DateTime** | Timestamp representing the date and time when the customer was created. The value is shown in the ISO 8601 format. | [optional]
-**updated_at** | **\DateTime** | Timestamp representing the date and time when the customer was updated. The value is shown in the ISO 8601 format. | [optional]
+**systemMetadata** | **object** | Object used to store system metadata information. | [optional]
+**createdAt** | **\DateTime** | Timestamp representing the date and time when the customer was created. The value is shown in the ISO 8601 format. | [optional]
+**updatedAt** | **\DateTime** | Timestamp representing the date and time when the customer was updated. The value is shown in the ISO 8601 format. | [optional]
 **assets** | [**\OpenAPI\Client\Model\CustomersUpdateResponseBodyAssets**](CustomersUpdateResponseBodyAssets.md) |  | [optional]
 **object** | **string** | The type of the object represented by JSON. | [optional] [default to 'customer']
 **name** | **string** | Customer&#39;s first and last name. | [optional]

@@ -59,26 +59,26 @@ class RedemptionEntryPromotionTier implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
         'name' => 'string',
         'banner' => 'string',
         'action' => '\OpenAPI\Client\Model\RedemptionEntryPromotionTierAction',
         'metadata' => 'object',
         'hierarchy' => 'int',
-        'promotion_id' => 'string',
+        'promotionId' => 'string',
         'campaign' => '\OpenAPI\Client\Model\RedemptionEntryPromotionTierCampaign',
-        'campaign_id' => 'string',
+        'campaignId' => 'string',
         'active' => 'bool',
-        'start_date' => '\DateTime',
-        'expiration_date' => '\DateTime',
-        'validity_timeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
-        'validity_day_of_week' => 'int[]',
-        'validity_hours' => '\OpenAPI\Client\Model\ValidityHours',
+        'startDate' => '\DateTime',
+        'expirationDate' => '\DateTime',
+        'validityTimeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
+        'validityDayOfWeek' => 'int[]',
+        'validityHours' => '\OpenAPI\Client\Model\ValidityHours',
         'summary' => '\OpenAPI\Client\Model\RedemptionEntryPromotionTierSummary',
         'object' => 'string',
-        'validation_rule_assignments' => '\OpenAPI\Client\Model\ValidationRuleAssignmentsList',
-        'category_id' => 'string',
+        'validationRuleAssignments' => '\OpenAPI\Client\Model\ValidationRuleAssignmentsList',
+        'categoryId' => 'string',
         'categories' => '\OpenAPI\Client\Model\Category[]'
     ];
 
@@ -91,26 +91,26 @@ class RedemptionEntryPromotionTier implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
         'name' => null,
         'banner' => null,
         'action' => null,
         'metadata' => null,
         'hierarchy' => null,
-        'promotion_id' => null,
+        'promotionId' => null,
         'campaign' => null,
-        'campaign_id' => null,
+        'campaignId' => null,
         'active' => null,
-        'start_date' => 'date-time',
-        'expiration_date' => 'date-time',
-        'validity_timeframe' => null,
-        'validity_day_of_week' => null,
-        'validity_hours' => null,
+        'startDate' => 'date-time',
+        'expirationDate' => 'date-time',
+        'validityTimeframe' => null,
+        'validityDayOfWeek' => null,
+        'validityHours' => null,
         'summary' => null,
         'object' => null,
-        'validation_rule_assignments' => null,
-        'category_id' => null,
+        'validationRuleAssignments' => null,
+        'categoryId' => null,
         'categories' => null
     ];
 
@@ -121,26 +121,26 @@ class RedemptionEntryPromotionTier implements ModelInterface, ArrayAccess, \Json
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'created_at' => true,
-		'updated_at' => true,
+		'createdAt' => true,
+		'updatedAt' => true,
 		'name' => true,
 		'banner' => true,
 		'action' => true,
 		'metadata' => true,
 		'hierarchy' => true,
-		'promotion_id' => true,
+		'promotionId' => true,
 		'campaign' => true,
-		'campaign_id' => true,
+		'campaignId' => true,
 		'active' => true,
-		'start_date' => true,
-		'expiration_date' => true,
-		'validity_timeframe' => false,
-		'validity_day_of_week' => true,
-		'validity_hours' => false,
+		'startDate' => true,
+		'expirationDate' => true,
+		'validityTimeframe' => false,
+		'validityDayOfWeek' => true,
+		'validityHours' => false,
 		'summary' => true,
 		'object' => true,
-		'validation_rule_assignments' => false,
-		'category_id' => true,
+		'validationRuleAssignments' => false,
+		'categoryId' => true,
 		'categories' => true
     ];
 
@@ -231,26 +231,26 @@ class RedemptionEntryPromotionTier implements ModelInterface, ArrayAccess, \Json
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
         'name' => 'name',
         'banner' => 'banner',
         'action' => 'action',
         'metadata' => 'metadata',
         'hierarchy' => 'hierarchy',
-        'promotion_id' => 'promotion_id',
+        'promotionId' => 'promotion_id',
         'campaign' => 'campaign',
-        'campaign_id' => 'campaign_id',
+        'campaignId' => 'campaign_id',
         'active' => 'active',
-        'start_date' => 'start_date',
-        'expiration_date' => 'expiration_date',
-        'validity_timeframe' => 'validity_timeframe',
-        'validity_day_of_week' => 'validity_day_of_week',
-        'validity_hours' => 'validity_hours',
+        'startDate' => 'start_date',
+        'expirationDate' => 'expiration_date',
+        'validityTimeframe' => 'validity_timeframe',
+        'validityDayOfWeek' => 'validity_day_of_week',
+        'validityHours' => 'validity_hours',
         'summary' => 'summary',
         'object' => 'object',
-        'validation_rule_assignments' => 'validation_rule_assignments',
-        'category_id' => 'category_id',
+        'validationRuleAssignments' => 'validation_rule_assignments',
+        'categoryId' => 'category_id',
         'categories' => 'categories'
     ];
 
@@ -261,26 +261,26 @@ class RedemptionEntryPromotionTier implements ModelInterface, ArrayAccess, \Json
      */
     protected static $setters = [
         'id' => 'setId',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
         'name' => 'setName',
         'banner' => 'setBanner',
         'action' => 'setAction',
         'metadata' => 'setMetadata',
         'hierarchy' => 'setHierarchy',
-        'promotion_id' => 'setPromotionId',
+        'promotionId' => 'setPromotionId',
         'campaign' => 'setCampaign',
-        'campaign_id' => 'setCampaignId',
+        'campaignId' => 'setCampaignId',
         'active' => 'setActive',
-        'start_date' => 'setStartDate',
-        'expiration_date' => 'setExpirationDate',
-        'validity_timeframe' => 'setValidityTimeframe',
-        'validity_day_of_week' => 'setValidityDayOfWeek',
-        'validity_hours' => 'setValidityHours',
+        'startDate' => 'setStartDate',
+        'expirationDate' => 'setExpirationDate',
+        'validityTimeframe' => 'setValidityTimeframe',
+        'validityDayOfWeek' => 'setValidityDayOfWeek',
+        'validityHours' => 'setValidityHours',
         'summary' => 'setSummary',
         'object' => 'setObject',
-        'validation_rule_assignments' => 'setValidationRuleAssignments',
-        'category_id' => 'setCategoryId',
+        'validationRuleAssignments' => 'setValidationRuleAssignments',
+        'categoryId' => 'setCategoryId',
         'categories' => 'setCategories'
     ];
 
@@ -291,26 +291,26 @@ class RedemptionEntryPromotionTier implements ModelInterface, ArrayAccess, \Json
      */
     protected static $getters = [
         'id' => 'getId',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
         'name' => 'getName',
         'banner' => 'getBanner',
         'action' => 'getAction',
         'metadata' => 'getMetadata',
         'hierarchy' => 'getHierarchy',
-        'promotion_id' => 'getPromotionId',
+        'promotionId' => 'getPromotionId',
         'campaign' => 'getCampaign',
-        'campaign_id' => 'getCampaignId',
+        'campaignId' => 'getCampaignId',
         'active' => 'getActive',
-        'start_date' => 'getStartDate',
-        'expiration_date' => 'getExpirationDate',
-        'validity_timeframe' => 'getValidityTimeframe',
-        'validity_day_of_week' => 'getValidityDayOfWeek',
-        'validity_hours' => 'getValidityHours',
+        'startDate' => 'getStartDate',
+        'expirationDate' => 'getExpirationDate',
+        'validityTimeframe' => 'getValidityTimeframe',
+        'validityDayOfWeek' => 'getValidityDayOfWeek',
+        'validityHours' => 'getValidityHours',
         'summary' => 'getSummary',
         'object' => 'getObject',
-        'validation_rule_assignments' => 'getValidationRuleAssignments',
-        'category_id' => 'getCategoryId',
+        'validationRuleAssignments' => 'getValidationRuleAssignments',
+        'categoryId' => 'getCategoryId',
         'categories' => 'getCategories'
     ];
 
@@ -397,26 +397,26 @@ class RedemptionEntryPromotionTier implements ModelInterface, ArrayAccess, \Json
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('updatedAt', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('banner', $data ?? [], null);
         $this->setIfExists('action', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('hierarchy', $data ?? [], null);
-        $this->setIfExists('promotion_id', $data ?? [], null);
+        $this->setIfExists('promotionId', $data ?? [], null);
         $this->setIfExists('campaign', $data ?? [], null);
-        $this->setIfExists('campaign_id', $data ?? [], null);
+        $this->setIfExists('campaignId', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
-        $this->setIfExists('start_date', $data ?? [], null);
-        $this->setIfExists('expiration_date', $data ?? [], null);
-        $this->setIfExists('validity_timeframe', $data ?? [], null);
-        $this->setIfExists('validity_day_of_week', $data ?? [], null);
-        $this->setIfExists('validity_hours', $data ?? [], null);
+        $this->setIfExists('startDate', $data ?? [], null);
+        $this->setIfExists('expirationDate', $data ?? [], null);
+        $this->setIfExists('validityTimeframe', $data ?? [], null);
+        $this->setIfExists('validityDayOfWeek', $data ?? [], null);
+        $this->setIfExists('validityHours', $data ?? [], null);
         $this->setIfExists('summary', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'promotion_tier');
-        $this->setIfExists('validation_rule_assignments', $data ?? [], null);
-        $this->setIfExists('category_id', $data ?? [], null);
+        $this->setIfExists('validationRuleAssignments', $data ?? [], null);
+        $this->setIfExists('categoryId', $data ?? [], null);
         $this->setIfExists('categories', $data ?? [], null);
     }
 
@@ -497,69 +497,69 @@ class RedemptionEntryPromotionTier implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the promotion tier was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the promotion tier was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \DateTime|null $updated_at Timestamp representing the date and time when the promotion tier was updated. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the promotion tier was updated. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        if (is_null($updated_at)) {
-            array_push($this->openAPINullablesSetToNull, 'updated_at');
+        if (is_null($updatedAt)) {
+            array_push($this->openAPINullablesSetToNull, 'updatedAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updated_at', $nullablesSetToNull);
+            $index = array_search('updatedAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }
@@ -735,35 +735,35 @@ class RedemptionEntryPromotionTier implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets promotion_id
+     * Gets promotionId
      *
      * @return string|null
      */
     public function getPromotionId()
     {
-        return $this->container['promotion_id'];
+        return $this->container['promotionId'];
     }
 
     /**
-     * Sets promotion_id
+     * Sets promotionId
      *
-     * @param string|null $promotion_id Promotion unique ID.
+     * @param string|null $promotionId Promotion unique ID.
      *
      * @return self
      */
-    public function setPromotionId($promotion_id)
+    public function setPromotionId($promotionId)
     {
-        if (is_null($promotion_id)) {
-            array_push($this->openAPINullablesSetToNull, 'promotion_id');
+        if (is_null($promotionId)) {
+            array_push($this->openAPINullablesSetToNull, 'promotionId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('promotion_id', $nullablesSetToNull);
+            $index = array_search('promotionId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['promotion_id'] = $promotion_id;
+        $this->container['promotionId'] = $promotionId;
 
         return $this;
     }
@@ -803,35 +803,35 @@ class RedemptionEntryPromotionTier implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets campaign_id
+     * Gets campaignId
      *
      * @return string|null
      */
     public function getCampaignId()
     {
-        return $this->container['campaign_id'];
+        return $this->container['campaignId'];
     }
 
     /**
-     * Sets campaign_id
+     * Sets campaignId
      *
-     * @param string|null $campaign_id Promotion tier's parent campaign's unique ID.
+     * @param string|null $campaignId Promotion tier's parent campaign's unique ID.
      *
      * @return self
      */
-    public function setCampaignId($campaign_id)
+    public function setCampaignId($campaignId)
     {
-        if (is_null($campaign_id)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_id');
+        if (is_null($campaignId)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_id', $nullablesSetToNull);
+            $index = array_search('campaignId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaign_id'] = $campaign_id;
+        $this->container['campaignId'] = $campaignId;
 
         return $this;
     }
@@ -871,166 +871,166 @@ class RedemptionEntryPromotionTier implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets start_date
+     * Gets startDate
      *
      * @return \DateTime|null
      */
     public function getStartDate()
     {
-        return $this->container['start_date'];
+        return $this->container['startDate'];
     }
 
     /**
-     * Sets start_date
+     * Sets startDate
      *
-     * @param \DateTime|null $start_date Activation timestamp defines when the promotion tier starts to be active in ISO 8601 format. Promotion tier is *inactive before* this date.
+     * @param \DateTime|null $startDate Activation timestamp defines when the promotion tier starts to be active in ISO 8601 format. Promotion tier is *inactive before* this date.
      *
      * @return self
      */
-    public function setStartDate($start_date)
+    public function setStartDate($startDate)
     {
-        if (is_null($start_date)) {
-            array_push($this->openAPINullablesSetToNull, 'start_date');
+        if (is_null($startDate)) {
+            array_push($this->openAPINullablesSetToNull, 'startDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('start_date', $nullablesSetToNull);
+            $index = array_search('startDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['start_date'] = $start_date;
+        $this->container['startDate'] = $startDate;
 
         return $this;
     }
 
     /**
-     * Gets expiration_date
+     * Gets expirationDate
      *
      * @return \DateTime|null
      */
     public function getExpirationDate()
     {
-        return $this->container['expiration_date'];
+        return $this->container['expirationDate'];
     }
 
     /**
-     * Sets expiration_date
+     * Sets expirationDate
      *
-     * @param \DateTime|null $expiration_date Activation timestamp defines when the promotion tier expires in ISO 8601 format. Promotion tier is *inactive after* this date.
+     * @param \DateTime|null $expirationDate Activation timestamp defines when the promotion tier expires in ISO 8601 format. Promotion tier is *inactive after* this date.
      *
      * @return self
      */
-    public function setExpirationDate($expiration_date)
+    public function setExpirationDate($expirationDate)
     {
-        if (is_null($expiration_date)) {
-            array_push($this->openAPINullablesSetToNull, 'expiration_date');
+        if (is_null($expirationDate)) {
+            array_push($this->openAPINullablesSetToNull, 'expirationDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiration_date', $nullablesSetToNull);
+            $index = array_search('expirationDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['expiration_date'] = $expiration_date;
+        $this->container['expirationDate'] = $expirationDate;
 
         return $this;
     }
 
     /**
-     * Gets validity_timeframe
+     * Gets validityTimeframe
      *
      * @return \OpenAPI\Client\Model\ValidityTimeframe|null
      */
     public function getValidityTimeframe()
     {
-        return $this->container['validity_timeframe'];
+        return $this->container['validityTimeframe'];
     }
 
     /**
-     * Sets validity_timeframe
+     * Sets validityTimeframe
      *
-     * @param \OpenAPI\Client\Model\ValidityTimeframe|null $validity_timeframe validity_timeframe
+     * @param \OpenAPI\Client\Model\ValidityTimeframe|null $validityTimeframe validityTimeframe
      *
      * @return self
      */
-    public function setValidityTimeframe($validity_timeframe)
+    public function setValidityTimeframe($validityTimeframe)
     {
-        if (is_null($validity_timeframe)) {
-            throw new \InvalidArgumentException('non-nullable validity_timeframe cannot be null');
+        if (is_null($validityTimeframe)) {
+            throw new \InvalidArgumentException('non-nullable validityTimeframe cannot be null');
         }
-        $this->container['validity_timeframe'] = $validity_timeframe;
+        $this->container['validityTimeframe'] = $validityTimeframe;
 
         return $this;
     }
 
     /**
-     * Gets validity_day_of_week
+     * Gets validityDayOfWeek
      *
      * @return int[]|null
      */
     public function getValidityDayOfWeek()
     {
-        return $this->container['validity_day_of_week'];
+        return $this->container['validityDayOfWeek'];
     }
 
     /**
-     * Sets validity_day_of_week
+     * Sets validityDayOfWeek
      *
-     * @param int[]|null $validity_day_of_week Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+     * @param int[]|null $validityDayOfWeek Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
      *
      * @return self
      */
-    public function setValidityDayOfWeek($validity_day_of_week)
+    public function setValidityDayOfWeek($validityDayOfWeek)
     {
-        if (is_null($validity_day_of_week)) {
-            array_push($this->openAPINullablesSetToNull, 'validity_day_of_week');
+        if (is_null($validityDayOfWeek)) {
+            array_push($this->openAPINullablesSetToNull, 'validityDayOfWeek');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validity_day_of_week', $nullablesSetToNull);
+            $index = array_search('validityDayOfWeek', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getValidityDayOfWeekAllowableValues();
-        if (!is_null($validity_day_of_week) && array_diff($validity_day_of_week, $allowedValues)) {
+        if (!is_null($validityDayOfWeek) && array_diff($validityDayOfWeek, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'validity_day_of_week', must be one of '%s'",
+                    "Invalid value for 'validityDayOfWeek', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['validity_day_of_week'] = $validity_day_of_week;
+        $this->container['validityDayOfWeek'] = $validityDayOfWeek;
 
         return $this;
     }
 
     /**
-     * Gets validity_hours
+     * Gets validityHours
      *
      * @return \OpenAPI\Client\Model\ValidityHours|null
      */
     public function getValidityHours()
     {
-        return $this->container['validity_hours'];
+        return $this->container['validityHours'];
     }
 
     /**
-     * Sets validity_hours
+     * Sets validityHours
      *
-     * @param \OpenAPI\Client\Model\ValidityHours|null $validity_hours validity_hours
+     * @param \OpenAPI\Client\Model\ValidityHours|null $validityHours validityHours
      *
      * @return self
      */
-    public function setValidityHours($validity_hours)
+    public function setValidityHours($validityHours)
     {
-        if (is_null($validity_hours)) {
-            throw new \InvalidArgumentException('non-nullable validity_hours cannot be null');
+        if (is_null($validityHours)) {
+            throw new \InvalidArgumentException('non-nullable validityHours cannot be null');
         }
-        $this->container['validity_hours'] = $validity_hours;
+        $this->container['validityHours'] = $validityHours;
 
         return $this;
     }
@@ -1104,62 +1104,62 @@ class RedemptionEntryPromotionTier implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets validation_rule_assignments
+     * Gets validationRuleAssignments
      *
      * @return \OpenAPI\Client\Model\ValidationRuleAssignmentsList|null
      */
     public function getValidationRuleAssignments()
     {
-        return $this->container['validation_rule_assignments'];
+        return $this->container['validationRuleAssignments'];
     }
 
     /**
-     * Sets validation_rule_assignments
+     * Sets validationRuleAssignments
      *
-     * @param \OpenAPI\Client\Model\ValidationRuleAssignmentsList|null $validation_rule_assignments validation_rule_assignments
+     * @param \OpenAPI\Client\Model\ValidationRuleAssignmentsList|null $validationRuleAssignments validationRuleAssignments
      *
      * @return self
      */
-    public function setValidationRuleAssignments($validation_rule_assignments)
+    public function setValidationRuleAssignments($validationRuleAssignments)
     {
-        if (is_null($validation_rule_assignments)) {
-            throw new \InvalidArgumentException('non-nullable validation_rule_assignments cannot be null');
+        if (is_null($validationRuleAssignments)) {
+            throw new \InvalidArgumentException('non-nullable validationRuleAssignments cannot be null');
         }
-        $this->container['validation_rule_assignments'] = $validation_rule_assignments;
+        $this->container['validationRuleAssignments'] = $validationRuleAssignments;
 
         return $this;
     }
 
     /**
-     * Gets category_id
+     * Gets categoryId
      *
      * @return string|null
      */
     public function getCategoryId()
     {
-        return $this->container['category_id'];
+        return $this->container['categoryId'];
     }
 
     /**
-     * Sets category_id
+     * Sets categoryId
      *
-     * @param string|null $category_id Promotion tier category ID.
+     * @param string|null $categoryId Promotion tier category ID.
      *
      * @return self
      */
-    public function setCategoryId($category_id)
+    public function setCategoryId($categoryId)
     {
-        if (is_null($category_id)) {
-            array_push($this->openAPINullablesSetToNull, 'category_id');
+        if (is_null($categoryId)) {
+            array_push($this->openAPINullablesSetToNull, 'categoryId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('category_id', $nullablesSetToNull);
+            $index = array_search('categoryId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['category_id'] = $category_id;
+        $this->container['categoryId'] = $categoryId;
 
         return $this;
     }

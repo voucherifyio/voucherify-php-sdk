@@ -61,7 +61,7 @@ class RedemptionEntryCustomer implements ModelInterface, ArrayAccess, \JsonSeria
         'id' => 'string',
         'name' => 'string',
         'email' => 'string',
-        'source_id' => 'string',
+        'sourceId' => 'string',
         'metadata' => 'object',
         'object' => 'string'
     ];
@@ -77,7 +77,7 @@ class RedemptionEntryCustomer implements ModelInterface, ArrayAccess, \JsonSeria
         'id' => null,
         'name' => null,
         'email' => null,
-        'source_id' => null,
+        'sourceId' => null,
         'metadata' => null,
         'object' => null
     ];
@@ -91,7 +91,7 @@ class RedemptionEntryCustomer implements ModelInterface, ArrayAccess, \JsonSeria
         'id' => true,
 		'name' => true,
 		'email' => true,
-		'source_id' => true,
+		'sourceId' => true,
 		'metadata' => true,
 		'object' => true
     ];
@@ -185,7 +185,7 @@ class RedemptionEntryCustomer implements ModelInterface, ArrayAccess, \JsonSeria
         'id' => 'id',
         'name' => 'name',
         'email' => 'email',
-        'source_id' => 'source_id',
+        'sourceId' => 'source_id',
         'metadata' => 'metadata',
         'object' => 'object'
     ];
@@ -199,7 +199,7 @@ class RedemptionEntryCustomer implements ModelInterface, ArrayAccess, \JsonSeria
         'id' => 'setId',
         'name' => 'setName',
         'email' => 'setEmail',
-        'source_id' => 'setSourceId',
+        'sourceId' => 'setSourceId',
         'metadata' => 'setMetadata',
         'object' => 'setObject'
     ];
@@ -213,7 +213,7 @@ class RedemptionEntryCustomer implements ModelInterface, ArrayAccess, \JsonSeria
         'id' => 'getId',
         'name' => 'getName',
         'email' => 'getEmail',
-        'source_id' => 'getSourceId',
+        'sourceId' => 'getSourceId',
         'metadata' => 'getMetadata',
         'object' => 'getObject'
     ];
@@ -291,7 +291,7 @@ class RedemptionEntryCustomer implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('email', $data ?? [], null);
-        $this->setIfExists('source_id', $data ?? [], null);
+        $this->setIfExists('sourceId', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'customer');
     }
@@ -450,35 +450,35 @@ class RedemptionEntryCustomer implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets source_id
+     * Gets sourceId
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['source_id'];
+        return $this->container['sourceId'];
     }
 
     /**
-     * Sets source_id
+     * Sets sourceId
      *
-     * @param string|null $source_id A unique identifier of the customer. It can be a customer ID or email from a CRM system, database, or a third-party service.
+     * @param string|null $sourceId A unique identifier of the customer. It can be a customer ID or email from a CRM system, database, or a third-party service.
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setSourceId($sourceId)
     {
-        if (is_null($source_id)) {
-            array_push($this->openAPINullablesSetToNull, 'source_id');
+        if (is_null($sourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'sourceId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('source_id', $nullablesSetToNull);
+            $index = array_search('sourceId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['source_id'] = $source_id;
+        $this->container['sourceId'] = $sourceId;
 
         return $this;
     }

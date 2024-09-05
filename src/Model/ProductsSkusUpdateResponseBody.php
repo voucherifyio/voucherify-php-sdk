@@ -60,16 +60,16 @@ class ProductsSkusUpdateResponseBody implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'source_id' => 'string',
-        'product_id' => 'string',
+        'sourceId' => 'string',
+        'productId' => 'string',
         'sku' => 'string',
         'price' => 'int',
         'currency' => 'string',
         'attributes' => 'object',
-        'image_url' => 'string',
+        'imageUrl' => 'string',
         'metadata' => 'object',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
         'object' => 'string'
     ];
 
@@ -82,16 +82,16 @@ class ProductsSkusUpdateResponseBody implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'source_id' => null,
-        'product_id' => null,
+        'sourceId' => null,
+        'productId' => null,
         'sku' => null,
         'price' => null,
         'currency' => null,
         'attributes' => null,
-        'image_url' => null,
+        'imageUrl' => null,
         'metadata' => null,
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
         'object' => null
     ];
 
@@ -102,16 +102,16 @@ class ProductsSkusUpdateResponseBody implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'source_id' => true,
-		'product_id' => true,
+		'sourceId' => true,
+		'productId' => true,
 		'sku' => true,
 		'price' => true,
 		'currency' => true,
 		'attributes' => true,
-		'image_url' => true,
+		'imageUrl' => true,
 		'metadata' => true,
-		'created_at' => true,
-		'updated_at' => true,
+		'createdAt' => true,
+		'updatedAt' => true,
 		'object' => true
     ];
 
@@ -202,16 +202,16 @@ class ProductsSkusUpdateResponseBody implements ModelInterface, ArrayAccess, \Js
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'source_id' => 'source_id',
-        'product_id' => 'product_id',
+        'sourceId' => 'source_id',
+        'productId' => 'product_id',
         'sku' => 'sku',
         'price' => 'price',
         'currency' => 'currency',
         'attributes' => 'attributes',
-        'image_url' => 'image_url',
+        'imageUrl' => 'image_url',
         'metadata' => 'metadata',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
         'object' => 'object'
     ];
 
@@ -222,16 +222,16 @@ class ProductsSkusUpdateResponseBody implements ModelInterface, ArrayAccess, \Js
      */
     protected static $setters = [
         'id' => 'setId',
-        'source_id' => 'setSourceId',
-        'product_id' => 'setProductId',
+        'sourceId' => 'setSourceId',
+        'productId' => 'setProductId',
         'sku' => 'setSku',
         'price' => 'setPrice',
         'currency' => 'setCurrency',
         'attributes' => 'setAttributes',
-        'image_url' => 'setImageUrl',
+        'imageUrl' => 'setImageUrl',
         'metadata' => 'setMetadata',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
         'object' => 'setObject'
     ];
 
@@ -242,16 +242,16 @@ class ProductsSkusUpdateResponseBody implements ModelInterface, ArrayAccess, \Js
      */
     protected static $getters = [
         'id' => 'getId',
-        'source_id' => 'getSourceId',
-        'product_id' => 'getProductId',
+        'sourceId' => 'getSourceId',
+        'productId' => 'getProductId',
         'sku' => 'getSku',
         'price' => 'getPrice',
         'currency' => 'getCurrency',
         'attributes' => 'getAttributes',
-        'image_url' => 'getImageUrl',
+        'imageUrl' => 'getImageUrl',
         'metadata' => 'getMetadata',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
         'object' => 'getObject'
     ];
 
@@ -326,16 +326,16 @@ class ProductsSkusUpdateResponseBody implements ModelInterface, ArrayAccess, \Js
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('source_id', $data ?? [], null);
-        $this->setIfExists('product_id', $data ?? [], null);
+        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('productId', $data ?? [], null);
         $this->setIfExists('sku', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('attributes', $data ?? [], null);
-        $this->setIfExists('image_url', $data ?? [], null);
+        $this->setIfExists('imageUrl', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('updatedAt', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'sku');
     }
 
@@ -425,69 +425,69 @@ class ProductsSkusUpdateResponseBody implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets source_id
+     * Gets sourceId
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['source_id'];
+        return $this->container['sourceId'];
     }
 
     /**
-     * Sets source_id
+     * Sets sourceId
      *
-     * @param string|null $source_id A unique SKU identifier from your inventory system.
+     * @param string|null $sourceId A unique SKU identifier from your inventory system.
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setSourceId($sourceId)
     {
-        if (is_null($source_id)) {
-            array_push($this->openAPINullablesSetToNull, 'source_id');
+        if (is_null($sourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'sourceId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('source_id', $nullablesSetToNull);
+            $index = array_search('sourceId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['source_id'] = $source_id;
+        $this->container['sourceId'] = $sourceId;
 
         return $this;
     }
 
     /**
-     * Gets product_id
+     * Gets productId
      *
      * @return string|null
      */
     public function getProductId()
     {
-        return $this->container['product_id'];
+        return $this->container['productId'];
     }
 
     /**
-     * Sets product_id
+     * Sets productId
      *
-     * @param string|null $product_id The parent product's unique ID.
+     * @param string|null $productId The parent product's unique ID.
      *
      * @return self
      */
-    public function setProductId($product_id)
+    public function setProductId($productId)
     {
-        if (is_null($product_id)) {
-            array_push($this->openAPINullablesSetToNull, 'product_id');
+        if (is_null($productId)) {
+            array_push($this->openAPINullablesSetToNull, 'productId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('product_id', $nullablesSetToNull);
+            $index = array_search('productId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['product_id'] = $product_id;
+        $this->container['productId'] = $productId;
 
         return $this;
     }
@@ -629,35 +629,35 @@ class ProductsSkusUpdateResponseBody implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets image_url
+     * Gets imageUrl
      *
      * @return string|null
      */
     public function getImageUrl()
     {
-        return $this->container['image_url'];
+        return $this->container['imageUrl'];
     }
 
     /**
-     * Sets image_url
+     * Sets imageUrl
      *
-     * @param string|null $image_url The HTTPS URL pointing to the .png or .jpg file that will be used to render the SKU image.
+     * @param string|null $imageUrl The HTTPS URL pointing to the .png or .jpg file that will be used to render the SKU image.
      *
      * @return self
      */
-    public function setImageUrl($image_url)
+    public function setImageUrl($imageUrl)
     {
-        if (is_null($image_url)) {
-            array_push($this->openAPINullablesSetToNull, 'image_url');
+        if (is_null($imageUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'imageUrl');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('image_url', $nullablesSetToNull);
+            $index = array_search('imageUrl', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['image_url'] = $image_url;
+        $this->container['imageUrl'] = $imageUrl;
 
         return $this;
     }
@@ -697,69 +697,69 @@ class ProductsSkusUpdateResponseBody implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the SKU was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the SKU was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \DateTime|null $updated_at Timestamp representing the date and time when the SKU was updated. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the SKU was updated. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        if (is_null($updated_at)) {
-            array_push($this->openAPINullablesSetToNull, 'updated_at');
+        if (is_null($updatedAt)) {
+            array_push($this->openAPINullablesSetToNull, 'updatedAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updated_at', $nullablesSetToNull);
+            $index = array_search('updatedAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }

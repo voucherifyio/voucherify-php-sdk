@@ -63,21 +63,21 @@ class SimpleVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'code' => 'string',
         'gift' => '\OpenAPI\Client\Model\Gift',
         'discount' => '\OpenAPI\Client\Model\Discount',
-        'loyalty_card' => '\OpenAPI\Client\Model\SimpleVoucherLoyaltyCard',
+        'loyaltyCard' => '\OpenAPI\Client\Model\SimpleLoyaltyCard',
         'type' => 'string',
         'campaign' => 'string',
-        'campaign_id' => 'string',
-        'is_referral_code' => 'bool',
-        'holder_id' => 'string',
-        'referrer_id' => 'string',
-        'category_id' => 'string',
+        'campaignId' => 'string',
+        'isReferralCode' => 'bool',
+        'holderId' => 'string',
+        'referrerId' => 'string',
+        'categoryId' => 'string',
         'categories' => '\OpenAPI\Client\Model\Category[]',
         'active' => 'bool',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
         'redemption' => '\OpenAPI\Client\Model\SimpleVoucherRedemption',
-        'start_date' => '\DateTime',
-        'expiration_date' => '\DateTime',
+        'startDate' => '\DateTime',
+        'expirationDate' => '\DateTime',
         'metadata' => 'object',
         'object' => 'string'
     ];
@@ -94,21 +94,21 @@ class SimpleVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'code' => null,
         'gift' => null,
         'discount' => null,
-        'loyalty_card' => null,
+        'loyaltyCard' => null,
         'type' => null,
         'campaign' => null,
-        'campaign_id' => null,
-        'is_referral_code' => null,
-        'holder_id' => null,
-        'referrer_id' => null,
-        'category_id' => null,
+        'campaignId' => null,
+        'isReferralCode' => null,
+        'holderId' => null,
+        'referrerId' => null,
+        'categoryId' => null,
         'categories' => null,
         'active' => null,
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
         'redemption' => null,
-        'start_date' => 'date-time',
-        'expiration_date' => 'date-time',
+        'startDate' => 'date-time',
+        'expirationDate' => 'date-time',
         'metadata' => null,
         'object' => null
     ];
@@ -123,21 +123,21 @@ class SimpleVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
 		'code' => true,
 		'gift' => false,
 		'discount' => false,
-		'loyalty_card' => true,
+		'loyaltyCard' => false,
 		'type' => true,
 		'campaign' => true,
-		'campaign_id' => true,
-		'is_referral_code' => true,
-		'holder_id' => true,
-		'referrer_id' => true,
-		'category_id' => true,
+		'campaignId' => true,
+		'isReferralCode' => true,
+		'holderId' => true,
+		'referrerId' => true,
+		'categoryId' => true,
 		'categories' => true,
 		'active' => true,
-		'created_at' => true,
-		'updated_at' => true,
+		'createdAt' => true,
+		'updatedAt' => true,
 		'redemption' => true,
-		'start_date' => true,
-		'expiration_date' => true,
+		'startDate' => true,
+		'expirationDate' => true,
 		'metadata' => true,
 		'object' => true
     ];
@@ -232,21 +232,21 @@ class SimpleVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'code' => 'code',
         'gift' => 'gift',
         'discount' => 'discount',
-        'loyalty_card' => 'loyalty_card',
+        'loyaltyCard' => 'loyalty_card',
         'type' => 'type',
         'campaign' => 'campaign',
-        'campaign_id' => 'campaign_id',
-        'is_referral_code' => 'is_referral_code',
-        'holder_id' => 'holder_id',
-        'referrer_id' => 'referrer_id',
-        'category_id' => 'category_id',
+        'campaignId' => 'campaign_id',
+        'isReferralCode' => 'is_referral_code',
+        'holderId' => 'holder_id',
+        'referrerId' => 'referrer_id',
+        'categoryId' => 'category_id',
         'categories' => 'categories',
         'active' => 'active',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
         'redemption' => 'redemption',
-        'start_date' => 'start_date',
-        'expiration_date' => 'expiration_date',
+        'startDate' => 'start_date',
+        'expirationDate' => 'expiration_date',
         'metadata' => 'metadata',
         'object' => 'object'
     ];
@@ -261,21 +261,21 @@ class SimpleVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'code' => 'setCode',
         'gift' => 'setGift',
         'discount' => 'setDiscount',
-        'loyalty_card' => 'setLoyaltyCard',
+        'loyaltyCard' => 'setLoyaltyCard',
         'type' => 'setType',
         'campaign' => 'setCampaign',
-        'campaign_id' => 'setCampaignId',
-        'is_referral_code' => 'setIsReferralCode',
-        'holder_id' => 'setHolderId',
-        'referrer_id' => 'setReferrerId',
-        'category_id' => 'setCategoryId',
+        'campaignId' => 'setCampaignId',
+        'isReferralCode' => 'setIsReferralCode',
+        'holderId' => 'setHolderId',
+        'referrerId' => 'setReferrerId',
+        'categoryId' => 'setCategoryId',
         'categories' => 'setCategories',
         'active' => 'setActive',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
         'redemption' => 'setRedemption',
-        'start_date' => 'setStartDate',
-        'expiration_date' => 'setExpirationDate',
+        'startDate' => 'setStartDate',
+        'expirationDate' => 'setExpirationDate',
         'metadata' => 'setMetadata',
         'object' => 'setObject'
     ];
@@ -290,21 +290,21 @@ class SimpleVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         'code' => 'getCode',
         'gift' => 'getGift',
         'discount' => 'getDiscount',
-        'loyalty_card' => 'getLoyaltyCard',
+        'loyaltyCard' => 'getLoyaltyCard',
         'type' => 'getType',
         'campaign' => 'getCampaign',
-        'campaign_id' => 'getCampaignId',
-        'is_referral_code' => 'getIsReferralCode',
-        'holder_id' => 'getHolderId',
-        'referrer_id' => 'getReferrerId',
-        'category_id' => 'getCategoryId',
+        'campaignId' => 'getCampaignId',
+        'isReferralCode' => 'getIsReferralCode',
+        'holderId' => 'getHolderId',
+        'referrerId' => 'getReferrerId',
+        'categoryId' => 'getCategoryId',
         'categories' => 'getCategories',
         'active' => 'getActive',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
         'redemption' => 'getRedemption',
-        'start_date' => 'getStartDate',
-        'expiration_date' => 'getExpirationDate',
+        'startDate' => 'getStartDate',
+        'expirationDate' => 'getExpirationDate',
         'metadata' => 'getMetadata',
         'object' => 'getObject'
     ];
@@ -400,21 +400,21 @@ class SimpleVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('code', $data ?? [], null);
         $this->setIfExists('gift', $data ?? [], null);
         $this->setIfExists('discount', $data ?? [], null);
-        $this->setIfExists('loyalty_card', $data ?? [], null);
+        $this->setIfExists('loyaltyCard', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('campaign', $data ?? [], null);
-        $this->setIfExists('campaign_id', $data ?? [], null);
-        $this->setIfExists('is_referral_code', $data ?? [], null);
-        $this->setIfExists('holder_id', $data ?? [], null);
-        $this->setIfExists('referrer_id', $data ?? [], null);
-        $this->setIfExists('category_id', $data ?? [], null);
+        $this->setIfExists('campaignId', $data ?? [], null);
+        $this->setIfExists('isReferralCode', $data ?? [], null);
+        $this->setIfExists('holderId', $data ?? [], null);
+        $this->setIfExists('referrerId', $data ?? [], null);
+        $this->setIfExists('categoryId', $data ?? [], null);
         $this->setIfExists('categories', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('updatedAt', $data ?? [], null);
         $this->setIfExists('redemption', $data ?? [], null);
-        $this->setIfExists('start_date', $data ?? [], null);
-        $this->setIfExists('expiration_date', $data ?? [], null);
+        $this->setIfExists('startDate', $data ?? [], null);
+        $this->setIfExists('expirationDate', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'voucher');
     }
@@ -602,35 +602,28 @@ class SimpleVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets loyalty_card
+     * Gets loyaltyCard
      *
-     * @return \OpenAPI\Client\Model\SimpleVoucherLoyaltyCard|null
+     * @return \OpenAPI\Client\Model\SimpleLoyaltyCard|null
      */
     public function getLoyaltyCard()
     {
-        return $this->container['loyalty_card'];
+        return $this->container['loyaltyCard'];
     }
 
     /**
-     * Sets loyalty_card
+     * Sets loyaltyCard
      *
-     * @param \OpenAPI\Client\Model\SimpleVoucherLoyaltyCard|null $loyalty_card loyalty_card
+     * @param \OpenAPI\Client\Model\SimpleLoyaltyCard|null $loyaltyCard loyaltyCard
      *
      * @return self
      */
-    public function setLoyaltyCard($loyalty_card)
+    public function setLoyaltyCard($loyaltyCard)
     {
-        if (is_null($loyalty_card)) {
-            array_push($this->openAPINullablesSetToNull, 'loyalty_card');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('loyalty_card', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($loyaltyCard)) {
+            throw new \InvalidArgumentException('non-nullable loyaltyCard cannot be null');
         }
-        $this->container['loyalty_card'] = $loyalty_card;
+        $this->container['loyaltyCard'] = $loyaltyCard;
 
         return $this;
     }
@@ -714,171 +707,171 @@ class SimpleVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets campaign_id
+     * Gets campaignId
      *
      * @return string|null
      */
     public function getCampaignId()
     {
-        return $this->container['campaign_id'];
+        return $this->container['campaignId'];
     }
 
     /**
-     * Sets campaign_id
+     * Sets campaignId
      *
-     * @param string|null $campaign_id Campaign unique ID.
+     * @param string|null $campaignId Campaign unique ID.
      *
      * @return self
      */
-    public function setCampaignId($campaign_id)
+    public function setCampaignId($campaignId)
     {
-        if (is_null($campaign_id)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_id');
+        if (is_null($campaignId)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_id', $nullablesSetToNull);
+            $index = array_search('campaignId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaign_id'] = $campaign_id;
+        $this->container['campaignId'] = $campaignId;
 
         return $this;
     }
 
     /**
-     * Gets is_referral_code
+     * Gets isReferralCode
      *
      * @return bool|null
      */
     public function getIsReferralCode()
     {
-        return $this->container['is_referral_code'];
+        return $this->container['isReferralCode'];
     }
 
     /**
-     * Sets is_referral_code
+     * Sets isReferralCode
      *
-     * @param bool|null $is_referral_code Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
+     * @param bool|null $isReferralCode Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
      *
      * @return self
      */
-    public function setIsReferralCode($is_referral_code)
+    public function setIsReferralCode($isReferralCode)
     {
-        if (is_null($is_referral_code)) {
-            array_push($this->openAPINullablesSetToNull, 'is_referral_code');
+        if (is_null($isReferralCode)) {
+            array_push($this->openAPINullablesSetToNull, 'isReferralCode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_referral_code', $nullablesSetToNull);
+            $index = array_search('isReferralCode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['is_referral_code'] = $is_referral_code;
+        $this->container['isReferralCode'] = $isReferralCode;
 
         return $this;
     }
 
     /**
-     * Gets holder_id
+     * Gets holderId
      *
      * @return string|null
      */
     public function getHolderId()
     {
-        return $this->container['holder_id'];
+        return $this->container['holderId'];
     }
 
     /**
-     * Sets holder_id
+     * Sets holderId
      *
-     * @param string|null $holder_id Unique customer identifier of the redeemable holder. It equals to the customer ID assigned by Voucherify.
+     * @param string|null $holderId Unique customer identifier of the redeemable holder. It equals to the customer ID assigned by Voucherify.
      *
      * @return self
      */
-    public function setHolderId($holder_id)
+    public function setHolderId($holderId)
     {
-        if (is_null($holder_id)) {
-            array_push($this->openAPINullablesSetToNull, 'holder_id');
+        if (is_null($holderId)) {
+            array_push($this->openAPINullablesSetToNull, 'holderId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('holder_id', $nullablesSetToNull);
+            $index = array_search('holderId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['holder_id'] = $holder_id;
+        $this->container['holderId'] = $holderId;
 
         return $this;
     }
 
     /**
-     * Gets referrer_id
+     * Gets referrerId
      *
      * @return string|null
      */
     public function getReferrerId()
     {
-        return $this->container['referrer_id'];
+        return $this->container['referrerId'];
     }
 
     /**
-     * Sets referrer_id
+     * Sets referrerId
      *
-     * @param string|null $referrer_id Unique identifier of the referrer assigned by Voucherify.
+     * @param string|null $referrerId Unique identifier of the referrer assigned by Voucherify.
      *
      * @return self
      */
-    public function setReferrerId($referrer_id)
+    public function setReferrerId($referrerId)
     {
-        if (is_null($referrer_id)) {
-            array_push($this->openAPINullablesSetToNull, 'referrer_id');
+        if (is_null($referrerId)) {
+            array_push($this->openAPINullablesSetToNull, 'referrerId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('referrer_id', $nullablesSetToNull);
+            $index = array_search('referrerId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['referrer_id'] = $referrer_id;
+        $this->container['referrerId'] = $referrerId;
 
         return $this;
     }
 
     /**
-     * Gets category_id
+     * Gets categoryId
      *
      * @return string|null
      */
     public function getCategoryId()
     {
-        return $this->container['category_id'];
+        return $this->container['categoryId'];
     }
 
     /**
-     * Sets category_id
+     * Sets categoryId
      *
-     * @param string|null $category_id Unique identifier of the category that this voucher belongs to.
+     * @param string|null $categoryId Unique identifier of the category that this voucher belongs to.
      *
      * @return self
      */
-    public function setCategoryId($category_id)
+    public function setCategoryId($categoryId)
     {
-        if (is_null($category_id)) {
-            array_push($this->openAPINullablesSetToNull, 'category_id');
+        if (is_null($categoryId)) {
+            array_push($this->openAPINullablesSetToNull, 'categoryId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('category_id', $nullablesSetToNull);
+            $index = array_search('categoryId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['category_id'] = $category_id;
+        $this->container['categoryId'] = $categoryId;
 
         return $this;
     }
@@ -952,69 +945,69 @@ class SimpleVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the order was created in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the order was created in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \DateTime|null $updated_at Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        if (is_null($updated_at)) {
-            array_push($this->openAPINullablesSetToNull, 'updated_at');
+        if (is_null($updatedAt)) {
+            array_push($this->openAPINullablesSetToNull, 'updatedAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updated_at', $nullablesSetToNull);
+            $index = array_search('updatedAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }
@@ -1054,69 +1047,69 @@ class SimpleVoucher implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets start_date
+     * Gets startDate
      *
      * @return \DateTime|null
      */
     public function getStartDate()
     {
-        return $this->container['start_date'];
+        return $this->container['startDate'];
     }
 
     /**
-     * Sets start_date
+     * Sets startDate
      *
-     * @param \DateTime|null $start_date Activation timestamp defines when the code starts to be active in ISO 8601 format. Voucher is *inactive before* this date.
+     * @param \DateTime|null $startDate Activation timestamp defines when the code starts to be active in ISO 8601 format. Voucher is *inactive before* this date.
      *
      * @return self
      */
-    public function setStartDate($start_date)
+    public function setStartDate($startDate)
     {
-        if (is_null($start_date)) {
-            array_push($this->openAPINullablesSetToNull, 'start_date');
+        if (is_null($startDate)) {
+            array_push($this->openAPINullablesSetToNull, 'startDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('start_date', $nullablesSetToNull);
+            $index = array_search('startDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['start_date'] = $start_date;
+        $this->container['startDate'] = $startDate;
 
         return $this;
     }
 
     /**
-     * Gets expiration_date
+     * Gets expirationDate
      *
      * @return \DateTime|null
      */
     public function getExpirationDate()
     {
-        return $this->container['expiration_date'];
+        return $this->container['expirationDate'];
     }
 
     /**
-     * Sets expiration_date
+     * Sets expirationDate
      *
-     * @param \DateTime|null $expiration_date Expiration timestamp defines when the code expires in ISO 8601 format.  Voucher is *inactive after* this date.
+     * @param \DateTime|null $expirationDate Expiration timestamp defines when the code expires in ISO 8601 format.  Voucher is *inactive after* this date.
      *
      * @return self
      */
-    public function setExpirationDate($expiration_date)
+    public function setExpirationDate($expirationDate)
     {
-        if (is_null($expiration_date)) {
-            array_push($this->openAPINullablesSetToNull, 'expiration_date');
+        if (is_null($expirationDate)) {
+            array_push($this->openAPINullablesSetToNull, 'expirationDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiration_date', $nullablesSetToNull);
+            $index = array_search('expirationDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['expiration_date'] = $expiration_date;
+        $this->container['expirationDate'] = $expirationDate;
 
         return $this;
     }

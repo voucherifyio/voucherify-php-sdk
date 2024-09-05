@@ -143,16 +143,16 @@ class OrdersApi
      *
      * Create Order
      *
-     * @param  \OpenAPI\Client\Model\OrdersCreateRequestBody $orders_create_request_body Specify the order parameters. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersCreateRequestBody $ordersCreateRequestBody Specify the order parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrder'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\OrdersCreateResponseBody
      */
-    public function createOrder($orders_create_request_body = null, string $contentType = self::contentTypes['createOrder'][0])
+    public function createOrder($ordersCreateRequestBody = null, string $contentType = self::contentTypes['createOrder'][0])
     {
-        list($response) = $this->createOrderWithHttpInfo($orders_create_request_body, $contentType);
+        list($response) = $this->createOrderWithHttpInfo($ordersCreateRequestBody, $contentType);
         return $response;
     }
 
@@ -161,16 +161,16 @@ class OrdersApi
      *
      * Create Order
      *
-     * @param  \OpenAPI\Client\Model\OrdersCreateRequestBody $orders_create_request_body Specify the order parameters. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersCreateRequestBody $ordersCreateRequestBody Specify the order parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrder'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\OrdersCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createOrderWithHttpInfo($orders_create_request_body = null, string $contentType = self::contentTypes['createOrder'][0])
+    public function createOrderWithHttpInfo($ordersCreateRequestBody = null, string $contentType = self::contentTypes['createOrder'][0])
     {
-        $request = $this->createOrderRequest($orders_create_request_body, $contentType);
+        $request = $this->createOrderRequest($ordersCreateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -261,15 +261,15 @@ class OrdersApi
      *
      * Create Order
      *
-     * @param  \OpenAPI\Client\Model\OrdersCreateRequestBody $orders_create_request_body Specify the order parameters. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersCreateRequestBody $ordersCreateRequestBody Specify the order parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createOrderAsync($orders_create_request_body = null, string $contentType = self::contentTypes['createOrder'][0])
+    public function createOrderAsync($ordersCreateRequestBody = null, string $contentType = self::contentTypes['createOrder'][0])
     {
-        return $this->createOrderAsyncWithHttpInfo($orders_create_request_body, $contentType)
+        return $this->createOrderAsyncWithHttpInfo($ordersCreateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -282,16 +282,16 @@ class OrdersApi
      *
      * Create Order
      *
-     * @param  \OpenAPI\Client\Model\OrdersCreateRequestBody $orders_create_request_body Specify the order parameters. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersCreateRequestBody $ordersCreateRequestBody Specify the order parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createOrderAsyncWithHttpInfo($orders_create_request_body = null, string $contentType = self::contentTypes['createOrder'][0])
+    public function createOrderAsyncWithHttpInfo($ordersCreateRequestBody = null, string $contentType = self::contentTypes['createOrder'][0])
     {
         $returnType = '\OpenAPI\Client\Model\OrdersCreateResponseBody';
-        $request = $this->createOrderRequest($orders_create_request_body, $contentType);
+        $request = $this->createOrderRequest($ordersCreateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -332,13 +332,13 @@ class OrdersApi
     /**
      * Create request for operation 'createOrder'
      *
-     * @param  \OpenAPI\Client\Model\OrdersCreateRequestBody $orders_create_request_body Specify the order parameters. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersCreateRequestBody $ordersCreateRequestBody Specify the order parameters. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createOrderRequest($orders_create_request_body = null, string $contentType = self::contentTypes['createOrder'][0])
+    public function createOrderRequest($ordersCreateRequestBody = null, string $contentType = self::contentTypes['createOrder'][0])
     {
 
 
@@ -361,12 +361,12 @@ class OrdersApi
         );
 
         // for model (json/xml)
-        if (isset($orders_create_request_body)) {
+        if (isset($ordersCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orders_create_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ordersCreateRequestBody));
             } else {
-                $httpBody = $orders_create_request_body;
+                $httpBody = $ordersCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -429,16 +429,16 @@ class OrdersApi
      *
      * Create Orders Export
      *
-     * @param  \OpenAPI\Client\Model\OrdersExportCreateRequestBody $orders_export_create_request_body Specify which order parameters you would like to export. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersExportCreateRequestBody $ordersExportCreateRequestBody Specify which order parameters you would like to export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrderExport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\OrdersExportCreateResponseBody
      */
-    public function createOrderExport($orders_export_create_request_body = null, string $contentType = self::contentTypes['createOrderExport'][0])
+    public function createOrderExport($ordersExportCreateRequestBody = null, string $contentType = self::contentTypes['createOrderExport'][0])
     {
-        list($response) = $this->createOrderExportWithHttpInfo($orders_export_create_request_body, $contentType);
+        list($response) = $this->createOrderExportWithHttpInfo($ordersExportCreateRequestBody, $contentType);
         return $response;
     }
 
@@ -447,16 +447,16 @@ class OrdersApi
      *
      * Create Orders Export
      *
-     * @param  \OpenAPI\Client\Model\OrdersExportCreateRequestBody $orders_export_create_request_body Specify which order parameters you would like to export. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersExportCreateRequestBody $ordersExportCreateRequestBody Specify which order parameters you would like to export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrderExport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\OrdersExportCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createOrderExportWithHttpInfo($orders_export_create_request_body = null, string $contentType = self::contentTypes['createOrderExport'][0])
+    public function createOrderExportWithHttpInfo($ordersExportCreateRequestBody = null, string $contentType = self::contentTypes['createOrderExport'][0])
     {
-        $request = $this->createOrderExportRequest($orders_export_create_request_body, $contentType);
+        $request = $this->createOrderExportRequest($ordersExportCreateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -547,15 +547,15 @@ class OrdersApi
      *
      * Create Orders Export
      *
-     * @param  \OpenAPI\Client\Model\OrdersExportCreateRequestBody $orders_export_create_request_body Specify which order parameters you would like to export. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersExportCreateRequestBody $ordersExportCreateRequestBody Specify which order parameters you would like to export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrderExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createOrderExportAsync($orders_export_create_request_body = null, string $contentType = self::contentTypes['createOrderExport'][0])
+    public function createOrderExportAsync($ordersExportCreateRequestBody = null, string $contentType = self::contentTypes['createOrderExport'][0])
     {
-        return $this->createOrderExportAsyncWithHttpInfo($orders_export_create_request_body, $contentType)
+        return $this->createOrderExportAsyncWithHttpInfo($ordersExportCreateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -568,16 +568,16 @@ class OrdersApi
      *
      * Create Orders Export
      *
-     * @param  \OpenAPI\Client\Model\OrdersExportCreateRequestBody $orders_export_create_request_body Specify which order parameters you would like to export. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersExportCreateRequestBody $ordersExportCreateRequestBody Specify which order parameters you would like to export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrderExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createOrderExportAsyncWithHttpInfo($orders_export_create_request_body = null, string $contentType = self::contentTypes['createOrderExport'][0])
+    public function createOrderExportAsyncWithHttpInfo($ordersExportCreateRequestBody = null, string $contentType = self::contentTypes['createOrderExport'][0])
     {
         $returnType = '\OpenAPI\Client\Model\OrdersExportCreateResponseBody';
-        $request = $this->createOrderExportRequest($orders_export_create_request_body, $contentType);
+        $request = $this->createOrderExportRequest($ordersExportCreateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -618,13 +618,13 @@ class OrdersApi
     /**
      * Create request for operation 'createOrderExport'
      *
-     * @param  \OpenAPI\Client\Model\OrdersExportCreateRequestBody $orders_export_create_request_body Specify which order parameters you would like to export. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersExportCreateRequestBody $ordersExportCreateRequestBody Specify which order parameters you would like to export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrderExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createOrderExportRequest($orders_export_create_request_body = null, string $contentType = self::contentTypes['createOrderExport'][0])
+    public function createOrderExportRequest($ordersExportCreateRequestBody = null, string $contentType = self::contentTypes['createOrderExport'][0])
     {
 
 
@@ -647,12 +647,12 @@ class OrdersApi
         );
 
         // for model (json/xml)
-        if (isset($orders_export_create_request_body)) {
+        if (isset($ordersExportCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orders_export_create_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ordersExportCreateRequestBody));
             } else {
-                $httpBody = $orders_export_create_request_body;
+                $httpBody = $ordersExportCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -715,16 +715,16 @@ class OrdersApi
      *
      * Get Order
      *
-     * @param  string $order_id Unique Voucherify order ID or order source ID. (required)
+     * @param  string $orderId Unique Voucherify order ID or order source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrder'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\OrdersGetResponseBody
      */
-    public function getOrder($order_id, string $contentType = self::contentTypes['getOrder'][0])
+    public function getOrder($orderId, string $contentType = self::contentTypes['getOrder'][0])
     {
-        list($response) = $this->getOrderWithHttpInfo($order_id, $contentType);
+        list($response) = $this->getOrderWithHttpInfo($orderId, $contentType);
         return $response;
     }
 
@@ -733,16 +733,16 @@ class OrdersApi
      *
      * Get Order
      *
-     * @param  string $order_id Unique Voucherify order ID or order source ID. (required)
+     * @param  string $orderId Unique Voucherify order ID or order source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrder'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\OrdersGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderWithHttpInfo($order_id, string $contentType = self::contentTypes['getOrder'][0])
+    public function getOrderWithHttpInfo($orderId, string $contentType = self::contentTypes['getOrder'][0])
     {
-        $request = $this->getOrderRequest($order_id, $contentType);
+        $request = $this->getOrderRequest($orderId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -833,15 +833,15 @@ class OrdersApi
      *
      * Get Order
      *
-     * @param  string $order_id Unique Voucherify order ID or order source ID. (required)
+     * @param  string $orderId Unique Voucherify order ID or order source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderAsync($order_id, string $contentType = self::contentTypes['getOrder'][0])
+    public function getOrderAsync($orderId, string $contentType = self::contentTypes['getOrder'][0])
     {
-        return $this->getOrderAsyncWithHttpInfo($order_id, $contentType)
+        return $this->getOrderAsyncWithHttpInfo($orderId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -854,16 +854,16 @@ class OrdersApi
      *
      * Get Order
      *
-     * @param  string $order_id Unique Voucherify order ID or order source ID. (required)
+     * @param  string $orderId Unique Voucherify order ID or order source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderAsyncWithHttpInfo($order_id, string $contentType = self::contentTypes['getOrder'][0])
+    public function getOrderAsyncWithHttpInfo($orderId, string $contentType = self::contentTypes['getOrder'][0])
     {
         $returnType = '\OpenAPI\Client\Model\OrdersGetResponseBody';
-        $request = $this->getOrderRequest($order_id, $contentType);
+        $request = $this->getOrderRequest($orderId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -904,19 +904,19 @@ class OrdersApi
     /**
      * Create request for operation 'getOrder'
      *
-     * @param  string $order_id Unique Voucherify order ID or order source ID. (required)
+     * @param  string $orderId Unique Voucherify order ID or order source ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOrderRequest($order_id, string $contentType = self::contentTypes['getOrder'][0])
+    public function getOrderRequest($orderId, string $contentType = self::contentTypes['getOrder'][0])
     {
 
-        // verify the required parameter 'order_id' is set
-        if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
+        // verify the required parameter 'orderId' is set
+        if ($orderId === null || (is_array($orderId) && count($orderId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $order_id when calling getOrder'
+                'Missing the required parameter $orderId when calling getOrder'
             );
         }
 
@@ -931,10 +931,10 @@ class OrdersApi
 
 
         // path params
-        if ($order_id !== null) {
+        if ($orderId !== null) {
             $resourcePath = str_replace(
                 '{' . 'orderId' . '}',
-                ObjectSerializer::toPathValue($order_id),
+                ObjectSerializer::toPathValue($orderId),
                 $resourcePath
             );
         }
@@ -1008,16 +1008,16 @@ class OrdersApi
      *
      * Import Orders
      *
-     * @param  \OpenAPI\Client\Model\OrdersImportCreateRequestBodyItem[] $orders_import_create_request_body_item The request body is sent in the form of an array of order objects. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersImportCreateRequestBodyItem[] $ordersImportCreateRequestBodyItem The request body is sent in the form of an array of order objects. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importOrders'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\OrdersImportCreateResponseBody
      */
-    public function importOrders($orders_import_create_request_body_item = null, string $contentType = self::contentTypes['importOrders'][0])
+    public function importOrders($ordersImportCreateRequestBodyItem = null, string $contentType = self::contentTypes['importOrders'][0])
     {
-        list($response) = $this->importOrdersWithHttpInfo($orders_import_create_request_body_item, $contentType);
+        list($response) = $this->importOrdersWithHttpInfo($ordersImportCreateRequestBodyItem, $contentType);
         return $response;
     }
 
@@ -1026,16 +1026,16 @@ class OrdersApi
      *
      * Import Orders
      *
-     * @param  \OpenAPI\Client\Model\OrdersImportCreateRequestBodyItem[] $orders_import_create_request_body_item The request body is sent in the form of an array of order objects. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersImportCreateRequestBodyItem[] $ordersImportCreateRequestBodyItem The request body is sent in the form of an array of order objects. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importOrders'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\OrdersImportCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function importOrdersWithHttpInfo($orders_import_create_request_body_item = null, string $contentType = self::contentTypes['importOrders'][0])
+    public function importOrdersWithHttpInfo($ordersImportCreateRequestBodyItem = null, string $contentType = self::contentTypes['importOrders'][0])
     {
-        $request = $this->importOrdersRequest($orders_import_create_request_body_item, $contentType);
+        $request = $this->importOrdersRequest($ordersImportCreateRequestBodyItem, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1126,15 +1126,15 @@ class OrdersApi
      *
      * Import Orders
      *
-     * @param  \OpenAPI\Client\Model\OrdersImportCreateRequestBodyItem[] $orders_import_create_request_body_item The request body is sent in the form of an array of order objects. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersImportCreateRequestBodyItem[] $ordersImportCreateRequestBodyItem The request body is sent in the form of an array of order objects. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importOrders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function importOrdersAsync($orders_import_create_request_body_item = null, string $contentType = self::contentTypes['importOrders'][0])
+    public function importOrdersAsync($ordersImportCreateRequestBodyItem = null, string $contentType = self::contentTypes['importOrders'][0])
     {
-        return $this->importOrdersAsyncWithHttpInfo($orders_import_create_request_body_item, $contentType)
+        return $this->importOrdersAsyncWithHttpInfo($ordersImportCreateRequestBodyItem, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1147,16 +1147,16 @@ class OrdersApi
      *
      * Import Orders
      *
-     * @param  \OpenAPI\Client\Model\OrdersImportCreateRequestBodyItem[] $orders_import_create_request_body_item The request body is sent in the form of an array of order objects. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersImportCreateRequestBodyItem[] $ordersImportCreateRequestBodyItem The request body is sent in the form of an array of order objects. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importOrders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function importOrdersAsyncWithHttpInfo($orders_import_create_request_body_item = null, string $contentType = self::contentTypes['importOrders'][0])
+    public function importOrdersAsyncWithHttpInfo($ordersImportCreateRequestBodyItem = null, string $contentType = self::contentTypes['importOrders'][0])
     {
         $returnType = '\OpenAPI\Client\Model\OrdersImportCreateResponseBody';
-        $request = $this->importOrdersRequest($orders_import_create_request_body_item, $contentType);
+        $request = $this->importOrdersRequest($ordersImportCreateRequestBodyItem, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1197,13 +1197,13 @@ class OrdersApi
     /**
      * Create request for operation 'importOrders'
      *
-     * @param  \OpenAPI\Client\Model\OrdersImportCreateRequestBodyItem[] $orders_import_create_request_body_item The request body is sent in the form of an array of order objects. (optional)
+     * @param  \OpenAPI\Client\Model\OrdersImportCreateRequestBodyItem[] $ordersImportCreateRequestBodyItem The request body is sent in the form of an array of order objects. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importOrders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function importOrdersRequest($orders_import_create_request_body_item = null, string $contentType = self::contentTypes['importOrders'][0])
+    public function importOrdersRequest($ordersImportCreateRequestBodyItem = null, string $contentType = self::contentTypes['importOrders'][0])
     {
 
 
@@ -1226,12 +1226,12 @@ class OrdersApi
         );
 
         // for model (json/xml)
-        if (isset($orders_import_create_request_body_item)) {
+        if (isset($ordersImportCreateRequestBodyItem)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orders_import_create_request_body_item));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ordersImportCreateRequestBodyItem));
             } else {
-                $httpBody = $orders_import_create_request_body_item;
+                $httpBody = $ordersImportCreateRequestBodyItem;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1624,17 +1624,17 @@ class OrdersApi
      *
      * Update Order
      *
-     * @param  string $order_id Unique Voucherify order ID or order source ID. (required)
-     * @param  \OpenAPI\Client\Model\OrdersUpdateRequestBody $orders_update_request_body Specify the parameters of the order that are to be updated. (optional)
+     * @param  string $orderId Unique Voucherify order ID or order source ID. (required)
+     * @param  \OpenAPI\Client\Model\OrdersUpdateRequestBody $ordersUpdateRequestBody Specify the parameters of the order that are to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOrder'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\OrdersUpdateResponseBody
      */
-    public function updateOrder($order_id, $orders_update_request_body = null, string $contentType = self::contentTypes['updateOrder'][0])
+    public function updateOrder($orderId, $ordersUpdateRequestBody = null, string $contentType = self::contentTypes['updateOrder'][0])
     {
-        list($response) = $this->updateOrderWithHttpInfo($order_id, $orders_update_request_body, $contentType);
+        list($response) = $this->updateOrderWithHttpInfo($orderId, $ordersUpdateRequestBody, $contentType);
         return $response;
     }
 
@@ -1643,17 +1643,17 @@ class OrdersApi
      *
      * Update Order
      *
-     * @param  string $order_id Unique Voucherify order ID or order source ID. (required)
-     * @param  \OpenAPI\Client\Model\OrdersUpdateRequestBody $orders_update_request_body Specify the parameters of the order that are to be updated. (optional)
+     * @param  string $orderId Unique Voucherify order ID or order source ID. (required)
+     * @param  \OpenAPI\Client\Model\OrdersUpdateRequestBody $ordersUpdateRequestBody Specify the parameters of the order that are to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOrder'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\OrdersUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateOrderWithHttpInfo($order_id, $orders_update_request_body = null, string $contentType = self::contentTypes['updateOrder'][0])
+    public function updateOrderWithHttpInfo($orderId, $ordersUpdateRequestBody = null, string $contentType = self::contentTypes['updateOrder'][0])
     {
-        $request = $this->updateOrderRequest($order_id, $orders_update_request_body, $contentType);
+        $request = $this->updateOrderRequest($orderId, $ordersUpdateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1744,16 +1744,16 @@ class OrdersApi
      *
      * Update Order
      *
-     * @param  string $order_id Unique Voucherify order ID or order source ID. (required)
-     * @param  \OpenAPI\Client\Model\OrdersUpdateRequestBody $orders_update_request_body Specify the parameters of the order that are to be updated. (optional)
+     * @param  string $orderId Unique Voucherify order ID or order source ID. (required)
+     * @param  \OpenAPI\Client\Model\OrdersUpdateRequestBody $ordersUpdateRequestBody Specify the parameters of the order that are to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateOrderAsync($order_id, $orders_update_request_body = null, string $contentType = self::contentTypes['updateOrder'][0])
+    public function updateOrderAsync($orderId, $ordersUpdateRequestBody = null, string $contentType = self::contentTypes['updateOrder'][0])
     {
-        return $this->updateOrderAsyncWithHttpInfo($order_id, $orders_update_request_body, $contentType)
+        return $this->updateOrderAsyncWithHttpInfo($orderId, $ordersUpdateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1766,17 +1766,17 @@ class OrdersApi
      *
      * Update Order
      *
-     * @param  string $order_id Unique Voucherify order ID or order source ID. (required)
-     * @param  \OpenAPI\Client\Model\OrdersUpdateRequestBody $orders_update_request_body Specify the parameters of the order that are to be updated. (optional)
+     * @param  string $orderId Unique Voucherify order ID or order source ID. (required)
+     * @param  \OpenAPI\Client\Model\OrdersUpdateRequestBody $ordersUpdateRequestBody Specify the parameters of the order that are to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateOrderAsyncWithHttpInfo($order_id, $orders_update_request_body = null, string $contentType = self::contentTypes['updateOrder'][0])
+    public function updateOrderAsyncWithHttpInfo($orderId, $ordersUpdateRequestBody = null, string $contentType = self::contentTypes['updateOrder'][0])
     {
         $returnType = '\OpenAPI\Client\Model\OrdersUpdateResponseBody';
-        $request = $this->updateOrderRequest($order_id, $orders_update_request_body, $contentType);
+        $request = $this->updateOrderRequest($orderId, $ordersUpdateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1817,20 +1817,20 @@ class OrdersApi
     /**
      * Create request for operation 'updateOrder'
      *
-     * @param  string $order_id Unique Voucherify order ID or order source ID. (required)
-     * @param  \OpenAPI\Client\Model\OrdersUpdateRequestBody $orders_update_request_body Specify the parameters of the order that are to be updated. (optional)
+     * @param  string $orderId Unique Voucherify order ID or order source ID. (required)
+     * @param  \OpenAPI\Client\Model\OrdersUpdateRequestBody $ordersUpdateRequestBody Specify the parameters of the order that are to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOrder'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateOrderRequest($order_id, $orders_update_request_body = null, string $contentType = self::contentTypes['updateOrder'][0])
+    public function updateOrderRequest($orderId, $ordersUpdateRequestBody = null, string $contentType = self::contentTypes['updateOrder'][0])
     {
 
-        // verify the required parameter 'order_id' is set
-        if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
+        // verify the required parameter 'orderId' is set
+        if ($orderId === null || (is_array($orderId) && count($orderId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $order_id when calling updateOrder'
+                'Missing the required parameter $orderId when calling updateOrder'
             );
         }
 
@@ -1846,10 +1846,10 @@ class OrdersApi
 
 
         // path params
-        if ($order_id !== null) {
+        if ($orderId !== null) {
             $resourcePath = str_replace(
                 '{' . 'orderId' . '}',
-                ObjectSerializer::toPathValue($order_id),
+                ObjectSerializer::toPathValue($orderId),
                 $resourcePath
             );
         }
@@ -1862,12 +1862,12 @@ class OrdersApi
         );
 
         // for model (json/xml)
-        if (isset($orders_update_request_body)) {
+        if (isset($ordersUpdateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orders_update_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ordersUpdateRequestBody));
             } else {
-                $httpBody = $orders_update_request_body;
+                $httpBody = $ordersUpdateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

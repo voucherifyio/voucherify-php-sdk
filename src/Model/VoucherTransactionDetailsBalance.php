@@ -64,7 +64,7 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
         'object' => 'string',
         'points' => 'int',
         'balance' => 'int',
-        'related_object' => '\OpenAPI\Client\Model\VoucherTransactionDetailsBalanceRelatedObject'
+        'relatedObject' => '\OpenAPI\Client\Model\VoucherTransactionDetailsBalanceRelatedObject'
     ];
 
     /**
@@ -80,7 +80,7 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
         'object' => null,
         'points' => null,
         'balance' => null,
-        'related_object' => null
+        'relatedObject' => null
     ];
 
     /**
@@ -94,7 +94,7 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
 		'object' => true,
 		'points' => true,
 		'balance' => true,
-		'related_object' => true
+		'relatedObject' => true
     ];
 
     /**
@@ -188,7 +188,7 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
         'object' => 'object',
         'points' => 'points',
         'balance' => 'balance',
-        'related_object' => 'related_object'
+        'relatedObject' => 'related_object'
     ];
 
     /**
@@ -202,7 +202,7 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
         'object' => 'setObject',
         'points' => 'setPoints',
         'balance' => 'setBalance',
-        'related_object' => 'setRelatedObject'
+        'relatedObject' => 'setRelatedObject'
     ];
 
     /**
@@ -216,7 +216,7 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
         'object' => 'getObject',
         'points' => 'getPoints',
         'balance' => 'getBalance',
-        'related_object' => 'getRelatedObject'
+        'relatedObject' => 'getRelatedObject'
     ];
 
     /**
@@ -307,7 +307,7 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
         $this->setIfExists('object', $data ?? [], 'balance');
         $this->setIfExists('points', $data ?? [], null);
         $this->setIfExists('balance', $data ?? [], null);
-        $this->setIfExists('related_object', $data ?? [], null);
+        $this->setIfExists('relatedObject', $data ?? [], null);
     }
 
     /**
@@ -579,35 +579,35 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets related_object
+     * Gets relatedObject
      *
      * @return \OpenAPI\Client\Model\VoucherTransactionDetailsBalanceRelatedObject|null
      */
     public function getRelatedObject()
     {
-        return $this->container['related_object'];
+        return $this->container['relatedObject'];
     }
 
     /**
-     * Sets related_object
+     * Sets relatedObject
      *
-     * @param \OpenAPI\Client\Model\VoucherTransactionDetailsBalanceRelatedObject|null $related_object related_object
+     * @param \OpenAPI\Client\Model\VoucherTransactionDetailsBalanceRelatedObject|null $relatedObject relatedObject
      *
      * @return self
      */
-    public function setRelatedObject($related_object)
+    public function setRelatedObject($relatedObject)
     {
-        if (is_null($related_object)) {
-            array_push($this->openAPINullablesSetToNull, 'related_object');
+        if (is_null($relatedObject)) {
+            array_push($this->openAPINullablesSetToNull, 'relatedObject');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('related_object', $nullablesSetToNull);
+            $index = array_search('relatedObject', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['related_object'] = $related_object;
+        $this->container['relatedObject'] = $relatedObject;
 
         return $this;
     }

@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **customer** | [**\OpenAPI\Client\Model\SimpleCustomerRequiredObjectType**](SimpleCustomerRequiredObjectType.md) |  |
 **referral** | **object** | A &#x60;null&#x60; referral object. | [optional]
 **loyalty** | **object** | A &#x60;null&#x60; loyalty object. | [optional]
+**metadata** | **object** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

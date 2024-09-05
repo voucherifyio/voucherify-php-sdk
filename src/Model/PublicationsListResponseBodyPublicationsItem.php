@@ -60,19 +60,19 @@ class PublicationsListResponseBodyPublicationsItem implements ModelInterface, Ar
     protected static $openAPITypes = [
         'id' => 'string',
         'object' => 'string',
-        'created_at' => '\DateTime',
-        'customer_id' => 'string',
-        'tracking_id' => 'string',
+        'createdAt' => '\DateTime',
+        'customerId' => 'string',
+        'trackingId' => 'string',
         'metadata' => '\OpenAPI\Client\Model\PublicationsListResponseBodyPublicationsItemMetadata',
         'channel' => 'string',
-        'source_id' => 'string',
+        'sourceId' => 'string',
         'customer' => '\OpenAPI\Client\Model\CustomerWithSummaryLoyaltyReferrals',
         'vouchers' => 'string[]',
-        'vouchers_id' => 'string[]',
+        'vouchersId' => 'string[]',
         'result' => 'string',
         'voucher' => '\OpenAPI\Client\Model\ListPublicationsItemVoucher',
-        'failure_code' => 'string',
-        'failure_message' => 'string'
+        'failureCode' => 'string',
+        'failureMessage' => 'string'
     ];
 
     /**
@@ -85,19 +85,19 @@ class PublicationsListResponseBodyPublicationsItem implements ModelInterface, Ar
     protected static $openAPIFormats = [
         'id' => null,
         'object' => null,
-        'created_at' => 'date-time',
-        'customer_id' => null,
-        'tracking_id' => null,
+        'createdAt' => 'date-time',
+        'customerId' => null,
+        'trackingId' => null,
         'metadata' => null,
         'channel' => null,
-        'source_id' => null,
+        'sourceId' => null,
         'customer' => null,
         'vouchers' => null,
-        'vouchers_id' => null,
+        'vouchersId' => null,
         'result' => null,
         'voucher' => null,
-        'failure_code' => null,
-        'failure_message' => null
+        'failureCode' => null,
+        'failureMessage' => null
     ];
 
     /**
@@ -108,19 +108,19 @@ class PublicationsListResponseBodyPublicationsItem implements ModelInterface, Ar
     protected static array $openAPINullables = [
         'id' => true,
 		'object' => true,
-		'created_at' => true,
-		'customer_id' => true,
-		'tracking_id' => true,
+		'createdAt' => true,
+		'customerId' => true,
+		'trackingId' => true,
 		'metadata' => false,
 		'channel' => true,
-		'source_id' => true,
+		'sourceId' => true,
 		'customer' => false,
 		'vouchers' => false,
-		'vouchers_id' => true,
+		'vouchersId' => true,
 		'result' => false,
 		'voucher' => false,
-		'failure_code' => true,
-		'failure_message' => true
+		'failureCode' => true,
+		'failureMessage' => true
     ];
 
     /**
@@ -211,19 +211,19 @@ class PublicationsListResponseBodyPublicationsItem implements ModelInterface, Ar
     protected static $attributeMap = [
         'id' => 'id',
         'object' => 'object',
-        'created_at' => 'created_at',
-        'customer_id' => 'customer_id',
-        'tracking_id' => 'tracking_id',
+        'createdAt' => 'created_at',
+        'customerId' => 'customer_id',
+        'trackingId' => 'tracking_id',
         'metadata' => 'metadata',
         'channel' => 'channel',
-        'source_id' => 'source_id',
+        'sourceId' => 'source_id',
         'customer' => 'customer',
         'vouchers' => 'vouchers',
-        'vouchers_id' => 'vouchers_id',
+        'vouchersId' => 'vouchers_id',
         'result' => 'result',
         'voucher' => 'voucher',
-        'failure_code' => 'failure_code',
-        'failure_message' => 'failure_message'
+        'failureCode' => 'failure_code',
+        'failureMessage' => 'failure_message'
     ];
 
     /**
@@ -234,19 +234,19 @@ class PublicationsListResponseBodyPublicationsItem implements ModelInterface, Ar
     protected static $setters = [
         'id' => 'setId',
         'object' => 'setObject',
-        'created_at' => 'setCreatedAt',
-        'customer_id' => 'setCustomerId',
-        'tracking_id' => 'setTrackingId',
+        'createdAt' => 'setCreatedAt',
+        'customerId' => 'setCustomerId',
+        'trackingId' => 'setTrackingId',
         'metadata' => 'setMetadata',
         'channel' => 'setChannel',
-        'source_id' => 'setSourceId',
+        'sourceId' => 'setSourceId',
         'customer' => 'setCustomer',
         'vouchers' => 'setVouchers',
-        'vouchers_id' => 'setVouchersId',
+        'vouchersId' => 'setVouchersId',
         'result' => 'setResult',
         'voucher' => 'setVoucher',
-        'failure_code' => 'setFailureCode',
-        'failure_message' => 'setFailureMessage'
+        'failureCode' => 'setFailureCode',
+        'failureMessage' => 'setFailureMessage'
     ];
 
     /**
@@ -257,19 +257,19 @@ class PublicationsListResponseBodyPublicationsItem implements ModelInterface, Ar
     protected static $getters = [
         'id' => 'getId',
         'object' => 'getObject',
-        'created_at' => 'getCreatedAt',
-        'customer_id' => 'getCustomerId',
-        'tracking_id' => 'getTrackingId',
+        'createdAt' => 'getCreatedAt',
+        'customerId' => 'getCustomerId',
+        'trackingId' => 'getTrackingId',
         'metadata' => 'getMetadata',
         'channel' => 'getChannel',
-        'source_id' => 'getSourceId',
+        'sourceId' => 'getSourceId',
         'customer' => 'getCustomer',
         'vouchers' => 'getVouchers',
-        'vouchers_id' => 'getVouchersId',
+        'vouchersId' => 'getVouchersId',
         'result' => 'getResult',
         'voucher' => 'getVoucher',
-        'failure_code' => 'getFailureCode',
-        'failure_message' => 'getFailureMessage'
+        'failureCode' => 'getFailureCode',
+        'failureMessage' => 'getFailureMessage'
     ];
 
     /**
@@ -359,19 +359,19 @@ class PublicationsListResponseBodyPublicationsItem implements ModelInterface, Ar
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'publication');
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('customer_id', $data ?? [], null);
-        $this->setIfExists('tracking_id', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('customerId', $data ?? [], null);
+        $this->setIfExists('trackingId', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('channel', $data ?? [], null);
-        $this->setIfExists('source_id', $data ?? [], null);
+        $this->setIfExists('sourceId', $data ?? [], null);
         $this->setIfExists('customer', $data ?? [], null);
         $this->setIfExists('vouchers', $data ?? [], null);
-        $this->setIfExists('vouchers_id', $data ?? [], null);
+        $this->setIfExists('vouchersId', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('voucher', $data ?? [], null);
-        $this->setIfExists('failure_code', $data ?? [], null);
-        $this->setIfExists('failure_message', $data ?? [], null);
+        $this->setIfExists('failureCode', $data ?? [], null);
+        $this->setIfExists('failureMessage', $data ?? [], null);
     }
 
     /**
@@ -513,103 +513,103 @@ class PublicationsListResponseBodyPublicationsItem implements ModelInterface, Ar
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the publication was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the publication was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets customer_id
+     * Gets customerId
      *
      * @return string|null
      */
     public function getCustomerId()
     {
-        return $this->container['customer_id'];
+        return $this->container['customerId'];
     }
 
     /**
-     * Sets customer_id
+     * Sets customerId
      *
-     * @param string|null $customer_id Unique customer ID of the customer receiving the publication.
+     * @param string|null $customerId Unique customer ID of the customer receiving the publication.
      *
      * @return self
      */
-    public function setCustomerId($customer_id)
+    public function setCustomerId($customerId)
     {
-        if (is_null($customer_id)) {
-            array_push($this->openAPINullablesSetToNull, 'customer_id');
+        if (is_null($customerId)) {
+            array_push($this->openAPINullablesSetToNull, 'customerId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customer_id', $nullablesSetToNull);
+            $index = array_search('customerId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['customer_id'] = $customer_id;
+        $this->container['customerId'] = $customerId;
 
         return $this;
     }
 
     /**
-     * Gets tracking_id
+     * Gets trackingId
      *
      * @return string|null
      */
     public function getTrackingId()
     {
-        return $this->container['tracking_id'];
+        return $this->container['trackingId'];
     }
 
     /**
-     * Sets tracking_id
+     * Sets trackingId
      *
-     * @param string|null $tracking_id Customer's `source_id`.
+     * @param string|null $trackingId Customer's `source_id`.
      *
      * @return self
      */
-    public function setTrackingId($tracking_id)
+    public function setTrackingId($trackingId)
     {
-        if (is_null($tracking_id)) {
-            array_push($this->openAPINullablesSetToNull, 'tracking_id');
+        if (is_null($trackingId)) {
+            array_push($this->openAPINullablesSetToNull, 'trackingId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tracking_id', $nullablesSetToNull);
+            $index = array_search('trackingId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['tracking_id'] = $tracking_id;
+        $this->container['trackingId'] = $trackingId;
 
         return $this;
     }
@@ -676,35 +676,35 @@ class PublicationsListResponseBodyPublicationsItem implements ModelInterface, Ar
     }
 
     /**
-     * Gets source_id
+     * Gets sourceId
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['source_id'];
+        return $this->container['sourceId'];
     }
 
     /**
-     * Sets source_id
+     * Sets sourceId
      *
-     * @param string|null $source_id The merchant's publication ID if it is different from the Voucherify publication ID. It's an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service.
+     * @param string|null $sourceId The merchant's publication ID if it is different from the Voucherify publication ID. It's an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service.
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setSourceId($sourceId)
     {
-        if (is_null($source_id)) {
-            array_push($this->openAPINullablesSetToNull, 'source_id');
+        if (is_null($sourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'sourceId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('source_id', $nullablesSetToNull);
+            $index = array_search('sourceId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['source_id'] = $source_id;
+        $this->container['sourceId'] = $sourceId;
 
         return $this;
     }
@@ -764,35 +764,35 @@ class PublicationsListResponseBodyPublicationsItem implements ModelInterface, Ar
     }
 
     /**
-     * Gets vouchers_id
+     * Gets vouchersId
      *
      * @return string[]|null
      */
     public function getVouchersId()
     {
-        return $this->container['vouchers_id'];
+        return $this->container['vouchersId'];
     }
 
     /**
-     * Sets vouchers_id
+     * Sets vouchersId
      *
-     * @param string[]|null $vouchers_id Contains the unique internal voucher IDs that was assigned by Voucherify.
+     * @param string[]|null $vouchersId Contains the unique internal voucher IDs that was assigned by Voucherify.
      *
      * @return self
      */
-    public function setVouchersId($vouchers_id)
+    public function setVouchersId($vouchersId)
     {
-        if (is_null($vouchers_id)) {
-            array_push($this->openAPINullablesSetToNull, 'vouchers_id');
+        if (is_null($vouchersId)) {
+            array_push($this->openAPINullablesSetToNull, 'vouchersId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('vouchers_id', $nullablesSetToNull);
+            $index = array_search('vouchersId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['vouchers_id'] = $vouchers_id;
+        $this->container['vouchersId'] = $vouchersId;
 
         return $this;
     }
@@ -862,69 +862,69 @@ class PublicationsListResponseBodyPublicationsItem implements ModelInterface, Ar
     }
 
     /**
-     * Gets failure_code
+     * Gets failureCode
      *
      * @return string|null
      */
     public function getFailureCode()
     {
-        return $this->container['failure_code'];
+        return $this->container['failureCode'];
     }
 
     /**
-     * Sets failure_code
+     * Sets failureCode
      *
-     * @param string|null $failure_code Generic reason as to why the create publication operation failed.
+     * @param string|null $failureCode Generic reason as to why the create publication operation failed.
      *
      * @return self
      */
-    public function setFailureCode($failure_code)
+    public function setFailureCode($failureCode)
     {
-        if (is_null($failure_code)) {
-            array_push($this->openAPINullablesSetToNull, 'failure_code');
+        if (is_null($failureCode)) {
+            array_push($this->openAPINullablesSetToNull, 'failureCode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('failure_code', $nullablesSetToNull);
+            $index = array_search('failureCode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['failure_code'] = $failure_code;
+        $this->container['failureCode'] = $failureCode;
 
         return $this;
     }
 
     /**
-     * Gets failure_message
+     * Gets failureMessage
      *
      * @return string|null
      */
     public function getFailureMessage()
     {
-        return $this->container['failure_message'];
+        return $this->container['failureMessage'];
     }
 
     /**
-     * Sets failure_message
+     * Sets failureMessage
      *
-     * @param string|null $failure_message This parameter will provide more expanded reason as to why the create publication operation failed.
+     * @param string|null $failureMessage This parameter will provide more expanded reason as to why the create publication operation failed.
      *
      * @return self
      */
-    public function setFailureMessage($failure_message)
+    public function setFailureMessage($failureMessage)
     {
-        if (is_null($failure_message)) {
-            array_push($this->openAPINullablesSetToNull, 'failure_message');
+        if (is_null($failureMessage)) {
+            array_push($this->openAPINullablesSetToNull, 'failureMessage');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('failure_message', $nullablesSetToNull);
+            $index = array_search('failureMessage', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['failure_message'] = $failure_message;
+        $this->container['failureMessage'] = $failureMessage;
 
         return $this;
     }

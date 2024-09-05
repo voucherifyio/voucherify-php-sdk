@@ -60,10 +60,10 @@ class LoyaltiesMemberActivityListResponseBody implements ModelInterface, ArrayAc
       */
     protected static $openAPITypes = [
         'object' => 'string',
-        'data_ref' => 'string',
+        'dataRef' => 'string',
         'data' => '\OpenAPI\Client\Model\MemberActivity[]',
-        'has_more' => 'bool',
-        'more_starting_after' => 'string'
+        'hasMore' => 'bool',
+        'moreStartingAfter' => 'string'
     ];
 
     /**
@@ -75,10 +75,10 @@ class LoyaltiesMemberActivityListResponseBody implements ModelInterface, ArrayAc
       */
     protected static $openAPIFormats = [
         'object' => null,
-        'data_ref' => null,
+        'dataRef' => null,
         'data' => null,
-        'has_more' => null,
-        'more_starting_after' => null
+        'hasMore' => null,
+        'moreStartingAfter' => null
     ];
 
     /**
@@ -88,10 +88,10 @@ class LoyaltiesMemberActivityListResponseBody implements ModelInterface, ArrayAc
       */
     protected static array $openAPINullables = [
         'object' => true,
-		'data_ref' => true,
+		'dataRef' => true,
 		'data' => true,
-		'has_more' => true,
-		'more_starting_after' => true
+		'hasMore' => true,
+		'moreStartingAfter' => true
     ];
 
     /**
@@ -181,10 +181,10 @@ class LoyaltiesMemberActivityListResponseBody implements ModelInterface, ArrayAc
      */
     protected static $attributeMap = [
         'object' => 'object',
-        'data_ref' => 'data_ref',
+        'dataRef' => 'data_ref',
         'data' => 'data',
-        'has_more' => 'has_more',
-        'more_starting_after' => 'more_starting_after'
+        'hasMore' => 'has_more',
+        'moreStartingAfter' => 'more_starting_after'
     ];
 
     /**
@@ -194,10 +194,10 @@ class LoyaltiesMemberActivityListResponseBody implements ModelInterface, ArrayAc
      */
     protected static $setters = [
         'object' => 'setObject',
-        'data_ref' => 'setDataRef',
+        'dataRef' => 'setDataRef',
         'data' => 'setData',
-        'has_more' => 'setHasMore',
-        'more_starting_after' => 'setMoreStartingAfter'
+        'hasMore' => 'setHasMore',
+        'moreStartingAfter' => 'setMoreStartingAfter'
     ];
 
     /**
@@ -207,10 +207,10 @@ class LoyaltiesMemberActivityListResponseBody implements ModelInterface, ArrayAc
      */
     protected static $getters = [
         'object' => 'getObject',
-        'data_ref' => 'getDataRef',
+        'dataRef' => 'getDataRef',
         'data' => 'getData',
-        'has_more' => 'getHasMore',
-        'more_starting_after' => 'getMoreStartingAfter'
+        'hasMore' => 'getHasMore',
+        'moreStartingAfter' => 'getMoreStartingAfter'
     ];
 
     /**
@@ -284,10 +284,10 @@ class LoyaltiesMemberActivityListResponseBody implements ModelInterface, ArrayAc
     public function __construct(array $data = null)
     {
         $this->setIfExists('object', $data ?? [], 'list');
-        $this->setIfExists('data_ref', $data ?? [], 'data');
+        $this->setIfExists('dataRef', $data ?? [], 'data');
         $this->setIfExists('data', $data ?? [], null);
-        $this->setIfExists('has_more', $data ?? [], null);
-        $this->setIfExists('more_starting_after', $data ?? [], null);
+        $this->setIfExists('hasMore', $data ?? [], null);
+        $this->setIfExists('moreStartingAfter', $data ?? [], null);
     }
 
     /**
@@ -386,35 +386,35 @@ class LoyaltiesMemberActivityListResponseBody implements ModelInterface, ArrayAc
     }
 
     /**
-     * Gets data_ref
+     * Gets dataRef
      *
      * @return string|null
      */
     public function getDataRef()
     {
-        return $this->container['data_ref'];
+        return $this->container['dataRef'];
     }
 
     /**
-     * Sets data_ref
+     * Sets dataRef
      *
-     * @param string|null $data_ref Identifies the name of the attribute that contains the array of member activity objects.
+     * @param string|null $dataRef Identifies the name of the attribute that contains the array of member activity objects.
      *
      * @return self
      */
-    public function setDataRef($data_ref)
+    public function setDataRef($dataRef)
     {
-        if (is_null($data_ref)) {
-            array_push($this->openAPINullablesSetToNull, 'data_ref');
+        if (is_null($dataRef)) {
+            array_push($this->openAPINullablesSetToNull, 'dataRef');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('data_ref', $nullablesSetToNull);
+            $index = array_search('dataRef', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['data_ref'] = $data_ref;
+        $this->container['dataRef'] = $dataRef;
 
         return $this;
     }
@@ -454,69 +454,69 @@ class LoyaltiesMemberActivityListResponseBody implements ModelInterface, ArrayAc
     }
 
     /**
-     * Gets has_more
+     * Gets hasMore
      *
      * @return bool|null
      */
     public function getHasMore()
     {
-        return $this->container['has_more'];
+        return $this->container['hasMore'];
     }
 
     /**
-     * Sets has_more
+     * Sets hasMore
      *
-     * @param bool|null $has_more As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request with a `starting_after_id` query or a different limit to get more records returned in the results.
+     * @param bool|null $hasMore As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request with a `starting_after_id` query or a different limit to get more records returned in the results.
      *
      * @return self
      */
-    public function setHasMore($has_more)
+    public function setHasMore($hasMore)
     {
-        if (is_null($has_more)) {
-            array_push($this->openAPINullablesSetToNull, 'has_more');
+        if (is_null($hasMore)) {
+            array_push($this->openAPINullablesSetToNull, 'hasMore');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('has_more', $nullablesSetToNull);
+            $index = array_search('hasMore', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['has_more'] = $has_more;
+        $this->container['hasMore'] = $hasMore;
 
         return $this;
     }
 
     /**
-     * Gets more_starting_after
+     * Gets moreStartingAfter
      *
      * @return string|null
      */
     public function getMoreStartingAfter()
     {
-        return $this->container['more_starting_after'];
+        return $this->container['moreStartingAfter'];
     }
 
     /**
-     * Sets more_starting_after
+     * Sets moreStartingAfter
      *
-     * @param string|null $more_starting_after Returns an ID that can be used to return another page of results. Use the event id in the `starting_after_id` query parameter to display another page of the results starting after the event with that ID.
+     * @param string|null $moreStartingAfter Returns an ID that can be used to return another page of results. Use the event id in the `starting_after_id` query parameter to display another page of the results starting after the event with that ID.
      *
      * @return self
      */
-    public function setMoreStartingAfter($more_starting_after)
+    public function setMoreStartingAfter($moreStartingAfter)
     {
-        if (is_null($more_starting_after)) {
-            array_push($this->openAPINullablesSetToNull, 'more_starting_after');
+        if (is_null($moreStartingAfter)) {
+            array_push($this->openAPINullablesSetToNull, 'moreStartingAfter');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('more_starting_after', $nullablesSetToNull);
+            $index = array_search('moreStartingAfter', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['more_starting_after'] = $more_starting_after;
+        $this->container['moreStartingAfter'] = $moreStartingAfter;
 
         return $this;
     }

@@ -59,30 +59,30 @@ class FiltersCondition implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'in' => 'mixed',
-        'not_in' => 'mixed',
+        'notIn' => 'mixed',
         'is' => 'mixed',
-        'is_days_ago' => 'mixed',
-        'is_days_in_future' => 'mixed',
-        'is_not' => 'mixed',
-        'has_value' => 'mixed',
-        'is_unknown' => 'mixed',
+        'isDaysAgo' => 'mixed',
+        'isDaysInFuture' => 'mixed',
+        'isNot' => 'mixed',
+        'hasValue' => 'mixed',
+        'isUnknown' => 'mixed',
         'contains' => 'mixed',
-        'not_contain' => 'mixed',
-        'starts_with' => 'mixed',
-        'ends_with' => 'mixed',
-        'more_than' => 'mixed',
-        'less_than' => 'mixed',
-        'more_than_ago' => 'mixed',
-        'less_than_ago' => 'mixed',
-        'more_than_future' => 'mixed',
-        'less_than_future' => 'mixed',
-        'more_than_equal' => 'mixed',
-        'less_than_equal' => 'mixed',
+        'notContain' => 'mixed',
+        'startsWith' => 'mixed',
+        'endsWith' => 'mixed',
+        'moreThan' => 'mixed',
+        'lessThan' => 'mixed',
+        'moreThanAgo' => 'mixed',
+        'lessThanAgo' => 'mixed',
+        'moreThanFuture' => 'mixed',
+        'lessThanFuture' => 'mixed',
+        'moreThanEqual' => 'mixed',
+        'lessThanEqual' => 'mixed',
         'after' => 'mixed',
         'before' => 'mixed',
         'count' => 'mixed',
-        'count_less' => 'mixed',
-        'count_more' => 'mixed'
+        'countLess' => 'mixed',
+        'countMore' => 'mixed'
     ];
 
     /**
@@ -94,30 +94,30 @@ class FiltersCondition implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'in' => null,
-        'not_in' => null,
+        'notIn' => null,
         'is' => null,
-        'is_days_ago' => null,
-        'is_days_in_future' => null,
-        'is_not' => null,
-        'has_value' => null,
-        'is_unknown' => null,
+        'isDaysAgo' => null,
+        'isDaysInFuture' => null,
+        'isNot' => null,
+        'hasValue' => null,
+        'isUnknown' => null,
         'contains' => null,
-        'not_contain' => null,
-        'starts_with' => null,
-        'ends_with' => null,
-        'more_than' => null,
-        'less_than' => null,
-        'more_than_ago' => null,
-        'less_than_ago' => null,
-        'more_than_future' => null,
-        'less_than_future' => null,
-        'more_than_equal' => null,
-        'less_than_equal' => null,
+        'notContain' => null,
+        'startsWith' => null,
+        'endsWith' => null,
+        'moreThan' => null,
+        'lessThan' => null,
+        'moreThanAgo' => null,
+        'lessThanAgo' => null,
+        'moreThanFuture' => null,
+        'lessThanFuture' => null,
+        'moreThanEqual' => null,
+        'lessThanEqual' => null,
         'after' => null,
         'before' => null,
         'count' => null,
-        'count_less' => null,
-        'count_more' => null
+        'countLess' => null,
+        'countMore' => null
     ];
 
     /**
@@ -127,30 +127,30 @@ class FiltersCondition implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'in' => true,
-		'not_in' => true,
+		'notIn' => true,
 		'is' => true,
-		'is_days_ago' => true,
-		'is_days_in_future' => true,
-		'is_not' => true,
-		'has_value' => true,
-		'is_unknown' => true,
+		'isDaysAgo' => true,
+		'isDaysInFuture' => true,
+		'isNot' => true,
+		'hasValue' => true,
+		'isUnknown' => true,
 		'contains' => true,
-		'not_contain' => true,
-		'starts_with' => true,
-		'ends_with' => true,
-		'more_than' => true,
-		'less_than' => true,
-		'more_than_ago' => true,
-		'less_than_ago' => true,
-		'more_than_future' => true,
-		'less_than_future' => true,
-		'more_than_equal' => true,
-		'less_than_equal' => true,
+		'notContain' => true,
+		'startsWith' => true,
+		'endsWith' => true,
+		'moreThan' => true,
+		'lessThan' => true,
+		'moreThanAgo' => true,
+		'lessThanAgo' => true,
+		'moreThanFuture' => true,
+		'lessThanFuture' => true,
+		'moreThanEqual' => true,
+		'lessThanEqual' => true,
 		'after' => true,
 		'before' => true,
 		'count' => true,
-		'count_less' => true,
-		'count_more' => true
+		'countLess' => true,
+		'countMore' => true
     ];
 
     /**
@@ -240,30 +240,30 @@ class FiltersCondition implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'in' => '$in',
-        'not_in' => '$not_in',
+        'notIn' => '$not_in',
         'is' => '$is',
-        'is_days_ago' => '$is_days_ago',
-        'is_days_in_future' => '$is_days_in_future',
-        'is_not' => '$is_not',
-        'has_value' => '$has_value',
-        'is_unknown' => '$is_unknown',
+        'isDaysAgo' => '$is_days_ago',
+        'isDaysInFuture' => '$is_days_in_future',
+        'isNot' => '$is_not',
+        'hasValue' => '$has_value',
+        'isUnknown' => '$is_unknown',
         'contains' => '$contains',
-        'not_contain' => '$not_contain',
-        'starts_with' => '$starts_with',
-        'ends_with' => '$ends_with',
-        'more_than' => '$more_than',
-        'less_than' => '$less_than',
-        'more_than_ago' => '$more_than_ago',
-        'less_than_ago' => '$less_than_ago',
-        'more_than_future' => '$more_than_future',
-        'less_than_future' => '$less_than_future',
-        'more_than_equal' => '$more_than_equal',
-        'less_than_equal' => '$less_than_equal',
+        'notContain' => '$not_contain',
+        'startsWith' => '$starts_with',
+        'endsWith' => '$ends_with',
+        'moreThan' => '$more_than',
+        'lessThan' => '$less_than',
+        'moreThanAgo' => '$more_than_ago',
+        'lessThanAgo' => '$less_than_ago',
+        'moreThanFuture' => '$more_than_future',
+        'lessThanFuture' => '$less_than_future',
+        'moreThanEqual' => '$more_than_equal',
+        'lessThanEqual' => '$less_than_equal',
         'after' => '$after',
         'before' => '$before',
         'count' => '$count',
-        'count_less' => '$count_less',
-        'count_more' => '$count_more'
+        'countLess' => '$count_less',
+        'countMore' => '$count_more'
     ];
 
     /**
@@ -273,30 +273,30 @@ class FiltersCondition implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'in' => 'setIn',
-        'not_in' => 'setNotIn',
+        'notIn' => 'setNotIn',
         'is' => 'setIs',
-        'is_days_ago' => 'setIsDaysAgo',
-        'is_days_in_future' => 'setIsDaysInFuture',
-        'is_not' => 'setIsNot',
-        'has_value' => 'setHasValue',
-        'is_unknown' => 'setIsUnknown',
+        'isDaysAgo' => 'setIsDaysAgo',
+        'isDaysInFuture' => 'setIsDaysInFuture',
+        'isNot' => 'setIsNot',
+        'hasValue' => 'setHasValue',
+        'isUnknown' => 'setIsUnknown',
         'contains' => 'setContains',
-        'not_contain' => 'setNotContain',
-        'starts_with' => 'setStartsWith',
-        'ends_with' => 'setEndsWith',
-        'more_than' => 'setMoreThan',
-        'less_than' => 'setLessThan',
-        'more_than_ago' => 'setMoreThanAgo',
-        'less_than_ago' => 'setLessThanAgo',
-        'more_than_future' => 'setMoreThanFuture',
-        'less_than_future' => 'setLessThanFuture',
-        'more_than_equal' => 'setMoreThanEqual',
-        'less_than_equal' => 'setLessThanEqual',
+        'notContain' => 'setNotContain',
+        'startsWith' => 'setStartsWith',
+        'endsWith' => 'setEndsWith',
+        'moreThan' => 'setMoreThan',
+        'lessThan' => 'setLessThan',
+        'moreThanAgo' => 'setMoreThanAgo',
+        'lessThanAgo' => 'setLessThanAgo',
+        'moreThanFuture' => 'setMoreThanFuture',
+        'lessThanFuture' => 'setLessThanFuture',
+        'moreThanEqual' => 'setMoreThanEqual',
+        'lessThanEqual' => 'setLessThanEqual',
         'after' => 'setAfter',
         'before' => 'setBefore',
         'count' => 'setCount',
-        'count_less' => 'setCountLess',
-        'count_more' => 'setCountMore'
+        'countLess' => 'setCountLess',
+        'countMore' => 'setCountMore'
     ];
 
     /**
@@ -306,30 +306,30 @@ class FiltersCondition implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'in' => 'getIn',
-        'not_in' => 'getNotIn',
+        'notIn' => 'getNotIn',
         'is' => 'getIs',
-        'is_days_ago' => 'getIsDaysAgo',
-        'is_days_in_future' => 'getIsDaysInFuture',
-        'is_not' => 'getIsNot',
-        'has_value' => 'getHasValue',
-        'is_unknown' => 'getIsUnknown',
+        'isDaysAgo' => 'getIsDaysAgo',
+        'isDaysInFuture' => 'getIsDaysInFuture',
+        'isNot' => 'getIsNot',
+        'hasValue' => 'getHasValue',
+        'isUnknown' => 'getIsUnknown',
         'contains' => 'getContains',
-        'not_contain' => 'getNotContain',
-        'starts_with' => 'getStartsWith',
-        'ends_with' => 'getEndsWith',
-        'more_than' => 'getMoreThan',
-        'less_than' => 'getLessThan',
-        'more_than_ago' => 'getMoreThanAgo',
-        'less_than_ago' => 'getLessThanAgo',
-        'more_than_future' => 'getMoreThanFuture',
-        'less_than_future' => 'getLessThanFuture',
-        'more_than_equal' => 'getMoreThanEqual',
-        'less_than_equal' => 'getLessThanEqual',
+        'notContain' => 'getNotContain',
+        'startsWith' => 'getStartsWith',
+        'endsWith' => 'getEndsWith',
+        'moreThan' => 'getMoreThan',
+        'lessThan' => 'getLessThan',
+        'moreThanAgo' => 'getMoreThanAgo',
+        'lessThanAgo' => 'getLessThanAgo',
+        'moreThanFuture' => 'getMoreThanFuture',
+        'lessThanFuture' => 'getLessThanFuture',
+        'moreThanEqual' => 'getMoreThanEqual',
+        'lessThanEqual' => 'getLessThanEqual',
         'after' => 'getAfter',
         'before' => 'getBefore',
         'count' => 'getCount',
-        'count_less' => 'getCountLess',
-        'count_more' => 'getCountMore'
+        'countLess' => 'getCountLess',
+        'countMore' => 'getCountMore'
     ];
 
     /**
@@ -390,30 +390,30 @@ class FiltersCondition implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('in', $data ?? [], null);
-        $this->setIfExists('not_in', $data ?? [], null);
+        $this->setIfExists('notIn', $data ?? [], null);
         $this->setIfExists('is', $data ?? [], null);
-        $this->setIfExists('is_days_ago', $data ?? [], null);
-        $this->setIfExists('is_days_in_future', $data ?? [], null);
-        $this->setIfExists('is_not', $data ?? [], null);
-        $this->setIfExists('has_value', $data ?? [], null);
-        $this->setIfExists('is_unknown', $data ?? [], null);
+        $this->setIfExists('isDaysAgo', $data ?? [], null);
+        $this->setIfExists('isDaysInFuture', $data ?? [], null);
+        $this->setIfExists('isNot', $data ?? [], null);
+        $this->setIfExists('hasValue', $data ?? [], null);
+        $this->setIfExists('isUnknown', $data ?? [], null);
         $this->setIfExists('contains', $data ?? [], null);
-        $this->setIfExists('not_contain', $data ?? [], null);
-        $this->setIfExists('starts_with', $data ?? [], null);
-        $this->setIfExists('ends_with', $data ?? [], null);
-        $this->setIfExists('more_than', $data ?? [], null);
-        $this->setIfExists('less_than', $data ?? [], null);
-        $this->setIfExists('more_than_ago', $data ?? [], null);
-        $this->setIfExists('less_than_ago', $data ?? [], null);
-        $this->setIfExists('more_than_future', $data ?? [], null);
-        $this->setIfExists('less_than_future', $data ?? [], null);
-        $this->setIfExists('more_than_equal', $data ?? [], null);
-        $this->setIfExists('less_than_equal', $data ?? [], null);
+        $this->setIfExists('notContain', $data ?? [], null);
+        $this->setIfExists('startsWith', $data ?? [], null);
+        $this->setIfExists('endsWith', $data ?? [], null);
+        $this->setIfExists('moreThan', $data ?? [], null);
+        $this->setIfExists('lessThan', $data ?? [], null);
+        $this->setIfExists('moreThanAgo', $data ?? [], null);
+        $this->setIfExists('lessThanAgo', $data ?? [], null);
+        $this->setIfExists('moreThanFuture', $data ?? [], null);
+        $this->setIfExists('lessThanFuture', $data ?? [], null);
+        $this->setIfExists('moreThanEqual', $data ?? [], null);
+        $this->setIfExists('lessThanEqual', $data ?? [], null);
         $this->setIfExists('after', $data ?? [], null);
         $this->setIfExists('before', $data ?? [], null);
         $this->setIfExists('count', $data ?? [], null);
-        $this->setIfExists('count_less', $data ?? [], null);
-        $this->setIfExists('count_more', $data ?? [], null);
+        $this->setIfExists('countLess', $data ?? [], null);
+        $this->setIfExists('countMore', $data ?? [], null);
     }
 
     /**
@@ -493,35 +493,35 @@ class FiltersCondition implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets not_in
+     * Gets notIn
      *
      * @return mixed|null
      */
     public function getNotIn()
     {
-        return $this->container['not_in'];
+        return $this->container['notIn'];
     }
 
     /**
-     * Sets not_in
+     * Sets notIn
      *
-     * @param mixed|null $not_in not_in
+     * @param mixed|null $notIn notIn
      *
      * @return self
      */
-    public function setNotIn($not_in)
+    public function setNotIn($notIn)
     {
-        if (is_null($not_in)) {
-            array_push($this->openAPINullablesSetToNull, 'not_in');
+        if (is_null($notIn)) {
+            array_push($this->openAPINullablesSetToNull, 'notIn');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('not_in', $nullablesSetToNull);
+            $index = array_search('notIn', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['not_in'] = $not_in;
+        $this->container['notIn'] = $notIn;
 
         return $this;
     }
@@ -561,171 +561,171 @@ class FiltersCondition implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets is_days_ago
+     * Gets isDaysAgo
      *
      * @return mixed|null
      */
     public function getIsDaysAgo()
     {
-        return $this->container['is_days_ago'];
+        return $this->container['isDaysAgo'];
     }
 
     /**
-     * Sets is_days_ago
+     * Sets isDaysAgo
      *
-     * @param mixed|null $is_days_ago is_days_ago
+     * @param mixed|null $isDaysAgo isDaysAgo
      *
      * @return self
      */
-    public function setIsDaysAgo($is_days_ago)
+    public function setIsDaysAgo($isDaysAgo)
     {
-        if (is_null($is_days_ago)) {
-            array_push($this->openAPINullablesSetToNull, 'is_days_ago');
+        if (is_null($isDaysAgo)) {
+            array_push($this->openAPINullablesSetToNull, 'isDaysAgo');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_days_ago', $nullablesSetToNull);
+            $index = array_search('isDaysAgo', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['is_days_ago'] = $is_days_ago;
+        $this->container['isDaysAgo'] = $isDaysAgo;
 
         return $this;
     }
 
     /**
-     * Gets is_days_in_future
+     * Gets isDaysInFuture
      *
      * @return mixed|null
      */
     public function getIsDaysInFuture()
     {
-        return $this->container['is_days_in_future'];
+        return $this->container['isDaysInFuture'];
     }
 
     /**
-     * Sets is_days_in_future
+     * Sets isDaysInFuture
      *
-     * @param mixed|null $is_days_in_future is_days_in_future
+     * @param mixed|null $isDaysInFuture isDaysInFuture
      *
      * @return self
      */
-    public function setIsDaysInFuture($is_days_in_future)
+    public function setIsDaysInFuture($isDaysInFuture)
     {
-        if (is_null($is_days_in_future)) {
-            array_push($this->openAPINullablesSetToNull, 'is_days_in_future');
+        if (is_null($isDaysInFuture)) {
+            array_push($this->openAPINullablesSetToNull, 'isDaysInFuture');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_days_in_future', $nullablesSetToNull);
+            $index = array_search('isDaysInFuture', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['is_days_in_future'] = $is_days_in_future;
+        $this->container['isDaysInFuture'] = $isDaysInFuture;
 
         return $this;
     }
 
     /**
-     * Gets is_not
+     * Gets isNot
      *
      * @return mixed|null
      */
     public function getIsNot()
     {
-        return $this->container['is_not'];
+        return $this->container['isNot'];
     }
 
     /**
-     * Sets is_not
+     * Sets isNot
      *
-     * @param mixed|null $is_not is_not
+     * @param mixed|null $isNot isNot
      *
      * @return self
      */
-    public function setIsNot($is_not)
+    public function setIsNot($isNot)
     {
-        if (is_null($is_not)) {
-            array_push($this->openAPINullablesSetToNull, 'is_not');
+        if (is_null($isNot)) {
+            array_push($this->openAPINullablesSetToNull, 'isNot');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_not', $nullablesSetToNull);
+            $index = array_search('isNot', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['is_not'] = $is_not;
+        $this->container['isNot'] = $isNot;
 
         return $this;
     }
 
     /**
-     * Gets has_value
+     * Gets hasValue
      *
      * @return mixed|null
      */
     public function getHasValue()
     {
-        return $this->container['has_value'];
+        return $this->container['hasValue'];
     }
 
     /**
-     * Sets has_value
+     * Sets hasValue
      *
-     * @param mixed|null $has_value has_value
+     * @param mixed|null $hasValue hasValue
      *
      * @return self
      */
-    public function setHasValue($has_value)
+    public function setHasValue($hasValue)
     {
-        if (is_null($has_value)) {
-            array_push($this->openAPINullablesSetToNull, 'has_value');
+        if (is_null($hasValue)) {
+            array_push($this->openAPINullablesSetToNull, 'hasValue');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('has_value', $nullablesSetToNull);
+            $index = array_search('hasValue', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['has_value'] = $has_value;
+        $this->container['hasValue'] = $hasValue;
 
         return $this;
     }
 
     /**
-     * Gets is_unknown
+     * Gets isUnknown
      *
      * @return mixed|null
      */
     public function getIsUnknown()
     {
-        return $this->container['is_unknown'];
+        return $this->container['isUnknown'];
     }
 
     /**
-     * Sets is_unknown
+     * Sets isUnknown
      *
-     * @param mixed|null $is_unknown is_unknown
+     * @param mixed|null $isUnknown isUnknown
      *
      * @return self
      */
-    public function setIsUnknown($is_unknown)
+    public function setIsUnknown($isUnknown)
     {
-        if (is_null($is_unknown)) {
-            array_push($this->openAPINullablesSetToNull, 'is_unknown');
+        if (is_null($isUnknown)) {
+            array_push($this->openAPINullablesSetToNull, 'isUnknown');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_unknown', $nullablesSetToNull);
+            $index = array_search('isUnknown', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['is_unknown'] = $is_unknown;
+        $this->container['isUnknown'] = $isUnknown;
 
         return $this;
     }
@@ -765,375 +765,375 @@ class FiltersCondition implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets not_contain
+     * Gets notContain
      *
      * @return mixed|null
      */
     public function getNotContain()
     {
-        return $this->container['not_contain'];
+        return $this->container['notContain'];
     }
 
     /**
-     * Sets not_contain
+     * Sets notContain
      *
-     * @param mixed|null $not_contain not_contain
+     * @param mixed|null $notContain notContain
      *
      * @return self
      */
-    public function setNotContain($not_contain)
+    public function setNotContain($notContain)
     {
-        if (is_null($not_contain)) {
-            array_push($this->openAPINullablesSetToNull, 'not_contain');
+        if (is_null($notContain)) {
+            array_push($this->openAPINullablesSetToNull, 'notContain');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('not_contain', $nullablesSetToNull);
+            $index = array_search('notContain', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['not_contain'] = $not_contain;
+        $this->container['notContain'] = $notContain;
 
         return $this;
     }
 
     /**
-     * Gets starts_with
+     * Gets startsWith
      *
      * @return mixed|null
      */
     public function getStartsWith()
     {
-        return $this->container['starts_with'];
+        return $this->container['startsWith'];
     }
 
     /**
-     * Sets starts_with
+     * Sets startsWith
      *
-     * @param mixed|null $starts_with starts_with
+     * @param mixed|null $startsWith startsWith
      *
      * @return self
      */
-    public function setStartsWith($starts_with)
+    public function setStartsWith($startsWith)
     {
-        if (is_null($starts_with)) {
-            array_push($this->openAPINullablesSetToNull, 'starts_with');
+        if (is_null($startsWith)) {
+            array_push($this->openAPINullablesSetToNull, 'startsWith');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('starts_with', $nullablesSetToNull);
+            $index = array_search('startsWith', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['starts_with'] = $starts_with;
+        $this->container['startsWith'] = $startsWith;
 
         return $this;
     }
 
     /**
-     * Gets ends_with
+     * Gets endsWith
      *
      * @return mixed|null
      */
     public function getEndsWith()
     {
-        return $this->container['ends_with'];
+        return $this->container['endsWith'];
     }
 
     /**
-     * Sets ends_with
+     * Sets endsWith
      *
-     * @param mixed|null $ends_with ends_with
+     * @param mixed|null $endsWith endsWith
      *
      * @return self
      */
-    public function setEndsWith($ends_with)
+    public function setEndsWith($endsWith)
     {
-        if (is_null($ends_with)) {
-            array_push($this->openAPINullablesSetToNull, 'ends_with');
+        if (is_null($endsWith)) {
+            array_push($this->openAPINullablesSetToNull, 'endsWith');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ends_with', $nullablesSetToNull);
+            $index = array_search('endsWith', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['ends_with'] = $ends_with;
+        $this->container['endsWith'] = $endsWith;
 
         return $this;
     }
 
     /**
-     * Gets more_than
+     * Gets moreThan
      *
      * @return mixed|null
      */
     public function getMoreThan()
     {
-        return $this->container['more_than'];
+        return $this->container['moreThan'];
     }
 
     /**
-     * Sets more_than
+     * Sets moreThan
      *
-     * @param mixed|null $more_than more_than
+     * @param mixed|null $moreThan moreThan
      *
      * @return self
      */
-    public function setMoreThan($more_than)
+    public function setMoreThan($moreThan)
     {
-        if (is_null($more_than)) {
-            array_push($this->openAPINullablesSetToNull, 'more_than');
+        if (is_null($moreThan)) {
+            array_push($this->openAPINullablesSetToNull, 'moreThan');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('more_than', $nullablesSetToNull);
+            $index = array_search('moreThan', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['more_than'] = $more_than;
+        $this->container['moreThan'] = $moreThan;
 
         return $this;
     }
 
     /**
-     * Gets less_than
+     * Gets lessThan
      *
      * @return mixed|null
      */
     public function getLessThan()
     {
-        return $this->container['less_than'];
+        return $this->container['lessThan'];
     }
 
     /**
-     * Sets less_than
+     * Sets lessThan
      *
-     * @param mixed|null $less_than less_than
+     * @param mixed|null $lessThan lessThan
      *
      * @return self
      */
-    public function setLessThan($less_than)
+    public function setLessThan($lessThan)
     {
-        if (is_null($less_than)) {
-            array_push($this->openAPINullablesSetToNull, 'less_than');
+        if (is_null($lessThan)) {
+            array_push($this->openAPINullablesSetToNull, 'lessThan');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('less_than', $nullablesSetToNull);
+            $index = array_search('lessThan', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['less_than'] = $less_than;
+        $this->container['lessThan'] = $lessThan;
 
         return $this;
     }
 
     /**
-     * Gets more_than_ago
+     * Gets moreThanAgo
      *
      * @return mixed|null
      */
     public function getMoreThanAgo()
     {
-        return $this->container['more_than_ago'];
+        return $this->container['moreThanAgo'];
     }
 
     /**
-     * Sets more_than_ago
+     * Sets moreThanAgo
      *
-     * @param mixed|null $more_than_ago more_than_ago
+     * @param mixed|null $moreThanAgo moreThanAgo
      *
      * @return self
      */
-    public function setMoreThanAgo($more_than_ago)
+    public function setMoreThanAgo($moreThanAgo)
     {
-        if (is_null($more_than_ago)) {
-            array_push($this->openAPINullablesSetToNull, 'more_than_ago');
+        if (is_null($moreThanAgo)) {
+            array_push($this->openAPINullablesSetToNull, 'moreThanAgo');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('more_than_ago', $nullablesSetToNull);
+            $index = array_search('moreThanAgo', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['more_than_ago'] = $more_than_ago;
+        $this->container['moreThanAgo'] = $moreThanAgo;
 
         return $this;
     }
 
     /**
-     * Gets less_than_ago
+     * Gets lessThanAgo
      *
      * @return mixed|null
      */
     public function getLessThanAgo()
     {
-        return $this->container['less_than_ago'];
+        return $this->container['lessThanAgo'];
     }
 
     /**
-     * Sets less_than_ago
+     * Sets lessThanAgo
      *
-     * @param mixed|null $less_than_ago less_than_ago
+     * @param mixed|null $lessThanAgo lessThanAgo
      *
      * @return self
      */
-    public function setLessThanAgo($less_than_ago)
+    public function setLessThanAgo($lessThanAgo)
     {
-        if (is_null($less_than_ago)) {
-            array_push($this->openAPINullablesSetToNull, 'less_than_ago');
+        if (is_null($lessThanAgo)) {
+            array_push($this->openAPINullablesSetToNull, 'lessThanAgo');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('less_than_ago', $nullablesSetToNull);
+            $index = array_search('lessThanAgo', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['less_than_ago'] = $less_than_ago;
+        $this->container['lessThanAgo'] = $lessThanAgo;
 
         return $this;
     }
 
     /**
-     * Gets more_than_future
+     * Gets moreThanFuture
      *
      * @return mixed|null
      */
     public function getMoreThanFuture()
     {
-        return $this->container['more_than_future'];
+        return $this->container['moreThanFuture'];
     }
 
     /**
-     * Sets more_than_future
+     * Sets moreThanFuture
      *
-     * @param mixed|null $more_than_future more_than_future
+     * @param mixed|null $moreThanFuture moreThanFuture
      *
      * @return self
      */
-    public function setMoreThanFuture($more_than_future)
+    public function setMoreThanFuture($moreThanFuture)
     {
-        if (is_null($more_than_future)) {
-            array_push($this->openAPINullablesSetToNull, 'more_than_future');
+        if (is_null($moreThanFuture)) {
+            array_push($this->openAPINullablesSetToNull, 'moreThanFuture');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('more_than_future', $nullablesSetToNull);
+            $index = array_search('moreThanFuture', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['more_than_future'] = $more_than_future;
+        $this->container['moreThanFuture'] = $moreThanFuture;
 
         return $this;
     }
 
     /**
-     * Gets less_than_future
+     * Gets lessThanFuture
      *
      * @return mixed|null
      */
     public function getLessThanFuture()
     {
-        return $this->container['less_than_future'];
+        return $this->container['lessThanFuture'];
     }
 
     /**
-     * Sets less_than_future
+     * Sets lessThanFuture
      *
-     * @param mixed|null $less_than_future less_than_future
+     * @param mixed|null $lessThanFuture lessThanFuture
      *
      * @return self
      */
-    public function setLessThanFuture($less_than_future)
+    public function setLessThanFuture($lessThanFuture)
     {
-        if (is_null($less_than_future)) {
-            array_push($this->openAPINullablesSetToNull, 'less_than_future');
+        if (is_null($lessThanFuture)) {
+            array_push($this->openAPINullablesSetToNull, 'lessThanFuture');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('less_than_future', $nullablesSetToNull);
+            $index = array_search('lessThanFuture', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['less_than_future'] = $less_than_future;
+        $this->container['lessThanFuture'] = $lessThanFuture;
 
         return $this;
     }
 
     /**
-     * Gets more_than_equal
+     * Gets moreThanEqual
      *
      * @return mixed|null
      */
     public function getMoreThanEqual()
     {
-        return $this->container['more_than_equal'];
+        return $this->container['moreThanEqual'];
     }
 
     /**
-     * Sets more_than_equal
+     * Sets moreThanEqual
      *
-     * @param mixed|null $more_than_equal more_than_equal
+     * @param mixed|null $moreThanEqual moreThanEqual
      *
      * @return self
      */
-    public function setMoreThanEqual($more_than_equal)
+    public function setMoreThanEqual($moreThanEqual)
     {
-        if (is_null($more_than_equal)) {
-            array_push($this->openAPINullablesSetToNull, 'more_than_equal');
+        if (is_null($moreThanEqual)) {
+            array_push($this->openAPINullablesSetToNull, 'moreThanEqual');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('more_than_equal', $nullablesSetToNull);
+            $index = array_search('moreThanEqual', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['more_than_equal'] = $more_than_equal;
+        $this->container['moreThanEqual'] = $moreThanEqual;
 
         return $this;
     }
 
     /**
-     * Gets less_than_equal
+     * Gets lessThanEqual
      *
      * @return mixed|null
      */
     public function getLessThanEqual()
     {
-        return $this->container['less_than_equal'];
+        return $this->container['lessThanEqual'];
     }
 
     /**
-     * Sets less_than_equal
+     * Sets lessThanEqual
      *
-     * @param mixed|null $less_than_equal less_than_equal
+     * @param mixed|null $lessThanEqual lessThanEqual
      *
      * @return self
      */
-    public function setLessThanEqual($less_than_equal)
+    public function setLessThanEqual($lessThanEqual)
     {
-        if (is_null($less_than_equal)) {
-            array_push($this->openAPINullablesSetToNull, 'less_than_equal');
+        if (is_null($lessThanEqual)) {
+            array_push($this->openAPINullablesSetToNull, 'lessThanEqual');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('less_than_equal', $nullablesSetToNull);
+            $index = array_search('lessThanEqual', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['less_than_equal'] = $less_than_equal;
+        $this->container['lessThanEqual'] = $lessThanEqual;
 
         return $this;
     }
@@ -1241,69 +1241,69 @@ class FiltersCondition implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets count_less
+     * Gets countLess
      *
      * @return mixed|null
      */
     public function getCountLess()
     {
-        return $this->container['count_less'];
+        return $this->container['countLess'];
     }
 
     /**
-     * Sets count_less
+     * Sets countLess
      *
-     * @param mixed|null $count_less count_less
+     * @param mixed|null $countLess countLess
      *
      * @return self
      */
-    public function setCountLess($count_less)
+    public function setCountLess($countLess)
     {
-        if (is_null($count_less)) {
-            array_push($this->openAPINullablesSetToNull, 'count_less');
+        if (is_null($countLess)) {
+            array_push($this->openAPINullablesSetToNull, 'countLess');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('count_less', $nullablesSetToNull);
+            $index = array_search('countLess', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['count_less'] = $count_less;
+        $this->container['countLess'] = $countLess;
 
         return $this;
     }
 
     /**
-     * Gets count_more
+     * Gets countMore
      *
      * @return mixed|null
      */
     public function getCountMore()
     {
-        return $this->container['count_more'];
+        return $this->container['countMore'];
     }
 
     /**
-     * Sets count_more
+     * Sets countMore
      *
-     * @param mixed|null $count_more count_more
+     * @param mixed|null $countMore countMore
      *
      * @return self
      */
-    public function setCountMore($count_more)
+    public function setCountMore($countMore)
     {
-        if (is_null($count_more)) {
-            array_push($this->openAPINullablesSetToNull, 'count_more');
+        if (is_null($countMore)) {
+            array_push($this->openAPINullablesSetToNull, 'countMore');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('count_more', $nullablesSetToNull);
+            $index = array_search('countMore', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['count_more'] = $count_more;
+        $this->container['countMore'] = $countMore;
 
         return $this;
     }

@@ -23,7 +23,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `createProduct()`
 
 ```php
-createProduct($products_create_request_body): \OpenAPI\Client\Model\ProductsCreateResponseBody
+createProduct($productsCreateRequestBody): \OpenAPI\Client\Model\ProductsCreateResponseBody
 ```
 
 Create Product
@@ -54,10 +54,10 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$products_create_request_body = {"source_id":"first_product","name":"Samsung Phone","price":200000,"attributes":["color","memory","processor"],"metadata":{"test":true,"vendor":"Online Store"},"image_url":"https://www.website.com/image.png"}; // \OpenAPI\Client\Model\ProductsCreateRequestBody | Specify the product parameters.
+$productsCreateRequestBody = {"source_id":"first_product","name":"Samsung Phone","price":200000,"attributes":["color","memory","processor"],"metadata":{"test":true,"vendor":"Online Store"},"image_url":"https://www.website.com/image.png"}; // \OpenAPI\Client\Model\ProductsCreateRequestBody | Specify the product parameters.
 
 try {
-    $result = $apiInstance->createProduct($products_create_request_body);
+    $result = $apiInstance->createProduct($productsCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->createProduct: ', $e->getMessage(), PHP_EOL;
@@ -68,7 +68,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **products_create_request_body** | [**\OpenAPI\Client\Model\ProductsCreateRequestBody**](../Model/ProductsCreateRequestBody.md)| Specify the product parameters. | [optional] |
+| **productsCreateRequestBody** | [**\OpenAPI\Client\Model\ProductsCreateRequestBody**](../Model/ProductsCreateRequestBody.md)| Specify the product parameters. | [optional] |
 
 ### Return type
 
@@ -90,7 +90,7 @@ try {
 ## `createSku()`
 
 ```php
-createSku($product_id, $products_skus_create_request_body): \OpenAPI\Client\Model\ProductsSkusCreateResponseBody
+createSku($productId, $productsSkusCreateRequestBody): \OpenAPI\Client\Model\ProductsSkusCreateResponseBody
 ```
 
 Create SKU
@@ -121,11 +121,11 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$product_id = 'product_id_example'; // string | A Voucherify product ID or product source ID.
-$products_skus_create_request_body = {"source_id":"first_product_sku_1","sku":"Samsung phone 256GB","price":1300,"currency":"USD","attributes":{"color":"vintage-black","memory":"256","processor":"Intel"},"image_url":"https://www.website.com/image.png","metadata":{"imported":true}}; // \OpenAPI\Client\Model\ProductsSkusCreateRequestBody | Specify the SKU parameters to be created.
+$productId = 'productId_example'; // string | A Voucherify product ID or product source ID.
+$productsSkusCreateRequestBody = {"source_id":"first_product_sku_1","sku":"Samsung phone 256GB","price":1300,"currency":"USD","attributes":{"color":"vintage-black","memory":"256","processor":"Intel"},"image_url":"https://www.website.com/image.png","metadata":{"imported":true}}; // \OpenAPI\Client\Model\ProductsSkusCreateRequestBody | Specify the SKU parameters to be created.
 
 try {
-    $result = $apiInstance->createSku($product_id, $products_skus_create_request_body);
+    $result = $apiInstance->createSku($productId, $productsSkusCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->createSku: ', $e->getMessage(), PHP_EOL;
@@ -136,8 +136,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **product_id** | **string**| A Voucherify product ID or product source ID. | |
-| **products_skus_create_request_body** | [**\OpenAPI\Client\Model\ProductsSkusCreateRequestBody**](../Model/ProductsSkusCreateRequestBody.md)| Specify the SKU parameters to be created. | [optional] |
+| **productId** | **string**| A Voucherify product ID or product source ID. | |
+| **productsSkusCreateRequestBody** | [**\OpenAPI\Client\Model\ProductsSkusCreateRequestBody**](../Model/ProductsSkusCreateRequestBody.md)| Specify the SKU parameters to be created. | [optional] |
 
 ### Return type
 
@@ -159,7 +159,7 @@ try {
 ## `deleteProduct()`
 
 ```php
-deleteProduct($product_id, $force)
+deleteProduct($productId, $force)
 ```
 
 Delete Product
@@ -190,11 +190,11 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$product_id = 'product_id_example'; // string | A Voucherify product ID or source ID.
+$productId = 'productId_example'; // string | A Voucherify product ID or source ID.
 $force = True; // bool | If this flag is set to true, the product and all related SKUs will be removed permanently. If it is set to false or not set at all, the product and all related SKUs will be moved to the bin. Going forward, the user will be able to create another product with exactly the same source_id.
 
 try {
-    $apiInstance->deleteProduct($product_id, $force);
+    $apiInstance->deleteProduct($productId, $force);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->deleteProduct: ', $e->getMessage(), PHP_EOL;
 }
@@ -204,7 +204,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **product_id** | **string**| A Voucherify product ID or source ID. | |
+| **productId** | **string**| A Voucherify product ID or source ID. | |
 | **force** | **bool**| If this flag is set to true, the product and all related SKUs will be removed permanently. If it is set to false or not set at all, the product and all related SKUs will be moved to the bin. Going forward, the user will be able to create another product with exactly the same source_id. | [optional] |
 
 ### Return type
@@ -227,7 +227,7 @@ void (empty response body)
 ## `deleteSku()`
 
 ```php
-deleteSku($product_id, $sku_id, $force)
+deleteSku($productId, $skuId, $force)
 ```
 
 Delete SKU
@@ -258,12 +258,12 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$product_id = 'product_id_example'; // string | A unique Voucherify product ID or product source ID.
-$sku_id = 'sku_id_example'; // string | A Voucherify SKU ID or SKU source ID.
+$productId = 'productId_example'; // string | A unique Voucherify product ID or product source ID.
+$skuId = 'skuId_example'; // string | A Voucherify SKU ID or SKU source ID.
 $force = True; // bool | If this flag is set to true, the SKU will be removed permanently. If it is set to false or not set at all, the SKU will be moved to the bin. Going forward, the user will be able to create another SKU with exactly the same source_id.
 
 try {
-    $apiInstance->deleteSku($product_id, $sku_id, $force);
+    $apiInstance->deleteSku($productId, $skuId, $force);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->deleteSku: ', $e->getMessage(), PHP_EOL;
 }
@@ -273,8 +273,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **product_id** | **string**| A unique Voucherify product ID or product source ID. | |
-| **sku_id** | **string**| A Voucherify SKU ID or SKU source ID. | |
+| **productId** | **string**| A unique Voucherify product ID or product source ID. | |
+| **skuId** | **string**| A Voucherify SKU ID or SKU source ID. | |
 | **force** | **bool**| If this flag is set to true, the SKU will be removed permanently. If it is set to false or not set at all, the SKU will be moved to the bin. Going forward, the user will be able to create another SKU with exactly the same source_id. | [optional] |
 
 ### Return type
@@ -297,7 +297,7 @@ void (empty response body)
 ## `getProduct()`
 
 ```php
-getProduct($product_id): \OpenAPI\Client\Model\ProductsGetResponseBody
+getProduct($productId): \OpenAPI\Client\Model\ProductsGetResponseBody
 ```
 
 Get Product
@@ -328,10 +328,10 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$product_id = 'product_id_example'; // string | A Voucherify product ID or source ID.
+$productId = 'productId_example'; // string | A Voucherify product ID or source ID.
 
 try {
-    $result = $apiInstance->getProduct($product_id);
+    $result = $apiInstance->getProduct($productId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->getProduct: ', $e->getMessage(), PHP_EOL;
@@ -342,7 +342,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **product_id** | **string**| A Voucherify product ID or source ID. | |
+| **productId** | **string**| A Voucherify product ID or source ID. | |
 
 ### Return type
 
@@ -364,7 +364,7 @@ try {
 ## `getSku()`
 
 ```php
-getSku($sku_id): \OpenAPI\Client\Model\SkusGetResponseBody
+getSku($skuId): \OpenAPI\Client\Model\SkusGetResponseBody
 ```
 
 Get SKU
@@ -395,10 +395,10 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$sku_id = 'sku_id_example'; // string | A Voucherify SKU identifier or SKU source ID.
+$skuId = 'skuId_example'; // string | A Voucherify SKU identifier or SKU source ID.
 
 try {
-    $result = $apiInstance->getSku($sku_id);
+    $result = $apiInstance->getSku($skuId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->getSku: ', $e->getMessage(), PHP_EOL;
@@ -409,7 +409,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **sku_id** | **string**| A Voucherify SKU identifier or SKU source ID. | |
+| **skuId** | **string**| A Voucherify SKU identifier or SKU source ID. | |
 
 ### Return type
 
@@ -565,7 +565,7 @@ try {
 ## `listProducts()`
 
 ```php
-listProducts($limit, $page, $order, $start_date, $end_date): \OpenAPI\Client\Model\ProductsListResponseBody
+listProducts($limit, $page, $order, $startDate, $endDate): \OpenAPI\Client\Model\ProductsListResponseBody
 ```
 
 List Products
@@ -599,11 +599,11 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 $order = new \OpenAPI\Client\Model\ParameterOrder(); // ParameterOrder | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
-$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
 
 try {
-    $result = $apiInstance->listProducts($limit, $page, $order, $start_date, $end_date);
+    $result = $apiInstance->listProducts($limit, $page, $order, $startDate, $endDate);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->listProducts: ', $e->getMessage(), PHP_EOL;
@@ -617,8 +617,8 @@ try {
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 | **order** | [**ParameterOrder**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
-| **start_date** | **\DateTime**| Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
-| **end_date** | **\DateTime**| Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
+| **startDate** | **\DateTime**| Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
+| **endDate** | **\DateTime**| Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
 
 ### Return type
 
@@ -640,7 +640,7 @@ try {
 ## `listSkusInProduct()`
 
 ```php
-listSkusInProduct($product_id, $limit, $page, $order, $start_date, $end_date): \OpenAPI\Client\Model\ProductsSkusListResponseBody
+listSkusInProduct($productId, $limit, $page, $order, $startDate, $endDate): \OpenAPI\Client\Model\ProductsSkusListResponseBody
 ```
 
 List SKUs in Product
@@ -671,15 +671,15 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$product_id = 'product_id_example'; // string | A Voucherify product ID or product source ID.
+$productId = 'productId_example'; // string | A Voucherify product ID or product source ID.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 $order = new \OpenAPI\Client\Model\ParameterOrder(); // ParameterOrder | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
-$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
 
 try {
-    $result = $apiInstance->listSkusInProduct($product_id, $limit, $page, $order, $start_date, $end_date);
+    $result = $apiInstance->listSkusInProduct($productId, $limit, $page, $order, $startDate, $endDate);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->listSkusInProduct: ', $e->getMessage(), PHP_EOL;
@@ -690,12 +690,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **product_id** | **string**| A Voucherify product ID or product source ID. | |
+| **productId** | **string**| A Voucherify product ID or product source ID. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 | **order** | [**ParameterOrder**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
-| **start_date** | **\DateTime**| Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
-| **end_date** | **\DateTime**| Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
+| **startDate** | **\DateTime**| Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
+| **endDate** | **\DateTime**| Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
 
 ### Return type
 
@@ -717,7 +717,7 @@ try {
 ## `updateProduct()`
 
 ```php
-updateProduct($product_id, $products_update_request_body): \OpenAPI\Client\Model\ProductsUpdateResponseBody
+updateProduct($productId, $productsUpdateRequestBody): \OpenAPI\Client\Model\ProductsUpdateResponseBody
 ```
 
 Update Product
@@ -748,11 +748,11 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$product_id = 'product_id_example'; // string | A Voucherify product ID or source ID.
-$products_update_request_body = {"price":210000}; // \OpenAPI\Client\Model\ProductsUpdateRequestBody | Specify the parameters of the product that are to be updated.
+$productId = 'productId_example'; // string | A Voucherify product ID or source ID.
+$productsUpdateRequestBody = {"price":210000}; // \OpenAPI\Client\Model\ProductsUpdateRequestBody | Specify the parameters of the product that are to be updated.
 
 try {
-    $result = $apiInstance->updateProduct($product_id, $products_update_request_body);
+    $result = $apiInstance->updateProduct($productId, $productsUpdateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->updateProduct: ', $e->getMessage(), PHP_EOL;
@@ -763,8 +763,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **product_id** | **string**| A Voucherify product ID or source ID. | |
-| **products_update_request_body** | [**\OpenAPI\Client\Model\ProductsUpdateRequestBody**](../Model/ProductsUpdateRequestBody.md)| Specify the parameters of the product that are to be updated. | [optional] |
+| **productId** | **string**| A Voucherify product ID or source ID. | |
+| **productsUpdateRequestBody** | [**\OpenAPI\Client\Model\ProductsUpdateRequestBody**](../Model/ProductsUpdateRequestBody.md)| Specify the parameters of the product that are to be updated. | [optional] |
 
 ### Return type
 
@@ -786,7 +786,7 @@ try {
 ## `updateProductsInBulk()`
 
 ```php
-updateProductsInBulk($products_update_in_bulk_request_body): \OpenAPI\Client\Model\ProductsUpdateInBulkResponseBody
+updateProductsInBulk($productsUpdateInBulkRequestBody): \OpenAPI\Client\Model\ProductsUpdateInBulkResponseBody
 ```
 
 Update Products in Bulk
@@ -817,10 +817,10 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$products_update_in_bulk_request_body = [{"source_id":"first_product","name":"Samsung Phone 1","price":220000,"attributes":["color","memory","processor"],"metadata":{"test":true,"vendor":"Online Store - 3"},"image_url":"https://voucherify-uploads.s3.amazonaws.com/org_2qt8DYlM/img_Z2qvs2KFnQyo2Ohz4uhsjGtf.png"},{"source_id":"second_product","name":"Samsung Phone 2","price":230000,"attributes":["color","memory","processor"],"metadata":{"test":true,"vendor":"Online Store - 4"},"image_url":"https://voucherify-uploads.s3.amazonaws.com/org_2qt8DYlM/img_Z2qvs2KFnQyo2Ohz4uhsjGtf.png"}]; // \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] | List the product fields to be updated in each customer object.
+$productsUpdateInBulkRequestBody = [{"source_id":"first_product","name":"Samsung Phone 1","price":220000,"attributes":["color","memory","processor"],"metadata":{"test":true,"vendor":"Online Store - 3"},"image_url":"https://voucherify-uploads.s3.amazonaws.com/org_2qt8DYlM/img_Z2qvs2KFnQyo2Ohz4uhsjGtf.png"},{"source_id":"second_product","name":"Samsung Phone 2","price":230000,"attributes":["color","memory","processor"],"metadata":{"test":true,"vendor":"Online Store - 4"},"image_url":"https://voucherify-uploads.s3.amazonaws.com/org_2qt8DYlM/img_Z2qvs2KFnQyo2Ohz4uhsjGtf.png"}]; // \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] | List the product fields to be updated in each customer object.
 
 try {
-    $result = $apiInstance->updateProductsInBulk($products_update_in_bulk_request_body);
+    $result = $apiInstance->updateProductsInBulk($productsUpdateInBulkRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->updateProductsInBulk: ', $e->getMessage(), PHP_EOL;
@@ -831,7 +831,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **products_update_in_bulk_request_body** | [**\OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[]**](../Model/ProductsUpdateInBulkRequestBody.md)| List the product fields to be updated in each customer object. | [optional] |
+| **productsUpdateInBulkRequestBody** | [**\OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[]**](../Model/ProductsUpdateInBulkRequestBody.md)| List the product fields to be updated in each customer object. | [optional] |
 
 ### Return type
 
@@ -853,7 +853,7 @@ try {
 ## `updateProductsMetadataInBulk()`
 
 ```php
-updateProductsMetadataInBulk($products_metadata_update_in_bulk_request_body): \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkResponseBody
+updateProductsMetadataInBulk($productsMetadataUpdateInBulkRequestBody): \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkResponseBody
 ```
 
 Update Products' Metadata in Bulk
@@ -884,10 +884,10 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$products_metadata_update_in_bulk_request_body = {"source_ids":["123-567-3433","test_volleyball"],"metadata":{"label":true,"origin":"PL"}}; // \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkRequestBody | List the source_ids of the products you would like to update with the metadata key/value pairs.
+$productsMetadataUpdateInBulkRequestBody = {"source_ids":["123-567-3433","test_volleyball"],"metadata":{"label":true,"origin":"PL"}}; // \OpenAPI\Client\Model\ProductsMetadataUpdateInBulkRequestBody | List the source_ids of the products you would like to update with the metadata key/value pairs.
 
 try {
-    $result = $apiInstance->updateProductsMetadataInBulk($products_metadata_update_in_bulk_request_body);
+    $result = $apiInstance->updateProductsMetadataInBulk($productsMetadataUpdateInBulkRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->updateProductsMetadataInBulk: ', $e->getMessage(), PHP_EOL;
@@ -898,7 +898,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **products_metadata_update_in_bulk_request_body** | [**\OpenAPI\Client\Model\ProductsMetadataUpdateInBulkRequestBody**](../Model/ProductsMetadataUpdateInBulkRequestBody.md)| List the source_ids of the products you would like to update with the metadata key/value pairs. | [optional] |
+| **productsMetadataUpdateInBulkRequestBody** | [**\OpenAPI\Client\Model\ProductsMetadataUpdateInBulkRequestBody**](../Model/ProductsMetadataUpdateInBulkRequestBody.md)| List the source_ids of the products you would like to update with the metadata key/value pairs. | [optional] |
 
 ### Return type
 
@@ -920,7 +920,7 @@ try {
 ## `updateSku()`
 
 ```php
-updateSku($product_id, $sku_id, $products_skus_update_request_body): \OpenAPI\Client\Model\ProductsSkusUpdateResponseBody
+updateSku($productId, $skuId, $productsSkusUpdateRequestBody): \OpenAPI\Client\Model\ProductsSkusUpdateResponseBody
 ```
 
 Update SKU
@@ -951,12 +951,12 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$product_id = 'product_id_example'; // string | A unique Voucherify product ID or product source ID.
-$sku_id = 'sku_id_example'; // string | A Voucherify SKU ID or SKU source ID.
-$products_skus_update_request_body = {"price":210000,"currency":"PLN"}; // \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody | Specify the parameters to be updated.
+$productId = 'productId_example'; // string | A unique Voucherify product ID or product source ID.
+$skuId = 'skuId_example'; // string | A Voucherify SKU ID or SKU source ID.
+$productsSkusUpdateRequestBody = {"price":210000,"currency":"PLN"}; // \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody | Specify the parameters to be updated.
 
 try {
-    $result = $apiInstance->updateSku($product_id, $sku_id, $products_skus_update_request_body);
+    $result = $apiInstance->updateSku($productId, $skuId, $productsSkusUpdateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->updateSku: ', $e->getMessage(), PHP_EOL;
@@ -967,9 +967,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **product_id** | **string**| A unique Voucherify product ID or product source ID. | |
-| **sku_id** | **string**| A Voucherify SKU ID or SKU source ID. | |
-| **products_skus_update_request_body** | [**\OpenAPI\Client\Model\ProductsSkusUpdateRequestBody**](../Model/ProductsSkusUpdateRequestBody.md)| Specify the parameters to be updated. | [optional] |
+| **productId** | **string**| A unique Voucherify product ID or product source ID. | |
+| **skuId** | **string**| A Voucherify SKU ID or SKU source ID. | |
+| **productsSkusUpdateRequestBody** | [**\OpenAPI\Client\Model\ProductsSkusUpdateRequestBody**](../Model/ProductsSkusUpdateRequestBody.md)| Specify the parameters to be updated. | [optional] |
 
 ### Return type
 

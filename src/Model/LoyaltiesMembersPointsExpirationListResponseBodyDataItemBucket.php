@@ -59,7 +59,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket implements 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total_points' => 'int'
+        'totalPoints' => 'int'
     ];
 
     /**
@@ -70,7 +70,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket implements 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'total_points' => null
+        'totalPoints' => null
     ];
 
     /**
@@ -79,7 +79,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket implements 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'total_points' => false
+        'totalPoints' => false
     ];
 
     /**
@@ -168,7 +168,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket implements 
      * @var string[]
      */
     protected static $attributeMap = [
-        'total_points' => 'total_points'
+        'totalPoints' => 'total_points'
     ];
 
     /**
@@ -177,7 +177,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket implements 
      * @var string[]
      */
     protected static $setters = [
-        'total_points' => 'setTotalPoints'
+        'totalPoints' => 'setTotalPoints'
     ];
 
     /**
@@ -186,7 +186,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket implements 
      * @var string[]
      */
     protected static $getters = [
-        'total_points' => 'getTotalPoints'
+        'totalPoints' => 'getTotalPoints'
     ];
 
     /**
@@ -246,7 +246,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket implements 
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('total_points', $data ?? [], null);
+        $this->setIfExists('totalPoints', $data ?? [], null);
     }
 
     /**
@@ -276,8 +276,8 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket implements 
     {
         $invalidProperties = [];
 
-        if ($this->container['total_points'] === null) {
-            $invalidProperties[] = "'total_points' can't be null";
+        if ($this->container['totalPoints'] === null) {
+            $invalidProperties[] = "'totalPoints' can't be null";
         }
         return $invalidProperties;
     }
@@ -295,28 +295,28 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket implements 
 
 
     /**
-     * Gets total_points
+     * Gets totalPoints
      *
      * @return int
      */
     public function getTotalPoints()
     {
-        return $this->container['total_points'];
+        return $this->container['totalPoints'];
     }
 
     /**
-     * Sets total_points
+     * Sets totalPoints
      *
-     * @param int $total_points Total number of points in the loyalty points bucket.
+     * @param int $totalPoints Total number of points in the loyalty points bucket.
      *
      * @return self
      */
-    public function setTotalPoints($total_points)
+    public function setTotalPoints($totalPoints)
     {
-        if (is_null($total_points)) {
-            throw new \InvalidArgumentException('non-nullable total_points cannot be null');
+        if (is_null($totalPoints)) {
+            throw new \InvalidArgumentException('non-nullable totalPoints cannot be null');
         }
-        $this->container['total_points'] = $total_points;
+        $this->container['totalPoints'] = $totalPoints;
 
         return $this;
     }

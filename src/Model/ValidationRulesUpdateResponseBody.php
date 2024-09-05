@@ -62,13 +62,13 @@ class ValidationRulesUpdateResponseBody implements ModelInterface, ArrayAccess, 
         'name' => 'string',
         'rules' => 'object',
         'error' => '\OpenAPI\Client\Model\ValidationRulesUpdateResponseBodyError',
-        'applicable_to' => '\OpenAPI\Client\Model\ValidationRulesUpdateResponseBodyApplicableTo',
+        'applicableTo' => '\OpenAPI\Client\Model\ValidationRulesUpdateResponseBodyApplicableTo',
         'type' => 'string',
-        'context_type' => 'string',
+        'contextType' => 'string',
         'id' => 'string',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
-        'assignments_count' => 'int',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
+        'assignmentsCount' => 'int',
         'object' => 'string'
     ];
 
@@ -83,13 +83,13 @@ class ValidationRulesUpdateResponseBody implements ModelInterface, ArrayAccess, 
         'name' => null,
         'rules' => null,
         'error' => null,
-        'applicable_to' => null,
+        'applicableTo' => null,
         'type' => null,
-        'context_type' => null,
+        'contextType' => null,
         'id' => null,
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
-        'assignments_count' => null,
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
+        'assignmentsCount' => null,
         'object' => null
     ];
 
@@ -102,13 +102,13 @@ class ValidationRulesUpdateResponseBody implements ModelInterface, ArrayAccess, 
         'name' => true,
 		'rules' => false,
 		'error' => true,
-		'applicable_to' => true,
+		'applicableTo' => true,
 		'type' => true,
-		'context_type' => true,
+		'contextType' => true,
 		'id' => true,
-		'created_at' => true,
-		'updated_at' => true,
-		'assignments_count' => true,
+		'createdAt' => true,
+		'updatedAt' => true,
+		'assignmentsCount' => true,
 		'object' => true
     ];
 
@@ -201,13 +201,13 @@ class ValidationRulesUpdateResponseBody implements ModelInterface, ArrayAccess, 
         'name' => 'name',
         'rules' => 'rules',
         'error' => 'error',
-        'applicable_to' => 'applicable_to',
+        'applicableTo' => 'applicable_to',
         'type' => 'type',
-        'context_type' => 'context_type',
+        'contextType' => 'context_type',
         'id' => 'id',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
-        'assignments_count' => 'assignments_count',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
+        'assignmentsCount' => 'assignments_count',
         'object' => 'object'
     ];
 
@@ -220,13 +220,13 @@ class ValidationRulesUpdateResponseBody implements ModelInterface, ArrayAccess, 
         'name' => 'setName',
         'rules' => 'setRules',
         'error' => 'setError',
-        'applicable_to' => 'setApplicableTo',
+        'applicableTo' => 'setApplicableTo',
         'type' => 'setType',
-        'context_type' => 'setContextType',
+        'contextType' => 'setContextType',
         'id' => 'setId',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt',
-        'assignments_count' => 'setAssignmentsCount',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
+        'assignmentsCount' => 'setAssignmentsCount',
         'object' => 'setObject'
     ];
 
@@ -239,13 +239,13 @@ class ValidationRulesUpdateResponseBody implements ModelInterface, ArrayAccess, 
         'name' => 'getName',
         'rules' => 'getRules',
         'error' => 'getError',
-        'applicable_to' => 'getApplicableTo',
+        'applicableTo' => 'getApplicableTo',
         'type' => 'getType',
-        'context_type' => 'getContextType',
+        'contextType' => 'getContextType',
         'id' => 'getId',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt',
-        'assignments_count' => 'getAssignmentsCount',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
+        'assignmentsCount' => 'getAssignmentsCount',
         'object' => 'getObject'
     ];
 
@@ -453,13 +453,13 @@ class ValidationRulesUpdateResponseBody implements ModelInterface, ArrayAccess, 
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('rules', $data ?? [], null);
         $this->setIfExists('error', $data ?? [], null);
-        $this->setIfExists('applicable_to', $data ?? [], null);
+        $this->setIfExists('applicableTo', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], 'expression');
-        $this->setIfExists('context_type', $data ?? [], 'global');
+        $this->setIfExists('contextType', $data ?? [], 'global');
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('updated_at', $data ?? [], null);
-        $this->setIfExists('assignments_count', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('updatedAt', $data ?? [], null);
+        $this->setIfExists('assignmentsCount', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'validation_rules');
     }
 
@@ -500,10 +500,10 @@ class ValidationRulesUpdateResponseBody implements ModelInterface, ArrayAccess, 
         }
 
         $allowedValues = $this->getContextTypeAllowableValues();
-        if (!is_null($this->container['context_type']) && !in_array($this->container['context_type'], $allowedValues, true)) {
+        if (!is_null($this->container['contextType']) && !in_array($this->container['contextType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'context_type', must be one of '%s'",
-                $this->container['context_type'],
+                "invalid value '%s' for 'contextType', must be one of '%s'",
+                $this->container['contextType'],
                 implode("', '", $allowedValues)
             );
         }
@@ -619,35 +619,35 @@ class ValidationRulesUpdateResponseBody implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets applicable_to
+     * Gets applicableTo
      *
      * @return \OpenAPI\Client\Model\ValidationRulesUpdateResponseBodyApplicableTo|null
      */
     public function getApplicableTo()
     {
-        return $this->container['applicable_to'];
+        return $this->container['applicableTo'];
     }
 
     /**
-     * Sets applicable_to
+     * Sets applicableTo
      *
-     * @param \OpenAPI\Client\Model\ValidationRulesUpdateResponseBodyApplicableTo|null $applicable_to applicable_to
+     * @param \OpenAPI\Client\Model\ValidationRulesUpdateResponseBodyApplicableTo|null $applicableTo applicableTo
      *
      * @return self
      */
-    public function setApplicableTo($applicable_to)
+    public function setApplicableTo($applicableTo)
     {
-        if (is_null($applicable_to)) {
-            array_push($this->openAPINullablesSetToNull, 'applicable_to');
+        if (is_null($applicableTo)) {
+            array_push($this->openAPINullablesSetToNull, 'applicableTo');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('applicable_to', $nullablesSetToNull);
+            $index = array_search('applicableTo', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['applicable_to'] = $applicable_to;
+        $this->container['applicableTo'] = $applicableTo;
 
         return $this;
     }
@@ -697,45 +697,45 @@ class ValidationRulesUpdateResponseBody implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets context_type
+     * Gets contextType
      *
      * @return string|null
      */
     public function getContextType()
     {
-        return $this->container['context_type'];
+        return $this->container['contextType'];
     }
 
     /**
-     * Sets context_type
+     * Sets contextType
      *
-     * @param string|null $context_type Validation rule context type.    | **Context Type** | **Definition** | |:---|:---| | earning_rule.order.paid |  | | earning_rule.custom_event |  | | earning_rule.customer.segment.entered |  | | campaign.discount_coupons |  | | campaign.discount_coupons.discount.apply_to_order |  | | campaign.discount_coupons.discount.apply_to_items |  | | campaign.discount_coupons.discount.apply_to_items_proportionally |  | | campaign.discount_coupons.discount.apply_to_items_proportionally_by_quantity |  | | campaign.discount_coupons.discount.fixed.apply_to_items |  | | campaign.gift_vouchers |  | | campaign.gift_vouchers.gift.apply_to_order |  | | campaign.gift_vouchers.gift.apply_to_items |  | | campaign.referral_program |  | | campaign.referral_program.discount.apply_to_order |  | | campaign.referral_program.discount.apply_to_items |  | | campaign.referral_program.discount.apply_to_items_proportionally |  | | campaign.referral_program.discount.apply_to_items_proportionally_by_quantity |  | | campaign.referral_program.discount.fixed.apply_to_items |  | | campaign.promotion |  | | campaign.promotion.discount.apply_to_order |  | | campaign.promotion.discount.apply_to_items |  | | campaign.promotion.discount.apply_to_items_proportionally |  | | campaign.promotion.discount.apply_to_items_proportionally_by_quantity |  | | campaign.promotion.discount.fixed.apply_to_items |  | | campaign.loyalty_program |  | | campaign.lucky_draw |  | | voucher.discount_voucher |  | | voucher.discount_voucher.discount.apply_to_order |  | | voucher.discount_voucher.discount.apply_to_items |  | | voucher.discount_voucher.discount.apply_to_items_proportionally |  | | voucher.discount_voucher.discount.apply_to_items_proportionally_by_quantity |  | | voucher.discount_voucher.discount.fixed.apply_to_items |  | | voucher.gift_voucher |  | | voucher.gift_voucher.gift.apply_to_order |  | | voucher.gift_voucher.gift.apply_to_items |  | | voucher.loyalty_card |  | | voucher.lucky_draw_code |  | | distribution.custom_event |  | | reward_assignment.pay_with_points |  | | global |  |
+     * @param string|null $contextType Validation rule context type.    | **Context Type** | **Definition** | |:---|:---| | earning_rule.order.paid |  | | earning_rule.custom_event |  | | earning_rule.customer.segment.entered |  | | campaign.discount_coupons |  | | campaign.discount_coupons.discount.apply_to_order |  | | campaign.discount_coupons.discount.apply_to_items |  | | campaign.discount_coupons.discount.apply_to_items_proportionally |  | | campaign.discount_coupons.discount.apply_to_items_proportionally_by_quantity |  | | campaign.discount_coupons.discount.fixed.apply_to_items |  | | campaign.gift_vouchers |  | | campaign.gift_vouchers.gift.apply_to_order |  | | campaign.gift_vouchers.gift.apply_to_items |  | | campaign.referral_program |  | | campaign.referral_program.discount.apply_to_order |  | | campaign.referral_program.discount.apply_to_items |  | | campaign.referral_program.discount.apply_to_items_proportionally |  | | campaign.referral_program.discount.apply_to_items_proportionally_by_quantity |  | | campaign.referral_program.discount.fixed.apply_to_items |  | | campaign.promotion |  | | campaign.promotion.discount.apply_to_order |  | | campaign.promotion.discount.apply_to_items |  | | campaign.promotion.discount.apply_to_items_proportionally |  | | campaign.promotion.discount.apply_to_items_proportionally_by_quantity |  | | campaign.promotion.discount.fixed.apply_to_items |  | | campaign.loyalty_program |  | | campaign.lucky_draw |  | | voucher.discount_voucher |  | | voucher.discount_voucher.discount.apply_to_order |  | | voucher.discount_voucher.discount.apply_to_items |  | | voucher.discount_voucher.discount.apply_to_items_proportionally |  | | voucher.discount_voucher.discount.apply_to_items_proportionally_by_quantity |  | | voucher.discount_voucher.discount.fixed.apply_to_items |  | | voucher.gift_voucher |  | | voucher.gift_voucher.gift.apply_to_order |  | | voucher.gift_voucher.gift.apply_to_items |  | | voucher.loyalty_card |  | | voucher.lucky_draw_code |  | | distribution.custom_event |  | | reward_assignment.pay_with_points |  | | global |  |
      *
      * @return self
      */
-    public function setContextType($context_type)
+    public function setContextType($contextType)
     {
-        if (is_null($context_type)) {
-            array_push($this->openAPINullablesSetToNull, 'context_type');
+        if (is_null($contextType)) {
+            array_push($this->openAPINullablesSetToNull, 'contextType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('context_type', $nullablesSetToNull);
+            $index = array_search('contextType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getContextTypeAllowableValues();
-        if (!is_null($context_type) && !in_array($context_type, $allowedValues, true)) {
+        if (!is_null($contextType) && !in_array($contextType, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'context_type', must be one of '%s'",
-                    $context_type,
+                    "Invalid value '%s' for 'contextType', must be one of '%s'",
+                    $contextType,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['context_type'] = $context_type;
+        $this->container['contextType'] = $contextType;
 
         return $this;
     }
@@ -775,103 +775,103 @@ class ValidationRulesUpdateResponseBody implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the validation rule was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the validation rule was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \DateTime|null $updated_at Timestamp representing the date and time when the validation rule was updated. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the validation rule was updated. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        if (is_null($updated_at)) {
-            array_push($this->openAPINullablesSetToNull, 'updated_at');
+        if (is_null($updatedAt)) {
+            array_push($this->openAPINullablesSetToNull, 'updatedAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updated_at', $nullablesSetToNull);
+            $index = array_search('updatedAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }
 
     /**
-     * Gets assignments_count
+     * Gets assignmentsCount
      *
      * @return int|null
      */
     public function getAssignmentsCount()
     {
-        return $this->container['assignments_count'];
+        return $this->container['assignmentsCount'];
     }
 
     /**
-     * Sets assignments_count
+     * Sets assignmentsCount
      *
-     * @param int|null $assignments_count The number of instances the validation rule has been assigned to different types of redeemables.
+     * @param int|null $assignmentsCount The number of instances the validation rule has been assigned to different types of redeemables.
      *
      * @return self
      */
-    public function setAssignmentsCount($assignments_count)
+    public function setAssignmentsCount($assignmentsCount)
     {
-        if (is_null($assignments_count)) {
-            array_push($this->openAPINullablesSetToNull, 'assignments_count');
+        if (is_null($assignmentsCount)) {
+            array_push($this->openAPINullablesSetToNull, 'assignmentsCount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('assignments_count', $nullablesSetToNull);
+            $index = array_search('assignmentsCount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['assignments_count'] = $assignments_count;
+        $this->container['assignmentsCount'] = $assignmentsCount;
 
         return $this;
     }

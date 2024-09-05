@@ -59,7 +59,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'conditions' => '\OpenAPI\Client\Model\FilterConditionsDateTimeConditions',
+        'conditions' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAtConditions',
         'junction' => 'string'
     ];
 
@@ -325,7 +325,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
     /**
      * Gets conditions
      *
-     * @return \OpenAPI\Client\Model\FilterConditionsDateTimeConditions|null
+     * @return \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAtConditions|null
      */
     public function getConditions()
     {
@@ -335,7 +335,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
     /**
      * Sets conditions
      *
-     * @param \OpenAPI\Client\Model\FilterConditionsDateTimeConditions|null $conditions conditions
+     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAtConditions|null $conditions conditions
      *
      * @return self
      */

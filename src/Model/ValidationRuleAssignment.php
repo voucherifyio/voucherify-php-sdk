@@ -60,10 +60,10 @@ class ValidationRuleAssignment implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'rule_id' => 'string',
-        'related_object_id' => 'string',
-        'related_object_type' => 'string',
-        'created_at' => '\DateTime',
+        'ruleId' => 'string',
+        'relatedObjectId' => 'string',
+        'relatedObjectType' => 'string',
+        'createdAt' => '\DateTime',
         'object' => 'string'
     ];
 
@@ -76,10 +76,10 @@ class ValidationRuleAssignment implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'rule_id' => null,
-        'related_object_id' => null,
-        'related_object_type' => null,
-        'created_at' => 'date-time',
+        'ruleId' => null,
+        'relatedObjectId' => null,
+        'relatedObjectType' => null,
+        'createdAt' => 'date-time',
         'object' => null
     ];
 
@@ -90,10 +90,10 @@ class ValidationRuleAssignment implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static array $openAPINullables = [
         'id' => true,
-		'rule_id' => true,
-		'related_object_id' => true,
-		'related_object_type' => true,
-		'created_at' => true,
+		'ruleId' => true,
+		'relatedObjectId' => true,
+		'relatedObjectType' => true,
+		'createdAt' => true,
 		'object' => true
     ];
 
@@ -184,10 +184,10 @@ class ValidationRuleAssignment implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'rule_id' => 'rule_id',
-        'related_object_id' => 'related_object_id',
-        'related_object_type' => 'related_object_type',
-        'created_at' => 'created_at',
+        'ruleId' => 'rule_id',
+        'relatedObjectId' => 'related_object_id',
+        'relatedObjectType' => 'related_object_type',
+        'createdAt' => 'created_at',
         'object' => 'object'
     ];
 
@@ -198,10 +198,10 @@ class ValidationRuleAssignment implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $setters = [
         'id' => 'setId',
-        'rule_id' => 'setRuleId',
-        'related_object_id' => 'setRelatedObjectId',
-        'related_object_type' => 'setRelatedObjectType',
-        'created_at' => 'setCreatedAt',
+        'ruleId' => 'setRuleId',
+        'relatedObjectId' => 'setRelatedObjectId',
+        'relatedObjectType' => 'setRelatedObjectType',
+        'createdAt' => 'setCreatedAt',
         'object' => 'setObject'
     ];
 
@@ -212,10 +212,10 @@ class ValidationRuleAssignment implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $getters = [
         'id' => 'getId',
-        'rule_id' => 'getRuleId',
-        'related_object_id' => 'getRelatedObjectId',
-        'related_object_type' => 'getRelatedObjectType',
-        'created_at' => 'getCreatedAt',
+        'ruleId' => 'getRuleId',
+        'relatedObjectId' => 'getRelatedObjectId',
+        'relatedObjectType' => 'getRelatedObjectType',
+        'createdAt' => 'getCreatedAt',
         'object' => 'getObject'
     ];
 
@@ -313,10 +313,10 @@ class ValidationRuleAssignment implements ModelInterface, ArrayAccess, \JsonSeri
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('rule_id', $data ?? [], null);
-        $this->setIfExists('related_object_id', $data ?? [], null);
-        $this->setIfExists('related_object_type', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('ruleId', $data ?? [], null);
+        $this->setIfExists('relatedObjectId', $data ?? [], null);
+        $this->setIfExists('relatedObjectType', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'validation_rules_assignment');
     }
 
@@ -348,10 +348,10 @@ class ValidationRuleAssignment implements ModelInterface, ArrayAccess, \JsonSeri
         $invalidProperties = [];
 
         $allowedValues = $this->getRelatedObjectTypeAllowableValues();
-        if (!is_null($this->container['related_object_type']) && !in_array($this->container['related_object_type'], $allowedValues, true)) {
+        if (!is_null($this->container['relatedObjectType']) && !in_array($this->container['relatedObjectType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'related_object_type', must be one of '%s'",
-                $this->container['related_object_type'],
+                "invalid value '%s' for 'relatedObjectType', must be one of '%s'",
+                $this->container['relatedObjectType'],
                 implode("', '", $allowedValues)
             );
         }
@@ -415,147 +415,147 @@ class ValidationRuleAssignment implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets rule_id
+     * Gets ruleId
      *
      * @return string|null
      */
     public function getRuleId()
     {
-        return $this->container['rule_id'];
+        return $this->container['ruleId'];
     }
 
     /**
-     * Sets rule_id
+     * Sets ruleId
      *
-     * @param string|null $rule_id Validation rule ID.
+     * @param string|null $ruleId Validation rule ID.
      *
      * @return self
      */
-    public function setRuleId($rule_id)
+    public function setRuleId($ruleId)
     {
-        if (is_null($rule_id)) {
-            array_push($this->openAPINullablesSetToNull, 'rule_id');
+        if (is_null($ruleId)) {
+            array_push($this->openAPINullablesSetToNull, 'ruleId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rule_id', $nullablesSetToNull);
+            $index = array_search('ruleId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['rule_id'] = $rule_id;
+        $this->container['ruleId'] = $ruleId;
 
         return $this;
     }
 
     /**
-     * Gets related_object_id
+     * Gets relatedObjectId
      *
      * @return string|null
      */
     public function getRelatedObjectId()
     {
-        return $this->container['related_object_id'];
+        return $this->container['relatedObjectId'];
     }
 
     /**
-     * Sets related_object_id
+     * Sets relatedObjectId
      *
-     * @param string|null $related_object_id The resource ID to which the validation rule was assigned.
+     * @param string|null $relatedObjectId The resource ID to which the validation rule was assigned.
      *
      * @return self
      */
-    public function setRelatedObjectId($related_object_id)
+    public function setRelatedObjectId($relatedObjectId)
     {
-        if (is_null($related_object_id)) {
-            array_push($this->openAPINullablesSetToNull, 'related_object_id');
+        if (is_null($relatedObjectId)) {
+            array_push($this->openAPINullablesSetToNull, 'relatedObjectId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('related_object_id', $nullablesSetToNull);
+            $index = array_search('relatedObjectId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['related_object_id'] = $related_object_id;
+        $this->container['relatedObjectId'] = $relatedObjectId;
 
         return $this;
     }
 
     /**
-     * Gets related_object_type
+     * Gets relatedObjectType
      *
      * @return string|null
      */
     public function getRelatedObjectType()
     {
-        return $this->container['related_object_type'];
+        return $this->container['relatedObjectType'];
     }
 
     /**
-     * Sets related_object_type
+     * Sets relatedObjectType
      *
-     * @param string|null $related_object_type The type of resource to which the validation rule was assigned.
+     * @param string|null $relatedObjectType The type of resource to which the validation rule was assigned.
      *
      * @return self
      */
-    public function setRelatedObjectType($related_object_type)
+    public function setRelatedObjectType($relatedObjectType)
     {
-        if (is_null($related_object_type)) {
-            array_push($this->openAPINullablesSetToNull, 'related_object_type');
+        if (is_null($relatedObjectType)) {
+            array_push($this->openAPINullablesSetToNull, 'relatedObjectType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('related_object_type', $nullablesSetToNull);
+            $index = array_search('relatedObjectType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getRelatedObjectTypeAllowableValues();
-        if (!is_null($related_object_type) && !in_array($related_object_type, $allowedValues, true)) {
+        if (!is_null($relatedObjectType) && !in_array($relatedObjectType, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'related_object_type', must be one of '%s'",
-                    $related_object_type,
+                    "Invalid value '%s' for 'relatedObjectType', must be one of '%s'",
+                    $relatedObjectType,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['related_object_type'] = $related_object_type;
+        $this->container['relatedObjectType'] = $relatedObjectType;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the validation rule assignment was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the validation rule assignment was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }

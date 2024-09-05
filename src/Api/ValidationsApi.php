@@ -128,16 +128,16 @@ class ValidationsApi
      *
      * Validate Stackable Discounts
      *
-     * @param  \OpenAPI\Client\Model\ValidationsValidateRequestBody $validations_validate_request_body validations_validate_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ValidationsValidateRequestBody $validationsValidateRequestBody validationsValidateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateStackedDiscounts'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ValidationsValidateResponseBody
      */
-    public function validateStackedDiscounts($validations_validate_request_body = null, string $contentType = self::contentTypes['validateStackedDiscounts'][0])
+    public function validateStackedDiscounts($validationsValidateRequestBody = null, string $contentType = self::contentTypes['validateStackedDiscounts'][0])
     {
-        list($response) = $this->validateStackedDiscountsWithHttpInfo($validations_validate_request_body, $contentType);
+        list($response) = $this->validateStackedDiscountsWithHttpInfo($validationsValidateRequestBody, $contentType);
         return $response;
     }
 
@@ -146,16 +146,16 @@ class ValidationsApi
      *
      * Validate Stackable Discounts
      *
-     * @param  \OpenAPI\Client\Model\ValidationsValidateRequestBody $validations_validate_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ValidationsValidateRequestBody $validationsValidateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateStackedDiscounts'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ValidationsValidateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function validateStackedDiscountsWithHttpInfo($validations_validate_request_body = null, string $contentType = self::contentTypes['validateStackedDiscounts'][0])
+    public function validateStackedDiscountsWithHttpInfo($validationsValidateRequestBody = null, string $contentType = self::contentTypes['validateStackedDiscounts'][0])
     {
-        $request = $this->validateStackedDiscountsRequest($validations_validate_request_body, $contentType);
+        $request = $this->validateStackedDiscountsRequest($validationsValidateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -246,15 +246,15 @@ class ValidationsApi
      *
      * Validate Stackable Discounts
      *
-     * @param  \OpenAPI\Client\Model\ValidationsValidateRequestBody $validations_validate_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ValidationsValidateRequestBody $validationsValidateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateStackedDiscounts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function validateStackedDiscountsAsync($validations_validate_request_body = null, string $contentType = self::contentTypes['validateStackedDiscounts'][0])
+    public function validateStackedDiscountsAsync($validationsValidateRequestBody = null, string $contentType = self::contentTypes['validateStackedDiscounts'][0])
     {
-        return $this->validateStackedDiscountsAsyncWithHttpInfo($validations_validate_request_body, $contentType)
+        return $this->validateStackedDiscountsAsyncWithHttpInfo($validationsValidateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -267,16 +267,16 @@ class ValidationsApi
      *
      * Validate Stackable Discounts
      *
-     * @param  \OpenAPI\Client\Model\ValidationsValidateRequestBody $validations_validate_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ValidationsValidateRequestBody $validationsValidateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateStackedDiscounts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function validateStackedDiscountsAsyncWithHttpInfo($validations_validate_request_body = null, string $contentType = self::contentTypes['validateStackedDiscounts'][0])
+    public function validateStackedDiscountsAsyncWithHttpInfo($validationsValidateRequestBody = null, string $contentType = self::contentTypes['validateStackedDiscounts'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ValidationsValidateResponseBody';
-        $request = $this->validateStackedDiscountsRequest($validations_validate_request_body, $contentType);
+        $request = $this->validateStackedDiscountsRequest($validationsValidateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -317,13 +317,13 @@ class ValidationsApi
     /**
      * Create request for operation 'validateStackedDiscounts'
      *
-     * @param  \OpenAPI\Client\Model\ValidationsValidateRequestBody $validations_validate_request_body (optional)
+     * @param  \OpenAPI\Client\Model\ValidationsValidateRequestBody $validationsValidateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateStackedDiscounts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function validateStackedDiscountsRequest($validations_validate_request_body = null, string $contentType = self::contentTypes['validateStackedDiscounts'][0])
+    public function validateStackedDiscountsRequest($validationsValidateRequestBody = null, string $contentType = self::contentTypes['validateStackedDiscounts'][0])
     {
 
 
@@ -346,12 +346,12 @@ class ValidationsApi
         );
 
         // for model (json/xml)
-        if (isset($validations_validate_request_body)) {
+        if (isset($validationsValidateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($validations_validate_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($validationsValidateRequestBody));
             } else {
-                $httpBody = $validations_validate_request_body;
+                $httpBody = $validationsValidateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

@@ -59,7 +59,7 @@ class LoyaltiesTiersCreateInBulkRequestBodyItem implements ModelInterface, Array
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'earning_rules' => 'array<string,\OpenAPI\Client\Model\MappingPoints>',
+        'earningRules' => 'array<string,\OpenAPI\Client\Model\MappingPoints>',
         'rewards' => 'array<string,\OpenAPI\Client\Model\MappingPoints>',
         'points' => '\OpenAPI\Client\Model\LoyaltyTierBasePoints',
         'metadata' => 'object'
@@ -74,7 +74,7 @@ class LoyaltiesTiersCreateInBulkRequestBodyItem implements ModelInterface, Array
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'earning_rules' => null,
+        'earningRules' => null,
         'rewards' => null,
         'points' => null,
         'metadata' => null
@@ -87,7 +87,7 @@ class LoyaltiesTiersCreateInBulkRequestBodyItem implements ModelInterface, Array
       */
     protected static array $openAPINullables = [
         'name' => true,
-		'earning_rules' => true,
+		'earningRules' => true,
 		'rewards' => true,
 		'points' => true,
 		'metadata' => false
@@ -180,7 +180,7 @@ class LoyaltiesTiersCreateInBulkRequestBodyItem implements ModelInterface, Array
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'earning_rules' => 'earning_rules',
+        'earningRules' => 'earning_rules',
         'rewards' => 'rewards',
         'points' => 'points',
         'metadata' => 'metadata'
@@ -193,7 +193,7 @@ class LoyaltiesTiersCreateInBulkRequestBodyItem implements ModelInterface, Array
      */
     protected static $setters = [
         'name' => 'setName',
-        'earning_rules' => 'setEarningRules',
+        'earningRules' => 'setEarningRules',
         'rewards' => 'setRewards',
         'points' => 'setPoints',
         'metadata' => 'setMetadata'
@@ -206,7 +206,7 @@ class LoyaltiesTiersCreateInBulkRequestBodyItem implements ModelInterface, Array
      */
     protected static $getters = [
         'name' => 'getName',
-        'earning_rules' => 'getEarningRules',
+        'earningRules' => 'getEarningRules',
         'rewards' => 'getRewards',
         'points' => 'getPoints',
         'metadata' => 'getMetadata'
@@ -270,7 +270,7 @@ class LoyaltiesTiersCreateInBulkRequestBodyItem implements ModelInterface, Array
     public function __construct(array $data = null)
     {
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('earning_rules', $data ?? [], null);
+        $this->setIfExists('earningRules', $data ?? [], null);
         $this->setIfExists('rewards', $data ?? [], null);
         $this->setIfExists('points', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
@@ -353,35 +353,35 @@ class LoyaltiesTiersCreateInBulkRequestBodyItem implements ModelInterface, Array
     }
 
     /**
-     * Gets earning_rules
+     * Gets earningRules
      *
      * @return array<string,\OpenAPI\Client\Model\MappingPoints>|null
      */
     public function getEarningRules()
     {
-        return $this->container['earning_rules'];
+        return $this->container['earningRules'];
     }
 
     /**
-     * Sets earning_rules
+     * Sets earningRules
      *
-     * @param array<string,\OpenAPI\Client\Model\MappingPoints>|null $earning_rules Contains a list of earning rule IDs and their points mapping for the given earning rule.
+     * @param array<string,\OpenAPI\Client\Model\MappingPoints>|null $earningRules Contains a list of earning rule IDs and their points mapping for the given earning rule.
      *
      * @return self
      */
-    public function setEarningRules($earning_rules)
+    public function setEarningRules($earningRules)
     {
-        if (is_null($earning_rules)) {
-            array_push($this->openAPINullablesSetToNull, 'earning_rules');
+        if (is_null($earningRules)) {
+            array_push($this->openAPINullablesSetToNull, 'earningRules');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('earning_rules', $nullablesSetToNull);
+            $index = array_search('earningRules', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['earning_rules'] = $earning_rules;
+        $this->container['earningRules'] = $earningRules;
 
         return $this;
     }

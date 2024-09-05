@@ -60,8 +60,8 @@ class LoyaltiesEarningRulesCreateResponseBodySource implements ModelInterface, A
       */
     protected static $openAPITypes = [
         'banner' => 'string',
-        'object_id' => 'string',
-        'object_type' => 'string'
+        'objectId' => 'string',
+        'objectType' => 'string'
     ];
 
     /**
@@ -73,8 +73,8 @@ class LoyaltiesEarningRulesCreateResponseBodySource implements ModelInterface, A
       */
     protected static $openAPIFormats = [
         'banner' => null,
-        'object_id' => null,
-        'object_type' => null
+        'objectId' => null,
+        'objectType' => null
     ];
 
     /**
@@ -84,8 +84,8 @@ class LoyaltiesEarningRulesCreateResponseBodySource implements ModelInterface, A
       */
     protected static array $openAPINullables = [
         'banner' => true,
-		'object_id' => true,
-		'object_type' => true
+		'objectId' => true,
+		'objectType' => true
     ];
 
     /**
@@ -175,8 +175,8 @@ class LoyaltiesEarningRulesCreateResponseBodySource implements ModelInterface, A
      */
     protected static $attributeMap = [
         'banner' => 'banner',
-        'object_id' => 'object_id',
-        'object_type' => 'object_type'
+        'objectId' => 'object_id',
+        'objectType' => 'object_type'
     ];
 
     /**
@@ -186,8 +186,8 @@ class LoyaltiesEarningRulesCreateResponseBodySource implements ModelInterface, A
      */
     protected static $setters = [
         'banner' => 'setBanner',
-        'object_id' => 'setObjectId',
-        'object_type' => 'setObjectType'
+        'objectId' => 'setObjectId',
+        'objectType' => 'setObjectType'
     ];
 
     /**
@@ -197,8 +197,8 @@ class LoyaltiesEarningRulesCreateResponseBodySource implements ModelInterface, A
      */
     protected static $getters = [
         'banner' => 'getBanner',
-        'object_id' => 'getObjectId',
-        'object_type' => 'getObjectType'
+        'objectId' => 'getObjectId',
+        'objectType' => 'getObjectType'
     ];
 
     /**
@@ -272,8 +272,8 @@ class LoyaltiesEarningRulesCreateResponseBodySource implements ModelInterface, A
     public function __construct(array $data = null)
     {
         $this->setIfExists('banner', $data ?? [], null);
-        $this->setIfExists('object_id', $data ?? [], null);
-        $this->setIfExists('object_type', $data ?? [], 'campaign');
+        $this->setIfExists('objectId', $data ?? [], null);
+        $this->setIfExists('objectType', $data ?? [], 'campaign');
     }
 
     /**
@@ -304,10 +304,10 @@ class LoyaltiesEarningRulesCreateResponseBodySource implements ModelInterface, A
         $invalidProperties = [];
 
         $allowedValues = $this->getObjectTypeAllowableValues();
-        if (!is_null($this->container['object_type']) && !in_array($this->container['object_type'], $allowedValues, true)) {
+        if (!is_null($this->container['objectType']) && !in_array($this->container['objectType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'object_type', must be one of '%s'",
-                $this->container['object_type'],
+                "invalid value '%s' for 'objectType', must be one of '%s'",
+                $this->container['objectType'],
                 implode("', '", $allowedValues)
             );
         }
@@ -362,79 +362,79 @@ class LoyaltiesEarningRulesCreateResponseBodySource implements ModelInterface, A
     }
 
     /**
-     * Gets object_id
+     * Gets objectId
      *
      * @return string|null
      */
     public function getObjectId()
     {
-        return $this->container['object_id'];
+        return $this->container['objectId'];
     }
 
     /**
-     * Sets object_id
+     * Sets objectId
      *
-     * @param string|null $object_id A unique campaign identifier assigned by the Voucherify API.
+     * @param string|null $objectId A unique campaign identifier assigned by the Voucherify API.
      *
      * @return self
      */
-    public function setObjectId($object_id)
+    public function setObjectId($objectId)
     {
-        if (is_null($object_id)) {
-            array_push($this->openAPINullablesSetToNull, 'object_id');
+        if (is_null($objectId)) {
+            array_push($this->openAPINullablesSetToNull, 'objectId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('object_id', $nullablesSetToNull);
+            $index = array_search('objectId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['object_id'] = $object_id;
+        $this->container['objectId'] = $objectId;
 
         return $this;
     }
 
     /**
-     * Gets object_type
+     * Gets objectType
      *
      * @return string|null
      */
     public function getObjectType()
     {
-        return $this->container['object_type'];
+        return $this->container['objectType'];
     }
 
     /**
-     * Sets object_type
+     * Sets objectType
      *
-     * @param string|null $object_type Defines the object associated with the earning rule. Defaults to `campaign`.
+     * @param string|null $objectType Defines the object associated with the earning rule. Defaults to `campaign`.
      *
      * @return self
      */
-    public function setObjectType($object_type)
+    public function setObjectType($objectType)
     {
-        if (is_null($object_type)) {
-            array_push($this->openAPINullablesSetToNull, 'object_type');
+        if (is_null($objectType)) {
+            array_push($this->openAPINullablesSetToNull, 'objectType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('object_type', $nullablesSetToNull);
+            $index = array_search('objectType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getObjectTypeAllowableValues();
-        if (!is_null($object_type) && !in_array($object_type, $allowedValues, true)) {
+        if (!is_null($objectType) && !in_array($objectType, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'object_type', must be one of '%s'",
-                    $object_type,
+                    "Invalid value '%s' for 'objectType', must be one of '%s'",
+                    $objectType,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['object_type'] = $object_type;
+        $this->container['objectType'] = $objectType;
 
         return $this;
     }

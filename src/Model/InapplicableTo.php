@@ -60,18 +60,21 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'object' => 'string',
         'id' => 'string',
-        'source_id' => 'string',
-        'product_id' => 'string',
-        'product_source_id' => 'string',
+        'sourceId' => 'string',
+        'productId' => 'string',
+        'productSourceId' => 'string',
         'strict' => 'bool',
         'price' => 'float',
-        'price_formula' => 'float',
+        'priceFormula' => 'float',
         'effect' => 'string',
-        'quantity_limit' => 'int',
-        'aggregated_quantity_limit' => 'int',
-        'amount_limit' => 'int',
-        'aggregated_amount_limit' => 'int',
-        'order_item_indices' => 'int[]'
+        'quantityLimit' => 'int',
+        'aggregatedQuantityLimit' => 'int',
+        'amountLimit' => 'int',
+        'aggregatedAmountLimit' => 'int',
+        'orderItemIndices' => 'int[]',
+        'repeat' => 'int',
+        'skipInitially' => 'int',
+        'target' => 'string'
     ];
 
     /**
@@ -84,18 +87,21 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'object' => null,
         'id' => null,
-        'source_id' => null,
-        'product_id' => null,
-        'product_source_id' => null,
+        'sourceId' => null,
+        'productId' => null,
+        'productSourceId' => null,
         'strict' => null,
         'price' => null,
-        'price_formula' => null,
+        'priceFormula' => null,
         'effect' => null,
-        'quantity_limit' => null,
-        'aggregated_quantity_limit' => null,
-        'amount_limit' => null,
-        'aggregated_amount_limit' => null,
-        'order_item_indices' => null
+        'quantityLimit' => null,
+        'aggregatedQuantityLimit' => null,
+        'amountLimit' => null,
+        'aggregatedAmountLimit' => null,
+        'orderItemIndices' => null,
+        'repeat' => null,
+        'skipInitially' => null,
+        'target' => null
     ];
 
     /**
@@ -106,18 +112,21 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'object' => true,
 		'id' => true,
-		'source_id' => true,
-		'product_id' => true,
-		'product_source_id' => true,
+		'sourceId' => true,
+		'productId' => true,
+		'productSourceId' => true,
 		'strict' => true,
 		'price' => true,
-		'price_formula' => true,
+		'priceFormula' => true,
 		'effect' => true,
-		'quantity_limit' => true,
-		'aggregated_quantity_limit' => true,
-		'amount_limit' => true,
-		'aggregated_amount_limit' => true,
-		'order_item_indices' => true
+		'quantityLimit' => true,
+		'aggregatedQuantityLimit' => true,
+		'amountLimit' => true,
+		'aggregatedAmountLimit' => true,
+		'orderItemIndices' => true,
+		'repeat' => true,
+		'skipInitially' => true,
+		'target' => true
     ];
 
     /**
@@ -208,18 +217,21 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'object' => 'object',
         'id' => 'id',
-        'source_id' => 'source_id',
-        'product_id' => 'product_id',
-        'product_source_id' => 'product_source_id',
+        'sourceId' => 'source_id',
+        'productId' => 'product_id',
+        'productSourceId' => 'product_source_id',
         'strict' => 'strict',
         'price' => 'price',
-        'price_formula' => 'price_formula',
+        'priceFormula' => 'price_formula',
         'effect' => 'effect',
-        'quantity_limit' => 'quantity_limit',
-        'aggregated_quantity_limit' => 'aggregated_quantity_limit',
-        'amount_limit' => 'amount_limit',
-        'aggregated_amount_limit' => 'aggregated_amount_limit',
-        'order_item_indices' => 'order_item_indices'
+        'quantityLimit' => 'quantity_limit',
+        'aggregatedQuantityLimit' => 'aggregated_quantity_limit',
+        'amountLimit' => 'amount_limit',
+        'aggregatedAmountLimit' => 'aggregated_amount_limit',
+        'orderItemIndices' => 'order_item_indices',
+        'repeat' => 'repeat',
+        'skipInitially' => 'skip_initially',
+        'target' => 'target'
     ];
 
     /**
@@ -230,18 +242,21 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'object' => 'setObject',
         'id' => 'setId',
-        'source_id' => 'setSourceId',
-        'product_id' => 'setProductId',
-        'product_source_id' => 'setProductSourceId',
+        'sourceId' => 'setSourceId',
+        'productId' => 'setProductId',
+        'productSourceId' => 'setProductSourceId',
         'strict' => 'setStrict',
         'price' => 'setPrice',
-        'price_formula' => 'setPriceFormula',
+        'priceFormula' => 'setPriceFormula',
         'effect' => 'setEffect',
-        'quantity_limit' => 'setQuantityLimit',
-        'aggregated_quantity_limit' => 'setAggregatedQuantityLimit',
-        'amount_limit' => 'setAmountLimit',
-        'aggregated_amount_limit' => 'setAggregatedAmountLimit',
-        'order_item_indices' => 'setOrderItemIndices'
+        'quantityLimit' => 'setQuantityLimit',
+        'aggregatedQuantityLimit' => 'setAggregatedQuantityLimit',
+        'amountLimit' => 'setAmountLimit',
+        'aggregatedAmountLimit' => 'setAggregatedAmountLimit',
+        'orderItemIndices' => 'setOrderItemIndices',
+        'repeat' => 'setRepeat',
+        'skipInitially' => 'setSkipInitially',
+        'target' => 'setTarget'
     ];
 
     /**
@@ -252,18 +267,21 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'object' => 'getObject',
         'id' => 'getId',
-        'source_id' => 'getSourceId',
-        'product_id' => 'getProductId',
-        'product_source_id' => 'getProductSourceId',
+        'sourceId' => 'getSourceId',
+        'productId' => 'getProductId',
+        'productSourceId' => 'getProductSourceId',
         'strict' => 'getStrict',
         'price' => 'getPrice',
-        'price_formula' => 'getPriceFormula',
+        'priceFormula' => 'getPriceFormula',
         'effect' => 'getEffect',
-        'quantity_limit' => 'getQuantityLimit',
-        'aggregated_quantity_limit' => 'getAggregatedQuantityLimit',
-        'amount_limit' => 'getAmountLimit',
-        'aggregated_amount_limit' => 'getAggregatedAmountLimit',
-        'order_item_indices' => 'getOrderItemIndices'
+        'quantityLimit' => 'getQuantityLimit',
+        'aggregatedQuantityLimit' => 'getAggregatedQuantityLimit',
+        'amountLimit' => 'getAmountLimit',
+        'aggregatedAmountLimit' => 'getAggregatedAmountLimit',
+        'orderItemIndices' => 'getOrderItemIndices',
+        'repeat' => 'getRepeat',
+        'skipInitially' => 'getSkipInitially',
+        'target' => 'getTarget'
     ];
 
     /**
@@ -359,18 +377,21 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('object', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('source_id', $data ?? [], null);
-        $this->setIfExists('product_id', $data ?? [], null);
-        $this->setIfExists('product_source_id', $data ?? [], null);
+        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('productId', $data ?? [], null);
+        $this->setIfExists('productSourceId', $data ?? [], null);
         $this->setIfExists('strict', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
-        $this->setIfExists('price_formula', $data ?? [], null);
+        $this->setIfExists('priceFormula', $data ?? [], null);
         $this->setIfExists('effect', $data ?? [], null);
-        $this->setIfExists('quantity_limit', $data ?? [], null);
-        $this->setIfExists('aggregated_quantity_limit', $data ?? [], null);
-        $this->setIfExists('amount_limit', $data ?? [], null);
-        $this->setIfExists('aggregated_amount_limit', $data ?? [], null);
-        $this->setIfExists('order_item_indices', $data ?? [], null);
+        $this->setIfExists('quantityLimit', $data ?? [], null);
+        $this->setIfExists('aggregatedQuantityLimit', $data ?? [], null);
+        $this->setIfExists('amountLimit', $data ?? [], null);
+        $this->setIfExists('aggregatedAmountLimit', $data ?? [], null);
+        $this->setIfExists('orderItemIndices', $data ?? [], null);
+        $this->setIfExists('repeat', $data ?? [], null);
+        $this->setIfExists('skipInitially', $data ?? [], null);
+        $this->setIfExists('target', $data ?? [], null);
     }
 
     /**
@@ -512,103 +533,103 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets source_id
+     * Gets sourceId
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['source_id'];
+        return $this->container['sourceId'];
     }
 
     /**
-     * Sets source_id
+     * Sets sourceId
      *
-     * @param string|null $source_id The source ID from your inventory system.
+     * @param string|null $sourceId The source ID from your inventory system.
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setSourceId($sourceId)
     {
-        if (is_null($source_id)) {
-            array_push($this->openAPINullablesSetToNull, 'source_id');
+        if (is_null($sourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'sourceId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('source_id', $nullablesSetToNull);
+            $index = array_search('sourceId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['source_id'] = $source_id;
+        $this->container['sourceId'] = $sourceId;
 
         return $this;
     }
 
     /**
-     * Gets product_id
+     * Gets productId
      *
      * @return string|null
      */
     public function getProductId()
     {
-        return $this->container['product_id'];
+        return $this->container['productId'];
     }
 
     /**
-     * Sets product_id
+     * Sets productId
      *
-     * @param string|null $product_id Parent product's unique ID assigned by Voucherify.
+     * @param string|null $productId Parent product's unique ID assigned by Voucherify.
      *
      * @return self
      */
-    public function setProductId($product_id)
+    public function setProductId($productId)
     {
-        if (is_null($product_id)) {
-            array_push($this->openAPINullablesSetToNull, 'product_id');
+        if (is_null($productId)) {
+            array_push($this->openAPINullablesSetToNull, 'productId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('product_id', $nullablesSetToNull);
+            $index = array_search('productId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['product_id'] = $product_id;
+        $this->container['productId'] = $productId;
 
         return $this;
     }
 
     /**
-     * Gets product_source_id
+     * Gets productSourceId
      *
      * @return string|null
      */
     public function getProductSourceId()
     {
-        return $this->container['product_source_id'];
+        return $this->container['productSourceId'];
     }
 
     /**
-     * Sets product_source_id
+     * Sets productSourceId
      *
-     * @param string|null $product_source_id Parent product's source ID from your inventory system.
+     * @param string|null $productSourceId Parent product's source ID from your inventory system.
      *
      * @return self
      */
-    public function setProductSourceId($product_source_id)
+    public function setProductSourceId($productSourceId)
     {
-        if (is_null($product_source_id)) {
-            array_push($this->openAPINullablesSetToNull, 'product_source_id');
+        if (is_null($productSourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'productSourceId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('product_source_id', $nullablesSetToNull);
+            $index = array_search('productSourceId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['product_source_id'] = $product_source_id;
+        $this->container['productSourceId'] = $productSourceId;
 
         return $this;
     }
@@ -682,35 +703,35 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets price_formula
+     * Gets priceFormula
      *
      * @return float|null
      */
     public function getPriceFormula()
     {
-        return $this->container['price_formula'];
+        return $this->container['priceFormula'];
     }
 
     /**
-     * Sets price_formula
+     * Sets priceFormula
      *
-     * @param float|null $price_formula Formula used to calculate the discounted price of an item.
+     * @param float|null $priceFormula Formula used to calculate the discounted price of an item.
      *
      * @return self
      */
-    public function setPriceFormula($price_formula)
+    public function setPriceFormula($priceFormula)
     {
-        if (is_null($price_formula)) {
-            array_push($this->openAPINullablesSetToNull, 'price_formula');
+        if (is_null($priceFormula)) {
+            array_push($this->openAPINullablesSetToNull, 'priceFormula');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('price_formula', $nullablesSetToNull);
+            $index = array_search('priceFormula', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['price_formula'] = $price_formula;
+        $this->container['priceFormula'] = $priceFormula;
 
         return $this;
     }
@@ -760,171 +781,273 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets quantity_limit
+     * Gets quantityLimit
      *
      * @return int|null
      */
     public function getQuantityLimit()
     {
-        return $this->container['quantity_limit'];
+        return $this->container['quantityLimit'];
     }
 
     /**
-     * Sets quantity_limit
+     * Sets quantityLimit
      *
-     * @param int|null $quantity_limit The maximum number of units allowed to be discounted per order line item.
+     * @param int|null $quantityLimit The maximum number of units allowed to be discounted per order line item.
      *
      * @return self
      */
-    public function setQuantityLimit($quantity_limit)
+    public function setQuantityLimit($quantityLimit)
     {
-        if (is_null($quantity_limit)) {
-            array_push($this->openAPINullablesSetToNull, 'quantity_limit');
+        if (is_null($quantityLimit)) {
+            array_push($this->openAPINullablesSetToNull, 'quantityLimit');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('quantity_limit', $nullablesSetToNull);
+            $index = array_search('quantityLimit', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['quantity_limit'] = $quantity_limit;
+        $this->container['quantityLimit'] = $quantityLimit;
 
         return $this;
     }
 
     /**
-     * Gets aggregated_quantity_limit
+     * Gets aggregatedQuantityLimit
      *
      * @return int|null
      */
     public function getAggregatedQuantityLimit()
     {
-        return $this->container['aggregated_quantity_limit'];
+        return $this->container['aggregatedQuantityLimit'];
     }
 
     /**
-     * Sets aggregated_quantity_limit
+     * Sets aggregatedQuantityLimit
      *
-     * @param int|null $aggregated_quantity_limit The maximum number of units allowed to be discounted combined across all matched order line items.
+     * @param int|null $aggregatedQuantityLimit The maximum number of units allowed to be discounted combined across all matched order line items.
      *
      * @return self
      */
-    public function setAggregatedQuantityLimit($aggregated_quantity_limit)
+    public function setAggregatedQuantityLimit($aggregatedQuantityLimit)
     {
-        if (is_null($aggregated_quantity_limit)) {
-            array_push($this->openAPINullablesSetToNull, 'aggregated_quantity_limit');
+        if (is_null($aggregatedQuantityLimit)) {
+            array_push($this->openAPINullablesSetToNull, 'aggregatedQuantityLimit');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('aggregated_quantity_limit', $nullablesSetToNull);
+            $index = array_search('aggregatedQuantityLimit', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['aggregated_quantity_limit'] = $aggregated_quantity_limit;
+        $this->container['aggregatedQuantityLimit'] = $aggregatedQuantityLimit;
 
         return $this;
     }
 
     /**
-     * Gets amount_limit
+     * Gets amountLimit
      *
      * @return int|null
      */
     public function getAmountLimit()
     {
-        return $this->container['amount_limit'];
+        return $this->container['amountLimit'];
     }
 
     /**
-     * Sets amount_limit
+     * Sets amountLimit
      *
-     * @param int|null $amount_limit Upper limit allowed to be applied as a discount per order line item. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $6 maximum discount is written as 600.
+     * @param int|null $amountLimit Upper limit allowed to be applied as a discount per order line item. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $6 maximum discount is written as 600.
      *
      * @return self
      */
-    public function setAmountLimit($amount_limit)
+    public function setAmountLimit($amountLimit)
     {
-        if (is_null($amount_limit)) {
-            array_push($this->openAPINullablesSetToNull, 'amount_limit');
+        if (is_null($amountLimit)) {
+            array_push($this->openAPINullablesSetToNull, 'amountLimit');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amount_limit', $nullablesSetToNull);
+            $index = array_search('amountLimit', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['amount_limit'] = $amount_limit;
+        $this->container['amountLimit'] = $amountLimit;
 
         return $this;
     }
 
     /**
-     * Gets aggregated_amount_limit
+     * Gets aggregatedAmountLimit
      *
      * @return int|null
      */
     public function getAggregatedAmountLimit()
     {
-        return $this->container['aggregated_amount_limit'];
+        return $this->container['aggregatedAmountLimit'];
     }
 
     /**
-     * Sets aggregated_amount_limit
+     * Sets aggregatedAmountLimit
      *
-     * @param int|null $aggregated_amount_limit Maximum discount amount per order. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $6 maximum discount on the entire order is written as 600. This value is definable for the following discount effects: - `APPLY_TO_ITEMS` (each item subtotal is discounted equally) - `APPLY_TO_ITEMS_BY_QUANTITY` (each unit of matched products has the same discount value)
+     * @param int|null $aggregatedAmountLimit Maximum discount amount per order. Value is multiplied by 100 to precisely represent 2 decimal places. For example, a $6 maximum discount on the entire order is written as 600. This value is definable for the following discount effects: - `APPLY_TO_ITEMS` (each item subtotal is discounted equally) - `APPLY_TO_ITEMS_BY_QUANTITY` (each unit of matched products has the same discount value)
      *
      * @return self
      */
-    public function setAggregatedAmountLimit($aggregated_amount_limit)
+    public function setAggregatedAmountLimit($aggregatedAmountLimit)
     {
-        if (is_null($aggregated_amount_limit)) {
-            array_push($this->openAPINullablesSetToNull, 'aggregated_amount_limit');
+        if (is_null($aggregatedAmountLimit)) {
+            array_push($this->openAPINullablesSetToNull, 'aggregatedAmountLimit');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('aggregated_amount_limit', $nullablesSetToNull);
+            $index = array_search('aggregatedAmountLimit', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['aggregated_amount_limit'] = $aggregated_amount_limit;
+        $this->container['aggregatedAmountLimit'] = $aggregatedAmountLimit;
 
         return $this;
     }
 
     /**
-     * Gets order_item_indices
+     * Gets orderItemIndices
      *
      * @return int[]|null
      */
     public function getOrderItemIndices()
     {
-        return $this->container['order_item_indices'];
+        return $this->container['orderItemIndices'];
     }
 
     /**
-     * Sets order_item_indices
+     * Sets orderItemIndices
      *
-     * @param int[]|null $order_item_indices order_item_indices
+     * @param int[]|null $orderItemIndices orderItemIndices
      *
      * @return self
      */
-    public function setOrderItemIndices($order_item_indices)
+    public function setOrderItemIndices($orderItemIndices)
     {
-        if (is_null($order_item_indices)) {
-            array_push($this->openAPINullablesSetToNull, 'order_item_indices');
+        if (is_null($orderItemIndices)) {
+            array_push($this->openAPINullablesSetToNull, 'orderItemIndices');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_item_indices', $nullablesSetToNull);
+            $index = array_search('orderItemIndices', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['order_item_indices'] = $order_item_indices;
+        $this->container['orderItemIndices'] = $orderItemIndices;
+
+        return $this;
+    }
+
+    /**
+     * Gets repeat
+     *
+     * @return int|null
+     */
+    public function getRepeat()
+    {
+        return $this->container['repeat'];
+    }
+
+    /**
+     * Sets repeat
+     *
+     * @param int|null $repeat repeat
+     *
+     * @return self
+     */
+    public function setRepeat($repeat)
+    {
+        if (is_null($repeat)) {
+            array_push($this->openAPINullablesSetToNull, 'repeat');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('repeat', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['repeat'] = $repeat;
+
+        return $this;
+    }
+
+    /**
+     * Gets skipInitially
+     *
+     * @return int|null
+     */
+    public function getSkipInitially()
+    {
+        return $this->container['skipInitially'];
+    }
+
+    /**
+     * Sets skipInitially
+     *
+     * @param int|null $skipInitially skipInitially
+     *
+     * @return self
+     */
+    public function setSkipInitially($skipInitially)
+    {
+        if (is_null($skipInitially)) {
+            array_push($this->openAPINullablesSetToNull, 'skipInitially');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('skipInitially', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['skipInitially'] = $skipInitially;
+
+        return $this;
+    }
+
+    /**
+     * Gets target
+     *
+     * @return string|null
+     */
+    public function getTarget()
+    {
+        return $this->container['target'];
+    }
+
+    /**
+     * Sets target
+     *
+     * @param string|null $target target
+     *
+     * @return self
+     */
+    public function setTarget($target)
+    {
+        if (is_null($target)) {
+            array_push($this->openAPINullablesSetToNull, 'target');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('target', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['target'] = $target;
 
         return $this;
     }

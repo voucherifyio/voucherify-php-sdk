@@ -20,7 +20,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `addVoucherWithSpecificCodeToCampaign()`
 
 ```php
-addVoucherWithSpecificCodeToCampaign($campaign_id, $code, $campaigns_vouchers_create_request_body): \OpenAPI\Client\Model\CampaignsVouchersCreateResponseBody
+addVoucherWithSpecificCodeToCampaign($campaignId, $code, $campaignsVouchersCreateRequestBody): \OpenAPI\Client\Model\CampaignsVouchersCreateResponseBody
 ```
 
 Add Voucher with Specific Code to Campaign
@@ -51,12 +51,12 @@ $apiInstance = new OpenAPI\Client\Api\CampaignsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
 $code = 'code_example'; // string | A custom **code** that identifies the voucher.
-$campaigns_vouchers_create_request_body = {"category_id":"cat_0bb81a481615a37b5e","start_date":"2022-09-24T00:00:00Z","expiration_date":"2022-09-25T23:59:59Z","active":false,"redemption":{"quantity":null},"additional_info":"Voucher added using API","metadata":{"Season":"Fall"}}; // \OpenAPI\Client\Model\CampaignsVouchersCreateRequestBody | Specify the voucher parameters that you would like to overwrite.
+$campaignsVouchersCreateRequestBody = {"category_id":"cat_0bb81a481615a37b5e","start_date":"2022-09-24T00:00:00Z","expiration_date":"2022-09-25T23:59:59Z","active":false,"redemption":{"quantity":null},"additional_info":"Voucher added using API","metadata":{"Season":"Fall"}}; // \OpenAPI\Client\Model\CampaignsVouchersCreateRequestBody | Specify the voucher parameters that you would like to overwrite.
 
 try {
-    $result = $apiInstance->addVoucherWithSpecificCodeToCampaign($campaign_id, $code, $campaigns_vouchers_create_request_body);
+    $result = $apiInstance->addVoucherWithSpecificCodeToCampaign($campaignId, $code, $campaignsVouchersCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsApi->addVoucherWithSpecificCodeToCampaign: ', $e->getMessage(), PHP_EOL;
@@ -67,9 +67,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
+| **campaignId** | **string**| The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
 | **code** | **string**| A custom **code** that identifies the voucher. | |
-| **campaigns_vouchers_create_request_body** | [**\OpenAPI\Client\Model\CampaignsVouchersCreateRequestBody**](../Model/CampaignsVouchersCreateRequestBody.md)| Specify the voucher parameters that you would like to overwrite. | [optional] |
+| **campaignsVouchersCreateRequestBody** | [**\OpenAPI\Client\Model\CampaignsVouchersCreateRequestBody**](../Model/CampaignsVouchersCreateRequestBody.md)| Specify the voucher parameters that you would like to overwrite. | [optional] |
 
 ### Return type
 
@@ -91,7 +91,7 @@ try {
 ## `addVouchersToCampaign()`
 
 ```php
-addVouchersToCampaign($campaign_id, $vouchers_count, $campaigns_vouchers_create_in_bulk_request_body): \OpenAPI\Client\Model\CampaignsVouchersCreateCombinedResponseBody
+addVouchersToCampaign($campaignId, $vouchersCount, $campaignsVouchersCreateInBulkRequestBody): \OpenAPI\Client\Model\CampaignsVouchersCreateCombinedResponseBody
 ```
 
 Add Vouchers to Campaign
@@ -122,12 +122,12 @@ $apiInstance = new OpenAPI\Client\Api\CampaignsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
-$vouchers_count = 56; // int | Number of vouchers that should be added.
-$campaigns_vouchers_create_in_bulk_request_body = new \OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody(); // \OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody | Specify the voucher parameters that you would like to overwrite.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
+$vouchersCount = 56; // int | Number of vouchers that should be added.
+$campaignsVouchersCreateInBulkRequestBody = new \OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody(); // \OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody | Specify the voucher parameters that you would like to overwrite.
 
 try {
-    $result = $apiInstance->addVouchersToCampaign($campaign_id, $vouchers_count, $campaigns_vouchers_create_in_bulk_request_body);
+    $result = $apiInstance->addVouchersToCampaign($campaignId, $vouchersCount, $campaignsVouchersCreateInBulkRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsApi->addVouchersToCampaign: ', $e->getMessage(), PHP_EOL;
@@ -138,9 +138,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
-| **vouchers_count** | **int**| Number of vouchers that should be added. | [optional] |
-| **campaigns_vouchers_create_in_bulk_request_body** | [**\OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody**](../Model/CampaignsVouchersCreateInBulkRequestBody.md)| Specify the voucher parameters that you would like to overwrite. | [optional] |
+| **campaignId** | **string**| The campaign ID or name of the campaign to which voucher(s) will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
+| **vouchersCount** | **int**| Number of vouchers that should be added. | [optional] |
+| **campaignsVouchersCreateInBulkRequestBody** | [**\OpenAPI\Client\Model\CampaignsVouchersCreateInBulkRequestBody**](../Model/CampaignsVouchersCreateInBulkRequestBody.md)| Specify the voucher parameters that you would like to overwrite. | [optional] |
 
 ### Return type
 
@@ -162,7 +162,7 @@ try {
 ## `createCampaign()`
 
 ```php
-createCampaign($campaigns_create_request_body): \OpenAPI\Client\Model\CampaignsCreateResponseBody
+createCampaign($campaignsCreateRequestBody): \OpenAPI\Client\Model\CampaignsCreateResponseBody
 ```
 
 Create Campaign
@@ -193,10 +193,10 @@ $apiInstance = new OpenAPI\Client\Api\CampaignsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaigns_create_request_body = {"name":"Discount Campaign 4","campaign_type":"DISCOUNT_COUPONS","join_once":true,"type":"AUTO_UPDATE","category_id":"cat_0bb343dee3cdb5ec0c","start_date":"2020-08-16T00:00:00Z","expiration_date":"2023-12-26T00:00:00Z","vouchers_count":3,"voucher":{"type":"DISCOUNT_VOUCHER","discount":{"percent_off":10,"type":"PERCENT"},"redemption":{"quantity":10},"code_config":{"pattern":"10OFF-#######"}},"validity_timeframe":{"interval":"P2D","duration":"P1D"},"validity_day_of_week":[0,1,2],"activity_duration_after_publishing":"P24D","use_voucher_metadata_schema":false,"metadata":{"region":"AMER"}}; // \OpenAPI\Client\Model\CampaignsCreateRequestBody | Specify the details of the campaign that you would like to create.
+$campaignsCreateRequestBody = {"name":"Discount Campaign 4","campaign_type":"DISCOUNT_COUPONS","join_once":true,"type":"AUTO_UPDATE","category_id":"cat_0bb343dee3cdb5ec0c","start_date":"2020-08-16T00:00:00Z","expiration_date":"2023-12-26T00:00:00Z","vouchers_count":3,"voucher":{"type":"DISCOUNT_VOUCHER","discount":{"percent_off":10,"type":"PERCENT"},"redemption":{"quantity":10},"code_config":{"pattern":"10OFF-#######"}},"validity_timeframe":{"interval":"P2D","duration":"P1D"},"validity_day_of_week":[0,1,2],"activity_duration_after_publishing":"P24D","use_voucher_metadata_schema":false,"metadata":{"region":"AMER"}}; // \OpenAPI\Client\Model\CampaignsCreateRequestBody | Specify the details of the campaign that you would like to create.
 
 try {
-    $result = $apiInstance->createCampaign($campaigns_create_request_body);
+    $result = $apiInstance->createCampaign($campaignsCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsApi->createCampaign: ', $e->getMessage(), PHP_EOL;
@@ -207,7 +207,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaigns_create_request_body** | [**\OpenAPI\Client\Model\CampaignsCreateRequestBody**](../Model/CampaignsCreateRequestBody.md)| Specify the details of the campaign that you would like to create. | [optional] |
+| **campaignsCreateRequestBody** | [**\OpenAPI\Client\Model\CampaignsCreateRequestBody**](../Model/CampaignsCreateRequestBody.md)| Specify the details of the campaign that you would like to create. | [optional] |
 
 ### Return type
 
@@ -229,7 +229,7 @@ try {
 ## `deleteCampaign()`
 
 ```php
-deleteCampaign($campaign_id, $force): \OpenAPI\Client\Model\CampaignsDeleteResponseBody
+deleteCampaign($campaignId, $force): \OpenAPI\Client\Model\CampaignsDeleteResponseBody
 ```
 
 Delete Campaign
@@ -260,11 +260,11 @@ $apiInstance = new OpenAPI\Client\Api\CampaignsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
+$campaignId = 'campaignId_example'; // string | You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
 $force = True; // bool | If this flag is set to true, the campaign and related vouchers will be removed permanently. If it is set to false or not set at all, the campaign and related vouchers will be moved to the bin. Going forward, the user will be able to create the next campaign with exactly the same name.
 
 try {
-    $result = $apiInstance->deleteCampaign($campaign_id, $force);
+    $result = $apiInstance->deleteCampaign($campaignId, $force);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsApi->deleteCampaign: ', $e->getMessage(), PHP_EOL;
@@ -275,7 +275,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
+| **campaignId** | **string**| You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
 | **force** | **bool**| If this flag is set to true, the campaign and related vouchers will be removed permanently. If it is set to false or not set at all, the campaign and related vouchers will be moved to the bin. Going forward, the user will be able to create the next campaign with exactly the same name. | [optional] |
 
 ### Return type
@@ -298,7 +298,7 @@ try {
 ## `disableCampaign()`
 
 ```php
-disableCampaign($campaign_id): object
+disableCampaign($campaignId): object
 ```
 
 Disable Campaign
@@ -329,10 +329,10 @@ $apiInstance = new OpenAPI\Client\Api\CampaignsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
 
 try {
-    $result = $apiInstance->disableCampaign($campaign_id);
+    $result = $apiInstance->disableCampaign($campaignId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsApi->disableCampaign: ', $e->getMessage(), PHP_EOL;
@@ -343,7 +343,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
+| **campaignId** | **string**| The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
 
 ### Return type
 
@@ -365,7 +365,7 @@ try {
 ## `enableCampaign()`
 
 ```php
-enableCampaign($campaign_id): object
+enableCampaign($campaignId): object
 ```
 
 Enable Campaign
@@ -396,10 +396,10 @@ $apiInstance = new OpenAPI\Client\Api\CampaignsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value.
 
 try {
-    $result = $apiInstance->enableCampaign($campaign_id);
+    $result = $apiInstance->enableCampaign($campaignId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsApi->enableCampaign: ', $e->getMessage(), PHP_EOL;
@@ -410,7 +410,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. | |
+| **campaignId** | **string**| The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. | |
 
 ### Return type
 
@@ -432,7 +432,7 @@ try {
 ## `getCampaign()`
 
 ```php
-getCampaign($campaign_id): \OpenAPI\Client\Model\CampaignsGetResponseBody
+getCampaign($campaignId): \OpenAPI\Client\Model\CampaignsGetResponseBody
 ```
 
 Get Campaign
@@ -463,10 +463,10 @@ $apiInstance = new OpenAPI\Client\Api\CampaignsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
+$campaignId = 'campaignId_example'; // string | You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
 
 try {
-    $result = $apiInstance->getCampaign($campaign_id);
+    $result = $apiInstance->getCampaign($campaignId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsApi->getCampaign: ', $e->getMessage(), PHP_EOL;
@@ -477,7 +477,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
+| **campaignId** | **string**| You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
 
 ### Return type
 
@@ -499,7 +499,7 @@ try {
 ## `importVouchersToCampaign()`
 
 ```php
-importVouchersToCampaign($campaign_id, $campaigns_import_voucher_item): \OpenAPI\Client\Model\CampaignsImportCreateResponseBody
+importVouchersToCampaign($campaignId, $campaignsImportVoucherItem): \OpenAPI\Client\Model\CampaignsImportCreateResponseBody
 ```
 
 Import Vouchers to Campaign
@@ -530,11 +530,11 @@ $apiInstance = new OpenAPI\Client\Api\CampaignsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
-$campaigns_import_voucher_item = [{"code":"CODE7","category":"First","redemption":{"quantity":1},"metadata":{"season":"Fall"},"additional_info":"secret-code1","active":true},{"code":"CODE8","category":"Second","redemption":{"quantity":18},"metadata":{"season":"Fall"},"additional_info":"secret-code1","active":true},{"code":"CODE9","category_id":"cat_0bb343dee3cdb5ec0c","redemption":{"quantity":4},"metadata":{"season":"Fall"},"additional_info":"secret-code1","active":true}]; // \OpenAPI\Client\Model\CampaignsImportVoucherItem[] | Discount type, expiration date and the remaining attributes will be taken from the Campaign settings.
+$campaignId = 'campaignId_example'; // string | The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
+$campaignsImportVoucherItem = [{"code":"CODE7","category":"First","redemption":{"quantity":1},"metadata":{"season":"Fall"},"additional_info":"secret-code1","active":true},{"code":"CODE8","category":"Second","redemption":{"quantity":18},"metadata":{"season":"Fall"},"additional_info":"secret-code1","active":true},{"code":"CODE9","category_id":"cat_0bb343dee3cdb5ec0c","redemption":{"quantity":4},"metadata":{"season":"Fall"},"additional_info":"secret-code1","active":true}]; // \OpenAPI\Client\Model\CampaignsImportVoucherItem[] | Discount type, expiration date and the remaining attributes will be taken from the Campaign settings.
 
 try {
-    $result = $apiInstance->importVouchersToCampaign($campaign_id, $campaigns_import_voucher_item);
+    $result = $apiInstance->importVouchersToCampaign($campaignId, $campaignsImportVoucherItem);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsApi->importVouchersToCampaign: ', $e->getMessage(), PHP_EOL;
@@ -545,8 +545,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
-| **campaigns_import_voucher_item** | [**\OpenAPI\Client\Model\CampaignsImportVoucherItem[]**](../Model/CampaignsImportVoucherItem.md)| Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. | [optional] |
+| **campaignId** | **string**| The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
+| **campaignsImportVoucherItem** | [**\OpenAPI\Client\Model\CampaignsImportVoucherItem[]**](../Model/CampaignsImportVoucherItem.md)| Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. | [optional] |
 
 ### Return type
 
@@ -568,7 +568,7 @@ try {
 ## `importVouchersToCampaignUsingCsv()`
 
 ```php
-importVouchersToCampaignUsingCsv($campaign_id, $file): \OpenAPI\Client\Model\CampaignsImportCsvCreateResponseBody
+importVouchersToCampaignUsingCsv($campaignId, $file): \OpenAPI\Client\Model\CampaignsImportCsvCreateResponseBody
 ```
 
 Import Vouchers to Campaign by CSV
@@ -599,11 +599,11 @@ $apiInstance = new OpenAPI\Client\Api\CampaignsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value.
+$campaignId = 'campaignId_example'; // string | The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value.
 $file = "/path/to/file.txt"; // \SplFileObject | File path.
 
 try {
-    $result = $apiInstance->importVouchersToCampaignUsingCsv($campaign_id, $file);
+    $result = $apiInstance->importVouchersToCampaignUsingCsv($campaignId, $file);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsApi->importVouchersToCampaignUsingCsv: ', $e->getMessage(), PHP_EOL;
@@ -614,7 +614,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. | |
+| **campaignId** | **string**| The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value. | |
 | **file** | **\SplFileObject****\SplFileObject**| File path. | [optional] |
 
 ### Return type
@@ -637,7 +637,7 @@ try {
 ## `listCampaigns()`
 
 ```php
-listCampaigns($limit, $page, $campaign_type, $expand, $order): \OpenAPI\Client\Model\CampaignsListResponseBody
+listCampaigns($limit, $page, $campaignType, $expand, $order): \OpenAPI\Client\Model\CampaignsListResponseBody
 ```
 
 List Campaigns
@@ -670,12 +670,12 @@ $apiInstance = new OpenAPI\Client\Api\CampaignsApi(
 );
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
-$campaign_type = new \OpenAPI\Client\Model\ParameterCampaignType(); // ParameterCampaignType | This attribute allows filtering by campaign type.
+$campaignType = new \OpenAPI\Client\Model\ParameterCampaignType(); // ParameterCampaignType | This attribute allows filtering by campaign type.
 $expand = new \OpenAPI\Client\Model\ParameterExpandListCampaigns(); // ParameterExpandListCampaigns | Include an expanded categories object in the response.
 $order = new \OpenAPI\Client\Model\ParameterOrderListCampaigns(); // ParameterOrderListCampaigns | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
 
 try {
-    $result = $apiInstance->listCampaigns($limit, $page, $campaign_type, $expand, $order);
+    $result = $apiInstance->listCampaigns($limit, $page, $campaignType, $expand, $order);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsApi->listCampaigns: ', $e->getMessage(), PHP_EOL;
@@ -688,7 +688,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
-| **campaign_type** | [**ParameterCampaignType**](../Model/.md)| This attribute allows filtering by campaign type. | [optional] |
+| **campaignType** | [**ParameterCampaignType**](../Model/.md)| This attribute allows filtering by campaign type. | [optional] |
 | **expand** | [**ParameterExpandListCampaigns**](../Model/.md)| Include an expanded categories object in the response. | [optional] |
 | **order** | [**ParameterOrderListCampaigns**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
 
@@ -712,7 +712,7 @@ try {
 ## `updateCampaign()`
 
 ```php
-updateCampaign($campaign_id, $campaigns_update_request_body): \OpenAPI\Client\Model\CampaignsUpdateResponseBody
+updateCampaign($campaignId, $campaignsUpdateRequestBody): \OpenAPI\Client\Model\CampaignsUpdateResponseBody
 ```
 
 Update Campaign
@@ -743,11 +743,11 @@ $apiInstance = new OpenAPI\Client\Api\CampaignsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 'campaign_id_example'; // string | You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
-$campaigns_update_request_body = {"description":"New description"}; // \OpenAPI\Client\Model\CampaignsUpdateRequestBody | Specify the campaign parameters to be updated.
+$campaignId = 'campaignId_example'; // string | You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
+$campaignsUpdateRequestBody = {"description":"New description"}; // \OpenAPI\Client\Model\CampaignsUpdateRequestBody | Specify the campaign parameters to be updated.
 
 try {
-    $result = $apiInstance->updateCampaign($campaign_id, $campaigns_update_request_body);
+    $result = $apiInstance->updateCampaign($campaignId, $campaignsUpdateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsApi->updateCampaign: ', $e->getMessage(), PHP_EOL;
@@ -758,8 +758,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **string**| You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
-| **campaigns_update_request_body** | [**\OpenAPI\Client\Model\CampaignsUpdateRequestBody**](../Model/CampaignsUpdateRequestBody.md)| Specify the campaign parameters to be updated. | [optional] |
+| **campaignId** | **string**| You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
+| **campaignsUpdateRequestBody** | [**\OpenAPI\Client\Model\CampaignsUpdateRequestBody**](../Model/CampaignsUpdateRequestBody.md)| Specify the campaign parameters to be updated. | [optional] |
 
 ### Return type
 

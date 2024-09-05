@@ -60,7 +60,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResult implements Mode
     protected static $openAPITypes = [
         'discount' => '\OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount',
         'gift' => '\OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItemResultGift',
-        'loyalty_card' => '\OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard',
+        'loyaltyCard' => '\OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard',
         'error' => '\OpenAPI\Client\Model\Error',
         'details' => '\OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItemResultDetails'
     ];
@@ -75,7 +75,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResult implements Mode
     protected static $openAPIFormats = [
         'discount' => null,
         'gift' => null,
-        'loyalty_card' => null,
+        'loyaltyCard' => null,
         'error' => null,
         'details' => null
     ];
@@ -88,7 +88,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResult implements Mode
     protected static array $openAPINullables = [
         'discount' => false,
 		'gift' => true,
-		'loyalty_card' => false,
+		'loyaltyCard' => false,
 		'error' => false,
 		'details' => false
     ];
@@ -181,7 +181,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResult implements Mode
     protected static $attributeMap = [
         'discount' => 'discount',
         'gift' => 'gift',
-        'loyalty_card' => 'loyalty_card',
+        'loyaltyCard' => 'loyalty_card',
         'error' => 'error',
         'details' => 'details'
     ];
@@ -194,7 +194,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResult implements Mode
     protected static $setters = [
         'discount' => 'setDiscount',
         'gift' => 'setGift',
-        'loyalty_card' => 'setLoyaltyCard',
+        'loyaltyCard' => 'setLoyaltyCard',
         'error' => 'setError',
         'details' => 'setDetails'
     ];
@@ -207,7 +207,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResult implements Mode
     protected static $getters = [
         'discount' => 'getDiscount',
         'gift' => 'getGift',
-        'loyalty_card' => 'getLoyaltyCard',
+        'loyaltyCard' => 'getLoyaltyCard',
         'error' => 'getError',
         'details' => 'getDetails'
     ];
@@ -271,7 +271,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResult implements Mode
     {
         $this->setIfExists('discount', $data ?? [], null);
         $this->setIfExists('gift', $data ?? [], null);
-        $this->setIfExists('loyalty_card', $data ?? [], null);
+        $this->setIfExists('loyaltyCard', $data ?? [], null);
         $this->setIfExists('error', $data ?? [], null);
         $this->setIfExists('details', $data ?? [], null);
     }
@@ -380,28 +380,28 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResult implements Mode
     }
 
     /**
-     * Gets loyalty_card
+     * Gets loyaltyCard
      *
      * @return \OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard|null
      */
     public function getLoyaltyCard()
     {
-        return $this->container['loyalty_card'];
+        return $this->container['loyaltyCard'];
     }
 
     /**
-     * Sets loyalty_card
+     * Sets loyaltyCard
      *
-     * @param \OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard|null $loyalty_card loyalty_card
+     * @param \OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard|null $loyaltyCard loyaltyCard
      *
      * @return self
      */
-    public function setLoyaltyCard($loyalty_card)
+    public function setLoyaltyCard($loyaltyCard)
     {
-        if (is_null($loyalty_card)) {
-            throw new \InvalidArgumentException('non-nullable loyalty_card cannot be null');
+        if (is_null($loyaltyCard)) {
+            throw new \InvalidArgumentException('non-nullable loyaltyCard cannot be null');
         }
-        $this->container['loyalty_card'] = $loyalty_card;
+        $this->container['loyaltyCard'] = $loyaltyCard;
 
         return $this;
     }

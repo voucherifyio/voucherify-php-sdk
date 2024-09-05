@@ -59,9 +59,9 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'winners_count' => 'string',
-        'unique_winners_per_draw' => 'string',
-        'unique_winners' => 'string'
+        'winnersCount' => 'string',
+        'uniqueWinnersPerDraw' => 'string',
+        'uniqueWinners' => 'string'
     ];
 
     /**
@@ -72,9 +72,9 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'winners_count' => null,
-        'unique_winners_per_draw' => null,
-        'unique_winners' => null
+        'winnersCount' => null,
+        'uniqueWinnersPerDraw' => null,
+        'uniqueWinners' => null
     ];
 
     /**
@@ -83,9 +83,9 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'winners_count' => true,
-		'unique_winners_per_draw' => true,
-		'unique_winners' => true
+        'winnersCount' => true,
+		'uniqueWinnersPerDraw' => true,
+		'uniqueWinners' => true
     ];
 
     /**
@@ -174,9 +174,9 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'winners_count' => 'winners_count',
-        'unique_winners_per_draw' => 'unique_winners_per_draw',
-        'unique_winners' => 'unique_winners'
+        'winnersCount' => 'winners_count',
+        'uniqueWinnersPerDraw' => 'unique_winners_per_draw',
+        'uniqueWinners' => 'unique_winners'
     ];
 
     /**
@@ -185,9 +185,9 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'winners_count' => 'setWinnersCount',
-        'unique_winners_per_draw' => 'setUniqueWinnersPerDraw',
-        'unique_winners' => 'setUniqueWinners'
+        'winnersCount' => 'setWinnersCount',
+        'uniqueWinnersPerDraw' => 'setUniqueWinnersPerDraw',
+        'uniqueWinners' => 'setUniqueWinners'
     ];
 
     /**
@@ -196,9 +196,9 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'winners_count' => 'getWinnersCount',
-        'unique_winners_per_draw' => 'getUniqueWinnersPerDraw',
-        'unique_winners' => 'getUniqueWinners'
+        'winnersCount' => 'getWinnersCount',
+        'uniqueWinnersPerDraw' => 'getUniqueWinnersPerDraw',
+        'uniqueWinners' => 'getUniqueWinners'
     ];
 
     /**
@@ -258,9 +258,9 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('winners_count', $data ?? [], null);
-        $this->setIfExists('unique_winners_per_draw', $data ?? [], null);
-        $this->setIfExists('unique_winners', $data ?? [], null);
+        $this->setIfExists('winnersCount', $data ?? [], null);
+        $this->setIfExists('uniqueWinnersPerDraw', $data ?? [], null);
+        $this->setIfExists('uniqueWinners', $data ?? [], null);
     }
 
     /**
@@ -306,29 +306,29 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets winners_count
+     * Gets winnersCount
      *
      * @return string|null
      */
     public function getWinnersCount()
     {
-        return $this->container['winners_count'];
+        return $this->container['winnersCount'];
     }
 
     /**
-     * Sets winners_count
+     * Sets winnersCount
      *
-     * @param string|null $winners_count It represents the total number of winners in a lucky draw.
+     * @param string|null $winnersCount It represents the total number of winners in a lucky draw.
      *
      * @return self
      */
-    public function setWinnersCount($winners_count)
+    public function setWinnersCount($winnersCount)
     {
-        if (is_null($winners_count)) {
-            array_push($this->openAPINullablesSetToNull, 'winners_count');
+        if (is_null($winnersCount)) {
+            array_push($this->openAPINullablesSetToNull, 'winnersCount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('winners_count', $nullablesSetToNull);
+            $index = array_search('winnersCount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
@@ -336,75 +336,75 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
 
-        $this->container['winners_count'] = $winners_count;
+        $this->container['winnersCount'] = $winnersCount;
 
         return $this;
     }
 
     /**
-     * Gets unique_winners_per_draw
+     * Gets uniqueWinnersPerDraw
      *
      * @return string|null
      */
     public function getUniqueWinnersPerDraw()
     {
-        return $this->container['unique_winners_per_draw'];
+        return $this->container['uniqueWinnersPerDraw'];
     }
 
     /**
-     * Sets unique_winners_per_draw
+     * Sets uniqueWinnersPerDraw
      *
-     * @param string|null $unique_winners_per_draw It indicates whether each winner in a draw is unique or not.
+     * @param string|null $uniqueWinnersPerDraw It indicates whether each winner in a draw is unique or not.
      *
      * @return self
      */
-    public function setUniqueWinnersPerDraw($unique_winners_per_draw)
+    public function setUniqueWinnersPerDraw($uniqueWinnersPerDraw)
     {
-        if (is_null($unique_winners_per_draw)) {
-            array_push($this->openAPINullablesSetToNull, 'unique_winners_per_draw');
+        if (is_null($uniqueWinnersPerDraw)) {
+            array_push($this->openAPINullablesSetToNull, 'uniqueWinnersPerDraw');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unique_winners_per_draw', $nullablesSetToNull);
+            $index = array_search('uniqueWinnersPerDraw', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['unique_winners_per_draw'] = $unique_winners_per_draw;
+        $this->container['uniqueWinnersPerDraw'] = $uniqueWinnersPerDraw;
 
         return $this;
     }
 
     /**
-     * Gets unique_winners
+     * Gets uniqueWinners
      *
      * @return string|null
      */
     public function getUniqueWinners()
     {
-        return $this->container['unique_winners'];
+        return $this->container['uniqueWinners'];
     }
 
     /**
-     * Sets unique_winners
+     * Sets uniqueWinners
      *
-     * @param string|null $unique_winners Specifies whether each participant can win only once across multiple draws.
+     * @param string|null $uniqueWinners Specifies whether each participant can win only once across multiple draws.
      *
      * @return self
      */
-    public function setUniqueWinners($unique_winners)
+    public function setUniqueWinners($uniqueWinners)
     {
-        if (is_null($unique_winners)) {
-            array_push($this->openAPINullablesSetToNull, 'unique_winners');
+        if (is_null($uniqueWinners)) {
+            array_push($this->openAPINullablesSetToNull, 'uniqueWinners');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unique_winners', $nullablesSetToNull);
+            $index = array_search('uniqueWinners', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['unique_winners'] = $unique_winners;
+        $this->container['uniqueWinners'] = $uniqueWinners;
 
         return $this;
     }

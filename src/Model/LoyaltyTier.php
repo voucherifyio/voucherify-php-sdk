@@ -59,14 +59,14 @@ class LoyaltyTier implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'earning_rules' => 'array<string,\OpenAPI\Client\Model\MappingPoints>',
+        'earningRules' => 'array<string,\OpenAPI\Client\Model\MappingPoints>',
         'rewards' => 'array<string,\OpenAPI\Client\Model\MappingPoints>',
         'points' => '\OpenAPI\Client\Model\LoyaltyTierPoints',
         'id' => 'string',
-        'campaign_id' => 'string',
+        'campaignId' => 'string',
         'metadata' => 'object',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
         'config' => '\OpenAPI\Client\Model\LoyaltyTierConfig',
         'expiration' => '\OpenAPI\Client\Model\LoyaltyTierExpiration',
         'object' => 'string'
@@ -81,14 +81,14 @@ class LoyaltyTier implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'earning_rules' => null,
+        'earningRules' => null,
         'rewards' => null,
         'points' => null,
         'id' => null,
-        'campaign_id' => null,
+        'campaignId' => null,
         'metadata' => null,
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
         'config' => null,
         'expiration' => null,
         'object' => null
@@ -101,14 +101,14 @@ class LoyaltyTier implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'name' => true,
-		'earning_rules' => true,
+		'earningRules' => true,
 		'rewards' => true,
 		'points' => true,
 		'id' => true,
-		'campaign_id' => true,
+		'campaignId' => true,
 		'metadata' => true,
-		'created_at' => true,
-		'updated_at' => true,
+		'createdAt' => true,
+		'updatedAt' => true,
 		'config' => true,
 		'expiration' => false,
 		'object' => true
@@ -201,14 +201,14 @@ class LoyaltyTier implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'earning_rules' => 'earning_rules',
+        'earningRules' => 'earning_rules',
         'rewards' => 'rewards',
         'points' => 'points',
         'id' => 'id',
-        'campaign_id' => 'campaign_id',
+        'campaignId' => 'campaign_id',
         'metadata' => 'metadata',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
         'config' => 'config',
         'expiration' => 'expiration',
         'object' => 'object'
@@ -221,14 +221,14 @@ class LoyaltyTier implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'name' => 'setName',
-        'earning_rules' => 'setEarningRules',
+        'earningRules' => 'setEarningRules',
         'rewards' => 'setRewards',
         'points' => 'setPoints',
         'id' => 'setId',
-        'campaign_id' => 'setCampaignId',
+        'campaignId' => 'setCampaignId',
         'metadata' => 'setMetadata',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
         'config' => 'setConfig',
         'expiration' => 'setExpiration',
         'object' => 'setObject'
@@ -241,14 +241,14 @@ class LoyaltyTier implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'name' => 'getName',
-        'earning_rules' => 'getEarningRules',
+        'earningRules' => 'getEarningRules',
         'rewards' => 'getRewards',
         'points' => 'getPoints',
         'id' => 'getId',
-        'campaign_id' => 'getCampaignId',
+        'campaignId' => 'getCampaignId',
         'metadata' => 'getMetadata',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
         'config' => 'getConfig',
         'expiration' => 'getExpiration',
         'object' => 'getObject'
@@ -325,14 +325,14 @@ class LoyaltyTier implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('earning_rules', $data ?? [], null);
+        $this->setIfExists('earningRules', $data ?? [], null);
         $this->setIfExists('rewards', $data ?? [], null);
         $this->setIfExists('points', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('campaign_id', $data ?? [], null);
+        $this->setIfExists('campaignId', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('updatedAt', $data ?? [], null);
         $this->setIfExists('config', $data ?? [], null);
         $this->setIfExists('expiration', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'loyalty_tier');
@@ -424,35 +424,35 @@ class LoyaltyTier implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets earning_rules
+     * Gets earningRules
      *
      * @return array<string,\OpenAPI\Client\Model\MappingPoints>|null
      */
     public function getEarningRules()
     {
-        return $this->container['earning_rules'];
+        return $this->container['earningRules'];
     }
 
     /**
-     * Sets earning_rules
+     * Sets earningRules
      *
-     * @param array<string,\OpenAPI\Client\Model\MappingPoints>|null $earning_rules Contains a list of earning rule IDs and their points mapping for the given earning rule.
+     * @param array<string,\OpenAPI\Client\Model\MappingPoints>|null $earningRules Contains a list of earning rule IDs and their points mapping for the given earning rule.
      *
      * @return self
      */
-    public function setEarningRules($earning_rules)
+    public function setEarningRules($earningRules)
     {
-        if (is_null($earning_rules)) {
-            array_push($this->openAPINullablesSetToNull, 'earning_rules');
+        if (is_null($earningRules)) {
+            array_push($this->openAPINullablesSetToNull, 'earningRules');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('earning_rules', $nullablesSetToNull);
+            $index = array_search('earningRules', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['earning_rules'] = $earning_rules;
+        $this->container['earningRules'] = $earningRules;
 
         return $this;
     }
@@ -560,35 +560,35 @@ class LoyaltyTier implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets campaign_id
+     * Gets campaignId
      *
      * @return string|null
      */
     public function getCampaignId()
     {
-        return $this->container['campaign_id'];
+        return $this->container['campaignId'];
     }
 
     /**
-     * Sets campaign_id
+     * Sets campaignId
      *
-     * @param string|null $campaign_id Unique parent campaign ID.
+     * @param string|null $campaignId Unique parent campaign ID.
      *
      * @return self
      */
-    public function setCampaignId($campaign_id)
+    public function setCampaignId($campaignId)
     {
-        if (is_null($campaign_id)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_id');
+        if (is_null($campaignId)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_id', $nullablesSetToNull);
+            $index = array_search('campaignId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaign_id'] = $campaign_id;
+        $this->container['campaignId'] = $campaignId;
 
         return $this;
     }
@@ -628,69 +628,69 @@ class LoyaltyTier implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the loyalty tier was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the loyalty tier was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \DateTime|null $updated_at Timestamp representing the date and time when the loyalty tier was updated. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the loyalty tier was updated. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        if (is_null($updated_at)) {
-            array_push($this->openAPINullablesSetToNull, 'updated_at');
+        if (is_null($updatedAt)) {
+            array_push($this->openAPINullablesSetToNull, 'updatedAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updated_at', $nullablesSetToNull);
+            $index = array_search('updatedAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }

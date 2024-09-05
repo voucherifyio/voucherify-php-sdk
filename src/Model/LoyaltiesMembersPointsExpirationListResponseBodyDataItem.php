@@ -59,13 +59,13 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'voucher_id' => 'string',
-        'campaign_id' => 'string',
+        'voucherId' => 'string',
+        'campaignId' => 'string',
         'bucket' => '\OpenAPI\Client\Model\LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket',
-        'created_at' => '\DateTime',
+        'createdAt' => '\DateTime',
         'status' => 'string',
-        'expires_at' => '\DateTime',
-        'updated_at' => '\DateTime',
+        'expiresAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
         'object' => 'string'
     ];
 
@@ -78,13 +78,13 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'voucher_id' => null,
-        'campaign_id' => null,
+        'voucherId' => null,
+        'campaignId' => null,
         'bucket' => null,
-        'created_at' => 'date-time',
+        'createdAt' => 'date-time',
         'status' => null,
-        'expires_at' => 'date-time',
-        'updated_at' => 'date-time',
+        'expiresAt' => 'date-time',
+        'updatedAt' => 'date-time',
         'object' => null
     ];
 
@@ -95,13 +95,13 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
       */
     protected static array $openAPINullables = [
         'id' => false,
-		'voucher_id' => false,
-		'campaign_id' => false,
+		'voucherId' => false,
+		'campaignId' => false,
 		'bucket' => false,
-		'created_at' => false,
+		'createdAt' => false,
 		'status' => false,
-		'expires_at' => false,
-		'updated_at' => false,
+		'expiresAt' => false,
+		'updatedAt' => false,
 		'object' => false
     ];
 
@@ -192,13 +192,13 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'voucher_id' => 'voucher_id',
-        'campaign_id' => 'campaign_id',
+        'voucherId' => 'voucher_id',
+        'campaignId' => 'campaign_id',
         'bucket' => 'bucket',
-        'created_at' => 'created_at',
+        'createdAt' => 'created_at',
         'status' => 'status',
-        'expires_at' => 'expires_at',
-        'updated_at' => 'updated_at',
+        'expiresAt' => 'expires_at',
+        'updatedAt' => 'updated_at',
         'object' => 'object'
     ];
 
@@ -209,13 +209,13 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
      */
     protected static $setters = [
         'id' => 'setId',
-        'voucher_id' => 'setVoucherId',
-        'campaign_id' => 'setCampaignId',
+        'voucherId' => 'setVoucherId',
+        'campaignId' => 'setCampaignId',
         'bucket' => 'setBucket',
-        'created_at' => 'setCreatedAt',
+        'createdAt' => 'setCreatedAt',
         'status' => 'setStatus',
-        'expires_at' => 'setExpiresAt',
-        'updated_at' => 'setUpdatedAt',
+        'expiresAt' => 'setExpiresAt',
+        'updatedAt' => 'setUpdatedAt',
         'object' => 'setObject'
     ];
 
@@ -226,13 +226,13 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
      */
     protected static $getters = [
         'id' => 'getId',
-        'voucher_id' => 'getVoucherId',
-        'campaign_id' => 'getCampaignId',
+        'voucherId' => 'getVoucherId',
+        'campaignId' => 'getCampaignId',
         'bucket' => 'getBucket',
-        'created_at' => 'getCreatedAt',
+        'createdAt' => 'getCreatedAt',
         'status' => 'getStatus',
-        'expires_at' => 'getExpiresAt',
-        'updated_at' => 'getUpdatedAt',
+        'expiresAt' => 'getExpiresAt',
+        'updatedAt' => 'getUpdatedAt',
         'object' => 'getObject'
     ];
 
@@ -307,13 +307,13 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('voucher_id', $data ?? [], null);
-        $this->setIfExists('campaign_id', $data ?? [], null);
+        $this->setIfExists('voucherId', $data ?? [], null);
+        $this->setIfExists('campaignId', $data ?? [], null);
         $this->setIfExists('bucket', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('expires_at', $data ?? [], null);
-        $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('expiresAt', $data ?? [], null);
+        $this->setIfExists('updatedAt', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'loyalty_points_bucket');
     }
 
@@ -347,23 +347,23 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
-        if ($this->container['voucher_id'] === null) {
-            $invalidProperties[] = "'voucher_id' can't be null";
+        if ($this->container['voucherId'] === null) {
+            $invalidProperties[] = "'voucherId' can't be null";
         }
-        if ($this->container['campaign_id'] === null) {
-            $invalidProperties[] = "'campaign_id' can't be null";
+        if ($this->container['campaignId'] === null) {
+            $invalidProperties[] = "'campaignId' can't be null";
         }
         if ($this->container['bucket'] === null) {
             $invalidProperties[] = "'bucket' can't be null";
         }
-        if ($this->container['created_at'] === null) {
-            $invalidProperties[] = "'created_at' can't be null";
+        if ($this->container['createdAt'] === null) {
+            $invalidProperties[] = "'createdAt' can't be null";
         }
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
         }
-        if ($this->container['expires_at'] === null) {
-            $invalidProperties[] = "'expires_at' can't be null";
+        if ($this->container['expiresAt'] === null) {
+            $invalidProperties[] = "'expiresAt' can't be null";
         }
         if ($this->container['object'] === null) {
             $invalidProperties[] = "'object' can't be null";
@@ -424,55 +424,55 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     }
 
     /**
-     * Gets voucher_id
+     * Gets voucherId
      *
      * @return string
      */
     public function getVoucherId()
     {
-        return $this->container['voucher_id'];
+        return $this->container['voucherId'];
     }
 
     /**
-     * Sets voucher_id
+     * Sets voucherId
      *
-     * @param string $voucher_id Unique parent loyalty card ID.
+     * @param string $voucherId Unique parent loyalty card ID.
      *
      * @return self
      */
-    public function setVoucherId($voucher_id)
+    public function setVoucherId($voucherId)
     {
-        if (is_null($voucher_id)) {
-            throw new \InvalidArgumentException('non-nullable voucher_id cannot be null');
+        if (is_null($voucherId)) {
+            throw new \InvalidArgumentException('non-nullable voucherId cannot be null');
         }
-        $this->container['voucher_id'] = $voucher_id;
+        $this->container['voucherId'] = $voucherId;
 
         return $this;
     }
 
     /**
-     * Gets campaign_id
+     * Gets campaignId
      *
      * @return string
      */
     public function getCampaignId()
     {
-        return $this->container['campaign_id'];
+        return $this->container['campaignId'];
     }
 
     /**
-     * Sets campaign_id
+     * Sets campaignId
      *
-     * @param string $campaign_id Unique parent campaign ID.
+     * @param string $campaignId Unique parent campaign ID.
      *
      * @return self
      */
-    public function setCampaignId($campaign_id)
+    public function setCampaignId($campaignId)
     {
-        if (is_null($campaign_id)) {
-            throw new \InvalidArgumentException('non-nullable campaign_id cannot be null');
+        if (is_null($campaignId)) {
+            throw new \InvalidArgumentException('non-nullable campaignId cannot be null');
         }
-        $this->container['campaign_id'] = $campaign_id;
+        $this->container['campaignId'] = $campaignId;
 
         return $this;
     }
@@ -505,28 +505,28 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime $created_at Timestamp representing the date and time when the loyalty points bucket object was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime $createdAt Timestamp representing the date and time when the loyalty points bucket object was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+        if (is_null($createdAt)) {
+            throw new \InvalidArgumentException('non-nullable createdAt cannot be null');
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
@@ -559,55 +559,55 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     }
 
     /**
-     * Gets expires_at
+     * Gets expiresAt
      *
      * @return \DateTime
      */
     public function getExpiresAt()
     {
-        return $this->container['expires_at'];
+        return $this->container['expiresAt'];
     }
 
     /**
-     * Sets expires_at
+     * Sets expiresAt
      *
-     * @param \DateTime $expires_at Date when the number of points defined in the bucket object are due to expire.
+     * @param \DateTime $expiresAt Date when the number of points defined in the bucket object are due to expire.
      *
      * @return self
      */
-    public function setExpiresAt($expires_at)
+    public function setExpiresAt($expiresAt)
     {
-        if (is_null($expires_at)) {
-            throw new \InvalidArgumentException('non-nullable expires_at cannot be null');
+        if (is_null($expiresAt)) {
+            throw new \InvalidArgumentException('non-nullable expiresAt cannot be null');
         }
-        $this->container['expires_at'] = $expires_at;
+        $this->container['expiresAt'] = $expiresAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \DateTime|null $updated_at Timestamp representing the date and time when the loyalty points bucket object was updated. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the loyalty points bucket object was updated. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        if (is_null($updated_at)) {
-            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
+        if (is_null($updatedAt)) {
+            throw new \InvalidArgumentException('non-nullable updatedAt cannot be null');
         }
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }

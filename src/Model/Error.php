@@ -63,9 +63,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         'key' => 'string',
         'message' => 'string',
         'details' => 'string',
-        'request_id' => 'string',
-        'resource_id' => 'string',
-        'resource_type' => 'string'
+        'requestId' => 'string',
+        'resourceId' => 'string',
+        'resourceType' => 'string'
     ];
 
     /**
@@ -80,9 +80,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         'key' => null,
         'message' => null,
         'details' => null,
-        'request_id' => null,
-        'resource_id' => null,
-        'resource_type' => null
+        'requestId' => null,
+        'resourceId' => null,
+        'resourceType' => null
     ];
 
     /**
@@ -95,9 +95,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 		'key' => true,
 		'message' => true,
 		'details' => true,
-		'request_id' => true,
-		'resource_id' => true,
-		'resource_type' => true
+		'requestId' => true,
+		'resourceId' => true,
+		'resourceType' => true
     ];
 
     /**
@@ -190,9 +190,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         'key' => 'key',
         'message' => 'message',
         'details' => 'details',
-        'request_id' => 'request_id',
-        'resource_id' => 'resource_id',
-        'resource_type' => 'resource_type'
+        'requestId' => 'request_id',
+        'resourceId' => 'resource_id',
+        'resourceType' => 'resource_type'
     ];
 
     /**
@@ -205,9 +205,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         'key' => 'setKey',
         'message' => 'setMessage',
         'details' => 'setDetails',
-        'request_id' => 'setRequestId',
-        'resource_id' => 'setResourceId',
-        'resource_type' => 'setResourceType'
+        'requestId' => 'setRequestId',
+        'resourceId' => 'setResourceId',
+        'resourceType' => 'setResourceType'
     ];
 
     /**
@@ -220,9 +220,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         'key' => 'getKey',
         'message' => 'getMessage',
         'details' => 'getDetails',
-        'request_id' => 'getRequestId',
-        'resource_id' => 'getResourceId',
-        'resource_type' => 'getResourceType'
+        'requestId' => 'getRequestId',
+        'resourceId' => 'getResourceId',
+        'resourceType' => 'getResourceType'
     ];
 
     /**
@@ -286,9 +286,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('key', $data ?? [], null);
         $this->setIfExists('message', $data ?? [], null);
         $this->setIfExists('details', $data ?? [], null);
-        $this->setIfExists('request_id', $data ?? [], null);
-        $this->setIfExists('resource_id', $data ?? [], null);
-        $this->setIfExists('resource_type', $data ?? [], null);
+        $this->setIfExists('requestId', $data ?? [], null);
+        $this->setIfExists('resourceId', $data ?? [], null);
+        $this->setIfExists('resourceType', $data ?? [], null);
     }
 
     /**
@@ -470,103 +470,103 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets request_id
+     * Gets requestId
      *
      * @return string|null
      */
     public function getRequestId()
     {
-        return $this->container['request_id'];
+        return $this->container['requestId'];
     }
 
     /**
-     * Sets request_id
+     * Sets requestId
      *
-     * @param string|null $request_id This ID is useful when troubleshooting and/or finding the root cause of an error response by our support team.
+     * @param string|null $requestId This ID is useful when troubleshooting and/or finding the root cause of an error response by our support team.
      *
      * @return self
      */
-    public function setRequestId($request_id)
+    public function setRequestId($requestId)
     {
-        if (is_null($request_id)) {
-            array_push($this->openAPINullablesSetToNull, 'request_id');
+        if (is_null($requestId)) {
+            array_push($this->openAPINullablesSetToNull, 'requestId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('request_id', $nullablesSetToNull);
+            $index = array_search('requestId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['request_id'] = $request_id;
+        $this->container['requestId'] = $requestId;
 
         return $this;
     }
 
     /**
-     * Gets resource_id
+     * Gets resourceId
      *
      * @return string|null
      */
     public function getResourceId()
     {
-        return $this->container['resource_id'];
+        return $this->container['resourceId'];
     }
 
     /**
-     * Sets resource_id
+     * Sets resourceId
      *
-     * @param string|null $resource_id Unique resource ID that can be used in another endpoint to get more details.
+     * @param string|null $resourceId Unique resource ID that can be used in another endpoint to get more details.
      *
      * @return self
      */
-    public function setResourceId($resource_id)
+    public function setResourceId($resourceId)
     {
-        if (is_null($resource_id)) {
-            array_push($this->openAPINullablesSetToNull, 'resource_id');
+        if (is_null($resourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'resourceId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('resource_id', $nullablesSetToNull);
+            $index = array_search('resourceId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['resource_id'] = $resource_id;
+        $this->container['resourceId'] = $resourceId;
 
         return $this;
     }
 
     /**
-     * Gets resource_type
+     * Gets resourceType
      *
      * @return string|null
      */
     public function getResourceType()
     {
-        return $this->container['resource_type'];
+        return $this->container['resourceType'];
     }
 
     /**
-     * Sets resource_type
+     * Sets resourceType
      *
-     * @param string|null $resource_type The resource type.
+     * @param string|null $resourceType The resource type.
      *
      * @return self
      */
-    public function setResourceType($resource_type)
+    public function setResourceType($resourceType)
     {
-        if (is_null($resource_type)) {
-            array_push($this->openAPINullablesSetToNull, 'resource_type');
+        if (is_null($resourceType)) {
+            array_push($this->openAPINullablesSetToNull, 'resourceType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('resource_type', $nullablesSetToNull);
+            $index = array_search('resourceType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['resource_type'] = $resource_type;
+        $this->container['resourceType'] = $resourceType;
 
         return $this;
     }

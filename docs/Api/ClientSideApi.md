@@ -8,14 +8,13 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 | [**listPromotionTiersClientSide()**](ClientSideApi.md#listPromotionTiersClientSide) | **GET** /client/v1/promotions/tiers | List Promotion Tiers (client-side) |
 | [**redeemStackedDiscountsClientSide()**](ClientSideApi.md#redeemStackedDiscountsClientSide) | **POST** /client/v1/redemptions | Redeem Stackable Discounts (client-side) |
 | [**trackCustomEventClientSide()**](ClientSideApi.md#trackCustomEventClientSide) | **POST** /client/v1/events | Track Custom Event (client-side) |
-| [**updateCustomersConsentsClientSide()**](ClientSideApi.md#updateCustomersConsentsClientSide) | **PUT** /client/v1/customers/{customerId}/consents | Update Customer&#39;s consents (client-side) [Deprecated] |
 | [**validateStackedDiscountsClientSide()**](ClientSideApi.md#validateStackedDiscountsClientSide) | **POST** /client/v1/validations | Validate Stackable Discounts (client-side) |
 
 
 ## `checkEligibilityClientSide()`
 
 ```php
-checkEligibilityClientSide($client_qualifications_check_eligibility_request_body): \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityResponseBody
+checkEligibilityClientSide($clientQualificationsCheckEligibilityRequestBody): \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityResponseBody
 ```
 
 Check Eligibility (client-side)
@@ -46,10 +45,10 @@ $apiInstance = new OpenAPI\Client\Api\ClientSideApi(
     new GuzzleHttp\Client(),
     $config
 );
-$client_qualifications_check_eligibility_request_body = new \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody(); // \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody | Define order and customer context.
+$clientQualificationsCheckEligibilityRequestBody = new \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody(); // \OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody | Define order and customer context.
 
 try {
-    $result = $apiInstance->checkEligibilityClientSide($client_qualifications_check_eligibility_request_body);
+    $result = $apiInstance->checkEligibilityClientSide($clientQualificationsCheckEligibilityRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientSideApi->checkEligibilityClientSide: ', $e->getMessage(), PHP_EOL;
@@ -60,7 +59,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **client_qualifications_check_eligibility_request_body** | [**\OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody**](../Model/ClientQualificationsCheckEligibilityRequestBody.md)| Define order and customer context. | [optional] |
+| **clientQualificationsCheckEligibilityRequestBody** | [**\OpenAPI\Client\Model\ClientQualificationsCheckEligibilityRequestBody**](../Model/ClientQualificationsCheckEligibilityRequestBody.md)| Define order and customer context. | [optional] |
 
 ### Return type
 
@@ -82,7 +81,7 @@ try {
 ## `listPromotionTiersClientSide()`
 
 ```php
-listPromotionTiersClientSide($origin, $is_available, $limit, $page, $order): \OpenAPI\Client\Model\ClientPromotionsTiersListResponseBody
+listPromotionTiersClientSide($origin, $isAvailable, $limit, $page, $order): \OpenAPI\Client\Model\ClientPromotionsTiersListResponseBody
 ```
 
 List Promotion Tiers (client-side)
@@ -114,13 +113,13 @@ $apiInstance = new OpenAPI\Client\Api\ClientSideApi(
     $config
 );
 $origin = 'origin_example'; // string | Indicates the origin (scheme, hostname, and port).
-$is_available = True; // bool | This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions.
+$isAvailable = True; // bool | This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 $order = new \OpenAPI\Client\Model\ParameterOrderListPromotionTiersClientSide(); // ParameterOrderListPromotionTiersClientSide | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
 
 try {
-    $result = $apiInstance->listPromotionTiersClientSide($origin, $is_available, $limit, $page, $order);
+    $result = $apiInstance->listPromotionTiersClientSide($origin, $isAvailable, $limit, $page, $order);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientSideApi->listPromotionTiersClientSide: ', $e->getMessage(), PHP_EOL;
@@ -132,7 +131,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **origin** | **string**| Indicates the origin (scheme, hostname, and port). | |
-| **is_available** | **bool**| This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. | [optional] |
+| **isAvailable** | **bool**| This parameter allows filtering promotions that are only available at the moment. When set to true, it selects only non-expired and active promotions. | [optional] |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 | **order** | [**ParameterOrderListPromotionTiersClientSide**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
@@ -157,7 +156,7 @@ try {
 ## `redeemStackedDiscountsClientSide()`
 
 ```php
-redeemStackedDiscountsClientSide($origin, $client_redemptions_redeem_request_body): \OpenAPI\Client\Model\ClientRedemptionsRedeemResponseBody
+redeemStackedDiscountsClientSide($origin, $clientRedemptionsRedeemRequestBody): \OpenAPI\Client\Model\ClientRedemptionsRedeemResponseBody
 ```
 
 Redeem Stackable Discounts (client-side)
@@ -189,10 +188,10 @@ $apiInstance = new OpenAPI\Client\Api\ClientSideApi(
     $config
 );
 $origin = 'origin_example'; // string | Indicates the origin (scheme, hostname, and port).
-$client_redemptions_redeem_request_body = {"customer":{"source_id":"sample_customer","metadata":{"key":"value"}},"options":{"expand":["order","redeemable","category"]},"redeemables":[{"object":"voucher","id":"voucher-code"}],"session":{"type":"LOCK","key":"session_key"},"order":{"amount":55000,"status":"PAID","items":[{"quantity":2,"price":20000,"source_id":"sample product1","related_object":"product","product":{"metadata":{"key":"value"}}},{"quantity":1,"price":15000,"source_id":"sample product2","related_object":"product","product":{"metadata":{"key":"value"}}}],"metadata":{"key":"value"}}}; // \OpenAPI\Client\Model\ClientRedemptionsRedeemRequestBody
+$clientRedemptionsRedeemRequestBody = {"customer":{"source_id":"sample_customer","metadata":{"key":"value"}},"options":{"expand":["order","redeemable","category"]},"redeemables":[{"object":"voucher","id":"voucher-code"}],"session":{"type":"LOCK","key":"session_key"},"order":{"amount":55000,"status":"PAID","items":[{"quantity":2,"price":20000,"source_id":"sample product1","related_object":"product","product":{"metadata":{"key":"value"}}},{"quantity":1,"price":15000,"source_id":"sample product2","related_object":"product","product":{"metadata":{"key":"value"}}}],"metadata":{"key":"value"}}}; // \OpenAPI\Client\Model\ClientRedemptionsRedeemRequestBody
 
 try {
-    $result = $apiInstance->redeemStackedDiscountsClientSide($origin, $client_redemptions_redeem_request_body);
+    $result = $apiInstance->redeemStackedDiscountsClientSide($origin, $clientRedemptionsRedeemRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientSideApi->redeemStackedDiscountsClientSide: ', $e->getMessage(), PHP_EOL;
@@ -204,7 +203,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **origin** | **string**| Indicates the origin (scheme, hostname, and port). | |
-| **client_redemptions_redeem_request_body** | [**\OpenAPI\Client\Model\ClientRedemptionsRedeemRequestBody**](../Model/ClientRedemptionsRedeemRequestBody.md)|  | [optional] |
+| **clientRedemptionsRedeemRequestBody** | [**\OpenAPI\Client\Model\ClientRedemptionsRedeemRequestBody**](../Model/ClientRedemptionsRedeemRequestBody.md)|  | [optional] |
 
 ### Return type
 
@@ -226,7 +225,7 @@ try {
 ## `trackCustomEventClientSide()`
 
 ```php
-trackCustomEventClientSide($origin, $client_events_create_request_body): \OpenAPI\Client\Model\ClientEventsCreateResponseBody
+trackCustomEventClientSide($origin, $clientEventsCreateRequestBody): \OpenAPI\Client\Model\ClientEventsCreateResponseBody
 ```
 
 Track Custom Event (client-side)
@@ -258,10 +257,10 @@ $apiInstance = new OpenAPI\Client\Api\ClientSideApi(
     $config
 );
 $origin = 'origin_example'; // string | Indicates the origin (scheme, hostname, and port).
-$client_events_create_request_body = {"event":"user_subscribed","customer":{"source_id":"source_customer_event"},"referral":{"code":"46jL0kYI","referrer_id":"cust_Vzck5i8U3OhcEUFY6MKhN9Rv"},"metadata":{"login":"bob","pricing_plan":"PP1","volume_number":4}}; // \OpenAPI\Client\Model\ClientEventsCreateRequestBody | Specify the details of the custom event.
+$clientEventsCreateRequestBody = {"event":"user_subscribed","customer":{"source_id":"source_customer_event"},"referral":{"code":"46jL0kYI","referrer_id":"cust_Vzck5i8U3OhcEUFY6MKhN9Rv"},"metadata":{"login":"bob","pricing_plan":"PP1","volume_number":4}}; // \OpenAPI\Client\Model\ClientEventsCreateRequestBody | Specify the details of the custom event.
 
 try {
-    $result = $apiInstance->trackCustomEventClientSide($origin, $client_events_create_request_body);
+    $result = $apiInstance->trackCustomEventClientSide($origin, $clientEventsCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientSideApi->trackCustomEventClientSide: ', $e->getMessage(), PHP_EOL;
@@ -273,7 +272,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **origin** | **string**| Indicates the origin (scheme, hostname, and port). | |
-| **client_events_create_request_body** | [**\OpenAPI\Client\Model\ClientEventsCreateRequestBody**](../Model/ClientEventsCreateRequestBody.md)| Specify the details of the custom event. | [optional] |
+| **clientEventsCreateRequestBody** | [**\OpenAPI\Client\Model\ClientEventsCreateRequestBody**](../Model/ClientEventsCreateRequestBody.md)| Specify the details of the custom event. | [optional] |
 
 ### Return type
 
@@ -292,78 +291,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `updateCustomersConsentsClientSide()`
-
-```php
-updateCustomersConsentsClientSide($customer_id, $body)
-```
-
-Update Customer's consents (client-side) [Deprecated]
-
-Update marketing permissions for the specified customer. ❗️ Deprecated  This endpoint is deprecated. The feature of managing consents will be soon removed from Voucherify, including this endpoint.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: X-Client-Application-Id
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Client-Application-Id', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Client-Application-Id', 'Bearer');
-
-// Configure API key authorization: X-Client-Token
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Client-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Client-Token', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\ClientSideApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$customer_id = 'customer_id_example'; // string | A Voucherify customer identifier or source_id
-$body = {"cnst_6jQ5XcUOLnj5L7ImQAdBsJ1I":true,"cnst_VCmucIvAsmDYw2PPAok6bcYy":false}; // object | Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use unsubscribed as a consent identifier and true as its value.   ## Examples  Opt-out from all communication:
-
-try {
-    $apiInstance->updateCustomersConsentsClientSide($customer_id, $body);
-} catch (Exception $e) {
-    echo 'Exception when calling ClientSideApi->updateCustomersConsentsClientSide: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **customer_id** | **string**| A Voucherify customer identifier or source_id | |
-| **body** | **object**| Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use unsubscribed as a consent identifier and true as its value.   ## Examples  Opt-out from all communication: | [optional] |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[X-Client-Application-Id](../../README.md#X-Client-Application-Id), [X-Client-Token](../../README.md#X-Client-Token)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `validateStackedDiscountsClientSide()`
 
 ```php
-validateStackedDiscountsClientSide($origin, $client_validations_validate_request_body): \OpenAPI\Client\Model\ClientValidationsValidateResponseBody
+validateStackedDiscountsClientSide($origin, $clientValidationsValidateRequestBody): \OpenAPI\Client\Model\ClientValidationsValidateResponseBody
 ```
 
 Validate Stackable Discounts (client-side)
@@ -395,10 +326,10 @@ $apiInstance = new OpenAPI\Client\Api\ClientSideApi(
     $config
 );
 $origin = 'origin_example'; // string | Indicates the origin (scheme, hostname, and port).
-$client_validations_validate_request_body = {"customer":{"source_id":"sample_customer","metadata":{"key":"value"}},"options":{"expand":["order","redeemable","category"]},"redeemables":[{"object":"voucher","id":"voucher-code"}],"session":{"type":"LOCK"},"order":{"amount":55000,"status":"PAID","items":[{"quantity":2,"price":20000,"source_id":"sample product1","related_object":"product","product":{"metadata":{"key":"value"}}},{"quantity":1,"price":15000,"source_id":"sample product2","related_object":"product","product":{"metadata":{"key":"value"}}}],"metadata":{"key":"value"}}}; // \OpenAPI\Client\Model\ClientValidationsValidateRequestBody
+$clientValidationsValidateRequestBody = {"customer":{"source_id":"sample_customer","metadata":{"key":"value"}},"options":{"expand":["order","redeemable","category"]},"redeemables":[{"object":"voucher","id":"voucher-code"}],"session":{"type":"LOCK"},"order":{"amount":55000,"status":"PAID","items":[{"quantity":2,"price":20000,"source_id":"sample product1","related_object":"product","product":{"metadata":{"key":"value"}}},{"quantity":1,"price":15000,"source_id":"sample product2","related_object":"product","product":{"metadata":{"key":"value"}}}],"metadata":{"key":"value"}}}; // \OpenAPI\Client\Model\ClientValidationsValidateRequestBody
 
 try {
-    $result = $apiInstance->validateStackedDiscountsClientSide($origin, $client_validations_validate_request_body);
+    $result = $apiInstance->validateStackedDiscountsClientSide($origin, $clientValidationsValidateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientSideApi->validateStackedDiscountsClientSide: ', $e->getMessage(), PHP_EOL;
@@ -410,7 +341,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **origin** | **string**| Indicates the origin (scheme, hostname, and port). | |
-| **client_validations_validate_request_body** | [**\OpenAPI\Client\Model\ClientValidationsValidateRequestBody**](../Model/ClientValidationsValidateRequestBody.md)|  | [optional] |
+| **clientValidationsValidateRequestBody** | [**\OpenAPI\Client\Model\ClientValidationsValidateRequestBody**](../Model/ClientValidationsValidateRequestBody.md)|  | [optional] |
 
 ### Return type
 

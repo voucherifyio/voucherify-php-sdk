@@ -63,7 +63,8 @@ class EventsCreateResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
         'type' => 'string',
         'customer' => '\OpenAPI\Client\Model\SimpleCustomerRequiredObjectType',
         'referral' => 'object',
-        'loyalty' => 'object'
+        'loyalty' => 'object',
+        'metadata' => 'object'
     ];
 
     /**
@@ -78,7 +79,8 @@ class EventsCreateResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
         'type' => null,
         'customer' => null,
         'referral' => null,
-        'loyalty' => null
+        'loyalty' => null,
+        'metadata' => null
     ];
 
     /**
@@ -91,7 +93,8 @@ class EventsCreateResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
 		'type' => true,
 		'customer' => false,
 		'referral' => true,
-		'loyalty' => true
+		'loyalty' => true,
+		'metadata' => true
     ];
 
     /**
@@ -184,7 +187,8 @@ class EventsCreateResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
         'type' => 'type',
         'customer' => 'customer',
         'referral' => 'referral',
-        'loyalty' => 'loyalty'
+        'loyalty' => 'loyalty',
+        'metadata' => 'metadata'
     ];
 
     /**
@@ -197,7 +201,8 @@ class EventsCreateResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
         'type' => 'setType',
         'customer' => 'setCustomer',
         'referral' => 'setReferral',
-        'loyalty' => 'setLoyalty'
+        'loyalty' => 'setLoyalty',
+        'metadata' => 'setMetadata'
     ];
 
     /**
@@ -210,7 +215,8 @@ class EventsCreateResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
         'type' => 'getType',
         'customer' => 'getCustomer',
         'referral' => 'getReferral',
-        'loyalty' => 'getLoyalty'
+        'loyalty' => 'getLoyalty',
+        'metadata' => 'getMetadata'
     ];
 
     /**
@@ -288,6 +294,7 @@ class EventsCreateResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('customer', $data ?? [], null);
         $this->setIfExists('referral', $data ?? [], null);
         $this->setIfExists('loyalty', $data ?? [], null);
+        $this->setIfExists('metadata', $data ?? [], null);
     }
 
     /**
@@ -513,6 +520,40 @@ class EventsCreateResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
             }
         }
         $this->container['loyalty'] = $loyalty;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     *
+     * @return object|null
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param object|null $metadata metadata
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        if (is_null($metadata)) {
+            array_push($this->openAPINullablesSetToNull, 'metadata');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('metadata', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['metadata'] = $metadata;
 
         return $this;
     }

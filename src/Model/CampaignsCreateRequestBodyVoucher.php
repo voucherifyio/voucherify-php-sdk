@@ -60,11 +60,11 @@ class CampaignsCreateRequestBodyVoucher implements ModelInterface, ArrayAccess, 
     protected static $openAPITypes = [
         'type' => 'string',
         'discount' => '\OpenAPI\Client\Model\Discount',
-        'code_config' => '\OpenAPI\Client\Model\CodeConfig',
+        'codeConfig' => '\OpenAPI\Client\Model\CodeConfig',
         'redemption' => '\OpenAPI\Client\Model\CampaignsCreateRequestBodyVoucherRedemption',
-        'is_referral_code' => 'bool',
+        'isReferralCode' => 'bool',
         'gift' => '\OpenAPI\Client\Model\Gift',
-        'loyalty_card' => '\OpenAPI\Client\Model\CampaignLoyaltyCard'
+        'loyaltyCard' => '\OpenAPI\Client\Model\CampaignLoyaltyCard'
     ];
 
     /**
@@ -77,11 +77,11 @@ class CampaignsCreateRequestBodyVoucher implements ModelInterface, ArrayAccess, 
     protected static $openAPIFormats = [
         'type' => null,
         'discount' => null,
-        'code_config' => null,
+        'codeConfig' => null,
         'redemption' => null,
-        'is_referral_code' => null,
+        'isReferralCode' => null,
         'gift' => null,
-        'loyalty_card' => null
+        'loyaltyCard' => null
     ];
 
     /**
@@ -92,11 +92,11 @@ class CampaignsCreateRequestBodyVoucher implements ModelInterface, ArrayAccess, 
     protected static array $openAPINullables = [
         'type' => true,
 		'discount' => false,
-		'code_config' => false,
+		'codeConfig' => false,
 		'redemption' => true,
-		'is_referral_code' => true,
+		'isReferralCode' => true,
 		'gift' => false,
-		'loyalty_card' => false
+		'loyaltyCard' => false
     ];
 
     /**
@@ -187,11 +187,11 @@ class CampaignsCreateRequestBodyVoucher implements ModelInterface, ArrayAccess, 
     protected static $attributeMap = [
         'type' => 'type',
         'discount' => 'discount',
-        'code_config' => 'code_config',
+        'codeConfig' => 'code_config',
         'redemption' => 'redemption',
-        'is_referral_code' => 'is_referral_code',
+        'isReferralCode' => 'is_referral_code',
         'gift' => 'gift',
-        'loyalty_card' => 'loyalty_card'
+        'loyaltyCard' => 'loyalty_card'
     ];
 
     /**
@@ -202,11 +202,11 @@ class CampaignsCreateRequestBodyVoucher implements ModelInterface, ArrayAccess, 
     protected static $setters = [
         'type' => 'setType',
         'discount' => 'setDiscount',
-        'code_config' => 'setCodeConfig',
+        'codeConfig' => 'setCodeConfig',
         'redemption' => 'setRedemption',
-        'is_referral_code' => 'setIsReferralCode',
+        'isReferralCode' => 'setIsReferralCode',
         'gift' => 'setGift',
-        'loyalty_card' => 'setLoyaltyCard'
+        'loyaltyCard' => 'setLoyaltyCard'
     ];
 
     /**
@@ -217,11 +217,11 @@ class CampaignsCreateRequestBodyVoucher implements ModelInterface, ArrayAccess, 
     protected static $getters = [
         'type' => 'getType',
         'discount' => 'getDiscount',
-        'code_config' => 'getCodeConfig',
+        'codeConfig' => 'getCodeConfig',
         'redemption' => 'getRedemption',
-        'is_referral_code' => 'getIsReferralCode',
+        'isReferralCode' => 'getIsReferralCode',
         'gift' => 'getGift',
-        'loyalty_card' => 'getLoyaltyCard'
+        'loyaltyCard' => 'getLoyaltyCard'
     ];
 
     /**
@@ -300,11 +300,11 @@ class CampaignsCreateRequestBodyVoucher implements ModelInterface, ArrayAccess, 
     {
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('discount', $data ?? [], null);
-        $this->setIfExists('code_config', $data ?? [], null);
+        $this->setIfExists('codeConfig', $data ?? [], null);
         $this->setIfExists('redemption', $data ?? [], null);
-        $this->setIfExists('is_referral_code', $data ?? [], null);
+        $this->setIfExists('isReferralCode', $data ?? [], null);
         $this->setIfExists('gift', $data ?? [], null);
-        $this->setIfExists('loyalty_card', $data ?? [], null);
+        $this->setIfExists('loyaltyCard', $data ?? [], null);
     }
 
     /**
@@ -430,28 +430,28 @@ class CampaignsCreateRequestBodyVoucher implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets code_config
+     * Gets codeConfig
      *
      * @return \OpenAPI\Client\Model\CodeConfig|null
      */
     public function getCodeConfig()
     {
-        return $this->container['code_config'];
+        return $this->container['codeConfig'];
     }
 
     /**
-     * Sets code_config
+     * Sets codeConfig
      *
-     * @param \OpenAPI\Client\Model\CodeConfig|null $code_config code_config
+     * @param \OpenAPI\Client\Model\CodeConfig|null $codeConfig codeConfig
      *
      * @return self
      */
-    public function setCodeConfig($code_config)
+    public function setCodeConfig($codeConfig)
     {
-        if (is_null($code_config)) {
-            throw new \InvalidArgumentException('non-nullable code_config cannot be null');
+        if (is_null($codeConfig)) {
+            throw new \InvalidArgumentException('non-nullable codeConfig cannot be null');
         }
-        $this->container['code_config'] = $code_config;
+        $this->container['codeConfig'] = $codeConfig;
 
         return $this;
     }
@@ -491,35 +491,35 @@ class CampaignsCreateRequestBodyVoucher implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets is_referral_code
+     * Gets isReferralCode
      *
      * @return bool|null
      */
     public function getIsReferralCode()
     {
-        return $this->container['is_referral_code'];
+        return $this->container['isReferralCode'];
     }
 
     /**
-     * Sets is_referral_code
+     * Sets isReferralCode
      *
-     * @param bool|null $is_referral_code Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
+     * @param bool|null $isReferralCode Flag indicating whether this voucher is a referral code; `true` for campaign type `REFERRAL_PROGRAM`.
      *
      * @return self
      */
-    public function setIsReferralCode($is_referral_code)
+    public function setIsReferralCode($isReferralCode)
     {
-        if (is_null($is_referral_code)) {
-            array_push($this->openAPINullablesSetToNull, 'is_referral_code');
+        if (is_null($isReferralCode)) {
+            array_push($this->openAPINullablesSetToNull, 'isReferralCode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_referral_code', $nullablesSetToNull);
+            $index = array_search('isReferralCode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['is_referral_code'] = $is_referral_code;
+        $this->container['isReferralCode'] = $isReferralCode;
 
         return $this;
     }
@@ -552,28 +552,28 @@ class CampaignsCreateRequestBodyVoucher implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets loyalty_card
+     * Gets loyaltyCard
      *
      * @return \OpenAPI\Client\Model\CampaignLoyaltyCard|null
      */
     public function getLoyaltyCard()
     {
-        return $this->container['loyalty_card'];
+        return $this->container['loyaltyCard'];
     }
 
     /**
-     * Sets loyalty_card
+     * Sets loyaltyCard
      *
-     * @param \OpenAPI\Client\Model\CampaignLoyaltyCard|null $loyalty_card loyalty_card
+     * @param \OpenAPI\Client\Model\CampaignLoyaltyCard|null $loyaltyCard loyaltyCard
      *
      * @return self
      */
-    public function setLoyaltyCard($loyalty_card)
+    public function setLoyaltyCard($loyaltyCard)
     {
-        if (is_null($loyalty_card)) {
-            throw new \InvalidArgumentException('non-nullable loyalty_card cannot be null');
+        if (is_null($loyaltyCard)) {
+            throw new \InvalidArgumentException('non-nullable loyaltyCard cannot be null');
         }
-        $this->container['loyalty_card'] = $loyalty_card;
+        $this->container['loyaltyCard'] = $loyaltyCard;
 
         return $this;
     }

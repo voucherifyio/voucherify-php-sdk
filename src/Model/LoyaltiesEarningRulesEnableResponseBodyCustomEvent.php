@@ -59,7 +59,7 @@ class LoyaltiesEarningRulesEnableResponseBodyCustomEvent implements ModelInterfa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'schema_id' => 'string'
+        'schemaId' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class LoyaltiesEarningRulesEnableResponseBodyCustomEvent implements ModelInterfa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'schema_id' => null
+        'schemaId' => null
     ];
 
     /**
@@ -79,7 +79,7 @@ class LoyaltiesEarningRulesEnableResponseBodyCustomEvent implements ModelInterfa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'schema_id' => true
+        'schemaId' => true
     ];
 
     /**
@@ -168,7 +168,7 @@ class LoyaltiesEarningRulesEnableResponseBodyCustomEvent implements ModelInterfa
      * @var string[]
      */
     protected static $attributeMap = [
-        'schema_id' => 'schema_id'
+        'schemaId' => 'schema_id'
     ];
 
     /**
@@ -177,7 +177,7 @@ class LoyaltiesEarningRulesEnableResponseBodyCustomEvent implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-        'schema_id' => 'setSchemaId'
+        'schemaId' => 'setSchemaId'
     ];
 
     /**
@@ -186,7 +186,7 @@ class LoyaltiesEarningRulesEnableResponseBodyCustomEvent implements ModelInterfa
      * @var string[]
      */
     protected static $getters = [
-        'schema_id' => 'getSchemaId'
+        'schemaId' => 'getSchemaId'
     ];
 
     /**
@@ -246,7 +246,7 @@ class LoyaltiesEarningRulesEnableResponseBodyCustomEvent implements ModelInterfa
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('schema_id', $data ?? [], null);
+        $this->setIfExists('schemaId', $data ?? [], null);
     }
 
     /**
@@ -292,35 +292,35 @@ class LoyaltiesEarningRulesEnableResponseBodyCustomEvent implements ModelInterfa
 
 
     /**
-     * Gets schema_id
+     * Gets schemaId
      *
      * @return string|null
      */
     public function getSchemaId()
     {
-        return $this->container['schema_id'];
+        return $this->container['schemaId'];
     }
 
     /**
-     * Sets schema_id
+     * Sets schemaId
      *
-     * @param string|null $schema_id Unique identifier of the custom event schema
+     * @param string|null $schemaId Unique identifier of the custom event schema
      *
      * @return self
      */
-    public function setSchemaId($schema_id)
+    public function setSchemaId($schemaId)
     {
-        if (is_null($schema_id)) {
-            array_push($this->openAPINullablesSetToNull, 'schema_id');
+        if (is_null($schemaId)) {
+            array_push($this->openAPINullablesSetToNull, 'schemaId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('schema_id', $nullablesSetToNull);
+            $index = array_search('schemaId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['schema_id'] = $schema_id;
+        $this->container['schemaId'] = $schemaId;
 
         return $this;
     }

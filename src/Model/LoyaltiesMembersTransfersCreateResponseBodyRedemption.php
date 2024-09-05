@@ -60,8 +60,8 @@ class LoyaltiesMembersTransfersCreateResponseBodyRedemption implements ModelInte
       */
     protected static $openAPITypes = [
         'quantity' => 'int',
-        'redeemed_points' => 'int',
-        'redeemed_quantity' => 'int',
+        'redeemedPoints' => 'int',
+        'redeemedQuantity' => 'int',
         'object' => 'string',
         'url' => 'string'
     ];
@@ -75,8 +75,8 @@ class LoyaltiesMembersTransfersCreateResponseBodyRedemption implements ModelInte
       */
     protected static $openAPIFormats = [
         'quantity' => null,
-        'redeemed_points' => null,
-        'redeemed_quantity' => null,
+        'redeemedPoints' => null,
+        'redeemedQuantity' => null,
         'object' => null,
         'url' => null
     ];
@@ -88,8 +88,8 @@ class LoyaltiesMembersTransfersCreateResponseBodyRedemption implements ModelInte
       */
     protected static array $openAPINullables = [
         'quantity' => true,
-		'redeemed_points' => true,
-		'redeemed_quantity' => true,
+		'redeemedPoints' => true,
+		'redeemedQuantity' => true,
 		'object' => true,
 		'url' => true
     ];
@@ -181,8 +181,8 @@ class LoyaltiesMembersTransfersCreateResponseBodyRedemption implements ModelInte
      */
     protected static $attributeMap = [
         'quantity' => 'quantity',
-        'redeemed_points' => 'redeemed_points',
-        'redeemed_quantity' => 'redeemed_quantity',
+        'redeemedPoints' => 'redeemed_points',
+        'redeemedQuantity' => 'redeemed_quantity',
         'object' => 'object',
         'url' => 'url'
     ];
@@ -194,8 +194,8 @@ class LoyaltiesMembersTransfersCreateResponseBodyRedemption implements ModelInte
      */
     protected static $setters = [
         'quantity' => 'setQuantity',
-        'redeemed_points' => 'setRedeemedPoints',
-        'redeemed_quantity' => 'setRedeemedQuantity',
+        'redeemedPoints' => 'setRedeemedPoints',
+        'redeemedQuantity' => 'setRedeemedQuantity',
         'object' => 'setObject',
         'url' => 'setUrl'
     ];
@@ -207,8 +207,8 @@ class LoyaltiesMembersTransfersCreateResponseBodyRedemption implements ModelInte
      */
     protected static $getters = [
         'quantity' => 'getQuantity',
-        'redeemed_points' => 'getRedeemedPoints',
-        'redeemed_quantity' => 'getRedeemedQuantity',
+        'redeemedPoints' => 'getRedeemedPoints',
+        'redeemedQuantity' => 'getRedeemedQuantity',
         'object' => 'getObject',
         'url' => 'getUrl'
     ];
@@ -284,8 +284,8 @@ class LoyaltiesMembersTransfersCreateResponseBodyRedemption implements ModelInte
     public function __construct(array $data = null)
     {
         $this->setIfExists('quantity', $data ?? [], null);
-        $this->setIfExists('redeemed_points', $data ?? [], null);
-        $this->setIfExists('redeemed_quantity', $data ?? [], null);
+        $this->setIfExists('redeemedPoints', $data ?? [], null);
+        $this->setIfExists('redeemedQuantity', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'list');
         $this->setIfExists('url', $data ?? [], null);
     }
@@ -376,69 +376,69 @@ class LoyaltiesMembersTransfersCreateResponseBodyRedemption implements ModelInte
     }
 
     /**
-     * Gets redeemed_points
+     * Gets redeemedPoints
      *
      * @return int|null
      */
     public function getRedeemedPoints()
     {
-        return $this->container['redeemed_points'];
+        return $this->container['redeemedPoints'];
     }
 
     /**
-     * Sets redeemed_points
+     * Sets redeemedPoints
      *
-     * @param int|null $redeemed_points Total loyalty points redeemed.
+     * @param int|null $redeemedPoints Total loyalty points redeemed.
      *
      * @return self
      */
-    public function setRedeemedPoints($redeemed_points)
+    public function setRedeemedPoints($redeemedPoints)
     {
-        if (is_null($redeemed_points)) {
-            array_push($this->openAPINullablesSetToNull, 'redeemed_points');
+        if (is_null($redeemedPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'redeemedPoints');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('redeemed_points', $nullablesSetToNull);
+            $index = array_search('redeemedPoints', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['redeemed_points'] = $redeemed_points;
+        $this->container['redeemedPoints'] = $redeemedPoints;
 
         return $this;
     }
 
     /**
-     * Gets redeemed_quantity
+     * Gets redeemedQuantity
      *
      * @return int|null
      */
     public function getRedeemedQuantity()
     {
-        return $this->container['redeemed_quantity'];
+        return $this->container['redeemedQuantity'];
     }
 
     /**
-     * Sets redeemed_quantity
+     * Sets redeemedQuantity
      *
-     * @param int|null $redeemed_quantity How many times a voucher has already been redeemed.
+     * @param int|null $redeemedQuantity How many times a voucher has already been redeemed.
      *
      * @return self
      */
-    public function setRedeemedQuantity($redeemed_quantity)
+    public function setRedeemedQuantity($redeemedQuantity)
     {
-        if (is_null($redeemed_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'redeemed_quantity');
+        if (is_null($redeemedQuantity)) {
+            array_push($this->openAPINullablesSetToNull, 'redeemedQuantity');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('redeemed_quantity', $nullablesSetToNull);
+            $index = array_search('redeemedQuantity', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['redeemed_quantity'] = $redeemed_quantity;
+        $this->container['redeemedQuantity'] = $redeemedQuantity;
 
         return $this;
     }

@@ -62,11 +62,11 @@ class AsyncActionBase implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'string',
         'type' => 'string',
         'status' => 'string',
-        'operation_status' => 'string',
-        'created_at' => '\DateTime',
-        'updated_at' => '\DateTime',
-        'request_id' => 'string',
-        'processing_time' => 'int',
+        'operationStatus' => 'string',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
+        'requestId' => 'string',
+        'processingTime' => 'int',
         'progress' => 'int',
         'object' => 'string'
     ];
@@ -82,11 +82,11 @@ class AsyncActionBase implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => null,
         'type' => null,
         'status' => null,
-        'operation_status' => null,
-        'created_at' => 'date-time',
-        'updated_at' => 'date-time',
-        'request_id' => null,
-        'processing_time' => null,
+        'operationStatus' => null,
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
+        'requestId' => null,
+        'processingTime' => null,
         'progress' => null,
         'object' => null
     ];
@@ -100,11 +100,11 @@ class AsyncActionBase implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => true,
 		'type' => true,
 		'status' => true,
-		'operation_status' => true,
-		'created_at' => true,
-		'updated_at' => true,
-		'request_id' => true,
-		'processing_time' => true,
+		'operationStatus' => true,
+		'createdAt' => true,
+		'updatedAt' => true,
+		'requestId' => true,
+		'processingTime' => true,
 		'progress' => true,
 		'object' => true
     ];
@@ -198,11 +198,11 @@ class AsyncActionBase implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'type' => 'type',
         'status' => 'status',
-        'operation_status' => 'operation_status',
-        'created_at' => 'created_at',
-        'updated_at' => 'updated_at',
-        'request_id' => 'request_id',
-        'processing_time' => 'processing_time',
+        'operationStatus' => 'operation_status',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
+        'requestId' => 'request_id',
+        'processingTime' => 'processing_time',
         'progress' => 'progress',
         'object' => 'object'
     ];
@@ -216,11 +216,11 @@ class AsyncActionBase implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'type' => 'setType',
         'status' => 'setStatus',
-        'operation_status' => 'setOperationStatus',
-        'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt',
-        'request_id' => 'setRequestId',
-        'processing_time' => 'setProcessingTime',
+        'operationStatus' => 'setOperationStatus',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
+        'requestId' => 'setRequestId',
+        'processingTime' => 'setProcessingTime',
         'progress' => 'setProgress',
         'object' => 'setObject'
     ];
@@ -234,11 +234,11 @@ class AsyncActionBase implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'type' => 'getType',
         'status' => 'getStatus',
-        'operation_status' => 'getOperationStatus',
-        'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt',
-        'request_id' => 'getRequestId',
-        'processing_time' => 'getProcessingTime',
+        'operationStatus' => 'getOperationStatus',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
+        'requestId' => 'getRequestId',
+        'processingTime' => 'getProcessingTime',
         'progress' => 'getProgress',
         'object' => 'getObject'
     ];
@@ -335,11 +335,11 @@ class AsyncActionBase implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('operation_status', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('updated_at', $data ?? [], null);
-        $this->setIfExists('request_id', $data ?? [], null);
-        $this->setIfExists('processing_time', $data ?? [], null);
+        $this->setIfExists('operationStatus', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('updatedAt', $data ?? [], null);
+        $this->setIfExists('requestId', $data ?? [], null);
+        $this->setIfExists('processingTime', $data ?? [], null);
         $this->setIfExists('progress', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'async_action');
     }
@@ -525,171 +525,171 @@ class AsyncActionBase implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets operation_status
+     * Gets operationStatus
      *
      * @return string|null
      */
     public function getOperationStatus()
     {
-        return $this->container['operation_status'];
+        return $this->container['operationStatus'];
     }
 
     /**
-     * Sets operation_status
+     * Sets operationStatus
      *
-     * @param string|null $operation_status Status of async action processing. Informs about the async action status, whether it failed, succeeded, or the status is unknown.
+     * @param string|null $operationStatus Status of async action processing. Informs about the async action status, whether it failed, succeeded, or the status is unknown.
      *
      * @return self
      */
-    public function setOperationStatus($operation_status)
+    public function setOperationStatus($operationStatus)
     {
-        if (is_null($operation_status)) {
-            array_push($this->openAPINullablesSetToNull, 'operation_status');
+        if (is_null($operationStatus)) {
+            array_push($this->openAPINullablesSetToNull, 'operationStatus');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('operation_status', $nullablesSetToNull);
+            $index = array_search('operationStatus', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['operation_status'] = $operation_status;
+        $this->container['operationStatus'] = $operationStatus;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the async action was scheduled in ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the async action was scheduled in ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \DateTime|null $updated_at Timestamp representing the date and time when the async action was updated. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the async action was updated. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        if (is_null($updated_at)) {
-            array_push($this->openAPINullablesSetToNull, 'updated_at');
+        if (is_null($updatedAt)) {
+            array_push($this->openAPINullablesSetToNull, 'updatedAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updated_at', $nullablesSetToNull);
+            $index = array_search('updatedAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }
 
     /**
-     * Gets request_id
+     * Gets requestId
      *
      * @return string|null
      */
     public function getRequestId()
     {
-        return $this->container['request_id'];
+        return $this->container['requestId'];
     }
 
     /**
-     * Sets request_id
+     * Sets requestId
      *
-     * @param string|null $request_id Unique request ID.
+     * @param string|null $requestId Unique request ID.
      *
      * @return self
      */
-    public function setRequestId($request_id)
+    public function setRequestId($requestId)
     {
-        if (is_null($request_id)) {
-            array_push($this->openAPINullablesSetToNull, 'request_id');
+        if (is_null($requestId)) {
+            array_push($this->openAPINullablesSetToNull, 'requestId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('request_id', $nullablesSetToNull);
+            $index = array_search('requestId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['request_id'] = $request_id;
+        $this->container['requestId'] = $requestId;
 
         return $this;
     }
 
     /**
-     * Gets processing_time
+     * Gets processingTime
      *
      * @return int|null
      */
     public function getProcessingTime()
     {
-        return $this->container['processing_time'];
+        return $this->container['processingTime'];
     }
 
     /**
-     * Sets processing_time
+     * Sets processingTime
      *
-     * @param int|null $processing_time The length of time it took to process the request in milliseconds.
+     * @param int|null $processingTime The length of time it took to process the request in milliseconds.
      *
      * @return self
      */
-    public function setProcessingTime($processing_time)
+    public function setProcessingTime($processingTime)
     {
-        if (is_null($processing_time)) {
-            array_push($this->openAPINullablesSetToNull, 'processing_time');
+        if (is_null($processingTime)) {
+            array_push($this->openAPINullablesSetToNull, 'processingTime');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('processing_time', $nullablesSetToNull);
+            $index = array_search('processingTime', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['processing_time'] = $processing_time;
+        $this->container['processingTime'] = $processingTime;
 
         return $this;
     }

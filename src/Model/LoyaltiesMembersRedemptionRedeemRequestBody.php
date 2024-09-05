@@ -60,7 +60,7 @@ class LoyaltiesMembersRedemptionRedeemRequestBody implements ModelInterface, Arr
       */
     protected static $openAPITypes = [
         'reward' => '\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemRequestBodyReward',
-        'order' => '\OpenAPI\Client\Model\OrderCalculatedEssential',
+        'order' => '\OpenAPI\Client\Model\Order',
         'metadata' => 'object'
     ];
 
@@ -342,7 +342,7 @@ class LoyaltiesMembersRedemptionRedeemRequestBody implements ModelInterface, Arr
     /**
      * Gets order
      *
-     * @return \OpenAPI\Client\Model\OrderCalculatedEssential|null
+     * @return \OpenAPI\Client\Model\Order|null
      */
     public function getOrder()
     {
@@ -352,7 +352,7 @@ class LoyaltiesMembersRedemptionRedeemRequestBody implements ModelInterface, Arr
     /**
      * Sets order
      *
-     * @param \OpenAPI\Client\Model\OrderCalculatedEssential|null $order order
+     * @param \OpenAPI\Client\Model\Order|null $order order
      *
      * @return self
      */

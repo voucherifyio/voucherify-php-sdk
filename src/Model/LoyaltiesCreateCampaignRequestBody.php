@@ -62,21 +62,21 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'name' => 'string',
         'description' => 'string',
         'type' => 'string',
-        'join_once' => 'bool',
-        'auto_join' => 'bool',
-        'use_voucher_metadata_schema' => 'bool',
-        'vouchers_count' => 'int',
-        'start_date' => '\DateTime',
-        'expiration_date' => '\DateTime',
-        'validity_timeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
-        'validity_day_of_week' => 'int[]',
-        'validity_hours' => '\OpenAPI\Client\Model\ValidityHours',
-        'activity_duration_after_publishing' => 'string',
-        'validation_rules' => 'string[]',
-        'category_id' => 'string',
+        'joinOnce' => 'bool',
+        'autoJoin' => 'bool',
+        'useVoucherMetadataSchema' => 'bool',
+        'vouchersCount' => 'int',
+        'startDate' => '\DateTime',
+        'expirationDate' => '\DateTime',
+        'validityTimeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
+        'validityDayOfWeek' => 'int[]',
+        'validityHours' => '\OpenAPI\Client\Model\ValidityHours',
+        'activityDurationAfterPublishing' => 'string',
+        'validationRules' => 'string[]',
+        'categoryId' => 'string',
         'category' => 'string',
         'metadata' => 'object',
-        'campaign_type' => 'string',
+        'campaignType' => 'string',
         'voucher' => '\OpenAPI\Client\Model\CampaignLoyaltyVoucher'
     ];
 
@@ -91,21 +91,21 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'name' => null,
         'description' => null,
         'type' => null,
-        'join_once' => null,
-        'auto_join' => null,
-        'use_voucher_metadata_schema' => null,
-        'vouchers_count' => null,
-        'start_date' => 'date-time',
-        'expiration_date' => 'date-time',
-        'validity_timeframe' => null,
-        'validity_day_of_week' => null,
-        'validity_hours' => null,
-        'activity_duration_after_publishing' => null,
-        'validation_rules' => null,
-        'category_id' => null,
+        'joinOnce' => null,
+        'autoJoin' => null,
+        'useVoucherMetadataSchema' => null,
+        'vouchersCount' => null,
+        'startDate' => 'date-time',
+        'expirationDate' => 'date-time',
+        'validityTimeframe' => null,
+        'validityDayOfWeek' => null,
+        'validityHours' => null,
+        'activityDurationAfterPublishing' => null,
+        'validationRules' => null,
+        'categoryId' => null,
         'category' => null,
         'metadata' => null,
-        'campaign_type' => null,
+        'campaignType' => null,
         'voucher' => null
     ];
 
@@ -118,21 +118,21 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'name' => true,
 		'description' => true,
 		'type' => true,
-		'join_once' => true,
-		'auto_join' => true,
-		'use_voucher_metadata_schema' => true,
-		'vouchers_count' => true,
-		'start_date' => true,
-		'expiration_date' => true,
-		'validity_timeframe' => false,
-		'validity_day_of_week' => true,
-		'validity_hours' => false,
-		'activity_duration_after_publishing' => true,
-		'validation_rules' => true,
-		'category_id' => true,
+		'joinOnce' => true,
+		'autoJoin' => true,
+		'useVoucherMetadataSchema' => true,
+		'vouchersCount' => true,
+		'startDate' => true,
+		'expirationDate' => true,
+		'validityTimeframe' => false,
+		'validityDayOfWeek' => true,
+		'validityHours' => false,
+		'activityDurationAfterPublishing' => true,
+		'validationRules' => true,
+		'categoryId' => true,
 		'category' => true,
 		'metadata' => true,
-		'campaign_type' => true,
+		'campaignType' => true,
 		'voucher' => false
     ];
 
@@ -225,21 +225,21 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'name' => 'name',
         'description' => 'description',
         'type' => 'type',
-        'join_once' => 'join_once',
-        'auto_join' => 'auto_join',
-        'use_voucher_metadata_schema' => 'use_voucher_metadata_schema',
-        'vouchers_count' => 'vouchers_count',
-        'start_date' => 'start_date',
-        'expiration_date' => 'expiration_date',
-        'validity_timeframe' => 'validity_timeframe',
-        'validity_day_of_week' => 'validity_day_of_week',
-        'validity_hours' => 'validity_hours',
-        'activity_duration_after_publishing' => 'activity_duration_after_publishing',
-        'validation_rules' => 'validation_rules',
-        'category_id' => 'category_id',
+        'joinOnce' => 'join_once',
+        'autoJoin' => 'auto_join',
+        'useVoucherMetadataSchema' => 'use_voucher_metadata_schema',
+        'vouchersCount' => 'vouchers_count',
+        'startDate' => 'start_date',
+        'expirationDate' => 'expiration_date',
+        'validityTimeframe' => 'validity_timeframe',
+        'validityDayOfWeek' => 'validity_day_of_week',
+        'validityHours' => 'validity_hours',
+        'activityDurationAfterPublishing' => 'activity_duration_after_publishing',
+        'validationRules' => 'validation_rules',
+        'categoryId' => 'category_id',
         'category' => 'category',
         'metadata' => 'metadata',
-        'campaign_type' => 'campaign_type',
+        'campaignType' => 'campaign_type',
         'voucher' => 'voucher'
     ];
 
@@ -252,21 +252,21 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'name' => 'setName',
         'description' => 'setDescription',
         'type' => 'setType',
-        'join_once' => 'setJoinOnce',
-        'auto_join' => 'setAutoJoin',
-        'use_voucher_metadata_schema' => 'setUseVoucherMetadataSchema',
-        'vouchers_count' => 'setVouchersCount',
-        'start_date' => 'setStartDate',
-        'expiration_date' => 'setExpirationDate',
-        'validity_timeframe' => 'setValidityTimeframe',
-        'validity_day_of_week' => 'setValidityDayOfWeek',
-        'validity_hours' => 'setValidityHours',
-        'activity_duration_after_publishing' => 'setActivityDurationAfterPublishing',
-        'validation_rules' => 'setValidationRules',
-        'category_id' => 'setCategoryId',
+        'joinOnce' => 'setJoinOnce',
+        'autoJoin' => 'setAutoJoin',
+        'useVoucherMetadataSchema' => 'setUseVoucherMetadataSchema',
+        'vouchersCount' => 'setVouchersCount',
+        'startDate' => 'setStartDate',
+        'expirationDate' => 'setExpirationDate',
+        'validityTimeframe' => 'setValidityTimeframe',
+        'validityDayOfWeek' => 'setValidityDayOfWeek',
+        'validityHours' => 'setValidityHours',
+        'activityDurationAfterPublishing' => 'setActivityDurationAfterPublishing',
+        'validationRules' => 'setValidationRules',
+        'categoryId' => 'setCategoryId',
         'category' => 'setCategory',
         'metadata' => 'setMetadata',
-        'campaign_type' => 'setCampaignType',
+        'campaignType' => 'setCampaignType',
         'voucher' => 'setVoucher'
     ];
 
@@ -279,21 +279,21 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'name' => 'getName',
         'description' => 'getDescription',
         'type' => 'getType',
-        'join_once' => 'getJoinOnce',
-        'auto_join' => 'getAutoJoin',
-        'use_voucher_metadata_schema' => 'getUseVoucherMetadataSchema',
-        'vouchers_count' => 'getVouchersCount',
-        'start_date' => 'getStartDate',
-        'expiration_date' => 'getExpirationDate',
-        'validity_timeframe' => 'getValidityTimeframe',
-        'validity_day_of_week' => 'getValidityDayOfWeek',
-        'validity_hours' => 'getValidityHours',
-        'activity_duration_after_publishing' => 'getActivityDurationAfterPublishing',
-        'validation_rules' => 'getValidationRules',
-        'category_id' => 'getCategoryId',
+        'joinOnce' => 'getJoinOnce',
+        'autoJoin' => 'getAutoJoin',
+        'useVoucherMetadataSchema' => 'getUseVoucherMetadataSchema',
+        'vouchersCount' => 'getVouchersCount',
+        'startDate' => 'getStartDate',
+        'expirationDate' => 'getExpirationDate',
+        'validityTimeframe' => 'getValidityTimeframe',
+        'validityDayOfWeek' => 'getValidityDayOfWeek',
+        'validityHours' => 'getValidityHours',
+        'activityDurationAfterPublishing' => 'getActivityDurationAfterPublishing',
+        'validationRules' => 'getValidationRules',
+        'categoryId' => 'getCategoryId',
         'category' => 'getCategory',
         'metadata' => 'getMetadata',
-        'campaign_type' => 'getCampaignType',
+        'campaignType' => 'getCampaignType',
         'voucher' => 'getVoucher'
     ];
 
@@ -410,21 +410,21 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('join_once', $data ?? [], null);
-        $this->setIfExists('auto_join', $data ?? [], null);
-        $this->setIfExists('use_voucher_metadata_schema', $data ?? [], null);
-        $this->setIfExists('vouchers_count', $data ?? [], null);
-        $this->setIfExists('start_date', $data ?? [], null);
-        $this->setIfExists('expiration_date', $data ?? [], null);
-        $this->setIfExists('validity_timeframe', $data ?? [], null);
-        $this->setIfExists('validity_day_of_week', $data ?? [], null);
-        $this->setIfExists('validity_hours', $data ?? [], null);
-        $this->setIfExists('activity_duration_after_publishing', $data ?? [], null);
-        $this->setIfExists('validation_rules', $data ?? [], null);
-        $this->setIfExists('category_id', $data ?? [], null);
+        $this->setIfExists('joinOnce', $data ?? [], null);
+        $this->setIfExists('autoJoin', $data ?? [], null);
+        $this->setIfExists('useVoucherMetadataSchema', $data ?? [], null);
+        $this->setIfExists('vouchersCount', $data ?? [], null);
+        $this->setIfExists('startDate', $data ?? [], null);
+        $this->setIfExists('expirationDate', $data ?? [], null);
+        $this->setIfExists('validityTimeframe', $data ?? [], null);
+        $this->setIfExists('validityDayOfWeek', $data ?? [], null);
+        $this->setIfExists('validityHours', $data ?? [], null);
+        $this->setIfExists('activityDurationAfterPublishing', $data ?? [], null);
+        $this->setIfExists('validationRules', $data ?? [], null);
+        $this->setIfExists('categoryId', $data ?? [], null);
         $this->setIfExists('category', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('campaign_type', $data ?? [], 'LOYALTY_PROGRAM');
+        $this->setIfExists('campaignType', $data ?? [], 'LOYALTY_PROGRAM');
         $this->setIfExists('voucher', $data ?? [], null);
     }
 
@@ -464,15 +464,15 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
             );
         }
 
-        if (!is_null($this->container['validation_rules']) && (count($this->container['validation_rules']) > 1)) {
-            $invalidProperties[] = "invalid value for 'validation_rules', number of items must be less than or equal to 1.";
+        if (!is_null($this->container['validationRules']) && (count($this->container['validationRules']) > 1)) {
+            $invalidProperties[] = "invalid value for 'validationRules', number of items must be less than or equal to 1.";
         }
 
         $allowedValues = $this->getCampaignTypeAllowableValues();
-        if (!is_null($this->container['campaign_type']) && !in_array($this->container['campaign_type'], $allowedValues, true)) {
+        if (!is_null($this->container['campaignType']) && !in_array($this->container['campaignType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'campaign_type', must be one of '%s'",
-                $this->container['campaign_type'],
+                "invalid value '%s' for 'campaignType', must be one of '%s'",
+                $this->container['campaignType'],
                 implode("', '", $allowedValues)
             );
         }
@@ -605,408 +605,408 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
     }
 
     /**
-     * Gets join_once
+     * Gets joinOnce
      *
      * @return bool|null
      */
     public function getJoinOnce()
     {
-        return $this->container['join_once'];
+        return $this->container['joinOnce'];
     }
 
     /**
-     * Sets join_once
+     * Sets joinOnce
      *
-     * @param bool|null $join_once If this value is set to `true`, customers will be able to join the campaign only once.
+     * @param bool|null $joinOnce If this value is set to `true`, customers will be able to join the campaign only once.
      *
      * @return self
      */
-    public function setJoinOnce($join_once)
+    public function setJoinOnce($joinOnce)
     {
-        if (is_null($join_once)) {
-            array_push($this->openAPINullablesSetToNull, 'join_once');
+        if (is_null($joinOnce)) {
+            array_push($this->openAPINullablesSetToNull, 'joinOnce');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('join_once', $nullablesSetToNull);
+            $index = array_search('joinOnce', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['join_once'] = $join_once;
+        $this->container['joinOnce'] = $joinOnce;
 
         return $this;
     }
 
     /**
-     * Gets auto_join
+     * Gets autoJoin
      *
      * @return bool|null
      */
     public function getAutoJoin()
     {
-        return $this->container['auto_join'];
+        return $this->container['autoJoin'];
     }
 
     /**
-     * Sets auto_join
+     * Sets autoJoin
      *
-     * @param bool|null $auto_join Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
+     * @param bool|null $autoJoin Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
      *
      * @return self
      */
-    public function setAutoJoin($auto_join)
+    public function setAutoJoin($autoJoin)
     {
-        if (is_null($auto_join)) {
-            array_push($this->openAPINullablesSetToNull, 'auto_join');
+        if (is_null($autoJoin)) {
+            array_push($this->openAPINullablesSetToNull, 'autoJoin');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('auto_join', $nullablesSetToNull);
+            $index = array_search('autoJoin', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['auto_join'] = $auto_join;
+        $this->container['autoJoin'] = $autoJoin;
 
         return $this;
     }
 
     /**
-     * Gets use_voucher_metadata_schema
+     * Gets useVoucherMetadataSchema
      *
      * @return bool|null
      */
     public function getUseVoucherMetadataSchema()
     {
-        return $this->container['use_voucher_metadata_schema'];
+        return $this->container['useVoucherMetadataSchema'];
     }
 
     /**
-     * Sets use_voucher_metadata_schema
+     * Sets useVoucherMetadataSchema
      *
-     * @param bool|null $use_voucher_metadata_schema Flag indicating whether the campaign is to use the voucher's metadata schema instead of the campaign metadata schema.
+     * @param bool|null $useVoucherMetadataSchema Flag indicating whether the campaign is to use the voucher's metadata schema instead of the campaign metadata schema.
      *
      * @return self
      */
-    public function setUseVoucherMetadataSchema($use_voucher_metadata_schema)
+    public function setUseVoucherMetadataSchema($useVoucherMetadataSchema)
     {
-        if (is_null($use_voucher_metadata_schema)) {
-            array_push($this->openAPINullablesSetToNull, 'use_voucher_metadata_schema');
+        if (is_null($useVoucherMetadataSchema)) {
+            array_push($this->openAPINullablesSetToNull, 'useVoucherMetadataSchema');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('use_voucher_metadata_schema', $nullablesSetToNull);
+            $index = array_search('useVoucherMetadataSchema', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['use_voucher_metadata_schema'] = $use_voucher_metadata_schema;
+        $this->container['useVoucherMetadataSchema'] = $useVoucherMetadataSchema;
 
         return $this;
     }
 
     /**
-     * Gets vouchers_count
+     * Gets vouchersCount
      *
      * @return int|null
      */
     public function getVouchersCount()
     {
-        return $this->container['vouchers_count'];
+        return $this->container['vouchersCount'];
     }
 
     /**
-     * Sets vouchers_count
+     * Sets vouchersCount
      *
-     * @param int|null $vouchers_count Total number of unique vouchers in campaign (size of campaign).
+     * @param int|null $vouchersCount Total number of unique vouchers in campaign (size of campaign).
      *
      * @return self
      */
-    public function setVouchersCount($vouchers_count)
+    public function setVouchersCount($vouchersCount)
     {
-        if (is_null($vouchers_count)) {
-            array_push($this->openAPINullablesSetToNull, 'vouchers_count');
+        if (is_null($vouchersCount)) {
+            array_push($this->openAPINullablesSetToNull, 'vouchersCount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('vouchers_count', $nullablesSetToNull);
+            $index = array_search('vouchersCount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['vouchers_count'] = $vouchers_count;
+        $this->container['vouchersCount'] = $vouchersCount;
 
         return $this;
     }
 
     /**
-     * Gets start_date
+     * Gets startDate
      *
      * @return \DateTime|null
      */
     public function getStartDate()
     {
-        return $this->container['start_date'];
+        return $this->container['startDate'];
     }
 
     /**
-     * Sets start_date
+     * Sets startDate
      *
-     * @param \DateTime|null $start_date Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date.
+     * @param \DateTime|null $startDate Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date.
      *
      * @return self
      */
-    public function setStartDate($start_date)
+    public function setStartDate($startDate)
     {
-        if (is_null($start_date)) {
-            array_push($this->openAPINullablesSetToNull, 'start_date');
+        if (is_null($startDate)) {
+            array_push($this->openAPINullablesSetToNull, 'startDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('start_date', $nullablesSetToNull);
+            $index = array_search('startDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['start_date'] = $start_date;
+        $this->container['startDate'] = $startDate;
 
         return $this;
     }
 
     /**
-     * Gets expiration_date
+     * Gets expirationDate
      *
      * @return \DateTime|null
      */
     public function getExpirationDate()
     {
-        return $this->container['expiration_date'];
+        return $this->container['expirationDate'];
     }
 
     /**
-     * Sets expiration_date
+     * Sets expirationDate
      *
-     * @param \DateTime|null $expiration_date Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
+     * @param \DateTime|null $expirationDate Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date.
      *
      * @return self
      */
-    public function setExpirationDate($expiration_date)
+    public function setExpirationDate($expirationDate)
     {
-        if (is_null($expiration_date)) {
-            array_push($this->openAPINullablesSetToNull, 'expiration_date');
+        if (is_null($expirationDate)) {
+            array_push($this->openAPINullablesSetToNull, 'expirationDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiration_date', $nullablesSetToNull);
+            $index = array_search('expirationDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['expiration_date'] = $expiration_date;
+        $this->container['expirationDate'] = $expirationDate;
 
         return $this;
     }
 
     /**
-     * Gets validity_timeframe
+     * Gets validityTimeframe
      *
      * @return \OpenAPI\Client\Model\ValidityTimeframe|null
      */
     public function getValidityTimeframe()
     {
-        return $this->container['validity_timeframe'];
+        return $this->container['validityTimeframe'];
     }
 
     /**
-     * Sets validity_timeframe
+     * Sets validityTimeframe
      *
-     * @param \OpenAPI\Client\Model\ValidityTimeframe|null $validity_timeframe validity_timeframe
+     * @param \OpenAPI\Client\Model\ValidityTimeframe|null $validityTimeframe validityTimeframe
      *
      * @return self
      */
-    public function setValidityTimeframe($validity_timeframe)
+    public function setValidityTimeframe($validityTimeframe)
     {
-        if (is_null($validity_timeframe)) {
-            throw new \InvalidArgumentException('non-nullable validity_timeframe cannot be null');
+        if (is_null($validityTimeframe)) {
+            throw new \InvalidArgumentException('non-nullable validityTimeframe cannot be null');
         }
-        $this->container['validity_timeframe'] = $validity_timeframe;
+        $this->container['validityTimeframe'] = $validityTimeframe;
 
         return $this;
     }
 
     /**
-     * Gets validity_day_of_week
+     * Gets validityDayOfWeek
      *
      * @return int[]|null
      */
     public function getValidityDayOfWeek()
     {
-        return $this->container['validity_day_of_week'];
+        return $this->container['validityDayOfWeek'];
     }
 
     /**
-     * Sets validity_day_of_week
+     * Sets validityDayOfWeek
      *
-     * @param int[]|null $validity_day_of_week Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+     * @param int[]|null $validityDayOfWeek Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
      *
      * @return self
      */
-    public function setValidityDayOfWeek($validity_day_of_week)
+    public function setValidityDayOfWeek($validityDayOfWeek)
     {
-        if (is_null($validity_day_of_week)) {
-            array_push($this->openAPINullablesSetToNull, 'validity_day_of_week');
+        if (is_null($validityDayOfWeek)) {
+            array_push($this->openAPINullablesSetToNull, 'validityDayOfWeek');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validity_day_of_week', $nullablesSetToNull);
+            $index = array_search('validityDayOfWeek', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getValidityDayOfWeekAllowableValues();
-        if (!is_null($validity_day_of_week) && array_diff($validity_day_of_week, $allowedValues)) {
+        if (!is_null($validityDayOfWeek) && array_diff($validityDayOfWeek, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'validity_day_of_week', must be one of '%s'",
+                    "Invalid value for 'validityDayOfWeek', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['validity_day_of_week'] = $validity_day_of_week;
+        $this->container['validityDayOfWeek'] = $validityDayOfWeek;
 
         return $this;
     }
 
     /**
-     * Gets validity_hours
+     * Gets validityHours
      *
      * @return \OpenAPI\Client\Model\ValidityHours|null
      */
     public function getValidityHours()
     {
-        return $this->container['validity_hours'];
+        return $this->container['validityHours'];
     }
 
     /**
-     * Sets validity_hours
+     * Sets validityHours
      *
-     * @param \OpenAPI\Client\Model\ValidityHours|null $validity_hours validity_hours
+     * @param \OpenAPI\Client\Model\ValidityHours|null $validityHours validityHours
      *
      * @return self
      */
-    public function setValidityHours($validity_hours)
+    public function setValidityHours($validityHours)
     {
-        if (is_null($validity_hours)) {
-            throw new \InvalidArgumentException('non-nullable validity_hours cannot be null');
+        if (is_null($validityHours)) {
+            throw new \InvalidArgumentException('non-nullable validityHours cannot be null');
         }
-        $this->container['validity_hours'] = $validity_hours;
+        $this->container['validityHours'] = $validityHours;
 
         return $this;
     }
 
     /**
-     * Gets activity_duration_after_publishing
+     * Gets activityDurationAfterPublishing
      *
      * @return string|null
      */
     public function getActivityDurationAfterPublishing()
     {
-        return $this->container['activity_duration_after_publishing'];
+        return $this->container['activityDurationAfterPublishing'];
     }
 
     /**
-     * Sets activity_duration_after_publishing
+     * Sets activityDurationAfterPublishing
      *
-     * @param string|null $activity_duration_after_publishing Defines the amount of time the vouchers will be active after publishing. The value is shown in the ISO 8601 format. For example, a voucher with the value of P24D will be valid for a duration of 24 days.
+     * @param string|null $activityDurationAfterPublishing Defines the amount of time the vouchers will be active after publishing. The value is shown in the ISO 8601 format. For example, a voucher with the value of P24D will be valid for a duration of 24 days.
      *
      * @return self
      */
-    public function setActivityDurationAfterPublishing($activity_duration_after_publishing)
+    public function setActivityDurationAfterPublishing($activityDurationAfterPublishing)
     {
-        if (is_null($activity_duration_after_publishing)) {
-            array_push($this->openAPINullablesSetToNull, 'activity_duration_after_publishing');
+        if (is_null($activityDurationAfterPublishing)) {
+            array_push($this->openAPINullablesSetToNull, 'activityDurationAfterPublishing');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('activity_duration_after_publishing', $nullablesSetToNull);
+            $index = array_search('activityDurationAfterPublishing', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['activity_duration_after_publishing'] = $activity_duration_after_publishing;
+        $this->container['activityDurationAfterPublishing'] = $activityDurationAfterPublishing;
 
         return $this;
     }
 
     /**
-     * Gets validation_rules
+     * Gets validationRules
      *
      * @return string[]|null
      */
     public function getValidationRules()
     {
-        return $this->container['validation_rules'];
+        return $this->container['validationRules'];
     }
 
     /**
-     * Sets validation_rules
+     * Sets validationRules
      *
-     * @param string[]|null $validation_rules Array containing the ID of the validation rule associated with the promotion tier.
+     * @param string[]|null $validationRules Array containing the ID of the validation rule associated with the promotion tier.
      *
      * @return self
      */
-    public function setValidationRules($validation_rules)
+    public function setValidationRules($validationRules)
     {
-        if (is_null($validation_rules)) {
-            array_push($this->openAPINullablesSetToNull, 'validation_rules');
+        if (is_null($validationRules)) {
+            array_push($this->openAPINullablesSetToNull, 'validationRules');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validation_rules', $nullablesSetToNull);
+            $index = array_search('validationRules', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
 
-        if (!is_null($validation_rules) && (count($validation_rules) > 1)) {
-            throw new \InvalidArgumentException('invalid value for $validation_rules when calling LoyaltiesCreateCampaignRequestBody., number of items must be less than or equal to 1.');
+        if (!is_null($validationRules) && (count($validationRules) > 1)) {
+            throw new \InvalidArgumentException('invalid value for $validationRules when calling LoyaltiesCreateCampaignRequestBody., number of items must be less than or equal to 1.');
         }
-        $this->container['validation_rules'] = $validation_rules;
+        $this->container['validationRules'] = $validationRules;
 
         return $this;
     }
 
     /**
-     * Gets category_id
+     * Gets categoryId
      *
      * @return string|null
      */
     public function getCategoryId()
     {
-        return $this->container['category_id'];
+        return $this->container['categoryId'];
     }
 
     /**
-     * Sets category_id
+     * Sets categoryId
      *
-     * @param string|null $category_id Unique category ID that this campaign belongs to. Either pass this parameter OR the `category`.
+     * @param string|null $categoryId Unique category ID that this campaign belongs to. Either pass this parameter OR the `category`.
      *
      * @return self
      */
-    public function setCategoryId($category_id)
+    public function setCategoryId($categoryId)
     {
-        if (is_null($category_id)) {
-            array_push($this->openAPINullablesSetToNull, 'category_id');
+        if (is_null($categoryId)) {
+            array_push($this->openAPINullablesSetToNull, 'categoryId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('category_id', $nullablesSetToNull);
+            $index = array_search('categoryId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['category_id'] = $category_id;
+        $this->container['categoryId'] = $categoryId;
 
         return $this;
     }
@@ -1080,45 +1080,45 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
     }
 
     /**
-     * Gets campaign_type
+     * Gets campaignType
      *
      * @return string|null
      */
     public function getCampaignType()
     {
-        return $this->container['campaign_type'];
+        return $this->container['campaignType'];
     }
 
     /**
-     * Sets campaign_type
+     * Sets campaignType
      *
-     * @param string|null $campaign_type Type of campaign.
+     * @param string|null $campaignType Type of campaign.
      *
      * @return self
      */
-    public function setCampaignType($campaign_type)
+    public function setCampaignType($campaignType)
     {
-        if (is_null($campaign_type)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_type');
+        if (is_null($campaignType)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_type', $nullablesSetToNull);
+            $index = array_search('campaignType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getCampaignTypeAllowableValues();
-        if (!is_null($campaign_type) && !in_array($campaign_type, $allowedValues, true)) {
+        if (!is_null($campaignType) && !in_array($campaignType, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'campaign_type', must be one of '%s'",
-                    $campaign_type,
+                    "Invalid value '%s' for 'campaignType', must be one of '%s'",
+                    $campaignType,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['campaign_type'] = $campaign_type;
+        $this->container['campaignType'] = $campaignType;
 
         return $this;
     }

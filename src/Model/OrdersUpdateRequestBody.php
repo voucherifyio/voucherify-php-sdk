@@ -59,16 +59,17 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
+        'sourceId' => 'string',
         'status' => 'string',
         'amount' => 'int',
-        'discount_amount' => 'int',
-        'initial_amount' => 'int',
+        'initialAmount' => 'int',
+        'discountAmount' => 'int',
         'items' => '\OpenAPI\Client\Model\OrderItem[]',
+        'metadata' => 'object',
+        'createdAt' => '\DateTime',
+        'referrerId' => 'string',
         'customer' => '\OpenAPI\Client\Model\Customer',
-        'customer_id' => 'string',
-        'referrer' => '\OpenAPI\Client\Model\Referrer',
-        'referrer_id' => 'string',
-        'metadata' => 'object'
+        'referrer' => '\OpenAPI\Client\Model\Referrer'
     ];
 
     /**
@@ -79,16 +80,17 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'sourceId' => null,
         'status' => null,
         'amount' => null,
-        'discount_amount' => null,
-        'initial_amount' => null,
+        'initialAmount' => null,
+        'discountAmount' => null,
         'items' => null,
+        'metadata' => null,
+        'createdAt' => 'date-time',
+        'referrerId' => null,
         'customer' => null,
-        'customer_id' => null,
-        'referrer' => null,
-        'referrer_id' => null,
-        'metadata' => null
+        'referrer' => null
     ];
 
     /**
@@ -97,16 +99,17 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'status' => true,
+        'sourceId' => true,
+		'status' => true,
 		'amount' => true,
-		'discount_amount' => true,
-		'initial_amount' => true,
+		'initialAmount' => true,
+		'discountAmount' => true,
 		'items' => true,
+		'metadata' => true,
+		'createdAt' => true,
+		'referrerId' => true,
 		'customer' => false,
-		'customer_id' => true,
-		'referrer' => false,
-		'referrer_id' => true,
-		'metadata' => true
+		'referrer' => false
     ];
 
     /**
@@ -195,16 +198,17 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
+        'sourceId' => 'source_id',
         'status' => 'status',
         'amount' => 'amount',
-        'discount_amount' => 'discount_amount',
-        'initial_amount' => 'initial_amount',
+        'initialAmount' => 'initial_amount',
+        'discountAmount' => 'discount_amount',
         'items' => 'items',
+        'metadata' => 'metadata',
+        'createdAt' => 'created_at',
+        'referrerId' => 'referrer_id',
         'customer' => 'customer',
-        'customer_id' => 'customer_id',
-        'referrer' => 'referrer',
-        'referrer_id' => 'referrer_id',
-        'metadata' => 'metadata'
+        'referrer' => 'referrer'
     ];
 
     /**
@@ -213,16 +217,17 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
+        'sourceId' => 'setSourceId',
         'status' => 'setStatus',
         'amount' => 'setAmount',
-        'discount_amount' => 'setDiscountAmount',
-        'initial_amount' => 'setInitialAmount',
+        'initialAmount' => 'setInitialAmount',
+        'discountAmount' => 'setDiscountAmount',
         'items' => 'setItems',
+        'metadata' => 'setMetadata',
+        'createdAt' => 'setCreatedAt',
+        'referrerId' => 'setReferrerId',
         'customer' => 'setCustomer',
-        'customer_id' => 'setCustomerId',
-        'referrer' => 'setReferrer',
-        'referrer_id' => 'setReferrerId',
-        'metadata' => 'setMetadata'
+        'referrer' => 'setReferrer'
     ];
 
     /**
@@ -231,16 +236,17 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
+        'sourceId' => 'getSourceId',
         'status' => 'getStatus',
         'amount' => 'getAmount',
-        'discount_amount' => 'getDiscountAmount',
-        'initial_amount' => 'getInitialAmount',
+        'initialAmount' => 'getInitialAmount',
+        'discountAmount' => 'getDiscountAmount',
         'items' => 'getItems',
+        'metadata' => 'getMetadata',
+        'createdAt' => 'getCreatedAt',
+        'referrerId' => 'getReferrerId',
         'customer' => 'getCustomer',
-        'customer_id' => 'getCustomerId',
-        'referrer' => 'getReferrer',
-        'referrer_id' => 'getReferrerId',
-        'metadata' => 'getMetadata'
+        'referrer' => 'getReferrer'
     ];
 
     /**
@@ -319,16 +325,17 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('sourceId', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
-        $this->setIfExists('discount_amount', $data ?? [], null);
-        $this->setIfExists('initial_amount', $data ?? [], null);
+        $this->setIfExists('initialAmount', $data ?? [], null);
+        $this->setIfExists('discountAmount', $data ?? [], null);
         $this->setIfExists('items', $data ?? [], null);
-        $this->setIfExists('customer', $data ?? [], null);
-        $this->setIfExists('customer_id', $data ?? [], null);
-        $this->setIfExists('referrer', $data ?? [], null);
-        $this->setIfExists('referrer_id', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('referrerId', $data ?? [], null);
+        $this->setIfExists('customer', $data ?? [], null);
+        $this->setIfExists('referrer', $data ?? [], null);
     }
 
     /**
@@ -381,6 +388,40 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets sourceId
+     *
+     * @return string|null
+     */
+    public function getSourceId()
+    {
+        return $this->container['sourceId'];
+    }
+
+    /**
+     * Sets sourceId
+     *
+     * @param string|null $sourceId Unique source ID of an existing order that will be linked to the redemption of this request.
+     *
+     * @return self
+     */
+    public function setSourceId($sourceId)
+    {
+        if (is_null($sourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'sourceId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sourceId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['sourceId'] = $sourceId;
+
+        return $this;
+    }
 
     /**
      * Gets status
@@ -461,69 +502,69 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets discount_amount
-     *
-     * @return int|null
-     */
-    public function getDiscountAmount()
-    {
-        return $this->container['discount_amount'];
-    }
-
-    /**
-     * Sets discount_amount
-     *
-     * @param int|null $discount_amount Sum of all order-level discounts applied to the order.
-     *
-     * @return self
-     */
-    public function setDiscountAmount($discount_amount)
-    {
-        if (is_null($discount_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'discount_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('discount_amount', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['discount_amount'] = $discount_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets initial_amount
+     * Gets initialAmount
      *
      * @return int|null
      */
     public function getInitialAmount()
     {
-        return $this->container['initial_amount'];
+        return $this->container['initialAmount'];
     }
 
     /**
-     * Sets initial_amount
+     * Sets initialAmount
      *
-     * @param int|null $initial_amount A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+     * @param int|null $initialAmount A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
      *
      * @return self
      */
-    public function setInitialAmount($initial_amount)
+    public function setInitialAmount($initialAmount)
     {
-        if (is_null($initial_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'initial_amount');
+        if (is_null($initialAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'initialAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('initial_amount', $nullablesSetToNull);
+            $index = array_search('initialAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['initial_amount'] = $initial_amount;
+        $this->container['initialAmount'] = $initialAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets discountAmount
+     *
+     * @return int|null
+     */
+    public function getDiscountAmount()
+    {
+        return $this->container['discountAmount'];
+    }
+
+    /**
+     * Sets discountAmount
+     *
+     * @param int|null $discountAmount Sum of all order-level discounts applied to the order.
+     *
+     * @return self
+     */
+    public function setDiscountAmount($discountAmount)
+    {
+        if (is_null($discountAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'discountAmount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('discountAmount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['discountAmount'] = $discountAmount;
 
         return $this;
     }
@@ -563,128 +604,6 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets customer
-     *
-     * @return \OpenAPI\Client\Model\Customer|null
-     */
-    public function getCustomer()
-    {
-        return $this->container['customer'];
-    }
-
-    /**
-     * Sets customer
-     *
-     * @param \OpenAPI\Client\Model\Customer|null $customer customer
-     *
-     * @return self
-     */
-    public function setCustomer($customer)
-    {
-        if (is_null($customer)) {
-            throw new \InvalidArgumentException('non-nullable customer cannot be null');
-        }
-        $this->container['customer'] = $customer;
-
-        return $this;
-    }
-
-    /**
-     * Gets customer_id
-     *
-     * @return string|null
-     */
-    public function getCustomerId()
-    {
-        return $this->container['customer_id'];
-    }
-
-    /**
-     * Sets customer_id
-     *
-     * @param string|null $customer_id Unique customer ID of the customer making the purchase.
-     *
-     * @return self
-     */
-    public function setCustomerId($customer_id)
-    {
-        if (is_null($customer_id)) {
-            array_push($this->openAPINullablesSetToNull, 'customer_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customer_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['customer_id'] = $customer_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets referrer
-     *
-     * @return \OpenAPI\Client\Model\Referrer|null
-     */
-    public function getReferrer()
-    {
-        return $this->container['referrer'];
-    }
-
-    /**
-     * Sets referrer
-     *
-     * @param \OpenAPI\Client\Model\Referrer|null $referrer referrer
-     *
-     * @return self
-     */
-    public function setReferrer($referrer)
-    {
-        if (is_null($referrer)) {
-            throw new \InvalidArgumentException('non-nullable referrer cannot be null');
-        }
-        $this->container['referrer'] = $referrer;
-
-        return $this;
-    }
-
-    /**
-     * Gets referrer_id
-     *
-     * @return string|null
-     */
-    public function getReferrerId()
-    {
-        return $this->container['referrer_id'];
-    }
-
-    /**
-     * Sets referrer_id
-     *
-     * @param string|null $referrer_id Unique referrer ID.
-     *
-     * @return self
-     */
-    public function setReferrerId($referrer_id)
-    {
-        if (is_null($referrer_id)) {
-            array_push($this->openAPINullablesSetToNull, 'referrer_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('referrer_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['referrer_id'] = $referrer_id;
-
-        return $this;
-    }
-
-    /**
      * Gets metadata
      *
      * @return object|null
@@ -714,6 +633,128 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
             }
         }
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setCreatedAt($createdAt)
+    {
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('createdAt', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['createdAt'] = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets referrerId
+     *
+     * @return string|null
+     */
+    public function getReferrerId()
+    {
+        return $this->container['referrerId'];
+    }
+
+    /**
+     * Sets referrerId
+     *
+     * @param string|null $referrerId Unique referrer ID.
+     *
+     * @return self
+     */
+    public function setReferrerId($referrerId)
+    {
+        if (is_null($referrerId)) {
+            array_push($this->openAPINullablesSetToNull, 'referrerId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('referrerId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['referrerId'] = $referrerId;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer
+     *
+     * @return \OpenAPI\Client\Model\Customer|null
+     */
+    public function getCustomer()
+    {
+        return $this->container['customer'];
+    }
+
+    /**
+     * Sets customer
+     *
+     * @param \OpenAPI\Client\Model\Customer|null $customer customer
+     *
+     * @return self
+     */
+    public function setCustomer($customer)
+    {
+        if (is_null($customer)) {
+            throw new \InvalidArgumentException('non-nullable customer cannot be null');
+        }
+        $this->container['customer'] = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Gets referrer
+     *
+     * @return \OpenAPI\Client\Model\Referrer|null
+     */
+    public function getReferrer()
+    {
+        return $this->container['referrer'];
+    }
+
+    /**
+     * Sets referrer
+     *
+     * @param \OpenAPI\Client\Model\Referrer|null $referrer referrer
+     *
+     * @return self
+     */
+    public function setReferrer($referrer)
+    {
+        if (is_null($referrer)) {
+            throw new \InvalidArgumentException('non-nullable referrer cannot be null');
+        }
+        $this->container['referrer'] = $referrer;
 
         return $this;
     }

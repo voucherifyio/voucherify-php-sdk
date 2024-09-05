@@ -58,11 +58,11 @@ class CustomerSummaryOrders implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total_amount' => 'int',
-        'total_count' => 'int',
-        'average_amount' => 'int',
-        'last_order_amount' => 'int',
-        'last_order_date' => '\DateTime'
+        'totalAmount' => 'int',
+        'totalCount' => 'int',
+        'averageAmount' => 'int',
+        'lastOrderAmount' => 'int',
+        'lastOrderDate' => '\DateTime'
     ];
 
     /**
@@ -73,11 +73,11 @@ class CustomerSummaryOrders implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'total_amount' => null,
-        'total_count' => null,
-        'average_amount' => null,
-        'last_order_amount' => null,
-        'last_order_date' => 'date-time'
+        'totalAmount' => null,
+        'totalCount' => null,
+        'averageAmount' => null,
+        'lastOrderAmount' => null,
+        'lastOrderDate' => 'date-time'
     ];
 
     /**
@@ -86,11 +86,11 @@ class CustomerSummaryOrders implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'total_amount' => true,
-		'total_count' => true,
-		'average_amount' => true,
-		'last_order_amount' => true,
-		'last_order_date' => true
+        'totalAmount' => true,
+		'totalCount' => true,
+		'averageAmount' => true,
+		'lastOrderAmount' => true,
+		'lastOrderDate' => true
     ];
 
     /**
@@ -179,11 +179,11 @@ class CustomerSummaryOrders implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'total_amount' => 'total_amount',
-        'total_count' => 'total_count',
-        'average_amount' => 'average_amount',
-        'last_order_amount' => 'last_order_amount',
-        'last_order_date' => 'last_order_date'
+        'totalAmount' => 'total_amount',
+        'totalCount' => 'total_count',
+        'averageAmount' => 'average_amount',
+        'lastOrderAmount' => 'last_order_amount',
+        'lastOrderDate' => 'last_order_date'
     ];
 
     /**
@@ -192,11 +192,11 @@ class CustomerSummaryOrders implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'total_amount' => 'setTotalAmount',
-        'total_count' => 'setTotalCount',
-        'average_amount' => 'setAverageAmount',
-        'last_order_amount' => 'setLastOrderAmount',
-        'last_order_date' => 'setLastOrderDate'
+        'totalAmount' => 'setTotalAmount',
+        'totalCount' => 'setTotalCount',
+        'averageAmount' => 'setAverageAmount',
+        'lastOrderAmount' => 'setLastOrderAmount',
+        'lastOrderDate' => 'setLastOrderDate'
     ];
 
     /**
@@ -205,11 +205,11 @@ class CustomerSummaryOrders implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'total_amount' => 'getTotalAmount',
-        'total_count' => 'getTotalCount',
-        'average_amount' => 'getAverageAmount',
-        'last_order_amount' => 'getLastOrderAmount',
-        'last_order_date' => 'getLastOrderDate'
+        'totalAmount' => 'getTotalAmount',
+        'totalCount' => 'getTotalCount',
+        'averageAmount' => 'getAverageAmount',
+        'lastOrderAmount' => 'getLastOrderAmount',
+        'lastOrderDate' => 'getLastOrderDate'
     ];
 
     /**
@@ -269,11 +269,11 @@ class CustomerSummaryOrders implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('total_amount', $data ?? [], null);
-        $this->setIfExists('total_count', $data ?? [], null);
-        $this->setIfExists('average_amount', $data ?? [], null);
-        $this->setIfExists('last_order_amount', $data ?? [], null);
-        $this->setIfExists('last_order_date', $data ?? [], null);
+        $this->setIfExists('totalAmount', $data ?? [], null);
+        $this->setIfExists('totalCount', $data ?? [], null);
+        $this->setIfExists('averageAmount', $data ?? [], null);
+        $this->setIfExists('lastOrderAmount', $data ?? [], null);
+        $this->setIfExists('lastOrderDate', $data ?? [], null);
     }
 
     /**
@@ -319,171 +319,171 @@ class CustomerSummaryOrders implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets total_amount
+     * Gets totalAmount
      *
      * @return int|null
      */
     public function getTotalAmount()
     {
-        return $this->container['total_amount'];
+        return $this->container['totalAmount'];
     }
 
     /**
-     * Sets total_amount
+     * Sets totalAmount
      *
-     * @param int|null $total_amount The total amount spent by the customer. Value is multiplied by 100 to precisely represent 2 decimal places. For example `10000 cents` for `$100.00`.
+     * @param int|null $totalAmount The total amount spent by the customer. Value is multiplied by 100 to precisely represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */
-    public function setTotalAmount($total_amount)
+    public function setTotalAmount($totalAmount)
     {
-        if (is_null($total_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'total_amount');
+        if (is_null($totalAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'totalAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_amount', $nullablesSetToNull);
+            $index = array_search('totalAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['total_amount'] = $total_amount;
+        $this->container['totalAmount'] = $totalAmount;
 
         return $this;
     }
 
     /**
-     * Gets total_count
+     * Gets totalCount
      *
      * @return int|null
      */
     public function getTotalCount()
     {
-        return $this->container['total_count'];
+        return $this->container['totalCount'];
     }
 
     /**
-     * Sets total_count
+     * Sets totalCount
      *
-     * @param int|null $total_count Total number of orders made by the customer.
+     * @param int|null $totalCount Total number of orders made by the customer.
      *
      * @return self
      */
-    public function setTotalCount($total_count)
+    public function setTotalCount($totalCount)
     {
-        if (is_null($total_count)) {
-            array_push($this->openAPINullablesSetToNull, 'total_count');
+        if (is_null($totalCount)) {
+            array_push($this->openAPINullablesSetToNull, 'totalCount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_count', $nullablesSetToNull);
+            $index = array_search('totalCount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['total_count'] = $total_count;
+        $this->container['totalCount'] = $totalCount;
 
         return $this;
     }
 
     /**
-     * Gets average_amount
+     * Gets averageAmount
      *
      * @return int|null
      */
     public function getAverageAmount()
     {
-        return $this->container['average_amount'];
+        return $this->container['averageAmount'];
     }
 
     /**
-     * Sets average_amount
+     * Sets averageAmount
      *
-     * @param int|null $average_amount Average amount spent on orders. `total_amount` &divide; `total_count`. Value is multiplied by 100 to precisely represent 2 decimal places. For example `10000 cents` for `$100.00`.
+     * @param int|null $averageAmount Average amount spent on orders. `total_amount` &divide; `total_count`. Value is multiplied by 100 to precisely represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */
-    public function setAverageAmount($average_amount)
+    public function setAverageAmount($averageAmount)
     {
-        if (is_null($average_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'average_amount');
+        if (is_null($averageAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'averageAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('average_amount', $nullablesSetToNull);
+            $index = array_search('averageAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['average_amount'] = $average_amount;
+        $this->container['averageAmount'] = $averageAmount;
 
         return $this;
     }
 
     /**
-     * Gets last_order_amount
+     * Gets lastOrderAmount
      *
      * @return int|null
      */
     public function getLastOrderAmount()
     {
-        return $this->container['last_order_amount'];
+        return $this->container['lastOrderAmount'];
     }
 
     /**
-     * Sets last_order_amount
+     * Sets lastOrderAmount
      *
-     * @param int|null $last_order_amount Amount spent on last order. Value is multiplied by 100 to precisely represent 2 decimal places. For example `10000 cents` for `$100.00`.
+     * @param int|null $lastOrderAmount Amount spent on last order. Value is multiplied by 100 to precisely represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */
-    public function setLastOrderAmount($last_order_amount)
+    public function setLastOrderAmount($lastOrderAmount)
     {
-        if (is_null($last_order_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'last_order_amount');
+        if (is_null($lastOrderAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'lastOrderAmount');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('last_order_amount', $nullablesSetToNull);
+            $index = array_search('lastOrderAmount', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['last_order_amount'] = $last_order_amount;
+        $this->container['lastOrderAmount'] = $lastOrderAmount;
 
         return $this;
     }
 
     /**
-     * Gets last_order_date
+     * Gets lastOrderDate
      *
      * @return \DateTime|null
      */
     public function getLastOrderDate()
     {
-        return $this->container['last_order_date'];
+        return $this->container['lastOrderDate'];
     }
 
     /**
-     * Sets last_order_date
+     * Sets lastOrderDate
      *
-     * @param \DateTime|null $last_order_date Timestamp representing the date and time of the customer's last order in ISO 8601 format.
+     * @param \DateTime|null $lastOrderDate Timestamp representing the date and time of the customer's last order in ISO 8601 format.
      *
      * @return self
      */
-    public function setLastOrderDate($last_order_date)
+    public function setLastOrderDate($lastOrderDate)
     {
-        if (is_null($last_order_date)) {
-            array_push($this->openAPINullablesSetToNull, 'last_order_date');
+        if (is_null($lastOrderDate)) {
+            array_push($this->openAPINullablesSetToNull, 'lastOrderDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('last_order_date', $nullablesSetToNull);
+            $index = array_search('lastOrderDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['last_order_date'] = $last_order_date;
+        $this->container['lastOrderDate'] = $lastOrderDate;
 
         return $this;
     }

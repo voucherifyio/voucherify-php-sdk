@@ -60,15 +60,15 @@ class PublicationsCreateResponseBody implements ModelInterface, ArrayAccess, \Js
     protected static $openAPITypes = [
         'id' => 'string',
         'object' => 'string',
-        'created_at' => '\DateTime',
-        'customer_id' => 'string',
-        'tracking_id' => 'string',
+        'createdAt' => '\DateTime',
+        'customerId' => 'string',
+        'trackingId' => 'string',
         'metadata' => 'object',
         'channel' => 'string',
-        'source_id' => 'string',
+        'sourceId' => 'string',
         'result' => 'string',
         'customer' => '\OpenAPI\Client\Model\CustomerWithSummaryLoyaltyReferrals',
-        'vouchers_id' => 'string[]',
+        'vouchersId' => 'string[]',
         'voucher' => '\OpenAPI\Client\Model\Voucher',
         'vouchers' => 'string[]'
     ];
@@ -83,15 +83,15 @@ class PublicationsCreateResponseBody implements ModelInterface, ArrayAccess, \Js
     protected static $openAPIFormats = [
         'id' => null,
         'object' => null,
-        'created_at' => 'date-time',
-        'customer_id' => null,
-        'tracking_id' => null,
+        'createdAt' => 'date-time',
+        'customerId' => null,
+        'trackingId' => null,
         'metadata' => null,
         'channel' => null,
-        'source_id' => null,
+        'sourceId' => null,
         'result' => null,
         'customer' => null,
-        'vouchers_id' => null,
+        'vouchersId' => null,
         'voucher' => null,
         'vouchers' => null
     ];
@@ -104,15 +104,15 @@ class PublicationsCreateResponseBody implements ModelInterface, ArrayAccess, \Js
     protected static array $openAPINullables = [
         'id' => true,
 		'object' => true,
-		'created_at' => true,
-		'customer_id' => true,
-		'tracking_id' => true,
+		'createdAt' => true,
+		'customerId' => true,
+		'trackingId' => true,
 		'metadata' => true,
 		'channel' => true,
-		'source_id' => true,
+		'sourceId' => true,
 		'result' => true,
 		'customer' => false,
-		'vouchers_id' => true,
+		'vouchersId' => true,
 		'voucher' => false,
 		'vouchers' => true
     ];
@@ -205,15 +205,15 @@ class PublicationsCreateResponseBody implements ModelInterface, ArrayAccess, \Js
     protected static $attributeMap = [
         'id' => 'id',
         'object' => 'object',
-        'created_at' => 'created_at',
-        'customer_id' => 'customer_id',
-        'tracking_id' => 'tracking_id',
+        'createdAt' => 'created_at',
+        'customerId' => 'customer_id',
+        'trackingId' => 'tracking_id',
         'metadata' => 'metadata',
         'channel' => 'channel',
-        'source_id' => 'source_id',
+        'sourceId' => 'source_id',
         'result' => 'result',
         'customer' => 'customer',
-        'vouchers_id' => 'vouchers_id',
+        'vouchersId' => 'vouchers_id',
         'voucher' => 'voucher',
         'vouchers' => 'vouchers'
     ];
@@ -226,15 +226,15 @@ class PublicationsCreateResponseBody implements ModelInterface, ArrayAccess, \Js
     protected static $setters = [
         'id' => 'setId',
         'object' => 'setObject',
-        'created_at' => 'setCreatedAt',
-        'customer_id' => 'setCustomerId',
-        'tracking_id' => 'setTrackingId',
+        'createdAt' => 'setCreatedAt',
+        'customerId' => 'setCustomerId',
+        'trackingId' => 'setTrackingId',
         'metadata' => 'setMetadata',
         'channel' => 'setChannel',
-        'source_id' => 'setSourceId',
+        'sourceId' => 'setSourceId',
         'result' => 'setResult',
         'customer' => 'setCustomer',
-        'vouchers_id' => 'setVouchersId',
+        'vouchersId' => 'setVouchersId',
         'voucher' => 'setVoucher',
         'vouchers' => 'setVouchers'
     ];
@@ -247,15 +247,15 @@ class PublicationsCreateResponseBody implements ModelInterface, ArrayAccess, \Js
     protected static $getters = [
         'id' => 'getId',
         'object' => 'getObject',
-        'created_at' => 'getCreatedAt',
-        'customer_id' => 'getCustomerId',
-        'tracking_id' => 'getTrackingId',
+        'createdAt' => 'getCreatedAt',
+        'customerId' => 'getCustomerId',
+        'trackingId' => 'getTrackingId',
         'metadata' => 'getMetadata',
         'channel' => 'getChannel',
-        'source_id' => 'getSourceId',
+        'sourceId' => 'getSourceId',
         'result' => 'getResult',
         'customer' => 'getCustomer',
-        'vouchers_id' => 'getVouchersId',
+        'vouchersId' => 'getVouchersId',
         'voucher' => 'getVoucher',
         'vouchers' => 'getVouchers'
     ];
@@ -358,15 +358,15 @@ class PublicationsCreateResponseBody implements ModelInterface, ArrayAccess, \Js
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'publication');
-        $this->setIfExists('created_at', $data ?? [], null);
-        $this->setIfExists('customer_id', $data ?? [], null);
-        $this->setIfExists('tracking_id', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('customerId', $data ?? [], null);
+        $this->setIfExists('trackingId', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('channel', $data ?? [], 'API');
-        $this->setIfExists('source_id', $data ?? [], null);
+        $this->setIfExists('sourceId', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], 'SUCCESS');
         $this->setIfExists('customer', $data ?? [], null);
-        $this->setIfExists('vouchers_id', $data ?? [], null);
+        $this->setIfExists('vouchersId', $data ?? [], null);
         $this->setIfExists('voucher', $data ?? [], null);
         $this->setIfExists('vouchers', $data ?? [], null);
     }
@@ -519,103 +519,103 @@ class PublicationsCreateResponseBody implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the publication was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the publication was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets customer_id
+     * Gets customerId
      *
      * @return string|null
      */
     public function getCustomerId()
     {
-        return $this->container['customer_id'];
+        return $this->container['customerId'];
     }
 
     /**
-     * Sets customer_id
+     * Sets customerId
      *
-     * @param string|null $customer_id Unique customer ID of the customer receiving the publication.
+     * @param string|null $customerId Unique customer ID of the customer receiving the publication.
      *
      * @return self
      */
-    public function setCustomerId($customer_id)
+    public function setCustomerId($customerId)
     {
-        if (is_null($customer_id)) {
-            array_push($this->openAPINullablesSetToNull, 'customer_id');
+        if (is_null($customerId)) {
+            array_push($this->openAPINullablesSetToNull, 'customerId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customer_id', $nullablesSetToNull);
+            $index = array_search('customerId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['customer_id'] = $customer_id;
+        $this->container['customerId'] = $customerId;
 
         return $this;
     }
 
     /**
-     * Gets tracking_id
+     * Gets trackingId
      *
      * @return string|null
      */
     public function getTrackingId()
     {
-        return $this->container['tracking_id'];
+        return $this->container['trackingId'];
     }
 
     /**
-     * Sets tracking_id
+     * Sets trackingId
      *
-     * @param string|null $tracking_id Customer's `source_id`.
+     * @param string|null $trackingId Customer's `source_id`.
      *
      * @return self
      */
-    public function setTrackingId($tracking_id)
+    public function setTrackingId($trackingId)
     {
-        if (is_null($tracking_id)) {
-            array_push($this->openAPINullablesSetToNull, 'tracking_id');
+        if (is_null($trackingId)) {
+            array_push($this->openAPINullablesSetToNull, 'trackingId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tracking_id', $nullablesSetToNull);
+            $index = array_search('trackingId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['tracking_id'] = $tracking_id;
+        $this->container['trackingId'] = $trackingId;
 
         return $this;
     }
@@ -699,35 +699,35 @@ class PublicationsCreateResponseBody implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets source_id
+     * Gets sourceId
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['source_id'];
+        return $this->container['sourceId'];
     }
 
     /**
-     * Sets source_id
+     * Sets sourceId
      *
-     * @param string|null $source_id The merchant's publication ID if it is different from the Voucherify publication ID. It's an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service.
+     * @param string|null $sourceId The merchant's publication ID if it is different from the Voucherify publication ID. It's an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service.
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setSourceId($sourceId)
     {
-        if (is_null($source_id)) {
-            array_push($this->openAPINullablesSetToNull, 'source_id');
+        if (is_null($sourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'sourceId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('source_id', $nullablesSetToNull);
+            $index = array_search('sourceId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['source_id'] = $source_id;
+        $this->container['sourceId'] = $sourceId;
 
         return $this;
     }
@@ -804,35 +804,35 @@ class PublicationsCreateResponseBody implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets vouchers_id
+     * Gets vouchersId
      *
      * @return string[]|null
      */
     public function getVouchersId()
     {
-        return $this->container['vouchers_id'];
+        return $this->container['vouchersId'];
     }
 
     /**
-     * Sets vouchers_id
+     * Sets vouchersId
      *
-     * @param string[]|null $vouchers_id Contains the unique internal voucher ID that was assigned by Voucherify.
+     * @param string[]|null $vouchersId Contains the unique internal voucher ID that was assigned by Voucherify.
      *
      * @return self
      */
-    public function setVouchersId($vouchers_id)
+    public function setVouchersId($vouchersId)
     {
-        if (is_null($vouchers_id)) {
-            array_push($this->openAPINullablesSetToNull, 'vouchers_id');
+        if (is_null($vouchersId)) {
+            array_push($this->openAPINullablesSetToNull, 'vouchersId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('vouchers_id', $nullablesSetToNull);
+            $index = array_search('vouchersId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['vouchers_id'] = $vouchers_id;
+        $this->container['vouchersId'] = $vouchersId;
 
         return $this;
     }

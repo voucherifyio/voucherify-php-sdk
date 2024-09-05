@@ -14,7 +14,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `createProductCollection()`
 
 ```php
-createProductCollection($product_collections_create_request_body): \OpenAPI\Client\Model\ProductCollectionsCreateResponseBody
+createProductCollection($productCollectionsCreateRequestBody): \OpenAPI\Client\Model\ProductCollectionsCreateResponseBody
 ```
 
 Create Product Collection
@@ -45,10 +45,10 @@ $apiInstance = new OpenAPI\Client\Api\ProductCollectionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$product_collections_create_request_body = new \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody(); // \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody
+$productCollectionsCreateRequestBody = new \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody(); // \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody
 
 try {
-    $result = $apiInstance->createProductCollection($product_collections_create_request_body);
+    $result = $apiInstance->createProductCollection($productCollectionsCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductCollectionsApi->createProductCollection: ', $e->getMessage(), PHP_EOL;
@@ -59,7 +59,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **product_collections_create_request_body** | [**\OpenAPI\Client\Model\ProductCollectionsCreateRequestBody**](../Model/ProductCollectionsCreateRequestBody.md)|  | [optional] |
+| **productCollectionsCreateRequestBody** | [**\OpenAPI\Client\Model\ProductCollectionsCreateRequestBody**](../Model/ProductCollectionsCreateRequestBody.md)|  | [optional] |
 
 ### Return type
 
@@ -81,7 +81,7 @@ try {
 ## `deleteProductCollection()`
 
 ```php
-deleteProductCollection($product_collection_id)
+deleteProductCollection($productCollectionId)
 ```
 
 Delete Product Collection
@@ -112,10 +112,10 @@ $apiInstance = new OpenAPI\Client\Api\ProductCollectionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$product_collection_id = 'product_collection_id_example'; // string | A unique product collection ID.
+$productCollectionId = 'productCollectionId_example'; // string | A unique product collection ID.
 
 try {
-    $apiInstance->deleteProductCollection($product_collection_id);
+    $apiInstance->deleteProductCollection($productCollectionId);
 } catch (Exception $e) {
     echo 'Exception when calling ProductCollectionsApi->deleteProductCollection: ', $e->getMessage(), PHP_EOL;
 }
@@ -125,7 +125,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **product_collection_id** | **string**| A unique product collection ID. | |
+| **productCollectionId** | **string**| A unique product collection ID. | |
 
 ### Return type
 
@@ -147,7 +147,7 @@ void (empty response body)
 ## `getProductCollection()`
 
 ```php
-getProductCollection($product_collection_id): \OpenAPI\Client\Model\ProductCollectionsGetResponseBody
+getProductCollection($productCollectionId): \OpenAPI\Client\Model\ProductCollectionsGetResponseBody
 ```
 
 Get Product Collection
@@ -178,10 +178,10 @@ $apiInstance = new OpenAPI\Client\Api\ProductCollectionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$product_collection_id = 'product_collection_id_example'; // string | A unique product collection ID.
+$productCollectionId = 'productCollectionId_example'; // string | A unique product collection ID.
 
 try {
-    $result = $apiInstance->getProductCollection($product_collection_id);
+    $result = $apiInstance->getProductCollection($productCollectionId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductCollectionsApi->getProductCollection: ', $e->getMessage(), PHP_EOL;
@@ -192,7 +192,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **product_collection_id** | **string**| A unique product collection ID. | |
+| **productCollectionId** | **string**| A unique product collection ID. | |
 
 ### Return type
 
@@ -285,7 +285,7 @@ try {
 ## `listProductsInCollection()`
 
 ```php
-listProductsInCollection($product_collection_id, $limit, $page, $order, $starting_after): \OpenAPI\Client\Model\ProductCollectionsProductsListResponseBody
+listProductsInCollection($productCollectionId, $limit, $page, $order, $startingAfter): \OpenAPI\Client\Model\ProductCollectionsProductsListResponseBody
 ```
 
 List Products in Collection
@@ -316,14 +316,14 @@ $apiInstance = new OpenAPI\Client\Api\ProductCollectionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$product_collection_id = 'product_collection_id_example'; // string | Unique product collection ID.
+$productCollectionId = 'productCollectionId_example'; // string | Unique product collection ID.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 $order = new \OpenAPI\Client\Model\ParameterOrder(); // ParameterOrder | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-$starting_after = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format.
+$startingAfter = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format.
 
 try {
-    $result = $apiInstance->listProductsInCollection($product_collection_id, $limit, $page, $order, $starting_after);
+    $result = $apiInstance->listProductsInCollection($productCollectionId, $limit, $page, $order, $startingAfter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductCollectionsApi->listProductsInCollection: ', $e->getMessage(), PHP_EOL;
@@ -334,11 +334,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **product_collection_id** | **string**| Unique product collection ID. | |
+| **productCollectionId** | **string**| Unique product collection ID. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 | **order** | [**ParameterOrder**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
-| **starting_after** | **\DateTime**| Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format. | [optional] |
+| **startingAfter** | **\DateTime**| Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format. | [optional] |
 
 ### Return type
 

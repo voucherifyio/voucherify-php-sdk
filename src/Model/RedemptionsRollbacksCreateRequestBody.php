@@ -60,9 +60,9 @@ class RedemptionsRollbacksCreateRequestBody implements ModelInterface, ArrayAcce
       */
     protected static $openAPITypes = [
         'reason' => 'string',
-        'tracking_id' => 'string',
+        'trackingId' => 'string',
         'customer' => '\OpenAPI\Client\Model\Customer',
-        'order' => '\OpenAPI\Client\Model\OrderCalculatedEssential',
+        'order' => '\OpenAPI\Client\Model\Order',
         'metadata' => 'object'
     ];
 
@@ -75,7 +75,7 @@ class RedemptionsRollbacksCreateRequestBody implements ModelInterface, ArrayAcce
       */
     protected static $openAPIFormats = [
         'reason' => null,
-        'tracking_id' => null,
+        'trackingId' => null,
         'customer' => null,
         'order' => null,
         'metadata' => null
@@ -88,7 +88,7 @@ class RedemptionsRollbacksCreateRequestBody implements ModelInterface, ArrayAcce
       */
     protected static array $openAPINullables = [
         'reason' => true,
-		'tracking_id' => true,
+		'trackingId' => true,
 		'customer' => false,
 		'order' => false,
 		'metadata' => true
@@ -181,7 +181,7 @@ class RedemptionsRollbacksCreateRequestBody implements ModelInterface, ArrayAcce
      */
     protected static $attributeMap = [
         'reason' => 'reason',
-        'tracking_id' => 'tracking_id',
+        'trackingId' => 'tracking_id',
         'customer' => 'customer',
         'order' => 'order',
         'metadata' => 'metadata'
@@ -194,7 +194,7 @@ class RedemptionsRollbacksCreateRequestBody implements ModelInterface, ArrayAcce
      */
     protected static $setters = [
         'reason' => 'setReason',
-        'tracking_id' => 'setTrackingId',
+        'trackingId' => 'setTrackingId',
         'customer' => 'setCustomer',
         'order' => 'setOrder',
         'metadata' => 'setMetadata'
@@ -207,7 +207,7 @@ class RedemptionsRollbacksCreateRequestBody implements ModelInterface, ArrayAcce
      */
     protected static $getters = [
         'reason' => 'getReason',
-        'tracking_id' => 'getTrackingId',
+        'trackingId' => 'getTrackingId',
         'customer' => 'getCustomer',
         'order' => 'getOrder',
         'metadata' => 'getMetadata'
@@ -271,7 +271,7 @@ class RedemptionsRollbacksCreateRequestBody implements ModelInterface, ArrayAcce
     public function __construct(array $data = null)
     {
         $this->setIfExists('reason', $data ?? [], null);
-        $this->setIfExists('tracking_id', $data ?? [], null);
+        $this->setIfExists('trackingId', $data ?? [], null);
         $this->setIfExists('customer', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
@@ -354,35 +354,35 @@ class RedemptionsRollbacksCreateRequestBody implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets tracking_id
+     * Gets trackingId
      *
      * @return string|null
      */
     public function getTrackingId()
     {
-        return $this->container['tracking_id'];
+        return $this->container['trackingId'];
     }
 
     /**
-     * Sets tracking_id
+     * Sets trackingId
      *
-     * @param string|null $tracking_id Customer's `source_id`.
+     * @param string|null $trackingId Customer's `source_id`.
      *
      * @return self
      */
-    public function setTrackingId($tracking_id)
+    public function setTrackingId($trackingId)
     {
-        if (is_null($tracking_id)) {
-            array_push($this->openAPINullablesSetToNull, 'tracking_id');
+        if (is_null($trackingId)) {
+            array_push($this->openAPINullablesSetToNull, 'trackingId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tracking_id', $nullablesSetToNull);
+            $index = array_search('trackingId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['tracking_id'] = $tracking_id;
+        $this->container['trackingId'] = $trackingId;
 
         return $this;
     }
@@ -417,7 +417,7 @@ class RedemptionsRollbacksCreateRequestBody implements ModelInterface, ArrayAcce
     /**
      * Gets order
      *
-     * @return \OpenAPI\Client\Model\OrderCalculatedEssential|null
+     * @return \OpenAPI\Client\Model\Order|null
      */
     public function getOrder()
     {
@@ -427,7 +427,7 @@ class RedemptionsRollbacksCreateRequestBody implements ModelInterface, ArrayAcce
     /**
      * Sets order
      *
-     * @param \OpenAPI\Client\Model\OrderCalculatedEssential|null $order order
+     * @param \OpenAPI\Client\Model\Order|null $order order
      *
      * @return self
      */

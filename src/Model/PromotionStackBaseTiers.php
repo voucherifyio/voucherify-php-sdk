@@ -60,7 +60,7 @@ class PromotionStackBaseTiers implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'ids' => 'string[]',
-        'hierarchy_mode' => 'string'
+        'hierarchyMode' => 'string'
     ];
 
     /**
@@ -72,7 +72,7 @@ class PromotionStackBaseTiers implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPIFormats = [
         'ids' => null,
-        'hierarchy_mode' => null
+        'hierarchyMode' => null
     ];
 
     /**
@@ -82,7 +82,7 @@ class PromotionStackBaseTiers implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static array $openAPINullables = [
         'ids' => true,
-		'hierarchy_mode' => true
+		'hierarchyMode' => true
     ];
 
     /**
@@ -172,7 +172,7 @@ class PromotionStackBaseTiers implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $attributeMap = [
         'ids' => 'ids',
-        'hierarchy_mode' => 'hierarchy_mode'
+        'hierarchyMode' => 'hierarchy_mode'
     ];
 
     /**
@@ -182,7 +182,7 @@ class PromotionStackBaseTiers implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $setters = [
         'ids' => 'setIds',
-        'hierarchy_mode' => 'setHierarchyMode'
+        'hierarchyMode' => 'setHierarchyMode'
     ];
 
     /**
@@ -192,7 +192,7 @@ class PromotionStackBaseTiers implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $getters = [
         'ids' => 'getIds',
-        'hierarchy_mode' => 'getHierarchyMode'
+        'hierarchyMode' => 'getHierarchyMode'
     ];
 
     /**
@@ -266,7 +266,7 @@ class PromotionStackBaseTiers implements ModelInterface, ArrayAccess, \JsonSeria
     public function __construct(array $data = null)
     {
         $this->setIfExists('ids', $data ?? [], null);
-        $this->setIfExists('hierarchy_mode', $data ?? [], 'MANUAL');
+        $this->setIfExists('hierarchyMode', $data ?? [], 'MANUAL');
     }
 
     /**
@@ -301,10 +301,10 @@ class PromotionStackBaseTiers implements ModelInterface, ArrayAccess, \JsonSeria
         }
 
         $allowedValues = $this->getHierarchyModeAllowableValues();
-        if (!is_null($this->container['hierarchy_mode']) && !in_array($this->container['hierarchy_mode'], $allowedValues, true)) {
+        if (!is_null($this->container['hierarchyMode']) && !in_array($this->container['hierarchyMode'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'hierarchy_mode', must be one of '%s'",
-                $this->container['hierarchy_mode'],
+                "invalid value '%s' for 'hierarchyMode', must be one of '%s'",
+                $this->container['hierarchyMode'],
                 implode("', '", $allowedValues)
             );
         }
@@ -364,45 +364,45 @@ class PromotionStackBaseTiers implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets hierarchy_mode
+     * Gets hierarchyMode
      *
      * @return string|null
      */
     public function getHierarchyMode()
     {
-        return $this->container['hierarchy_mode'];
+        return $this->container['hierarchyMode'];
     }
 
     /**
-     * Sets hierarchy_mode
+     * Sets hierarchyMode
      *
-     * @param string|null $hierarchy_mode hierarchy_mode
+     * @param string|null $hierarchyMode hierarchyMode
      *
      * @return self
      */
-    public function setHierarchyMode($hierarchy_mode)
+    public function setHierarchyMode($hierarchyMode)
     {
-        if (is_null($hierarchy_mode)) {
-            array_push($this->openAPINullablesSetToNull, 'hierarchy_mode');
+        if (is_null($hierarchyMode)) {
+            array_push($this->openAPINullablesSetToNull, 'hierarchyMode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('hierarchy_mode', $nullablesSetToNull);
+            $index = array_search('hierarchyMode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getHierarchyModeAllowableValues();
-        if (!is_null($hierarchy_mode) && !in_array($hierarchy_mode, $allowedValues, true)) {
+        if (!is_null($hierarchyMode) && !in_array($hierarchyMode, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'hierarchy_mode', must be one of '%s'",
-                    $hierarchy_mode,
+                    "Invalid value '%s' for 'hierarchyMode', must be one of '%s'",
+                    $hierarchyMode,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['hierarchy_mode'] = $hierarchy_mode;
+        $this->container['hierarchyMode'] = $hierarchyMode;
 
         return $this;
     }

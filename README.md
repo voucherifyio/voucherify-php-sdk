@@ -66,10 +66,10 @@ $apiInstance = new OpenAPI\Client\Api\AsyncActionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$async_action_id = 'async_action_id_example'; // string | Unique ID of the asynchronous operation.
+$asyncActionId = 'asyncActionId_example'; // string | Unique ID of the asynchronous operation.
 
 try {
-    $result = $apiInstance->getAsyncAction($async_action_id);
+    $result = $apiInstance->getAsyncAction($asyncActionId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AsyncActionsApi->getAsyncAction: ', $e->getMessage(), PHP_EOL;
@@ -105,14 +105,12 @@ Class | Method | HTTP request | Description
 *ClientSideApi* | [**listPromotionTiersClientSide**](docs/Api/ClientSideApi.md#listpromotiontiersclientside) | **GET** /client/v1/promotions/tiers | List Promotion Tiers (client-side)
 *ClientSideApi* | [**redeemStackedDiscountsClientSide**](docs/Api/ClientSideApi.md#redeemstackeddiscountsclientside) | **POST** /client/v1/redemptions | Redeem Stackable Discounts (client-side)
 *ClientSideApi* | [**trackCustomEventClientSide**](docs/Api/ClientSideApi.md#trackcustomeventclientside) | **POST** /client/v1/events | Track Custom Event (client-side)
-*ClientSideApi* | [**updateCustomersConsentsClientSide**](docs/Api/ClientSideApi.md#updatecustomersconsentsclientside) | **PUT** /client/v1/customers/{customerId}/consents | Update Customer&#39;s consents (client-side) [Deprecated]
 *ClientSideApi* | [**validateStackedDiscountsClientSide**](docs/Api/ClientSideApi.md#validatestackeddiscountsclientside) | **POST** /client/v1/validations | Validate Stackable Discounts (client-side)
 *CustomersApi* | [**createCustomer**](docs/Api/CustomersApi.md#createcustomer) | **POST** /v1/customers | Create Customer
 *CustomersApi* | [**customerPermanentlyDeletion**](docs/Api/CustomersApi.md#customerpermanentlydeletion) | **POST** /v1/customers/{customerId}/permanent-deletion | Delete Customer Permanently
 *CustomersApi* | [**deleteCustomer**](docs/Api/CustomersApi.md#deletecustomer) | **DELETE** /v1/customers/{customerId} | Delete Customer
 *CustomersApi* | [**getCustomer**](docs/Api/CustomersApi.md#getcustomer) | **GET** /v1/customers/{customerId} | Get Customer
 *CustomersApi* | [**importCustomersUsingCsv**](docs/Api/CustomersApi.md#importcustomersusingcsv) | **POST** /v1/customers/importCSV | Import and Update Customers using CSV
-*CustomersApi* | [**listCustomerActivities**](docs/Api/CustomersApi.md#listcustomeractivities) | **GET** /v1/customers/{customerId}/activities | List Customer Activities [Deprecated]
 *CustomersApi* | [**listCustomerActivity**](docs/Api/CustomersApi.md#listcustomeractivity) | **GET** /v1/customers/{customerId}/activity | List Customer Activity
 *CustomersApi* | [**listCustomerRedeemables**](docs/Api/CustomersApi.md#listcustomerredeemables) | **GET** /v1/customers/{customerId}/redeemables | List Customer&#39;s Redeemables
 *CustomersApi* | [**listCustomerSegments**](docs/Api/CustomersApi.md#listcustomersegments) | **GET** /v1/customers/{customerId}/segments | List Customer&#39;s Segments
@@ -320,7 +318,6 @@ Class | Method | HTTP request | Description
 - [ClientPromotionsTiersListResponseBody](docs/Model/ClientPromotionsTiersListResponseBody.md)
 - [ClientQualificationsCheckEligibilityRequestBody](docs/Model/ClientQualificationsCheckEligibilityRequestBody.md)
 - [ClientQualificationsCheckEligibilityResponseBody](docs/Model/ClientQualificationsCheckEligibilityResponseBody.md)
-- [ClientQualificationsCheckEligibilityResponseBodyOrder](docs/Model/ClientQualificationsCheckEligibilityResponseBodyOrder.md)
 - [ClientRedemptionsRedeemRequestBody](docs/Model/ClientRedemptionsRedeemRequestBody.md)
 - [ClientRedemptionsRedeemRequestBodyOptions](docs/Model/ClientRedemptionsRedeemRequestBodyOptions.md)
 - [ClientRedemptionsRedeemRequestBodyRedeemablesItem](docs/Model/ClientRedemptionsRedeemRequestBodyRedeemablesItem.md)
@@ -360,7 +357,6 @@ Class | Method | HTTP request | Description
 - [CustomerWithSummaryLoyaltyReferrals](docs/Model/CustomerWithSummaryLoyaltyReferrals.md)
 - [CustomerWithSummaryLoyaltyReferralsAddress](docs/Model/CustomerWithSummaryLoyaltyReferralsAddress.md)
 - [CustomerWithSummaryLoyaltyReferralsAssets](docs/Model/CustomerWithSummaryLoyaltyReferralsAssets.md)
-- [CustomersActivitiesListResponseBody](docs/Model/CustomersActivitiesListResponseBody.md)
 - [CustomersActivityListResponseBody](docs/Model/CustomersActivityListResponseBody.md)
 - [CustomersCreateRequestBody](docs/Model/CustomersCreateRequestBody.md)
 - [CustomersCreateRequestBodyAddress](docs/Model/CustomersCreateRequestBodyAddress.md)
@@ -428,8 +424,6 @@ Class | Method | HTTP request | Description
 - [ExportsGetResponseBodyResult](docs/Model/ExportsGetResponseBodyResult.md)
 - [ExportsListResponseBody](docs/Model/ExportsListResponseBody.md)
 - [FieldConditions](docs/Model/FieldConditions.md)
-- [FilterConditionsDateTime](docs/Model/FilterConditionsDateTime.md)
-- [FilterConditionsDateTimeConditions](docs/Model/FilterConditionsDateTimeConditions.md)
 - [FilterConditionsString](docs/Model/FilterConditionsString.md)
 - [FiltersCondition](docs/Model/FiltersCondition.md)
 - [Gift](docs/Model/Gift.md)
@@ -439,30 +433,24 @@ Class | Method | HTTP request | Description
 - [LoyaltiesCreateCampaignRequestBody](docs/Model/LoyaltiesCreateCampaignRequestBody.md)
 - [LoyaltiesCreateCampaignResponseBody](docs/Model/LoyaltiesCreateCampaignResponseBody.md)
 - [LoyaltiesDeleteResponseBody](docs/Model/LoyaltiesDeleteResponseBody.md)
-- [LoyaltiesEarningRulesCreateCustomEventRequestBody](docs/Model/LoyaltiesEarningRulesCreateCustomEventRequestBody.md)
-- [LoyaltiesEarningRulesCreateCustomEventRequestBodyCustomEvent](docs/Model/LoyaltiesEarningRulesCreateCustomEventRequestBodyCustomEvent.md)
-- [LoyaltiesEarningRulesCreateCustomEventRequestBodyLoyalty](docs/Model/LoyaltiesEarningRulesCreateCustomEventRequestBodyLoyalty.md)
-- [LoyaltiesEarningRulesCreateCustomEventRequestBodyLoyaltyCustomEvent](docs/Model/LoyaltiesEarningRulesCreateCustomEventRequestBodyLoyaltyCustomEvent.md)
-- [LoyaltiesEarningRulesCreateCustomEventRequestBodyLoyaltyCustomEventMetadata](docs/Model/LoyaltiesEarningRulesCreateCustomEventRequestBodyLoyaltyCustomEventMetadata.md)
-- [LoyaltiesEarningRulesCreateCustomEventRequestBodySource](docs/Model/LoyaltiesEarningRulesCreateCustomEventRequestBodySource.md)
-- [LoyaltiesEarningRulesCreateEnteredSegmentRequestBody](docs/Model/LoyaltiesEarningRulesCreateEnteredSegmentRequestBody.md)
-- [LoyaltiesEarningRulesCreateEnteredSegmentRequestBodyLoyalty](docs/Model/LoyaltiesEarningRulesCreateEnteredSegmentRequestBodyLoyalty.md)
-- [LoyaltiesEarningRulesCreateEnteredSegmentRequestBodyLoyaltyCustomer](docs/Model/LoyaltiesEarningRulesCreateEnteredSegmentRequestBodyLoyaltyCustomer.md)
-- [LoyaltiesEarningRulesCreateEnteredSegmentRequestBodyLoyaltyCustomerMetadata](docs/Model/LoyaltiesEarningRulesCreateEnteredSegmentRequestBodyLoyaltyCustomerMetadata.md)
-- [LoyaltiesEarningRulesCreateEnteredSegmentRequestBodySegment](docs/Model/LoyaltiesEarningRulesCreateEnteredSegmentRequestBodySegment.md)
-- [LoyaltiesEarningRulesCreateEnteredSegmentRequestBodySource](docs/Model/LoyaltiesEarningRulesCreateEnteredSegmentRequestBodySource.md)
-- [LoyaltiesEarningRulesCreateOrderPaidRequestBody](docs/Model/LoyaltiesEarningRulesCreateOrderPaidRequestBody.md)
-- [LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyalty](docs/Model/LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyalty.md)
-- [LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrder](docs/Model/LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrder.md)
-- [LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrderAmount](docs/Model/LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrderAmount.md)
-- [LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrderItems](docs/Model/LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrderItems.md)
-- [LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrderItemsAmount](docs/Model/LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrderItemsAmount.md)
-- [LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrderItemsQuantity](docs/Model/LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrderItemsQuantity.md)
-- [LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrderItemsSubtotalAmount](docs/Model/LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrderItemsSubtotalAmount.md)
-- [LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrderMetadata](docs/Model/LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrderMetadata.md)
-- [LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrderTotalAmount](docs/Model/LoyaltiesEarningRulesCreateOrderPaidRequestBodyLoyaltyOrderTotalAmount.md)
-- [LoyaltiesEarningRulesCreateOrderPaidRequestBodySource](docs/Model/LoyaltiesEarningRulesCreateOrderPaidRequestBodySource.md)
 - [LoyaltiesEarningRulesCreateRequestBodyItem](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItem.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyalty](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyalty.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEventMetadata](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEventMetadata.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomerMetadata](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomerMetadata.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderAmount](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderAmount.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantity](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantity.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderMetadata](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderMetadata.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderTotalAmount](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderTotalAmount.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemSegment](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemSegment.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemSource](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemSource.md)
 - [LoyaltiesEarningRulesCreateResponseBody](docs/Model/LoyaltiesEarningRulesCreateResponseBody.md)
 - [LoyaltiesEarningRulesCreateResponseBodyCustomEvent](docs/Model/LoyaltiesEarningRulesCreateResponseBodyCustomEvent.md)
 - [LoyaltiesEarningRulesCreateResponseBodyLoyalty](docs/Model/LoyaltiesEarningRulesCreateResponseBodyLoyalty.md)
@@ -481,10 +469,6 @@ Class | Method | HTTP request | Description
 - [LoyaltiesEarningRulesCreateResponseBodyLoyaltyTier](docs/Model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyTier.md)
 - [LoyaltiesEarningRulesCreateResponseBodySegment](docs/Model/LoyaltiesEarningRulesCreateResponseBodySegment.md)
 - [LoyaltiesEarningRulesCreateResponseBodySource](docs/Model/LoyaltiesEarningRulesCreateResponseBodySource.md)
-- [LoyaltiesEarningRulesCreateTierChangeRequestBody](docs/Model/LoyaltiesEarningRulesCreateTierChangeRequestBody.md)
-- [LoyaltiesEarningRulesCreateTierChangeRequestBodyLoyalty](docs/Model/LoyaltiesEarningRulesCreateTierChangeRequestBodyLoyalty.md)
-- [LoyaltiesEarningRulesCreateTierChangeRequestBodyLoyaltyTier](docs/Model/LoyaltiesEarningRulesCreateTierChangeRequestBodyLoyaltyTier.md)
-- [LoyaltiesEarningRulesCreateTierChangeRequestBodySource](docs/Model/LoyaltiesEarningRulesCreateTierChangeRequestBodySource.md)
 - [LoyaltiesEarningRulesDisableResponseBody](docs/Model/LoyaltiesEarningRulesDisableResponseBody.md)
 - [LoyaltiesEarningRulesDisableResponseBodyCustomEvent](docs/Model/LoyaltiesEarningRulesDisableResponseBodyCustomEvent.md)
 - [LoyaltiesEarningRulesDisableResponseBodyLoyalty](docs/Model/LoyaltiesEarningRulesDisableResponseBodyLoyalty.md)
@@ -706,27 +690,17 @@ Class | Method | HTTP request | Description
 - [LuckyDraw](docs/Model/LuckyDraw.md)
 - [MappingPoints](docs/Model/MappingPoints.md)
 - [MemberActivity](docs/Model/MemberActivity.md)
+- [Order](docs/Model/Order.md)
 - [OrderCalculated](docs/Model/OrderCalculated.md)
-- [OrderCalculatedCustomer](docs/Model/OrderCalculatedCustomer.md)
-- [OrderCalculatedCustomerAddress](docs/Model/OrderCalculatedCustomerAddress.md)
-- [OrderCalculatedEssential](docs/Model/OrderCalculatedEssential.md)
-- [OrderCalculatedNoCustomerData](docs/Model/OrderCalculatedNoCustomerData.md)
-- [OrderCalculatedReferrer](docs/Model/OrderCalculatedReferrer.md)
-- [OrderCalculatedReferrerAddress](docs/Model/OrderCalculatedReferrerAddress.md)
-- [OrderCreateBase](docs/Model/OrderCreateBase.md)
+- [OrderCalculatedItem](docs/Model/OrderCalculatedItem.md)
+- [OrderCalculatedItemProduct](docs/Model/OrderCalculatedItemProduct.md)
+- [OrderCalculatedItemSku](docs/Model/OrderCalculatedItemSku.md)
 - [OrderItem](docs/Model/OrderItem.md)
-- [OrderItemCalculated](docs/Model/OrderItemCalculated.md)
-- [OrderItemCalculatedProduct](docs/Model/OrderItemCalculatedProduct.md)
-- [OrderItemCalculatedSku](docs/Model/OrderItemCalculatedSku.md)
 - [OrderItemProduct](docs/Model/OrderItemProduct.md)
 - [OrderItemSku](docs/Model/OrderItemSku.md)
-- [OrderRedemptions](docs/Model/OrderRedemptions.md)
+- [OrderRedemptionsEntry](docs/Model/OrderRedemptionsEntry.md)
 - [OrdersCreateRequestBody](docs/Model/OrdersCreateRequestBody.md)
 - [OrdersCreateResponseBody](docs/Model/OrdersCreateResponseBody.md)
-- [OrdersCreateResponseBodyCustomer](docs/Model/OrdersCreateResponseBodyCustomer.md)
-- [OrdersCreateResponseBodyCustomerAddress](docs/Model/OrdersCreateResponseBodyCustomerAddress.md)
-- [OrdersCreateResponseBodyReferrer](docs/Model/OrdersCreateResponseBodyReferrer.md)
-- [OrdersCreateResponseBodyReferrerAddress](docs/Model/OrdersCreateResponseBodyReferrerAddress.md)
 - [OrdersExportCreateRequestBody](docs/Model/OrdersExportCreateRequestBody.md)
 - [OrdersExportCreateRequestBodyParameters](docs/Model/OrdersExportCreateRequestBodyParameters.md)
 - [OrdersExportCreateResponseBody](docs/Model/OrdersExportCreateResponseBody.md)
@@ -737,10 +711,6 @@ Class | Method | HTTP request | Description
 - [OrdersListResponseBody](docs/Model/OrdersListResponseBody.md)
 - [OrdersUpdateRequestBody](docs/Model/OrdersUpdateRequestBody.md)
 - [OrdersUpdateResponseBody](docs/Model/OrdersUpdateResponseBody.md)
-- [OrdersUpdateResponseBodyCustomer](docs/Model/OrdersUpdateResponseBodyCustomer.md)
-- [OrdersUpdateResponseBodyCustomerAddress](docs/Model/OrdersUpdateResponseBodyCustomerAddress.md)
-- [OrdersUpdateResponseBodyReferrer](docs/Model/OrdersUpdateResponseBodyReferrer.md)
-- [OrdersUpdateResponseBodyReferrerAddress](docs/Model/OrdersUpdateResponseBodyReferrerAddress.md)
 - [ParameterActivityCategory](docs/Model/ParameterActivityCategory.md)
 - [ParameterCampaignType](docs/Model/ParameterCampaignType.md)
 - [ParameterCreatedBeforeAfter](docs/Model/ParameterCreatedBeforeAfter.md)
@@ -750,6 +720,7 @@ Class | Method | HTTP request | Description
 - [ParameterFiltersListCustomerRedeemablesCampaignType](docs/Model/ParameterFiltersListCustomerRedeemablesCampaignType.md)
 - [ParameterFiltersListCustomerRedeemablesCampaignTypeConditions](docs/Model/ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.md)
 - [ParameterFiltersListCustomerRedeemablesCreatedAt](docs/Model/ParameterFiltersListCustomerRedeemablesCreatedAt.md)
+- [ParameterFiltersListCustomerRedeemablesCreatedAtConditions](docs/Model/ParameterFiltersListCustomerRedeemablesCreatedAtConditions.md)
 - [ParameterFiltersListCustomerRedeemablesHolderRole](docs/Model/ParameterFiltersListCustomerRedeemablesHolderRole.md)
 - [ParameterFiltersListCustomerRedeemablesHolderRoleConditions](docs/Model/ParameterFiltersListCustomerRedeemablesHolderRoleConditions.md)
 - [ParameterFiltersListCustomerRedeemablesId](docs/Model/ParameterFiltersListCustomerRedeemablesId.md)
@@ -890,7 +861,6 @@ Class | Method | HTTP request | Description
 - [PublicationsListResponseBodyPublicationsItemMetadata](docs/Model/PublicationsListResponseBodyPublicationsItemMetadata.md)
 - [QualificationsCheckEligibilityRequestBody](docs/Model/QualificationsCheckEligibilityRequestBody.md)
 - [QualificationsCheckEligibilityResponseBody](docs/Model/QualificationsCheckEligibilityResponseBody.md)
-- [QualificationsCheckEligibilityResponseBodyOrder](docs/Model/QualificationsCheckEligibilityResponseBodyOrder.md)
 - [QualificationsFieldConditions](docs/Model/QualificationsFieldConditions.md)
 - [QualificationsFiltersCondition](docs/Model/QualificationsFiltersCondition.md)
 - [QualificationsOption](docs/Model/QualificationsOption.md)
@@ -1079,7 +1049,6 @@ Class | Method | HTTP request | Description
 - [SimpleSegment](docs/Model/SimpleSegment.md)
 - [SimpleSkuDiscountUnit](docs/Model/SimpleSkuDiscountUnit.md)
 - [SimpleVoucher](docs/Model/SimpleVoucher.md)
-- [SimpleVoucherLoyaltyCard](docs/Model/SimpleVoucherLoyaltyCard.md)
 - [SimpleVoucherRedemption](docs/Model/SimpleVoucherRedemption.md)
 - [Sku](docs/Model/Sku.md)
 - [SkusGetResponseBody](docs/Model/SkusGetResponseBody.md)
@@ -1260,4 +1229,5 @@ support@voucherify.io
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `v2018-08-01`
+    - Package version: `3.0.0`
 - Build package: `org.openapitools.codegen.languages.PhpNextgenClientCodegen`

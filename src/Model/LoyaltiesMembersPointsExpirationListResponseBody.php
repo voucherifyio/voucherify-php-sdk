@@ -60,7 +60,7 @@ class LoyaltiesMembersPointsExpirationListResponseBody implements ModelInterface
       */
     protected static $openAPITypes = [
         'object' => 'string',
-        'data_ref' => 'string',
+        'dataRef' => 'string',
         'data' => '\OpenAPI\Client\Model\LoyaltiesMembersPointsExpirationListResponseBodyDataItem[]',
         'total' => 'int'
     ];
@@ -74,7 +74,7 @@ class LoyaltiesMembersPointsExpirationListResponseBody implements ModelInterface
       */
     protected static $openAPIFormats = [
         'object' => null,
-        'data_ref' => null,
+        'dataRef' => null,
         'data' => null,
         'total' => null
     ];
@@ -86,7 +86,7 @@ class LoyaltiesMembersPointsExpirationListResponseBody implements ModelInterface
       */
     protected static array $openAPINullables = [
         'object' => true,
-		'data_ref' => true,
+		'dataRef' => true,
 		'data' => true,
 		'total' => true
     ];
@@ -178,7 +178,7 @@ class LoyaltiesMembersPointsExpirationListResponseBody implements ModelInterface
      */
     protected static $attributeMap = [
         'object' => 'object',
-        'data_ref' => 'data_ref',
+        'dataRef' => 'data_ref',
         'data' => 'data',
         'total' => 'total'
     ];
@@ -190,7 +190,7 @@ class LoyaltiesMembersPointsExpirationListResponseBody implements ModelInterface
      */
     protected static $setters = [
         'object' => 'setObject',
-        'data_ref' => 'setDataRef',
+        'dataRef' => 'setDataRef',
         'data' => 'setData',
         'total' => 'setTotal'
     ];
@@ -202,7 +202,7 @@ class LoyaltiesMembersPointsExpirationListResponseBody implements ModelInterface
      */
     protected static $getters = [
         'object' => 'getObject',
-        'data_ref' => 'getDataRef',
+        'dataRef' => 'getDataRef',
         'data' => 'getData',
         'total' => 'getTotal'
     ];
@@ -291,7 +291,7 @@ class LoyaltiesMembersPointsExpirationListResponseBody implements ModelInterface
     public function __construct(array $data = null)
     {
         $this->setIfExists('object', $data ?? [], 'list');
-        $this->setIfExists('data_ref', $data ?? [], 'data');
+        $this->setIfExists('dataRef', $data ?? [], 'data');
         $this->setIfExists('data', $data ?? [], null);
         $this->setIfExists('total', $data ?? [], null);
     }
@@ -337,16 +337,16 @@ class LoyaltiesMembersPointsExpirationListResponseBody implements ModelInterface
         }
 
         $allowedValues = $this->getDataRefAllowableValues();
-        if (!is_null($this->container['data_ref']) && !in_array($this->container['data_ref'], $allowedValues, true)) {
+        if (!is_null($this->container['dataRef']) && !in_array($this->container['dataRef'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'data_ref', must be one of '%s'",
-                $this->container['data_ref'],
+                "invalid value '%s' for 'dataRef', must be one of '%s'",
+                $this->container['dataRef'],
                 implode("', '", $allowedValues)
             );
         }
 
-        if (!is_null($this->container['data_ref']) && !preg_match("/data/", $this->container['data_ref'])) {
-            $invalidProperties[] = "invalid value for 'data_ref', must be conform to the pattern /data/.";
+        if (!is_null($this->container['dataRef']) && !preg_match("/data/", $this->container['dataRef'])) {
+            $invalidProperties[] = "invalid value for 'dataRef', must be conform to the pattern /data/.";
         }
 
         return $invalidProperties;
@@ -414,50 +414,50 @@ class LoyaltiesMembersPointsExpirationListResponseBody implements ModelInterface
     }
 
     /**
-     * Gets data_ref
+     * Gets dataRef
      *
      * @return string|null
      */
     public function getDataRef()
     {
-        return $this->container['data_ref'];
+        return $this->container['dataRef'];
     }
 
     /**
-     * Sets data_ref
+     * Sets dataRef
      *
-     * @param string|null $data_ref Identifies the name of the attribute that contains the array of loyalty points expiration bucket objects.
+     * @param string|null $dataRef Identifies the name of the attribute that contains the array of loyalty points expiration bucket objects.
      *
      * @return self
      */
-    public function setDataRef($data_ref)
+    public function setDataRef($dataRef)
     {
-        if (is_null($data_ref)) {
-            array_push($this->openAPINullablesSetToNull, 'data_ref');
+        if (is_null($dataRef)) {
+            array_push($this->openAPINullablesSetToNull, 'dataRef');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('data_ref', $nullablesSetToNull);
+            $index = array_search('dataRef', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getDataRefAllowableValues();
-        if (!is_null($data_ref) && !in_array($data_ref, $allowedValues, true)) {
+        if (!is_null($dataRef) && !in_array($dataRef, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'data_ref', must be one of '%s'",
-                    $data_ref,
+                    "Invalid value '%s' for 'dataRef', must be one of '%s'",
+                    $dataRef,
                     implode("', '", $allowedValues)
                 )
             );
         }
 
-        if (!is_null($data_ref) && (!preg_match("/data/", $data_ref))) {
-            throw new \InvalidArgumentException("invalid value for \$data_ref when calling LoyaltiesMembersPointsExpirationListResponseBody., must conform to the pattern /data/.");
+        if (!is_null($dataRef) && (!preg_match("/data/", $dataRef))) {
+            throw new \InvalidArgumentException("invalid value for \$dataRef when calling LoyaltiesMembersPointsExpirationListResponseBody., must conform to the pattern /data/.");
         }
 
-        $this->container['data_ref'] = $data_ref;
+        $this->container['dataRef'] = $dataRef;
 
         return $this;
     }

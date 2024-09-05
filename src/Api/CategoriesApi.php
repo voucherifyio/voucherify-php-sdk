@@ -140,16 +140,16 @@ class CategoriesApi
      *
      * Create Category
      *
-     * @param  \OpenAPI\Client\Model\CategoriesCreateRequestBody $categories_create_request_body Specify the details of the category that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CategoriesCreateRequestBody $categoriesCreateRequestBody Specify the details of the category that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCategory'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CategoriesCreateResponseBody
      */
-    public function createCategory($categories_create_request_body = null, string $contentType = self::contentTypes['createCategory'][0])
+    public function createCategory($categoriesCreateRequestBody = null, string $contentType = self::contentTypes['createCategory'][0])
     {
-        list($response) = $this->createCategoryWithHttpInfo($categories_create_request_body, $contentType);
+        list($response) = $this->createCategoryWithHttpInfo($categoriesCreateRequestBody, $contentType);
         return $response;
     }
 
@@ -158,16 +158,16 @@ class CategoriesApi
      *
      * Create Category
      *
-     * @param  \OpenAPI\Client\Model\CategoriesCreateRequestBody $categories_create_request_body Specify the details of the category that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CategoriesCreateRequestBody $categoriesCreateRequestBody Specify the details of the category that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCategory'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CategoriesCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createCategoryWithHttpInfo($categories_create_request_body = null, string $contentType = self::contentTypes['createCategory'][0])
+    public function createCategoryWithHttpInfo($categoriesCreateRequestBody = null, string $contentType = self::contentTypes['createCategory'][0])
     {
-        $request = $this->createCategoryRequest($categories_create_request_body, $contentType);
+        $request = $this->createCategoryRequest($categoriesCreateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -258,15 +258,15 @@ class CategoriesApi
      *
      * Create Category
      *
-     * @param  \OpenAPI\Client\Model\CategoriesCreateRequestBody $categories_create_request_body Specify the details of the category that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CategoriesCreateRequestBody $categoriesCreateRequestBody Specify the details of the category that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCategory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createCategoryAsync($categories_create_request_body = null, string $contentType = self::contentTypes['createCategory'][0])
+    public function createCategoryAsync($categoriesCreateRequestBody = null, string $contentType = self::contentTypes['createCategory'][0])
     {
-        return $this->createCategoryAsyncWithHttpInfo($categories_create_request_body, $contentType)
+        return $this->createCategoryAsyncWithHttpInfo($categoriesCreateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -279,16 +279,16 @@ class CategoriesApi
      *
      * Create Category
      *
-     * @param  \OpenAPI\Client\Model\CategoriesCreateRequestBody $categories_create_request_body Specify the details of the category that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CategoriesCreateRequestBody $categoriesCreateRequestBody Specify the details of the category that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCategory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createCategoryAsyncWithHttpInfo($categories_create_request_body = null, string $contentType = self::contentTypes['createCategory'][0])
+    public function createCategoryAsyncWithHttpInfo($categoriesCreateRequestBody = null, string $contentType = self::contentTypes['createCategory'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CategoriesCreateResponseBody';
-        $request = $this->createCategoryRequest($categories_create_request_body, $contentType);
+        $request = $this->createCategoryRequest($categoriesCreateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -329,13 +329,13 @@ class CategoriesApi
     /**
      * Create request for operation 'createCategory'
      *
-     * @param  \OpenAPI\Client\Model\CategoriesCreateRequestBody $categories_create_request_body Specify the details of the category that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CategoriesCreateRequestBody $categoriesCreateRequestBody Specify the details of the category that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCategory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createCategoryRequest($categories_create_request_body = null, string $contentType = self::contentTypes['createCategory'][0])
+    public function createCategoryRequest($categoriesCreateRequestBody = null, string $contentType = self::contentTypes['createCategory'][0])
     {
 
 
@@ -358,12 +358,12 @@ class CategoriesApi
         );
 
         // for model (json/xml)
-        if (isset($categories_create_request_body)) {
+        if (isset($categoriesCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($categories_create_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($categoriesCreateRequestBody));
             } else {
-                $httpBody = $categories_create_request_body;
+                $httpBody = $categoriesCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -426,16 +426,16 @@ class CategoriesApi
      *
      * Delete Category
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCategory'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteCategory($category_id, string $contentType = self::contentTypes['deleteCategory'][0])
+    public function deleteCategory($categoryId, string $contentType = self::contentTypes['deleteCategory'][0])
     {
-        $this->deleteCategoryWithHttpInfo($category_id, $contentType);
+        $this->deleteCategoryWithHttpInfo($categoryId, $contentType);
     }
 
     /**
@@ -443,16 +443,16 @@ class CategoriesApi
      *
      * Delete Category
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCategory'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteCategoryWithHttpInfo($category_id, string $contentType = self::contentTypes['deleteCategory'][0])
+    public function deleteCategoryWithHttpInfo($categoryId, string $contentType = self::contentTypes['deleteCategory'][0])
     {
-        $request = $this->deleteCategoryRequest($category_id, $contentType);
+        $request = $this->deleteCategoryRequest($categoryId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -503,15 +503,15 @@ class CategoriesApi
      *
      * Delete Category
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCategory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCategoryAsync($category_id, string $contentType = self::contentTypes['deleteCategory'][0])
+    public function deleteCategoryAsync($categoryId, string $contentType = self::contentTypes['deleteCategory'][0])
     {
-        return $this->deleteCategoryAsyncWithHttpInfo($category_id, $contentType)
+        return $this->deleteCategoryAsyncWithHttpInfo($categoryId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -524,16 +524,16 @@ class CategoriesApi
      *
      * Delete Category
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCategory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCategoryAsyncWithHttpInfo($category_id, string $contentType = self::contentTypes['deleteCategory'][0])
+    public function deleteCategoryAsyncWithHttpInfo($categoryId, string $contentType = self::contentTypes['deleteCategory'][0])
     {
         $returnType = '';
-        $request = $this->deleteCategoryRequest($category_id, $contentType);
+        $request = $this->deleteCategoryRequest($categoryId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -561,19 +561,19 @@ class CategoriesApi
     /**
      * Create request for operation 'deleteCategory'
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCategory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteCategoryRequest($category_id, string $contentType = self::contentTypes['deleteCategory'][0])
+    public function deleteCategoryRequest($categoryId, string $contentType = self::contentTypes['deleteCategory'][0])
     {
 
-        // verify the required parameter 'category_id' is set
-        if ($category_id === null || (is_array($category_id) && count($category_id) === 0)) {
+        // verify the required parameter 'categoryId' is set
+        if ($categoryId === null || (is_array($categoryId) && count($categoryId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $category_id when calling deleteCategory'
+                'Missing the required parameter $categoryId when calling deleteCategory'
             );
         }
 
@@ -588,10 +588,10 @@ class CategoriesApi
 
 
         // path params
-        if ($category_id !== null) {
+        if ($categoryId !== null) {
             $resourcePath = str_replace(
                 '{' . 'categoryId' . '}',
-                ObjectSerializer::toPathValue($category_id),
+                ObjectSerializer::toPathValue($categoryId),
                 $resourcePath
             );
         }
@@ -665,16 +665,16 @@ class CategoriesApi
      *
      * Get Category
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategory'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CategoriesGetResponseBody
      */
-    public function getCategory($category_id, string $contentType = self::contentTypes['getCategory'][0])
+    public function getCategory($categoryId, string $contentType = self::contentTypes['getCategory'][0])
     {
-        list($response) = $this->getCategoryWithHttpInfo($category_id, $contentType);
+        list($response) = $this->getCategoryWithHttpInfo($categoryId, $contentType);
         return $response;
     }
 
@@ -683,16 +683,16 @@ class CategoriesApi
      *
      * Get Category
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategory'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CategoriesGetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCategoryWithHttpInfo($category_id, string $contentType = self::contentTypes['getCategory'][0])
+    public function getCategoryWithHttpInfo($categoryId, string $contentType = self::contentTypes['getCategory'][0])
     {
-        $request = $this->getCategoryRequest($category_id, $contentType);
+        $request = $this->getCategoryRequest($categoryId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -783,15 +783,15 @@ class CategoriesApi
      *
      * Get Category
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCategoryAsync($category_id, string $contentType = self::contentTypes['getCategory'][0])
+    public function getCategoryAsync($categoryId, string $contentType = self::contentTypes['getCategory'][0])
     {
-        return $this->getCategoryAsyncWithHttpInfo($category_id, $contentType)
+        return $this->getCategoryAsyncWithHttpInfo($categoryId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -804,16 +804,16 @@ class CategoriesApi
      *
      * Get Category
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCategoryAsyncWithHttpInfo($category_id, string $contentType = self::contentTypes['getCategory'][0])
+    public function getCategoryAsyncWithHttpInfo($categoryId, string $contentType = self::contentTypes['getCategory'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CategoriesGetResponseBody';
-        $request = $this->getCategoryRequest($category_id, $contentType);
+        $request = $this->getCategoryRequest($categoryId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -854,19 +854,19 @@ class CategoriesApi
     /**
      * Create request for operation 'getCategory'
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCategory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCategoryRequest($category_id, string $contentType = self::contentTypes['getCategory'][0])
+    public function getCategoryRequest($categoryId, string $contentType = self::contentTypes['getCategory'][0])
     {
 
-        // verify the required parameter 'category_id' is set
-        if ($category_id === null || (is_array($category_id) && count($category_id) === 0)) {
+        // verify the required parameter 'categoryId' is set
+        if ($categoryId === null || (is_array($categoryId) && count($categoryId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $category_id when calling getCategory'
+                'Missing the required parameter $categoryId when calling getCategory'
             );
         }
 
@@ -881,10 +881,10 @@ class CategoriesApi
 
 
         // path params
-        if ($category_id !== null) {
+        if ($categoryId !== null) {
             $resourcePath = str_replace(
                 '{' . 'categoryId' . '}',
-                ObjectSerializer::toPathValue($category_id),
+                ObjectSerializer::toPathValue($categoryId),
                 $resourcePath
             );
         }
@@ -1231,17 +1231,17 @@ class CategoriesApi
      *
      * Update Category
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
-     * @param  \OpenAPI\Client\Model\CategoriesUpdateRequestBody $categories_update_request_body Specify the details of the category that you would like to update. (optional)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\CategoriesUpdateRequestBody $categoriesUpdateRequestBody Specify the details of the category that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCategory'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CategoriesUpdateResponseBody
      */
-    public function updateCategory($category_id, $categories_update_request_body = null, string $contentType = self::contentTypes['updateCategory'][0])
+    public function updateCategory($categoryId, $categoriesUpdateRequestBody = null, string $contentType = self::contentTypes['updateCategory'][0])
     {
-        list($response) = $this->updateCategoryWithHttpInfo($category_id, $categories_update_request_body, $contentType);
+        list($response) = $this->updateCategoryWithHttpInfo($categoryId, $categoriesUpdateRequestBody, $contentType);
         return $response;
     }
 
@@ -1250,17 +1250,17 @@ class CategoriesApi
      *
      * Update Category
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
-     * @param  \OpenAPI\Client\Model\CategoriesUpdateRequestBody $categories_update_request_body Specify the details of the category that you would like to update. (optional)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\CategoriesUpdateRequestBody $categoriesUpdateRequestBody Specify the details of the category that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCategory'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CategoriesUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateCategoryWithHttpInfo($category_id, $categories_update_request_body = null, string $contentType = self::contentTypes['updateCategory'][0])
+    public function updateCategoryWithHttpInfo($categoryId, $categoriesUpdateRequestBody = null, string $contentType = self::contentTypes['updateCategory'][0])
     {
-        $request = $this->updateCategoryRequest($category_id, $categories_update_request_body, $contentType);
+        $request = $this->updateCategoryRequest($categoryId, $categoriesUpdateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1351,16 +1351,16 @@ class CategoriesApi
      *
      * Update Category
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
-     * @param  \OpenAPI\Client\Model\CategoriesUpdateRequestBody $categories_update_request_body Specify the details of the category that you would like to update. (optional)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\CategoriesUpdateRequestBody $categoriesUpdateRequestBody Specify the details of the category that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCategory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateCategoryAsync($category_id, $categories_update_request_body = null, string $contentType = self::contentTypes['updateCategory'][0])
+    public function updateCategoryAsync($categoryId, $categoriesUpdateRequestBody = null, string $contentType = self::contentTypes['updateCategory'][0])
     {
-        return $this->updateCategoryAsyncWithHttpInfo($category_id, $categories_update_request_body, $contentType)
+        return $this->updateCategoryAsyncWithHttpInfo($categoryId, $categoriesUpdateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1373,17 +1373,17 @@ class CategoriesApi
      *
      * Update Category
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
-     * @param  \OpenAPI\Client\Model\CategoriesUpdateRequestBody $categories_update_request_body Specify the details of the category that you would like to update. (optional)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\CategoriesUpdateRequestBody $categoriesUpdateRequestBody Specify the details of the category that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCategory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateCategoryAsyncWithHttpInfo($category_id, $categories_update_request_body = null, string $contentType = self::contentTypes['updateCategory'][0])
+    public function updateCategoryAsyncWithHttpInfo($categoryId, $categoriesUpdateRequestBody = null, string $contentType = self::contentTypes['updateCategory'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CategoriesUpdateResponseBody';
-        $request = $this->updateCategoryRequest($category_id, $categories_update_request_body, $contentType);
+        $request = $this->updateCategoryRequest($categoryId, $categoriesUpdateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1424,20 +1424,20 @@ class CategoriesApi
     /**
      * Create request for operation 'updateCategory'
      *
-     * @param  string $category_id Unique category ID assigned by Voucherify. (required)
-     * @param  \OpenAPI\Client\Model\CategoriesUpdateRequestBody $categories_update_request_body Specify the details of the category that you would like to update. (optional)
+     * @param  string $categoryId Unique category ID assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\CategoriesUpdateRequestBody $categoriesUpdateRequestBody Specify the details of the category that you would like to update. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateCategory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateCategoryRequest($category_id, $categories_update_request_body = null, string $contentType = self::contentTypes['updateCategory'][0])
+    public function updateCategoryRequest($categoryId, $categoriesUpdateRequestBody = null, string $contentType = self::contentTypes['updateCategory'][0])
     {
 
-        // verify the required parameter 'category_id' is set
-        if ($category_id === null || (is_array($category_id) && count($category_id) === 0)) {
+        // verify the required parameter 'categoryId' is set
+        if ($categoryId === null || (is_array($categoryId) && count($categoryId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $category_id when calling updateCategory'
+                'Missing the required parameter $categoryId when calling updateCategory'
             );
         }
 
@@ -1453,10 +1453,10 @@ class CategoriesApi
 
 
         // path params
-        if ($category_id !== null) {
+        if ($categoryId !== null) {
             $resourcePath = str_replace(
                 '{' . 'categoryId' . '}',
-                ObjectSerializer::toPathValue($category_id),
+                ObjectSerializer::toPathValue($categoryId),
                 $resourcePath
             );
         }
@@ -1469,12 +1469,12 @@ class CategoriesApi
         );
 
         // for model (json/xml)
-        if (isset($categories_update_request_body)) {
+        if (isset($categoriesUpdateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($categories_update_request_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($categoriesUpdateRequestBody));
             } else {
-                $httpBody = $categories_update_request_body;
+                $httpBody = $categoriesUpdateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

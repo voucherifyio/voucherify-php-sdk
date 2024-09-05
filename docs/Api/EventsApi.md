@@ -10,7 +10,7 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 ## `trackCustomEvent()`
 
 ```php
-trackCustomEvent($events_create_request_body): \OpenAPI\Client\Model\EventsCreateResponseBody
+trackCustomEvent($eventsCreateRequestBody): \OpenAPI\Client\Model\EventsCreateResponseBody
 ```
 
 Track Custom Event
@@ -41,10 +41,10 @@ $apiInstance = new OpenAPI\Client\Api\EventsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$events_create_request_body = {"event":"event-name","customer":{"source_id":"referee-source_id"},"referral":{"code":"voucher-code","referrer_id":"referrer-source_id"}}; // \OpenAPI\Client\Model\EventsCreateRequestBody | Specify the details of the custom event.
+$eventsCreateRequestBody = {"event":"event-name","customer":{"source_id":"referee-source_id"},"referral":{"code":"voucher-code","referrer_id":"referrer-source_id"}}; // \OpenAPI\Client\Model\EventsCreateRequestBody | Specify the details of the custom event.
 
 try {
-    $result = $apiInstance->trackCustomEvent($events_create_request_body);
+    $result = $apiInstance->trackCustomEvent($eventsCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EventsApi->trackCustomEvent: ', $e->getMessage(), PHP_EOL;
@@ -55,7 +55,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **events_create_request_body** | [**\OpenAPI\Client\Model\EventsCreateRequestBody**](../Model/EventsCreateRequestBody.md)| Specify the details of the custom event. | [optional] |
+| **eventsCreateRequestBody** | [**\OpenAPI\Client\Model\EventsCreateRequestBody**](../Model/EventsCreateRequestBody.md)| Specify the details of the custom event. | [optional] |
 
 ### Return type
 

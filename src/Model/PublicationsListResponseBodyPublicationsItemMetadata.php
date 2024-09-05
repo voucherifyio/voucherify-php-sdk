@@ -58,9 +58,9 @@ class PublicationsListResponseBodyPublicationsItemMetadata implements ModelInter
       * @var string[]
       */
     protected static $openAPITypes = [
-        'source_type' => 'string',
-        'source_id' => 'string',
-        'distribution_id' => 'string'
+        'sourceType' => 'string',
+        'sourceId' => 'string',
+        'distributionId' => 'string'
     ];
 
     /**
@@ -71,9 +71,9 @@ class PublicationsListResponseBodyPublicationsItemMetadata implements ModelInter
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'source_type' => null,
-        'source_id' => null,
-        'distribution_id' => null
+        'sourceType' => null,
+        'sourceId' => null,
+        'distributionId' => null
     ];
 
     /**
@@ -82,9 +82,9 @@ class PublicationsListResponseBodyPublicationsItemMetadata implements ModelInter
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'source_type' => true,
-		'source_id' => true,
-		'distribution_id' => true
+        'sourceType' => true,
+		'sourceId' => true,
+		'distributionId' => true
     ];
 
     /**
@@ -173,9 +173,9 @@ class PublicationsListResponseBodyPublicationsItemMetadata implements ModelInter
      * @var string[]
      */
     protected static $attributeMap = [
-        'source_type' => 'source_type',
-        'source_id' => 'source_id',
-        'distribution_id' => 'distribution_id'
+        'sourceType' => 'source_type',
+        'sourceId' => 'source_id',
+        'distributionId' => 'distribution_id'
     ];
 
     /**
@@ -184,9 +184,9 @@ class PublicationsListResponseBodyPublicationsItemMetadata implements ModelInter
      * @var string[]
      */
     protected static $setters = [
-        'source_type' => 'setSourceType',
-        'source_id' => 'setSourceId',
-        'distribution_id' => 'setDistributionId'
+        'sourceType' => 'setSourceType',
+        'sourceId' => 'setSourceId',
+        'distributionId' => 'setDistributionId'
     ];
 
     /**
@@ -195,9 +195,9 @@ class PublicationsListResponseBodyPublicationsItemMetadata implements ModelInter
      * @var string[]
      */
     protected static $getters = [
-        'source_type' => 'getSourceType',
-        'source_id' => 'getSourceId',
-        'distribution_id' => 'getDistributionId'
+        'sourceType' => 'getSourceType',
+        'sourceId' => 'getSourceId',
+        'distributionId' => 'getDistributionId'
     ];
 
     /**
@@ -257,9 +257,9 @@ class PublicationsListResponseBodyPublicationsItemMetadata implements ModelInter
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('source_type', $data ?? [], null);
-        $this->setIfExists('source_id', $data ?? [], null);
-        $this->setIfExists('distribution_id', $data ?? [], null);
+        $this->setIfExists('sourceType', $data ?? [], null);
+        $this->setIfExists('sourceId', $data ?? [], null);
+        $this->setIfExists('distributionId', $data ?? [], null);
     }
 
     /**
@@ -305,103 +305,103 @@ class PublicationsListResponseBodyPublicationsItemMetadata implements ModelInter
 
 
     /**
-     * Gets source_type
+     * Gets sourceType
      *
      * @return string|null
      */
     public function getSourceType()
     {
-        return $this->container['source_type'];
+        return $this->container['sourceType'];
     }
 
     /**
-     * Sets source_type
+     * Sets sourceType
      *
-     * @param string|null $source_type Defines the type of the distribution source.
+     * @param string|null $sourceType Defines the type of the distribution source.
      *
      * @return self
      */
-    public function setSourceType($source_type)
+    public function setSourceType($sourceType)
     {
-        if (is_null($source_type)) {
-            array_push($this->openAPINullablesSetToNull, 'source_type');
+        if (is_null($sourceType)) {
+            array_push($this->openAPINullablesSetToNull, 'sourceType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('source_type', $nullablesSetToNull);
+            $index = array_search('sourceType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['source_type'] = $source_type;
+        $this->container['sourceType'] = $sourceType;
 
         return $this;
     }
 
     /**
-     * Gets source_id
+     * Gets sourceId
      *
      * @return string|null
      */
     public function getSourceId()
     {
-        return $this->container['source_id'];
+        return $this->container['sourceId'];
     }
 
     /**
-     * Sets source_id
+     * Sets sourceId
      *
-     * @param string|null $source_id Unique identifier of the distribution source.
+     * @param string|null $sourceId Unique identifier of the distribution source.
      *
      * @return self
      */
-    public function setSourceId($source_id)
+    public function setSourceId($sourceId)
     {
-        if (is_null($source_id)) {
-            array_push($this->openAPINullablesSetToNull, 'source_id');
+        if (is_null($sourceId)) {
+            array_push($this->openAPINullablesSetToNull, 'sourceId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('source_id', $nullablesSetToNull);
+            $index = array_search('sourceId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['source_id'] = $source_id;
+        $this->container['sourceId'] = $sourceId;
 
         return $this;
     }
 
     /**
-     * Gets distribution_id
+     * Gets distributionId
      *
      * @return string|null
      */
     public function getDistributionId()
     {
-        return $this->container['distribution_id'];
+        return $this->container['distributionId'];
     }
 
     /**
-     * Sets distribution_id
+     * Sets distributionId
      *
-     * @param string|null $distribution_id Unique identifier of the distribution.
+     * @param string|null $distributionId Unique identifier of the distribution.
      *
      * @return self
      */
-    public function setDistributionId($distribution_id)
+    public function setDistributionId($distributionId)
     {
-        if (is_null($distribution_id)) {
-            array_push($this->openAPINullablesSetToNull, 'distribution_id');
+        if (is_null($distributionId)) {
+            array_push($this->openAPINullablesSetToNull, 'distributionId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('distribution_id', $nullablesSetToNull);
+            $index = array_search('distributionId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['distribution_id'] = $distribution_id;
+        $this->container['distributionId'] = $distributionId;
 
         return $this;
     }

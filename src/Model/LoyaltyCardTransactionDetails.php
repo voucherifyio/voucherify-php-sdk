@@ -62,16 +62,16 @@ class LoyaltyCardTransactionDetails implements ModelInterface, ArrayAccess, \Jso
         'balance' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsBalance',
         'order' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsOrder',
         'event' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsEvent',
-        'earning_rule' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsEarningRule',
+        'earningRule' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsEarningRule',
         'segment' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsSegment',
-        'loyalty_tier' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsLoyaltyTier',
+        'loyaltyTier' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsLoyaltyTier',
         'redemption' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsRedemption',
         'rollback' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsRollback',
-        'custom_event' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsCustomEvent',
-        'event_schema' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsEventSchema',
+        'customEvent' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsCustomEvent',
+        'eventSchema' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsEventSchema',
         'reward' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsReward',
-        'source_voucher' => '\OpenAPI\Client\Model\SimpleVoucher',
-        'destination_voucher' => '\OpenAPI\Client\Model\SimpleVoucher'
+        'sourceVoucher' => '\OpenAPI\Client\Model\SimpleVoucher',
+        'destinationVoucher' => '\OpenAPI\Client\Model\SimpleVoucher'
     ];
 
     /**
@@ -85,16 +85,16 @@ class LoyaltyCardTransactionDetails implements ModelInterface, ArrayAccess, \Jso
         'balance' => null,
         'order' => null,
         'event' => null,
-        'earning_rule' => null,
+        'earningRule' => null,
         'segment' => null,
-        'loyalty_tier' => null,
+        'loyaltyTier' => null,
         'redemption' => null,
         'rollback' => null,
-        'custom_event' => null,
-        'event_schema' => null,
+        'customEvent' => null,
+        'eventSchema' => null,
         'reward' => null,
-        'source_voucher' => null,
-        'destination_voucher' => null
+        'sourceVoucher' => null,
+        'destinationVoucher' => null
     ];
 
     /**
@@ -106,16 +106,16 @@ class LoyaltyCardTransactionDetails implements ModelInterface, ArrayAccess, \Jso
         'balance' => true,
 		'order' => true,
 		'event' => true,
-		'earning_rule' => true,
+		'earningRule' => true,
 		'segment' => true,
-		'loyalty_tier' => true,
+		'loyaltyTier' => true,
 		'redemption' => true,
 		'rollback' => true,
-		'custom_event' => true,
-		'event_schema' => true,
+		'customEvent' => true,
+		'eventSchema' => true,
 		'reward' => true,
-		'source_voucher' => false,
-		'destination_voucher' => false
+		'sourceVoucher' => false,
+		'destinationVoucher' => false
     ];
 
     /**
@@ -207,16 +207,16 @@ class LoyaltyCardTransactionDetails implements ModelInterface, ArrayAccess, \Jso
         'balance' => 'balance',
         'order' => 'order',
         'event' => 'event',
-        'earning_rule' => 'earning_rule',
+        'earningRule' => 'earning_rule',
         'segment' => 'segment',
-        'loyalty_tier' => 'loyalty_tier',
+        'loyaltyTier' => 'loyalty_tier',
         'redemption' => 'redemption',
         'rollback' => 'rollback',
-        'custom_event' => 'custom_event',
-        'event_schema' => 'event_schema',
+        'customEvent' => 'custom_event',
+        'eventSchema' => 'event_schema',
         'reward' => 'reward',
-        'source_voucher' => 'source_voucher',
-        'destination_voucher' => 'destination_voucher'
+        'sourceVoucher' => 'source_voucher',
+        'destinationVoucher' => 'destination_voucher'
     ];
 
     /**
@@ -228,16 +228,16 @@ class LoyaltyCardTransactionDetails implements ModelInterface, ArrayAccess, \Jso
         'balance' => 'setBalance',
         'order' => 'setOrder',
         'event' => 'setEvent',
-        'earning_rule' => 'setEarningRule',
+        'earningRule' => 'setEarningRule',
         'segment' => 'setSegment',
-        'loyalty_tier' => 'setLoyaltyTier',
+        'loyaltyTier' => 'setLoyaltyTier',
         'redemption' => 'setRedemption',
         'rollback' => 'setRollback',
-        'custom_event' => 'setCustomEvent',
-        'event_schema' => 'setEventSchema',
+        'customEvent' => 'setCustomEvent',
+        'eventSchema' => 'setEventSchema',
         'reward' => 'setReward',
-        'source_voucher' => 'setSourceVoucher',
-        'destination_voucher' => 'setDestinationVoucher'
+        'sourceVoucher' => 'setSourceVoucher',
+        'destinationVoucher' => 'setDestinationVoucher'
     ];
 
     /**
@@ -249,16 +249,16 @@ class LoyaltyCardTransactionDetails implements ModelInterface, ArrayAccess, \Jso
         'balance' => 'getBalance',
         'order' => 'getOrder',
         'event' => 'getEvent',
-        'earning_rule' => 'getEarningRule',
+        'earningRule' => 'getEarningRule',
         'segment' => 'getSegment',
-        'loyalty_tier' => 'getLoyaltyTier',
+        'loyaltyTier' => 'getLoyaltyTier',
         'redemption' => 'getRedemption',
         'rollback' => 'getRollback',
-        'custom_event' => 'getCustomEvent',
-        'event_schema' => 'getEventSchema',
+        'customEvent' => 'getCustomEvent',
+        'eventSchema' => 'getEventSchema',
         'reward' => 'getReward',
-        'source_voucher' => 'getSourceVoucher',
-        'destination_voucher' => 'getDestinationVoucher'
+        'sourceVoucher' => 'getSourceVoucher',
+        'destinationVoucher' => 'getDestinationVoucher'
     ];
 
     /**
@@ -321,16 +321,16 @@ class LoyaltyCardTransactionDetails implements ModelInterface, ArrayAccess, \Jso
         $this->setIfExists('balance', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
         $this->setIfExists('event', $data ?? [], null);
-        $this->setIfExists('earning_rule', $data ?? [], null);
+        $this->setIfExists('earningRule', $data ?? [], null);
         $this->setIfExists('segment', $data ?? [], null);
-        $this->setIfExists('loyalty_tier', $data ?? [], null);
+        $this->setIfExists('loyaltyTier', $data ?? [], null);
         $this->setIfExists('redemption', $data ?? [], null);
         $this->setIfExists('rollback', $data ?? [], null);
-        $this->setIfExists('custom_event', $data ?? [], null);
-        $this->setIfExists('event_schema', $data ?? [], null);
+        $this->setIfExists('customEvent', $data ?? [], null);
+        $this->setIfExists('eventSchema', $data ?? [], null);
         $this->setIfExists('reward', $data ?? [], null);
-        $this->setIfExists('source_voucher', $data ?? [], null);
-        $this->setIfExists('destination_voucher', $data ?? [], null);
+        $this->setIfExists('sourceVoucher', $data ?? [], null);
+        $this->setIfExists('destinationVoucher', $data ?? [], null);
     }
 
     /**
@@ -478,35 +478,35 @@ class LoyaltyCardTransactionDetails implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets earning_rule
+     * Gets earningRule
      *
      * @return \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsEarningRule|null
      */
     public function getEarningRule()
     {
-        return $this->container['earning_rule'];
+        return $this->container['earningRule'];
     }
 
     /**
-     * Sets earning_rule
+     * Sets earningRule
      *
-     * @param \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsEarningRule|null $earning_rule earning_rule
+     * @param \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsEarningRule|null $earningRule earningRule
      *
      * @return self
      */
-    public function setEarningRule($earning_rule)
+    public function setEarningRule($earningRule)
     {
-        if (is_null($earning_rule)) {
-            array_push($this->openAPINullablesSetToNull, 'earning_rule');
+        if (is_null($earningRule)) {
+            array_push($this->openAPINullablesSetToNull, 'earningRule');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('earning_rule', $nullablesSetToNull);
+            $index = array_search('earningRule', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['earning_rule'] = $earning_rule;
+        $this->container['earningRule'] = $earningRule;
 
         return $this;
     }
@@ -546,35 +546,35 @@ class LoyaltyCardTransactionDetails implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets loyalty_tier
+     * Gets loyaltyTier
      *
      * @return \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsLoyaltyTier|null
      */
     public function getLoyaltyTier()
     {
-        return $this->container['loyalty_tier'];
+        return $this->container['loyaltyTier'];
     }
 
     /**
-     * Sets loyalty_tier
+     * Sets loyaltyTier
      *
-     * @param \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsLoyaltyTier|null $loyalty_tier loyalty_tier
+     * @param \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsLoyaltyTier|null $loyaltyTier loyaltyTier
      *
      * @return self
      */
-    public function setLoyaltyTier($loyalty_tier)
+    public function setLoyaltyTier($loyaltyTier)
     {
-        if (is_null($loyalty_tier)) {
-            array_push($this->openAPINullablesSetToNull, 'loyalty_tier');
+        if (is_null($loyaltyTier)) {
+            array_push($this->openAPINullablesSetToNull, 'loyaltyTier');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('loyalty_tier', $nullablesSetToNull);
+            $index = array_search('loyaltyTier', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['loyalty_tier'] = $loyalty_tier;
+        $this->container['loyaltyTier'] = $loyaltyTier;
 
         return $this;
     }
@@ -648,69 +648,69 @@ class LoyaltyCardTransactionDetails implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets custom_event
+     * Gets customEvent
      *
      * @return \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsCustomEvent|null
      */
     public function getCustomEvent()
     {
-        return $this->container['custom_event'];
+        return $this->container['customEvent'];
     }
 
     /**
-     * Sets custom_event
+     * Sets customEvent
      *
-     * @param \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsCustomEvent|null $custom_event custom_event
+     * @param \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsCustomEvent|null $customEvent customEvent
      *
      * @return self
      */
-    public function setCustomEvent($custom_event)
+    public function setCustomEvent($customEvent)
     {
-        if (is_null($custom_event)) {
-            array_push($this->openAPINullablesSetToNull, 'custom_event');
+        if (is_null($customEvent)) {
+            array_push($this->openAPINullablesSetToNull, 'customEvent');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('custom_event', $nullablesSetToNull);
+            $index = array_search('customEvent', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['custom_event'] = $custom_event;
+        $this->container['customEvent'] = $customEvent;
 
         return $this;
     }
 
     /**
-     * Gets event_schema
+     * Gets eventSchema
      *
      * @return \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsEventSchema|null
      */
     public function getEventSchema()
     {
-        return $this->container['event_schema'];
+        return $this->container['eventSchema'];
     }
 
     /**
-     * Sets event_schema
+     * Sets eventSchema
      *
-     * @param \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsEventSchema|null $event_schema event_schema
+     * @param \OpenAPI\Client\Model\LoyaltyCardTransactionDetailsEventSchema|null $eventSchema eventSchema
      *
      * @return self
      */
-    public function setEventSchema($event_schema)
+    public function setEventSchema($eventSchema)
     {
-        if (is_null($event_schema)) {
-            array_push($this->openAPINullablesSetToNull, 'event_schema');
+        if (is_null($eventSchema)) {
+            array_push($this->openAPINullablesSetToNull, 'eventSchema');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('event_schema', $nullablesSetToNull);
+            $index = array_search('eventSchema', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['event_schema'] = $event_schema;
+        $this->container['eventSchema'] = $eventSchema;
 
         return $this;
     }
@@ -750,55 +750,55 @@ class LoyaltyCardTransactionDetails implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets source_voucher
+     * Gets sourceVoucher
      *
      * @return \OpenAPI\Client\Model\SimpleVoucher|null
      */
     public function getSourceVoucher()
     {
-        return $this->container['source_voucher'];
+        return $this->container['sourceVoucher'];
     }
 
     /**
-     * Sets source_voucher
+     * Sets sourceVoucher
      *
-     * @param \OpenAPI\Client\Model\SimpleVoucher|null $source_voucher source_voucher
+     * @param \OpenAPI\Client\Model\SimpleVoucher|null $sourceVoucher sourceVoucher
      *
      * @return self
      */
-    public function setSourceVoucher($source_voucher)
+    public function setSourceVoucher($sourceVoucher)
     {
-        if (is_null($source_voucher)) {
-            throw new \InvalidArgumentException('non-nullable source_voucher cannot be null');
+        if (is_null($sourceVoucher)) {
+            throw new \InvalidArgumentException('non-nullable sourceVoucher cannot be null');
         }
-        $this->container['source_voucher'] = $source_voucher;
+        $this->container['sourceVoucher'] = $sourceVoucher;
 
         return $this;
     }
 
     /**
-     * Gets destination_voucher
+     * Gets destinationVoucher
      *
      * @return \OpenAPI\Client\Model\SimpleVoucher|null
      */
     public function getDestinationVoucher()
     {
-        return $this->container['destination_voucher'];
+        return $this->container['destinationVoucher'];
     }
 
     /**
-     * Sets destination_voucher
+     * Sets destinationVoucher
      *
-     * @param \OpenAPI\Client\Model\SimpleVoucher|null $destination_voucher destination_voucher
+     * @param \OpenAPI\Client\Model\SimpleVoucher|null $destinationVoucher destinationVoucher
      *
      * @return self
      */
-    public function setDestinationVoucher($destination_voucher)
+    public function setDestinationVoucher($destinationVoucher)
     {
-        if (is_null($destination_voucher)) {
-            throw new \InvalidArgumentException('non-nullable destination_voucher cannot be null');
+        if (is_null($destinationVoucher)) {
+            throw new \InvalidArgumentException('non-nullable destinationVoucher cannot be null');
         }
-        $this->container['destination_voucher'] = $destination_voucher;
+        $this->container['destinationVoucher'] = $destinationVoucher;
 
         return $this;
     }

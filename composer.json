@@ -1,4 +1,6 @@
 {
+    "name": "rspective/voucherify",
+    "version": "3.0.0",
     "description": "Voucherify promotion engine REST API. Please see https://docs.voucherify.io/docs for more details.",
     "keywords": [
         "openapitools",
@@ -23,10 +25,7 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^7.4.5",
-        "guzzlehttp/psr7": "^2.0",
-        "codeception/codeception": "^5.1",
-        "codeception/module-phpbrowser": "*",
-        "codeception/module-asserts": "*"
+        "guzzlehttp/psr7": "^2.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.5",
@@ -34,14 +33,10 @@
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
-        "psr-4": {
-            "OpenAPI\\Client\\": "src/"
-        }
+        "psr-4": { "OpenAPI\\Client\\" : "src/" }
     },
     "autoload-dev": {
-        "psr-4": {
-            "OpenAPI\\Client\\Test\\": "tests/"
-        }
+        "psr-4": { "OpenAPI\\Client\\Test\\" : "tests/" }
     },
     "scripts": {
         "test": [

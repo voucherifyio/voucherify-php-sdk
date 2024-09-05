@@ -63,16 +63,16 @@ class PromotionTierCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'banner' => 'string',
         'action' => '\OpenAPI\Client\Model\PromotionTierCreateParamsAction',
         'metadata' => 'object',
-        'validation_rules' => 'string[]',
+        'validationRules' => 'string[]',
         'active' => 'bool',
         'hierarchy' => 'int',
-        'start_date' => '\DateTime',
-        'expiration_date' => '\DateTime',
-        'validity_timeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
-        'validity_day_of_week' => 'int[]',
-        'validity_hours' => '\OpenAPI\Client\Model\ValidityHours',
+        'startDate' => '\DateTime',
+        'expirationDate' => '\DateTime',
+        'validityTimeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
+        'validityDayOfWeek' => 'int[]',
+        'validityHours' => '\OpenAPI\Client\Model\ValidityHours',
         'category' => 'string',
-        'category_id' => 'string'
+        'categoryId' => 'string'
     ];
 
     /**
@@ -87,16 +87,16 @@ class PromotionTierCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'banner' => null,
         'action' => null,
         'metadata' => null,
-        'validation_rules' => null,
+        'validationRules' => null,
         'active' => null,
         'hierarchy' => null,
-        'start_date' => 'date-time',
-        'expiration_date' => 'date-time',
-        'validity_timeframe' => null,
-        'validity_day_of_week' => null,
-        'validity_hours' => null,
+        'startDate' => 'date-time',
+        'expirationDate' => 'date-time',
+        'validityTimeframe' => null,
+        'validityDayOfWeek' => null,
+        'validityHours' => null,
         'category' => null,
-        'category_id' => null
+        'categoryId' => null
     ];
 
     /**
@@ -109,16 +109,16 @@ class PromotionTierCreateParams implements ModelInterface, ArrayAccess, \JsonSer
 		'banner' => true,
 		'action' => true,
 		'metadata' => true,
-		'validation_rules' => true,
+		'validationRules' => true,
 		'active' => true,
 		'hierarchy' => true,
-		'start_date' => true,
-		'expiration_date' => true,
-		'validity_timeframe' => false,
-		'validity_day_of_week' => true,
-		'validity_hours' => false,
+		'startDate' => true,
+		'expirationDate' => true,
+		'validityTimeframe' => false,
+		'validityDayOfWeek' => true,
+		'validityHours' => false,
 		'category' => true,
-		'category_id' => true
+		'categoryId' => true
     ];
 
     /**
@@ -211,16 +211,16 @@ class PromotionTierCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'banner' => 'banner',
         'action' => 'action',
         'metadata' => 'metadata',
-        'validation_rules' => 'validation_rules',
+        'validationRules' => 'validation_rules',
         'active' => 'active',
         'hierarchy' => 'hierarchy',
-        'start_date' => 'start_date',
-        'expiration_date' => 'expiration_date',
-        'validity_timeframe' => 'validity_timeframe',
-        'validity_day_of_week' => 'validity_day_of_week',
-        'validity_hours' => 'validity_hours',
+        'startDate' => 'start_date',
+        'expirationDate' => 'expiration_date',
+        'validityTimeframe' => 'validity_timeframe',
+        'validityDayOfWeek' => 'validity_day_of_week',
+        'validityHours' => 'validity_hours',
         'category' => 'category',
-        'category_id' => 'category_id'
+        'categoryId' => 'category_id'
     ];
 
     /**
@@ -233,16 +233,16 @@ class PromotionTierCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'banner' => 'setBanner',
         'action' => 'setAction',
         'metadata' => 'setMetadata',
-        'validation_rules' => 'setValidationRules',
+        'validationRules' => 'setValidationRules',
         'active' => 'setActive',
         'hierarchy' => 'setHierarchy',
-        'start_date' => 'setStartDate',
-        'expiration_date' => 'setExpirationDate',
-        'validity_timeframe' => 'setValidityTimeframe',
-        'validity_day_of_week' => 'setValidityDayOfWeek',
-        'validity_hours' => 'setValidityHours',
+        'startDate' => 'setStartDate',
+        'expirationDate' => 'setExpirationDate',
+        'validityTimeframe' => 'setValidityTimeframe',
+        'validityDayOfWeek' => 'setValidityDayOfWeek',
+        'validityHours' => 'setValidityHours',
         'category' => 'setCategory',
-        'category_id' => 'setCategoryId'
+        'categoryId' => 'setCategoryId'
     ];
 
     /**
@@ -255,16 +255,16 @@ class PromotionTierCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         'banner' => 'getBanner',
         'action' => 'getAction',
         'metadata' => 'getMetadata',
-        'validation_rules' => 'getValidationRules',
+        'validationRules' => 'getValidationRules',
         'active' => 'getActive',
         'hierarchy' => 'getHierarchy',
-        'start_date' => 'getStartDate',
-        'expiration_date' => 'getExpirationDate',
-        'validity_timeframe' => 'getValidityTimeframe',
-        'validity_day_of_week' => 'getValidityDayOfWeek',
-        'validity_hours' => 'getValidityHours',
+        'startDate' => 'getStartDate',
+        'expirationDate' => 'getExpirationDate',
+        'validityTimeframe' => 'getValidityTimeframe',
+        'validityDayOfWeek' => 'getValidityDayOfWeek',
+        'validityHours' => 'getValidityHours',
         'category' => 'getCategory',
-        'category_id' => 'getCategoryId'
+        'categoryId' => 'getCategoryId'
     ];
 
     /**
@@ -353,16 +353,16 @@ class PromotionTierCreateParams implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('banner', $data ?? [], null);
         $this->setIfExists('action', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('validation_rules', $data ?? [], null);
+        $this->setIfExists('validationRules', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
         $this->setIfExists('hierarchy', $data ?? [], null);
-        $this->setIfExists('start_date', $data ?? [], null);
-        $this->setIfExists('expiration_date', $data ?? [], null);
-        $this->setIfExists('validity_timeframe', $data ?? [], null);
-        $this->setIfExists('validity_day_of_week', $data ?? [], null);
-        $this->setIfExists('validity_hours', $data ?? [], null);
+        $this->setIfExists('startDate', $data ?? [], null);
+        $this->setIfExists('expirationDate', $data ?? [], null);
+        $this->setIfExists('validityTimeframe', $data ?? [], null);
+        $this->setIfExists('validityDayOfWeek', $data ?? [], null);
+        $this->setIfExists('validityHours', $data ?? [], null);
         $this->setIfExists('category', $data ?? [], null);
-        $this->setIfExists('category_id', $data ?? [], null);
+        $this->setIfExists('categoryId', $data ?? [], null);
     }
 
     /**
@@ -544,35 +544,35 @@ class PromotionTierCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets validation_rules
+     * Gets validationRules
      *
      * @return string[]|null
      */
     public function getValidationRules()
     {
-        return $this->container['validation_rules'];
+        return $this->container['validationRules'];
     }
 
     /**
-     * Sets validation_rules
+     * Sets validationRules
      *
-     * @param string[]|null $validation_rules Array containing the ID of the validation rule associated with the promotion tier.
+     * @param string[]|null $validationRules Array containing the ID of the validation rule associated with the promotion tier.
      *
      * @return self
      */
-    public function setValidationRules($validation_rules)
+    public function setValidationRules($validationRules)
     {
-        if (is_null($validation_rules)) {
-            array_push($this->openAPINullablesSetToNull, 'validation_rules');
+        if (is_null($validationRules)) {
+            array_push($this->openAPINullablesSetToNull, 'validationRules');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validation_rules', $nullablesSetToNull);
+            $index = array_search('validationRules', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['validation_rules'] = $validation_rules;
+        $this->container['validationRules'] = $validationRules;
 
         return $this;
     }
@@ -646,166 +646,166 @@ class PromotionTierCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets start_date
+     * Gets startDate
      *
      * @return \DateTime|null
      */
     public function getStartDate()
     {
-        return $this->container['start_date'];
+        return $this->container['startDate'];
     }
 
     /**
-     * Sets start_date
+     * Sets startDate
      *
-     * @param \DateTime|null $start_date Activation timestamp defines when the promotion tier starts to be active in ISO 8601 format. Promotion tier is *inactive before* this date.
+     * @param \DateTime|null $startDate Activation timestamp defines when the promotion tier starts to be active in ISO 8601 format. Promotion tier is *inactive before* this date.
      *
      * @return self
      */
-    public function setStartDate($start_date)
+    public function setStartDate($startDate)
     {
-        if (is_null($start_date)) {
-            array_push($this->openAPINullablesSetToNull, 'start_date');
+        if (is_null($startDate)) {
+            array_push($this->openAPINullablesSetToNull, 'startDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('start_date', $nullablesSetToNull);
+            $index = array_search('startDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['start_date'] = $start_date;
+        $this->container['startDate'] = $startDate;
 
         return $this;
     }
 
     /**
-     * Gets expiration_date
+     * Gets expirationDate
      *
      * @return \DateTime|null
      */
     public function getExpirationDate()
     {
-        return $this->container['expiration_date'];
+        return $this->container['expirationDate'];
     }
 
     /**
-     * Sets expiration_date
+     * Sets expirationDate
      *
-     * @param \DateTime|null $expiration_date Activation timestamp defines when the promotion tier expires in ISO 8601 format. Promotion tier is *inactive after* this date.
+     * @param \DateTime|null $expirationDate Activation timestamp defines when the promotion tier expires in ISO 8601 format. Promotion tier is *inactive after* this date.
      *
      * @return self
      */
-    public function setExpirationDate($expiration_date)
+    public function setExpirationDate($expirationDate)
     {
-        if (is_null($expiration_date)) {
-            array_push($this->openAPINullablesSetToNull, 'expiration_date');
+        if (is_null($expirationDate)) {
+            array_push($this->openAPINullablesSetToNull, 'expirationDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiration_date', $nullablesSetToNull);
+            $index = array_search('expirationDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['expiration_date'] = $expiration_date;
+        $this->container['expirationDate'] = $expirationDate;
 
         return $this;
     }
 
     /**
-     * Gets validity_timeframe
+     * Gets validityTimeframe
      *
      * @return \OpenAPI\Client\Model\ValidityTimeframe|null
      */
     public function getValidityTimeframe()
     {
-        return $this->container['validity_timeframe'];
+        return $this->container['validityTimeframe'];
     }
 
     /**
-     * Sets validity_timeframe
+     * Sets validityTimeframe
      *
-     * @param \OpenAPI\Client\Model\ValidityTimeframe|null $validity_timeframe validity_timeframe
+     * @param \OpenAPI\Client\Model\ValidityTimeframe|null $validityTimeframe validityTimeframe
      *
      * @return self
      */
-    public function setValidityTimeframe($validity_timeframe)
+    public function setValidityTimeframe($validityTimeframe)
     {
-        if (is_null($validity_timeframe)) {
-            throw new \InvalidArgumentException('non-nullable validity_timeframe cannot be null');
+        if (is_null($validityTimeframe)) {
+            throw new \InvalidArgumentException('non-nullable validityTimeframe cannot be null');
         }
-        $this->container['validity_timeframe'] = $validity_timeframe;
+        $this->container['validityTimeframe'] = $validityTimeframe;
 
         return $this;
     }
 
     /**
-     * Gets validity_day_of_week
+     * Gets validityDayOfWeek
      *
      * @return int[]|null
      */
     public function getValidityDayOfWeek()
     {
-        return $this->container['validity_day_of_week'];
+        return $this->container['validityDayOfWeek'];
     }
 
     /**
-     * Sets validity_day_of_week
+     * Sets validityDayOfWeek
      *
-     * @param int[]|null $validity_day_of_week Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
+     * @param int[]|null $validityDayOfWeek Integer array corresponding to the particular days of the week in which the voucher is valid.  - `0` Sunday - `1` Monday - `2` Tuesday - `3` Wednesday - `4` Thursday - `5` Friday - `6` Saturday
      *
      * @return self
      */
-    public function setValidityDayOfWeek($validity_day_of_week)
+    public function setValidityDayOfWeek($validityDayOfWeek)
     {
-        if (is_null($validity_day_of_week)) {
-            array_push($this->openAPINullablesSetToNull, 'validity_day_of_week');
+        if (is_null($validityDayOfWeek)) {
+            array_push($this->openAPINullablesSetToNull, 'validityDayOfWeek');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validity_day_of_week', $nullablesSetToNull);
+            $index = array_search('validityDayOfWeek', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getValidityDayOfWeekAllowableValues();
-        if (!is_null($validity_day_of_week) && array_diff($validity_day_of_week, $allowedValues)) {
+        if (!is_null($validityDayOfWeek) && array_diff($validityDayOfWeek, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'validity_day_of_week', must be one of '%s'",
+                    "Invalid value for 'validityDayOfWeek', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['validity_day_of_week'] = $validity_day_of_week;
+        $this->container['validityDayOfWeek'] = $validityDayOfWeek;
 
         return $this;
     }
 
     /**
-     * Gets validity_hours
+     * Gets validityHours
      *
      * @return \OpenAPI\Client\Model\ValidityHours|null
      */
     public function getValidityHours()
     {
-        return $this->container['validity_hours'];
+        return $this->container['validityHours'];
     }
 
     /**
-     * Sets validity_hours
+     * Sets validityHours
      *
-     * @param \OpenAPI\Client\Model\ValidityHours|null $validity_hours validity_hours
+     * @param \OpenAPI\Client\Model\ValidityHours|null $validityHours validityHours
      *
      * @return self
      */
-    public function setValidityHours($validity_hours)
+    public function setValidityHours($validityHours)
     {
-        if (is_null($validity_hours)) {
-            throw new \InvalidArgumentException('non-nullable validity_hours cannot be null');
+        if (is_null($validityHours)) {
+            throw new \InvalidArgumentException('non-nullable validityHours cannot be null');
         }
-        $this->container['validity_hours'] = $validity_hours;
+        $this->container['validityHours'] = $validityHours;
 
         return $this;
     }
@@ -845,35 +845,35 @@ class PromotionTierCreateParams implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets category_id
+     * Gets categoryId
      *
      * @return string|null
      */
     public function getCategoryId()
     {
-        return $this->container['category_id'];
+        return $this->container['categoryId'];
     }
 
     /**
-     * Sets category_id
+     * Sets categoryId
      *
-     * @param string|null $category_id Instead of using the category name, you can alternatively assign a new category to a promotion tier using a unique category ID, i.e. `cat_0c9da30e7116ba6bba`.
+     * @param string|null $categoryId Instead of using the category name, you can alternatively assign a new category to a promotion tier using a unique category ID, i.e. `cat_0c9da30e7116ba6bba`.
      *
      * @return self
      */
-    public function setCategoryId($category_id)
+    public function setCategoryId($categoryId)
     {
-        if (is_null($category_id)) {
-            array_push($this->openAPINullablesSetToNull, 'category_id');
+        if (is_null($categoryId)) {
+            array_push($this->openAPINullablesSetToNull, 'categoryId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('category_id', $nullablesSetToNull);
+            $index = array_search('categoryId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['category_id'] = $category_id;
+        $this->container['categoryId'] = $categoryId;
 
         return $this;
     }

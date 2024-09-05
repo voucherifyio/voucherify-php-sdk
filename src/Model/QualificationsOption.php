@@ -60,10 +60,10 @@ class QualificationsOption implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'limit' => 'int',
-        'starting_after' => '\DateTime',
+        'startingAfter' => '\DateTime',
         'filters' => '\OpenAPI\Client\Model\QualificationsOptionFilters',
         'expand' => 'string[]',
-        'sorting_rule' => 'string'
+        'sortingRule' => 'string'
     ];
 
     /**
@@ -75,10 +75,10 @@ class QualificationsOption implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPIFormats = [
         'limit' => null,
-        'starting_after' => 'date-time',
+        'startingAfter' => 'date-time',
         'filters' => null,
         'expand' => null,
-        'sorting_rule' => null
+        'sortingRule' => null
     ];
 
     /**
@@ -88,10 +88,10 @@ class QualificationsOption implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static array $openAPINullables = [
         'limit' => true,
-		'starting_after' => true,
+		'startingAfter' => true,
 		'filters' => true,
 		'expand' => true,
-		'sorting_rule' => true
+		'sortingRule' => true
     ];
 
     /**
@@ -181,10 +181,10 @@ class QualificationsOption implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $attributeMap = [
         'limit' => 'limit',
-        'starting_after' => 'starting_after',
+        'startingAfter' => 'starting_after',
         'filters' => 'filters',
         'expand' => 'expand',
-        'sorting_rule' => 'sorting_rule'
+        'sortingRule' => 'sorting_rule'
     ];
 
     /**
@@ -194,10 +194,10 @@ class QualificationsOption implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $setters = [
         'limit' => 'setLimit',
-        'starting_after' => 'setStartingAfter',
+        'startingAfter' => 'setStartingAfter',
         'filters' => 'setFilters',
         'expand' => 'setExpand',
-        'sorting_rule' => 'setSortingRule'
+        'sortingRule' => 'setSortingRule'
     ];
 
     /**
@@ -207,10 +207,10 @@ class QualificationsOption implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'limit' => 'getLimit',
-        'starting_after' => 'getStartingAfter',
+        'startingAfter' => 'getStartingAfter',
         'filters' => 'getFilters',
         'expand' => 'getExpand',
-        'sorting_rule' => 'getSortingRule'
+        'sortingRule' => 'getSortingRule'
     ];
 
     /**
@@ -305,10 +305,10 @@ class QualificationsOption implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(array $data = null)
     {
         $this->setIfExists('limit', $data ?? [], null);
-        $this->setIfExists('starting_after', $data ?? [], null);
+        $this->setIfExists('startingAfter', $data ?? [], null);
         $this->setIfExists('filters', $data ?? [], null);
         $this->setIfExists('expand', $data ?? [], null);
-        $this->setIfExists('sorting_rule', $data ?? [], null);
+        $this->setIfExists('sortingRule', $data ?? [], null);
     }
 
     /**
@@ -343,10 +343,10 @@ class QualificationsOption implements ModelInterface, ArrayAccess, \JsonSerializ
         }
 
         $allowedValues = $this->getSortingRuleAllowableValues();
-        if (!is_null($this->container['sorting_rule']) && !in_array($this->container['sorting_rule'], $allowedValues, true)) {
+        if (!is_null($this->container['sortingRule']) && !in_array($this->container['sortingRule'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'sorting_rule', must be one of '%s'",
-                $this->container['sorting_rule'],
+                "invalid value '%s' for 'sortingRule', must be one of '%s'",
+                $this->container['sortingRule'],
                 implode("', '", $allowedValues)
             );
         }
@@ -406,35 +406,35 @@ class QualificationsOption implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets starting_after
+     * Gets startingAfter
      *
      * @return \DateTime|null
      */
     public function getStartingAfter()
     {
-        return $this->container['starting_after'];
+        return $this->container['startingAfter'];
     }
 
     /**
-     * Sets starting_after
+     * Sets startingAfter
      *
-     * @param \DateTime|null $starting_after Cursor used for paging.
+     * @param \DateTime|null $startingAfter Cursor used for paging.
      *
      * @return self
      */
-    public function setStartingAfter($starting_after)
+    public function setStartingAfter($startingAfter)
     {
-        if (is_null($starting_after)) {
-            array_push($this->openAPINullablesSetToNull, 'starting_after');
+        if (is_null($startingAfter)) {
+            array_push($this->openAPINullablesSetToNull, 'startingAfter');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('starting_after', $nullablesSetToNull);
+            $index = array_search('startingAfter', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['starting_after'] = $starting_after;
+        $this->container['startingAfter'] = $startingAfter;
 
         return $this;
     }
@@ -517,45 +517,45 @@ class QualificationsOption implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets sorting_rule
+     * Gets sortingRule
      *
      * @return string|null
      */
     public function getSortingRule()
     {
-        return $this->container['sorting_rule'];
+        return $this->container['sortingRule'];
     }
 
     /**
-     * Sets sorting_rule
+     * Sets sortingRule
      *
-     * @param string|null $sorting_rule Is used to determine the order in which data is displayed in the result array.    - `DEFAULT` - Sorting descending by `created_at`   - `BEST_DEAL` - Sorting descending by `total_applied_discount_amount`   - `LEAST_DEAL` - Sorting ascending by `total_applied_discount_amount`
+     * @param string|null $sortingRule Is used to determine the order in which data is displayed in the result array.    - `DEFAULT` - Sorting descending by `created_at`   - `BEST_DEAL` - Sorting descending by `total_applied_discount_amount`   - `LEAST_DEAL` - Sorting ascending by `total_applied_discount_amount`
      *
      * @return self
      */
-    public function setSortingRule($sorting_rule)
+    public function setSortingRule($sortingRule)
     {
-        if (is_null($sorting_rule)) {
-            array_push($this->openAPINullablesSetToNull, 'sorting_rule');
+        if (is_null($sortingRule)) {
+            array_push($this->openAPINullablesSetToNull, 'sortingRule');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sorting_rule', $nullablesSetToNull);
+            $index = array_search('sortingRule', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
         $allowedValues = $this->getSortingRuleAllowableValues();
-        if (!is_null($sorting_rule) && !in_array($sorting_rule, $allowedValues, true)) {
+        if (!is_null($sortingRule) && !in_array($sortingRule, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'sorting_rule', must be one of '%s'",
-                    $sorting_rule,
+                    "Invalid value '%s' for 'sortingRule', must be one of '%s'",
+                    $sortingRule,
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['sorting_rule'] = $sorting_rule;
+        $this->container['sortingRule'] = $sortingRule;
 
         return $this;
     }

@@ -59,7 +59,7 @@ class PromotionTierSummaryRedemptions implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total_redeemed' => 'int'
+        'totalRedeemed' => 'int'
     ];
 
     /**
@@ -70,7 +70,7 @@ class PromotionTierSummaryRedemptions implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'total_redeemed' => null
+        'totalRedeemed' => null
     ];
 
     /**
@@ -79,7 +79,7 @@ class PromotionTierSummaryRedemptions implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'total_redeemed' => true
+        'totalRedeemed' => true
     ];
 
     /**
@@ -168,7 +168,7 @@ class PromotionTierSummaryRedemptions implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'total_redeemed' => 'total_redeemed'
+        'totalRedeemed' => 'total_redeemed'
     ];
 
     /**
@@ -177,7 +177,7 @@ class PromotionTierSummaryRedemptions implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'total_redeemed' => 'setTotalRedeemed'
+        'totalRedeemed' => 'setTotalRedeemed'
     ];
 
     /**
@@ -186,7 +186,7 @@ class PromotionTierSummaryRedemptions implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'total_redeemed' => 'getTotalRedeemed'
+        'totalRedeemed' => 'getTotalRedeemed'
     ];
 
     /**
@@ -246,7 +246,7 @@ class PromotionTierSummaryRedemptions implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('total_redeemed', $data ?? [], null);
+        $this->setIfExists('totalRedeemed', $data ?? [], null);
     }
 
     /**
@@ -292,35 +292,35 @@ class PromotionTierSummaryRedemptions implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets total_redeemed
+     * Gets totalRedeemed
      *
      * @return int|null
      */
     public function getTotalRedeemed()
     {
-        return $this->container['total_redeemed'];
+        return $this->container['totalRedeemed'];
     }
 
     /**
-     * Sets total_redeemed
+     * Sets totalRedeemed
      *
-     * @param int|null $total_redeemed Number of times the promotion tier was redeemed.
+     * @param int|null $totalRedeemed Number of times the promotion tier was redeemed.
      *
      * @return self
      */
-    public function setTotalRedeemed($total_redeemed)
+    public function setTotalRedeemed($totalRedeemed)
     {
-        if (is_null($total_redeemed)) {
-            array_push($this->openAPINullablesSetToNull, 'total_redeemed');
+        if (is_null($totalRedeemed)) {
+            array_push($this->openAPINullablesSetToNull, 'totalRedeemed');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_redeemed', $nullablesSetToNull);
+            $index = array_search('totalRedeemed', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['total_redeemed'] = $total_redeemed;
+        $this->container['totalRedeemed'] = $totalRedeemed;
 
         return $this;
     }

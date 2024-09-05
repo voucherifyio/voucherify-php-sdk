@@ -60,8 +60,8 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters impleme
       */
     protected static $openAPITypes = [
         'junction' => 'string',
-        'voucher_id' => '\OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId',
-        'campaign_id' => '\OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId'
+        'voucherId' => '\OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId',
+        'campaignId' => '\OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId'
     ];
 
     /**
@@ -73,8 +73,8 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters impleme
       */
     protected static $openAPIFormats = [
         'junction' => null,
-        'voucher_id' => null,
-        'campaign_id' => null
+        'voucherId' => null,
+        'campaignId' => null
     ];
 
     /**
@@ -84,8 +84,8 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters impleme
       */
     protected static array $openAPINullables = [
         'junction' => true,
-		'voucher_id' => true,
-		'campaign_id' => true
+		'voucherId' => true,
+		'campaignId' => true
     ];
 
     /**
@@ -175,8 +175,8 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters impleme
      */
     protected static $attributeMap = [
         'junction' => 'junction',
-        'voucher_id' => 'voucher_id',
-        'campaign_id' => 'campaign_id'
+        'voucherId' => 'voucher_id',
+        'campaignId' => 'campaign_id'
     ];
 
     /**
@@ -186,8 +186,8 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters impleme
      */
     protected static $setters = [
         'junction' => 'setJunction',
-        'voucher_id' => 'setVoucherId',
-        'campaign_id' => 'setCampaignId'
+        'voucherId' => 'setVoucherId',
+        'campaignId' => 'setCampaignId'
     ];
 
     /**
@@ -197,8 +197,8 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters impleme
      */
     protected static $getters = [
         'junction' => 'getJunction',
-        'voucher_id' => 'getVoucherId',
-        'campaign_id' => 'getCampaignId'
+        'voucherId' => 'getVoucherId',
+        'campaignId' => 'getCampaignId'
     ];
 
     /**
@@ -274,8 +274,8 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters impleme
     public function __construct(array $data = null)
     {
         $this->setIfExists('junction', $data ?? [], null);
-        $this->setIfExists('voucher_id', $data ?? [], null);
-        $this->setIfExists('campaign_id', $data ?? [], null);
+        $this->setIfExists('voucherId', $data ?? [], null);
+        $this->setIfExists('campaignId', $data ?? [], null);
     }
 
     /**
@@ -374,69 +374,69 @@ class LoyaltiesPointsExpirationExportCreateResponseBodyParametersFilters impleme
     }
 
     /**
-     * Gets voucher_id
+     * Gets voucherId
      *
      * @return \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId|null
      */
     public function getVoucherId()
     {
-        return $this->container['voucher_id'];
+        return $this->container['voucherId'];
     }
 
     /**
-     * Sets voucher_id
+     * Sets voucherId
      *
-     * @param \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId|null $voucher_id voucher_id
+     * @param \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersVoucherId|null $voucherId voucherId
      *
      * @return self
      */
-    public function setVoucherId($voucher_id)
+    public function setVoucherId($voucherId)
     {
-        if (is_null($voucher_id)) {
-            array_push($this->openAPINullablesSetToNull, 'voucher_id');
+        if (is_null($voucherId)) {
+            array_push($this->openAPINullablesSetToNull, 'voucherId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('voucher_id', $nullablesSetToNull);
+            $index = array_search('voucherId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['voucher_id'] = $voucher_id;
+        $this->container['voucherId'] = $voucherId;
 
         return $this;
     }
 
     /**
-     * Gets campaign_id
+     * Gets campaignId
      *
      * @return \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId|null
      */
     public function getCampaignId()
     {
-        return $this->container['campaign_id'];
+        return $this->container['campaignId'];
     }
 
     /**
-     * Sets campaign_id
+     * Sets campaignId
      *
-     * @param \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId|null $campaign_id campaign_id
+     * @param \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBodyParametersFiltersCampaignId|null $campaignId campaignId
      *
      * @return self
      */
-    public function setCampaignId($campaign_id)
+    public function setCampaignId($campaignId)
     {
-        if (is_null($campaign_id)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_id');
+        if (is_null($campaignId)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_id', $nullablesSetToNull);
+            $index = array_search('campaignId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaign_id'] = $campaign_id;
+        $this->container['campaignId'] = $campaignId;
 
         return $this;
     }

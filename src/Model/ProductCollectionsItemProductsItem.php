@@ -59,7 +59,7 @@ class ProductCollectionsItemProductsItem implements ModelInterface, ArrayAccess,
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'product_id' => 'string',
+        'productId' => 'string',
         'object' => 'string'
     ];
 
@@ -72,7 +72,7 @@ class ProductCollectionsItemProductsItem implements ModelInterface, ArrayAccess,
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'product_id' => null,
+        'productId' => null,
         'object' => null
     ];
 
@@ -83,7 +83,7 @@ class ProductCollectionsItemProductsItem implements ModelInterface, ArrayAccess,
       */
     protected static array $openAPINullables = [
         'id' => false,
-		'product_id' => false,
+		'productId' => false,
 		'object' => false
     ];
 
@@ -174,7 +174,7 @@ class ProductCollectionsItemProductsItem implements ModelInterface, ArrayAccess,
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'product_id' => 'product_id',
+        'productId' => 'product_id',
         'object' => 'object'
     ];
 
@@ -185,7 +185,7 @@ class ProductCollectionsItemProductsItem implements ModelInterface, ArrayAccess,
      */
     protected static $setters = [
         'id' => 'setId',
-        'product_id' => 'setProductId',
+        'productId' => 'setProductId',
         'object' => 'setObject'
     ];
 
@@ -196,7 +196,7 @@ class ProductCollectionsItemProductsItem implements ModelInterface, ArrayAccess,
      */
     protected static $getters = [
         'id' => 'getId',
-        'product_id' => 'getProductId',
+        'productId' => 'getProductId',
         'object' => 'getObject'
     ];
 
@@ -273,7 +273,7 @@ class ProductCollectionsItemProductsItem implements ModelInterface, ArrayAccess,
     public function __construct(array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('product_id', $data ?? [], null);
+        $this->setIfExists('productId', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], null);
     }
 
@@ -362,28 +362,28 @@ class ProductCollectionsItemProductsItem implements ModelInterface, ArrayAccess,
     }
 
     /**
-     * Gets product_id
+     * Gets productId
      *
      * @return string|null
      */
     public function getProductId()
     {
-        return $this->container['product_id'];
+        return $this->container['productId'];
     }
 
     /**
-     * Sets product_id
+     * Sets productId
      *
-     * @param string|null $product_id Product ID for SKUs.
+     * @param string|null $productId Product ID for SKUs.
      *
      * @return self
      */
-    public function setProductId($product_id)
+    public function setProductId($productId)
     {
-        if (is_null($product_id)) {
-            throw new \InvalidArgumentException('non-nullable product_id cannot be null');
+        if (is_null($productId)) {
+            throw new \InvalidArgumentException('non-nullable productId cannot be null');
         }
-        $this->container['product_id'] = $product_id;
+        $this->container['productId'] = $productId;
 
         return $this;
     }

@@ -61,19 +61,19 @@ class QualificationsRedeemableBase implements ModelInterface, ArrayAccess, \Json
     protected static $openAPITypes = [
         'id' => 'string',
         'object' => 'string',
-        'created_at' => '\DateTime',
+        'createdAt' => '\DateTime',
         'result' => '\OpenAPI\Client\Model\RedeemableResult',
         'order' => '\OpenAPI\Client\Model\OrderCalculated',
-        'validation_rule_id' => 'string',
-        'applicable_to' => '\OpenAPI\Client\Model\ApplicableToResultList',
-        'inapplicable_to' => '\OpenAPI\Client\Model\InapplicableToResultList',
+        'validationRuleId' => 'string',
+        'applicableTo' => '\OpenAPI\Client\Model\ApplicableToResultList',
+        'inapplicableTo' => '\OpenAPI\Client\Model\InapplicableToResultList',
         'metadata' => 'object',
         'categories' => '\OpenAPI\Client\Model\Category[]',
         'banner' => 'string',
         'name' => 'string',
-        'campaign_name' => 'string',
-        'campaign_id' => 'string',
-        'validation_rules_assignments' => '\OpenAPI\Client\Model\ValidationRulesAssignmentsList'
+        'campaignName' => 'string',
+        'campaignId' => 'string',
+        'validationRulesAssignments' => '\OpenAPI\Client\Model\ValidationRulesAssignmentsList'
     ];
 
     /**
@@ -86,19 +86,19 @@ class QualificationsRedeemableBase implements ModelInterface, ArrayAccess, \Json
     protected static $openAPIFormats = [
         'id' => null,
         'object' => null,
-        'created_at' => 'date-time',
+        'createdAt' => 'date-time',
         'result' => null,
         'order' => null,
-        'validation_rule_id' => null,
-        'applicable_to' => null,
-        'inapplicable_to' => null,
+        'validationRuleId' => null,
+        'applicableTo' => null,
+        'inapplicableTo' => null,
         'metadata' => null,
         'categories' => null,
         'banner' => null,
         'name' => null,
-        'campaign_name' => null,
-        'campaign_id' => null,
-        'validation_rules_assignments' => null
+        'campaignName' => null,
+        'campaignId' => null,
+        'validationRulesAssignments' => null
     ];
 
     /**
@@ -109,19 +109,19 @@ class QualificationsRedeemableBase implements ModelInterface, ArrayAccess, \Json
     protected static array $openAPINullables = [
         'id' => true,
 		'object' => true,
-		'created_at' => true,
+		'createdAt' => true,
 		'result' => false,
 		'order' => false,
-		'validation_rule_id' => true,
-		'applicable_to' => false,
-		'inapplicable_to' => false,
+		'validationRuleId' => true,
+		'applicableTo' => false,
+		'inapplicableTo' => false,
 		'metadata' => true,
 		'categories' => true,
 		'banner' => true,
 		'name' => true,
-		'campaign_name' => true,
-		'campaign_id' => true,
-		'validation_rules_assignments' => false
+		'campaignName' => true,
+		'campaignId' => true,
+		'validationRulesAssignments' => false
     ];
 
     /**
@@ -212,19 +212,19 @@ class QualificationsRedeemableBase implements ModelInterface, ArrayAccess, \Json
     protected static $attributeMap = [
         'id' => 'id',
         'object' => 'object',
-        'created_at' => 'created_at',
+        'createdAt' => 'created_at',
         'result' => 'result',
         'order' => 'order',
-        'validation_rule_id' => 'validation_rule_id',
-        'applicable_to' => 'applicable_to',
-        'inapplicable_to' => 'inapplicable_to',
+        'validationRuleId' => 'validation_rule_id',
+        'applicableTo' => 'applicable_to',
+        'inapplicableTo' => 'inapplicable_to',
         'metadata' => 'metadata',
         'categories' => 'categories',
         'banner' => 'banner',
         'name' => 'name',
-        'campaign_name' => 'campaign_name',
-        'campaign_id' => 'campaign_id',
-        'validation_rules_assignments' => 'validation_rules_assignments'
+        'campaignName' => 'campaign_name',
+        'campaignId' => 'campaign_id',
+        'validationRulesAssignments' => 'validation_rules_assignments'
     ];
 
     /**
@@ -235,19 +235,19 @@ class QualificationsRedeemableBase implements ModelInterface, ArrayAccess, \Json
     protected static $setters = [
         'id' => 'setId',
         'object' => 'setObject',
-        'created_at' => 'setCreatedAt',
+        'createdAt' => 'setCreatedAt',
         'result' => 'setResult',
         'order' => 'setOrder',
-        'validation_rule_id' => 'setValidationRuleId',
-        'applicable_to' => 'setApplicableTo',
-        'inapplicable_to' => 'setInapplicableTo',
+        'validationRuleId' => 'setValidationRuleId',
+        'applicableTo' => 'setApplicableTo',
+        'inapplicableTo' => 'setInapplicableTo',
         'metadata' => 'setMetadata',
         'categories' => 'setCategories',
         'banner' => 'setBanner',
         'name' => 'setName',
-        'campaign_name' => 'setCampaignName',
-        'campaign_id' => 'setCampaignId',
-        'validation_rules_assignments' => 'setValidationRulesAssignments'
+        'campaignName' => 'setCampaignName',
+        'campaignId' => 'setCampaignId',
+        'validationRulesAssignments' => 'setValidationRulesAssignments'
     ];
 
     /**
@@ -258,19 +258,19 @@ class QualificationsRedeemableBase implements ModelInterface, ArrayAccess, \Json
     protected static $getters = [
         'id' => 'getId',
         'object' => 'getObject',
-        'created_at' => 'getCreatedAt',
+        'createdAt' => 'getCreatedAt',
         'result' => 'getResult',
         'order' => 'getOrder',
-        'validation_rule_id' => 'getValidationRuleId',
-        'applicable_to' => 'getApplicableTo',
-        'inapplicable_to' => 'getInapplicableTo',
+        'validationRuleId' => 'getValidationRuleId',
+        'applicableTo' => 'getApplicableTo',
+        'inapplicableTo' => 'getInapplicableTo',
         'metadata' => 'getMetadata',
         'categories' => 'getCategories',
         'banner' => 'getBanner',
         'name' => 'getName',
-        'campaign_name' => 'getCampaignName',
-        'campaign_id' => 'getCampaignId',
-        'validation_rules_assignments' => 'getValidationRulesAssignments'
+        'campaignName' => 'getCampaignName',
+        'campaignId' => 'getCampaignId',
+        'validationRulesAssignments' => 'getValidationRulesAssignments'
     ];
 
     /**
@@ -351,19 +351,19 @@ class QualificationsRedeemableBase implements ModelInterface, ArrayAccess, \Json
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
-        $this->setIfExists('validation_rule_id', $data ?? [], null);
-        $this->setIfExists('applicable_to', $data ?? [], null);
-        $this->setIfExists('inapplicable_to', $data ?? [], null);
+        $this->setIfExists('validationRuleId', $data ?? [], null);
+        $this->setIfExists('applicableTo', $data ?? [], null);
+        $this->setIfExists('inapplicableTo', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('categories', $data ?? [], null);
         $this->setIfExists('banner', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('campaign_name', $data ?? [], null);
-        $this->setIfExists('campaign_id', $data ?? [], null);
-        $this->setIfExists('validation_rules_assignments', $data ?? [], null);
+        $this->setIfExists('campaignName', $data ?? [], null);
+        $this->setIfExists('campaignId', $data ?? [], null);
+        $this->setIfExists('validationRulesAssignments', $data ?? [], null);
     }
 
     /**
@@ -496,35 +496,35 @@ class QualificationsRedeemableBase implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets created_at
+     * Gets createdAt
      *
      * @return \DateTime|null
      */
     public function getCreatedAt()
     {
-        return $this->container['created_at'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets created_at
+     * Sets createdAt
      *
-     * @param \DateTime|null $created_at Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
+            $index = array_search('createdAt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
@@ -584,89 +584,89 @@ class QualificationsRedeemableBase implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets validation_rule_id
+     * Gets validationRuleId
      *
      * @return string|null
      */
     public function getValidationRuleId()
     {
-        return $this->container['validation_rule_id'];
+        return $this->container['validationRuleId'];
     }
 
     /**
-     * Sets validation_rule_id
+     * Sets validationRuleId
      *
-     * @param string|null $validation_rule_id A unique validation rule identifier assigned by the Voucherify API. The validation rule is verified before points are added to the balance.
+     * @param string|null $validationRuleId A unique validation rule identifier assigned by the Voucherify API. The validation rule is verified before points are added to the balance.
      *
      * @return self
      */
-    public function setValidationRuleId($validation_rule_id)
+    public function setValidationRuleId($validationRuleId)
     {
-        if (is_null($validation_rule_id)) {
-            array_push($this->openAPINullablesSetToNull, 'validation_rule_id');
+        if (is_null($validationRuleId)) {
+            array_push($this->openAPINullablesSetToNull, 'validationRuleId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validation_rule_id', $nullablesSetToNull);
+            $index = array_search('validationRuleId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['validation_rule_id'] = $validation_rule_id;
+        $this->container['validationRuleId'] = $validationRuleId;
 
         return $this;
     }
 
     /**
-     * Gets applicable_to
+     * Gets applicableTo
      *
      * @return \OpenAPI\Client\Model\ApplicableToResultList|null
      */
     public function getApplicableTo()
     {
-        return $this->container['applicable_to'];
+        return $this->container['applicableTo'];
     }
 
     /**
-     * Sets applicable_to
+     * Sets applicableTo
      *
-     * @param \OpenAPI\Client\Model\ApplicableToResultList|null $applicable_to applicable_to
+     * @param \OpenAPI\Client\Model\ApplicableToResultList|null $applicableTo applicableTo
      *
      * @return self
      */
-    public function setApplicableTo($applicable_to)
+    public function setApplicableTo($applicableTo)
     {
-        if (is_null($applicable_to)) {
-            throw new \InvalidArgumentException('non-nullable applicable_to cannot be null');
+        if (is_null($applicableTo)) {
+            throw new \InvalidArgumentException('non-nullable applicableTo cannot be null');
         }
-        $this->container['applicable_to'] = $applicable_to;
+        $this->container['applicableTo'] = $applicableTo;
 
         return $this;
     }
 
     /**
-     * Gets inapplicable_to
+     * Gets inapplicableTo
      *
      * @return \OpenAPI\Client\Model\InapplicableToResultList|null
      */
     public function getInapplicableTo()
     {
-        return $this->container['inapplicable_to'];
+        return $this->container['inapplicableTo'];
     }
 
     /**
-     * Sets inapplicable_to
+     * Sets inapplicableTo
      *
-     * @param \OpenAPI\Client\Model\InapplicableToResultList|null $inapplicable_to inapplicable_to
+     * @param \OpenAPI\Client\Model\InapplicableToResultList|null $inapplicableTo inapplicableTo
      *
      * @return self
      */
-    public function setInapplicableTo($inapplicable_to)
+    public function setInapplicableTo($inapplicableTo)
     {
-        if (is_null($inapplicable_to)) {
-            throw new \InvalidArgumentException('non-nullable inapplicable_to cannot be null');
+        if (is_null($inapplicableTo)) {
+            throw new \InvalidArgumentException('non-nullable inapplicableTo cannot be null');
         }
-        $this->container['inapplicable_to'] = $inapplicable_to;
+        $this->container['inapplicableTo'] = $inapplicableTo;
 
         return $this;
     }
@@ -808,96 +808,96 @@ class QualificationsRedeemableBase implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets campaign_name
+     * Gets campaignName
      *
      * @return string|null
      */
     public function getCampaignName()
     {
-        return $this->container['campaign_name'];
+        return $this->container['campaignName'];
     }
 
     /**
-     * Sets campaign_name
+     * Sets campaignName
      *
-     * @param string|null $campaign_name Name of the campaign associated to the redeemable. This field is available only if object is not `campaign`
+     * @param string|null $campaignName Name of the campaign associated to the redeemable. This field is available only if object is not `campaign`
      *
      * @return self
      */
-    public function setCampaignName($campaign_name)
+    public function setCampaignName($campaignName)
     {
-        if (is_null($campaign_name)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_name');
+        if (is_null($campaignName)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignName');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_name', $nullablesSetToNull);
+            $index = array_search('campaignName', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaign_name'] = $campaign_name;
+        $this->container['campaignName'] = $campaignName;
 
         return $this;
     }
 
     /**
-     * Gets campaign_id
+     * Gets campaignId
      *
      * @return string|null
      */
     public function getCampaignId()
     {
-        return $this->container['campaign_id'];
+        return $this->container['campaignId'];
     }
 
     /**
-     * Sets campaign_id
+     * Sets campaignId
      *
-     * @param string|null $campaign_id Id of the campaign associated to the redeemable. This field is available only if object is not `campaign`
+     * @param string|null $campaignId Id of the campaign associated to the redeemable. This field is available only if object is not `campaign`
      *
      * @return self
      */
-    public function setCampaignId($campaign_id)
+    public function setCampaignId($campaignId)
     {
-        if (is_null($campaign_id)) {
-            array_push($this->openAPINullablesSetToNull, 'campaign_id');
+        if (is_null($campaignId)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignId');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('campaign_id', $nullablesSetToNull);
+            $index = array_search('campaignId', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['campaign_id'] = $campaign_id;
+        $this->container['campaignId'] = $campaignId;
 
         return $this;
     }
 
     /**
-     * Gets validation_rules_assignments
+     * Gets validationRulesAssignments
      *
      * @return \OpenAPI\Client\Model\ValidationRulesAssignmentsList|null
      */
     public function getValidationRulesAssignments()
     {
-        return $this->container['validation_rules_assignments'];
+        return $this->container['validationRulesAssignments'];
     }
 
     /**
-     * Sets validation_rules_assignments
+     * Sets validationRulesAssignments
      *
-     * @param \OpenAPI\Client\Model\ValidationRulesAssignmentsList|null $validation_rules_assignments validation_rules_assignments
+     * @param \OpenAPI\Client\Model\ValidationRulesAssignmentsList|null $validationRulesAssignments validationRulesAssignments
      *
      * @return self
      */
-    public function setValidationRulesAssignments($validation_rules_assignments)
+    public function setValidationRulesAssignments($validationRulesAssignments)
     {
-        if (is_null($validation_rules_assignments)) {
-            throw new \InvalidArgumentException('non-nullable validation_rules_assignments cannot be null');
+        if (is_null($validationRulesAssignments)) {
+            throw new \InvalidArgumentException('non-nullable validationRulesAssignments cannot be null');
         }
-        $this->container['validation_rules_assignments'] = $validation_rules_assignments;
+        $this->container['validationRulesAssignments'] = $validationRulesAssignments;
 
         return $this;
     }

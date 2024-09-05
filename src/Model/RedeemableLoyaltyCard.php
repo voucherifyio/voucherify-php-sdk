@@ -61,8 +61,8 @@ class RedeemableLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'points' => 'int',
         'balance' => 'int',
-        'exchange_ratio' => 'float',
-        'points_ratio' => 'int',
+        'exchangeRatio' => 'float',
+        'pointsRatio' => 'int',
         'transfers' => '\OpenAPI\Client\Model\LoyaltiesTransferPoints[]'
     ];
 
@@ -76,8 +76,8 @@ class RedeemableLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPIFormats = [
         'points' => null,
         'balance' => null,
-        'exchange_ratio' => null,
-        'points_ratio' => null,
+        'exchangeRatio' => null,
+        'pointsRatio' => null,
         'transfers' => null
     ];
 
@@ -89,8 +89,8 @@ class RedeemableLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static array $openAPINullables = [
         'points' => true,
 		'balance' => true,
-		'exchange_ratio' => true,
-		'points_ratio' => true,
+		'exchangeRatio' => true,
+		'pointsRatio' => true,
 		'transfers' => true
     ];
 
@@ -182,8 +182,8 @@ class RedeemableLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $attributeMap = [
         'points' => 'points',
         'balance' => 'balance',
-        'exchange_ratio' => 'exchange_ratio',
-        'points_ratio' => 'points_ratio',
+        'exchangeRatio' => 'exchange_ratio',
+        'pointsRatio' => 'points_ratio',
         'transfers' => 'transfers'
     ];
 
@@ -195,8 +195,8 @@ class RedeemableLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $setters = [
         'points' => 'setPoints',
         'balance' => 'setBalance',
-        'exchange_ratio' => 'setExchangeRatio',
-        'points_ratio' => 'setPointsRatio',
+        'exchangeRatio' => 'setExchangeRatio',
+        'pointsRatio' => 'setPointsRatio',
         'transfers' => 'setTransfers'
     ];
 
@@ -208,8 +208,8 @@ class RedeemableLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $getters = [
         'points' => 'getPoints',
         'balance' => 'getBalance',
-        'exchange_ratio' => 'getExchangeRatio',
-        'points_ratio' => 'getPointsRatio',
+        'exchangeRatio' => 'getExchangeRatio',
+        'pointsRatio' => 'getPointsRatio',
         'transfers' => 'getTransfers'
     ];
 
@@ -272,8 +272,8 @@ class RedeemableLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $this->setIfExists('points', $data ?? [], null);
         $this->setIfExists('balance', $data ?? [], null);
-        $this->setIfExists('exchange_ratio', $data ?? [], null);
-        $this->setIfExists('points_ratio', $data ?? [], null);
+        $this->setIfExists('exchangeRatio', $data ?? [], null);
+        $this->setIfExists('pointsRatio', $data ?? [], null);
         $this->setIfExists('transfers', $data ?? [], null);
     }
 
@@ -388,69 +388,69 @@ class RedeemableLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets exchange_ratio
+     * Gets exchangeRatio
      *
      * @return float|null
      */
     public function getExchangeRatio()
     {
-        return $this->container['exchange_ratio'];
+        return $this->container['exchangeRatio'];
     }
 
     /**
-     * Sets exchange_ratio
+     * Sets exchangeRatio
      *
-     * @param float|null $exchange_ratio The cash equivalent of the points defined in the points_ratio property.
+     * @param float|null $exchangeRatio The cash equivalent of the points defined in the points_ratio property.
      *
      * @return self
      */
-    public function setExchangeRatio($exchange_ratio)
+    public function setExchangeRatio($exchangeRatio)
     {
-        if (is_null($exchange_ratio)) {
-            array_push($this->openAPINullablesSetToNull, 'exchange_ratio');
+        if (is_null($exchangeRatio)) {
+            array_push($this->openAPINullablesSetToNull, 'exchangeRatio');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('exchange_ratio', $nullablesSetToNull);
+            $index = array_search('exchangeRatio', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['exchange_ratio'] = $exchange_ratio;
+        $this->container['exchangeRatio'] = $exchangeRatio;
 
         return $this;
     }
 
     /**
-     * Gets points_ratio
+     * Gets pointsRatio
      *
      * @return int|null
      */
     public function getPointsRatio()
     {
-        return $this->container['points_ratio'];
+        return $this->container['pointsRatio'];
     }
 
     /**
-     * Sets points_ratio
+     * Sets pointsRatio
      *
-     * @param int|null $points_ratio The number of loyalty points that will map to the predefined cash amount defined by the exchange_ratio property.
+     * @param int|null $pointsRatio The number of loyalty points that will map to the predefined cash amount defined by the exchange_ratio property.
      *
      * @return self
      */
-    public function setPointsRatio($points_ratio)
+    public function setPointsRatio($pointsRatio)
     {
-        if (is_null($points_ratio)) {
-            array_push($this->openAPINullablesSetToNull, 'points_ratio');
+        if (is_null($pointsRatio)) {
+            array_push($this->openAPINullablesSetToNull, 'pointsRatio');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('points_ratio', $nullablesSetToNull);
+            $index = array_search('pointsRatio', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['points_ratio'] = $points_ratio;
+        $this->container['pointsRatio'] = $pointsRatio;
 
         return $this;
     }

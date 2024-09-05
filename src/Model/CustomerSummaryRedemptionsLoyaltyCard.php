@@ -59,8 +59,8 @@ class CustomerSummaryRedemptionsLoyaltyCard implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'redeemed_points' => 'int',
-        'points_to_go' => 'int'
+        'redeemedPoints' => 'int',
+        'pointsToGo' => 'int'
     ];
 
     /**
@@ -71,8 +71,8 @@ class CustomerSummaryRedemptionsLoyaltyCard implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'redeemed_points' => null,
-        'points_to_go' => null
+        'redeemedPoints' => null,
+        'pointsToGo' => null
     ];
 
     /**
@@ -81,8 +81,8 @@ class CustomerSummaryRedemptionsLoyaltyCard implements ModelInterface, ArrayAcce
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'redeemed_points' => true,
-		'points_to_go' => true
+        'redeemedPoints' => true,
+		'pointsToGo' => true
     ];
 
     /**
@@ -171,8 +171,8 @@ class CustomerSummaryRedemptionsLoyaltyCard implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'redeemed_points' => 'redeemed_points',
-        'points_to_go' => 'points_to_go'
+        'redeemedPoints' => 'redeemed_points',
+        'pointsToGo' => 'points_to_go'
     ];
 
     /**
@@ -181,8 +181,8 @@ class CustomerSummaryRedemptionsLoyaltyCard implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'redeemed_points' => 'setRedeemedPoints',
-        'points_to_go' => 'setPointsToGo'
+        'redeemedPoints' => 'setRedeemedPoints',
+        'pointsToGo' => 'setPointsToGo'
     ];
 
     /**
@@ -191,8 +191,8 @@ class CustomerSummaryRedemptionsLoyaltyCard implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'redeemed_points' => 'getRedeemedPoints',
-        'points_to_go' => 'getPointsToGo'
+        'redeemedPoints' => 'getRedeemedPoints',
+        'pointsToGo' => 'getPointsToGo'
     ];
 
     /**
@@ -252,8 +252,8 @@ class CustomerSummaryRedemptionsLoyaltyCard implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('redeemed_points', $data ?? [], null);
-        $this->setIfExists('points_to_go', $data ?? [], null);
+        $this->setIfExists('redeemedPoints', $data ?? [], null);
+        $this->setIfExists('pointsToGo', $data ?? [], null);
     }
 
     /**
@@ -299,69 +299,69 @@ class CustomerSummaryRedemptionsLoyaltyCard implements ModelInterface, ArrayAcce
 
 
     /**
-     * Gets redeemed_points
+     * Gets redeemedPoints
      *
      * @return int|null
      */
     public function getRedeemedPoints()
     {
-        return $this->container['redeemed_points'];
+        return $this->container['redeemedPoints'];
     }
 
     /**
-     * Sets redeemed_points
+     * Sets redeemedPoints
      *
-     * @param int|null $redeemed_points Total number of loyalty points redeemed by the customer.
+     * @param int|null $redeemedPoints Total number of loyalty points redeemed by the customer.
      *
      * @return self
      */
-    public function setRedeemedPoints($redeemed_points)
+    public function setRedeemedPoints($redeemedPoints)
     {
-        if (is_null($redeemed_points)) {
-            array_push($this->openAPINullablesSetToNull, 'redeemed_points');
+        if (is_null($redeemedPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'redeemedPoints');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('redeemed_points', $nullablesSetToNull);
+            $index = array_search('redeemedPoints', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['redeemed_points'] = $redeemed_points;
+        $this->container['redeemedPoints'] = $redeemedPoints;
 
         return $this;
     }
 
     /**
-     * Gets points_to_go
+     * Gets pointsToGo
      *
      * @return int|null
      */
     public function getPointsToGo()
     {
-        return $this->container['points_to_go'];
+        return $this->container['pointsToGo'];
     }
 
     /**
-     * Sets points_to_go
+     * Sets pointsToGo
      *
-     * @param int|null $points_to_go Sum of remaining available point balance across all loyalty cards.
+     * @param int|null $pointsToGo Sum of remaining available point balance across all loyalty cards.
      *
      * @return self
      */
-    public function setPointsToGo($points_to_go)
+    public function setPointsToGo($pointsToGo)
     {
-        if (is_null($points_to_go)) {
-            array_push($this->openAPINullablesSetToNull, 'points_to_go');
+        if (is_null($pointsToGo)) {
+            array_push($this->openAPINullablesSetToNull, 'pointsToGo');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('points_to_go', $nullablesSetToNull);
+            $index = array_search('pointsToGo', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['points_to_go'] = $points_to_go;
+        $this->container['pointsToGo'] = $pointsToGo;
 
         return $this;
     }

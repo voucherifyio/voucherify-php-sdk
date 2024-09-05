@@ -61,8 +61,8 @@ class VoucherLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'points' => 'int',
         'balance' => 'int',
-        'next_expiration_date' => '\DateTime',
-        'next_expiration_points' => 'int'
+        'nextExpirationDate' => '\DateTime',
+        'nextExpirationPoints' => 'int'
     ];
 
     /**
@@ -75,8 +75,8 @@ class VoucherLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPIFormats = [
         'points' => null,
         'balance' => null,
-        'next_expiration_date' => 'date',
-        'next_expiration_points' => null
+        'nextExpirationDate' => 'date',
+        'nextExpirationPoints' => null
     ];
 
     /**
@@ -87,8 +87,8 @@ class VoucherLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static array $openAPINullables = [
         'points' => true,
 		'balance' => true,
-		'next_expiration_date' => true,
-		'next_expiration_points' => true
+		'nextExpirationDate' => true,
+		'nextExpirationPoints' => true
     ];
 
     /**
@@ -179,8 +179,8 @@ class VoucherLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $attributeMap = [
         'points' => 'points',
         'balance' => 'balance',
-        'next_expiration_date' => 'next_expiration_date',
-        'next_expiration_points' => 'next_expiration_points'
+        'nextExpirationDate' => 'next_expiration_date',
+        'nextExpirationPoints' => 'next_expiration_points'
     ];
 
     /**
@@ -191,8 +191,8 @@ class VoucherLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $setters = [
         'points' => 'setPoints',
         'balance' => 'setBalance',
-        'next_expiration_date' => 'setNextExpirationDate',
-        'next_expiration_points' => 'setNextExpirationPoints'
+        'nextExpirationDate' => 'setNextExpirationDate',
+        'nextExpirationPoints' => 'setNextExpirationPoints'
     ];
 
     /**
@@ -203,8 +203,8 @@ class VoucherLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $getters = [
         'points' => 'getPoints',
         'balance' => 'getBalance',
-        'next_expiration_date' => 'getNextExpirationDate',
-        'next_expiration_points' => 'getNextExpirationPoints'
+        'nextExpirationDate' => 'getNextExpirationDate',
+        'nextExpirationPoints' => 'getNextExpirationPoints'
     ];
 
     /**
@@ -266,8 +266,8 @@ class VoucherLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $this->setIfExists('points', $data ?? [], null);
         $this->setIfExists('balance', $data ?? [], null);
-        $this->setIfExists('next_expiration_date', $data ?? [], null);
-        $this->setIfExists('next_expiration_points', $data ?? [], null);
+        $this->setIfExists('nextExpirationDate', $data ?? [], null);
+        $this->setIfExists('nextExpirationPoints', $data ?? [], null);
     }
 
     /**
@@ -381,69 +381,69 @@ class VoucherLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Gets next_expiration_date
+     * Gets nextExpirationDate
      *
      * @return \DateTime|null
      */
     public function getNextExpirationDate()
     {
-        return $this->container['next_expiration_date'];
+        return $this->container['nextExpirationDate'];
     }
 
     /**
-     * Sets next_expiration_date
+     * Sets nextExpirationDate
      *
-     * @param \DateTime|null $next_expiration_date The next closest date when the next set of points are due to expire.
+     * @param \DateTime|null $nextExpirationDate The next closest date when the next set of points are due to expire.
      *
      * @return self
      */
-    public function setNextExpirationDate($next_expiration_date)
+    public function setNextExpirationDate($nextExpirationDate)
     {
-        if (is_null($next_expiration_date)) {
-            array_push($this->openAPINullablesSetToNull, 'next_expiration_date');
+        if (is_null($nextExpirationDate)) {
+            array_push($this->openAPINullablesSetToNull, 'nextExpirationDate');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('next_expiration_date', $nullablesSetToNull);
+            $index = array_search('nextExpirationDate', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['next_expiration_date'] = $next_expiration_date;
+        $this->container['nextExpirationDate'] = $nextExpirationDate;
 
         return $this;
     }
 
     /**
-     * Gets next_expiration_points
+     * Gets nextExpirationPoints
      *
      * @return int|null
      */
     public function getNextExpirationPoints()
     {
-        return $this->container['next_expiration_points'];
+        return $this->container['nextExpirationPoints'];
     }
 
     /**
-     * Sets next_expiration_points
+     * Sets nextExpirationPoints
      *
-     * @param int|null $next_expiration_points The amount of points that are set to expire next.
+     * @param int|null $nextExpirationPoints The amount of points that are set to expire next.
      *
      * @return self
      */
-    public function setNextExpirationPoints($next_expiration_points)
+    public function setNextExpirationPoints($nextExpirationPoints)
     {
-        if (is_null($next_expiration_points)) {
-            array_push($this->openAPINullablesSetToNull, 'next_expiration_points');
+        if (is_null($nextExpirationPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'nextExpirationPoints');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('next_expiration_points', $nullablesSetToNull);
+            $index = array_search('nextExpirationPoints', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['next_expiration_points'] = $next_expiration_points;
+        $this->container['nextExpirationPoints'] = $nextExpirationPoints;
 
         return $this;
     }

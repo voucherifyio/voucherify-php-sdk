@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **balance** | **int** | The balance after adding/removing points. | [optional]
 **type** | **string** | The type of voucher being modified. | [optional]
 **object** | **string** | The type of the object represented by JSON. Default is balance. | [optional] [default to 'balance']
-**related_object** | [**\OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject**](LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject.md) |  | [optional]
-**operation_type** | **string** |  | [optional]
+**relatedObject** | [**\OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject**](LoyaltiesMembersBalanceUpdateResponseBodyRelatedObject.md) |  | [optional]
+**operationType** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
