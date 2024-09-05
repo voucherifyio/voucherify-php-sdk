@@ -61,7 +61,7 @@ class ProductCollectionsListResponseBody implements ModelInterface, ArrayAccess,
     protected static $openAPITypes = [
         'object' => 'string',
         'dataRef' => 'string',
-        'data' => 'ProductCollectionsItem[]',
+        'data' => '\OpenAPI\Client\Model\ProductCollectionsItem[]',
         'total' => 'int'
     ];
 
@@ -447,7 +447,7 @@ class ProductCollectionsListResponseBody implements ModelInterface, ArrayAccess,
     /**
      * Gets data
      *
-     * @return ProductCollectionsItem[]|null
+     * @return \OpenAPI\Client\Model\ProductCollectionsItem[]|null
      */
     public function getData()
     {
@@ -457,7 +457,7 @@ class ProductCollectionsListResponseBody implements ModelInterface, ArrayAccess,
     /**
      * Sets data
      *
-     * @param ProductCollectionsItem[]|null $data A dictionary that contains an array of product collections and their details.
+     * @param \OpenAPI\Client\Model\ProductCollectionsItem[]|null $data A dictionary that contains an array of product collections and their details.
      *
      * @return self
      */

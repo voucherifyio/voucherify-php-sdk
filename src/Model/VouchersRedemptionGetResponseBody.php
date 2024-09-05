@@ -65,7 +65,7 @@ class VouchersRedemptionGetResponseBody implements ModelInterface, ArrayAccess, 
         'url' => 'string',
         'dataRef' => 'string',
         'total' => 'int',
-        'redemptionEntries' => 'RedemptionEntry[]'
+        'redemptionEntries' => '\OpenAPI\Client\Model\RedemptionEntry[]'
     ];
 
     /**
@@ -543,7 +543,7 @@ class VouchersRedemptionGetResponseBody implements ModelInterface, ArrayAccess, 
     /**
      * Gets redemptionEntries
      *
-     * @return RedemptionEntry[]
+     * @return \OpenAPI\Client\Model\RedemptionEntry[]
      */
     public function getRedemptionEntries()
     {
@@ -553,7 +553,7 @@ class VouchersRedemptionGetResponseBody implements ModelInterface, ArrayAccess, 
     /**
      * Sets redemptionEntries
      *
-     * @param RedemptionEntry[] $redemptionEntries Contains the array of successful and failed redemption objects.
+     * @param \OpenAPI\Client\Model\RedemptionEntry[] $redemptionEntries Contains the array of successful and failed redemption objects.
      *
      * @return self
      */

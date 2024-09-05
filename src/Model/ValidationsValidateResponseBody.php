@@ -414,7 +414,7 @@ class ValidationsValidateResponseBody implements ModelInterface, ArrayAccess, \J
     /**
      * Gets skippedRedeemables
      *
-     * @return ValidationsRedeemableSkipped[]|null
+     * @return \OpenAPI\Client\Model\ValidationsRedeemableSkipped[]|null
      */
     public function getSkippedRedeemables()
     {
@@ -424,7 +424,7 @@ class ValidationsValidateResponseBody implements ModelInterface, ArrayAccess, \J
     /**
      * Sets skippedRedeemables
      *
-     * @param ValidationsRedeemableSkipped[]|null $skippedRedeemables Lists validation results of each skipped redeemable.
+     * @param \OpenAPI\Client\Model\ValidationsRedeemableSkipped[]|null $skippedRedeemables Lists validation results of each skipped redeemable.
      *
      * @return self
      */
@@ -448,7 +448,7 @@ class ValidationsValidateResponseBody implements ModelInterface, ArrayAccess, \J
     /**
      * Gets inapplicableRedeemables
      *
-     * @return ValidationsRedeemableInapplicable[]|null
+     * @return \OpenAPI\Client\Model\ValidationsRedeemableInapplicable[]|null
      */
     public function getInapplicableRedeemables()
     {
@@ -458,7 +458,7 @@ class ValidationsValidateResponseBody implements ModelInterface, ArrayAccess, \J
     /**
      * Sets inapplicableRedeemables
      *
-     * @param ValidationsRedeemableInapplicable[]|null $inapplicableRedeemables Lists validation results of each inapplicable redeemable.
+     * @param \OpenAPI\Client\Model\ValidationsRedeemableInapplicable[]|null $inapplicableRedeemables Lists validation results of each inapplicable redeemable.
      *
      * @return self
      */

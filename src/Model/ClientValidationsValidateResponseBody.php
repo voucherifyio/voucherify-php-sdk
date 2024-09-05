@@ -61,8 +61,8 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     protected static $openAPITypes = [
         'valid' => 'bool',
         'redeemables' => '\OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItem[]',
-        'skippedRedeemables' => 'ValidationsRedeemableSkipped[]',
-        'inapplicableRedeemables' => 'ValidationsRedeemableInapplicable[]',
+        'skippedRedeemables' => '\OpenAPI\Client\Model\ValidationsRedeemableSkipped[]',
+        'inapplicableRedeemables' => '\OpenAPI\Client\Model\ValidationsRedeemableInapplicable[]',
         'order' => '\OpenAPI\Client\Model\OrderCalculated',
         'trackingId' => 'string',
         'session' => '\OpenAPI\Client\Model\Session',
@@ -414,7 +414,7 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     /**
      * Gets skippedRedeemables
      *
-     * @return ValidationsRedeemableSkipped[]|null
+     * @return \OpenAPI\Client\Model\ValidationsRedeemableSkipped[]|null
      */
     public function getSkippedRedeemables()
     {
@@ -424,7 +424,7 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     /**
      * Sets skippedRedeemables
      *
-     * @param ValidationsRedeemableSkipped[]|null $skippedRedeemables Lists validation results of each skipped redeemable.
+     * @param \OpenAPI\Client\Model\ValidationsRedeemableSkipped[]|null $skippedRedeemables Lists validation results of each skipped redeemable.
      *
      * @return self
      */
@@ -448,7 +448,7 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     /**
      * Gets inapplicableRedeemables
      *
-     * @return ValidationsRedeemableInapplicable[]|null
+     * @return \OpenAPI\Client\Model\ValidationsRedeemableInapplicable[]|null
      */
     public function getInapplicableRedeemables()
     {
@@ -458,7 +458,7 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     /**
      * Sets inapplicableRedeemables
      *
-     * @param ValidationsRedeemableInapplicable[]|null $inapplicableRedeemables Lists validation results of each inapplicable redeemable.
+     * @param \OpenAPI\Client\Model\ValidationsRedeemableInapplicable[]|null $inapplicableRedeemables Lists validation results of each inapplicable redeemable.
      *
      * @return self
      */
