@@ -1,0 +1,81 @@
+{
+  "id": "v_2C8Z2e6NlA3nKD5vTOrHpmRL4GvvQYJ2",
+  "code": "kWyXCmFP",
+  "campaign": "Di5YkGmbRQ",
+  "campaign_id": "camp_cyuO0e2nOD3lPXLEI2lChac4",
+  "category": null,
+  "category_id": null,
+  "type": "DISCOUNT_VOUCHER",
+  "discount": {
+    "type": "AMOUNT",
+    "amount_off": 1000,
+    "amount_off_formula": null,
+    "aggregated_amount_limit": null,
+    "effect": null,
+    "is_dynamic": null,
+    "unit_off": null,
+    "unit_off_formula": null,
+    "unit_type": null,
+    "units": null,
+    "percent_off": null,
+    "percent_off_formula": null,
+    "amount_limit": null,
+    "fixed_amount": null,
+    "fixed_amount_formula": null
+  },
+  "gift": null,
+  "loyalty_card": null,
+  "start_date": null,
+  "expiration_date": null,
+  "validity_day_of_week": null,
+  "active": false,
+  "additional_info": null,
+  "metadata": [],
+  "assets": {
+    "qr": {
+      "id": "262efb7b-d9a8-4edc-bca3-c664fc94c45d",
+      "url": "https://dl.voucherify.io/api/v1/assets/qr/262efb7b-d9a8-4edc-bca3-c664fc94c45d"
+    },
+    "barcode": {
+      "id": "3c445d33-b7b8-42a7-9567-967a7e21aafa",
+      "url": "https://dl.voucherify.io/api/v1/assets/barcode/3c445d33-b7b8-42a7-9567-967a7e21aafa"
+    }
+  },
+  "is_referral_code": false,
+  "created_at": "2024-08-02T12:02:31+00:00",
+  "updated_at": "2024-08-02T12:02:34+00:00",
+  "holder_id": "cust_Wd3S7riOl01BvtZaIEtTO69w",
+  "referrer_id": null,
+  "object": "voucher",
+  "publish": {
+    "object": "list",
+    "count": 1,
+    "url": "/v1/vouchers/kWyXCmFP/publications?page=1&limit=10"
+  },
+  "redemption": {
+    "quantity": null,
+    "redeemed_quantity": 0,
+    "redeemed_points": null,
+    "object": "list",
+    "url": "/v1/vouchers/kWyXCmFP/redemptions?page=1&limit=10"
+  },
+  "categories": [],
+  "validation_rules_assignments": {
+    "object": "list",
+    "data_ref": "data",
+    "data": [
+      {
+        "id": "asgm_FpO5nJruiUx1RSwz",
+        "rule_id": "val_SJzxaKXbasc5",
+        "related_object_id": "camp_cyuO0e2nOD3lPXLEI2lChac4",
+        "related_object_type": "campaign",
+        "created_at": "2024-08-02T12:02:31+00:00",
+        "updated_at": null,
+        "object": "validation_rules_assignment",
+        "validation_status": null,
+        "validation_omitted_rules": null
+      }
+    ],
+    "total": 1
+  }
+}

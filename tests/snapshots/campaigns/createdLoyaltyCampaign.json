@@ -1,0 +1,54 @@
+{
+  "id": "camp_XhlgXPmEdQTwOWJJn4ACtGxz",
+  "name": "7CiBxpEG0X",
+  "description": null,
+  "campaign_type": "LOYALTY_PROGRAM",
+  "type": "STATIC",
+  "voucher": {
+    "type": "LOYALTY_CARD",
+    "loyalty_card": {
+      "points": 1000,
+      "expiration_rules": null
+    },
+    "redemption": {
+      "quantity": null
+    },
+    "code_config": {
+      "length": 8,
+      "charset": "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "prefix": null,
+      "postfix": null,
+      "pattern": "########",
+      "initial_count": null
+    },
+    "is_referral_code": false,
+    "start_date": null,
+    "expiration_date": null,
+    "validity_day_of_week": null
+  },
+  "auto_join": false,
+  "join_once": false,
+  "use_voucher_metadata_schema": true,
+  "validity_day_of_week": null,
+  "activity_duration_after_publishing": null,
+  "vouchers_count": 0,
+  "start_date": null,
+  "expiration_date": null,
+  "active": true,
+  "metadata": null,
+  "created_at": "2024-09-04T10:16:00+00:00",
+  "updated_at": null,
+  "category": null,
+  "creation_status": "DONE",
+  "vouchers_generation_status": "DONE",
+  "protected": false,
+  "category_id": null,
+  "categories": [],
+  "object": "campaign",
+  "validation_rules_assignments": {
+    "object": "list",
+    "data_ref": "data",
+    "data": [],
+    "total": 0
+  }
+}

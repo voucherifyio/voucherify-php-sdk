@@ -1,0 +1,75 @@
+{
+  "object": "list",
+  "data_ref": "data",
+  "data": [
+    {
+      "id": "vtx_0f26818b5548058f1a",
+      "source_id": null,
+      "voucher_id": "v_uMSsaZiN4SgrLv3D6WPTsjSVbrXqvvHM",
+      "campaign_id": "camp_MtDZCfUCDfWChsfipxq2kwuX",
+      "source": null,
+      "reason": null,
+      "type": "POINTS_ADDITION",
+      "details": {
+        "balance": {
+          "type": "loyalty_card",
+          "total": 13000,
+          "object": "balance",
+          "points": 2000,
+          "balance": 13000,
+          "related_object": {
+            "id": "v_uMSsaZiN4SgrLv3D6WPTsjSVbrXqvvHM",
+            "type": "voucher"
+          }
+        },
+        "order": null,
+        "event": null,
+        "earning_rule": null,
+        "segment": null,
+        "loyalty_tier": null,
+        "redemption": null,
+        "rollback": null,
+        "custom_event": null,
+        "event_schema": null,
+        "reward": null
+      },
+      "related_transaction_id": null,
+      "created_at": "2024-08-02T12:35:33+00:00"
+    },
+    {
+      "id": "vtx_0f268186d4803ac4f9",
+      "source_id": "X3uJklzyj3",
+      "voucher_id": "v_uMSsaZiN4SgrLv3D6WPTsjSVbrXqvvHM",
+      "campaign_id": "camp_MtDZCfUCDfWChsfipxq2kwuX",
+      "source": "API",
+      "reason": "Regular customer",
+      "type": "POINTS_ADDITION",
+      "details": {
+        "balance": {
+          "type": "loyalty_card",
+          "total": 11000,
+          "object": "balance",
+          "points": 10000,
+          "balance": 11000,
+          "related_object": {
+            "id": "v_uMSsaZiN4SgrLv3D6WPTsjSVbrXqvvHM",
+            "type": "voucher"
+          }
+        },
+        "order": null,
+        "event": null,
+        "earning_rule": null,
+        "segment": null,
+        "loyalty_tier": null,
+        "redemption": null,
+        "rollback": null,
+        "custom_event": null,
+        "event_schema": null,
+        "reward": null
+      },
+      "related_transaction_id": null,
+      "created_at": "2024-08-02T12:35:29+00:00"
+    }
+  ],
+  "has_more": false
+}

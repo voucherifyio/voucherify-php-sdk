@@ -1,0 +1,82 @@
+{
+  "id": "v_qufKTAte5Ldyz456CEqvvScXACSeo9xS",
+  "code": "2dLzEeLh",
+  "campaign": "gFTVDj601E",
+  "campaign_id": "camp_tk6MbB9NNlS1zO0lsq2nHuNc",
+  "category": null,
+  "category_id": null,
+  "type": "DISCOUNT_VOUCHER",
+  "discount": {
+    "type": "AMOUNT",
+    "amount_off": 1000,
+    "amount_off_formula": null,
+    "aggregated_amount_limit": null,
+    "effect": null,
+    "is_dynamic": null,
+    "unit_off": null,
+    "unit_off_formula": null,
+    "unit_type": null,
+    "units": null,
+    "percent_off": null,
+    "percent_off_formula": null,
+    "amount_limit": null,
+    "fixed_amount": null,
+    "fixed_amount_formula": null
+  },
+  "gift": null,
+  "loyalty_card": null,
+  "start_date": null,
+  "expiration_date": null,
+  "validity_day_of_week": null,
+  "active": true,
+  "additional_info": null,
+  "metadata": [],
+  "assets": {
+    "qr": {
+      "id": "13de49b9-9a0c-4a37-8b3d-b8f275f871ca",
+      "url": "https://dl.voucherify.io/api/v1/assets/qr/13de49b9-9a0c-4a37-8b3d-b8f275f871ca"
+    },
+    "barcode": {
+      "id": "b2f989c3-ae4c-41c5-93bc-ef13830a06a4",
+      "url": "https://dl.voucherify.io/api/v1/assets/barcode/b2f989c3-ae4c-41c5-93bc-ef13830a06a4"
+    }
+  },
+  "is_referral_code": false,
+  "created_at": "2024-09-04T10:28:31+00:00",
+  "updated_at": null,
+  "holder_id": null,
+  "referrer_id": null,
+  "object": "voucher",
+  "publish": {
+    "object": "list",
+    "count": 0,
+    "url": "/v1/vouchers/2dLzEeLh/publications?page=1&limit=10"
+  },
+  "redemption": {
+    "quantity": null,
+    "redeemed_quantity": 0,
+    "redeemed_points": null,
+    "object": "list",
+    "url": "/v1/vouchers/2dLzEeLh/redemptions?page=1&limit=10"
+  },
+  "categories": [],
+  "validation_rules_assignments": {
+    "object": "list",
+    "data_ref": "data",
+    "data": [
+      {
+        "id": "asgm_yISSzrcDyB4xqMXl",
+        "rule_id": "val_s6sxKnk77dRq",
+        "related_object_id": "camp_tk6MbB9NNlS1zO0lsq2nHuNc",
+        "related_object_type": "campaign",
+        "created_at": "2024-09-04T10:28:30+00:00",
+        "updated_at": null,
+        "object": "validation_rules_assignment",
+        "validation_status": null,
+        "validation_omitted_rules": null
+      }
+    ],
+    "total": 1
+  },
+  "async_action_id": null
+}
