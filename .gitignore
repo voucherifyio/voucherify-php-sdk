@@ -20,7 +20,6 @@ build/phplint.cache
 
 
 /.openapi-generator/
-/tests/
 /.gitlab-ci.yml
 /.openapi-generator-ignore
 /.travis.yml

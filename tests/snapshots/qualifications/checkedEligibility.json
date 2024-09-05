@@ -1,0 +1,406 @@
+{
+  "redeemables": {
+    "object": "list",
+    "data_ref": "data",
+    "data": [
+      {
+        "id": "xRtmGye7",
+        "object": "voucher",
+        "created_at": "2024-09-04T10:54:03+00:00",
+        "result": {
+          "discount": {
+            "type": "AMOUNT",
+            "amount_off": 1000,
+            "amount_off_formula": null,
+            "aggregated_amount_limit": null,
+            "effect": "APPLY_TO_ITEMS",
+            "is_dynamic": false,
+            "unit_off": null,
+            "unit_off_formula": null,
+            "unit_type": null,
+            "units": null,
+            "percent_off": null,
+            "percent_off_formula": null,
+            "amount_limit": null,
+            "fixed_amount": null,
+            "fixed_amount_formula": null
+          }
+        },
+        "order": {
+          "id": null,
+          "source_id": null,
+          "status": null,
+          "amount": 20000,
+          "initial_amount": null,
+          "discount_amount": null,
+          "items_discount_amount": null,
+          "total_discount_amount": null,
+          "total_amount": 20000,
+          "applied_discount_amount": null,
+          "items_applied_discount_amount": null,
+          "total_applied_discount_amount": null,
+          "items": null,
+          "metadata": [],
+          "object": "order",
+          "created_at": null,
+          "updated_at": null,
+          "customer_id": null,
+          "referrer_id": null,
+          "customer": null,
+          "referrer": null,
+          "redemptions": null
+        },
+        "validation_rule_id": null,
+        "applicable_to": {
+          "data": [
+            {
+              "object": "product",
+              "id": "prod_0f50e6c2c60de1ffc7",
+              "source_id": null,
+              "product_id": null,
+              "product_source_id": null,
+              "strict": false,
+              "price": null,
+              "price_formula": null,
+              "effect": "APPLY_TO_EVERY",
+              "quantity_limit": null,
+              "aggregated_quantity_limit": null,
+              "amount_limit": null,
+              "aggregated_amount_limit": null,
+              "order_item_indices": null
+            }
+          ],
+          "total": 1,
+          "object": "list",
+          "data_ref": "data"
+        },
+        "inapplicable_to": {
+          "data": [],
+          "total": 0,
+          "object": "list",
+          "data_ref": "data"
+        },
+        "metadata": null,
+        "categories": null,
+        "banner": null,
+        "name": null,
+        "campaign_name": null,
+        "campaign_id": null,
+        "redeemables": null
+      },
+      {
+        "id": "camp_oMX6x73mQ2a1qHr7E5eHNww5",
+        "object": "campaign",
+        "created_at": "2024-09-04T10:54:03+00:00",
+        "result": {
+          "loyalty_card": {
+            "points": 0,
+            "balance": 1000,
+            "exchange_ratio": null,
+            "points_ratio": null,
+            "transfers": null
+          }
+        },
+        "order": {
+          "id": null,
+          "source_id": null,
+          "status": null,
+          "amount": 20000,
+          "initial_amount": null,
+          "discount_amount": null,
+          "items_discount_amount": null,
+          "total_discount_amount": null,
+          "total_amount": 20000,
+          "applied_discount_amount": null,
+          "items_applied_discount_amount": null,
+          "total_applied_discount_amount": null,
+          "items": null,
+          "metadata": [],
+          "object": "order",
+          "created_at": null,
+          "updated_at": null,
+          "customer_id": null,
+          "referrer_id": null,
+          "customer": null,
+          "referrer": null,
+          "redemptions": null
+        },
+        "validation_rule_id": null,
+        "applicable_to": {
+          "data": [],
+          "total": 0,
+          "object": "list",
+          "data_ref": "data"
+        },
+        "inapplicable_to": {
+          "data": [],
+          "total": 0,
+          "object": "list",
+          "data_ref": "data"
+        },
+        "metadata": null,
+        "categories": null,
+        "banner": null,
+        "name": null,
+        "campaign_name": null,
+        "campaign_id": null,
+        "redeemables": null
+      },
+      {
+        "id": "camp_AYMExOYuIfFdy2hsLjgygla5",
+        "object": "campaign",
+        "created_at": "2024-09-04T10:54:02+00:00",
+        "result": {
+          "discount": {
+            "type": "AMOUNT",
+            "amount_off": 1000,
+            "amount_off_formula": null,
+            "aggregated_amount_limit": null,
+            "effect": "APPLY_TO_ITEMS",
+            "is_dynamic": false,
+            "unit_off": null,
+            "unit_off_formula": null,
+            "unit_type": null,
+            "units": null,
+            "percent_off": null,
+            "percent_off_formula": null,
+            "amount_limit": null,
+            "fixed_amount": null,
+            "fixed_amount_formula": null
+          }
+        },
+        "order": {
+          "id": null,
+          "source_id": null,
+          "status": null,
+          "amount": 20000,
+          "initial_amount": null,
+          "discount_amount": null,
+          "items_discount_amount": null,
+          "total_discount_amount": null,
+          "total_amount": 20000,
+          "applied_discount_amount": null,
+          "items_applied_discount_amount": null,
+          "total_applied_discount_amount": null,
+          "items": null,
+          "metadata": [],
+          "object": "order",
+          "created_at": null,
+          "updated_at": null,
+          "customer_id": null,
+          "referrer_id": null,
+          "customer": null,
+          "referrer": null,
+          "redemptions": null
+        },
+        "validation_rule_id": null,
+        "applicable_to": {
+          "data": [
+            {
+              "object": "product",
+              "id": "prod_0f50e6c2c60de1ffc7",
+              "source_id": null,
+              "product_id": null,
+              "product_source_id": null,
+              "strict": false,
+              "price": null,
+              "price_formula": null,
+              "effect": "APPLY_TO_EVERY",
+              "quantity_limit": null,
+              "aggregated_quantity_limit": null,
+              "amount_limit": null,
+              "aggregated_amount_limit": null,
+              "order_item_indices": null
+            }
+          ],
+          "total": 1,
+          "object": "list",
+          "data_ref": "data"
+        },
+        "inapplicable_to": {
+          "data": [],
+          "total": 0,
+          "object": "list",
+          "data_ref": "data"
+        },
+        "metadata": null,
+        "categories": null,
+        "banner": null,
+        "name": null,
+        "campaign_name": null,
+        "campaign_id": null,
+        "redeemables": null
+      },
+      {
+        "id": "camp_rAqTVAb1bVFxHrJUCMfRRZSI",
+        "object": "campaign",
+        "created_at": "2024-09-04T10:52:37+00:00",
+        "result": {
+          "loyalty_card": {
+            "points": 0,
+            "balance": 1000,
+            "exchange_ratio": null,
+            "points_ratio": null,
+            "transfers": null
+          }
+        },
+        "order": {
+          "id": null,
+          "source_id": null,
+          "status": null,
+          "amount": 20000,
+          "initial_amount": null,
+          "discount_amount": null,
+          "items_discount_amount": null,
+          "total_discount_amount": null,
+          "total_amount": 20000,
+          "applied_discount_amount": null,
+          "items_applied_discount_amount": null,
+          "total_applied_discount_amount": null,
+          "items": null,
+          "metadata": [],
+          "object": "order",
+          "created_at": null,
+          "updated_at": null,
+          "customer_id": null,
+          "referrer_id": null,
+          "customer": null,
+          "referrer": null,
+          "redemptions": null
+        },
+        "validation_rule_id": null,
+        "applicable_to": {
+          "data": [],
+          "total": 0,
+          "object": "list",
+          "data_ref": "data"
+        },
+        "inapplicable_to": {
+          "data": [],
+          "total": 0,
+          "object": "list",
+          "data_ref": "data"
+        },
+        "metadata": null,
+        "categories": null,
+        "banner": null,
+        "name": null,
+        "campaign_name": null,
+        "campaign_id": null,
+        "redeemables": null
+      },
+      {
+        "id": "camp_LHEm115jsw7XdvfpXn7Gh6Zz",
+        "object": "campaign",
+        "created_at": "2024-09-04T10:52:37+00:00",
+        "result": {
+          "discount": {
+            "type": "AMOUNT",
+            "amount_off": 1000,
+            "amount_off_formula": null,
+            "aggregated_amount_limit": null,
+            "effect": "APPLY_TO_ITEMS",
+            "is_dynamic": false,
+            "unit_off": null,
+            "unit_off_formula": null,
+            "unit_type": null,
+            "units": null,
+            "percent_off": null,
+            "percent_off_formula": null,
+            "amount_limit": null,
+            "fixed_amount": null,
+            "fixed_amount_formula": null
+          }
+        },
+        "order": {
+          "id": null,
+          "source_id": null,
+          "status": null,
+          "amount": 20000,
+          "initial_amount": null,
+          "discount_amount": null,
+          "items_discount_amount": null,
+          "total_discount_amount": null,
+          "total_amount": 20000,
+          "applied_discount_amount": null,
+          "items_applied_discount_amount": null,
+          "total_applied_discount_amount": null,
+          "items": null,
+          "metadata": [],
+          "object": "order",
+          "created_at": null,
+          "updated_at": null,
+          "customer_id": null,
+          "referrer_id": null,
+          "customer": null,
+          "referrer": null,
+          "redemptions": null
+        },
+        "validation_rule_id": null,
+        "applicable_to": {
+          "data": [
+            {
+              "object": "product",
+              "id": "prod_0f50e66fbe8104d01f",
+              "source_id": null,
+              "product_id": null,
+              "product_source_id": null,
+              "strict": false,
+              "price": null,
+              "price_formula": null,
+              "effect": "APPLY_TO_EVERY",
+              "quantity_limit": null,
+              "aggregated_quantity_limit": null,
+              "amount_limit": null,
+              "aggregated_amount_limit": null,
+              "order_item_indices": null
+            }
+          ],
+          "total": 1,
+          "object": "list",
+          "data_ref": "data"
+        },
+        "inapplicable_to": {
+          "data": [],
+          "total": 0,
+          "object": "list",
+          "data_ref": "data"
+        },
+        "metadata": null,
+        "categories": null,
+        "banner": null,
+        "name": null,
+        "campaign_name": null,
+        "campaign_id": null,
+        "redeemables": null
+      }
+    ],
+    "total": 5,
+    "has_more": true,
+    "more_starting_after": "2024-09-04T10:52:37+00:00"
+  },
+  "tracking_id": "track_celJ4xALxdxUZt6U5dityQ==",
+  "order": {
+    "status": null,
+    "amount": 20000,
+    "discount_amount": null,
+    "initial_amount": null,
+    "items": null,
+    "customer_id": null,
+    "referrer_id": null,
+    "metadata": [],
+    "created_at": null,
+    "updated_at": null
+  },
+  "stacking_rules": {
+    "redeemables_limit": 30,
+    "applicable_redeemables_limit": 5,
+    "applicable_redeemables_per_category_limit": null,
+    "applicable_exclusive_redeemables_limit": 1,
+    "applicable_exclusive_redeemables_per_category_limit": null,
+    "exclusive_categories": [],
+    "joint_categories": [],
+    "redeemables_application_mode": "ALL",
+    "redeemables_sorting_rule": "REQUESTED_ORDER"
+  }
+}

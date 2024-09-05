@@ -1,0 +1,81 @@
+{
+  "id": "v_UTlrjntV5pR5ox9KusK2OjpRMQvdt2j3",
+  "code": "ojklY0Y5",
+  "campaign": "Lp98leds7k",
+  "campaign_id": "camp_zLI3kwtHN9Ap74HxYy7oUZUz",
+  "category": null,
+  "category_id": null,
+  "type": "DISCOUNT_VOUCHER",
+  "discount": {
+    "type": "AMOUNT",
+    "amount_off": 1000,
+    "amount_off_formula": null,
+    "aggregated_amount_limit": null,
+    "effect": null,
+    "is_dynamic": null,
+    "unit_off": null,
+    "unit_off_formula": null,
+    "unit_type": null,
+    "units": null,
+    "percent_off": null,
+    "percent_off_formula": null,
+    "amount_limit": null,
+    "fixed_amount": null,
+    "fixed_amount_formula": null
+  },
+  "gift": null,
+  "loyalty_card": null,
+  "start_date": null,
+  "expiration_date": null,
+  "validity_day_of_week": null,
+  "active": true,
+  "additional_info": null,
+  "metadata": [],
+  "assets": {
+    "qr": {
+      "id": "cd2fc7ef-966a-4932-b0d1-2bce44ddb2c2",
+      "url": "https://dl.voucherify.io/api/v1/assets/qr/cd2fc7ef-966a-4932-b0d1-2bce44ddb2c2"
+    },
+    "barcode": {
+      "id": "d253d762-df48-4c9b-824c-d132b4f66e43",
+      "url": "https://dl.voucherify.io/api/v1/assets/barcode/d253d762-df48-4c9b-824c-d132b4f66e43"
+    }
+  },
+  "is_referral_code": false,
+  "created_at": "2024-08-02T12:01:51+00:00",
+  "updated_at": "2024-08-02T12:01:52+00:00",
+  "holder_id": "cust_jT7V62JdxTg9Ep5eR7sD9Rlf",
+  "referrer_id": null,
+  "object": "voucher",
+  "publish": {
+    "object": "list",
+    "count": 1,
+    "url": "/v1/vouchers/ojklY0Y5/publications?page=1&limit=10"
+  },
+  "redemption": {
+    "quantity": null,
+    "redeemed_quantity": 0,
+    "redeemed_points": null,
+    "object": "list",
+    "url": "/v1/vouchers/ojklY0Y5/redemptions?page=1&limit=10"
+  },
+  "categories": [],
+  "validation_rules_assignments": {
+    "object": "list",
+    "data_ref": "data",
+    "data": [
+      {
+        "id": "asgm_0WGhayddkebXnOPQ",
+        "rule_id": "val_BkFmghr1nID0",
+        "related_object_id": "camp_zLI3kwtHN9Ap74HxYy7oUZUz",
+        "related_object_type": "campaign",
+        "created_at": "2024-08-02T12:01:50+00:00",
+        "updated_at": null,
+        "object": "validation_rules_assignment",
+        "validation_status": null,
+        "validation_omitted_rules": null
+      }
+    ],
+    "total": 1
+  }
+}

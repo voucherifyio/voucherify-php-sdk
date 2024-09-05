@@ -1,0 +1,93 @@
+{
+  "id": "pub_E80vbkTU4q1ISx2DukUVtWd8zcQnmHIb",
+  "object": "publication",
+  "created_at": "2024-09-05T14:28:51+00:00",
+  "customer_id": "cust_1e4yReLJg9XsJxQuK2XpPGaG",
+  "tracking_id": "BgBDSkz6ov",
+  "metadata": [],
+  "channel": "API",
+  "source_id": null,
+  "result": "SUCCESS",
+  "customer": {
+    "id": "cust_1e4yReLJg9XsJxQuK2XpPGaG",
+    "source_id": "BgBDSkz6ov",
+    "system_metadata": null,
+    "created_at": null,
+    "updated_at": null,
+    "assets": null,
+    "object": "customer",
+    "name": "John Doe",
+    "description": null,
+    "email": null,
+    "phone": null,
+    "birthday": null,
+    "birthdate": null,
+    "address": null,
+    "metadata": null
+  },
+  "vouchers_id": ["v_mi3Au36An0LiMJPSc0SnM4yq4LhwIy3G"],
+  "voucher": {
+    "id": "v_mi3Au36An0LiMJPSc0SnM4yq4LhwIy3G",
+    "code": "aflktwUK",
+    "campaign": "beLQc6RyOW",
+    "campaign_id": "camp_AF29AHx1uu2z119NQEmPPk2F",
+    "category": null,
+    "category_id": null,
+    "type": "DISCOUNT_VOUCHER",
+    "discount": {
+      "type": "AMOUNT",
+      "amount_off": 1000,
+      "amount_off_formula": null,
+      "aggregated_amount_limit": null,
+      "effect": null,
+      "is_dynamic": null,
+      "unit_off": null,
+      "unit_off_formula": null,
+      "unit_type": null,
+      "units": null,
+      "percent_off": null,
+      "percent_off_formula": null,
+      "amount_limit": null,
+      "fixed_amount": null,
+      "fixed_amount_formula": null
+    },
+    "gift": null,
+    "loyalty_card": null,
+    "start_date": null,
+    "expiration_date": null,
+    "validity_day_of_week": null,
+    "active": true,
+    "additional_info": null,
+    "metadata": [],
+    "assets": {
+      "qr": {
+        "id": "b97efa40-be08-4f2a-b497-6a1632365d4a",
+        "url": "https://dev2.dl.voucherify.io/api/v1/assets/qr/b97efa40-be08-4f2a-b497-6a1632365d4a"
+      },
+      "barcode": {
+        "id": "281c49f6-b89c-4a01-99b8-1decf94a40f8",
+        "url": "https://dev2.dl.voucherify.io/api/v1/assets/barcode/281c49f6-b89c-4a01-99b8-1decf94a40f8"
+      }
+    },
+    "is_referral_code": false,
+    "created_at": "2024-09-05T14:28:49+00:00",
+    "updated_at": "2024-09-05T14:28:51+00:00",
+    "holder_id": "cust_1e4yReLJg9XsJxQuK2XpPGaG",
+    "referrer_id": null,
+    "object": "voucher",
+    "publish": {
+      "object": "list",
+      "count": 1,
+      "url": "/v1/vouchers/aflktwUK/publications?page=1&limit=10"
+    },
+    "redemption": {
+      "quantity": null,
+      "redeemed_quantity": 0,
+      "redeemed_points": null,
+      "object": "list",
+      "url": "/v1/vouchers/aflktwUK/redemptions?page=1&limit=10"
+    },
+    "categories": []
+  },
+  "vouchers": null
+}

@@ -1,0 +1,12 @@
+{
+  "amount": 10000,
+  "total": 11000,
+  "balance": 11000,
+  "type": "loyalty_card",
+  "operation_type": "MANUAL",
+  "object": "balance",
+  "related_object": {
+    "type": "voucher",
+    "id": "v_603CxRWtIC17ORye0aOT5W0tL7nRdhAv"
+  }
+}
