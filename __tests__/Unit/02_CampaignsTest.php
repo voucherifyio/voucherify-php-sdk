@@ -85,7 +85,6 @@ class CampaignsTest extends TestCase
     public function testAddVoucherToCampaign()
     {
         $createdVoucher = addVouchersToCampaign($this->campaignsApiInstance, $this->voucherify->getDiscountCampaign()->id, 1);
-
         $snapshot = 'campaigns/addedVoucherToCampaign';
         $keysToRemove = ['id', 'code', 'campaign', 'campaign_id', 'url', 'created_at', 'rule_id', 'related_object_id'];
         $filteredSnapshot = filterSnapshot($snapshot, $keysToRemove);
@@ -99,7 +98,6 @@ class CampaignsTest extends TestCase
     public function testCreateBundleOfVouchers()
     {
         $asyncAction = addVouchersToCampaign($this->campaignsApiInstance, $this->voucherify->getDiscountCampaign()->id, 5);
-
         $snapshot = 'campaigns/createdBundleOfVouchers';
         $keysToRemove = ['async_action_id'];
         $filteredSnapshot = filterSnapshot($snapshot, $keysToRemove);

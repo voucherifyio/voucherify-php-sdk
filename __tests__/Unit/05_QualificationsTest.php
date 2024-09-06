@@ -27,6 +27,7 @@ class QualificationsTest extends TestCase
         $filteredSnapshot = filterSnapshot($snapshot, $keysToRemove);
 
         $this->assertTrue(validateDeepMatch($filteredSnapshot, $checkedEligibility), 'Error during test with checking eligibility');
+        $this->assertEquals('voucher', $checkedEligibility->getRedeemables()->getData()[0]->getObject());
         $this->assertThat($checkedEligibility->getStackingRules()->getRedeemablesApplicationMode(), $this->logicalOr($this->stringContains('ALL'), $this->stringContains('PARTIAL')));
         $this->assertIsNumeric($checkedEligibility->getStackingRules()->getRedeemablesLimit());
     }

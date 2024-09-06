@@ -26,7 +26,6 @@ class ValidationsTest extends TestCase
     public function testCreateValidateStackedApplicableDiscounts()
     {
         $validationResult = validateStackedDiscounts($this->validationsApiInstance, $this->voucherCode, $this->productId, $this->customer, 20000);
-        consoleLog($validationResult);
         $snapshot = 'validations/validatedStackedApplicableDiscounts';
         $keysToRemove = ['id', 'product_id', 'customer_id', 'tracking_id', 'stacking_rules', 'repeat', 'skip_initially', 'target'];
         $filteredSnapshot = filterSnapshot($snapshot, $keysToRemove);
