@@ -1,11 +1,11 @@
 namespace: Tests
 support_namespace: Support
 paths:
-    tests: tests
-    output: tests/_output
-    data: tests/Support/Data
-    support: tests/Support
-    envs: tests/_envs
+    tests: __tests__
+    output: __tests__/_output
+    data: __tests__/Support/Data
+    support: __tests__/Support
+    envs: __tests__/_envs
 actor_suffix: Tester
 extensions:
     enabled:
