@@ -45,4 +45,11 @@ class RedemptionsTest extends TestCase
         $this->assertNotEmpty($redemptionResult->getSkippedRedeemables());
         $this->assertIsArray($redemptionResult->getInapplicableRedeemables());
     }
+
+    // public function testListRedemptions()
+    // {
+    //     $voucherCode = $this->voucherify->getVoucher()->code;
+    //     $result = listRedemptions($this->redemptionsApiInstance, $voucherCode);
+    //     consoleLog($result);
+    // }
 }

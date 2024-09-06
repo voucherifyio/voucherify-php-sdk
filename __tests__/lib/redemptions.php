@@ -2,7 +2,10 @@
 require_once __DIR__ . '/utils.php';
 
 use OpenAPI\Client\Api\RedemptionsApi;
+use OpenAPI\Client\Model\FilterConditionsString;
 use OpenAPI\Client\Model\OrderCalculated;
+use OpenAPI\Client\Model\ParameterFiltersListRedemptions;
+use OpenAPI\Client\Model\ParameterFiltersListRedemptionsVoucherCode;
 use OpenAPI\Client\Model\RedemptionsRedeemRequestBody;
 use OpenAPI\Client\Model\RedemptionsRedeemRequestBodyRedeemablesItem;
 use OpenAPI\Client\Model\RedemptionsRedeemResponseBody;
@@ -44,3 +47,24 @@ function createRedemptionsRequestBodyRedeemable($voucherId): RedemptionsRedeemRe
     $redeemable->setObject('voucher');
     return $redeemable;
 }
+
+// function listRedemptions(RedemptionsApi $redemptionsApiInstance, string $voucherCodeValue)
+// {
+//     $filters = new ParameterFiltersListRedemptions();
+//     $voucherCode = new ParameterFiltersListRedemptionsVoucherCode();
+//     $condition = new FilterConditionsString();
+
+//     $condition->setIs($voucherCodeValue);
+//     $voucherCode->setConditions($condition);
+//     $filters->setVoucherCode($voucherCode);
+//     consoleLog($filters);
+
+//     try {
+//         $result = $redemptionsApiInstance->listRedemptions(null, null, null, null, null, null, null, $filters);
+
+//         return $result;
+//     } catch (Error $err) {
+//         error_log('Error during list redemptions: ' . $err);
+//         return null;
+//     }
+// }
