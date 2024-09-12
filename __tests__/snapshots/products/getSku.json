@@ -1,0 +1,18 @@
+{
+  "id": "sku_0f1c3fc53e88058ed8",
+  "source_id": "yXLsMVRYGx",
+  "product_id": "prod_0f1c3fc3c748058eb1",
+  "sku": null,
+  "price": 2000,
+  "currency": null,
+  "attributes": {
+    "color": "red",
+    "memory": "16GB",
+    "processor": "Intel Core i7"
+  },
+  "image_url": null,
+  "metadata": [],
+  "created_at": "2024-07-25T13:23:23+00:00",
+  "updated_at": "2024-07-25T13:23:23+00:00",
+  "object": "sku"
+}

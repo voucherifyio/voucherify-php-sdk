@@ -1,0 +1,22 @@
+{
+  "name": "FxmNqTrDn0",
+  "rules": {
+    "1": {
+      "name": "order.amount",
+      "conditions": {
+        "$more_than": [500000]
+      },
+      "rules": {}
+    },
+    "logic": "1"
+  },
+  "error": null,
+  "applicable_to": null,
+  "type": "basic",
+  "context_type": "global",
+  "id": "val_tdKWWozwHAjd",
+  "created_at": "2024-09-04T10:17:53+00:00",
+  "updated_at": null,
+  "assignments_count": null,
+  "object": "validation_rules"
+}
