@@ -1569,7 +1569,7 @@ try {
 ## `listLoyaltyCardTransactions()`
 
 ```php
-listLoyaltyCardTransactions($memberId, $limit): \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody
+listLoyaltyCardTransactions($memberId, $limit, $order, $startingAfterId): \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody
 ```
 
 List Loyalty Card Transactions
@@ -1602,9 +1602,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
 );
 $memberId = 'memberId_example'; // string | A unique code identifying the loyalty card that you are looking to retrieve transaction data for.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
+$order = new \OpenAPI\Client\Model\ParameterOrderListTransactions(); // ParameterOrderListTransactions | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+$startingAfterId = 'startingAfterId_example'; // string | A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID.
 
 try {
-    $result = $apiInstance->listLoyaltyCardTransactions($memberId, $limit);
+    $result = $apiInstance->listLoyaltyCardTransactions($memberId, $limit, $order, $startingAfterId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listLoyaltyCardTransactions: ', $e->getMessage(), PHP_EOL;
@@ -1617,6 +1619,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **memberId** | **string**| A unique code identifying the loyalty card that you are looking to retrieve transaction data for. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
+| **order** | [**ParameterOrderListTransactions**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
+| **startingAfterId** | **string**| A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. | [optional] |
 
 ### Return type
 
@@ -1638,7 +1642,7 @@ try {
 ## `listLoyaltyCardTransactions1()`
 
 ```php
-listLoyaltyCardTransactions1($campaignId, $memberId, $limit, $page): \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody
+listLoyaltyCardTransactions1($campaignId, $memberId, $limit, $order, $startingAfterId): \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody
 ```
 
 List Loyalty Card Transactions
@@ -1672,10 +1676,11 @@ $apiInstance = new OpenAPI\Client\Api\LoyaltiesApi(
 $campaignId = 'campaignId_example'; // string | A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return.
 $memberId = 'memberId_example'; // string | A unique code identifying the loyalty card that you are looking to retrieve transaction data for.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-$page = 56; // int | Which page of results to return. The lowest value is 1.
+$order = new \OpenAPI\Client\Model\ParameterOrderListTransactions(); // ParameterOrderListTransactions | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+$startingAfterId = 'startingAfterId_example'; // string | A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID.
 
 try {
-    $result = $apiInstance->listLoyaltyCardTransactions1($campaignId, $memberId, $limit, $page);
+    $result = $apiInstance->listLoyaltyCardTransactions1($campaignId, $memberId, $limit, $order, $startingAfterId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoyaltiesApi->listLoyaltyCardTransactions1: ', $e->getMessage(), PHP_EOL;
@@ -1689,7 +1694,8 @@ try {
 | **campaignId** | **string**| A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. | |
 | **memberId** | **string**| A unique code identifying the loyalty card that you are looking to retrieve transaction data for. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
-| **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
+| **order** | [**ParameterOrderListTransactions**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
+| **startingAfterId** | **string**| A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. | [optional] |
 
 ### Return type
 

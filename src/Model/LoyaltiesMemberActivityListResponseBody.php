@@ -500,7 +500,7 @@ class LoyaltiesMemberActivityListResponseBody implements ModelInterface, ArrayAc
     /**
      * Sets moreStartingAfter
      *
-     * @param string|null $moreStartingAfter Returns an ID that can be used to return another page of results. Use the event id in the `starting_after_id` query parameter to display another page of the results starting after the event with that ID.
+     * @param string|null $moreStartingAfter Returns an ID that can be used to return another page of results. Use the event ID in the `starting_after_id` query parameter to display another page of the results starting after the event with that ID.
      *
      * @return self
      */

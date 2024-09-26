@@ -468,7 +468,7 @@ class PromotionsTiersListResponseBody implements ModelInterface, ArrayAccess, \J
     /**
      * Sets hasMore
      *
-     * @param bool|null $hasMore As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different page or a different start date filter) to get more records returned in the results.
+     * @param bool|null $hasMore As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request to get more records returned in the results.
      *
      * @return self
      */
