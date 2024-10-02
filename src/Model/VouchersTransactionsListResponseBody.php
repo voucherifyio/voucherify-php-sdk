@@ -254,6 +254,32 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         return self::$openAPIModelName;
     }
 
+    public const OBJECT__LIST = 'list';
+    public const DATA_REF_DATA = 'data';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getObjectAllowableValues()
+    {
+        return [
+            self::OBJECT__LIST,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDataRefAllowableValues()
+    {
+        return [
+            self::DATA_REF_DATA,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -304,6 +330,24 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getObjectAllowableValues();
+        if (!is_null($this->container['object']) && !in_array($this->container['object'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'object', must be one of '%s'",
+                $this->container['object'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getDataRefAllowableValues();
+        if (!is_null($this->container['dataRef']) && !in_array($this->container['dataRef'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'dataRef', must be one of '%s'",
+                $this->container['dataRef'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -348,6 +392,16 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+        $allowedValues = $this->getObjectAllowableValues();
+        if (!is_null($object) && !in_array($object, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'object', must be one of '%s'",
+                    $object,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['object'] = $object;
 
         return $this;
@@ -381,6 +435,16 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
+        }
+        $allowedValues = $this->getDataRefAllowableValues();
+        if (!is_null($dataRef) && !in_array($dataRef, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'dataRef', must be one of '%s'",
+                    $dataRef,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
         $this->container['dataRef'] = $dataRef;
 

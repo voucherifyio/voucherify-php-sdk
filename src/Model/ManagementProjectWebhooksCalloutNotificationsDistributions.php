@@ -1,6 +1,6 @@
 <?php
 /**
- * FilterConditionsDateTimeConditions
+ * ManagementProjectWebhooksCalloutNotificationsDistributions
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * FilterConditionsDateTimeConditions Class Doc Comment
+ * ManagementProjectWebhooksCalloutNotificationsDistributions Class Doc Comment
  *
  * @category Class
- * @description Data filters used to narrow down the data records to be returned in the result.
+ * @description Determines the notification settings for webhooks sent through Distributions.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class FilterConditionsDateTimeConditions implements ModelInterface, ArrayAccess, \JsonSerializable
+class ManagementProjectWebhooksCalloutNotificationsDistributions implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class FilterConditionsDateTimeConditions implements ModelInterface, ArrayAccess,
       *
       * @var string
       */
-    protected static $openAPIModelName = 'FilterConditionsDateTimeConditions';
+    protected static $openAPIModelName = 'ManagementProjectWebhooksCalloutNotificationsDistributions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,12 +59,9 @@ class FilterConditionsDateTimeConditions implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'after' => '\DateTime',
-        'before' => '\DateTime',
-        'hasValue' => 'string',
-        'isUnknown' => 'string',
-        'moreThan' => 'int',
-        'lessThan' => 'int'
+        'email' => 'bool',
+        'inApp' => 'bool',
+        'emails' => 'string[]'
     ];
 
     /**
@@ -75,12 +72,9 @@ class FilterConditionsDateTimeConditions implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'after' => 'date-time',
-        'before' => 'date-time',
-        'hasValue' => null,
-        'isUnknown' => null,
-        'moreThan' => null,
-        'lessThan' => null
+        'email' => null,
+        'inApp' => null,
+        'emails' => null
     ];
 
     /**
@@ -89,12 +83,9 @@ class FilterConditionsDateTimeConditions implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'after' => true,
-		'before' => true,
-		'hasValue' => true,
-		'isUnknown' => true,
-		'moreThan' => true,
-		'lessThan' => true
+        'email' => true,
+		'inApp' => true,
+		'emails' => true
     ];
 
     /**
@@ -183,12 +174,9 @@ class FilterConditionsDateTimeConditions implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'after' => '$after',
-        'before' => '$before',
-        'hasValue' => '$has_value',
-        'isUnknown' => '$is_unknown',
-        'moreThan' => 'more_than',
-        'lessThan' => 'less_than'
+        'email' => 'email',
+        'inApp' => 'in_app',
+        'emails' => 'emails'
     ];
 
     /**
@@ -197,12 +185,9 @@ class FilterConditionsDateTimeConditions implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'after' => 'setAfter',
-        'before' => 'setBefore',
-        'hasValue' => 'setHasValue',
-        'isUnknown' => 'setIsUnknown',
-        'moreThan' => 'setMoreThan',
-        'lessThan' => 'setLessThan'
+        'email' => 'setEmail',
+        'inApp' => 'setInApp',
+        'emails' => 'setEmails'
     ];
 
     /**
@@ -211,12 +196,9 @@ class FilterConditionsDateTimeConditions implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'after' => 'getAfter',
-        'before' => 'getBefore',
-        'hasValue' => 'getHasValue',
-        'isUnknown' => 'getIsUnknown',
-        'moreThan' => 'getMoreThan',
-        'lessThan' => 'getLessThan'
+        'email' => 'getEmail',
+        'inApp' => 'getInApp',
+        'emails' => 'getEmails'
     ];
 
     /**
@@ -276,12 +258,9 @@ class FilterConditionsDateTimeConditions implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('after', $data ?? [], null);
-        $this->setIfExists('before', $data ?? [], null);
-        $this->setIfExists('hasValue', $data ?? [], null);
-        $this->setIfExists('isUnknown', $data ?? [], null);
-        $this->setIfExists('moreThan', $data ?? [], null);
-        $this->setIfExists('lessThan', $data ?? [], null);
+        $this->setIfExists('email', $data ?? [], null);
+        $this->setIfExists('inApp', $data ?? [], null);
+        $this->setIfExists('emails', $data ?? [], null);
     }
 
     /**
@@ -327,205 +306,103 @@ class FilterConditionsDateTimeConditions implements ModelInterface, ArrayAccess,
 
 
     /**
-     * Gets after
+     * Gets email
      *
-     * @return \DateTime|null
+     * @return bool|null
      */
-    public function getAfter()
+    public function getEmail()
     {
-        return $this->container['after'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets after
+     * Sets email
      *
-     * @param \DateTime|null $after Value is after this date. The value for this parameter is shown in the ISO 8601 format.
+     * @param bool|null $email Enables the notification through an email.
      *
      * @return self
      */
-    public function setAfter($after)
+    public function setEmail($email)
     {
-        if (is_null($after)) {
-            array_push($this->openAPINullablesSetToNull, 'after');
+        if (is_null($email)) {
+            array_push($this->openAPINullablesSetToNull, 'email');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('after', $nullablesSetToNull);
+            $index = array_search('email', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['after'] = $after;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets before
+     * Gets inApp
      *
-     * @return \DateTime|null
+     * @return bool|null
      */
-    public function getBefore()
+    public function getInApp()
     {
-        return $this->container['before'];
+        return $this->container['inApp'];
     }
 
     /**
-     * Sets before
+     * Sets inApp
      *
-     * @param \DateTime|null $before Value is before this date. The value for this parameter is shown in the ISO 8601 format.
+     * @param bool|null $inApp Enables the notification through an email.
      *
      * @return self
      */
-    public function setBefore($before)
+    public function setInApp($inApp)
     {
-        if (is_null($before)) {
-            array_push($this->openAPINullablesSetToNull, 'before');
+        if (is_null($inApp)) {
+            array_push($this->openAPINullablesSetToNull, 'inApp');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('before', $nullablesSetToNull);
+            $index = array_search('inApp', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['before'] = $before;
+        $this->container['inApp'] = $inApp;
 
         return $this;
     }
 
     /**
-     * Gets hasValue
+     * Gets emails
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getHasValue()
+    public function getEmails()
     {
-        return $this->container['hasValue'];
+        return $this->container['emails'];
     }
 
     /**
-     * Sets hasValue
+     * Sets emails
      *
-     * @param string|null $hasValue Value is NOT null. The value for this parameter is an empty string.
+     * @param string[]|null $emails An array of email addresses which will receive the notification.
      *
      * @return self
      */
-    public function setHasValue($hasValue)
+    public function setEmails($emails)
     {
-        if (is_null($hasValue)) {
-            array_push($this->openAPINullablesSetToNull, 'hasValue');
+        if (is_null($emails)) {
+            array_push($this->openAPINullablesSetToNull, 'emails');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('hasValue', $nullablesSetToNull);
+            $index = array_search('emails', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['hasValue'] = $hasValue;
-
-        return $this;
-    }
-
-    /**
-     * Gets isUnknown
-     *
-     * @return string|null
-     */
-    public function getIsUnknown()
-    {
-        return $this->container['isUnknown'];
-    }
-
-    /**
-     * Sets isUnknown
-     *
-     * @param string|null $isUnknown Value is null. The value for this parameter is an empty string.
-     *
-     * @return self
-     */
-    public function setIsUnknown($isUnknown)
-    {
-        if (is_null($isUnknown)) {
-            array_push($this->openAPINullablesSetToNull, 'isUnknown');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('isUnknown', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['isUnknown'] = $isUnknown;
-
-        return $this;
-    }
-
-    /**
-     * Gets moreThan
-     *
-     * @return int|null
-     */
-    public function getMoreThan()
-    {
-        return $this->container['moreThan'];
-    }
-
-    /**
-     * Sets moreThan
-     *
-     * @param int|null $moreThan Value is more days ago before the current date and time, e.g. more than `10` days ago.
-     *
-     * @return self
-     */
-    public function setMoreThan($moreThan)
-    {
-        if (is_null($moreThan)) {
-            array_push($this->openAPINullablesSetToNull, 'moreThan');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('moreThan', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['moreThan'] = $moreThan;
-
-        return $this;
-    }
-
-    /**
-     * Gets lessThan
-     *
-     * @return int|null
-     */
-    public function getLessThan()
-    {
-        return $this->container['lessThan'];
-    }
-
-    /**
-     * Sets lessThan
-     *
-     * @param int|null $lessThan Value is less days before the current date and time, e.g. less than `10` days ago.
-     *
-     * @return self
-     */
-    public function setLessThan($lessThan)
-    {
-        if (is_null($lessThan)) {
-            array_push($this->openAPINullablesSetToNull, 'lessThan');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('lessThan', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['lessThan'] = $lessThan;
+        $this->container['emails'] = $emails;
 
         return $this;
     }

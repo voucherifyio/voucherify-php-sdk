@@ -1,6 +1,6 @@
 <?php
 /**
- * LuckyDraw
+ * ManagementProjectsMetadataSchemasGetResponseBody
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * LuckyDraw Class Doc Comment
+ * ManagementProjectsMetadataSchemasGetResponseBody Class Doc Comment
  *
  * @category Class
- * @description Object for defining detailed information about lucky draw should be applied
+ * @description Response body schema for **POST** &#x60;management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId}&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
+class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'LuckyDraw';
+    protected static $openAPIModelName = 'ManagementProjectsMetadataSchemasGetResponseBody';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,13 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'winnersCount' => 'string',
-        'uniqueWinnersPerDraw' => 'string',
-        'uniqueWinners' => 'string'
+        'id' => 'string',
+        'relatedObject' => 'string',
+        'properties' => 'array<string,\OpenAPI\Client\Model\ManagementProjectsMetadataSchemaDefinition>',
+        'allowDefinedOnly' => 'bool',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
+        'object' => 'string'
     ];
 
     /**
@@ -72,9 +76,13 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'winnersCount' => null,
-        'uniqueWinnersPerDraw' => null,
-        'uniqueWinners' => null
+        'id' => null,
+        'relatedObject' => null,
+        'properties' => null,
+        'allowDefinedOnly' => null,
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
+        'object' => null
     ];
 
     /**
@@ -83,9 +91,13 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'winnersCount' => true,
-		'uniqueWinnersPerDraw' => true,
-		'uniqueWinners' => true
+        'id' => true,
+		'relatedObject' => true,
+		'properties' => true,
+		'allowDefinedOnly' => true,
+		'createdAt' => true,
+		'updatedAt' => true,
+		'object' => true
     ];
 
     /**
@@ -174,9 +186,13 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'winnersCount' => 'winners_count',
-        'uniqueWinnersPerDraw' => 'unique_winners_per_draw',
-        'uniqueWinners' => 'unique_winners'
+        'id' => 'id',
+        'relatedObject' => 'related_object',
+        'properties' => 'properties',
+        'allowDefinedOnly' => 'allow_defined_only',
+        'createdAt' => 'created_at',
+        'updatedAt' => 'updated_at',
+        'object' => 'object'
     ];
 
     /**
@@ -185,9 +201,13 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'winnersCount' => 'setWinnersCount',
-        'uniqueWinnersPerDraw' => 'setUniqueWinnersPerDraw',
-        'uniqueWinners' => 'setUniqueWinners'
+        'id' => 'setId',
+        'relatedObject' => 'setRelatedObject',
+        'properties' => 'setProperties',
+        'allowDefinedOnly' => 'setAllowDefinedOnly',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
+        'object' => 'setObject'
     ];
 
     /**
@@ -196,9 +216,13 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'winnersCount' => 'getWinnersCount',
-        'uniqueWinnersPerDraw' => 'getUniqueWinnersPerDraw',
-        'uniqueWinners' => 'getUniqueWinners'
+        'id' => 'getId',
+        'relatedObject' => 'getRelatedObject',
+        'properties' => 'getProperties',
+        'allowDefinedOnly' => 'getAllowDefinedOnly',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
+        'object' => 'getObject'
     ];
 
     /**
@@ -258,9 +282,13 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('winnersCount', $data ?? [], null);
-        $this->setIfExists('uniqueWinnersPerDraw', $data ?? [], null);
-        $this->setIfExists('uniqueWinners', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('relatedObject', $data ?? [], null);
+        $this->setIfExists('properties', $data ?? [], null);
+        $this->setIfExists('allowDefinedOnly', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('updatedAt', $data ?? [], null);
+        $this->setIfExists('object', $data ?? [], 'metadata_schema');
     }
 
     /**
@@ -306,105 +334,239 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets winnersCount
+     * Gets id
      *
      * @return string|null
      */
-    public function getWinnersCount()
+    public function getId()
     {
-        return $this->container['winnersCount'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets winnersCount
+     * Sets id
      *
-     * @param string|null $winnersCount It represents the total number of winners in a lucky draw.
+     * @param string|null $id Unique identifier of the metadata schema.
      *
      * @return self
      */
-    public function setWinnersCount($winnersCount)
+    public function setId($id)
     {
-        if (is_null($winnersCount)) {
-            array_push($this->openAPINullablesSetToNull, 'winnersCount');
+        if (is_null($id)) {
+            array_push($this->openAPINullablesSetToNull, 'id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('winnersCount', $nullablesSetToNull);
+            $index = array_search('id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
-        $this->container['winnersCount'] = $winnersCount;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets uniqueWinnersPerDraw
+     * Gets relatedObject
      *
      * @return string|null
      */
-    public function getUniqueWinnersPerDraw()
+    public function getRelatedObject()
     {
-        return $this->container['uniqueWinnersPerDraw'];
+        return $this->container['relatedObject'];
     }
 
     /**
-     * Sets uniqueWinnersPerDraw
+     * Sets relatedObject
      *
-     * @param string|null $uniqueWinnersPerDraw It indicates whether each winner in a draw is unique or not.
+     * @param string|null $relatedObject The resource type. You can define custom metadata schemas, which have a custom `\"related_object\"` resource type. The standard metadata schemas are: `\"campaign\"`, `\"customer\"`, `\"earning_rule\"`, `\"loyalty_tier\"`, `\"order\"`, `\"order_item\"`, `\"product\"`, `\"promotion_tier\"`, `\"publication\"`, `\"redemption\"`, `\"reward\"`, `\"voucher\"`.
      *
      * @return self
      */
-    public function setUniqueWinnersPerDraw($uniqueWinnersPerDraw)
+    public function setRelatedObject($relatedObject)
     {
-        if (is_null($uniqueWinnersPerDraw)) {
-            array_push($this->openAPINullablesSetToNull, 'uniqueWinnersPerDraw');
+        if (is_null($relatedObject)) {
+            array_push($this->openAPINullablesSetToNull, 'relatedObject');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('uniqueWinnersPerDraw', $nullablesSetToNull);
+            $index = array_search('relatedObject', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['uniqueWinnersPerDraw'] = $uniqueWinnersPerDraw;
+        $this->container['relatedObject'] = $relatedObject;
 
         return $this;
     }
 
     /**
-     * Gets uniqueWinners
+     * Gets properties
      *
-     * @return string|null
+     * @return array<string,\OpenAPI\Client\Model\ManagementProjectsMetadataSchemaDefinition>|null
      */
-    public function getUniqueWinners()
+    public function getProperties()
     {
-        return $this->container['uniqueWinners'];
+        return $this->container['properties'];
     }
 
     /**
-     * Sets uniqueWinners
+     * Sets properties
      *
-     * @param string|null $uniqueWinners Specifies whether each participant can win only once across multiple draws.
+     * @param array<string,\OpenAPI\Client\Model\ManagementProjectsMetadataSchemaDefinition>|null $properties Contains metadata definitions.
      *
      * @return self
      */
-    public function setUniqueWinners($uniqueWinners)
+    public function setProperties($properties)
     {
-        if (is_null($uniqueWinners)) {
-            array_push($this->openAPINullablesSetToNull, 'uniqueWinners');
+        if (is_null($properties)) {
+            array_push($this->openAPINullablesSetToNull, 'properties');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('uniqueWinners', $nullablesSetToNull);
+            $index = array_search('properties', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['uniqueWinners'] = $uniqueWinners;
+        $this->container['properties'] = $properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets allowDefinedOnly
+     *
+     * @return bool|null
+     */
+    public function getAllowDefinedOnly()
+    {
+        return $this->container['allowDefinedOnly'];
+    }
+
+    /**
+     * Sets allowDefinedOnly
+     *
+     * @param bool|null $allowDefinedOnly Restricts the creation of metadata fields when set to `true`. It indicates whether or not you can create new metadata definitions, e.g. in the campaign or publication manager. If set to `true`, then only the defined fields are available for assigning values.
+     *
+     * @return self
+     */
+    public function setAllowDefinedOnly($allowDefinedOnly)
+    {
+        if (is_null($allowDefinedOnly)) {
+            array_push($this->openAPINullablesSetToNull, 'allowDefinedOnly');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('allowDefinedOnly', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['allowDefinedOnly'] = $allowDefinedOnly;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the metadata schema was created. The value for this parameter is shown in the ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setCreatedAt($createdAt)
+    {
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('createdAt', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['createdAt'] = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets updatedAt
+     *
+     * @return \DateTime|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updatedAt'];
+    }
+
+    /**
+     * Sets updatedAt
+     *
+     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the metadata schema was updated. The value for this parameter is shown in the ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        if (is_null($updatedAt)) {
+            array_push($this->openAPINullablesSetToNull, 'updatedAt');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('updatedAt', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['updatedAt'] = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets object
+     *
+     * @return string|null
+     */
+    public function getObject()
+    {
+        return $this->container['object'];
+    }
+
+    /**
+     * Sets object
+     *
+     * @param string|null $object The type of the object represented by the JSON. This object stores information about the metadata schema.
+     *
+     * @return self
+     */
+    public function setObject($object)
+    {
+        if (is_null($object)) {
+            array_push($this->openAPINullablesSetToNull, 'object');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('object', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['object'] = $object;
 
         return $this;
     }

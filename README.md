@@ -131,6 +131,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AsyncActionsApi* | [**getAsyncAction**](docs/Api/AsyncActionsApi.md#getasyncaction) | **GET** /v1/async-actions/{asyncActionId} | Get Async Action
 *AsyncActionsApi* | [**listAsyncActions**](docs/Api/AsyncActionsApi.md#listasyncactions) | **GET** /v1/async-actions | List Async Actions
+*BinApi* | [**deleteBinEntry**](docs/Api/BinApi.md#deletebinentry) | **DELETE** /v1/trash-bin/{binEntryId} | Delete Bin Entry
+*BinApi* | [**listBinEntries**](docs/Api/BinApi.md#listbinentries) | **GET** /v1/trash-bin | List Bin Entries
 *CampaignsApi* | [**addVoucherWithSpecificCodeToCampaign**](docs/Api/CampaignsApi.md#addvoucherwithspecificcodetocampaign) | **POST** /v1/campaigns/{campaignId}/vouchers/{code} | Add Voucher with Specific Code to Campaign
 *CampaignsApi* | [**addVouchersToCampaign**](docs/Api/CampaignsApi.md#addvoucherstocampaign) | **POST** /v1/campaigns/{campaignId}/vouchers | Add Vouchers to Campaign
 *CampaignsApi* | [**createCampaign**](docs/Api/CampaignsApi.md#createcampaign) | **POST** /v1/campaigns | Create Campaign
@@ -162,7 +164,6 @@ Class | Method | HTTP request | Description
 *CustomersApi* | [**listCustomerSegments**](docs/Api/CustomersApi.md#listcustomersegments) | **GET** /v1/customers/{customerId}/segments | List Customer&#39;s Segments
 *CustomersApi* | [**listCustomers**](docs/Api/CustomersApi.md#listcustomers) | **GET** /v1/customers | List Customers
 *CustomersApi* | [**updateCustomer**](docs/Api/CustomersApi.md#updatecustomer) | **PUT** /v1/customers/{customerId} | Update Customer
-*CustomersApi* | [**updateCustomersConsents**](docs/Api/CustomersApi.md#updatecustomersconsents) | **PUT** /v1/customers/{customerId}/consents | Update Customer&#39;s consents [Deprecated]
 *CustomersApi* | [**updateCustomersInBulk**](docs/Api/CustomersApi.md#updatecustomersinbulk) | **POST** /v1/customers/bulk/async | Update Customers in Bulk
 *CustomersApi* | [**updateCustomersMetadataInBulk**](docs/Api/CustomersApi.md#updatecustomersmetadatainbulk) | **POST** /v1/customers/metadata/async | Update Customers&#39; Metadata in Bulk
 *EventsApi* | [**trackCustomEvent**](docs/Api/EventsApi.md#trackcustomevent) | **POST** /v1/events | Track Custom Event
@@ -215,6 +216,42 @@ Class | Method | HTTP request | Description
 *LoyaltiesApi* | [**updateLoyaltyCardBalance1**](docs/Api/LoyaltiesApi.md#updateloyaltycardbalance1) | **POST** /v1/loyalties/{campaignId}/members/{memberId}/balance | Add or Remove Loyalty Card Balance
 *LoyaltiesApi* | [**updateLoyaltyProgram**](docs/Api/LoyaltiesApi.md#updateloyaltyprogram) | **PUT** /v1/loyalties/{campaignId} | Update Loyalty Campaign
 *LoyaltiesApi* | [**updateRewardAssignment1**](docs/Api/LoyaltiesApi.md#updaterewardassignment1) | **PUT** /v1/loyalties/{campaignId}/rewards/{assignmentId} | Update Reward Assignment
+*ManagementApi* | [**assignUser**](docs/Api/ManagementApi.md#assignuser) | **POST** /management/v1/projects/{projectId}/users | Assign User
+*ManagementApi* | [**createBrand**](docs/Api/ManagementApi.md#createbrand) | **POST** /management/v1/projects/{projectId}/branding | Create Brand
+*ManagementApi* | [**createCustomEventSchema**](docs/Api/ManagementApi.md#createcustomeventschema) | **POST** /management/v1/projects/{projectId}/custom-event-schemas | Create Custom Event Schema
+*ManagementApi* | [**createMetadataSchema**](docs/Api/ManagementApi.md#createmetadataschema) | **POST** /management/v1/projects/{projectId}/metadata-schemas | Create Metadata Schema
+*ManagementApi* | [**createProject**](docs/Api/ManagementApi.md#createproject) | **POST** /management/v1/projects | Create Project
+*ManagementApi* | [**createStackingRules**](docs/Api/ManagementApi.md#createstackingrules) | **POST** /management/v1/projects/{projectId}/stacking-rules | Create Stacking Rules
+*ManagementApi* | [**createWebhook**](docs/Api/ManagementApi.md#createwebhook) | **POST** /management/v1/projects/{projectId}/webhooks | Create Webhook
+*ManagementApi* | [**deleteBrand**](docs/Api/ManagementApi.md#deletebrand) | **DELETE** /management/v1/projects/{projectId}/branding/{brandingId} | Delete Brand
+*ManagementApi* | [**deleteCustomEventSchema**](docs/Api/ManagementApi.md#deletecustomeventschema) | **DELETE** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId} | Delete Custom Event Schema
+*ManagementApi* | [**deleteMetadataSchema**](docs/Api/ManagementApi.md#deletemetadataschema) | **DELETE** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId} | Delete Metadata Schema
+*ManagementApi* | [**deleteProject**](docs/Api/ManagementApi.md#deleteproject) | **DELETE** /management/v1/projects/{projectId} | Delete Project
+*ManagementApi* | [**deleteStackingRules**](docs/Api/ManagementApi.md#deletestackingrules) | **DELETE** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId} | Delete Stacking Rules
+*ManagementApi* | [**deleteWebhook**](docs/Api/ManagementApi.md#deletewebhook) | **DELETE** /management/v1/projects/{projectId}/webhooks/{webhookId} | Delete Webhook
+*ManagementApi* | [**getBrand**](docs/Api/ManagementApi.md#getbrand) | **GET** /management/v1/projects/{projectId}/branding/{brandingId} | Get Brand
+*ManagementApi* | [**getCustomEventSchema**](docs/Api/ManagementApi.md#getcustomeventschema) | **GET** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId} | Get Custom Event Schema
+*ManagementApi* | [**getMetadataSchema1**](docs/Api/ManagementApi.md#getmetadataschema1) | **GET** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId} | Get Metadata Schema
+*ManagementApi* | [**getProject**](docs/Api/ManagementApi.md#getproject) | **GET** /management/v1/projects/{projectId} | Get Project
+*ManagementApi* | [**getStackingRules**](docs/Api/ManagementApi.md#getstackingrules) | **GET** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId} | Get Stacking Rules
+*ManagementApi* | [**getUser**](docs/Api/ManagementApi.md#getuser) | **GET** /management/v1/projects/{projectId}/users/{userId} | Get User
+*ManagementApi* | [**getWebhook**](docs/Api/ManagementApi.md#getwebhook) | **GET** /management/v1/projects/{projectId}/webhooks/{webhookId} | Get Webhook
+*ManagementApi* | [**inviteUser**](docs/Api/ManagementApi.md#inviteuser) | **POST** /management/v1/projects/users/invite | Invite a New User
+*ManagementApi* | [**listBrands**](docs/Api/ManagementApi.md#listbrands) | **GET** /management/v1/projects/{projectId}/branding | List Brands
+*ManagementApi* | [**listCustomEventSchemas**](docs/Api/ManagementApi.md#listcustomeventschemas) | **GET** /management/v1/projects/{projectId}/custom-event-schemas | List Custom Event Schemas
+*ManagementApi* | [**listMetadataSchemas1**](docs/Api/ManagementApi.md#listmetadataschemas1) | **GET** /management/v1/projects/{projectId}/metadata-schemas | List Metadata Schemas
+*ManagementApi* | [**listProjects**](docs/Api/ManagementApi.md#listprojects) | **GET** /management/v1/projects | List Projects
+*ManagementApi* | [**listStackingRules**](docs/Api/ManagementApi.md#liststackingrules) | **GET** /management/v1/projects/{projectId}/stacking-rules | List Stacking Rules
+*ManagementApi* | [**listUsers**](docs/Api/ManagementApi.md#listusers) | **GET** /management/v1/projects/{projectId}/users | List Users
+*ManagementApi* | [**listWebhooks**](docs/Api/ManagementApi.md#listwebhooks) | **GET** /management/v1/projects/{projectId}/webhooks | List Webhooks
+*ManagementApi* | [**unassignUser**](docs/Api/ManagementApi.md#unassignuser) | **DELETE** /management/v1/projects/{projectId}/users/{userId} | Unassign User
+*ManagementApi* | [**updateBrand**](docs/Api/ManagementApi.md#updatebrand) | **PUT** /management/v1/projects/{projectId}/branding/{brandingId} | Update Brand
+*ManagementApi* | [**updateCustomEventSchema**](docs/Api/ManagementApi.md#updatecustomeventschema) | **PUT** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId} | Update Custom Event Schema
+*ManagementApi* | [**updateMetadataSchema**](docs/Api/ManagementApi.md#updatemetadataschema) | **PUT** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId} | Update Metadata Schema
+*ManagementApi* | [**updateProject**](docs/Api/ManagementApi.md#updateproject) | **PUT** /management/v1/projects/{projectId} | Update Project
+*ManagementApi* | [**updateStackingRules**](docs/Api/ManagementApi.md#updatestackingrules) | **PUT** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId} | Update Stacking Rules
+*ManagementApi* | [**updateUser**](docs/Api/ManagementApi.md#updateuser) | **PUT** /management/v1/projects/{projectId}/users/{userId} | Update User
+*ManagementApi* | [**updateWebhook**](docs/Api/ManagementApi.md#updatewebhook) | **PUT** /management/v1/projects/{projectId}/webhooks/{webhookId} | Update Webhook
 *OrdersApi* | [**createOrder**](docs/Api/OrdersApi.md#createorder) | **POST** /v1/orders | Create Order
 *OrdersApi* | [**createOrderExport**](docs/Api/OrdersApi.md#createorderexport) | **POST** /v1/orders/export | Create Orders Export
 *OrdersApi* | [**getOrder**](docs/Api/OrdersApi.md#getorder) | **GET** /v1/orders/{orderId} | Get Order
@@ -471,7 +508,6 @@ Class | Method | HTTP request | Description
 - [ExportsListResponseBody](docs/Model/ExportsListResponseBody.md)
 - [FieldConditions](docs/Model/FieldConditions.md)
 - [FilterConditionsDateTime](docs/Model/FilterConditionsDateTime.md)
-- [FilterConditionsDateTimeConditions](docs/Model/FilterConditionsDateTimeConditions.md)
 - [FilterConditionsString](docs/Model/FilterConditionsString.md)
 - [FiltersCondition](docs/Model/FiltersCondition.md)
 - [Gift](docs/Model/Gift.md)
@@ -735,7 +771,127 @@ Class | Method | HTTP request | Description
 - [LoyaltyTiersExpirationAllExpirationDate](docs/Model/LoyaltyTiersExpirationAllExpirationDate.md)
 - [LoyaltyTiersExpirationAllExpirationDateRounding](docs/Model/LoyaltyTiersExpirationAllExpirationDateRounding.md)
 - [LoyaltyTiersExpirationAllStartDate](docs/Model/LoyaltyTiersExpirationAllStartDate.md)
-- [LuckyDraw](docs/Model/LuckyDraw.md)
+- [ManagementProject](docs/Model/ManagementProject.md)
+- [ManagementProjectApiUsageNotifications](docs/Model/ManagementProjectApiUsageNotifications.md)
+- [ManagementProjectDefaultCodeConfig](docs/Model/ManagementProjectDefaultCodeConfig.md)
+- [ManagementProjectLimits](docs/Model/ManagementProjectLimits.md)
+- [ManagementProjectLimitsApiCallsItem](docs/Model/ManagementProjectLimitsApiCallsItem.md)
+- [ManagementProjectLimitsBulkApiCallsItem](docs/Model/ManagementProjectLimitsBulkApiCallsItem.md)
+- [ManagementProjectWebhooksCalloutNotifications](docs/Model/ManagementProjectWebhooksCalloutNotifications.md)
+- [ManagementProjectWebhooksCalloutNotificationsDistributions](docs/Model/ManagementProjectWebhooksCalloutNotificationsDistributions.md)
+- [ManagementProjectWebhooksCalloutNotificationsWebhooks](docs/Model/ManagementProjectWebhooksCalloutNotificationsWebhooks.md)
+- [ManagementProjectsBranding](docs/Model/ManagementProjectsBranding.md)
+- [ManagementProjectsBrandingAddress](docs/Model/ManagementProjectsBrandingAddress.md)
+- [ManagementProjectsBrandingBrand](docs/Model/ManagementProjectsBrandingBrand.md)
+- [ManagementProjectsBrandingCockpits](docs/Model/ManagementProjectsBrandingCockpits.md)
+- [ManagementProjectsBrandingContact](docs/Model/ManagementProjectsBrandingContact.md)
+- [ManagementProjectsBrandingCreateRequestBody](docs/Model/ManagementProjectsBrandingCreateRequestBody.md)
+- [ManagementProjectsBrandingCreateRequestBodyAddress](docs/Model/ManagementProjectsBrandingCreateRequestBodyAddress.md)
+- [ManagementProjectsBrandingCreateRequestBodyBrand](docs/Model/ManagementProjectsBrandingCreateRequestBodyBrand.md)
+- [ManagementProjectsBrandingCreateRequestBodyCockpits](docs/Model/ManagementProjectsBrandingCreateRequestBodyCockpits.md)
+- [ManagementProjectsBrandingCreateRequestBodyContact](docs/Model/ManagementProjectsBrandingCreateRequestBodyContact.md)
+- [ManagementProjectsBrandingCreateResponseBody](docs/Model/ManagementProjectsBrandingCreateResponseBody.md)
+- [ManagementProjectsBrandingCreateResponseBodyAddress](docs/Model/ManagementProjectsBrandingCreateResponseBodyAddress.md)
+- [ManagementProjectsBrandingCreateResponseBodyBrand](docs/Model/ManagementProjectsBrandingCreateResponseBodyBrand.md)
+- [ManagementProjectsBrandingCreateResponseBodyCockpits](docs/Model/ManagementProjectsBrandingCreateResponseBodyCockpits.md)
+- [ManagementProjectsBrandingCreateResponseBodyContact](docs/Model/ManagementProjectsBrandingCreateResponseBodyContact.md)
+- [ManagementProjectsBrandingGetResponseBody](docs/Model/ManagementProjectsBrandingGetResponseBody.md)
+- [ManagementProjectsBrandingGetResponseBodyAddress](docs/Model/ManagementProjectsBrandingGetResponseBodyAddress.md)
+- [ManagementProjectsBrandingGetResponseBodyBrand](docs/Model/ManagementProjectsBrandingGetResponseBodyBrand.md)
+- [ManagementProjectsBrandingGetResponseBodyCockpits](docs/Model/ManagementProjectsBrandingGetResponseBodyCockpits.md)
+- [ManagementProjectsBrandingGetResponseBodyContact](docs/Model/ManagementProjectsBrandingGetResponseBodyContact.md)
+- [ManagementProjectsBrandingListResponseBody](docs/Model/ManagementProjectsBrandingListResponseBody.md)
+- [ManagementProjectsBrandingUpdateRequestBody](docs/Model/ManagementProjectsBrandingUpdateRequestBody.md)
+- [ManagementProjectsBrandingUpdateRequestBodyAddress](docs/Model/ManagementProjectsBrandingUpdateRequestBodyAddress.md)
+- [ManagementProjectsBrandingUpdateRequestBodyBrand](docs/Model/ManagementProjectsBrandingUpdateRequestBodyBrand.md)
+- [ManagementProjectsBrandingUpdateRequestBodyCockpits](docs/Model/ManagementProjectsBrandingUpdateRequestBodyCockpits.md)
+- [ManagementProjectsBrandingUpdateRequestBodyContact](docs/Model/ManagementProjectsBrandingUpdateRequestBodyContact.md)
+- [ManagementProjectsBrandingUpdateResponseBody](docs/Model/ManagementProjectsBrandingUpdateResponseBody.md)
+- [ManagementProjectsBrandingUpdateResponseBodyAddress](docs/Model/ManagementProjectsBrandingUpdateResponseBodyAddress.md)
+- [ManagementProjectsBrandingUpdateResponseBodyBrand](docs/Model/ManagementProjectsBrandingUpdateResponseBodyBrand.md)
+- [ManagementProjectsBrandingUpdateResponseBodyCockpits](docs/Model/ManagementProjectsBrandingUpdateResponseBodyCockpits.md)
+- [ManagementProjectsBrandingUpdateResponseBodyContact](docs/Model/ManagementProjectsBrandingUpdateResponseBodyContact.md)
+- [ManagementProjectsCreateRequestBody](docs/Model/ManagementProjectsCreateRequestBody.md)
+- [ManagementProjectsCreateRequestBodyApiUsageNotifications](docs/Model/ManagementProjectsCreateRequestBodyApiUsageNotifications.md)
+- [ManagementProjectsCreateRequestBodyUsersItem](docs/Model/ManagementProjectsCreateRequestBodyUsersItem.md)
+- [ManagementProjectsCreateRequestBodyWebhooksCalloutNotifications](docs/Model/ManagementProjectsCreateRequestBodyWebhooksCalloutNotifications.md)
+- [ManagementProjectsCreateRequestBodyWebhooksCalloutNotificationsDistributions](docs/Model/ManagementProjectsCreateRequestBodyWebhooksCalloutNotificationsDistributions.md)
+- [ManagementProjectsCreateRequestBodyWebhooksCalloutNotificationsWebhooks](docs/Model/ManagementProjectsCreateRequestBodyWebhooksCalloutNotificationsWebhooks.md)
+- [ManagementProjectsCreateResponseBody](docs/Model/ManagementProjectsCreateResponseBody.md)
+- [ManagementProjectsCreateResponseBodyApiUsageNotifications](docs/Model/ManagementProjectsCreateResponseBodyApiUsageNotifications.md)
+- [ManagementProjectsCreateResponseBodyClientSideKey](docs/Model/ManagementProjectsCreateResponseBodyClientSideKey.md)
+- [ManagementProjectsCreateResponseBodyServerSideKey](docs/Model/ManagementProjectsCreateResponseBodyServerSideKey.md)
+- [ManagementProjectsCreateResponseBodyWebhooksCalloutNotifications](docs/Model/ManagementProjectsCreateResponseBodyWebhooksCalloutNotifications.md)
+- [ManagementProjectsCreateResponseBodyWebhooksCalloutNotificationsDistributions](docs/Model/ManagementProjectsCreateResponseBodyWebhooksCalloutNotificationsDistributions.md)
+- [ManagementProjectsCreateResponseBodyWebhooksCalloutNotificationsWebhooks](docs/Model/ManagementProjectsCreateResponseBodyWebhooksCalloutNotificationsWebhooks.md)
+- [ManagementProjectsCustomEventSchema](docs/Model/ManagementProjectsCustomEventSchema.md)
+- [ManagementProjectsCustomEventSchemaSchema](docs/Model/ManagementProjectsCustomEventSchemaSchema.md)
+- [ManagementProjectsCustomEventSchemasCreateRequestBody](docs/Model/ManagementProjectsCustomEventSchemasCreateRequestBody.md)
+- [ManagementProjectsCustomEventSchemasCreateRequestBodySchema](docs/Model/ManagementProjectsCustomEventSchemasCreateRequestBodySchema.md)
+- [ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntry](docs/Model/ManagementProjectsCustomEventSchemasCreateRequestBodySchemaPropertiesEntry.md)
+- [ManagementProjectsCustomEventSchemasCreateResponseBody](docs/Model/ManagementProjectsCustomEventSchemasCreateResponseBody.md)
+- [ManagementProjectsCustomEventSchemasCreateResponseBodySchema](docs/Model/ManagementProjectsCustomEventSchemasCreateResponseBodySchema.md)
+- [ManagementProjectsCustomEventSchemasGetResponseBody](docs/Model/ManagementProjectsCustomEventSchemasGetResponseBody.md)
+- [ManagementProjectsCustomEventSchemasGetResponseBodySchema](docs/Model/ManagementProjectsCustomEventSchemasGetResponseBodySchema.md)
+- [ManagementProjectsCustomEventSchemasListResponseBody](docs/Model/ManagementProjectsCustomEventSchemasListResponseBody.md)
+- [ManagementProjectsCustomEventSchemasUpdateRequestBody](docs/Model/ManagementProjectsCustomEventSchemasUpdateRequestBody.md)
+- [ManagementProjectsCustomEventSchemasUpdateRequestBodySchema](docs/Model/ManagementProjectsCustomEventSchemasUpdateRequestBodySchema.md)
+- [ManagementProjectsCustomEventSchemasUpdateResponseBody](docs/Model/ManagementProjectsCustomEventSchemasUpdateResponseBody.md)
+- [ManagementProjectsCustomEventSchemasUpdateResponseBodySchema](docs/Model/ManagementProjectsCustomEventSchemasUpdateResponseBodySchema.md)
+- [ManagementProjectsGetResponseBody](docs/Model/ManagementProjectsGetResponseBody.md)
+- [ManagementProjectsGetResponseBodyApiUsageNotifications](docs/Model/ManagementProjectsGetResponseBodyApiUsageNotifications.md)
+- [ManagementProjectsGetResponseBodyDefaultCodeConfig](docs/Model/ManagementProjectsGetResponseBodyDefaultCodeConfig.md)
+- [ManagementProjectsGetResponseBodyLimits](docs/Model/ManagementProjectsGetResponseBodyLimits.md)
+- [ManagementProjectsGetResponseBodyLimitsApiCallsItem](docs/Model/ManagementProjectsGetResponseBodyLimitsApiCallsItem.md)
+- [ManagementProjectsGetResponseBodyLimitsBulkApiCallsItem](docs/Model/ManagementProjectsGetResponseBodyLimitsBulkApiCallsItem.md)
+- [ManagementProjectsGetResponseBodyWebhooksCalloutNotifications](docs/Model/ManagementProjectsGetResponseBodyWebhooksCalloutNotifications.md)
+- [ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsDistributions](docs/Model/ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsDistributions.md)
+- [ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsWebhooks](docs/Model/ManagementProjectsGetResponseBodyWebhooksCalloutNotificationsWebhooks.md)
+- [ManagementProjectsListResponseBody](docs/Model/ManagementProjectsListResponseBody.md)
+- [ManagementProjectsMetadataSchema](docs/Model/ManagementProjectsMetadataSchema.md)
+- [ManagementProjectsMetadataSchemaDefinition](docs/Model/ManagementProjectsMetadataSchemaDefinition.md)
+- [ManagementProjectsMetadataSchemasCreateRequestBody](docs/Model/ManagementProjectsMetadataSchemasCreateRequestBody.md)
+- [ManagementProjectsMetadataSchemasCreateResponseBody](docs/Model/ManagementProjectsMetadataSchemasCreateResponseBody.md)
+- [ManagementProjectsMetadataSchemasGetResponseBody](docs/Model/ManagementProjectsMetadataSchemasGetResponseBody.md)
+- [ManagementProjectsMetadataSchemasListResponseBody](docs/Model/ManagementProjectsMetadataSchemasListResponseBody.md)
+- [ManagementProjectsMetadataSchemasUpdateRequestBody](docs/Model/ManagementProjectsMetadataSchemasUpdateRequestBody.md)
+- [ManagementProjectsMetadataSchemasUpdateResponseBody](docs/Model/ManagementProjectsMetadataSchemasUpdateResponseBody.md)
+- [ManagementProjectsStackingRules](docs/Model/ManagementProjectsStackingRules.md)
+- [ManagementProjectsStackingRulesCreateRequestBody](docs/Model/ManagementProjectsStackingRulesCreateRequestBody.md)
+- [ManagementProjectsStackingRulesCreateResponseBody](docs/Model/ManagementProjectsStackingRulesCreateResponseBody.md)
+- [ManagementProjectsStackingRulesGetResponseBody](docs/Model/ManagementProjectsStackingRulesGetResponseBody.md)
+- [ManagementProjectsStackingRulesListResponseBody](docs/Model/ManagementProjectsStackingRulesListResponseBody.md)
+- [ManagementProjectsStackingRulesUpdateRequestBody](docs/Model/ManagementProjectsStackingRulesUpdateRequestBody.md)
+- [ManagementProjectsStackingRulesUpdateResponseBody](docs/Model/ManagementProjectsStackingRulesUpdateResponseBody.md)
+- [ManagementProjectsUpdateRequestBody](docs/Model/ManagementProjectsUpdateRequestBody.md)
+- [ManagementProjectsUpdateRequestBodyApiUsageNotifications](docs/Model/ManagementProjectsUpdateRequestBodyApiUsageNotifications.md)
+- [ManagementProjectsUpdateRequestBodyDefaultCodeConfig](docs/Model/ManagementProjectsUpdateRequestBodyDefaultCodeConfig.md)
+- [ManagementProjectsUpdateRequestBodyWebhooksCalloutNotifications](docs/Model/ManagementProjectsUpdateRequestBodyWebhooksCalloutNotifications.md)
+- [ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsDistributions](docs/Model/ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsDistributions.md)
+- [ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsWebhooks](docs/Model/ManagementProjectsUpdateRequestBodyWebhooksCalloutNotificationsWebhooks.md)
+- [ManagementProjectsUpdateResponseBody](docs/Model/ManagementProjectsUpdateResponseBody.md)
+- [ManagementProjectsUpdateResponseBodyApiUsageNotifications](docs/Model/ManagementProjectsUpdateResponseBodyApiUsageNotifications.md)
+- [ManagementProjectsUpdateResponseBodyDefaultCodeConfig](docs/Model/ManagementProjectsUpdateResponseBodyDefaultCodeConfig.md)
+- [ManagementProjectsUpdateResponseBodyLimits](docs/Model/ManagementProjectsUpdateResponseBodyLimits.md)
+- [ManagementProjectsUpdateResponseBodyLimitsApiCallsItem](docs/Model/ManagementProjectsUpdateResponseBodyLimitsApiCallsItem.md)
+- [ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem](docs/Model/ManagementProjectsUpdateResponseBodyLimitsBulkApiCallsItem.md)
+- [ManagementProjectsUpdateResponseBodyWebhooksCalloutNotifications](docs/Model/ManagementProjectsUpdateResponseBodyWebhooksCalloutNotifications.md)
+- [ManagementProjectsUpdateResponseBodyWebhooksCalloutNotificationsDistributions](docs/Model/ManagementProjectsUpdateResponseBodyWebhooksCalloutNotificationsDistributions.md)
+- [ManagementProjectsUpdateResponseBodyWebhooksCalloutNotificationsWebhooks](docs/Model/ManagementProjectsUpdateResponseBodyWebhooksCalloutNotificationsWebhooks.md)
+- [ManagementProjectsUsersAssignRequestBody](docs/Model/ManagementProjectsUsersAssignRequestBody.md)
+- [ManagementProjectsUsersAssignResponseBody](docs/Model/ManagementProjectsUsersAssignResponseBody.md)
+- [ManagementProjectsUsersGetUserResponseBody](docs/Model/ManagementProjectsUsersGetUserResponseBody.md)
+- [ManagementProjectsUsersInviteCreateRequestBody](docs/Model/ManagementProjectsUsersInviteCreateRequestBody.md)
+- [ManagementProjectsUsersListResponseBody](docs/Model/ManagementProjectsUsersListResponseBody.md)
+- [ManagementProjectsUsersUpdateRoleRequestBody](docs/Model/ManagementProjectsUsersUpdateRoleRequestBody.md)
+- [ManagementProjectsUsersUpdateRoleResponseBody](docs/Model/ManagementProjectsUsersUpdateRoleResponseBody.md)
+- [ManagementProjectsWebhook](docs/Model/ManagementProjectsWebhook.md)
+- [ManagementProjectsWebhooksCreateRequestBody](docs/Model/ManagementProjectsWebhooksCreateRequestBody.md)
+- [ManagementProjectsWebhooksCreateResponseBody](docs/Model/ManagementProjectsWebhooksCreateResponseBody.md)
+- [ManagementProjectsWebhooksGetResponseBody](docs/Model/ManagementProjectsWebhooksGetResponseBody.md)
+- [ManagementProjectsWebhooksListResponseBody](docs/Model/ManagementProjectsWebhooksListResponseBody.md)
+- [ManagementProjectsWebhooksUpdateRequestBody](docs/Model/ManagementProjectsWebhooksUpdateRequestBody.md)
+- [ManagementProjectsWebhooksUpdateResponseBody](docs/Model/ManagementProjectsWebhooksUpdateResponseBody.md)
 - [MappingPoints](docs/Model/MappingPoints.md)
 - [MemberActivity](docs/Model/MemberActivity.md)
 - [Order](docs/Model/Order.md)
@@ -763,10 +919,25 @@ Class | Method | HTTP request | Description
 - [ParameterCampaignType](docs/Model/ParameterCampaignType.md)
 - [ParameterCreatedBeforeAfter](docs/Model/ParameterCreatedBeforeAfter.md)
 - [ParameterExpandListCampaigns](docs/Model/ParameterExpandListCampaigns.md)
+- [ParameterFiltersListBin](docs/Model/ParameterFiltersListBin.md)
+- [ParameterFiltersListBinId](docs/Model/ParameterFiltersListBinId.md)
+- [ParameterFiltersListBinResourceId](docs/Model/ParameterFiltersListBinResourceId.md)
+- [ParameterFiltersListBinResourceName](docs/Model/ParameterFiltersListBinResourceName.md)
+- [ParameterFiltersListBinResourceType](docs/Model/ParameterFiltersListBinResourceType.md)
+- [ParameterFiltersListBinResourceTypeConditions](docs/Model/ParameterFiltersListBinResourceTypeConditions.md)
+- [ParameterFiltersListCampaigns](docs/Model/ParameterFiltersListCampaigns.md)
+- [ParameterFiltersListCampaignsCampaignStatus](docs/Model/ParameterFiltersListCampaignsCampaignStatus.md)
+- [ParameterFiltersListCampaignsCampaignStatusConditions](docs/Model/ParameterFiltersListCampaignsCampaignStatusConditions.md)
+- [ParameterFiltersListCampaignsCategories](docs/Model/ParameterFiltersListCampaignsCategories.md)
+- [ParameterFiltersListCampaignsCategoryIds](docs/Model/ParameterFiltersListCampaignsCategoryIds.md)
+- [ParameterFiltersListCampaignsIsReferralCode](docs/Model/ParameterFiltersListCampaignsIsReferralCode.md)
+- [ParameterFiltersListCampaignsValidityTimeframe](docs/Model/ParameterFiltersListCampaignsValidityTimeframe.md)
+- [ParameterFiltersListCampaignsVoucherType](docs/Model/ParameterFiltersListCampaignsVoucherType.md)
 - [ParameterFiltersListCustomerRedeemables](docs/Model/ParameterFiltersListCustomerRedeemables.md)
 - [ParameterFiltersListCustomerRedeemablesCampaignId](docs/Model/ParameterFiltersListCustomerRedeemablesCampaignId.md)
 - [ParameterFiltersListCustomerRedeemablesCampaignType](docs/Model/ParameterFiltersListCustomerRedeemablesCampaignType.md)
 - [ParameterFiltersListCustomerRedeemablesCampaignTypeConditions](docs/Model/ParameterFiltersListCustomerRedeemablesCampaignTypeConditions.md)
+- [ParameterFiltersListCustomerRedeemablesCreatedAt](docs/Model/ParameterFiltersListCustomerRedeemablesCreatedAt.md)
 - [ParameterFiltersListCustomerRedeemablesHolderRole](docs/Model/ParameterFiltersListCustomerRedeemablesHolderRole.md)
 - [ParameterFiltersListCustomerRedeemablesHolderRoleConditions](docs/Model/ParameterFiltersListCustomerRedeemablesHolderRoleConditions.md)
 - [ParameterFiltersListCustomerRedeemablesId](docs/Model/ParameterFiltersListCustomerRedeemablesId.md)
@@ -799,6 +970,7 @@ Class | Method | HTTP request | Description
 - [ParameterOrder](docs/Model/ParameterOrder.md)
 - [ParameterOrderCreatedAt](docs/Model/ParameterOrderCreatedAt.md)
 - [ParameterOrderListAllPromotionStacks](docs/Model/ParameterOrderListAllPromotionStacks.md)
+- [ParameterOrderListBin](docs/Model/ParameterOrderListBin.md)
 - [ParameterOrderListCampaigns](docs/Model/ParameterOrderListCampaigns.md)
 - [ParameterOrderListCustomers](docs/Model/ParameterOrderListCustomers.md)
 - [ParameterOrderListEarningRules](docs/Model/ParameterOrderListEarningRules.md)
@@ -1112,6 +1284,10 @@ Class | Method | HTTP request | Description
 - [SkusImportCsvCreateResponseBody](docs/Model/SkusImportCsvCreateResponseBody.md)
 - [SkusListForProduct](docs/Model/SkusListForProduct.md)
 - [StackingRules](docs/Model/StackingRules.md)
+- [TrashBinItem](docs/Model/TrashBinItem.md)
+- [TrashBinListResponseBody](docs/Model/TrashBinListResponseBody.md)
+- [UsageNotifications](docs/Model/UsageNotifications.md)
+- [User](docs/Model/User.md)
 - [ValidationRule](docs/Model/ValidationRule.md)
 - [ValidationRuleApplicableTo](docs/Model/ValidationRuleApplicableTo.md)
 - [ValidationRuleAssignment](docs/Model/ValidationRuleAssignment.md)
@@ -1268,6 +1444,22 @@ Class | Method | HTTP request | Description
 
 - **Type**: API key
 - **API key parameter name**: X-Client-Application-Id
+- **Location**: HTTP header
+
+
+
+### X-Management-Id
+
+- **Type**: API key
+- **API key parameter name**: X-Management-Id
+- **Location**: HTTP header
+
+
+
+### X-Management-Token
+
+- **Type**: API key
+- **API key parameter name**: X-Management-Token
 - **Location**: HTTP header
 
 

@@ -4,6 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**discount** | **object** |  | [optional]
+**referralProgram** | [**\OpenAPI\Client\Model\ReferralProgram**](ReferralProgram.md) |  | [optional]
+**gift** | [**\OpenAPI\Client\Model\Gift**](Gift.md) |  | [optional]
+**loyaltyTiersExpiration** | [**\OpenAPI\Client\Model\LoyaltyTiersExpirationAll**](LoyaltyTiersExpirationAll.md) |  | [optional]
+**options** | [**\OpenAPI\Client\Model\CampaignsUpdateRequestBodyOptions**](CampaignsUpdateRequestBodyOptions.md) |  | [optional]
 **startDate** | **\DateTime** | Activation timestamp defines when the campaign starts to be active in ISO 8601 format. Campaign is *inactive before* this date. | [optional]
 **expirationDate** | **\DateTime** | Expiration timestamp defines when the campaign expires in ISO 8601 format.  Campaign is *inactive after* this date. | [optional]
 **validityTimeframe** | [**\OpenAPI\Client\Model\ValidityTimeframe**](ValidityTimeframe.md) |  | [optional]
@@ -11,20 +16,8 @@ Name | Type | Description | Notes
 **validityHours** | [**\OpenAPI\Client\Model\ValidityHours**](ValidityHours.md) |  | [optional]
 **description** | **string** | An optional field to keep any extra textual information about the campaign such as a campaign description and details. | [optional]
 **category** | **string** | The category assigned to the campaign. Either pass this parameter OR the &#x60;category_id&#x60;. | [optional]
-**metadata** | **object** |  | [optional]
+**metadata** | **object** | The metadata object stores all custom attributes assigned to the campaign. A set of key/value pairs that you can attach to a campaign object. It can be useful for storing additional information about the campaign in a structured format. | [optional]
 **unsetMetadataFields** | **string[]** | Determine which metadata should be removed from campaign. | [optional]
 **categoryId** | **string** | Unique category ID that this campaign belongs to. Either pass this parameter OR the &#x60;category&#x60;. | [optional]
-**activityDurationAfterPublishing** | **string** | Defines the amount of time the vouchers will be active after publishing. The value is shown in the ISO 8601 format. For example, a voucher with the value of P24D will be valid for a duration of 24 days. | [optional]
-**joinOnce** | **bool** | If this value is set to &#x60;true&#x60;, customers will be able to join the campaign only once. | [optional]
-**autoJoin** | **bool** | Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled. | [optional]
-**type** | **string** | Defines whether the campaign can be updated with new vouchers after campaign creation.      - &#x60;AUTO_UPDATE&#x60;: By choosing the auto update option you will create a campaign that can be enhanced by new vouchers after the time of creation (e.g. by publish vouchers method).     -  &#x60;STATIC&#x60;: vouchers need to be manually published. | [optional]
-**discount** | **object** |  | [optional]
-**referralProgram** | [**\OpenAPI\Client\Model\ReferralProgram**](ReferralProgram.md) |  | [optional]
-**gift** | [**\OpenAPI\Client\Model\Gift**](Gift.md) |  | [optional]
-**loyaltyTiersExpiration** | [**\OpenAPI\Client\Model\LoyaltyTiersExpirationAll**](LoyaltyTiersExpirationAll.md) |  | [optional]
-**options** | [**\OpenAPI\Client\Model\CampaignsUpdateRequestBodyOptions**](CampaignsUpdateRequestBodyOptions.md) |  | [optional]
-**winnersCount** | **string** | It represents the total number of winners in a lucky draw. | [optional]
-**uniqueWinnersPerDraw** | **string** | It indicates whether each winner in a draw is unique or not. | [optional]
-**uniqueWinners** | **string** | Specifies whether each participant can win only once across multiple draws. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

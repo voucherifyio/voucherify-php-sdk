@@ -198,7 +198,7 @@ $voucher = 'voucher_example'; // string | Filters by a given voucher code.
 $result = new \OpenAPI\Client\Model\ParameterResultListPublications(); // ParameterResultListPublications | Filters by a publication result.
 $voucherType = new \OpenAPI\Client\Model\ParameterVoucherTypeListPublications(); // ParameterVoucherTypeListPublications | Filters by a voucher type.
 $isReferralCode = True; // bool | This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns.
-$filters = new \OpenAPI\Client\Model\ParameterFiltersListPublications(); // ParameterFiltersListPublications | Filter conditions.
+$filters = new \OpenAPI\Client\Model\ParameterFiltersListPublications(); // ParameterFiltersListPublications | Filters for listing publications.
 $sourceId = 'sourceId_example'; // string | Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id.
 
 try {
@@ -222,7 +222,7 @@ try {
 | **result** | [**ParameterResultListPublications**](../Model/.md)| Filters by a publication result. | [optional] |
 | **voucherType** | [**ParameterVoucherTypeListPublications**](../Model/.md)| Filters by a voucher type. | [optional] |
 | **isReferralCode** | **bool**| This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. | [optional] |
-| **filters** | [**ParameterFiltersListPublications**](../Model/.md)| Filter conditions. | [optional] |
+| **filters** | [**ParameterFiltersListPublications**](../Model/.md)| Filters for listing publications. | [optional] |
 | **sourceId** | **string**| Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. | [optional] |
 
 ### Return type

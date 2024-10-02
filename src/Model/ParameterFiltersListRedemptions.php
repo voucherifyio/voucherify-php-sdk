@@ -58,7 +58,6 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'junction' => 'string',
         'voucherCode' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsVoucherCode',
         'relatedObjectId' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsRelatedObjectId',
         'relatedObjectParentId' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsRelatedObjectParentId',
@@ -68,7 +67,8 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
         'object' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsObject',
         'customerId' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsCustomerId',
         'campaignName' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsCampaignName',
-        'userLogin' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsUserLogin'
+        'userLogin' => '\OpenAPI\Client\Model\ParameterFiltersListRedemptionsUserLogin',
+        'junction' => 'string'
     ];
 
     /**
@@ -79,7 +79,6 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'junction' => null,
         'voucherCode' => null,
         'relatedObjectId' => null,
         'relatedObjectParentId' => null,
@@ -89,7 +88,8 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
         'object' => null,
         'customerId' => null,
         'campaignName' => null,
-        'userLogin' => null
+        'userLogin' => null,
+        'junction' => null
     ];
 
     /**
@@ -98,8 +98,7 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'junction' => true,
-		'voucherCode' => true,
+        'voucherCode' => true,
 		'relatedObjectId' => true,
 		'relatedObjectParentId' => true,
 		'parentRedemptionId' => true,
@@ -108,7 +107,8 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
 		'object' => true,
 		'customerId' => true,
 		'campaignName' => true,
-		'userLogin' => true
+		'userLogin' => true,
+		'junction' => true
     ];
 
     /**
@@ -197,7 +197,6 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'junction' => 'junction',
         'voucherCode' => 'voucher_code',
         'relatedObjectId' => 'related_object_id',
         'relatedObjectParentId' => 'related_object_parent_id',
@@ -207,7 +206,8 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
         'object' => 'object',
         'customerId' => 'customer_id',
         'campaignName' => 'campaign_name',
-        'userLogin' => 'user_login'
+        'userLogin' => 'user_login',
+        'junction' => 'junction'
     ];
 
     /**
@@ -216,7 +216,6 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'junction' => 'setJunction',
         'voucherCode' => 'setVoucherCode',
         'relatedObjectId' => 'setRelatedObjectId',
         'relatedObjectParentId' => 'setRelatedObjectParentId',
@@ -226,7 +225,8 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
         'object' => 'setObject',
         'customerId' => 'setCustomerId',
         'campaignName' => 'setCampaignName',
-        'userLogin' => 'setUserLogin'
+        'userLogin' => 'setUserLogin',
+        'junction' => 'setJunction'
     ];
 
     /**
@@ -235,7 +235,6 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'junction' => 'getJunction',
         'voucherCode' => 'getVoucherCode',
         'relatedObjectId' => 'getRelatedObjectId',
         'relatedObjectParentId' => 'getRelatedObjectParentId',
@@ -245,7 +244,8 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
         'object' => 'getObject',
         'customerId' => 'getCustomerId',
         'campaignName' => 'getCampaignName',
-        'userLogin' => 'getUserLogin'
+        'userLogin' => 'getUserLogin',
+        'junction' => 'getJunction'
     ];
 
     /**
@@ -320,7 +320,6 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('junction', $data ?? [], null);
         $this->setIfExists('voucherCode', $data ?? [], null);
         $this->setIfExists('relatedObjectId', $data ?? [], null);
         $this->setIfExists('relatedObjectParentId', $data ?? [], null);
@@ -331,6 +330,7 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('customerId', $data ?? [], null);
         $this->setIfExists('campaignName', $data ?? [], null);
         $this->setIfExists('userLogin', $data ?? [], null);
+        $this->setIfExists('junction', $data ?? [], null);
     }
 
     /**
@@ -383,50 +383,6 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets junction
-     *
-     * @return string|null
-     */
-    public function getJunction()
-    {
-        return $this->container['junction'];
-    }
-
-    /**
-     * Sets junction
-     *
-     * @param string|null $junction Logical Operator Between Filters. Filter by conditions set on the `junction` parameter indicating how the `conditions` should be accounted for in the query. An `AND` is an all-inclusive logical operator, meaning the `AND` operator displays a record if **ALL** the conditions separated by AND are TRUE, while  an `OR` operator displays a record if **ANY** of the conditions separated by OR is TRUE.
-     *
-     * @return self
-     */
-    public function setJunction($junction)
-    {
-        if (is_null($junction)) {
-            array_push($this->openAPINullablesSetToNull, 'junction');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('junction', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $allowedValues = $this->getJunctionAllowableValues();
-        if (!is_null($junction) && !in_array($junction, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'junction', must be one of '%s'",
-                    $junction,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['junction'] = $junction;
-
-        return $this;
-    }
 
     /**
      * Gets voucherCode
@@ -764,6 +720,50 @@ class ParameterFiltersListRedemptions implements ModelInterface, ArrayAccess, \J
             }
         }
         $this->container['userLogin'] = $userLogin;
+
+        return $this;
+    }
+
+    /**
+     * Gets junction
+     *
+     * @return string|null
+     */
+    public function getJunction()
+    {
+        return $this->container['junction'];
+    }
+
+    /**
+     * Sets junction
+     *
+     * @param string|null $junction Logical Operator Between Filters. Filter by conditions set on the `junction` parameter indicating how the `conditions` should be accounted for in the query. An `AND` is an all-inclusive logical operator, meaning the `AND` operator displays a record if **ALL** the conditions separated by AND are TRUE, while  an `OR` operator displays a record if **ANY** of the conditions separated by OR is TRUE.
+     *
+     * @return self
+     */
+    public function setJunction($junction)
+    {
+        if (is_null($junction)) {
+            array_push($this->openAPINullablesSetToNull, 'junction');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('junction', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getJunctionAllowableValues();
+        if (!is_null($junction) && !in_array($junction, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'junction', must be one of '%s'",
+                    $junction,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['junction'] = $junction;
 
         return $this;
     }

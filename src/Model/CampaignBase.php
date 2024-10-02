@@ -82,6 +82,7 @@ class CampaignBase implements ModelInterface, ArrayAccess, \JsonSerializable
         'category' => 'string',
         'creationStatus' => 'string',
         'vouchersGenerationStatus' => 'string',
+        'readonly' => 'bool',
         'protected' => 'bool',
         'categoryId' => 'string',
         'categories' => '\OpenAPI\Client\Model\Category[]',
@@ -121,6 +122,7 @@ class CampaignBase implements ModelInterface, ArrayAccess, \JsonSerializable
         'category' => null,
         'creationStatus' => null,
         'vouchersGenerationStatus' => null,
+        'readonly' => null,
         'protected' => null,
         'categoryId' => null,
         'categories' => null,
@@ -158,6 +160,7 @@ class CampaignBase implements ModelInterface, ArrayAccess, \JsonSerializable
 		'category' => true,
 		'creationStatus' => true,
 		'vouchersGenerationStatus' => true,
+		'readonly' => true,
 		'protected' => true,
 		'categoryId' => true,
 		'categories' => true,
@@ -275,6 +278,7 @@ class CampaignBase implements ModelInterface, ArrayAccess, \JsonSerializable
         'category' => 'category',
         'creationStatus' => 'creation_status',
         'vouchersGenerationStatus' => 'vouchers_generation_status',
+        'readonly' => 'readonly',
         'protected' => 'protected',
         'categoryId' => 'category_id',
         'categories' => 'categories',
@@ -312,6 +316,7 @@ class CampaignBase implements ModelInterface, ArrayAccess, \JsonSerializable
         'category' => 'setCategory',
         'creationStatus' => 'setCreationStatus',
         'vouchersGenerationStatus' => 'setVouchersGenerationStatus',
+        'readonly' => 'setReadonly',
         'protected' => 'setProtected',
         'categoryId' => 'setCategoryId',
         'categories' => 'setCategories',
@@ -349,6 +354,7 @@ class CampaignBase implements ModelInterface, ArrayAccess, \JsonSerializable
         'category' => 'getCategory',
         'creationStatus' => 'getCreationStatus',
         'vouchersGenerationStatus' => 'getVouchersGenerationStatus',
+        'readonly' => 'getReadonly',
         'protected' => 'getProtected',
         'categoryId' => 'getCategoryId',
         'categories' => 'getCategories',
@@ -403,7 +409,6 @@ class CampaignBase implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CAMPAIGN_TYPE_DISCOUNT_COUPONS = 'DISCOUNT_COUPONS';
     public const CAMPAIGN_TYPE_PROMOTION = 'PROMOTION';
     public const CAMPAIGN_TYPE_REFERRAL_PROGRAM = 'REFERRAL_PROGRAM';
-    public const CAMPAIGN_TYPE_LUCKY_DRAW = 'LUCKY_DRAW';
     public const TYPE_AUTO_UPDATE = 'AUTO_UPDATE';
     public const TYPE__STATIC = 'STATIC';
     public const VALIDITY_DAY_OF_WEEK_0 = 0;
@@ -437,7 +442,6 @@ class CampaignBase implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CAMPAIGN_TYPE_DISCOUNT_COUPONS,
             self::CAMPAIGN_TYPE_PROMOTION,
             self::CAMPAIGN_TYPE_REFERRAL_PROGRAM,
-            self::CAMPAIGN_TYPE_LUCKY_DRAW,
         ];
     }
 
@@ -542,6 +546,7 @@ class CampaignBase implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('category', $data ?? [], null);
         $this->setIfExists('creationStatus', $data ?? [], null);
         $this->setIfExists('vouchersGenerationStatus', $data ?? [], null);
+        $this->setIfExists('readonly', $data ?? [], null);
         $this->setIfExists('protected', $data ?? [], null);
         $this->setIfExists('categoryId', $data ?? [], null);
         $this->setIfExists('categories', $data ?? [], null);
@@ -1434,6 +1439,40 @@ class CampaignBase implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['vouchersGenerationStatus'] = $vouchersGenerationStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets readonly
+     *
+     * @return bool|null
+     */
+    public function getReadonly()
+    {
+        return $this->container['readonly'];
+    }
+
+    /**
+     * Sets readonly
+     *
+     * @param bool|null $readonly Indicates whether the campaign can be only read by a restricted user in the Areas and Stores enterprise feature. It is returned only to restricted users; this field is not returned for users with other roles.
+     *
+     * @return self
+     */
+    public function setReadonly($readonly)
+    {
+        if (is_null($readonly)) {
+            array_push($this->openAPINullablesSetToNull, 'readonly');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('readonly', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['readonly'] = $readonly;
 
         return $this;
     }

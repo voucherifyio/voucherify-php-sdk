@@ -59,7 +59,12 @@ class FilterConditionsDateTime implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'conditions' => '\OpenAPI\Client\Model\FilterConditionsDateTimeConditions'
+        'after' => '\DateTime',
+        'before' => '\DateTime',
+        'hasValue' => 'string',
+        'isUnknown' => 'string',
+        'moreThan' => 'int',
+        'lessThan' => 'int'
     ];
 
     /**
@@ -70,7 +75,12 @@ class FilterConditionsDateTime implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'conditions' => null
+        'after' => 'date-time',
+        'before' => 'date-time',
+        'hasValue' => null,
+        'isUnknown' => null,
+        'moreThan' => null,
+        'lessThan' => null
     ];
 
     /**
@@ -79,7 +89,12 @@ class FilterConditionsDateTime implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'conditions' => true
+        'after' => true,
+		'before' => true,
+		'hasValue' => true,
+		'isUnknown' => true,
+		'moreThan' => true,
+		'lessThan' => true
     ];
 
     /**
@@ -168,7 +183,12 @@ class FilterConditionsDateTime implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'conditions' => 'conditions'
+        'after' => '$after',
+        'before' => '$before',
+        'hasValue' => '$has_value',
+        'isUnknown' => '$is_unknown',
+        'moreThan' => 'more_than',
+        'lessThan' => 'less_than'
     ];
 
     /**
@@ -177,7 +197,12 @@ class FilterConditionsDateTime implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'conditions' => 'setConditions'
+        'after' => 'setAfter',
+        'before' => 'setBefore',
+        'hasValue' => 'setHasValue',
+        'isUnknown' => 'setIsUnknown',
+        'moreThan' => 'setMoreThan',
+        'lessThan' => 'setLessThan'
     ];
 
     /**
@@ -186,7 +211,12 @@ class FilterConditionsDateTime implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'conditions' => 'getConditions'
+        'after' => 'getAfter',
+        'before' => 'getBefore',
+        'hasValue' => 'getHasValue',
+        'isUnknown' => 'getIsUnknown',
+        'moreThan' => 'getMoreThan',
+        'lessThan' => 'getLessThan'
     ];
 
     /**
@@ -246,7 +276,12 @@ class FilterConditionsDateTime implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('conditions', $data ?? [], null);
+        $this->setIfExists('after', $data ?? [], null);
+        $this->setIfExists('before', $data ?? [], null);
+        $this->setIfExists('hasValue', $data ?? [], null);
+        $this->setIfExists('isUnknown', $data ?? [], null);
+        $this->setIfExists('moreThan', $data ?? [], null);
+        $this->setIfExists('lessThan', $data ?? [], null);
     }
 
     /**
@@ -292,35 +327,205 @@ class FilterConditionsDateTime implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets conditions
+     * Gets after
      *
-     * @return \OpenAPI\Client\Model\FilterConditionsDateTimeConditions|null
+     * @return \DateTime|null
      */
-    public function getConditions()
+    public function getAfter()
     {
-        return $this->container['conditions'];
+        return $this->container['after'];
     }
 
     /**
-     * Sets conditions
+     * Sets after
      *
-     * @param \OpenAPI\Client\Model\FilterConditionsDateTimeConditions|null $conditions conditions
+     * @param \DateTime|null $after Value is after this date. The value for this parameter is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setConditions($conditions)
+    public function setAfter($after)
     {
-        if (is_null($conditions)) {
-            array_push($this->openAPINullablesSetToNull, 'conditions');
+        if (is_null($after)) {
+            array_push($this->openAPINullablesSetToNull, 'after');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('conditions', $nullablesSetToNull);
+            $index = array_search('after', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['conditions'] = $conditions;
+        $this->container['after'] = $after;
+
+        return $this;
+    }
+
+    /**
+     * Gets before
+     *
+     * @return \DateTime|null
+     */
+    public function getBefore()
+    {
+        return $this->container['before'];
+    }
+
+    /**
+     * Sets before
+     *
+     * @param \DateTime|null $before Value is before this date. The value for this parameter is shown in the ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setBefore($before)
+    {
+        if (is_null($before)) {
+            array_push($this->openAPINullablesSetToNull, 'before');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('before', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['before'] = $before;
+
+        return $this;
+    }
+
+    /**
+     * Gets hasValue
+     *
+     * @return string|null
+     */
+    public function getHasValue()
+    {
+        return $this->container['hasValue'];
+    }
+
+    /**
+     * Sets hasValue
+     *
+     * @param string|null $hasValue Value is NOT null. The value for this parameter is an empty string.
+     *
+     * @return self
+     */
+    public function setHasValue($hasValue)
+    {
+        if (is_null($hasValue)) {
+            array_push($this->openAPINullablesSetToNull, 'hasValue');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('hasValue', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['hasValue'] = $hasValue;
+
+        return $this;
+    }
+
+    /**
+     * Gets isUnknown
+     *
+     * @return string|null
+     */
+    public function getIsUnknown()
+    {
+        return $this->container['isUnknown'];
+    }
+
+    /**
+     * Sets isUnknown
+     *
+     * @param string|null $isUnknown Value is null. The value for this parameter is an empty string.
+     *
+     * @return self
+     */
+    public function setIsUnknown($isUnknown)
+    {
+        if (is_null($isUnknown)) {
+            array_push($this->openAPINullablesSetToNull, 'isUnknown');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('isUnknown', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['isUnknown'] = $isUnknown;
+
+        return $this;
+    }
+
+    /**
+     * Gets moreThan
+     *
+     * @return int|null
+     */
+    public function getMoreThan()
+    {
+        return $this->container['moreThan'];
+    }
+
+    /**
+     * Sets moreThan
+     *
+     * @param int|null $moreThan Value is more days ago before the current date and time, e.g. more than `10` days ago.
+     *
+     * @return self
+     */
+    public function setMoreThan($moreThan)
+    {
+        if (is_null($moreThan)) {
+            array_push($this->openAPINullablesSetToNull, 'moreThan');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('moreThan', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['moreThan'] = $moreThan;
+
+        return $this;
+    }
+
+    /**
+     * Gets lessThan
+     *
+     * @return int|null
+     */
+    public function getLessThan()
+    {
+        return $this->container['lessThan'];
+    }
+
+    /**
+     * Sets lessThan
+     *
+     * @param int|null $lessThan Value is less days before the current date and time, e.g. less than `10` days ago.
+     *
+     * @return self
+     */
+    public function setLessThan($lessThan)
+    {
+        if (is_null($lessThan)) {
+            array_push($this->openAPINullablesSetToNull, 'lessThan');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lessThan', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['lessThan'] = $lessThan;
 
         return $this;
     }

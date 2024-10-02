@@ -14,7 +14,6 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 | [**listCustomerSegments()**](CustomersApi.md#listCustomerSegments) | **GET** /v1/customers/{customerId}/segments | List Customer&#39;s Segments |
 | [**listCustomers()**](CustomersApi.md#listCustomers) | **GET** /v1/customers | List Customers |
 | [**updateCustomer()**](CustomersApi.md#updateCustomer) | **PUT** /v1/customers/{customerId} | Update Customer |
-| [**updateCustomersConsents()**](CustomersApi.md#updateCustomersConsents) | **PUT** /v1/customers/{customerId}/consents | Update Customer&#39;s consents [Deprecated] |
 | [**updateCustomersInBulk()**](CustomersApi.md#updateCustomersInBulk) | **POST** /v1/customers/bulk/async | Update Customers in Bulk |
 | [**updateCustomersMetadataInBulk()**](CustomersApi.md#updateCustomersMetadataInBulk) | **POST** /v1/customers/metadata/async | Update Customers&#39; Metadata in Bulk |
 
@@ -733,74 +732,6 @@ try {
 
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `updateCustomersConsents()`
-
-```php
-updateCustomersConsents($customerId, $body)
-```
-
-Update Customer's consents [Deprecated]
-
-Update marketing permissions for the specified customer. ❗️ Deprecated  This endpoint is deprecated. The feature of managing consents will be soon removed from Voucherify, including this endpoint.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: X-App-Id
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-App-Id', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-App-Id', 'Bearer');
-
-// Configure API key authorization: X-App-Token
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-App-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-App-Token', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\CustomersApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$customerId = 'customerId_example'; // string | A Voucherify unique customer identifier or source ID.
-$body = {"cnst_6jQ5XcUOLnj5L7ImQAdBsJ1I":true,"cnst_VCmucIvAsmDYw2PPAok6bcYy":false}; // object | Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use unsubscribed as a consent identifier and true as its value.   ## Examples  Opt-out from all communication:
-
-try {
-    $apiInstance->updateCustomersConsents($customerId, $body);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomersApi->updateCustomersConsents: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **customerId** | **string**| A Voucherify unique customer identifier or source ID. | |
-| **body** | **object**| Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use unsubscribed as a consent identifier and true as its value.   ## Examples  Opt-out from all communication: | [optional] |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[X-App-Id](../../README.md#X-App-Id), [X-App-Token](../../README.md#X-App-Token)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
