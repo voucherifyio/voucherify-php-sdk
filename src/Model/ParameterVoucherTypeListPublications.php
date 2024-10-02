@@ -44,8 +44,6 @@ enum ParameterVoucherTypeListPublications: string
 
     case LOYALTY = 'loyalty';
 
-    case LUCKY_DRAW = 'lucky_draw';
-
 }
 
 

@@ -58,6 +58,11 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
+        'discount' => 'object',
+        'referralProgram' => '\OpenAPI\Client\Model\ReferralProgram',
+        'gift' => '\OpenAPI\Client\Model\Gift',
+        'loyaltyTiersExpiration' => '\OpenAPI\Client\Model\LoyaltyTiersExpirationAll',
+        'options' => '\OpenAPI\Client\Model\CampaignsUpdateRequestBodyOptions',
         'startDate' => '\DateTime',
         'expirationDate' => '\DateTime',
         'validityTimeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
@@ -67,19 +72,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'category' => 'string',
         'metadata' => 'object',
         'unsetMetadataFields' => 'string[]',
-        'categoryId' => 'string',
-        'activityDurationAfterPublishing' => 'string',
-        'joinOnce' => 'bool',
-        'autoJoin' => 'bool',
-        'type' => 'string',
-        'discount' => 'object',
-        'referralProgram' => '\OpenAPI\Client\Model\ReferralProgram',
-        'gift' => '\OpenAPI\Client\Model\Gift',
-        'loyaltyTiersExpiration' => '\OpenAPI\Client\Model\LoyaltyTiersExpirationAll',
-        'options' => '\OpenAPI\Client\Model\CampaignsUpdateRequestBodyOptions',
-        'winnersCount' => 'string',
-        'uniqueWinnersPerDraw' => 'string',
-        'uniqueWinners' => 'string'
+        'categoryId' => 'string'
     ];
 
     /**
@@ -90,6 +83,11 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'discount' => null,
+        'referralProgram' => null,
+        'gift' => null,
+        'loyaltyTiersExpiration' => null,
+        'options' => null,
         'startDate' => 'date-time',
         'expirationDate' => 'date-time',
         'validityTimeframe' => null,
@@ -99,19 +97,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'category' => null,
         'metadata' => null,
         'unsetMetadataFields' => null,
-        'categoryId' => null,
-        'activityDurationAfterPublishing' => null,
-        'joinOnce' => null,
-        'autoJoin' => null,
-        'type' => null,
-        'discount' => null,
-        'referralProgram' => null,
-        'gift' => null,
-        'loyaltyTiersExpiration' => null,
-        'options' => null,
-        'winnersCount' => null,
-        'uniqueWinnersPerDraw' => null,
-        'uniqueWinners' => null
+        'categoryId' => null
     ];
 
     /**
@@ -120,7 +106,12 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'startDate' => true,
+        'discount' => true,
+		'referralProgram' => false,
+		'gift' => false,
+		'loyaltyTiersExpiration' => false,
+		'options' => true,
+		'startDate' => true,
 		'expirationDate' => true,
 		'validityTimeframe' => false,
 		'validityDayOfWeek' => true,
@@ -129,19 +120,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
 		'category' => true,
 		'metadata' => true,
 		'unsetMetadataFields' => true,
-		'categoryId' => true,
-		'activityDurationAfterPublishing' => true,
-		'joinOnce' => true,
-		'autoJoin' => true,
-		'type' => true,
-		'discount' => true,
-		'referralProgram' => false,
-		'gift' => false,
-		'loyaltyTiersExpiration' => false,
-		'options' => true,
-		'winnersCount' => true,
-		'uniqueWinnersPerDraw' => true,
-		'uniqueWinners' => true
+		'categoryId' => true
     ];
 
     /**
@@ -230,6 +209,11 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
+        'discount' => 'discount',
+        'referralProgram' => 'referral_program',
+        'gift' => 'gift',
+        'loyaltyTiersExpiration' => 'loyalty_tiers_expiration',
+        'options' => 'options',
         'startDate' => 'start_date',
         'expirationDate' => 'expiration_date',
         'validityTimeframe' => 'validity_timeframe',
@@ -239,19 +223,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'category' => 'category',
         'metadata' => 'metadata',
         'unsetMetadataFields' => 'unset_metadata_fields',
-        'categoryId' => 'category_id',
-        'activityDurationAfterPublishing' => 'activity_duration_after_publishing',
-        'joinOnce' => 'join_once',
-        'autoJoin' => 'auto_join',
-        'type' => 'type',
-        'discount' => 'discount',
-        'referralProgram' => 'referral_program',
-        'gift' => 'gift',
-        'loyaltyTiersExpiration' => 'loyalty_tiers_expiration',
-        'options' => 'options',
-        'winnersCount' => 'winners_count',
-        'uniqueWinnersPerDraw' => 'unique_winners_per_draw',
-        'uniqueWinners' => 'unique_winners'
+        'categoryId' => 'category_id'
     ];
 
     /**
@@ -260,6 +232,11 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
+        'discount' => 'setDiscount',
+        'referralProgram' => 'setReferralProgram',
+        'gift' => 'setGift',
+        'loyaltyTiersExpiration' => 'setLoyaltyTiersExpiration',
+        'options' => 'setOptions',
         'startDate' => 'setStartDate',
         'expirationDate' => 'setExpirationDate',
         'validityTimeframe' => 'setValidityTimeframe',
@@ -269,19 +246,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'category' => 'setCategory',
         'metadata' => 'setMetadata',
         'unsetMetadataFields' => 'setUnsetMetadataFields',
-        'categoryId' => 'setCategoryId',
-        'activityDurationAfterPublishing' => 'setActivityDurationAfterPublishing',
-        'joinOnce' => 'setJoinOnce',
-        'autoJoin' => 'setAutoJoin',
-        'type' => 'setType',
-        'discount' => 'setDiscount',
-        'referralProgram' => 'setReferralProgram',
-        'gift' => 'setGift',
-        'loyaltyTiersExpiration' => 'setLoyaltyTiersExpiration',
-        'options' => 'setOptions',
-        'winnersCount' => 'setWinnersCount',
-        'uniqueWinnersPerDraw' => 'setUniqueWinnersPerDraw',
-        'uniqueWinners' => 'setUniqueWinners'
+        'categoryId' => 'setCategoryId'
     ];
 
     /**
@@ -290,6 +255,11 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
+        'discount' => 'getDiscount',
+        'referralProgram' => 'getReferralProgram',
+        'gift' => 'getGift',
+        'loyaltyTiersExpiration' => 'getLoyaltyTiersExpiration',
+        'options' => 'getOptions',
         'startDate' => 'getStartDate',
         'expirationDate' => 'getExpirationDate',
         'validityTimeframe' => 'getValidityTimeframe',
@@ -299,19 +269,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'category' => 'getCategory',
         'metadata' => 'getMetadata',
         'unsetMetadataFields' => 'getUnsetMetadataFields',
-        'categoryId' => 'getCategoryId',
-        'activityDurationAfterPublishing' => 'getActivityDurationAfterPublishing',
-        'joinOnce' => 'getJoinOnce',
-        'autoJoin' => 'getAutoJoin',
-        'type' => 'getType',
-        'discount' => 'getDiscount',
-        'referralProgram' => 'getReferralProgram',
-        'gift' => 'getGift',
-        'loyaltyTiersExpiration' => 'getLoyaltyTiersExpiration',
-        'options' => 'getOptions',
-        'winnersCount' => 'getWinnersCount',
-        'uniqueWinnersPerDraw' => 'getUniqueWinnersPerDraw',
-        'uniqueWinners' => 'getUniqueWinners'
+        'categoryId' => 'getCategoryId'
     ];
 
     /**
@@ -362,8 +320,6 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     public const VALIDITY_DAY_OF_WEEK_4 = 4;
     public const VALIDITY_DAY_OF_WEEK_5 = 5;
     public const VALIDITY_DAY_OF_WEEK_6 = 6;
-    public const TYPE_AUTO_UPDATE = 'AUTO_UPDATE';
-    public const TYPE__STATIC = 'STATIC';
 
     /**
      * Gets allowable values of the enum
@@ -384,19 +340,6 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_AUTO_UPDATE,
-            self::TYPE__STATIC,
-        ];
-    }
-
-    /**
      * Associative array for storing property values
      *
      * @var mixed[]
@@ -411,6 +354,11 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('discount', $data ?? [], null);
+        $this->setIfExists('referralProgram', $data ?? [], null);
+        $this->setIfExists('gift', $data ?? [], null);
+        $this->setIfExists('loyaltyTiersExpiration', $data ?? [], null);
+        $this->setIfExists('options', $data ?? [], null);
         $this->setIfExists('startDate', $data ?? [], null);
         $this->setIfExists('expirationDate', $data ?? [], null);
         $this->setIfExists('validityTimeframe', $data ?? [], null);
@@ -421,18 +369,6 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('unsetMetadataFields', $data ?? [], null);
         $this->setIfExists('categoryId', $data ?? [], null);
-        $this->setIfExists('activityDurationAfterPublishing', $data ?? [], null);
-        $this->setIfExists('joinOnce', $data ?? [], null);
-        $this->setIfExists('autoJoin', $data ?? [], null);
-        $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('discount', $data ?? [], null);
-        $this->setIfExists('referralProgram', $data ?? [], null);
-        $this->setIfExists('gift', $data ?? [], null);
-        $this->setIfExists('loyaltyTiersExpiration', $data ?? [], null);
-        $this->setIfExists('options', $data ?? [], null);
-        $this->setIfExists('winnersCount', $data ?? [], null);
-        $this->setIfExists('uniqueWinnersPerDraw', $data ?? [], null);
-        $this->setIfExists('uniqueWinners', $data ?? [], null);
     }
 
     /**
@@ -462,15 +398,6 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'type', must be one of '%s'",
-                $this->container['type'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -485,6 +412,155 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets discount
+     *
+     * @return object|null
+     */
+    public function getDiscount()
+    {
+        return $this->container['discount'];
+    }
+
+    /**
+     * Sets discount
+     *
+     * @param object|null $discount discount
+     *
+     * @return self
+     */
+    public function setDiscount($discount)
+    {
+        if (is_null($discount)) {
+            array_push($this->openAPINullablesSetToNull, 'discount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('discount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['discount'] = $discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets referralProgram
+     *
+     * @return \OpenAPI\Client\Model\ReferralProgram|null
+     */
+    public function getReferralProgram()
+    {
+        return $this->container['referralProgram'];
+    }
+
+    /**
+     * Sets referralProgram
+     *
+     * @param \OpenAPI\Client\Model\ReferralProgram|null $referralProgram referralProgram
+     *
+     * @return self
+     */
+    public function setReferralProgram($referralProgram)
+    {
+        if (is_null($referralProgram)) {
+            throw new \InvalidArgumentException('non-nullable referralProgram cannot be null');
+        }
+        $this->container['referralProgram'] = $referralProgram;
+
+        return $this;
+    }
+
+    /**
+     * Gets gift
+     *
+     * @return \OpenAPI\Client\Model\Gift|null
+     */
+    public function getGift()
+    {
+        return $this->container['gift'];
+    }
+
+    /**
+     * Sets gift
+     *
+     * @param \OpenAPI\Client\Model\Gift|null $gift gift
+     *
+     * @return self
+     */
+    public function setGift($gift)
+    {
+        if (is_null($gift)) {
+            throw new \InvalidArgumentException('non-nullable gift cannot be null');
+        }
+        $this->container['gift'] = $gift;
+
+        return $this;
+    }
+
+    /**
+     * Gets loyaltyTiersExpiration
+     *
+     * @return \OpenAPI\Client\Model\LoyaltyTiersExpirationAll|null
+     */
+    public function getLoyaltyTiersExpiration()
+    {
+        return $this->container['loyaltyTiersExpiration'];
+    }
+
+    /**
+     * Sets loyaltyTiersExpiration
+     *
+     * @param \OpenAPI\Client\Model\LoyaltyTiersExpirationAll|null $loyaltyTiersExpiration loyaltyTiersExpiration
+     *
+     * @return self
+     */
+    public function setLoyaltyTiersExpiration($loyaltyTiersExpiration)
+    {
+        if (is_null($loyaltyTiersExpiration)) {
+            throw new \InvalidArgumentException('non-nullable loyaltyTiersExpiration cannot be null');
+        }
+        $this->container['loyaltyTiersExpiration'] = $loyaltyTiersExpiration;
+
+        return $this;
+    }
+
+    /**
+     * Gets options
+     *
+     * @return \OpenAPI\Client\Model\CampaignsUpdateRequestBodyOptions|null
+     */
+    public function getOptions()
+    {
+        return $this->container['options'];
+    }
+
+    /**
+     * Sets options
+     *
+     * @param \OpenAPI\Client\Model\CampaignsUpdateRequestBodyOptions|null $options options
+     *
+     * @return self
+     */
+    public function setOptions($options)
+    {
+        if (is_null($options)) {
+            array_push($this->openAPINullablesSetToNull, 'options');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('options', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['options'] = $options;
+
+        return $this;
+    }
 
     /**
      * Gets startDate
@@ -732,7 +808,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets metadata
      *
-     * @param object|null $metadata metadata
+     * @param object|null $metadata The metadata object stores all custom attributes assigned to the campaign. A set of key/value pairs that you can attach to a campaign object. It can be useful for storing additional information about the campaign in a structured format.
      *
      * @return self
      */
@@ -817,405 +893,6 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['categoryId'] = $categoryId;
-
-        return $this;
-    }
-
-    /**
-     * Gets activityDurationAfterPublishing
-     *
-     * @return string|null
-     */
-    public function getActivityDurationAfterPublishing()
-    {
-        return $this->container['activityDurationAfterPublishing'];
-    }
-
-    /**
-     * Sets activityDurationAfterPublishing
-     *
-     * @param string|null $activityDurationAfterPublishing Defines the amount of time the vouchers will be active after publishing. The value is shown in the ISO 8601 format. For example, a voucher with the value of P24D will be valid for a duration of 24 days.
-     *
-     * @return self
-     */
-    public function setActivityDurationAfterPublishing($activityDurationAfterPublishing)
-    {
-        if (is_null($activityDurationAfterPublishing)) {
-            array_push($this->openAPINullablesSetToNull, 'activityDurationAfterPublishing');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('activityDurationAfterPublishing', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['activityDurationAfterPublishing'] = $activityDurationAfterPublishing;
-
-        return $this;
-    }
-
-    /**
-     * Gets joinOnce
-     *
-     * @return bool|null
-     */
-    public function getJoinOnce()
-    {
-        return $this->container['joinOnce'];
-    }
-
-    /**
-     * Sets joinOnce
-     *
-     * @param bool|null $joinOnce If this value is set to `true`, customers will be able to join the campaign only once.
-     *
-     * @return self
-     */
-    public function setJoinOnce($joinOnce)
-    {
-        if (is_null($joinOnce)) {
-            array_push($this->openAPINullablesSetToNull, 'joinOnce');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('joinOnce', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['joinOnce'] = $joinOnce;
-
-        return $this;
-    }
-
-    /**
-     * Gets autoJoin
-     *
-     * @return bool|null
-     */
-    public function getAutoJoin()
-    {
-        return $this->container['autoJoin'];
-    }
-
-    /**
-     * Sets autoJoin
-     *
-     * @param bool|null $autoJoin Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
-     *
-     * @return self
-     */
-    public function setAutoJoin($autoJoin)
-    {
-        if (is_null($autoJoin)) {
-            array_push($this->openAPINullablesSetToNull, 'autoJoin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('autoJoin', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['autoJoin'] = $autoJoin;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type Defines whether the campaign can be updated with new vouchers after campaign creation.      - `AUTO_UPDATE`: By choosing the auto update option you will create a campaign that can be enhanced by new vouchers after the time of creation (e.g. by publish vouchers method).     -  `STATIC`: vouchers need to be manually published.
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        if (is_null($type)) {
-            array_push($this->openAPINullablesSetToNull, 'type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets discount
-     *
-     * @return object|null
-     */
-    public function getDiscount()
-    {
-        return $this->container['discount'];
-    }
-
-    /**
-     * Sets discount
-     *
-     * @param object|null $discount discount
-     *
-     * @return self
-     */
-    public function setDiscount($discount)
-    {
-        if (is_null($discount)) {
-            array_push($this->openAPINullablesSetToNull, 'discount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('discount', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['discount'] = $discount;
-
-        return $this;
-    }
-
-    /**
-     * Gets referralProgram
-     *
-     * @return \OpenAPI\Client\Model\ReferralProgram|null
-     */
-    public function getReferralProgram()
-    {
-        return $this->container['referralProgram'];
-    }
-
-    /**
-     * Sets referralProgram
-     *
-     * @param \OpenAPI\Client\Model\ReferralProgram|null $referralProgram referralProgram
-     *
-     * @return self
-     */
-    public function setReferralProgram($referralProgram)
-    {
-        if (is_null($referralProgram)) {
-            throw new \InvalidArgumentException('non-nullable referralProgram cannot be null');
-        }
-        $this->container['referralProgram'] = $referralProgram;
-
-        return $this;
-    }
-
-    /**
-     * Gets gift
-     *
-     * @return \OpenAPI\Client\Model\Gift|null
-     */
-    public function getGift()
-    {
-        return $this->container['gift'];
-    }
-
-    /**
-     * Sets gift
-     *
-     * @param \OpenAPI\Client\Model\Gift|null $gift gift
-     *
-     * @return self
-     */
-    public function setGift($gift)
-    {
-        if (is_null($gift)) {
-            throw new \InvalidArgumentException('non-nullable gift cannot be null');
-        }
-        $this->container['gift'] = $gift;
-
-        return $this;
-    }
-
-    /**
-     * Gets loyaltyTiersExpiration
-     *
-     * @return \OpenAPI\Client\Model\LoyaltyTiersExpirationAll|null
-     */
-    public function getLoyaltyTiersExpiration()
-    {
-        return $this->container['loyaltyTiersExpiration'];
-    }
-
-    /**
-     * Sets loyaltyTiersExpiration
-     *
-     * @param \OpenAPI\Client\Model\LoyaltyTiersExpirationAll|null $loyaltyTiersExpiration loyaltyTiersExpiration
-     *
-     * @return self
-     */
-    public function setLoyaltyTiersExpiration($loyaltyTiersExpiration)
-    {
-        if (is_null($loyaltyTiersExpiration)) {
-            throw new \InvalidArgumentException('non-nullable loyaltyTiersExpiration cannot be null');
-        }
-        $this->container['loyaltyTiersExpiration'] = $loyaltyTiersExpiration;
-
-        return $this;
-    }
-
-    /**
-     * Gets options
-     *
-     * @return \OpenAPI\Client\Model\CampaignsUpdateRequestBodyOptions|null
-     */
-    public function getOptions()
-    {
-        return $this->container['options'];
-    }
-
-    /**
-     * Sets options
-     *
-     * @param \OpenAPI\Client\Model\CampaignsUpdateRequestBodyOptions|null $options options
-     *
-     * @return self
-     */
-    public function setOptions($options)
-    {
-        if (is_null($options)) {
-            array_push($this->openAPINullablesSetToNull, 'options');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('options', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['options'] = $options;
-
-        return $this;
-    }
-
-    /**
-     * Gets winnersCount
-     *
-     * @return string|null
-     */
-    public function getWinnersCount()
-    {
-        return $this->container['winnersCount'];
-    }
-
-    /**
-     * Sets winnersCount
-     *
-     * @param string|null $winnersCount It represents the total number of winners in a lucky draw.
-     *
-     * @return self
-     */
-    public function setWinnersCount($winnersCount)
-    {
-        if (is_null($winnersCount)) {
-            array_push($this->openAPINullablesSetToNull, 'winnersCount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('winnersCount', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-
-        $this->container['winnersCount'] = $winnersCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets uniqueWinnersPerDraw
-     *
-     * @return string|null
-     */
-    public function getUniqueWinnersPerDraw()
-    {
-        return $this->container['uniqueWinnersPerDraw'];
-    }
-
-    /**
-     * Sets uniqueWinnersPerDraw
-     *
-     * @param string|null $uniqueWinnersPerDraw It indicates whether each winner in a draw is unique or not.
-     *
-     * @return self
-     */
-    public function setUniqueWinnersPerDraw($uniqueWinnersPerDraw)
-    {
-        if (is_null($uniqueWinnersPerDraw)) {
-            array_push($this->openAPINullablesSetToNull, 'uniqueWinnersPerDraw');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('uniqueWinnersPerDraw', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['uniqueWinnersPerDraw'] = $uniqueWinnersPerDraw;
-
-        return $this;
-    }
-
-    /**
-     * Gets uniqueWinners
-     *
-     * @return string|null
-     */
-    public function getUniqueWinners()
-    {
-        return $this->container['uniqueWinners'];
-    }
-
-    /**
-     * Sets uniqueWinners
-     *
-     * @param string|null $uniqueWinners Specifies whether each participant can win only once across multiple draws.
-     *
-     * @return self
-     */
-    public function setUniqueWinners($uniqueWinners)
-    {
-        if (is_null($uniqueWinners)) {
-            array_push($this->openAPINullablesSetToNull, 'uniqueWinners');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('uniqueWinners', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['uniqueWinners'] = $uniqueWinners;
 
         return $this;
     }

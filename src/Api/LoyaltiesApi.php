@@ -6973,15 +6973,17 @@ class LoyaltiesApi
      *
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody
      */
-    public function listLoyaltyCardTransactions($memberId, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
+    public function listLoyaltyCardTransactions($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
-        list($response) = $this->listLoyaltyCardTransactionsWithHttpInfo($memberId, $limit, $contentType);
+        list($response) = $this->listLoyaltyCardTransactionsWithHttpInfo($memberId, $limit, $order, $startingAfterId, $contentType);
         return $response;
     }
 
@@ -6992,15 +6994,17 @@ class LoyaltiesApi
      *
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listLoyaltyCardTransactionsWithHttpInfo($memberId, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
+    public function listLoyaltyCardTransactionsWithHttpInfo($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
-        $request = $this->listLoyaltyCardTransactionsRequest($memberId, $limit, $contentType);
+        $request = $this->listLoyaltyCardTransactionsRequest($memberId, $limit, $order, $startingAfterId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7093,14 +7097,16 @@ class LoyaltiesApi
      *
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLoyaltyCardTransactionsAsync($memberId, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
+    public function listLoyaltyCardTransactionsAsync($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
-        return $this->listLoyaltyCardTransactionsAsyncWithHttpInfo($memberId, $limit, $contentType)
+        return $this->listLoyaltyCardTransactionsAsyncWithHttpInfo($memberId, $limit, $order, $startingAfterId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7115,15 +7121,17 @@ class LoyaltiesApi
      *
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLoyaltyCardTransactionsAsyncWithHttpInfo($memberId, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
+    public function listLoyaltyCardTransactionsAsyncWithHttpInfo($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody';
-        $request = $this->listLoyaltyCardTransactionsRequest($memberId, $limit, $contentType);
+        $request = $this->listLoyaltyCardTransactionsRequest($memberId, $limit, $order, $startingAfterId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7166,12 +7174,14 @@ class LoyaltiesApi
      *
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listLoyaltyCardTransactionsRequest($memberId, $limit = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
+    public function listLoyaltyCardTransactionsRequest($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
 
         // verify the required parameter 'memberId' is set
@@ -7189,6 +7199,8 @@ class LoyaltiesApi
         }
         
 
+
+
         $resourcePath = '/v1/loyalties/members/{memberId}/transactions';
         $formParams = [];
         $queryParams = [];
@@ -7201,6 +7213,24 @@ class LoyaltiesApi
             $limit,
             'limit', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $order,
+            'order', // param base name
+            'ParameterOrderListTransactions', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $startingAfterId,
+            'starting_after_id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -7288,16 +7318,17 @@ class LoyaltiesApi
      * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  int $page Which page of results to return. The lowest value is 1. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody
      */
-    public function listLoyaltyCardTransactions1($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
+    public function listLoyaltyCardTransactions1($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
-        list($response) = $this->listLoyaltyCardTransactions1WithHttpInfo($campaignId, $memberId, $limit, $page, $contentType);
+        list($response) = $this->listLoyaltyCardTransactions1WithHttpInfo($campaignId, $memberId, $limit, $order, $startingAfterId, $contentType);
         return $response;
     }
 
@@ -7309,16 +7340,17 @@ class LoyaltiesApi
      * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  int $page Which page of results to return. The lowest value is 1. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions1'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listLoyaltyCardTransactions1WithHttpInfo($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
+    public function listLoyaltyCardTransactions1WithHttpInfo($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
-        $request = $this->listLoyaltyCardTransactions1Request($campaignId, $memberId, $limit, $page, $contentType);
+        $request = $this->listLoyaltyCardTransactions1Request($campaignId, $memberId, $limit, $order, $startingAfterId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7412,15 +7444,16 @@ class LoyaltiesApi
      * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  int $page Which page of results to return. The lowest value is 1. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLoyaltyCardTransactions1Async($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
+    public function listLoyaltyCardTransactions1Async($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
-        return $this->listLoyaltyCardTransactions1AsyncWithHttpInfo($campaignId, $memberId, $limit, $page, $contentType)
+        return $this->listLoyaltyCardTransactions1AsyncWithHttpInfo($campaignId, $memberId, $limit, $order, $startingAfterId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7436,16 +7469,17 @@ class LoyaltiesApi
      * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  int $page Which page of results to return. The lowest value is 1. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listLoyaltyCardTransactions1AsyncWithHttpInfo($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
+    public function listLoyaltyCardTransactions1AsyncWithHttpInfo($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
         $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody';
-        $request = $this->listLoyaltyCardTransactions1Request($campaignId, $memberId, $limit, $page, $contentType);
+        $request = $this->listLoyaltyCardTransactions1Request($campaignId, $memberId, $limit, $order, $startingAfterId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7489,13 +7523,14 @@ class LoyaltiesApi
      * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  int $page Which page of results to return. The lowest value is 1. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCardTransactions1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listLoyaltyCardTransactions1Request($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
+    public function listLoyaltyCardTransactions1Request($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
 
         // verify the required parameter 'campaignId' is set
@@ -7519,13 +7554,8 @@ class LoyaltiesApi
             throw new \InvalidArgumentException('invalid value for "$limit" when calling LoyaltiesApi.listLoyaltyCardTransactions1, must be bigger than or equal to 1.');
         }
         
-        if ($page !== null && $page > 100) {
-            throw new \InvalidArgumentException('invalid value for "$page" when calling LoyaltiesApi.listLoyaltyCardTransactions1, must be smaller than or equal to 100.');
-        }
-        if ($page !== null && $page < 1) {
-            throw new \InvalidArgumentException('invalid value for "$page" when calling LoyaltiesApi.listLoyaltyCardTransactions1, must be bigger than or equal to 1.');
-        }
-        
+
+
 
         $resourcePath = '/v1/loyalties/{campaignId}/members/{memberId}/transactions';
         $formParams = [];
@@ -7545,9 +7575,18 @@ class LoyaltiesApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page,
-            'page', // param base name
-            'integer', // openApiType
+            $order,
+            'order', // param base name
+            'ParameterOrderListTransactions', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $startingAfterId,
+            'starting_after_id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

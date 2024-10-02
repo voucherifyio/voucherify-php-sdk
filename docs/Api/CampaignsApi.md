@@ -637,7 +637,7 @@ try {
 ## `listCampaigns()`
 
 ```php
-listCampaigns($limit, $page, $campaignType, $expand, $order): \OpenAPI\Client\Model\CampaignsListResponseBody
+listCampaigns($limit, $page, $campaignType, $expand, $order, $filters): \OpenAPI\Client\Model\CampaignsListResponseBody
 ```
 
 List Campaigns
@@ -673,9 +673,10 @@ $page = 56; // int | Which page of results to return. The lowest value is 1.
 $campaignType = new \OpenAPI\Client\Model\ParameterCampaignType(); // ParameterCampaignType | This attribute allows filtering by campaign type.
 $expand = new \OpenAPI\Client\Model\ParameterExpandListCampaigns(); // ParameterExpandListCampaigns | Include an expanded categories object in the response.
 $order = new \OpenAPI\Client\Model\ParameterOrderListCampaigns(); // ParameterOrderListCampaigns | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+$filters = new \OpenAPI\Client\Model\ParameterFiltersListCampaigns(); // ParameterFiltersListCampaigns | Filters the results by campaign status or whether the campaign is a referral campaign.
 
 try {
-    $result = $apiInstance->listCampaigns($limit, $page, $campaignType, $expand, $order);
+    $result = $apiInstance->listCampaigns($limit, $page, $campaignType, $expand, $order, $filters);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignsApi->listCampaigns: ', $e->getMessage(), PHP_EOL;
@@ -691,6 +692,7 @@ try {
 | **campaignType** | [**ParameterCampaignType**](../Model/.md)| This attribute allows filtering by campaign type. | [optional] |
 | **expand** | [**ParameterExpandListCampaigns**](../Model/.md)| Include an expanded categories object in the response. | [optional] |
 | **order** | [**ParameterOrderListCampaigns**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
+| **filters** | [**ParameterFiltersListCampaigns**](../Model/.md)| Filters the results by campaign status or whether the campaign is a referral campaign. | [optional] |
 
 ### Return type
 

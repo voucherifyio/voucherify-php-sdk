@@ -50,8 +50,6 @@ enum ParameterCampaignType: string
 
     case LOYALTY_PROGRAM = 'LOYALTY_PROGRAM';
 
-    case LUCKY_DRAW = 'LUCKY_DRAW';
-
 }
 
 

@@ -59,8 +59,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'conditions' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAtConditions',
-        'junction' => 'string'
+        'conditions' => '\OpenAPI\Client\Model\FilterConditionsDateTime'
     ];
 
     /**
@@ -71,8 +70,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'conditions' => null,
-        'junction' => null
+        'conditions' => null
     ];
 
     /**
@@ -81,8 +79,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'conditions' => true,
-		'junction' => true
+        'conditions' => false
     ];
 
     /**
@@ -171,8 +168,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'conditions' => 'conditions',
-        'junction' => 'junction'
+        'conditions' => 'conditions'
     ];
 
     /**
@@ -181,8 +177,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'conditions' => 'setConditions',
-        'junction' => 'setJunction'
+        'conditions' => 'setConditions'
     ];
 
     /**
@@ -191,8 +186,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'conditions' => 'getConditions',
-        'junction' => 'getJunction'
+        'conditions' => 'getConditions'
     ];
 
     /**
@@ -236,21 +230,6 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
         return self::$openAPIModelName;
     }
 
-    public const JUNCTION__AND = 'and';
-    public const JUNCTION__OR = 'or';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getJunctionAllowableValues()
-    {
-        return [
-            self::JUNCTION__AND,
-            self::JUNCTION__OR,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -268,7 +247,6 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
     public function __construct(array $data = null)
     {
         $this->setIfExists('conditions', $data ?? [], null);
-        $this->setIfExists('junction', $data ?? [], null);
     }
 
     /**
@@ -298,15 +276,6 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getJunctionAllowableValues();
-        if (!is_null($this->container['junction']) && !in_array($this->container['junction'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'junction', must be one of '%s'",
-                $this->container['junction'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -325,7 +294,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
     /**
      * Gets conditions
      *
-     * @return \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAtConditions|null
+     * @return \OpenAPI\Client\Model\FilterConditionsDateTime|null
      */
     public function getConditions()
     {
@@ -335,67 +304,16 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
     /**
      * Sets conditions
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAtConditions|null $conditions conditions
+     * @param \OpenAPI\Client\Model\FilterConditionsDateTime|null $conditions conditions
      *
      * @return self
      */
     public function setConditions($conditions)
     {
         if (is_null($conditions)) {
-            array_push($this->openAPINullablesSetToNull, 'conditions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('conditions', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable conditions cannot be null');
         }
         $this->container['conditions'] = $conditions;
-
-        return $this;
-    }
-
-    /**
-     * Gets junction
-     *
-     * @return string|null
-     */
-    public function getJunction()
-    {
-        return $this->container['junction'];
-    }
-
-    /**
-     * Sets junction
-     *
-     * @param string|null $junction Logical Operator Between Filters. Filter by conditions set on the `junction` parameter indicating how the `conditions` should be accounted for in the query. An `AND` is an all-inclusive logical operator, meaning the `AND` operator displays a record if **ALL** the conditions separated by AND are TRUE, while  an `OR` operator displays a record if **ANY** of the conditions separated by OR is TRUE.
-     *
-     * @return self
-     */
-    public function setJunction($junction)
-    {
-        if (is_null($junction)) {
-            array_push($this->openAPINullablesSetToNull, 'junction');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('junction', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $allowedValues = $this->getJunctionAllowableValues();
-        if (!is_null($junction) && !in_array($junction, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'junction', must be one of '%s'",
-                    $junction,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['junction'] = $junction;
 
         return $this;
     }

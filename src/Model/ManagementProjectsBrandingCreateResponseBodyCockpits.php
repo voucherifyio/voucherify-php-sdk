@@ -1,6 +1,6 @@
 <?php
 /**
- * ParameterFiltersListCustomerRedeemablesCreatedAtConditions
+ * ManagementProjectsBrandingCreateResponseBodyCockpits
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * ParameterFiltersListCustomerRedeemablesCreatedAtConditions Class Doc Comment
+ * ManagementProjectsBrandingCreateResponseBodyCockpits Class Doc Comment
  *
  * @category Class
- * @description Data filters used to narrow down the data records to be returned in the result.
+ * @description Defines customer cockpit details.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements ModelInterface, ArrayAccess, \JsonSerializable
+class ManagementProjectsBrandingCreateResponseBodyCockpits implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ParameterFiltersListCustomerRedeemablesCreatedAtConditions';
+    protected static $openAPIModelName = 'ManagementProjectsBrandingCreateResponseBodyCockpits';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,12 +59,14 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
       * @var string[]
       */
     protected static $openAPITypes = [
-        'after' => '\DateTime',
-        'before' => '\DateTime',
-        'hasValue' => 'string',
-        'isUnknown' => 'string',
-        'moreThan' => 'int',
-        'lessThan' => 'int'
+        'campaignsOverviewEnabled' => 'bool',
+        'loyaltyEnabled' => 'bool',
+        'giftCardsEnabled' => 'bool',
+        'couponsEnabled' => 'bool',
+        'referralsEnabled' => 'bool',
+        'theme' => 'string',
+        'useCustomDoubleOptInRedirectUrl' => 'bool',
+        'customDoubleOptInRedirectUrl' => 'string'
     ];
 
     /**
@@ -75,12 +77,14 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'after' => 'date-time',
-        'before' => 'date-time',
-        'hasValue' => null,
-        'isUnknown' => null,
-        'moreThan' => null,
-        'lessThan' => null
+        'campaignsOverviewEnabled' => null,
+        'loyaltyEnabled' => null,
+        'giftCardsEnabled' => null,
+        'couponsEnabled' => null,
+        'referralsEnabled' => null,
+        'theme' => null,
+        'useCustomDoubleOptInRedirectUrl' => null,
+        'customDoubleOptInRedirectUrl' => null
     ];
 
     /**
@@ -89,12 +93,14 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'after' => true,
-		'before' => true,
-		'hasValue' => true,
-		'isUnknown' => true,
-		'moreThan' => true,
-		'lessThan' => true
+        'campaignsOverviewEnabled' => true,
+		'loyaltyEnabled' => true,
+		'giftCardsEnabled' => true,
+		'couponsEnabled' => true,
+		'referralsEnabled' => true,
+		'theme' => true,
+		'useCustomDoubleOptInRedirectUrl' => true,
+		'customDoubleOptInRedirectUrl' => true
     ];
 
     /**
@@ -183,12 +189,14 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
      * @var string[]
      */
     protected static $attributeMap = [
-        'after' => '$after',
-        'before' => '$before',
-        'hasValue' => '$has_value',
-        'isUnknown' => '$is_unknown',
-        'moreThan' => 'more_than',
-        'lessThan' => 'less_than'
+        'campaignsOverviewEnabled' => 'campaigns_overview_enabled',
+        'loyaltyEnabled' => 'loyalty_enabled',
+        'giftCardsEnabled' => 'gift_cards_enabled',
+        'couponsEnabled' => 'coupons_enabled',
+        'referralsEnabled' => 'referrals_enabled',
+        'theme' => 'theme',
+        'useCustomDoubleOptInRedirectUrl' => 'use_custom_double_opt_in_redirect_url',
+        'customDoubleOptInRedirectUrl' => 'custom_double_opt_in_redirect_url'
     ];
 
     /**
@@ -197,12 +205,14 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
      * @var string[]
      */
     protected static $setters = [
-        'after' => 'setAfter',
-        'before' => 'setBefore',
-        'hasValue' => 'setHasValue',
-        'isUnknown' => 'setIsUnknown',
-        'moreThan' => 'setMoreThan',
-        'lessThan' => 'setLessThan'
+        'campaignsOverviewEnabled' => 'setCampaignsOverviewEnabled',
+        'loyaltyEnabled' => 'setLoyaltyEnabled',
+        'giftCardsEnabled' => 'setGiftCardsEnabled',
+        'couponsEnabled' => 'setCouponsEnabled',
+        'referralsEnabled' => 'setReferralsEnabled',
+        'theme' => 'setTheme',
+        'useCustomDoubleOptInRedirectUrl' => 'setUseCustomDoubleOptInRedirectUrl',
+        'customDoubleOptInRedirectUrl' => 'setCustomDoubleOptInRedirectUrl'
     ];
 
     /**
@@ -211,12 +221,14 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
      * @var string[]
      */
     protected static $getters = [
-        'after' => 'getAfter',
-        'before' => 'getBefore',
-        'hasValue' => 'getHasValue',
-        'isUnknown' => 'getIsUnknown',
-        'moreThan' => 'getMoreThan',
-        'lessThan' => 'getLessThan'
+        'campaignsOverviewEnabled' => 'getCampaignsOverviewEnabled',
+        'loyaltyEnabled' => 'getLoyaltyEnabled',
+        'giftCardsEnabled' => 'getGiftCardsEnabled',
+        'couponsEnabled' => 'getCouponsEnabled',
+        'referralsEnabled' => 'getReferralsEnabled',
+        'theme' => 'getTheme',
+        'useCustomDoubleOptInRedirectUrl' => 'getUseCustomDoubleOptInRedirectUrl',
+        'customDoubleOptInRedirectUrl' => 'getCustomDoubleOptInRedirectUrl'
     ];
 
     /**
@@ -260,6 +272,33 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
         return self::$openAPIModelName;
     }
 
+    public const THEME_BLUE = 'blue';
+    public const THEME_DARK_GREEN = 'dark-green';
+    public const THEME__DEFAULT = 'default';
+    public const THEME_GREEN = 'green';
+    public const THEME_GREY = 'grey';
+    public const THEME_ORANGE = 'orange';
+    public const THEME_PURPLE = 'purple';
+    public const THEME_RED = 'red';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getThemeAllowableValues()
+    {
+        return [
+            self::THEME_BLUE,
+            self::THEME_DARK_GREEN,
+            self::THEME__DEFAULT,
+            self::THEME_GREEN,
+            self::THEME_GREY,
+            self::THEME_ORANGE,
+            self::THEME_PURPLE,
+            self::THEME_RED,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -276,12 +315,14 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('after', $data ?? [], null);
-        $this->setIfExists('before', $data ?? [], null);
-        $this->setIfExists('hasValue', $data ?? [], null);
-        $this->setIfExists('isUnknown', $data ?? [], null);
-        $this->setIfExists('moreThan', $data ?? [], null);
-        $this->setIfExists('lessThan', $data ?? [], null);
+        $this->setIfExists('campaignsOverviewEnabled', $data ?? [], null);
+        $this->setIfExists('loyaltyEnabled', $data ?? [], null);
+        $this->setIfExists('giftCardsEnabled', $data ?? [], null);
+        $this->setIfExists('couponsEnabled', $data ?? [], null);
+        $this->setIfExists('referralsEnabled', $data ?? [], null);
+        $this->setIfExists('theme', $data ?? [], null);
+        $this->setIfExists('useCustomDoubleOptInRedirectUrl', $data ?? [], null);
+        $this->setIfExists('customDoubleOptInRedirectUrl', $data ?? [], null);
     }
 
     /**
@@ -311,6 +352,15 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getThemeAllowableValues();
+        if (!is_null($this->container['theme']) && !in_array($this->container['theme'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'theme', must be one of '%s'",
+                $this->container['theme'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -327,205 +377,283 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
 
 
     /**
-     * Gets after
+     * Gets campaignsOverviewEnabled
      *
-     * @return \DateTime|null
+     * @return bool|null
      */
-    public function getAfter()
+    public function getCampaignsOverviewEnabled()
     {
-        return $this->container['after'];
+        return $this->container['campaignsOverviewEnabled'];
     }
 
     /**
-     * Sets after
+     * Sets campaignsOverviewEnabled
      *
-     * @param \DateTime|null $after Value is after this date. The value for this parameter is shown in the ISO 8601 format.
+     * @param bool|null $campaignsOverviewEnabled Enables the campaign overview for customers.
      *
      * @return self
      */
-    public function setAfter($after)
+    public function setCampaignsOverviewEnabled($campaignsOverviewEnabled)
     {
-        if (is_null($after)) {
-            array_push($this->openAPINullablesSetToNull, 'after');
+        if (is_null($campaignsOverviewEnabled)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignsOverviewEnabled');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('after', $nullablesSetToNull);
+            $index = array_search('campaignsOverviewEnabled', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['after'] = $after;
+        $this->container['campaignsOverviewEnabled'] = $campaignsOverviewEnabled;
 
         return $this;
     }
 
     /**
-     * Gets before
+     * Gets loyaltyEnabled
      *
-     * @return \DateTime|null
+     * @return bool|null
      */
-    public function getBefore()
+    public function getLoyaltyEnabled()
     {
-        return $this->container['before'];
+        return $this->container['loyaltyEnabled'];
     }
 
     /**
-     * Sets before
+     * Sets loyaltyEnabled
      *
-     * @param \DateTime|null $before Value is before this date. The value for this parameter is shown in the ISO 8601 format.
+     * @param bool|null $loyaltyEnabled Enables the loyalty campaign overview for customers.
      *
      * @return self
      */
-    public function setBefore($before)
+    public function setLoyaltyEnabled($loyaltyEnabled)
     {
-        if (is_null($before)) {
-            array_push($this->openAPINullablesSetToNull, 'before');
+        if (is_null($loyaltyEnabled)) {
+            array_push($this->openAPINullablesSetToNull, 'loyaltyEnabled');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('before', $nullablesSetToNull);
+            $index = array_search('loyaltyEnabled', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['before'] = $before;
+        $this->container['loyaltyEnabled'] = $loyaltyEnabled;
 
         return $this;
     }
 
     /**
-     * Gets hasValue
+     * Gets giftCardsEnabled
+     *
+     * @return bool|null
+     */
+    public function getGiftCardsEnabled()
+    {
+        return $this->container['giftCardsEnabled'];
+    }
+
+    /**
+     * Sets giftCardsEnabled
+     *
+     * @param bool|null $giftCardsEnabled Enables the gift card overview for customers.
+     *
+     * @return self
+     */
+    public function setGiftCardsEnabled($giftCardsEnabled)
+    {
+        if (is_null($giftCardsEnabled)) {
+            array_push($this->openAPINullablesSetToNull, 'giftCardsEnabled');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('giftCardsEnabled', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['giftCardsEnabled'] = $giftCardsEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets couponsEnabled
+     *
+     * @return bool|null
+     */
+    public function getCouponsEnabled()
+    {
+        return $this->container['couponsEnabled'];
+    }
+
+    /**
+     * Sets couponsEnabled
+     *
+     * @param bool|null $couponsEnabled Enables the discount coupon overview for customers.
+     *
+     * @return self
+     */
+    public function setCouponsEnabled($couponsEnabled)
+    {
+        if (is_null($couponsEnabled)) {
+            array_push($this->openAPINullablesSetToNull, 'couponsEnabled');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('couponsEnabled', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['couponsEnabled'] = $couponsEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets referralsEnabled
+     *
+     * @return bool|null
+     */
+    public function getReferralsEnabled()
+    {
+        return $this->container['referralsEnabled'];
+    }
+
+    /**
+     * Sets referralsEnabled
+     *
+     * @param bool|null $referralsEnabled Enables the referral campaign overview for customers.
+     *
+     * @return self
+     */
+    public function setReferralsEnabled($referralsEnabled)
+    {
+        if (is_null($referralsEnabled)) {
+            array_push($this->openAPINullablesSetToNull, 'referralsEnabled');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('referralsEnabled', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['referralsEnabled'] = $referralsEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets theme
      *
      * @return string|null
      */
-    public function getHasValue()
+    public function getTheme()
     {
-        return $this->container['hasValue'];
+        return $this->container['theme'];
     }
 
     /**
-     * Sets hasValue
+     * Sets theme
      *
-     * @param string|null $hasValue Value is NOT null. The value for this parameter is an empty string.
+     * @param string|null $theme Determines the color scheme of the customer cockpit.
      *
      * @return self
      */
-    public function setHasValue($hasValue)
+    public function setTheme($theme)
     {
-        if (is_null($hasValue)) {
-            array_push($this->openAPINullablesSetToNull, 'hasValue');
+        if (is_null($theme)) {
+            array_push($this->openAPINullablesSetToNull, 'theme');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('hasValue', $nullablesSetToNull);
+            $index = array_search('theme', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['hasValue'] = $hasValue;
+        $allowedValues = $this->getThemeAllowableValues();
+        if (!is_null($theme) && !in_array($theme, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'theme', must be one of '%s'",
+                    $theme,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['theme'] = $theme;
 
         return $this;
     }
 
     /**
-     * Gets isUnknown
+     * Gets useCustomDoubleOptInRedirectUrl
+     *
+     * @return bool|null
+     */
+    public function getUseCustomDoubleOptInRedirectUrl()
+    {
+        return $this->container['useCustomDoubleOptInRedirectUrl'];
+    }
+
+    /**
+     * Sets useCustomDoubleOptInRedirectUrl
+     *
+     * @param bool|null $useCustomDoubleOptInRedirectUrl Enables the double opt-in option. It must be a valid URL format.
+     *
+     * @return self
+     */
+    public function setUseCustomDoubleOptInRedirectUrl($useCustomDoubleOptInRedirectUrl)
+    {
+        if (is_null($useCustomDoubleOptInRedirectUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'useCustomDoubleOptInRedirectUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('useCustomDoubleOptInRedirectUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['useCustomDoubleOptInRedirectUrl'] = $useCustomDoubleOptInRedirectUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets customDoubleOptInRedirectUrl
      *
      * @return string|null
      */
-    public function getIsUnknown()
+    public function getCustomDoubleOptInRedirectUrl()
     {
-        return $this->container['isUnknown'];
+        return $this->container['customDoubleOptInRedirectUrl'];
     }
 
     /**
-     * Sets isUnknown
+     * Sets customDoubleOptInRedirectUrl
      *
-     * @param string|null $isUnknown Value is null. The value for this parameter is an empty string.
+     * @param string|null $customDoubleOptInRedirectUrl Defines the URL for the double opt-in consent. It must be a valid URL format.
      *
      * @return self
      */
-    public function setIsUnknown($isUnknown)
+    public function setCustomDoubleOptInRedirectUrl($customDoubleOptInRedirectUrl)
     {
-        if (is_null($isUnknown)) {
-            array_push($this->openAPINullablesSetToNull, 'isUnknown');
+        if (is_null($customDoubleOptInRedirectUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'customDoubleOptInRedirectUrl');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('isUnknown', $nullablesSetToNull);
+            $index = array_search('customDoubleOptInRedirectUrl', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['isUnknown'] = $isUnknown;
-
-        return $this;
-    }
-
-    /**
-     * Gets moreThan
-     *
-     * @return int|null
-     */
-    public function getMoreThan()
-    {
-        return $this->container['moreThan'];
-    }
-
-    /**
-     * Sets moreThan
-     *
-     * @param int|null $moreThan Value is more days ago before the current date and time, e.g. more than `10` days ago.
-     *
-     * @return self
-     */
-    public function setMoreThan($moreThan)
-    {
-        if (is_null($moreThan)) {
-            array_push($this->openAPINullablesSetToNull, 'moreThan');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('moreThan', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['moreThan'] = $moreThan;
-
-        return $this;
-    }
-
-    /**
-     * Gets lessThan
-     *
-     * @return int|null
-     */
-    public function getLessThan()
-    {
-        return $this->container['lessThan'];
-    }
-
-    /**
-     * Sets lessThan
-     *
-     * @param int|null $lessThan Value is less days before the current date and time, e.g. less than `10` days ago.
-     *
-     * @return self
-     */
-    public function setLessThan($lessThan)
-    {
-        if (is_null($lessThan)) {
-            array_push($this->openAPINullablesSetToNull, 'lessThan');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('lessThan', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['lessThan'] = $lessThan;
+        $this->container['customDoubleOptInRedirectUrl'] = $customDoubleOptInRedirectUrl;
 
         return $this;
     }

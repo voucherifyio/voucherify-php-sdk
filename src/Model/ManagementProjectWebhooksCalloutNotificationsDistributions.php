@@ -1,6 +1,6 @@
 <?php
 /**
- * LuckyDraw
+ * ManagementProjectWebhooksCalloutNotificationsDistributions
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * LuckyDraw Class Doc Comment
+ * ManagementProjectWebhooksCalloutNotificationsDistributions Class Doc Comment
  *
  * @category Class
- * @description Object for defining detailed information about lucky draw should be applied
+ * @description Determines the notification settings for webhooks sent through Distributions.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
+class ManagementProjectWebhooksCalloutNotificationsDistributions implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'LuckyDraw';
+    protected static $openAPIModelName = 'ManagementProjectWebhooksCalloutNotificationsDistributions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,9 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'winnersCount' => 'string',
-        'uniqueWinnersPerDraw' => 'string',
-        'uniqueWinners' => 'string'
+        'email' => 'bool',
+        'inApp' => 'bool',
+        'emails' => 'string[]'
     ];
 
     /**
@@ -72,9 +72,9 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'winnersCount' => null,
-        'uniqueWinnersPerDraw' => null,
-        'uniqueWinners' => null
+        'email' => null,
+        'inApp' => null,
+        'emails' => null
     ];
 
     /**
@@ -83,9 +83,9 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'winnersCount' => true,
-		'uniqueWinnersPerDraw' => true,
-		'uniqueWinners' => true
+        'email' => true,
+		'inApp' => true,
+		'emails' => true
     ];
 
     /**
@@ -174,9 +174,9 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'winnersCount' => 'winners_count',
-        'uniqueWinnersPerDraw' => 'unique_winners_per_draw',
-        'uniqueWinners' => 'unique_winners'
+        'email' => 'email',
+        'inApp' => 'in_app',
+        'emails' => 'emails'
     ];
 
     /**
@@ -185,9 +185,9 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'winnersCount' => 'setWinnersCount',
-        'uniqueWinnersPerDraw' => 'setUniqueWinnersPerDraw',
-        'uniqueWinners' => 'setUniqueWinners'
+        'email' => 'setEmail',
+        'inApp' => 'setInApp',
+        'emails' => 'setEmails'
     ];
 
     /**
@@ -196,9 +196,9 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'winnersCount' => 'getWinnersCount',
-        'uniqueWinnersPerDraw' => 'getUniqueWinnersPerDraw',
-        'uniqueWinners' => 'getUniqueWinners'
+        'email' => 'getEmail',
+        'inApp' => 'getInApp',
+        'emails' => 'getEmails'
     ];
 
     /**
@@ -258,9 +258,9 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('winnersCount', $data ?? [], null);
-        $this->setIfExists('uniqueWinnersPerDraw', $data ?? [], null);
-        $this->setIfExists('uniqueWinners', $data ?? [], null);
+        $this->setIfExists('email', $data ?? [], null);
+        $this->setIfExists('inApp', $data ?? [], null);
+        $this->setIfExists('emails', $data ?? [], null);
     }
 
     /**
@@ -306,105 +306,103 @@ class LuckyDraw implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets winnersCount
+     * Gets email
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getWinnersCount()
+    public function getEmail()
     {
-        return $this->container['winnersCount'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets winnersCount
+     * Sets email
      *
-     * @param string|null $winnersCount It represents the total number of winners in a lucky draw.
+     * @param bool|null $email Enables the notification through an email.
      *
      * @return self
      */
-    public function setWinnersCount($winnersCount)
+    public function setEmail($email)
     {
-        if (is_null($winnersCount)) {
-            array_push($this->openAPINullablesSetToNull, 'winnersCount');
+        if (is_null($email)) {
+            array_push($this->openAPINullablesSetToNull, 'email');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('winnersCount', $nullablesSetToNull);
+            $index = array_search('email', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
-        $this->container['winnersCount'] = $winnersCount;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets uniqueWinnersPerDraw
+     * Gets inApp
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getUniqueWinnersPerDraw()
+    public function getInApp()
     {
-        return $this->container['uniqueWinnersPerDraw'];
+        return $this->container['inApp'];
     }
 
     /**
-     * Sets uniqueWinnersPerDraw
+     * Sets inApp
      *
-     * @param string|null $uniqueWinnersPerDraw It indicates whether each winner in a draw is unique or not.
+     * @param bool|null $inApp Enables the notification through an email.
      *
      * @return self
      */
-    public function setUniqueWinnersPerDraw($uniqueWinnersPerDraw)
+    public function setInApp($inApp)
     {
-        if (is_null($uniqueWinnersPerDraw)) {
-            array_push($this->openAPINullablesSetToNull, 'uniqueWinnersPerDraw');
+        if (is_null($inApp)) {
+            array_push($this->openAPINullablesSetToNull, 'inApp');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('uniqueWinnersPerDraw', $nullablesSetToNull);
+            $index = array_search('inApp', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['uniqueWinnersPerDraw'] = $uniqueWinnersPerDraw;
+        $this->container['inApp'] = $inApp;
 
         return $this;
     }
 
     /**
-     * Gets uniqueWinners
+     * Gets emails
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getUniqueWinners()
+    public function getEmails()
     {
-        return $this->container['uniqueWinners'];
+        return $this->container['emails'];
     }
 
     /**
-     * Sets uniqueWinners
+     * Sets emails
      *
-     * @param string|null $uniqueWinners Specifies whether each participant can win only once across multiple draws.
+     * @param string[]|null $emails An array of email addresses which will receive the notification.
      *
      * @return self
      */
-    public function setUniqueWinners($uniqueWinners)
+    public function setEmails($emails)
     {
-        if (is_null($uniqueWinners)) {
-            array_push($this->openAPINullablesSetToNull, 'uniqueWinners');
+        if (is_null($emails)) {
+            array_push($this->openAPINullablesSetToNull, 'emails');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('uniqueWinners', $nullablesSetToNull);
+            $index = array_search('emails', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['uniqueWinners'] = $uniqueWinners;
+        $this->container['emails'] = $emails;
 
         return $this;
     }
