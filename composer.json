@@ -1,6 +1,6 @@
 {
     "name": "rspective/voucherify",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "description": "Voucherify promotion engine REST API. Please see https://docs.voucherify.io/docs for more details.",
     "keywords": [
         "openapitools",
@@ -30,7 +30,9 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.5",
         "overtrue/phplint": "^9.0",
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^9.8",
+        "codeception/codeception": "^5.1",
+        "codeception/module-asserts": "^3.0"
     },
     "autoload": {
         "psr-4": { "OpenAPI\\Client\\" : "src/" }

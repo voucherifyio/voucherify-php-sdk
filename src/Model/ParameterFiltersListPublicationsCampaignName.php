@@ -1,6 +1,6 @@
 <?php
 /**
- * ParameterFiltersListCustomerRedeemablesCreatedAtConditions
+ * ParameterFiltersListPublicationsCampaignName
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * ParameterFiltersListCustomerRedeemablesCreatedAtConditions Class Doc Comment
+ * ParameterFiltersListPublicationsCampaignName Class Doc Comment
  *
  * @category Class
- * @description Data filters used to narrow down the data records to be returned in the result.
+ * @description Filter publications by campaign names.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements ModelInterface, ArrayAccess, \JsonSerializable
+class ParameterFiltersListPublicationsCampaignName implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ParameterFiltersListCustomerRedeemablesCreatedAtConditions';
+    protected static $openAPIModelName = 'ParameterFiltersListPublicationsCampaignName';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,12 +59,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
       * @var string[]
       */
     protected static $openAPITypes = [
-        'after' => '\DateTime',
-        'before' => '\DateTime',
-        'hasValue' => 'string',
-        'isUnknown' => 'string',
-        'moreThan' => 'int',
-        'lessThan' => 'int'
+        'conditions' => '\OpenAPI\Client\Model\FilterConditionsString'
     ];
 
     /**
@@ -75,12 +70,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'after' => 'date-time',
-        'before' => 'date-time',
-        'hasValue' => null,
-        'isUnknown' => null,
-        'moreThan' => null,
-        'lessThan' => null
+        'conditions' => null
     ];
 
     /**
@@ -89,12 +79,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'after' => true,
-		'before' => true,
-		'hasValue' => true,
-		'isUnknown' => true,
-		'moreThan' => true,
-		'lessThan' => true
+        'conditions' => false
     ];
 
     /**
@@ -183,12 +168,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
      * @var string[]
      */
     protected static $attributeMap = [
-        'after' => '$after',
-        'before' => '$before',
-        'hasValue' => '$has_value',
-        'isUnknown' => '$is_unknown',
-        'moreThan' => 'more_than',
-        'lessThan' => 'less_than'
+        'conditions' => 'conditions'
     ];
 
     /**
@@ -197,12 +177,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
      * @var string[]
      */
     protected static $setters = [
-        'after' => 'setAfter',
-        'before' => 'setBefore',
-        'hasValue' => 'setHasValue',
-        'isUnknown' => 'setIsUnknown',
-        'moreThan' => 'setMoreThan',
-        'lessThan' => 'setLessThan'
+        'conditions' => 'setConditions'
     ];
 
     /**
@@ -211,12 +186,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
      * @var string[]
      */
     protected static $getters = [
-        'after' => 'getAfter',
-        'before' => 'getBefore',
-        'hasValue' => 'getHasValue',
-        'isUnknown' => 'getIsUnknown',
-        'moreThan' => 'getMoreThan',
-        'lessThan' => 'getLessThan'
+        'conditions' => 'getConditions'
     ];
 
     /**
@@ -276,12 +246,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('after', $data ?? [], null);
-        $this->setIfExists('before', $data ?? [], null);
-        $this->setIfExists('hasValue', $data ?? [], null);
-        $this->setIfExists('isUnknown', $data ?? [], null);
-        $this->setIfExists('moreThan', $data ?? [], null);
-        $this->setIfExists('lessThan', $data ?? [], null);
+        $this->setIfExists('conditions', $data ?? [], null);
     }
 
     /**
@@ -327,205 +292,28 @@ class ParameterFiltersListCustomerRedeemablesCreatedAtConditions implements Mode
 
 
     /**
-     * Gets after
+     * Gets conditions
      *
-     * @return \DateTime|null
+     * @return \OpenAPI\Client\Model\FilterConditionsString|null
      */
-    public function getAfter()
+    public function getConditions()
     {
-        return $this->container['after'];
+        return $this->container['conditions'];
     }
 
     /**
-     * Sets after
+     * Sets conditions
      *
-     * @param \DateTime|null $after Value is after this date. The value for this parameter is shown in the ISO 8601 format.
+     * @param \OpenAPI\Client\Model\FilterConditionsString|null $conditions conditions
      *
      * @return self
      */
-    public function setAfter($after)
+    public function setConditions($conditions)
     {
-        if (is_null($after)) {
-            array_push($this->openAPINullablesSetToNull, 'after');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('after', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($conditions)) {
+            throw new \InvalidArgumentException('non-nullable conditions cannot be null');
         }
-        $this->container['after'] = $after;
-
-        return $this;
-    }
-
-    /**
-     * Gets before
-     *
-     * @return \DateTime|null
-     */
-    public function getBefore()
-    {
-        return $this->container['before'];
-    }
-
-    /**
-     * Sets before
-     *
-     * @param \DateTime|null $before Value is before this date. The value for this parameter is shown in the ISO 8601 format.
-     *
-     * @return self
-     */
-    public function setBefore($before)
-    {
-        if (is_null($before)) {
-            array_push($this->openAPINullablesSetToNull, 'before');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('before', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['before'] = $before;
-
-        return $this;
-    }
-
-    /**
-     * Gets hasValue
-     *
-     * @return string|null
-     */
-    public function getHasValue()
-    {
-        return $this->container['hasValue'];
-    }
-
-    /**
-     * Sets hasValue
-     *
-     * @param string|null $hasValue Value is NOT null. The value for this parameter is an empty string.
-     *
-     * @return self
-     */
-    public function setHasValue($hasValue)
-    {
-        if (is_null($hasValue)) {
-            array_push($this->openAPINullablesSetToNull, 'hasValue');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('hasValue', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['hasValue'] = $hasValue;
-
-        return $this;
-    }
-
-    /**
-     * Gets isUnknown
-     *
-     * @return string|null
-     */
-    public function getIsUnknown()
-    {
-        return $this->container['isUnknown'];
-    }
-
-    /**
-     * Sets isUnknown
-     *
-     * @param string|null $isUnknown Value is null. The value for this parameter is an empty string.
-     *
-     * @return self
-     */
-    public function setIsUnknown($isUnknown)
-    {
-        if (is_null($isUnknown)) {
-            array_push($this->openAPINullablesSetToNull, 'isUnknown');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('isUnknown', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['isUnknown'] = $isUnknown;
-
-        return $this;
-    }
-
-    /**
-     * Gets moreThan
-     *
-     * @return int|null
-     */
-    public function getMoreThan()
-    {
-        return $this->container['moreThan'];
-    }
-
-    /**
-     * Sets moreThan
-     *
-     * @param int|null $moreThan Value is more days ago before the current date and time, e.g. more than `10` days ago.
-     *
-     * @return self
-     */
-    public function setMoreThan($moreThan)
-    {
-        if (is_null($moreThan)) {
-            array_push($this->openAPINullablesSetToNull, 'moreThan');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('moreThan', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['moreThan'] = $moreThan;
-
-        return $this;
-    }
-
-    /**
-     * Gets lessThan
-     *
-     * @return int|null
-     */
-    public function getLessThan()
-    {
-        return $this->container['lessThan'];
-    }
-
-    /**
-     * Sets lessThan
-     *
-     * @param int|null $lessThan Value is less days before the current date and time, e.g. less than `10` days ago.
-     *
-     * @return self
-     */
-    public function setLessThan($lessThan)
-    {
-        if (is_null($lessThan)) {
-            array_push($this->openAPINullablesSetToNull, 'lessThan');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('lessThan', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['lessThan'] = $lessThan;
+        $this->container['conditions'] = $conditions;
 
         return $this;
     }

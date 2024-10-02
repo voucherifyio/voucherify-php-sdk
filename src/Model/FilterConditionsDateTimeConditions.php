@@ -1,6 +1,6 @@
 <?php
 /**
- * ParameterFiltersListCustomerRedeemablesCreatedAt
+ * FilterConditionsDateTimeConditions
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * ParameterFiltersListCustomerRedeemablesCreatedAt Class Doc Comment
+ * FilterConditionsDateTimeConditions Class Doc Comment
  *
  * @category Class
- * @description Timestamp representing the date and time when the customer redeemable was created. The value is shown in the ISO 8601 format.
+ * @description Data filters used to narrow down the data records to be returned in the result.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface, ArrayAccess, \JsonSerializable
+class FilterConditionsDateTimeConditions implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ParameterFiltersListCustomerRedeemablesCreatedAt';
+    protected static $openAPIModelName = 'FilterConditionsDateTimeConditions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +59,12 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'conditions' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAtConditions',
-        'junction' => 'string'
+        'after' => '\DateTime',
+        'before' => '\DateTime',
+        'hasValue' => 'string',
+        'isUnknown' => 'string',
+        'moreThan' => 'int',
+        'lessThan' => 'int'
     ];
 
     /**
@@ -71,8 +75,12 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'conditions' => null,
-        'junction' => null
+        'after' => 'date-time',
+        'before' => 'date-time',
+        'hasValue' => null,
+        'isUnknown' => null,
+        'moreThan' => null,
+        'lessThan' => null
     ];
 
     /**
@@ -81,8 +89,12 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'conditions' => true,
-		'junction' => true
+        'after' => true,
+		'before' => true,
+		'hasValue' => true,
+		'isUnknown' => true,
+		'moreThan' => true,
+		'lessThan' => true
     ];
 
     /**
@@ -171,8 +183,12 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'conditions' => 'conditions',
-        'junction' => 'junction'
+        'after' => '$after',
+        'before' => '$before',
+        'hasValue' => '$has_value',
+        'isUnknown' => '$is_unknown',
+        'moreThan' => 'more_than',
+        'lessThan' => 'less_than'
     ];
 
     /**
@@ -181,8 +197,12 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'conditions' => 'setConditions',
-        'junction' => 'setJunction'
+        'after' => 'setAfter',
+        'before' => 'setBefore',
+        'hasValue' => 'setHasValue',
+        'isUnknown' => 'setIsUnknown',
+        'moreThan' => 'setMoreThan',
+        'lessThan' => 'setLessThan'
     ];
 
     /**
@@ -191,8 +211,12 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'conditions' => 'getConditions',
-        'junction' => 'getJunction'
+        'after' => 'getAfter',
+        'before' => 'getBefore',
+        'hasValue' => 'getHasValue',
+        'isUnknown' => 'getIsUnknown',
+        'moreThan' => 'getMoreThan',
+        'lessThan' => 'getLessThan'
     ];
 
     /**
@@ -236,21 +260,6 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
         return self::$openAPIModelName;
     }
 
-    public const JUNCTION__AND = 'and';
-    public const JUNCTION__OR = 'or';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getJunctionAllowableValues()
-    {
-        return [
-            self::JUNCTION__AND,
-            self::JUNCTION__OR,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -267,8 +276,12 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('conditions', $data ?? [], null);
-        $this->setIfExists('junction', $data ?? [], null);
+        $this->setIfExists('after', $data ?? [], null);
+        $this->setIfExists('before', $data ?? [], null);
+        $this->setIfExists('hasValue', $data ?? [], null);
+        $this->setIfExists('isUnknown', $data ?? [], null);
+        $this->setIfExists('moreThan', $data ?? [], null);
+        $this->setIfExists('lessThan', $data ?? [], null);
     }
 
     /**
@@ -298,15 +311,6 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getJunctionAllowableValues();
-        if (!is_null($this->container['junction']) && !in_array($this->container['junction'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'junction', must be one of '%s'",
-                $this->container['junction'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -323,79 +327,205 @@ class ParameterFiltersListCustomerRedeemablesCreatedAt implements ModelInterface
 
 
     /**
-     * Gets conditions
+     * Gets after
      *
-     * @return \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAtConditions|null
+     * @return \DateTime|null
      */
-    public function getConditions()
+    public function getAfter()
     {
-        return $this->container['conditions'];
+        return $this->container['after'];
     }
 
     /**
-     * Sets conditions
+     * Sets after
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAtConditions|null $conditions conditions
+     * @param \DateTime|null $after Value is after this date. The value for this parameter is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setConditions($conditions)
+    public function setAfter($after)
     {
-        if (is_null($conditions)) {
-            array_push($this->openAPINullablesSetToNull, 'conditions');
+        if (is_null($after)) {
+            array_push($this->openAPINullablesSetToNull, 'after');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('conditions', $nullablesSetToNull);
+            $index = array_search('after', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['conditions'] = $conditions;
+        $this->container['after'] = $after;
 
         return $this;
     }
 
     /**
-     * Gets junction
+     * Gets before
      *
-     * @return string|null
+     * @return \DateTime|null
      */
-    public function getJunction()
+    public function getBefore()
     {
-        return $this->container['junction'];
+        return $this->container['before'];
     }
 
     /**
-     * Sets junction
+     * Sets before
      *
-     * @param string|null $junction Logical Operator Between Filters. Filter by conditions set on the `junction` parameter indicating how the `conditions` should be accounted for in the query. An `AND` is an all-inclusive logical operator, meaning the `AND` operator displays a record if **ALL** the conditions separated by AND are TRUE, while  an `OR` operator displays a record if **ANY** of the conditions separated by OR is TRUE.
+     * @param \DateTime|null $before Value is before this date. The value for this parameter is shown in the ISO 8601 format.
      *
      * @return self
      */
-    public function setJunction($junction)
+    public function setBefore($before)
     {
-        if (is_null($junction)) {
-            array_push($this->openAPINullablesSetToNull, 'junction');
+        if (is_null($before)) {
+            array_push($this->openAPINullablesSetToNull, 'before');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('junction', $nullablesSetToNull);
+            $index = array_search('before', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $allowedValues = $this->getJunctionAllowableValues();
-        if (!is_null($junction) && !in_array($junction, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'junction', must be one of '%s'",
-                    $junction,
-                    implode("', '", $allowedValues)
-                )
-            );
+        $this->container['before'] = $before;
+
+        return $this;
+    }
+
+    /**
+     * Gets hasValue
+     *
+     * @return string|null
+     */
+    public function getHasValue()
+    {
+        return $this->container['hasValue'];
+    }
+
+    /**
+     * Sets hasValue
+     *
+     * @param string|null $hasValue Value is NOT null. The value for this parameter is an empty string.
+     *
+     * @return self
+     */
+    public function setHasValue($hasValue)
+    {
+        if (is_null($hasValue)) {
+            array_push($this->openAPINullablesSetToNull, 'hasValue');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('hasValue', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['junction'] = $junction;
+        $this->container['hasValue'] = $hasValue;
+
+        return $this;
+    }
+
+    /**
+     * Gets isUnknown
+     *
+     * @return string|null
+     */
+    public function getIsUnknown()
+    {
+        return $this->container['isUnknown'];
+    }
+
+    /**
+     * Sets isUnknown
+     *
+     * @param string|null $isUnknown Value is null. The value for this parameter is an empty string.
+     *
+     * @return self
+     */
+    public function setIsUnknown($isUnknown)
+    {
+        if (is_null($isUnknown)) {
+            array_push($this->openAPINullablesSetToNull, 'isUnknown');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('isUnknown', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['isUnknown'] = $isUnknown;
+
+        return $this;
+    }
+
+    /**
+     * Gets moreThan
+     *
+     * @return int|null
+     */
+    public function getMoreThan()
+    {
+        return $this->container['moreThan'];
+    }
+
+    /**
+     * Sets moreThan
+     *
+     * @param int|null $moreThan Value is more days ago before the current date and time, e.g. more than `10` days ago.
+     *
+     * @return self
+     */
+    public function setMoreThan($moreThan)
+    {
+        if (is_null($moreThan)) {
+            array_push($this->openAPINullablesSetToNull, 'moreThan');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('moreThan', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['moreThan'] = $moreThan;
+
+        return $this;
+    }
+
+    /**
+     * Gets lessThan
+     *
+     * @return int|null
+     */
+    public function getLessThan()
+    {
+        return $this->container['lessThan'];
+    }
+
+    /**
+     * Sets lessThan
+     *
+     * @param int|null $lessThan Value is less days before the current date and time, e.g. less than `10` days ago.
+     *
+     * @return self
+     */
+    public function setLessThan($lessThan)
+    {
+        if (is_null($lessThan)) {
+            array_push($this->openAPINullablesSetToNull, 'lessThan');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lessThan', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['lessThan'] = $lessThan;
 
         return $this;
     }

@@ -62,7 +62,8 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         'object' => 'string',
         'dataRef' => 'string',
         'data' => '\OpenAPI\Client\Model\VoucherTransaction[]',
-        'hasMore' => 'bool'
+        'hasMore' => 'bool',
+        'moreStartingAfter' => 'string'
     ];
 
     /**
@@ -76,7 +77,8 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         'object' => null,
         'dataRef' => null,
         'data' => null,
-        'hasMore' => null
+        'hasMore' => null,
+        'moreStartingAfter' => null
     ];
 
     /**
@@ -88,7 +90,8 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         'object' => true,
 		'dataRef' => true,
 		'data' => true,
-		'hasMore' => true
+		'hasMore' => true,
+		'moreStartingAfter' => true
     ];
 
     /**
@@ -180,7 +183,8 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         'object' => 'object',
         'dataRef' => 'data_ref',
         'data' => 'data',
-        'hasMore' => 'has_more'
+        'hasMore' => 'has_more',
+        'moreStartingAfter' => 'more_starting_after'
     ];
 
     /**
@@ -192,7 +196,8 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         'object' => 'setObject',
         'dataRef' => 'setDataRef',
         'data' => 'setData',
-        'hasMore' => 'setHasMore'
+        'hasMore' => 'setHasMore',
+        'moreStartingAfter' => 'setMoreStartingAfter'
     ];
 
     /**
@@ -204,7 +209,8 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         'object' => 'getObject',
         'dataRef' => 'getDataRef',
         'data' => 'getData',
-        'hasMore' => 'getHasMore'
+        'hasMore' => 'getHasMore',
+        'moreStartingAfter' => 'getMoreStartingAfter'
     ];
 
     /**
@@ -268,6 +274,7 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         $this->setIfExists('dataRef', $data ?? [], 'data');
         $this->setIfExists('data', $data ?? [], null);
         $this->setIfExists('hasMore', $data ?? [], null);
+        $this->setIfExists('moreStartingAfter', $data ?? [], null);
     }
 
     /**
@@ -427,7 +434,7 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
     /**
      * Sets hasMore
      *
-     * @param bool|null $hasMore As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different page or a different start date filter) to get more records returned in the results.
+     * @param bool|null $hasMore As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different paging or a different start date filter) to get more records returned in the results.
      *
      * @return self
      */
@@ -444,6 +451,40 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
             }
         }
         $this->container['hasMore'] = $hasMore;
+
+        return $this;
+    }
+
+    /**
+     * Gets moreStartingAfter
+     *
+     * @return string|null
+     */
+    public function getMoreStartingAfter()
+    {
+        return $this->container['moreStartingAfter'];
+    }
+
+    /**
+     * Sets moreStartingAfter
+     *
+     * @param string|null $moreStartingAfter Returns an ID that can be used to return another page of results. Use the transaction ID in the `starting_after_id` query parameter to display another page of the results starting after the transaction with that ID.
+     *
+     * @return self
+     */
+    public function setMoreStartingAfter($moreStartingAfter)
+    {
+        if (is_null($moreStartingAfter)) {
+            array_push($this->openAPINullablesSetToNull, 'moreStartingAfter');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('moreStartingAfter', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['moreStartingAfter'] = $moreStartingAfter;
 
         return $this;
     }

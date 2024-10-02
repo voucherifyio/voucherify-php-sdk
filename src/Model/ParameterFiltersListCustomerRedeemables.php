@@ -58,8 +58,9 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
+        'junction' => 'string',
         'id' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesId',
-        'createdAt' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAt',
+        'createdAt' => '\OpenAPI\Client\Model\FilterConditionsDateTime',
         'redeemableId' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesRedeemableId',
         'redeemableObject' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesRedeemableObject',
         'holderRole' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesHolderRole',
@@ -76,6 +77,7 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'junction' => null,
         'id' => null,
         'createdAt' => null,
         'redeemableId' => null,
@@ -92,8 +94,9 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => true,
-		'createdAt' => true,
+        'junction' => true,
+		'id' => true,
+		'createdAt' => false,
 		'redeemableId' => true,
 		'redeemableObject' => true,
 		'holderRole' => true,
@@ -188,6 +191,7 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
+        'junction' => 'junction',
         'id' => 'id',
         'createdAt' => 'created_at',
         'redeemableId' => 'redeemable_id',
@@ -204,6 +208,7 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
+        'junction' => 'setJunction',
         'id' => 'setId',
         'createdAt' => 'setCreatedAt',
         'redeemableId' => 'setRedeemableId',
@@ -220,6 +225,7 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
+        'junction' => 'getJunction',
         'id' => 'getId',
         'createdAt' => 'getCreatedAt',
         'redeemableId' => 'getRedeemableId',
@@ -271,6 +277,21 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
         return self::$openAPIModelName;
     }
 
+    public const JUNCTION__AND = 'and';
+    public const JUNCTION__OR = 'or';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getJunctionAllowableValues()
+    {
+        return [
+            self::JUNCTION__AND,
+            self::JUNCTION__OR,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -287,6 +308,7 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('junction', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('redeemableId', $data ?? [], null);
@@ -324,6 +346,15 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getJunctionAllowableValues();
+        if (!is_null($this->container['junction']) && !in_array($this->container['junction'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'junction', must be one of '%s'",
+                $this->container['junction'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -338,6 +369,50 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets junction
+     *
+     * @return string|null
+     */
+    public function getJunction()
+    {
+        return $this->container['junction'];
+    }
+
+    /**
+     * Sets junction
+     *
+     * @param string|null $junction Logical Operator Between Filters. Filter by conditions set on the `junction` parameter indicating how the `conditions` should be accounted for in the query. An `AND` is an all-inclusive logical operator, meaning the `AND` operator displays a record if **ALL** the conditions separated by AND are TRUE, while  an `OR` operator displays a record if **ANY** of the conditions separated by OR is TRUE.
+     *
+     * @return self
+     */
+    public function setJunction($junction)
+    {
+        if (is_null($junction)) {
+            array_push($this->openAPINullablesSetToNull, 'junction');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('junction', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getJunctionAllowableValues();
+        if (!is_null($junction) && !in_array($junction, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'junction', must be one of '%s'",
+                    $junction,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['junction'] = $junction;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -376,7 +451,7 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
     /**
      * Gets createdAt
      *
-     * @return \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAt|null
+     * @return \OpenAPI\Client\Model\FilterConditionsDateTime|null
      */
     public function getCreatedAt()
     {
@@ -386,21 +461,14 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
     /**
      * Sets createdAt
      *
-     * @param \OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCreatedAt|null $createdAt createdAt
+     * @param \OpenAPI\Client\Model\FilterConditionsDateTime|null $createdAt createdAt
      *
      * @return self
      */
     public function setCreatedAt($createdAt)
     {
         if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable createdAt cannot be null');
         }
         $this->container['createdAt'] = $createdAt;
 

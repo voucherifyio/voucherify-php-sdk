@@ -414,7 +414,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets message
      *
-     * @param string|null $message A human-readable message providing a short description about the error.
+     * @param string|null $message A human-readable message providing a short description of the error.
      *
      * @return self
      */
