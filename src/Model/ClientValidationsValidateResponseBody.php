@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ClientValidationsValidateResponseBody Class Doc Comment
  *
  * @category Class
- * @description Response body schema for POST &#x60;/validations&#x60;.
+ * @description Response body schema for **POST** &#x60;/validations&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

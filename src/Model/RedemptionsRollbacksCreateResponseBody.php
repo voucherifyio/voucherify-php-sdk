@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * RedemptionsRollbacksCreateResponseBody Class Doc Comment
  *
  * @category Class
- * @description Response body schema for POST &#x60;/redemptions/{parentRedemptionID}/rollbacks&#x60;.
+ * @description Response body schema for **POST** &#x60;/redemptions/{parentRedemptionID}/rollbacks&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

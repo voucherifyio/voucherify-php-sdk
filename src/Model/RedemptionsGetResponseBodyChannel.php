@@ -237,6 +237,7 @@ class RedemptionsGetResponseBodyChannel implements ModelInterface, ArrayAccess, 
 
     public const CHANNEL_TYPE_USER = 'USER';
     public const CHANNEL_TYPE_API = 'API';
+    public const CHANNEL_TYPE_AUTO_REDEEM = 'AUTO_REDEEM';
 
     /**
      * Gets allowable values of the enum
@@ -248,6 +249,7 @@ class RedemptionsGetResponseBodyChannel implements ModelInterface, ArrayAccess, 
         return [
             self::CHANNEL_TYPE_USER,
             self::CHANNEL_TYPE_API,
+            self::CHANNEL_TYPE_AUTO_REDEEM,
         ];
     }
 
@@ -368,7 +370,7 @@ class RedemptionsGetResponseBodyChannel implements ModelInterface, ArrayAccess, 
     /**
      * Sets channelType
      *
-     * @param string|null $channelType The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard and an `API` corresponds to the API.
+     * @param string|null $channelType channelType
      *
      * @return self
      */

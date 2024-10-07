@@ -59,7 +59,8 @@ class LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty implements M
       * @var string[]
       */
     protected static $openAPITypes = [
-        'points' => 'int'
+        'points' => 'int',
+        'autoRedeem' => 'bool'
     ];
 
     /**
@@ -70,7 +71,8 @@ class LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty implements M
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'points' => null
+        'points' => null,
+        'autoRedeem' => null
     ];
 
     /**
@@ -79,7 +81,8 @@ class LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty implements M
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'points' => true
+        'points' => true,
+		'autoRedeem' => true
     ];
 
     /**
@@ -168,7 +171,8 @@ class LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty implements M
      * @var string[]
      */
     protected static $attributeMap = [
-        'points' => 'points'
+        'points' => 'points',
+        'autoRedeem' => 'auto_redeem'
     ];
 
     /**
@@ -177,7 +181,8 @@ class LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty implements M
      * @var string[]
      */
     protected static $setters = [
-        'points' => 'setPoints'
+        'points' => 'setPoints',
+        'autoRedeem' => 'setAutoRedeem'
     ];
 
     /**
@@ -186,7 +191,8 @@ class LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty implements M
      * @var string[]
      */
     protected static $getters = [
-        'points' => 'getPoints'
+        'points' => 'getPoints',
+        'autoRedeem' => 'getAutoRedeem'
     ];
 
     /**
@@ -247,6 +253,7 @@ class LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty implements M
     public function __construct(array $data = null)
     {
         $this->setIfExists('points', $data ?? [], null);
+        $this->setIfExists('autoRedeem', $data ?? [], null);
     }
 
     /**
@@ -321,6 +328,40 @@ class LoyaltiesRewardsCreateAssignmentResponseBodyParametersLoyalty implements M
             }
         }
         $this->container['points'] = $points;
+
+        return $this;
+    }
+
+    /**
+     * Gets autoRedeem
+     *
+     * @return bool|null
+     */
+    public function getAutoRedeem()
+    {
+        return $this->container['autoRedeem'];
+    }
+
+    /**
+     * Sets autoRedeem
+     *
+     * @param bool|null $autoRedeem Determines if the reward is redeemed automatically when the customer reaches the sufficient number of points to redeem it. Value `true` means that the automatic reward redemption is active. Only one reward can be set to be redeemed automatically in a loyalty campaign, i.e. only one can have the value `true`.
+     *
+     * @return self
+     */
+    public function setAutoRedeem($autoRedeem)
+    {
+        if (is_null($autoRedeem)) {
+            array_push($this->openAPINullablesSetToNull, 'autoRedeem');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('autoRedeem', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['autoRedeem'] = $autoRedeem;
 
         return $this;
     }

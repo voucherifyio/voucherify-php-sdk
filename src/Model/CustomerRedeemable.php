@@ -292,11 +292,9 @@ class CustomerRedeemable implements ModelInterface, ArrayAccess, \JsonSerializab
     public const CAMPAIGN_TYPE_DISCOUNT_COUPONS = 'DISCOUNT_COUPONS';
     public const CAMPAIGN_TYPE_PROMOTION = 'PROMOTION';
     public const CAMPAIGN_TYPE_REFERRAL_PROGRAM = 'REFERRAL_PROGRAM';
-    public const CAMPAIGN_TYPE_LUCKY_DRAW = 'LUCKY_DRAW';
     public const VOUCHER_TYPE_GIFT_VOUCHER = 'GIFT_VOUCHER';
     public const VOUCHER_TYPE_DISCOUNT_VOUCHER = 'DISCOUNT_VOUCHER';
     public const VOUCHER_TYPE_LOYALTY_CARD = 'LOYALTY_CARD';
-    public const VOUCHER_TYPE_LUCKY_DRAW_CODE = 'LUCKY_DRAW_CODE';
 
     /**
      * Gets allowable values of the enum
@@ -325,7 +323,6 @@ class CustomerRedeemable implements ModelInterface, ArrayAccess, \JsonSerializab
             self::CAMPAIGN_TYPE_DISCOUNT_COUPONS,
             self::CAMPAIGN_TYPE_PROMOTION,
             self::CAMPAIGN_TYPE_REFERRAL_PROGRAM,
-            self::CAMPAIGN_TYPE_LUCKY_DRAW,
         ];
     }
 
@@ -340,7 +337,6 @@ class CustomerRedeemable implements ModelInterface, ArrayAccess, \JsonSerializab
             self::VOUCHER_TYPE_GIFT_VOUCHER,
             self::VOUCHER_TYPE_DISCOUNT_VOUCHER,
             self::VOUCHER_TYPE_LOYALTY_CARD,
-            self::VOUCHER_TYPE_LUCKY_DRAW_CODE,
         ];
     }
 

@@ -62,7 +62,8 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         'object' => 'string',
         'dataRef' => 'string',
         'data' => '\OpenAPI\Client\Model\VoucherTransaction[]',
-        'hasMore' => 'bool'
+        'hasMore' => 'bool',
+        'moreStartingAfter' => 'string'
     ];
 
     /**
@@ -76,7 +77,8 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         'object' => null,
         'dataRef' => null,
         'data' => null,
-        'hasMore' => null
+        'hasMore' => null,
+        'moreStartingAfter' => null
     ];
 
     /**
@@ -88,7 +90,8 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         'object' => true,
 		'dataRef' => true,
 		'data' => true,
-		'hasMore' => true
+		'hasMore' => true,
+		'moreStartingAfter' => true
     ];
 
     /**
@@ -180,7 +183,8 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         'object' => 'object',
         'dataRef' => 'data_ref',
         'data' => 'data',
-        'hasMore' => 'has_more'
+        'hasMore' => 'has_more',
+        'moreStartingAfter' => 'more_starting_after'
     ];
 
     /**
@@ -192,7 +196,8 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         'object' => 'setObject',
         'dataRef' => 'setDataRef',
         'data' => 'setData',
-        'hasMore' => 'setHasMore'
+        'hasMore' => 'setHasMore',
+        'moreStartingAfter' => 'setMoreStartingAfter'
     ];
 
     /**
@@ -204,7 +209,8 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         'object' => 'getObject',
         'dataRef' => 'getDataRef',
         'data' => 'getData',
-        'hasMore' => 'getHasMore'
+        'hasMore' => 'getHasMore',
+        'moreStartingAfter' => 'getMoreStartingAfter'
     ];
 
     /**
@@ -248,6 +254,32 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         return self::$openAPIModelName;
     }
 
+    public const OBJECT__LIST = 'list';
+    public const DATA_REF_DATA = 'data';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getObjectAllowableValues()
+    {
+        return [
+            self::OBJECT__LIST,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDataRefAllowableValues()
+    {
+        return [
+            self::DATA_REF_DATA,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -268,6 +300,7 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
         $this->setIfExists('dataRef', $data ?? [], 'data');
         $this->setIfExists('data', $data ?? [], null);
         $this->setIfExists('hasMore', $data ?? [], null);
+        $this->setIfExists('moreStartingAfter', $data ?? [], null);
     }
 
     /**
@@ -296,6 +329,24 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getObjectAllowableValues();
+        if (!is_null($this->container['object']) && !in_array($this->container['object'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'object', must be one of '%s'",
+                $this->container['object'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getDataRefAllowableValues();
+        if (!is_null($this->container['dataRef']) && !in_array($this->container['dataRef'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'dataRef', must be one of '%s'",
+                $this->container['dataRef'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -341,6 +392,16 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+        $allowedValues = $this->getObjectAllowableValues();
+        if (!is_null($object) && !in_array($object, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'object', must be one of '%s'",
+                    $object,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['object'] = $object;
 
         return $this;
@@ -374,6 +435,16 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
+        }
+        $allowedValues = $this->getDataRefAllowableValues();
+        if (!is_null($dataRef) && !in_array($dataRef, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'dataRef', must be one of '%s'",
+                    $dataRef,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
         $this->container['dataRef'] = $dataRef;
 
@@ -427,7 +498,7 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
     /**
      * Sets hasMore
      *
-     * @param bool|null $hasMore As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different page or a different start date filter) to get more records returned in the results.
+     * @param bool|null $hasMore As query results are always limited (by the limit parameter), the `has_more` flag indicates if there are more records for given filter parameters. This lets you know if you can run another request (with a different paging or a different start date filter) to get more records returned in the results.
      *
      * @return self
      */
@@ -444,6 +515,40 @@ class VouchersTransactionsListResponseBody implements ModelInterface, ArrayAcces
             }
         }
         $this->container['hasMore'] = $hasMore;
+
+        return $this;
+    }
+
+    /**
+     * Gets moreStartingAfter
+     *
+     * @return string|null
+     */
+    public function getMoreStartingAfter()
+    {
+        return $this->container['moreStartingAfter'];
+    }
+
+    /**
+     * Sets moreStartingAfter
+     *
+     * @param string|null $moreStartingAfter Returns an ID that can be used to return another page of results. Use the transaction ID in the `starting_after_id` query parameter to display another page of the results starting after the transaction with that ID.
+     *
+     * @return self
+     */
+    public function setMoreStartingAfter($moreStartingAfter)
+    {
+        if (is_null($moreStartingAfter)) {
+            array_push($this->openAPINullablesSetToNull, 'moreStartingAfter');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('moreStartingAfter', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['moreStartingAfter'] = $moreStartingAfter;
 
         return $this;
     }

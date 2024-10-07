@@ -5,11 +5,11 @@ use OpenAPI\Client\Api\PublicationsApi;
 use OpenAPI\Client\Model\PublicationsCreateRequestBody;
 use OpenAPI\Client\Model\PublicationsCreateResponseBody;
 use OpenAPI\Client\Model\CreatePublicationCampaign;
-use OpenAPI\Client\Model\PublicationsCreateRequestBodyCustomer;
+use OpenAPI\Client\Model\Customer;
 
 function createPublication(PublicationsApi $publicationsApiInstance, string $customerId, string $campaignName): ?PublicationsCreateResponseBody {
     $publication = new PublicationsCreateRequestBody();
-    $customer = new PublicationsCreateRequestBodyCustomer();
+    $customer = new Customer();
     $campaign = new CreatePublicationCampaign();
 
     $customer->setId($customerId);

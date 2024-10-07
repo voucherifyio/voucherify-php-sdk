@@ -582,7 +582,7 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets items
      *
-     * @param \OpenAPI\Client\Model\OrderItem[]|null $items Array of items applied to the order.
+     * @param \OpenAPI\Client\Model\OrderItem[]|null $items Array of items applied to the order. It can include up 500 items.
      *
      * @return self
      */

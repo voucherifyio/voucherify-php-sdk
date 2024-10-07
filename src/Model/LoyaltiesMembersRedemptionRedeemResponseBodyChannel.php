@@ -238,6 +238,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyChannel implements ModelInterf
 
     public const CHANNEL_TYPE_USER = 'USER';
     public const CHANNEL_TYPE_API = 'API';
+    public const CHANNEL_TYPE_AUTO_REDEEM = 'AUTO_REDEEM';
 
     /**
      * Gets allowable values of the enum
@@ -249,6 +250,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyChannel implements ModelInterf
         return [
             self::CHANNEL_TYPE_USER,
             self::CHANNEL_TYPE_API,
+            self::CHANNEL_TYPE_AUTO_REDEEM,
         ];
     }
 
@@ -335,7 +337,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyChannel implements ModelInterf
     /**
      * Sets channelId
      *
-     * @param string|null $channelId Unique channel ID of the user performing the redemption. This is either a user ID from a user using the Voucherify Dashboard or an X-APP-Id of a user using the API.
+     * @param string|null $channelId Unique channel ID of the user performing the redemption. This is either a user ID from a user using the Voucherify Dashboard or an X-APP-Id of a user using the API. For `AUTO_REDEEM`, it is the reward assignment ID.
      *
      * @return self
      */
@@ -369,7 +371,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyChannel implements ModelInterf
     /**
      * Sets channelType
      *
-     * @param string|null $channelType The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard and an `API` corresponds to the API.
+     * @param string|null $channelType The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard, `API` corresponds to the API, and `AUTO_REDEEM` corresponds to a loyalty campaign reward that has been redeemed automatically.
      *
      * @return self
      */

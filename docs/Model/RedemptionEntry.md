@@ -22,11 +22,11 @@ Name | Type | Description | Notes
 **customer** | [**\OpenAPI\Client\Model\RedemptionEntryCustomer**](RedemptionEntryCustomer.md) |  | [optional]
 **relatedObjectType** | **string** | Defines the related object. | [optional]
 **relatedObjectId** | **string** |  | [optional]
-**voucher** | [**\OpenAPI\Client\Model\RedemptionEntryVoucher**](RedemptionEntryVoucher.md) |  | [optional]
 **promotionTier** | [**\OpenAPI\Client\Model\RedemptionEntryPromotionTier**](RedemptionEntryPromotionTier.md) |  | [optional]
 **reward** | [**\OpenAPI\Client\Model\RedemptionRewardResult**](RedemptionRewardResult.md) |  | [optional]
 **gift** | [**\OpenAPI\Client\Model\RedemptionEntryGift**](RedemptionEntryGift.md) |  | [optional]
 **loyaltyCard** | [**\OpenAPI\Client\Model\RedemptionEntryLoyaltyCard**](RedemptionEntryLoyaltyCard.md) |  | [optional]
+**voucher** | [**\OpenAPI\Client\Model\RedemptionEntryVoucher**](RedemptionEntryVoucher.md) |  | [optional]
 **reason** | **string** | System generated cause for the redemption being invalid in the context of the provided parameters. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

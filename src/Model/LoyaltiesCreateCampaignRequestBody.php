@@ -72,10 +72,10 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'validityDayOfWeek' => 'int[]',
         'validityHours' => '\OpenAPI\Client\Model\ValidityHours',
         'activityDurationAfterPublishing' => 'string',
-        'validationRules' => 'string[]',
         'categoryId' => 'string',
         'category' => 'string',
         'metadata' => 'object',
+        'validationRules' => 'string[]',
         'campaignType' => 'string',
         'voucher' => '\OpenAPI\Client\Model\CampaignLoyaltyVoucher'
     ];
@@ -101,10 +101,10 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'validityDayOfWeek' => null,
         'validityHours' => null,
         'activityDurationAfterPublishing' => null,
-        'validationRules' => null,
         'categoryId' => null,
         'category' => null,
         'metadata' => null,
+        'validationRules' => null,
         'campaignType' => null,
         'voucher' => null
     ];
@@ -128,10 +128,10 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
 		'validityDayOfWeek' => true,
 		'validityHours' => false,
 		'activityDurationAfterPublishing' => true,
-		'validationRules' => true,
 		'categoryId' => true,
 		'category' => true,
 		'metadata' => true,
+		'validationRules' => true,
 		'campaignType' => true,
 		'voucher' => false
     ];
@@ -235,10 +235,10 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'validityDayOfWeek' => 'validity_day_of_week',
         'validityHours' => 'validity_hours',
         'activityDurationAfterPublishing' => 'activity_duration_after_publishing',
-        'validationRules' => 'validation_rules',
         'categoryId' => 'category_id',
         'category' => 'category',
         'metadata' => 'metadata',
+        'validationRules' => 'validation_rules',
         'campaignType' => 'campaign_type',
         'voucher' => 'voucher'
     ];
@@ -262,10 +262,10 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'validityDayOfWeek' => 'setValidityDayOfWeek',
         'validityHours' => 'setValidityHours',
         'activityDurationAfterPublishing' => 'setActivityDurationAfterPublishing',
-        'validationRules' => 'setValidationRules',
         'categoryId' => 'setCategoryId',
         'category' => 'setCategory',
         'metadata' => 'setMetadata',
+        'validationRules' => 'setValidationRules',
         'campaignType' => 'setCampaignType',
         'voucher' => 'setVoucher'
     ];
@@ -289,10 +289,10 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'validityDayOfWeek' => 'getValidityDayOfWeek',
         'validityHours' => 'getValidityHours',
         'activityDurationAfterPublishing' => 'getActivityDurationAfterPublishing',
-        'validationRules' => 'getValidationRules',
         'categoryId' => 'getCategoryId',
         'category' => 'getCategory',
         'metadata' => 'getMetadata',
+        'validationRules' => 'getValidationRules',
         'campaignType' => 'getCampaignType',
         'voucher' => 'getVoucher'
     ];
@@ -420,10 +420,10 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         $this->setIfExists('validityDayOfWeek', $data ?? [], null);
         $this->setIfExists('validityHours', $data ?? [], null);
         $this->setIfExists('activityDurationAfterPublishing', $data ?? [], null);
-        $this->setIfExists('validationRules', $data ?? [], null);
         $this->setIfExists('categoryId', $data ?? [], null);
         $this->setIfExists('category', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('validationRules', $data ?? [], null);
         $this->setIfExists('campaignType', $data ?? [], 'LOYALTY_PROGRAM');
         $this->setIfExists('voucher', $data ?? [], null);
     }
@@ -940,44 +940,6 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
     }
 
     /**
-     * Gets validationRules
-     *
-     * @return string[]|null
-     */
-    public function getValidationRules()
-    {
-        return $this->container['validationRules'];
-    }
-
-    /**
-     * Sets validationRules
-     *
-     * @param string[]|null $validationRules Array containing the ID of the validation rule associated with the promotion tier.
-     *
-     * @return self
-     */
-    public function setValidationRules($validationRules)
-    {
-        if (is_null($validationRules)) {
-            array_push($this->openAPINullablesSetToNull, 'validationRules');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validationRules', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($validationRules) && (count($validationRules) > 1)) {
-            throw new \InvalidArgumentException('invalid value for $validationRules when calling LoyaltiesCreateCampaignRequestBody., number of items must be less than or equal to 1.');
-        }
-        $this->container['validationRules'] = $validationRules;
-
-        return $this;
-    }
-
-    /**
      * Gets categoryId
      *
      * @return string|null
@@ -1075,6 +1037,44 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
             }
         }
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets validationRules
+     *
+     * @return string[]|null
+     */
+    public function getValidationRules()
+    {
+        return $this->container['validationRules'];
+    }
+
+    /**
+     * Sets validationRules
+     *
+     * @param string[]|null $validationRules Array containing the ID of the validation rule associated with the promotion tier.
+     *
+     * @return self
+     */
+    public function setValidationRules($validationRules)
+    {
+        if (is_null($validationRules)) {
+            array_push($this->openAPINullablesSetToNull, 'validationRules');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('validationRules', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($validationRules) && (count($validationRules) > 1)) {
+            throw new \InvalidArgumentException('invalid value for $validationRules when calling LoyaltiesCreateCampaignRequestBody., number of items must be less than or equal to 1.');
+        }
+        $this->container['validationRules'] = $validationRules;
 
         return $this;
     }

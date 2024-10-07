@@ -22,11 +22,11 @@ Name | Type | Description | Notes
 **customer** | [**\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemCustomer**](RedemptionsListResponseBodyRedemptionsItemCustomer.md) |  | [optional]
 **relatedObjectType** | **string** | Defines the related object. | [optional]
 **relatedObjectId** | **string** |  | [optional]
-**voucher** | [**\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemVoucher**](RedemptionsListResponseBodyRedemptionsItemVoucher.md) |  | [optional]
 **promotionTier** | [**\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemPromotionTier**](RedemptionsListResponseBodyRedemptionsItemPromotionTier.md) |  | [optional]
 **reward** | [**\OpenAPI\Client\Model\RedemptionRewardResult**](RedemptionRewardResult.md) |  | [optional]
 **gift** | [**\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemGift**](RedemptionsListResponseBodyRedemptionsItemGift.md) |  | [optional]
 **loyaltyCard** | [**\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemLoyaltyCard**](RedemptionsListResponseBodyRedemptionsItemLoyaltyCard.md) |  | [optional]
+**voucher** | [**\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemVoucher**](RedemptionsListResponseBodyRedemptionsItemVoucher.md) |  | [optional]
 **reason** | **string** | System generated cause for the redemption being invalid in the context of the provided parameters. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

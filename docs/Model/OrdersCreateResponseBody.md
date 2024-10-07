@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **appliedDiscountAmount** | **int** | This field shows the order-level discount applied. | [optional]
 **itemsAppliedDiscountAmount** | **int** | Sum of all product-specific discounts applied in a particular request.   &#x60;sum(items, i &#x3D;&gt; i.applied_discount_amount)&#x60; | [optional]
 **totalAppliedDiscountAmount** | **int** | Sum of all order-level AND all product-specific discounts applied in a particular request.   &#x60;total_applied_discount_amount&#x60; &#x3D; &#x60;applied_discount_amount&#x60; + &#x60;items_applied_discount_amount&#x60; | [optional]
-**items** | [**\OpenAPI\Client\Model\OrderCalculatedItem[]**](OrderCalculatedItem.md) | Array of items applied to the order. | [optional]
+**items** | [**\OpenAPI\Client\Model\OrderCalculatedItem[]**](OrderCalculatedItem.md) | Array of items applied to the order. It can include up 500 items. | [optional]
 **metadata** | **object** | A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format. | [optional]
 **object** | **string** | The type of the object represented by JSON. | [optional] [default to 'order']
 **createdAt** | **\DateTime** | Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format. | [optional]

@@ -62,7 +62,7 @@ class ProductCollectionsItem implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => 'string',
         'name' => 'string',
         'type' => 'string',
-        'filter' => '\OpenAPI\Client\Model\ProductCollectionsItemFilter',
+        'filter' => 'object',
         'products' => '\OpenAPI\Client\Model\ProductCollectionsItemProductsItem[]',
         'createdAt' => '\DateTime',
         'object' => 'string'
@@ -494,7 +494,7 @@ class ProductCollectionsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets filter
      *
-     * @return \OpenAPI\Client\Model\ProductCollectionsItemFilter|null
+     * @return object|null
      */
     public function getFilter()
     {
@@ -504,7 +504,7 @@ class ProductCollectionsItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets filter
      *
-     * @param \OpenAPI\Client\Model\ProductCollectionsItemFilter|null $filter filter
+     * @param object|null $filter Defines a set of criteria and boundary conditions for an `AUTO_UPDATE` product collection type.
      *
      * @return self
      */

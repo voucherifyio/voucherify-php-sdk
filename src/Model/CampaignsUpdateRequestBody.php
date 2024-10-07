@@ -72,14 +72,11 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'joinOnce' => 'bool',
         'autoJoin' => 'bool',
         'type' => 'string',
-        'discount' => 'object',
+        'discount' => '\OpenAPI\Client\Model\Discount',
         'referralProgram' => '\OpenAPI\Client\Model\ReferralProgram',
         'gift' => '\OpenAPI\Client\Model\Gift',
         'loyaltyTiersExpiration' => '\OpenAPI\Client\Model\LoyaltyTiersExpirationAll',
-        'options' => '\OpenAPI\Client\Model\CampaignsUpdateRequestBodyOptions',
-        'winnersCount' => 'string',
-        'uniqueWinnersPerDraw' => 'string',
-        'uniqueWinners' => 'string'
+        'options' => '\OpenAPI\Client\Model\CampaignsUpdateRequestBodyOptions'
     ];
 
     /**
@@ -108,10 +105,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'referralProgram' => null,
         'gift' => null,
         'loyaltyTiersExpiration' => null,
-        'options' => null,
-        'winnersCount' => null,
-        'uniqueWinnersPerDraw' => null,
-        'uniqueWinners' => null
+        'options' => null
     ];
 
     /**
@@ -134,14 +128,11 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
 		'joinOnce' => true,
 		'autoJoin' => true,
 		'type' => true,
-		'discount' => true,
+		'discount' => false,
 		'referralProgram' => false,
 		'gift' => false,
 		'loyaltyTiersExpiration' => false,
-		'options' => true,
-		'winnersCount' => true,
-		'uniqueWinnersPerDraw' => true,
-		'uniqueWinners' => true
+		'options' => true
     ];
 
     /**
@@ -248,10 +239,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'referralProgram' => 'referral_program',
         'gift' => 'gift',
         'loyaltyTiersExpiration' => 'loyalty_tiers_expiration',
-        'options' => 'options',
-        'winnersCount' => 'winners_count',
-        'uniqueWinnersPerDraw' => 'unique_winners_per_draw',
-        'uniqueWinners' => 'unique_winners'
+        'options' => 'options'
     ];
 
     /**
@@ -278,10 +266,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'referralProgram' => 'setReferralProgram',
         'gift' => 'setGift',
         'loyaltyTiersExpiration' => 'setLoyaltyTiersExpiration',
-        'options' => 'setOptions',
-        'winnersCount' => 'setWinnersCount',
-        'uniqueWinnersPerDraw' => 'setUniqueWinnersPerDraw',
-        'uniqueWinners' => 'setUniqueWinners'
+        'options' => 'setOptions'
     ];
 
     /**
@@ -308,10 +293,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'referralProgram' => 'getReferralProgram',
         'gift' => 'getGift',
         'loyaltyTiersExpiration' => 'getLoyaltyTiersExpiration',
-        'options' => 'getOptions',
-        'winnersCount' => 'getWinnersCount',
-        'uniqueWinnersPerDraw' => 'getUniqueWinnersPerDraw',
-        'uniqueWinners' => 'getUniqueWinners'
+        'options' => 'getOptions'
     ];
 
     /**
@@ -430,9 +412,6 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         $this->setIfExists('gift', $data ?? [], null);
         $this->setIfExists('loyaltyTiersExpiration', $data ?? [], null);
         $this->setIfExists('options', $data ?? [], null);
-        $this->setIfExists('winnersCount', $data ?? [], null);
-        $this->setIfExists('uniqueWinnersPerDraw', $data ?? [], null);
-        $this->setIfExists('uniqueWinners', $data ?? [], null);
     }
 
     /**
@@ -970,7 +949,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets discount
      *
-     * @return object|null
+     * @return \OpenAPI\Client\Model\Discount|null
      */
     public function getDiscount()
     {
@@ -980,21 +959,14 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets discount
      *
-     * @param object|null $discount discount
+     * @param \OpenAPI\Client\Model\Discount|null $discount discount
      *
      * @return self
      */
     public function setDiscount($discount)
     {
         if (is_null($discount)) {
-            array_push($this->openAPINullablesSetToNull, 'discount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('discount', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable discount cannot be null');
         }
         $this->container['discount'] = $discount;
 
@@ -1112,110 +1084,6 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['options'] = $options;
-
-        return $this;
-    }
-
-    /**
-     * Gets winnersCount
-     *
-     * @return string|null
-     */
-    public function getWinnersCount()
-    {
-        return $this->container['winnersCount'];
-    }
-
-    /**
-     * Sets winnersCount
-     *
-     * @param string|null $winnersCount It represents the total number of winners in a lucky draw.
-     *
-     * @return self
-     */
-    public function setWinnersCount($winnersCount)
-    {
-        if (is_null($winnersCount)) {
-            array_push($this->openAPINullablesSetToNull, 'winnersCount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('winnersCount', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-
-        $this->container['winnersCount'] = $winnersCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets uniqueWinnersPerDraw
-     *
-     * @return string|null
-     */
-    public function getUniqueWinnersPerDraw()
-    {
-        return $this->container['uniqueWinnersPerDraw'];
-    }
-
-    /**
-     * Sets uniqueWinnersPerDraw
-     *
-     * @param string|null $uniqueWinnersPerDraw It indicates whether each winner in a draw is unique or not.
-     *
-     * @return self
-     */
-    public function setUniqueWinnersPerDraw($uniqueWinnersPerDraw)
-    {
-        if (is_null($uniqueWinnersPerDraw)) {
-            array_push($this->openAPINullablesSetToNull, 'uniqueWinnersPerDraw');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('uniqueWinnersPerDraw', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['uniqueWinnersPerDraw'] = $uniqueWinnersPerDraw;
-
-        return $this;
-    }
-
-    /**
-     * Gets uniqueWinners
-     *
-     * @return string|null
-     */
-    public function getUniqueWinners()
-    {
-        return $this->container['uniqueWinners'];
-    }
-
-    /**
-     * Sets uniqueWinners
-     *
-     * @param string|null $uniqueWinners Specifies whether each participant can win only once across multiple draws.
-     *
-     * @return self
-     */
-    public function setUniqueWinners($uniqueWinners)
-    {
-        if (is_null($uniqueWinners)) {
-            array_push($this->openAPINullablesSetToNull, 'uniqueWinners');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('uniqueWinners', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['uniqueWinners'] = $uniqueWinners;
 
         return $this;
     }

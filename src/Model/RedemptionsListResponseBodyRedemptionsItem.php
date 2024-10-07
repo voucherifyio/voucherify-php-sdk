@@ -76,11 +76,11 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
         'customer' => '\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemCustomer',
         'relatedObjectType' => 'string',
         'relatedObjectId' => 'string',
-        'voucher' => '\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemVoucher',
         'promotionTier' => '\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemPromotionTier',
         'reward' => '\OpenAPI\Client\Model\RedemptionRewardResult',
         'gift' => '\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemGift',
         'loyaltyCard' => '\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemLoyaltyCard',
+        'voucher' => '\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemVoucher',
         'reason' => 'string'
     ];
 
@@ -110,11 +110,11 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
         'customer' => null,
         'relatedObjectType' => null,
         'relatedObjectId' => null,
-        'voucher' => null,
         'promotionTier' => null,
         'reward' => null,
         'gift' => null,
         'loyaltyCard' => null,
+        'voucher' => null,
         'reason' => null
     ];
 
@@ -142,11 +142,11 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
 		'customer' => false,
 		'relatedObjectType' => true,
 		'relatedObjectId' => false,
-		'voucher' => false,
 		'promotionTier' => false,
 		'reward' => false,
 		'gift' => false,
 		'loyaltyCard' => false,
+		'voucher' => false,
 		'reason' => true
     ];
 
@@ -254,11 +254,11 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
         'customer' => 'customer',
         'relatedObjectType' => 'related_object_type',
         'relatedObjectId' => 'related_object_id',
-        'voucher' => 'voucher',
         'promotionTier' => 'promotion_tier',
         'reward' => 'reward',
         'gift' => 'gift',
         'loyaltyCard' => 'loyalty_card',
+        'voucher' => 'voucher',
         'reason' => 'reason'
     ];
 
@@ -286,11 +286,11 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
         'customer' => 'setCustomer',
         'relatedObjectType' => 'setRelatedObjectType',
         'relatedObjectId' => 'setRelatedObjectId',
-        'voucher' => 'setVoucher',
         'promotionTier' => 'setPromotionTier',
         'reward' => 'setReward',
         'gift' => 'setGift',
         'loyaltyCard' => 'setLoyaltyCard',
+        'voucher' => 'setVoucher',
         'reason' => 'setReason'
     ];
 
@@ -318,11 +318,11 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
         'customer' => 'getCustomer',
         'relatedObjectType' => 'getRelatedObjectType',
         'relatedObjectId' => 'getRelatedObjectId',
-        'voucher' => 'getVoucher',
         'promotionTier' => 'getPromotionTier',
         'reward' => 'getReward',
         'gift' => 'getGift',
         'loyaltyCard' => 'getLoyaltyCard',
+        'voucher' => 'getVoucher',
         'reason' => 'getReason'
     ];
 
@@ -465,11 +465,11 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
         $this->setIfExists('customer', $data ?? [], null);
         $this->setIfExists('relatedObjectType', $data ?? [], null);
         $this->setIfExists('relatedObjectId', $data ?? [], null);
-        $this->setIfExists('voucher', $data ?? [], null);
         $this->setIfExists('promotionTier', $data ?? [], null);
         $this->setIfExists('reward', $data ?? [], null);
         $this->setIfExists('gift', $data ?? [], null);
         $this->setIfExists('loyaltyCard', $data ?? [], null);
+        $this->setIfExists('voucher', $data ?? [], null);
         $this->setIfExists('reason', $data ?? [], null);
     }
 
@@ -1134,33 +1134,6 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
     }
 
     /**
-     * Gets voucher
-     *
-     * @return \OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemVoucher|null
-     */
-    public function getVoucher()
-    {
-        return $this->container['voucher'];
-    }
-
-    /**
-     * Sets voucher
-     *
-     * @param \OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemVoucher|null $voucher voucher
-     *
-     * @return self
-     */
-    public function setVoucher($voucher)
-    {
-        if (is_null($voucher)) {
-            throw new \InvalidArgumentException('non-nullable voucher cannot be null');
-        }
-        $this->container['voucher'] = $voucher;
-
-        return $this;
-    }
-
-    /**
      * Gets promotionTier
      *
      * @return \OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemPromotionTier|null
@@ -1264,6 +1237,33 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
             throw new \InvalidArgumentException('non-nullable loyaltyCard cannot be null');
         }
         $this->container['loyaltyCard'] = $loyaltyCard;
+
+        return $this;
+    }
+
+    /**
+     * Gets voucher
+     *
+     * @return \OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemVoucher|null
+     */
+    public function getVoucher()
+    {
+        return $this->container['voucher'];
+    }
+
+    /**
+     * Sets voucher
+     *
+     * @param \OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemVoucher|null $voucher voucher
+     *
+     * @return self
+     */
+    public function setVoucher($voucher)
+    {
+        if (is_null($voucher)) {
+            throw new \InvalidArgumentException('non-nullable voucher cannot be null');
+        }
+        $this->container['voucher'] = $voucher;
 
         return $this;
     }

@@ -238,6 +238,10 @@ class ObjectSerializer
             return ["{$paramName}" => $value->format(self::$dateTimeFormat)];
         }
 
+        $value = (in_array($openApiType, ['object', 'array'], true))
+            ? (is_object($value) ? json_decode(json_encode($value), true) : (array)$value)
+            : $value;
+
         $query = [];
         $value = (in_array($openApiType, ['object', 'array'], true)) ? (array)$value : $value;
 
