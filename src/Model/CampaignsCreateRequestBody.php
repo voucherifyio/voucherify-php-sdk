@@ -78,8 +78,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'campaignType' => 'string',
         'voucher' => '\OpenAPI\Client\Model\CampaignsCreateRequestBodyVoucher',
         'referralProgram' => '\OpenAPI\Client\Model\ReferralProgram',
-        'promotion' => '\OpenAPI\Client\Model\CampaignsCreateRequestBodyPromotion',
-        'luckyDraw' => '\OpenAPI\Client\Model\LuckyDraw'
+        'promotion' => '\OpenAPI\Client\Model\CampaignsCreateRequestBodyPromotion'
     ];
 
     /**
@@ -110,8 +109,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'campaignType' => null,
         'voucher' => null,
         'referralProgram' => null,
-        'promotion' => null,
-        'luckyDraw' => null
+        'promotion' => null
     ];
 
     /**
@@ -140,8 +138,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
 		'campaignType' => true,
 		'voucher' => true,
 		'referralProgram' => false,
-		'promotion' => true,
-		'luckyDraw' => false
+		'promotion' => true
     ];
 
     /**
@@ -250,8 +247,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'campaignType' => 'campaign_type',
         'voucher' => 'voucher',
         'referralProgram' => 'referral_program',
-        'promotion' => 'promotion',
-        'luckyDraw' => 'lucky_draw'
+        'promotion' => 'promotion'
     ];
 
     /**
@@ -280,8 +276,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'campaignType' => 'setCampaignType',
         'voucher' => 'setVoucher',
         'referralProgram' => 'setReferralProgram',
-        'promotion' => 'setPromotion',
-        'luckyDraw' => 'setLuckyDraw'
+        'promotion' => 'setPromotion'
     ];
 
     /**
@@ -310,8 +305,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'campaignType' => 'getCampaignType',
         'voucher' => 'getVoucher',
         'referralProgram' => 'getReferralProgram',
-        'promotion' => 'getPromotion',
-        'luckyDraw' => 'getLuckyDraw'
+        'promotion' => 'getPromotion'
     ];
 
     /**
@@ -369,7 +363,6 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     public const CAMPAIGN_TYPE_GIFT_VOUCHERS = 'GIFT_VOUCHERS';
     public const CAMPAIGN_TYPE_LOYALTY_PROGRAM = 'LOYALTY_PROGRAM';
     public const CAMPAIGN_TYPE_PROMOTION = 'PROMOTION';
-    public const CAMPAIGN_TYPE_LUCKY_DRAW = 'LUCKY_DRAW';
 
     /**
      * Gets allowable values of the enum
@@ -415,7 +408,6 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
             self::CAMPAIGN_TYPE_GIFT_VOUCHERS,
             self::CAMPAIGN_TYPE_LOYALTY_PROGRAM,
             self::CAMPAIGN_TYPE_PROMOTION,
-            self::CAMPAIGN_TYPE_LUCKY_DRAW,
         ];
     }
 
@@ -455,7 +447,6 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         $this->setIfExists('voucher', $data ?? [], null);
         $this->setIfExists('referralProgram', $data ?? [], null);
         $this->setIfExists('promotion', $data ?? [], null);
-        $this->setIfExists('luckyDraw', $data ?? [], null);
     }
 
     /**
@@ -1244,33 +1235,6 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['promotion'] = $promotion;
-
-        return $this;
-    }
-
-    /**
-     * Gets luckyDraw
-     *
-     * @return \OpenAPI\Client\Model\LuckyDraw|null
-     */
-    public function getLuckyDraw()
-    {
-        return $this->container['luckyDraw'];
-    }
-
-    /**
-     * Sets luckyDraw
-     *
-     * @param \OpenAPI\Client\Model\LuckyDraw|null $luckyDraw luckyDraw
-     *
-     * @return self
-     */
-    public function setLuckyDraw($luckyDraw)
-    {
-        if (is_null($luckyDraw)) {
-            throw new \InvalidArgumentException('non-nullable luckyDraw cannot be null');
-        }
-        $this->container['luckyDraw'] = $luckyDraw;
 
         return $this;
     }

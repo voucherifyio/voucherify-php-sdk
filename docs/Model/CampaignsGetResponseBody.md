@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **category** | **string** | Unique category name. | [optional]
 **creationStatus** | **string** | Indicates the status of the campaign creation. | [optional]
 **vouchersGenerationStatus** | **string** | Indicates the status of the campaign&#39;s voucher generation. | [optional]
+**readonly** | **bool** | Indicates whether the campaign can be only read by a restricted user in the Areas and Stores enterprise feature. It is returned only to restricted users; this field is not returned for users with other roles. | [optional]
 **protected** | **bool** | Indicates whether the resource can be deleted. | [optional]
 **categoryId** | **string** | Unique category ID that this campaign belongs to. | [optional]
 **categories** | [**\OpenAPI\Client\Model\Category[]**](Category.md) | Contains details about the category. | [optional]

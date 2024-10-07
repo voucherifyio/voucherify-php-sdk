@@ -633,7 +633,7 @@ try {
 ## `listVoucherTransactions()`
 
 ```php
-listVoucherTransactions($code, $limit, $page): \OpenAPI\Client\Model\VouchersTransactionsListResponseBody
+listVoucherTransactions($code, $limit, $order, $startingAfterId): \OpenAPI\Client\Model\VouchersTransactionsListResponseBody
 ```
 
 List Voucher Transactions
@@ -666,10 +666,11 @@ $apiInstance = new OpenAPI\Client\Api\VouchersApi(
 );
 $code = 'code_example'; // string | A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u.
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-$page = 56; // int | Which page of results to return. The lowest value is 1.
+$order = new \OpenAPI\Client\Model\ParameterOrderListTransactions(); // ParameterOrderListTransactions | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+$startingAfterId = 'startingAfterId_example'; // string | A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID.
 
 try {
-    $result = $apiInstance->listVoucherTransactions($code, $limit, $page);
+    $result = $apiInstance->listVoucherTransactions($code, $limit, $order, $startingAfterId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VouchersApi->listVoucherTransactions: ', $e->getMessage(), PHP_EOL;
@@ -682,7 +683,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. | |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
-| **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
+| **order** | [**ParameterOrderListTransactions**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
+| **startingAfterId** | **string**| A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. | [optional] |
 
 ### Return type
 

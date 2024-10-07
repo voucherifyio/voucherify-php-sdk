@@ -407,7 +407,7 @@ class OrderItemProduct implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets override
      *
-     * @param bool|null $override The override set to `true` is used to store the product information in the system. If the product does not exist, it will be created with a source_id; if it does exist, the provided values for the name, price, and metadata will replace those already stored in the system.
+     * @param bool|null $override The override set to `true` is used to store the product information in the system. If the product does not exist, it will be created with a source_id; if it does exist, the provided values for the name, price, and metadata will replace those already stored in the system. Override works only for endpoints that create an order in the database.
      *
      * @return self
      */

@@ -2900,15 +2900,16 @@ class CampaignsApi
      * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
      * @param  ParameterExpandListCampaigns $expand Include an expanded categories object in the response. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  ParameterFiltersListCampaigns $filters Filters the results by campaign status or whether the campaign is a referral campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CampaignsListResponseBody
      */
-    public function listCampaigns($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
+    public function listCampaigns($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, $filters = null, string $contentType = self::contentTypes['listCampaigns'][0])
     {
-        list($response) = $this->listCampaignsWithHttpInfo($limit, $page, $campaignType, $expand, $order, $contentType);
+        list($response) = $this->listCampaignsWithHttpInfo($limit, $page, $campaignType, $expand, $order, $filters, $contentType);
         return $response;
     }
 
@@ -2922,15 +2923,16 @@ class CampaignsApi
      * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
      * @param  ParameterExpandListCampaigns $expand Include an expanded categories object in the response. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  ParameterFiltersListCampaigns $filters Filters the results by campaign status or whether the campaign is a referral campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CampaignsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCampaignsWithHttpInfo($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
+    public function listCampaignsWithHttpInfo($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, $filters = null, string $contentType = self::contentTypes['listCampaigns'][0])
     {
-        $request = $this->listCampaignsRequest($limit, $page, $campaignType, $expand, $order, $contentType);
+        $request = $this->listCampaignsRequest($limit, $page, $campaignType, $expand, $order, $filters, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3026,14 +3028,15 @@ class CampaignsApi
      * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
      * @param  ParameterExpandListCampaigns $expand Include an expanded categories object in the response. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  ParameterFiltersListCampaigns $filters Filters the results by campaign status or whether the campaign is a referral campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCampaignsAsync($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
+    public function listCampaignsAsync($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, $filters = null, string $contentType = self::contentTypes['listCampaigns'][0])
     {
-        return $this->listCampaignsAsyncWithHttpInfo($limit, $page, $campaignType, $expand, $order, $contentType)
+        return $this->listCampaignsAsyncWithHttpInfo($limit, $page, $campaignType, $expand, $order, $filters, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3051,15 +3054,16 @@ class CampaignsApi
      * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
      * @param  ParameterExpandListCampaigns $expand Include an expanded categories object in the response. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  ParameterFiltersListCampaigns $filters Filters the results by campaign status or whether the campaign is a referral campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCampaignsAsyncWithHttpInfo($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
+    public function listCampaignsAsyncWithHttpInfo($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, $filters = null, string $contentType = self::contentTypes['listCampaigns'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CampaignsListResponseBody';
-        $request = $this->listCampaignsRequest($limit, $page, $campaignType, $expand, $order, $contentType);
+        $request = $this->listCampaignsRequest($limit, $page, $campaignType, $expand, $order, $filters, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3105,12 +3109,13 @@ class CampaignsApi
      * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
      * @param  ParameterExpandListCampaigns $expand Include an expanded categories object in the response. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  ParameterFiltersListCampaigns $filters Filters the results by campaign status or whether the campaign is a referral campaign. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listCampaignsRequest($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, string $contentType = self::contentTypes['listCampaigns'][0])
+    public function listCampaignsRequest($limit = null, $page = null, $campaignType = null, $expand = null, $order = null, $filters = null, string $contentType = self::contentTypes['listCampaigns'][0])
     {
 
         if ($limit !== null && $limit > 100) {
@@ -3127,6 +3132,7 @@ class CampaignsApi
             throw new \InvalidArgumentException('invalid value for "$page" when calling CampaignsApi.listCampaigns, must be bigger than or equal to 1.');
         }
         
+
 
 
 
@@ -3180,6 +3186,15 @@ class CampaignsApi
             'order', // param base name
             'ParameterOrderListCampaigns', // openApiType
             'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $filters,
+            'filters', // param base name
+            'object', // openApiType
+            'deepObject', // style
             true, // explode
             false // required
         ) ?? []);

@@ -25,6 +25,5 @@ Name | Type | Description | Notes
 **voucher** | [**\OpenAPI\Client\Model\CampaignsCreateRequestBodyVoucher**](CampaignsCreateRequestBodyVoucher.md) |  | [optional]
 **referralProgram** | [**\OpenAPI\Client\Model\ReferralProgram**](ReferralProgram.md) |  | [optional]
 **promotion** | [**\OpenAPI\Client\Model\CampaignsCreateRequestBodyPromotion**](CampaignsCreateRequestBodyPromotion.md) |  | [optional]
-**luckyDraw** | [**\OpenAPI\Client\Model\LuckyDraw**](LuckyDraw.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
