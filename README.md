@@ -112,39 +112,11 @@ Remember that this SDK is auto generated (except of the tests) so changes made h
 
 - **2024-10-02** - `4.0.0`
   - Fix object parsing in query. For example `filters` while listing redemptions.
-  - !!! BREAKING CHANGES !!!
-    - Pagination changed on listing card transactions(listLoyaltyCardTransactions) - NO `page` param is supported - use `$startingAfterId` instead.
-    - Pagination changed on listing voucher transactions(listVoucherTransactions) - NO `page` param is supported - use `$startingAfterId` instead.
-    - ApplicableToEffect - changed - `EVERY` -> `TO_EVERY`, `CHEAPEST` -> `TO_CHEAPEST`, `MOST_EXPENSIVE` -> `TO_MOST_EXPENSIVE`, 2 new values introduced.
-    - `listPublications` parameter `filters` have changed - now uses `ParameterFiltersListPublications` instead of `String`
-    - `ParameterFiltersListRedemptions` and `ParameterFiltersListCustomerRedeemables` have been updated
-    - enum `LUCKY_DRAW`, `LUCKY_DRAW_CODE`, `VOUCHER_LUCKY_DRAW_CODE`, `CAMPAIGN_LUCKY_DRAW` have been deleted from everywhere and no longer supported
-    - CampaignsUpdateRequestBody - properties `activityDurationAfterPublishing`, `joinOnce`, `autoJoin`, `type`, `uniqueWinners`, `uniqueWinnersPerDraw` and enum `AUTO_UPDATE` | `STATIC` have been deleted and no longer supported
-    - `updateCustomersConsents` has been deleted and no longer supported
-    - `FilterConditionsDateTimeConditions` model has been renamed to `FilterConditionsDateTime`
-    - FilterConditionsDateTime - `conditions` has been divided on `after`, `before`, `hasValue`, `isUnknown`, `moreThan`, `lessThan` properties
-    - ParamterFiltersListCustomerRedeemables - model name of `createdAt` has been renamed from `FilterConditionsDateTime` to `ParameterFiltersListCustomerRedeemablesCreatedAt`
-    - `junction` is deleted from models:
-      - `ParameterFiltersListCustomerRedeemablesCampaignId`
-      - `ParameterFiltersListCustomerRedeemablesCampaignType`
-      - `ParameterFiltersListCustomerRedeemablesCreatedAt`
-      - `ParameterFiltersListCustomerRedeemablesHolderRole`
-      - `ParameterFiltersListCustomerRedeemablesId`
-      - `ParameterFiltersListCustomerRedeemablesRedeemableId`
-      - `ParameterFiltersListCustomerRedeemablesRedeemableObject`
-      - `ParameterFiltersListCustomerRedeemablesVoucherType`
-      - `ParameterFiltersListRedemptionsCampaignName`
-      - `ParameterFiltersListRedemptionsCustomerId`
-      - `ParameterFiltersListRedemptionsFailureCode`
-      - `ParameterFiltersListRedemptionsObject`
-      - `ParameterFiltersListRedemptionsParentRedemptionId`
-      - `ParameterFiltersListRedemptionsRelatedObjectId`,
-      - `ParameterFiltersListRedemptionsRelatedObjectParentId`
-      - `ParameterFiltersListRedemptionsResult`
-      - `ParameterFiltersListRedemptionsUserLogin`
-      - `ParameterFiltersListRedemptionsVoucherCode`
-
   - Added support:
+    - /v1/locations - List Locations
+    - /v1/locations/{locationId} - Get Location
+    - /v1/metadata-schemas - List Metadata Schemas
+    - /v1/metadata-schemas/{resource} - Get Metadata Schema
     - /management/v1/projects/users/invite, post - Invite Users
     - /management/v1/projects/{projectId}/users, get - Get Project
     - /management/v1/projects/{projectId}/users, post - Create Project
@@ -176,6 +148,37 @@ Remember that this SDK is auto generated (except of the tests) so changes made h
     - /management/v1/projects/{projectId}/branding/{brandingId}, get - Get Brand
     - /management/v1/projects/{projectId}/branding/{brandingId}, put - Update Brand
     - /management/v1/projects/{projectId}/branding/{brandingId}, delete - Delete Brand
+  - !!! BREAKING CHANGES !!!
+    - Pagination changed on listing card transactions(listLoyaltyCardTransactions) - NO `page` param is supported - use `$startingAfterId` instead.
+    - Pagination changed on listing voucher transactions(listVoucherTransactions) - NO `page` param is supported - use `$startingAfterId` instead.
+    - ApplicableToEffect - changed - `EVERY` -> `TO_EVERY`, `CHEAPEST` -> `TO_CHEAPEST`, `MOST_EXPENSIVE` -> `TO_MOST_EXPENSIVE`, 2 new values introduced.
+    - `listPublications` parameter `filters` have changed - now uses `ParameterFiltersListPublications` instead of `String`
+    - `ParameterFiltersListRedemptions` and `ParameterFiltersListCustomerRedeemables` have been updated
+    - enum `LUCKY_DRAW`, `LUCKY_DRAW_CODE`, `VOUCHER_LUCKY_DRAW_CODE`, `CAMPAIGN_LUCKY_DRAW` have been deleted from everywhere and no longer supported
+    - CampaignsUpdateRequestBody - properties `activityDurationAfterPublishing`, `joinOnce`, `autoJoin`, `type`, `uniqueWinners`, `uniqueWinnersPerDraw` and enum `AUTO_UPDATE` | `STATIC` have been deleted and no longer supported
+    - `updateCustomersConsents` has been deleted and no longer supported
+    - `FilterConditionsDateTimeConditions` model has been renamed to `FilterConditionsDateTime`
+    - FilterConditionsDateTime - `conditions` has been divided on `after`, `before`, `hasValue`, `isUnknown`, `moreThan`, `lessThan` properties
+    - ParamterFiltersListCustomerRedeemables - model name of `createdAt` has been renamed from `FilterConditionsDateTime` to `ParameterFiltersListCustomerRedeemablesCreatedAt`
+    - `junction` is deleted from models:
+      - `ParameterFiltersListCustomerRedeemablesCampaignId`
+      - `ParameterFiltersListCustomerRedeemablesCampaignType`
+      - `ParameterFiltersListCustomerRedeemablesCreatedAt`
+      - `ParameterFiltersListCustomerRedeemablesHolderRole`
+      - `ParameterFiltersListCustomerRedeemablesId`
+      - `ParameterFiltersListCustomerRedeemablesRedeemableId`
+      - `ParameterFiltersListCustomerRedeemablesRedeemableObject`
+      - `ParameterFiltersListCustomerRedeemablesVoucherType`
+      - `ParameterFiltersListRedemptionsCampaignName`
+      - `ParameterFiltersListRedemptionsCustomerId`
+      - `ParameterFiltersListRedemptionsFailureCode`
+      - `ParameterFiltersListRedemptionsObject`
+      - `ParameterFiltersListRedemptionsParentRedemptionId`
+      - `ParameterFiltersListRedemptionsRelatedObjectId`,
+      - `ParameterFiltersListRedemptionsRelatedObjectParentId`
+      - `ParameterFiltersListRedemptionsResult`
+      - `ParameterFiltersListRedemptionsUserLogin`
+      - `ParameterFiltersListRedemptionsVoucherCode`
 
 - **2024-09-11** - `3.0.0`
   -  The new version of the SDK includes coverage for all the most commonly used Voucherify endpoints and supports typed models.
@@ -231,6 +234,8 @@ Class | Method | HTTP request | Description
 *ExportsApi* | [**downloadExport**](docs/Api/ExportsApi.md#downloadexport) | **GET** /v1/exports/{export_Id} | Download Export
 *ExportsApi* | [**getExport**](docs/Api/ExportsApi.md#getexport) | **GET** /v1/exports/{exportId} | Get Export
 *ExportsApi* | [**listExports**](docs/Api/ExportsApi.md#listexports) | **GET** /v1/exports | List Exports
+*LocationsApi* | [**getLocation**](docs/Api/LocationsApi.md#getlocation) | **GET** /v1/locations/{locationId} | Get Location
+*LocationsApi* | [**listLocations**](docs/Api/LocationsApi.md#listlocations) | **GET** /v1/locations | List Locations
 *LoyaltiesApi* | [**addMember**](docs/Api/LoyaltiesApi.md#addmember) | **POST** /v1/loyalties/{campaignId}/members | Add Member
 *LoyaltiesApi* | [**createEarningRule**](docs/Api/LoyaltiesApi.md#createearningrule) | **POST** /v1/loyalties/{campaignId}/earning-rules | Create Earning Rule
 *LoyaltiesApi* | [**createInBulkLoyaltyTiers**](docs/Api/LoyaltiesApi.md#createinbulkloyaltytiers) | **POST** /v1/loyalties/{campaignId}/tiers | Create loyalty tiers
@@ -311,6 +316,8 @@ Class | Method | HTTP request | Description
 *ManagementApi* | [**updateStackingRules**](docs/Api/ManagementApi.md#updatestackingrules) | **PUT** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId} | Update Stacking Rules
 *ManagementApi* | [**updateUser**](docs/Api/ManagementApi.md#updateuser) | **PUT** /management/v1/projects/{projectId}/users/{userId} | Update User
 *ManagementApi* | [**updateWebhook**](docs/Api/ManagementApi.md#updatewebhook) | **PUT** /management/v1/projects/{projectId}/webhooks/{webhookId} | Update Webhook
+*MetadataSchemasApi* | [**getMetadataSchema**](docs/Api/MetadataSchemasApi.md#getmetadataschema) | **GET** /v1/metadata-schemas/{resource} | Get Metadata Schema
+*MetadataSchemasApi* | [**listMetadataSchemas**](docs/Api/MetadataSchemasApi.md#listmetadataschemas) | **GET** /v1/metadata-schemas | List Metadata Schemas
 *OrdersApi* | [**createOrder**](docs/Api/OrdersApi.md#createorder) | **POST** /v1/orders | Create Order
 *OrdersApi* | [**createOrderExport**](docs/Api/OrdersApi.md#createorderexport) | **POST** /v1/orders/export | Create Orders Export
 *OrdersApi* | [**getOrder**](docs/Api/OrdersApi.md#getorder) | **GET** /v1/orders/{orderId} | Get Order
@@ -573,6 +580,15 @@ Class | Method | HTTP request | Description
 - [InapplicableTo](docs/Model/InapplicableTo.md)
 - [InapplicableToResultList](docs/Model/InapplicableToResultList.md)
 - [ListPublicationsItemVoucher](docs/Model/ListPublicationsItemVoucher.md)
+- [Location](docs/Model/Location.md)
+- [LocationShape](docs/Model/LocationShape.md)
+- [LocationShapeDistance](docs/Model/LocationShapeDistance.md)
+- [LocationShapeGeojson](docs/Model/LocationShapeGeojson.md)
+- [LocationsGetResponseBody](docs/Model/LocationsGetResponseBody.md)
+- [LocationsGetResponseBodyShape](docs/Model/LocationsGetResponseBodyShape.md)
+- [LocationsGetResponseBodyShapeDistance](docs/Model/LocationsGetResponseBodyShapeDistance.md)
+- [LocationsGetResponseBodyShapeGeojson](docs/Model/LocationsGetResponseBodyShapeGeojson.md)
+- [LocationsListResponseBody](docs/Model/LocationsListResponseBody.md)
 - [LoyaltiesCreateCampaignRequestBody](docs/Model/LoyaltiesCreateCampaignRequestBody.md)
 - [LoyaltiesCreateCampaignResponseBody](docs/Model/LoyaltiesCreateCampaignResponseBody.md)
 - [LoyaltiesDeleteResponseBody](docs/Model/LoyaltiesDeleteResponseBody.md)
@@ -953,6 +969,10 @@ Class | Method | HTTP request | Description
 - [ManagementProjectsWebhooksUpdateResponseBody](docs/Model/ManagementProjectsWebhooksUpdateResponseBody.md)
 - [MappingPoints](docs/Model/MappingPoints.md)
 - [MemberActivity](docs/Model/MemberActivity.md)
+- [MetadataSchema](docs/Model/MetadataSchema.md)
+- [MetadataSchemaDefinition](docs/Model/MetadataSchemaDefinition.md)
+- [MetadataSchemasGetResponseBody](docs/Model/MetadataSchemasGetResponseBody.md)
+- [MetadataSchemasListResponseBody](docs/Model/MetadataSchemasListResponseBody.md)
 - [Order](docs/Model/Order.md)
 - [OrderCalculated](docs/Model/OrderCalculated.md)
 - [OrderCalculatedItem](docs/Model/OrderCalculatedItem.md)
@@ -1005,6 +1025,8 @@ Class | Method | HTTP request | Description
 - [ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions](docs/Model/ParameterFiltersListCustomerRedeemablesRedeemableObjectConditions.md)
 - [ParameterFiltersListCustomerRedeemablesVoucherType](docs/Model/ParameterFiltersListCustomerRedeemablesVoucherType.md)
 - [ParameterFiltersListCustomerRedeemablesVoucherTypeConditions](docs/Model/ParameterFiltersListCustomerRedeemablesVoucherTypeConditions.md)
+- [ParameterFiltersListLocations](docs/Model/ParameterFiltersListLocations.md)
+- [ParameterFiltersListLocationsName](docs/Model/ParameterFiltersListLocationsName.md)
 - [ParameterFiltersListPublications](docs/Model/ParameterFiltersListPublications.md)
 - [ParameterFiltersListPublicationsCampaignName](docs/Model/ParameterFiltersListPublicationsCampaignName.md)
 - [ParameterFiltersListPublicationsCustomerId](docs/Model/ParameterFiltersListPublicationsCustomerId.md)
@@ -1034,6 +1056,7 @@ Class | Method | HTTP request | Description
 - [ParameterOrderListCustomers](docs/Model/ParameterOrderListCustomers.md)
 - [ParameterOrderListEarningRules](docs/Model/ParameterOrderListEarningRules.md)
 - [ParameterOrderListExports](docs/Model/ParameterOrderListExports.md)
+- [ParameterOrderListLocations](docs/Model/ParameterOrderListLocations.md)
 - [ParameterOrderListLoyaltyTiers](docs/Model/ParameterOrderListLoyaltyTiers.md)
 - [ParameterOrderListOrders](docs/Model/ParameterOrderListOrders.md)
 - [ParameterOrderListPromotionTiers](docs/Model/ParameterOrderListPromotionTiers.md)

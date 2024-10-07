@@ -1,6 +1,6 @@
 <?php
 /**
- * ManagementProjectsMetadataSchemasGetResponseBody
+ * LocationShapeGeojson
  *
  * PHP version 8.1
  *
@@ -33,16 +33,15 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * ManagementProjectsMetadataSchemasGetResponseBody Class Doc Comment
+ * LocationShapeGeojson Class Doc Comment
  *
  * @category Class
- * @description Response body schema for **GET** &#x60;management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId}&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface, ArrayAccess, \JsonSerializable
+class LocationShapeGeojson implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ManagementProjectsMetadataSchemasGetResponseBody';
+    protected static $openAPIModelName = 'LocationShapeGeojson';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,13 +58,8 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'relatedObject' => 'string',
-        'properties' => 'array<string,\OpenAPI\Client\Model\ManagementProjectsMetadataSchemaDefinition>',
-        'allowDefinedOnly' => 'bool',
-        'createdAt' => '\DateTime',
-        'updatedAt' => '\DateTime',
-        'object' => 'string'
+        'type' => 'string',
+        'coordinates' => 'int[][]'
     ];
 
     /**
@@ -76,13 +70,8 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'relatedObject' => null,
-        'properties' => null,
-        'allowDefinedOnly' => null,
-        'createdAt' => 'date-time',
-        'updatedAt' => 'date-time',
-        'object' => null
+        'type' => null,
+        'coordinates' => null
     ];
 
     /**
@@ -91,13 +80,8 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => true,
-		'relatedObject' => true,
-		'properties' => true,
-		'allowDefinedOnly' => true,
-		'createdAt' => true,
-		'updatedAt' => true,
-		'object' => true
+        'type' => true,
+		'coordinates' => true
     ];
 
     /**
@@ -186,13 +170,8 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'relatedObject' => 'related_object',
-        'properties' => 'properties',
-        'allowDefinedOnly' => 'allow_defined_only',
-        'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at',
-        'object' => 'object'
+        'type' => 'type',
+        'coordinates' => 'coordinates'
     ];
 
     /**
@@ -201,13 +180,8 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'relatedObject' => 'setRelatedObject',
-        'properties' => 'setProperties',
-        'allowDefinedOnly' => 'setAllowDefinedOnly',
-        'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt',
-        'object' => 'setObject'
+        'type' => 'setType',
+        'coordinates' => 'setCoordinates'
     ];
 
     /**
@@ -216,13 +190,8 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'relatedObject' => 'getRelatedObject',
-        'properties' => 'getProperties',
-        'allowDefinedOnly' => 'getAllowDefinedOnly',
-        'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt',
-        'object' => 'getObject'
+        'type' => 'getType',
+        'coordinates' => 'getCoordinates'
     ];
 
     /**
@@ -266,6 +235,21 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
         return self::$openAPIModelName;
     }
 
+    public const TYPE_POLYGON = 'Polygon';
+    public const TYPE_MULTI_POLYGON = 'MultiPolygon';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_POLYGON,
+            self::TYPE_MULTI_POLYGON,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -282,13 +266,8 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('relatedObject', $data ?? [], null);
-        $this->setIfExists('properties', $data ?? [], null);
-        $this->setIfExists('allowDefinedOnly', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
-        $this->setIfExists('updatedAt', $data ?? [], null);
-        $this->setIfExists('object', $data ?? [], 'metadata_schema');
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('coordinates', $data ?? [], null);
     }
 
     /**
@@ -318,6 +297,15 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -334,239 +322,79 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
 
 
     /**
-     * Gets id
+     * Gets type
      *
      * @return string|null
      */
-    public function getId()
+    public function getType()
     {
-        return $this->container['id'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets id
+     * Sets type
      *
-     * @param string|null $id Unique identifier of the metadata schema.
+     * @param string|null $type type
      *
      * @return self
      */
-    public function setId($id)
+    public function setType($type)
     {
-        if (is_null($id)) {
-            array_push($this->openAPINullablesSetToNull, 'id');
+        if (is_null($type)) {
+            array_push($this->openAPINullablesSetToNull, 'type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('id', $nullablesSetToNull);
+            $index = array_search('type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['id'] = $id;
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets relatedObject
+     * Gets coordinates
      *
-     * @return string|null
+     * @return int[][]|null
      */
-    public function getRelatedObject()
+    public function getCoordinates()
     {
-        return $this->container['relatedObject'];
+        return $this->container['coordinates'];
     }
 
     /**
-     * Sets relatedObject
+     * Sets coordinates
      *
-     * @param string|null $relatedObject The resource type. You can define custom metadata schemas, which have a custom `\"related_object\"` resource type. The standard metadata schemas are: `\"campaign\"`, `\"customer\"`, `\"earning_rule\"`, `\"loyalty_tier\"`, `\"order\"`, `\"order_item\"`, `\"product\"`, `\"promotion_tier\"`, `\"publication\"`, `\"redemption\"`, `\"reward\"`, `\"voucher\"`.
+     * @param int[][]|null $coordinates coordinates
      *
      * @return self
      */
-    public function setRelatedObject($relatedObject)
+    public function setCoordinates($coordinates)
     {
-        if (is_null($relatedObject)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObject');
+        if (is_null($coordinates)) {
+            array_push($this->openAPINullablesSetToNull, 'coordinates');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObject', $nullablesSetToNull);
+            $index = array_search('coordinates', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['relatedObject'] = $relatedObject;
-
-        return $this;
-    }
-
-    /**
-     * Gets properties
-     *
-     * @return array<string,\OpenAPI\Client\Model\ManagementProjectsMetadataSchemaDefinition>|null
-     */
-    public function getProperties()
-    {
-        return $this->container['properties'];
-    }
-
-    /**
-     * Sets properties
-     *
-     * @param array<string,\OpenAPI\Client\Model\ManagementProjectsMetadataSchemaDefinition>|null $properties Contains metadata definitions.
-     *
-     * @return self
-     */
-    public function setProperties($properties)
-    {
-        if (is_null($properties)) {
-            array_push($this->openAPINullablesSetToNull, 'properties');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('properties', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['properties'] = $properties;
-
-        return $this;
-    }
-
-    /**
-     * Gets allowDefinedOnly
-     *
-     * @return bool|null
-     */
-    public function getAllowDefinedOnly()
-    {
-        return $this->container['allowDefinedOnly'];
-    }
-
-    /**
-     * Sets allowDefinedOnly
-     *
-     * @param bool|null $allowDefinedOnly Restricts the creation of metadata fields when set to `true`. It indicates whether or not you can create new metadata definitions, e.g. in the campaign or publication manager. If set to `true`, then only the defined fields are available for assigning values.
-     *
-     * @return self
-     */
-    public function setAllowDefinedOnly($allowDefinedOnly)
-    {
-        if (is_null($allowDefinedOnly)) {
-            array_push($this->openAPINullablesSetToNull, 'allowDefinedOnly');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('allowDefinedOnly', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['allowDefinedOnly'] = $allowDefinedOnly;
-
-        return $this;
-    }
-
-    /**
-     * Gets createdAt
-     *
-     * @return \DateTime|null
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['createdAt'];
-    }
-
-    /**
-     * Sets createdAt
-     *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the metadata schema was created. The value for this parameter is shown in the ISO 8601 format.
-     *
-     * @return self
-     */
-    public function setCreatedAt($createdAt)
-    {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['createdAt'] = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets updatedAt
-     *
-     * @return \DateTime|null
-     */
-    public function getUpdatedAt()
-    {
-        return $this->container['updatedAt'];
-    }
-
-    /**
-     * Sets updatedAt
-     *
-     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the metadata schema was updated. The value for this parameter is shown in the ISO 8601 format.
-     *
-     * @return self
-     */
-    public function setUpdatedAt($updatedAt)
-    {
-        if (is_null($updatedAt)) {
-            array_push($this->openAPINullablesSetToNull, 'updatedAt');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updatedAt', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['updatedAt'] = $updatedAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets object
-     *
-     * @return string|null
-     */
-    public function getObject()
-    {
-        return $this->container['object'];
-    }
-
-    /**
-     * Sets object
-     *
-     * @param string|null $object The type of the object represented by the JSON. This object stores information about the metadata schema.
-     *
-     * @return self
-     */
-    public function setObject($object)
-    {
-        if (is_null($object)) {
-            array_push($this->openAPINullablesSetToNull, 'object');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('object', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['object'] = $object;
+        $this->container['coordinates'] = $coordinates;
 
         return $this;
     }

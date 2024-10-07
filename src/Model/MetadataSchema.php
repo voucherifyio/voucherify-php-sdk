@@ -1,6 +1,6 @@
 <?php
 /**
- * ManagementProjectsMetadataSchemasGetResponseBody
+ * MetadataSchema
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * ManagementProjectsMetadataSchemasGetResponseBody Class Doc Comment
+ * MetadataSchema Class Doc Comment
  *
  * @category Class
- * @description Response body schema for **GET** &#x60;management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId}&#x60;.
+ * @description Object representing a metadata schema.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface, ArrayAccess, \JsonSerializable
+class MetadataSchema implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ManagementProjectsMetadataSchemasGetResponseBody';
+    protected static $openAPIModelName = 'MetadataSchema';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +61,7 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
     protected static $openAPITypes = [
         'id' => 'string',
         'relatedObject' => 'string',
-        'properties' => 'array<string,\OpenAPI\Client\Model\ManagementProjectsMetadataSchemaDefinition>',
+        'properties' => 'array<string,\OpenAPI\Client\Model\MetadataSchemaDefinition>',
         'allowDefinedOnly' => 'bool',
         'createdAt' => '\DateTime',
         'updatedAt' => '\DateTime',
@@ -404,7 +404,7 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
     /**
      * Gets properties
      *
-     * @return array<string,\OpenAPI\Client\Model\ManagementProjectsMetadataSchemaDefinition>|null
+     * @return array<string,\OpenAPI\Client\Model\MetadataSchemaDefinition>|null
      */
     public function getProperties()
     {
@@ -414,7 +414,7 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
     /**
      * Sets properties
      *
-     * @param array<string,\OpenAPI\Client\Model\ManagementProjectsMetadataSchemaDefinition>|null $properties Contains metadata definitions.
+     * @param array<string,\OpenAPI\Client\Model\MetadataSchemaDefinition>|null $properties Contains metadata definitions.
      *
      * @return self
      */

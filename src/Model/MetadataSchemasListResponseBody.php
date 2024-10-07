@@ -1,6 +1,6 @@
 <?php
 /**
- * ManagementProjectsMetadataSchemasGetResponseBody
+ * MetadataSchemasListResponseBody
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * ManagementProjectsMetadataSchemasGetResponseBody Class Doc Comment
+ * MetadataSchemasListResponseBody Class Doc Comment
  *
  * @category Class
- * @description Response body schema for **GET** &#x60;management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId}&#x60;.
+ * @description Object containing a list of metadata schemas.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface, ArrayAccess, \JsonSerializable
+class MetadataSchemasListResponseBody implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ManagementProjectsMetadataSchemasGetResponseBody';
+    protected static $openAPIModelName = 'MetadataSchemasListResponseBody';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,13 +59,10 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'relatedObject' => 'string',
-        'properties' => 'array<string,\OpenAPI\Client\Model\ManagementProjectsMetadataSchemaDefinition>',
-        'allowDefinedOnly' => 'bool',
-        'createdAt' => '\DateTime',
-        'updatedAt' => '\DateTime',
-        'object' => 'string'
+        'object' => 'string',
+        'dataRef' => 'string',
+        'schemas' => '\OpenAPI\Client\Model\MetadataSchema[]',
+        'total' => 'int'
     ];
 
     /**
@@ -76,13 +73,10 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'relatedObject' => null,
-        'properties' => null,
-        'allowDefinedOnly' => null,
-        'createdAt' => 'date-time',
-        'updatedAt' => 'date-time',
-        'object' => null
+        'object' => null,
+        'dataRef' => null,
+        'schemas' => null,
+        'total' => null
     ];
 
     /**
@@ -91,13 +85,10 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => true,
-		'relatedObject' => true,
-		'properties' => true,
-		'allowDefinedOnly' => true,
-		'createdAt' => true,
-		'updatedAt' => true,
-		'object' => true
+        'object' => true,
+		'dataRef' => true,
+		'schemas' => true,
+		'total' => true
     ];
 
     /**
@@ -186,13 +177,10 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'relatedObject' => 'related_object',
-        'properties' => 'properties',
-        'allowDefinedOnly' => 'allow_defined_only',
-        'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at',
-        'object' => 'object'
+        'object' => 'object',
+        'dataRef' => 'data_ref',
+        'schemas' => 'schemas',
+        'total' => 'total'
     ];
 
     /**
@@ -201,13 +189,10 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'relatedObject' => 'setRelatedObject',
-        'properties' => 'setProperties',
-        'allowDefinedOnly' => 'setAllowDefinedOnly',
-        'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt',
-        'object' => 'setObject'
+        'object' => 'setObject',
+        'dataRef' => 'setDataRef',
+        'schemas' => 'setSchemas',
+        'total' => 'setTotal'
     ];
 
     /**
@@ -216,13 +201,10 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'relatedObject' => 'getRelatedObject',
-        'properties' => 'getProperties',
-        'allowDefinedOnly' => 'getAllowDefinedOnly',
-        'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt',
-        'object' => 'getObject'
+        'object' => 'getObject',
+        'dataRef' => 'getDataRef',
+        'schemas' => 'getSchemas',
+        'total' => 'getTotal'
     ];
 
     /**
@@ -266,6 +248,32 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
         return self::$openAPIModelName;
     }
 
+    public const OBJECT__LIST = 'list';
+    public const DATA_REF_SCHEMAS = 'schemas';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getObjectAllowableValues()
+    {
+        return [
+            self::OBJECT__LIST,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDataRefAllowableValues()
+    {
+        return [
+            self::DATA_REF_SCHEMAS,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -282,13 +290,10 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('relatedObject', $data ?? [], null);
-        $this->setIfExists('properties', $data ?? [], null);
-        $this->setIfExists('allowDefinedOnly', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
-        $this->setIfExists('updatedAt', $data ?? [], null);
-        $this->setIfExists('object', $data ?? [], 'metadata_schema');
+        $this->setIfExists('object', $data ?? [], 'list');
+        $this->setIfExists('dataRef', $data ?? [], 'schemas');
+        $this->setIfExists('schemas', $data ?? [], null);
+        $this->setIfExists('total', $data ?? [], null);
     }
 
     /**
@@ -318,6 +323,24 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getObjectAllowableValues();
+        if (!is_null($this->container['object']) && !in_array($this->container['object'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'object', must be one of '%s'",
+                $this->container['object'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getDataRefAllowableValues();
+        if (!is_null($this->container['dataRef']) && !in_array($this->container['dataRef'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'dataRef', must be one of '%s'",
+                $this->container['dataRef'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -334,210 +357,6 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
 
 
     /**
-     * Gets id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string|null $id Unique identifier of the metadata schema.
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        if (is_null($id)) {
-            array_push($this->openAPINullablesSetToNull, 'id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets relatedObject
-     *
-     * @return string|null
-     */
-    public function getRelatedObject()
-    {
-        return $this->container['relatedObject'];
-    }
-
-    /**
-     * Sets relatedObject
-     *
-     * @param string|null $relatedObject The resource type. You can define custom metadata schemas, which have a custom `\"related_object\"` resource type. The standard metadata schemas are: `\"campaign\"`, `\"customer\"`, `\"earning_rule\"`, `\"loyalty_tier\"`, `\"order\"`, `\"order_item\"`, `\"product\"`, `\"promotion_tier\"`, `\"publication\"`, `\"redemption\"`, `\"reward\"`, `\"voucher\"`.
-     *
-     * @return self
-     */
-    public function setRelatedObject($relatedObject)
-    {
-        if (is_null($relatedObject)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedObject');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedObject', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['relatedObject'] = $relatedObject;
-
-        return $this;
-    }
-
-    /**
-     * Gets properties
-     *
-     * @return array<string,\OpenAPI\Client\Model\ManagementProjectsMetadataSchemaDefinition>|null
-     */
-    public function getProperties()
-    {
-        return $this->container['properties'];
-    }
-
-    /**
-     * Sets properties
-     *
-     * @param array<string,\OpenAPI\Client\Model\ManagementProjectsMetadataSchemaDefinition>|null $properties Contains metadata definitions.
-     *
-     * @return self
-     */
-    public function setProperties($properties)
-    {
-        if (is_null($properties)) {
-            array_push($this->openAPINullablesSetToNull, 'properties');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('properties', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['properties'] = $properties;
-
-        return $this;
-    }
-
-    /**
-     * Gets allowDefinedOnly
-     *
-     * @return bool|null
-     */
-    public function getAllowDefinedOnly()
-    {
-        return $this->container['allowDefinedOnly'];
-    }
-
-    /**
-     * Sets allowDefinedOnly
-     *
-     * @param bool|null $allowDefinedOnly Restricts the creation of metadata fields when set to `true`. It indicates whether or not you can create new metadata definitions, e.g. in the campaign or publication manager. If set to `true`, then only the defined fields are available for assigning values.
-     *
-     * @return self
-     */
-    public function setAllowDefinedOnly($allowDefinedOnly)
-    {
-        if (is_null($allowDefinedOnly)) {
-            array_push($this->openAPINullablesSetToNull, 'allowDefinedOnly');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('allowDefinedOnly', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['allowDefinedOnly'] = $allowDefinedOnly;
-
-        return $this;
-    }
-
-    /**
-     * Gets createdAt
-     *
-     * @return \DateTime|null
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['createdAt'];
-    }
-
-    /**
-     * Sets createdAt
-     *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the metadata schema was created. The value for this parameter is shown in the ISO 8601 format.
-     *
-     * @return self
-     */
-    public function setCreatedAt($createdAt)
-    {
-        if (is_null($createdAt)) {
-            array_push($this->openAPINullablesSetToNull, 'createdAt');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('createdAt', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['createdAt'] = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets updatedAt
-     *
-     * @return \DateTime|null
-     */
-    public function getUpdatedAt()
-    {
-        return $this->container['updatedAt'];
-    }
-
-    /**
-     * Sets updatedAt
-     *
-     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the metadata schema was updated. The value for this parameter is shown in the ISO 8601 format.
-     *
-     * @return self
-     */
-    public function setUpdatedAt($updatedAt)
-    {
-        if (is_null($updatedAt)) {
-            array_push($this->openAPINullablesSetToNull, 'updatedAt');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updatedAt', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['updatedAt'] = $updatedAt;
-
-        return $this;
-    }
-
-    /**
      * Gets object
      *
      * @return string|null
@@ -550,7 +369,7 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
     /**
      * Sets object
      *
-     * @param string|null $object The type of the object represented by the JSON. This object stores information about the metadata schema.
+     * @param string|null $object The type of the object represented by JSON. This object stores information about the metadata schemas in a dictionary.
      *
      * @return self
      */
@@ -566,7 +385,129 @@ class ManagementProjectsMetadataSchemasGetResponseBody implements ModelInterface
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+        $allowedValues = $this->getObjectAllowableValues();
+        if (!is_null($object) && !in_array($object, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'object', must be one of '%s'",
+                    $object,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['object'] = $object;
+
+        return $this;
+    }
+
+    /**
+     * Gets dataRef
+     *
+     * @return string|null
+     */
+    public function getDataRef()
+    {
+        return $this->container['dataRef'];
+    }
+
+    /**
+     * Sets dataRef
+     *
+     * @param string|null $dataRef Identifies the name of the attribute that contains the array of metadata schema objects.
+     *
+     * @return self
+     */
+    public function setDataRef($dataRef)
+    {
+        if (is_null($dataRef)) {
+            array_push($this->openAPINullablesSetToNull, 'dataRef');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('dataRef', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getDataRefAllowableValues();
+        if (!is_null($dataRef) && !in_array($dataRef, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'dataRef', must be one of '%s'",
+                    $dataRef,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['dataRef'] = $dataRef;
+
+        return $this;
+    }
+
+    /**
+     * Gets schemas
+     *
+     * @return \OpenAPI\Client\Model\MetadataSchema[]|null
+     */
+    public function getSchemas()
+    {
+        return $this->container['schemas'];
+    }
+
+    /**
+     * Sets schemas
+     *
+     * @param \OpenAPI\Client\Model\MetadataSchema[]|null $schemas Array of metadata schema objects. The metadata schemas are listed by related object properties.
+     *
+     * @return self
+     */
+    public function setSchemas($schemas)
+    {
+        if (is_null($schemas)) {
+            array_push($this->openAPINullablesSetToNull, 'schemas');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('schemas', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['schemas'] = $schemas;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     *
+     * @return int|null
+     */
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     *
+     * @param int|null $total The total number of metadata schema objects.
+     *
+     * @return self
+     */
+    public function setTotal($total)
+    {
+        if (is_null($total)) {
+            array_push($this->openAPINullablesSetToNull, 'total');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('total', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['total'] = $total;
 
         return $this;
     }
