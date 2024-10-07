@@ -161,11 +161,22 @@ Download the contents of the exported CSV file.   📘 Important notes  **Base U
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: X-App-Id
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-App-Id', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-App-Id', 'Bearer');
+
+// Configure API key authorization: X-App-Token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-App-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-App-Token', 'Bearer');
+
 
 $apiInstance = new OpenAPI\Client\Api\ExportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $exportId = exp_ex6zq0x0EEa9S0N68QcqhxcQ; // string | Unique export object ID.
 $token = 'token_example'; // string | Token that was issued to the export, to get this token, get the export first
@@ -191,7 +202,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[X-App-Id](../../README.md#X-App-Id), [X-App-Token](../../README.md#X-App-Token)
 
 ### HTTP request headers
 

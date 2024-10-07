@@ -60,7 +60,7 @@ class PublicationsCreateRequestBody implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPITypes = [
         'voucher' => 'string',
         'sourceId' => 'string',
-        'customer' => '\OpenAPI\Client\Model\PublicationsCreateRequestBodyCustomer',
+        'customer' => '\OpenAPI\Client\Model\Customer',
         'metadata' => 'object',
         'channel' => 'string',
         'campaign' => '\OpenAPI\Client\Model\CreatePublicationCampaign'
@@ -90,7 +90,7 @@ class PublicationsCreateRequestBody implements ModelInterface, ArrayAccess, \Jso
     protected static array $openAPINullables = [
         'voucher' => true,
 		'sourceId' => true,
-		'customer' => true,
+		'customer' => false,
 		'metadata' => true,
 		'channel' => true,
 		'campaign' => false
@@ -396,7 +396,7 @@ class PublicationsCreateRequestBody implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets customer
      *
-     * @return \OpenAPI\Client\Model\PublicationsCreateRequestBodyCustomer|null
+     * @return \OpenAPI\Client\Model\Customer|null
      */
     public function getCustomer()
     {
@@ -406,21 +406,14 @@ class PublicationsCreateRequestBody implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets customer
      *
-     * @param \OpenAPI\Client\Model\PublicationsCreateRequestBodyCustomer|null $customer customer
+     * @param \OpenAPI\Client\Model\Customer|null $customer customer
      *
      * @return self
      */
     public function setCustomer($customer)
     {
         if (is_null($customer)) {
-            array_push($this->openAPINullablesSetToNull, 'customer');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customer', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable customer cannot be null');
         }
         $this->container['customer'] = $customer;
 

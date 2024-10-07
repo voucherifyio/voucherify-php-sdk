@@ -68,7 +68,7 @@ class QualificationsRedeemableBase implements ModelInterface, ArrayAccess, \Json
         'applicableTo' => '\OpenAPI\Client\Model\ApplicableToResultList',
         'inapplicableTo' => '\OpenAPI\Client\Model\InapplicableToResultList',
         'metadata' => 'object',
-        'categories' => '\OpenAPI\Client\Model\Category[]',
+        'categories' => '\OpenAPI\Client\Model\CategoryWithStackingRulesType[]',
         'banner' => 'string',
         'name' => 'string',
         'campaignName' => 'string',
@@ -708,7 +708,7 @@ class QualificationsRedeemableBase implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets categories
      *
-     * @return \OpenAPI\Client\Model\Category[]|null
+     * @return \OpenAPI\Client\Model\CategoryWithStackingRulesType[]|null
      */
     public function getCategories()
     {
@@ -718,7 +718,7 @@ class QualificationsRedeemableBase implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets categories
      *
-     * @param \OpenAPI\Client\Model\Category[]|null $categories List of category information.
+     * @param \OpenAPI\Client\Model\CategoryWithStackingRulesType[]|null $categories List of category information.
      *
      * @return self
      */

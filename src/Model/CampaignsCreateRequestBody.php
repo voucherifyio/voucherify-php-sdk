@@ -71,15 +71,14 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'validityDayOfWeek' => 'int[]',
         'validityHours' => '\OpenAPI\Client\Model\ValidityHours',
         'activityDurationAfterPublishing' => 'string',
-        'validationRules' => 'string[]',
         'categoryId' => 'string',
         'category' => 'string',
         'metadata' => 'object',
+        'validationRules' => 'string[]',
         'campaignType' => 'string',
         'voucher' => '\OpenAPI\Client\Model\CampaignsCreateRequestBodyVoucher',
         'referralProgram' => '\OpenAPI\Client\Model\ReferralProgram',
-        'promotion' => '\OpenAPI\Client\Model\CampaignsCreateRequestBodyPromotion',
-        'luckyDraw' => '\OpenAPI\Client\Model\LuckyDraw'
+        'promotion' => '\OpenAPI\Client\Model\CampaignsCreateRequestBodyPromotion'
     ];
 
     /**
@@ -103,15 +102,14 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'validityDayOfWeek' => null,
         'validityHours' => null,
         'activityDurationAfterPublishing' => null,
-        'validationRules' => null,
         'categoryId' => null,
         'category' => null,
         'metadata' => null,
+        'validationRules' => null,
         'campaignType' => null,
         'voucher' => null,
         'referralProgram' => null,
-        'promotion' => null,
-        'luckyDraw' => null
+        'promotion' => null
     ];
 
     /**
@@ -133,15 +131,14 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
 		'validityDayOfWeek' => true,
 		'validityHours' => false,
 		'activityDurationAfterPublishing' => true,
-		'validationRules' => true,
 		'categoryId' => true,
 		'category' => true,
 		'metadata' => true,
+		'validationRules' => true,
 		'campaignType' => true,
 		'voucher' => true,
 		'referralProgram' => false,
-		'promotion' => true,
-		'luckyDraw' => false
+		'promotion' => true
     ];
 
     /**
@@ -243,15 +240,14 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'validityDayOfWeek' => 'validity_day_of_week',
         'validityHours' => 'validity_hours',
         'activityDurationAfterPublishing' => 'activity_duration_after_publishing',
-        'validationRules' => 'validation_rules',
         'categoryId' => 'category_id',
         'category' => 'category',
         'metadata' => 'metadata',
+        'validationRules' => 'validation_rules',
         'campaignType' => 'campaign_type',
         'voucher' => 'voucher',
         'referralProgram' => 'referral_program',
-        'promotion' => 'promotion',
-        'luckyDraw' => 'lucky_draw'
+        'promotion' => 'promotion'
     ];
 
     /**
@@ -273,15 +269,14 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'validityDayOfWeek' => 'setValidityDayOfWeek',
         'validityHours' => 'setValidityHours',
         'activityDurationAfterPublishing' => 'setActivityDurationAfterPublishing',
-        'validationRules' => 'setValidationRules',
         'categoryId' => 'setCategoryId',
         'category' => 'setCategory',
         'metadata' => 'setMetadata',
+        'validationRules' => 'setValidationRules',
         'campaignType' => 'setCampaignType',
         'voucher' => 'setVoucher',
         'referralProgram' => 'setReferralProgram',
-        'promotion' => 'setPromotion',
-        'luckyDraw' => 'setLuckyDraw'
+        'promotion' => 'setPromotion'
     ];
 
     /**
@@ -303,15 +298,14 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'validityDayOfWeek' => 'getValidityDayOfWeek',
         'validityHours' => 'getValidityHours',
         'activityDurationAfterPublishing' => 'getActivityDurationAfterPublishing',
-        'validationRules' => 'getValidationRules',
         'categoryId' => 'getCategoryId',
         'category' => 'getCategory',
         'metadata' => 'getMetadata',
+        'validationRules' => 'getValidationRules',
         'campaignType' => 'getCampaignType',
         'voucher' => 'getVoucher',
         'referralProgram' => 'getReferralProgram',
-        'promotion' => 'getPromotion',
-        'luckyDraw' => 'getLuckyDraw'
+        'promotion' => 'getPromotion'
     ];
 
     /**
@@ -369,7 +363,6 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     public const CAMPAIGN_TYPE_GIFT_VOUCHERS = 'GIFT_VOUCHERS';
     public const CAMPAIGN_TYPE_LOYALTY_PROGRAM = 'LOYALTY_PROGRAM';
     public const CAMPAIGN_TYPE_PROMOTION = 'PROMOTION';
-    public const CAMPAIGN_TYPE_LUCKY_DRAW = 'LUCKY_DRAW';
 
     /**
      * Gets allowable values of the enum
@@ -415,7 +408,6 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
             self::CAMPAIGN_TYPE_GIFT_VOUCHERS,
             self::CAMPAIGN_TYPE_LOYALTY_PROGRAM,
             self::CAMPAIGN_TYPE_PROMOTION,
-            self::CAMPAIGN_TYPE_LUCKY_DRAW,
         ];
     }
 
@@ -447,15 +439,14 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         $this->setIfExists('validityDayOfWeek', $data ?? [], null);
         $this->setIfExists('validityHours', $data ?? [], null);
         $this->setIfExists('activityDurationAfterPublishing', $data ?? [], null);
-        $this->setIfExists('validationRules', $data ?? [], null);
         $this->setIfExists('categoryId', $data ?? [], null);
         $this->setIfExists('category', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('validationRules', $data ?? [], null);
         $this->setIfExists('campaignType', $data ?? [], null);
         $this->setIfExists('voucher', $data ?? [], null);
         $this->setIfExists('referralProgram', $data ?? [], null);
         $this->setIfExists('promotion', $data ?? [], null);
-        $this->setIfExists('luckyDraw', $data ?? [], null);
     }
 
     /**
@@ -970,44 +961,6 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets validationRules
-     *
-     * @return string[]|null
-     */
-    public function getValidationRules()
-    {
-        return $this->container['validationRules'];
-    }
-
-    /**
-     * Sets validationRules
-     *
-     * @param string[]|null $validationRules Array containing the ID of the validation rule associated with the promotion tier.
-     *
-     * @return self
-     */
-    public function setValidationRules($validationRules)
-    {
-        if (is_null($validationRules)) {
-            array_push($this->openAPINullablesSetToNull, 'validationRules');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validationRules', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($validationRules) && (count($validationRules) > 1)) {
-            throw new \InvalidArgumentException('invalid value for $validationRules when calling CampaignsCreateRequestBody., number of items must be less than or equal to 1.');
-        }
-        $this->container['validationRules'] = $validationRules;
-
-        return $this;
-    }
-
-    /**
      * Gets categoryId
      *
      * @return string|null
@@ -1105,6 +1058,44 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets validationRules
+     *
+     * @return string[]|null
+     */
+    public function getValidationRules()
+    {
+        return $this->container['validationRules'];
+    }
+
+    /**
+     * Sets validationRules
+     *
+     * @param string[]|null $validationRules Array containing the ID of the validation rule associated with the promotion tier.
+     *
+     * @return self
+     */
+    public function setValidationRules($validationRules)
+    {
+        if (is_null($validationRules)) {
+            array_push($this->openAPINullablesSetToNull, 'validationRules');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('validationRules', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($validationRules) && (count($validationRules) > 1)) {
+            throw new \InvalidArgumentException('invalid value for $validationRules when calling CampaignsCreateRequestBody., number of items must be less than or equal to 1.');
+        }
+        $this->container['validationRules'] = $validationRules;
 
         return $this;
     }
@@ -1244,33 +1235,6 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['promotion'] = $promotion;
-
-        return $this;
-    }
-
-    /**
-     * Gets luckyDraw
-     *
-     * @return \OpenAPI\Client\Model\LuckyDraw|null
-     */
-    public function getLuckyDraw()
-    {
-        return $this->container['luckyDraw'];
-    }
-
-    /**
-     * Sets luckyDraw
-     *
-     * @param \OpenAPI\Client\Model\LuckyDraw|null $luckyDraw luckyDraw
-     *
-     * @return self
-     */
-    public function setLuckyDraw($luckyDraw)
-    {
-        if (is_null($luckyDraw)) {
-            throw new \InvalidArgumentException('non-nullable luckyDraw cannot be null');
-        }
-        $this->container['luckyDraw'] = $luckyDraw;
 
         return $this;
     }

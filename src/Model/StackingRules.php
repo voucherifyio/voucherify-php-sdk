@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * StackingRules Class Doc Comment
  *
  * @category Class
- * @description Defines stacking rules for redeemables. Read more in the [Help Center](https://support.voucherify.io/article/604-stacking-rules)
+ * @description Defines stacking rules for redeemables. Read more in the [Stacking Rule Documentation](https://support.voucherify.io/article/604-stacking-rules).
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

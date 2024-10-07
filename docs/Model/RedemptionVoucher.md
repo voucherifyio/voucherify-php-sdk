@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **object** | **string** | The type of the object represented by JSON. Default is &#x60;voucher&#x60;. | [optional] [default to 'voucher']
 **publish** | [**\OpenAPI\Client\Model\RedemptionVoucherPublish**](RedemptionVoucherPublish.md) |  | [optional]
 **redemption** | [**\OpenAPI\Client\Model\RedemptionVoucherRedemption**](RedemptionVoucherRedemption.md) |  | [optional]
-**categories** | [**\OpenAPI\Client\Model\Category[]**](Category.md) | Contains details about the category. | [optional]
+**categories** | [**\OpenAPI\Client\Model\CategoryWithStackingRulesType[]**](CategoryWithStackingRulesType.md) | Contains details about the category. | [optional]
 **validationRulesAssignments** | [**\OpenAPI\Client\Model\ValidationRulesAssignmentsList**](ValidationRulesAssignmentsList.md) |  | [optional]
 **holder** | [**\OpenAPI\Client\Model\SimpleCustomer**](SimpleCustomer.md) |  | [optional]
 

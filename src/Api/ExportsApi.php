@@ -936,6 +936,16 @@ class ExportsApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Id');
+        if ($apiKey !== null) {
+            $headers['X-App-Id'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Token');
+        if ($apiKey !== null) {
+            $headers['X-App-Token'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

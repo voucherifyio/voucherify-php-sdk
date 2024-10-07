@@ -253,25 +253,21 @@ class QualificationsOptionFiltersCampaignTypeConditions implements ModelInterfac
     public const IS_REFERRAL_PROGRAM = 'REFERRAL_PROGRAM';
     public const IS_DISCOUNT_COUPONS = 'DISCOUNT_COUPONS';
     public const IS_LOYALTY_PROGRAM = 'LOYALTY_PROGRAM';
-    public const IS_LUCKY_DRAW = 'LUCKY_DRAW';
     public const IS_NOT_PROMOTION = 'PROMOTION';
     public const IS_NOT_GIFT_VOUCHERS = 'GIFT_VOUCHERS';
     public const IS_NOT_REFERRAL_PROGRAM = 'REFERRAL_PROGRAM';
     public const IS_NOT_DISCOUNT_COUPONS = 'DISCOUNT_COUPONS';
     public const IS_NOT_LOYALTY_PROGRAM = 'LOYALTY_PROGRAM';
-    public const IS_NOT_LUCKY_DRAW = 'LUCKY_DRAW';
     public const IN_PROMOTION = 'PROMOTION';
     public const IN_GIFT_VOUCHERS = 'GIFT_VOUCHERS';
     public const IN_REFERRAL_PROGRAM = 'REFERRAL_PROGRAM';
     public const IN_DISCOUNT_COUPONS = 'DISCOUNT_COUPONS';
     public const IN_LOYALTY_PROGRAM = 'LOYALTY_PROGRAM';
-    public const IN_LUCKY_DRAW = 'LUCKY_DRAW';
     public const NOT_IN_PROMOTION = 'PROMOTION';
     public const NOT_IN_GIFT_VOUCHERS = 'GIFT_VOUCHERS';
     public const NOT_IN_REFERRAL_PROGRAM = 'REFERRAL_PROGRAM';
     public const NOT_IN_DISCOUNT_COUPONS = 'DISCOUNT_COUPONS';
     public const NOT_IN_LOYALTY_PROGRAM = 'LOYALTY_PROGRAM';
-    public const NOT_IN_LUCKY_DRAW = 'LUCKY_DRAW';
 
     /**
      * Gets allowable values of the enum
@@ -286,7 +282,6 @@ class QualificationsOptionFiltersCampaignTypeConditions implements ModelInterfac
             self::IS_REFERRAL_PROGRAM,
             self::IS_DISCOUNT_COUPONS,
             self::IS_LOYALTY_PROGRAM,
-            self::IS_LUCKY_DRAW,
         ];
     }
 
@@ -303,7 +298,6 @@ class QualificationsOptionFiltersCampaignTypeConditions implements ModelInterfac
             self::IS_NOT_REFERRAL_PROGRAM,
             self::IS_NOT_DISCOUNT_COUPONS,
             self::IS_NOT_LOYALTY_PROGRAM,
-            self::IS_NOT_LUCKY_DRAW,
         ];
     }
 
@@ -320,7 +314,6 @@ class QualificationsOptionFiltersCampaignTypeConditions implements ModelInterfac
             self::IN_REFERRAL_PROGRAM,
             self::IN_DISCOUNT_COUPONS,
             self::IN_LOYALTY_PROGRAM,
-            self::IN_LUCKY_DRAW,
         ];
     }
 
@@ -337,7 +330,6 @@ class QualificationsOptionFiltersCampaignTypeConditions implements ModelInterfac
             self::NOT_IN_REFERRAL_PROGRAM,
             self::NOT_IN_DISCOUNT_COUPONS,
             self::NOT_IN_LOYALTY_PROGRAM,
-            self::NOT_IN_LUCKY_DRAW,
         ];
     }
 

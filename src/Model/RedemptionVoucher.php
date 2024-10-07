@@ -86,7 +86,7 @@ class RedemptionVoucher implements ModelInterface, ArrayAccess, \JsonSerializabl
         'object' => 'string',
         'publish' => '\OpenAPI\Client\Model\RedemptionVoucherPublish',
         'redemption' => '\OpenAPI\Client\Model\RedemptionVoucherRedemption',
-        'categories' => '\OpenAPI\Client\Model\Category[]',
+        'categories' => '\OpenAPI\Client\Model\CategoryWithStackingRulesType[]',
         'validationRulesAssignments' => '\OpenAPI\Client\Model\ValidationRulesAssignmentsList',
         'holder' => '\OpenAPI\Client\Model\SimpleCustomer'
     ];
@@ -1457,7 +1457,7 @@ class RedemptionVoucher implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets categories
      *
-     * @return \OpenAPI\Client\Model\Category[]|null
+     * @return \OpenAPI\Client\Model\CategoryWithStackingRulesType[]|null
      */
     public function getCategories()
     {
@@ -1467,7 +1467,7 @@ class RedemptionVoucher implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets categories
      *
-     * @param \OpenAPI\Client\Model\Category[]|null $categories Contains details about the category.
+     * @param \OpenAPI\Client\Model\CategoryWithStackingRulesType[]|null $categories Contains details about the category.
      *
      * @return self
      */

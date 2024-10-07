@@ -63,7 +63,7 @@ class ValidationsRedeemableInapplicable implements ModelInterface, ArrayAccess, 
         'object' => 'string',
         'result' => '\OpenAPI\Client\Model\ValidationsRedeemableInapplicableResult',
         'metadata' => 'object',
-        'categories' => '\OpenAPI\Client\Model\Category[]'
+        'categories' => '\OpenAPI\Client\Model\CategoryWithStackingRulesType[]'
     ];
 
     /**
@@ -564,7 +564,7 @@ class ValidationsRedeemableInapplicable implements ModelInterface, ArrayAccess, 
     /**
      * Gets categories
      *
-     * @return \OpenAPI\Client\Model\Category[]|null
+     * @return \OpenAPI\Client\Model\CategoryWithStackingRulesType[]|null
      */
     public function getCategories()
     {
@@ -574,7 +574,7 @@ class ValidationsRedeemableInapplicable implements ModelInterface, ArrayAccess, 
     /**
      * Sets categories
      *
-     * @param \OpenAPI\Client\Model\Category[]|null $categories categories
+     * @param \OpenAPI\Client\Model\CategoryWithStackingRulesType[]|null $categories categories
      *
      * @return self
      */

@@ -468,7 +468,7 @@ class LoyaltiesMembersGetResponseBodyRedemption implements ModelInterface, Array
     /**
      * Sets url
      *
-     * @param string|null $url The endpoint where this list of redemptions can be accessed using a GET method. `/v1/vouchers/{voucher_code}/redemptions`
+     * @param string|null $url The endpoint where this list of redemptions can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/redemptions`
      *
      * @return self
      */

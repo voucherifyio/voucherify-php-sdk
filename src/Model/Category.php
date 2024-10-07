@@ -64,8 +64,7 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
         'hierarchy' => 'int',
         'object' => 'string',
         'createdAt' => '\DateTime',
-        'updatedAt' => '\DateTime',
-        'stackingRulesType' => 'string'
+        'updatedAt' => '\DateTime'
     ];
 
     /**
@@ -81,8 +80,7 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
         'hierarchy' => null,
         'object' => null,
         'createdAt' => 'date-time',
-        'updatedAt' => 'date-time',
-        'stackingRulesType' => null
+        'updatedAt' => 'date-time'
     ];
 
     /**
@@ -96,8 +94,7 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
 		'hierarchy' => true,
 		'object' => true,
 		'createdAt' => true,
-		'updatedAt' => true,
-		'stackingRulesType' => true
+		'updatedAt' => true
     ];
 
     /**
@@ -191,8 +188,7 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
         'hierarchy' => 'hierarchy',
         'object' => 'object',
         'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at',
-        'stackingRulesType' => 'stacking_rules_type'
+        'updatedAt' => 'updated_at'
     ];
 
     /**
@@ -206,8 +202,7 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
         'hierarchy' => 'setHierarchy',
         'object' => 'setObject',
         'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt',
-        'stackingRulesType' => 'setStackingRulesType'
+        'updatedAt' => 'setUpdatedAt'
     ];
 
     /**
@@ -221,8 +216,7 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
         'hierarchy' => 'getHierarchy',
         'object' => 'getObject',
         'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt',
-        'stackingRulesType' => 'getStackingRulesType'
+        'updatedAt' => 'getUpdatedAt'
     ];
 
     /**
@@ -267,8 +261,6 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     public const OBJECT_CATEGORY = 'category';
-    public const STACKING_RULES_TYPE_JOINT = 'JOINT';
-    public const STACKING_RULES_TYPE_EXCLUSIVE = 'EXCLUSIVE';
 
     /**
      * Gets allowable values of the enum
@@ -279,19 +271,6 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return [
             self::OBJECT_CATEGORY,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStackingRulesTypeAllowableValues()
-    {
-        return [
-            self::STACKING_RULES_TYPE_JOINT,
-            self::STACKING_RULES_TYPE_EXCLUSIVE,
         ];
     }
 
@@ -316,7 +295,6 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('object', $data ?? [], 'category');
         $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('updatedAt', $data ?? [], null);
-        $this->setIfExists('stackingRulesType', $data ?? [], null);
     }
 
     /**
@@ -346,20 +324,15 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['hierarchy']) && ($this->container['hierarchy'] < 0)) {
+            $invalidProperties[] = "invalid value for 'hierarchy', must be bigger than or equal to 0.";
+        }
+
         $allowedValues = $this->getObjectAllowableValues();
         if (!is_null($this->container['object']) && !in_array($this->container['object'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'object', must be one of '%s'",
                 $this->container['object'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        $allowedValues = $this->getStackingRulesTypeAllowableValues();
-        if (!is_null($this->container['stackingRulesType']) && !in_array($this->container['stackingRulesType'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'stackingRulesType', must be one of '%s'",
-                $this->container['stackingRulesType'],
                 implode("', '", $allowedValues)
             );
         }
@@ -460,7 +433,7 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets hierarchy
      *
-     * @param int|null $hierarchy Category hierarchy.
+     * @param int|null $hierarchy Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
      *
      * @return self
      */
@@ -476,6 +449,11 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($hierarchy) && ($hierarchy < 0)) {
+            throw new \InvalidArgumentException('invalid value for $hierarchy when calling Category., must be bigger than or equal to 0.');
+        }
+
         $this->container['hierarchy'] = $hierarchy;
 
         return $this;
@@ -589,50 +567,6 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['updatedAt'] = $updatedAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets stackingRulesType
-     *
-     * @return string|null
-     */
-    public function getStackingRulesType()
-    {
-        return $this->container['stackingRulesType'];
-    }
-
-    /**
-     * Sets stackingRulesType
-     *
-     * @param string|null $stackingRulesType The type of the stacking rule eligibility.
-     *
-     * @return self
-     */
-    public function setStackingRulesType($stackingRulesType)
-    {
-        if (is_null($stackingRulesType)) {
-            array_push($this->openAPINullablesSetToNull, 'stackingRulesType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('stackingRulesType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $allowedValues = $this->getStackingRulesTypeAllowableValues();
-        if (!is_null($stackingRulesType) && !in_array($stackingRulesType, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'stackingRulesType', must be one of '%s'",
-                    $stackingRulesType,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['stackingRulesType'] = $stackingRulesType;
 
         return $this;
     }

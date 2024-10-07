@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **inapplicableTo** | [**\OpenAPI\Client\Model\InapplicableToResultList**](InapplicableToResultList.md) |  | [optional]
 **result** | [**\OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItemResult**](ClientValidationsValidateResponseBodyRedeemablesItemResult.md) |  | [optional]
 **metadata** | **object** |  | [optional]
-**categories** | [**\OpenAPI\Client\Model\Category[]**](Category.md) |  | [optional]
+**categories** | [**\OpenAPI\Client\Model\CategoryWithStackingRulesType[]**](CategoryWithStackingRulesType.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

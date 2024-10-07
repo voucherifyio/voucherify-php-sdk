@@ -66,7 +66,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItem implements ModelInter
         'inapplicableTo' => '\OpenAPI\Client\Model\InapplicableToResultList',
         'result' => '\OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItemResult',
         'metadata' => 'object',
-        'categories' => '\OpenAPI\Client\Model\Category[]'
+        'categories' => '\OpenAPI\Client\Model\CategoryWithStackingRulesType[]'
     ];
 
     /**
@@ -649,7 +649,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItem implements ModelInter
     /**
      * Gets categories
      *
-     * @return \OpenAPI\Client\Model\Category[]|null
+     * @return \OpenAPI\Client\Model\CategoryWithStackingRulesType[]|null
      */
     public function getCategories()
     {
@@ -659,7 +659,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItem implements ModelInter
     /**
      * Sets categories
      *
-     * @param \OpenAPI\Client\Model\Category[]|null $categories categories
+     * @param \OpenAPI\Client\Model\CategoryWithStackingRulesType[]|null $categories categories
      *
      * @return self
      */

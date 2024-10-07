@@ -813,7 +813,7 @@ class PublicationsApi
      * @param  ParameterResultListPublications $result Filters by a publication result. (optional)
      * @param  ParameterVoucherTypeListPublications $voucherType Filters by a voucher type. (optional)
      * @param  bool $isReferralCode This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
-     * @param  string $filters Allows for combining the filters mentioned in the endpoint description. (optional)
+     * @param  ParameterFiltersListPublications $filters Filters for listing publications. (optional)
      * @param  string $sourceId Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPublications'] to see the possible values for this operation
      *
@@ -841,7 +841,7 @@ class PublicationsApi
      * @param  ParameterResultListPublications $result Filters by a publication result. (optional)
      * @param  ParameterVoucherTypeListPublications $voucherType Filters by a voucher type. (optional)
      * @param  bool $isReferralCode This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
-     * @param  string $filters Allows for combining the filters mentioned in the endpoint description. (optional)
+     * @param  ParameterFiltersListPublications $filters Filters for listing publications. (optional)
      * @param  string $sourceId Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPublications'] to see the possible values for this operation
      *
@@ -951,7 +951,7 @@ class PublicationsApi
      * @param  ParameterResultListPublications $result Filters by a publication result. (optional)
      * @param  ParameterVoucherTypeListPublications $voucherType Filters by a voucher type. (optional)
      * @param  bool $isReferralCode This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
-     * @param  string $filters Allows for combining the filters mentioned in the endpoint description. (optional)
+     * @param  ParameterFiltersListPublications $filters Filters for listing publications. (optional)
      * @param  string $sourceId Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPublications'] to see the possible values for this operation
      *
@@ -982,7 +982,7 @@ class PublicationsApi
      * @param  ParameterResultListPublications $result Filters by a publication result. (optional)
      * @param  ParameterVoucherTypeListPublications $voucherType Filters by a voucher type. (optional)
      * @param  bool $isReferralCode This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
-     * @param  string $filters Allows for combining the filters mentioned in the endpoint description. (optional)
+     * @param  ParameterFiltersListPublications $filters Filters for listing publications. (optional)
      * @param  string $sourceId Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPublications'] to see the possible values for this operation
      *
@@ -1042,7 +1042,7 @@ class PublicationsApi
      * @param  ParameterResultListPublications $result Filters by a publication result. (optional)
      * @param  ParameterVoucherTypeListPublications $voucherType Filters by a voucher type. (optional)
      * @param  bool $isReferralCode This filter works only for the true option. If set to true, the query returns only publications of codes from referral campaigns. (optional)
-     * @param  string $filters Allows for combining the filters mentioned in the endpoint description. (optional)
+     * @param  ParameterFiltersListPublications $filters Filters for listing publications. (optional)
      * @param  string $sourceId Using this endpoint with a particular publication source_id, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPublications'] to see the possible values for this operation
      *
@@ -1168,7 +1168,7 @@ class PublicationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $filters,
             'filters', // param base name
-            'string', // openApiType
+            'object', // openApiType
             'form', // style
             true, // explode
             false // required
