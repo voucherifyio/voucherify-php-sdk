@@ -160,6 +160,7 @@ Remember that this SDK is auto generated (except of the tests) so changes made h
     - `FilterConditionsDateTimeConditions` model has been renamed to `FilterConditionsDateTime`
     - FilterConditionsDateTime - `conditions` has been divided on `after`, `before`, `hasValue`, `isUnknown`, `moreThan`, `lessThan` properties
     - ParamterFiltersListCustomerRedeemables - model name of `createdAt` has been renamed from `FilterConditionsDateTime` to `ParameterFiltersListCustomerRedeemablesCreatedAt`
+    - `filter` property in schemas ProductCollectionsCreateRequestBody, ProductCollectionsCreateResponseBody, ProductCollectionsItem and ProductCollectionsGetResponseBody has changed. Uses plain `object`.
     - `junction` is deleted from models:
       - `ParameterFiltersListCustomerRedeemablesCampaignId`
       - `ParameterFiltersListCustomerRedeemablesCampaignType`
@@ -1073,16 +1074,12 @@ Class | Method | HTTP request | Description
 - [ParameterVoucherTypeListPublications](docs/Model/ParameterVoucherTypeListPublications.md)
 - [Product](docs/Model/Product.md)
 - [ProductCollectionsCreateRequestBody](docs/Model/ProductCollectionsCreateRequestBody.md)
-- [ProductCollectionsCreateRequestBodyFilter](docs/Model/ProductCollectionsCreateRequestBodyFilter.md)
 - [ProductCollectionsCreateRequestBodyProductsItem](docs/Model/ProductCollectionsCreateRequestBodyProductsItem.md)
 - [ProductCollectionsCreateResponseBody](docs/Model/ProductCollectionsCreateResponseBody.md)
-- [ProductCollectionsCreateResponseBodyFilter](docs/Model/ProductCollectionsCreateResponseBodyFilter.md)
 - [ProductCollectionsCreateResponseBodyProductsItem](docs/Model/ProductCollectionsCreateResponseBodyProductsItem.md)
 - [ProductCollectionsGetResponseBody](docs/Model/ProductCollectionsGetResponseBody.md)
-- [ProductCollectionsGetResponseBodyFilter](docs/Model/ProductCollectionsGetResponseBodyFilter.md)
 - [ProductCollectionsGetResponseBodyProductsItem](docs/Model/ProductCollectionsGetResponseBodyProductsItem.md)
 - [ProductCollectionsItem](docs/Model/ProductCollectionsItem.md)
-- [ProductCollectionsItemFilter](docs/Model/ProductCollectionsItemFilter.md)
 - [ProductCollectionsItemProductsItem](docs/Model/ProductCollectionsItemProductsItem.md)
 - [ProductCollectionsListResponseBody](docs/Model/ProductCollectionsListResponseBody.md)
 - [ProductCollectionsProductsListResponseBody](docs/Model/ProductCollectionsProductsListResponseBody.md)

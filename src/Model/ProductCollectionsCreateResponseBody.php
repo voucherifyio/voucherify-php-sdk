@@ -62,7 +62,7 @@ class ProductCollectionsCreateResponseBody implements ModelInterface, ArrayAcces
         'id' => 'string',
         'name' => 'string',
         'type' => 'string',
-        'filter' => '\OpenAPI\Client\Model\ProductCollectionsCreateResponseBodyFilter',
+        'filter' => 'object',
         'products' => '\OpenAPI\Client\Model\ProductCollectionsCreateResponseBodyProductsItem[]',
         'createdAt' => '\DateTime',
         'object' => 'string'
@@ -494,7 +494,7 @@ class ProductCollectionsCreateResponseBody implements ModelInterface, ArrayAcces
     /**
      * Gets filter
      *
-     * @return \OpenAPI\Client\Model\ProductCollectionsCreateResponseBodyFilter|null
+     * @return object|null
      */
     public function getFilter()
     {
@@ -504,7 +504,7 @@ class ProductCollectionsCreateResponseBody implements ModelInterface, ArrayAcces
     /**
      * Sets filter
      *
-     * @param \OpenAPI\Client\Model\ProductCollectionsCreateResponseBodyFilter|null $filter filter
+     * @param object|null $filter Defines a set of criteria and boundary conditions for an `AUTO_UPDATE` product collection type.
      *
      * @return self
      */
