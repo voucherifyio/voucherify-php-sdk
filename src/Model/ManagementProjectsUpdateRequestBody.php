@@ -72,8 +72,8 @@ class ManagementProjectsUpdateRequestBody implements ModelInterface, ArrayAccess
         'clientCreateCustomerEnabled' => 'bool',
         'clientLoyaltyEventsEnabled' => 'bool',
         'clientSetVoucherExpirationDateEnabled' => 'bool',
-        'apiUsageNotifications' => '\OpenAPI\Client\Model\ManagementProjectsUpdateRequestBodyApiUsageNotifications',
         'webhooksCalloutNotifications' => '\OpenAPI\Client\Model\ManagementProjectsUpdateRequestBodyWebhooksCalloutNotifications',
+        'apiUsageNotifications' => '\OpenAPI\Client\Model\ManagementProjectsUpdateRequestBodyApiUsageNotifications',
         'defaultCodeConfig' => '\OpenAPI\Client\Model\ManagementProjectsUpdateRequestBodyDefaultCodeConfig'
     ];
 
@@ -98,8 +98,8 @@ class ManagementProjectsUpdateRequestBody implements ModelInterface, ArrayAccess
         'clientCreateCustomerEnabled' => null,
         'clientLoyaltyEventsEnabled' => null,
         'clientSetVoucherExpirationDateEnabled' => null,
-        'apiUsageNotifications' => null,
         'webhooksCalloutNotifications' => null,
+        'apiUsageNotifications' => null,
         'defaultCodeConfig' => null
     ];
 
@@ -122,8 +122,8 @@ class ManagementProjectsUpdateRequestBody implements ModelInterface, ArrayAccess
 		'clientCreateCustomerEnabled' => true,
 		'clientLoyaltyEventsEnabled' => true,
 		'clientSetVoucherExpirationDateEnabled' => true,
-		'apiUsageNotifications' => true,
 		'webhooksCalloutNotifications' => true,
+		'apiUsageNotifications' => true,
 		'defaultCodeConfig' => true
     ];
 
@@ -226,8 +226,8 @@ class ManagementProjectsUpdateRequestBody implements ModelInterface, ArrayAccess
         'clientCreateCustomerEnabled' => 'client_create_customer_enabled',
         'clientLoyaltyEventsEnabled' => 'client_loyalty_events_enabled',
         'clientSetVoucherExpirationDateEnabled' => 'client_set_voucher_expiration_date_enabled',
-        'apiUsageNotifications' => 'api_usage_notifications',
         'webhooksCalloutNotifications' => 'webhooks_callout_notifications',
+        'apiUsageNotifications' => 'api_usage_notifications',
         'defaultCodeConfig' => 'default_code_config'
     ];
 
@@ -250,8 +250,8 @@ class ManagementProjectsUpdateRequestBody implements ModelInterface, ArrayAccess
         'clientCreateCustomerEnabled' => 'setClientCreateCustomerEnabled',
         'clientLoyaltyEventsEnabled' => 'setClientLoyaltyEventsEnabled',
         'clientSetVoucherExpirationDateEnabled' => 'setClientSetVoucherExpirationDateEnabled',
-        'apiUsageNotifications' => 'setApiUsageNotifications',
         'webhooksCalloutNotifications' => 'setWebhooksCalloutNotifications',
+        'apiUsageNotifications' => 'setApiUsageNotifications',
         'defaultCodeConfig' => 'setDefaultCodeConfig'
     ];
 
@@ -274,8 +274,8 @@ class ManagementProjectsUpdateRequestBody implements ModelInterface, ArrayAccess
         'clientCreateCustomerEnabled' => 'getClientCreateCustomerEnabled',
         'clientLoyaltyEventsEnabled' => 'getClientLoyaltyEventsEnabled',
         'clientSetVoucherExpirationDateEnabled' => 'getClientSetVoucherExpirationDateEnabled',
-        'apiUsageNotifications' => 'getApiUsageNotifications',
         'webhooksCalloutNotifications' => 'getWebhooksCalloutNotifications',
+        'apiUsageNotifications' => 'getApiUsageNotifications',
         'defaultCodeConfig' => 'getDefaultCodeConfig'
     ];
 
@@ -362,8 +362,8 @@ class ManagementProjectsUpdateRequestBody implements ModelInterface, ArrayAccess
         $this->setIfExists('clientCreateCustomerEnabled', $data ?? [], null);
         $this->setIfExists('clientLoyaltyEventsEnabled', $data ?? [], null);
         $this->setIfExists('clientSetVoucherExpirationDateEnabled', $data ?? [], null);
-        $this->setIfExists('apiUsageNotifications', $data ?? [], null);
         $this->setIfExists('webhooksCalloutNotifications', $data ?? [], null);
+        $this->setIfExists('apiUsageNotifications', $data ?? [], null);
         $this->setIfExists('defaultCodeConfig', $data ?? [], null);
     }
 
@@ -871,40 +871,6 @@ class ManagementProjectsUpdateRequestBody implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets apiUsageNotifications
-     *
-     * @return \OpenAPI\Client\Model\ManagementProjectsUpdateRequestBodyApiUsageNotifications|null
-     */
-    public function getApiUsageNotifications()
-    {
-        return $this->container['apiUsageNotifications'];
-    }
-
-    /**
-     * Sets apiUsageNotifications
-     *
-     * @param \OpenAPI\Client\Model\ManagementProjectsUpdateRequestBodyApiUsageNotifications|null $apiUsageNotifications apiUsageNotifications
-     *
-     * @return self
-     */
-    public function setApiUsageNotifications($apiUsageNotifications)
-    {
-        if (is_null($apiUsageNotifications)) {
-            array_push($this->openAPINullablesSetToNull, 'apiUsageNotifications');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('apiUsageNotifications', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['apiUsageNotifications'] = $apiUsageNotifications;
-
-        return $this;
-    }
-
-    /**
      * Gets webhooksCalloutNotifications
      *
      * @return \OpenAPI\Client\Model\ManagementProjectsUpdateRequestBodyWebhooksCalloutNotifications|null
@@ -934,6 +900,40 @@ class ManagementProjectsUpdateRequestBody implements ModelInterface, ArrayAccess
             }
         }
         $this->container['webhooksCalloutNotifications'] = $webhooksCalloutNotifications;
+
+        return $this;
+    }
+
+    /**
+     * Gets apiUsageNotifications
+     *
+     * @return \OpenAPI\Client\Model\ManagementProjectsUpdateRequestBodyApiUsageNotifications|null
+     */
+    public function getApiUsageNotifications()
+    {
+        return $this->container['apiUsageNotifications'];
+    }
+
+    /**
+     * Sets apiUsageNotifications
+     *
+     * @param \OpenAPI\Client\Model\ManagementProjectsUpdateRequestBodyApiUsageNotifications|null $apiUsageNotifications apiUsageNotifications
+     *
+     * @return self
+     */
+    public function setApiUsageNotifications($apiUsageNotifications)
+    {
+        if (is_null($apiUsageNotifications)) {
+            array_push($this->openAPINullablesSetToNull, 'apiUsageNotifications');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('apiUsageNotifications', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['apiUsageNotifications'] = $apiUsageNotifications;
 
         return $this;
     }

@@ -73,8 +73,8 @@ class ManagementProjectsCreateResponseBody implements ModelInterface, ArrayAcces
         'clientCreateCustomerEnabled' => 'bool',
         'clientLoyaltyEventsEnabled' => 'bool',
         'clientSetVoucherExpirationDateEnabled' => 'bool',
-        'apiUsageNotifications' => '\OpenAPI\Client\Model\ManagementProjectsCreateResponseBodyApiUsageNotifications',
         'webhooksCalloutNotifications' => '\OpenAPI\Client\Model\ManagementProjectsCreateResponseBodyWebhooksCalloutNotifications',
+        'apiUsageNotifications' => '\OpenAPI\Client\Model\ManagementProjectsCreateResponseBodyApiUsageNotifications',
         'clusterId' => 'string',
         'caseSensitiveCodes' => 'bool',
         'apiVersion' => 'string',
@@ -106,8 +106,8 @@ class ManagementProjectsCreateResponseBody implements ModelInterface, ArrayAcces
         'clientCreateCustomerEnabled' => null,
         'clientLoyaltyEventsEnabled' => null,
         'clientSetVoucherExpirationDateEnabled' => null,
-        'apiUsageNotifications' => null,
         'webhooksCalloutNotifications' => null,
+        'apiUsageNotifications' => null,
         'clusterId' => null,
         'caseSensitiveCodes' => null,
         'apiVersion' => null,
@@ -137,8 +137,8 @@ class ManagementProjectsCreateResponseBody implements ModelInterface, ArrayAcces
 		'clientCreateCustomerEnabled' => true,
 		'clientLoyaltyEventsEnabled' => true,
 		'clientSetVoucherExpirationDateEnabled' => true,
-		'apiUsageNotifications' => true,
 		'webhooksCalloutNotifications' => true,
+		'apiUsageNotifications' => true,
 		'clusterId' => true,
 		'caseSensitiveCodes' => true,
 		'apiVersion' => true,
@@ -248,8 +248,8 @@ class ManagementProjectsCreateResponseBody implements ModelInterface, ArrayAcces
         'clientCreateCustomerEnabled' => 'client_create_customer_enabled',
         'clientLoyaltyEventsEnabled' => 'client_loyalty_events_enabled',
         'clientSetVoucherExpirationDateEnabled' => 'client_set_voucher_expiration_date_enabled',
-        'apiUsageNotifications' => 'api_usage_notifications',
         'webhooksCalloutNotifications' => 'webhooks_callout_notifications',
+        'apiUsageNotifications' => 'api_usage_notifications',
         'clusterId' => 'cluster_id',
         'caseSensitiveCodes' => 'case_sensitive_codes',
         'apiVersion' => 'api_version',
@@ -279,8 +279,8 @@ class ManagementProjectsCreateResponseBody implements ModelInterface, ArrayAcces
         'clientCreateCustomerEnabled' => 'setClientCreateCustomerEnabled',
         'clientLoyaltyEventsEnabled' => 'setClientLoyaltyEventsEnabled',
         'clientSetVoucherExpirationDateEnabled' => 'setClientSetVoucherExpirationDateEnabled',
-        'apiUsageNotifications' => 'setApiUsageNotifications',
         'webhooksCalloutNotifications' => 'setWebhooksCalloutNotifications',
+        'apiUsageNotifications' => 'setApiUsageNotifications',
         'clusterId' => 'setClusterId',
         'caseSensitiveCodes' => 'setCaseSensitiveCodes',
         'apiVersion' => 'setApiVersion',
@@ -310,8 +310,8 @@ class ManagementProjectsCreateResponseBody implements ModelInterface, ArrayAcces
         'clientCreateCustomerEnabled' => 'getClientCreateCustomerEnabled',
         'clientLoyaltyEventsEnabled' => 'getClientLoyaltyEventsEnabled',
         'clientSetVoucherExpirationDateEnabled' => 'getClientSetVoucherExpirationDateEnabled',
-        'apiUsageNotifications' => 'getApiUsageNotifications',
         'webhooksCalloutNotifications' => 'getWebhooksCalloutNotifications',
+        'apiUsageNotifications' => 'getApiUsageNotifications',
         'clusterId' => 'getClusterId',
         'caseSensitiveCodes' => 'getCaseSensitiveCodes',
         'apiVersion' => 'getApiVersion',
@@ -418,8 +418,8 @@ class ManagementProjectsCreateResponseBody implements ModelInterface, ArrayAcces
         $this->setIfExists('clientCreateCustomerEnabled', $data ?? [], null);
         $this->setIfExists('clientLoyaltyEventsEnabled', $data ?? [], null);
         $this->setIfExists('clientSetVoucherExpirationDateEnabled', $data ?? [], null);
-        $this->setIfExists('apiUsageNotifications', $data ?? [], null);
         $this->setIfExists('webhooksCalloutNotifications', $data ?? [], null);
+        $this->setIfExists('apiUsageNotifications', $data ?? [], null);
         $this->setIfExists('clusterId', $data ?? [], null);
         $this->setIfExists('caseSensitiveCodes', $data ?? [], null);
         $this->setIfExists('apiVersion', $data ?? [], 'v2018-08-01');
@@ -976,40 +976,6 @@ class ManagementProjectsCreateResponseBody implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets apiUsageNotifications
-     *
-     * @return \OpenAPI\Client\Model\ManagementProjectsCreateResponseBodyApiUsageNotifications|null
-     */
-    public function getApiUsageNotifications()
-    {
-        return $this->container['apiUsageNotifications'];
-    }
-
-    /**
-     * Sets apiUsageNotifications
-     *
-     * @param \OpenAPI\Client\Model\ManagementProjectsCreateResponseBodyApiUsageNotifications|null $apiUsageNotifications apiUsageNotifications
-     *
-     * @return self
-     */
-    public function setApiUsageNotifications($apiUsageNotifications)
-    {
-        if (is_null($apiUsageNotifications)) {
-            array_push($this->openAPINullablesSetToNull, 'apiUsageNotifications');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('apiUsageNotifications', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['apiUsageNotifications'] = $apiUsageNotifications;
-
-        return $this;
-    }
-
-    /**
      * Gets webhooksCalloutNotifications
      *
      * @return \OpenAPI\Client\Model\ManagementProjectsCreateResponseBodyWebhooksCalloutNotifications|null
@@ -1039,6 +1005,40 @@ class ManagementProjectsCreateResponseBody implements ModelInterface, ArrayAcces
             }
         }
         $this->container['webhooksCalloutNotifications'] = $webhooksCalloutNotifications;
+
+        return $this;
+    }
+
+    /**
+     * Gets apiUsageNotifications
+     *
+     * @return \OpenAPI\Client\Model\ManagementProjectsCreateResponseBodyApiUsageNotifications|null
+     */
+    public function getApiUsageNotifications()
+    {
+        return $this->container['apiUsageNotifications'];
+    }
+
+    /**
+     * Sets apiUsageNotifications
+     *
+     * @param \OpenAPI\Client\Model\ManagementProjectsCreateResponseBodyApiUsageNotifications|null $apiUsageNotifications apiUsageNotifications
+     *
+     * @return self
+     */
+    public function setApiUsageNotifications($apiUsageNotifications)
+    {
+        if (is_null($apiUsageNotifications)) {
+            array_push($this->openAPINullablesSetToNull, 'apiUsageNotifications');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('apiUsageNotifications', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['apiUsageNotifications'] = $apiUsageNotifications;
 
         return $this;
     }

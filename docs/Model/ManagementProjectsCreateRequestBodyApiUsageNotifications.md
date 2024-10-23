@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**redemptions** | [**\OpenAPI\Client\Model\UsageNotifications**](UsageNotifications.md) |  | [optional]
 **messages** | [**\OpenAPI\Client\Model\UsageNotifications**](UsageNotifications.md) |  | [optional]
 **apiCalls** | [**\OpenAPI\Client\Model\UsageNotifications**](UsageNotifications.md) |  | [optional]
 **bulkApiCalls** | [**\OpenAPI\Client\Model\UsageNotifications**](UsageNotifications.md) |  | [optional]

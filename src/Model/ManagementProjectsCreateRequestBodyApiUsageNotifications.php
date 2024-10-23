@@ -59,7 +59,6 @@ class ManagementProjectsCreateRequestBodyApiUsageNotifications implements ModelI
       * @var string[]
       */
     protected static $openAPITypes = [
-        'redemptions' => '\OpenAPI\Client\Model\UsageNotifications',
         'messages' => '\OpenAPI\Client\Model\UsageNotifications',
         'apiCalls' => '\OpenAPI\Client\Model\UsageNotifications',
         'bulkApiCalls' => '\OpenAPI\Client\Model\UsageNotifications',
@@ -75,7 +74,6 @@ class ManagementProjectsCreateRequestBodyApiUsageNotifications implements ModelI
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'redemptions' => null,
         'messages' => null,
         'apiCalls' => null,
         'bulkApiCalls' => null,
@@ -89,8 +87,7 @@ class ManagementProjectsCreateRequestBodyApiUsageNotifications implements ModelI
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'redemptions' => false,
-		'messages' => false,
+        'messages' => false,
 		'apiCalls' => false,
 		'bulkApiCalls' => false,
 		'webhookCalls' => false,
@@ -183,7 +180,6 @@ class ManagementProjectsCreateRequestBodyApiUsageNotifications implements ModelI
      * @var string[]
      */
     protected static $attributeMap = [
-        'redemptions' => 'redemptions',
         'messages' => 'messages',
         'apiCalls' => 'api_calls',
         'bulkApiCalls' => 'bulk_api_calls',
@@ -197,7 +193,6 @@ class ManagementProjectsCreateRequestBodyApiUsageNotifications implements ModelI
      * @var string[]
      */
     protected static $setters = [
-        'redemptions' => 'setRedemptions',
         'messages' => 'setMessages',
         'apiCalls' => 'setApiCalls',
         'bulkApiCalls' => 'setBulkApiCalls',
@@ -211,7 +206,6 @@ class ManagementProjectsCreateRequestBodyApiUsageNotifications implements ModelI
      * @var string[]
      */
     protected static $getters = [
-        'redemptions' => 'getRedemptions',
         'messages' => 'getMessages',
         'apiCalls' => 'getApiCalls',
         'bulkApiCalls' => 'getBulkApiCalls',
@@ -276,7 +270,6 @@ class ManagementProjectsCreateRequestBodyApiUsageNotifications implements ModelI
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('redemptions', $data ?? [], null);
         $this->setIfExists('messages', $data ?? [], null);
         $this->setIfExists('apiCalls', $data ?? [], null);
         $this->setIfExists('bulkApiCalls', $data ?? [], null);
@@ -325,33 +318,6 @@ class ManagementProjectsCreateRequestBodyApiUsageNotifications implements ModelI
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets redemptions
-     *
-     * @return \OpenAPI\Client\Model\UsageNotifications|null
-     */
-    public function getRedemptions()
-    {
-        return $this->container['redemptions'];
-    }
-
-    /**
-     * Sets redemptions
-     *
-     * @param \OpenAPI\Client\Model\UsageNotifications|null $redemptions redemptions
-     *
-     * @return self
-     */
-    public function setRedemptions($redemptions)
-    {
-        if (is_null($redemptions)) {
-            throw new \InvalidArgumentException('non-nullable redemptions cannot be null');
-        }
-        $this->container['redemptions'] = $redemptions;
-
-        return $this;
-    }
 
     /**
      * Gets messages

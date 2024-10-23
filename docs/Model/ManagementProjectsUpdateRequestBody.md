@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **clientCreateCustomerEnabled** | **bool** | Enables client-side creation of customers. | [optional]
 **clientLoyaltyEventsEnabled** | **bool** | Enables client-side events for loyalty and referral programs. | [optional]
 **clientSetVoucherExpirationDateEnabled** | **bool** | Enables client-side setting of voucher expiration date. | [optional]
-**apiUsageNotifications** | [**\OpenAPI\Client\Model\ManagementProjectsUpdateRequestBodyApiUsageNotifications**](ManagementProjectsUpdateRequestBodyApiUsageNotifications.md) |  | [optional]
 **webhooksCalloutNotifications** | [**\OpenAPI\Client\Model\ManagementProjectsUpdateRequestBodyWebhooksCalloutNotifications**](ManagementProjectsUpdateRequestBodyWebhooksCalloutNotifications.md) |  | [optional]
+**apiUsageNotifications** | [**\OpenAPI\Client\Model\ManagementProjectsUpdateRequestBodyApiUsageNotifications**](ManagementProjectsUpdateRequestBodyApiUsageNotifications.md) |  | [optional]
 **defaultCodeConfig** | [**\OpenAPI\Client\Model\ManagementProjectsUpdateRequestBodyDefaultCodeConfig**](ManagementProjectsUpdateRequestBodyDefaultCodeConfig.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
