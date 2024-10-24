@@ -86,7 +86,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyVoucher implements ModelInterf
         'object' => 'string',
         'publish' => '\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodyVoucherPublish',
         'redemption' => '\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodyVoucherRedemption',
-        'categories' => '\OpenAPI\Client\Model\Category[]',
+        'categories' => 'mixed[]',
         'validationRulesAssignments' => '\OpenAPI\Client\Model\ValidationRulesAssignmentsList',
         'holder' => '\OpenAPI\Client\Model\SimpleCustomer'
     ];
@@ -1457,7 +1457,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyVoucher implements ModelInterf
     /**
      * Gets categories
      *
-     * @return \OpenAPI\Client\Model\Category[]|null
+     * @return mixed[]|null
      */
     public function getCategories()
     {
@@ -1467,7 +1467,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyVoucher implements ModelInterf
     /**
      * Sets categories
      *
-     * @param \OpenAPI\Client\Model\Category[]|null $categories Contains details about the category.
+     * @param mixed[]|null $categories Always returns an empty array.
      *
      * @return self
      */

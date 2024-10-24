@@ -77,11 +77,11 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
         'customer' => '\OpenAPI\Client\Model\SimpleCustomer',
         'relatedObjectType' => 'string',
         'relatedObjectId' => 'string',
-        'voucher' => '\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodyVoucher',
         'promotionTier' => '\OpenAPI\Client\Model\PromotionTier',
         'reward' => '\OpenAPI\Client\Model\RedemptionRewardResult',
         'gift' => '\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodyGift',
-        'loyaltyCard' => '\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodyLoyaltyCard'
+        'loyaltyCard' => '\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodyLoyaltyCard',
+        'voucher' => '\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodyVoucher'
     ];
 
     /**
@@ -110,11 +110,11 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
         'customer' => null,
         'relatedObjectType' => null,
         'relatedObjectId' => null,
-        'voucher' => null,
         'promotionTier' => null,
         'reward' => null,
         'gift' => null,
-        'loyaltyCard' => null
+        'loyaltyCard' => null,
+        'voucher' => null
     ];
 
     /**
@@ -141,11 +141,11 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
 		'customer' => false,
 		'relatedObjectType' => true,
 		'relatedObjectId' => true,
-		'voucher' => true,
 		'promotionTier' => false,
 		'reward' => false,
 		'gift' => true,
-		'loyaltyCard' => true
+		'loyaltyCard' => true,
+		'voucher' => true
     ];
 
     /**
@@ -252,11 +252,11 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
         'customer' => 'customer',
         'relatedObjectType' => 'related_object_type',
         'relatedObjectId' => 'related_object_id',
-        'voucher' => 'voucher',
         'promotionTier' => 'promotion_tier',
         'reward' => 'reward',
         'gift' => 'gift',
-        'loyaltyCard' => 'loyalty_card'
+        'loyaltyCard' => 'loyalty_card',
+        'voucher' => 'voucher'
     ];
 
     /**
@@ -283,11 +283,11 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
         'customer' => 'setCustomer',
         'relatedObjectType' => 'setRelatedObjectType',
         'relatedObjectId' => 'setRelatedObjectId',
-        'voucher' => 'setVoucher',
         'promotionTier' => 'setPromotionTier',
         'reward' => 'setReward',
         'gift' => 'setGift',
-        'loyaltyCard' => 'setLoyaltyCard'
+        'loyaltyCard' => 'setLoyaltyCard',
+        'voucher' => 'setVoucher'
     ];
 
     /**
@@ -314,11 +314,11 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
         'customer' => 'getCustomer',
         'relatedObjectType' => 'getRelatedObjectType',
         'relatedObjectId' => 'getRelatedObjectId',
-        'voucher' => 'getVoucher',
         'promotionTier' => 'getPromotionTier',
         'reward' => 'getReward',
         'gift' => 'getGift',
-        'loyaltyCard' => 'getLoyaltyCard'
+        'loyaltyCard' => 'getLoyaltyCard',
+        'voucher' => 'getVoucher'
     ];
 
     /**
@@ -458,11 +458,11 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
         $this->setIfExists('customer', $data ?? [], null);
         $this->setIfExists('relatedObjectType', $data ?? [], null);
         $this->setIfExists('relatedObjectId', $data ?? [], null);
-        $this->setIfExists('voucher', $data ?? [], null);
         $this->setIfExists('promotionTier', $data ?? [], null);
         $this->setIfExists('reward', $data ?? [], null);
         $this->setIfExists('gift', $data ?? [], null);
         $this->setIfExists('loyaltyCard', $data ?? [], null);
+        $this->setIfExists('voucher', $data ?? [], null);
     }
 
     /**
@@ -1182,40 +1182,6 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
     }
 
     /**
-     * Gets voucher
-     *
-     * @return \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodyVoucher|null
-     */
-    public function getVoucher()
-    {
-        return $this->container['voucher'];
-    }
-
-    /**
-     * Sets voucher
-     *
-     * @param \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodyVoucher|null $voucher voucher
-     *
-     * @return self
-     */
-    public function setVoucher($voucher)
-    {
-        if (is_null($voucher)) {
-            array_push($this->openAPINullablesSetToNull, 'voucher');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('voucher', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['voucher'] = $voucher;
-
-        return $this;
-    }
-
-    /**
      * Gets promotionTier
      *
      * @return \OpenAPI\Client\Model\PromotionTier|null
@@ -1333,6 +1299,40 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
             }
         }
         $this->container['loyaltyCard'] = $loyaltyCard;
+
+        return $this;
+    }
+
+    /**
+     * Gets voucher
+     *
+     * @return \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodyVoucher|null
+     */
+    public function getVoucher()
+    {
+        return $this->container['voucher'];
+    }
+
+    /**
+     * Sets voucher
+     *
+     * @param \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodyVoucher|null $voucher voucher
+     *
+     * @return self
+     */
+    public function setVoucher($voucher)
+    {
+        if (is_null($voucher)) {
+            array_push($this->openAPINullablesSetToNull, 'voucher');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('voucher', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['voucher'] = $voucher;
 
         return $this;
     }

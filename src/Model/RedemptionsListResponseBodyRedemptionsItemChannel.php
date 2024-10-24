@@ -81,7 +81,7 @@ class RedemptionsListResponseBodyRedemptionsItemChannel implements ModelInterfac
       */
     protected static array $openAPINullables = [
         'channelId' => false,
-		'channelType' => true
+		'channelType' => false
     ];
 
     /**
@@ -237,6 +237,7 @@ class RedemptionsListResponseBodyRedemptionsItemChannel implements ModelInterfac
 
     public const CHANNEL_TYPE_USER = 'USER';
     public const CHANNEL_TYPE_API = 'API';
+    public const CHANNEL_TYPE_AUTO_REDEEM = 'AUTO_REDEEM';
 
     /**
      * Gets allowable values of the enum
@@ -248,6 +249,7 @@ class RedemptionsListResponseBodyRedemptionsItemChannel implements ModelInterfac
         return [
             self::CHANNEL_TYPE_USER,
             self::CHANNEL_TYPE_API,
+            self::CHANNEL_TYPE_AUTO_REDEEM,
         ];
     }
 
@@ -361,24 +363,17 @@ class RedemptionsListResponseBodyRedemptionsItemChannel implements ModelInterfac
     /**
      * Sets channelType
      *
-     * @param string|null $channelType The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard and an `API` corresponds to the API.
+     * @param string|null $channelType channelType
      *
      * @return self
      */
     public function setChannelType($channelType)
     {
         if (is_null($channelType)) {
-            array_push($this->openAPINullablesSetToNull, 'channelType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('channelType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable channelType cannot be null');
         }
         $allowedValues = $this->getChannelTypeAllowableValues();
-        if (!is_null($channelType) && !in_array($channelType, $allowedValues, true)) {
+        if (!in_array($channelType, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'channelType', must be one of '%s'",

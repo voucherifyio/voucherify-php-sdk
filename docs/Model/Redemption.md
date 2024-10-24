@@ -22,10 +22,10 @@ Name | Type | Description | Notes
 **customer** | [**\OpenAPI\Client\Model\SimpleCustomer**](SimpleCustomer.md) |  | [optional]
 **relatedObjectType** | **string** | Defines the related object. | [optional]
 **relatedObjectId** | **string** | Unique related object ID assigned by Voucherify, i.e. v_lfZi4rcEGe0sN9gmnj40bzwK2FH6QUno for a voucher. | [optional]
-**voucher** | [**\OpenAPI\Client\Model\RedemptionVoucher**](RedemptionVoucher.md) |  | [optional]
 **promotionTier** | [**\OpenAPI\Client\Model\PromotionTier**](PromotionTier.md) |  | [optional]
 **reward** | [**\OpenAPI\Client\Model\RedemptionRewardResult**](RedemptionRewardResult.md) |  | [optional]
 **gift** | [**\OpenAPI\Client\Model\RedemptionGift**](RedemptionGift.md) |  | [optional]
 **loyaltyCard** | [**\OpenAPI\Client\Model\RedemptionLoyaltyCard**](RedemptionLoyaltyCard.md) |  | [optional]
+**voucher** | [**\OpenAPI\Client\Model\RedemptionVoucher**](RedemptionVoucher.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

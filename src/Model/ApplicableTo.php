@@ -328,9 +328,11 @@ class ApplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     public const OBJECT_PRODUCT = 'product';
     public const OBJECT_SKU = 'sku';
     public const OBJECT_PRODUCTS_COLLECTION = 'products_collection';
-    public const EFFECT_EVERY = 'APPLY_TO_EVERY';
-    public const EFFECT_CHEAPEST = 'APPLY_TO_CHEAPEST';
-    public const EFFECT_MOST_EXPENSIVE = 'APPLY_TO_MOST_EXPENSIVE';
+    public const EFFECT_TO_EVERY = 'APPLY_TO_EVERY';
+    public const EFFECT_TO_CHEAPEST = 'APPLY_TO_CHEAPEST';
+    public const EFFECT_FROM_CHEAPEST = 'APPLY_FROM_CHEAPEST';
+    public const EFFECT_TO_MOST_EXPENSIVE = 'APPLY_TO_MOST_EXPENSIVE';
+    public const EFFECT_FROM_MOST_EXPENSIVE = 'APPLY_FROM_MOST_EXPENSIVE';
 
     /**
      * Gets allowable values of the enum
@@ -354,9 +356,11 @@ class ApplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getEffectAllowableValues()
     {
         return [
-            self::EFFECT_EVERY,
-            self::EFFECT_CHEAPEST,
-            self::EFFECT_MOST_EXPENSIVE,
+            self::EFFECT_TO_EVERY,
+            self::EFFECT_TO_CHEAPEST,
+            self::EFFECT_FROM_CHEAPEST,
+            self::EFFECT_TO_MOST_EXPENSIVE,
+            self::EFFECT_FROM_MOST_EXPENSIVE,
         ];
     }
 
@@ -467,7 +471,7 @@ class ApplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets object
      *
-     * @param string|null $object This object stores information about the product collection.
+     * @param string|null $object This object stores information about the resource to which the discount is applicable.
      *
      * @return self
      */
@@ -511,7 +515,7 @@ class ApplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id Unique product collection ID assigned by Voucherify.
+     * @param string|null $id Unique product collection, product, or SKU identifier assigned by Voucherify.
      *
      * @return self
      */
@@ -545,7 +549,7 @@ class ApplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sourceId
      *
-     * @param string|null $sourceId The source ID from your inventory system.
+     * @param string|null $sourceId The source identifier from your inventory system.
      *
      * @return self
      */
@@ -929,7 +933,7 @@ class ApplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderItemIndices
      *
-     * @param int[]|null $orderItemIndices orderItemIndices
+     * @param int[]|null $orderItemIndices Determines the order in which the discount is applied to the products or SKUs sent in the `order` object in the request. The counting begins from `0`.
      *
      * @return self
      */
@@ -963,7 +967,7 @@ class ApplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets repeat
      *
-     * @param int|null $repeat repeat
+     * @param int|null $repeat Determines the recurrence of the discount, e.g. `\"repeat\": 3` means that the discount is applied to every third item.
      *
      * @return self
      */
@@ -997,7 +1001,7 @@ class ApplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets skipInitially
      *
-     * @param int|null $skipInitially skipInitially
+     * @param int|null $skipInitially Determines how many items are skipped before the discount is applied.
      *
      * @return self
      */
@@ -1031,7 +1035,7 @@ class ApplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets target
      *
-     * @param string|null $target target
+     * @param string|null $target Determines to which kinds of objects the discount is applicable. `\"ITEM\"` includes products and SKUs.
      *
      * @return self
      */

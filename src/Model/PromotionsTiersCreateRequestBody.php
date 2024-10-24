@@ -61,7 +61,6 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
     protected static $openAPITypes = [
         'name' => 'string',
         'banner' => 'string',
-        'action' => '\OpenAPI\Client\Model\PromotionsTiersCreateRequestBodyAction',
         'metadata' => 'object',
         'hierarchy' => 'int',
         'active' => 'bool',
@@ -70,9 +69,10 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
         'validityTimeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
         'validityDayOfWeek' => 'int[]',
         'validityHours' => '\OpenAPI\Client\Model\ValidityHours',
-        'validationRuleAssignments' => '\OpenAPI\Client\Model\ValidationRuleAssignmentsList',
         'category' => 'string',
-        'categoryId' => 'string'
+        'categoryId' => 'string',
+        'action' => '\OpenAPI\Client\Model\PromotionsTiersCreateRequestBodyAction',
+        'validationRuleAssignments' => '\OpenAPI\Client\Model\ValidationRuleAssignmentsList'
     ];
 
     /**
@@ -85,7 +85,6 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
     protected static $openAPIFormats = [
         'name' => null,
         'banner' => null,
-        'action' => null,
         'metadata' => null,
         'hierarchy' => null,
         'active' => null,
@@ -94,9 +93,10 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
         'validityTimeframe' => null,
         'validityDayOfWeek' => null,
         'validityHours' => null,
-        'validationRuleAssignments' => null,
         'category' => null,
-        'categoryId' => null
+        'categoryId' => null,
+        'action' => null,
+        'validationRuleAssignments' => null
     ];
 
     /**
@@ -107,7 +107,6 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
     protected static array $openAPINullables = [
         'name' => true,
 		'banner' => true,
-		'action' => true,
 		'metadata' => true,
 		'hierarchy' => true,
 		'active' => true,
@@ -116,9 +115,10 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
 		'validityTimeframe' => false,
 		'validityDayOfWeek' => true,
 		'validityHours' => false,
-		'validationRuleAssignments' => false,
 		'category' => true,
-		'categoryId' => true
+		'categoryId' => true,
+		'action' => true,
+		'validationRuleAssignments' => false
     ];
 
     /**
@@ -209,7 +209,6 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
     protected static $attributeMap = [
         'name' => 'name',
         'banner' => 'banner',
-        'action' => 'action',
         'metadata' => 'metadata',
         'hierarchy' => 'hierarchy',
         'active' => 'active',
@@ -218,9 +217,10 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
         'validityTimeframe' => 'validity_timeframe',
         'validityDayOfWeek' => 'validity_day_of_week',
         'validityHours' => 'validity_hours',
-        'validationRuleAssignments' => 'validation_rule_assignments',
         'category' => 'category',
-        'categoryId' => 'category_id'
+        'categoryId' => 'category_id',
+        'action' => 'action',
+        'validationRuleAssignments' => 'validation_rule_assignments'
     ];
 
     /**
@@ -231,7 +231,6 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
     protected static $setters = [
         'name' => 'setName',
         'banner' => 'setBanner',
-        'action' => 'setAction',
         'metadata' => 'setMetadata',
         'hierarchy' => 'setHierarchy',
         'active' => 'setActive',
@@ -240,9 +239,10 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
         'validityTimeframe' => 'setValidityTimeframe',
         'validityDayOfWeek' => 'setValidityDayOfWeek',
         'validityHours' => 'setValidityHours',
-        'validationRuleAssignments' => 'setValidationRuleAssignments',
         'category' => 'setCategory',
-        'categoryId' => 'setCategoryId'
+        'categoryId' => 'setCategoryId',
+        'action' => 'setAction',
+        'validationRuleAssignments' => 'setValidationRuleAssignments'
     ];
 
     /**
@@ -253,7 +253,6 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
     protected static $getters = [
         'name' => 'getName',
         'banner' => 'getBanner',
-        'action' => 'getAction',
         'metadata' => 'getMetadata',
         'hierarchy' => 'getHierarchy',
         'active' => 'getActive',
@@ -262,9 +261,10 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
         'validityTimeframe' => 'getValidityTimeframe',
         'validityDayOfWeek' => 'getValidityDayOfWeek',
         'validityHours' => 'getValidityHours',
-        'validationRuleAssignments' => 'getValidationRuleAssignments',
         'category' => 'getCategory',
-        'categoryId' => 'getCategoryId'
+        'categoryId' => 'getCategoryId',
+        'action' => 'getAction',
+        'validationRuleAssignments' => 'getValidationRuleAssignments'
     ];
 
     /**
@@ -351,7 +351,6 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
     {
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('banner', $data ?? [], null);
-        $this->setIfExists('action', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('hierarchy', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
@@ -360,9 +359,10 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
         $this->setIfExists('validityTimeframe', $data ?? [], null);
         $this->setIfExists('validityDayOfWeek', $data ?? [], null);
         $this->setIfExists('validityHours', $data ?? [], null);
-        $this->setIfExists('validationRuleAssignments', $data ?? [], null);
         $this->setIfExists('category', $data ?? [], null);
         $this->setIfExists('categoryId', $data ?? [], null);
+        $this->setIfExists('action', $data ?? [], null);
+        $this->setIfExists('validationRuleAssignments', $data ?? [], null);
     }
 
     /**
@@ -471,40 +471,6 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['banner'] = $banner;
-
-        return $this;
-    }
-
-    /**
-     * Gets action
-     *
-     * @return \OpenAPI\Client\Model\PromotionsTiersCreateRequestBodyAction|null
-     */
-    public function getAction()
-    {
-        return $this->container['action'];
-    }
-
-    /**
-     * Sets action
-     *
-     * @param \OpenAPI\Client\Model\PromotionsTiersCreateRequestBodyAction|null $action action
-     *
-     * @return self
-     */
-    public function setAction($action)
-    {
-        if (is_null($action)) {
-            array_push($this->openAPINullablesSetToNull, 'action');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('action', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['action'] = $action;
 
         return $this;
     }
@@ -777,33 +743,6 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets validationRuleAssignments
-     *
-     * @return \OpenAPI\Client\Model\ValidationRuleAssignmentsList|null
-     */
-    public function getValidationRuleAssignments()
-    {
-        return $this->container['validationRuleAssignments'];
-    }
-
-    /**
-     * Sets validationRuleAssignments
-     *
-     * @param \OpenAPI\Client\Model\ValidationRuleAssignmentsList|null $validationRuleAssignments validationRuleAssignments
-     *
-     * @return self
-     */
-    public function setValidationRuleAssignments($validationRuleAssignments)
-    {
-        if (is_null($validationRuleAssignments)) {
-            throw new \InvalidArgumentException('non-nullable validationRuleAssignments cannot be null');
-        }
-        $this->container['validationRuleAssignments'] = $validationRuleAssignments;
-
-        return $this;
-    }
-
-    /**
      * Gets category
      *
      * @return string|null
@@ -867,6 +806,67 @@ class PromotionsTiersCreateRequestBody implements ModelInterface, ArrayAccess, \
             }
         }
         $this->container['categoryId'] = $categoryId;
+
+        return $this;
+    }
+
+    /**
+     * Gets action
+     *
+     * @return \OpenAPI\Client\Model\PromotionsTiersCreateRequestBodyAction|null
+     */
+    public function getAction()
+    {
+        return $this->container['action'];
+    }
+
+    /**
+     * Sets action
+     *
+     * @param \OpenAPI\Client\Model\PromotionsTiersCreateRequestBodyAction|null $action action
+     *
+     * @return self
+     */
+    public function setAction($action)
+    {
+        if (is_null($action)) {
+            array_push($this->openAPINullablesSetToNull, 'action');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('action', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['action'] = $action;
+
+        return $this;
+    }
+
+    /**
+     * Gets validationRuleAssignments
+     *
+     * @return \OpenAPI\Client\Model\ValidationRuleAssignmentsList|null
+     */
+    public function getValidationRuleAssignments()
+    {
+        return $this->container['validationRuleAssignments'];
+    }
+
+    /**
+     * Sets validationRuleAssignments
+     *
+     * @param \OpenAPI\Client\Model\ValidationRuleAssignmentsList|null $validationRuleAssignments validationRuleAssignments
+     *
+     * @return self
+     */
+    public function setValidationRuleAssignments($validationRuleAssignments)
+    {
+        if (is_null($validationRuleAssignments)) {
+            throw new \InvalidArgumentException('non-nullable validationRuleAssignments cannot be null');
+        }
+        $this->container['validationRuleAssignments'] = $validationRuleAssignments;
 
         return $this;
     }

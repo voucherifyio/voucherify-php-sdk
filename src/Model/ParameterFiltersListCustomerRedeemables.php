@@ -65,7 +65,8 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
         'holderRole' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesHolderRole',
         'campaignId' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCampaignId',
         'campaignType' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesCampaignType',
-        'voucherType' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesVoucherType'
+        'voucherType' => '\OpenAPI\Client\Model\ParameterFiltersListCustomerRedeemablesVoucherType',
+        'junction' => 'string'
     ];
 
     /**
@@ -83,7 +84,8 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
         'holderRole' => null,
         'campaignId' => null,
         'campaignType' => null,
-        'voucherType' => null
+        'voucherType' => null,
+        'junction' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
 		'holderRole' => true,
 		'campaignId' => true,
 		'campaignType' => true,
-		'voucherType' => true
+		'voucherType' => true,
+		'junction' => true
     ];
 
     /**
@@ -195,7 +198,8 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
         'holderRole' => 'holder_role',
         'campaignId' => 'campaign_id',
         'campaignType' => 'campaign_type',
-        'voucherType' => 'voucher_type'
+        'voucherType' => 'voucher_type',
+        'junction' => 'junction'
     ];
 
     /**
@@ -211,7 +215,8 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
         'holderRole' => 'setHolderRole',
         'campaignId' => 'setCampaignId',
         'campaignType' => 'setCampaignType',
-        'voucherType' => 'setVoucherType'
+        'voucherType' => 'setVoucherType',
+        'junction' => 'setJunction'
     ];
 
     /**
@@ -227,7 +232,8 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
         'holderRole' => 'getHolderRole',
         'campaignId' => 'getCampaignId',
         'campaignType' => 'getCampaignType',
-        'voucherType' => 'getVoucherType'
+        'voucherType' => 'getVoucherType',
+        'junction' => 'getJunction'
     ];
 
     /**
@@ -271,6 +277,21 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
         return self::$openAPIModelName;
     }
 
+    public const JUNCTION__AND = 'and';
+    public const JUNCTION__OR = 'or';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getJunctionAllowableValues()
+    {
+        return [
+            self::JUNCTION__AND,
+            self::JUNCTION__OR,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -295,6 +316,7 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
         $this->setIfExists('campaignId', $data ?? [], null);
         $this->setIfExists('campaignType', $data ?? [], null);
         $this->setIfExists('voucherType', $data ?? [], null);
+        $this->setIfExists('junction', $data ?? [], null);
     }
 
     /**
@@ -323,6 +345,15 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getJunctionAllowableValues();
+        if (!is_null($this->container['junction']) && !in_array($this->container['junction'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'junction', must be one of '%s'",
+                $this->container['junction'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -607,6 +638,50 @@ class ParameterFiltersListCustomerRedeemables implements ModelInterface, ArrayAc
             }
         }
         $this->container['voucherType'] = $voucherType;
+
+        return $this;
+    }
+
+    /**
+     * Gets junction
+     *
+     * @return string|null
+     */
+    public function getJunction()
+    {
+        return $this->container['junction'];
+    }
+
+    /**
+     * Sets junction
+     *
+     * @param string|null $junction Logical Operator Between Filters. Filter by conditions set on the `junction` parameter indicating how the `conditions` should be accounted for in the query. An `AND` is an all-inclusive logical operator, meaning the `AND` operator displays a record if **ALL** the conditions separated by AND are TRUE, while  an `OR` operator displays a record if **ANY** of the conditions separated by OR is TRUE.
+     *
+     * @return self
+     */
+    public function setJunction($junction)
+    {
+        if (is_null($junction)) {
+            array_push($this->openAPINullablesSetToNull, 'junction');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('junction', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getJunctionAllowableValues();
+        if (!is_null($junction) && !in_array($junction, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'junction', must be one of '%s'",
+                    $junction,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['junction'] = $junction;
 
         return $this;
     }

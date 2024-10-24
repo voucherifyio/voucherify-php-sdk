@@ -919,7 +919,7 @@ class OrdersCreateResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets items
      *
-     * @param \OpenAPI\Client\Model\OrderCalculatedItem[]|null $items Array of items applied to the order.
+     * @param \OpenAPI\Client\Model\OrderCalculatedItem[]|null $items Array of items applied to the order. It can include up 500 items.
      *
      * @return self
      */

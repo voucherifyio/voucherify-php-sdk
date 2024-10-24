@@ -324,6 +324,10 @@ class CategoriesUpdateResponseBody implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['hierarchy']) && ($this->container['hierarchy'] < 0)) {
+            $invalidProperties[] = "invalid value for 'hierarchy', must be bigger than or equal to 0.";
+        }
+
         $allowedValues = $this->getObjectAllowableValues();
         if (!is_null($this->container['object']) && !in_array($this->container['object'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -429,7 +433,7 @@ class CategoriesUpdateResponseBody implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets hierarchy
      *
-     * @param int|null $hierarchy Category hierarchy.
+     * @param int|null $hierarchy Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
      *
      * @return self
      */
@@ -445,6 +449,11 @@ class CategoriesUpdateResponseBody implements ModelInterface, ArrayAccess, \Json
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($hierarchy) && ($hierarchy < 0)) {
+            throw new \InvalidArgumentException('invalid value for $hierarchy when calling CategoriesUpdateResponseBody., must be bigger than or equal to 0.');
+        }
+
         $this->container['hierarchy'] = $hierarchy;
 
         return $this;

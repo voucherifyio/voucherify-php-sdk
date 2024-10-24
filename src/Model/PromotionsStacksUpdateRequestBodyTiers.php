@@ -367,7 +367,7 @@ class PromotionsStacksUpdateRequestBodyTiers implements ModelInterface, ArrayAcc
     /**
      * Sets hierarchyMode
      *
-     * @param string|null $hierarchyMode Category hierarchy.
+     * @param string|null $hierarchyMode Category hierarchy. Categories with lower hierarchy are processed before categories with higher hierarchy value.
      *
      * @return self
      */

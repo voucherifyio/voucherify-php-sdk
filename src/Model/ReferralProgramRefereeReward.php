@@ -242,10 +242,8 @@ class ReferralProgramRefereeReward implements ModelInterface, ArrayAccess, \Json
         return self::$openAPIModelName;
     }
 
-    public const TYPE_DISCOUNT_VOUCHER = 'DISCOUNT_VOUCHER';
     public const TYPE_LOYALTY_CARD = 'LOYALTY_CARD';
     public const TYPE_GIFT_VOUCHER = 'GIFT_VOUCHER';
-    public const TYPE_LUCKY_DRAW_CODE = 'LUCKY_DRAW_CODE';
 
     /**
      * Gets allowable values of the enum
@@ -255,10 +253,8 @@ class ReferralProgramRefereeReward implements ModelInterface, ArrayAccess, \Json
     public function getTypeAllowableValues()
     {
         return [
-            self::TYPE_DISCOUNT_VOUCHER,
             self::TYPE_LOYALTY_CARD,
             self::TYPE_GIFT_VOUCHER,
-            self::TYPE_LUCKY_DRAW_CODE,
         ];
     }
 

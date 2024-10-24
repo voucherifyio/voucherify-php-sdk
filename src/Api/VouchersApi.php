@@ -2789,16 +2789,17 @@ class VouchersApi
      *
      * @param  string $code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  int $page Which page of results to return. The lowest value is 1. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listVoucherTransactions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\VouchersTransactionsListResponseBody
      */
-    public function listVoucherTransactions($code, $limit = null, $page = null, string $contentType = self::contentTypes['listVoucherTransactions'][0])
+    public function listVoucherTransactions($code, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listVoucherTransactions'][0])
     {
-        list($response) = $this->listVoucherTransactionsWithHttpInfo($code, $limit, $page, $contentType);
+        list($response) = $this->listVoucherTransactionsWithHttpInfo($code, $limit, $order, $startingAfterId, $contentType);
         return $response;
     }
 
@@ -2809,16 +2810,17 @@ class VouchersApi
      *
      * @param  string $code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  int $page Which page of results to return. The lowest value is 1. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listVoucherTransactions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\VouchersTransactionsListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listVoucherTransactionsWithHttpInfo($code, $limit = null, $page = null, string $contentType = self::contentTypes['listVoucherTransactions'][0])
+    public function listVoucherTransactionsWithHttpInfo($code, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listVoucherTransactions'][0])
     {
-        $request = $this->listVoucherTransactionsRequest($code, $limit, $page, $contentType);
+        $request = $this->listVoucherTransactionsRequest($code, $limit, $order, $startingAfterId, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2911,15 +2913,16 @@ class VouchersApi
      *
      * @param  string $code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  int $page Which page of results to return. The lowest value is 1. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listVoucherTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listVoucherTransactionsAsync($code, $limit = null, $page = null, string $contentType = self::contentTypes['listVoucherTransactions'][0])
+    public function listVoucherTransactionsAsync($code, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listVoucherTransactions'][0])
     {
-        return $this->listVoucherTransactionsAsyncWithHttpInfo($code, $limit, $page, $contentType)
+        return $this->listVoucherTransactionsAsyncWithHttpInfo($code, $limit, $order, $startingAfterId, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2934,16 +2937,17 @@ class VouchersApi
      *
      * @param  string $code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  int $page Which page of results to return. The lowest value is 1. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listVoucherTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listVoucherTransactionsAsyncWithHttpInfo($code, $limit = null, $page = null, string $contentType = self::contentTypes['listVoucherTransactions'][0])
+    public function listVoucherTransactionsAsyncWithHttpInfo($code, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listVoucherTransactions'][0])
     {
         $returnType = '\OpenAPI\Client\Model\VouchersTransactionsListResponseBody';
-        $request = $this->listVoucherTransactionsRequest($code, $limit, $page, $contentType);
+        $request = $this->listVoucherTransactionsRequest($code, $limit, $order, $startingAfterId, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2986,13 +2990,14 @@ class VouchersApi
      *
      * @param  string $code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  int $page Which page of results to return. The lowest value is 1. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listVoucherTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listVoucherTransactionsRequest($code, $limit = null, $page = null, string $contentType = self::contentTypes['listVoucherTransactions'][0])
+    public function listVoucherTransactionsRequest($code, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listVoucherTransactions'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -3009,13 +3014,8 @@ class VouchersApi
             throw new \InvalidArgumentException('invalid value for "$limit" when calling VouchersApi.listVoucherTransactions, must be bigger than or equal to 1.');
         }
         
-        if ($page !== null && $page > 100) {
-            throw new \InvalidArgumentException('invalid value for "$page" when calling VouchersApi.listVoucherTransactions, must be smaller than or equal to 100.');
-        }
-        if ($page !== null && $page < 1) {
-            throw new \InvalidArgumentException('invalid value for "$page" when calling VouchersApi.listVoucherTransactions, must be bigger than or equal to 1.');
-        }
-        
+
+
 
         $resourcePath = '/v1/vouchers/{code}/transactions';
         $formParams = [];
@@ -3035,9 +3035,18 @@ class VouchersApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page,
-            'page', // param base name
-            'integer', // openApiType
+            $order,
+            'order', // param base name
+            'ParameterOrderListTransactions', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $startingAfterId,
+            'starting_after_id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

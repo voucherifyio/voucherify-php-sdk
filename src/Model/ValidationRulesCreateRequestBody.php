@@ -300,7 +300,6 @@ class ValidationRulesCreateRequestBody implements ModelInterface, ArrayAccess, \
     public const CONTEXT_TYPE_CAMPAIGN_PROMOTION_DISCOUNT_FIXED_APPLY_TO_ITEMS = 'campaign.promotion.discount.fixed.apply_to_items';
     public const CONTEXT_TYPE_CAMPAIGN_PROMOTION_DISCOUNT_PERCENT_APPLY_TO_ITEMS = 'campaign.promotion.discount.percent.apply_to_items';
     public const CONTEXT_TYPE_CAMPAIGN_LOYALTY_PROGRAM = 'campaign.loyalty_program';
-    public const CONTEXT_TYPE_CAMPAIGN_LUCKY_DRAW = 'campaign.lucky_draw';
     public const CONTEXT_TYPE_VOUCHER_DISCOUNT_VOUCHER = 'voucher.discount_voucher';
     public const CONTEXT_TYPE_VOUCHER_DISCOUNT_VOUCHER_DISCOUNT_APPLY_TO_ORDER = 'voucher.discount_voucher.discount.apply_to_order';
     public const CONTEXT_TYPE_VOUCHER_DISCOUNT_VOUCHER_DISCOUNT_APPLY_TO_ITEMS = 'voucher.discount_voucher.discount.apply_to_items';
@@ -313,7 +312,6 @@ class ValidationRulesCreateRequestBody implements ModelInterface, ArrayAccess, \
     public const CONTEXT_TYPE_VOUCHER_GIFT_VOUCHER_GIFT_APPLY_TO_ORDER = 'voucher.gift_voucher.gift.apply_to_order';
     public const CONTEXT_TYPE_VOUCHER_GIFT_VOUCHER_GIFT_APPLY_TO_ITEMS = 'voucher.gift_voucher.gift.apply_to_items';
     public const CONTEXT_TYPE_VOUCHER_LOYALTY_CARD = 'voucher.loyalty_card';
-    public const CONTEXT_TYPE_VOUCHER_LUCKY_DRAW_CODE = 'voucher.lucky_draw_code';
     public const CONTEXT_TYPE_DISTRIBUTION_CUSTOM_EVENT = 'distribution.custom_event';
     public const CONTEXT_TYPE_DISTRIBUTION_ORDER_PAID = 'distribution.order.paid';
     public const CONTEXT_TYPE_DISTRIBUTION_ORDER_CREATED = 'distribution.order.created';
@@ -381,7 +379,6 @@ class ValidationRulesCreateRequestBody implements ModelInterface, ArrayAccess, \
             self::CONTEXT_TYPE_CAMPAIGN_PROMOTION_DISCOUNT_FIXED_APPLY_TO_ITEMS,
             self::CONTEXT_TYPE_CAMPAIGN_PROMOTION_DISCOUNT_PERCENT_APPLY_TO_ITEMS,
             self::CONTEXT_TYPE_CAMPAIGN_LOYALTY_PROGRAM,
-            self::CONTEXT_TYPE_CAMPAIGN_LUCKY_DRAW,
             self::CONTEXT_TYPE_VOUCHER_DISCOUNT_VOUCHER,
             self::CONTEXT_TYPE_VOUCHER_DISCOUNT_VOUCHER_DISCOUNT_APPLY_TO_ORDER,
             self::CONTEXT_TYPE_VOUCHER_DISCOUNT_VOUCHER_DISCOUNT_APPLY_TO_ITEMS,
@@ -394,7 +391,6 @@ class ValidationRulesCreateRequestBody implements ModelInterface, ArrayAccess, \
             self::CONTEXT_TYPE_VOUCHER_GIFT_VOUCHER_GIFT_APPLY_TO_ORDER,
             self::CONTEXT_TYPE_VOUCHER_GIFT_VOUCHER_GIFT_APPLY_TO_ITEMS,
             self::CONTEXT_TYPE_VOUCHER_LOYALTY_CARD,
-            self::CONTEXT_TYPE_VOUCHER_LUCKY_DRAW_CODE,
             self::CONTEXT_TYPE_DISTRIBUTION_CUSTOM_EVENT,
             self::CONTEXT_TYPE_DISTRIBUTION_ORDER_PAID,
             self::CONTEXT_TYPE_DISTRIBUTION_ORDER_CREATED,
@@ -674,7 +670,7 @@ class ValidationRulesCreateRequestBody implements ModelInterface, ArrayAccess, \
     /**
      * Sets contextType
      *
-     * @param string|null $contextType Validation rule context type.    | **Context Type** | **Definition** | |:---|:---| | earning_rule.order.paid |  | | earning_rule.custom_event |  | | earning_rule.customer.segment.entered |  | | campaign.discount_coupons |  | | campaign.discount_coupons.discount.apply_to_order |  | | campaign.discount_coupons.discount.apply_to_items |  | | campaign.discount_coupons.discount.apply_to_items_proportionally |  | | campaign.discount_coupons.discount.apply_to_items_proportionally_by_quantity |  | | campaign.discount_coupons.discount.fixed.apply_to_items |  | | campaign.gift_vouchers |  | | campaign.gift_vouchers.gift.apply_to_order |  | | campaign.gift_vouchers.gift.apply_to_items |  | | campaign.referral_program |  | | campaign.referral_program.discount.apply_to_order |  | | campaign.referral_program.discount.apply_to_items |  | | campaign.referral_program.discount.apply_to_items_proportionally |  | | campaign.referral_program.discount.apply_to_items_proportionally_by_quantity |  | | campaign.referral_program.discount.fixed.apply_to_items |  | | campaign.promotion |  | | campaign.promotion.discount.apply_to_order |  | | campaign.promotion.discount.apply_to_items |  | | campaign.promotion.discount.apply_to_items_proportionally |  | | campaign.promotion.discount.apply_to_items_proportionally_by_quantity |  | | campaign.promotion.discount.fixed.apply_to_items |  | | campaign.loyalty_program |  | | campaign.lucky_draw |  | | voucher.discount_voucher |  | | voucher.discount_voucher.discount.apply_to_order |  | | voucher.discount_voucher.discount.apply_to_items |  | | voucher.discount_voucher.discount.apply_to_items_proportionally |  | | voucher.discount_voucher.discount.apply_to_items_proportionally_by_quantity |  | | voucher.discount_voucher.discount.fixed.apply_to_items |  | | voucher.gift_voucher |  | | voucher.gift_voucher.gift.apply_to_order |  | | voucher.gift_voucher.gift.apply_to_items |  | | voucher.loyalty_card |  | | voucher.lucky_draw_code |  | | distribution.custom_event |  | | reward_assignment.pay_with_points |  | | global |  |
+     * @param string|null $contextType Validation rule context type.    | **Context Type** | **Definition** | |:---|:---| | earning_rule.order.paid |  | | earning_rule.custom_event |  | | earning_rule.customer.segment.entered |  | | campaign.discount_coupons |  | | campaign.discount_coupons.discount.apply_to_order |  | | campaign.discount_coupons.discount.apply_to_items |  | | campaign.discount_coupons.discount.apply_to_items_proportionally |  | | campaign.discount_coupons.discount.apply_to_items_proportionally_by_quantity |  | | campaign.discount_coupons.discount.fixed.apply_to_items |  | | campaign.gift_vouchers |  | | campaign.gift_vouchers.gift.apply_to_order |  | | campaign.gift_vouchers.gift.apply_to_items |  | | campaign.referral_program |  | | campaign.referral_program.discount.apply_to_order |  | | campaign.referral_program.discount.apply_to_items |  | | campaign.referral_program.discount.apply_to_items_proportionally |  | | campaign.referral_program.discount.apply_to_items_proportionally_by_quantity |  | | campaign.referral_program.discount.fixed.apply_to_items |  | | campaign.promotion |  | | campaign.promotion.discount.apply_to_order |  | | campaign.promotion.discount.apply_to_items |  | | campaign.promotion.discount.apply_to_items_proportionally |  | | campaign.promotion.discount.apply_to_items_proportionally_by_quantity |  | | campaign.promotion.discount.fixed.apply_to_items |  | | campaign.loyalty_program |  | | voucher.discount_voucher |  | | voucher.discount_voucher.discount.apply_to_order |  | | voucher.discount_voucher.discount.apply_to_items |  | | voucher.discount_voucher.discount.apply_to_items_proportionally |  | | voucher.discount_voucher.discount.apply_to_items_proportionally_by_quantity |  | | voucher.discount_voucher.discount.fixed.apply_to_items |  | | voucher.gift_voucher |  | | voucher.gift_voucher.gift.apply_to_order |  | | voucher.gift_voucher.gift.apply_to_items |  | | voucher.loyalty_card |  | | distribution.custom_event |  | | reward_assignment.pay_with_points |  | | global |  |
      *
      * @return self
      */

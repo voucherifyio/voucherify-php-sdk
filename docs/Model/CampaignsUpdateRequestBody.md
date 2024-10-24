@@ -18,13 +18,10 @@ Name | Type | Description | Notes
 **joinOnce** | **bool** | If this value is set to &#x60;true&#x60;, customers will be able to join the campaign only once. | [optional]
 **autoJoin** | **bool** | Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled. | [optional]
 **type** | **string** | Defines whether the campaign can be updated with new vouchers after campaign creation.      - &#x60;AUTO_UPDATE&#x60;: By choosing the auto update option you will create a campaign that can be enhanced by new vouchers after the time of creation (e.g. by publish vouchers method).     -  &#x60;STATIC&#x60;: vouchers need to be manually published. | [optional]
-**discount** | **object** |  | [optional]
+**discount** | [**\OpenAPI\Client\Model\Discount**](Discount.md) |  | [optional]
 **referralProgram** | [**\OpenAPI\Client\Model\ReferralProgram**](ReferralProgram.md) |  | [optional]
 **gift** | [**\OpenAPI\Client\Model\Gift**](Gift.md) |  | [optional]
 **loyaltyTiersExpiration** | [**\OpenAPI\Client\Model\LoyaltyTiersExpirationAll**](LoyaltyTiersExpirationAll.md) |  | [optional]
 **options** | [**\OpenAPI\Client\Model\CampaignsUpdateRequestBodyOptions**](CampaignsUpdateRequestBodyOptions.md) |  | [optional]
-**winnersCount** | **string** | It represents the total number of winners in a lucky draw. | [optional]
-**uniqueWinnersPerDraw** | **string** | It indicates whether each winner in a draw is unique or not. | [optional]
-**uniqueWinners** | **string** | Specifies whether each participant can win only once across multiple draws. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -386,7 +386,7 @@ class LoyaltyMemberPublish implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets url
      *
-     * @param string|null $url The endpoint where this list of publications can be accessed using a GET method. `/v1/vouchers/{voucher_code}/publications`
+     * @param string|null $url The endpoint where this list of publications can be accessed using a **GET** method. `/v1/vouchers/{voucher_code}/publications`
      *
      * @return self
      */
