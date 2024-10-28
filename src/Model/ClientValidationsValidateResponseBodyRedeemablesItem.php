@@ -101,7 +101,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItem implements ModelInter
 		'applicableTo' => false,
 		'inapplicableTo' => false,
 		'result' => false,
-		'metadata' => false,
+		'metadata' => true,
 		'categories' => true
     ];
 
@@ -632,14 +632,21 @@ class ClientValidationsValidateResponseBodyRedeemablesItem implements ModelInter
     /**
      * Sets metadata
      *
-     * @param object|null $metadata metadata
+     * @param object|null $metadata The metadata object stores all custom attributes in the form of key/value pairs assigned to the redeemable.
      *
      * @return self
      */
     public function setMetadata($metadata)
     {
         if (is_null($metadata)) {
-            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'metadata');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('metadata', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['metadata'] = $metadata;
 

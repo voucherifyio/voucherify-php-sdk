@@ -129,7 +129,7 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
 		'date' => true,
 		'customerId' => true,
 		'trackingId' => true,
-		'metadata' => false,
+		'metadata' => true,
 		'amount' => false,
 		'redemption' => true,
 		'result' => true,
@@ -730,14 +730,21 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
     /**
      * Sets metadata
      *
-     * @param object|null $metadata metadata
+     * @param object|null $metadata The metadata object stores all custom attributes assigned to the redemption.
      *
      * @return self
      */
     public function setMetadata($metadata)
     {
         if (is_null($metadata)) {
-            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'metadata');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('metadata', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['metadata'] = $metadata;
 

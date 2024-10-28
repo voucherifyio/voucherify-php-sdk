@@ -67,7 +67,7 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
         'unitOff' => 'int',
         'unitOffFormula' => 'string',
         'unitType' => 'string',
-        'product' => '\OpenAPI\Client\Model\SimpleProductDiscountUnit',
+        'product' => '\OpenAPI\Client\Model\DiscountProduct',
         'sku' => '\OpenAPI\Client\Model\SimpleSkuDiscountUnit',
         'units' => '\OpenAPI\Client\Model\DiscountUnitMultipleOneUnit[]',
         'percentOff' => 'float',
@@ -119,7 +119,7 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
 		'unitOff' => true,
 		'unitOffFormula' => true,
 		'unitType' => true,
-		'product' => false,
+		'product' => true,
 		'sku' => false,
 		'units' => true,
 		'percentOff' => true,
@@ -795,7 +795,7 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets product
      *
-     * @return \OpenAPI\Client\Model\SimpleProductDiscountUnit|null
+     * @return \OpenAPI\Client\Model\DiscountProduct|null
      */
     public function getProduct()
     {
@@ -805,14 +805,21 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product
      *
-     * @param \OpenAPI\Client\Model\SimpleProductDiscountUnit|null $product product
+     * @param \OpenAPI\Client\Model\DiscountProduct|null $product product
      *
      * @return self
      */
     public function setProduct($product)
     {
         if (is_null($product)) {
-            throw new \InvalidArgumentException('non-nullable product cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'product');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('product', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['product'] = $product;
 

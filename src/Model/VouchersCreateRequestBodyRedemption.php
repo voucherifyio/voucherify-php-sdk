@@ -1,6 +1,6 @@
 <?php
 /**
- * ExportsGetResponseBodyParametersFilters
+ * VouchersCreateRequestBodyRedemption
  *
  * PHP version 8.1
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * ExportsGetResponseBodyParametersFilters Class Doc Comment
+ * VouchersCreateRequestBodyRedemption Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ExportsGetResponseBodyParametersFilters implements ModelInterface, ArrayAccess, \JsonSerializable
+class VouchersCreateRequestBodyRedemption implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ExportsGetResponseBodyParametersFilters implements ModelInterface, ArrayAc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ExportsGetResponseBodyParametersFilters';
+    protected static $openAPIModelName = 'VouchersCreateRequestBodyRedemption';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,10 +58,7 @@ class ExportsGetResponseBodyParametersFilters implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'junction' => 'string',
-        'campaignId' => '\OpenAPI\Client\Model\FieldConditions',
-        'voucherId' => '\OpenAPI\Client\Model\FieldConditions',
-        'createdAt' => '\OpenAPI\Client\Model\FieldConditions'
+        'quantity' => 'int'
     ];
 
     /**
@@ -72,10 +69,7 @@ class ExportsGetResponseBodyParametersFilters implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'junction' => null,
-        'campaignId' => null,
-        'voucherId' => null,
-        'createdAt' => null
+        'quantity' => null
     ];
 
     /**
@@ -84,10 +78,7 @@ class ExportsGetResponseBodyParametersFilters implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'junction' => true,
-		'campaignId' => false,
-		'voucherId' => false,
-		'createdAt' => false
+        'quantity' => true
     ];
 
     /**
@@ -176,10 +167,7 @@ class ExportsGetResponseBodyParametersFilters implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'junction' => 'junction',
-        'campaignId' => 'campaign_id',
-        'voucherId' => 'voucher_id',
-        'createdAt' => 'created_at'
+        'quantity' => 'quantity'
     ];
 
     /**
@@ -188,10 +176,7 @@ class ExportsGetResponseBodyParametersFilters implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'junction' => 'setJunction',
-        'campaignId' => 'setCampaignId',
-        'voucherId' => 'setVoucherId',
-        'createdAt' => 'setCreatedAt'
+        'quantity' => 'setQuantity'
     ];
 
     /**
@@ -200,10 +185,7 @@ class ExportsGetResponseBodyParametersFilters implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'junction' => 'getJunction',
-        'campaignId' => 'getCampaignId',
-        'voucherId' => 'getVoucherId',
-        'createdAt' => 'getCreatedAt'
+        'quantity' => 'getQuantity'
     ];
 
     /**
@@ -247,21 +229,6 @@ class ExportsGetResponseBodyParametersFilters implements ModelInterface, ArrayAc
         return self::$openAPIModelName;
     }
 
-    public const JUNCTION__AND = 'and';
-    public const JUNCTION__OR = 'or';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getJunctionAllowableValues()
-    {
-        return [
-            self::JUNCTION__AND,
-            self::JUNCTION__OR,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -278,10 +245,7 @@ class ExportsGetResponseBodyParametersFilters implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('junction', $data ?? [], null);
-        $this->setIfExists('campaignId', $data ?? [], null);
-        $this->setIfExists('voucherId', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('quantity', $data ?? [], null);
     }
 
     /**
@@ -311,15 +275,6 @@ class ExportsGetResponseBodyParametersFilters implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getJunctionAllowableValues();
-        if (!is_null($this->container['junction']) && !in_array($this->container['junction'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'junction', must be one of '%s'",
-                $this->container['junction'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -336,126 +291,35 @@ class ExportsGetResponseBodyParametersFilters implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets junction
+     * Gets quantity
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getJunction()
+    public function getQuantity()
     {
-        return $this->container['junction'];
+        return $this->container['quantity'];
     }
 
     /**
-     * Sets junction
+     * Sets quantity
      *
-     * @param string|null $junction Logical Operator Between Filters. Filter by conditions set on the `junction` parameter indicating how the `conditions` should be accounted for in the query. An `AND` is an all-inclusive logical operator, meaning the `AND` operator displays a record if **ALL** the conditions separated by AND are TRUE, while  an `OR` operator displays a record if **ANY** of the conditions separated by OR is TRUE.
+     * @param int|null $quantity How many times a voucher can be redeemed. A `null` value means unlimited.
      *
      * @return self
      */
-    public function setJunction($junction)
+    public function setQuantity($quantity)
     {
-        if (is_null($junction)) {
-            array_push($this->openAPINullablesSetToNull, 'junction');
+        if (is_null($quantity)) {
+            array_push($this->openAPINullablesSetToNull, 'quantity');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('junction', $nullablesSetToNull);
+            $index = array_search('quantity', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $allowedValues = $this->getJunctionAllowableValues();
-        if (!is_null($junction) && !in_array($junction, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'junction', must be one of '%s'",
-                    $junction,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['junction'] = $junction;
-
-        return $this;
-    }
-
-    /**
-     * Gets campaignId
-     *
-     * @return \OpenAPI\Client\Model\FieldConditions|null
-     */
-    public function getCampaignId()
-    {
-        return $this->container['campaignId'];
-    }
-
-    /**
-     * Sets campaignId
-     *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $campaignId campaignId
-     *
-     * @return self
-     */
-    public function setCampaignId($campaignId)
-    {
-        if (is_null($campaignId)) {
-            throw new \InvalidArgumentException('non-nullable campaignId cannot be null');
-        }
-        $this->container['campaignId'] = $campaignId;
-
-        return $this;
-    }
-
-    /**
-     * Gets voucherId
-     *
-     * @return \OpenAPI\Client\Model\FieldConditions|null
-     */
-    public function getVoucherId()
-    {
-        return $this->container['voucherId'];
-    }
-
-    /**
-     * Sets voucherId
-     *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $voucherId voucherId
-     *
-     * @return self
-     */
-    public function setVoucherId($voucherId)
-    {
-        if (is_null($voucherId)) {
-            throw new \InvalidArgumentException('non-nullable voucherId cannot be null');
-        }
-        $this->container['voucherId'] = $voucherId;
-
-        return $this;
-    }
-
-    /**
-     * Gets createdAt
-     *
-     * @return \OpenAPI\Client\Model\FieldConditions|null
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['createdAt'];
-    }
-
-    /**
-     * Sets createdAt
-     *
-     * @param \OpenAPI\Client\Model\FieldConditions|null $createdAt createdAt
-     *
-     * @return self
-     */
-    public function setCreatedAt($createdAt)
-    {
-        if (is_null($createdAt)) {
-            throw new \InvalidArgumentException('non-nullable createdAt cannot be null');
-        }
-        $this->container['createdAt'] = $createdAt;
+        $this->container['quantity'] = $quantity;
 
         return $this;
     }

@@ -153,7 +153,7 @@ class RedemptionsListResponseBodyRedemptionsItemVoucher implements ModelInterfac
 		'validityHours' => false,
 		'active' => true,
 		'additionalInfo' => true,
-		'metadata' => false,
+		'metadata' => true,
 		'assets' => false,
 		'isReferralCode' => true,
 		'createdAt' => true,
@@ -1119,14 +1119,21 @@ class RedemptionsListResponseBodyRedemptionsItemVoucher implements ModelInterfac
     /**
      * Sets metadata
      *
-     * @param object|null $metadata metadata
+     * @param object|null $metadata The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format.
      *
      * @return self
      */
     public function setMetadata($metadata)
     {
         if (is_null($metadata)) {
-            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'metadata');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('metadata', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['metadata'] = $metadata;
 

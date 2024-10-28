@@ -92,7 +92,7 @@ class RedemptionsListResponseBodyRedemptionsItemCustomer implements ModelInterfa
 		'name' => true,
 		'email' => true,
 		'sourceId' => true,
-		'metadata' => false,
+		'metadata' => true,
 		'object' => true
     ];
 
@@ -496,14 +496,21 @@ class RedemptionsListResponseBodyRedemptionsItemCustomer implements ModelInterfa
     /**
      * Sets metadata
      *
-     * @param object|null $metadata metadata
+     * @param object|null $metadata A set of custom key/value pairs that are attached to the customer. It stores all custom attributes assigned to the customer.
      *
      * @return self
      */
     public function setMetadata($metadata)
     {
         if (is_null($metadata)) {
-            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'metadata');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('metadata', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['metadata'] = $metadata;
 

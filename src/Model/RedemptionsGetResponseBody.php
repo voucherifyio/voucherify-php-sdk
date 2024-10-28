@@ -744,7 +744,7 @@ class RedemptionsGetResponseBody implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets metadata
      *
-     * @param object|null $metadata metadata
+     * @param object|null $metadata The metadata object stores all custom attributes assigned to the redemption.
      *
      * @return self
      */

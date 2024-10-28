@@ -365,7 +365,7 @@ try {
 ## `generateRandomCode()`
 
 ```php
-generateRandomCode($body): \OpenAPI\Client\Model\VouchersCreateResponseBody
+generateRandomCode($vouchersCreateRequestBody): \OpenAPI\Client\Model\VouchersCreateResponseBody
 ```
 
 Generate Random Code
@@ -396,10 +396,10 @@ $apiInstance = new OpenAPI\Client\Api\VouchersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = {"category":"New Customers","code":"NEW-WELCOME-COUPON","type":"DISCOUNT_VOUCHER","campaign_id":"camp_Y6dLsYIZloGqP8izufXY6SSJ","discount":{"percent_off":10,"type":"PERCENT","effect":"APPLY_TO_ORDER"},"start_date":"2016-01-01T00:00:00Z","expiration_date":"2022-12-31T23:59:59Z","validity_timeframe":{"duration":"PT1H","interval":"P2D"},"validity_day_of_week":[1,2,3,4,5],"active":false,"additional_info":"This voucher will remain inactive until enabled.","redemption":{"quantity":10},"metadata":{"test":true,"locale":"de-en"},"validation_rules":["val_4j7DCRm2IS59"]}; // object | Specify the details of the voucher that you would like to create.
+$vouchersCreateRequestBody = {"category":"New Customers","code":"NEW-WELCOME-COUPON","type":"DISCOUNT_VOUCHER","campaign_id":"camp_Y6dLsYIZloGqP8izufXY6SSJ","discount":{"percent_off":10,"type":"PERCENT","effect":"APPLY_TO_ORDER"},"start_date":"2016-01-01T00:00:00Z","expiration_date":"2022-12-31T23:59:59Z","validity_timeframe":{"duration":"PT1H","interval":"P2D"},"validity_day_of_week":[1,2,3,4,5],"active":false,"additional_info":"This voucher will remain inactive until enabled.","redemption":{"quantity":10},"metadata":{"test":true,"locale":"de-en"},"validation_rules":["val_4j7DCRm2IS59"]}; // \OpenAPI\Client\Model\VouchersCreateRequestBody | Specify the details of the voucher that you would like to create.
 
 try {
-    $result = $apiInstance->generateRandomCode($body);
+    $result = $apiInstance->generateRandomCode($vouchersCreateRequestBody);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VouchersApi->generateRandomCode: ', $e->getMessage(), PHP_EOL;
@@ -410,7 +410,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | **object**| Specify the details of the voucher that you would like to create. | [optional] |
+| **vouchersCreateRequestBody** | [**\OpenAPI\Client\Model\VouchersCreateRequestBody**](../Model/VouchersCreateRequestBody.md)| Specify the details of the voucher that you would like to create. | [optional] |
 
 ### Return type
 

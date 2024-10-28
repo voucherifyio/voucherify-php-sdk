@@ -496,7 +496,7 @@ class RedemptionEntryCustomer implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets metadata
      *
-     * @param object|null $metadata metadata
+     * @param object|null $metadata A set of custom key/value pairs that are attached to the customer. It stores all custom attributes assigned to the customer.
      *
      * @return self
      */

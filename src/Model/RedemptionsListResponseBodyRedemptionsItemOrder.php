@@ -79,7 +79,7 @@ class RedemptionsListResponseBodyRedemptionsItemOrder implements ModelInterface,
         'referrerId' => 'string',
         'customer' => '\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemOrderCustomer',
         'referrer' => '\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemOrderReferrer',
-        'redemptions' => 'object'
+        'redemptions' => 'array<string,\OpenAPI\Client\Model\OrderRedemptionsEntry>'
     ];
 
     /**
@@ -133,7 +133,7 @@ class RedemptionsListResponseBodyRedemptionsItemOrder implements ModelInterface,
 		'itemsAppliedDiscountAmount' => true,
 		'totalAppliedDiscountAmount' => true,
 		'items' => true,
-		'metadata' => false,
+		'metadata' => true,
 		'object' => true,
 		'createdAt' => true,
 		'updatedAt' => true,
@@ -141,7 +141,7 @@ class RedemptionsListResponseBodyRedemptionsItemOrder implements ModelInterface,
 		'referrerId' => true,
 		'customer' => false,
 		'referrer' => false,
-		'redemptions' => false
+		'redemptions' => true
     ];
 
     /**
@@ -952,14 +952,21 @@ class RedemptionsListResponseBodyRedemptionsItemOrder implements ModelInterface,
     /**
      * Sets metadata
      *
-     * @param object|null $metadata metadata
+     * @param object|null $metadata A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format.
      *
      * @return self
      */
     public function setMetadata($metadata)
     {
         if (is_null($metadata)) {
-            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'metadata');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('metadata', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['metadata'] = $metadata;
 
@@ -1203,7 +1210,7 @@ class RedemptionsListResponseBodyRedemptionsItemOrder implements ModelInterface,
     /**
      * Gets redemptions
      *
-     * @return object|null
+     * @return array<string,\OpenAPI\Client\Model\OrderRedemptionsEntry>|null
      */
     public function getRedemptions()
     {
@@ -1213,14 +1220,21 @@ class RedemptionsListResponseBodyRedemptionsItemOrder implements ModelInterface,
     /**
      * Sets redemptions
      *
-     * @param object|null $redemptions redemptions
+     * @param array<string,\OpenAPI\Client\Model\OrderRedemptionsEntry>|null $redemptions redemptions
      *
      * @return self
      */
     public function setRedemptions($redemptions)
     {
         if (is_null($redemptions)) {
-            throw new \InvalidArgumentException('non-nullable redemptions cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'redemptions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('redemptions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['redemptions'] = $redemptions;
 

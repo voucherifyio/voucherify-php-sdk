@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **validityHours** | [**\OpenAPI\Client\Model\ValidityHours**](ValidityHours.md) |  | [optional]
 **active** | **bool** | A flag to toggle the voucher on or off. You can disable a voucher even though it&#39;s within the active period defined by the &#x60;start_date&#x60; and &#x60;expiration_date&#x60;.    - &#x60;true&#x60; indicates an *active* voucher - &#x60;false&#x60; indicates an *inactive* voucher | [optional]
 **additionalInfo** | **string** | An optional field to keep any extra textual information about the code such as a code description and details. | [optional]
-**metadata** | **object** |  | [optional]
+**metadata** | **object** | The metadata object stores all custom attributes assigned to the code. A set of key/value pairs that you can attach to a voucher object. It can be useful for storing additional information about the voucher in a structured format. | [optional]
 **assets** | [**\OpenAPI\Client\Model\VoucherAssets**](VoucherAssets.md) |  | [optional]
 **isReferralCode** | **bool** | Flag indicating whether this voucher is a referral code; &#x60;true&#x60; for campaign type &#x60;REFERRAL_PROGRAM&#x60;. | [optional]
 **createdAt** | **\DateTime** | Timestamp representing the date and time when the voucher was created. The value is shown in the ISO 8601 format. | [optional]

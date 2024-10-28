@@ -126,7 +126,7 @@ class RedemptionsListResponseBodyRedemptionsItemPromotionTier implements ModelIn
 		'name' => true,
 		'banner' => true,
 		'action' => false,
-		'metadata' => false,
+		'metadata' => true,
 		'hierarchy' => true,
 		'promotionId' => true,
 		'campaign' => false,
@@ -672,14 +672,21 @@ class RedemptionsListResponseBodyRedemptionsItemPromotionTier implements ModelIn
     /**
      * Sets metadata
      *
-     * @param object|null $metadata metadata
+     * @param object|null $metadata The metadata object stores all custom attributes assigned to the promotion tier. A set of key/value pairs that you can attach to a promotion tier object. It can be useful for storing additional information about the promotion tier in a structured format.
      *
      * @return self
      */
     public function setMetadata($metadata)
     {
         if (is_null($metadata)) {
-            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'metadata');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('metadata', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['metadata'] = $metadata;
 
