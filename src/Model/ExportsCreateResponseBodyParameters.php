@@ -60,7 +60,7 @@ class ExportsCreateResponseBodyParameters implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'order' => 'string',
         'fields' => 'string[]',
-        'filters' => '\OpenAPI\Client\Model\ExportsCreateResponseBodyParametersFilters'
+        'filters' => 'object'
     ];
 
     /**
@@ -655,7 +655,7 @@ class ExportsCreateResponseBodyParameters implements ModelInterface, ArrayAccess
     /**
      * Gets filters
      *
-     * @return \OpenAPI\Client\Model\ExportsCreateResponseBodyParametersFilters|null
+     * @return object|null
      */
     public function getFilters()
     {
@@ -665,7 +665,7 @@ class ExportsCreateResponseBodyParameters implements ModelInterface, ArrayAccess
     /**
      * Sets filters
      *
-     * @param \OpenAPI\Client\Model\ExportsCreateResponseBodyParametersFilters|null $filters filters
+     * @param object|null $filters Allowed additional properties must start with \"metadata.\" or \"redemption.\" and Allowed additional properties must start with \"metadata.\" and Allowed additional properties must start with \"metadata.\" or \"address.\" or \"summary.\" or \"loyalty.\" or \"loyalty_tier.\" or \"loyalty_points.\" or \"system_metadata.\"
      *
      * @return self
      */

@@ -59,12 +59,12 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyalty implements ModelInterface,
       */
     protected static $openAPITypes = [
         'type' => 'string',
+        'points' => 'int',
         'calculationType' => 'string',
         'order' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrder',
         'orderItems' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems',
         'customer' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomer',
-        'customEvent' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent',
-        'points' => 'int'
+        'customEvent' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBodyLoyaltyCustomEvent'
     ];
 
     /**
@@ -76,12 +76,12 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyalty implements ModelInterface,
       */
     protected static $openAPIFormats = [
         'type' => null,
+        'points' => null,
         'calculationType' => null,
         'order' => null,
         'orderItems' => null,
         'customer' => null,
-        'customEvent' => null,
-        'points' => null
+        'customEvent' => null
     ];
 
     /**
@@ -91,12 +91,12 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyalty implements ModelInterface,
       */
     protected static array $openAPINullables = [
         'type' => true,
+		'points' => true,
 		'calculationType' => true,
 		'order' => true,
 		'orderItems' => true,
 		'customer' => true,
-		'customEvent' => true,
-		'points' => true
+		'customEvent' => true
     ];
 
     /**
@@ -186,12 +186,12 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyalty implements ModelInterface,
      */
     protected static $attributeMap = [
         'type' => 'type',
+        'points' => 'points',
         'calculationType' => 'calculation_type',
         'order' => 'order',
         'orderItems' => 'order_items',
         'customer' => 'customer',
-        'customEvent' => 'custom_event',
-        'points' => 'points'
+        'customEvent' => 'custom_event'
     ];
 
     /**
@@ -201,12 +201,12 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyalty implements ModelInterface,
      */
     protected static $setters = [
         'type' => 'setType',
+        'points' => 'setPoints',
         'calculationType' => 'setCalculationType',
         'order' => 'setOrder',
         'orderItems' => 'setOrderItems',
         'customer' => 'setCustomer',
-        'customEvent' => 'setCustomEvent',
-        'points' => 'setPoints'
+        'customEvent' => 'setCustomEvent'
     ];
 
     /**
@@ -216,12 +216,12 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyalty implements ModelInterface,
      */
     protected static $getters = [
         'type' => 'getType',
+        'points' => 'getPoints',
         'calculationType' => 'getCalculationType',
         'order' => 'getOrder',
         'orderItems' => 'getOrderItems',
         'customer' => 'getCustomer',
-        'customEvent' => 'getCustomEvent',
-        'points' => 'getPoints'
+        'customEvent' => 'getCustomEvent'
     ];
 
     /**
@@ -265,8 +265,8 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyalty implements ModelInterface,
         return self::$openAPIModelName;
     }
 
-    public const TYPE_PROPORTIONAL = 'PROPORTIONAL';
     public const TYPE_FIXED = 'FIXED';
+    public const TYPE_PROPORTIONAL = 'PROPORTIONAL';
     public const CALCULATION_TYPE_ORDER_AMOUNT = 'ORDER_AMOUNT';
     public const CALCULATION_TYPE_ORDER_TOTAL_AMOUNT = 'ORDER_TOTAL_AMOUNT';
     public const CALCULATION_TYPE_ORDER_METADATA = 'ORDER_METADATA';
@@ -284,8 +284,8 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyalty implements ModelInterface,
     public function getTypeAllowableValues()
     {
         return [
-            self::TYPE_PROPORTIONAL,
             self::TYPE_FIXED,
+            self::TYPE_PROPORTIONAL,
         ];
     }
 
@@ -324,12 +324,12 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyalty implements ModelInterface,
     public function __construct(array $data = null)
     {
         $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('points', $data ?? [], null);
         $this->setIfExists('calculationType', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
         $this->setIfExists('orderItems', $data ?? [], null);
         $this->setIfExists('customer', $data ?? [], null);
         $this->setIfExists('customEvent', $data ?? [], null);
-        $this->setIfExists('points', $data ?? [], null);
     }
 
     /**
@@ -432,6 +432,40 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyalty implements ModelInterface,
             );
         }
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets points
+     *
+     * @return int|null
+     */
+    public function getPoints()
+    {
+        return $this->container['points'];
+    }
+
+    /**
+     * Sets points
+     *
+     * @param int|null $points Defines how the points will be added to the loyalty card. FIXED adds a fixed number of points.
+     *
+     * @return self
+     */
+    public function setPoints($points)
+    {
+        if (is_null($points)) {
+            array_push($this->openAPINullablesSetToNull, 'points');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('points', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['points'] = $points;
 
         return $this;
     }
@@ -612,40 +646,6 @@ class LoyaltiesEarningRulesDisableResponseBodyLoyalty implements ModelInterface,
             }
         }
         $this->container['customEvent'] = $customEvent;
-
-        return $this;
-    }
-
-    /**
-     * Gets points
-     *
-     * @return int|null
-     */
-    public function getPoints()
-    {
-        return $this->container['points'];
-    }
-
-    /**
-     * Sets points
-     *
-     * @param int|null $points Defines how the points will be added to the loyalty card. FIXED adds a fixed number of points.
-     *
-     * @return self
-     */
-    public function setPoints($points)
-    {
-        if (is_null($points)) {
-            array_push($this->openAPINullablesSetToNull, 'points');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('points', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['points'] = $points;
 
         return $this;
     }

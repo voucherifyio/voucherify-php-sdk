@@ -79,7 +79,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
         'referrerId' => 'string',
         'customer' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyOrderCustomer',
         'referrer' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyOrderReferrer',
-        'redemptions' => 'object'
+        'redemptions' => 'array<string,\OpenAPI\Client\Model\OrderRedemptionsEntry>'
     ];
 
     /**
@@ -952,7 +952,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Sets metadata
      *
-     * @param object|null $metadata metadata
+     * @param object|null $metadata A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format.
      *
      * @return self
      */
@@ -1224,7 +1224,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Gets redemptions
      *
-     * @return object|null
+     * @return array<string,\OpenAPI\Client\Model\OrderRedemptionsEntry>|null
      */
     public function getRedemptions()
     {
@@ -1234,7 +1234,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Sets redemptions
      *
-     * @param object|null $redemptions redemptions
+     * @param array<string,\OpenAPI\Client\Model\OrderRedemptionsEntry>|null $redemptions redemptions
      *
      * @return self
      */

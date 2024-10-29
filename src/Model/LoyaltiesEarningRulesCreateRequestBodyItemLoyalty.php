@@ -61,10 +61,10 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
         'type' => 'string',
         'points' => 'int',
         'calculationType' => 'string',
-        'customEvent' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent',
-        'orderItems' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems',
         'order' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder',
-        'customer' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer'
+        'orderItems' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems',
+        'customer' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomer',
+        'customEvent' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent'
     ];
 
     /**
@@ -78,10 +78,10 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
         'type' => null,
         'points' => null,
         'calculationType' => null,
-        'customEvent' => null,
-        'orderItems' => null,
         'order' => null,
-        'customer' => null
+        'orderItems' => null,
+        'customer' => null,
+        'customEvent' => null
     ];
 
     /**
@@ -93,10 +93,10 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
         'type' => false,
 		'points' => true,
 		'calculationType' => false,
-		'customEvent' => true,
-		'orderItems' => false,
 		'order' => false,
-		'customer' => true
+		'orderItems' => false,
+		'customer' => true,
+		'customEvent' => true
     ];
 
     /**
@@ -188,10 +188,10 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
         'type' => 'type',
         'points' => 'points',
         'calculationType' => 'calculation_type',
-        'customEvent' => 'custom_event',
-        'orderItems' => 'order_items',
         'order' => 'order',
-        'customer' => 'customer'
+        'orderItems' => 'order_items',
+        'customer' => 'customer',
+        'customEvent' => 'custom_event'
     ];
 
     /**
@@ -203,10 +203,10 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
         'type' => 'setType',
         'points' => 'setPoints',
         'calculationType' => 'setCalculationType',
-        'customEvent' => 'setCustomEvent',
-        'orderItems' => 'setOrderItems',
         'order' => 'setOrder',
-        'customer' => 'setCustomer'
+        'orderItems' => 'setOrderItems',
+        'customer' => 'setCustomer',
+        'customEvent' => 'setCustomEvent'
     ];
 
     /**
@@ -218,10 +218,10 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
         'type' => 'getType',
         'points' => 'getPoints',
         'calculationType' => 'getCalculationType',
-        'customEvent' => 'getCustomEvent',
-        'orderItems' => 'getOrderItems',
         'order' => 'getOrder',
-        'customer' => 'getCustomer'
+        'orderItems' => 'getOrderItems',
+        'customer' => 'getCustomer',
+        'customEvent' => 'getCustomEvent'
     ];
 
     /**
@@ -267,14 +267,14 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
 
     public const TYPE_FIXED = 'FIXED';
     public const TYPE_PROPORTIONAL = 'PROPORTIONAL';
-    public const CALCULATION_TYPE_CUSTOM_EVENT_METADATA = 'CUSTOM_EVENT_METADATA';
-    public const CALCULATION_TYPE_ORDER_ITEMS_QUANTITY = 'ORDER_ITEMS_QUANTITY';
-    public const CALCULATION_TYPE_ORDER_ITEMS_AMOUNT = 'ORDER_ITEMS_AMOUNT';
-    public const CALCULATION_TYPE_ORDER_ITEMS_SUBTOTAL_AMOUNT = 'ORDER_ITEMS_SUBTOTAL_AMOUNT';
     public const CALCULATION_TYPE_ORDER_AMOUNT = 'ORDER_AMOUNT';
     public const CALCULATION_TYPE_ORDER_TOTAL_AMOUNT = 'ORDER_TOTAL_AMOUNT';
     public const CALCULATION_TYPE_ORDER_METADATA = 'ORDER_METADATA';
+    public const CALCULATION_TYPE_ORDER_ITEMS_QUANTITY = 'ORDER_ITEMS_QUANTITY';
+    public const CALCULATION_TYPE_ORDER_ITEMS_AMOUNT = 'ORDER_ITEMS_AMOUNT';
+    public const CALCULATION_TYPE_ORDER_ITEMS_SUBTOTAL_AMOUNT = 'ORDER_ITEMS_SUBTOTAL_AMOUNT';
     public const CALCULATION_TYPE_CUSTOMER_METADATA = 'CUSTOMER_METADATA';
+    public const CALCULATION_TYPE_CUSTOM_EVENT_METADATA = 'CUSTOM_EVENT_METADATA';
 
     /**
      * Gets allowable values of the enum
@@ -297,14 +297,14 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
     public function getCalculationTypeAllowableValues()
     {
         return [
-            self::CALCULATION_TYPE_CUSTOM_EVENT_METADATA,
-            self::CALCULATION_TYPE_ORDER_ITEMS_QUANTITY,
-            self::CALCULATION_TYPE_ORDER_ITEMS_AMOUNT,
-            self::CALCULATION_TYPE_ORDER_ITEMS_SUBTOTAL_AMOUNT,
             self::CALCULATION_TYPE_ORDER_AMOUNT,
             self::CALCULATION_TYPE_ORDER_TOTAL_AMOUNT,
             self::CALCULATION_TYPE_ORDER_METADATA,
+            self::CALCULATION_TYPE_ORDER_ITEMS_QUANTITY,
+            self::CALCULATION_TYPE_ORDER_ITEMS_AMOUNT,
+            self::CALCULATION_TYPE_ORDER_ITEMS_SUBTOTAL_AMOUNT,
             self::CALCULATION_TYPE_CUSTOMER_METADATA,
+            self::CALCULATION_TYPE_CUSTOM_EVENT_METADATA,
         ];
     }
 
@@ -326,10 +326,10 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('points', $data ?? [], null);
         $this->setIfExists('calculationType', $data ?? [], null);
-        $this->setIfExists('customEvent', $data ?? [], null);
-        $this->setIfExists('orderItems', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
+        $this->setIfExists('orderItems', $data ?? [], null);
         $this->setIfExists('customer', $data ?? [], null);
+        $this->setIfExists('customEvent', $data ?? [], null);
     }
 
     /**
@@ -501,35 +501,28 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
     }
 
     /**
-     * Gets customEvent
+     * Gets order
      *
-     * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent|null
+     * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder|null
      */
-    public function getCustomEvent()
+    public function getOrder()
     {
-        return $this->container['customEvent'];
+        return $this->container['order'];
     }
 
     /**
-     * Sets customEvent
+     * Sets order
      *
-     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent|null $customEvent customEvent
+     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder|null $order order
      *
      * @return self
      */
-    public function setCustomEvent($customEvent)
+    public function setOrder($order)
     {
-        if (is_null($customEvent)) {
-            array_push($this->openAPINullablesSetToNull, 'customEvent');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customEvent', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($order)) {
+            throw new \InvalidArgumentException('non-nullable order cannot be null');
         }
-        $this->container['customEvent'] = $customEvent;
+        $this->container['order'] = $order;
 
         return $this;
     }
@@ -557,33 +550,6 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
             throw new \InvalidArgumentException('non-nullable orderItems cannot be null');
         }
         $this->container['orderItems'] = $orderItems;
-
-        return $this;
-    }
-
-    /**
-     * Gets order
-     *
-     * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder|null
-     */
-    public function getOrder()
-    {
-        return $this->container['order'];
-    }
-
-    /**
-     * Sets order
-     *
-     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder|null $order order
-     *
-     * @return self
-     */
-    public function setOrder($order)
-    {
-        if (is_null($order)) {
-            throw new \InvalidArgumentException('non-nullable order cannot be null');
-        }
-        $this->container['order'] = $order;
 
         return $this;
     }
@@ -618,6 +584,40 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
             }
         }
         $this->container['customer'] = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Gets customEvent
+     *
+     * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent|null
+     */
+    public function getCustomEvent()
+    {
+        return $this->container['customEvent'];
+    }
+
+    /**
+     * Sets customEvent
+     *
+     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyCustomEvent|null $customEvent customEvent
+     *
+     * @return self
+     */
+    public function setCustomEvent($customEvent)
+    {
+        if (is_null($customEvent)) {
+            array_push($this->openAPINullablesSetToNull, 'customEvent');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('customEvent', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['customEvent'] = $customEvent;
 
         return $this;
     }

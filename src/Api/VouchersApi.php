@@ -1625,16 +1625,16 @@ class VouchersApi
      *
      * Generate Random Code
      *
-     * @param  object $body Specify the details of the voucher that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\VouchersCreateRequestBody $vouchersCreateRequestBody Specify the details of the voucher that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateRandomCode'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\VouchersCreateResponseBody
      */
-    public function generateRandomCode($body = null, string $contentType = self::contentTypes['generateRandomCode'][0])
+    public function generateRandomCode($vouchersCreateRequestBody = null, string $contentType = self::contentTypes['generateRandomCode'][0])
     {
-        list($response) = $this->generateRandomCodeWithHttpInfo($body, $contentType);
+        list($response) = $this->generateRandomCodeWithHttpInfo($vouchersCreateRequestBody, $contentType);
         return $response;
     }
 
@@ -1643,16 +1643,16 @@ class VouchersApi
      *
      * Generate Random Code
      *
-     * @param  object $body Specify the details of the voucher that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\VouchersCreateRequestBody $vouchersCreateRequestBody Specify the details of the voucher that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateRandomCode'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\VouchersCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generateRandomCodeWithHttpInfo($body = null, string $contentType = self::contentTypes['generateRandomCode'][0])
+    public function generateRandomCodeWithHttpInfo($vouchersCreateRequestBody = null, string $contentType = self::contentTypes['generateRandomCode'][0])
     {
-        $request = $this->generateRandomCodeRequest($body, $contentType);
+        $request = $this->generateRandomCodeRequest($vouchersCreateRequestBody, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1743,15 +1743,15 @@ class VouchersApi
      *
      * Generate Random Code
      *
-     * @param  object $body Specify the details of the voucher that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\VouchersCreateRequestBody $vouchersCreateRequestBody Specify the details of the voucher that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateRandomCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateRandomCodeAsync($body = null, string $contentType = self::contentTypes['generateRandomCode'][0])
+    public function generateRandomCodeAsync($vouchersCreateRequestBody = null, string $contentType = self::contentTypes['generateRandomCode'][0])
     {
-        return $this->generateRandomCodeAsyncWithHttpInfo($body, $contentType)
+        return $this->generateRandomCodeAsyncWithHttpInfo($vouchersCreateRequestBody, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1764,16 +1764,16 @@ class VouchersApi
      *
      * Generate Random Code
      *
-     * @param  object $body Specify the details of the voucher that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\VouchersCreateRequestBody $vouchersCreateRequestBody Specify the details of the voucher that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateRandomCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateRandomCodeAsyncWithHttpInfo($body = null, string $contentType = self::contentTypes['generateRandomCode'][0])
+    public function generateRandomCodeAsyncWithHttpInfo($vouchersCreateRequestBody = null, string $contentType = self::contentTypes['generateRandomCode'][0])
     {
         $returnType = '\OpenAPI\Client\Model\VouchersCreateResponseBody';
-        $request = $this->generateRandomCodeRequest($body, $contentType);
+        $request = $this->generateRandomCodeRequest($vouchersCreateRequestBody, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1814,13 +1814,13 @@ class VouchersApi
     /**
      * Create request for operation 'generateRandomCode'
      *
-     * @param  object $body Specify the details of the voucher that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\VouchersCreateRequestBody $vouchersCreateRequestBody Specify the details of the voucher that you would like to create. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateRandomCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function generateRandomCodeRequest($body = null, string $contentType = self::contentTypes['generateRandomCode'][0])
+    public function generateRandomCodeRequest($vouchersCreateRequestBody = null, string $contentType = self::contentTypes['generateRandomCode'][0])
     {
 
 
@@ -1843,12 +1843,12 @@ class VouchersApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($vouchersCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($vouchersCreateRequestBody));
             } else {
-                $httpBody = $body;
+                $httpBody = $vouchersCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

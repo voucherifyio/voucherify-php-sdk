@@ -58,8 +58,8 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDetails implements Mod
       * @var string[]
       */
     protected static $openAPITypes = [
-        'key' => 'string',
-        'message' => 'string'
+        'message' => 'string',
+        'key' => 'string'
     ];
 
     /**
@@ -70,8 +70,8 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDetails implements Mod
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'key' => null,
-        'message' => null
+        'message' => null,
+        'key' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDetails implements Mod
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'key' => false,
-		'message' => false
+        'message' => false,
+		'key' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDetails implements Mod
      * @var string[]
      */
     protected static $attributeMap = [
-        'key' => 'key',
-        'message' => 'message'
+        'message' => 'message',
+        'key' => 'key'
     ];
 
     /**
@@ -180,8 +180,8 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDetails implements Mod
      * @var string[]
      */
     protected static $setters = [
-        'key' => 'setKey',
-        'message' => 'setMessage'
+        'message' => 'setMessage',
+        'key' => 'setKey'
     ];
 
     /**
@@ -190,8 +190,8 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDetails implements Mod
      * @var string[]
      */
     protected static $getters = [
-        'key' => 'getKey',
-        'message' => 'getMessage'
+        'message' => 'getMessage',
+        'key' => 'getKey'
     ];
 
     /**
@@ -251,8 +251,8 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDetails implements Mod
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('key', $data ?? [], null);
         $this->setIfExists('message', $data ?? [], null);
+        $this->setIfExists('key', $data ?? [], null);
     }
 
     /**
@@ -298,33 +298,6 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDetails implements Mod
 
 
     /**
-     * Gets key
-     *
-     * @return string|null
-     */
-    public function getKey()
-    {
-        return $this->container['key'];
-    }
-
-    /**
-     * Sets key
-     *
-     * @param string|null $key key
-     *
-     * @return self
-     */
-    public function setKey($key)
-    {
-        if (is_null($key)) {
-            throw new \InvalidArgumentException('non-nullable key cannot be null');
-        }
-        $this->container['key'] = $key;
-
-        return $this;
-    }
-
-    /**
      * Gets message
      *
      * @return string|null
@@ -347,6 +320,33 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDetails implements Mod
             throw new \InvalidArgumentException('non-nullable message cannot be null');
         }
         $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets key
+     *
+     * @return string|null
+     */
+    public function getKey()
+    {
+        return $this->container['key'];
+    }
+
+    /**
+     * Sets key
+     *
+     * @param string|null $key key
+     *
+     * @return self
+     */
+    public function setKey($key)
+    {
+        if (is_null($key)) {
+            throw new \InvalidArgumentException('non-nullable key cannot be null');
+        }
+        $this->container['key'] = $key;
 
         return $this;
     }

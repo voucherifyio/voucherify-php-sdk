@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **unitOff** | **int** | Number of units to be granted a full value discount. | [optional]
 **unitOffFormula** | **string** |  | [optional]
 **unitType** | **string** | The product deemed as free, chosen from product inventory (e.g. time, items). | [optional]
-**product** | [**\OpenAPI\Client\Model\SimpleProductDiscountUnit**](SimpleProductDiscountUnit.md) |  | [optional]
+**product** | [**\OpenAPI\Client\Model\DiscountProduct**](DiscountProduct.md) |  | [optional]
 **sku** | [**\OpenAPI\Client\Model\SimpleSkuDiscountUnit**](SimpleSkuDiscountUnit.md) |  | [optional]
 **units** | [**\OpenAPI\Client\Model\DiscountUnitMultipleOneUnit[]**](DiscountUnitMultipleOneUnit.md) |  | [optional]
 **percentOff** | **float** | The percent discount that the customer will receive. | [optional]

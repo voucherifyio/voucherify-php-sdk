@@ -114,7 +114,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItem implements ModelInterface, Arra
 		'validityTimeframe' => false,
 		'validityDayOfWeek' => true,
 		'validityHours' => false,
-		'metadata' => false,
+		'metadata' => true,
 		'segment' => true,
 		'customEvent' => true,
 		'loyaltyTier' => true
@@ -733,14 +733,21 @@ class LoyaltiesEarningRulesCreateRequestBodyItem implements ModelInterface, Arra
     /**
      * Sets metadata
      *
-     * @param object|null $metadata metadata
+     * @param object|null $metadata The metadata object stores all custom attributes assigned to the earning rule. A set of key/value pairs that you can attach to an earning rule object. It can be useful for storing additional information about the earning rule in a structured format.
      *
      * @return self
      */
     public function setMetadata($metadata)
     {
         if (is_null($metadata)) {
-            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'metadata');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('metadata', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['metadata'] = $metadata;
 
