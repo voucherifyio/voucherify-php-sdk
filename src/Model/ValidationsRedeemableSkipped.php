@@ -63,7 +63,9 @@ class ValidationsRedeemableSkipped implements ModelInterface, ArrayAccess, \Json
         'object' => 'string',
         'result' => '\OpenAPI\Client\Model\ValidationsRedeemableSkippedResult',
         'metadata' => 'object',
-        'categories' => '\OpenAPI\Client\Model\CategoryWithStackingRulesType[]'
+        'categories' => '\OpenAPI\Client\Model\CategoryWithStackingRulesType[]',
+        'campaignName' => 'string',
+        'campaignId' => 'string'
     ];
 
     /**
@@ -79,7 +81,9 @@ class ValidationsRedeemableSkipped implements ModelInterface, ArrayAccess, \Json
         'object' => null,
         'result' => null,
         'metadata' => null,
-        'categories' => null
+        'categories' => null,
+        'campaignName' => null,
+        'campaignId' => null
     ];
 
     /**
@@ -93,7 +97,9 @@ class ValidationsRedeemableSkipped implements ModelInterface, ArrayAccess, \Json
 		'object' => true,
 		'result' => true,
 		'metadata' => true,
-		'categories' => true
+		'categories' => true,
+		'campaignName' => true,
+		'campaignId' => true
     ];
 
     /**
@@ -187,7 +193,9 @@ class ValidationsRedeemableSkipped implements ModelInterface, ArrayAccess, \Json
         'object' => 'object',
         'result' => 'result',
         'metadata' => 'metadata',
-        'categories' => 'categories'
+        'categories' => 'categories',
+        'campaignName' => 'campaign_name',
+        'campaignId' => 'campaign_id'
     ];
 
     /**
@@ -201,7 +209,9 @@ class ValidationsRedeemableSkipped implements ModelInterface, ArrayAccess, \Json
         'object' => 'setObject',
         'result' => 'setResult',
         'metadata' => 'setMetadata',
-        'categories' => 'setCategories'
+        'categories' => 'setCategories',
+        'campaignName' => 'setCampaignName',
+        'campaignId' => 'setCampaignId'
     ];
 
     /**
@@ -215,7 +225,9 @@ class ValidationsRedeemableSkipped implements ModelInterface, ArrayAccess, \Json
         'object' => 'getObject',
         'result' => 'getResult',
         'metadata' => 'getMetadata',
-        'categories' => 'getCategories'
+        'categories' => 'getCategories',
+        'campaignName' => 'getCampaignName',
+        'campaignId' => 'getCampaignId'
     ];
 
     /**
@@ -309,6 +321,8 @@ class ValidationsRedeemableSkipped implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('categories', $data ?? [], null);
+        $this->setIfExists('campaignName', $data ?? [], null);
+        $this->setIfExists('campaignId', $data ?? [], null);
     }
 
     /**
@@ -591,6 +605,74 @@ class ValidationsRedeemableSkipped implements ModelInterface, ArrayAccess, \Json
             }
         }
         $this->container['categories'] = $categories;
+
+        return $this;
+    }
+
+    /**
+     * Gets campaignName
+     *
+     * @return string|null
+     */
+    public function getCampaignName()
+    {
+        return $this->container['campaignName'];
+    }
+
+    /**
+     * Sets campaignName
+     *
+     * @param string|null $campaignName Campaign name
+     *
+     * @return self
+     */
+    public function setCampaignName($campaignName)
+    {
+        if (is_null($campaignName)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignName');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('campaignName', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['campaignName'] = $campaignName;
+
+        return $this;
+    }
+
+    /**
+     * Gets campaignId
+     *
+     * @return string|null
+     */
+    public function getCampaignId()
+    {
+        return $this->container['campaignId'];
+    }
+
+    /**
+     * Sets campaignId
+     *
+     * @param string|null $campaignId Unique campaign ID assigned by Voucherify.
+     *
+     * @return self
+     */
+    public function setCampaignId($campaignId)
+    {
+        if (is_null($campaignId)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('campaignId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['campaignId'] = $campaignId;
 
         return $this;
     }
