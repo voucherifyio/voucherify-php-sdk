@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * AccessSettingsCampaignAssignmentsList Class Doc Comment
  *
  * @category Class
- * @description Lists all assignments of the campaign to areas and stores.  **NOTE**: This object is returned only if the Areas and Stores enterprise feature is enabled. Contact [Voucherify Sales](https://www.voucherify.io/contact-sales) to learn more.
+ * @description Lists all assignments of the campaign to areas and stores. For [GET List Campaigns](ref:list-campaigns), this is returned if the &#x60;expand&#x3D;access_settings_assignments&#x60; query parameter is passed in the request.  **NOTE**: This object is returned only if the Areas and Stores enterprise feature is enabled. Contact [Voucherify Sales](https://www.voucherify.io/contact-sales) to learn more.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

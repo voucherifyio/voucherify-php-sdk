@@ -870,7 +870,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metadata
      *
-     * @param object|null $metadata A set of custom key/value pairs that you can attach to an order item. It can be useful for storing additional information about the order item in a structured format.
+     * @param object|null $metadata A set of custom key/value pairs that you can attach to an order item. It can be useful for storing additional information about the order item in a structured format. It can be used to define business validation rules.
      *
      * @return self
      */

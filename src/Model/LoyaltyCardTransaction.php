@@ -64,10 +64,10 @@ class LoyaltyCardTransaction implements ModelInterface, ArrayAccess, \JsonSerial
         'campaignId' => 'string',
         'source' => 'string',
         'reason' => 'string',
-        'type' => 'string',
-        'details' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetails',
         'relatedTransactionId' => 'string',
-        'createdAt' => '\DateTime'
+        'createdAt' => '\DateTime',
+        'details' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetails',
+        'type' => 'string'
     ];
 
     /**
@@ -84,10 +84,10 @@ class LoyaltyCardTransaction implements ModelInterface, ArrayAccess, \JsonSerial
         'campaignId' => null,
         'source' => null,
         'reason' => null,
-        'type' => null,
-        'details' => null,
         'relatedTransactionId' => null,
-        'createdAt' => 'date-time'
+        'createdAt' => 'date-time',
+        'details' => null,
+        'type' => null
     ];
 
     /**
@@ -102,10 +102,10 @@ class LoyaltyCardTransaction implements ModelInterface, ArrayAccess, \JsonSerial
 		'campaignId' => true,
 		'source' => true,
 		'reason' => true,
-		'type' => true,
-		'details' => true,
 		'relatedTransactionId' => true,
-		'createdAt' => true
+		'createdAt' => true,
+		'details' => true,
+		'type' => true
     ];
 
     /**
@@ -200,10 +200,10 @@ class LoyaltyCardTransaction implements ModelInterface, ArrayAccess, \JsonSerial
         'campaignId' => 'campaign_id',
         'source' => 'source',
         'reason' => 'reason',
-        'type' => 'type',
-        'details' => 'details',
         'relatedTransactionId' => 'related_transaction_id',
-        'createdAt' => 'created_at'
+        'createdAt' => 'created_at',
+        'details' => 'details',
+        'type' => 'type'
     ];
 
     /**
@@ -218,10 +218,10 @@ class LoyaltyCardTransaction implements ModelInterface, ArrayAccess, \JsonSerial
         'campaignId' => 'setCampaignId',
         'source' => 'setSource',
         'reason' => 'setReason',
-        'type' => 'setType',
-        'details' => 'setDetails',
         'relatedTransactionId' => 'setRelatedTransactionId',
-        'createdAt' => 'setCreatedAt'
+        'createdAt' => 'setCreatedAt',
+        'details' => 'setDetails',
+        'type' => 'setType'
     ];
 
     /**
@@ -236,10 +236,10 @@ class LoyaltyCardTransaction implements ModelInterface, ArrayAccess, \JsonSerial
         'campaignId' => 'getCampaignId',
         'source' => 'getSource',
         'reason' => 'getReason',
-        'type' => 'getType',
-        'details' => 'getDetails',
         'relatedTransactionId' => 'getRelatedTransactionId',
-        'createdAt' => 'getCreatedAt'
+        'createdAt' => 'getCreatedAt',
+        'details' => 'getDetails',
+        'type' => 'getType'
     ];
 
     /**
@@ -332,10 +332,10 @@ class LoyaltyCardTransaction implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('campaignId', $data ?? [], null);
         $this->setIfExists('source', $data ?? [], null);
         $this->setIfExists('reason', $data ?? [], null);
-        $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('details', $data ?? [], null);
         $this->setIfExists('relatedTransactionId', $data ?? [], null);
         $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('details', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
     }
 
     /**
@@ -594,84 +594,6 @@ class LoyaltyCardTransaction implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        if (is_null($type)) {
-            array_push($this->openAPINullablesSetToNull, 'type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets details
-     *
-     * @return \OpenAPI\Client\Model\LoyaltyCardTransactionDetails|null
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     *
-     * @param \OpenAPI\Client\Model\LoyaltyCardTransactionDetails|null $details details
-     *
-     * @return self
-     */
-    public function setDetails($details)
-    {
-        if (is_null($details)) {
-            array_push($this->openAPINullablesSetToNull, 'details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('details', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['details'] = $details;
-
-        return $this;
-    }
-
-    /**
      * Gets relatedTransactionId
      *
      * @return string|null
@@ -735,6 +657,84 @@ class LoyaltyCardTransaction implements ModelInterface, ArrayAccess, \JsonSerial
             }
         }
         $this->container['createdAt'] = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets details
+     *
+     * @return \OpenAPI\Client\Model\LoyaltyCardTransactionDetails|null
+     */
+    public function getDetails()
+    {
+        return $this->container['details'];
+    }
+
+    /**
+     * Sets details
+     *
+     * @param \OpenAPI\Client\Model\LoyaltyCardTransactionDetails|null $details details
+     *
+     * @return self
+     */
+    public function setDetails($details)
+    {
+        if (is_null($details)) {
+            array_push($this->openAPINullablesSetToNull, 'details');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('details', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['details'] = $details;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type Transaction types concerning loyalty points.
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }

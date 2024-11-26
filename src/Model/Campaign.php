@@ -428,6 +428,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CAMPAIGN_TYPE_REFERRAL_PROGRAM = 'REFERRAL_PROGRAM';
     public const TYPE_AUTO_UPDATE = 'AUTO_UPDATE';
     public const TYPE__STATIC = 'STATIC';
+    public const TYPE_STANDALONE = 'STANDALONE';
     public const VALIDITY_DAY_OF_WEEK_0 = 0;
     public const VALIDITY_DAY_OF_WEEK_1 = 1;
     public const VALIDITY_DAY_OF_WEEK_2 = 2;
@@ -472,6 +473,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         return [
             self::TYPE_AUTO_UPDATE,
             self::TYPE__STATIC,
+            self::TYPE_STANDALONE,
         ];
     }
 
@@ -812,7 +814,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets type
      *
-     * @param string|null $type Defines whether the campaign can be updated with new vouchers after campaign creation.      - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria     -  `STATIC`: vouchers need to be manually published
+     * @param string|null $type Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of standalone vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published - `STANDALONE`: campaign for single vouchers
      *
      * @return self
      */
@@ -917,7 +919,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets joinOnce
      *
-     * @param bool|null $joinOnce If this value is set to `true`, customers will be able to join the campaign only once.
+     * @param bool|null $joinOnce If this value is set to `true`, customers will be able to join the campaign only once. It is always `false` for standalone voucher campaigns and it cannot be changed in them.
      *
      * @return self
      */

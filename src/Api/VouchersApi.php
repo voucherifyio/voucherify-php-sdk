@@ -1320,7 +1320,7 @@ class VouchersApi
      * Export Voucher Transactions
      *
      * @param  string $code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. (required)
-     * @param  \OpenAPI\Client\Model\VouchersTransactionsExportCreateRequestBody $vouchersTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  \OpenAPI\Client\Model\VouchersTransactionsExportCreateRequestBody $vouchersTransactionsExportCreateRequestBody Specify the parameters for the camapign transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportVoucherTransactions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -1339,7 +1339,7 @@ class VouchersApi
      * Export Voucher Transactions
      *
      * @param  string $code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. (required)
-     * @param  \OpenAPI\Client\Model\VouchersTransactionsExportCreateRequestBody $vouchersTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  \OpenAPI\Client\Model\VouchersTransactionsExportCreateRequestBody $vouchersTransactionsExportCreateRequestBody Specify the parameters for the camapign transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportVoucherTransactions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -1440,7 +1440,7 @@ class VouchersApi
      * Export Voucher Transactions
      *
      * @param  string $code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. (required)
-     * @param  \OpenAPI\Client\Model\VouchersTransactionsExportCreateRequestBody $vouchersTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  \OpenAPI\Client\Model\VouchersTransactionsExportCreateRequestBody $vouchersTransactionsExportCreateRequestBody Specify the parameters for the camapign transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportVoucherTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1462,7 +1462,7 @@ class VouchersApi
      * Export Voucher Transactions
      *
      * @param  string $code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. (required)
-     * @param  \OpenAPI\Client\Model\VouchersTransactionsExportCreateRequestBody $vouchersTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  \OpenAPI\Client\Model\VouchersTransactionsExportCreateRequestBody $vouchersTransactionsExportCreateRequestBody Specify the parameters for the camapign transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportVoucherTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1513,7 +1513,7 @@ class VouchersApi
      * Create request for operation 'exportVoucherTransactions'
      *
      * @param  string $code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. (required)
-     * @param  \OpenAPI\Client\Model\VouchersTransactionsExportCreateRequestBody $vouchersTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  \OpenAPI\Client\Model\VouchersTransactionsExportCreateRequestBody $vouchersTransactionsExportCreateRequestBody Specify the parameters for the camapign transaction export. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportVoucherTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

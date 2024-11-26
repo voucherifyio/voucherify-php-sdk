@@ -36,6 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltiesMembersPointsExpirationListResponseBodyDataItem Class Doc Comment
  *
  * @category Class
+ * @description Contains the details about expiring loyalty points.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -62,9 +63,9 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
         'voucherId' => 'string',
         'campaignId' => 'string',
         'bucket' => '\OpenAPI\Client\Model\LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket',
-        'createdAt' => '\DateTime',
         'status' => 'string',
         'expiresAt' => '\DateTime',
+        'createdAt' => '\DateTime',
         'updatedAt' => '\DateTime',
         'object' => 'string'
     ];
@@ -81,9 +82,9 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
         'voucherId' => null,
         'campaignId' => null,
         'bucket' => null,
-        'createdAt' => 'date-time',
         'status' => null,
         'expiresAt' => 'date-time',
+        'createdAt' => 'date-time',
         'updatedAt' => 'date-time',
         'object' => null
     ];
@@ -94,15 +95,15 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-		'voucherId' => false,
-		'campaignId' => false,
-		'bucket' => false,
-		'createdAt' => false,
-		'status' => false,
-		'expiresAt' => false,
-		'updatedAt' => false,
-		'object' => false
+        'id' => true,
+		'voucherId' => true,
+		'campaignId' => true,
+		'bucket' => true,
+		'status' => true,
+		'expiresAt' => true,
+		'createdAt' => true,
+		'updatedAt' => true,
+		'object' => true
     ];
 
     /**
@@ -195,9 +196,9 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
         'voucherId' => 'voucher_id',
         'campaignId' => 'campaign_id',
         'bucket' => 'bucket',
-        'createdAt' => 'created_at',
         'status' => 'status',
         'expiresAt' => 'expires_at',
+        'createdAt' => 'created_at',
         'updatedAt' => 'updated_at',
         'object' => 'object'
     ];
@@ -212,9 +213,9 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
         'voucherId' => 'setVoucherId',
         'campaignId' => 'setCampaignId',
         'bucket' => 'setBucket',
-        'createdAt' => 'setCreatedAt',
         'status' => 'setStatus',
         'expiresAt' => 'setExpiresAt',
+        'createdAt' => 'setCreatedAt',
         'updatedAt' => 'setUpdatedAt',
         'object' => 'setObject'
     ];
@@ -229,9 +230,9 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
         'voucherId' => 'getVoucherId',
         'campaignId' => 'getCampaignId',
         'bucket' => 'getBucket',
-        'createdAt' => 'getCreatedAt',
         'status' => 'getStatus',
         'expiresAt' => 'getExpiresAt',
+        'createdAt' => 'getCreatedAt',
         'updatedAt' => 'getUpdatedAt',
         'object' => 'getObject'
     ];
@@ -310,9 +311,9 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
         $this->setIfExists('voucherId', $data ?? [], null);
         $this->setIfExists('campaignId', $data ?? [], null);
         $this->setIfExists('bucket', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('expiresAt', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('updatedAt', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'loyalty_points_bucket');
     }
@@ -344,30 +345,6 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['voucherId'] === null) {
-            $invalidProperties[] = "'voucherId' can't be null";
-        }
-        if ($this->container['campaignId'] === null) {
-            $invalidProperties[] = "'campaignId' can't be null";
-        }
-        if ($this->container['bucket'] === null) {
-            $invalidProperties[] = "'bucket' can't be null";
-        }
-        if ($this->container['createdAt'] === null) {
-            $invalidProperties[] = "'createdAt' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['expiresAt'] === null) {
-            $invalidProperties[] = "'expiresAt' can't be null";
-        }
-        if ($this->container['object'] === null) {
-            $invalidProperties[] = "'object' can't be null";
-        }
         $allowedValues = $this->getObjectAllowableValues();
         if (!is_null($this->container['object']) && !in_array($this->container['object'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -375,10 +352,6 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
                 $this->container['object'],
                 implode("', '", $allowedValues)
             );
-        }
-
-        if (!preg_match("/loyalty_points_bucket/", $this->container['object'])) {
-            $invalidProperties[] = "invalid value for 'object', must be conform to the pattern /loyalty_points_bucket/.";
         }
 
         return $invalidProperties;
@@ -399,7 +372,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Gets id
      *
-     * @return string
+     * @return string|null
      */
     public function getId()
     {
@@ -409,14 +382,21 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Sets id
      *
-     * @param string $id Unique loyalty points bucket ID.
+     * @param string|null $id Unique identifier of the loyalty points bucket.
      *
      * @return self
      */
     public function setId($id)
     {
         if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['id'] = $id;
 
@@ -426,7 +406,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Gets voucherId
      *
-     * @return string
+     * @return string|null
      */
     public function getVoucherId()
     {
@@ -436,14 +416,21 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Sets voucherId
      *
-     * @param string $voucherId Unique parent loyalty card ID.
+     * @param string|null $voucherId Unique identifier of the parent loyalty card.
      *
      * @return self
      */
     public function setVoucherId($voucherId)
     {
         if (is_null($voucherId)) {
-            throw new \InvalidArgumentException('non-nullable voucherId cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'voucherId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('voucherId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['voucherId'] = $voucherId;
 
@@ -453,7 +440,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Gets campaignId
      *
-     * @return string
+     * @return string|null
      */
     public function getCampaignId()
     {
@@ -463,14 +450,21 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Sets campaignId
      *
-     * @param string $campaignId Unique parent campaign ID.
+     * @param string|null $campaignId Unique identifier of the parent campaign.
      *
      * @return self
      */
     public function setCampaignId($campaignId)
     {
         if (is_null($campaignId)) {
-            throw new \InvalidArgumentException('non-nullable campaignId cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'campaignId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('campaignId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['campaignId'] = $campaignId;
 
@@ -480,7 +474,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Gets bucket
      *
-     * @return \OpenAPI\Client\Model\LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket
+     * @return \OpenAPI\Client\Model\LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket|null
      */
     public function getBucket()
     {
@@ -490,14 +484,21 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Sets bucket
      *
-     * @param \OpenAPI\Client\Model\LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket $bucket bucket
+     * @param \OpenAPI\Client\Model\LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket|null $bucket bucket
      *
      * @return self
      */
     public function setBucket($bucket)
     {
         if (is_null($bucket)) {
-            throw new \InvalidArgumentException('non-nullable bucket cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'bucket');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('bucket', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['bucket'] = $bucket;
 
@@ -505,36 +506,9 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     }
 
     /**
-     * Gets createdAt
-     *
-     * @return \DateTime
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['createdAt'];
-    }
-
-    /**
-     * Sets createdAt
-     *
-     * @param \DateTime $createdAt Timestamp representing the date and time when the loyalty points bucket object was created. The value is shown in the ISO 8601 format.
-     *
-     * @return self
-     */
-    public function setCreatedAt($createdAt)
-    {
-        if (is_null($createdAt)) {
-            throw new \InvalidArgumentException('non-nullable createdAt cannot be null');
-        }
-        $this->container['createdAt'] = $createdAt;
-
-        return $this;
-    }
-
-    /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -544,14 +518,21 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Sets status
      *
-     * @param string $status Loyalty points bucket point status.
+     * @param string|null $status Loyalty point point bucket status.
      *
      * @return self
      */
     public function setStatus($status)
     {
         if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['status'] = $status;
 
@@ -561,7 +542,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Gets expiresAt
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getExpiresAt()
     {
@@ -571,16 +552,57 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Sets expiresAt
      *
-     * @param \DateTime $expiresAt Date when the number of points defined in the bucket object are due to expire.
+     * @param \DateTime|null $expiresAt Date when the number of points defined in the bucket object are due to expire.
      *
      * @return self
      */
     public function setExpiresAt($expiresAt)
     {
         if (is_null($expiresAt)) {
-            throw new \InvalidArgumentException('non-nullable expiresAt cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'expiresAt');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('expiresAt', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['expiresAt'] = $expiresAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the loyalty point bucket object was created in ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setCreatedAt($createdAt)
+    {
+        if (is_null($createdAt)) {
+            array_push($this->openAPINullablesSetToNull, 'createdAt');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('createdAt', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
@@ -598,14 +620,21 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Sets updatedAt
      *
-     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the loyalty points bucket object was updated. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $updatedAt Timestamp representing the date and time when the loyalty point bucket object was updated in ISO 8601 format.
      *
      * @return self
      */
     public function setUpdatedAt($updatedAt)
     {
         if (is_null($updatedAt)) {
-            throw new \InvalidArgumentException('non-nullable updatedAt cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'updatedAt');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('updatedAt', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['updatedAt'] = $updatedAt;
 
@@ -615,7 +644,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Gets object
      *
-     * @return string
+     * @return string|null
      */
     public function getObject()
     {
@@ -625,17 +654,24 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Sets object
      *
-     * @param string $object The type of the object represented by JSON. This object stores information about the loyalty points bucket.
+     * @param string|null $object The type of the object represented by JSON. This object stores information about the loyalty point bucket.
      *
      * @return self
      */
     public function setObject($object)
     {
         if (is_null($object)) {
-            throw new \InvalidArgumentException('non-nullable object cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'object');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('object', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $allowedValues = $this->getObjectAllowableValues();
-        if (!in_array($object, $allowedValues, true)) {
+        if (!is_null($object) && !in_array($object, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'object', must be one of '%s'",
@@ -644,11 +680,6 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
                 )
             );
         }
-
-        if ((!preg_match("/loyalty_points_bucket/", $object))) {
-            throw new \InvalidArgumentException("invalid value for \$object when calling LoyaltiesMembersPointsExpirationListResponseBodyDataItem., must conform to the pattern /loyalty_points_bucket/.");
-        }
-
         $this->container['object'] = $object;
 
         return $this;

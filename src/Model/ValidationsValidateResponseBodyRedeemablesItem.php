@@ -68,7 +68,8 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
         'metadata' => 'object',
         'categories' => '\OpenAPI\Client\Model\CategoryWithStackingRulesType[]',
         'campaignName' => 'string',
-        'campaignId' => 'string'
+        'campaignId' => 'string',
+        'name' => 'string'
     ];
 
     /**
@@ -89,7 +90,8 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
         'metadata' => null,
         'categories' => null,
         'campaignName' => null,
-        'campaignId' => null
+        'campaignId' => null,
+        'name' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
 		'metadata' => true,
 		'categories' => true,
 		'campaignName' => true,
-		'campaignId' => true
+		'campaignId' => true,
+		'name' => true
     ];
 
     /**
@@ -207,7 +210,8 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
         'metadata' => 'metadata',
         'categories' => 'categories',
         'campaignName' => 'campaign_name',
-        'campaignId' => 'campaign_id'
+        'campaignId' => 'campaign_id',
+        'name' => 'name'
     ];
 
     /**
@@ -226,7 +230,8 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
         'metadata' => 'setMetadata',
         'categories' => 'setCategories',
         'campaignName' => 'setCampaignName',
-        'campaignId' => 'setCampaignId'
+        'campaignId' => 'setCampaignId',
+        'name' => 'setName'
     ];
 
     /**
@@ -245,7 +250,8 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
         'metadata' => 'getMetadata',
         'categories' => 'getCategories',
         'campaignName' => 'getCampaignName',
-        'campaignId' => 'getCampaignId'
+        'campaignId' => 'getCampaignId',
+        'name' => 'getName'
     ];
 
     /**
@@ -348,6 +354,7 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
         $this->setIfExists('categories', $data ?? [], null);
         $this->setIfExists('campaignName', $data ?? [], null);
         $this->setIfExists('campaignId', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
     }
 
     /**
@@ -714,7 +721,7 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
     /**
      * Sets campaignName
      *
-     * @param string|null $campaignName Campaign name
+     * @param string|null $campaignName Campaign name. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
      *
      * @return self
      */
@@ -748,7 +755,7 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
     /**
      * Sets campaignId
      *
-     * @param string|null $campaignId Unique campaign ID assigned by Voucherify.
+     * @param string|null $campaignId Unique campaign ID assigned by Voucherify. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
      *
      * @return self
      */
@@ -765,6 +772,40 @@ class ValidationsValidateResponseBodyRedeemablesItem implements ModelInterface, 
             }
         }
         $this->container['campaignId'] = $campaignId;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name Name of the promotion tier. Displayed only if the `options.expand` is passed with a `redeemable` value in the validation request body.
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        if (is_null($name)) {
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['name'] = $name;
 
         return $this;
     }

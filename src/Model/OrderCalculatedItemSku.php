@@ -63,7 +63,8 @@ class OrderCalculatedItemSku implements ModelInterface, ArrayAccess, \JsonSerial
         'sourceId' => 'string',
         'override' => 'bool',
         'sku' => 'string',
-        'price' => 'float'
+        'price' => 'float',
+        'metadata' => 'object'
     ];
 
     /**
@@ -78,7 +79,8 @@ class OrderCalculatedItemSku implements ModelInterface, ArrayAccess, \JsonSerial
         'sourceId' => null,
         'override' => null,
         'sku' => null,
-        'price' => null
+        'price' => null,
+        'metadata' => null
     ];
 
     /**
@@ -91,7 +93,8 @@ class OrderCalculatedItemSku implements ModelInterface, ArrayAccess, \JsonSerial
 		'sourceId' => true,
 		'override' => true,
 		'sku' => true,
-		'price' => true
+		'price' => true,
+		'metadata' => true
     ];
 
     /**
@@ -184,7 +187,8 @@ class OrderCalculatedItemSku implements ModelInterface, ArrayAccess, \JsonSerial
         'sourceId' => 'source_id',
         'override' => 'override',
         'sku' => 'sku',
-        'price' => 'price'
+        'price' => 'price',
+        'metadata' => 'metadata'
     ];
 
     /**
@@ -197,7 +201,8 @@ class OrderCalculatedItemSku implements ModelInterface, ArrayAccess, \JsonSerial
         'sourceId' => 'setSourceId',
         'override' => 'setOverride',
         'sku' => 'setSku',
-        'price' => 'setPrice'
+        'price' => 'setPrice',
+        'metadata' => 'setMetadata'
     ];
 
     /**
@@ -210,7 +215,8 @@ class OrderCalculatedItemSku implements ModelInterface, ArrayAccess, \JsonSerial
         'sourceId' => 'getSourceId',
         'override' => 'getOverride',
         'sku' => 'getSku',
-        'price' => 'getPrice'
+        'price' => 'getPrice',
+        'metadata' => 'getMetadata'
     ];
 
     /**
@@ -275,6 +281,7 @@ class OrderCalculatedItemSku implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('override', $data ?? [], null);
         $this->setIfExists('sku', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
+        $this->setIfExists('metadata', $data ?? [], null);
     }
 
     /**
@@ -485,6 +492,40 @@ class OrderCalculatedItemSku implements ModelInterface, ArrayAccess, \JsonSerial
             }
         }
         $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     *
+     * @return object|null
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param object|null $metadata A set of custom key/value pairs that you can attach to an SKU. It can be useful for storing additional information about the SKU in a structured format. It can be used to create product collections.
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        if (is_null($metadata)) {
+            array_push($this->openAPINullablesSetToNull, 'metadata');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('metadata', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['metadata'] = $metadata;
 
         return $this;
     }

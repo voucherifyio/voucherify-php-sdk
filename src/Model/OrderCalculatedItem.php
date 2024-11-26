@@ -1189,7 +1189,7 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets metadata
      *
-     * @param object|null $metadata A set of custom key/value pairs that you can attach to an SKU. It can be useful for storing additional information about the SKU in a structured format.
+     * @param object|null $metadata A set of custom key/value pairs that you can attach to an item object. It can be useful for storing additional information about the item in a structured format. It can be used to define business validation rules or discount formulas.
      *
      * @return self
      */

@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **requestId** | **string** | This ID is useful when troubleshooting and/or finding the root cause of an error response by our support team. | [optional]
 **resourceId** | **string** | Unique resource ID that can be used in another endpoint to get more details. | [optional]
 **resourceType** | **string** | The resource type. | [optional]
+**error** | [**\OpenAPI\Client\Model\ErrorError**](ErrorError.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

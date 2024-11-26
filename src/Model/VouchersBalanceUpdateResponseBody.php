@@ -560,7 +560,7 @@ class VouchersBalanceUpdateResponseBody implements ModelInterface, ArrayAccess, 
     /**
      * Sets operationType
      *
-     * @param string|null $operationType operationType
+     * @param string|null $operationType The type of the operation being performed.
      *
      * @return self
      */

@@ -64,6 +64,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
         'object' => 'string',
         'points' => 'int',
         'balance' => 'int',
+        'operationType' => 'string',
         'relatedObject' => '\OpenAPI\Client\Model\LoyaltyCardTransactionDetailsBalanceRelatedObject'
     ];
 
@@ -80,6 +81,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
         'object' => null,
         'points' => null,
         'balance' => null,
+        'operationType' => null,
         'relatedObject' => null
     ];
 
@@ -94,6 +96,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
 		'object' => true,
 		'points' => true,
 		'balance' => true,
+		'operationType' => true,
 		'relatedObject' => true
     ];
 
@@ -188,6 +191,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
         'object' => 'object',
         'points' => 'points',
         'balance' => 'balance',
+        'operationType' => 'operation_type',
         'relatedObject' => 'related_object'
     ];
 
@@ -202,6 +206,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
         'object' => 'setObject',
         'points' => 'setPoints',
         'balance' => 'setBalance',
+        'operationType' => 'setOperationType',
         'relatedObject' => 'setRelatedObject'
     ];
 
@@ -216,6 +221,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
         'object' => 'getObject',
         'points' => 'getPoints',
         'balance' => 'getBalance',
+        'operationType' => 'getOperationType',
         'relatedObject' => 'getRelatedObject'
     ];
 
@@ -261,7 +267,10 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
     }
 
     public const TYPE_LOYALTY_CARD = 'loyalty_card';
+    public const TYPE_GIFT_VOUCHER = 'gift_voucher';
     public const OBJECT_BALANCE = 'balance';
+    public const OPERATION_TYPE_MANUAL = 'MANUAL';
+    public const OPERATION_TYPE_AUTOMATIC = 'AUTOMATIC';
 
     /**
      * Gets allowable values of the enum
@@ -272,6 +281,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
     {
         return [
             self::TYPE_LOYALTY_CARD,
+            self::TYPE_GIFT_VOUCHER,
         ];
     }
 
@@ -284,6 +294,19 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
     {
         return [
             self::OBJECT_BALANCE,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getOperationTypeAllowableValues()
+    {
+        return [
+            self::OPERATION_TYPE_MANUAL,
+            self::OPERATION_TYPE_AUTOMATIC,
         ];
     }
 
@@ -302,11 +325,12 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('type', $data ?? [], 'loyalty_card');
+        $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('total', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'balance');
         $this->setIfExists('points', $data ?? [], null);
         $this->setIfExists('balance', $data ?? [], null);
+        $this->setIfExists('operationType', $data ?? [], null);
         $this->setIfExists('relatedObject', $data ?? [], null);
     }
 
@@ -346,10 +370,6 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
             );
         }
 
-        if (!is_null($this->container['type']) && !preg_match("/loyalty_card/", $this->container['type'])) {
-            $invalidProperties[] = "invalid value for 'type', must be conform to the pattern /loyalty_card/.";
-        }
-
         $allowedValues = $this->getObjectAllowableValues();
         if (!is_null($this->container['object']) && !in_array($this->container['object'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -359,8 +379,13 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
             );
         }
 
-        if (!is_null($this->container['object']) && !preg_match("/balance/", $this->container['object'])) {
-            $invalidProperties[] = "invalid value for 'object', must be conform to the pattern /balance/.";
+        $allowedValues = $this->getOperationTypeAllowableValues();
+        if (!is_null($this->container['operationType']) && !in_array($this->container['operationType'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'operationType', must be one of '%s'",
+                $this->container['operationType'],
+                implode("', '", $allowedValues)
+            );
         }
 
         return $invalidProperties;
@@ -417,11 +442,6 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
                 )
             );
         }
-
-        if (!is_null($type) && (!preg_match("/loyalty_card/", $type))) {
-            throw new \InvalidArgumentException("invalid value for \$type when calling LoyaltyCardTransactionDetailsBalance., must conform to the pattern /loyalty_card/.");
-        }
-
         $this->container['type'] = $type;
 
         return $this;
@@ -440,7 +460,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
     /**
      * Sets total
      *
-     * @param int|null $total The number of all points accumulated on the card as affected by add or subtract operations.
+     * @param int|null $total The number of all points or credits accumulated on the card as affected by add or subtract operations.
      *
      * @return self
      */
@@ -500,11 +520,6 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
                 )
             );
         }
-
-        if (!is_null($object) && (!preg_match("/balance/", $object))) {
-            throw new \InvalidArgumentException("invalid value for \$object when calling LoyaltyCardTransactionDetailsBalance., must conform to the pattern /balance/.");
-        }
-
         $this->container['object'] = $object;
 
         return $this;
@@ -523,7 +538,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
     /**
      * Sets points
      *
-     * @param int|null $points Points added or subtracted in the transaction.
+     * @param int|null $points Points added or subtracted in the transaction of a loyalty card.
      *
      * @return self
      */
@@ -557,7 +572,7 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
     /**
      * Sets balance
      *
-     * @param int|null $balance The available points on the card after the transaction as affected by redemption or rollback.
+     * @param int|null $balance The available points or credits on the card after the transaction as affected by redemption or rollback.
      *
      * @return self
      */
@@ -574,6 +589,50 @@ class LoyaltyCardTransactionDetailsBalance implements ModelInterface, ArrayAcces
             }
         }
         $this->container['balance'] = $balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets operationType
+     *
+     * @return string|null
+     */
+    public function getOperationType()
+    {
+        return $this->container['operationType'];
+    }
+
+    /**
+     * Sets operationType
+     *
+     * @param string|null $operationType The type of the operation being performed. The operation type is `AUTOMATIC` if it is an automatic redemption.
+     *
+     * @return self
+     */
+    public function setOperationType($operationType)
+    {
+        if (is_null($operationType)) {
+            array_push($this->openAPINullablesSetToNull, 'operationType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('operationType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getOperationTypeAllowableValues();
+        if (!is_null($operationType) && !in_array($operationType, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'operationType', must be one of '%s'",
+                    $operationType,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['operationType'] = $operationType;
 
         return $this;
     }

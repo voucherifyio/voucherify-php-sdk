@@ -847,7 +847,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets joinOnce
      *
-     * @param bool|null $joinOnce If this value is set to `true`, customers will be able to join the campaign only once.
+     * @param bool|null $joinOnce If this value is set to `true`, customers will be able to join the campaign only once. It is always `false` for standalone voucher campaigns and it cannot be changed in them.
      *
      * @return self
      */
@@ -915,7 +915,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets type
      *
-     * @param string|null $type Defines whether the campaign can be updated with new vouchers after campaign creation.      - `AUTO_UPDATE`: By choosing the auto update option you will create a campaign that can be enhanced by new vouchers after the time of creation (e.g. by publish vouchers method).     -  `STATIC`: vouchers need to be manually published.
+     * @param string|null $type Defines whether the campaign can be updated with new vouchers after campaign creation.  - `AUTO_UPDATE`: By choosing the auto update option you will create a campaign that can be enhanced by new vouchers after the time of creation (e.g. by publish vouchers method). -  `STATIC`: vouchers need to be manually published.  If the `type` of the campaign is `STANDALONE`, the type cannot be changed. Also, the `type` cannot be changed to `STANDALONE`.
      *
      * @return self
      */

@@ -64,10 +64,10 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
         'campaignId' => 'string',
         'source' => 'string',
         'reason' => 'string',
-        'type' => 'string',
-        'details' => '\OpenAPI\Client\Model\VoucherTransactionDetails',
         'relatedTransactionId' => 'string',
-        'createdAt' => '\DateTime'
+        'createdAt' => '\DateTime',
+        'details' => '\OpenAPI\Client\Model\VoucherTransactionDetails',
+        'type' => 'mixed'
     ];
 
     /**
@@ -84,10 +84,10 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
         'campaignId' => null,
         'source' => null,
         'reason' => null,
-        'type' => null,
-        'details' => null,
         'relatedTransactionId' => null,
-        'createdAt' => 'date-time'
+        'createdAt' => 'date-time',
+        'details' => null,
+        'type' => null
     ];
 
     /**
@@ -102,10 +102,10 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
 		'campaignId' => true,
 		'source' => true,
 		'reason' => true,
-		'type' => true,
-		'details' => true,
 		'relatedTransactionId' => true,
-		'createdAt' => true
+		'createdAt' => true,
+		'details' => true,
+		'type' => true
     ];
 
     /**
@@ -200,10 +200,10 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
         'campaignId' => 'campaign_id',
         'source' => 'source',
         'reason' => 'reason',
-        'type' => 'type',
-        'details' => 'details',
         'relatedTransactionId' => 'related_transaction_id',
-        'createdAt' => 'created_at'
+        'createdAt' => 'created_at',
+        'details' => 'details',
+        'type' => 'type'
     ];
 
     /**
@@ -218,10 +218,10 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
         'campaignId' => 'setCampaignId',
         'source' => 'setSource',
         'reason' => 'setReason',
-        'type' => 'setType',
-        'details' => 'setDetails',
         'relatedTransactionId' => 'setRelatedTransactionId',
-        'createdAt' => 'setCreatedAt'
+        'createdAt' => 'setCreatedAt',
+        'details' => 'setDetails',
+        'type' => 'setType'
     ];
 
     /**
@@ -236,10 +236,10 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
         'campaignId' => 'getCampaignId',
         'source' => 'getSource',
         'reason' => 'getReason',
-        'type' => 'getType',
-        'details' => 'getDetails',
         'relatedTransactionId' => 'getRelatedTransactionId',
-        'createdAt' => 'getCreatedAt'
+        'createdAt' => 'getCreatedAt',
+        'details' => 'getDetails',
+        'type' => 'getType'
     ];
 
     /**
@@ -283,33 +283,6 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
-    public const TYPE_ACCRUAL = 'POINTS_ACCRUAL';
-    public const TYPE_REDEMPTION = 'POINTS_REDEMPTION';
-    public const TYPE_REFUND = 'POINTS_REFUND';
-    public const TYPE_ADDITION = 'POINTS_ADDITION';
-    public const TYPE_REMOVAL = 'POINTS_REMOVAL';
-    public const TYPE_EXPIRATION = 'POINTS_EXPIRATION';
-    public const TYPE_TRANSFER_IN = 'POINTS_TRANSFER_IN';
-    public const TYPE_TRANSFER_OUT = 'POINTS_TRANSFER_OUT';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_ACCRUAL,
-            self::TYPE_REDEMPTION,
-            self::TYPE_REFUND,
-            self::TYPE_ADDITION,
-            self::TYPE_REMOVAL,
-            self::TYPE_EXPIRATION,
-            self::TYPE_TRANSFER_IN,
-            self::TYPE_TRANSFER_OUT,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -332,10 +305,10 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('campaignId', $data ?? [], null);
         $this->setIfExists('source', $data ?? [], null);
         $this->setIfExists('reason', $data ?? [], null);
-        $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('details', $data ?? [], null);
         $this->setIfExists('relatedTransactionId', $data ?? [], null);
         $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('details', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
     }
 
     /**
@@ -364,15 +337,6 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'type', must be one of '%s'",
-                $this->container['type'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -594,84 +558,6 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        if (is_null($type)) {
-            array_push($this->openAPINullablesSetToNull, 'type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets details
-     *
-     * @return \OpenAPI\Client\Model\VoucherTransactionDetails|null
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     *
-     * @param \OpenAPI\Client\Model\VoucherTransactionDetails|null $details details
-     *
-     * @return self
-     */
-    public function setDetails($details)
-    {
-        if (is_null($details)) {
-            array_push($this->openAPINullablesSetToNull, 'details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('details', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['details'] = $details;
-
-        return $this;
-    }
-
-    /**
      * Gets relatedTransactionId
      *
      * @return string|null
@@ -735,6 +621,74 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
             }
         }
         $this->container['createdAt'] = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets details
+     *
+     * @return \OpenAPI\Client\Model\VoucherTransactionDetails|null
+     */
+    public function getDetails()
+    {
+        return $this->container['details'];
+    }
+
+    /**
+     * Sets details
+     *
+     * @param \OpenAPI\Client\Model\VoucherTransactionDetails|null $details details
+     *
+     * @return self
+     */
+    public function setDetails($details)
+    {
+        if (is_null($details)) {
+            array_push($this->openAPINullablesSetToNull, 'details');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('details', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['details'] = $details;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return mixed|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param mixed|null $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }

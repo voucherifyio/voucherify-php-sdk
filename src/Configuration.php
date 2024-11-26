@@ -100,7 +100,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'OpenAPI-Generator/5.0.1/PHP';
+    protected $userAgent = 'OpenAPI-Generator/5.0.2/PHP';
 
     /**
      * Debug switch (default set to false)
@@ -433,7 +433,7 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: v2018-08-01' . PHP_EOL;
-        $report .= '    SDK Package Version: 5.0.1' . PHP_EOL;
+        $report .= '    SDK Package Version: 5.0.2' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

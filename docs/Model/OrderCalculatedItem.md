@@ -24,6 +24,6 @@ Name | Type | Description | Notes
 **product** | [**\OpenAPI\Client\Model\OrderCalculatedItemProduct**](OrderCalculatedItemProduct.md) |  | [optional]
 **sku** | [**\OpenAPI\Client\Model\OrderCalculatedItemSku**](OrderCalculatedItemSku.md) |  | [optional]
 **object** | **string** | The type of the object represented by JSON. | [optional] [default to 'order_item']
-**metadata** | **object** | A set of custom key/value pairs that you can attach to an SKU. It can be useful for storing additional information about the SKU in a structured format. | [optional]
+**metadata** | **object** | A set of custom key/value pairs that you can attach to an item object. It can be useful for storing additional information about the item in a structured format. It can be used to define business validation rules or discount formulas. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
