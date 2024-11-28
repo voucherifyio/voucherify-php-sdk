@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **campaignId** | **string** | Unqiue campaign ID of the voucher&#39;s parent campaign if it is part of campaign that generates bulk codes. | [optional]
 **source** | **string** | The channel through which the transaction took place, whether through the API or the the Dashboard. In case of a redemption, this value is null. | [optional]
 **reason** | **string** | Reason why the transaction occurred. In case of a redemption, this value is null. | [optional]
-**type** | **string** |  | [optional]
-**details** | [**\OpenAPI\Client\Model\VoucherTransactionDetails**](VoucherTransactionDetails.md) |  | [optional]
 **relatedTransactionId** | **string** | The related transaction ID on the receiving card. | [optional]
 **createdAt** | **\DateTime** | Timestamp representing the date and time when the transaction was created. The value is shown in the ISO 8601 format. | [optional]
+**details** | [**\OpenAPI\Client\Model\VoucherTransactionDetails**](VoucherTransactionDetails.md) |  | [optional]
+**type** | **mixed** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

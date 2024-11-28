@@ -65,7 +65,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         'details' => 'string',
         'requestId' => 'string',
         'resourceId' => 'string',
-        'resourceType' => 'string'
+        'resourceType' => 'string',
+        'error' => '\OpenAPI\Client\Model\ErrorError'
     ];
 
     /**
@@ -82,7 +83,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         'details' => null,
         'requestId' => null,
         'resourceId' => null,
-        'resourceType' => null
+        'resourceType' => null,
+        'error' => null
     ];
 
     /**
@@ -97,7 +99,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 		'details' => true,
 		'requestId' => true,
 		'resourceId' => true,
-		'resourceType' => true
+		'resourceType' => true,
+		'error' => true
     ];
 
     /**
@@ -192,7 +195,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         'details' => 'details',
         'requestId' => 'request_id',
         'resourceId' => 'resource_id',
-        'resourceType' => 'resource_type'
+        'resourceType' => 'resource_type',
+        'error' => 'error'
     ];
 
     /**
@@ -207,7 +211,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         'details' => 'setDetails',
         'requestId' => 'setRequestId',
         'resourceId' => 'setResourceId',
-        'resourceType' => 'setResourceType'
+        'resourceType' => 'setResourceType',
+        'error' => 'setError'
     ];
 
     /**
@@ -222,7 +227,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         'details' => 'getDetails',
         'requestId' => 'getRequestId',
         'resourceId' => 'getResourceId',
-        'resourceType' => 'getResourceType'
+        'resourceType' => 'getResourceType',
+        'error' => 'getError'
     ];
 
     /**
@@ -289,6 +295,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('requestId', $data ?? [], null);
         $this->setIfExists('resourceId', $data ?? [], null);
         $this->setIfExists('resourceType', $data ?? [], null);
+        $this->setIfExists('error', $data ?? [], null);
     }
 
     /**
@@ -567,6 +574,40 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['resourceType'] = $resourceType;
+
+        return $this;
+    }
+
+    /**
+     * Gets error
+     *
+     * @return \OpenAPI\Client\Model\ErrorError|null
+     */
+    public function getError()
+    {
+        return $this->container['error'];
+    }
+
+    /**
+     * Sets error
+     *
+     * @param \OpenAPI\Client\Model\ErrorError|null $error error
+     *
+     * @return self
+     */
+    public function setError($error)
+    {
+        if (is_null($error)) {
+            array_push($this->openAPINullablesSetToNull, 'error');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('error', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['error'] = $error;
 
         return $this;
     }

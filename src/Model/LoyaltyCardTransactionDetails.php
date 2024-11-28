@@ -103,7 +103,7 @@ class LoyaltyCardTransactionDetails implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'balance' => true,
+        'balance' => false,
 		'order' => true,
 		'event' => true,
 		'earningRule' => true,
@@ -395,14 +395,7 @@ class LoyaltyCardTransactionDetails implements ModelInterface, ArrayAccess, \Jso
     public function setBalance($balance)
     {
         if (is_null($balance)) {
-            array_push($this->openAPINullablesSetToNull, 'balance');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('balance', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable balance cannot be null');
         }
         $this->container['balance'] = $balance;
 

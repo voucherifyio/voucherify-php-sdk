@@ -42,6 +42,8 @@ enum ParameterExpandListCampaigns: string
 {
     case CATEGORY = 'category';
 
+    case ACCESS_SETTINGS_ASSIGNMENTS = 'access_settings_assignments';
+
 }
 
 

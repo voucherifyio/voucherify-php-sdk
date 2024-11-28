@@ -305,10 +305,6 @@ class LoyaltyCardTransactionDetailsBalanceRelatedObject implements ModelInterfac
             );
         }
 
-        if (!is_null($this->container['type']) && !preg_match("/voucher/", $this->container['type'])) {
-            $invalidProperties[] = "invalid value for 'type', must be conform to the pattern /voucher/.";
-        }
-
         return $invalidProperties;
     }
 
@@ -337,7 +333,7 @@ class LoyaltyCardTransactionDetailsBalanceRelatedObject implements ModelInterfac
     /**
      * Sets id
      *
-     * @param string|null $id Identifies the voucher that is being modified, this is the ID that was assigned by the Voucherify API.
+     * @param string|null $id Identifies the voucher that is being modified. The ID is assigned by the Voucherify API.
      *
      * @return self
      */
@@ -397,11 +393,6 @@ class LoyaltyCardTransactionDetailsBalanceRelatedObject implements ModelInterfac
                 )
             );
         }
-
-        if (!is_null($type) && (!preg_match("/voucher/", $type))) {
-            throw new \InvalidArgumentException("invalid value for \$type when calling LoyaltyCardTransactionDetailsBalanceRelatedObject., must conform to the pattern /voucher/.");
-        }
-
         $this->container['type'] = $type;
 
         return $this;

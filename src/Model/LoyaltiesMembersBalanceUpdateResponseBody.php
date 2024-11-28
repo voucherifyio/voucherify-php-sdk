@@ -658,7 +658,7 @@ class LoyaltiesMembersBalanceUpdateResponseBody implements ModelInterface, Array
     /**
      * Sets operationType
      *
-     * @param string|null $operationType operationType
+     * @param string|null $operationType The type of operation being performed.
      *
      * @return self
      */

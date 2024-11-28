@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket Class Doc Comment
  *
  * @category Class
- * @description Defines the number of points stored in the given loyalty points bucket.
+ * @description Defines the number of points stored in this loyalty point bucket.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -79,7 +79,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket implements 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'totalPoints' => false
+        'totalPoints' => true
     ];
 
     /**
@@ -276,9 +276,6 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket implements 
     {
         $invalidProperties = [];
 
-        if ($this->container['totalPoints'] === null) {
-            $invalidProperties[] = "'totalPoints' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -297,7 +294,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket implements 
     /**
      * Gets totalPoints
      *
-     * @return int
+     * @return int|null
      */
     public function getTotalPoints()
     {
@@ -307,14 +304,21 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItemBucket implements 
     /**
      * Sets totalPoints
      *
-     * @param int $totalPoints Total number of points in the loyalty points bucket.
+     * @param int|null $totalPoints Total number of points in the loyalty point bucket.
      *
      * @return self
      */
     public function setTotalPoints($totalPoints)
     {
         if (is_null($totalPoints)) {
-            throw new \InvalidArgumentException('non-nullable totalPoints cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'totalPoints');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('totalPoints', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['totalPoints'] = $totalPoints;
 

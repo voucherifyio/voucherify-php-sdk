@@ -475,7 +475,7 @@ class OrderItemProduct implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metadata
      *
-     * @param object|null $metadata A set of custom key/value pairs that you can attach to a product. It can be useful for storing additional information about the product in a structured format.
+     * @param object|null $metadata A set of custom key/value pairs that you can attach to a product. It can be useful for storing additional information about the product in a structured format. It can be used to create product collections.
      *
      * @return self
      */

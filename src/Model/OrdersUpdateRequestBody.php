@@ -616,7 +616,7 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets metadata
      *
-     * @param object|null $metadata A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format.
+     * @param object|null $metadata A set of custom key/value pairs that you can attach to an order. It can be useful for storing additional information about the order in a structured format. It can be used to define business validation rules or discount formulas.
      *
      * @return self
      */
