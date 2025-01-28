@@ -75,6 +75,7 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'categoryId' => 'string',
         'category' => 'string',
         'metadata' => 'object',
+        'accessSettings' => '\OpenAPI\Client\Model\AccessSettings',
         'validationRules' => 'string[]',
         'campaignType' => 'string',
         'voucher' => '\OpenAPI\Client\Model\CampaignLoyaltyVoucher'
@@ -104,6 +105,7 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'categoryId' => null,
         'category' => null,
         'metadata' => null,
+        'accessSettings' => null,
         'validationRules' => null,
         'campaignType' => null,
         'voucher' => null
@@ -131,6 +133,7 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
 		'categoryId' => true,
 		'category' => true,
 		'metadata' => true,
+		'accessSettings' => false,
 		'validationRules' => true,
 		'campaignType' => true,
 		'voucher' => false
@@ -238,6 +241,7 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'categoryId' => 'category_id',
         'category' => 'category',
         'metadata' => 'metadata',
+        'accessSettings' => 'access_settings',
         'validationRules' => 'validation_rules',
         'campaignType' => 'campaign_type',
         'voucher' => 'voucher'
@@ -265,6 +269,7 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'categoryId' => 'setCategoryId',
         'category' => 'setCategory',
         'metadata' => 'setMetadata',
+        'accessSettings' => 'setAccessSettings',
         'validationRules' => 'setValidationRules',
         'campaignType' => 'setCampaignType',
         'voucher' => 'setVoucher'
@@ -292,6 +297,7 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         'categoryId' => 'getCategoryId',
         'category' => 'getCategory',
         'metadata' => 'getMetadata',
+        'accessSettings' => 'getAccessSettings',
         'validationRules' => 'getValidationRules',
         'campaignType' => 'getCampaignType',
         'voucher' => 'getVoucher'
@@ -423,6 +429,7 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
         $this->setIfExists('categoryId', $data ?? [], null);
         $this->setIfExists('category', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('accessSettings', $data ?? [], null);
         $this->setIfExists('validationRules', $data ?? [], null);
         $this->setIfExists('campaignType', $data ?? [], 'LOYALTY_PROGRAM');
         $this->setIfExists('voucher', $data ?? [], null);
@@ -1037,6 +1044,33 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
             }
         }
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets accessSettings
+     *
+     * @return \OpenAPI\Client\Model\AccessSettings|null
+     */
+    public function getAccessSettings()
+    {
+        return $this->container['accessSettings'];
+    }
+
+    /**
+     * Sets accessSettings
+     *
+     * @param \OpenAPI\Client\Model\AccessSettings|null $accessSettings accessSettings
+     *
+     * @return self
+     */
+    public function setAccessSettings($accessSettings)
+    {
+        if (is_null($accessSettings)) {
+            throw new \InvalidArgumentException('non-nullable accessSettings cannot be null');
+        }
+        $this->container['accessSettings'] = $accessSettings;
 
         return $this;
     }

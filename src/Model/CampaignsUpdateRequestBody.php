@@ -68,6 +68,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'metadata' => 'object',
         'unsetMetadataFields' => 'string[]',
         'categoryId' => 'string',
+        'accessSettings' => '\OpenAPI\Client\Model\AccessSettings',
         'activityDurationAfterPublishing' => 'string',
         'joinOnce' => 'bool',
         'autoJoin' => 'bool',
@@ -97,6 +98,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'metadata' => null,
         'unsetMetadataFields' => null,
         'categoryId' => null,
+        'accessSettings' => null,
         'activityDurationAfterPublishing' => null,
         'joinOnce' => null,
         'autoJoin' => null,
@@ -124,6 +126,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
 		'metadata' => true,
 		'unsetMetadataFields' => true,
 		'categoryId' => true,
+		'accessSettings' => false,
 		'activityDurationAfterPublishing' => true,
 		'joinOnce' => true,
 		'autoJoin' => true,
@@ -231,6 +234,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'metadata' => 'metadata',
         'unsetMetadataFields' => 'unset_metadata_fields',
         'categoryId' => 'category_id',
+        'accessSettings' => 'access_settings',
         'activityDurationAfterPublishing' => 'activity_duration_after_publishing',
         'joinOnce' => 'join_once',
         'autoJoin' => 'auto_join',
@@ -258,6 +262,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'metadata' => 'setMetadata',
         'unsetMetadataFields' => 'setUnsetMetadataFields',
         'categoryId' => 'setCategoryId',
+        'accessSettings' => 'setAccessSettings',
         'activityDurationAfterPublishing' => 'setActivityDurationAfterPublishing',
         'joinOnce' => 'setJoinOnce',
         'autoJoin' => 'setAutoJoin',
@@ -285,6 +290,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'metadata' => 'getMetadata',
         'unsetMetadataFields' => 'getUnsetMetadataFields',
         'categoryId' => 'getCategoryId',
+        'accessSettings' => 'getAccessSettings',
         'activityDurationAfterPublishing' => 'getActivityDurationAfterPublishing',
         'joinOnce' => 'getJoinOnce',
         'autoJoin' => 'getAutoJoin',
@@ -403,6 +409,7 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('unsetMetadataFields', $data ?? [], null);
         $this->setIfExists('categoryId', $data ?? [], null);
+        $this->setIfExists('accessSettings', $data ?? [], null);
         $this->setIfExists('activityDurationAfterPublishing', $data ?? [], null);
         $this->setIfExists('joinOnce', $data ?? [], null);
         $this->setIfExists('autoJoin', $data ?? [], null);
@@ -796,6 +803,33 @@ class CampaignsUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['categoryId'] = $categoryId;
+
+        return $this;
+    }
+
+    /**
+     * Gets accessSettings
+     *
+     * @return \OpenAPI\Client\Model\AccessSettings|null
+     */
+    public function getAccessSettings()
+    {
+        return $this->container['accessSettings'];
+    }
+
+    /**
+     * Sets accessSettings
+     *
+     * @param \OpenAPI\Client\Model\AccessSettings|null $accessSettings accessSettings
+     *
+     * @return self
+     */
+    public function setAccessSettings($accessSettings)
+    {
+        if (is_null($accessSettings)) {
+            throw new \InvalidArgumentException('non-nullable accessSettings cannot be null');
+        }
+        $this->container['accessSettings'] = $accessSettings;
 
         return $this;
     }

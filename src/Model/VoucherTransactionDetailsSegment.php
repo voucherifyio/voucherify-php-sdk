@@ -311,7 +311,7 @@ class VoucherTransactionDetailsSegment implements ModelInterface, ArrayAccess, \
     /**
      * Sets id
      *
-     * @param string|null $id id
+     * @param string|null $id Unique identifier of the segment.
      *
      * @return self
      */
@@ -345,7 +345,7 @@ class VoucherTransactionDetailsSegment implements ModelInterface, ArrayAccess, \
     /**
      * Sets name
      *
-     * @param string|null $name name
+     * @param string|null $name Name of the segment.
      *
      * @return self
      */

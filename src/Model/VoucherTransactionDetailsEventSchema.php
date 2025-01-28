@@ -311,7 +311,7 @@ class VoucherTransactionDetailsEventSchema implements ModelInterface, ArrayAcces
     /**
      * Sets id
      *
-     * @param string|null $id Unique metadata schema ID.
+     * @param string|null $id Unique identifier of the metadata schema.
      *
      * @return self
      */
@@ -345,7 +345,7 @@ class VoucherTransactionDetailsEventSchema implements ModelInterface, ArrayAcces
     /**
      * Sets name
      *
-     * @param string|null $name Type of custom event.
+     * @param string|null $name Type of the custom event.
      *
      * @return self
      */

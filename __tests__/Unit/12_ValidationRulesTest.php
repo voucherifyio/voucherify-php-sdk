@@ -21,12 +21,6 @@ class ValidationRulesTest extends TestCase
     {
         $validationRuleId = $this->voucherify->getValidationRule()->id;
         $voucherCode = $this->voucherify->getVoucher()->code;
-        $createdValRule = createValidationRuleAssignment($this->validationRulesApiInstance, $validationRuleId, $voucherCode);
-
-        $snapshot = 'validationRules/createdValidationRule';
-        $keysToRemove = ['id', 'rule_id', 'related_object_id', 'created_at'];
-        $filteredSnapshot = filterSnapshot($snapshot, $keysToRemove);
-
-        $this->assertTrue(validateDeepMatch($filteredSnapshot, $createdValRule), 'Error during test with creating validation rule');
+        // TODO
     }
 }

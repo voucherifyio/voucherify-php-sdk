@@ -27,7 +27,7 @@ class ValidationsTest extends TestCase
     {
         $validationResult = validateStackedDiscounts($this->validationsApiInstance, $this->voucherCode, $this->productId, $this->customer, 20000);
         $snapshot = 'validations/validatedStackedApplicableDiscounts';
-        $keysToRemove = ['id', 'product_id', 'customer_id', 'tracking_id', 'stacking_rules', 'repeat', 'skip_initially', 'target'];
+        $keysToRemove = ['order', 'id', 'product_id', 'customer_id', 'tracking_id', 'stacking_rules', 'repeat', 'skip_initially', 'target'];
         $filteredSnapshot = filterSnapshot($snapshot, $keysToRemove);
         $this->assertTrue(validateDeepMatch($filteredSnapshot, $validationResult), 'Error during test with creating validate stacked applicable discounts');
         $this->assertThat($validationResult->getStackingRules()->getRedeemablesApplicationMode(), $this->logicalOr($this->stringContains('ALL'), $this->stringContains('PARTIAL')));

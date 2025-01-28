@@ -109,8 +109,8 @@ $apiInstance = new OpenAPI\Client\Api\BinApi(
     $config
 );
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
-$order = new \OpenAPI\Client\Model\ParameterOrderListBin(); // ParameterOrderListBin | Orders the bin entries according the date and time when they were moved to the bin or according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order.
-$startingAfterId = 'startingAfterId_example'; // string | A cursor for pagination. It retrieves the events starting after an event with the given ID.
+$order = new \OpenAPI\Client\Model\ParameterOrderListBin(); // ParameterOrderListBin | Orders the bin entries according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order.
+$startingAfterId = 'startingAfterId_example'; // string | A cursor for pagination. It retrieves the results starting after a result with the given ID.
 $filters = new \OpenAPI\Client\Model\ParameterFiltersListBin(); // ParameterFiltersListBin | Filters for listing bin entries.
 
 try {
@@ -126,8 +126,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
-| **order** | [**ParameterOrderListBin**](../Model/.md)| Orders the bin entries according the date and time when they were moved to the bin or according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order. | [optional] |
-| **startingAfterId** | **string**| A cursor for pagination. It retrieves the events starting after an event with the given ID. | [optional] |
+| **order** | [**ParameterOrderListBin**](../Model/.md)| Orders the bin entries according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order. | [optional] |
+| **startingAfterId** | **string**| A cursor for pagination. It retrieves the results starting after a result with the given ID. | [optional] |
 | **filters** | [**ParameterFiltersListBin**](../Model/.md)| Filters for listing bin entries. | [optional] |
 
 ### Return type

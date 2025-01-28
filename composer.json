@@ -1,6 +1,6 @@
 {
     "name": "rspective/voucherify",
-    "version": "5.0.2",
+    "version": "5.0.3",
     "description": "Voucherify promotion engine REST API. Please see https://docs.voucherify.io/docs for more details.",
     "keywords": [
         "openapitools",

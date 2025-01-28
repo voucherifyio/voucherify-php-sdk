@@ -72,6 +72,7 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'amountLimit' => 'int',
         'aggregatedAmountLimit' => 'int',
         'orderItemIndices' => 'int[]',
+        'orderItemUnits' => '\OpenAPI\Client\Model\InapplicableToOrderItemUnitsItem[]',
         'repeat' => 'int',
         'skipInitially' => 'int',
         'target' => 'string'
@@ -99,6 +100,7 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'amountLimit' => null,
         'aggregatedAmountLimit' => null,
         'orderItemIndices' => null,
+        'orderItemUnits' => null,
         'repeat' => null,
         'skipInitially' => null,
         'target' => null
@@ -124,6 +126,7 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
 		'amountLimit' => true,
 		'aggregatedAmountLimit' => true,
 		'orderItemIndices' => true,
+		'orderItemUnits' => true,
 		'repeat' => true,
 		'skipInitially' => true,
 		'target' => true
@@ -229,6 +232,7 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'amountLimit' => 'amount_limit',
         'aggregatedAmountLimit' => 'aggregated_amount_limit',
         'orderItemIndices' => 'order_item_indices',
+        'orderItemUnits' => 'order_item_units',
         'repeat' => 'repeat',
         'skipInitially' => 'skip_initially',
         'target' => 'target'
@@ -254,6 +258,7 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'amountLimit' => 'setAmountLimit',
         'aggregatedAmountLimit' => 'setAggregatedAmountLimit',
         'orderItemIndices' => 'setOrderItemIndices',
+        'orderItemUnits' => 'setOrderItemUnits',
         'repeat' => 'setRepeat',
         'skipInitially' => 'setSkipInitially',
         'target' => 'setTarget'
@@ -279,6 +284,7 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'amountLimit' => 'getAmountLimit',
         'aggregatedAmountLimit' => 'getAggregatedAmountLimit',
         'orderItemIndices' => 'getOrderItemIndices',
+        'orderItemUnits' => 'getOrderItemUnits',
         'repeat' => 'getRepeat',
         'skipInitially' => 'getSkipInitially',
         'target' => 'getTarget'
@@ -393,6 +399,7 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('amountLimit', $data ?? [], null);
         $this->setIfExists('aggregatedAmountLimit', $data ?? [], null);
         $this->setIfExists('orderItemIndices', $data ?? [], null);
+        $this->setIfExists('orderItemUnits', $data ?? [], null);
         $this->setIfExists('repeat', $data ?? [], null);
         $this->setIfExists('skipInitially', $data ?? [], null);
         $this->setIfExists('target', $data ?? [], null);
@@ -933,7 +940,7 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderItemIndices
      *
-     * @param int[]|null $orderItemIndices Determines the order in which the discount is applied to the products or SKUs sent in the `order` object in the request. The counting begins from `0`.
+     * @param int[]|null $orderItemIndices Lists which order lines are (not) covered by the discount. The order in the array is determined by the sequence of applied discounts, while the numbers correspond to the order lines sent in the `order` object in the request. The first order line is assigned `0`, the second order line is assigned `1`, and so on.
      *
      * @return self
      */
@@ -950,6 +957,40 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['orderItemIndices'] = $orderItemIndices;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderItemUnits
+     *
+     * @return \OpenAPI\Client\Model\InapplicableToOrderItemUnitsItem[]|null
+     */
+    public function getOrderItemUnits()
+    {
+        return $this->container['orderItemUnits'];
+    }
+
+    /**
+     * Sets orderItemUnits
+     *
+     * @param \OpenAPI\Client\Model\InapplicableToOrderItemUnitsItem[]|null $orderItemUnits Lists which units within order lines are covered by the discount. The order line items are listed according to sequence of applied discounts while the `index` corresponds to the order line sent in the `order` object in the request.
+     *
+     * @return self
+     */
+    public function setOrderItemUnits($orderItemUnits)
+    {
+        if (is_null($orderItemUnits)) {
+            array_push($this->openAPINullablesSetToNull, 'orderItemUnits');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('orderItemUnits', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['orderItemUnits'] = $orderItemUnits;
 
         return $this;
     }
@@ -1035,7 +1076,7 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets target
      *
-     * @param string|null $target Determines to which kinds of objects the discount is applicable. `\"ITEM\"` includes products and SKUs.
+     * @param string|null $target Determines to which kinds of objects the discount is applicable. `ITEM` includes products and SKUs. `UNIT` means particular units within an order line.
      *
      * @return self
      */

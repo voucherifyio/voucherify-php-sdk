@@ -65,6 +65,7 @@ class EarningRule implements ModelInterface, ArrayAccess, \JsonSerializable
         'customEvent' => '\OpenAPI\Client\Model\EarningRuleCustomEvent',
         'segment' => '\OpenAPI\Client\Model\EarningRuleSegment',
         'loyaltyTier' => '\OpenAPI\Client\Model\EarningRuleLoyaltyTier',
+        'pendingPoints' => '\OpenAPI\Client\Model\EarningRulePendingPoints',
         'source' => '\OpenAPI\Client\Model\EarningRuleSource',
         'object' => 'string',
         'automationId' => 'string',
@@ -94,6 +95,7 @@ class EarningRule implements ModelInterface, ArrayAccess, \JsonSerializable
         'customEvent' => null,
         'segment' => null,
         'loyaltyTier' => null,
+        'pendingPoints' => null,
         'source' => null,
         'object' => null,
         'automationId' => null,
@@ -121,6 +123,7 @@ class EarningRule implements ModelInterface, ArrayAccess, \JsonSerializable
 		'customEvent' => true,
 		'segment' => true,
 		'loyaltyTier' => true,
+		'pendingPoints' => true,
 		'source' => true,
 		'object' => true,
 		'automationId' => true,
@@ -228,6 +231,7 @@ class EarningRule implements ModelInterface, ArrayAccess, \JsonSerializable
         'customEvent' => 'custom_event',
         'segment' => 'segment',
         'loyaltyTier' => 'loyalty_tier',
+        'pendingPoints' => 'pending_points',
         'source' => 'source',
         'object' => 'object',
         'automationId' => 'automation_id',
@@ -255,6 +259,7 @@ class EarningRule implements ModelInterface, ArrayAccess, \JsonSerializable
         'customEvent' => 'setCustomEvent',
         'segment' => 'setSegment',
         'loyaltyTier' => 'setLoyaltyTier',
+        'pendingPoints' => 'setPendingPoints',
         'source' => 'setSource',
         'object' => 'setObject',
         'automationId' => 'setAutomationId',
@@ -282,6 +287,7 @@ class EarningRule implements ModelInterface, ArrayAccess, \JsonSerializable
         'customEvent' => 'getCustomEvent',
         'segment' => 'getSegment',
         'loyaltyTier' => 'getLoyaltyTier',
+        'pendingPoints' => 'getPendingPoints',
         'source' => 'getSource',
         'object' => 'getObject',
         'automationId' => 'getAutomationId',
@@ -398,6 +404,7 @@ class EarningRule implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('customEvent', $data ?? [], null);
         $this->setIfExists('segment', $data ?? [], null);
         $this->setIfExists('loyaltyTier', $data ?? [], null);
+        $this->setIfExists('pendingPoints', $data ?? [], null);
         $this->setIfExists('source', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'earning_rule');
         $this->setIfExists('automationId', $data ?? [], null);
@@ -697,6 +704,40 @@ class EarningRule implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['loyaltyTier'] = $loyaltyTier;
+
+        return $this;
+    }
+
+    /**
+     * Gets pendingPoints
+     *
+     * @return \OpenAPI\Client\Model\EarningRulePendingPoints|null
+     */
+    public function getPendingPoints()
+    {
+        return $this->container['pendingPoints'];
+    }
+
+    /**
+     * Sets pendingPoints
+     *
+     * @param \OpenAPI\Client\Model\EarningRulePendingPoints|null $pendingPoints pendingPoints
+     *
+     * @return self
+     */
+    public function setPendingPoints($pendingPoints)
+    {
+        if (is_null($pendingPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'pendingPoints');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('pendingPoints', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['pendingPoints'] = $pendingPoints;
 
         return $this;
     }

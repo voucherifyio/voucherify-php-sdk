@@ -338,8 +338,8 @@ class QualificationsOption implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['limit']) && ($this->container['limit'] > 100)) {
-            $invalidProperties[] = "invalid value for 'limit', must be smaller than or equal to 100.";
+        if (!is_null($this->container['limit']) && ($this->container['limit'] > 50)) {
+            $invalidProperties[] = "invalid value for 'limit', must be smaller than or equal to 50.";
         }
 
         $allowedValues = $this->getSortingRuleAllowableValues();
@@ -396,8 +396,8 @@ class QualificationsOption implements ModelInterface, ArrayAccess, \JsonSerializ
             }
         }
 
-        if (!is_null($limit) && ($limit > 100)) {
-            throw new \InvalidArgumentException('invalid value for $limit when calling QualificationsOption., must be smaller than or equal to 100.');
+        if (!is_null($limit) && ($limit > 50)) {
+            throw new \InvalidArgumentException('invalid value for $limit when calling QualificationsOption., must be smaller than or equal to 50.');
         }
 
         $this->container['limit'] = $limit;

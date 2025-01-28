@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltyCardTransactionDetailsLoyaltyTier Class Doc Comment
  *
  * @category Class
- * @description Contains information about the loyalty tier.
+ * @description Contains information about the loyalty tier that is mapped for the earning rule and used in the transaction.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -311,7 +311,7 @@ class LoyaltyCardTransactionDetailsLoyaltyTier implements ModelInterface, ArrayA
     /**
      * Sets id
      *
-     * @param string|null $id id
+     * @param string|null $id Unique identifier of the loyalty tier, assigned by Voucherify.
      *
      * @return self
      */
@@ -345,7 +345,7 @@ class LoyaltyCardTransactionDetailsLoyaltyTier implements ModelInterface, ArrayA
     /**
      * Sets name
      *
-     * @param string|null $name name
+     * @param string|null $name User-defined name of the loyalty tier.
      *
      * @return self
      */

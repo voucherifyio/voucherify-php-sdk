@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **categoryId** | **string** | Unique category ID that this campaign belongs to. Either pass this parameter OR the &#x60;category&#x60;. | [optional]
 **category** | **string** | The category assigned to the campaign. Either pass this parameter OR the &#x60;category_id&#x60;. | [optional]
 **metadata** | **object** | The metadata object stores all custom attributes assigned to the campaign. A set of key/value pairs that you can attach to a campaign object. It can be useful for storing additional information about the campaign in a structured format. | [optional]
+**accessSettings** | [**\OpenAPI\Client\Model\AccessSettings**](AccessSettings.md) |  | [optional]
 **validationRules** | **string[]** | Array containing the ID of the validation rule associated with the promotion tier. | [optional]
 **campaignType** | **string** |  | [optional]
 **voucher** | [**\OpenAPI\Client\Model\CampaignsCreateRequestBodyVoucher**](CampaignsCreateRequestBodyVoucher.md) |  | [optional]

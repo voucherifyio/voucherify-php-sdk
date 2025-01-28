@@ -69,6 +69,8 @@ class VoucherTransactionDetails implements ModelInterface, ArrayAccess, \JsonSer
         'rollback' => '\OpenAPI\Client\Model\VoucherTransactionDetailsRollback',
         'customEvent' => '\OpenAPI\Client\Model\VoucherTransactionDetailsCustomEvent',
         'eventSchema' => '\OpenAPI\Client\Model\VoucherTransactionDetailsEventSchema',
+        'holderLoyaltyTier' => '\OpenAPI\Client\Model\VoucherTransactionDetailsHolderLoyaltyTier',
+        'pendingPoints' => '\OpenAPI\Client\Model\LoyaltyPendingPoints',
         'reward' => '\OpenAPI\Client\Model\VoucherTransactionDetailsReward',
         'sourceVoucher' => '\OpenAPI\Client\Model\SimpleVoucher',
         'destinationVoucher' => '\OpenAPI\Client\Model\SimpleVoucher'
@@ -92,6 +94,8 @@ class VoucherTransactionDetails implements ModelInterface, ArrayAccess, \JsonSer
         'rollback' => null,
         'customEvent' => null,
         'eventSchema' => null,
+        'holderLoyaltyTier' => null,
+        'pendingPoints' => null,
         'reward' => null,
         'sourceVoucher' => null,
         'destinationVoucher' => null
@@ -113,6 +117,8 @@ class VoucherTransactionDetails implements ModelInterface, ArrayAccess, \JsonSer
 		'rollback' => true,
 		'customEvent' => true,
 		'eventSchema' => true,
+		'holderLoyaltyTier' => true,
+		'pendingPoints' => false,
 		'reward' => true,
 		'sourceVoucher' => false,
 		'destinationVoucher' => false
@@ -214,6 +220,8 @@ class VoucherTransactionDetails implements ModelInterface, ArrayAccess, \JsonSer
         'rollback' => 'rollback',
         'customEvent' => 'custom_event',
         'eventSchema' => 'event_schema',
+        'holderLoyaltyTier' => 'holder_loyalty_tier',
+        'pendingPoints' => 'pending_points',
         'reward' => 'reward',
         'sourceVoucher' => 'source_voucher',
         'destinationVoucher' => 'destination_voucher'
@@ -235,6 +243,8 @@ class VoucherTransactionDetails implements ModelInterface, ArrayAccess, \JsonSer
         'rollback' => 'setRollback',
         'customEvent' => 'setCustomEvent',
         'eventSchema' => 'setEventSchema',
+        'holderLoyaltyTier' => 'setHolderLoyaltyTier',
+        'pendingPoints' => 'setPendingPoints',
         'reward' => 'setReward',
         'sourceVoucher' => 'setSourceVoucher',
         'destinationVoucher' => 'setDestinationVoucher'
@@ -256,6 +266,8 @@ class VoucherTransactionDetails implements ModelInterface, ArrayAccess, \JsonSer
         'rollback' => 'getRollback',
         'customEvent' => 'getCustomEvent',
         'eventSchema' => 'getEventSchema',
+        'holderLoyaltyTier' => 'getHolderLoyaltyTier',
+        'pendingPoints' => 'getPendingPoints',
         'reward' => 'getReward',
         'sourceVoucher' => 'getSourceVoucher',
         'destinationVoucher' => 'getDestinationVoucher'
@@ -328,6 +340,8 @@ class VoucherTransactionDetails implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('rollback', $data ?? [], null);
         $this->setIfExists('customEvent', $data ?? [], null);
         $this->setIfExists('eventSchema', $data ?? [], null);
+        $this->setIfExists('holderLoyaltyTier', $data ?? [], null);
+        $this->setIfExists('pendingPoints', $data ?? [], null);
         $this->setIfExists('reward', $data ?? [], null);
         $this->setIfExists('sourceVoucher', $data ?? [], null);
         $this->setIfExists('destinationVoucher', $data ?? [], null);
@@ -704,6 +718,67 @@ class VoucherTransactionDetails implements ModelInterface, ArrayAccess, \JsonSer
             }
         }
         $this->container['eventSchema'] = $eventSchema;
+
+        return $this;
+    }
+
+    /**
+     * Gets holderLoyaltyTier
+     *
+     * @return \OpenAPI\Client\Model\VoucherTransactionDetailsHolderLoyaltyTier|null
+     */
+    public function getHolderLoyaltyTier()
+    {
+        return $this->container['holderLoyaltyTier'];
+    }
+
+    /**
+     * Sets holderLoyaltyTier
+     *
+     * @param \OpenAPI\Client\Model\VoucherTransactionDetailsHolderLoyaltyTier|null $holderLoyaltyTier holderLoyaltyTier
+     *
+     * @return self
+     */
+    public function setHolderLoyaltyTier($holderLoyaltyTier)
+    {
+        if (is_null($holderLoyaltyTier)) {
+            array_push($this->openAPINullablesSetToNull, 'holderLoyaltyTier');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('holderLoyaltyTier', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['holderLoyaltyTier'] = $holderLoyaltyTier;
+
+        return $this;
+    }
+
+    /**
+     * Gets pendingPoints
+     *
+     * @return \OpenAPI\Client\Model\LoyaltyPendingPoints|null
+     */
+    public function getPendingPoints()
+    {
+        return $this->container['pendingPoints'];
+    }
+
+    /**
+     * Sets pendingPoints
+     *
+     * @param \OpenAPI\Client\Model\LoyaltyPendingPoints|null $pendingPoints pendingPoints
+     *
+     * @return self
+     */
+    public function setPendingPoints($pendingPoints)
+    {
+        if (is_null($pendingPoints)) {
+            throw new \InvalidArgumentException('non-nullable pendingPoints cannot be null');
+        }
+        $this->container['pendingPoints'] = $pendingPoints;
 
         return $this;
     }

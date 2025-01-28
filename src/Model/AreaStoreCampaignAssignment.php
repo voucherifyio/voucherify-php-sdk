@@ -61,6 +61,7 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPITypes = [
         'id' => 'string',
         'areaId' => 'string',
+        'allStores' => 'bool',
         'areaStoreId' => 'string',
         'createdAt' => '\DateTime',
         'object' => 'string'
@@ -76,6 +77,7 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPIFormats = [
         'id' => null,
         'areaId' => null,
+        'allStores' => null,
         'areaStoreId' => null,
         'createdAt' => 'date-time',
         'object' => null
@@ -89,6 +91,7 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
     protected static array $openAPINullables = [
         'id' => true,
 		'areaId' => true,
+		'allStores' => true,
 		'areaStoreId' => true,
 		'createdAt' => true,
 		'object' => true
@@ -182,6 +185,7 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
     protected static $attributeMap = [
         'id' => 'id',
         'areaId' => 'area_id',
+        'allStores' => 'all_stores',
         'areaStoreId' => 'area_store_id',
         'createdAt' => 'created_at',
         'object' => 'object'
@@ -195,6 +199,7 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
     protected static $setters = [
         'id' => 'setId',
         'areaId' => 'setAreaId',
+        'allStores' => 'setAllStores',
         'areaStoreId' => 'setAreaStoreId',
         'createdAt' => 'setCreatedAt',
         'object' => 'setObject'
@@ -208,6 +213,7 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
     protected static $getters = [
         'id' => 'getId',
         'areaId' => 'getAreaId',
+        'allStores' => 'getAllStores',
         'areaStoreId' => 'getAreaStoreId',
         'createdAt' => 'getCreatedAt',
         'object' => 'getObject'
@@ -285,6 +291,7 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('areaId', $data ?? [], null);
+        $this->setIfExists('allStores', $data ?? [], null);
         $this->setIfExists('areaStoreId', $data ?? [], null);
         $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'area_store_campaign_assignment');
@@ -405,6 +412,40 @@ class AreaStoreCampaignAssignment implements ModelInterface, ArrayAccess, \JsonS
             }
         }
         $this->container['areaId'] = $areaId;
+
+        return $this;
+    }
+
+    /**
+     * Gets allStores
+     *
+     * @return bool|null
+     */
+    public function getAllStores()
+    {
+        return $this->container['allStores'];
+    }
+
+    /**
+     * Sets allStores
+     *
+     * @param bool|null $allStores Determines if the campaign is assigned to all of the stores in the area, i.e. if an area ID is passed in the `access_settings.assign.area_all_stores_ids` in the request.
+     *
+     * @return self
+     */
+    public function setAllStores($allStores)
+    {
+        if (is_null($allStores)) {
+            array_push($this->openAPINullablesSetToNull, 'allStores');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('allStores', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['allStores'] = $allStores;
 
         return $this;
     }

@@ -723,7 +723,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
     /**
      * Sets unitOffFormula
      *
-     * @param string|null $unitOffFormula unitOffFormula
+     * @param string|null $unitOffFormula Formula used to calculate the number of units.
      *
      * @return self
      */

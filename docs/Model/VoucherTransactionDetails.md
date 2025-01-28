@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **rollback** | [**\OpenAPI\Client\Model\VoucherTransactionDetailsRollback**](VoucherTransactionDetailsRollback.md) |  | [optional]
 **customEvent** | [**\OpenAPI\Client\Model\VoucherTransactionDetailsCustomEvent**](VoucherTransactionDetailsCustomEvent.md) |  | [optional]
 **eventSchema** | [**\OpenAPI\Client\Model\VoucherTransactionDetailsEventSchema**](VoucherTransactionDetailsEventSchema.md) |  | [optional]
+**holderLoyaltyTier** | [**\OpenAPI\Client\Model\VoucherTransactionDetailsHolderLoyaltyTier**](VoucherTransactionDetailsHolderLoyaltyTier.md) |  | [optional]
+**pendingPoints** | [**\OpenAPI\Client\Model\LoyaltyPendingPoints**](LoyaltyPendingPoints.md) |  | [optional]
 **reward** | [**\OpenAPI\Client\Model\VoucherTransactionDetailsReward**](VoucherTransactionDetailsReward.md) |  | [optional]
 **sourceVoucher** | [**\OpenAPI\Client\Model\SimpleVoucher**](SimpleVoucher.md) |  | [optional]
 **destinationVoucher** | [**\OpenAPI\Client\Model\SimpleVoucher**](SimpleVoucher.md) |  | [optional]

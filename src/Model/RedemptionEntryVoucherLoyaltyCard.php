@@ -61,7 +61,8 @@ class RedemptionEntryVoucherLoyaltyCard implements ModelInterface, ArrayAccess, 
         'points' => 'int',
         'balance' => 'int',
         'nextExpirationDate' => '\DateTime',
-        'nextExpirationPoints' => 'int'
+        'nextExpirationPoints' => 'int',
+        'pendingPoints' => 'int'
     ];
 
     /**
@@ -75,7 +76,8 @@ class RedemptionEntryVoucherLoyaltyCard implements ModelInterface, ArrayAccess, 
         'points' => null,
         'balance' => null,
         'nextExpirationDate' => 'date',
-        'nextExpirationPoints' => null
+        'nextExpirationPoints' => null,
+        'pendingPoints' => null
     ];
 
     /**
@@ -87,7 +89,8 @@ class RedemptionEntryVoucherLoyaltyCard implements ModelInterface, ArrayAccess, 
         'points' => true,
 		'balance' => true,
 		'nextExpirationDate' => true,
-		'nextExpirationPoints' => true
+		'nextExpirationPoints' => true,
+		'pendingPoints' => true
     ];
 
     /**
@@ -179,7 +182,8 @@ class RedemptionEntryVoucherLoyaltyCard implements ModelInterface, ArrayAccess, 
         'points' => 'points',
         'balance' => 'balance',
         'nextExpirationDate' => 'next_expiration_date',
-        'nextExpirationPoints' => 'next_expiration_points'
+        'nextExpirationPoints' => 'next_expiration_points',
+        'pendingPoints' => 'pending_points'
     ];
 
     /**
@@ -191,7 +195,8 @@ class RedemptionEntryVoucherLoyaltyCard implements ModelInterface, ArrayAccess, 
         'points' => 'setPoints',
         'balance' => 'setBalance',
         'nextExpirationDate' => 'setNextExpirationDate',
-        'nextExpirationPoints' => 'setNextExpirationPoints'
+        'nextExpirationPoints' => 'setNextExpirationPoints',
+        'pendingPoints' => 'setPendingPoints'
     ];
 
     /**
@@ -203,7 +208,8 @@ class RedemptionEntryVoucherLoyaltyCard implements ModelInterface, ArrayAccess, 
         'points' => 'getPoints',
         'balance' => 'getBalance',
         'nextExpirationDate' => 'getNextExpirationDate',
-        'nextExpirationPoints' => 'getNextExpirationPoints'
+        'nextExpirationPoints' => 'getNextExpirationPoints',
+        'pendingPoints' => 'getPendingPoints'
     ];
 
     /**
@@ -267,6 +273,7 @@ class RedemptionEntryVoucherLoyaltyCard implements ModelInterface, ArrayAccess, 
         $this->setIfExists('balance', $data ?? [], null);
         $this->setIfExists('nextExpirationDate', $data ?? [], null);
         $this->setIfExists('nextExpirationPoints', $data ?? [], null);
+        $this->setIfExists('pendingPoints', $data ?? [], null);
     }
 
     /**
@@ -324,7 +331,7 @@ class RedemptionEntryVoucherLoyaltyCard implements ModelInterface, ArrayAccess, 
     /**
      * Sets points
      *
-     * @param int|null $points Total points incurred over the lifespan of the loyalty card.
+     * @param int|null $points Total points incurred over the lifespan of the loyalty card, minus the expired points.
      *
      * @return self
      */
@@ -443,6 +450,40 @@ class RedemptionEntryVoucherLoyaltyCard implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['nextExpirationPoints'] = $nextExpirationPoints;
+
+        return $this;
+    }
+
+    /**
+     * Gets pendingPoints
+     *
+     * @return int|null
+     */
+    public function getPendingPoints()
+    {
+        return $this->container['pendingPoints'];
+    }
+
+    /**
+     * Sets pendingPoints
+     *
+     * @param int|null $pendingPoints Determines the number of pending points that will be added to the loyalty card after the predefined time.
+     *
+     * @return self
+     */
+    public function setPendingPoints($pendingPoints)
+    {
+        if (is_null($pendingPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'pendingPoints');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('pendingPoints', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['pendingPoints'] = $pendingPoints;
 
         return $this;
     }

@@ -25,5 +25,6 @@ Name | Type | Description | Notes
 **sku** | [**\OpenAPI\Client\Model\OrderCalculatedItemSku**](OrderCalculatedItemSku.md) |  | [optional]
 **object** | **string** | The type of the object represented by JSON. | [optional] [default to 'order_item']
 **metadata** | **object** | A set of custom key/value pairs that you can attach to an item object. It can be useful for storing additional information about the item in a structured format. It can be used to define business validation rules or discount formulas. | [optional]
+**applicationDetails** | [**\OpenAPI\Client\Model\OrderCalculatedItemApplicationDetailsItem[]**](OrderCalculatedItemApplicationDetailsItem.md) | Array containing details about the items that are replaced and the items that are replacements for discounts with the &#x60;REPLACE_ITEMS&#x60; effect. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

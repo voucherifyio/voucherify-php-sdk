@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**customerId** | **string** | Unique customer ID of the customer making the purchase. | [optional]
+**customerId** | **string** | Unique customer identifier of the customer making the purchase. The ID is assigned by Voucherify. | [optional]
 **campaignId** | **string** | Unique campaign ID, assigned by Voucherify. | [optional]
 **tierId** | **string** | Unique tier ID, assigned by Voucherify. | [optional]
 **startDate** | **string** | Activation timestamp defines when the loyalty tier starts to be active in ISO 8601 format. Loyalty tier is inactive before this date. | [optional]

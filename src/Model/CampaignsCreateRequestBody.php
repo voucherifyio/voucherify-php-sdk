@@ -74,6 +74,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'categoryId' => 'string',
         'category' => 'string',
         'metadata' => 'object',
+        'accessSettings' => '\OpenAPI\Client\Model\AccessSettings',
         'validationRules' => 'string[]',
         'campaignType' => 'string',
         'voucher' => '\OpenAPI\Client\Model\CampaignsCreateRequestBodyVoucher',
@@ -105,6 +106,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'categoryId' => null,
         'category' => null,
         'metadata' => null,
+        'accessSettings' => null,
         'validationRules' => null,
         'campaignType' => null,
         'voucher' => null,
@@ -134,6 +136,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
 		'categoryId' => true,
 		'category' => true,
 		'metadata' => true,
+		'accessSettings' => false,
 		'validationRules' => true,
 		'campaignType' => true,
 		'voucher' => true,
@@ -243,6 +246,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'categoryId' => 'category_id',
         'category' => 'category',
         'metadata' => 'metadata',
+        'accessSettings' => 'access_settings',
         'validationRules' => 'validation_rules',
         'campaignType' => 'campaign_type',
         'voucher' => 'voucher',
@@ -272,6 +276,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'categoryId' => 'setCategoryId',
         'category' => 'setCategory',
         'metadata' => 'setMetadata',
+        'accessSettings' => 'setAccessSettings',
         'validationRules' => 'setValidationRules',
         'campaignType' => 'setCampaignType',
         'voucher' => 'setVoucher',
@@ -301,6 +306,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         'categoryId' => 'getCategoryId',
         'category' => 'getCategory',
         'metadata' => 'getMetadata',
+        'accessSettings' => 'getAccessSettings',
         'validationRules' => 'getValidationRules',
         'campaignType' => 'getCampaignType',
         'voucher' => 'getVoucher',
@@ -442,6 +448,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         $this->setIfExists('categoryId', $data ?? [], null);
         $this->setIfExists('category', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('accessSettings', $data ?? [], null);
         $this->setIfExists('validationRules', $data ?? [], null);
         $this->setIfExists('campaignType', $data ?? [], null);
         $this->setIfExists('voucher', $data ?? [], null);
@@ -1058,6 +1065,33 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets accessSettings
+     *
+     * @return \OpenAPI\Client\Model\AccessSettings|null
+     */
+    public function getAccessSettings()
+    {
+        return $this->container['accessSettings'];
+    }
+
+    /**
+     * Sets accessSettings
+     *
+     * @param \OpenAPI\Client\Model\AccessSettings|null $accessSettings accessSettings
+     *
+     * @return self
+     */
+    public function setAccessSettings($accessSettings)
+    {
+        if (is_null($accessSettings)) {
+            throw new \InvalidArgumentException('non-nullable accessSettings cannot be null');
+        }
+        $this->container['accessSettings'] = $accessSettings;
 
         return $this;
     }

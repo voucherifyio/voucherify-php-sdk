@@ -88,9 +88,9 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'object' => 'string',
         'referralProgram' => '\OpenAPI\Client\Model\ReferralProgram',
         'loyaltyTiersExpiration' => '\OpenAPI\Client\Model\LoyaltyTiersExpirationAll',
+        'accessSettingsAssignments' => '\OpenAPI\Client\Model\AccessSettingsCampaignAssignmentsList',
         'promotion' => '\OpenAPI\Client\Model\PromotionTiersList',
-        'validationRulesAssignments' => '\OpenAPI\Client\Model\ValidationRulesAssignmentsList',
-        'accessSettingsAssignments' => '\OpenAPI\Client\Model\AccessSettingsCampaignAssignmentsList'
+        'validationRulesAssignments' => '\OpenAPI\Client\Model\ValidationRulesAssignmentsList'
     ];
 
     /**
@@ -131,9 +131,9 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'object' => null,
         'referralProgram' => null,
         'loyaltyTiersExpiration' => null,
+        'accessSettingsAssignments' => null,
         'promotion' => null,
-        'validationRulesAssignments' => null,
-        'accessSettingsAssignments' => null
+        'validationRulesAssignments' => null
     ];
 
     /**
@@ -172,9 +172,9 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
 		'object' => true,
 		'referralProgram' => false,
 		'loyaltyTiersExpiration' => false,
+		'accessSettingsAssignments' => false,
 		'promotion' => false,
-		'validationRulesAssignments' => false,
-		'accessSettingsAssignments' => false
+		'validationRulesAssignments' => false
     ];
 
     /**
@@ -293,9 +293,9 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'object' => 'object',
         'referralProgram' => 'referral_program',
         'loyaltyTiersExpiration' => 'loyalty_tiers_expiration',
+        'accessSettingsAssignments' => 'access_settings_assignments',
         'promotion' => 'promotion',
-        'validationRulesAssignments' => 'validation_rules_assignments',
-        'accessSettingsAssignments' => 'access_settings_assignments'
+        'validationRulesAssignments' => 'validation_rules_assignments'
     ];
 
     /**
@@ -334,9 +334,9 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'object' => 'setObject',
         'referralProgram' => 'setReferralProgram',
         'loyaltyTiersExpiration' => 'setLoyaltyTiersExpiration',
+        'accessSettingsAssignments' => 'setAccessSettingsAssignments',
         'promotion' => 'setPromotion',
-        'validationRulesAssignments' => 'setValidationRulesAssignments',
-        'accessSettingsAssignments' => 'setAccessSettingsAssignments'
+        'validationRulesAssignments' => 'setValidationRulesAssignments'
     ];
 
     /**
@@ -375,9 +375,9 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         'object' => 'getObject',
         'referralProgram' => 'getReferralProgram',
         'loyaltyTiersExpiration' => 'getLoyaltyTiersExpiration',
+        'accessSettingsAssignments' => 'getAccessSettingsAssignments',
         'promotion' => 'getPromotion',
-        'validationRulesAssignments' => 'getValidationRulesAssignments',
-        'accessSettingsAssignments' => 'getAccessSettingsAssignments'
+        'validationRulesAssignments' => 'getValidationRulesAssignments'
     ];
 
     /**
@@ -572,9 +572,9 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('object', $data ?? [], 'campaign');
         $this->setIfExists('referralProgram', $data ?? [], null);
         $this->setIfExists('loyaltyTiersExpiration', $data ?? [], null);
+        $this->setIfExists('accessSettingsAssignments', $data ?? [], null);
         $this->setIfExists('promotion', $data ?? [], null);
         $this->setIfExists('validationRulesAssignments', $data ?? [], null);
-        $this->setIfExists('accessSettingsAssignments', $data ?? [], null);
     }
 
     /**
@@ -1690,6 +1690,33 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets accessSettingsAssignments
+     *
+     * @return \OpenAPI\Client\Model\AccessSettingsCampaignAssignmentsList|null
+     */
+    public function getAccessSettingsAssignments()
+    {
+        return $this->container['accessSettingsAssignments'];
+    }
+
+    /**
+     * Sets accessSettingsAssignments
+     *
+     * @param \OpenAPI\Client\Model\AccessSettingsCampaignAssignmentsList|null $accessSettingsAssignments accessSettingsAssignments
+     *
+     * @return self
+     */
+    public function setAccessSettingsAssignments($accessSettingsAssignments)
+    {
+        if (is_null($accessSettingsAssignments)) {
+            throw new \InvalidArgumentException('non-nullable accessSettingsAssignments cannot be null');
+        }
+        $this->container['accessSettingsAssignments'] = $accessSettingsAssignments;
+
+        return $this;
+    }
+
+    /**
      * Gets promotion
      *
      * @return \OpenAPI\Client\Model\PromotionTiersList|null
@@ -1739,33 +1766,6 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable validationRulesAssignments cannot be null');
         }
         $this->container['validationRulesAssignments'] = $validationRulesAssignments;
-
-        return $this;
-    }
-
-    /**
-     * Gets accessSettingsAssignments
-     *
-     * @return \OpenAPI\Client\Model\AccessSettingsCampaignAssignmentsList|null
-     */
-    public function getAccessSettingsAssignments()
-    {
-        return $this->container['accessSettingsAssignments'];
-    }
-
-    /**
-     * Sets accessSettingsAssignments
-     *
-     * @param \OpenAPI\Client\Model\AccessSettingsCampaignAssignmentsList|null $accessSettingsAssignments accessSettingsAssignments
-     *
-     * @return self
-     */
-    public function setAccessSettingsAssignments($accessSettingsAssignments)
-    {
-        if (is_null($accessSettingsAssignments)) {
-            throw new \InvalidArgumentException('non-nullable accessSettingsAssignments cannot be null');
-        }
-        $this->container['accessSettingsAssignments'] = $accessSettingsAssignments;
 
         return $this;
     }

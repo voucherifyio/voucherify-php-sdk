@@ -78,7 +78,8 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'product' => '\OpenAPI\Client\Model\OrderCalculatedItemProduct',
         'sku' => '\OpenAPI\Client\Model\OrderCalculatedItemSku',
         'object' => 'string',
-        'metadata' => 'object'
+        'metadata' => 'object',
+        'applicationDetails' => '\OpenAPI\Client\Model\OrderCalculatedItemApplicationDetailsItem[]'
     ];
 
     /**
@@ -109,7 +110,8 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'product' => null,
         'sku' => null,
         'object' => null,
-        'metadata' => null
+        'metadata' => null,
+        'applicationDetails' => null
     ];
 
     /**
@@ -138,7 +140,8 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
 		'product' => true,
 		'sku' => true,
 		'object' => true,
-		'metadata' => true
+		'metadata' => true,
+		'applicationDetails' => true
     ];
 
     /**
@@ -247,7 +250,8 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'product' => 'product',
         'sku' => 'sku',
         'object' => 'object',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
+        'applicationDetails' => 'application_details'
     ];
 
     /**
@@ -276,7 +280,8 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'product' => 'setProduct',
         'sku' => 'setSku',
         'object' => 'setObject',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
+        'applicationDetails' => 'setApplicationDetails'
     ];
 
     /**
@@ -305,7 +310,8 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'product' => 'getProduct',
         'sku' => 'getSku',
         'object' => 'getObject',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
+        'applicationDetails' => 'getApplicationDetails'
     ];
 
     /**
@@ -414,6 +420,7 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('sku', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'order_item');
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('applicationDetails', $data ?? [], null);
     }
 
     /**
@@ -1206,6 +1213,40 @@ class OrderCalculatedItem implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets applicationDetails
+     *
+     * @return \OpenAPI\Client\Model\OrderCalculatedItemApplicationDetailsItem[]|null
+     */
+    public function getApplicationDetails()
+    {
+        return $this->container['applicationDetails'];
+    }
+
+    /**
+     * Sets applicationDetails
+     *
+     * @param \OpenAPI\Client\Model\OrderCalculatedItemApplicationDetailsItem[]|null $applicationDetails Array containing details about the items that are replaced and the items that are replacements for discounts with the `REPLACE_ITEMS` effect.
+     *
+     * @return self
+     */
+    public function setApplicationDetails($applicationDetails)
+    {
+        if (is_null($applicationDetails)) {
+            array_push($this->openAPINullablesSetToNull, 'applicationDetails');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('applicationDetails', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['applicationDetails'] = $applicationDetails;
 
         return $this;
     }

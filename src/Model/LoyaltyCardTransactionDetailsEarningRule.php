@@ -311,7 +311,7 @@ class LoyaltyCardTransactionDetailsEarningRule implements ModelInterface, ArrayA
     /**
      * Sets id
      *
-     * @param string|null $id Unique earning rule ID.
+     * @param string|null $id Unique identifier of an earning rule, assigned by Voucherify.
      *
      * @return self
      */

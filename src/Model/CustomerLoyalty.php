@@ -317,7 +317,7 @@ class CustomerLoyalty implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets points
      *
-     * @param int|null $points Customer's loyalty points.
+     * @param int|null $points Customer's loyalty points minus expired for all loyalty cards which the customer has.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **unitOff** | **float** | Number of units to be granted a full value discount. | [optional]
-**unitOffFormula** | **string** |  | [optional]
+**unitOffFormula** | **string** | Formula used to calculate the number of units. | [optional]
 **effect** | **string** | Defines how the unit is added to the customer&#39;s order. | [optional]
 **unitType** | **string** | The product deemed as free, chosen from product inventory (e.g. time, items). | [optional]
 **product** | [**\OpenAPI\Client\Model\SimpleProductDiscountUnit**](SimpleProductDiscountUnit.md) |  | [optional]

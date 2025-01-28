@@ -346,7 +346,7 @@ class LoyaltyTierExpiration implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets customerId
      *
-     * @param string|null $customerId Unique customer ID of the customer making the purchase.
+     * @param string|null $customerId Unique customer identifier of the customer making the purchase. The ID is assigned by Voucherify.
      *
      * @return self
      */

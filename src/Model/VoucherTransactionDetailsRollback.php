@@ -304,7 +304,7 @@ class VoucherTransactionDetailsRollback implements ModelInterface, ArrayAccess, 
     /**
      * Sets id
      *
-     * @param string|null $id Unique redemption rollback ID.
+     * @param string|null $id Unique identifier of the redemption rollback.
      *
      * @return self
      */
