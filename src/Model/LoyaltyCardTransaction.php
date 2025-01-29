@@ -283,6 +283,7 @@ class LoyaltyCardTransaction implements ModelInterface, ArrayAccess, \JsonSerial
         return self::$openAPIModelName;
     }
 
+    public const TYPE_PENDING_ACTIVATION = 'PENDING_POINTS_ACTIVATION';
     public const TYPE_ACCRUAL = 'POINTS_ACCRUAL';
     public const TYPE_REDEMPTION = 'POINTS_REDEMPTION';
     public const TYPE_REFUND = 'POINTS_REFUND';
@@ -300,6 +301,7 @@ class LoyaltyCardTransaction implements ModelInterface, ArrayAccess, \JsonSerial
     public function getTypeAllowableValues()
     {
         return [
+            self::TYPE_PENDING_ACTIVATION,
             self::TYPE_ACCRUAL,
             self::TYPE_REDEMPTION,
             self::TYPE_REFUND,

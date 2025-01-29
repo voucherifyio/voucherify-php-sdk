@@ -332,7 +332,7 @@ class RedeemableLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets points
      *
-     * @param int|null $points Total points incurred over the lifespan of the loyalty card.
+     * @param int|null $points Total points incurred over the lifespan of the loyalty card, minus the expired points.
      *
      * @return self
      */

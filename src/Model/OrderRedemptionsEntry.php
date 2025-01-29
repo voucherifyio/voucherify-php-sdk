@@ -420,7 +420,7 @@ class OrderRedemptionsEntry implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets rollbackDate
      *
-     * @param \DateTime|null $rollbackDate Timestamp representing the date and tiem when the redemption rollback was created. The value is shown in the ISO 8601 format.
+     * @param \DateTime|null $rollbackDate Timestamp representing the date and time when the redemption rollback was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */

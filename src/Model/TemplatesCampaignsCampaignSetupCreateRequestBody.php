@@ -75,6 +75,7 @@ class TemplatesCampaignsCampaignSetupCreateRequestBody implements ModelInterface
         'categoryId' => 'string',
         'category' => 'string',
         'metadata' => 'object',
+        'accessSettings' => '\OpenAPI\Client\Model\AccessSettings',
         'voucher' => '\OpenAPI\Client\Model\TemplatesCampaignsCampaignSetupCreateRequestBodyVoucher'
     ];
 
@@ -102,6 +103,7 @@ class TemplatesCampaignsCampaignSetupCreateRequestBody implements ModelInterface
         'categoryId' => null,
         'category' => null,
         'metadata' => null,
+        'accessSettings' => null,
         'voucher' => null
     ];
 
@@ -127,6 +129,7 @@ class TemplatesCampaignsCampaignSetupCreateRequestBody implements ModelInterface
 		'categoryId' => true,
 		'category' => true,
 		'metadata' => true,
+		'accessSettings' => false,
 		'voucher' => true
     ];
 
@@ -232,6 +235,7 @@ class TemplatesCampaignsCampaignSetupCreateRequestBody implements ModelInterface
         'categoryId' => 'category_id',
         'category' => 'category',
         'metadata' => 'metadata',
+        'accessSettings' => 'access_settings',
         'voucher' => 'voucher'
     ];
 
@@ -257,6 +261,7 @@ class TemplatesCampaignsCampaignSetupCreateRequestBody implements ModelInterface
         'categoryId' => 'setCategoryId',
         'category' => 'setCategory',
         'metadata' => 'setMetadata',
+        'accessSettings' => 'setAccessSettings',
         'voucher' => 'setVoucher'
     ];
 
@@ -282,6 +287,7 @@ class TemplatesCampaignsCampaignSetupCreateRequestBody implements ModelInterface
         'categoryId' => 'getCategoryId',
         'category' => 'getCategory',
         'metadata' => 'getMetadata',
+        'accessSettings' => 'getAccessSettings',
         'voucher' => 'getVoucher'
     ];
 
@@ -398,6 +404,7 @@ class TemplatesCampaignsCampaignSetupCreateRequestBody implements ModelInterface
         $this->setIfExists('categoryId', $data ?? [], null);
         $this->setIfExists('category', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('accessSettings', $data ?? [], null);
         $this->setIfExists('voucher', $data ?? [], null);
     }
 
@@ -997,6 +1004,33 @@ class TemplatesCampaignsCampaignSetupCreateRequestBody implements ModelInterface
             }
         }
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets accessSettings
+     *
+     * @return \OpenAPI\Client\Model\AccessSettings|null
+     */
+    public function getAccessSettings()
+    {
+        return $this->container['accessSettings'];
+    }
+
+    /**
+     * Sets accessSettings
+     *
+     * @param \OpenAPI\Client\Model\AccessSettings|null $accessSettings accessSettings
+     *
+     * @return self
+     */
+    public function setAccessSettings($accessSettings)
+    {
+        if (is_null($accessSettings)) {
+            throw new \InvalidArgumentException('non-nullable accessSettings cannot be null');
+        }
+        $this->container['accessSettings'] = $accessSettings;
 
         return $this;
     }

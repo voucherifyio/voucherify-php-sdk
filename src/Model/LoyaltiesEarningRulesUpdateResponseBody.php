@@ -66,6 +66,7 @@ class LoyaltiesEarningRulesUpdateResponseBody implements ModelInterface, ArrayAc
         'customEvent' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBodyCustomEvent',
         'segment' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBodySegment',
         'loyaltyTier' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBodyLoyaltyTier',
+        'pendingPoints' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBodyPendingPoints',
         'source' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBodySource',
         'object' => 'string',
         'automationId' => 'string',
@@ -95,6 +96,7 @@ class LoyaltiesEarningRulesUpdateResponseBody implements ModelInterface, ArrayAc
         'customEvent' => null,
         'segment' => null,
         'loyaltyTier' => null,
+        'pendingPoints' => null,
         'source' => null,
         'object' => null,
         'automationId' => null,
@@ -122,6 +124,7 @@ class LoyaltiesEarningRulesUpdateResponseBody implements ModelInterface, ArrayAc
 		'customEvent' => true,
 		'segment' => true,
 		'loyaltyTier' => true,
+		'pendingPoints' => true,
 		'source' => true,
 		'object' => true,
 		'automationId' => true,
@@ -229,6 +232,7 @@ class LoyaltiesEarningRulesUpdateResponseBody implements ModelInterface, ArrayAc
         'customEvent' => 'custom_event',
         'segment' => 'segment',
         'loyaltyTier' => 'loyalty_tier',
+        'pendingPoints' => 'pending_points',
         'source' => 'source',
         'object' => 'object',
         'automationId' => 'automation_id',
@@ -256,6 +260,7 @@ class LoyaltiesEarningRulesUpdateResponseBody implements ModelInterface, ArrayAc
         'customEvent' => 'setCustomEvent',
         'segment' => 'setSegment',
         'loyaltyTier' => 'setLoyaltyTier',
+        'pendingPoints' => 'setPendingPoints',
         'source' => 'setSource',
         'object' => 'setObject',
         'automationId' => 'setAutomationId',
@@ -283,6 +288,7 @@ class LoyaltiesEarningRulesUpdateResponseBody implements ModelInterface, ArrayAc
         'customEvent' => 'getCustomEvent',
         'segment' => 'getSegment',
         'loyaltyTier' => 'getLoyaltyTier',
+        'pendingPoints' => 'getPendingPoints',
         'source' => 'getSource',
         'object' => 'getObject',
         'automationId' => 'getAutomationId',
@@ -399,6 +405,7 @@ class LoyaltiesEarningRulesUpdateResponseBody implements ModelInterface, ArrayAc
         $this->setIfExists('customEvent', $data ?? [], null);
         $this->setIfExists('segment', $data ?? [], null);
         $this->setIfExists('loyaltyTier', $data ?? [], null);
+        $this->setIfExists('pendingPoints', $data ?? [], null);
         $this->setIfExists('source', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'earning_rule');
         $this->setIfExists('automationId', $data ?? [], null);
@@ -698,6 +705,40 @@ class LoyaltiesEarningRulesUpdateResponseBody implements ModelInterface, ArrayAc
             }
         }
         $this->container['loyaltyTier'] = $loyaltyTier;
+
+        return $this;
+    }
+
+    /**
+     * Gets pendingPoints
+     *
+     * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBodyPendingPoints|null
+     */
+    public function getPendingPoints()
+    {
+        return $this->container['pendingPoints'];
+    }
+
+    /**
+     * Sets pendingPoints
+     *
+     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBodyPendingPoints|null $pendingPoints pendingPoints
+     *
+     * @return self
+     */
+    public function setPendingPoints($pendingPoints)
+    {
+        if (is_null($pendingPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'pendingPoints');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('pendingPoints', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['pendingPoints'] = $pendingPoints;
 
         return $this;
     }

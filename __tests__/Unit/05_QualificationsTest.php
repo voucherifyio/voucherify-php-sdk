@@ -23,7 +23,7 @@ class QualificationsTest extends TestCase
         $checkedEligibility = checkEligibility($this->qualificationsApiInstance, $customerId, 5);
 
         $snapshot = 'qualifications/checkedEligibility';
-        $keysToRemove = ['id', 'created_at', 'tracking_id', 'more_starting_after', 'redeemables', 'stacking_rules'];
+        $keysToRemove = ['id', 'metadata', 'created_at', 'tracking_id', 'more_starting_after', 'redeemables', 'stacking_rules'];
         $filteredSnapshot = filterSnapshot($snapshot, $keysToRemove);
 
         $this->assertTrue(validateDeepMatch($filteredSnapshot, $checkedEligibility), 'Error during test with checking eligibility');

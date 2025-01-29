@@ -72,7 +72,13 @@ class LoyaltiesApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
+        'activateMemberPendingPoints' => [
+            'application/json',
+        ],
         'addMember' => [
+            'application/json',
+        ],
+        'cancelMemberPendingPoints' => [
             'application/json',
         ],
         'createEarningRule' => [
@@ -135,6 +141,9 @@ class LoyaltiesApi
         'getRewardDetails' => [
             'application/json',
         ],
+        'listCampaignPendingPoints' => [
+            'application/json',
+        ],
         'listEarningRules' => [
             'application/json',
         ],
@@ -163,6 +172,12 @@ class LoyaltiesApi
             'application/json',
         ],
         'listMemberLoyaltyTier' => [
+            'application/json',
+        ],
+        'listMemberPendingPoints' => [
+            'application/json',
+        ],
+        'listMemberPendingPoints1' => [
             'application/json',
         ],
         'listMemberRewards' => [
@@ -250,6 +265,319 @@ class LoyaltiesApi
     public function getConfig()
     {
         return $this->config;
+    }
+
+    /**
+     * Operation activateMemberPendingPoints
+     *
+     * Activate Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsActivateResponseBody
+     */
+    public function activateMemberPendingPoints($memberId, $pendingPointsId, string $contentType = self::contentTypes['activateMemberPendingPoints'][0])
+    {
+        list($response) = $this->activateMemberPendingPointsWithHttpInfo($memberId, $pendingPointsId, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation activateMemberPendingPointsWithHttpInfo
+     *
+     * Activate Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsActivateResponseBody, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function activateMemberPendingPointsWithHttpInfo($memberId, $pendingPointsId, string $contentType = self::contentTypes['activateMemberPendingPoints'][0])
+    {
+        $request = $this->activateMemberPendingPointsRequest($memberId, $pendingPointsId, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsActivateResponseBody' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsActivateResponseBody' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsActivateResponseBody', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsActivateResponseBody';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsActivateResponseBody',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation activateMemberPendingPointsAsync
+     *
+     * Activate Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function activateMemberPendingPointsAsync($memberId, $pendingPointsId, string $contentType = self::contentTypes['activateMemberPendingPoints'][0])
+    {
+        return $this->activateMemberPendingPointsAsyncWithHttpInfo($memberId, $pendingPointsId, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation activateMemberPendingPointsAsyncWithHttpInfo
+     *
+     * Activate Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function activateMemberPendingPointsAsyncWithHttpInfo($memberId, $pendingPointsId, string $contentType = self::contentTypes['activateMemberPendingPoints'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsActivateResponseBody';
+        $request = $this->activateMemberPendingPointsRequest($memberId, $pendingPointsId, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'activateMemberPendingPoints'
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function activateMemberPendingPointsRequest($memberId, $pendingPointsId, string $contentType = self::contentTypes['activateMemberPendingPoints'][0])
+    {
+
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $memberId when calling activateMemberPendingPoints'
+            );
+        }
+
+        // verify the required parameter 'pendingPointsId' is set
+        if ($pendingPointsId === null || (is_array($pendingPointsId) && count($pendingPointsId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pendingPointsId when calling activateMemberPendingPoints'
+            );
+        }
+
+
+        $resourcePath = '/v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/activate';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($memberId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'memberId' . '}',
+                ObjectSerializer::toPathValue($memberId),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($pendingPointsId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pendingPointsId' . '}',
+                ObjectSerializer::toPathValue($pendingPointsId),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Id');
+        if ($apiKey !== null) {
+            $headers['X-App-Id'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Token');
+        if ($apiKey !== null) {
+            $headers['X-App-Token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
     /**
@@ -503,6 +831,265 @@ class LoyaltiesApi
                 $httpBody = $loyaltiesMembersCreateRequestBody;
             }
         } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Id');
+        if ($apiKey !== null) {
+            $headers['X-App-Id'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Token');
+        if ($apiKey !== null) {
+            $headers['X-App-Token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cancelMemberPendingPoints
+     *
+     * Cancel Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function cancelMemberPendingPoints($memberId, $pendingPointsId, string $contentType = self::contentTypes['cancelMemberPendingPoints'][0])
+    {
+        $this->cancelMemberPendingPointsWithHttpInfo($memberId, $pendingPointsId, $contentType);
+    }
+
+    /**
+     * Operation cancelMemberPendingPointsWithHttpInfo
+     *
+     * Cancel Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cancelMemberPendingPointsWithHttpInfo($memberId, $pendingPointsId, string $contentType = self::contentTypes['cancelMemberPendingPoints'][0])
+    {
+        $request = $this->cancelMemberPendingPointsRequest($memberId, $pendingPointsId, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cancelMemberPendingPointsAsync
+     *
+     * Cancel Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cancelMemberPendingPointsAsync($memberId, $pendingPointsId, string $contentType = self::contentTypes['cancelMemberPendingPoints'][0])
+    {
+        return $this->cancelMemberPendingPointsAsyncWithHttpInfo($memberId, $pendingPointsId, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cancelMemberPendingPointsAsyncWithHttpInfo
+     *
+     * Cancel Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cancelMemberPendingPointsAsyncWithHttpInfo($memberId, $pendingPointsId, string $contentType = self::contentTypes['cancelMemberPendingPoints'][0])
+    {
+        $returnType = '';
+        $request = $this->cancelMemberPendingPointsRequest($memberId, $pendingPointsId, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cancelMemberPendingPoints'
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function cancelMemberPendingPointsRequest($memberId, $pendingPointsId, string $contentType = self::contentTypes['cancelMemberPendingPoints'][0])
+    {
+
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $memberId when calling cancelMemberPendingPoints'
+            );
+        }
+
+        // verify the required parameter 'pendingPointsId' is set
+        if ($pendingPointsId === null || (is_array($pendingPointsId) && count($pendingPointsId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pendingPointsId when calling cancelMemberPendingPoints'
+            );
+        }
+
+
+        $resourcePath = '/v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/cancel';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($memberId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'memberId' . '}',
+                ObjectSerializer::toPathValue($memberId),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($pendingPointsId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pendingPointsId' . '}',
+                ObjectSerializer::toPathValue($pendingPointsId),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1459,7 +2046,7 @@ class LoyaltiesApi
     /**
      * Operation createPointsExpirationExport
      *
-     * Create Points Expiration Export
+     * Export Loyalty Campaign Point Expiration
      *
      * @param  string $campaignId Unique campaign ID or name. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody $loyaltiesPointsExpirationExportCreateRequestBody Specify the data filters, types of data to return and order in which the results should be returned. (optional)
@@ -1478,7 +2065,7 @@ class LoyaltiesApi
     /**
      * Operation createPointsExpirationExportWithHttpInfo
      *
-     * Create Points Expiration Export
+     * Export Loyalty Campaign Point Expiration
      *
      * @param  string $campaignId Unique campaign ID or name. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody $loyaltiesPointsExpirationExportCreateRequestBody Specify the data filters, types of data to return and order in which the results should be returned. (optional)
@@ -1579,7 +2166,7 @@ class LoyaltiesApi
     /**
      * Operation createPointsExpirationExportAsync
      *
-     * Create Points Expiration Export
+     * Export Loyalty Campaign Point Expiration
      *
      * @param  string $campaignId Unique campaign ID or name. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody $loyaltiesPointsExpirationExportCreateRequestBody Specify the data filters, types of data to return and order in which the results should be returned. (optional)
@@ -1601,7 +2188,7 @@ class LoyaltiesApi
     /**
      * Operation createPointsExpirationExportAsyncWithHttpInfo
      *
-     * Create Points Expiration Export
+     * Export Loyalty Campaign Point Expiration
      *
      * @param  string $campaignId Unique campaign ID or name. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateRequestBody $loyaltiesPointsExpirationExportCreateRequestBody Specify the data filters, types of data to return and order in which the results should be returned. (optional)
@@ -2900,7 +3487,7 @@ class LoyaltiesApi
      * Disable Earning Rule
      *
      * @param  string $campaignId Unique campaign ID or name. (required)
-     * @param  string $earningRuleId Unique earning rule ID. (required)
+     * @param  string $earningRuleId Unique identifier of an earning rule, assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -2919,7 +3506,7 @@ class LoyaltiesApi
      * Disable Earning Rule
      *
      * @param  string $campaignId Unique campaign ID or name. (required)
-     * @param  string $earningRuleId Unique earning rule ID. (required)
+     * @param  string $earningRuleId Unique identifier of an earning rule, assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -3020,7 +3607,7 @@ class LoyaltiesApi
      * Disable Earning Rule
      *
      * @param  string $campaignId Unique campaign ID or name. (required)
-     * @param  string $earningRuleId Unique earning rule ID. (required)
+     * @param  string $earningRuleId Unique identifier of an earning rule, assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3042,7 +3629,7 @@ class LoyaltiesApi
      * Disable Earning Rule
      *
      * @param  string $campaignId Unique campaign ID or name. (required)
-     * @param  string $earningRuleId Unique earning rule ID. (required)
+     * @param  string $earningRuleId Unique identifier of an earning rule, assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3093,7 +3680,7 @@ class LoyaltiesApi
      * Create request for operation 'disableEarningRule'
      *
      * @param  string $campaignId Unique campaign ID or name. (required)
-     * @param  string $earningRuleId Unique earning rule ID. (required)
+     * @param  string $earningRuleId Unique identifier of an earning rule, assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3213,7 +3800,7 @@ class LoyaltiesApi
      * Enable Earning Rule
      *
      * @param  string $campaignId Unique campaign ID or name. (required)
-     * @param  string $earningRuleId Unique earning rule ID. (required)
+     * @param  string $earningRuleId Unique identifier of an earning rule, assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -3232,7 +3819,7 @@ class LoyaltiesApi
      * Enable Earning Rule
      *
      * @param  string $campaignId Unique campaign ID or name. (required)
-     * @param  string $earningRuleId Unique earning rule ID. (required)
+     * @param  string $earningRuleId Unique identifier of an earning rule, assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -3333,7 +3920,7 @@ class LoyaltiesApi
      * Enable Earning Rule
      *
      * @param  string $campaignId Unique campaign ID or name. (required)
-     * @param  string $earningRuleId Unique earning rule ID. (required)
+     * @param  string $earningRuleId Unique identifier of an earning rule, assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3355,7 +3942,7 @@ class LoyaltiesApi
      * Enable Earning Rule
      *
      * @param  string $campaignId Unique campaign ID or name. (required)
-     * @param  string $earningRuleId Unique earning rule ID. (required)
+     * @param  string $earningRuleId Unique identifier of an earning rule, assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3406,7 +3993,7 @@ class LoyaltiesApi
      * Create request for operation 'enableEarningRule'
      *
      * @param  string $campaignId Unique campaign ID or name. (required)
-     * @param  string $earningRuleId Unique earning rule ID. (required)
+     * @param  string $earningRuleId Unique identifier of an earning rule, assigned by Voucherify. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6548,6 +7135,350 @@ class LoyaltiesApi
             $resourcePath = str_replace(
                 '{' . 'assignmentId' . '}',
                 ObjectSerializer::toPathValue($assignmentId),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Id');
+        if ($apiKey !== null) {
+            $headers['X-App-Id'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Token');
+        if ($apiKey !== null) {
+            $headers['X-App-Token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listCampaignPendingPoints
+     *
+     * List Campaign Pending Points
+     *
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaignPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\LoyaltiesPendingPointsListResponseBody
+     */
+    public function listCampaignPendingPoints($campaignId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listCampaignPendingPoints'][0])
+    {
+        list($response) = $this->listCampaignPendingPointsWithHttpInfo($campaignId, $limit, $order, $startingAfterId, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation listCampaignPendingPointsWithHttpInfo
+     *
+     * List Campaign Pending Points
+     *
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaignPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\LoyaltiesPendingPointsListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listCampaignPendingPointsWithHttpInfo($campaignId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listCampaignPendingPoints'][0])
+    {
+        $request = $this->listCampaignPendingPointsRequest($campaignId, $limit, $order, $startingAfterId, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\LoyaltiesPendingPointsListResponseBody' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\LoyaltiesPendingPointsListResponseBody' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\LoyaltiesPendingPointsListResponseBody', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\LoyaltiesPendingPointsListResponseBody';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\LoyaltiesPendingPointsListResponseBody',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listCampaignPendingPointsAsync
+     *
+     * List Campaign Pending Points
+     *
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaignPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listCampaignPendingPointsAsync($campaignId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listCampaignPendingPoints'][0])
+    {
+        return $this->listCampaignPendingPointsAsyncWithHttpInfo($campaignId, $limit, $order, $startingAfterId, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listCampaignPendingPointsAsyncWithHttpInfo
+     *
+     * List Campaign Pending Points
+     *
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaignPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listCampaignPendingPointsAsyncWithHttpInfo($campaignId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listCampaignPendingPoints'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\LoyaltiesPendingPointsListResponseBody';
+        $request = $this->listCampaignPendingPointsRequest($campaignId, $limit, $order, $startingAfterId, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listCampaignPendingPoints'
+     *
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaignPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listCampaignPendingPointsRequest($campaignId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listCampaignPendingPoints'][0])
+    {
+
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $campaignId when calling listCampaignPendingPoints'
+            );
+        }
+
+        if ($limit !== null && $limit > 100) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling LoyaltiesApi.listCampaignPendingPoints, must be smaller than or equal to 100.');
+        }
+        if ($limit !== null && $limit < 1) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling LoyaltiesApi.listCampaignPendingPoints, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+        $resourcePath = '/v1/loyalties/{campaignId}/pending-points';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $order,
+            'order', // param base name
+            'ParameterOrderListPendingPoints', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $startingAfterId,
+            'starting_after_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($campaignId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'campaignId' . '}',
+                ObjectSerializer::toPathValue($campaignId),
                 $resourcePath
             );
         }
@@ -10003,6 +10934,714 @@ class LoyaltiesApi
     }
 
     /**
+     * Operation listMemberPendingPoints
+     *
+     * List Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody
+     */
+    public function listMemberPendingPoints($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints'][0])
+    {
+        list($response) = $this->listMemberPendingPointsWithHttpInfo($memberId, $limit, $order, $startingAfterId, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation listMemberPendingPointsWithHttpInfo
+     *
+     * List Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listMemberPendingPointsWithHttpInfo($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints'][0])
+    {
+        $request = $this->listMemberPendingPointsRequest($memberId, $limit, $order, $startingAfterId, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listMemberPendingPointsAsync
+     *
+     * List Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listMemberPendingPointsAsync($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints'][0])
+    {
+        return $this->listMemberPendingPointsAsyncWithHttpInfo($memberId, $limit, $order, $startingAfterId, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listMemberPendingPointsAsyncWithHttpInfo
+     *
+     * List Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listMemberPendingPointsAsyncWithHttpInfo($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody';
+        $request = $this->listMemberPendingPointsRequest($memberId, $limit, $order, $startingAfterId, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listMemberPendingPoints'
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listMemberPendingPointsRequest($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints'][0])
+    {
+
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $memberId when calling listMemberPendingPoints'
+            );
+        }
+
+        if ($limit !== null && $limit > 100) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling LoyaltiesApi.listMemberPendingPoints, must be smaller than or equal to 100.');
+        }
+        if ($limit !== null && $limit < 1) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling LoyaltiesApi.listMemberPendingPoints, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+        $resourcePath = '/v1/loyalties/members/{memberId}/pending-points';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $order,
+            'order', // param base name
+            'ParameterOrderListPendingPoints', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $startingAfterId,
+            'starting_after_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($memberId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'memberId' . '}',
+                ObjectSerializer::toPathValue($memberId),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Id');
+        if ($apiKey !== null) {
+            $headers['X-App-Id'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Token');
+        if ($apiKey !== null) {
+            $headers['X-App-Token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listMemberPendingPoints1
+     *
+     * List Member Pending Points
+     *
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberPendingPoints1'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody
+     */
+    public function listMemberPendingPoints1($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints1'][0])
+    {
+        list($response) = $this->listMemberPendingPoints1WithHttpInfo($campaignId, $memberId, $limit, $order, $startingAfterId, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation listMemberPendingPoints1WithHttpInfo
+     *
+     * List Member Pending Points
+     *
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberPendingPoints1'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listMemberPendingPoints1WithHttpInfo($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints1'][0])
+    {
+        $request = $this->listMemberPendingPoints1Request($campaignId, $memberId, $limit, $order, $startingAfterId, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listMemberPendingPoints1Async
+     *
+     * List Member Pending Points
+     *
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberPendingPoints1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listMemberPendingPoints1Async($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints1'][0])
+    {
+        return $this->listMemberPendingPoints1AsyncWithHttpInfo($campaignId, $memberId, $limit, $order, $startingAfterId, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listMemberPendingPoints1AsyncWithHttpInfo
+     *
+     * List Member Pending Points
+     *
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberPendingPoints1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listMemberPendingPoints1AsyncWithHttpInfo($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints1'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody';
+        $request = $this->listMemberPendingPoints1Request($campaignId, $memberId, $limit, $order, $startingAfterId, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listMemberPendingPoints1'
+     *
+     * @param  string $campaignId Unique campaign ID. (required)
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  int $limit Limit the number of the pending point entries that the API returns in the response. (optional)
+     * @param  ParameterOrderListPendingPoints $order Orders the pending point entries according the pending point entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberPendingPoints1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listMemberPendingPoints1Request($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints1'][0])
+    {
+
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $campaignId when calling listMemberPendingPoints1'
+            );
+        }
+
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $memberId when calling listMemberPendingPoints1'
+            );
+        }
+
+        if ($limit !== null && $limit > 100) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling LoyaltiesApi.listMemberPendingPoints1, must be smaller than or equal to 100.');
+        }
+        if ($limit !== null && $limit < 1) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling LoyaltiesApi.listMemberPendingPoints1, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+        $resourcePath = '/v1/loyalties/{campaignId}/members/{memberId}/pending-points';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $order,
+            'order', // param base name
+            'ParameterOrderListPendingPoints', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $startingAfterId,
+            'starting_after_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($campaignId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'campaignId' . '}',
+                ObjectSerializer::toPathValue($campaignId),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($memberId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'memberId' . '}',
+                ObjectSerializer::toPathValue($memberId),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Id');
+        if ($apiKey !== null) {
+            $headers['X-App-Id'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Token');
+        if ($apiKey !== null) {
+            $headers['X-App-Token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation listMemberRewards
      *
      * List Member Rewards
@@ -10738,7 +12377,7 @@ class LoyaltiesApi
     /**
      * Operation listPointsExpiration
      *
-     * Get Points Expiration
+     * List Loyalty Card Point Expiration
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $memberId Loyalty card code. (required)
@@ -10759,7 +12398,7 @@ class LoyaltiesApi
     /**
      * Operation listPointsExpirationWithHttpInfo
      *
-     * Get Points Expiration
+     * List Loyalty Card Point Expiration
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $memberId Loyalty card code. (required)
@@ -10862,7 +12501,7 @@ class LoyaltiesApi
     /**
      * Operation listPointsExpirationAsync
      *
-     * Get Points Expiration
+     * List Loyalty Card Point Expiration
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $memberId Loyalty card code. (required)
@@ -10886,7 +12525,7 @@ class LoyaltiesApi
     /**
      * Operation listPointsExpirationAsyncWithHttpInfo
      *
-     * Get Points Expiration
+     * List Loyalty Card Point Expiration
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $memberId Loyalty card code. (required)

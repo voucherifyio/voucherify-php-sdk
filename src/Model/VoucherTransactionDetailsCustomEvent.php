@@ -311,7 +311,7 @@ class VoucherTransactionDetailsCustomEvent implements ModelInterface, ArrayAcces
     /**
      * Sets id
      *
-     * @param string|null $id Unique event ID.
+     * @param string|null $id Unique identifier of the event.
      *
      * @return self
      */
@@ -345,7 +345,7 @@ class VoucherTransactionDetailsCustomEvent implements ModelInterface, ArrayAcces
     /**
      * Sets type
      *
-     * @param string|null $type Type of custom event.
+     * @param string|null $type Type of the custom event.
      *
      * @return self
      */

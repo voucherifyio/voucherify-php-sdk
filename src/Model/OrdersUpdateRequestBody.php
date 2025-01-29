@@ -548,7 +548,7 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets discountAmount
      *
-     * @param int|null $discountAmount Sum of all order-level discounts applied to the order.
+     * @param int|null $discountAmount Sum of all order-level discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
      *
      * @return self
      */
@@ -582,7 +582,7 @@ class OrdersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets items
      *
-     * @param \OpenAPI\Client\Model\OrderItem[]|null $items Array of items applied to the order. It can include up 500 items.
+     * @param \OpenAPI\Client\Model\OrderItem[]|null $items Array of items applied to the order. It can include up to 500 items.
      *
      * @return self
      */

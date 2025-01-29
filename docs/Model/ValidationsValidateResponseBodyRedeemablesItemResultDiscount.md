@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **effect** | **string** |  | [optional]
 **isDynamic** | **bool** | Flag indicating whether the discount was calculated using a formula. | [optional]
 **unitOff** | **int** | Number of units to be granted a full value discount. | [optional]
-**unitOffFormula** | **string** |  | [optional]
+**unitOffFormula** | **string** | Formula used to calculate the number of units. | [optional]
 **unitType** | **string** | The product deemed as free, chosen from product inventory (e.g. time, items). | [optional]
 **product** | [**\OpenAPI\Client\Model\ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct**](ValidationsValidateResponseBodyRedeemablesItemResultDiscountProduct.md) |  | [optional]
 **sku** | [**\OpenAPI\Client\Model\SimpleSkuDiscountUnit**](SimpleSkuDiscountUnit.md) |  | [optional]

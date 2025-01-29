@@ -371,8 +371,8 @@ class BinApi
      * List Bin Entries
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  ParameterOrderListBin $order Orders the bin entries according the date and time when they were moved to the bin or according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  ParameterOrderListBin $order Orders the bin entries according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
      * @param  ParameterFiltersListBin $filters Filters for listing bin entries. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBinEntries'] to see the possible values for this operation
      *
@@ -392,8 +392,8 @@ class BinApi
      * List Bin Entries
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  ParameterOrderListBin $order Orders the bin entries according the date and time when they were moved to the bin or according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  ParameterOrderListBin $order Orders the bin entries according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
      * @param  ParameterFiltersListBin $filters Filters for listing bin entries. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBinEntries'] to see the possible values for this operation
      *
@@ -495,8 +495,8 @@ class BinApi
      * List Bin Entries
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  ParameterOrderListBin $order Orders the bin entries according the date and time when they were moved to the bin or according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  ParameterOrderListBin $order Orders the bin entries according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
      * @param  ParameterFiltersListBin $filters Filters for listing bin entries. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBinEntries'] to see the possible values for this operation
      *
@@ -519,8 +519,8 @@ class BinApi
      * List Bin Entries
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  ParameterOrderListBin $order Orders the bin entries according the date and time when they were moved to the bin or according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  ParameterOrderListBin $order Orders the bin entries according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
      * @param  ParameterFiltersListBin $filters Filters for listing bin entries. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBinEntries'] to see the possible values for this operation
      *
@@ -572,8 +572,8 @@ class BinApi
      * Create request for operation 'listBinEntries'
      *
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
-     * @param  ParameterOrderListBin $order Orders the bin entries according the date and time when they were moved to the bin or according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  string $startingAfterId A cursor for pagination. It retrieves the events starting after an event with the given ID. (optional)
+     * @param  ParameterOrderListBin $order Orders the bin entries according to the bin entry ID. The dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the results starting after a result with the given ID. (optional)
      * @param  ParameterFiltersListBin $filters Filters for listing bin entries. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listBinEntries'] to see the possible values for this operation
      *

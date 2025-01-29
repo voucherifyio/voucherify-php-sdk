@@ -70,7 +70,6 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
         'appliedDiscountAmount' => 'int',
         'itemsAppliedDiscountAmount' => 'int',
         'totalAppliedDiscountAmount' => 'int',
-        'items' => '\OpenAPI\Client\Model\OrderCalculatedItem[]',
         'metadata' => 'object',
         'object' => 'string',
         'createdAt' => '\DateTime',
@@ -79,7 +78,8 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
         'referrerId' => 'string',
         'customer' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyOrderCustomer',
         'referrer' => '\OpenAPI\Client\Model\RedemptionsGetResponseBodyOrderReferrer',
-        'redemptions' => 'array<string,\OpenAPI\Client\Model\OrderRedemptionsEntry>'
+        'redemptions' => 'array<string,\OpenAPI\Client\Model\OrderRedemptionsEntry>',
+        'items' => '\OpenAPI\Client\Model\OrderCalculatedItem[]'
     ];
 
     /**
@@ -102,7 +102,6 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
         'appliedDiscountAmount' => null,
         'itemsAppliedDiscountAmount' => null,
         'totalAppliedDiscountAmount' => null,
-        'items' => null,
         'metadata' => null,
         'object' => null,
         'createdAt' => 'date-time',
@@ -111,7 +110,8 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
         'referrerId' => null,
         'customer' => null,
         'referrer' => null,
-        'redemptions' => null
+        'redemptions' => null,
+        'items' => null
     ];
 
     /**
@@ -132,7 +132,6 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
 		'appliedDiscountAmount' => true,
 		'itemsAppliedDiscountAmount' => true,
 		'totalAppliedDiscountAmount' => true,
-		'items' => true,
 		'metadata' => true,
 		'object' => true,
 		'createdAt' => true,
@@ -141,7 +140,8 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
 		'referrerId' => true,
 		'customer' => true,
 		'referrer' => true,
-		'redemptions' => true
+		'redemptions' => true,
+		'items' => true
     ];
 
     /**
@@ -242,7 +242,6 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
         'appliedDiscountAmount' => 'applied_discount_amount',
         'itemsAppliedDiscountAmount' => 'items_applied_discount_amount',
         'totalAppliedDiscountAmount' => 'total_applied_discount_amount',
-        'items' => 'items',
         'metadata' => 'metadata',
         'object' => 'object',
         'createdAt' => 'created_at',
@@ -251,7 +250,8 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
         'referrerId' => 'referrer_id',
         'customer' => 'customer',
         'referrer' => 'referrer',
-        'redemptions' => 'redemptions'
+        'redemptions' => 'redemptions',
+        'items' => 'items'
     ];
 
     /**
@@ -272,7 +272,6 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
         'appliedDiscountAmount' => 'setAppliedDiscountAmount',
         'itemsAppliedDiscountAmount' => 'setItemsAppliedDiscountAmount',
         'totalAppliedDiscountAmount' => 'setTotalAppliedDiscountAmount',
-        'items' => 'setItems',
         'metadata' => 'setMetadata',
         'object' => 'setObject',
         'createdAt' => 'setCreatedAt',
@@ -281,7 +280,8 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
         'referrerId' => 'setReferrerId',
         'customer' => 'setCustomer',
         'referrer' => 'setReferrer',
-        'redemptions' => 'setRedemptions'
+        'redemptions' => 'setRedemptions',
+        'items' => 'setItems'
     ];
 
     /**
@@ -302,7 +302,6 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
         'appliedDiscountAmount' => 'getAppliedDiscountAmount',
         'itemsAppliedDiscountAmount' => 'getItemsAppliedDiscountAmount',
         'totalAppliedDiscountAmount' => 'getTotalAppliedDiscountAmount',
-        'items' => 'getItems',
         'metadata' => 'getMetadata',
         'object' => 'getObject',
         'createdAt' => 'getCreatedAt',
@@ -311,7 +310,8 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
         'referrerId' => 'getReferrerId',
         'customer' => 'getCustomer',
         'referrer' => 'getReferrer',
-        'redemptions' => 'getRedemptions'
+        'redemptions' => 'getRedemptions',
+        'items' => 'getItems'
     ];
 
     /**
@@ -415,7 +415,6 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('appliedDiscountAmount', $data ?? [], null);
         $this->setIfExists('itemsAppliedDiscountAmount', $data ?? [], null);
         $this->setIfExists('totalAppliedDiscountAmount', $data ?? [], null);
-        $this->setIfExists('items', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'order');
         $this->setIfExists('createdAt', $data ?? [], null);
@@ -425,6 +424,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('customer', $data ?? [], null);
         $this->setIfExists('referrer', $data ?? [], null);
         $this->setIfExists('redemptions', $data ?? [], null);
+        $this->setIfExists('items', $data ?? [], null);
     }
 
     /**
@@ -612,7 +612,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Sets amount
      *
-     * @param int|null $amount A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+     * @param int|null $amount This is the sum of the order items' amounts. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
      *
      * @return self
      */
@@ -646,7 +646,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Sets initialAmount
      *
-     * @param int|null $initialAmount A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
+     * @param int|null $initialAmount This is the sum of the order items' amounts before any discount or other effect (e.g. add missing units) is applied. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
      *
      * @return self
      */
@@ -680,7 +680,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Sets discountAmount
      *
-     * @param int|null $discountAmount Sum of all order-level discounts applied to the order.
+     * @param int|null $discountAmount Sum of all order-level discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
      *
      * @return self
      */
@@ -714,7 +714,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Sets itemsDiscountAmount
      *
-     * @param int|null $itemsDiscountAmount Sum of all product-specific discounts applied to the order.
+     * @param int|null $itemsDiscountAmount Sum of all product-specific discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
      *
      * @return self
      */
@@ -748,7 +748,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Sets totalDiscountAmount
      *
-     * @param int|null $totalDiscountAmount Sum of all order-level AND all product-specific discounts applied to the order.
+     * @param int|null $totalDiscountAmount Sum of all order-level AND all product-specific discounts applied to the order. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
      *
      * @return self
      */
@@ -782,7 +782,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Sets totalAmount
      *
-     * @param int|null $totalAmount Order amount after undoing all the discounts through the rollback redemption.
+     * @param int|null $totalAmount Order amount after undoing all the discounts through the rollback redemption. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
      *
      * @return self
      */
@@ -816,7 +816,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Sets appliedDiscountAmount
      *
-     * @param int|null $appliedDiscountAmount This field shows the order-level discount applied.
+     * @param int|null $appliedDiscountAmount This field shows the order-level discount applied. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).
      *
      * @return self
      */
@@ -850,7 +850,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Sets itemsAppliedDiscountAmount
      *
-     * @param int|null $itemsAppliedDiscountAmount Sum of all product-specific discounts applied in a particular request.   `sum(items, i => i.applied_discount_amount)`
+     * @param int|null $itemsAppliedDiscountAmount Sum of all product-specific discounts applied in a particular request. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).   `sum(items, i => i.applied_discount_amount)`
      *
      * @return self
      */
@@ -884,7 +884,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Sets totalAppliedDiscountAmount
      *
-     * @param int|null $totalAppliedDiscountAmount Sum of all order-level AND all product-specific discounts applied in a particular request.   `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount`
+     * @param int|null $totalAppliedDiscountAmount Sum of all order-level AND all product-specific discounts applied in a particular request. It is expressed as an integer in the smallest currency unit (e.g. 100 cents for $1.00).   `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount`
      *
      * @return self
      */
@@ -901,40 +901,6 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
             }
         }
         $this->container['totalAppliedDiscountAmount'] = $totalAppliedDiscountAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets items
-     *
-     * @return \OpenAPI\Client\Model\OrderCalculatedItem[]|null
-     */
-    public function getItems()
-    {
-        return $this->container['items'];
-    }
-
-    /**
-     * Sets items
-     *
-     * @param \OpenAPI\Client\Model\OrderCalculatedItem[]|null $items Array of items applied to the order. It can include up 500 items.
-     *
-     * @return self
-     */
-    public function setItems($items)
-    {
-        if (is_null($items)) {
-            array_push($this->openAPINullablesSetToNull, 'items');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('items', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['items'] = $items;
 
         return $this;
     }
@@ -1098,7 +1064,7 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
     /**
      * Sets customerId
      *
-     * @param string|null $customerId Unique customer ID of the customer making the purchase.
+     * @param string|null $customerId Unique customer identifier of the customer making the purchase. The ID is assigned by Voucherify.
      *
      * @return self
      */
@@ -1251,6 +1217,40 @@ class RedemptionsGetResponseBodyOrder implements ModelInterface, ArrayAccess, \J
             }
         }
         $this->container['redemptions'] = $redemptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets items
+     *
+     * @return \OpenAPI\Client\Model\OrderCalculatedItem[]|null
+     */
+    public function getItems()
+    {
+        return $this->container['items'];
+    }
+
+    /**
+     * Sets items
+     *
+     * @param \OpenAPI\Client\Model\OrderCalculatedItem[]|null $items Array of items applied to the order. It can include up 500 items.
+     *
+     * @return self
+     */
+    public function setItems($items)
+    {
+        if (is_null($items)) {
+            array_push($this->openAPINullablesSetToNull, 'items');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('items', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['items'] = $items;
 
         return $this;
     }

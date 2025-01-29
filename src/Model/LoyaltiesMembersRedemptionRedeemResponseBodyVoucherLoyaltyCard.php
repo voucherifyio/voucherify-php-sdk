@@ -62,7 +62,8 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard implements 
         'points' => 'int',
         'balance' => 'int',
         'nextExpirationDate' => '\DateTime',
-        'nextExpirationPoints' => 'int'
+        'nextExpirationPoints' => 'int',
+        'pendingPoints' => 'int'
     ];
 
     /**
@@ -76,7 +77,8 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard implements 
         'points' => null,
         'balance' => null,
         'nextExpirationDate' => 'date',
-        'nextExpirationPoints' => null
+        'nextExpirationPoints' => null,
+        'pendingPoints' => null
     ];
 
     /**
@@ -88,7 +90,8 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard implements 
         'points' => true,
 		'balance' => true,
 		'nextExpirationDate' => true,
-		'nextExpirationPoints' => true
+		'nextExpirationPoints' => true,
+		'pendingPoints' => true
     ];
 
     /**
@@ -180,7 +183,8 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard implements 
         'points' => 'points',
         'balance' => 'balance',
         'nextExpirationDate' => 'next_expiration_date',
-        'nextExpirationPoints' => 'next_expiration_points'
+        'nextExpirationPoints' => 'next_expiration_points',
+        'pendingPoints' => 'pending_points'
     ];
 
     /**
@@ -192,7 +196,8 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard implements 
         'points' => 'setPoints',
         'balance' => 'setBalance',
         'nextExpirationDate' => 'setNextExpirationDate',
-        'nextExpirationPoints' => 'setNextExpirationPoints'
+        'nextExpirationPoints' => 'setNextExpirationPoints',
+        'pendingPoints' => 'setPendingPoints'
     ];
 
     /**
@@ -204,7 +209,8 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard implements 
         'points' => 'getPoints',
         'balance' => 'getBalance',
         'nextExpirationDate' => 'getNextExpirationDate',
-        'nextExpirationPoints' => 'getNextExpirationPoints'
+        'nextExpirationPoints' => 'getNextExpirationPoints',
+        'pendingPoints' => 'getPendingPoints'
     ];
 
     /**
@@ -268,6 +274,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard implements 
         $this->setIfExists('balance', $data ?? [], null);
         $this->setIfExists('nextExpirationDate', $data ?? [], null);
         $this->setIfExists('nextExpirationPoints', $data ?? [], null);
+        $this->setIfExists('pendingPoints', $data ?? [], null);
     }
 
     /**
@@ -325,7 +332,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard implements 
     /**
      * Sets points
      *
-     * @param int|null $points Total points incurred over the lifespan of the loyalty card.
+     * @param int|null $points Total points incurred over the lifespan of the loyalty card, minus the expired points.
      *
      * @return self
      */
@@ -444,6 +451,40 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard implements 
             }
         }
         $this->container['nextExpirationPoints'] = $nextExpirationPoints;
+
+        return $this;
+    }
+
+    /**
+     * Gets pendingPoints
+     *
+     * @return int|null
+     */
+    public function getPendingPoints()
+    {
+        return $this->container['pendingPoints'];
+    }
+
+    /**
+     * Sets pendingPoints
+     *
+     * @param int|null $pendingPoints Determines the number of pending points that will be added to the loyalty card after the predefined time.
+     *
+     * @return self
+     */
+    public function setPendingPoints($pendingPoints)
+    {
+        if (is_null($pendingPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'pendingPoints');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('pendingPoints', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['pendingPoints'] = $pendingPoints;
 
         return $this;
     }
