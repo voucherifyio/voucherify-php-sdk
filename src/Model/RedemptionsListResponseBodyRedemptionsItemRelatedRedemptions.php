@@ -81,7 +81,7 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptions implements Mo
       */
     protected static array $openAPINullables = [
         'rollbacks' => false,
-		'redemptions' => true
+		'redemptions' => false
     ];
 
     /**
@@ -344,14 +344,7 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptions implements Mo
     public function setRedemptions($redemptions)
     {
         if (is_null($redemptions)) {
-            array_push($this->openAPINullablesSetToNull, 'redemptions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('redemptions', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable redemptions cannot be null');
         }
         $this->container['redemptions'] = $redemptions;
 

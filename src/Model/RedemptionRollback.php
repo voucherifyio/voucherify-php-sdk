@@ -70,7 +70,6 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
         'reason' => 'string',
         'result' => 'string',
         'status' => 'string',
-        'relatedRedemptions' => '\OpenAPI\Client\Model\RedemptionRollbackRelatedRedemptions',
         'failureCode' => 'string',
         'failureMessage' => 'string',
         'order' => '\OpenAPI\Client\Model\OrderCalculated',
@@ -82,7 +81,8 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
         'promotionTier' => '\OpenAPI\Client\Model\PromotionTier',
         'reward' => '\OpenAPI\Client\Model\RedemptionRewardResult',
         'gift' => '\OpenAPI\Client\Model\RedemptionRollbackGift',
-        'loyaltyCard' => '\OpenAPI\Client\Model\RedemptionRollbackLoyaltyCard'
+        'loyaltyCard' => '\OpenAPI\Client\Model\RedemptionRollbackLoyaltyCard',
+        'relatedRedemptions' => '\OpenAPI\Client\Model\RedemptionRollbackRelatedRedemptions'
     ];
 
     /**
@@ -104,7 +104,6 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
         'reason' => null,
         'result' => null,
         'status' => null,
-        'relatedRedemptions' => null,
         'failureCode' => null,
         'failureMessage' => null,
         'order' => null,
@@ -116,7 +115,8 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
         'promotionTier' => null,
         'reward' => null,
         'gift' => null,
-        'loyaltyCard' => null
+        'loyaltyCard' => null,
+        'relatedRedemptions' => null
     ];
 
     /**
@@ -136,7 +136,6 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
 		'reason' => true,
 		'result' => true,
 		'status' => true,
-		'relatedRedemptions' => true,
 		'failureCode' => true,
 		'failureMessage' => true,
 		'order' => false,
@@ -148,7 +147,8 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
 		'promotionTier' => false,
 		'reward' => false,
 		'gift' => true,
-		'loyaltyCard' => true
+		'loyaltyCard' => true,
+		'relatedRedemptions' => true
     ];
 
     /**
@@ -248,7 +248,6 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
         'reason' => 'reason',
         'result' => 'result',
         'status' => 'status',
-        'relatedRedemptions' => 'related_redemptions',
         'failureCode' => 'failure_code',
         'failureMessage' => 'failure_message',
         'order' => 'order',
@@ -260,7 +259,8 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
         'promotionTier' => 'promotion_tier',
         'reward' => 'reward',
         'gift' => 'gift',
-        'loyaltyCard' => 'loyalty_card'
+        'loyaltyCard' => 'loyalty_card',
+        'relatedRedemptions' => 'related_redemptions'
     ];
 
     /**
@@ -280,7 +280,6 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
         'reason' => 'setReason',
         'result' => 'setResult',
         'status' => 'setStatus',
-        'relatedRedemptions' => 'setRelatedRedemptions',
         'failureCode' => 'setFailureCode',
         'failureMessage' => 'setFailureMessage',
         'order' => 'setOrder',
@@ -292,7 +291,8 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
         'promotionTier' => 'setPromotionTier',
         'reward' => 'setReward',
         'gift' => 'setGift',
-        'loyaltyCard' => 'setLoyaltyCard'
+        'loyaltyCard' => 'setLoyaltyCard',
+        'relatedRedemptions' => 'setRelatedRedemptions'
     ];
 
     /**
@@ -312,7 +312,6 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
         'reason' => 'getReason',
         'result' => 'getResult',
         'status' => 'getStatus',
-        'relatedRedemptions' => 'getRelatedRedemptions',
         'failureCode' => 'getFailureCode',
         'failureMessage' => 'getFailureMessage',
         'order' => 'getOrder',
@@ -324,7 +323,8 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
         'promotionTier' => 'getPromotionTier',
         'reward' => 'getReward',
         'gift' => 'getGift',
-        'loyaltyCard' => 'getLoyaltyCard'
+        'loyaltyCard' => 'getLoyaltyCard',
+        'relatedRedemptions' => 'getRelatedRedemptions'
     ];
 
     /**
@@ -455,7 +455,6 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('reason', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('relatedRedemptions', $data ?? [], null);
         $this->setIfExists('failureCode', $data ?? [], null);
         $this->setIfExists('failureMessage', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
@@ -468,6 +467,7 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('reward', $data ?? [], null);
         $this->setIfExists('gift', $data ?? [], null);
         $this->setIfExists('loyaltyCard', $data ?? [], null);
+        $this->setIfExists('relatedRedemptions', $data ?? [], null);
     }
 
     /**
@@ -953,40 +953,6 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Gets relatedRedemptions
-     *
-     * @return \OpenAPI\Client\Model\RedemptionRollbackRelatedRedemptions|null
-     */
-    public function getRelatedRedemptions()
-    {
-        return $this->container['relatedRedemptions'];
-    }
-
-    /**
-     * Sets relatedRedemptions
-     *
-     * @param \OpenAPI\Client\Model\RedemptionRollbackRelatedRedemptions|null $relatedRedemptions relatedRedemptions
-     *
-     * @return self
-     */
-    public function setRelatedRedemptions($relatedRedemptions)
-    {
-        if (is_null($relatedRedemptions)) {
-            array_push($this->openAPINullablesSetToNull, 'relatedRedemptions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relatedRedemptions', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['relatedRedemptions'] = $relatedRedemptions;
-
-        return $this;
-    }
-
-    /**
      * Gets failureCode
      *
      * @return string|null
@@ -1365,6 +1331,40 @@ class RedemptionRollback implements ModelInterface, ArrayAccess, \JsonSerializab
             }
         }
         $this->container['loyaltyCard'] = $loyaltyCard;
+
+        return $this;
+    }
+
+    /**
+     * Gets relatedRedemptions
+     *
+     * @return \OpenAPI\Client\Model\RedemptionRollbackRelatedRedemptions|null
+     */
+    public function getRelatedRedemptions()
+    {
+        return $this->container['relatedRedemptions'];
+    }
+
+    /**
+     * Sets relatedRedemptions
+     *
+     * @param \OpenAPI\Client\Model\RedemptionRollbackRelatedRedemptions|null $relatedRedemptions relatedRedemptions
+     *
+     * @return self
+     */
+    public function setRelatedRedemptions($relatedRedemptions)
+    {
+        if (is_null($relatedRedemptions)) {
+            array_push($this->openAPINullablesSetToNull, 'relatedRedemptions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('relatedRedemptions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['relatedRedemptions'] = $relatedRedemptions;
 
         return $this;
     }

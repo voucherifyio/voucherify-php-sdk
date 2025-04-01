@@ -1169,7 +1169,7 @@ class PublicationsApi
             $filters,
             'filters', // param base name
             'object', // openApiType
-            'form', // style
+            'deepObject', // style
             true, // explode
             false // required
         ) ?? []);

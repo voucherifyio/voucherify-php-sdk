@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ClientValidationsValidateResponseBodyRedeemablesItemResultGift Class Doc Comment
  *
  * @category Class
- * @description Stores the amount of gift card credits to be applied in the redemption.
+ * @description Stores the amount of gift card credits to be applied.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -59,6 +59,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultGift implements 
       * @var string[]
       */
     protected static $openAPITypes = [
+        'balance' => 'int',
         'credits' => 'int'
     ];
 
@@ -70,6 +71,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultGift implements 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'balance' => null,
         'credits' => null
     ];
 
@@ -79,7 +81,8 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultGift implements 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'credits' => true
+        'balance' => true,
+		'credits' => true
     ];
 
     /**
@@ -168,6 +171,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultGift implements 
      * @var string[]
      */
     protected static $attributeMap = [
+        'balance' => 'balance',
         'credits' => 'credits'
     ];
 
@@ -177,6 +181,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultGift implements 
      * @var string[]
      */
     protected static $setters = [
+        'balance' => 'setBalance',
         'credits' => 'setCredits'
     ];
 
@@ -186,6 +191,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultGift implements 
      * @var string[]
      */
     protected static $getters = [
+        'balance' => 'getBalance',
         'credits' => 'getCredits'
     ];
 
@@ -246,6 +252,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultGift implements 
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('balance', $data ?? [], null);
         $this->setIfExists('credits', $data ?? [], null);
     }
 
@@ -292,6 +299,40 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultGift implements 
 
 
     /**
+     * Gets balance
+     *
+     * @return int|null
+     */
+    public function getBalance()
+    {
+        return $this->container['balance'];
+    }
+
+    /**
+     * Sets balance
+     *
+     * @param int|null $balance Available funds at the moment of validation. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+     *
+     * @return self
+     */
+    public function setBalance($balance)
+    {
+        if (is_null($balance)) {
+            array_push($this->openAPINullablesSetToNull, 'balance');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('balance', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['balance'] = $balance;
+
+        return $this;
+    }
+
+    /**
      * Gets credits
      *
      * @return int|null
@@ -304,7 +345,7 @@ class ClientValidationsValidateResponseBodyRedeemablesItemResultGift implements 
     /**
      * Sets credits
      *
-     * @param int|null $credits Total number of gift card credits to be applied in the redemption expressed as the smallest currency unit (e.g. 100 cents for $1.00).
+     * @param int|null $credits Total number of gift card credits to be applied. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */

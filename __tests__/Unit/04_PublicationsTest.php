@@ -22,6 +22,7 @@ class PublicationsTest extends TestCase
         $campaignName = $this->voucherify->getDiscountCampaign()->id;
         $customerId = $this->voucherify->getCustomer()->id;
         $createdPublication = createPublication($this->publicationsApiInstance, $customerId, $campaignName);
+        $createdPublicationLoyalty = createPublication($this->publicationsApiInstance, $customerId, $this->voucherify->getLoyaltyCampaign()->id);
 
         $snapshot = 'publications/createdPublication';
         $keysToRemove = ['id', 'created_at', 'customer_id', 'tracking_id', 'source_id', 'vouchers_id', 'code', 'campaign', 'campaign_id', 'url', 'updated_at', 'holder_id', 'referrer_id'];

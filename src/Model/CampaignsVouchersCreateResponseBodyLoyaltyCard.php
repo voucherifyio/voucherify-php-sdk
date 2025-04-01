@@ -63,7 +63,9 @@ class CampaignsVouchersCreateResponseBodyLoyaltyCard implements ModelInterface, 
         'balance' => 'int',
         'nextExpirationDate' => '\DateTime',
         'nextExpirationPoints' => 'int',
-        'pendingPoints' => 'int'
+        'pendingPoints' => 'int',
+        'expiredPoints' => 'int',
+        'subtractedPoints' => 'int'
     ];
 
     /**
@@ -78,7 +80,9 @@ class CampaignsVouchersCreateResponseBodyLoyaltyCard implements ModelInterface, 
         'balance' => null,
         'nextExpirationDate' => 'date',
         'nextExpirationPoints' => null,
-        'pendingPoints' => null
+        'pendingPoints' => null,
+        'expiredPoints' => null,
+        'subtractedPoints' => null
     ];
 
     /**
@@ -91,7 +95,9 @@ class CampaignsVouchersCreateResponseBodyLoyaltyCard implements ModelInterface, 
 		'balance' => true,
 		'nextExpirationDate' => true,
 		'nextExpirationPoints' => true,
-		'pendingPoints' => true
+		'pendingPoints' => true,
+		'expiredPoints' => true,
+		'subtractedPoints' => true
     ];
 
     /**
@@ -184,7 +190,9 @@ class CampaignsVouchersCreateResponseBodyLoyaltyCard implements ModelInterface, 
         'balance' => 'balance',
         'nextExpirationDate' => 'next_expiration_date',
         'nextExpirationPoints' => 'next_expiration_points',
-        'pendingPoints' => 'pending_points'
+        'pendingPoints' => 'pending_points',
+        'expiredPoints' => 'expired_points',
+        'subtractedPoints' => 'subtracted_points'
     ];
 
     /**
@@ -197,7 +205,9 @@ class CampaignsVouchersCreateResponseBodyLoyaltyCard implements ModelInterface, 
         'balance' => 'setBalance',
         'nextExpirationDate' => 'setNextExpirationDate',
         'nextExpirationPoints' => 'setNextExpirationPoints',
-        'pendingPoints' => 'setPendingPoints'
+        'pendingPoints' => 'setPendingPoints',
+        'expiredPoints' => 'setExpiredPoints',
+        'subtractedPoints' => 'setSubtractedPoints'
     ];
 
     /**
@@ -210,7 +220,9 @@ class CampaignsVouchersCreateResponseBodyLoyaltyCard implements ModelInterface, 
         'balance' => 'getBalance',
         'nextExpirationDate' => 'getNextExpirationDate',
         'nextExpirationPoints' => 'getNextExpirationPoints',
-        'pendingPoints' => 'getPendingPoints'
+        'pendingPoints' => 'getPendingPoints',
+        'expiredPoints' => 'getExpiredPoints',
+        'subtractedPoints' => 'getSubtractedPoints'
     ];
 
     /**
@@ -275,6 +287,8 @@ class CampaignsVouchersCreateResponseBodyLoyaltyCard implements ModelInterface, 
         $this->setIfExists('nextExpirationDate', $data ?? [], null);
         $this->setIfExists('nextExpirationPoints', $data ?? [], null);
         $this->setIfExists('pendingPoints', $data ?? [], null);
+        $this->setIfExists('expiredPoints', $data ?? [], null);
+        $this->setIfExists('subtractedPoints', $data ?? [], null);
     }
 
     /**
@@ -332,7 +346,7 @@ class CampaignsVouchersCreateResponseBodyLoyaltyCard implements ModelInterface, 
     /**
      * Sets points
      *
-     * @param int|null $points Total points incurred over the lifespan of the loyalty card, minus the expired points.
+     * @param int|null $points Total number of points added to the loyalty card over its lifespan.
      *
      * @return self
      */
@@ -366,7 +380,7 @@ class CampaignsVouchersCreateResponseBodyLoyaltyCard implements ModelInterface, 
     /**
      * Sets balance
      *
-     * @param int|null $balance Points available for reward redemption.
+     * @param int|null $balance Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
      *
      * @return self
      */
@@ -468,7 +482,7 @@ class CampaignsVouchersCreateResponseBodyLoyaltyCard implements ModelInterface, 
     /**
      * Sets pendingPoints
      *
-     * @param int|null $pendingPoints Determines the number of pending points that will be added to the loyalty card after the predefined time.
+     * @param int|null $pendingPoints Shows the number of pending points that will be added to the loyalty card when they are activated automatically or manually.
      *
      * @return self
      */
@@ -485,6 +499,74 @@ class CampaignsVouchersCreateResponseBodyLoyaltyCard implements ModelInterface, 
             }
         }
         $this->container['pendingPoints'] = $pendingPoints;
+
+        return $this;
+    }
+
+    /**
+     * Gets expiredPoints
+     *
+     * @return int|null
+     */
+    public function getExpiredPoints()
+    {
+        return $this->container['expiredPoints'];
+    }
+
+    /**
+     * Sets expiredPoints
+     *
+     * @param int|null $expiredPoints Shows the total number of expired points over the lifetime of the loyalty card.
+     *
+     * @return self
+     */
+    public function setExpiredPoints($expiredPoints)
+    {
+        if (is_null($expiredPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'expiredPoints');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('expiredPoints', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['expiredPoints'] = $expiredPoints;
+
+        return $this;
+    }
+
+    /**
+     * Gets subtractedPoints
+     *
+     * @return int|null
+     */
+    public function getSubtractedPoints()
+    {
+        return $this->container['subtractedPoints'];
+    }
+
+    /**
+     * Sets subtractedPoints
+     *
+     * @param int|null $subtractedPoints Shows the total number of subtracted points over the lifetime of the loyalty card.
+     *
+     * @return self
+     */
+    public function setSubtractedPoints($subtractedPoints)
+    {
+        if (is_null($subtractedPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'subtractedPoints');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('subtractedPoints', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['subtractedPoints'] = $subtractedPoints;
 
         return $this;
     }

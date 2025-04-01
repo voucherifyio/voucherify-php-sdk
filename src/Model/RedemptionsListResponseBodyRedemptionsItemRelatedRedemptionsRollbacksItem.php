@@ -59,7 +59,8 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem 
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'date' => '\DateTime'
+        'date' => '\DateTime',
+        'rollbackOrderMode' => 'string'
     ];
 
     /**
@@ -71,7 +72,8 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem 
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'date' => 'date-time'
+        'date' => 'date-time',
+        'rollbackOrderMode' => null
     ];
 
     /**
@@ -81,7 +83,8 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem 
       */
     protected static array $openAPINullables = [
         'id' => false,
-		'date' => false
+		'date' => false,
+		'rollbackOrderMode' => false
     ];
 
     /**
@@ -171,7 +174,8 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem 
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'date' => 'date'
+        'date' => 'date',
+        'rollbackOrderMode' => 'rollback_order_mode'
     ];
 
     /**
@@ -181,7 +185,8 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem 
      */
     protected static $setters = [
         'id' => 'setId',
-        'date' => 'setDate'
+        'date' => 'setDate',
+        'rollbackOrderMode' => 'setRollbackOrderMode'
     ];
 
     /**
@@ -191,7 +196,8 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem 
      */
     protected static $getters = [
         'id' => 'getId',
-        'date' => 'getDate'
+        'date' => 'getDate',
+        'rollbackOrderMode' => 'getRollbackOrderMode'
     ];
 
     /**
@@ -235,6 +241,21 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem 
         return self::$openAPIModelName;
     }
 
+    public const ROLLBACK_ORDER_MODE_WITH_ORDER = 'WITH_ORDER';
+    public const ROLLBACK_ORDER_MODE_WITHOUT_ORDER = 'WITHOUT_ORDER';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getRollbackOrderModeAllowableValues()
+    {
+        return [
+            self::ROLLBACK_ORDER_MODE_WITH_ORDER,
+            self::ROLLBACK_ORDER_MODE_WITHOUT_ORDER,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -253,6 +274,7 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem 
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('date', $data ?? [], null);
+        $this->setIfExists('rollbackOrderMode', $data ?? [], null);
     }
 
     /**
@@ -281,6 +303,15 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem 
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getRollbackOrderModeAllowableValues();
+        if (!is_null($this->container['rollbackOrderMode']) && !in_array($this->container['rollbackOrderMode'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'rollbackOrderMode', must be one of '%s'",
+                $this->container['rollbackOrderMode'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -347,6 +378,43 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem 
             throw new \InvalidArgumentException('non-nullable date cannot be null');
         }
         $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets rollbackOrderMode
+     *
+     * @return string|null
+     */
+    public function getRollbackOrderMode()
+    {
+        return $this->container['rollbackOrderMode'];
+    }
+
+    /**
+     * Sets rollbackOrderMode
+     *
+     * @param string|null $rollbackOrderMode Defines the rollback mode for the order. `WITH_ORDER` is a default setting. The redemption is rolled back together with the data about the order, including related discount values. `WITHOUT_ORDER` allows rolling the redemption back without affecting order data, including the applied discount values. This is returned only in GET `v1/redemptions/` and GET `v1/redemptions/{redemptionId}` endpoints.
+     *
+     * @return self
+     */
+    public function setRollbackOrderMode($rollbackOrderMode)
+    {
+        if (is_null($rollbackOrderMode)) {
+            throw new \InvalidArgumentException('non-nullable rollbackOrderMode cannot be null');
+        }
+        $allowedValues = $this->getRollbackOrderModeAllowableValues();
+        if (!in_array($rollbackOrderMode, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'rollbackOrderMode', must be one of '%s'",
+                    $rollbackOrderMode,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['rollbackOrderMode'] = $rollbackOrderMode;
 
         return $this;
     }

@@ -59,6 +59,7 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'string',
         'valid' => 'bool',
         'redeemables' => '\OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItem[]',
         'skippedRedeemables' => '\OpenAPI\Client\Model\ValidationsRedeemableSkipped[]',
@@ -77,6 +78,7 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'id' => null,
         'valid' => null,
         'redeemables' => null,
         'skippedRedeemables' => null,
@@ -93,7 +95,8 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'valid' => true,
+        'id' => true,
+		'valid' => true,
 		'redeemables' => true,
 		'skippedRedeemables' => true,
 		'inapplicableRedeemables' => true,
@@ -189,6 +192,7 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'valid' => 'valid',
         'redeemables' => 'redeemables',
         'skippedRedeemables' => 'skipped_redeemables',
@@ -205,6 +209,7 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'valid' => 'setValid',
         'redeemables' => 'setRedeemables',
         'skippedRedeemables' => 'setSkippedRedeemables',
@@ -221,6 +226,7 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'valid' => 'getValid',
         'redeemables' => 'getRedeemables',
         'skippedRedeemables' => 'getSkippedRedeemables',
@@ -288,6 +294,7 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('valid', $data ?? [], null);
         $this->setIfExists('redeemables', $data ?? [], null);
         $this->setIfExists('skippedRedeemables', $data ?? [], null);
@@ -342,6 +349,40 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id Unique identifier of the validation, assigned by Voucherify.
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        if (is_null($id)) {
+            array_push($this->openAPINullablesSetToNull, 'id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets valid

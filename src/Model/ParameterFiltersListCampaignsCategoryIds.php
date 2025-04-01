@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ParameterFiltersListCampaignsCategoryIds Class Doc Comment
  *
  * @category Class
- * @description Filter by categories ids
+ * @description Filter by categories IDs
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

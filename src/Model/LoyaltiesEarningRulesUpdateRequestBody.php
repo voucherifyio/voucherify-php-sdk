@@ -64,6 +64,7 @@ class LoyaltiesEarningRulesUpdateRequestBody implements ModelInterface, ArrayAcc
         'active' => 'bool',
         'startDate' => '\DateTime',
         'expirationDate' => '\DateTime',
+        'pendingPoints' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBodyPendingPoints',
         'validityTimeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
         'validityDayOfWeek' => 'int[]',
         'validityHours' => '\OpenAPI\Client\Model\ValidityHours',
@@ -84,6 +85,7 @@ class LoyaltiesEarningRulesUpdateRequestBody implements ModelInterface, ArrayAcc
         'active' => null,
         'startDate' => 'date-time',
         'expirationDate' => 'date-time',
+        'pendingPoints' => null,
         'validityTimeframe' => null,
         'validityDayOfWeek' => null,
         'validityHours' => null,
@@ -102,6 +104,7 @@ class LoyaltiesEarningRulesUpdateRequestBody implements ModelInterface, ArrayAcc
 		'active' => true,
 		'startDate' => true,
 		'expirationDate' => true,
+		'pendingPoints' => true,
 		'validityTimeframe' => false,
 		'validityDayOfWeek' => true,
 		'validityHours' => false,
@@ -200,6 +203,7 @@ class LoyaltiesEarningRulesUpdateRequestBody implements ModelInterface, ArrayAcc
         'active' => 'active',
         'startDate' => 'start_date',
         'expirationDate' => 'expiration_date',
+        'pendingPoints' => 'pending_points',
         'validityTimeframe' => 'validity_timeframe',
         'validityDayOfWeek' => 'validity_day_of_week',
         'validityHours' => 'validity_hours',
@@ -218,6 +222,7 @@ class LoyaltiesEarningRulesUpdateRequestBody implements ModelInterface, ArrayAcc
         'active' => 'setActive',
         'startDate' => 'setStartDate',
         'expirationDate' => 'setExpirationDate',
+        'pendingPoints' => 'setPendingPoints',
         'validityTimeframe' => 'setValidityTimeframe',
         'validityDayOfWeek' => 'setValidityDayOfWeek',
         'validityHours' => 'setValidityHours',
@@ -236,6 +241,7 @@ class LoyaltiesEarningRulesUpdateRequestBody implements ModelInterface, ArrayAcc
         'active' => 'getActive',
         'startDate' => 'getStartDate',
         'expirationDate' => 'getExpirationDate',
+        'pendingPoints' => 'getPendingPoints',
         'validityTimeframe' => 'getValidityTimeframe',
         'validityDayOfWeek' => 'getValidityDayOfWeek',
         'validityHours' => 'getValidityHours',
@@ -330,6 +336,7 @@ class LoyaltiesEarningRulesUpdateRequestBody implements ModelInterface, ArrayAcc
         $this->setIfExists('active', $data ?? [], null);
         $this->setIfExists('startDate', $data ?? [], null);
         $this->setIfExists('expirationDate', $data ?? [], null);
+        $this->setIfExists('pendingPoints', $data ?? [], null);
         $this->setIfExists('validityTimeframe', $data ?? [], null);
         $this->setIfExists('validityDayOfWeek', $data ?? [], null);
         $this->setIfExists('validityHours', $data ?? [], null);
@@ -578,6 +585,40 @@ class LoyaltiesEarningRulesUpdateRequestBody implements ModelInterface, ArrayAcc
             }
         }
         $this->container['expirationDate'] = $expirationDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets pendingPoints
+     *
+     * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBodyPendingPoints|null
+     */
+    public function getPendingPoints()
+    {
+        return $this->container['pendingPoints'];
+    }
+
+    /**
+     * Sets pendingPoints
+     *
+     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateRequestBodyPendingPoints|null $pendingPoints pendingPoints
+     *
+     * @return self
+     */
+    public function setPendingPoints($pendingPoints)
+    {
+        if (is_null($pendingPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'pendingPoints');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('pendingPoints', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['pendingPoints'] = $pendingPoints;
 
         return $this;
     }

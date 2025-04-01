@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ParameterFiltersListCampaignsCampaignStatus Class Doc Comment
  *
  * @category Class
- * @description Type of the campaign. Allowed values: &#x60;DONE&#x60;, &#x60;IN_PROGRESS&#x60;, &#x60;DRAFT&#x60;, &#x60;FAILED&#x60; &#x60;MODIFYING&#x60;
+ * @description Status of the campaign. Allowed values: &#x60;DONE&#x60;, &#x60;IN_PROGRESS&#x60;, &#x60;DRAFT&#x60;, &#x60;FAILED&#x60; &#x60;MODIFYING&#x60;
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

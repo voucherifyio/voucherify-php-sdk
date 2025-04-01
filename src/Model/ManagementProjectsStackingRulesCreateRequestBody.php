@@ -70,7 +70,8 @@ class ManagementProjectsStackingRulesCreateRequestBody implements ModelInterface
         'initialAmountModeCategories' => 'string[]',
         'discountedAmountModeCategories' => 'string[]',
         'redeemablesApplicationMode' => 'string',
-        'redeemablesSortingRule' => 'string'
+        'redeemablesSortingRule' => 'string',
+        'redeemablesRollbackOrderMode' => 'string'
     ];
 
     /**
@@ -92,7 +93,8 @@ class ManagementProjectsStackingRulesCreateRequestBody implements ModelInterface
         'initialAmountModeCategories' => null,
         'discountedAmountModeCategories' => null,
         'redeemablesApplicationMode' => null,
-        'redeemablesSortingRule' => null
+        'redeemablesSortingRule' => null,
+        'redeemablesRollbackOrderMode' => null
     ];
 
     /**
@@ -112,7 +114,8 @@ class ManagementProjectsStackingRulesCreateRequestBody implements ModelInterface
 		'initialAmountModeCategories' => true,
 		'discountedAmountModeCategories' => true,
 		'redeemablesApplicationMode' => true,
-		'redeemablesSortingRule' => true
+		'redeemablesSortingRule' => true,
+		'redeemablesRollbackOrderMode' => true
     ];
 
     /**
@@ -212,7 +215,8 @@ class ManagementProjectsStackingRulesCreateRequestBody implements ModelInterface
         'initialAmountModeCategories' => 'initial_amount_mode_categories',
         'discountedAmountModeCategories' => 'discounted_amount_mode_categories',
         'redeemablesApplicationMode' => 'redeemables_application_mode',
-        'redeemablesSortingRule' => 'redeemables_sorting_rule'
+        'redeemablesSortingRule' => 'redeemables_sorting_rule',
+        'redeemablesRollbackOrderMode' => 'redeemables_rollback_order_mode'
     ];
 
     /**
@@ -232,7 +236,8 @@ class ManagementProjectsStackingRulesCreateRequestBody implements ModelInterface
         'initialAmountModeCategories' => 'setInitialAmountModeCategories',
         'discountedAmountModeCategories' => 'setDiscountedAmountModeCategories',
         'redeemablesApplicationMode' => 'setRedeemablesApplicationMode',
-        'redeemablesSortingRule' => 'setRedeemablesSortingRule'
+        'redeemablesSortingRule' => 'setRedeemablesSortingRule',
+        'redeemablesRollbackOrderMode' => 'setRedeemablesRollbackOrderMode'
     ];
 
     /**
@@ -252,7 +257,8 @@ class ManagementProjectsStackingRulesCreateRequestBody implements ModelInterface
         'initialAmountModeCategories' => 'getInitialAmountModeCategories',
         'discountedAmountModeCategories' => 'getDiscountedAmountModeCategories',
         'redeemablesApplicationMode' => 'getRedeemablesApplicationMode',
-        'redeemablesSortingRule' => 'getRedeemablesSortingRule'
+        'redeemablesSortingRule' => 'getRedeemablesSortingRule',
+        'redeemablesRollbackOrderMode' => 'getRedeemablesRollbackOrderMode'
     ];
 
     /**
@@ -302,6 +308,8 @@ class ManagementProjectsStackingRulesCreateRequestBody implements ModelInterface
     public const REDEEMABLES_APPLICATION_MODE_PARTIAL = 'PARTIAL';
     public const REDEEMABLES_SORTING_RULE_CATEGORY_HIERARCHY = 'CATEGORY_HIERARCHY';
     public const REDEEMABLES_SORTING_RULE_REQUESTED_ORDER = 'REQUESTED_ORDER';
+    public const REDEEMABLES_ROLLBACK_ORDER_MODE_WITH_ORDER = 'WITH_ORDER';
+    public const REDEEMABLES_ROLLBACK_ORDER_MODE_WITHOUT_ORDER = 'WITHOUT_ORDER';
 
     /**
      * Gets allowable values of the enum
@@ -343,6 +351,19 @@ class ManagementProjectsStackingRulesCreateRequestBody implements ModelInterface
     }
 
     /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getRedeemablesRollbackOrderModeAllowableValues()
+    {
+        return [
+            self::REDEEMABLES_ROLLBACK_ORDER_MODE_WITH_ORDER,
+            self::REDEEMABLES_ROLLBACK_ORDER_MODE_WITHOUT_ORDER,
+        ];
+    }
+
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
@@ -369,6 +390,7 @@ class ManagementProjectsStackingRulesCreateRequestBody implements ModelInterface
         $this->setIfExists('discountedAmountModeCategories', $data ?? [], null);
         $this->setIfExists('redeemablesApplicationMode', $data ?? [], null);
         $this->setIfExists('redeemablesSortingRule', $data ?? [], null);
+        $this->setIfExists('redeemablesRollbackOrderMode', $data ?? [], null);
     }
 
     /**
@@ -441,6 +463,15 @@ class ManagementProjectsStackingRulesCreateRequestBody implements ModelInterface
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'redeemablesSortingRule', must be one of '%s'",
                 $this->container['redeemablesSortingRule'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getRedeemablesRollbackOrderModeAllowableValues();
+        if (!is_null($this->container['redeemablesRollbackOrderMode']) && !in_array($this->container['redeemablesRollbackOrderMode'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'redeemablesRollbackOrderMode', must be one of '%s'",
+                $this->container['redeemablesRollbackOrderMode'],
                 implode("', '", $allowedValues)
             );
         }
@@ -915,6 +946,50 @@ class ManagementProjectsStackingRulesCreateRequestBody implements ModelInterface
             );
         }
         $this->container['redeemablesSortingRule'] = $redeemablesSortingRule;
+
+        return $this;
+    }
+
+    /**
+     * Gets redeemablesRollbackOrderMode
+     *
+     * @return string|null
+     */
+    public function getRedeemablesRollbackOrderMode()
+    {
+        return $this->container['redeemablesRollbackOrderMode'];
+    }
+
+    /**
+     * Sets redeemablesRollbackOrderMode
+     *
+     * @param string|null $redeemablesRollbackOrderMode Defines the rollback mode for the order. `WITH_ORDER` is a default setting. The redemption is rolled back together with the data about the order, including related discount values. `WITHOUT_ORDER` allows rolling the redemption back without affecting order data, including the applied discount values.
+     *
+     * @return self
+     */
+    public function setRedeemablesRollbackOrderMode($redeemablesRollbackOrderMode)
+    {
+        if (is_null($redeemablesRollbackOrderMode)) {
+            array_push($this->openAPINullablesSetToNull, 'redeemablesRollbackOrderMode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('redeemablesRollbackOrderMode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getRedeemablesRollbackOrderModeAllowableValues();
+        if (!is_null($redeemablesRollbackOrderMode) && !in_array($redeemablesRollbackOrderMode, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'redeemablesRollbackOrderMode', must be one of '%s'",
+                    $redeemablesRollbackOrderMode,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['redeemablesRollbackOrderMode'] = $redeemablesRollbackOrderMode;
 
         return $this;
     }

@@ -60,6 +60,7 @@ class VoucherGift implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'amount' => 'int',
+        'subtractedAmount' => 'int',
         'balance' => 'int',
         'effect' => 'string'
     ];
@@ -73,6 +74,7 @@ class VoucherGift implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'amount' => null,
+        'subtractedAmount' => null,
         'balance' => null,
         'effect' => null
     ];
@@ -84,6 +86,7 @@ class VoucherGift implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'amount' => true,
+		'subtractedAmount' => true,
 		'balance' => true,
 		'effect' => true
     ];
@@ -175,6 +178,7 @@ class VoucherGift implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'amount' => 'amount',
+        'subtractedAmount' => 'subtracted_amount',
         'balance' => 'balance',
         'effect' => 'effect'
     ];
@@ -186,6 +190,7 @@ class VoucherGift implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'amount' => 'setAmount',
+        'subtractedAmount' => 'setSubtractedAmount',
         'balance' => 'setBalance',
         'effect' => 'setEffect'
     ];
@@ -197,6 +202,7 @@ class VoucherGift implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'amount' => 'getAmount',
+        'subtractedAmount' => 'getSubtractedAmount',
         'balance' => 'getBalance',
         'effect' => 'getEffect'
     ];
@@ -274,6 +280,7 @@ class VoucherGift implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('amount', $data ?? [], null);
+        $this->setIfExists('subtractedAmount', $data ?? [], null);
         $this->setIfExists('balance', $data ?? [], null);
         $this->setIfExists('effect', $data ?? [], null);
     }
@@ -342,7 +349,7 @@ class VoucherGift implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets amount
      *
-     * @param int|null $amount Total gift card income over the lifetime of the card. Value is multiplied by 100 to precisely represent 2 decimal places. For example, $100 amount is written as 10000.
+     * @param int|null $amount Total gift card income over the lifetime of the card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */
@@ -364,6 +371,40 @@ class VoucherGift implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets subtractedAmount
+     *
+     * @return int|null
+     */
+    public function getSubtractedAmount()
+    {
+        return $this->container['subtractedAmount'];
+    }
+
+    /**
+     * Sets subtractedAmount
+     *
+     * @param int|null $subtractedAmount Total amount of subtracted credits over the gift card lifetime. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
+     *
+     * @return self
+     */
+    public function setSubtractedAmount($subtractedAmount)
+    {
+        if (is_null($subtractedAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'subtractedAmount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('subtractedAmount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['subtractedAmount'] = $subtractedAmount;
+
+        return $this;
+    }
+
+    /**
      * Gets balance
      *
      * @return int|null
@@ -376,7 +417,7 @@ class VoucherGift implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets balance
      *
-     * @param int|null $balance Available funds. Value is multiplied by 100 to precisely represent 2 decimal places. For example, $100 amount is written as 10000.
+     * @param int|null $balance Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */

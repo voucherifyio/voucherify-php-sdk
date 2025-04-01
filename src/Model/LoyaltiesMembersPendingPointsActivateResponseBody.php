@@ -480,7 +480,7 @@ class LoyaltiesMembersPendingPointsActivateResponseBody implements ModelInterfac
     /**
      * Sets balance
      *
-     * @param int|null $balance The current number of loyalty points after the pendint points have been added.
+     * @param int|null $balance The current number of loyalty points after the pending points have been added.
      *
      * @return self
      */

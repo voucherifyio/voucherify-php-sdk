@@ -69,7 +69,8 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesApplicationMode' => 'string',
         'redeemablesSortingRule' => 'string',
         'redeemablesProductsApplicationMode' => 'string',
-        'redeemablesNoEffectRule' => 'string'
+        'redeemablesNoEffectRule' => 'string',
+        'redeemablesRollbackOrderMode' => 'string'
     ];
 
     /**
@@ -90,7 +91,8 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesApplicationMode' => null,
         'redeemablesSortingRule' => null,
         'redeemablesProductsApplicationMode' => null,
-        'redeemablesNoEffectRule' => null
+        'redeemablesNoEffectRule' => null,
+        'redeemablesRollbackOrderMode' => null
     ];
 
     /**
@@ -109,7 +111,8 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
 		'redeemablesApplicationMode' => true,
 		'redeemablesSortingRule' => true,
 		'redeemablesProductsApplicationMode' => true,
-		'redeemablesNoEffectRule' => true
+		'redeemablesNoEffectRule' => true,
+		'redeemablesRollbackOrderMode' => true
     ];
 
     /**
@@ -208,7 +211,8 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesApplicationMode' => 'redeemables_application_mode',
         'redeemablesSortingRule' => 'redeemables_sorting_rule',
         'redeemablesProductsApplicationMode' => 'redeemables_products_application_mode',
-        'redeemablesNoEffectRule' => 'redeemables_no_effect_rule'
+        'redeemablesNoEffectRule' => 'redeemables_no_effect_rule',
+        'redeemablesRollbackOrderMode' => 'redeemables_rollback_order_mode'
     ];
 
     /**
@@ -227,7 +231,8 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesApplicationMode' => 'setRedeemablesApplicationMode',
         'redeemablesSortingRule' => 'setRedeemablesSortingRule',
         'redeemablesProductsApplicationMode' => 'setRedeemablesProductsApplicationMode',
-        'redeemablesNoEffectRule' => 'setRedeemablesNoEffectRule'
+        'redeemablesNoEffectRule' => 'setRedeemablesNoEffectRule',
+        'redeemablesRollbackOrderMode' => 'setRedeemablesRollbackOrderMode'
     ];
 
     /**
@@ -246,7 +251,8 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesApplicationMode' => 'getRedeemablesApplicationMode',
         'redeemablesSortingRule' => 'getRedeemablesSortingRule',
         'redeemablesProductsApplicationMode' => 'getRedeemablesProductsApplicationMode',
-        'redeemablesNoEffectRule' => 'getRedeemablesNoEffectRule'
+        'redeemablesNoEffectRule' => 'getRedeemablesNoEffectRule',
+        'redeemablesRollbackOrderMode' => 'getRedeemablesRollbackOrderMode'
     ];
 
     /**
@@ -298,6 +304,8 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     public const REDEEMABLES_PRODUCTS_APPLICATION_MODE_ONCE = 'ONCE';
     public const REDEEMABLES_NO_EFFECT_RULE_REDEEM_ANYWAY = 'REDEEM_ANYWAY';
     public const REDEEMABLES_NO_EFFECT_RULE_SKIP = 'SKIP';
+    public const REDEEMABLES_ROLLBACK_ORDER_MODE_WITH_ORDER = 'WITH_ORDER';
+    public const REDEEMABLES_ROLLBACK_ORDER_MODE_WITHOUT_ORDER = 'WITHOUT_ORDER';
 
     /**
      * Gets allowable values of the enum
@@ -352,6 +360,19 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getRedeemablesRollbackOrderModeAllowableValues()
+    {
+        return [
+            self::REDEEMABLES_ROLLBACK_ORDER_MODE_WITH_ORDER,
+            self::REDEEMABLES_ROLLBACK_ORDER_MODE_WITHOUT_ORDER,
+        ];
+    }
+
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
@@ -377,6 +398,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('redeemablesSortingRule', $data ?? [], 'REQUESTED_ORDER');
         $this->setIfExists('redeemablesProductsApplicationMode', $data ?? [], null);
         $this->setIfExists('redeemablesNoEffectRule', $data ?? [], null);
+        $this->setIfExists('redeemablesRollbackOrderMode', $data ?? [], null);
     }
 
     /**
@@ -478,6 +500,15 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'redeemablesNoEffectRule', must be one of '%s'",
                 $this->container['redeemablesNoEffectRule'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getRedeemablesRollbackOrderModeAllowableValues();
+        if (!is_null($this->container['redeemablesRollbackOrderMode']) && !in_array($this->container['redeemablesRollbackOrderMode'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'redeemablesRollbackOrderMode', must be one of '%s'",
+                $this->container['redeemablesRollbackOrderMode'],
                 implode("', '", $allowedValues)
             );
         }
@@ -947,6 +978,50 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['redeemablesNoEffectRule'] = $redeemablesNoEffectRule;
+
+        return $this;
+    }
+
+    /**
+     * Gets redeemablesRollbackOrderMode
+     *
+     * @return string|null
+     */
+    public function getRedeemablesRollbackOrderMode()
+    {
+        return $this->container['redeemablesRollbackOrderMode'];
+    }
+
+    /**
+     * Sets redeemablesRollbackOrderMode
+     *
+     * @param string|null $redeemablesRollbackOrderMode Defines the rollback mode for the order. `WITH_ORDER` is a default setting. The redemption is rolled back together with the data about the order, including related discount values. `WITHOUT_ORDER` allows rolling the redemption back without affecting order data.
+     *
+     * @return self
+     */
+    public function setRedeemablesRollbackOrderMode($redeemablesRollbackOrderMode)
+    {
+        if (is_null($redeemablesRollbackOrderMode)) {
+            array_push($this->openAPINullablesSetToNull, 'redeemablesRollbackOrderMode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('redeemablesRollbackOrderMode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getRedeemablesRollbackOrderModeAllowableValues();
+        if (!is_null($redeemablesRollbackOrderMode) && !in_array($redeemablesRollbackOrderMode, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'redeemablesRollbackOrderMode', must be one of '%s'",
+                    $redeemablesRollbackOrderMode,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['redeemablesRollbackOrderMode'] = $redeemablesRollbackOrderMode;
 
         return $this;
     }

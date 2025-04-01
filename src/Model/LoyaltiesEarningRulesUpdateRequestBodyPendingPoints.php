@@ -1,6 +1,6 @@
 <?php
 /**
- * VouchersDisableResponseBodyLoyaltyCard
+ * LoyaltiesEarningRulesUpdateRequestBodyPendingPoints
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * VouchersDisableResponseBodyLoyaltyCard Class Doc Comment
+ * LoyaltiesEarningRulesUpdateRequestBodyPendingPoints Class Doc Comment
  *
  * @category Class
- * @description Object representing loyalty card parameters. Child attributes are present only if &#x60;type&#x60; is &#x60;LOYALTY_CARD&#x60;. Defaults to &#x60;null&#x60;.
+ * @description Defines the configuration for pending points. Pending points can be used only with the &#x60;order.paid&#x60; event. Pass &#x60;null&#x60; to remove pending points from the earning rule.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class VouchersDisableResponseBodyLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSerializable
+class LoyaltiesEarningRulesUpdateRequestBodyPendingPoints implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class VouchersDisableResponseBodyLoyaltyCard implements ModelInterface, ArrayAcc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'VouchersDisableResponseBodyLoyaltyCard';
+    protected static $openAPIModelName = 'LoyaltiesEarningRulesUpdateRequestBodyPendingPoints';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,13 +59,8 @@ class VouchersDisableResponseBodyLoyaltyCard implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'points' => 'int',
-        'balance' => 'int',
-        'nextExpirationDate' => '\DateTime',
-        'nextExpirationPoints' => 'int',
-        'pendingPoints' => 'int',
-        'expiredPoints' => 'int',
-        'subtractedPoints' => 'int'
+        'periodType' => 'string',
+        'periodValue' => 'int'
     ];
 
     /**
@@ -76,13 +71,8 @@ class VouchersDisableResponseBodyLoyaltyCard implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'points' => null,
-        'balance' => null,
-        'nextExpirationDate' => 'date',
-        'nextExpirationPoints' => null,
-        'pendingPoints' => null,
-        'expiredPoints' => null,
-        'subtractedPoints' => null
+        'periodType' => null,
+        'periodValue' => null
     ];
 
     /**
@@ -91,13 +81,8 @@ class VouchersDisableResponseBodyLoyaltyCard implements ModelInterface, ArrayAcc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'points' => true,
-		'balance' => true,
-		'nextExpirationDate' => true,
-		'nextExpirationPoints' => true,
-		'pendingPoints' => true,
-		'expiredPoints' => true,
-		'subtractedPoints' => true
+        'periodType' => true,
+		'periodValue' => true
     ];
 
     /**
@@ -186,13 +171,8 @@ class VouchersDisableResponseBodyLoyaltyCard implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'points' => 'points',
-        'balance' => 'balance',
-        'nextExpirationDate' => 'next_expiration_date',
-        'nextExpirationPoints' => 'next_expiration_points',
-        'pendingPoints' => 'pending_points',
-        'expiredPoints' => 'expired_points',
-        'subtractedPoints' => 'subtracted_points'
+        'periodType' => 'period_type',
+        'periodValue' => 'period_value'
     ];
 
     /**
@@ -201,13 +181,8 @@ class VouchersDisableResponseBodyLoyaltyCard implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'points' => 'setPoints',
-        'balance' => 'setBalance',
-        'nextExpirationDate' => 'setNextExpirationDate',
-        'nextExpirationPoints' => 'setNextExpirationPoints',
-        'pendingPoints' => 'setPendingPoints',
-        'expiredPoints' => 'setExpiredPoints',
-        'subtractedPoints' => 'setSubtractedPoints'
+        'periodType' => 'setPeriodType',
+        'periodValue' => 'setPeriodValue'
     ];
 
     /**
@@ -216,13 +191,8 @@ class VouchersDisableResponseBodyLoyaltyCard implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'points' => 'getPoints',
-        'balance' => 'getBalance',
-        'nextExpirationDate' => 'getNextExpirationDate',
-        'nextExpirationPoints' => 'getNextExpirationPoints',
-        'pendingPoints' => 'getPendingPoints',
-        'expiredPoints' => 'getExpiredPoints',
-        'subtractedPoints' => 'getSubtractedPoints'
+        'periodType' => 'getPeriodType',
+        'periodValue' => 'getPeriodValue'
     ];
 
     /**
@@ -266,6 +236,19 @@ class VouchersDisableResponseBodyLoyaltyCard implements ModelInterface, ArrayAcc
         return self::$openAPIModelName;
     }
 
+    public const PERIOD_TYPE_DAY = 'DAY';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPeriodTypeAllowableValues()
+    {
+        return [
+            self::PERIOD_TYPE_DAY,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -282,13 +265,8 @@ class VouchersDisableResponseBodyLoyaltyCard implements ModelInterface, ArrayAcc
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('points', $data ?? [], null);
-        $this->setIfExists('balance', $data ?? [], null);
-        $this->setIfExists('nextExpirationDate', $data ?? [], null);
-        $this->setIfExists('nextExpirationPoints', $data ?? [], null);
-        $this->setIfExists('pendingPoints', $data ?? [], null);
-        $this->setIfExists('expiredPoints', $data ?? [], null);
-        $this->setIfExists('subtractedPoints', $data ?? [], null);
+        $this->setIfExists('periodType', $data ?? [], 'DAY');
+        $this->setIfExists('periodValue', $data ?? [], null);
     }
 
     /**
@@ -318,6 +296,23 @@ class VouchersDisableResponseBodyLoyaltyCard implements ModelInterface, ArrayAcc
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getPeriodTypeAllowableValues();
+        if (!is_null($this->container['periodType']) && !in_array($this->container['periodType'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'periodType', must be one of '%s'",
+                $this->container['periodType'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if (!is_null($this->container['periodValue']) && ($this->container['periodValue'] > 90)) {
+            $invalidProperties[] = "invalid value for 'periodValue', must be smaller than or equal to 90.";
+        }
+
+        if (!is_null($this->container['periodValue']) && ($this->container['periodValue'] < 1)) {
+            $invalidProperties[] = "invalid value for 'periodValue', must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -334,239 +329,87 @@ class VouchersDisableResponseBodyLoyaltyCard implements ModelInterface, ArrayAcc
 
 
     /**
-     * Gets points
+     * Gets periodType
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getPoints()
+    public function getPeriodType()
     {
-        return $this->container['points'];
+        return $this->container['periodType'];
     }
 
     /**
-     * Sets points
+     * Sets periodType
      *
-     * @param int|null $points Total number of points added to the loyalty card over its lifespan.
+     * @param string|null $periodType Defines the type of the period during which the points are in the pending state. Currently, only `DAY` value is accepted.
      *
      * @return self
      */
-    public function setPoints($points)
+    public function setPeriodType($periodType)
     {
-        if (is_null($points)) {
-            array_push($this->openAPINullablesSetToNull, 'points');
+        if (is_null($periodType)) {
+            array_push($this->openAPINullablesSetToNull, 'periodType');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('points', $nullablesSetToNull);
+            $index = array_search('periodType', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['points'] = $points;
+        $allowedValues = $this->getPeriodTypeAllowableValues();
+        if (!is_null($periodType) && !in_array($periodType, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'periodType', must be one of '%s'",
+                    $periodType,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['periodType'] = $periodType;
 
         return $this;
     }
 
     /**
-     * Gets balance
+     * Gets periodValue
      *
      * @return int|null
      */
-    public function getBalance()
+    public function getPeriodValue()
     {
-        return $this->container['balance'];
+        return $this->container['periodValue'];
     }
 
     /**
-     * Sets balance
+     * Sets periodValue
      *
-     * @param int|null $balance Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
+     * @param int|null $periodValue Defines for how long the points are in the pending state. The minimum value is 1, maximum is 90.
      *
      * @return self
      */
-    public function setBalance($balance)
+    public function setPeriodValue($periodValue)
     {
-        if (is_null($balance)) {
-            array_push($this->openAPINullablesSetToNull, 'balance');
+        if (is_null($periodValue)) {
+            array_push($this->openAPINullablesSetToNull, 'periodValue');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('balance', $nullablesSetToNull);
+            $index = array_search('periodValue', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['balance'] = $balance;
 
-        return $this;
-    }
-
-    /**
-     * Gets nextExpirationDate
-     *
-     * @return \DateTime|null
-     */
-    public function getNextExpirationDate()
-    {
-        return $this->container['nextExpirationDate'];
-    }
-
-    /**
-     * Sets nextExpirationDate
-     *
-     * @param \DateTime|null $nextExpirationDate The next closest date when the next set of points are due to expire.
-     *
-     * @return self
-     */
-    public function setNextExpirationDate($nextExpirationDate)
-    {
-        if (is_null($nextExpirationDate)) {
-            array_push($this->openAPINullablesSetToNull, 'nextExpirationDate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('nextExpirationDate', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (!is_null($periodValue) && ($periodValue > 90)) {
+            throw new \InvalidArgumentException('invalid value for $periodValue when calling LoyaltiesEarningRulesUpdateRequestBodyPendingPoints., must be smaller than or equal to 90.');
         }
-        $this->container['nextExpirationDate'] = $nextExpirationDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets nextExpirationPoints
-     *
-     * @return int|null
-     */
-    public function getNextExpirationPoints()
-    {
-        return $this->container['nextExpirationPoints'];
-    }
-
-    /**
-     * Sets nextExpirationPoints
-     *
-     * @param int|null $nextExpirationPoints The amount of points that are set to expire next.
-     *
-     * @return self
-     */
-    public function setNextExpirationPoints($nextExpirationPoints)
-    {
-        if (is_null($nextExpirationPoints)) {
-            array_push($this->openAPINullablesSetToNull, 'nextExpirationPoints');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('nextExpirationPoints', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (!is_null($periodValue) && ($periodValue < 1)) {
+            throw new \InvalidArgumentException('invalid value for $periodValue when calling LoyaltiesEarningRulesUpdateRequestBodyPendingPoints., must be bigger than or equal to 1.');
         }
-        $this->container['nextExpirationPoints'] = $nextExpirationPoints;
 
-        return $this;
-    }
-
-    /**
-     * Gets pendingPoints
-     *
-     * @return int|null
-     */
-    public function getPendingPoints()
-    {
-        return $this->container['pendingPoints'];
-    }
-
-    /**
-     * Sets pendingPoints
-     *
-     * @param int|null $pendingPoints Shows the number of pending points that will be added to the loyalty card when they are activated automatically or manually.
-     *
-     * @return self
-     */
-    public function setPendingPoints($pendingPoints)
-    {
-        if (is_null($pendingPoints)) {
-            array_push($this->openAPINullablesSetToNull, 'pendingPoints');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pendingPoints', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['pendingPoints'] = $pendingPoints;
-
-        return $this;
-    }
-
-    /**
-     * Gets expiredPoints
-     *
-     * @return int|null
-     */
-    public function getExpiredPoints()
-    {
-        return $this->container['expiredPoints'];
-    }
-
-    /**
-     * Sets expiredPoints
-     *
-     * @param int|null $expiredPoints Shows the total number of expired points over the lifetime of the loyalty card.
-     *
-     * @return self
-     */
-    public function setExpiredPoints($expiredPoints)
-    {
-        if (is_null($expiredPoints)) {
-            array_push($this->openAPINullablesSetToNull, 'expiredPoints');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiredPoints', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['expiredPoints'] = $expiredPoints;
-
-        return $this;
-    }
-
-    /**
-     * Gets subtractedPoints
-     *
-     * @return int|null
-     */
-    public function getSubtractedPoints()
-    {
-        return $this->container['subtractedPoints'];
-    }
-
-    /**
-     * Sets subtractedPoints
-     *
-     * @param int|null $subtractedPoints Shows the total number of subtracted points over the lifetime of the loyalty card.
-     *
-     * @return self
-     */
-    public function setSubtractedPoints($subtractedPoints)
-    {
-        if (is_null($subtractedPoints)) {
-            array_push($this->openAPINullablesSetToNull, 'subtractedPoints');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('subtractedPoints', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['subtractedPoints'] = $subtractedPoints;
+        $this->container['periodValue'] = $periodValue;
 
         return $this;
     }

@@ -54,7 +54,7 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$productsCreateRequestBody = {"source_id":"first_product","name":"Samsung Phone","price":200000,"attributes":["color","memory","processor"],"metadata":{"test":true,"vendor":"Online Store"},"image_url":"https://www.website.com/image.png"}; // \OpenAPI\Client\Model\ProductsCreateRequestBody | Specify the product parameters.
+$productsCreateRequestBody = {"source_id":"first_product","name":"Samsung Phone","price":200000,"attributes":["color","memory","processor"],"metadata":{"test":true,"vendor":"Online Store"},"image_url":"{{internalVoucherifyURL}}"}; // \OpenAPI\Client\Model\ProductsCreateRequestBody | Specify the product parameters.
 
 try {
     $result = $apiInstance->createProduct($productsCreateRequestBody);
@@ -122,7 +122,7 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     $config
 );
 $productId = 'productId_example'; // string | A Voucherify product ID or product source ID.
-$productsSkusCreateRequestBody = {"source_id":"first_product_sku_1","sku":"Samsung phone 256GB","price":1300,"currency":"USD","attributes":{"color":"vintage-black","memory":"256","processor":"Intel"},"image_url":"https://www.website.com/image.png","metadata":{"imported":true}}; // \OpenAPI\Client\Model\ProductsSkusCreateRequestBody | Specify the SKU parameters to be created.
+$productsSkusCreateRequestBody = {"source_id":"first_product_sku_1","sku":"Samsung phone 256GB","price":1300,"currency":"USD","attributes":{"color":"vintage-black","memory":"256","processor":"Intel"},"image_url":"{{internalVoucherifyURL}}","metadata":{"imported":true}}; // \OpenAPI\Client\Model\ProductsSkusCreateRequestBody | Specify the SKU parameters to be created.
 
 try {
     $result = $apiInstance->createSku($productId, $productsSkusCreateRequestBody);
@@ -817,7 +817,7 @@ $apiInstance = new OpenAPI\Client\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$productsUpdateInBulkRequestBody = [{"source_id":"first_product","name":"Samsung Phone 1","price":220000,"attributes":["color","memory","processor"],"metadata":{"test":true,"vendor":"Online Store - 3"},"image_url":"https://voucherify-uploads.s3.amazonaws.com/org_2qt8DYlM/img_Z2qvs2KFnQyo2Ohz4uhsjGtf.png"},{"source_id":"second_product","name":"Samsung Phone 2","price":230000,"attributes":["color","memory","processor"],"metadata":{"test":true,"vendor":"Online Store - 4"},"image_url":"https://voucherify-uploads.s3.amazonaws.com/org_2qt8DYlM/img_Z2qvs2KFnQyo2Ohz4uhsjGtf.png"}]; // \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] | List the product fields to be updated in each customer object.
+$productsUpdateInBulkRequestBody = [{"source_id":"first_product","name":"Samsung Phone 1","price":220000,"attributes":["color","memory","processor"],"metadata":{"test":true,"vendor":"Online Store - 3"},"image_url":"{{internalVoucherifyURL}}"},{"source_id":"second_product","name":"Samsung Phone 2","price":230000,"attributes":["color","memory","processor"],"metadata":{"test":true,"vendor":"Online Store - 4"},"image_url":"{{internalVoucherifyURL}}"}]; // \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] | List the product fields to be updated in each customer object.
 
 try {
     $result = $apiInstance->updateProductsInBulk($productsUpdateInBulkRequestBody);
