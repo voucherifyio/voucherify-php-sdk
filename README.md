@@ -287,7 +287,7 @@ Authorization schemes defined for the API.
 - **2024-09-11** - `3.0.0`
   -  The new version of the SDK includes coverage for all the most commonly used Voucherify endpoints and supports typed models.
 
-*Previous versions of the API are no longer supported, and we highly recommend upgrading to version 3.0.0, which is now designated as Long-Term Support (LTS).*
+*Previous versions of the SDK are no longer supported. We highly recommend upgrading to version 3.0.0 or newer, as it is now designated as Long-Term Support (LTS).*
 
 ## 🌐 Documentation of API endpoints
 
