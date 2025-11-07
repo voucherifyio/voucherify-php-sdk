@@ -121,7 +121,7 @@ try {
 
 > [!TIP]
 > 
-> Check the test implementation in the folder `(./__test__)`.
+> Check the test implementation in the [Test folder](./__tests__/).
 
 ## 🐳 Run local tests with docker
 
