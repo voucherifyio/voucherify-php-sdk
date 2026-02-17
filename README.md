@@ -47,11 +47,11 @@ To install the bindings with [Composer](https://getcomposer.org/), add the follo
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+      "url": "https://github.com/voucherifyio/voucherify-php-sdk"
     }
   ],
   "require": {
-    "GIT_USER_ID/GIT_REPO_ID": "*@dev"
+    "voucherify/voucherify-php-sdk": "^5.0"
   }
 }
 ```
@@ -89,38 +89,40 @@ Once installed, run:
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+$host = getenv('VOUCHERIFY_HOST') ?: 'https://api.voucherify.io';
+$xAppId = getenv('X_APP_ID');
+$xAppToken = getenv('X_APP_TOKEN');
 
+if (!$xAppId || !$xAppToken) {
+    throw new RuntimeException('X_APP_ID and X_APP_TOKEN must be set in the environment.');
+}
 
-// Configure API key authorization: X-App-Id
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-App-Id', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-App-Id', 'Bearer');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+    ->setHost($host)
+    ->setApiKey('X-App-Id', $xAppId)
+    ->setApiKey('X-App-Token', $xAppToken);
 
-// Configure API key authorization: X-App-Token
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-App-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-App-Token', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\AsyncActionsApi(
+$apiInstance = new OpenAPI\Client\Api\CampaignsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$asyncActionId = 'asyncActionId_example'; // string | Unique ID of the asynchronous operation.
 
 try {
-    $result = $apiInstance->getAsyncAction($asyncActionId);
+    $result = $apiInstance->listCampaigns();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AsyncActionsApi->getAsyncAction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CampaignsApi->listCampaigns: ', $e->getMessage(), PHP_EOL;
 }
-
 ```
 
+> [!NOTE]
+>
+> This code just lists campaigns, so it won't affect your Voucherify data.
+
 > [!TIP]
-> 
+>
 > Check the test implementation in the [Test folder](./__tests__/).
 
 ## 🐳 Run local tests with docker
@@ -177,6 +179,7 @@ Authorization schemes defined for the API.
 - **Type**: API key
 - **API key parameter name**: X-Management-Token
 - **Location**: HTTP header
+
 
 ## 📅 Changelog
 
@@ -287,251 +290,257 @@ Authorization schemes defined for the API.
 - **2024-09-11** - `3.0.0`
   -  The new version of the SDK includes coverage for all the most commonly used Voucherify endpoints and supports typed models.
 
-*Previous versions of the SDK are no longer supported. We highly recommend upgrading to version 3.0.0 or newer, as it is now designated as Long-Term Support (LTS).*
+*Previous versions of the API are no longer supported, and we highly recommend upgrading to version 3.0.0, which is now designated as Long-Term Support (LTS).*
 
-## 🌐 Documentation of API endpoints
+## API Endpoints
 
-All URIs are relative to `https://api.voucherify.io`.
+All URIs are relative to *https://api.voucherify.io*
 
-| Class                   | Method                                                                                                    | HTTP request                                                                               | Description                                |
-| ----------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------ |
-| *AsyncActionsApi*       | [**getAsyncAction**](docs/Api/AsyncActionsApi.md#getasyncaction)                                          | **GET** /v1/async-actions/{asyncActionId}                                                  | Get Async Action                           |
-| *AsyncActionsApi*       | [**listAsyncActions**](docs/Api/AsyncActionsApi.md#listasyncactions)                                      | **GET** /v1/async-actions                                                                  | List Async Actions                         |
-| *BinApi*                | [**deleteBinEntry**](docs/Api/BinApi.md#deletebinentry)                                                   | **DELETE** /v1/trash-bin/{binEntryId}                                                      | Delete Bin Entry                           |
-| *BinApi*                | [**listBinEntries**](docs/Api/BinApi.md#listbinentries)                                                   | **GET** /v1/trash-bin                                                                      | List Bin Entries                           |
-| *CampaignsApi*          | [**addVoucherWithSpecificCodeToCampaign**](docs/Api/CampaignsApi.md#addvoucherwithspecificcodetocampaign) | **POST** /v1/campaigns/{campaignId}/vouchers/{code}                                        | Add Voucher with Specific Code to Campaign |
-| *CampaignsApi*          | [**addVouchersToCampaign**](docs/Api/CampaignsApi.md#addvoucherstocampaign)                               | **POST** /v1/campaigns/{campaignId}/vouchers                                               | Add Vouchers to Campaign                   |
-| *CampaignsApi*          | [**createCampaign**](docs/Api/CampaignsApi.md#createcampaign)                                             | **POST** /v1/campaigns                                                                     | Create Campaign                            |
-| *CampaignsApi*          | [**deleteCampaign**](docs/Api/CampaignsApi.md#deletecampaign)                                             | **DELETE** /v1/campaigns/{campaignId}                                                      | Delete Campaign                            |
-| *CampaignsApi*          | [**disableCampaign**](docs/Api/CampaignsApi.md#disablecampaign)                                           | **POST** /v1/campaigns/{campaignId}/disable                                                | Disable Campaign                           |
-| *CampaignsApi*          | [**enableCampaign**](docs/Api/CampaignsApi.md#enablecampaign)                                             | **POST** /v1/campaigns/{campaignId}/enable                                                 | Enable Campaign                            |
-| *CampaignsApi*          | [**getCampaign**](docs/Api/CampaignsApi.md#getcampaign)                                                   | **GET** /v1/campaigns/{campaignId}                                                         | Get Campaign                               |
-| *CampaignsApi*          | [**importVouchersToCampaign**](docs/Api/CampaignsApi.md#importvoucherstocampaign)                         | **POST** /v1/campaigns/{campaignId}/import                                                 | Import Vouchers to Campaign                |
-| *CampaignsApi*          | [**importVouchersToCampaignUsingCsv**](docs/Api/CampaignsApi.md#importvoucherstocampaignusingcsv)         | **POST** /v1/campaigns/{campaignId}/importCSV                                              | Import Vouchers to Campaign by CSV         |
-| *CampaignsApi*          | [**listCampaigns**](docs/Api/CampaignsApi.md#listcampaigns)                                               | **GET** /v1/campaigns                                                                      | List Campaigns                             |
-| *CampaignsApi*          | [**updateCampaign**](docs/Api/CampaignsApi.md#updatecampaign)                                             | **PUT** /v1/campaigns/{campaignId}                                                         | Update Campaign                            |
-| *CategoriesApi*         | [**createCategory**](docs/Api/CategoriesApi.md#createcategory)                                            | **POST** /v1/categories                                                                    | Create Category                            |
-| *CategoriesApi*         | [**deleteCategory**](docs/Api/CategoriesApi.md#deletecategory)                                            | **DELETE** /v1/categories/{categoryId}                                                     | Delete Category                            |
-| *CategoriesApi*         | [**getCategory**](docs/Api/CategoriesApi.md#getcategory)                                                  | **GET** /v1/categories/{categoryId}                                                        | Get Category                               |
-| *CategoriesApi*         | [**listCategories**](docs/Api/CategoriesApi.md#listcategories)                                            | **GET** /v1/categories                                                                     | List Categories                            |
-| *CategoriesApi*         | [**updateCategory**](docs/Api/CategoriesApi.md#updatecategory)                                            | **PUT** /v1/categories/{categoryId}                                                        | Update Category                            |
-| *ClientSideApi*         | [**checkEligibilityClientSide**](docs/Api/ClientSideApi.md#checkeligibilityclientside)                    | **POST** /client/v1/qualifications                                                         | Check Eligibility (client-side)            |
-| *ClientSideApi*         | [**listPromotionTiersClientSide**](docs/Api/ClientSideApi.md#listpromotiontiersclientside)                | **GET** /client/v1/promotions/tiers                                                        | List Promotion Tiers (client-side)         |
-| *ClientSideApi*         | [**redeemStackedDiscountsClientSide**](docs/Api/ClientSideApi.md#redeemstackeddiscountsclientside)        | **POST** /client/v1/redemptions                                                            | Redeem Stackable Discounts (client-side)   |
-| *ClientSideApi*         | [**trackCustomEventClientSide**](docs/Api/ClientSideApi.md#trackcustomeventclientside)                    | **POST** /client/v1/events                                                                 | Track Custom Event (client-side)           |
-| *ClientSideApi*         | [**validateStackedDiscountsClientSide**](docs/Api/ClientSideApi.md#validatestackeddiscountsclientside)    | **POST** /client/v1/validations                                                            | Validate Stackable Discounts (client-side) |
-| *CustomersApi*          | [**createCustomer**](docs/Api/CustomersApi.md#createcustomer)                                             | **POST** /v1/customers                                                                     | Create Customer                            |
-| *CustomersApi*          | [**customerPermanentlyDeletion**](docs/Api/CustomersApi.md#customerpermanentlydeletion)                   | **POST** /v1/customers/{customerId}/permanent-deletion                                     | Delete Customer Permanently                |
-| *CustomersApi*          | [**deleteCustomer**](docs/Api/CustomersApi.md#deletecustomer)                                             | **DELETE** /v1/customers/{customerId}                                                      | Delete Customer                            |
-| *CustomersApi*          | [**getCustomer**](docs/Api/CustomersApi.md#getcustomer)                                                   | **GET** /v1/customers/{customerId}                                                         | Get Customer                               |
-| *CustomersApi*          | [**importCustomersUsingCsv**](docs/Api/CustomersApi.md#importcustomersusingcsv)                           | **POST** /v1/customers/importCSV                                                           | Import and Update Customers using CSV      |
-| *CustomersApi*          | [**listCustomerActivity**](docs/Api/CustomersApi.md#listcustomeractivity)                                 | **GET** /v1/customers/{customerId}/activity                                                | List Customer Activity                     |
-| *CustomersApi*          | [**listCustomerRedeemables**](docs/Api/CustomersApi.md#listcustomerredeemables)                           | **GET** /v1/customers/{customerId}/redeemables                                             | List Customer&#39;s Redeemables            |
-| *CustomersApi*          | [**listCustomerSegments**](docs/Api/CustomersApi.md#listcustomersegments)                                 | **GET** /v1/customers/{customerId}/segments                                                | List Customer&#39;s Segments               |
-| *CustomersApi*          | [**listCustomers**](docs/Api/CustomersApi.md#listcustomers)                                               | **GET** /v1/customers                                                                      | List Customers                             |
-| *CustomersApi*          | [**updateCustomer**](docs/Api/CustomersApi.md#updatecustomer)                                             | **PUT** /v1/customers/{customerId}                                                         | Update Customer                            |
-| *CustomersApi*          | [**updateCustomersInBulk**](docs/Api/CustomersApi.md#updatecustomersinbulk)                               | **POST** /v1/customers/bulk/async                                                          | Update Customers in Bulk                   |
-| *CustomersApi*          | [**updateCustomersMetadataInBulk**](docs/Api/CustomersApi.md#updatecustomersmetadatainbulk)               | **POST** /v1/customers/metadata/async                                                      | Update Customers&#39; Metadata in Bulk     |
-| *EventsApi*             | [**trackCustomEvent**](docs/Api/EventsApi.md#trackcustomevent)                                            | **POST** /v1/events                                                                        | Track Custom Event                         |
-| *ExportsApi*            | [**createExport**](docs/Api/ExportsApi.md#createexport)                                                   | **POST** /v1/exports                                                                       | Create Export                              |
-| *ExportsApi*            | [**deleteExport**](docs/Api/ExportsApi.md#deleteexport)                                                   | **DELETE** /v1/exports/{exportId}                                                          | Delete Export                              |
-| *ExportsApi*            | [**downloadExport**](docs/Api/ExportsApi.md#downloadexport)                                               | **GET** /v1/exports/{export_Id}                                                            | Download Export                            |
-| *ExportsApi*            | [**getExport**](docs/Api/ExportsApi.md#getexport)                                                         | **GET** /v1/exports/{exportId}                                                             | Get Export                                 |
-| *ExportsApi*            | [**listExports**](docs/Api/ExportsApi.md#listexports)                                                     | **GET** /v1/exports                                                                        | List Exports                               |
-| *LocationsApi*          | [**getLocation**](docs/Api/LocationsApi.md#getlocation)                                                   | **GET** /v1/locations/{locationId}                                                         | Get Location                               |
-| *LocationsApi*          | [**listLocations**](docs/Api/LocationsApi.md#listlocations)                                               | **GET** /v1/locations                                                                      | List Locations                             |
-| *LoyaltiesApi*          | [**activateMemberPendingPoints**](docs/Api/LoyaltiesApi.md#activatememberpendingpoints)                   | **POST** /v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/activate        | Activate Member Pending Points             |
-| *LoyaltiesApi*          | [**addMember**](docs/Api/LoyaltiesApi.md#addmember)                                                       | **POST** /v1/loyalties/{campaignId}/members                                                | Add Member                                 |
-| *LoyaltiesApi*          | [**cancelMemberPendingPoints**](docs/Api/LoyaltiesApi.md#cancelmemberpendingpoints)                       | **POST** /v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/cancel          | Cancel Member Pending Points               |
-| *LoyaltiesApi*          | [**createEarningRule**](docs/Api/LoyaltiesApi.md#createearningrule)                                       | **POST** /v1/loyalties/{campaignId}/earning-rules                                          | Create Earning Rule                        |
-| *LoyaltiesApi*          | [**createInBulkLoyaltyTiers**](docs/Api/LoyaltiesApi.md#createinbulkloyaltytiers)                         | **POST** /v1/loyalties/{campaignId}/tiers                                                  | Create loyalty tiers                       |
-| *LoyaltiesApi*          | [**createLoyaltyProgram**](docs/Api/LoyaltiesApi.md#createloyaltyprogram)                                 | **POST** /v1/loyalties                                                                     | Create Loyalty Campaign                    |
-| *LoyaltiesApi*          | [**createPointsExpirationExport**](docs/Api/LoyaltiesApi.md#createpointsexpirationexport)                 | **POST** /v1/loyalties/{campaignId}/points-expiration/export                               | Export Loyalty Campaign Point Expiration   |
-| *LoyaltiesApi*          | [**createRewardAssignment1**](docs/Api/LoyaltiesApi.md#createrewardassignment1)                           | **POST** /v1/loyalties/{campaignId}/rewards                                                | Create Reward Assignment                   |
-| *LoyaltiesApi*          | [**deleteEarningRule**](docs/Api/LoyaltiesApi.md#deleteearningrule)                                       | **DELETE** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}                        | Delete Earning Rule                        |
-| *LoyaltiesApi*          | [**deleteLoyaltyProgram**](docs/Api/LoyaltiesApi.md#deleteloyaltyprogram)                                 | **DELETE** /v1/loyalties/{campaignId}                                                      | Delete Loyalty Campaign                    |
-| *LoyaltiesApi*          | [**deleteRewardAssignment1**](docs/Api/LoyaltiesApi.md#deleterewardassignment1)                           | **DELETE** /v1/loyalties/{campaignId}/rewards/{assignmentId}                               | Delete Reward Assignment                   |
-| *LoyaltiesApi*          | [**disableEarningRule**](docs/Api/LoyaltiesApi.md#disableearningrule)                                     | **POST** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}/disable                  | Disable Earning Rule                       |
-| *LoyaltiesApi*          | [**enableEarningRule**](docs/Api/LoyaltiesApi.md#enableearningrule)                                       | **POST** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}/enable                   | Enable Earning Rule                        |
-| *LoyaltiesApi*          | [**exportLoyaltyCardTransactions**](docs/Api/LoyaltiesApi.md#exportloyaltycardtransactions)               | **POST** /v1/loyalties/members/{memberId}/transactions/export                              | Export Loyalty Card Transactions           |
-| *LoyaltiesApi*          | [**exportLoyaltyCardTransactions1**](docs/Api/LoyaltiesApi.md#exportloyaltycardtransactions1)             | **POST** /v1/loyalties/{campaignId}/members/{memberId}/transactions/export                 | Export Loyalty Card Transactions           |
-| *LoyaltiesApi*          | [**getEarningRule**](docs/Api/LoyaltiesApi.md#getearningrule)                                             | **GET** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}                           | Get Earning Rule                           |
-| *LoyaltiesApi*          | [**getLoyaltyProgram**](docs/Api/LoyaltiesApi.md#getloyaltyprogram)                                       | **GET** /v1/loyalties/{campaignId}                                                         | Get Loyalty Campaign                       |
-| *LoyaltiesApi*          | [**getLoyaltyTier**](docs/Api/LoyaltiesApi.md#getloyaltytier)                                             | **GET** /v1/loyalties/{campaignId}/tiers/{loyaltyTierId}                                   | Get Loyalty Tier                           |
-| *LoyaltiesApi*          | [**getMember**](docs/Api/LoyaltiesApi.md#getmember)                                                       | **GET** /v1/loyalties/members/{memberId}                                                   | Get Member                                 |
-| *LoyaltiesApi*          | [**getMember1**](docs/Api/LoyaltiesApi.md#getmember1)                                                     | **GET** /v1/loyalties/{campaignId}/members/{memberId}                                      | Get Member                                 |
-| *LoyaltiesApi*          | [**getRewardAssignment1**](docs/Api/LoyaltiesApi.md#getrewardassignment1)                                 | **GET** /v1/loyalties/{campaignId}/reward-assignments/{assignmentId}                       | Get Reward Assignment                      |
-| *LoyaltiesApi*          | [**getRewardAssignment2**](docs/Api/LoyaltiesApi.md#getrewardassignment2)                                 | **GET** /v1/loyalties/{campaignId}/rewards/{assignmentId}                                  | Get Reward Assignment                      |
-| *LoyaltiesApi*          | [**getRewardDetails**](docs/Api/LoyaltiesApi.md#getrewarddetails)                                         | **GET** /v1/loyalties/{campaignId}/reward-assignments/{assignmentId}/reward                | Get Reward Details                         |
-| *LoyaltiesApi*          | [**listCampaignPendingPoints**](docs/Api/LoyaltiesApi.md#listcampaignpendingpoints)                       | **GET** /v1/loyalties/{campaignId}/pending-points                                          | List Campaign Pending Points               |
-| *LoyaltiesApi*          | [**listEarningRules**](docs/Api/LoyaltiesApi.md#listearningrules)                                         | **GET** /v1/loyalties/{campaignId}/earning-rules                                           | List Earning Rules                         |
-| *LoyaltiesApi*          | [**listLoyaltyCardTransactions**](docs/Api/LoyaltiesApi.md#listloyaltycardtransactions)                   | **GET** /v1/loyalties/members/{memberId}/transactions                                      | List Loyalty Card Transactions             |
-| *LoyaltiesApi*          | [**listLoyaltyCardTransactions1**](docs/Api/LoyaltiesApi.md#listloyaltycardtransactions1)                 | **GET** /v1/loyalties/{campaignId}/members/{memberId}/transactions                         | List Loyalty Card Transactions             |
-| *LoyaltiesApi*          | [**listLoyaltyPrograms**](docs/Api/LoyaltiesApi.md#listloyaltyprograms)                                   | **GET** /v1/loyalties                                                                      | List Loyalty Campaigns                     |
-| *LoyaltiesApi*          | [**listLoyaltyTierEarningRules**](docs/Api/LoyaltiesApi.md#listloyaltytierearningrules)                   | **GET** /v1/loyalties/{campaignId}/tiers/{loyaltyTierId}/earning-rules                     | List Loyalty Tier Earning Rules            |
-| *LoyaltiesApi*          | [**listLoyaltyTierRewards**](docs/Api/LoyaltiesApi.md#listloyaltytierrewards)                             | **GET** /v1/loyalties/{campaignId}/tiers/{loyaltyTierId}/rewards                           | List Loyalty Tier Rewards                  |
-| *LoyaltiesApi*          | [**listLoyaltyTiers**](docs/Api/LoyaltiesApi.md#listloyaltytiers)                                         | **GET** /v1/loyalties/{campaignId}/tiers                                                   | List Loyalty Tiers                         |
-| *LoyaltiesApi*          | [**listMemberActivity**](docs/Api/LoyaltiesApi.md#listmemberactivity)                                     | **GET** /v1/loyalties/members/{memberId}/activity                                          | List Member Activity                       |
-| *LoyaltiesApi*          | [**listMemberActivity1**](docs/Api/LoyaltiesApi.md#listmemberactivity1)                                   | **GET** /v1/loyalties/{campaignId}/members/{memberId}/activity                             | List Member Activity                       |
-| *LoyaltiesApi*          | [**listMemberLoyaltyTier**](docs/Api/LoyaltiesApi.md#listmemberloyaltytier)                               | **GET** /v1/loyalties/members/{memberId}/tiers                                             | List Member&#39;s Loyalty Tiers            |
-| *LoyaltiesApi*          | [**listMemberPendingPoints**](docs/Api/LoyaltiesApi.md#listmemberpendingpoints)                           | **GET** /v1/loyalties/members/{memberId}/pending-points                                    | List Member Pending Points                 |
-| *LoyaltiesApi*          | [**listMemberPendingPoints1**](docs/Api/LoyaltiesApi.md#listmemberpendingpoints1)                         | **GET** /v1/loyalties/{campaignId}/members/{memberId}/pending-points                       | List Member Pending Points                 |
-| *LoyaltiesApi*          | [**listMemberRewards**](docs/Api/LoyaltiesApi.md#listmemberrewards)                                       | **GET** /v1/loyalties/members/{memberId}/rewards                                           | List Member Rewards                        |
-| *LoyaltiesApi*          | [**listMembers**](docs/Api/LoyaltiesApi.md#listmembers)                                                   | **GET** /v1/loyalties/{campaignId}/members                                                 | List Members                               |
-| *LoyaltiesApi*          | [**listPointsExpiration**](docs/Api/LoyaltiesApi.md#listpointsexpiration)                                 | **GET** /v1/loyalties/{campaignId}/members/{memberId}/points-expiration                    | List Loyalty Card Point Expiration         |
-| *LoyaltiesApi*          | [**listRewardAssignments1**](docs/Api/LoyaltiesApi.md#listrewardassignments1)                             | **GET** /v1/loyalties/{campaignId}/reward-assignments                                      | List Reward Assignments                    |
-| *LoyaltiesApi*          | [**listRewardAssignments2**](docs/Api/LoyaltiesApi.md#listrewardassignments2)                             | **GET** /v1/loyalties/{campaignId}/rewards                                                 | List Reward Assignments                    |
-| *LoyaltiesApi*          | [**redeemReward**](docs/Api/LoyaltiesApi.md#redeemreward)                                                 | **POST** /v1/loyalties/members/{memberId}/redemption                                       | Redeem Reward                              |
-| *LoyaltiesApi*          | [**redeemReward1**](docs/Api/LoyaltiesApi.md#redeemreward1)                                               | **POST** /v1/loyalties/{campaignId}/members/{memberId}/redemption                          | Redeem Reward                              |
-| *LoyaltiesApi*          | [**transferPoints**](docs/Api/LoyaltiesApi.md#transferpoints)                                             | **POST** /v1/loyalties/{campaignId}/members/{memberId}/transfers                           | Transfer Loyalty Points                    |
-| *LoyaltiesApi*          | [**updateEarningRule**](docs/Api/LoyaltiesApi.md#updateearningrule)                                       | **PUT** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}                           | Update Earning Rule                        |
-| *LoyaltiesApi*          | [**updateLoyaltyCardBalance**](docs/Api/LoyaltiesApi.md#updateloyaltycardbalance)                         | **POST** /v1/loyalties/members/{memberId}/balance                                          | Add or Remove Loyalty Card Balance         |
-| *LoyaltiesApi*          | [**updateLoyaltyCardBalance1**](docs/Api/LoyaltiesApi.md#updateloyaltycardbalance1)                       | **POST** /v1/loyalties/{campaignId}/members/{memberId}/balance                             | Add or Remove Loyalty Card Balance         |
-| *LoyaltiesApi*          | [**updateLoyaltyProgram**](docs/Api/LoyaltiesApi.md#updateloyaltyprogram)                                 | **PUT** /v1/loyalties/{campaignId}                                                         | Update Loyalty Campaign                    |
-| *LoyaltiesApi*          | [**updateRewardAssignment1**](docs/Api/LoyaltiesApi.md#updaterewardassignment1)                           | **PUT** /v1/loyalties/{campaignId}/rewards/{assignmentId}                                  | Update Reward Assignment                   |
-| *ManagementApi*         | [**assignUser**](docs/Api/ManagementApi.md#assignuser)                                                    | **POST** /management/v1/projects/{projectId}/users                                         | Assign User                                |
-| *ManagementApi*         | [**createBrand**](docs/Api/ManagementApi.md#createbrand)                                                  | **POST** /management/v1/projects/{projectId}/branding                                      | Create Brand                               |
-| *ManagementApi*         | [**createCustomEventSchema**](docs/Api/ManagementApi.md#createcustomeventschema)                          | **POST** /management/v1/projects/{projectId}/custom-event-schemas                          | Create Custom Event Schema                 |
-| *ManagementApi*         | [**createMetadataSchema**](docs/Api/ManagementApi.md#createmetadataschema)                                | **POST** /management/v1/projects/{projectId}/metadata-schemas                              | Create Metadata Schema                     |
-| *ManagementApi*         | [**createProject**](docs/Api/ManagementApi.md#createproject)                                              | **POST** /management/v1/projects                                                           | Create Project                             |
-| *ManagementApi*         | [**createStackingRules**](docs/Api/ManagementApi.md#createstackingrules)                                  | **POST** /management/v1/projects/{projectId}/stacking-rules                                | Create Stacking Rules                      |
-| *ManagementApi*         | [**createWebhook**](docs/Api/ManagementApi.md#createwebhook)                                              | **POST** /management/v1/projects/{projectId}/webhooks                                      | Create Webhook                             |
-| *ManagementApi*         | [**deleteBrand**](docs/Api/ManagementApi.md#deletebrand)                                                  | **DELETE** /management/v1/projects/{projectId}/branding/{brandingId}                       | Delete Brand                               |
-| *ManagementApi*         | [**deleteCustomEventSchema**](docs/Api/ManagementApi.md#deletecustomeventschema)                          | **DELETE** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId}  | Delete Custom Event Schema                 |
-| *ManagementApi*         | [**deleteMetadataSchema**](docs/Api/ManagementApi.md#deletemetadataschema)                                | **DELETE** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId}         | Delete Metadata Schema                     |
-| *ManagementApi*         | [**deleteProject**](docs/Api/ManagementApi.md#deleteproject)                                              | **DELETE** /management/v1/projects/{projectId}                                             | Delete Project                             |
-| *ManagementApi*         | [**deleteStackingRules**](docs/Api/ManagementApi.md#deletestackingrules)                                  | **DELETE** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId}            | Delete Stacking Rules                      |
-| *ManagementApi*         | [**deleteWebhook**](docs/Api/ManagementApi.md#deletewebhook)                                              | **DELETE** /management/v1/projects/{projectId}/webhooks/{webhookId}                        | Delete Webhook                             |
-| *ManagementApi*         | [**getBrand**](docs/Api/ManagementApi.md#getbrand)                                                        | **GET** /management/v1/projects/{projectId}/branding/{brandingId}                          | Get Brand                                  |
-| *ManagementApi*         | [**getCustomEventSchema**](docs/Api/ManagementApi.md#getcustomeventschema)                                | **GET** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId}     | Get Custom Event Schema                    |
-| *ManagementApi*         | [**getMetadataSchema1**](docs/Api/ManagementApi.md#getmetadataschema1)                                    | **GET** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId}            | Get Metadata Schema                        |
-| *ManagementApi*         | [**getProject**](docs/Api/ManagementApi.md#getproject)                                                    | **GET** /management/v1/projects/{projectId}                                                | Get Project                                |
-| *ManagementApi*         | [**getStackingRules**](docs/Api/ManagementApi.md#getstackingrules)                                        | **GET** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId}               | Get Stacking Rules                         |
-| *ManagementApi*         | [**getUser**](docs/Api/ManagementApi.md#getuser)                                                          | **GET** /management/v1/projects/{projectId}/users/{userId}                                 | Get User                                   |
-| *ManagementApi*         | [**getWebhook**](docs/Api/ManagementApi.md#getwebhook)                                                    | **GET** /management/v1/projects/{projectId}/webhooks/{webhookId}                           | Get Webhook                                |
-| *ManagementApi*         | [**inviteUser**](docs/Api/ManagementApi.md#inviteuser)                                                    | **POST** /management/v1/projects/users/invite                                              | Invite a New User                          |
-| *ManagementApi*         | [**listBrands**](docs/Api/ManagementApi.md#listbrands)                                                    | **GET** /management/v1/projects/{projectId}/branding                                       | List Brands                                |
-| *ManagementApi*         | [**listCustomEventSchemas**](docs/Api/ManagementApi.md#listcustomeventschemas)                            | **GET** /management/v1/projects/{projectId}/custom-event-schemas                           | List Custom Event Schemas                  |
-| *ManagementApi*         | [**listMetadataSchemas1**](docs/Api/ManagementApi.md#listmetadataschemas1)                                | **GET** /management/v1/projects/{projectId}/metadata-schemas                               | List Metadata Schemas                      |
-| *ManagementApi*         | [**listProjects**](docs/Api/ManagementApi.md#listprojects)                                                | **GET** /management/v1/projects                                                            | List Projects                              |
-| *ManagementApi*         | [**listStackingRules**](docs/Api/ManagementApi.md#liststackingrules)                                      | **GET** /management/v1/projects/{projectId}/stacking-rules                                 | List Stacking Rules                        |
-| *ManagementApi*         | [**listUsers**](docs/Api/ManagementApi.md#listusers)                                                      | **GET** /management/v1/projects/{projectId}/users                                          | List Users                                 |
-| *ManagementApi*         | [**listWebhooks**](docs/Api/ManagementApi.md#listwebhooks)                                                | **GET** /management/v1/projects/{projectId}/webhooks                                       | List Webhooks                              |
-| *ManagementApi*         | [**managementCopyCampaignTemplate**](docs/Api/ManagementApi.md#managementcopycampaigntemplate)            | **POST** /management/v1/projects/{projectId}/templates/campaigns/{campaignTemplateId}/copy | Copy Campaign Template to a Project        |
-| *ManagementApi*         | [**managementListCampaignTemplates**](docs/Api/ManagementApi.md#managementlistcampaigntemplates)          | **GET** /management/v1/projects/{projectId}/templates/campaigns                            | List Campaign Templates                    |
-| *ManagementApi*         | [**unassignUser**](docs/Api/ManagementApi.md#unassignuser)                                                | **DELETE** /management/v1/projects/{projectId}/users/{userId}                              | Unassign User                              |
-| *ManagementApi*         | [**updateBrand**](docs/Api/ManagementApi.md#updatebrand)                                                  | **PUT** /management/v1/projects/{projectId}/branding/{brandingId}                          | Update Brand                               |
-| *ManagementApi*         | [**updateCustomEventSchema**](docs/Api/ManagementApi.md#updatecustomeventschema)                          | **PUT** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId}     | Update Custom Event Schema                 |
-| *ManagementApi*         | [**updateMetadataSchema**](docs/Api/ManagementApi.md#updatemetadataschema)                                | **PUT** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId}            | Update Metadata Schema                     |
-| *ManagementApi*         | [**updateProject**](docs/Api/ManagementApi.md#updateproject)                                              | **PUT** /management/v1/projects/{projectId}                                                | Update Project                             |
-| *ManagementApi*         | [**updateStackingRules**](docs/Api/ManagementApi.md#updatestackingrules)                                  | **PUT** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId}               | Update Stacking Rules                      |
-| *ManagementApi*         | [**updateUser**](docs/Api/ManagementApi.md#updateuser)                                                    | **PUT** /management/v1/projects/{projectId}/users/{userId}                                 | Update User                                |
-| *ManagementApi*         | [**updateWebhook**](docs/Api/ManagementApi.md#updatewebhook)                                              | **PUT** /management/v1/projects/{projectId}/webhooks/{webhookId}                           | Update Webhook                             |
-| *MetadataSchemasApi*    | [**getMetadataSchema**](docs/Api/MetadataSchemasApi.md#getmetadataschema)                                 | **GET** /v1/metadata-schemas/{resource}                                                    | Get Metadata Schema                        |
-| *MetadataSchemasApi*    | [**listMetadataSchemas**](docs/Api/MetadataSchemasApi.md#listmetadataschemas)                             | **GET** /v1/metadata-schemas                                                               | List Metadata Schemas                      |
-| *OrdersApi*             | [**createOrder**](docs/Api/OrdersApi.md#createorder)                                                      | **POST** /v1/orders                                                                        | Create Order                               |
-| *OrdersApi*             | [**createOrderExport**](docs/Api/OrdersApi.md#createorderexport)                                          | **POST** /v1/orders/export                                                                 | Create Orders Export                       |
-| *OrdersApi*             | [**getOrder**](docs/Api/OrdersApi.md#getorder)                                                            | **GET** /v1/orders/{orderId}                                                               | Get Order                                  |
-| *OrdersApi*             | [**importOrders**](docs/Api/OrdersApi.md#importorders)                                                    | **POST** /v1/orders/import                                                                 | Import Orders                              |
-| *OrdersApi*             | [**listOrders**](docs/Api/OrdersApi.md#listorders)                                                        | **GET** /v1/orders                                                                         | List Orders                                |
-| *OrdersApi*             | [**updateOrder**](docs/Api/OrdersApi.md#updateorder)                                                      | **PUT** /v1/orders/{orderId}                                                               | Update Order                               |
-| *ProductCollectionsApi* | [**createProductCollection**](docs/Api/ProductCollectionsApi.md#createproductcollection)                  | **POST** /v1/product-collections                                                           | Create Product Collection                  |
-| *ProductCollectionsApi* | [**deleteProductCollection**](docs/Api/ProductCollectionsApi.md#deleteproductcollection)                  | **DELETE** /v1/product-collections/{productCollectionId}                                   | Delete Product Collection                  |
-| *ProductCollectionsApi* | [**getProductCollection**](docs/Api/ProductCollectionsApi.md#getproductcollection)                        | **GET** /v1/product-collections/{productCollectionId}                                      | Get Product Collection                     |
-| *ProductCollectionsApi* | [**listProductCollections**](docs/Api/ProductCollectionsApi.md#listproductcollections)                    | **GET** /v1/product-collections                                                            | List Product Collections                   |
-| *ProductCollectionsApi* | [**listProductsInCollection**](docs/Api/ProductCollectionsApi.md#listproductsincollection)                | **GET** /v1/product-collections/{productCollectionId}/products                             | List Products in Collection                |
-| *ProductsApi*           | [**createProduct**](docs/Api/ProductsApi.md#createproduct)                                                | **POST** /v1/products                                                                      | Create Product                             |
-| *ProductsApi*           | [**createSku**](docs/Api/ProductsApi.md#createsku)                                                        | **POST** /v1/products/{productId}/skus                                                     | Create SKU                                 |
-| *ProductsApi*           | [**deleteProduct**](docs/Api/ProductsApi.md#deleteproduct)                                                | **DELETE** /v1/products/{productId}                                                        | Delete Product                             |
-| *ProductsApi*           | [**deleteSku**](docs/Api/ProductsApi.md#deletesku)                                                        | **DELETE** /v1/products/{productId}/skus/{skuId}                                           | Delete SKU                                 |
-| *ProductsApi*           | [**getProduct**](docs/Api/ProductsApi.md#getproduct)                                                      | **GET** /v1/products/{productId}                                                           | Get Product                                |
-| *ProductsApi*           | [**getSku**](docs/Api/ProductsApi.md#getsku)                                                              | **GET** /v1/skus/{skuId}                                                                   | Get SKU                                    |
-| *ProductsApi*           | [**importProductsUsingCsv**](docs/Api/ProductsApi.md#importproductsusingcsv)                              | **POST** /v1/products/importCSV                                                            | Import Products using CSV                  |
-| *ProductsApi*           | [**importSkusUsingCsv**](docs/Api/ProductsApi.md#importskususingcsv)                                      | **POST** /v1/skus/importCSV                                                                | Import SKUs using CSV                      |
-| *ProductsApi*           | [**listProducts**](docs/Api/ProductsApi.md#listproducts)                                                  | **GET** /v1/products                                                                       | List Products                              |
-| *ProductsApi*           | [**listSkusInProduct**](docs/Api/ProductsApi.md#listskusinproduct)                                        | **GET** /v1/products/{productId}/skus                                                      | List SKUs in Product                       |
-| *ProductsApi*           | [**updateProduct**](docs/Api/ProductsApi.md#updateproduct)                                                | **PUT** /v1/products/{productId}                                                           | Update Product                             |
-| *ProductsApi*           | [**updateProductsInBulk**](docs/Api/ProductsApi.md#updateproductsinbulk)                                  | **POST** /v1/products/bulk/async                                                           | Update Products in Bulk                    |
-| *ProductsApi*           | [**updateProductsMetadataInBulk**](docs/Api/ProductsApi.md#updateproductsmetadatainbulk)                  | **POST** /v1/products/metadata/async                                                       | Update Products&#39; Metadata in Bulk      |
-| *ProductsApi*           | [**updateSku**](docs/Api/ProductsApi.md#updatesku)                                                        | **PUT** /v1/products/{productId}/skus/{skuId}                                              | Update SKU                                 |
-| *PromotionsApi*         | [**addPromotionTierToCampaign**](docs/Api/PromotionsApi.md#addpromotiontiertocampaign)                    | **POST** /v1/promotions/{campaignId}/tiers                                                 | Add Promotion Tier to Campaign             |
-| *PromotionsApi*         | [**createPromotionStack**](docs/Api/PromotionsApi.md#createpromotionstack)                                | **POST** /v1/promotions/{campaignId}/stacks                                                | Create Promotion Stack                     |
-| *PromotionsApi*         | [**deletePromotionStack**](docs/Api/PromotionsApi.md#deletepromotionstack)                                | **DELETE** /v1/promotions/{campaignId}/stacks/{stackId}                                    | Delete Promotion Stack                     |
-| *PromotionsApi*         | [**deletePromotionTier**](docs/Api/PromotionsApi.md#deletepromotiontier)                                  | **DELETE** /v1/promotions/tiers/{promotionTierId}                                          | Delete Promotion Tier                      |
-| *PromotionsApi*         | [**disablePromotionTier**](docs/Api/PromotionsApi.md#disablepromotiontier)                                | **POST** /v1/promotions/tiers/{promotionTierId}/disable                                    | Disable Promotion Tier                     |
-| *PromotionsApi*         | [**enablePromotionTier**](docs/Api/PromotionsApi.md#enablepromotiontier)                                  | **POST** /v1/promotions/tiers/{promotionTierId}/enable                                     | Enable Promotion Tier                      |
-| *PromotionsApi*         | [**getPromotionStack**](docs/Api/PromotionsApi.md#getpromotionstack)                                      | **GET** /v1/promotions/{campaignId}/stacks/{stackId}                                       | Get Promotion Stack                        |
-| *PromotionsApi*         | [**getPromotionTier**](docs/Api/PromotionsApi.md#getpromotiontier)                                        | **GET** /v1/promotions/tiers/{promotionTierId}                                             | Get Promotion Tier                         |
-| *PromotionsApi*         | [**listAllPromotionStacks**](docs/Api/PromotionsApi.md#listallpromotionstacks)                            | **GET** /v1/promotions/stacks                                                              | List Promotion Stacks                      |
-| *PromotionsApi*         | [**listPromotionStacksInCampaign**](docs/Api/PromotionsApi.md#listpromotionstacksincampaign)              | **GET** /v1/promotions/{campaignId}/stacks                                                 | List Promotion Stacks in Campaign          |
-| *PromotionsApi*         | [**listPromotionTiers**](docs/Api/PromotionsApi.md#listpromotiontiers)                                    | **GET** /v1/promotions/tiers                                                               | List Promotion Tiers                       |
-| *PromotionsApi*         | [**listPromotionTiersFromCampaign**](docs/Api/PromotionsApi.md#listpromotiontiersfromcampaign)            | **GET** /v1/promotions/{campaignId}/tiers                                                  | List Promotion Tiers from Campaign         |
-| *PromotionsApi*         | [**updatePromotionStack**](docs/Api/PromotionsApi.md#updatepromotionstack)                                | **PUT** /v1/promotions/{campaignId}/stacks/{stackId}                                       | Update Promotion Stack                     |
-| *PromotionsApi*         | [**updatePromotionTier**](docs/Api/PromotionsApi.md#updatepromotiontier)                                  | **PUT** /v1/promotions/tiers/{promotionTierId}                                             | Update Promotion Tier                      |
-| *PublicationsApi*       | [**createPublication**](docs/Api/PublicationsApi.md#createpublication)                                    | **POST** /v1/publications                                                                  | Create Publication                         |
-| *PublicationsApi*       | [**createPublication1**](docs/Api/PublicationsApi.md#createpublication1)                                  | **GET** /v1/publications/create                                                            | Create Publication                         |
-| *PublicationsApi*       | [**listPublications**](docs/Api/PublicationsApi.md#listpublications)                                      | **GET** /v1/publications                                                                   | List Publications                          |
-| *QualificationsApi*     | [**checkEligibility**](docs/Api/QualificationsApi.md#checkeligibility)                                    | **POST** /v1/qualifications                                                                | Check Eligibility                          |
-| *RedemptionsApi*        | [**getRedemption**](docs/Api/RedemptionsApi.md#getredemption)                                             | **GET** /v1/redemptions/{redemptionId}                                                     | Get Redemption                             |
-| *RedemptionsApi*        | [**getVoucherRedemptions**](docs/Api/RedemptionsApi.md#getvoucherredemptions)                             | **GET** /v1/vouchers/{code}/redemption                                                     | Get Voucher&#39;s Redemptions              |
-| *RedemptionsApi*        | [**listRedemptions**](docs/Api/RedemptionsApi.md#listredemptions)                                         | **GET** /v1/redemptions                                                                    | List Redemptions                           |
-| *RedemptionsApi*        | [**redeemStackedDiscounts**](docs/Api/RedemptionsApi.md#redeemstackeddiscounts)                           | **POST** /v1/redemptions                                                                   | Redeem Stackable Discounts                 |
-| *RedemptionsApi*        | [**rollbackRedemption**](docs/Api/RedemptionsApi.md#rollbackredemption)                                   | **POST** /v1/redemptions/{redemptionId}/rollback                                           | Rollback Redemption                        |
-| *RedemptionsApi*        | [**rollbackStackedRedemptions**](docs/Api/RedemptionsApi.md#rollbackstackedredemptions)                   | **POST** /v1/redemptions/{parentRedemptionId}/rollbacks                                    | Rollback Stackable Redemptions             |
-| *ReferralsApi*          | [**referralsAddHolders**](docs/Api/ReferralsApi.md#referralsaddholders)                                   | **POST** /v1/referrals/members/{memberId}/holders                                          | Add Referral Code Holders                  |
-| *ReferralsApi*          | [**referralsAddHolders1**](docs/Api/ReferralsApi.md#referralsaddholders1)                                 | **POST** /v1/referrals/{campaignId}/members/{memberId}/holders                             | Add Referral Code Holders                  |
-| *ReferralsApi*          | [**referralsCodeHolders**](docs/Api/ReferralsApi.md#referralscodeholders)                                 | **GET** /v1/referrals/{campaignId}/members/{memberId}/holders                              | List Referral Code Holders                 |
-| *ReferralsApi*          | [**referralsCodeHolders1**](docs/Api/ReferralsApi.md#referralscodeholders1)                               | **GET** /v1/referrals/members/{memberId}/holders                                           | List Referral Code Holders                 |
-| *ReferralsApi*          | [**referralsRemoveHolder**](docs/Api/ReferralsApi.md#referralsremoveholder)                               | **DELETE** /v1/referrals/members/{memberId}/holders/{holderId}                             | Remove Referral Card Holder                |
-| *ReferralsApi*          | [**referralsRemoveHolder1**](docs/Api/ReferralsApi.md#referralsremoveholder1)                             | **DELETE** /v1/referrals/{campaignId}/members/{memberId}/holders/{holderId}                | Remove Referral Card Holder                |
-| *RewardsApi*            | [**createReward**](docs/Api/RewardsApi.md#createreward)                                                   | **POST** /v1/rewards                                                                       | Create Reward                              |
-| *RewardsApi*            | [**createRewardAssignment**](docs/Api/RewardsApi.md#createrewardassignment)                               | **POST** /v1/rewards/{rewardId}/assignments                                                | Create Reward Assignment                   |
-| *RewardsApi*            | [**deleteReward**](docs/Api/RewardsApi.md#deletereward)                                                   | **DELETE** /v1/rewards/{rewardId}                                                          | Delete Reward                              |
-| *RewardsApi*            | [**deleteRewardAssignment**](docs/Api/RewardsApi.md#deleterewardassignment)                               | **DELETE** /v1/rewards/{rewardId}/assignments/{assignmentId}                               | Delete Reward Assignment                   |
-| *RewardsApi*            | [**getReward**](docs/Api/RewardsApi.md#getreward)                                                         | **GET** /v1/rewards/{rewardId}                                                             | Get Reward                                 |
-| *RewardsApi*            | [**getRewardAssignment**](docs/Api/RewardsApi.md#getrewardassignment)                                     | **GET** /v1/rewards/{rewardId}/assignments/{assignmentId}                                  | Get Reward Assignment                      |
-| *RewardsApi*            | [**listRewardAssignments**](docs/Api/RewardsApi.md#listrewardassignments)                                 | **GET** /v1/rewards/{rewardId}/assignments                                                 | List Reward Assignments                    |
-| *RewardsApi*            | [**listRewards**](docs/Api/RewardsApi.md#listrewards)                                                     | **GET** /v1/rewards                                                                        | List Rewards                               |
-| *RewardsApi*            | [**updateReward**](docs/Api/RewardsApi.md#updatereward)                                                   | **PUT** /v1/rewards/{rewardId}                                                             | Update Reward                              |
-| *RewardsApi*            | [**updateRewardAssignment**](docs/Api/RewardsApi.md#updaterewardassignment)                               | **PUT** /v1/rewards/{rewardId}/assignments/{assignmentId}                                  | Update Reward Assignment                   |
-| *SegmentsApi*           | [**createSegment**](docs/Api/SegmentsApi.md#createsegment)                                                | **POST** /v1/segments                                                                      | Create Segment                             |
-| *SegmentsApi*           | [**deleteSegment**](docs/Api/SegmentsApi.md#deletesegment)                                                | **DELETE** /v1/segments/{segmentId}                                                        | Delete Segment                             |
-| *SegmentsApi*           | [**getSegment**](docs/Api/SegmentsApi.md#getsegment)                                                      | **GET** /v1/segments/{segmentId}                                                           | Get Segment                                |
-| *TemplatesApi*          | [**addTierFromTemplate**](docs/Api/TemplatesApi.md#addtierfromtemplate)                                   | **POST** /v1/templates/campaigns/{campaignTemplateId}/tier-setup                           | Add Promotion Tier From Template           |
-| *TemplatesApi*          | [**createCampaignFromTemplate**](docs/Api/TemplatesApi.md#createcampaignfromtemplate)                     | **POST** /v1/templates/campaigns/{campaignTemplateId}/campaign-setup                       | Create Campaign From Template              |
-| *TemplatesApi*          | [**createCampaignTemplate**](docs/Api/TemplatesApi.md#createcampaigntemplate)                             | **POST** /v1/templates/campaigns                                                           | Create Campaign Template                   |
-| *TemplatesApi*          | [**deleteCampaignTemplate**](docs/Api/TemplatesApi.md#deletecampaigntemplate)                             | **DELETE** /v1/templates/campaigns/{campaignTemplateId}                                    | Delete Campaign Template                   |
-| *TemplatesApi*          | [**getCampaignTemplate**](docs/Api/TemplatesApi.md#getcampaigntemplate)                                   | **GET** /v1/templates/campaigns/{campaignTemplateId}                                       | Get Campaign Template                      |
-| *TemplatesApi*          | [**listCampaignTemplates**](docs/Api/TemplatesApi.md#listcampaigntemplates)                               | **GET** /v1/templates/campaigns                                                            | List Campaign Templates                    |
-| *TemplatesApi*          | [**updateCampaignTemplate**](docs/Api/TemplatesApi.md#updatecampaigntemplate)                             | **PUT** /v1/templates/campaigns/{campaignTemplateId}                                       | Update Campaign Template                   |
-| *ValidationRulesApi*    | [**createValidationRuleAssignment**](docs/Api/ValidationRulesApi.md#createvalidationruleassignment)       | **POST** /v1/validation-rules/{validationRuleId}/assignments                               | Create Validation Rules Assignments        |
-| *ValidationRulesApi*    | [**createValidationRules**](docs/Api/ValidationRulesApi.md#createvalidationrules)                         | **POST** /v1/validation-rules                                                              | Create Validation Rules                    |
-| *ValidationRulesApi*    | [**deleteValidationRuleAssignment**](docs/Api/ValidationRulesApi.md#deletevalidationruleassignment)       | **DELETE** /v1/validation-rules/{validationRuleId}/assignments/{assignmentId}              | Delete Validation Rule Assignment          |
-| *ValidationRulesApi*    | [**deleteValidationRules**](docs/Api/ValidationRulesApi.md#deletevalidationrules)                         | **DELETE** /v1/validation-rules/{validationRuleId}                                         | Delete Validation Rule                     |
-| *ValidationRulesApi*    | [**getValidationRule**](docs/Api/ValidationRulesApi.md#getvalidationrule)                                 | **GET** /v1/validation-rules/{validationRuleId}                                            | Get Validation Rule                        |
-| *ValidationRulesApi*    | [**listValidationRuleAssignments**](docs/Api/ValidationRulesApi.md#listvalidationruleassignments)         | **GET** /v1/validation-rules/{validationRuleId}/assignments                                | List Validation Rule Assignments           |
-| *ValidationRulesApi*    | [**listValidationRules**](docs/Api/ValidationRulesApi.md#listvalidationrules)                             | **GET** /v1/validation-rules                                                               | List Validation Rules                      |
-| *ValidationRulesApi*    | [**listValidationRulesAssignments**](docs/Api/ValidationRulesApi.md#listvalidationrulesassignments)       | **GET** /v1/validation-rules-assignments                                                   | List Validation Rules&#39; Assignment(s)   |
-| *ValidationRulesApi*    | [**updateValidationRule**](docs/Api/ValidationRulesApi.md#updatevalidationrule)                           | **PUT** /v1/validation-rules/{validationRuleId}                                            | Update Validation Rule                     |
-| *ValidationsApi*        | [**validateStackedDiscounts**](docs/Api/ValidationsApi.md#validatestackeddiscounts)                       | **POST** /v1/validations                                                                   | Validate Stackable Discounts               |
-| *VouchersApi*           | [**createVoucher**](docs/Api/VouchersApi.md#createvoucher)                                                | **POST** /v1/vouchers/{code}                                                               | Create Voucher                             |
-| *VouchersApi*           | [**deleteVoucher**](docs/Api/VouchersApi.md#deletevoucher)                                                | **DELETE** /v1/vouchers/{code}                                                             | Delete Voucher                             |
-| *VouchersApi*           | [**disableVoucher**](docs/Api/VouchersApi.md#disablevoucher)                                              | **POST** /v1/vouchers/{code}/disable                                                       | Disable Voucher                            |
-| *VouchersApi*           | [**enableVoucher**](docs/Api/VouchersApi.md#enablevoucher)                                                | **POST** /v1/vouchers/{code}/enable                                                        | Enable Voucher                             |
-| *VouchersApi*           | [**exportVoucherTransactions**](docs/Api/VouchersApi.md#exportvouchertransactions)                        | **POST** /v1/vouchers/{code}/transactions/export                                           | Export Voucher Transactions                |
-| *VouchersApi*           | [**generateRandomCode**](docs/Api/VouchersApi.md#generaterandomcode)                                      | **POST** /v1/vouchers                                                                      | Generate Random Code                       |
-| *VouchersApi*           | [**getVoucher**](docs/Api/VouchersApi.md#getvoucher)                                                      | **GET** /v1/vouchers/{code}                                                                | Get Voucher                                |
-| *VouchersApi*           | [**importVouchers**](docs/Api/VouchersApi.md#importvouchers)                                              | **POST** /v1/vouchers/import                                                               | Import Vouchers                            |
-| *VouchersApi*           | [**importVouchersUsingCsv**](docs/Api/VouchersApi.md#importvouchersusingcsv)                              | **POST** /v1/vouchers/importCSV                                                            | Import Vouchers using CSV                  |
-| *VouchersApi*           | [**listVoucherTransactions**](docs/Api/VouchersApi.md#listvouchertransactions)                            | **GET** /v1/vouchers/{code}/transactions                                                   | List Voucher Transactions                  |
-| *VouchersApi*           | [**listVouchers**](docs/Api/VouchersApi.md#listvouchers)                                                  | **GET** /v1/vouchers                                                                       | List Vouchers                              |
-| *VouchersApi*           | [**releaseValidationSession**](docs/Api/VouchersApi.md#releasevalidationsession)                          | **DELETE** /v1/vouchers/{code}/sessions/{sessionKey}                                       | Release Validation Session                 |
-| *VouchersApi*           | [**updateVoucher**](docs/Api/VouchersApi.md#updatevoucher)                                                | **PUT** /v1/vouchers/{code}                                                                | Update Voucher                             |
-| *VouchersApi*           | [**updateVoucherBalance**](docs/Api/VouchersApi.md#updatevoucherbalance)                                  | **POST** /v1/vouchers/{code}/balance                                                       | Add or Remove Voucher Balance              |
-| *VouchersApi*           | [**updateVouchersInBulk**](docs/Api/VouchersApi.md#updatevouchersinbulk)                                  | **POST** /v1/vouchers/bulk/async                                                           | Update Vouchers in Bulk                    |
-| *VouchersApi*           | [**updateVouchersMetadataInBulk**](docs/Api/VouchersApi.md#updatevouchersmetadatainbulk)                  | **POST** /v1/vouchers/metadata/async                                                       | Update Vouchers&#39; Metadata in Bulk      |
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*AsyncActionsApi* | [**getAsyncAction**](docs/Api/AsyncActionsApi.md#getasyncaction) | **GET** /v1/async-actions/{asyncActionId} | Get Async Action
+*AsyncActionsApi* | [**listAsyncActions**](docs/Api/AsyncActionsApi.md#listasyncactions) | **GET** /v1/async-actions | List Async Actions
+*BinApi* | [**deleteBinEntry**](docs/Api/BinApi.md#deletebinentry) | **DELETE** /v1/trash-bin/{binEntryId} | Delete Bin Entry
+*BinApi* | [**listBinEntries**](docs/Api/BinApi.md#listbinentries) | **GET** /v1/trash-bin | List Bin Entries
+*CampaignsApi* | [**addVoucherWithSpecificCodeToCampaign**](docs/Api/CampaignsApi.md#addvoucherwithspecificcodetocampaign) | **POST** /v1/campaigns/{campaignId}/vouchers/{code} | Add Voucher with Specific Code to Campaign
+*CampaignsApi* | [**addVouchersToCampaign**](docs/Api/CampaignsApi.md#addvoucherstocampaign) | **POST** /v1/campaigns/{campaignId}/vouchers | Add Vouchers to Campaign
+*CampaignsApi* | [**createCampaign**](docs/Api/CampaignsApi.md#createcampaign) | **POST** /v1/campaigns | Create Campaign
+*CampaignsApi* | [**deleteCampaign**](docs/Api/CampaignsApi.md#deletecampaign) | **DELETE** /v1/campaigns/{campaignId} | Delete Campaign
+*CampaignsApi* | [**disableCampaign**](docs/Api/CampaignsApi.md#disablecampaign) | **POST** /v1/campaigns/{campaignId}/disable | Disable Campaign
+*CampaignsApi* | [**enableCampaign**](docs/Api/CampaignsApi.md#enablecampaign) | **POST** /v1/campaigns/{campaignId}/enable | Enable Campaign
+*CampaignsApi* | [**exportCampaignTransactions**](docs/Api/CampaignsApi.md#exportcampaigntransactions) | **POST** /v1/campaigns/{campaignId}/transactions/export | Export Campaign Transactions
+*CampaignsApi* | [**getCampaign**](docs/Api/CampaignsApi.md#getcampaign) | **GET** /v1/campaigns/{campaignId} | Get Campaign
+*CampaignsApi* | [**getCampaignSummary**](docs/Api/CampaignsApi.md#getcampaignsummary) | **GET** /v1/campaigns/{campaignId}/summary | Get Campaign Summary
+*CampaignsApi* | [**importVouchersToCampaign**](docs/Api/CampaignsApi.md#importvoucherstocampaign) | **POST** /v1/campaigns/{campaignId}/import | Import Vouchers to Campaign
+*CampaignsApi* | [**importVouchersToCampaignUsingCsv**](docs/Api/CampaignsApi.md#importvoucherstocampaignusingcsv) | **POST** /v1/campaigns/{campaignId}/importCSV | Import Vouchers to Campaign by CSV
+*CampaignsApi* | [**listCampaignTransactions**](docs/Api/CampaignsApi.md#listcampaigntransactions) | **GET** /v1/campaigns/{campaignId}/transactions | List Campaign Transactions
+*CampaignsApi* | [**listCampaigns**](docs/Api/CampaignsApi.md#listcampaigns) | **GET** /v1/campaigns | List Campaigns
+*CampaignsApi* | [**updateCampaign**](docs/Api/CampaignsApi.md#updatecampaign) | **PUT** /v1/campaigns/{campaignId} | Update Campaign
+*CategoriesApi* | [**createCategory**](docs/Api/CategoriesApi.md#createcategory) | **POST** /v1/categories | Create Category
+*CategoriesApi* | [**deleteCategory**](docs/Api/CategoriesApi.md#deletecategory) | **DELETE** /v1/categories/{categoryId} | Delete Category
+*CategoriesApi* | [**getCategory**](docs/Api/CategoriesApi.md#getcategory) | **GET** /v1/categories/{categoryId} | Get Category
+*CategoriesApi* | [**listCategories**](docs/Api/CategoriesApi.md#listcategories) | **GET** /v1/categories | List Categories
+*CategoriesApi* | [**updateCategory**](docs/Api/CategoriesApi.md#updatecategory) | **PUT** /v1/categories/{categoryId} | Update Category
+*ClientSideApi* | [**checkEligibilityClientSide**](docs/Api/ClientSideApi.md#checkeligibilityclientside) | **POST** /client/v1/qualifications | Check Eligibility (client-side)
+*ClientSideApi* | [**listPromotionTiersClientSide**](docs/Api/ClientSideApi.md#listpromotiontiersclientside) | **GET** /client/v1/promotions/tiers | List Promotion Tiers (client-side)
+*ClientSideApi* | [**redeemStackedDiscountsClientSide**](docs/Api/ClientSideApi.md#redeemstackeddiscountsclientside) | **POST** /client/v1/redemptions | Redeem Stackable Discounts (client-side)
+*ClientSideApi* | [**trackCustomEventClientSide**](docs/Api/ClientSideApi.md#trackcustomeventclientside) | **POST** /client/v1/events | Track Custom Event (client-side)
+*ClientSideApi* | [**validateStackedDiscountsClientSide**](docs/Api/ClientSideApi.md#validatestackeddiscountsclientside) | **POST** /client/v1/validations | Validate Stackable Discounts (client-side)
+*CustomersApi* | [**createCustomer**](docs/Api/CustomersApi.md#createcustomer) | **POST** /v1/customers | Create Customer
+*CustomersApi* | [**customerPermanentlyDeletion**](docs/Api/CustomersApi.md#customerpermanentlydeletion) | **POST** /v1/customers/{customerId}/permanent-deletion | Delete Customer Permanently
+*CustomersApi* | [**deleteCustomer**](docs/Api/CustomersApi.md#deletecustomer) | **DELETE** /v1/customers/{customerId} | Delete Customer
+*CustomersApi* | [**getCustomer**](docs/Api/CustomersApi.md#getcustomer) | **GET** /v1/customers/{customerId} | Get Customer
+*CustomersApi* | [**importCustomersUsingCsv**](docs/Api/CustomersApi.md#importcustomersusingcsv) | **POST** /v1/customers/importCSV | Import and Update Customers using CSV
+*CustomersApi* | [**listCustomerActivity**](docs/Api/CustomersApi.md#listcustomeractivity) | **GET** /v1/customers/{customerId}/activity | List Customer Activity
+*CustomersApi* | [**listCustomerRedeemables**](docs/Api/CustomersApi.md#listcustomerredeemables) | **GET** /v1/customers/{customerId}/redeemables | List Customer&#39;s Redeemables
+*CustomersApi* | [**listCustomerSegments**](docs/Api/CustomersApi.md#listcustomersegments) | **GET** /v1/customers/{customerId}/segments | List Customer&#39;s Segments
+*CustomersApi* | [**listCustomers**](docs/Api/CustomersApi.md#listcustomers) | **GET** /v1/customers | List Customers
+*CustomersApi* | [**updateCustomer**](docs/Api/CustomersApi.md#updatecustomer) | **PUT** /v1/customers/{customerId} | Update Customer
+*CustomersApi* | [**updateCustomersInBulk**](docs/Api/CustomersApi.md#updatecustomersinbulk) | **POST** /v1/customers/bulk/async | Update Customers in Bulk
+*CustomersApi* | [**updateCustomersMetadataInBulk**](docs/Api/CustomersApi.md#updatecustomersmetadatainbulk) | **POST** /v1/customers/metadata/async | Update Customers&#39; Metadata in Bulk
+*EventsApi* | [**trackCustomEvent**](docs/Api/EventsApi.md#trackcustomevent) | **POST** /v1/events | Track Custom Event
+*ExportsApi* | [**createExport**](docs/Api/ExportsApi.md#createexport) | **POST** /v1/exports | Create Export
+*ExportsApi* | [**deleteExport**](docs/Api/ExportsApi.md#deleteexport) | **DELETE** /v1/exports/{exportId} | Delete Export
+*ExportsApi* | [**downloadExport**](docs/Api/ExportsApi.md#downloadexport) | **GET** /v1/exports/{export_Id} | Download Export
+*ExportsApi* | [**getExport**](docs/Api/ExportsApi.md#getexport) | **GET** /v1/exports/{exportId} | Get Export
+*ExportsApi* | [**listExports**](docs/Api/ExportsApi.md#listexports) | **GET** /v1/exports | List Exports
+*LocationsApi* | [**getLocation**](docs/Api/LocationsApi.md#getlocation) | **GET** /v1/locations/{locationId} | Get Location
+*LocationsApi* | [**listLocations**](docs/Api/LocationsApi.md#listlocations) | **GET** /v1/locations | List Locations
+*LoyaltiesApi* | [**activateMemberPendingPoints**](docs/Api/LoyaltiesApi.md#activatememberpendingpoints) | **POST** /v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/activate | Activate Member Pending Points
+*LoyaltiesApi* | [**addMember**](docs/Api/LoyaltiesApi.md#addmember) | **POST** /v1/loyalties/{campaignId}/members | Add Member
+*LoyaltiesApi* | [**adjustMemberPendingPoints**](docs/Api/LoyaltiesApi.md#adjustmemberpendingpoints) | **POST** /v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/balance | Adjust Member Pending Points
+*LoyaltiesApi* | [**cancelMemberPendingPoints**](docs/Api/LoyaltiesApi.md#cancelmemberpendingpoints) | **POST** /v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/cancel | Cancel Member Pending Points
+*LoyaltiesApi* | [**createEarningRule**](docs/Api/LoyaltiesApi.md#createearningrule) | **POST** /v1/loyalties/{campaignId}/earning-rules | Create Earning Rule
+*LoyaltiesApi* | [**createInBulkLoyaltyTiers**](docs/Api/LoyaltiesApi.md#createinbulkloyaltytiers) | **POST** /v1/loyalties/{campaignId}/tiers | Create loyalty tiers
+*LoyaltiesApi* | [**createLoyaltyProgram**](docs/Api/LoyaltiesApi.md#createloyaltyprogram) | **POST** /v1/loyalties | Create Loyalty Campaign
+*LoyaltiesApi* | [**createPointsExpirationExport**](docs/Api/LoyaltiesApi.md#createpointsexpirationexport) | **POST** /v1/loyalties/{campaignId}/points-expiration/export | Export Loyalty Campaign Point Expiration
+*LoyaltiesApi* | [**createRewardAssignment1**](docs/Api/LoyaltiesApi.md#createrewardassignment1) | **POST** /v1/loyalties/{campaignId}/rewards | Create Loyalty Campaign Reward Assignment
+*LoyaltiesApi* | [**deleteEarningRule**](docs/Api/LoyaltiesApi.md#deleteearningrule) | **DELETE** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId} | Delete Earning Rule
+*LoyaltiesApi* | [**deleteLoyaltyProgram**](docs/Api/LoyaltiesApi.md#deleteloyaltyprogram) | **DELETE** /v1/loyalties/{campaignId} | Delete Loyalty Campaign
+*LoyaltiesApi* | [**deleteRewardAssignment1**](docs/Api/LoyaltiesApi.md#deleterewardassignment1) | **DELETE** /v1/loyalties/{campaignId}/rewards/{assignmentId} | Delete Campaign Reward Assignment
+*LoyaltiesApi* | [**disableEarningRule**](docs/Api/LoyaltiesApi.md#disableearningrule) | **POST** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}/disable | Disable Earning Rule
+*LoyaltiesApi* | [**enableEarningRule**](docs/Api/LoyaltiesApi.md#enableearningrule) | **POST** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}/enable | Enable Earning Rule
+*LoyaltiesApi* | [**exportLoyaltyCampaignTransactions**](docs/Api/LoyaltiesApi.md#exportloyaltycampaigntransactions) | **POST** /v1/loyalties/{campaignId}/transactions/export | Export Loyalty Campaign Transactions
+*LoyaltiesApi* | [**exportLoyaltyCardTransactions**](docs/Api/LoyaltiesApi.md#exportloyaltycardtransactions) | **POST** /v1/loyalties/members/{memberId}/transactions/export | Export Loyalty Card Transactions
+*LoyaltiesApi* | [**exportLoyaltyCardTransactions1**](docs/Api/LoyaltiesApi.md#exportloyaltycardtransactions1) | **POST** /v1/loyalties/{campaignId}/members/{memberId}/transactions/export | Export Loyalty Card Transactions with campaign ID
+*LoyaltiesApi* | [**getEarningRule**](docs/Api/LoyaltiesApi.md#getearningrule) | **GET** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId} | Get Earning Rule
+*LoyaltiesApi* | [**getLoyaltyProgram**](docs/Api/LoyaltiesApi.md#getloyaltyprogram) | **GET** /v1/loyalties/{campaignId} | Get Loyalty Campaign
+*LoyaltiesApi* | [**getLoyaltyTier**](docs/Api/LoyaltiesApi.md#getloyaltytier) | **GET** /v1/loyalties/{campaignId}/tiers/{loyaltyTierId} | Get Loyalty Tier
+*LoyaltiesApi* | [**getMember**](docs/Api/LoyaltiesApi.md#getmember) | **GET** /v1/loyalties/members/{memberId} | Get Member
+*LoyaltiesApi* | [**getMember1**](docs/Api/LoyaltiesApi.md#getmember1) | **GET** /v1/loyalties/{campaignId}/members/{memberId} | Get Member with campaign ID
+*LoyaltiesApi* | [**getRewardAssignment1**](docs/Api/LoyaltiesApi.md#getrewardassignment1) | **GET** /v1/loyalties/{campaignId}/reward-assignments/{assignmentId} | Get Campaign Reward Assignments
+*LoyaltiesApi* | [**getRewardAssignment2**](docs/Api/LoyaltiesApi.md#getrewardassignment2) | **GET** /v1/loyalties/{campaignId}/rewards/{assignmentId} | Get Campaign Reward Assignment
+*LoyaltiesApi* | [**getRewardDetails**](docs/Api/LoyaltiesApi.md#getrewarddetails) | **GET** /v1/loyalties/{campaignId}/reward-assignments/{assignmentId}/reward | Get Reward Details
+*LoyaltiesApi* | [**listCampaignPendingPoints**](docs/Api/LoyaltiesApi.md#listcampaignpendingpoints) | **GET** /v1/loyalties/{campaignId}/pending-points | List Campaign Pending Points
+*LoyaltiesApi* | [**listEarningRules**](docs/Api/LoyaltiesApi.md#listearningrules) | **GET** /v1/loyalties/{campaignId}/earning-rules | List Earning Rules
+*LoyaltiesApi* | [**listLoyaltyCampaignTransactions**](docs/Api/LoyaltiesApi.md#listloyaltycampaigntransactions) | **GET** /v1/loyalties/{campaignId}/transactions | List Loyalty Campaign Transactions
+*LoyaltiesApi* | [**listLoyaltyCardTransactions**](docs/Api/LoyaltiesApi.md#listloyaltycardtransactions) | **GET** /v1/loyalties/members/{memberId}/transactions | List Loyalty Card Transactions
+*LoyaltiesApi* | [**listLoyaltyCardTransactions1**](docs/Api/LoyaltiesApi.md#listloyaltycardtransactions1) | **GET** /v1/loyalties/{campaignId}/members/{memberId}/transactions | List Loyalty Card Transactions with campaign ID
+*LoyaltiesApi* | [**listLoyaltyPrograms**](docs/Api/LoyaltiesApi.md#listloyaltyprograms) | **GET** /v1/loyalties | List Loyalty Campaigns
+*LoyaltiesApi* | [**listLoyaltyTierEarningRules**](docs/Api/LoyaltiesApi.md#listloyaltytierearningrules) | **GET** /v1/loyalties/{campaignId}/tiers/{loyaltyTierId}/earning-rules | List Loyalty Tier Earning Rules
+*LoyaltiesApi* | [**listLoyaltyTierRewards**](docs/Api/LoyaltiesApi.md#listloyaltytierrewards) | **GET** /v1/loyalties/{campaignId}/tiers/{loyaltyTierId}/rewards | List Loyalty Tier Rewards
+*LoyaltiesApi* | [**listLoyaltyTiers**](docs/Api/LoyaltiesApi.md#listloyaltytiers) | **GET** /v1/loyalties/{campaignId}/tiers | List Loyalty Tiers
+*LoyaltiesApi* | [**listMemberActivity**](docs/Api/LoyaltiesApi.md#listmemberactivity) | **GET** /v1/loyalties/members/{memberId}/activity | List Member Activity
+*LoyaltiesApi* | [**listMemberActivity1**](docs/Api/LoyaltiesApi.md#listmemberactivity1) | **GET** /v1/loyalties/{campaignId}/members/{memberId}/activity | List Member Activity with campaign ID
+*LoyaltiesApi* | [**listMemberLoyaltyTier**](docs/Api/LoyaltiesApi.md#listmemberloyaltytier) | **GET** /v1/loyalties/members/{memberId}/tiers | List Member&#39;s Loyalty Tiers
+*LoyaltiesApi* | [**listMemberPendingPoints**](docs/Api/LoyaltiesApi.md#listmemberpendingpoints) | **GET** /v1/loyalties/members/{memberId}/pending-points | List Member Pending Points
+*LoyaltiesApi* | [**listMemberPendingPoints1**](docs/Api/LoyaltiesApi.md#listmemberpendingpoints1) | **GET** /v1/loyalties/{campaignId}/members/{memberId}/pending-points | List Member Pending Points with campaign ID
+*LoyaltiesApi* | [**listMemberRewards**](docs/Api/LoyaltiesApi.md#listmemberrewards) | **GET** /v1/loyalties/members/{memberId}/rewards | List Member Rewards
+*LoyaltiesApi* | [**listMembers**](docs/Api/LoyaltiesApi.md#listmembers) | **GET** /v1/loyalties/{campaignId}/members | List Members
+*LoyaltiesApi* | [**listPointsExpiration**](docs/Api/LoyaltiesApi.md#listpointsexpiration) | **GET** /v1/loyalties/{campaignId}/members/{memberId}/points-expiration | List Loyalty Card Point Expiration
+*LoyaltiesApi* | [**listRewardAssignments1**](docs/Api/LoyaltiesApi.md#listrewardassignments1) | **GET** /v1/loyalties/{campaignId}/reward-assignments | List Reward Assignments with campaign ID
+*LoyaltiesApi* | [**listRewardAssignments2**](docs/Api/LoyaltiesApi.md#listrewardassignments2) | **GET** /v1/loyalties/{campaignId}/rewards | List Campaign Rewards
+*LoyaltiesApi* | [**redeemReward**](docs/Api/LoyaltiesApi.md#redeemreward) | **POST** /v1/loyalties/members/{memberId}/redemption | Redeem Reward
+*LoyaltiesApi* | [**redeemReward1**](docs/Api/LoyaltiesApi.md#redeemreward1) | **POST** /v1/loyalties/{campaignId}/members/{memberId}/redemption | Redeem Reward with campaign ID
+*LoyaltiesApi* | [**transferPoints**](docs/Api/LoyaltiesApi.md#transferpoints) | **POST** /v1/loyalties/{campaignId}/members/{memberId}/transfers | Transfer Loyalty Points
+*LoyaltiesApi* | [**updateEarningRule**](docs/Api/LoyaltiesApi.md#updateearningrule) | **PUT** /v1/loyalties/{campaignId}/earning-rules/{earningRuleId} | Update Earning Rule
+*LoyaltiesApi* | [**updateLoyaltyCardBalance**](docs/Api/LoyaltiesApi.md#updateloyaltycardbalance) | **POST** /v1/loyalties/members/{memberId}/balance | Adjust Loyalty Card Balance
+*LoyaltiesApi* | [**updateLoyaltyCardBalance1**](docs/Api/LoyaltiesApi.md#updateloyaltycardbalance1) | **POST** /v1/loyalties/{campaignId}/members/{memberId}/balance | Adjust Loyalty Card Balance with campaign ID
+*LoyaltiesApi* | [**updateLoyaltyProgram**](docs/Api/LoyaltiesApi.md#updateloyaltyprogram) | **PUT** /v1/loyalties/{campaignId} | Update Loyalty Campaign
+*LoyaltiesApi* | [**updateRewardAssignment1**](docs/Api/LoyaltiesApi.md#updaterewardassignment1) | **PUT** /v1/loyalties/{campaignId}/rewards/{assignmentId} | Update Campaign Reward Assignment
+*ManagementApi* | [**assignUser**](docs/Api/ManagementApi.md#assignuser) | **POST** /management/v1/projects/{projectId}/users | Assign User
+*ManagementApi* | [**createBrand**](docs/Api/ManagementApi.md#createbrand) | **POST** /management/v1/projects/{projectId}/branding | Create Brand
+*ManagementApi* | [**createCustomEventSchema**](docs/Api/ManagementApi.md#createcustomeventschema) | **POST** /management/v1/projects/{projectId}/custom-event-schemas | Create Custom Event Schema
+*ManagementApi* | [**createMetadataSchema**](docs/Api/ManagementApi.md#createmetadataschema) | **POST** /management/v1/projects/{projectId}/metadata-schemas | Create Metadata Schema
+*ManagementApi* | [**createProject**](docs/Api/ManagementApi.md#createproject) | **POST** /management/v1/projects | Create Project
+*ManagementApi* | [**createStackingRules**](docs/Api/ManagementApi.md#createstackingrules) | **POST** /management/v1/projects/{projectId}/stacking-rules | Create Stacking Rules
+*ManagementApi* | [**createWebhook**](docs/Api/ManagementApi.md#createwebhook) | **POST** /management/v1/projects/{projectId}/webhooks | Create Webhook
+*ManagementApi* | [**deleteBrand**](docs/Api/ManagementApi.md#deletebrand) | **DELETE** /management/v1/projects/{projectId}/branding/{brandingId} | Delete Brand
+*ManagementApi* | [**deleteCustomEventSchema**](docs/Api/ManagementApi.md#deletecustomeventschema) | **DELETE** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId} | Delete Custom Event Schema
+*ManagementApi* | [**deleteMetadataSchema**](docs/Api/ManagementApi.md#deletemetadataschema) | **DELETE** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId} | Delete Metadata Schema
+*ManagementApi* | [**deleteProject**](docs/Api/ManagementApi.md#deleteproject) | **DELETE** /management/v1/projects/{projectId} | Delete Project
+*ManagementApi* | [**deleteStackingRules**](docs/Api/ManagementApi.md#deletestackingrules) | **DELETE** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId} | Delete Stacking Rules
+*ManagementApi* | [**deleteWebhook**](docs/Api/ManagementApi.md#deletewebhook) | **DELETE** /management/v1/projects/{projectId}/webhooks/{webhookId} | Delete Webhook
+*ManagementApi* | [**getBrand**](docs/Api/ManagementApi.md#getbrand) | **GET** /management/v1/projects/{projectId}/branding/{brandingId} | Get Brand
+*ManagementApi* | [**getCustomEventSchema**](docs/Api/ManagementApi.md#getcustomeventschema) | **GET** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId} | Get Custom Event Schema
+*ManagementApi* | [**getMetadataSchema1**](docs/Api/ManagementApi.md#getmetadataschema1) | **GET** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId} | Get Metadata Schema
+*ManagementApi* | [**getProject**](docs/Api/ManagementApi.md#getproject) | **GET** /management/v1/projects/{projectId} | Get Project
+*ManagementApi* | [**getStackingRules**](docs/Api/ManagementApi.md#getstackingrules) | **GET** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId} | Get Stacking Rules
+*ManagementApi* | [**getUser**](docs/Api/ManagementApi.md#getuser) | **GET** /management/v1/projects/{projectId}/users/{userId} | Get User
+*ManagementApi* | [**getWebhook**](docs/Api/ManagementApi.md#getwebhook) | **GET** /management/v1/projects/{projectId}/webhooks/{webhookId} | Get Webhook
+*ManagementApi* | [**inviteUser**](docs/Api/ManagementApi.md#inviteuser) | **POST** /management/v1/projects/users/invite | Invite a New User
+*ManagementApi* | [**listBrands**](docs/Api/ManagementApi.md#listbrands) | **GET** /management/v1/projects/{projectId}/branding | List Brands
+*ManagementApi* | [**listCustomEventSchemas**](docs/Api/ManagementApi.md#listcustomeventschemas) | **GET** /management/v1/projects/{projectId}/custom-event-schemas | List Custom Event Schemas
+*ManagementApi* | [**listMetadataSchemas1**](docs/Api/ManagementApi.md#listmetadataschemas1) | **GET** /management/v1/projects/{projectId}/metadata-schemas | List Metadata Schemas
+*ManagementApi* | [**listProjects**](docs/Api/ManagementApi.md#listprojects) | **GET** /management/v1/projects | List Projects
+*ManagementApi* | [**listStackingRules**](docs/Api/ManagementApi.md#liststackingrules) | **GET** /management/v1/projects/{projectId}/stacking-rules | List Stacking Rules
+*ManagementApi* | [**listUsers**](docs/Api/ManagementApi.md#listusers) | **GET** /management/v1/projects/{projectId}/users | List Users
+*ManagementApi* | [**listWebhooks**](docs/Api/ManagementApi.md#listwebhooks) | **GET** /management/v1/projects/{projectId}/webhooks | List Webhooks
+*ManagementApi* | [**managementCopyCampaignTemplate**](docs/Api/ManagementApi.md#managementcopycampaigntemplate) | **POST** /management/v1/projects/{projectId}/templates/campaigns/{campaignTemplateId}/copy | Copy Campaign Template to a Project
+*ManagementApi* | [**managementListCampaignTemplates**](docs/Api/ManagementApi.md#managementlistcampaigntemplates) | **GET** /management/v1/projects/{projectId}/templates/campaigns | List Campaign Templates
+*ManagementApi* | [**unassignUser**](docs/Api/ManagementApi.md#unassignuser) | **DELETE** /management/v1/projects/{projectId}/users/{userId} | Unassign User
+*ManagementApi* | [**updateBrand**](docs/Api/ManagementApi.md#updatebrand) | **PUT** /management/v1/projects/{projectId}/branding/{brandingId} | Update Brand
+*ManagementApi* | [**updateCustomEventSchema**](docs/Api/ManagementApi.md#updatecustomeventschema) | **PUT** /management/v1/projects/{projectId}/custom-event-schemas/{customEventSchemaId} | Update Custom Event Schema
+*ManagementApi* | [**updateMetadataSchema**](docs/Api/ManagementApi.md#updatemetadataschema) | **PUT** /management/v1/projects/{projectId}/metadata-schemas/{metadataSchemaId} | Update Metadata Schema
+*ManagementApi* | [**updateProject**](docs/Api/ManagementApi.md#updateproject) | **PUT** /management/v1/projects/{projectId} | Update Project
+*ManagementApi* | [**updateStackingRules**](docs/Api/ManagementApi.md#updatestackingrules) | **PUT** /management/v1/projects/{projectId}/stacking-rules/{stackingRulesId} | Update Stacking Rules
+*ManagementApi* | [**updateUser**](docs/Api/ManagementApi.md#updateuser) | **PUT** /management/v1/projects/{projectId}/users/{userId} | Update User
+*ManagementApi* | [**updateWebhook**](docs/Api/ManagementApi.md#updatewebhook) | **PUT** /management/v1/projects/{projectId}/webhooks/{webhookId} | Update Webhook
+*MetadataSchemasApi* | [**getMetadataSchema**](docs/Api/MetadataSchemasApi.md#getmetadataschema) | **GET** /v1/metadata-schemas/{resource} | Get Metadata Schema
+*MetadataSchemasApi* | [**listMetadataSchemas**](docs/Api/MetadataSchemasApi.md#listmetadataschemas) | **GET** /v1/metadata-schemas | List Metadata Schema Definitions
+*OrdersApi* | [**createOrder**](docs/Api/OrdersApi.md#createorder) | **POST** /v1/orders | Create Order
+*OrdersApi* | [**createOrderExport**](docs/Api/OrdersApi.md#createorderexport) | **POST** /v1/orders/export | Create Orders Export
+*OrdersApi* | [**getOrder**](docs/Api/OrdersApi.md#getorder) | **GET** /v1/orders/{orderId} | Get Order
+*OrdersApi* | [**importOrders**](docs/Api/OrdersApi.md#importorders) | **POST** /v1/orders/import | Import Orders
+*OrdersApi* | [**listOrders**](docs/Api/OrdersApi.md#listorders) | **GET** /v1/orders | List Orders
+*OrdersApi* | [**updateOrder**](docs/Api/OrdersApi.md#updateorder) | **PUT** /v1/orders/{orderId} | Update Order
+*ProductCollectionsApi* | [**createProductCollection**](docs/Api/ProductCollectionsApi.md#createproductcollection) | **POST** /v1/product-collections | Create Product Collection
+*ProductCollectionsApi* | [**deleteProductCollection**](docs/Api/ProductCollectionsApi.md#deleteproductcollection) | **DELETE** /v1/product-collections/{productCollectionId} | Delete Product Collection
+*ProductCollectionsApi* | [**getProductCollection**](docs/Api/ProductCollectionsApi.md#getproductcollection) | **GET** /v1/product-collections/{productCollectionId} | Get Product Collection
+*ProductCollectionsApi* | [**listProductCollections**](docs/Api/ProductCollectionsApi.md#listproductcollections) | **GET** /v1/product-collections | List Product Collections
+*ProductCollectionsApi* | [**listProductsInCollection**](docs/Api/ProductCollectionsApi.md#listproductsincollection) | **GET** /v1/product-collections/{productCollectionId}/products | List Products in Collection
+*ProductsApi* | [**createProduct**](docs/Api/ProductsApi.md#createproduct) | **POST** /v1/products | Create Product
+*ProductsApi* | [**createSku**](docs/Api/ProductsApi.md#createsku) | **POST** /v1/products/{productId}/skus | Create SKU
+*ProductsApi* | [**deleteProduct**](docs/Api/ProductsApi.md#deleteproduct) | **DELETE** /v1/products/{productId} | Delete Product
+*ProductsApi* | [**deleteSku**](docs/Api/ProductsApi.md#deletesku) | **DELETE** /v1/products/{productId}/skus/{skuId} | Delete SKU
+*ProductsApi* | [**getProduct**](docs/Api/ProductsApi.md#getproduct) | **GET** /v1/products/{productId} | Get Product
+*ProductsApi* | [**getSku**](docs/Api/ProductsApi.md#getsku) | **GET** /v1/skus/{skuId} | Get SKU
+*ProductsApi* | [**importProductsUsingCsv**](docs/Api/ProductsApi.md#importproductsusingcsv) | **POST** /v1/products/importCSV | Import Products using CSV
+*ProductsApi* | [**importSkusUsingCsv**](docs/Api/ProductsApi.md#importskususingcsv) | **POST** /v1/skus/importCSV | Import SKUs using CSV
+*ProductsApi* | [**listProducts**](docs/Api/ProductsApi.md#listproducts) | **GET** /v1/products | List Products
+*ProductsApi* | [**listSkusInProduct**](docs/Api/ProductsApi.md#listskusinproduct) | **GET** /v1/products/{productId}/skus | List SKUs in Product
+*ProductsApi* | [**updateProduct**](docs/Api/ProductsApi.md#updateproduct) | **PUT** /v1/products/{productId} | Update Product
+*ProductsApi* | [**updateProductsInBulk**](docs/Api/ProductsApi.md#updateproductsinbulk) | **POST** /v1/products/bulk/async | Update Products in Bulk
+*ProductsApi* | [**updateProductsMetadataInBulk**](docs/Api/ProductsApi.md#updateproductsmetadatainbulk) | **POST** /v1/products/metadata/async | Update Products&#39; Metadata in Bulk
+*ProductsApi* | [**updateSku**](docs/Api/ProductsApi.md#updatesku) | **PUT** /v1/products/{productId}/skus/{skuId} | Update SKU
+*PromotionsApi* | [**addPromotionTierToCampaign**](docs/Api/PromotionsApi.md#addpromotiontiertocampaign) | **POST** /v1/promotions/{campaignId}/tiers | Add Promotion Tier to Campaign
+*PromotionsApi* | [**createPromotionStack**](docs/Api/PromotionsApi.md#createpromotionstack) | **POST** /v1/promotions/{campaignId}/stacks | Create Promotion Stack
+*PromotionsApi* | [**deletePromotionStack**](docs/Api/PromotionsApi.md#deletepromotionstack) | **DELETE** /v1/promotions/{campaignId}/stacks/{stackId} | Delete Promotion Stack
+*PromotionsApi* | [**deletePromotionTier**](docs/Api/PromotionsApi.md#deletepromotiontier) | **DELETE** /v1/promotions/tiers/{promotionTierId} | Delete Promotion Tier
+*PromotionsApi* | [**disablePromotionTier**](docs/Api/PromotionsApi.md#disablepromotiontier) | **POST** /v1/promotions/tiers/{promotionTierId}/disable | Disable Promotion Tier
+*PromotionsApi* | [**enablePromotionTier**](docs/Api/PromotionsApi.md#enablepromotiontier) | **POST** /v1/promotions/tiers/{promotionTierId}/enable | Enable Promotion Tier
+*PromotionsApi* | [**getPromotionStack**](docs/Api/PromotionsApi.md#getpromotionstack) | **GET** /v1/promotions/{campaignId}/stacks/{stackId} | Get Promotion Stack
+*PromotionsApi* | [**getPromotionTier**](docs/Api/PromotionsApi.md#getpromotiontier) | **GET** /v1/promotions/tiers/{promotionTierId} | Get Promotion Tier
+*PromotionsApi* | [**listAllPromotionStacks**](docs/Api/PromotionsApi.md#listallpromotionstacks) | **GET** /v1/promotions/stacks | List Promotion Stacks
+*PromotionsApi* | [**listPromotionStacksInCampaign**](docs/Api/PromotionsApi.md#listpromotionstacksincampaign) | **GET** /v1/promotions/{campaignId}/stacks | List Promotion Stacks in Campaign
+*PromotionsApi* | [**listPromotionTiers**](docs/Api/PromotionsApi.md#listpromotiontiers) | **GET** /v1/promotions/tiers | List Promotion Tiers
+*PromotionsApi* | [**listPromotionTiersFromCampaign**](docs/Api/PromotionsApi.md#listpromotiontiersfromcampaign) | **GET** /v1/promotions/{campaignId}/tiers | List Promotion Tiers from Campaign
+*PromotionsApi* | [**updatePromotionStack**](docs/Api/PromotionsApi.md#updatepromotionstack) | **PUT** /v1/promotions/{campaignId}/stacks/{stackId} | Update Promotion Stack
+*PromotionsApi* | [**updatePromotionTier**](docs/Api/PromotionsApi.md#updatepromotiontier) | **PUT** /v1/promotions/tiers/{promotionTierId} | Update Promotion Tier
+*PublicationsApi* | [**createPublication**](docs/Api/PublicationsApi.md#createpublication) | **POST** /v1/publications | Create Publication
+*PublicationsApi* | [**createPublication1**](docs/Api/PublicationsApi.md#createpublication1) | **GET** /v1/publications/create | Create Publication with GET
+*PublicationsApi* | [**listPublications**](docs/Api/PublicationsApi.md#listpublications) | **GET** /v1/publications | List Publications
+*QualificationsApi* | [**checkEligibility**](docs/Api/QualificationsApi.md#checkeligibility) | **POST** /v1/qualifications | Check Eligibility
+*RedemptionsApi* | [**getRedemption**](docs/Api/RedemptionsApi.md#getredemption) | **GET** /v1/redemptions/{redemptionId} | Get Redemption
+*RedemptionsApi* | [**getVoucherRedemptions**](docs/Api/RedemptionsApi.md#getvoucherredemptions) | **GET** /v1/vouchers/{code}/redemption | Get Voucher&#39;s Redemptions
+*RedemptionsApi* | [**listRedemptions**](docs/Api/RedemptionsApi.md#listredemptions) | **GET** /v1/redemptions | List Redemptions
+*RedemptionsApi* | [**redeemStackedDiscounts**](docs/Api/RedemptionsApi.md#redeemstackeddiscounts) | **POST** /v1/redemptions | Redeem Stackable Discounts
+*RedemptionsApi* | [**rollbackRedemption**](docs/Api/RedemptionsApi.md#rollbackredemption) | **POST** /v1/redemptions/{redemptionId}/rollback | Rollback Redemption
+*RedemptionsApi* | [**rollbackStackedRedemptions**](docs/Api/RedemptionsApi.md#rollbackstackedredemptions) | **POST** /v1/redemptions/{parentRedemptionId}/rollbacks | Rollback Stackable Redemptions
+*ReferralsApi* | [**referralsAddHolders**](docs/Api/ReferralsApi.md#referralsaddholders) | **POST** /v1/referrals/members/{memberId}/holders | Add Referral Code Holders
+*ReferralsApi* | [**referralsAddHolders1**](docs/Api/ReferralsApi.md#referralsaddholders1) | **POST** /v1/referrals/{campaignId}/members/{memberId}/holders | Add Referral Code Holders with Campaign ID
+*ReferralsApi* | [**referralsCodeHolders**](docs/Api/ReferralsApi.md#referralscodeholders) | **GET** /v1/referrals/{campaignId}/members/{memberId}/holders | List Referral Code Holders with campaign ID
+*ReferralsApi* | [**referralsCodeHolders1**](docs/Api/ReferralsApi.md#referralscodeholders1) | **GET** /v1/referrals/members/{memberId}/holders | List Referral Code Holders
+*ReferralsApi* | [**referralsRemoveHolder**](docs/Api/ReferralsApi.md#referralsremoveholder) | **DELETE** /v1/referrals/members/{memberId}/holders/{holderId} | Remove Referral Card Holder
+*ReferralsApi* | [**referralsRemoveHolder1**](docs/Api/ReferralsApi.md#referralsremoveholder1) | **DELETE** /v1/referrals/{campaignId}/members/{memberId}/holders/{holderId} | Remove Referral Card Holder with campaign ID
+*RewardsApi* | [**createReward**](docs/Api/RewardsApi.md#createreward) | **POST** /v1/rewards | Create Reward
+*RewardsApi* | [**createRewardAssignment**](docs/Api/RewardsApi.md#createrewardassignment) | **POST** /v1/rewards/{rewardId}/assignments | Create Reward Assignment
+*RewardsApi* | [**deleteReward**](docs/Api/RewardsApi.md#deletereward) | **DELETE** /v1/rewards/{rewardId} | Delete Reward
+*RewardsApi* | [**deleteRewardAssignment**](docs/Api/RewardsApi.md#deleterewardassignment) | **DELETE** /v1/rewards/{rewardId}/assignments/{assignmentId} | Delete Reward Assignment
+*RewardsApi* | [**getReward**](docs/Api/RewardsApi.md#getreward) | **GET** /v1/rewards/{rewardId} | Get Reward
+*RewardsApi* | [**getRewardAssignment**](docs/Api/RewardsApi.md#getrewardassignment) | **GET** /v1/rewards/{rewardId}/assignments/{assignmentId} | Get Reward Assignment
+*RewardsApi* | [**listRewardAssignments**](docs/Api/RewardsApi.md#listrewardassignments) | **GET** /v1/rewards/{rewardId}/assignments | List Reward Assignments
+*RewardsApi* | [**listRewards**](docs/Api/RewardsApi.md#listrewards) | **GET** /v1/rewards | List Rewards
+*RewardsApi* | [**updateReward**](docs/Api/RewardsApi.md#updatereward) | **PUT** /v1/rewards/{rewardId} | Update Reward
+*RewardsApi* | [**updateRewardAssignment**](docs/Api/RewardsApi.md#updaterewardassignment) | **PUT** /v1/rewards/{rewardId}/assignments/{assignmentId} | Update Reward Assignment
+*SegmentsApi* | [**createSegment**](docs/Api/SegmentsApi.md#createsegment) | **POST** /v1/segments | Create Segment
+*SegmentsApi* | [**deleteSegment**](docs/Api/SegmentsApi.md#deletesegment) | **DELETE** /v1/segments/{segmentId} | Delete Segment
+*SegmentsApi* | [**getSegment**](docs/Api/SegmentsApi.md#getsegment) | **GET** /v1/segments/{segmentId} | Get Segment
+*TemplatesApi* | [**addTierFromTemplate**](docs/Api/TemplatesApi.md#addtierfromtemplate) | **POST** /v1/templates/campaigns/{campaignTemplateId}/tier-setup | Add Promotion Tier From Template
+*TemplatesApi* | [**createCampaignFromTemplate**](docs/Api/TemplatesApi.md#createcampaignfromtemplate) | **POST** /v1/templates/campaigns/{campaignTemplateId}/campaign-setup | Create Campaign From Template
+*TemplatesApi* | [**createCampaignTemplate**](docs/Api/TemplatesApi.md#createcampaigntemplate) | **POST** /v1/templates/campaigns | Create Campaign Template
+*TemplatesApi* | [**deleteCampaignTemplate**](docs/Api/TemplatesApi.md#deletecampaigntemplate) | **DELETE** /v1/templates/campaigns/{campaignTemplateId} | Delete Campaign Template
+*TemplatesApi* | [**getCampaignTemplate**](docs/Api/TemplatesApi.md#getcampaigntemplate) | **GET** /v1/templates/campaigns/{campaignTemplateId} | Get Campaign Template
+*TemplatesApi* | [**listCampaignTemplates**](docs/Api/TemplatesApi.md#listcampaigntemplates) | **GET** /v1/templates/campaigns | List Campaign Templates
+*TemplatesApi* | [**updateCampaignTemplate**](docs/Api/TemplatesApi.md#updatecampaigntemplate) | **PUT** /v1/templates/campaigns/{campaignTemplateId} | Update Campaign Template
+*ValidationRulesApi* | [**createValidationRuleAssignment**](docs/Api/ValidationRulesApi.md#createvalidationruleassignment) | **POST** /v1/validation-rules/{validationRuleId}/assignments | Create Validation Rules Assignments
+*ValidationRulesApi* | [**createValidationRules**](docs/Api/ValidationRulesApi.md#createvalidationrules) | **POST** /v1/validation-rules | Create Validation Rules
+*ValidationRulesApi* | [**deleteValidationRuleAssignment**](docs/Api/ValidationRulesApi.md#deletevalidationruleassignment) | **DELETE** /v1/validation-rules/{validationRuleId}/assignments/{assignmentId} | Delete Validation Rule Assignment
+*ValidationRulesApi* | [**deleteValidationRules**](docs/Api/ValidationRulesApi.md#deletevalidationrules) | **DELETE** /v1/validation-rules/{validationRuleId} | Delete Validation Rule
+*ValidationRulesApi* | [**getValidationRule**](docs/Api/ValidationRulesApi.md#getvalidationrule) | **GET** /v1/validation-rules/{validationRuleId} | Get Validation Rule
+*ValidationRulesApi* | [**listValidationRuleAssignments**](docs/Api/ValidationRulesApi.md#listvalidationruleassignments) | **GET** /v1/validation-rules/{validationRuleId}/assignments | List Validation Rule Assignments
+*ValidationRulesApi* | [**listValidationRules**](docs/Api/ValidationRulesApi.md#listvalidationrules) | **GET** /v1/validation-rules | List Validation Rules
+*ValidationRulesApi* | [**listValidationRulesAssignments**](docs/Api/ValidationRulesApi.md#listvalidationrulesassignments) | **GET** /v1/validation-rules-assignments | List Validation Rules&#39; Assignment(s)
+*ValidationRulesApi* | [**updateValidationRule**](docs/Api/ValidationRulesApi.md#updatevalidationrule) | **PUT** /v1/validation-rules/{validationRuleId} | Update Validation Rule
+*ValidationsApi* | [**validateStackedDiscounts**](docs/Api/ValidationsApi.md#validatestackeddiscounts) | **POST** /v1/validations | Validate Stackable Discounts
+*VouchersApi* | [**createVoucher**](docs/Api/VouchersApi.md#createvoucher) | **POST** /v1/vouchers/{code} | Create Voucher
+*VouchersApi* | [**deleteVoucher**](docs/Api/VouchersApi.md#deletevoucher) | **DELETE** /v1/vouchers/{code} | Delete Voucher
+*VouchersApi* | [**disableVoucher**](docs/Api/VouchersApi.md#disablevoucher) | **POST** /v1/vouchers/{code}/disable | Disable Voucher
+*VouchersApi* | [**enableVoucher**](docs/Api/VouchersApi.md#enablevoucher) | **POST** /v1/vouchers/{code}/enable | Enable Voucher
+*VouchersApi* | [**exportVoucherTransactions**](docs/Api/VouchersApi.md#exportvouchertransactions) | **POST** /v1/vouchers/{code}/transactions/export | Export Voucher Transactions
+*VouchersApi* | [**generateRandomCode**](docs/Api/VouchersApi.md#generaterandomcode) | **POST** /v1/vouchers | Generate Random Code
+*VouchersApi* | [**getVoucher**](docs/Api/VouchersApi.md#getvoucher) | **GET** /v1/vouchers/{code} | Get Voucher
+*VouchersApi* | [**importVouchers**](docs/Api/VouchersApi.md#importvouchers) | **POST** /v1/vouchers/import | Import Vouchers
+*VouchersApi* | [**importVouchersUsingCsv**](docs/Api/VouchersApi.md#importvouchersusingcsv) | **POST** /v1/vouchers/importCSV | Import Vouchers using CSV
+*VouchersApi* | [**listVoucherTransactions**](docs/Api/VouchersApi.md#listvouchertransactions) | **GET** /v1/vouchers/{code}/transactions | List Voucher Transactions
+*VouchersApi* | [**listVouchers**](docs/Api/VouchersApi.md#listvouchers) | **GET** /v1/vouchers | List Vouchers
+*VouchersApi* | [**releaseValidationSession**](docs/Api/VouchersApi.md#releasevalidationsession) | **DELETE** /v1/vouchers/{code}/sessions/{sessionKey} | Release Validation Session
+*VouchersApi* | [**updateVoucher**](docs/Api/VouchersApi.md#updatevoucher) | **PUT** /v1/vouchers/{code} | Update Voucher
+*VouchersApi* | [**updateVoucherBalance**](docs/Api/VouchersApi.md#updatevoucherbalance) | **POST** /v1/vouchers/{code}/balance | Adjust Voucher Balance
+*VouchersApi* | [**updateVouchersInBulk**](docs/Api/VouchersApi.md#updatevouchersinbulk) | **POST** /v1/vouchers/bulk/async | Update Vouchers in Bulk
+*VouchersApi* | [**updateVouchersMetadataInBulk**](docs/Api/VouchersApi.md#updatevouchersmetadatainbulk) | **POST** /v1/vouchers/metadata/async | Update Vouchers&#39; Metadata in Bulk
 
-## 📚 Documentation of models
+## Models
 
 - [AccessSettings](docs/Model/AccessSettings.md)
 - [AccessSettingsAssign](docs/Model/AccessSettingsAssign.md)
@@ -544,6 +553,9 @@ All URIs are relative to `https://api.voucherify.io`.
 - [AsyncActionBase](docs/Model/AsyncActionBase.md)
 - [AsyncActionGetResponseBody](docs/Model/AsyncActionGetResponseBody.md)
 - [AsyncActionsListResponseBody](docs/Model/AsyncActionsListResponseBody.md)
+- [Bundle](docs/Model/Bundle.md)
+- [BundleIdentifiedItem](docs/Model/BundleIdentifiedItem.md)
+- [BundleMissingItem](docs/Model/BundleMissingItem.md)
 - [BusValRuleAssignment](docs/Model/BusValRuleAssignment.md)
 - [Campaign](docs/Model/Campaign.md)
 - [CampaignBase](docs/Model/CampaignBase.md)
@@ -566,6 +578,16 @@ All URIs are relative to `https://api.voucherify.io`.
 - [CampaignsImportVoucherItem](docs/Model/CampaignsImportVoucherItem.md)
 - [CampaignsImportVoucherItemRedemption](docs/Model/CampaignsImportVoucherItemRedemption.md)
 - [CampaignsListResponseBody](docs/Model/CampaignsListResponseBody.md)
+- [CampaignsSummaryGetResponseBody](docs/Model/CampaignsSummaryGetResponseBody.md)
+- [CampaignsTransactionsExportCreateRequestBody](docs/Model/CampaignsTransactionsExportCreateRequestBody.md)
+- [CampaignsTransactionsExportCreateRequestBodyParameters](docs/Model/CampaignsTransactionsExportCreateRequestBodyParameters.md)
+- [CampaignsTransactionsExportCreateResponseBody](docs/Model/CampaignsTransactionsExportCreateResponseBody.md)
+- [CampaignsTransactionsExportCreateResponseBodyParameters](docs/Model/CampaignsTransactionsExportCreateResponseBodyParameters.md)
+- [CampaignsTransactionsExportCreateResponseBodyParametersFilters](docs/Model/CampaignsTransactionsExportCreateResponseBodyParametersFilters.md)
+- [CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignId](docs/Model/CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignId.md)
+- [CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions](docs/Model/CampaignsTransactionsExportCreateResponseBodyParametersFiltersCampaignIdConditions.md)
+- [CampaignsTransactionsExportCreateResponseBodyResult](docs/Model/CampaignsTransactionsExportCreateResponseBodyResult.md)
+- [CampaignsTransactionsListResponseBody](docs/Model/CampaignsTransactionsListResponseBody.md)
 - [CampaignsUpdateRequestBody](docs/Model/CampaignsUpdateRequestBody.md)
 - [CampaignsUpdateRequestBodyOptions](docs/Model/CampaignsUpdateRequestBodyOptions.md)
 - [CampaignsUpdateResponseBody](docs/Model/CampaignsUpdateResponseBody.md)
@@ -597,6 +619,7 @@ All URIs are relative to `https://api.voucherify.io`.
 - [ClientEventsCreateResponseBody](docs/Model/ClientEventsCreateResponseBody.md)
 - [ClientPromotionsTiersListResponseBody](docs/Model/ClientPromotionsTiersListResponseBody.md)
 - [ClientQualificationsCheckEligibilityRequestBody](docs/Model/ClientQualificationsCheckEligibilityRequestBody.md)
+- [ClientQualificationsCheckEligibilityRequestBodySession](docs/Model/ClientQualificationsCheckEligibilityRequestBodySession.md)
 - [ClientQualificationsCheckEligibilityResponseBody](docs/Model/ClientQualificationsCheckEligibilityResponseBody.md)
 - [ClientRedemptionsRedeemRequestBody](docs/Model/ClientRedemptionsRedeemRequestBody.md)
 - [ClientRedemptionsRedeemRequestBodyOptions](docs/Model/ClientRedemptionsRedeemRequestBodyOptions.md)
@@ -667,6 +690,7 @@ All URIs are relative to `https://api.voucherify.io`.
 - [DiscountUnitMultipleOneUnit](docs/Model/DiscountUnitMultipleOneUnit.md)
 - [EarningRule](docs/Model/EarningRule.md)
 - [EarningRuleCustomEvent](docs/Model/EarningRuleCustomEvent.md)
+- [EarningRuleExpirationRules](docs/Model/EarningRuleExpirationRules.md)
 - [EarningRuleLoyalty](docs/Model/EarningRuleLoyalty.md)
 - [EarningRuleLoyaltyCustomEvent](docs/Model/EarningRuleLoyaltyCustomEvent.md)
 - [EarningRuleLoyaltyCustomEventMetadata](docs/Model/EarningRuleLoyaltyCustomEventMetadata.md)
@@ -676,8 +700,11 @@ All URIs are relative to `https://api.voucherify.io`.
 - [EarningRuleLoyaltyOrderAmount](docs/Model/EarningRuleLoyaltyOrderAmount.md)
 - [EarningRuleLoyaltyOrderItems](docs/Model/EarningRuleLoyaltyOrderItems.md)
 - [EarningRuleLoyaltyOrderItemsAmount](docs/Model/EarningRuleLoyaltyOrderItemsAmount.md)
+- [EarningRuleLoyaltyOrderItemsAmountApplicableToItem](docs/Model/EarningRuleLoyaltyOrderItemsAmountApplicableToItem.md)
 - [EarningRuleLoyaltyOrderItemsQuantity](docs/Model/EarningRuleLoyaltyOrderItemsQuantity.md)
+- [EarningRuleLoyaltyOrderItemsQuantityApplicableToItem](docs/Model/EarningRuleLoyaltyOrderItemsQuantityApplicableToItem.md)
 - [EarningRuleLoyaltyOrderItemsSubtotalAmount](docs/Model/EarningRuleLoyaltyOrderItemsSubtotalAmount.md)
+- [EarningRuleLoyaltyOrderItemsSubtotalAmountApplicableToItem](docs/Model/EarningRuleLoyaltyOrderItemsSubtotalAmountApplicableToItem.md)
 - [EarningRuleLoyaltyOrderMetadata](docs/Model/EarningRuleLoyaltyOrderMetadata.md)
 - [EarningRuleLoyaltyOrderTotalAmount](docs/Model/EarningRuleLoyaltyOrderTotalAmount.md)
 - [EarningRuleLoyaltyTier](docs/Model/EarningRuleLoyaltyTier.md)
@@ -694,6 +721,7 @@ All URIs are relative to `https://api.voucherify.io`.
 - [EventsCreateRequestBodyReferral](docs/Model/EventsCreateRequestBodyReferral.md)
 - [EventsCreateResponseBody](docs/Model/EventsCreateResponseBody.md)
 - [Export](docs/Model/Export.md)
+- [ExportCampaignTransactionsFilters](docs/Model/ExportCampaignTransactionsFilters.md)
 - [ExportParameters](docs/Model/ExportParameters.md)
 - [ExportResult](docs/Model/ExportResult.md)
 - [ExportVoucherTransactionsFilters](docs/Model/ExportVoucherTransactionsFilters.md)
@@ -737,11 +765,15 @@ All URIs are relative to `https://api.voucherify.io`.
 - [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderAmount](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderAmount.md)
 - [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems.md)
 - [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmount.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmountApplicableToItem](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsAmountApplicableToItem.md)
 - [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantity](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantity.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantityApplicableToItem](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsQuantityApplicableToItem.md)
 - [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmount.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmountApplicableToItem](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItemsSubtotalAmountApplicableToItem.md)
 - [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderMetadata](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderMetadata.md)
 - [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderTotalAmount](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderTotalAmount.md)
 - [LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyTier.md)
+- [LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints.md)
 - [LoyaltiesEarningRulesCreateRequestBodyItemSegment](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemSegment.md)
 - [LoyaltiesEarningRulesCreateRequestBodyItemSource](docs/Model/LoyaltiesEarningRulesCreateRequestBodyItemSource.md)
 - [LoyaltiesEarningRulesCreateResponseBody](docs/Model/LoyaltiesEarningRulesCreateResponseBody.md)
@@ -755,8 +787,11 @@ All URIs are relative to `https://api.voucherify.io`.
 - [LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderAmount](docs/Model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderAmount.md)
 - [LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItems](docs/Model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItems.md)
 - [LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmount](docs/Model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmount.md)
+- [LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmountApplicableToItem](docs/Model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsAmountApplicableToItem.md)
 - [LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsQuantity](docs/Model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsQuantity.md)
+- [LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem](docs/Model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem.md)
 - [LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsSubtotalAmount](docs/Model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsSubtotalAmount.md)
+- [LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem](docs/Model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem.md)
 - [LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderMetadata](docs/Model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderMetadata.md)
 - [LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderTotalAmount](docs/Model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderTotalAmount.md)
 - [LoyaltiesEarningRulesCreateResponseBodyLoyaltyTier](docs/Model/LoyaltiesEarningRulesCreateResponseBodyLoyaltyTier.md)
@@ -774,8 +809,11 @@ All URIs are relative to `https://api.voucherify.io`.
 - [LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderAmount](docs/Model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderAmount.md)
 - [LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems](docs/Model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItems.md)
 - [LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmount](docs/Model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmount.md)
+- [LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmountApplicableToItem](docs/Model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsAmountApplicableToItem.md)
 - [LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantity](docs/Model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantity.md)
+- [LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem](docs/Model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem.md)
 - [LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmount](docs/Model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmount.md)
+- [LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem](docs/Model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem.md)
 - [LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderMetadata](docs/Model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderMetadata.md)
 - [LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount](docs/Model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyOrderTotalAmount.md)
 - [LoyaltiesEarningRulesDisableResponseBodyLoyaltyTier](docs/Model/LoyaltiesEarningRulesDisableResponseBodyLoyaltyTier.md)
@@ -793,8 +831,11 @@ All URIs are relative to `https://api.voucherify.io`.
 - [LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderAmount](docs/Model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderAmount.md)
 - [LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItems](docs/Model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItems.md)
 - [LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsAmount](docs/Model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsAmount.md)
+- [LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsAmountApplicableToItem](docs/Model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsAmountApplicableToItem.md)
 - [LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity](docs/Model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity.md)
+- [LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem](docs/Model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem.md)
 - [LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsSubtotalAmount](docs/Model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsSubtotalAmount.md)
+- [LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem](docs/Model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem.md)
 - [LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderMetadata](docs/Model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderMetadata.md)
 - [LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderTotalAmount](docs/Model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderTotalAmount.md)
 - [LoyaltiesEarningRulesEnableResponseBodyLoyaltyTier](docs/Model/LoyaltiesEarningRulesEnableResponseBodyLoyaltyTier.md)
@@ -812,8 +853,11 @@ All URIs are relative to `https://api.voucherify.io`.
 - [LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderAmount](docs/Model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderAmount.md)
 - [LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItems](docs/Model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItems.md)
 - [LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsAmount](docs/Model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsAmount.md)
+- [LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsAmountApplicableToItem](docs/Model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsAmountApplicableToItem.md)
 - [LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsQuantity](docs/Model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsQuantity.md)
+- [LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsQuantityApplicableToItem](docs/Model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsQuantityApplicableToItem.md)
 - [LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount](docs/Model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmount.md)
+- [LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem](docs/Model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem.md)
 - [LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderMetadata](docs/Model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderMetadata.md)
 - [LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderTotalAmount](docs/Model/LoyaltiesEarningRulesGetResponseBodyLoyaltyOrderTotalAmount.md)
 - [LoyaltiesEarningRulesGetResponseBodyLoyaltyTier](docs/Model/LoyaltiesEarningRulesGetResponseBodyLoyaltyTier.md)
@@ -831,10 +875,14 @@ All URIs are relative to `https://api.voucherify.io`.
 - [LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderAmount](docs/Model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderAmount.md)
 - [LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItems](docs/Model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItems.md)
 - [LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsAmount](docs/Model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsAmount.md)
+- [LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsAmountApplicableToItem](docs/Model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsAmountApplicableToItem.md)
 - [LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsQuantity](docs/Model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsQuantity.md)
+- [LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsQuantityApplicableToItem](docs/Model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsQuantityApplicableToItem.md)
 - [LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsSubtotalAmount](docs/Model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsSubtotalAmount.md)
+- [LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem](docs/Model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem.md)
 - [LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderMetadata](docs/Model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderMetadata.md)
 - [LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderTotalAmount](docs/Model/LoyaltiesEarningRulesUpdateRequestBodyLoyaltyOrderTotalAmount.md)
+- [LoyaltiesEarningRulesUpdateRequestBodyPendingPoints](docs/Model/LoyaltiesEarningRulesUpdateRequestBodyPendingPoints.md)
 - [LoyaltiesEarningRulesUpdateRequestBodySource](docs/Model/LoyaltiesEarningRulesUpdateRequestBodySource.md)
 - [LoyaltiesEarningRulesUpdateResponseBody](docs/Model/LoyaltiesEarningRulesUpdateResponseBody.md)
 - [LoyaltiesEarningRulesUpdateResponseBodyCustomEvent](docs/Model/LoyaltiesEarningRulesUpdateResponseBodyCustomEvent.md)
@@ -847,8 +895,11 @@ All URIs are relative to `https://api.voucherify.io`.
 - [LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderAmount](docs/Model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderAmount.md)
 - [LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItems](docs/Model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItems.md)
 - [LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsAmount](docs/Model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsAmount.md)
+- [LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsAmountApplicableToItem](docs/Model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsAmountApplicableToItem.md)
 - [LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantity](docs/Model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantity.md)
+- [LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem](docs/Model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsQuantityApplicableToItem.md)
 - [LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmount](docs/Model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmount.md)
+- [LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem](docs/Model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderItemsSubtotalAmountApplicableToItem.md)
 - [LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata](docs/Model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderMetadata.md)
 - [LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount](docs/Model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount.md)
 - [LoyaltiesEarningRulesUpdateResponseBodyLoyaltyTier](docs/Model/LoyaltiesEarningRulesUpdateResponseBodyLoyaltyTier.md)
@@ -874,6 +925,9 @@ All URIs are relative to `https://api.voucherify.io`.
 - [LoyaltiesMembersGetResponseBodyRedemption](docs/Model/LoyaltiesMembersGetResponseBodyRedemption.md)
 - [LoyaltiesMembersPendingPointsActivateResponseBody](docs/Model/LoyaltiesMembersPendingPointsActivateResponseBody.md)
 - [LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject](docs/Model/LoyaltiesMembersPendingPointsActivateResponseBodyRelatedObject.md)
+- [LoyaltiesMembersPendingPointsBalanceRequestBody](docs/Model/LoyaltiesMembersPendingPointsBalanceRequestBody.md)
+- [LoyaltiesMembersPendingPointsBalanceResponseBody](docs/Model/LoyaltiesMembersPendingPointsBalanceResponseBody.md)
+- [LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject](docs/Model/LoyaltiesMembersPendingPointsBalanceResponseBodyRelatedObject.md)
 - [LoyaltiesMembersPendingPointsListResponseBody](docs/Model/LoyaltiesMembersPendingPointsListResponseBody.md)
 - [LoyaltiesMembersPointsExpirationListResponseBody](docs/Model/LoyaltiesMembersPointsExpirationListResponseBody.md)
 - [LoyaltiesMembersPointsExpirationListResponseBodyDataItem](docs/Model/LoyaltiesMembersPointsExpirationListResponseBodyDataItem.md)
@@ -887,6 +941,7 @@ All URIs are relative to `https://api.voucherify.io`.
 - [LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptions](docs/Model/LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptions.md)
 - [LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRedemptionsItem](docs/Model/LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRedemptionsItem.md)
 - [LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRollbacksItem](docs/Model/LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptionsRollbacksItem.md)
+- [LoyaltiesMembersRedemptionRedeemResponseBodySession](docs/Model/LoyaltiesMembersRedemptionRedeemResponseBodySession.md)
 - [LoyaltiesMembersRedemptionRedeemResponseBodyVoucher](docs/Model/LoyaltiesMembersRedemptionRedeemResponseBodyVoucher.md)
 - [LoyaltiesMembersRedemptionRedeemResponseBodyVoucherGift](docs/Model/LoyaltiesMembersRedemptionRedeemResponseBodyVoucherGift.md)
 - [LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard](docs/Model/LoyaltiesMembersRedemptionRedeemResponseBodyVoucherLoyaltyCard.md)
@@ -952,6 +1007,9 @@ All URIs are relative to `https://api.voucherify.io`.
 - [LoyaltiesTiersGetResponseBodyPoints](docs/Model/LoyaltiesTiersGetResponseBodyPoints.md)
 - [LoyaltiesTiersListResponseBody](docs/Model/LoyaltiesTiersListResponseBody.md)
 - [LoyaltiesTiersRewardsListResponseBody](docs/Model/LoyaltiesTiersRewardsListResponseBody.md)
+- [LoyaltiesTransactionsExportCreateRequestBody](docs/Model/LoyaltiesTransactionsExportCreateRequestBody.md)
+- [LoyaltiesTransactionsExportCreateRequestBodyParameters](docs/Model/LoyaltiesTransactionsExportCreateRequestBodyParameters.md)
+- [LoyaltiesTransactionsListResponseBody](docs/Model/LoyaltiesTransactionsListResponseBody.md)
 - [LoyaltiesTransferPoints](docs/Model/LoyaltiesTransferPoints.md)
 - [LoyaltiesUpdateCampaignRequestBody](docs/Model/LoyaltiesUpdateCampaignRequestBody.md)
 - [LoyaltiesUpdateCampaignRequestBodyOptions](docs/Model/LoyaltiesUpdateCampaignRequestBodyOptions.md)
@@ -1244,6 +1302,7 @@ All URIs are relative to `https://api.voucherify.io`.
 - [ParameterTemplatesList](docs/Model/ParameterTemplatesList.md)
 - [ParameterUpdatedBeforeAfter](docs/Model/ParameterUpdatedBeforeAfter.md)
 - [ParameterVoucherTypeListPublications](docs/Model/ParameterVoucherTypeListPublications.md)
+- [ParametersFiltersListCampaignTransactions](docs/Model/ParametersFiltersListCampaignTransactions.md)
 - [Product](docs/Model/Product.md)
 - [ProductCollectionsCreateRequestBody](docs/Model/ProductCollectionsCreateRequestBody.md)
 - [ProductCollectionsCreateRequestBodyProductsItem](docs/Model/ProductCollectionsCreateRequestBodyProductsItem.md)
@@ -1338,6 +1397,7 @@ All URIs are relative to `https://api.voucherify.io`.
 - [PublicationsListResponseBodyPublicationsItem](docs/Model/PublicationsListResponseBodyPublicationsItem.md)
 - [PublicationsListResponseBodyPublicationsItemMetadata](docs/Model/PublicationsListResponseBodyPublicationsItemMetadata.md)
 - [QualificationsCheckEligibilityRequestBody](docs/Model/QualificationsCheckEligibilityRequestBody.md)
+- [QualificationsCheckEligibilityRequestBodySession](docs/Model/QualificationsCheckEligibilityRequestBodySession.md)
 - [QualificationsCheckEligibilityResponseBody](docs/Model/QualificationsCheckEligibilityResponseBody.md)
 - [QualificationsFieldConditions](docs/Model/QualificationsFieldConditions.md)
 - [QualificationsFiltersCondition](docs/Model/QualificationsFiltersCondition.md)
@@ -1380,6 +1440,7 @@ All URIs are relative to `https://api.voucherify.io`.
 - [RedemptionEntryRelatedRedemptions](docs/Model/RedemptionEntryRelatedRedemptions.md)
 - [RedemptionEntryRelatedRedemptionsRedemptionsItem](docs/Model/RedemptionEntryRelatedRedemptionsRedemptionsItem.md)
 - [RedemptionEntryRelatedRedemptionsRollbacksItem](docs/Model/RedemptionEntryRelatedRedemptionsRollbacksItem.md)
+- [RedemptionEntrySession](docs/Model/RedemptionEntrySession.md)
 - [RedemptionEntryVoucher](docs/Model/RedemptionEntryVoucher.md)
 - [RedemptionEntryVoucherGift](docs/Model/RedemptionEntryVoucherGift.md)
 - [RedemptionEntryVoucherLoyaltyCard](docs/Model/RedemptionEntryVoucherLoyaltyCard.md)
@@ -1402,6 +1463,7 @@ All URIs are relative to `https://api.voucherify.io`.
 - [RedemptionRollbackRelatedRedemptions](docs/Model/RedemptionRollbackRelatedRedemptions.md)
 - [RedemptionRollbackRelatedRedemptionsRedemptionsItem](docs/Model/RedemptionRollbackRelatedRedemptionsRedemptionsItem.md)
 - [RedemptionRollbackRelatedRedemptionsRollbacksItem](docs/Model/RedemptionRollbackRelatedRedemptionsRollbacksItem.md)
+- [RedemptionSession](docs/Model/RedemptionSession.md)
 - [RedemptionVoucher](docs/Model/RedemptionVoucher.md)
 - [RedemptionVoucherGift](docs/Model/RedemptionVoucherGift.md)
 - [RedemptionVoucherLoyaltyCard](docs/Model/RedemptionVoucherLoyaltyCard.md)
@@ -1424,6 +1486,7 @@ All URIs are relative to `https://api.voucherify.io`.
 - [RedemptionsGetResponseBodyRelatedRedemptions](docs/Model/RedemptionsGetResponseBodyRelatedRedemptions.md)
 - [RedemptionsGetResponseBodyRelatedRedemptionsRedemptionsItem](docs/Model/RedemptionsGetResponseBodyRelatedRedemptionsRedemptionsItem.md)
 - [RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem](docs/Model/RedemptionsGetResponseBodyRelatedRedemptionsRollbacksItem.md)
+- [RedemptionsGetResponseBodySession](docs/Model/RedemptionsGetResponseBodySession.md)
 - [RedemptionsGetResponseBodyVoucher](docs/Model/RedemptionsGetResponseBodyVoucher.md)
 - [RedemptionsGetResponseBodyVoucherGift](docs/Model/RedemptionsGetResponseBodyVoucherGift.md)
 - [RedemptionsGetResponseBodyVoucherLoyaltyCard](docs/Model/RedemptionsGetResponseBodyVoucherLoyaltyCard.md)
@@ -1447,6 +1510,7 @@ All URIs are relative to `https://api.voucherify.io`.
 - [RedemptionsListResponseBodyRedemptionsItemRelatedRedemptions](docs/Model/RedemptionsListResponseBodyRedemptionsItemRelatedRedemptions.md)
 - [RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRedemptionsItem](docs/Model/RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRedemptionsItem.md)
 - [RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem](docs/Model/RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem.md)
+- [RedemptionsListResponseBodyRedemptionsItemSession](docs/Model/RedemptionsListResponseBodyRedemptionsItemSession.md)
 - [RedemptionsListResponseBodyRedemptionsItemVoucher](docs/Model/RedemptionsListResponseBodyRedemptionsItemVoucher.md)
 - [RedemptionsListResponseBodyRedemptionsItemVoucherGift](docs/Model/RedemptionsListResponseBodyRedemptionsItemVoucherGift.md)
 - [RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard](docs/Model/RedemptionsListResponseBodyRedemptionsItemVoucherLoyaltyCard.md)
