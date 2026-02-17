@@ -47,11 +47,11 @@ To install the bindings with [Composer](https://getcomposer.org/), add the follo
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/voucherifyio/voucherify-php-sdk"
+      "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
     }
   ],
   "require": {
-    "voucherify/voucherify-php-sdk": "^5.0"
+    "GIT_USER_ID/GIT_REPO_ID": "*@dev"
   }
 }
 ```
@@ -89,40 +89,38 @@ Once installed, run:
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$host = getenv('VOUCHERIFY_HOST') ?: 'https://api.voucherify.io';
-$xAppId = getenv('X_APP_ID');
-$xAppToken = getenv('X_APP_TOKEN');
 
-if (!$xAppId || !$xAppToken) {
-    throw new RuntimeException('X_APP_ID and X_APP_TOKEN must be set in the environment.');
-}
 
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
-    ->setHost($host)
-    ->setApiKey('X-App-Id', $xAppId)
-    ->setApiKey('X-App-Token', $xAppToken);
+// Configure API key authorization: X-App-Id
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-App-Id', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-App-Id', 'Bearer');
 
-$apiInstance = new OpenAPI\Client\Api\CampaignsApi(
+// Configure API key authorization: X-App-Token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-App-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-App-Token', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\AsyncActionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+$asyncActionId = 'asyncActionId_example'; // string | Unique ID of the asynchronous operation.
 
 try {
-    $result = $apiInstance->listCampaigns();
+    $result = $apiInstance->getAsyncAction($asyncActionId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CampaignsApi->listCampaigns: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AsyncActionsApi->getAsyncAction: ', $e->getMessage(), PHP_EOL;
 }
+
 ```
 
-> [!NOTE]
->
-> This code just lists campaigns, so it won't affect your Voucherify data.
-
 > [!TIP]
->
+> 
 > Check the test implementation in the [Test folder](./__tests__/).
 
 ## 🐳 Run local tests with docker
