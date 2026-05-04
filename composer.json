@@ -30,8 +30,8 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.5",
         "overtrue/phplint": "^9.0",
-        "phpunit/phpunit": "^9.5",
-        "codeception/codeception": "^5.1",
+        "phpunit/phpunit": "^11.0",
+        "codeception/codeception": "^5.3",
         "codeception/module-asserts": "^3.0"
     },
     "autoload": {

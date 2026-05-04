@@ -9,7 +9,7 @@ RUN composer install
 
 
 # Stage 2: Final image
-FROM php:8.3
+FROM php:8.5
 
 WORKDIR /app
 

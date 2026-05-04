@@ -364,7 +364,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->setIfExists('redeemablesLimit', $data ?? [], 30);
         $this->setIfExists('applicableRedeemablesLimit', $data ?? [], 5);
