@@ -21,6 +21,7 @@ return $config->setRules([
         'no_trailing_whitespace' => false,
         'no_trailing_whitespace_in_comment' => false,
         'braces' => false,
+        'nullable_type_declaration_for_default_null_value' => true,
         'single_blank_line_at_eof' => false,
         'blank_line_after_namespace' => false,
         'no_leading_import_slash' => false,
