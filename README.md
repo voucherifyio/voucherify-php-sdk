@@ -182,7 +182,10 @@ Authorization schemes defined for the API.
 
 ## 📅 Changelog
 
-- **2024-01-29** - `5.0.3`
+- **2026-05-07** - `5.0.4`
+  - Fixed PHP 8.4 deprecation warnings: added explicit nullable type declarations (`?Type $param = null`) across all API and Model constructors
+  - Fixed tests: publish loyalty card before updating balance (required by API change)
+- **2025-01-29** - `5.0.3`
   - Added support for **GET** /v1/loyalties/{campaignId}/pending-points
   - Added support for **GET** /v1/loyalties/members/{memberId}/pending-points
   - Added support for **GET** /v1/loyalties/{campaignId}/members/{memberId}/pending-points

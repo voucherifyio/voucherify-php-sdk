@@ -249,7 +249,7 @@ class RedemptionsGetResponseBodyPromotionTierSummaryOrders implements ModelInter
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->setIfExists('totalAmount', $data ?? [], null);
         $this->setIfExists('totalDiscountAmount', $data ?? [], null);

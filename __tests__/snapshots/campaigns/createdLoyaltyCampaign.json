@@ -27,7 +27,7 @@
     "validity_day_of_week": null
   },
   "auto_join": false,
-  "join_once": false,
+  "join_once": true,
   "use_voucher_metadata_schema": true,
   "validity_day_of_week": null,
   "activity_duration_after_publishing": null,

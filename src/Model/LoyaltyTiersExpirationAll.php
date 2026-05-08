@@ -296,7 +296,7 @@ class LoyaltyTiersExpirationAll implements ModelInterface, ArrayAccess, \JsonSer
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->setIfExists('qualificationType', $data ?? [], null);
         $this->setIfExists('qualificationPeriod', $data ?? [], null);

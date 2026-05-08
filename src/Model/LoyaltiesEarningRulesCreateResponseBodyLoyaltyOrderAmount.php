@@ -250,7 +250,7 @@ class LoyaltiesEarningRulesCreateResponseBodyLoyaltyOrderAmount implements Model
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->setIfExists('every', $data ?? [], null);
         $this->setIfExists('points', $data ?? [], null);

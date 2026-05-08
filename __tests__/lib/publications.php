@@ -26,4 +26,21 @@ function createPublication(PublicationsApi $publicationsApiInstance, string $cus
     }
 }
 
+function publishVoucher(PublicationsApi $publicationsApiInstance, string $customerId, string $voucherCode): ?PublicationsCreateResponseBody {
+    $publication = new PublicationsCreateRequestBody();
+    $customer = new Customer();
+
+    $customer->setId($customerId);
+    $publication->setCustomer($customer);
+    $publication->setVoucher($voucherCode);
+
+    try {
+        $createdPublication = $publicationsApiInstance->createPublication(null, $publication);
+        return $createdPublication;
+    } catch (\Error $err) {
+        error_log('Error during publishing voucher: ' . $err);
+        return null;
+    }
+}
+
 ?>

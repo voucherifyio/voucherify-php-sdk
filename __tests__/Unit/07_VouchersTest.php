@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../lib/config.php';
 require_once __DIR__ . '/../lib/vouchers.php';
+require_once __DIR__ . '/../lib/publications.php';
 require_once __DIR__ . '/../lib/utils.php';
 require_once __DIR__ . '/../lib/voucherify.php';
 
@@ -9,12 +10,14 @@ use PHPUnit\Framework\TestCase;
 class VouchersTest extends TestCase
 {
     private $vouchersApiInstance;
+    private $publicationsApiInstance;
     private $voucherify;
     private $voucherCode;
 
     protected function setUp(): void
     {
         $this->vouchersApiInstance = Config::vouchersApiInstance();
+        $this->publicationsApiInstance = Config::publicationsApiInstance();
         $this->voucherify = VoucherifyData::getInstance();
         $this->voucherCode = $this->voucherify->getVoucher()->code;
     }
@@ -54,7 +57,12 @@ class VouchersTest extends TestCase
 
     public function testUpdateLoyaltyCardBalance()
     {
-        $updatedLoyaltyCard = updateLoyaltyCardbalance($this->vouchersApiInstance, $this->voucherify->getLoyaltyCard()->code);
+        $loyaltyCardCode = $this->voucherify->getLoyaltyCard()->code;
+        $customerId = $this->voucherify->getCustomer()->id;
+
+        publishVoucher($this->publicationsApiInstance, $customerId, $loyaltyCardCode);
+
+        $updatedLoyaltyCard = updateLoyaltyCardbalance($this->vouchersApiInstance, $loyaltyCardCode);
 
         $snapshot = 'vouchers/updatedLoyaltyCardBalance';
         $keysToRemove = ['id'];
