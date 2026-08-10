@@ -106,9 +106,11 @@ function createPromotionCampaign(CampaignsApi $campaignsApiInstance): ?Campaigns
     $discount->setAmountOff(1000);
 
     $promotion->setTiers([
-        "name" => generateRandomString(),
-        "banner" => generateRandomString(),
-        "action" => $discount
+        [
+            "name" => generateRandomString(),
+            "banner" => generateRandomString(),
+            "action" => $discount
+        ]
     ]);
 
     $campaign->setCampaignType('PROMOTION');

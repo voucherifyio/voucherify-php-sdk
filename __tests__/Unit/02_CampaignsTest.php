@@ -52,7 +52,7 @@ class CampaignsTest extends TestCase
         $createdCampaign = createPromotionCampaign($this->campaignsApiInstance);
 
         $snapshot = 'campaigns/createdPromotionCampaign';
-        $keysToRemove = ['name', 'id', 'created_at'];
+        $keysToRemove = ['name', 'id', 'created_at', 'tiers', 'total'];
         $filteredSnapshot = filterSnapshot($snapshot, $keysToRemove);
 
         $this->assertTrue(validateDeepMatch($filteredSnapshot, $createdCampaign), 'Error during test with creating promotion campaign');

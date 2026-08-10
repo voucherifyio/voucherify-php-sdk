@@ -26,11 +26,12 @@ class Config
     {
         if (is_null(self::$config)) {
             $env = parse_ini_file('.env');
+            $host = rtrim(trim($env['VOUCHERIFY_HOST'] ?? 'https://api.voucherify.io'), '/');
 
             self::$config = Configuration::getDefaultConfiguration()
                 ->setApiKey('X-App-Id', $env['X_APP_ID'])
                 ->setApiKey('X-App-Token', $env['X_APP_TOKEN'])
-                ->setHost($env['VOUCHERIFY_HOST'] ?? 'https://api.voucherify.io');
+                ->setHost($host);
         }
 
         return self::$config;
