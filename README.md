@@ -179,10 +179,26 @@ Authorization schemes defined for the API.
 
 ## 📅 Changelog
 
-- **2026-08-10** - `5.0.5`
+- **2026-08-10** - `5.1.0`
   - Fixed: `ValidationsRedeemableSkippedResultDetails` key enum was missing `no_effect`, so deserializing a skipped redeemable with `"key": "no_effect"` threw `\InvalidArgumentException` (entire validations/redemptions response failed to parse).
   - This affects `POST /v1/validations` and stackable `POST /v1/redemptions` when `redeemables_no_effect_rule` is `SKIP` (globally or via `no_effect_skip_categories`).
   - New allowable value: `no_effect` - Redeemable cannot be applied due to no effect.
+  - Added support for **GET** /v1/campaigns/{campaignId}/summary
+  - Added support for **GET** /v1/campaigns/{campaignId}/transactions
+  - Added support for **POST** /v1/campaigns/{campaignId}/transactions/export
+  - Added support for **GET** /v1/loyalties/{campaignId}/transactions
+  - Added support for **POST** /v1/loyalties/{campaignId}/transactions/export
+  - Added support for **POST** /v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/balance
+  - Added 55 new models (campaign/loyalty transaction listing & export, campaign summary, bundle discounts, earning-rule expiration/applicable-to/pending-points types, redemption/qualification session objects, and related filters).
+  - Updated bundle discounts: `bundle` on validation/redeemable results, `bundleRules` on validation rules, and new `Bundle` types.
+  - Updated discount applicability with campaign/promotion-tier quantity limits (and formulas) and `units_limit_exceeded` on unit-level results; new discount effect `ADD_SAME_ITEMS`.
+  - Updated loyalty earning rules with `expirationRules`, `applicableTo`, `pointsFormula`, and pending-points configuration; new `FIXED_DAY_OF_YEAR` expiration period type.
+  - Updated redemptions and qualifications with optional `session` objects.
+  - Updated gift/loyalty voucher responses with `subtractedAmount` / `subtractedPoints` and loyalty `expiredPoints`.
+  - Updated customer assets with `cockpitPreferenceCenterUrl`.
+  - Updated segments with `passive` type and `updatedAt`; async action listings with `hasMore`.
+  - Updated `CampaignsCreateRequestBody` with `STANDALONE` campaign type.
+  - Added many new management webhook event constants (campaign tiers/stacks/rewards, voucher transactions, pending-points lifecycle, customer confirmed, and more).
 - **2026-05-07** - `5.0.4`
   - Fixed PHP 8.4 deprecation warnings: added explicit nullable type declarations (`?Type $param = null`) across all API and Model constructors
   - Fixed tests: publish loyalty card before updating balance (required by API change)
