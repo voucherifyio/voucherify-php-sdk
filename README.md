@@ -183,6 +183,7 @@ Authorization schemes defined for the API.
   - Fixed: `ValidationsRedeemableSkippedResultDetails` key enum was missing `no_effect`, so deserializing a skipped redeemable with `"key": "no_effect"` threw `\InvalidArgumentException` (entire validations/redemptions response failed to parse).
   - This affects `POST /v1/validations` and stackable `POST /v1/redemptions` when `redeemables_no_effect_rule` is `SKIP` (globally or via `no_effect_skip_categories`).
   - New allowable value: `no_effect` - Redeemable cannot be applied due to no effect.
+  - Fixed: `FilterConditionsDateTime` now serializes `moreThan` / `lessThan` as `$more_than` / `$less_than`, matching the documented filter contract and the already-correct `FiltersCondition`; previously these were sent as `more_than` / `less_than` and ignored by the API. Getters and setters are unchanged.
   - Added support for **GET** /v1/campaigns/{campaignId}/summary
   - Added support for **GET** /v1/campaigns/{campaignId}/transactions
   - Added support for **POST** /v1/campaigns/{campaignId}/transactions/export
