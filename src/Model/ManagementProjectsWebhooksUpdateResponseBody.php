@@ -292,7 +292,7 @@ class ManagementProjectsWebhooksUpdateResponseBody implements ModelInterface, Ar
     public const EVENTS_CAMPAIGN_REWARD_ASSIGNMENT_DELETED = 'campaign.reward.assignment.deleted';
     public const EVENTS_CAMPAIGN_REWARD_ASSIGNMENT_UPDATED = 'campaign.reward.assignment.updated';
     public const EVENTS_CAMPAIGN_UPDATED = 'campaign.updated';
-    public const EVENTS_CAMPAIGN_VOUCHERS_ADDED = 'campaign.vouchers.added';
+    public const EVENTS_CAMPAIGN_VOUCHERS_ADED = 'campaign.vouchers.aded';
     public const EVENTS_CAMPAIGN_VOUCHERS_GENERATION_COMPLETED = 'campaign.vouchers.generation.completed';
     public const EVENTS_CAMPAIGN_VOUCHERS_GENERATION_FAILED = 'campaign.vouchers.generation.failed';
     public const EVENTS_CAMPAIGN_VOUCHERS_GENERATION_STARTED = 'campaign.vouchers.generation.started';
@@ -310,13 +310,13 @@ class ManagementProjectsWebhooksUpdateResponseBody implements ModelInterface, Ar
     public const EVENTS_VOUCHER_DELETED = 'voucher.deleted';
     public const EVENTS_VOUCHER_DISABLED = 'voucher.disabled';
     public const EVENTS_VOUCHER_ENABLED = 'voucher.enabled';
-    public const EVENTS_VOUCHER_GIFT_BALANCE_ADDED = 'voucher.gift.balance_added';
+    public const EVENTS_VOUCHER_GIFT_BALANCE_ADED = 'voucher.gift.balance_aded';
     public const EVENTS_VOUCHER_GIFT_TRANSACTION_CREATED = 'voucher.gift.transaction.created';
     public const EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_ACTIVATED = 'voucher.loyalty_card.pending_points.activated';
-    public const EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_ADDED = 'voucher.loyalty_card.pending_points.added';
+    public const EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_ADED = 'voucher.loyalty_card.pending_points.aded';
     public const EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_CANCELED = 'voucher.loyalty_card.pending_points.canceled';
     public const EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_UPDATED = 'voucher.loyalty_card.pending_points.updated';
-    public const EVENTS_VOUCHER_LOYALTY_CARD_POINTS_ADDED = 'voucher.loyalty_card.points_added';
+    public const EVENTS_VOUCHER_LOYALTY_CARD_POINTS_ADED = 'voucher.loyalty_card.points_aded';
     public const EVENTS_VOUCHER_LOYALTY_CARD_POINTS_EXPIRED = 'voucher.loyalty_card.points_expired';
     public const EVENTS_VOUCHER_LOYALTY_CARD_TRANSACTION_CREATED = 'voucher.loyalty_card.transaction.created';
     public const EVENTS_VOUCHER_PUBLISHED = 'voucher.published';
@@ -373,7 +373,7 @@ class ManagementProjectsWebhooksUpdateResponseBody implements ModelInterface, Ar
             self::EVENTS_CAMPAIGN_REWARD_ASSIGNMENT_DELETED,
             self::EVENTS_CAMPAIGN_REWARD_ASSIGNMENT_UPDATED,
             self::EVENTS_CAMPAIGN_UPDATED,
-            self::EVENTS_CAMPAIGN_VOUCHERS_ADDED,
+            self::EVENTS_CAMPAIGN_VOUCHERS_ADED,
             self::EVENTS_CAMPAIGN_VOUCHERS_GENERATION_COMPLETED,
             self::EVENTS_CAMPAIGN_VOUCHERS_GENERATION_FAILED,
             self::EVENTS_CAMPAIGN_VOUCHERS_GENERATION_STARTED,
@@ -391,13 +391,13 @@ class ManagementProjectsWebhooksUpdateResponseBody implements ModelInterface, Ar
             self::EVENTS_VOUCHER_DELETED,
             self::EVENTS_VOUCHER_DISABLED,
             self::EVENTS_VOUCHER_ENABLED,
-            self::EVENTS_VOUCHER_GIFT_BALANCE_ADDED,
+            self::EVENTS_VOUCHER_GIFT_BALANCE_ADED,
             self::EVENTS_VOUCHER_GIFT_TRANSACTION_CREATED,
             self::EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_ACTIVATED,
-            self::EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_ADDED,
+            self::EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_ADED,
             self::EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_CANCELED,
             self::EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_UPDATED,
-            self::EVENTS_VOUCHER_LOYALTY_CARD_POINTS_ADDED,
+            self::EVENTS_VOUCHER_LOYALTY_CARD_POINTS_ADED,
             self::EVENTS_VOUCHER_LOYALTY_CARD_POINTS_EXPIRED,
             self::EVENTS_VOUCHER_LOYALTY_CARD_TRANSACTION_CREATED,
             self::EVENTS_VOUCHER_PUBLISHED,

@@ -2497,15 +2497,16 @@ class VouchersApi
      * Import Vouchers using CSV
      *
      * @param  \SplFileObject $file File path. (optional)
+     * @param  bool $webhooksEnable Triggers a webhook sendout for new and updated vouchers if the voucher created and voucher updated webhooks are configured in Project settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersUsingCsv'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\VouchersImportCsvCreateResponseBody
      */
-    public function importVouchersUsingCsv($file = null, string $contentType = self::contentTypes['importVouchersUsingCsv'][0])
+    public function importVouchersUsingCsv($file = null, $webhooksEnable = null, string $contentType = self::contentTypes['importVouchersUsingCsv'][0])
     {
-        list($response) = $this->importVouchersUsingCsvWithHttpInfo($file, $contentType);
+        list($response) = $this->importVouchersUsingCsvWithHttpInfo($file, $webhooksEnable, $contentType);
         return $response;
     }
 
@@ -2515,15 +2516,16 @@ class VouchersApi
      * Import Vouchers using CSV
      *
      * @param  \SplFileObject $file File path. (optional)
+     * @param  bool $webhooksEnable Triggers a webhook sendout for new and updated vouchers if the voucher created and voucher updated webhooks are configured in Project settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersUsingCsv'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\VouchersImportCsvCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function importVouchersUsingCsvWithHttpInfo($file = null, string $contentType = self::contentTypes['importVouchersUsingCsv'][0])
+    public function importVouchersUsingCsvWithHttpInfo($file = null, $webhooksEnable = null, string $contentType = self::contentTypes['importVouchersUsingCsv'][0])
     {
-        $request = $this->importVouchersUsingCsvRequest($file, $contentType);
+        $request = $this->importVouchersUsingCsvRequest($file, $webhooksEnable, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2615,14 +2617,15 @@ class VouchersApi
      * Import Vouchers using CSV
      *
      * @param  \SplFileObject $file File path. (optional)
+     * @param  bool $webhooksEnable Triggers a webhook sendout for new and updated vouchers if the voucher created and voucher updated webhooks are configured in Project settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersUsingCsv'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function importVouchersUsingCsvAsync($file = null, string $contentType = self::contentTypes['importVouchersUsingCsv'][0])
+    public function importVouchersUsingCsvAsync($file = null, $webhooksEnable = null, string $contentType = self::contentTypes['importVouchersUsingCsv'][0])
     {
-        return $this->importVouchersUsingCsvAsyncWithHttpInfo($file, $contentType)
+        return $this->importVouchersUsingCsvAsyncWithHttpInfo($file, $webhooksEnable, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2636,15 +2639,16 @@ class VouchersApi
      * Import Vouchers using CSV
      *
      * @param  \SplFileObject $file File path. (optional)
+     * @param  bool $webhooksEnable Triggers a webhook sendout for new and updated vouchers if the voucher created and voucher updated webhooks are configured in Project settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersUsingCsv'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function importVouchersUsingCsvAsyncWithHttpInfo($file = null, string $contentType = self::contentTypes['importVouchersUsingCsv'][0])
+    public function importVouchersUsingCsvAsyncWithHttpInfo($file = null, $webhooksEnable = null, string $contentType = self::contentTypes['importVouchersUsingCsv'][0])
     {
         $returnType = '\OpenAPI\Client\Model\VouchersImportCsvCreateResponseBody';
-        $request = $this->importVouchersUsingCsvRequest($file, $contentType);
+        $request = $this->importVouchersUsingCsvRequest($file, $webhooksEnable, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2686,13 +2690,15 @@ class VouchersApi
      * Create request for operation 'importVouchersUsingCsv'
      *
      * @param  \SplFileObject $file File path. (optional)
+     * @param  bool $webhooksEnable Triggers a webhook sendout for new and updated vouchers if the voucher created and voucher updated webhooks are configured in Project settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersUsingCsv'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function importVouchersUsingCsvRequest($file = null, string $contentType = self::contentTypes['importVouchersUsingCsv'][0])
+    public function importVouchersUsingCsvRequest($file = null, $webhooksEnable = null, string $contentType = self::contentTypes['importVouchersUsingCsv'][0])
     {
+
 
 
 
@@ -2717,6 +2723,10 @@ class VouchersApi
                     'rb'
                 );
             }
+        }
+        // form params
+        if ($webhooksEnable !== null) {
+            $formParams['webhooks_enable'] = ObjectSerializer::toFormValue($webhooksEnable);
         }
 
         $headers = $this->headerSelector->selectHeaders(
