@@ -427,7 +427,7 @@ class ManagementProjectsUsersInviteCreateRequestBody implements ModelInterface, 
     /**
      * Sets projects
      *
-     * @param array<string,string>|null $projects In the key, provide the project ID to which the new user will be assigned. In the value, provide the role which the user will have in the project. The predefined Voucherify roles are: `ADMIN`, `USER`, `VIEWER`, `MERCHANT`, `USER_RESTRICTED` (for the Areas and Stores, an Enterprise feature). Send a custom role ID (Enterprise feature) to assign a custom role.
+     * @param array<string,string>|null $projects In the key, provide the project ID to which the new user will be assigned. In the value, provide the role which the user will have in the project. The predefined Voucherify roles are: `ADMIN`, `USER`, `VIEWER`, `MERCHANT`, `USER_RESTRICTED` (for the Areas and Stores, an Enterprise feature). Send a custom role ID (Enterprise feature) to assign a custom role. To find the custom role ID: If you are an admin, go to Voucherify Dashboard, Team settings, and Roles tab. Click on a custom role. The custom role ID is in the URL in the format `role_XyZ7aB9cD2eF4gH1iJ0kL5mN6oP8qR3s`.
      *
      * @return self
      */

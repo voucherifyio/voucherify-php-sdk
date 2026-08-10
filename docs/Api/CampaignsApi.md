@@ -10,9 +10,12 @@ All URIs are relative to https://api.voucherify.io, except if the operation defi
 | [**deleteCampaign()**](CampaignsApi.md#deleteCampaign) | **DELETE** /v1/campaigns/{campaignId} | Delete Campaign |
 | [**disableCampaign()**](CampaignsApi.md#disableCampaign) | **POST** /v1/campaigns/{campaignId}/disable | Disable Campaign |
 | [**enableCampaign()**](CampaignsApi.md#enableCampaign) | **POST** /v1/campaigns/{campaignId}/enable | Enable Campaign |
+| [**exportCampaignTransactions()**](CampaignsApi.md#exportCampaignTransactions) | **POST** /v1/campaigns/{campaignId}/transactions/export | Export Campaign Transactions |
 | [**getCampaign()**](CampaignsApi.md#getCampaign) | **GET** /v1/campaigns/{campaignId} | Get Campaign |
+| [**getCampaignSummary()**](CampaignsApi.md#getCampaignSummary) | **GET** /v1/campaigns/{campaignId}/summary | Get Campaign Summary |
 | [**importVouchersToCampaign()**](CampaignsApi.md#importVouchersToCampaign) | **POST** /v1/campaigns/{campaignId}/import | Import Vouchers to Campaign |
 | [**importVouchersToCampaignUsingCsv()**](CampaignsApi.md#importVouchersToCampaignUsingCsv) | **POST** /v1/campaigns/{campaignId}/importCSV | Import Vouchers to Campaign by CSV |
+| [**listCampaignTransactions()**](CampaignsApi.md#listCampaignTransactions) | **GET** /v1/campaigns/{campaignId}/transactions | List Campaign Transactions |
 | [**listCampaigns()**](CampaignsApi.md#listCampaigns) | **GET** /v1/campaigns | List Campaigns |
 | [**updateCampaign()**](CampaignsApi.md#updateCampaign) | **PUT** /v1/campaigns/{campaignId} | Update Campaign |
 
@@ -96,7 +99,7 @@ addVouchersToCampaign($campaignId, $vouchersCount, $campaignsVouchersCreateInBul
 
 Add Vouchers to Campaign
 
-This method gives the possibility to push new vouchers to an existing campaign. New vouchers will inherit properties from the campaign profile. However, it is possible to overwrite some of them in the request body. If you provide an optional code_config parameter with a voucher code configuration, then it will be used to generate new voucher codes. Otherwise, the voucher code configuration from the campaign will be used. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
+This method gives the possibility to push new vouchers to an existing campaign. New vouchers will inherit properties from the campaign profile. However, it is possible to overwrite some of them in the request body. If you provide an optional code_config parameter with a voucher code configuration, then it will be used to generate new voucher codes. Otherwise, the voucher code configuration from the campaign will be used. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
 
 ### Example
 
@@ -167,7 +170,7 @@ createCampaign($campaignsCreateRequestBody): \OpenAPI\Client\Model\CampaignsCrea
 
 Create Campaign
 
-Method to create a batch of vouchers aggregated in one campaign. You can choose a variety of voucher types and define a unique pattern for generating codes.    📘 Global uniqueness  All campaign codes are unique across the whole project. Voucherify will not allow you to generate 2 campaigns with the same coupon code.    🚧 Code generation status  This is an asynchronous action; you cant read or modify a newly created campaign until the code generation is completed. See the creation_status field in the campaign object description. 🚧 Standalone Vouchers and Campaigns In version [v20241004](https://support.voucherify.io/article/23-whats-new-in-voucherify#v20241004), standalone vouchers created through the Voucherify dashboard create a campaign for that voucher. However, you cannot create a standalone discount or gift voucher campaign with the type: STANDALONE through the API. Voucherify developers work on adding that feature. Follow the [Voucherify Release Notes](https://support.voucherify.io/article/23-whats-new-in-voucherify#v20241004) for more details about released features.
+Method to create a batch of vouchers aggregated in one campaign. You can choose a variety of voucher types and define a unique pattern for generating codes.    📘 Global uniqueness  All campaign codes are unique across the whole project. Voucherify will not allow you to generate 2 campaigns with the same coupon code.    🚧 Code generation status  This is an asynchronous action; you cant read or modify a newly created campaign until the code generation is completed. See the creation_status field in the [campaign object](/api-reference/campaigns/campaign-object) description.
 
 ### Example
 
@@ -234,7 +237,7 @@ deleteCampaign($campaignId, $force): \OpenAPI\Client\Model\CampaignsDeleteRespon
 
 Delete Campaign
 
-Deletes a campaign and all related vouchers. This action cannot be undone. Also, this method immediately removes any redemptions on the voucher. If the force parameter is set to false or not set at all, the campaign and all related vouchers will be moved to the bin. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
+Deletes a campaign and all related vouchers. This action cannot be undone. Also, this method immediately removes any redemptions on the voucher. If the force parameter is set to false or not set at all, the campaign and all related vouchers will be moved to [the bin](/api-reference/bin/list-bin-entries). This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
 
 ### Example
 
@@ -429,6 +432,75 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `exportCampaignTransactions()`
+
+```php
+exportCampaignTransactions($campaignId, $campaignsTransactionsExportCreateRequestBody): \OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody
+```
+
+Export Campaign Transactions
+
+Export transactions is an asynchronous process that generates a CSV file with the data about credit movements on all gift cards or point movements on all loyalty cards in a given campaign. To export transactions: 1. In the export request, use parameters to select which fields will be exported, in what order, and which data will be filtered. 2. Use the returned id to track the export status with the [GET Export](/api-reference/exports/get-export) method. 3. In the GET Export method, when the returned status field has the DONE value, the export file has been generated. 4. Use the URL in the result property to download the file. You must be logged to your Voucherify account on a given cluster in the browser to be able to download the file. An export request will almost always result in a single file being generated by the system. However, when the data volume is large, the system may split the results into multiple files. An example export file can look as follows:    👍 Export Loyalty Campaign Transactions  For loyalty campaigns, this method works in the same way the [POST Export Loyalty Campaign Transactions](/api-reference/loyalties/export-loyalty-campaign-transactions) does.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: X-App-Id
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-App-Id', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-App-Id', 'Bearer');
+
+// Configure API key authorization: X-App-Token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-App-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-App-Token', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$campaignId = 'campaignId_example'; // string | You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
+$campaignsTransactionsExportCreateRequestBody = {"order":"-created_at","parameters":{"fields":["id","type","source_id","created_at"],"filters":{"created_at":{"conditions":{"$after":["2024-10-01T00:00:00.000Z"]}}}}}; // \OpenAPI\Client\Model\CampaignsTransactionsExportCreateRequestBody | Specify the parameters for the transaction export.
+
+try {
+    $result = $apiInstance->exportCampaignTransactions($campaignId, $campaignsTransactionsExportCreateRequestBody);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CampaignsApi->exportCampaignTransactions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaignId** | **string**| You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
+| **campaignsTransactionsExportCreateRequestBody** | [**\OpenAPI\Client\Model\CampaignsTransactionsExportCreateRequestBody**](../Model/CampaignsTransactionsExportCreateRequestBody.md)| Specify the parameters for the transaction export. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody**](../Model/CampaignsTransactionsExportCreateResponseBody.md)
+
+### Authorization
+
+[X-App-Id](../../README.md#X-App-Id), [X-App-Token](../../README.md#X-App-Token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getCampaign()`
 
 ```php
@@ -496,6 +568,77 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getCampaignSummary()`
+
+```php
+getCampaignSummary($campaignId, $startDate, $endDate): \OpenAPI\Client\Model\CampaignsSummaryGetResponseBody
+```
+
+Get Campaign Summary
+
+Returns data for campaign analytics, covering validations, redemptions, publications, and other details specific to a given campaign type. Use start_date and end_date to narrow down the data to specific periods. 🚧 Campaigns created before 17 June 2025 This endpoint returns analytics data for campaigns that were created after 17 June 2025. Older campaigns return empty data.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: X-App-Id
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-App-Id', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-App-Id', 'Bearer');
+
+// Configure API key authorization: X-App-Token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-App-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-App-Token', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$campaignId = 'campaignId_example'; // string | You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date which results must begin on. Represented in ISO 8601 format.
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date which results must end on. Represented in ISO 8601 format.
+
+try {
+    $result = $apiInstance->getCampaignSummary($campaignId, $startDate, $endDate);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CampaignsApi->getCampaignSummary: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaignId** | **string**| You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
+| **startDate** | **\DateTime**| Timestamp representing the date which results must begin on. Represented in ISO 8601 format. | [optional] |
+| **endDate** | **\DateTime**| Timestamp representing the date which results must end on. Represented in ISO 8601 format. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\CampaignsSummaryGetResponseBody**](../Model/CampaignsSummaryGetResponseBody.md)
+
+### Authorization
+
+[X-App-Id](../../README.md#X-App-Id), [X-App-Token](../../README.md#X-App-Token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `importVouchersToCampaign()`
 
 ```php
@@ -504,7 +647,7 @@ importVouchersToCampaign($campaignId, $campaignsImportVoucherItem): \OpenAPI\Cli
 
 Import Vouchers to Campaign
 
-Imports vouchers to an **existing** campaign. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
+Imports vouchers to an **existing** campaign. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
 
 ### Example
 
@@ -531,7 +674,7 @@ $apiInstance = new OpenAPI\Client\Api\CampaignsApi(
     $config
 );
 $campaignId = 'campaignId_example'; // string | The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
-$campaignsImportVoucherItem = [{"code":"CODE7","category":"First","redemption":{"quantity":1},"metadata":{"season":"Fall"},"additional_info":"secret-code1","active":true},{"code":"CODE8","category":"Second","redemption":{"quantity":18},"metadata":{"season":"Fall"},"additional_info":"secret-code1","active":true},{"code":"CODE9","redemption":{"quantity":4},"metadata":{"season":"Fall"},"additional_info":"secret-code1","active":true}]; // \OpenAPI\Client\Model\CampaignsImportVoucherItem[] | Discount type, expiration date and the remaining attributes will be taken from the Campaign settings.
+$campaignsImportVoucherItem = [{"code":"CODE7","category":"First","redemption":{"quantity":1},"metadata":{"season":"Fall"},"additional_info":"secret-code1","active":true},{"code":"CODE8","category":"Second","redemption":{"quantity":18},"metadata":{"season":"Fall"},"additional_info":"secret-code1","active":true},{"code":"CODE9","redemption":{"quantity":4},"metadata":{"season":"Fall"},"additional_info":"secret-code1","active":true}]; // \OpenAPI\Client\Model\CampaignsImportVoucherItem[] | Discount type, expiration date and the remaining attributes will be taken from the [Campaign](/api-reference/campaigns/get-campaign) settings.
 
 try {
     $result = $apiInstance->importVouchersToCampaign($campaignId, $campaignsImportVoucherItem);
@@ -546,7 +689,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **campaignId** | **string**| The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
-| **campaignsImportVoucherItem** | [**\OpenAPI\Client\Model\CampaignsImportVoucherItem[]**](../Model/CampaignsImportVoucherItem.md)| Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. | [optional] |
+| **campaignsImportVoucherItem** | [**\OpenAPI\Client\Model\CampaignsImportVoucherItem[]**](../Model/CampaignsImportVoucherItem.md)| Discount type, expiration date and the remaining attributes will be taken from the [Campaign](/api-reference/campaigns/get-campaign) settings. | [optional] |
 
 ### Return type
 
@@ -573,7 +716,7 @@ importVouchersToCampaignUsingCsv($campaignId, $file): \OpenAPI\Client\Model\Camp
 
 Import Vouchers to Campaign by CSV
 
-Imports vouchers to an **existing** campaign.   The CSV file has to include headers in the first line.  This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
+Imports vouchers to an **existing** campaign.   The CSV file has to include headers in the first line.  This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this [API request](/api-reference/async-actions/get-async-action).
 
 ### Example
 
@@ -634,6 +777,81 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `listCampaignTransactions()`
+
+```php
+listCampaignTransactions($campaignId, $limit, $order, $startingAfterId, $filters): \OpenAPI\Client\Model\CampaignsTransactionsListResponseBody
+```
+
+List Campaign Transactions
+
+Retrieves all transactions for the campaign with the given campaign ID or campaign name. The id filter denotes the unique transaction identifier.  🚧  The endpoint works only for gift card and loyalty campaigns.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: X-App-Id
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-App-Id', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-App-Id', 'Bearer');
+
+// Configure API key authorization: X-App-Token
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-App-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-App-Token', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CampaignsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$campaignId = 'campaignId_example'; // string | You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
+$limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
+$order = new \OpenAPI\Client\Model\ParameterOrderListTransactions(); // ParameterOrderListTransactions | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+$startingAfterId = 'startingAfterId_example'; // string | A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID.
+$filters = new \OpenAPI\Client\Model\ParametersFiltersListCampaignTransactions(); // ParametersFiltersListCampaignTransactions | Filters for listing responses.
+
+try {
+    $result = $apiInstance->listCampaignTransactions($campaignId, $limit, $order, $startingAfterId, $filters);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CampaignsApi->listCampaignTransactions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaignId** | **string**| You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. | |
+| **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
+| **order** | [**ParameterOrderListTransactions**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
+| **startingAfterId** | **string**| A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. | [optional] |
+| **filters** | [**ParametersFiltersListCampaignTransactions**](../Model/.md)| Filters for listing responses. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\CampaignsTransactionsListResponseBody**](../Model/CampaignsTransactionsListResponseBody.md)
+
+### Authorization
+
+[X-App-Id](../../README.md#X-App-Id), [X-App-Token](../../README.md#X-App-Token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `listCampaigns()`
 
 ```php
@@ -671,9 +889,9 @@ $apiInstance = new OpenAPI\Client\Api\CampaignsApi(
 $limit = 56; // int | Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items.
 $page = 56; // int | Which page of results to return. The lowest value is 1.
 $campaignType = new \OpenAPI\Client\Model\ParameterCampaignType(); // ParameterCampaignType | This attribute allows filtering by campaign type.
-$expand = new \OpenAPI\Client\Model\ParameterExpandListCampaigns(); // ParameterExpandListCampaigns | Includes an expanded categories object in the response. If the [Areas and Stores](https://support.voucherify.io/article/623-areas-and-stores) Enterprise feature is enabled, add access_settings_assignments to return assigned areas and stores.
+$expand = new \OpenAPI\Client\Model\ParameterExpandListCampaigns(); // ParameterExpandListCampaigns | Includes an expanded categories object in the response. If the [Areas and Stores](/orchestrate/areas-and-stores) Enterprise feature is enabled, add access_settings_assignments to return assigned areas and stores.
 $order = new \OpenAPI\Client\Model\ParameterOrderListCampaigns(); // ParameterOrderListCampaigns | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
-$filters = new \OpenAPI\Client\Model\ParameterFiltersListCampaigns(); // ParameterFiltersListCampaigns | Filters the results by campaign status or whether the campaign is a referral campaign.
+$filters = new \OpenAPI\Client\Model\ParameterFiltersListCampaigns(); // ParameterFiltersListCampaigns | Filters the results by various campaign properties.
 
 try {
     $result = $apiInstance->listCampaigns($limit, $page, $campaignType, $expand, $order, $filters);
@@ -690,9 +908,9 @@ try {
 | **limit** | **int**| Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. | [optional] |
 | **page** | **int**| Which page of results to return. The lowest value is 1. | [optional] |
 | **campaignType** | [**ParameterCampaignType**](../Model/.md)| This attribute allows filtering by campaign type. | [optional] |
-| **expand** | [**ParameterExpandListCampaigns**](../Model/.md)| Includes an expanded categories object in the response. If the [Areas and Stores](https://support.voucherify.io/article/623-areas-and-stores) Enterprise feature is enabled, add access_settings_assignments to return assigned areas and stores. | [optional] |
+| **expand** | [**ParameterExpandListCampaigns**](../Model/.md)| Includes an expanded categories object in the response. If the [Areas and Stores](/orchestrate/areas-and-stores) Enterprise feature is enabled, add access_settings_assignments to return assigned areas and stores. | [optional] |
 | **order** | [**ParameterOrderListCampaigns**](../Model/.md)| Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
-| **filters** | [**ParameterFiltersListCampaigns**](../Model/.md)| Filters the results by campaign status or whether the campaign is a referral campaign. | [optional] |
+| **filters** | [**ParameterFiltersListCampaigns**](../Model/.md)| Filters the results by various campaign properties. | [optional] |
 
 ### Return type
 
@@ -719,7 +937,7 @@ updateCampaign($campaignId, $campaignsUpdateRequestBody): \OpenAPI\Client\Model\
 
 Update Campaign
 
-Updates the specified campaign by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged.  Fields other than the ones listed in the request body wont be modified. Even if provided, they will be silently skipped.     ## Vouchers will be affected  This method will update vouchers aggregated in the campaign. It will affect all vouchers that are not published or redeemed yet.
+Updates the specified campaign by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged.  Fields other than the ones listed in the request body wont be modified. Even if provided, they will be silently skipped.     🚧 Vouchers will be affected  This method will update vouchers aggregated in the campaign. It will affect all vouchers that are not published or redeemed yet.
 
 ### Example
 

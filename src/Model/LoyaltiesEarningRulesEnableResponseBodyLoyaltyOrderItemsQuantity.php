@@ -61,8 +61,10 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity implement
     protected static $openAPITypes = [
         'every' => 'int',
         'points' => 'int',
+        'pointsFormula' => 'string',
         'object' => 'string',
-        'id' => 'string'
+        'id' => 'string',
+        'applicableTo' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem[]'
     ];
 
     /**
@@ -75,8 +77,10 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity implement
     protected static $openAPIFormats = [
         'every' => null,
         'points' => null,
+        'pointsFormula' => null,
         'object' => null,
-        'id' => null
+        'id' => null,
+        'applicableTo' => null
     ];
 
     /**
@@ -87,8 +91,10 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity implement
     protected static array $openAPINullables = [
         'every' => true,
 		'points' => true,
+		'pointsFormula' => true,
 		'object' => true,
-		'id' => true
+		'id' => true,
+		'applicableTo' => true
     ];
 
     /**
@@ -179,8 +185,10 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity implement
     protected static $attributeMap = [
         'every' => 'every',
         'points' => 'points',
+        'pointsFormula' => 'points_formula',
         'object' => 'object',
-        'id' => 'id'
+        'id' => 'id',
+        'applicableTo' => 'applicable_to'
     ];
 
     /**
@@ -191,8 +199,10 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity implement
     protected static $setters = [
         'every' => 'setEvery',
         'points' => 'setPoints',
+        'pointsFormula' => 'setPointsFormula',
         'object' => 'setObject',
-        'id' => 'setId'
+        'id' => 'setId',
+        'applicableTo' => 'setApplicableTo'
     ];
 
     /**
@@ -203,8 +213,10 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity implement
     protected static $getters = [
         'every' => 'getEvery',
         'points' => 'getPoints',
+        'pointsFormula' => 'getPointsFormula',
         'object' => 'getObject',
-        'id' => 'getId'
+        'id' => 'getId',
+        'applicableTo' => 'getApplicableTo'
     ];
 
     /**
@@ -283,8 +295,10 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity implement
     {
         $this->setIfExists('every', $data ?? [], null);
         $this->setIfExists('points', $data ?? [], null);
+        $this->setIfExists('pointsFormula', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('applicableTo', $data ?? [], null);
     }
 
     /**
@@ -407,6 +421,40 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity implement
     }
 
     /**
+     * Gets pointsFormula
+     *
+     * @return string|null
+     */
+    public function getPointsFormula()
+    {
+        return $this->container['pointsFormula'];
+    }
+
+    /**
+     * Sets pointsFormula
+     *
+     * @param string|null $pointsFormula Formula used to dynamically calculate the rewarded points.
+     *
+     * @return self
+     */
+    public function setPointsFormula($pointsFormula)
+    {
+        if (is_null($pointsFormula)) {
+            array_push($this->openAPINullablesSetToNull, 'pointsFormula');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('pointsFormula', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['pointsFormula'] = $pointsFormula;
+
+        return $this;
+    }
+
+    /**
      * Gets object
      *
      * @return string|null
@@ -419,7 +467,7 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity implement
     /**
      * Sets object
      *
-     * @param string|null $object Type of object taken under consideration.
+     * @param string|null $object Type of object which will be covered by the earning rule. This is required together with `id`. Can be replaced by the `applicable_to` array. In response, the value of the first object is returned even if `applicable_to` array was used.
      *
      * @return self
      */
@@ -463,7 +511,7 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity implement
     /**
      * Sets id
      *
-     * @param string|null $id Unique ID of the resource, i.e. pc_75U0dHlr7u75BJodrW1AE3t6, prod_0bae32322150fd0546, or sku_0b7d7dfb090be5c619.
+     * @param string|null $id Unique ID of the resource assigned by Voucherify. This is required together with `object`. Can be replaced by the `applicable_to` array. In response, the value of the first object is returned even if `applicable_to` array was used. Values are, for example, `pc_75U0dHlr7u75BJodrW1AE3t6` for product collection, `prod_0bae32322150fd0546` for a product, or `sku_0b7d7dfb090be5c619` for a SKU.
      *
      * @return self
      */
@@ -480,6 +528,40 @@ class LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantity implement
             }
         }
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets applicableTo
+     *
+     * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem[]|null
+     */
+    public function getApplicableTo()
+    {
+        return $this->container['applicableTo'];
+    }
+
+    /**
+     * Sets applicableTo
+     *
+     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBodyLoyaltyOrderItemsQuantityApplicableToItem[]|null $applicableTo Defines products, SKUs, or product collections covered by the earning rule. Can be replaced by `object` and `id` to define only one object.
+     *
+     * @return self
+     */
+    public function setApplicableTo($applicableTo)
+    {
+        if (is_null($applicableTo)) {
+            array_push($this->openAPINullablesSetToNull, 'applicableTo');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('applicableTo', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['applicableTo'] = $applicableTo;
 
         return $this;
     }

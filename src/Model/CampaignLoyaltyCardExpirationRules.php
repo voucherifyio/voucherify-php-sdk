@@ -36,6 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * CampaignLoyaltyCardExpirationRules Class Doc Comment
  *
  * @category Class
+ * @description Defines the loyalty point expiration rule. This expiration rule applies when there are no &#x60;expiration_rules&#x60; defined for an earning rule.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -61,7 +62,9 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
         'periodType' => 'string',
         'periodValue' => 'int',
         'roundingType' => 'string',
-        'roundingValue' => 'int'
+        'roundingValue' => 'int',
+        'fixedMonth' => 'int',
+        'fixedDay' => 'int'
     ];
 
     /**
@@ -75,7 +78,9 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
         'periodType' => null,
         'periodValue' => null,
         'roundingType' => null,
-        'roundingValue' => null
+        'roundingValue' => null,
+        'fixedMonth' => null,
+        'fixedDay' => null
     ];
 
     /**
@@ -87,7 +92,9 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
         'periodType' => true,
 		'periodValue' => true,
 		'roundingType' => true,
-		'roundingValue' => true
+		'roundingValue' => true,
+		'fixedMonth' => true,
+		'fixedDay' => true
     ];
 
     /**
@@ -179,7 +186,9 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
         'periodType' => 'period_type',
         'periodValue' => 'period_value',
         'roundingType' => 'rounding_type',
-        'roundingValue' => 'rounding_value'
+        'roundingValue' => 'rounding_value',
+        'fixedMonth' => 'fixed_month',
+        'fixedDay' => 'fixed_day'
     ];
 
     /**
@@ -191,7 +200,9 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
         'periodType' => 'setPeriodType',
         'periodValue' => 'setPeriodValue',
         'roundingType' => 'setRoundingType',
-        'roundingValue' => 'setRoundingValue'
+        'roundingValue' => 'setRoundingValue',
+        'fixedMonth' => 'setFixedMonth',
+        'fixedDay' => 'setFixedDay'
     ];
 
     /**
@@ -203,7 +214,9 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
         'periodType' => 'getPeriodType',
         'periodValue' => 'getPeriodValue',
         'roundingType' => 'getRoundingType',
-        'roundingValue' => 'getRoundingValue'
+        'roundingValue' => 'getRoundingValue',
+        'fixedMonth' => 'getFixedMonth',
+        'fixedDay' => 'getFixedDay'
     ];
 
     /**
@@ -247,6 +260,7 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
         return self::$openAPIModelName;
     }
 
+    public const PERIOD_TYPE_FIXED_DAY_OF_YEAR = 'FIXED_DAY_OF_YEAR';
     public const PERIOD_TYPE_MONTH = 'MONTH';
     public const ROUNDING_TYPE_END_OF_MONTH = 'END_OF_MONTH';
     public const ROUNDING_TYPE_END_OF_QUARTER = 'END_OF_QUARTER';
@@ -262,6 +276,7 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
     public function getPeriodTypeAllowableValues()
     {
         return [
+            self::PERIOD_TYPE_FIXED_DAY_OF_YEAR,
             self::PERIOD_TYPE_MONTH,
         ];
     }
@@ -297,10 +312,12 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('periodType', $data ?? [], 'MONTH');
+        $this->setIfExists('periodType', $data ?? [], null);
         $this->setIfExists('periodValue', $data ?? [], null);
         $this->setIfExists('roundingType', $data ?? [], null);
         $this->setIfExists('roundingValue', $data ?? [], null);
+        $this->setIfExists('fixedMonth', $data ?? [], null);
+        $this->setIfExists('fixedDay', $data ?? [], null);
     }
 
     /**
@@ -348,6 +365,22 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
             );
         }
 
+        if (!is_null($this->container['fixedMonth']) && ($this->container['fixedMonth'] > 12)) {
+            $invalidProperties[] = "invalid value for 'fixedMonth', must be smaller than or equal to 12.";
+        }
+
+        if (!is_null($this->container['fixedMonth']) && ($this->container['fixedMonth'] < 1)) {
+            $invalidProperties[] = "invalid value for 'fixedMonth', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['fixedDay']) && ($this->container['fixedDay'] > 31)) {
+            $invalidProperties[] = "invalid value for 'fixedDay', must be smaller than or equal to 31.";
+        }
+
+        if (!is_null($this->container['fixedDay']) && ($this->container['fixedDay'] < 1)) {
+            $invalidProperties[] = "invalid value for 'fixedDay', must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -376,7 +409,7 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
     /**
      * Sets periodType
      *
-     * @param string|null $periodType Type of period
+     * @param string|null $periodType Type of period. Can be set for `MONTH` or `FIXED_DAY_OF_YEAR`. `MONTH` requires the `period_value` field. `FIXED_DAY_OF_YEAR` requires the `fixed_month` and `fixed_day` fields.
      *
      * @return self
      */
@@ -420,7 +453,7 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
     /**
      * Sets periodValue
      *
-     * @param int|null $periodValue Value of the period
+     * @param int|null $periodValue Value of the period. Required for the `period_type: MONTH`.
      *
      * @return self
      */
@@ -454,7 +487,7 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
     /**
      * Sets roundingType
      *
-     * @param string|null $roundingType Type of rounding
+     * @param string|null $roundingType Type of rounding of the expiration period. Optional for the `period_type: MONTH`.
      *
      * @return self
      */
@@ -498,7 +531,7 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
     /**
      * Sets roundingValue
      *
-     * @param int|null $roundingValue Value of rounding
+     * @param int|null $roundingValue Value of rounding of the expiration period. Required for the `rounding_type`.
      *
      * @return self
      */
@@ -515,6 +548,90 @@ class CampaignLoyaltyCardExpirationRules implements ModelInterface, ArrayAccess,
             }
         }
         $this->container['roundingValue'] = $roundingValue;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixedMonth
+     *
+     * @return int|null
+     */
+    public function getFixedMonth()
+    {
+        return $this->container['fixedMonth'];
+    }
+
+    /**
+     * Sets fixedMonth
+     *
+     * @param int|null $fixedMonth Determines the month when the points expire; `1` is January, `2` is February, and so on. Required for the `period_type: FIXED_DAY_OF_YEAR`.
+     *
+     * @return self
+     */
+    public function setFixedMonth($fixedMonth)
+    {
+        if (is_null($fixedMonth)) {
+            array_push($this->openAPINullablesSetToNull, 'fixedMonth');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('fixedMonth', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($fixedMonth) && ($fixedMonth > 12)) {
+            throw new \InvalidArgumentException('invalid value for $fixedMonth when calling CampaignLoyaltyCardExpirationRules., must be smaller than or equal to 12.');
+        }
+        if (!is_null($fixedMonth) && ($fixedMonth < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fixedMonth when calling CampaignLoyaltyCardExpirationRules., must be bigger than or equal to 1.');
+        }
+
+        $this->container['fixedMonth'] = $fixedMonth;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixedDay
+     *
+     * @return int|null
+     */
+    public function getFixedDay()
+    {
+        return $this->container['fixedDay'];
+    }
+
+    /**
+     * Sets fixedDay
+     *
+     * @param int|null $fixedDay Determines the day of the month when the points expire. Required for the `period_type: FIXED_DAY_OF_YEAR`.
+     *
+     * @return self
+     */
+    public function setFixedDay($fixedDay)
+    {
+        if (is_null($fixedDay)) {
+            array_push($this->openAPINullablesSetToNull, 'fixedDay');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('fixedDay', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($fixedDay) && ($fixedDay > 31)) {
+            throw new \InvalidArgumentException('invalid value for $fixedDay when calling CampaignLoyaltyCardExpirationRules., must be smaller than or equal to 31.');
+        }
+        if (!is_null($fixedDay) && ($fixedDay < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fixedDay when calling CampaignLoyaltyCardExpirationRules., must be bigger than or equal to 1.');
+        }
+
+        $this->container['fixedDay'] = $fixedDay;
 
         return $this;
     }

@@ -61,6 +61,7 @@ class LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEventMetadata implemen
     protected static $openAPITypes = [
         'every' => 'int',
         'points' => 'int',
+        'pointsFormula' => 'string',
         'property' => 'string'
     ];
 
@@ -74,6 +75,7 @@ class LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEventMetadata implemen
     protected static $openAPIFormats = [
         'every' => null,
         'points' => null,
+        'pointsFormula' => null,
         'property' => null
     ];
 
@@ -85,6 +87,7 @@ class LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEventMetadata implemen
     protected static array $openAPINullables = [
         'every' => true,
 		'points' => true,
+		'pointsFormula' => true,
 		'property' => true
     ];
 
@@ -176,6 +179,7 @@ class LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEventMetadata implemen
     protected static $attributeMap = [
         'every' => 'every',
         'points' => 'points',
+        'pointsFormula' => 'points_formula',
         'property' => 'property'
     ];
 
@@ -187,6 +191,7 @@ class LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEventMetadata implemen
     protected static $setters = [
         'every' => 'setEvery',
         'points' => 'setPoints',
+        'pointsFormula' => 'setPointsFormula',
         'property' => 'setProperty'
     ];
 
@@ -198,6 +203,7 @@ class LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEventMetadata implemen
     protected static $getters = [
         'every' => 'getEvery',
         'points' => 'getPoints',
+        'pointsFormula' => 'getPointsFormula',
         'property' => 'getProperty'
     ];
 
@@ -260,6 +266,7 @@ class LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEventMetadata implemen
     {
         $this->setIfExists('every', $data ?? [], null);
         $this->setIfExists('points', $data ?? [], null);
+        $this->setIfExists('pointsFormula', $data ?? [], null);
         $this->setIfExists('property', $data ?? [], null);
     }
 
@@ -369,6 +376,40 @@ class LoyaltiesEarningRulesCreateResponseBodyLoyaltyCustomEventMetadata implemen
             }
         }
         $this->container['points'] = $points;
+
+        return $this;
+    }
+
+    /**
+     * Gets pointsFormula
+     *
+     * @return string|null
+     */
+    public function getPointsFormula()
+    {
+        return $this->container['pointsFormula'];
+    }
+
+    /**
+     * Sets pointsFormula
+     *
+     * @param string|null $pointsFormula Formula used to dynamically calculate the rewarded points.
+     *
+     * @return self
+     */
+    public function setPointsFormula($pointsFormula)
+    {
+        if (is_null($pointsFormula)) {
+            array_push($this->openAPINullablesSetToNull, 'pointsFormula');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('pointsFormula', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['pointsFormula'] = $pointsFormula;
 
         return $this;
     }

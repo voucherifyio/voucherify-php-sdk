@@ -455,7 +455,7 @@ class ProductsSkusCreateRequestBody implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets price
      *
-     * @param int|null $price SKU unit price. Value is multiplied by 100 to precisely represent 2 decimal places. For example `10000 cents` for `$100.00`.
+     * @param int|null $price SKU unit price. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */

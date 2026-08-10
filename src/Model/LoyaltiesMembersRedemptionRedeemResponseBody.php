@@ -69,6 +69,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
         'redemption' => 'string',
         'result' => 'string',
         'status' => 'string',
+        'session' => '\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodySession',
         'relatedRedemptions' => '\OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodyRelatedRedemptions',
         'failureCode' => 'string',
         'failureMessage' => 'string',
@@ -102,6 +103,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
         'redemption' => null,
         'result' => null,
         'status' => null,
+        'session' => null,
         'relatedRedemptions' => null,
         'failureCode' => null,
         'failureMessage' => null,
@@ -133,6 +135,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
 		'redemption' => true,
 		'result' => true,
 		'status' => true,
+		'session' => true,
 		'relatedRedemptions' => true,
 		'failureCode' => true,
 		'failureMessage' => true,
@@ -244,6 +247,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
         'redemption' => 'redemption',
         'result' => 'result',
         'status' => 'status',
+        'session' => 'session',
         'relatedRedemptions' => 'related_redemptions',
         'failureCode' => 'failure_code',
         'failureMessage' => 'failure_message',
@@ -275,6 +279,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
         'redemption' => 'setRedemption',
         'result' => 'setResult',
         'status' => 'setStatus',
+        'session' => 'setSession',
         'relatedRedemptions' => 'setRelatedRedemptions',
         'failureCode' => 'setFailureCode',
         'failureMessage' => 'setFailureMessage',
@@ -306,6 +311,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
         'redemption' => 'getRedemption',
         'result' => 'getResult',
         'status' => 'getStatus',
+        'session' => 'getSession',
         'relatedRedemptions' => 'getRelatedRedemptions',
         'failureCode' => 'getFailureCode',
         'failureMessage' => 'getFailureMessage',
@@ -450,6 +456,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
         $this->setIfExists('redemption', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('session', $data ?? [], null);
         $this->setIfExists('relatedRedemptions', $data ?? [], null);
         $this->setIfExists('failureCode', $data ?? [], null);
         $this->setIfExists('failureMessage', $data ?? [], null);
@@ -909,6 +916,40 @@ class LoyaltiesMembersRedemptionRedeemResponseBody implements ModelInterface, Ar
             );
         }
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets session
+     *
+     * @return \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodySession|null
+     */
+    public function getSession()
+    {
+        return $this->container['session'];
+    }
+
+    /**
+     * Sets session
+     *
+     * @param \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBodySession|null $session session
+     *
+     * @return self
+     */
+    public function setSession($session)
+    {
+        if (is_null($session)) {
+            array_push($this->openAPINullablesSetToNull, 'session');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('session', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['session'] = $session;
 
         return $this;
     }

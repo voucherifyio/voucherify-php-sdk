@@ -357,6 +357,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
 
     public const TYPE_AUTO_UPDATE = 'AUTO_UPDATE';
     public const TYPE__STATIC = 'STATIC';
+    public const TYPE_STANDALONE = 'STANDALONE';
     public const VALIDITY_DAY_OF_WEEK_0 = 0;
     public const VALIDITY_DAY_OF_WEEK_1 = 1;
     public const VALIDITY_DAY_OF_WEEK_2 = 2;
@@ -380,6 +381,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
         return [
             self::TYPE_AUTO_UPDATE,
             self::TYPE__STATIC,
+            self::TYPE_STANDALONE,
         ];
     }
 
@@ -601,7 +603,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets type
      *
-     * @param string|null $type Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of standalone vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published
+     * @param string|null $type Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of generic (standalone) vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published - `STANDALONE`: the campaign is a generic (standalone) one with a single voucher for public use (only for discount and gift card campaigns)
      *
      * @return self
      */
@@ -645,7 +647,7 @@ class CampaignsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets joinOnce
      *
-     * @param bool|null $joinOnce If this value is set to `true`, customers will be able to join the campaign only once.
+     * @param bool|null $joinOnce If this value is set to `true`, customers will be able to join the campaign only once. For loyalty campaigns, it's forced to `true`, even if `join_once: false` is passed in the request.
      *
      * @return self
      */

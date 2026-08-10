@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * StackingRules Class Doc Comment
  *
  * @category Class
- * @description Defines stacking rules for redeemables. Read more in the [Stacking Rule Documentation](https://support.voucherify.io/article/604-stacking-rules).
+ * @description Defines stacking rules for redeemables. Read more in the [Stacking Rule Documentation](/orchestrate/stacking-rules).
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -62,6 +62,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesLimit' => 'int',
         'applicableRedeemablesLimit' => 'int',
         'applicableRedeemablesPerCategoryLimit' => 'int',
+        'applicableRedeemablesCategoryLimits' => 'array<string,int>',
         'applicableExclusiveRedeemablesLimit' => 'int',
         'applicableExclusiveRedeemablesPerCategoryLimit' => 'int',
         'exclusiveCategories' => 'string[]',
@@ -69,7 +70,10 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesApplicationMode' => 'string',
         'redeemablesSortingRule' => 'string',
         'redeemablesProductsApplicationMode' => 'string',
-        'redeemablesNoEffectRule' => 'string'
+        'redeemablesNoEffectRule' => 'string',
+        'noEffectSkipCategories' => 'string[]',
+        'noEffectRedeemAnywayCategories' => 'string[]',
+        'redeemablesRollbackOrderMode' => 'string'
     ];
 
     /**
@@ -83,6 +87,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesLimit' => null,
         'applicableRedeemablesLimit' => null,
         'applicableRedeemablesPerCategoryLimit' => null,
+        'applicableRedeemablesCategoryLimits' => null,
         'applicableExclusiveRedeemablesLimit' => null,
         'applicableExclusiveRedeemablesPerCategoryLimit' => null,
         'exclusiveCategories' => null,
@@ -90,7 +95,10 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesApplicationMode' => null,
         'redeemablesSortingRule' => null,
         'redeemablesProductsApplicationMode' => null,
-        'redeemablesNoEffectRule' => null
+        'redeemablesNoEffectRule' => null,
+        'noEffectSkipCategories' => null,
+        'noEffectRedeemAnywayCategories' => null,
+        'redeemablesRollbackOrderMode' => null
     ];
 
     /**
@@ -102,6 +110,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesLimit' => true,
 		'applicableRedeemablesLimit' => true,
 		'applicableRedeemablesPerCategoryLimit' => true,
+		'applicableRedeemablesCategoryLimits' => true,
 		'applicableExclusiveRedeemablesLimit' => true,
 		'applicableExclusiveRedeemablesPerCategoryLimit' => true,
 		'exclusiveCategories' => true,
@@ -109,7 +118,10 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
 		'redeemablesApplicationMode' => true,
 		'redeemablesSortingRule' => true,
 		'redeemablesProductsApplicationMode' => true,
-		'redeemablesNoEffectRule' => true
+		'redeemablesNoEffectRule' => true,
+		'noEffectSkipCategories' => true,
+		'noEffectRedeemAnywayCategories' => true,
+		'redeemablesRollbackOrderMode' => true
     ];
 
     /**
@@ -201,6 +213,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesLimit' => 'redeemables_limit',
         'applicableRedeemablesLimit' => 'applicable_redeemables_limit',
         'applicableRedeemablesPerCategoryLimit' => 'applicable_redeemables_per_category_limit',
+        'applicableRedeemablesCategoryLimits' => 'applicable_redeemables_category_limits',
         'applicableExclusiveRedeemablesLimit' => 'applicable_exclusive_redeemables_limit',
         'applicableExclusiveRedeemablesPerCategoryLimit' => 'applicable_exclusive_redeemables_per_category_limit',
         'exclusiveCategories' => 'exclusive_categories',
@@ -208,7 +221,10 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesApplicationMode' => 'redeemables_application_mode',
         'redeemablesSortingRule' => 'redeemables_sorting_rule',
         'redeemablesProductsApplicationMode' => 'redeemables_products_application_mode',
-        'redeemablesNoEffectRule' => 'redeemables_no_effect_rule'
+        'redeemablesNoEffectRule' => 'redeemables_no_effect_rule',
+        'noEffectSkipCategories' => 'no_effect_skip_categories',
+        'noEffectRedeemAnywayCategories' => 'no_effect_redeem_anyway_categories',
+        'redeemablesRollbackOrderMode' => 'redeemables_rollback_order_mode'
     ];
 
     /**
@@ -220,6 +236,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesLimit' => 'setRedeemablesLimit',
         'applicableRedeemablesLimit' => 'setApplicableRedeemablesLimit',
         'applicableRedeemablesPerCategoryLimit' => 'setApplicableRedeemablesPerCategoryLimit',
+        'applicableRedeemablesCategoryLimits' => 'setApplicableRedeemablesCategoryLimits',
         'applicableExclusiveRedeemablesLimit' => 'setApplicableExclusiveRedeemablesLimit',
         'applicableExclusiveRedeemablesPerCategoryLimit' => 'setApplicableExclusiveRedeemablesPerCategoryLimit',
         'exclusiveCategories' => 'setExclusiveCategories',
@@ -227,7 +244,10 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesApplicationMode' => 'setRedeemablesApplicationMode',
         'redeemablesSortingRule' => 'setRedeemablesSortingRule',
         'redeemablesProductsApplicationMode' => 'setRedeemablesProductsApplicationMode',
-        'redeemablesNoEffectRule' => 'setRedeemablesNoEffectRule'
+        'redeemablesNoEffectRule' => 'setRedeemablesNoEffectRule',
+        'noEffectSkipCategories' => 'setNoEffectSkipCategories',
+        'noEffectRedeemAnywayCategories' => 'setNoEffectRedeemAnywayCategories',
+        'redeemablesRollbackOrderMode' => 'setRedeemablesRollbackOrderMode'
     ];
 
     /**
@@ -239,6 +259,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesLimit' => 'getRedeemablesLimit',
         'applicableRedeemablesLimit' => 'getApplicableRedeemablesLimit',
         'applicableRedeemablesPerCategoryLimit' => 'getApplicableRedeemablesPerCategoryLimit',
+        'applicableRedeemablesCategoryLimits' => 'getApplicableRedeemablesCategoryLimits',
         'applicableExclusiveRedeemablesLimit' => 'getApplicableExclusiveRedeemablesLimit',
         'applicableExclusiveRedeemablesPerCategoryLimit' => 'getApplicableExclusiveRedeemablesPerCategoryLimit',
         'exclusiveCategories' => 'getExclusiveCategories',
@@ -246,7 +267,10 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         'redeemablesApplicationMode' => 'getRedeemablesApplicationMode',
         'redeemablesSortingRule' => 'getRedeemablesSortingRule',
         'redeemablesProductsApplicationMode' => 'getRedeemablesProductsApplicationMode',
-        'redeemablesNoEffectRule' => 'getRedeemablesNoEffectRule'
+        'redeemablesNoEffectRule' => 'getRedeemablesNoEffectRule',
+        'noEffectSkipCategories' => 'getNoEffectSkipCategories',
+        'noEffectRedeemAnywayCategories' => 'getNoEffectRedeemAnywayCategories',
+        'redeemablesRollbackOrderMode' => 'getRedeemablesRollbackOrderMode'
     ];
 
     /**
@@ -298,6 +322,8 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     public const REDEEMABLES_PRODUCTS_APPLICATION_MODE_ONCE = 'ONCE';
     public const REDEEMABLES_NO_EFFECT_RULE_REDEEM_ANYWAY = 'REDEEM_ANYWAY';
     public const REDEEMABLES_NO_EFFECT_RULE_SKIP = 'SKIP';
+    public const REDEEMABLES_ROLLBACK_ORDER_MODE_WITH_ORDER = 'WITH_ORDER';
+    public const REDEEMABLES_ROLLBACK_ORDER_MODE_WITHOUT_ORDER = 'WITHOUT_ORDER';
 
     /**
      * Gets allowable values of the enum
@@ -352,6 +378,19 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getRedeemablesRollbackOrderModeAllowableValues()
+    {
+        return [
+            self::REDEEMABLES_ROLLBACK_ORDER_MODE_WITH_ORDER,
+            self::REDEEMABLES_ROLLBACK_ORDER_MODE_WITHOUT_ORDER,
+        ];
+    }
+
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
@@ -369,6 +408,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('redeemablesLimit', $data ?? [], 30);
         $this->setIfExists('applicableRedeemablesLimit', $data ?? [], 5);
         $this->setIfExists('applicableRedeemablesPerCategoryLimit', $data ?? [], 1);
+        $this->setIfExists('applicableRedeemablesCategoryLimits', $data ?? [], null);
         $this->setIfExists('applicableExclusiveRedeemablesLimit', $data ?? [], 1);
         $this->setIfExists('applicableExclusiveRedeemablesPerCategoryLimit', $data ?? [], 1);
         $this->setIfExists('exclusiveCategories', $data ?? [], null);
@@ -377,6 +417,9 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('redeemablesSortingRule', $data ?? [], 'REQUESTED_ORDER');
         $this->setIfExists('redeemablesProductsApplicationMode', $data ?? [], null);
         $this->setIfExists('redeemablesNoEffectRule', $data ?? [], null);
+        $this->setIfExists('noEffectSkipCategories', $data ?? [], null);
+        $this->setIfExists('noEffectRedeemAnywayCategories', $data ?? [], null);
+        $this->setIfExists('redeemablesRollbackOrderMode', $data ?? [], null);
     }
 
     /**
@@ -422,8 +465,8 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'applicableRedeemablesLimit', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['applicableRedeemablesPerCategoryLimit']) && ($this->container['applicableRedeemablesPerCategoryLimit'] > 5)) {
-            $invalidProperties[] = "invalid value for 'applicableRedeemablesPerCategoryLimit', must be smaller than or equal to 5.";
+        if (!is_null($this->container['applicableRedeemablesPerCategoryLimit']) && ($this->container['applicableRedeemablesPerCategoryLimit'] > 30)) {
+            $invalidProperties[] = "invalid value for 'applicableRedeemablesPerCategoryLimit', must be smaller than or equal to 30.";
         }
 
         if (!is_null($this->container['applicableRedeemablesPerCategoryLimit']) && ($this->container['applicableRedeemablesPerCategoryLimit'] < 1)) {
@@ -482,6 +525,15 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
+        $allowedValues = $this->getRedeemablesRollbackOrderModeAllowableValues();
+        if (!is_null($this->container['redeemablesRollbackOrderMode']) && !in_array($this->container['redeemablesRollbackOrderMode'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'redeemablesRollbackOrderMode', must be one of '%s'",
+                $this->container['redeemablesRollbackOrderMode'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -510,7 +562,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets redeemablesLimit
      *
-     * @param int|null $redeemablesLimit Defines how many redeemables can be sent in one stacking request (note: more redeemables means more processing time!).
+     * @param int|null $redeemablesLimit Defines how many redeemables can be sent in one request. Note: more redeemables means more processing time.
      *
      * @return self
      */
@@ -552,7 +604,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets applicableRedeemablesLimit
      *
-     * @param int|null $applicableRedeemablesLimit Defines how many of the sent redeemables will be applied to the order. For example, a user can select 30 discounts but only 5 will be applied to the order and the remaining will be labelled as SKIPPED.
+     * @param int|null $applicableRedeemablesLimit Defines how many redeemables can be applied in one request. The number must be less than or equal to `redeemables_limit`. For example, a user can select 30 discounts but only 5 will be applied to the order and the remaining will be `SKIPPED` according to the `redeemables_sorting_rule`.
      *
      * @return self
      */
@@ -594,7 +646,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets applicableRedeemablesPerCategoryLimit
      *
-     * @param int|null $applicableRedeemablesPerCategoryLimit Defines how many redeemables per category can be applied in one request.
+     * @param int|null $applicableRedeemablesPerCategoryLimit Defines how many redeemables with the same category can be applied in one request. The number must be less than or equal to `applicable_redeemables_limit`. The ones above the limit will be `SKIPPED` according to the `redeemables_sorting_rule`.
      *
      * @return self
      */
@@ -611,14 +663,48 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
 
-        if (!is_null($applicableRedeemablesPerCategoryLimit) && ($applicableRedeemablesPerCategoryLimit > 5)) {
-            throw new \InvalidArgumentException('invalid value for $applicableRedeemablesPerCategoryLimit when calling StackingRules., must be smaller than or equal to 5.');
+        if (!is_null($applicableRedeemablesPerCategoryLimit) && ($applicableRedeemablesPerCategoryLimit > 30)) {
+            throw new \InvalidArgumentException('invalid value for $applicableRedeemablesPerCategoryLimit when calling StackingRules., must be smaller than or equal to 30.');
         }
         if (!is_null($applicableRedeemablesPerCategoryLimit) && ($applicableRedeemablesPerCategoryLimit < 1)) {
             throw new \InvalidArgumentException('invalid value for $applicableRedeemablesPerCategoryLimit when calling StackingRules., must be bigger than or equal to 1.');
         }
 
         $this->container['applicableRedeemablesPerCategoryLimit'] = $applicableRedeemablesPerCategoryLimit;
+
+        return $this;
+    }
+
+    /**
+     * Gets applicableRedeemablesCategoryLimits
+     *
+     * @return array<string,int>|null
+     */
+    public function getApplicableRedeemablesCategoryLimits()
+    {
+        return $this->container['applicableRedeemablesCategoryLimits'];
+    }
+
+    /**
+     * Sets applicableRedeemablesCategoryLimits
+     *
+     * @param array<string,int>|null $applicableRedeemablesCategoryLimits Lists categories by category IDs (keys) and defines their limits (values) of applicable redeemables that belong to campaigns with that category.
+     *
+     * @return self
+     */
+    public function setApplicableRedeemablesCategoryLimits($applicableRedeemablesCategoryLimits)
+    {
+        if (is_null($applicableRedeemablesCategoryLimits)) {
+            array_push($this->openAPINullablesSetToNull, 'applicableRedeemablesCategoryLimits');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('applicableRedeemablesCategoryLimits', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['applicableRedeemablesCategoryLimits'] = $applicableRedeemablesCategoryLimits;
 
         return $this;
     }
@@ -636,7 +722,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets applicableExclusiveRedeemablesLimit
      *
-     * @param int|null $applicableExclusiveRedeemablesLimit Defines how many redeemables with an exclusive category can be applied in one request.
+     * @param int|null $applicableExclusiveRedeemablesLimit Defines how many redeemables with an assigned exclusive category can be applied in one request. The ones above the limit will be `SKIPPED` according to the `redeemables_sorting_rule`.
      *
      * @return self
      */
@@ -678,7 +764,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets applicableExclusiveRedeemablesPerCategoryLimit
      *
-     * @param int|null $applicableExclusiveRedeemablesPerCategoryLimit Defines how many redeemables with an exclusive category per category in stacking rules can be applied in one request.
+     * @param int|null $applicableExclusiveRedeemablesPerCategoryLimit Defines how many redeemables with an exclusive category per category in stacking rules can be applied in one request. The ones above the limit will be `SKIPPED` according to the `redeemables_sorting_rule`.
      *
      * @return self
      */
@@ -720,7 +806,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets exclusiveCategories
      *
-     * @param string[]|null $exclusiveCategories Lists all exclusive categories. A redeemable from a campaign with an exclusive category is the only redeemable to be redeemed when applied with redeemables from other campaigns unless these campaigns are exclusive or joint.
+     * @param string[]|null $exclusiveCategories Lists the IDs of exclusive categories. A redeemable from a campaign with an exclusive category is the only redeemable to be redeemed when applied with redeemables from other campaigns unless these campaigns are exclusive or joint.
      *
      * @return self
      */
@@ -754,7 +840,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets jointCategories
      *
-     * @param string[]|null $jointCategories Lists all joint categories. A campaign with a joint category is always applied regardless of the exclusivity of other campaigns.
+     * @param string[]|null $jointCategories Lists the IDs of the joint categories. A campaign with a joint category is always applied regardless of the exclusivity of other campaigns.
      *
      * @return self
      */
@@ -788,7 +874,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets redeemablesApplicationMode
      *
-     * @param string|null $redeemablesApplicationMode Defines redeemables application mode.
+     * @param string|null $redeemablesApplicationMode Defines the application mode for redeemables. `\"ALL\"` means that all redeemables must be validated for the redemption to be successful. `\"PARTIAL\"` means that only those redeemables that can be validated will be redeemed. The redeemables that fail validaton will be skipped.
      *
      * @return self
      */
@@ -832,7 +918,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets redeemablesSortingRule
      *
-     * @param string|null $redeemablesSortingRule Defines redeemables sorting rule.
+     * @param string|null $redeemablesSortingRule Defines redeemables sorting rule. `CATEGORY_HIERARCHY` means that redeemables are applied oaccording to the category priority. `REQUESTED_ORDER` means that redeemables are applied in the sequence provided in the request.
      *
      * @return self
      */
@@ -876,7 +962,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets redeemablesProductsApplicationMode
      *
-     * @param string|null $redeemablesProductsApplicationMode Defines redeemables products application mode.
+     * @param string|null $redeemablesProductsApplicationMode Defines redeemables products application mode. `STACK` means that multiple discounts can be applied to a product. `ONCE` means that only one discount can be applied to the same product.
      *
      * @return self
      */
@@ -920,7 +1006,7 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets redeemablesNoEffectRule
      *
-     * @param string|null $redeemablesNoEffectRule Defines redeemables no effect rule.
+     * @param string|null $redeemablesNoEffectRule Defines redeemables no effect rule. `REDEEM_ANYWAY` means that the redeemable will be redeemed regardless of any restrictions or conditions in place. `SKIP` means that the redeemable will be processed only when an applicable effect is calculated.
      *
      * @return self
      */
@@ -947,6 +1033,118 @@ class StackingRules implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['redeemablesNoEffectRule'] = $redeemablesNoEffectRule;
+
+        return $this;
+    }
+
+    /**
+     * Gets noEffectSkipCategories
+     *
+     * @return string[]|null
+     */
+    public function getNoEffectSkipCategories()
+    {
+        return $this->container['noEffectSkipCategories'];
+    }
+
+    /**
+     * Sets noEffectSkipCategories
+     *
+     * @param string[]|null $noEffectSkipCategories Lists category IDs. Redeemables with a given category are skipped even if the `redeemables_no_effect_rule` is set to `REDEEM_ANYWAY`. Category IDs can't overlap with the IDs in `no_effect_redeem_anyway_categories`.
+     *
+     * @return self
+     */
+    public function setNoEffectSkipCategories($noEffectSkipCategories)
+    {
+        if (is_null($noEffectSkipCategories)) {
+            array_push($this->openAPINullablesSetToNull, 'noEffectSkipCategories');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('noEffectSkipCategories', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['noEffectSkipCategories'] = $noEffectSkipCategories;
+
+        return $this;
+    }
+
+    /**
+     * Gets noEffectRedeemAnywayCategories
+     *
+     * @return string[]|null
+     */
+    public function getNoEffectRedeemAnywayCategories()
+    {
+        return $this->container['noEffectRedeemAnywayCategories'];
+    }
+
+    /**
+     * Sets noEffectRedeemAnywayCategories
+     *
+     * @param string[]|null $noEffectRedeemAnywayCategories Lists category IDs. Redeemables with a given category are redeemed anyway even if the `redeemables_no_effect_rule` is set to `SKIP`. Category IDs can't overlap with the IDs in `no_effect_skip_categories`.
+     *
+     * @return self
+     */
+    public function setNoEffectRedeemAnywayCategories($noEffectRedeemAnywayCategories)
+    {
+        if (is_null($noEffectRedeemAnywayCategories)) {
+            array_push($this->openAPINullablesSetToNull, 'noEffectRedeemAnywayCategories');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('noEffectRedeemAnywayCategories', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['noEffectRedeemAnywayCategories'] = $noEffectRedeemAnywayCategories;
+
+        return $this;
+    }
+
+    /**
+     * Gets redeemablesRollbackOrderMode
+     *
+     * @return string|null
+     */
+    public function getRedeemablesRollbackOrderMode()
+    {
+        return $this->container['redeemablesRollbackOrderMode'];
+    }
+
+    /**
+     * Sets redeemablesRollbackOrderMode
+     *
+     * @param string|null $redeemablesRollbackOrderMode Defines the rollback mode for the order. `WITH_ORDER` is a default setting. The redemption is rolled back together with the data about the order, including related discount values. `WITHOUT_ORDER` allows rolling the redemption back without affecting order data, including the applied discount values.
+     *
+     * @return self
+     */
+    public function setRedeemablesRollbackOrderMode($redeemablesRollbackOrderMode)
+    {
+        if (is_null($redeemablesRollbackOrderMode)) {
+            array_push($this->openAPINullablesSetToNull, 'redeemablesRollbackOrderMode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('redeemablesRollbackOrderMode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getRedeemablesRollbackOrderModeAllowableValues();
+        if (!is_null($redeemablesRollbackOrderMode) && !in_array($redeemablesRollbackOrderMode, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'redeemablesRollbackOrderMode', must be one of '%s'",
+                    $redeemablesRollbackOrderMode,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['redeemablesRollbackOrderMode'] = $redeemablesRollbackOrderMode;
 
         return $this;
     }

@@ -304,7 +304,7 @@ class ValidityHours implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets daily
      *
-     * @param \OpenAPI\Client\Model\ValidityHoursDailyItem[]|null $daily Defines the reccuring period(s) when the resource is active. The periods should not overlap.
+     * @param \OpenAPI\Client\Model\ValidityHoursDailyItem[]|null $daily Defines the recurring period(s) when the resource is active. The periods should not overlap.
      *
      * @return self
      */

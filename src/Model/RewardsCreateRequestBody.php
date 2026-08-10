@@ -433,7 +433,7 @@ class RewardsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets stock
      *
-     * @param int|null $stock The number of units of the product that you want to share as a reward.
+     * @param int|null $stock The number of units of the product that you want to share as a reward. Use this parameter to code a stock-taking logic.
      *
      * @return self
      */

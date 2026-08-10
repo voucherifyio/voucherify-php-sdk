@@ -68,6 +68,7 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
         'redemption' => 'string',
         'result' => 'string',
         'status' => 'string',
+        'session' => '\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemSession',
         'relatedRedemptions' => '\OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemRelatedRedemptions',
         'failureCode' => 'string',
         'failureMessage' => 'string',
@@ -102,6 +103,7 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
         'redemption' => null,
         'result' => null,
         'status' => null,
+        'session' => null,
         'relatedRedemptions' => null,
         'failureCode' => null,
         'failureMessage' => null,
@@ -134,6 +136,7 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
 		'redemption' => true,
 		'result' => true,
 		'status' => false,
+		'session' => true,
 		'relatedRedemptions' => false,
 		'failureCode' => true,
 		'failureMessage' => true,
@@ -246,6 +249,7 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
         'redemption' => 'redemption',
         'result' => 'result',
         'status' => 'status',
+        'session' => 'session',
         'relatedRedemptions' => 'related_redemptions',
         'failureCode' => 'failure_code',
         'failureMessage' => 'failure_message',
@@ -278,6 +282,7 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
         'redemption' => 'setRedemption',
         'result' => 'setResult',
         'status' => 'setStatus',
+        'session' => 'setSession',
         'relatedRedemptions' => 'setRelatedRedemptions',
         'failureCode' => 'setFailureCode',
         'failureMessage' => 'setFailureMessage',
@@ -310,6 +315,7 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
         'redemption' => 'getRedemption',
         'result' => 'getResult',
         'status' => 'getStatus',
+        'session' => 'getSession',
         'relatedRedemptions' => 'getRelatedRedemptions',
         'failureCode' => 'getFailureCode',
         'failureMessage' => 'getFailureMessage',
@@ -457,6 +463,7 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
         $this->setIfExists('redemption', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('session', $data ?? [], null);
         $this->setIfExists('relatedRedemptions', $data ?? [], null);
         $this->setIfExists('failureCode', $data ?? [], null);
         $this->setIfExists('failureMessage', $data ?? [], null);
@@ -889,6 +896,40 @@ class RedemptionsListResponseBodyRedemptionsItem implements ModelInterface, Arra
             );
         }
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets session
+     *
+     * @return \OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemSession|null
+     */
+    public function getSession()
+    {
+        return $this->container['session'];
+    }
+
+    /**
+     * Sets session
+     *
+     * @param \OpenAPI\Client\Model\RedemptionsListResponseBodyRedemptionsItemSession|null $session session
+     *
+     * @return self
+     */
+    public function setSession($session)
+    {
+        if (is_null($session)) {
+            array_push($this->openAPINullablesSetToNull, 'session');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('session', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['session'] = $session;
 
         return $this;
     }

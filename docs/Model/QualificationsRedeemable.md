@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | Id of the redeemable. | [optional]
+**id** | **string** | ID of the redeemable. For a voucher, it&#39;s its &#x60;code&#x60; value. | [optional]
 **object** | **string** | Object type of the redeemable. | [optional]
 **createdAt** | **\DateTime** | Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format. | [optional]
 **result** | [**\OpenAPI\Client\Model\RedeemableResult**](RedeemableResult.md) |  | [optional]

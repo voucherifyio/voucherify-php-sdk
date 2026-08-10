@@ -896,7 +896,7 @@ class LoyaltiesUpdateCampaignResponseBody implements ModelInterface, ArrayAccess
     /**
      * Sets joinOnce
      *
-     * @param bool|null $joinOnce If this value is set to `true`, customers will be able to join the campaign only once.
+     * @param bool|null $joinOnce Always set to `true` for loyalty campaigns, meaning customers can join the campaign only once. It can't be changed to `false`.
      *
      * @return self
      */

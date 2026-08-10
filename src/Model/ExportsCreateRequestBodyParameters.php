@@ -60,7 +60,8 @@ class ExportsCreateRequestBodyParameters implements ModelInterface, ArrayAccess,
     protected static $openAPITypes = [
         'order' => 'string',
         'fields' => 'string[]',
-        'filters' => 'object'
+        'filters' => 'object',
+        'campaignId' => 'string'
     ];
 
     /**
@@ -73,7 +74,8 @@ class ExportsCreateRequestBodyParameters implements ModelInterface, ArrayAccess,
     protected static $openAPIFormats = [
         'order' => null,
         'fields' => null,
-        'filters' => null
+        'filters' => null,
+        'campaignId' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class ExportsCreateRequestBodyParameters implements ModelInterface, ArrayAccess,
     protected static array $openAPINullables = [
         'order' => true,
 		'fields' => true,
-		'filters' => true
+		'filters' => true,
+		'campaignId' => true
     ];
 
     /**
@@ -175,7 +178,8 @@ class ExportsCreateRequestBodyParameters implements ModelInterface, ArrayAccess,
     protected static $attributeMap = [
         'order' => 'order',
         'fields' => 'fields',
-        'filters' => 'filters'
+        'filters' => 'filters',
+        'campaignId' => 'campaign_id'
     ];
 
     /**
@@ -186,7 +190,8 @@ class ExportsCreateRequestBodyParameters implements ModelInterface, ArrayAccess,
     protected static $setters = [
         'order' => 'setOrder',
         'fields' => 'setFields',
-        'filters' => 'setFilters'
+        'filters' => 'setFilters',
+        'campaignId' => 'setCampaignId'
     ];
 
     /**
@@ -197,7 +202,8 @@ class ExportsCreateRequestBodyParameters implements ModelInterface, ArrayAccess,
     protected static $getters = [
         'order' => 'getOrder',
         'fields' => 'getFields',
-        'filters' => 'getFilters'
+        'filters' => 'getFilters',
+        'campaignId' => 'getCampaignId'
     ];
 
     /**
@@ -512,6 +518,7 @@ class ExportsCreateRequestBodyParameters implements ModelInterface, ArrayAccess,
         $this->setIfExists('order', $data ?? [], null);
         $this->setIfExists('fields', $data ?? [], null);
         $this->setIfExists('filters', $data ?? [], null);
+        $this->setIfExists('campaignId', $data ?? [], null);
     }
 
     /**
@@ -682,6 +689,40 @@ class ExportsCreateRequestBodyParameters implements ModelInterface, ArrayAccess,
             }
         }
         $this->container['filters'] = $filters;
+
+        return $this;
+    }
+
+    /**
+     * Gets campaignId
+     *
+     * @return string|null
+     */
+    public function getCampaignId()
+    {
+        return $this->container['campaignId'];
+    }
+
+    /**
+     * Sets campaignId
+     *
+     * @param string|null $campaignId Unique identifier of the campaign. It is assigned by Voucherify. The campaign ID defines the campaign for which the voucher export will be triggered.
+     *
+     * @return self
+     */
+    public function setCampaignId($campaignId)
+    {
+        if (is_null($campaignId)) {
+            array_push($this->openAPINullablesSetToNull, 'campaignId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('campaignId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['campaignId'] = $campaignId;
 
         return $this;
     }

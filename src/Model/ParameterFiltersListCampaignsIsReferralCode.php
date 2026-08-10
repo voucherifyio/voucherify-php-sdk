@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ParameterFiltersListCampaignsIsReferralCode Class Doc Comment
  *
  * @category Class
- * @description 
+ * @description Determines if the campaign is or is not a referral campaign.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

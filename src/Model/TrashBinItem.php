@@ -623,7 +623,7 @@ class TrashBinItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets resourceParentId
      *
-     * @param string|null $resourceParentId Unique identifier of the parent resource. For a voucher, it is a campaign ID, except for standalone vouchers. For an SKU, it is the product ID. It returns `null` for campaigns and base products.
+     * @param string|null $resourceParentId Unique identifier of the parent resource. For a voucher, it is a campaign ID, except for generic (standalone) vouchers. For an SKU, it is the product ID. It returns `null` for campaigns and base products.
      *
      * @return self
      */

@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ProductsSkusCreateResponseBody Class Doc Comment
  *
  * @category Class
- * @description Response body schema for **PUT** &#x60;v1/products/{productId}/skus&#x60;.
+ * @description Response body schema for **PUT** &#x60;v1/products/{productId}/SKUs&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

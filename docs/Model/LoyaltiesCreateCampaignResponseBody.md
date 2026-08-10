@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **type** | **string** | Defines whether the campaign can be updated with new vouchers after campaign creation.      - &#x60;AUTO_UPDATE&#x60;: the campaign is dynamic, i.e. vouchers will generate based on set criteria     -  &#x60;STATIC&#x60;: vouchers need to be manually published | [optional]
 **voucher** | [**\OpenAPI\Client\Model\LoyaltyCampaignVoucher**](LoyaltyCampaignVoucher.md) |  | [optional]
 **autoJoin** | **bool** | Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled. | [optional]
-**joinOnce** | **bool** | If this value is set to &#x60;true&#x60;, customers will be able to join the campaign only once. | [optional]
+**joinOnce** | **bool** | Always set to &#x60;true&#x60; for loyalty campaigns, meaning customers can join the campaign only once. It can&#39;t be changed to &#x60;false&#x60;. | [optional]
 **useVoucherMetadataSchema** | **bool** | Flag indicating whether the campaign is to use the voucher&#39;s metadata schema instead of the campaign metadata schema. | [optional]
 **validityTimeframe** | [**\OpenAPI\Client\Model\ValidityTimeframe**](ValidityTimeframe.md) |  | [optional]
 **validityDayOfWeek** | **int[]** | Integer array corresponding to the particular days of the week in which the voucher is valid.  - &#x60;0&#x60; Sunday - &#x60;1&#x60; Monday - &#x60;2&#x60; Tuesday - &#x60;3&#x60; Wednesday - &#x60;4&#x60; Thursday - &#x60;5&#x60; Friday - &#x60;6&#x60; Saturday | [optional]

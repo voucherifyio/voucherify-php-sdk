@@ -422,7 +422,7 @@ class MetadataSchemasApi
     /**
      * Operation listMetadataSchemas
      *
-     * List Metadata Schemas
+     * List Metadata Schema Definitions
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMetadataSchemas'] to see the possible values for this operation
      *
@@ -439,7 +439,7 @@ class MetadataSchemasApi
     /**
      * Operation listMetadataSchemasWithHttpInfo
      *
-     * List Metadata Schemas
+     * List Metadata Schema Definitions
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMetadataSchemas'] to see the possible values for this operation
      *
@@ -538,7 +538,7 @@ class MetadataSchemasApi
     /**
      * Operation listMetadataSchemasAsync
      *
-     * List Metadata Schemas
+     * List Metadata Schema Definitions
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMetadataSchemas'] to see the possible values for this operation
      *
@@ -558,7 +558,7 @@ class MetadataSchemasApi
     /**
      * Operation listMetadataSchemasAsyncWithHttpInfo
      *
-     * List Metadata Schemas
+     * List Metadata Schema Definitions
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMetadataSchemas'] to see the possible values for this operation
      *

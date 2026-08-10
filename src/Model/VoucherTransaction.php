@@ -502,7 +502,7 @@ class VoucherTransaction implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets source
      *
-     * @param string|null $source The channel through which the transaction took place, whether through the API or the the Dashboard. In case of a redemption, this value is null.
+     * @param string|null $source The channel through which the transaction took place, whether through the API or the Dashboard. In case of a redemption, this value is null.
      *
      * @return self
      */

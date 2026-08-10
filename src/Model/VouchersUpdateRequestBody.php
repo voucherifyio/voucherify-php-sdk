@@ -445,7 +445,7 @@ class VouchersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets category
      *
-     * @param string|null $category The name of the category that this voucher belongs to. Useful when listing vouchers with the [List Vouchers](ref:list-vouchers) endpoint.
+     * @param string|null $category The name of the category that this voucher belongs to. Useful when listing vouchers with the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
      *
      * @return self
      */
@@ -479,7 +479,7 @@ class VouchersUpdateRequestBody implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets categoryId
      *
-     * @param string|null $categoryId Unique identifier assigned by Voucherify to the name of the category that this voucher belongs to. Useful when listing vouchers with the [List Vouchers](ref:list-vouchers) endpoint.
+     * @param string|null $categoryId Unique identifier assigned by Voucherify to the name of the category that this voucher belongs to. Useful when listing vouchers with the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
      *
      * @return self
      */

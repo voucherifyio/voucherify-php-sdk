@@ -63,7 +63,6 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'sourceId' => 'string',
         'productId' => 'string',
         'productSourceId' => 'string',
-        'strict' => 'bool',
         'price' => 'float',
         'priceFormula' => 'float',
         'effect' => 'string',
@@ -71,11 +70,28 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'aggregatedQuantityLimit' => 'int',
         'amountLimit' => 'int',
         'aggregatedAmountLimit' => 'int',
+        'productCampaignQuantityLimit' => 'int',
+        'productCampaignQuantityLimitFormula' => 'string',
+        'productCustomerCampaignQuantityLimit' => 'int',
+        'productCustomerCampaignQuantityLimitFormula' => 'string',
+        'productInCollectionCampaignQuantityLimit' => 'int',
+        'productInCollectionCampaignQuantityLimitFormula' => 'string',
+        'productInCollectionCustomerCampaignQuantityLimit' => 'int',
+        'productInCollectionCustomerCampaignQuantityLimitFormula' => 'string',
+        'productPromotionTierQuantityLimit' => 'int',
+        'productPromotionTierQuantityLimitFormula' => 'string',
+        'productCustomerPromotionTierQuantityLimit' => 'int',
+        'productCustomerPromotionTierQuantityLimitFormula' => 'string',
+        'productInCollectionPromotionTierQuantityLimit' => 'int',
+        'productInCollectionPromotionTierQuantityLimitFormula' => 'string',
+        'productInCollectionCustomerPromotionTierQuantityLimit' => 'int',
+        'productInCollectionCustomerPromotionTierQuantityLimitFormula' => 'string',
         'orderItemIndices' => 'int[]',
         'orderItemUnits' => '\OpenAPI\Client\Model\InapplicableToOrderItemUnitsItem[]',
         'repeat' => 'int',
         'skipInitially' => 'int',
-        'target' => 'string'
+        'target' => 'string',
+        'strict' => 'bool'
     ];
 
     /**
@@ -91,7 +107,6 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'sourceId' => null,
         'productId' => null,
         'productSourceId' => null,
-        'strict' => null,
         'price' => null,
         'priceFormula' => null,
         'effect' => null,
@@ -99,11 +114,28 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'aggregatedQuantityLimit' => null,
         'amountLimit' => null,
         'aggregatedAmountLimit' => null,
+        'productCampaignQuantityLimit' => null,
+        'productCampaignQuantityLimitFormula' => null,
+        'productCustomerCampaignQuantityLimit' => null,
+        'productCustomerCampaignQuantityLimitFormula' => null,
+        'productInCollectionCampaignQuantityLimit' => null,
+        'productInCollectionCampaignQuantityLimitFormula' => null,
+        'productInCollectionCustomerCampaignQuantityLimit' => null,
+        'productInCollectionCustomerCampaignQuantityLimitFormula' => null,
+        'productPromotionTierQuantityLimit' => null,
+        'productPromotionTierQuantityLimitFormula' => null,
+        'productCustomerPromotionTierQuantityLimit' => null,
+        'productCustomerPromotionTierQuantityLimitFormula' => null,
+        'productInCollectionPromotionTierQuantityLimit' => null,
+        'productInCollectionPromotionTierQuantityLimitFormula' => null,
+        'productInCollectionCustomerPromotionTierQuantityLimit' => null,
+        'productInCollectionCustomerPromotionTierQuantityLimitFormula' => null,
         'orderItemIndices' => null,
         'orderItemUnits' => null,
         'repeat' => null,
         'skipInitially' => null,
-        'target' => null
+        'target' => null,
+        'strict' => null
     ];
 
     /**
@@ -117,7 +149,6 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
 		'sourceId' => true,
 		'productId' => true,
 		'productSourceId' => true,
-		'strict' => true,
 		'price' => true,
 		'priceFormula' => true,
 		'effect' => true,
@@ -125,11 +156,28 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
 		'aggregatedQuantityLimit' => true,
 		'amountLimit' => true,
 		'aggregatedAmountLimit' => true,
+		'productCampaignQuantityLimit' => true,
+		'productCampaignQuantityLimitFormula' => true,
+		'productCustomerCampaignQuantityLimit' => true,
+		'productCustomerCampaignQuantityLimitFormula' => true,
+		'productInCollectionCampaignQuantityLimit' => true,
+		'productInCollectionCampaignQuantityLimitFormula' => true,
+		'productInCollectionCustomerCampaignQuantityLimit' => true,
+		'productInCollectionCustomerCampaignQuantityLimitFormula' => true,
+		'productPromotionTierQuantityLimit' => true,
+		'productPromotionTierQuantityLimitFormula' => true,
+		'productCustomerPromotionTierQuantityLimit' => true,
+		'productCustomerPromotionTierQuantityLimitFormula' => true,
+		'productInCollectionPromotionTierQuantityLimit' => true,
+		'productInCollectionPromotionTierQuantityLimitFormula' => true,
+		'productInCollectionCustomerPromotionTierQuantityLimit' => true,
+		'productInCollectionCustomerPromotionTierQuantityLimitFormula' => true,
 		'orderItemIndices' => true,
 		'orderItemUnits' => true,
 		'repeat' => true,
 		'skipInitially' => true,
-		'target' => true
+		'target' => true,
+		'strict' => true
     ];
 
     /**
@@ -223,7 +271,6 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'sourceId' => 'source_id',
         'productId' => 'product_id',
         'productSourceId' => 'product_source_id',
-        'strict' => 'strict',
         'price' => 'price',
         'priceFormula' => 'price_formula',
         'effect' => 'effect',
@@ -231,11 +278,28 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'aggregatedQuantityLimit' => 'aggregated_quantity_limit',
         'amountLimit' => 'amount_limit',
         'aggregatedAmountLimit' => 'aggregated_amount_limit',
+        'productCampaignQuantityLimit' => 'product_campaign_quantity_limit',
+        'productCampaignQuantityLimitFormula' => 'product_campaign_quantity_limit_formula',
+        'productCustomerCampaignQuantityLimit' => 'product_customer_campaign_quantity_limit',
+        'productCustomerCampaignQuantityLimitFormula' => 'product_customer_campaign_quantity_limit_formula',
+        'productInCollectionCampaignQuantityLimit' => 'product_in_collection_campaign_quantity_limit',
+        'productInCollectionCampaignQuantityLimitFormula' => 'product_in_collection_campaign_quantity_limit_formula',
+        'productInCollectionCustomerCampaignQuantityLimit' => 'product_in_collection_customer_campaign_quantity_limit',
+        'productInCollectionCustomerCampaignQuantityLimitFormula' => 'product_in_collection_customer_campaign_quantity_limit_formula',
+        'productPromotionTierQuantityLimit' => 'product_promotion_tier_quantity_limit',
+        'productPromotionTierQuantityLimitFormula' => 'product_promotion_tier_quantity_limit_formula',
+        'productCustomerPromotionTierQuantityLimit' => 'product_customer_promotion_tier_quantity_limit',
+        'productCustomerPromotionTierQuantityLimitFormula' => 'product_customer_promotion_tier_quantity_limit_formula',
+        'productInCollectionPromotionTierQuantityLimit' => 'product_in_collection_promotion_tier_quantity_limit',
+        'productInCollectionPromotionTierQuantityLimitFormula' => 'product_in_collection_promotion_tier_quantity_limit_formula',
+        'productInCollectionCustomerPromotionTierQuantityLimit' => 'product_in_collection_customer_promotion_tier_quantity_limit',
+        'productInCollectionCustomerPromotionTierQuantityLimitFormula' => 'product_in_collection_customer_promotion_tier_quantity_limit_formula',
         'orderItemIndices' => 'order_item_indices',
         'orderItemUnits' => 'order_item_units',
         'repeat' => 'repeat',
         'skipInitially' => 'skip_initially',
-        'target' => 'target'
+        'target' => 'target',
+        'strict' => 'strict'
     ];
 
     /**
@@ -249,7 +313,6 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'sourceId' => 'setSourceId',
         'productId' => 'setProductId',
         'productSourceId' => 'setProductSourceId',
-        'strict' => 'setStrict',
         'price' => 'setPrice',
         'priceFormula' => 'setPriceFormula',
         'effect' => 'setEffect',
@@ -257,11 +320,28 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'aggregatedQuantityLimit' => 'setAggregatedQuantityLimit',
         'amountLimit' => 'setAmountLimit',
         'aggregatedAmountLimit' => 'setAggregatedAmountLimit',
+        'productCampaignQuantityLimit' => 'setProductCampaignQuantityLimit',
+        'productCampaignQuantityLimitFormula' => 'setProductCampaignQuantityLimitFormula',
+        'productCustomerCampaignQuantityLimit' => 'setProductCustomerCampaignQuantityLimit',
+        'productCustomerCampaignQuantityLimitFormula' => 'setProductCustomerCampaignQuantityLimitFormula',
+        'productInCollectionCampaignQuantityLimit' => 'setProductInCollectionCampaignQuantityLimit',
+        'productInCollectionCampaignQuantityLimitFormula' => 'setProductInCollectionCampaignQuantityLimitFormula',
+        'productInCollectionCustomerCampaignQuantityLimit' => 'setProductInCollectionCustomerCampaignQuantityLimit',
+        'productInCollectionCustomerCampaignQuantityLimitFormula' => 'setProductInCollectionCustomerCampaignQuantityLimitFormula',
+        'productPromotionTierQuantityLimit' => 'setProductPromotionTierQuantityLimit',
+        'productPromotionTierQuantityLimitFormula' => 'setProductPromotionTierQuantityLimitFormula',
+        'productCustomerPromotionTierQuantityLimit' => 'setProductCustomerPromotionTierQuantityLimit',
+        'productCustomerPromotionTierQuantityLimitFormula' => 'setProductCustomerPromotionTierQuantityLimitFormula',
+        'productInCollectionPromotionTierQuantityLimit' => 'setProductInCollectionPromotionTierQuantityLimit',
+        'productInCollectionPromotionTierQuantityLimitFormula' => 'setProductInCollectionPromotionTierQuantityLimitFormula',
+        'productInCollectionCustomerPromotionTierQuantityLimit' => 'setProductInCollectionCustomerPromotionTierQuantityLimit',
+        'productInCollectionCustomerPromotionTierQuantityLimitFormula' => 'setProductInCollectionCustomerPromotionTierQuantityLimitFormula',
         'orderItemIndices' => 'setOrderItemIndices',
         'orderItemUnits' => 'setOrderItemUnits',
         'repeat' => 'setRepeat',
         'skipInitially' => 'setSkipInitially',
-        'target' => 'setTarget'
+        'target' => 'setTarget',
+        'strict' => 'setStrict'
     ];
 
     /**
@@ -275,7 +355,6 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'sourceId' => 'getSourceId',
         'productId' => 'getProductId',
         'productSourceId' => 'getProductSourceId',
-        'strict' => 'getStrict',
         'price' => 'getPrice',
         'priceFormula' => 'getPriceFormula',
         'effect' => 'getEffect',
@@ -283,11 +362,28 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'aggregatedQuantityLimit' => 'getAggregatedQuantityLimit',
         'amountLimit' => 'getAmountLimit',
         'aggregatedAmountLimit' => 'getAggregatedAmountLimit',
+        'productCampaignQuantityLimit' => 'getProductCampaignQuantityLimit',
+        'productCampaignQuantityLimitFormula' => 'getProductCampaignQuantityLimitFormula',
+        'productCustomerCampaignQuantityLimit' => 'getProductCustomerCampaignQuantityLimit',
+        'productCustomerCampaignQuantityLimitFormula' => 'getProductCustomerCampaignQuantityLimitFormula',
+        'productInCollectionCampaignQuantityLimit' => 'getProductInCollectionCampaignQuantityLimit',
+        'productInCollectionCampaignQuantityLimitFormula' => 'getProductInCollectionCampaignQuantityLimitFormula',
+        'productInCollectionCustomerCampaignQuantityLimit' => 'getProductInCollectionCustomerCampaignQuantityLimit',
+        'productInCollectionCustomerCampaignQuantityLimitFormula' => 'getProductInCollectionCustomerCampaignQuantityLimitFormula',
+        'productPromotionTierQuantityLimit' => 'getProductPromotionTierQuantityLimit',
+        'productPromotionTierQuantityLimitFormula' => 'getProductPromotionTierQuantityLimitFormula',
+        'productCustomerPromotionTierQuantityLimit' => 'getProductCustomerPromotionTierQuantityLimit',
+        'productCustomerPromotionTierQuantityLimitFormula' => 'getProductCustomerPromotionTierQuantityLimitFormula',
+        'productInCollectionPromotionTierQuantityLimit' => 'getProductInCollectionPromotionTierQuantityLimit',
+        'productInCollectionPromotionTierQuantityLimitFormula' => 'getProductInCollectionPromotionTierQuantityLimitFormula',
+        'productInCollectionCustomerPromotionTierQuantityLimit' => 'getProductInCollectionCustomerPromotionTierQuantityLimit',
+        'productInCollectionCustomerPromotionTierQuantityLimitFormula' => 'getProductInCollectionCustomerPromotionTierQuantityLimitFormula',
         'orderItemIndices' => 'getOrderItemIndices',
         'orderItemUnits' => 'getOrderItemUnits',
         'repeat' => 'getRepeat',
         'skipInitially' => 'getSkipInitially',
-        'target' => 'getTarget'
+        'target' => 'getTarget',
+        'strict' => 'getStrict'
     ];
 
     /**
@@ -390,7 +486,6 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('sourceId', $data ?? [], null);
         $this->setIfExists('productId', $data ?? [], null);
         $this->setIfExists('productSourceId', $data ?? [], null);
-        $this->setIfExists('strict', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('priceFormula', $data ?? [], null);
         $this->setIfExists('effect', $data ?? [], null);
@@ -398,11 +493,28 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('aggregatedQuantityLimit', $data ?? [], null);
         $this->setIfExists('amountLimit', $data ?? [], null);
         $this->setIfExists('aggregatedAmountLimit', $data ?? [], null);
+        $this->setIfExists('productCampaignQuantityLimit', $data ?? [], null);
+        $this->setIfExists('productCampaignQuantityLimitFormula', $data ?? [], null);
+        $this->setIfExists('productCustomerCampaignQuantityLimit', $data ?? [], null);
+        $this->setIfExists('productCustomerCampaignQuantityLimitFormula', $data ?? [], null);
+        $this->setIfExists('productInCollectionCampaignQuantityLimit', $data ?? [], null);
+        $this->setIfExists('productInCollectionCampaignQuantityLimitFormula', $data ?? [], null);
+        $this->setIfExists('productInCollectionCustomerCampaignQuantityLimit', $data ?? [], null);
+        $this->setIfExists('productInCollectionCustomerCampaignQuantityLimitFormula', $data ?? [], null);
+        $this->setIfExists('productPromotionTierQuantityLimit', $data ?? [], null);
+        $this->setIfExists('productPromotionTierQuantityLimitFormula', $data ?? [], null);
+        $this->setIfExists('productCustomerPromotionTierQuantityLimit', $data ?? [], null);
+        $this->setIfExists('productCustomerPromotionTierQuantityLimitFormula', $data ?? [], null);
+        $this->setIfExists('productInCollectionPromotionTierQuantityLimit', $data ?? [], null);
+        $this->setIfExists('productInCollectionPromotionTierQuantityLimitFormula', $data ?? [], null);
+        $this->setIfExists('productInCollectionCustomerPromotionTierQuantityLimit', $data ?? [], null);
+        $this->setIfExists('productInCollectionCustomerPromotionTierQuantityLimitFormula', $data ?? [], null);
         $this->setIfExists('orderItemIndices', $data ?? [], null);
         $this->setIfExists('orderItemUnits', $data ?? [], null);
         $this->setIfExists('repeat', $data ?? [], null);
         $this->setIfExists('skipInitially', $data ?? [], null);
         $this->setIfExists('target', $data ?? [], null);
+        $this->setIfExists('strict', $data ?? [], null);
     }
 
     /**
@@ -646,40 +758,6 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets strict
-     *
-     * @return bool|null
-     */
-    public function getStrict()
-    {
-        return $this->container['strict'];
-    }
-
-    /**
-     * Sets strict
-     *
-     * @param bool|null $strict strict
-     *
-     * @return self
-     */
-    public function setStrict($strict)
-    {
-        if (is_null($strict)) {
-            array_push($this->openAPINullablesSetToNull, 'strict');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('strict', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['strict'] = $strict;
-
-        return $this;
-    }
-
-    /**
      * Gets price
      *
      * @return float|null
@@ -726,7 +804,7 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets priceFormula
      *
-     * @param float|null $priceFormula Formula used to calculate the discounted price of an item.
+     * @param float|null $priceFormula Formula used to dynamically calculate the discounted price of an item.
      *
      * @return self
      */
@@ -928,6 +1006,550 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets productCampaignQuantityLimit
+     *
+     * @return int|null
+     */
+    public function getProductCampaignQuantityLimit()
+    {
+        return $this->container['productCampaignQuantityLimit'];
+    }
+
+    /**
+     * Sets productCampaignQuantityLimit
+     *
+     * @param int|null $productCampaignQuantityLimit Limits the number of discounted item units (product, SKU, collection) that all customers can receive in a given campaign. If a product is selected, the limit covers all discounts across all SKUs belonging to that product. If a product collection is selected, the limit covers all products/SKUs within the collection.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductCampaignQuantityLimit($productCampaignQuantityLimit)
+    {
+        if (is_null($productCampaignQuantityLimit)) {
+            array_push($this->openAPINullablesSetToNull, 'productCampaignQuantityLimit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productCampaignQuantityLimit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productCampaignQuantityLimit'] = $productCampaignQuantityLimit;
+
+        return $this;
+    }
+
+    /**
+     * Gets productCampaignQuantityLimitFormula
+     *
+     * @return string|null
+     */
+    public function getProductCampaignQuantityLimitFormula()
+    {
+        return $this->container['productCampaignQuantityLimitFormula'];
+    }
+
+    /**
+     * Sets productCampaignQuantityLimitFormula
+     *
+     * @param string|null $productCampaignQuantityLimitFormula Formula used to dynamically calculate the maximum units per campaign.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductCampaignQuantityLimitFormula($productCampaignQuantityLimitFormula)
+    {
+        if (is_null($productCampaignQuantityLimitFormula)) {
+            array_push($this->openAPINullablesSetToNull, 'productCampaignQuantityLimitFormula');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productCampaignQuantityLimitFormula', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productCampaignQuantityLimitFormula'] = $productCampaignQuantityLimitFormula;
+
+        return $this;
+    }
+
+    /**
+     * Gets productCustomerCampaignQuantityLimit
+     *
+     * @return int|null
+     */
+    public function getProductCustomerCampaignQuantityLimit()
+    {
+        return $this->container['productCustomerCampaignQuantityLimit'];
+    }
+
+    /**
+     * Sets productCustomerCampaignQuantityLimit
+     *
+     * @param int|null $productCustomerCampaignQuantityLimit Limits the number of discounted item units (product, SKU, collection) that one customer can receive in a given campaign.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductCustomerCampaignQuantityLimit($productCustomerCampaignQuantityLimit)
+    {
+        if (is_null($productCustomerCampaignQuantityLimit)) {
+            array_push($this->openAPINullablesSetToNull, 'productCustomerCampaignQuantityLimit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productCustomerCampaignQuantityLimit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productCustomerCampaignQuantityLimit'] = $productCustomerCampaignQuantityLimit;
+
+        return $this;
+    }
+
+    /**
+     * Gets productCustomerCampaignQuantityLimitFormula
+     *
+     * @return string|null
+     */
+    public function getProductCustomerCampaignQuantityLimitFormula()
+    {
+        return $this->container['productCustomerCampaignQuantityLimitFormula'];
+    }
+
+    /**
+     * Sets productCustomerCampaignQuantityLimitFormula
+     *
+     * @param string|null $productCustomerCampaignQuantityLimitFormula Formula used to dynamically calculate the maximum units per customer in a campaign.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductCustomerCampaignQuantityLimitFormula($productCustomerCampaignQuantityLimitFormula)
+    {
+        if (is_null($productCustomerCampaignQuantityLimitFormula)) {
+            array_push($this->openAPINullablesSetToNull, 'productCustomerCampaignQuantityLimitFormula');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productCustomerCampaignQuantityLimitFormula', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productCustomerCampaignQuantityLimitFormula'] = $productCustomerCampaignQuantityLimitFormula;
+
+        return $this;
+    }
+
+    /**
+     * Gets productInCollectionCampaignQuantityLimit
+     *
+     * @return int|null
+     */
+    public function getProductInCollectionCampaignQuantityLimit()
+    {
+        return $this->container['productInCollectionCampaignQuantityLimit'];
+    }
+
+    /**
+     * Sets productInCollectionCampaignQuantityLimit
+     *
+     * @param int|null $productInCollectionCampaignQuantityLimit Limits the number of discounted item units of a given product in a collection that all customers can receive in a given campaign.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductInCollectionCampaignQuantityLimit($productInCollectionCampaignQuantityLimit)
+    {
+        if (is_null($productInCollectionCampaignQuantityLimit)) {
+            array_push($this->openAPINullablesSetToNull, 'productInCollectionCampaignQuantityLimit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productInCollectionCampaignQuantityLimit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productInCollectionCampaignQuantityLimit'] = $productInCollectionCampaignQuantityLimit;
+
+        return $this;
+    }
+
+    /**
+     * Gets productInCollectionCampaignQuantityLimitFormula
+     *
+     * @return string|null
+     */
+    public function getProductInCollectionCampaignQuantityLimitFormula()
+    {
+        return $this->container['productInCollectionCampaignQuantityLimitFormula'];
+    }
+
+    /**
+     * Sets productInCollectionCampaignQuantityLimitFormula
+     *
+     * @param string|null $productInCollectionCampaignQuantityLimitFormula Formula used to dynamically calculate the maximum units per campaign for a product in a collection.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductInCollectionCampaignQuantityLimitFormula($productInCollectionCampaignQuantityLimitFormula)
+    {
+        if (is_null($productInCollectionCampaignQuantityLimitFormula)) {
+            array_push($this->openAPINullablesSetToNull, 'productInCollectionCampaignQuantityLimitFormula');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productInCollectionCampaignQuantityLimitFormula', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productInCollectionCampaignQuantityLimitFormula'] = $productInCollectionCampaignQuantityLimitFormula;
+
+        return $this;
+    }
+
+    /**
+     * Gets productInCollectionCustomerCampaignQuantityLimit
+     *
+     * @return int|null
+     */
+    public function getProductInCollectionCustomerCampaignQuantityLimit()
+    {
+        return $this->container['productInCollectionCustomerCampaignQuantityLimit'];
+    }
+
+    /**
+     * Sets productInCollectionCustomerCampaignQuantityLimit
+     *
+     * @param int|null $productInCollectionCustomerCampaignQuantityLimit Limits the number of discounted item units of a given product in a collection that one customer can receive in a campaign.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductInCollectionCustomerCampaignQuantityLimit($productInCollectionCustomerCampaignQuantityLimit)
+    {
+        if (is_null($productInCollectionCustomerCampaignQuantityLimit)) {
+            array_push($this->openAPINullablesSetToNull, 'productInCollectionCustomerCampaignQuantityLimit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productInCollectionCustomerCampaignQuantityLimit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productInCollectionCustomerCampaignQuantityLimit'] = $productInCollectionCustomerCampaignQuantityLimit;
+
+        return $this;
+    }
+
+    /**
+     * Gets productInCollectionCustomerCampaignQuantityLimitFormula
+     *
+     * @return string|null
+     */
+    public function getProductInCollectionCustomerCampaignQuantityLimitFormula()
+    {
+        return $this->container['productInCollectionCustomerCampaignQuantityLimitFormula'];
+    }
+
+    /**
+     * Sets productInCollectionCustomerCampaignQuantityLimitFormula
+     *
+     * @param string|null $productInCollectionCustomerCampaignQuantityLimitFormula Formula used to dynamically calculate the maximum units per customer for a product in a collection.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductInCollectionCustomerCampaignQuantityLimitFormula($productInCollectionCustomerCampaignQuantityLimitFormula)
+    {
+        if (is_null($productInCollectionCustomerCampaignQuantityLimitFormula)) {
+            array_push($this->openAPINullablesSetToNull, 'productInCollectionCustomerCampaignQuantityLimitFormula');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productInCollectionCustomerCampaignQuantityLimitFormula', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productInCollectionCustomerCampaignQuantityLimitFormula'] = $productInCollectionCustomerCampaignQuantityLimitFormula;
+
+        return $this;
+    }
+
+    /**
+     * Gets productPromotionTierQuantityLimit
+     *
+     * @return int|null
+     */
+    public function getProductPromotionTierQuantityLimit()
+    {
+        return $this->container['productPromotionTierQuantityLimit'];
+    }
+
+    /**
+     * Sets productPromotionTierQuantityLimit
+     *
+     * @param int|null $productPromotionTierQuantityLimit Limits the number of discounted item units that all customers can receive in a promotion tier.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductPromotionTierQuantityLimit($productPromotionTierQuantityLimit)
+    {
+        if (is_null($productPromotionTierQuantityLimit)) {
+            array_push($this->openAPINullablesSetToNull, 'productPromotionTierQuantityLimit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productPromotionTierQuantityLimit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productPromotionTierQuantityLimit'] = $productPromotionTierQuantityLimit;
+
+        return $this;
+    }
+
+    /**
+     * Gets productPromotionTierQuantityLimitFormula
+     *
+     * @return string|null
+     */
+    public function getProductPromotionTierQuantityLimitFormula()
+    {
+        return $this->container['productPromotionTierQuantityLimitFormula'];
+    }
+
+    /**
+     * Sets productPromotionTierQuantityLimitFormula
+     *
+     * @param string|null $productPromotionTierQuantityLimitFormula Formula used to dynamically calculate the maximum units per promotion tier.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductPromotionTierQuantityLimitFormula($productPromotionTierQuantityLimitFormula)
+    {
+        if (is_null($productPromotionTierQuantityLimitFormula)) {
+            array_push($this->openAPINullablesSetToNull, 'productPromotionTierQuantityLimitFormula');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productPromotionTierQuantityLimitFormula', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productPromotionTierQuantityLimitFormula'] = $productPromotionTierQuantityLimitFormula;
+
+        return $this;
+    }
+
+    /**
+     * Gets productCustomerPromotionTierQuantityLimit
+     *
+     * @return int|null
+     */
+    public function getProductCustomerPromotionTierQuantityLimit()
+    {
+        return $this->container['productCustomerPromotionTierQuantityLimit'];
+    }
+
+    /**
+     * Sets productCustomerPromotionTierQuantityLimit
+     *
+     * @param int|null $productCustomerPromotionTierQuantityLimit Limits the number of discounted item units that one customer can receive in a given promotion tier.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductCustomerPromotionTierQuantityLimit($productCustomerPromotionTierQuantityLimit)
+    {
+        if (is_null($productCustomerPromotionTierQuantityLimit)) {
+            array_push($this->openAPINullablesSetToNull, 'productCustomerPromotionTierQuantityLimit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productCustomerPromotionTierQuantityLimit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productCustomerPromotionTierQuantityLimit'] = $productCustomerPromotionTierQuantityLimit;
+
+        return $this;
+    }
+
+    /**
+     * Gets productCustomerPromotionTierQuantityLimitFormula
+     *
+     * @return string|null
+     */
+    public function getProductCustomerPromotionTierQuantityLimitFormula()
+    {
+        return $this->container['productCustomerPromotionTierQuantityLimitFormula'];
+    }
+
+    /**
+     * Sets productCustomerPromotionTierQuantityLimitFormula
+     *
+     * @param string|null $productCustomerPromotionTierQuantityLimitFormula Formula used to dynamically calculate the maximum units per customer in a promotion tier.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductCustomerPromotionTierQuantityLimitFormula($productCustomerPromotionTierQuantityLimitFormula)
+    {
+        if (is_null($productCustomerPromotionTierQuantityLimitFormula)) {
+            array_push($this->openAPINullablesSetToNull, 'productCustomerPromotionTierQuantityLimitFormula');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productCustomerPromotionTierQuantityLimitFormula', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productCustomerPromotionTierQuantityLimitFormula'] = $productCustomerPromotionTierQuantityLimitFormula;
+
+        return $this;
+    }
+
+    /**
+     * Gets productInCollectionPromotionTierQuantityLimit
+     *
+     * @return int|null
+     */
+    public function getProductInCollectionPromotionTierQuantityLimit()
+    {
+        return $this->container['productInCollectionPromotionTierQuantityLimit'];
+    }
+
+    /**
+     * Sets productInCollectionPromotionTierQuantityLimit
+     *
+     * @param int|null $productInCollectionPromotionTierQuantityLimit Limits the number of discounted item units of a given product in a collection that all customers can receive in a given promotion tier.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductInCollectionPromotionTierQuantityLimit($productInCollectionPromotionTierQuantityLimit)
+    {
+        if (is_null($productInCollectionPromotionTierQuantityLimit)) {
+            array_push($this->openAPINullablesSetToNull, 'productInCollectionPromotionTierQuantityLimit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productInCollectionPromotionTierQuantityLimit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productInCollectionPromotionTierQuantityLimit'] = $productInCollectionPromotionTierQuantityLimit;
+
+        return $this;
+    }
+
+    /**
+     * Gets productInCollectionPromotionTierQuantityLimitFormula
+     *
+     * @return string|null
+     */
+    public function getProductInCollectionPromotionTierQuantityLimitFormula()
+    {
+        return $this->container['productInCollectionPromotionTierQuantityLimitFormula'];
+    }
+
+    /**
+     * Sets productInCollectionPromotionTierQuantityLimitFormula
+     *
+     * @param string|null $productInCollectionPromotionTierQuantityLimitFormula Formula used to dynamically calculate the maximum units per promotion tier for a product in a collection.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductInCollectionPromotionTierQuantityLimitFormula($productInCollectionPromotionTierQuantityLimitFormula)
+    {
+        if (is_null($productInCollectionPromotionTierQuantityLimitFormula)) {
+            array_push($this->openAPINullablesSetToNull, 'productInCollectionPromotionTierQuantityLimitFormula');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productInCollectionPromotionTierQuantityLimitFormula', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productInCollectionPromotionTierQuantityLimitFormula'] = $productInCollectionPromotionTierQuantityLimitFormula;
+
+        return $this;
+    }
+
+    /**
+     * Gets productInCollectionCustomerPromotionTierQuantityLimit
+     *
+     * @return int|null
+     */
+    public function getProductInCollectionCustomerPromotionTierQuantityLimit()
+    {
+        return $this->container['productInCollectionCustomerPromotionTierQuantityLimit'];
+    }
+
+    /**
+     * Sets productInCollectionCustomerPromotionTierQuantityLimit
+     *
+     * @param int|null $productInCollectionCustomerPromotionTierQuantityLimit Limits the number of discounted item units of a given product in a collection that one customer can receive in a promotion tier.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductInCollectionCustomerPromotionTierQuantityLimit($productInCollectionCustomerPromotionTierQuantityLimit)
+    {
+        if (is_null($productInCollectionCustomerPromotionTierQuantityLimit)) {
+            array_push($this->openAPINullablesSetToNull, 'productInCollectionCustomerPromotionTierQuantityLimit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productInCollectionCustomerPromotionTierQuantityLimit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productInCollectionCustomerPromotionTierQuantityLimit'] = $productInCollectionCustomerPromotionTierQuantityLimit;
+
+        return $this;
+    }
+
+    /**
+     * Gets productInCollectionCustomerPromotionTierQuantityLimitFormula
+     *
+     * @return string|null
+     */
+    public function getProductInCollectionCustomerPromotionTierQuantityLimitFormula()
+    {
+        return $this->container['productInCollectionCustomerPromotionTierQuantityLimitFormula'];
+    }
+
+    /**
+     * Sets productInCollectionCustomerPromotionTierQuantityLimitFormula
+     *
+     * @param string|null $productInCollectionCustomerPromotionTierQuantityLimitFormula Formula used to dynamically calculate the maximum units per customer in a promotion tier for a product in a collection.  This limit is available on demand as part of campaign budget limits. Contact [Voucherify support](https://www.voucherify.io/contact-support) or your account manager to learn more.
+     *
+     * @return self
+     */
+    public function setProductInCollectionCustomerPromotionTierQuantityLimitFormula($productInCollectionCustomerPromotionTierQuantityLimitFormula)
+    {
+        if (is_null($productInCollectionCustomerPromotionTierQuantityLimitFormula)) {
+            array_push($this->openAPINullablesSetToNull, 'productInCollectionCustomerPromotionTierQuantityLimitFormula');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productInCollectionCustomerPromotionTierQuantityLimitFormula', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productInCollectionCustomerPromotionTierQuantityLimitFormula'] = $productInCollectionCustomerPromotionTierQuantityLimitFormula;
+
+        return $this;
+    }
+
+    /**
      * Gets orderItemIndices
      *
      * @return int[]|null
@@ -1093,6 +1715,40 @@ class InapplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['target'] = $target;
+
+        return $this;
+    }
+
+    /**
+     * Gets strict
+     *
+     * @return bool|null
+     */
+    public function getStrict()
+    {
+        return $this->container['strict'];
+    }
+
+    /**
+     * Sets strict
+     *
+     * @param bool|null $strict strict
+     *
+     * @return self
+     */
+    public function setStrict($strict)
+    {
+        if (is_null($strict)) {
+            array_push($this->openAPINullablesSetToNull, 'strict');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('strict', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['strict'] = $strict;
 
         return $this;
     }

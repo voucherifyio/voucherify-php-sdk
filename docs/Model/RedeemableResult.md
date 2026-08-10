@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **discount** | [**\OpenAPI\Client\Model\Discount**](Discount.md) |  | [optional]
+**bundle** | [**\OpenAPI\Client\Model\Bundle**](Bundle.md) |  | [optional]
 **gift** | [**\OpenAPI\Client\Model\RedeemableGift**](RedeemableGift.md) |  | [optional]
 **loyaltyCard** | [**\OpenAPI\Client\Model\RedeemableLoyaltyCard**](RedeemableLoyaltyCard.md) |  | [optional]
 **error** | [**\OpenAPI\Client\Model\Error**](Error.md) |  | [optional]

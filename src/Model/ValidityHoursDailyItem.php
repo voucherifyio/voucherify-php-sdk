@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ValidityHoursDailyItem Class Doc Comment
  *
  * @category Class
- * @description Defines the reccuring period(s) when the resource will be active.
+ * @description Defines the recurring period(s) when the resource will be active.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

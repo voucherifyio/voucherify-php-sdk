@@ -187,8 +187,8 @@ class FilterConditionsDateTime implements ModelInterface, ArrayAccess, \JsonSeri
         'before' => '$before',
         'hasValue' => '$has_value',
         'isUnknown' => '$is_unknown',
-        'moreThan' => 'more_than',
-        'lessThan' => 'less_than'
+        'moreThan' => '$more_than',
+        'lessThan' => '$less_than'
     ];
 
     /**

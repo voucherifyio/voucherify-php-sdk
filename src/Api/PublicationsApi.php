@@ -433,9 +433,9 @@ class PublicationsApi
     /**
      * Operation createPublication1
      *
-     * Create Publication
+     * Create Publication with GET
      *
-     * @param  Customer $customer Contains information about the customer to whom the publication was directed. (required)
+     * @param  Customer $customer Contains information about the customer to whom the publication was directed. Use customer.id, customer.source_id, or both to identify the customer; at least one of them is required. (required)
      * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
      * @param  string $voucher Code of voucher being published. (optional)
      * @param  CreatePublicationCampaign $campaign Create publication with campaign. (optional)
@@ -456,9 +456,9 @@ class PublicationsApi
     /**
      * Operation createPublication1WithHttpInfo
      *
-     * Create Publication
+     * Create Publication with GET
      *
-     * @param  Customer $customer Contains information about the customer to whom the publication was directed. (required)
+     * @param  Customer $customer Contains information about the customer to whom the publication was directed. Use customer.id, customer.source_id, or both to identify the customer; at least one of them is required. (required)
      * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
      * @param  string $voucher Code of voucher being published. (optional)
      * @param  CreatePublicationCampaign $campaign Create publication with campaign. (optional)
@@ -561,9 +561,9 @@ class PublicationsApi
     /**
      * Operation createPublication1Async
      *
-     * Create Publication
+     * Create Publication with GET
      *
-     * @param  Customer $customer Contains information about the customer to whom the publication was directed. (required)
+     * @param  Customer $customer Contains information about the customer to whom the publication was directed. Use customer.id, customer.source_id, or both to identify the customer; at least one of them is required. (required)
      * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
      * @param  string $voucher Code of voucher being published. (optional)
      * @param  CreatePublicationCampaign $campaign Create publication with campaign. (optional)
@@ -587,9 +587,9 @@ class PublicationsApi
     /**
      * Operation createPublication1AsyncWithHttpInfo
      *
-     * Create Publication
+     * Create Publication with GET
      *
-     * @param  Customer $customer Contains information about the customer to whom the publication was directed. (required)
+     * @param  Customer $customer Contains information about the customer to whom the publication was directed. Use customer.id, customer.source_id, or both to identify the customer; at least one of them is required. (required)
      * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
      * @param  string $voucher Code of voucher being published. (optional)
      * @param  CreatePublicationCampaign $campaign Create publication with campaign. (optional)
@@ -644,7 +644,7 @@ class PublicationsApi
     /**
      * Create request for operation 'createPublication1'
      *
-     * @param  Customer $customer Contains information about the customer to whom the publication was directed. (required)
+     * @param  Customer $customer Contains information about the customer to whom the publication was directed. Use customer.id, customer.source_id, or both to identify the customer; at least one of them is required. (required)
      * @param  bool $joinOnce Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer. (optional)
      * @param  string $voucher Code of voucher being published. (optional)
      * @param  CreatePublicationCampaign $campaign Create publication with campaign. (optional)
@@ -1169,7 +1169,7 @@ class PublicationsApi
             $filters,
             'filters', // param base name
             'object', // openApiType
-            'form', // style
+            'deepObject', // style
             true, // explode
             false // required
         ) ?? []);

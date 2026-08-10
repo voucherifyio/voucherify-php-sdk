@@ -66,10 +66,10 @@ class OrdersImportCreateRequestBodyItem implements ModelInterface, ArrayAccess, 
         'discountAmount' => 'int',
         'items' => '\OpenAPI\Client\Model\OrderItem[]',
         'metadata' => 'object',
-        'createdAt' => '\DateTime',
         'referrerId' => 'string',
         'customer' => '\OpenAPI\Client\Model\Customer',
-        'referrer' => '\OpenAPI\Client\Model\Referrer'
+        'referrer' => '\OpenAPI\Client\Model\Referrer',
+        'createdAt' => '\DateTime'
     ];
 
     /**
@@ -88,10 +88,10 @@ class OrdersImportCreateRequestBodyItem implements ModelInterface, ArrayAccess, 
         'discountAmount' => null,
         'items' => null,
         'metadata' => null,
-        'createdAt' => 'date-time',
         'referrerId' => null,
         'customer' => null,
-        'referrer' => null
+        'referrer' => null,
+        'createdAt' => 'date-time'
     ];
 
     /**
@@ -108,10 +108,10 @@ class OrdersImportCreateRequestBodyItem implements ModelInterface, ArrayAccess, 
 		'discountAmount' => true,
 		'items' => true,
 		'metadata' => true,
-		'createdAt' => false,
 		'referrerId' => true,
 		'customer' => false,
-		'referrer' => false
+		'referrer' => false,
+		'createdAt' => false
     ];
 
     /**
@@ -208,10 +208,10 @@ class OrdersImportCreateRequestBodyItem implements ModelInterface, ArrayAccess, 
         'discountAmount' => 'discount_amount',
         'items' => 'items',
         'metadata' => 'metadata',
-        'createdAt' => 'created_at',
         'referrerId' => 'referrer_id',
         'customer' => 'customer',
-        'referrer' => 'referrer'
+        'referrer' => 'referrer',
+        'createdAt' => 'created_at'
     ];
 
     /**
@@ -228,10 +228,10 @@ class OrdersImportCreateRequestBodyItem implements ModelInterface, ArrayAccess, 
         'discountAmount' => 'setDiscountAmount',
         'items' => 'setItems',
         'metadata' => 'setMetadata',
-        'createdAt' => 'setCreatedAt',
         'referrerId' => 'setReferrerId',
         'customer' => 'setCustomer',
-        'referrer' => 'setReferrer'
+        'referrer' => 'setReferrer',
+        'createdAt' => 'setCreatedAt'
     ];
 
     /**
@@ -248,10 +248,10 @@ class OrdersImportCreateRequestBodyItem implements ModelInterface, ArrayAccess, 
         'discountAmount' => 'getDiscountAmount',
         'items' => 'getItems',
         'metadata' => 'getMetadata',
-        'createdAt' => 'getCreatedAt',
         'referrerId' => 'getReferrerId',
         'customer' => 'getCustomer',
-        'referrer' => 'getReferrer'
+        'referrer' => 'getReferrer',
+        'createdAt' => 'getCreatedAt'
     ];
 
     /**
@@ -338,10 +338,10 @@ class OrdersImportCreateRequestBodyItem implements ModelInterface, ArrayAccess, 
         $this->setIfExists('discountAmount', $data ?? [], null);
         $this->setIfExists('items', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('referrerId', $data ?? [], null);
         $this->setIfExists('customer', $data ?? [], null);
         $this->setIfExists('referrer', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
     }
 
     /**
@@ -442,7 +442,7 @@ class OrdersImportCreateRequestBodyItem implements ModelInterface, ArrayAccess, 
     /**
      * Sets sourceId
      *
-     * @param string|null $sourceId Unique source ID of an existing order that will be linked to the redemption of this request.
+     * @param string|null $sourceId Unique source ID of an existing order that will be linked to the redemption of this request.  For validation and redemption, if `source_id` is used with an existing order, the original order data will be used, like `items`, `amount`, and so on, not the one sent in the new request.
      *
      * @return self
      */
@@ -678,33 +678,6 @@ class OrdersImportCreateRequestBodyItem implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets createdAt
-     *
-     * @return \DateTime|null
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['createdAt'];
-    }
-
-    /**
-     * Sets createdAt
-     *
-     * @param \DateTime|null $createdAt Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
-     *
-     * @return self
-     */
-    public function setCreatedAt($createdAt)
-    {
-        if (is_null($createdAt)) {
-            throw new \InvalidArgumentException('non-nullable createdAt cannot be null');
-        }
-        $this->container['createdAt'] = $createdAt;
-
-        return $this;
-    }
-
-    /**
      * Gets referrerId
      *
      * @return string|null
@@ -788,6 +761,33 @@ class OrdersImportCreateRequestBodyItem implements ModelInterface, ArrayAccess, 
             throw new \InvalidArgumentException('non-nullable referrer cannot be null');
         }
         $this->container['referrer'] = $referrer;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param \DateTime|null $createdAt Timestamp representing the date and time when the order was created. The value is shown in the ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setCreatedAt($createdAt)
+    {
+        if (is_null($createdAt)) {
+            throw new \InvalidArgumentException('non-nullable createdAt cannot be null');
+        }
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }

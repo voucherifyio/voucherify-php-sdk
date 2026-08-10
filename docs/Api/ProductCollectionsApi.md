@@ -45,7 +45,7 @@ $apiInstance = new OpenAPI\Client\Api\ProductCollectionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$productCollectionsCreateRequestBody = new \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody(); // \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody
+$productCollectionsCreateRequestBody = {"type":"STATIC","name":"Static collection example","products":[{"id":"prod_0a41dd45dc85fcab40","object":"product"}]}; // \OpenAPI\Client\Model\ProductCollectionsCreateRequestBody
 
 try {
     $result = $apiInstance->createProductCollection($productCollectionsCreateRequestBody);

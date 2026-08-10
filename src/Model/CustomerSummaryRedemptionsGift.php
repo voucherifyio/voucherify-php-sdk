@@ -311,7 +311,7 @@ class CustomerSummaryRedemptionsGift implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets redeemedAmount
      *
-     * @param int|null $redeemedAmount Total amount of gift card credits redeemed by customer. Value is multiplied by 100 to precisely represent 2 decimal places. For example `10000 cents` for `$100.00`.
+     * @param int|null $redeemedAmount Total amount of gift card credits redeemed by customer. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */
@@ -345,7 +345,7 @@ class CustomerSummaryRedemptionsGift implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets amountToGo
      *
-     * @param int|null $amountToGo Remaining gift card balance across all gift cards. Value is multiplied by 100 to precisely represent 2 decimal places. For example `10000 cents` for `$100.00`.
+     * @param int|null $amountToGo Remaining gift card balance across all gift cards. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */

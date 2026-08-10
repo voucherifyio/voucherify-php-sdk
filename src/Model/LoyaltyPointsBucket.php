@@ -518,7 +518,7 @@ class LoyaltyPointsBucket implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets status
      *
-     * @param string|null $status Loyalty point point bucket status.
+     * @param string|null $status Loyalty point bucket status.
      *
      * @return self
      */

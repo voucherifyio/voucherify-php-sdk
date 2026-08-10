@@ -36,6 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard Class Doc Comment
  *
  * @category Class
+ * @description Stores the amount of loyalty card points to be applied in the redemption.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

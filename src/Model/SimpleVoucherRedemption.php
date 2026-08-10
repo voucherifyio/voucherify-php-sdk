@@ -60,7 +60,8 @@ class SimpleVoucherRedemption implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'quantity' => 'int',
-        'redeemedQuantity' => 'int'
+        'redeemedQuantity' => 'int',
+        'redeemedPoints' => 'int'
     ];
 
     /**
@@ -72,7 +73,8 @@ class SimpleVoucherRedemption implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPIFormats = [
         'quantity' => null,
-        'redeemedQuantity' => null
+        'redeemedQuantity' => null,
+        'redeemedPoints' => null
     ];
 
     /**
@@ -82,7 +84,8 @@ class SimpleVoucherRedemption implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static array $openAPINullables = [
         'quantity' => true,
-		'redeemedQuantity' => true
+		'redeemedQuantity' => true,
+		'redeemedPoints' => true
     ];
 
     /**
@@ -172,7 +175,8 @@ class SimpleVoucherRedemption implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $attributeMap = [
         'quantity' => 'quantity',
-        'redeemedQuantity' => 'redeemed_quantity'
+        'redeemedQuantity' => 'redeemed_quantity',
+        'redeemedPoints' => 'redeemed_points'
     ];
 
     /**
@@ -182,7 +186,8 @@ class SimpleVoucherRedemption implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $setters = [
         'quantity' => 'setQuantity',
-        'redeemedQuantity' => 'setRedeemedQuantity'
+        'redeemedQuantity' => 'setRedeemedQuantity',
+        'redeemedPoints' => 'setRedeemedPoints'
     ];
 
     /**
@@ -192,7 +197,8 @@ class SimpleVoucherRedemption implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $getters = [
         'quantity' => 'getQuantity',
-        'redeemedQuantity' => 'getRedeemedQuantity'
+        'redeemedQuantity' => 'getRedeemedQuantity',
+        'redeemedPoints' => 'getRedeemedPoints'
     ];
 
     /**
@@ -254,6 +260,7 @@ class SimpleVoucherRedemption implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $this->setIfExists('quantity', $data ?? [], null);
         $this->setIfExists('redeemedQuantity', $data ?? [], null);
+        $this->setIfExists('redeemedPoints', $data ?? [], null);
     }
 
     /**
@@ -362,6 +369,40 @@ class SimpleVoucherRedemption implements ModelInterface, ArrayAccess, \JsonSeria
             }
         }
         $this->container['redeemedQuantity'] = $redeemedQuantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets redeemedPoints
+     *
+     * @return int|null
+     */
+    public function getRedeemedPoints()
+    {
+        return $this->container['redeemedPoints'];
+    }
+
+    /**
+     * Sets redeemedPoints
+     *
+     * @param int|null $redeemedPoints Total loyalty points redeemed.
+     *
+     * @return self
+     */
+    public function setRedeemedPoints($redeemedPoints)
+    {
+        if (is_null($redeemedPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'redeemedPoints');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('redeemedPoints', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['redeemedPoints'] = $redeemedPoints;
 
         return $this;
     }

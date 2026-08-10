@@ -581,7 +581,7 @@ class CampaignsImportVoucherItem implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets category
      *
-     * @param string|null $category Tag defining the category that this voucher belongs to. Useful when listing vouchers using the [List Vouchers](ref:list-vouchers) endpoint.
+     * @param string|null $category Tag defining the category that this voucher belongs to. Useful when listing vouchers using the [List Vouchers](/api-reference/vouchers/list-vouchers) endpoint.
      *
      * @return self
      */

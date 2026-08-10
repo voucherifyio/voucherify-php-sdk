@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **reason** | **string** | System generated cause for the redemption being invalid in the context of the provided parameters. | [optional]
 **result** | **string** | Redemption result. | [optional]
 **status** | **string** | Redemption status. | [optional]
-**relatedRedemptions** | [**\OpenAPI\Client\Model\RedemptionRollbackRelatedRedemptions**](RedemptionRollbackRelatedRedemptions.md) |  | [optional]
 **failureCode** | **string** | If the result is &#x60;FAILURE&#x60;, this parameter will provide a generic reason as to why the redemption failed. | [optional]
 **failureMessage** | **string** | If the result is &#x60;FAILURE&#x60;, this parameter will provide a more expanded reason as to why the redemption failed. | [optional]
 **order** | [**\OpenAPI\Client\Model\OrderCalculated**](OrderCalculated.md) |  | [optional]
@@ -28,5 +27,6 @@ Name | Type | Description | Notes
 **reward** | [**\OpenAPI\Client\Model\RedemptionRewardResult**](RedemptionRewardResult.md) |  | [optional]
 **gift** | [**\OpenAPI\Client\Model\RedemptionRollbackGift**](RedemptionRollbackGift.md) |  | [optional]
 **loyaltyCard** | [**\OpenAPI\Client\Model\RedemptionRollbackLoyaltyCard**](RedemptionRollbackLoyaltyCard.md) |  | [optional]
+**relatedRedemptions** | [**\OpenAPI\Client\Model\RedemptionRollbackRelatedRedemptions**](RedemptionRollbackRelatedRedemptions.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

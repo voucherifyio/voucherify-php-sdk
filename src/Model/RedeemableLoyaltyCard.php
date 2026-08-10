@@ -332,7 +332,7 @@ class RedeemableLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets points
      *
-     * @param int|null $points Total points incurred over the lifespan of the loyalty card, minus the expired points.
+     * @param int|null $points Total number of points added to the loyalty card over its lifespan.
      *
      * @return self
      */
@@ -366,7 +366,7 @@ class RedeemableLoyaltyCard implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets balance
      *
-     * @param int|null $balance Points available for reward redemption.
+     * @param int|null $balance Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
      *
      * @return self
      */

@@ -261,34 +261,66 @@ class ManagementProjectsWebhooksGetResponseBody implements ModelInterface, Array
     }
 
     public const OBJECT_WEBHOOK = 'webhook';
-    public const EVENTS_REDEMPTION_SUCCEEDED = 'redemption.succeeded';
-    public const EVENTS_REDEMPTION_FAILED = 'redemption.failed';
-    public const EVENTS_REDEMPTION_ROLLBACK_SUCCEEDED = 'redemption.rollback.succeeded';
-    public const EVENTS_REDEMPTION_ROLLBACK_FAILED = 'redemption.rollback.failed';
-    public const EVENTS_PUBLICATION_SUCCEEDED = 'publication.succeeded';
-    public const EVENTS_VOUCHER_PUBLISHED = 'voucher.published';
-    public const EVENTS_VOUCHER_UPDATED = 'voucher.updated';
-    public const EVENTS_VOUCHER_DELETED = 'voucher.deleted';
-    public const EVENTS_VOUCHER_CREATED = 'voucher.created';
-    public const EVENTS_VOUCHER_ENABLED = 'voucher.enabled';
-    public const EVENTS_VOUCHER_DISABLED = 'voucher.disabled';
-    public const EVENTS_VOUCHER_LOYALTY_CARD_POINTS_ADDED = 'voucher.loyalty_card.points_added';
-    public const EVENTS_VOUCHER_GIFT_BALANCE_ADDED = 'voucher.gift.balance_added';
-    public const EVENTS_CAMPAIGN_ENABLED = 'campaign.enabled';
-    public const EVENTS_CAMPAIGN_DELETED = 'campaign.deleted';
-    public const EVENTS_CAMPAIGN_CREATED = 'campaign.created';
-    public const EVENTS_CAMPAIGN_UPDATED = 'campaign.updated';
-    public const EVENTS_CAMPAIGN_DISABLED = 'campaign.disabled';
-    public const EVENTS_CAMPAIGN_VOUCHERS_GENERATION_COMPLETED = 'campaign.vouchers.generation.completed';
     public const EVENTS_BUSINESS_VALIDATION_RULE_ASSIGNMENT_CREATED = 'business_validation_rule.assignment.created';
     public const EVENTS_BUSINESS_VALIDATION_RULE_ASSIGNMENT_DELETED = 'business_validation_rule.assignment.deleted';
     public const EVENTS_BUSINESS_VALIDATION_RULE_CREATED = 'business_validation_rule.created';
     public const EVENTS_BUSINESS_VALIDATION_RULE_DELETED = 'business_validation_rule.deleted';
     public const EVENTS_BUSINESS_VALIDATION_RULE_UPDATED = 'business_validation_rule.updated';
+    public const EVENTS_CAMPAIGN_CREATED = 'campaign.created';
+    public const EVENTS_CAMPAIGN_DELETED = 'campaign.deleted';
+    public const EVENTS_CAMPAIGN_DISABLED = 'campaign.disabled';
+    public const EVENTS_CAMPAIGN_ENABLED = 'campaign.enabled';
+    public const EVENTS_CAMPAIGN_EARNING_RULE_ASSIGNED = 'campaign.earning_rule.assigned';
+    public const EVENTS_CAMPAIGN_EARNING_RULE_DELETED = 'campaign.earning_rule.deleted';
+    public const EVENTS_CAMPAIGN_EARNING_RULE_DISABLED = 'campaign.earning_rule.disabled';
+    public const EVENTS_CAMPAIGN_EARNING_RULE_ENABLED = 'campaign.earning_rule.enabled';
+    public const EVENTS_CAMPAIGN_EARNING_RULE_UPDATED = 'campaign.earning_rule.updated';
+    public const EVENTS_CAMPAIGN_LOYALTY_TIER_CREATED = 'campaign.loyalty_tier.created';
+    public const EVENTS_CAMPAIGN_LOYALTY_TIER_DELETED = 'campaign.loyalty_tier.deleted';
+    public const EVENTS_CAMPAIGN_LOYALTY_TIER_UPDATED = 'campaign.loyalty_tier.updated';
+    public const EVENTS_CAMPAIGN_PROMOTION_STACK_CREATED = 'campaign.promotion_stack.created';
+    public const EVENTS_CAMPAIGN_PROMOTION_STACK_UPDATED = 'campaign.promotion_stack.updated';
+    public const EVENTS_CAMPAIGN_PROMOTION_TIER_CREATED = 'campaign.promotion_tier.created';
+    public const EVENTS_CAMPAIGN_PROMOTION_TIER_DELETED = 'campaign.promotion_tier.deleted';
+    public const EVENTS_CAMPAIGN_PROMOTION_TIER_DISABLED = 'campaign.promotion_tier.disabled';
+    public const EVENTS_CAMPAIGN_PROMOTION_TIER_ENABLED = 'campaign.promotion_tier.enabled';
+    public const EVENTS_CAMPAIGN_PROMOTION_TIER_UPDATED = 'campaign.promotion_tier.updated';
+    public const EVENTS_CAMPAIGN_REFERRAL_TIER_CREATED = 'campaign.referral_tier.created';
+    public const EVENTS_CAMPAIGN_REFERRAL_TIER_DELETED = 'campaign.referral_tier.deleted';
+    public const EVENTS_CAMPAIGN_REFERRAL_TIER_UPDATED = 'campaign.referral_tier.updated';
+    public const EVENTS_CAMPAIGN_REWARD_ASSIGNMENT_CREATED = 'campaign.reward.assignment.created';
+    public const EVENTS_CAMPAIGN_REWARD_ASSIGNMENT_DELETED = 'campaign.reward.assignment.deleted';
+    public const EVENTS_CAMPAIGN_REWARD_ASSIGNMENT_UPDATED = 'campaign.reward.assignment.updated';
+    public const EVENTS_CAMPAIGN_UPDATED = 'campaign.updated';
+    public const EVENTS_CAMPAIGN_VOUCHERS_ADED = 'campaign.vouchers.aded';
+    public const EVENTS_CAMPAIGN_VOUCHERS_GENERATION_COMPLETED = 'campaign.vouchers.generation.completed';
+    public const EVENTS_CAMPAIGN_VOUCHERS_GENERATION_FAILED = 'campaign.vouchers.generation.failed';
+    public const EVENTS_CAMPAIGN_VOUCHERS_GENERATION_STARTED = 'campaign.vouchers.generation.started';
+    public const EVENTS_CUSTOMER_CONFIRMED = 'customer.confirmed';
     public const EVENTS_CUSTOMER_CREATED = 'customer.created';
     public const EVENTS_CUSTOMER_DELETED = 'customer.deleted';
     public const EVENTS_CUSTOMER_REWARDED = 'customer.rewarded';
     public const EVENTS_CUSTOMER_REWARDED_LOYALTY_POINTS = 'customer.rewarded.loyalty_points';
+    public const EVENTS_PUBLICATION_SUCCEEDED = 'publication.succeeded';
+    public const EVENTS_REDEMPTION_FAILED = 'redemption.failed';
+    public const EVENTS_REDEMPTION_ROLLBACK_FAILED = 'redemption.rollback.failed';
+    public const EVENTS_REDEMPTION_ROLLBACK_SUCCEEDED = 'redemption.rollback.succeeded';
+    public const EVENTS_REDEMPTION_SUCCEEDED = 'redemption.succeeded';
+    public const EVENTS_VOUCHER_CREATED = 'voucher.created';
+    public const EVENTS_VOUCHER_DELETED = 'voucher.deleted';
+    public const EVENTS_VOUCHER_DISABLED = 'voucher.disabled';
+    public const EVENTS_VOUCHER_ENABLED = 'voucher.enabled';
+    public const EVENTS_VOUCHER_GIFT_BALANCE_ADED = 'voucher.gift.balance_aded';
+    public const EVENTS_VOUCHER_GIFT_TRANSACTION_CREATED = 'voucher.gift.transaction.created';
+    public const EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_ACTIVATED = 'voucher.loyalty_card.pending_points.activated';
+    public const EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_ADED = 'voucher.loyalty_card.pending_points.aded';
+    public const EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_CANCELED = 'voucher.loyalty_card.pending_points.canceled';
+    public const EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_UPDATED = 'voucher.loyalty_card.pending_points.updated';
+    public const EVENTS_VOUCHER_LOYALTY_CARD_POINTS_ADED = 'voucher.loyalty_card.points_aded';
+    public const EVENTS_VOUCHER_LOYALTY_CARD_POINTS_EXPIRED = 'voucher.loyalty_card.points_expired';
+    public const EVENTS_VOUCHER_LOYALTY_CARD_TRANSACTION_CREATED = 'voucher.loyalty_card.transaction.created';
+    public const EVENTS_VOUCHER_PUBLISHED = 'voucher.published';
+    public const EVENTS_VOUCHER_UPDATED = 'voucher.updated';
 
     /**
      * Gets allowable values of the enum
@@ -310,34 +342,66 @@ class ManagementProjectsWebhooksGetResponseBody implements ModelInterface, Array
     public function getEventsAllowableValues()
     {
         return [
-            self::EVENTS_REDEMPTION_SUCCEEDED,
-            self::EVENTS_REDEMPTION_FAILED,
-            self::EVENTS_REDEMPTION_ROLLBACK_SUCCEEDED,
-            self::EVENTS_REDEMPTION_ROLLBACK_FAILED,
-            self::EVENTS_PUBLICATION_SUCCEEDED,
-            self::EVENTS_VOUCHER_PUBLISHED,
-            self::EVENTS_VOUCHER_UPDATED,
-            self::EVENTS_VOUCHER_DELETED,
-            self::EVENTS_VOUCHER_CREATED,
-            self::EVENTS_VOUCHER_ENABLED,
-            self::EVENTS_VOUCHER_DISABLED,
-            self::EVENTS_VOUCHER_LOYALTY_CARD_POINTS_ADDED,
-            self::EVENTS_VOUCHER_GIFT_BALANCE_ADDED,
-            self::EVENTS_CAMPAIGN_ENABLED,
-            self::EVENTS_CAMPAIGN_DELETED,
-            self::EVENTS_CAMPAIGN_CREATED,
-            self::EVENTS_CAMPAIGN_UPDATED,
-            self::EVENTS_CAMPAIGN_DISABLED,
-            self::EVENTS_CAMPAIGN_VOUCHERS_GENERATION_COMPLETED,
             self::EVENTS_BUSINESS_VALIDATION_RULE_ASSIGNMENT_CREATED,
             self::EVENTS_BUSINESS_VALIDATION_RULE_ASSIGNMENT_DELETED,
             self::EVENTS_BUSINESS_VALIDATION_RULE_CREATED,
             self::EVENTS_BUSINESS_VALIDATION_RULE_DELETED,
             self::EVENTS_BUSINESS_VALIDATION_RULE_UPDATED,
+            self::EVENTS_CAMPAIGN_CREATED,
+            self::EVENTS_CAMPAIGN_DELETED,
+            self::EVENTS_CAMPAIGN_DISABLED,
+            self::EVENTS_CAMPAIGN_ENABLED,
+            self::EVENTS_CAMPAIGN_EARNING_RULE_ASSIGNED,
+            self::EVENTS_CAMPAIGN_EARNING_RULE_DELETED,
+            self::EVENTS_CAMPAIGN_EARNING_RULE_DISABLED,
+            self::EVENTS_CAMPAIGN_EARNING_RULE_ENABLED,
+            self::EVENTS_CAMPAIGN_EARNING_RULE_UPDATED,
+            self::EVENTS_CAMPAIGN_LOYALTY_TIER_CREATED,
+            self::EVENTS_CAMPAIGN_LOYALTY_TIER_DELETED,
+            self::EVENTS_CAMPAIGN_LOYALTY_TIER_UPDATED,
+            self::EVENTS_CAMPAIGN_PROMOTION_STACK_CREATED,
+            self::EVENTS_CAMPAIGN_PROMOTION_STACK_UPDATED,
+            self::EVENTS_CAMPAIGN_PROMOTION_TIER_CREATED,
+            self::EVENTS_CAMPAIGN_PROMOTION_TIER_DELETED,
+            self::EVENTS_CAMPAIGN_PROMOTION_TIER_DISABLED,
+            self::EVENTS_CAMPAIGN_PROMOTION_TIER_ENABLED,
+            self::EVENTS_CAMPAIGN_PROMOTION_TIER_UPDATED,
+            self::EVENTS_CAMPAIGN_REFERRAL_TIER_CREATED,
+            self::EVENTS_CAMPAIGN_REFERRAL_TIER_DELETED,
+            self::EVENTS_CAMPAIGN_REFERRAL_TIER_UPDATED,
+            self::EVENTS_CAMPAIGN_REWARD_ASSIGNMENT_CREATED,
+            self::EVENTS_CAMPAIGN_REWARD_ASSIGNMENT_DELETED,
+            self::EVENTS_CAMPAIGN_REWARD_ASSIGNMENT_UPDATED,
+            self::EVENTS_CAMPAIGN_UPDATED,
+            self::EVENTS_CAMPAIGN_VOUCHERS_ADED,
+            self::EVENTS_CAMPAIGN_VOUCHERS_GENERATION_COMPLETED,
+            self::EVENTS_CAMPAIGN_VOUCHERS_GENERATION_FAILED,
+            self::EVENTS_CAMPAIGN_VOUCHERS_GENERATION_STARTED,
+            self::EVENTS_CUSTOMER_CONFIRMED,
             self::EVENTS_CUSTOMER_CREATED,
             self::EVENTS_CUSTOMER_DELETED,
             self::EVENTS_CUSTOMER_REWARDED,
             self::EVENTS_CUSTOMER_REWARDED_LOYALTY_POINTS,
+            self::EVENTS_PUBLICATION_SUCCEEDED,
+            self::EVENTS_REDEMPTION_FAILED,
+            self::EVENTS_REDEMPTION_ROLLBACK_FAILED,
+            self::EVENTS_REDEMPTION_ROLLBACK_SUCCEEDED,
+            self::EVENTS_REDEMPTION_SUCCEEDED,
+            self::EVENTS_VOUCHER_CREATED,
+            self::EVENTS_VOUCHER_DELETED,
+            self::EVENTS_VOUCHER_DISABLED,
+            self::EVENTS_VOUCHER_ENABLED,
+            self::EVENTS_VOUCHER_GIFT_BALANCE_ADED,
+            self::EVENTS_VOUCHER_GIFT_TRANSACTION_CREATED,
+            self::EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_ACTIVATED,
+            self::EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_ADED,
+            self::EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_CANCELED,
+            self::EVENTS_VOUCHER_LOYALTY_CARD_PENDING_POINTS_UPDATED,
+            self::EVENTS_VOUCHER_LOYALTY_CARD_POINTS_ADED,
+            self::EVENTS_VOUCHER_LOYALTY_CARD_POINTS_EXPIRED,
+            self::EVENTS_VOUCHER_LOYALTY_CARD_TRANSACTION_CREATED,
+            self::EVENTS_VOUCHER_PUBLISHED,
+            self::EVENTS_VOUCHER_UPDATED,
         ];
     }
 

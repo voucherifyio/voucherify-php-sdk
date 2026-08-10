@@ -36,6 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ParameterFiltersListCampaignsCampaignStatusConditions Class Doc Comment
  *
  * @category Class
+ * @description Data conditions used to narrow down the data records to be returned in the result.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -50,7 +51,7 @@ class ParameterFiltersListCampaignsCampaignStatusConditions implements ModelInte
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ParameterFiltersListCampaignsCampaignStatus_conditions';
+    protected static $openAPIModelName = 'ParameterFiltersListCampaignsCampaignStatusConditions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -249,6 +249,7 @@ class SegmentsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSer
 
     public const TYPE__STATIC = 'static';
     public const TYPE_AUTO_UPDATE = 'auto-update';
+    public const TYPE_PASSIVE = 'passive';
 
     /**
      * Gets allowable values of the enum
@@ -260,6 +261,7 @@ class SegmentsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSer
         return [
             self::TYPE__STATIC,
             self::TYPE_AUTO_UPDATE,
+            self::TYPE_PASSIVE,
         ];
     }
 
@@ -460,7 +462,7 @@ class SegmentsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets filter
      *
-     * @param object|null $filter Defines a set of criteria for an `auto-update` segment type.
+     * @param object|null $filter Defines a set of criteria for an `auto-update` or `passive` segment type.
      *
      * @return self
      */

@@ -283,7 +283,7 @@ updateCategory($categoryId, $categoriesUpdateRequestBody): \OpenAPI\Client\Model
 
 Update Category
 
-Update category using the category ID.
+Update a category using the category ID.
 
 ### Example
 

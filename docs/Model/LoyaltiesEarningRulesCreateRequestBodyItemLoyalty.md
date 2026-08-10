@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **string** |  | [optional]
 **points** | **int** | Defines how the points will be added to the loyalty card. FIXED adds a fixed number of points. | [optional]
+**pointsFormula** | **string** | Formula used to dynamically calculate the rewarded points. | [optional]
 **calculationType** | **string** |  | [optional]
 **order** | [**\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder**](LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder.md) |  | [optional]
 **orderItems** | [**\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems**](LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems.md) |  | [optional]

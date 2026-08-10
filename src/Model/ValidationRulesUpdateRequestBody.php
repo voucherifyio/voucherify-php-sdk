@@ -61,6 +61,7 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
     protected static $openAPITypes = [
         'name' => 'string',
         'rules' => 'object',
+        'bundleRules' => 'object',
         'error' => '\OpenAPI\Client\Model\ValidationRulesUpdateRequestBodyError',
         'applicableTo' => '\OpenAPI\Client\Model\ValidationRulesUpdateRequestBodyApplicableTo',
         'type' => 'string',
@@ -77,6 +78,7 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
     protected static $openAPIFormats = [
         'name' => null,
         'rules' => null,
+        'bundleRules' => null,
         'error' => null,
         'applicableTo' => null,
         'type' => null,
@@ -91,6 +93,7 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
     protected static array $openAPINullables = [
         'name' => true,
 		'rules' => false,
+		'bundleRules' => false,
 		'error' => true,
 		'applicableTo' => true,
 		'type' => true,
@@ -185,6 +188,7 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
     protected static $attributeMap = [
         'name' => 'name',
         'rules' => 'rules',
+        'bundleRules' => 'bundle_rules',
         'error' => 'error',
         'applicableTo' => 'applicable_to',
         'type' => 'type',
@@ -199,6 +203,7 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
     protected static $setters = [
         'name' => 'setName',
         'rules' => 'setRules',
+        'bundleRules' => 'setBundleRules',
         'error' => 'setError',
         'applicableTo' => 'setApplicableTo',
         'type' => 'setType',
@@ -213,6 +218,7 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
     protected static $getters = [
         'name' => 'getName',
         'rules' => 'getRules',
+        'bundleRules' => 'getBundleRules',
         'error' => 'getError',
         'applicableTo' => 'getApplicableTo',
         'type' => 'getType',
@@ -418,6 +424,7 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
     {
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('rules', $data ?? [], null);
+        $this->setIfExists('bundleRules', $data ?? [], null);
         $this->setIfExists('error', $data ?? [], null);
         $this->setIfExists('applicableTo', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], 'expression');
@@ -541,6 +548,33 @@ class ValidationRulesUpdateRequestBody implements ModelInterface, ArrayAccess, \
             throw new \InvalidArgumentException('non-nullable rules cannot be null');
         }
         $this->container['rules'] = $rules;
+
+        return $this;
+    }
+
+    /**
+     * Gets bundleRules
+     *
+     * @return object|null
+     */
+    public function getBundleRules()
+    {
+        return $this->container['bundleRules'];
+    }
+
+    /**
+     * Sets bundleRules
+     *
+     * @param object|null $bundleRules Contains all the definitions for the bundle rules. It is a set of key value pairs representing the rules and logic between them. The keys are numbered consecutively beginning from `1`. The values are objects containing the rule conditions.  While updating with the PUT method, you can pass `\"bundle_rules\": null` to delete the configuration; in the response, an empty object is then returned.
+     *
+     * @return self
+     */
+    public function setBundleRules($bundleRules)
+    {
+        if (is_null($bundleRules)) {
+            throw new \InvalidArgumentException('non-nullable bundleRules cannot be null');
+        }
+        $this->container['bundleRules'] = $bundleRules;
 
         return $this;
     }

@@ -59,6 +59,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResult implements ModelInter
       */
     protected static $openAPITypes = [
         'discount' => '\OpenAPI\Client\Model\ValidationsValidateResponseBodyRedeemablesItemResultDiscount',
+        'bundle' => '\OpenAPI\Client\Model\Bundle',
         'gift' => '\OpenAPI\Client\Model\ValidationsValidateResponseBodyRedeemablesItemResultGift',
         'loyaltyCard' => '\OpenAPI\Client\Model\ValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard',
         'error' => '\OpenAPI\Client\Model\Error',
@@ -74,6 +75,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResult implements ModelInter
       */
     protected static $openAPIFormats = [
         'discount' => null,
+        'bundle' => null,
         'gift' => null,
         'loyaltyCard' => null,
         'error' => null,
@@ -87,8 +89,9 @@ class ValidationsValidateResponseBodyRedeemablesItemResult implements ModelInter
       */
     protected static array $openAPINullables = [
         'discount' => false,
+		'bundle' => false,
 		'gift' => true,
-		'loyaltyCard' => false,
+		'loyaltyCard' => true,
 		'error' => false,
 		'details' => false
     ];
@@ -180,6 +183,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResult implements ModelInter
      */
     protected static $attributeMap = [
         'discount' => 'discount',
+        'bundle' => 'bundle',
         'gift' => 'gift',
         'loyaltyCard' => 'loyalty_card',
         'error' => 'error',
@@ -193,6 +197,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResult implements ModelInter
      */
     protected static $setters = [
         'discount' => 'setDiscount',
+        'bundle' => 'setBundle',
         'gift' => 'setGift',
         'loyaltyCard' => 'setLoyaltyCard',
         'error' => 'setError',
@@ -206,6 +211,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResult implements ModelInter
      */
     protected static $getters = [
         'discount' => 'getDiscount',
+        'bundle' => 'getBundle',
         'gift' => 'getGift',
         'loyaltyCard' => 'getLoyaltyCard',
         'error' => 'getError',
@@ -270,6 +276,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResult implements ModelInter
     public function __construct(?array $data = null)
     {
         $this->setIfExists('discount', $data ?? [], null);
+        $this->setIfExists('bundle', $data ?? [], null);
         $this->setIfExists('gift', $data ?? [], null);
         $this->setIfExists('loyaltyCard', $data ?? [], null);
         $this->setIfExists('error', $data ?? [], null);
@@ -346,6 +353,33 @@ class ValidationsValidateResponseBodyRedeemablesItemResult implements ModelInter
     }
 
     /**
+     * Gets bundle
+     *
+     * @return \OpenAPI\Client\Model\Bundle|null
+     */
+    public function getBundle()
+    {
+        return $this->container['bundle'];
+    }
+
+    /**
+     * Sets bundle
+     *
+     * @param \OpenAPI\Client\Model\Bundle|null $bundle bundle
+     *
+     * @return self
+     */
+    public function setBundle($bundle)
+    {
+        if (is_null($bundle)) {
+            throw new \InvalidArgumentException('non-nullable bundle cannot be null');
+        }
+        $this->container['bundle'] = $bundle;
+
+        return $this;
+    }
+
+    /**
      * Gets gift
      *
      * @return \OpenAPI\Client\Model\ValidationsValidateResponseBodyRedeemablesItemResultGift|null
@@ -399,7 +433,14 @@ class ValidationsValidateResponseBodyRedeemablesItemResult implements ModelInter
     public function setLoyaltyCard($loyaltyCard)
     {
         if (is_null($loyaltyCard)) {
-            throw new \InvalidArgumentException('non-nullable loyaltyCard cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'loyaltyCard');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('loyaltyCard', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['loyaltyCard'] = $loyaltyCard;
 

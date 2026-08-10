@@ -61,7 +61,8 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
     protected static $openAPITypes = [
         'object' => 'string',
         'dataRef' => 'string',
-        'asyncActions' => '\OpenAPI\Client\Model\AsyncActionBase[]'
+        'asyncActions' => '\OpenAPI\Client\Model\AsyncActionBase[]',
+        'hasMore' => 'bool'
     ];
 
     /**
@@ -74,7 +75,8 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
     protected static $openAPIFormats = [
         'object' => null,
         'dataRef' => null,
-        'asyncActions' => null
+        'asyncActions' => null,
+        'hasMore' => null
     ];
 
     /**
@@ -85,7 +87,8 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
     protected static array $openAPINullables = [
         'object' => true,
 		'dataRef' => true,
-		'asyncActions' => true
+		'asyncActions' => true,
+		'hasMore' => true
     ];
 
     /**
@@ -176,7 +179,8 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
     protected static $attributeMap = [
         'object' => 'object',
         'dataRef' => 'data_ref',
-        'asyncActions' => 'async_actions'
+        'asyncActions' => 'async_actions',
+        'hasMore' => 'has_more'
     ];
 
     /**
@@ -187,7 +191,8 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
     protected static $setters = [
         'object' => 'setObject',
         'dataRef' => 'setDataRef',
-        'asyncActions' => 'setAsyncActions'
+        'asyncActions' => 'setAsyncActions',
+        'hasMore' => 'setHasMore'
     ];
 
     /**
@@ -198,7 +203,8 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
     protected static $getters = [
         'object' => 'getObject',
         'dataRef' => 'getDataRef',
-        'asyncActions' => 'getAsyncActions'
+        'asyncActions' => 'getAsyncActions',
+        'hasMore' => 'getHasMore'
     ];
 
     /**
@@ -287,6 +293,7 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('object', $data ?? [], 'list');
         $this->setIfExists('dataRef', $data ?? [], 'async_actions');
         $this->setIfExists('asyncActions', $data ?? [], null);
+        $this->setIfExists('hasMore', $data ?? [], null);
     }
 
     /**
@@ -467,6 +474,40 @@ class AsyncActionsListResponseBody implements ModelInterface, ArrayAccess, \Json
             }
         }
         $this->container['asyncActions'] = $asyncActions;
+
+        return $this;
+    }
+
+    /**
+     * Gets hasMore
+     *
+     * @return bool|null
+     */
+    public function getHasMore()
+    {
+        return $this->container['hasMore'];
+    }
+
+    /**
+     * Sets hasMore
+     *
+     * @param bool|null $hasMore As query results are always limited by parameters, the `has_more` flag indicates if there are more records available. This lets you know if you can run another request to get more records returned in the results.
+     *
+     * @return self
+     */
+    public function setHasMore($hasMore)
+    {
+        if (is_null($hasMore)) {
+            array_push($this->openAPINullablesSetToNull, 'hasMore');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('hasMore', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['hasMore'] = $hasMore;
 
         return $this;
     }

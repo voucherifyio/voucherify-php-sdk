@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **discount** | [**\OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount**](ClientValidationsValidateResponseBodyRedeemablesItemResultDiscount.md) |  | [optional]
+**bundle** | [**\OpenAPI\Client\Model\Bundle**](Bundle.md) |  | [optional]
 **gift** | [**\OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItemResultGift**](ClientValidationsValidateResponseBodyRedeemablesItemResultGift.md) |  | [optional]
 **loyaltyCard** | [**\OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard**](ClientValidationsValidateResponseBodyRedeemablesItemResultLoyaltyCard.md) |  | [optional]
 **error** | [**\OpenAPI\Client\Model\Error**](Error.md) |  | [optional]

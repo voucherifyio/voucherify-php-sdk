@@ -90,7 +90,13 @@ class CampaignsApi
         'enableCampaign' => [
             'application/json',
         ],
+        'exportCampaignTransactions' => [
+            'application/json',
+        ],
         'getCampaign' => [
+            'application/json',
+        ],
+        'getCampaignSummary' => [
             'application/json',
         ],
         'importVouchersToCampaign' => [
@@ -98,6 +104,9 @@ class CampaignsApi
         ],
         'importVouchersToCampaignUsingCsv' => [
             'multipart/form-data',
+        ],
+        'listCampaignTransactions' => [
+            'application/json',
         ],
         'listCampaigns' => [
             'application/json',
@@ -1981,6 +1990,312 @@ class CampaignsApi
     }
 
     /**
+     * Operation exportCampaignTransactions
+     *
+     * Export Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsTransactionsExportCreateRequestBody $campaignsTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody
+     */
+    public function exportCampaignTransactions($campaignId, $campaignsTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportCampaignTransactions'][0])
+    {
+        list($response) = $this->exportCampaignTransactionsWithHttpInfo($campaignId, $campaignsTransactionsExportCreateRequestBody, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation exportCampaignTransactionsWithHttpInfo
+     *
+     * Export Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsTransactionsExportCreateRequestBody $campaignsTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function exportCampaignTransactionsWithHttpInfo($campaignId, $campaignsTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportCampaignTransactions'][0])
+    {
+        $request = $this->exportCampaignTransactionsRequest($campaignId, $campaignsTransactionsExportCreateRequestBody, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation exportCampaignTransactionsAsync
+     *
+     * Export Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsTransactionsExportCreateRequestBody $campaignsTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function exportCampaignTransactionsAsync($campaignId, $campaignsTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportCampaignTransactions'][0])
+    {
+        return $this->exportCampaignTransactionsAsyncWithHttpInfo($campaignId, $campaignsTransactionsExportCreateRequestBody, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation exportCampaignTransactionsAsyncWithHttpInfo
+     *
+     * Export Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsTransactionsExportCreateRequestBody $campaignsTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function exportCampaignTransactionsAsyncWithHttpInfo($campaignId, $campaignsTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportCampaignTransactions'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody';
+        $request = $this->exportCampaignTransactionsRequest($campaignId, $campaignsTransactionsExportCreateRequestBody, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'exportCampaignTransactions'
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\CampaignsTransactionsExportCreateRequestBody $campaignsTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function exportCampaignTransactionsRequest($campaignId, $campaignsTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportCampaignTransactions'][0])
+    {
+
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $campaignId when calling exportCampaignTransactions'
+            );
+        }
+
+
+
+        $resourcePath = '/v1/campaigns/{campaignId}/transactions/export';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($campaignId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'campaignId' . '}',
+                ObjectSerializer::toPathValue($campaignId),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($campaignsTransactionsExportCreateRequestBody)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaignsTransactionsExportCreateRequestBody));
+            } else {
+                $httpBody = $campaignsTransactionsExportCreateRequestBody;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Id');
+        if ($apiKey !== null) {
+            $headers['X-App-Id'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Token');
+        if ($apiKey !== null) {
+            $headers['X-App-Token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getCampaign
      *
      * Get Campaign
@@ -2274,12 +2589,335 @@ class CampaignsApi
     }
 
     /**
+     * Operation getCampaignSummary
+     *
+     * Get Campaign Summary
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \DateTime $startDate Timestamp representing the date which results must begin on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaignSummary'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\CampaignsSummaryGetResponseBody
+     */
+    public function getCampaignSummary($campaignId, $startDate = null, $endDate = null, string $contentType = self::contentTypes['getCampaignSummary'][0])
+    {
+        list($response) = $this->getCampaignSummaryWithHttpInfo($campaignId, $startDate, $endDate, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getCampaignSummaryWithHttpInfo
+     *
+     * Get Campaign Summary
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \DateTime $startDate Timestamp representing the date which results must begin on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaignSummary'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\CampaignsSummaryGetResponseBody, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCampaignSummaryWithHttpInfo($campaignId, $startDate = null, $endDate = null, string $contentType = self::contentTypes['getCampaignSummary'][0])
+    {
+        $request = $this->getCampaignSummaryRequest($campaignId, $startDate, $endDate, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\CampaignsSummaryGetResponseBody' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\CampaignsSummaryGetResponseBody' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CampaignsSummaryGetResponseBody', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\CampaignsSummaryGetResponseBody';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\CampaignsSummaryGetResponseBody',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCampaignSummaryAsync
+     *
+     * Get Campaign Summary
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \DateTime $startDate Timestamp representing the date which results must begin on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaignSummary'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCampaignSummaryAsync($campaignId, $startDate = null, $endDate = null, string $contentType = self::contentTypes['getCampaignSummary'][0])
+    {
+        return $this->getCampaignSummaryAsyncWithHttpInfo($campaignId, $startDate, $endDate, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCampaignSummaryAsyncWithHttpInfo
+     *
+     * Get Campaign Summary
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \DateTime $startDate Timestamp representing the date which results must begin on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaignSummary'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCampaignSummaryAsyncWithHttpInfo($campaignId, $startDate = null, $endDate = null, string $contentType = self::contentTypes['getCampaignSummary'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\CampaignsSummaryGetResponseBody';
+        $request = $this->getCampaignSummaryRequest($campaignId, $startDate, $endDate, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCampaignSummary'
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \DateTime $startDate Timestamp representing the date which results must begin on. Represented in ISO 8601 format. (optional)
+     * @param  \DateTime $endDate Timestamp representing the date which results must end on. Represented in ISO 8601 format. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaignSummary'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getCampaignSummaryRequest($campaignId, $startDate = null, $endDate = null, string $contentType = self::contentTypes['getCampaignSummary'][0])
+    {
+
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $campaignId when calling getCampaignSummary'
+            );
+        }
+
+
+
+
+        $resourcePath = '/v1/campaigns/{campaignId}/summary';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $startDate,
+            'start_date', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $endDate,
+            'end_date', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($campaignId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'campaignId' . '}',
+                ObjectSerializer::toPathValue($campaignId),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Id');
+        if ($apiKey !== null) {
+            $headers['X-App-Id'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Token');
+        if ($apiKey !== null) {
+            $headers['X-App-Token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation importVouchersToCampaign
      *
      * Import Vouchers to Campaign
      *
      * @param  string $campaignId The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the [Campaign](/api-reference/campaigns/get-campaign) settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -2298,7 +2936,7 @@ class CampaignsApi
      * Import Vouchers to Campaign
      *
      * @param  string $campaignId The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the [Campaign](/api-reference/campaigns/get-campaign) settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -2399,7 +3037,7 @@ class CampaignsApi
      * Import Vouchers to Campaign
      *
      * @param  string $campaignId The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the [Campaign](/api-reference/campaigns/get-campaign) settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2421,7 +3059,7 @@ class CampaignsApi
      * Import Vouchers to Campaign
      *
      * @param  string $campaignId The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the [Campaign](/api-reference/campaigns/get-campaign) settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2472,7 +3110,7 @@ class CampaignsApi
      * Create request for operation 'importVouchersToCampaign'
      *
      * @param  string $campaignId The ID of an existing campaign to which youre importing the codes. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
-     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the Campaign settings. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsImportVoucherItem[] $campaignsImportVoucherItem Discount type, expiration date and the remaining attributes will be taken from the [Campaign](/api-reference/campaigns/get-campaign) settings. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['importVouchersToCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2891,6 +3529,365 @@ class CampaignsApi
     }
 
     /**
+     * Operation listCampaignTransactions
+     *
+     * List Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
+     * @param  ParametersFiltersListCampaignTransactions $filters Filters for listing responses. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\CampaignsTransactionsListResponseBody
+     */
+    public function listCampaignTransactions($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listCampaignTransactions'][0])
+    {
+        list($response) = $this->listCampaignTransactionsWithHttpInfo($campaignId, $limit, $order, $startingAfterId, $filters, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation listCampaignTransactionsWithHttpInfo
+     *
+     * List Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
+     * @param  ParametersFiltersListCampaignTransactions $filters Filters for listing responses. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\CampaignsTransactionsListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listCampaignTransactionsWithHttpInfo($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listCampaignTransactions'][0])
+    {
+        $request = $this->listCampaignTransactionsRequest($campaignId, $limit, $order, $startingAfterId, $filters, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\CampaignsTransactionsListResponseBody' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\CampaignsTransactionsListResponseBody' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CampaignsTransactionsListResponseBody', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\CampaignsTransactionsListResponseBody';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\CampaignsTransactionsListResponseBody',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listCampaignTransactionsAsync
+     *
+     * List Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
+     * @param  ParametersFiltersListCampaignTransactions $filters Filters for listing responses. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listCampaignTransactionsAsync($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listCampaignTransactions'][0])
+    {
+        return $this->listCampaignTransactionsAsyncWithHttpInfo($campaignId, $limit, $order, $startingAfterId, $filters, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listCampaignTransactionsAsyncWithHttpInfo
+     *
+     * List Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
+     * @param  ParametersFiltersListCampaignTransactions $filters Filters for listing responses. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listCampaignTransactionsAsyncWithHttpInfo($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listCampaignTransactions'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\CampaignsTransactionsListResponseBody';
+        $request = $this->listCampaignTransactionsRequest($campaignId, $limit, $order, $startingAfterId, $filters, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listCampaignTransactions'
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
+     * @param  ParametersFiltersListCampaignTransactions $filters Filters for listing responses. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listCampaignTransactionsRequest($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listCampaignTransactions'][0])
+    {
+
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $campaignId when calling listCampaignTransactions'
+            );
+        }
+
+        if ($limit !== null && $limit > 100) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling CampaignsApi.listCampaignTransactions, must be smaller than or equal to 100.');
+        }
+        if ($limit !== null && $limit < 1) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling CampaignsApi.listCampaignTransactions, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+
+        $resourcePath = '/v1/campaigns/{campaignId}/transactions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $order,
+            'order', // param base name
+            'ParameterOrderListTransactions', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $startingAfterId,
+            'starting_after_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $filters,
+            'filters', // param base name
+            'object', // openApiType
+            'deepObject', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($campaignId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'campaignId' . '}',
+                ObjectSerializer::toPathValue($campaignId),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Id');
+        if ($apiKey !== null) {
+            $headers['X-App-Id'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Token');
+        if ($apiKey !== null) {
+            $headers['X-App-Token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation listCampaigns
      *
      * List Campaigns
@@ -2898,9 +3895,9 @@ class CampaignsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
-     * @param  ParameterExpandListCampaigns $expand Includes an expanded categories object in the response. If the [Areas and Stores](https://support.voucherify.io/article/623-areas-and-stores) Enterprise feature is enabled, add access_settings_assignments to return assigned areas and stores. (optional)
+     * @param  ParameterExpandListCampaigns $expand Includes an expanded categories object in the response. If the [Areas and Stores](/orchestrate/areas-and-stores) Enterprise feature is enabled, add access_settings_assignments to return assigned areas and stores. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterFiltersListCampaigns $filters Filters the results by campaign status or whether the campaign is a referral campaign. (optional)
+     * @param  ParameterFiltersListCampaigns $filters Filters the results by various campaign properties. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -2921,9 +3918,9 @@ class CampaignsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
-     * @param  ParameterExpandListCampaigns $expand Includes an expanded categories object in the response. If the [Areas and Stores](https://support.voucherify.io/article/623-areas-and-stores) Enterprise feature is enabled, add access_settings_assignments to return assigned areas and stores. (optional)
+     * @param  ParameterExpandListCampaigns $expand Includes an expanded categories object in the response. If the [Areas and Stores](/orchestrate/areas-and-stores) Enterprise feature is enabled, add access_settings_assignments to return assigned areas and stores. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterFiltersListCampaigns $filters Filters the results by campaign status or whether the campaign is a referral campaign. (optional)
+     * @param  ParameterFiltersListCampaigns $filters Filters the results by various campaign properties. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -3026,9 +4023,9 @@ class CampaignsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
-     * @param  ParameterExpandListCampaigns $expand Includes an expanded categories object in the response. If the [Areas and Stores](https://support.voucherify.io/article/623-areas-and-stores) Enterprise feature is enabled, add access_settings_assignments to return assigned areas and stores. (optional)
+     * @param  ParameterExpandListCampaigns $expand Includes an expanded categories object in the response. If the [Areas and Stores](/orchestrate/areas-and-stores) Enterprise feature is enabled, add access_settings_assignments to return assigned areas and stores. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterFiltersListCampaigns $filters Filters the results by campaign status or whether the campaign is a referral campaign. (optional)
+     * @param  ParameterFiltersListCampaigns $filters Filters the results by various campaign properties. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3052,9 +4049,9 @@ class CampaignsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
-     * @param  ParameterExpandListCampaigns $expand Includes an expanded categories object in the response. If the [Areas and Stores](https://support.voucherify.io/article/623-areas-and-stores) Enterprise feature is enabled, add access_settings_assignments to return assigned areas and stores. (optional)
+     * @param  ParameterExpandListCampaigns $expand Includes an expanded categories object in the response. If the [Areas and Stores](/orchestrate/areas-and-stores) Enterprise feature is enabled, add access_settings_assignments to return assigned areas and stores. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterFiltersListCampaigns $filters Filters the results by campaign status or whether the campaign is a referral campaign. (optional)
+     * @param  ParameterFiltersListCampaigns $filters Filters the results by various campaign properties. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3107,9 +4104,9 @@ class CampaignsApi
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterCampaignType $campaignType This attribute allows filtering by campaign type. (optional)
-     * @param  ParameterExpandListCampaigns $expand Includes an expanded categories object in the response. If the [Areas and Stores](https://support.voucherify.io/article/623-areas-and-stores) Enterprise feature is enabled, add access_settings_assignments to return assigned areas and stores. (optional)
+     * @param  ParameterExpandListCampaigns $expand Includes an expanded categories object in the response. If the [Areas and Stores](/orchestrate/areas-and-stores) Enterprise feature is enabled, add access_settings_assignments to return assigned areas and stores. (optional)
      * @param  ParameterOrderListCampaigns $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
-     * @param  ParameterFiltersListCampaigns $filters Filters the results by campaign status or whether the campaign is a referral campaign. (optional)
+     * @param  ParameterFiltersListCampaigns $filters Filters the results by various campaign properties. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCampaigns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
