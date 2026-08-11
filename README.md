@@ -199,7 +199,8 @@ Authorization schemes defined for the API.
   - Updated customer assets with `cockpitPreferenceCenterUrl`.
   - Updated segments with `passive` type and `updatedAt`; async action listings with `hasMore`.
   - Updated `CampaignsCreateRequestBody` with `STANDALONE` campaign type.
-  - Added many new management webhook event constants (campaign tiers/stacks/rewards, voucher transactions, pending-points lifecycle, customer confirmed, and more). Existing `EVENTS_*_ADDED` constants and the `importVouchersUsingCsv($file, $contentType)` signature are unchanged, so this release stays backward compatible. The upstream `aded` spelling typo in the source specification is compensated for during generation and tracked in [DEV-4148](https://voucherify.atlassian.net/browse/DEV-4148).
+  - Added many new management webhook event constants (campaign tiers/stacks/rewards, voucher transactions, pending-points lifecycle, customer confirmed, and more). Existing `EVENTS_*_ADDED` constants keep their names and values, and the `importVouchersUsingCsv($file, $contentType)` signature is unchanged. The upstream `aded` spelling typo in the source specification is compensated for during generation and will be corrected across all SDKs in a future alignment.
+  - Not exposed yet: the `webhooks_enable` form field on CSV voucher import. It is omitted on purpose, because adding it would insert a parameter before `$contentType` and silently shift existing positional calls. It will arrive with a future cross-SDK alignment or the next major version.
 - **2026-05-07** - `5.0.4`
   - Fixed PHP 8.4 deprecation warnings: added explicit nullable type declarations (`?Type $param = null`) across all API and Model constructors
   - Fixed tests: publish loyalty card before updating balance (required by API change)
