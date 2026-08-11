@@ -566,7 +566,7 @@ try {
 ## `importVouchersUsingCsv()`
 
 ```php
-importVouchersUsingCsv($file, $webhooksEnable): \OpenAPI\Client\Model\VouchersImportCsvCreateResponseBody
+importVouchersUsingCsv($file): \OpenAPI\Client\Model\VouchersImportCsvCreateResponseBody
 ```
 
 Import Vouchers using CSV
@@ -598,10 +598,9 @@ $apiInstance = new OpenAPI\Client\Api\VouchersApi(
     $config
 );
 $file = "/path/to/file.txt"; // \SplFileObject | File path.
-$webhooksEnable = True; // bool | Triggers a webhook sendout for new and updated vouchers if the voucher created and voucher updated webhooks are configured in Project settings.
 
 try {
-    $result = $apiInstance->importVouchersUsingCsv($file, $webhooksEnable);
+    $result = $apiInstance->importVouchersUsingCsv($file);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VouchersApi->importVouchersUsingCsv: ', $e->getMessage(), PHP_EOL;
@@ -613,7 +612,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **file** | **\SplFileObject****\SplFileObject**| File path. | [optional] |
-| **webhooksEnable** | **bool**| Triggers a webhook sendout for new and updated vouchers if the voucher created and voucher updated webhooks are configured in Project settings. | [optional] |
 
 ### Return type
 

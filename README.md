@@ -199,9 +199,7 @@ Authorization schemes defined for the API.
   - Updated customer assets with `cockpitPreferenceCenterUrl`.
   - Updated segments with `passive` type and `updatedAt`; async action listings with `hasMore`.
   - Updated `CampaignsCreateRequestBody` with `STANDALONE` campaign type.
-  - Added many new management webhook event constants (campaign tiers/stacks/rewards, voucher transactions, pending-points lifecycle, customer confirmed, and more).
-  - Changed: `importVouchersUsingCsv()` now accepts `$webhooksEnable` before `$contentType`, exposing the `webhooks_enable` form field that triggers webhooks for imported vouchers. Call sites that passed `$contentType` as the second positional argument have to be updated or switched to named arguments.
-  - Removed: `EVENTS_VOUCHER_GIFT_BALANCE_ADDED` and `EVENTS_VOUCHER_LOYALTY_CARD_POINTS_ADDED` on the management webhook models, replaced by `EVENTS_VOUCHER_GIFT_BALANCE_ADED` (`voucher.gift.balance_aded`) and `EVENTS_VOUCHER_LOYALTY_CARD_POINTS_ADED` (`voucher.loyalty_card.points_aded`) to match the OpenAPI definition and the other Voucherify SDKs. The `aded` spelling is an upstream specification typo tracked in [DEV-4148](https://voucherify.atlassian.net/browse/DEV-4148) and will be corrected across all SDKs at once.
+  - Added many new management webhook event constants (campaign tiers/stacks/rewards, voucher transactions, pending-points lifecycle, customer confirmed, and more). Existing `EVENTS_*_ADDED` constants and the `importVouchersUsingCsv($file, $contentType)` signature are unchanged, so this release stays backward compatible. The upstream `aded` spelling typo in the source specification is compensated for during generation and tracked in [DEV-4148](https://voucherify.atlassian.net/browse/DEV-4148).
 - **2026-05-07** - `5.0.4`
   - Fixed PHP 8.4 deprecation warnings: added explicit nullable type declarations (`?Type $param = null`) across all API and Model constructors
   - Fixed tests: publish loyalty card before updating balance (required by API change)
