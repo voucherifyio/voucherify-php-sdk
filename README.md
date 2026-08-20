@@ -136,6 +136,10 @@ To run tests locally with docker:
 
 This SDK is generated automatically from our [OpenAPI specification](https://github.com/voucherifyio/voucherify-openapi). To contribute, submit an issue rather than creating a pull request. Voucherify developers will review your issue and reply as soon as possible.
 
+## 🏷️ Link tags
+
+[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/tree/sdk-php-5.1.0).
+
 ## 🔐 Authorization
 
 Authorization schemes defined for the API.
@@ -180,16 +184,16 @@ Authorization schemes defined for the API.
 ## 📅 Changelog
 
 - **2026-08-10** - `5.1.0`
-  - Fixed: `ValidationsRedeemableSkippedResultDetails` key enum was missing `no_effect`, so deserializing a skipped redeemable with `"key": "no_effect"` threw `\InvalidArgumentException` (entire validations/redemptions response failed to parse).
+  - Fixed: `ValidationsRedeemableSkippedResultDetails` was missing `no_effect` (`ValidationsRedeemableSkippedResultDetails::KEY_NO_EFFECT`), so deserializing a skipped redeemable with `"key": "no_effect"` threw `\InvalidArgumentException` (entire validations/redemptions response failed to parse).
   - This affects `POST /v1/validations` and stackable `POST /v1/redemptions` when `redeemables_no_effect_rule` is `SKIP` (globally or via `no_effect_skip_categories`).
-  - New allowable value: `no_effect` - Redeemable cannot be applied due to no effect.
+  - New allowable value: `no_effect` (`KEY_NO_EFFECT`) - Redeemable cannot be applied due to no effect.
   - Fixed: `FilterConditionsDateTime` now serializes `moreThan` / `lessThan` as `$more_than` / `$less_than`, matching the documented filter contract and the already-correct `FiltersCondition`; previously these were sent as `more_than` / `less_than` and ignored by the API. Getters and setters are unchanged.
   - Added support for **GET** /v1/campaigns/{campaignId}/summary
   - Added support for **GET** /v1/campaigns/{campaignId}/transactions
   - Added support for **POST** /v1/campaigns/{campaignId}/transactions/export
   - Added support for **GET** /v1/loyalties/{campaignId}/transactions
   - Added support for **POST** /v1/loyalties/{campaignId}/transactions/export
-  - Added support for **POST** /v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/balance
+  - Added support for **POST** /v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/balance (`LoyaltiesApi::adjustMemberPendingPoints()`)
   - Added 55 new models (campaign/loyalty transaction listing & export, campaign summary, bundle discounts, earning-rule expiration/applicable-to/pending-points types, redemption/qualification session objects, and related filters).
   - Updated bundle discounts: `bundle` on validation/redeemable results, `bundleRules` on validation rules, and new `Bundle` types.
   - Updated discount applicability with campaign/promotion-tier quantity limits (and formulas) and `units_limit_exceeded` on unit-level results; new discount effect `ADD_SAME_ITEMS`.
@@ -198,7 +202,7 @@ Authorization schemes defined for the API.
   - Updated gift/loyalty voucher responses with `subtractedAmount` / `subtractedPoints` and loyalty `expiredPoints`.
   - Updated customer assets with `cockpitPreferenceCenterUrl`.
   - Updated segments with `passive` type and `updatedAt`; async action listings with `hasMore`.
-  - Updated `CampaignsCreateRequestBody` with `STANDALONE` campaign type.
+  - Updated `CampaignsCreateRequestBody` `type` enum with `STANDALONE` (`TYPE_STANDALONE`; alongside `AUTO_UPDATE` and `STATIC`).
   - Added many new management webhook event constants (campaign tiers/stacks/rewards, voucher transactions, pending-points lifecycle, customer confirmed, and more). Existing `EVENTS_*_ADDED` constants keep their names and values, and the `importVouchersUsingCsv($file, $contentType)` signature is unchanged. The upstream `aded` spelling typo in the source specification is compensated for during generation and will be corrected across all SDKs in a future alignment.
   - Not exposed yet: the `webhooks_enable` form field on CSV voucher import. It is omitted on purpose, because adding it would insert a parameter before `$contentType` and silently shift existing positional calls. It will arrive with a future cross-SDK alignment or the next major version.
 - **2026-05-07** - `5.0.4`
