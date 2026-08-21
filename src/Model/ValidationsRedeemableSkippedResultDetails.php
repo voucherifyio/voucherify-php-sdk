@@ -241,6 +241,7 @@ class ValidationsRedeemableSkippedResultDetails implements ModelInterface, Array
     public const KEY_APPLICABLE_EXCLUSIVE_REDEEMABLES_PER_CATEGORY_LIMIT_EXCEEDED = 'applicable_exclusive_redeemables_per_category_limit_exceeded';
     public const KEY_EXCLUSION_RULES_NOT_MET = 'exclusion_rules_not_met';
     public const KEY_PRECEDING_VALIDATION_FAILED = 'preceding_validation_failed';
+    public const KEY_NO_EFFECT = 'no_effect';
 
     /**
      * Gets allowable values of the enum
@@ -256,6 +257,7 @@ class ValidationsRedeemableSkippedResultDetails implements ModelInterface, Array
             self::KEY_APPLICABLE_EXCLUSIVE_REDEEMABLES_PER_CATEGORY_LIMIT_EXCEEDED,
             self::KEY_EXCLUSION_RULES_NOT_MET,
             self::KEY_PRECEDING_VALIDATION_FAILED,
+            self::KEY_NO_EFFECT,
         ];
     }
 

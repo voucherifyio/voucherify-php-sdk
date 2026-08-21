@@ -492,7 +492,7 @@ class Reward implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets stock
      *
-     * @param int|null $stock Configurable for **material rewards**. The number of units of the product that you want to share as reward.
+     * @param int|null $stock Configurable for **material rewards**. The number of units of the product that you want to share as a reward. Use this parameter to code a stock-taking logic.
      *
      * @return self
      */

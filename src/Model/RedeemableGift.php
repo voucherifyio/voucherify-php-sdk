@@ -60,7 +60,8 @@ class RedeemableGift implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'balance' => 'float',
-        'credits' => 'float'
+        'credits' => 'float',
+        'lockedCredits' => 'float'
     ];
 
     /**
@@ -72,7 +73,8 @@ class RedeemableGift implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'balance' => null,
-        'credits' => null
+        'credits' => null,
+        'lockedCredits' => null
     ];
 
     /**
@@ -82,7 +84,8 @@ class RedeemableGift implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'balance' => true,
-		'credits' => true
+		'credits' => true,
+		'lockedCredits' => true
     ];
 
     /**
@@ -172,7 +175,8 @@ class RedeemableGift implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'balance' => 'balance',
-        'credits' => 'credits'
+        'credits' => 'credits',
+        'lockedCredits' => 'locked_credits'
     ];
 
     /**
@@ -182,7 +186,8 @@ class RedeemableGift implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'balance' => 'setBalance',
-        'credits' => 'setCredits'
+        'credits' => 'setCredits',
+        'lockedCredits' => 'setLockedCredits'
     ];
 
     /**
@@ -192,7 +197,8 @@ class RedeemableGift implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'balance' => 'getBalance',
-        'credits' => 'getCredits'
+        'credits' => 'getCredits',
+        'lockedCredits' => 'getLockedCredits'
     ];
 
     /**
@@ -254,6 +260,7 @@ class RedeemableGift implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('balance', $data ?? [], null);
         $this->setIfExists('credits', $data ?? [], null);
+        $this->setIfExists('lockedCredits', $data ?? [], null);
     }
 
     /**
@@ -311,7 +318,7 @@ class RedeemableGift implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets balance
      *
-     * @param float|null $balance Available funds. Value is multiplied by 100 to precisely represent 2 decimal places. For example, $100 amount is written as 10000.
+     * @param float|null $balance Available funds. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */
@@ -345,7 +352,7 @@ class RedeemableGift implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets credits
      *
-     * @param float|null $credits The number of credits that the user wants to use from the gift card to fulfil the order. The value of credits cannot be higher than the current balance on the gift card. If the user gives more points than he has on the gift card, the application will return an error code in response. Value is multiplied by 100 to precisely represent 2 decimal places. For example `10000 cents` for `$100.00`.
+     * @param float|null $credits The number of credits that the user wants to use from the gift card to fulfil the order. The value of credits cannot be higher than the current balance on the gift card. If the user gives more points than he has on the gift card, the application will return an error code in response. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */
@@ -362,6 +369,40 @@ class RedeemableGift implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['credits'] = $credits;
+
+        return $this;
+    }
+
+    /**
+     * Gets lockedCredits
+     *
+     * @return float|null
+     */
+    public function getLockedCredits()
+    {
+        return $this->container['lockedCredits'];
+    }
+
+    /**
+     * Sets lockedCredits
+     *
+     * @param float|null $lockedCredits The number of credits that are locked under a validation session. This is returned if the qualification request includes `session.type: LOCK` parameter in the body. The value is multiplied by 100 to represent 2 decimal places. For example `10000` for `$100.00`. Returns `0` if there aren't any active validation sessions for the gift card.
+     *
+     * @return self
+     */
+    public function setLockedCredits($lockedCredits)
+    {
+        if (is_null($lockedCredits)) {
+            array_push($this->openAPINullablesSetToNull, 'lockedCredits');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lockedCredits', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['lockedCredits'] = $lockedCredits;
 
         return $this;
     }

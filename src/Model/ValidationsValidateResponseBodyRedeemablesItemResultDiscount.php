@@ -337,6 +337,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
     public const EFFECT_ADD_MISSING_ITEMS = 'ADD_MISSING_ITEMS';
     public const EFFECT_ADD_NEW_ITEMS = 'ADD_NEW_ITEMS';
     public const EFFECT_ADD_MANY_ITEMS = 'ADD_MANY_ITEMS';
+    public const EFFECT_ADD_SAME_ITEMS = 'ADD_SAME_ITEMS';
 
     /**
      * Gets allowable values of the enum
@@ -369,6 +370,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
             self::EFFECT_ADD_MISSING_ITEMS,
             self::EFFECT_ADD_NEW_ITEMS,
             self::EFFECT_ADD_MANY_ITEMS,
+            self::EFFECT_ADD_SAME_ITEMS,
         ];
     }
 
@@ -550,7 +552,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
     /**
      * Sets amountOffFormula
      *
-     * @param string|null $amountOffFormula amountOffFormula
+     * @param string|null $amountOffFormula Formula used to dynamically calculate the discount.
      *
      * @return self
      */
@@ -723,7 +725,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
     /**
      * Sets unitOffFormula
      *
-     * @param string|null $unitOffFormula Formula used to calculate the number of units.
+     * @param string|null $unitOffFormula Formula used to dynamically calculate the number of units.
      *
      * @return self
      */
@@ -913,7 +915,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
     /**
      * Sets percentOffFormula
      *
-     * @param string|null $percentOffFormula percentOffFormula
+     * @param string|null $percentOffFormula Formula used to dynamically calculate the discount.
      *
      * @return self
      */
@@ -1015,7 +1017,7 @@ class ValidationsValidateResponseBodyRedeemablesItemResultDiscount implements Mo
     /**
      * Sets fixedAmountFormula
      *
-     * @param string|null $fixedAmountFormula fixedAmountFormula
+     * @param string|null $fixedAmountFormula Formula used to dynamically calculate the discount.
      *
      * @return self
      */

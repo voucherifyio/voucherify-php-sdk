@@ -4150,7 +4150,7 @@ class VouchersApi
     /**
      * Operation updateVoucherBalance
      *
-     * Add or Remove Voucher Balance
+     * Adjust Voucher Balance
      *
      * @param  string $code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. (required)
      * @param  \OpenAPI\Client\Model\VouchersBalanceUpdateRequestBody $vouchersBalanceUpdateRequestBody Provide the amount to be added to/subtracted from the voucher. (required)
@@ -4169,7 +4169,7 @@ class VouchersApi
     /**
      * Operation updateVoucherBalanceWithHttpInfo
      *
-     * Add or Remove Voucher Balance
+     * Adjust Voucher Balance
      *
      * @param  string $code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. (required)
      * @param  \OpenAPI\Client\Model\VouchersBalanceUpdateRequestBody $vouchersBalanceUpdateRequestBody Provide the amount to be added to/subtracted from the voucher. (required)
@@ -4270,7 +4270,7 @@ class VouchersApi
     /**
      * Operation updateVoucherBalanceAsync
      *
-     * Add or Remove Voucher Balance
+     * Adjust Voucher Balance
      *
      * @param  string $code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. (required)
      * @param  \OpenAPI\Client\Model\VouchersBalanceUpdateRequestBody $vouchersBalanceUpdateRequestBody Provide the amount to be added to/subtracted from the voucher. (required)
@@ -4292,7 +4292,7 @@ class VouchersApi
     /**
      * Operation updateVoucherBalanceAsyncWithHttpInfo
      *
-     * Add or Remove Voucher Balance
+     * Adjust Voucher Balance
      *
      * @param  string $code A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u. (required)
      * @param  \OpenAPI\Client\Model\VouchersBalanceUpdateRequestBody $vouchersBalanceUpdateRequestBody Provide the amount to be added to/subtracted from the voucher. (required)

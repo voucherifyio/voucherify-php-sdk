@@ -60,7 +60,8 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount implements 
       */
     protected static $openAPITypes = [
         'every' => 'int',
-        'points' => 'int'
+        'points' => 'int',
+        'pointsFormula' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount implements 
       */
     protected static $openAPIFormats = [
         'every' => null,
-        'points' => null
+        'points' => null,
+        'pointsFormula' => null
     ];
 
     /**
@@ -82,7 +84,8 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount implements 
       */
     protected static array $openAPINullables = [
         'every' => true,
-		'points' => true
+		'points' => true,
+		'pointsFormula' => true
     ];
 
     /**
@@ -172,7 +175,8 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount implements 
      */
     protected static $attributeMap = [
         'every' => 'every',
-        'points' => 'points'
+        'points' => 'points',
+        'pointsFormula' => 'points_formula'
     ];
 
     /**
@@ -182,7 +186,8 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount implements 
      */
     protected static $setters = [
         'every' => 'setEvery',
-        'points' => 'setPoints'
+        'points' => 'setPoints',
+        'pointsFormula' => 'setPointsFormula'
     ];
 
     /**
@@ -192,7 +197,8 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount implements 
      */
     protected static $getters = [
         'every' => 'getEvery',
-        'points' => 'getPoints'
+        'points' => 'getPoints',
+        'pointsFormula' => 'getPointsFormula'
     ];
 
     /**
@@ -254,6 +260,7 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount implements 
     {
         $this->setIfExists('every', $data ?? [], null);
         $this->setIfExists('points', $data ?? [], null);
+        $this->setIfExists('pointsFormula', $data ?? [], null);
     }
 
     /**
@@ -362,6 +369,40 @@ class LoyaltiesEarningRulesUpdateResponseBodyLoyaltyOrderTotalAmount implements 
             }
         }
         $this->container['points'] = $points;
+
+        return $this;
+    }
+
+    /**
+     * Gets pointsFormula
+     *
+     * @return string|null
+     */
+    public function getPointsFormula()
+    {
+        return $this->container['pointsFormula'];
+    }
+
+    /**
+     * Sets pointsFormula
+     *
+     * @param string|null $pointsFormula Formula used to dynamically calculate the rewarded points.
+     *
+     * @return self
+     */
+    public function setPointsFormula($pointsFormula)
+    {
+        if (is_null($pointsFormula)) {
+            array_push($this->openAPINullablesSetToNull, 'pointsFormula');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('pointsFormula', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['pointsFormula'] = $pointsFormula;
 
         return $this;
     }

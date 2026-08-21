@@ -421,7 +421,7 @@ class LoyaltyTiersExpirationAll implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets qualificationPeriod
      *
-     * @param string|null $qualificationPeriod Customers can qualify for the tier if they collected enough points in a given time period. So, in addition to the customer having to reach a points range, they also need to have collected the points within a set time period.      | **Period** | **Definition** | |:---|:---| | **Calendar Month** | Points collected in one calendar month<br>January, February, March, etc. | | **Calendar Quarter** | Points collected in the quarter<br>- January - March<br>- April - June<br>- July - September<br>- October - December | | **Calendar Half-year** | Points collected in the half-year<br>- January - June<br>- July - December | | **Calendar Year** | Points collected in one calendar year<br>January - December |
+     * @param string|null $qualificationPeriod Customers can qualify for the tier if they collected enough points in a given time period. So, in addition to the customer having to reach a points range, they also need to have collected the points within a set time period.      | **Period** | **Definition** | |:---|:---| | **Calendar Month** | Points collected in one calendar month<br />January, February, March, etc. | | **Calendar Quarter** | Points collected in the quarter<br />- January - March<br />- April - June<br />- July - September<br />- October - December | | **Calendar Half-year** | Points collected in the half-year<br />- January - June<br />- July - December | | **Calendar Year** | Points collected in one calendar year<br />January - December |
      *
      * @return self
      */

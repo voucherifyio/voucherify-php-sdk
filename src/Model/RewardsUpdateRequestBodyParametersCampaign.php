@@ -344,7 +344,7 @@ class RewardsUpdateRequestBodyParametersCampaign implements ModelInterface, Arra
     /**
      * Sets balance
      *
-     * @param int|null $balance The incremental points to be added to the current balance on the loyalty card. and The incremental amount to be added to the current balance on the gift card. Value is multiplied by 100 to precisely represent 2 decimal places. For example, $100 amount is written as 10000.
+     * @param int|null $balance The incremental points to be added to the current balance on the loyalty card. and The incremental amount to be added to the current balance on the gift card. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */

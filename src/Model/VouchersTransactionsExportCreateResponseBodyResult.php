@@ -304,7 +304,7 @@ class VouchersTransactionsExportCreateResponseBodyResult implements ModelInterfa
     /**
      * Sets url
      *
-     * @param string|null $url URL of the CSV file location. It contains the `token` used for authorization in the <!-- [Download export](OpenAPI.json/paths/~1exports~1{export_Id}/get) -->[Download export](ref:download-export) method.
+     * @param string|null $url URL of the CSV file location. It contains the `token` used for authorization in the [Download export](/api-reference/exports/download-export) method.
      *
      * @return self
      */

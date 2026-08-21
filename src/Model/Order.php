@@ -415,7 +415,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sourceId
      *
-     * @param string|null $sourceId Unique source ID of an existing order that will be linked to the redemption of this request.
+     * @param string|null $sourceId Unique source ID of an existing order that will be linked to the redemption of this request.  For validation and redemption, if `source_id` is used with an existing order, the original order data will be used, like `items`, `amount`, and so on, not the one sent in the new request.
      *
      * @return self
      */

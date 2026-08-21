@@ -51,7 +51,7 @@ $apiInstance = new OpenAPI\Client\Api\ValidationRulesApi(
 );
 $validationRuleId = 'validationRuleId_example'; // string | Unique validation rule ID.
 $force = True; // bool | If this flag is set to true, the previous assignment with the same data will be deleted and a new one will be added.
-$validationRulesAssignmentsCreateRequestBody = {"voucher":"v_ssR6vhswwh5odSloN2Vc3O60w7aea018"}; // \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody | Specify the resource that you would like to assign the validation rule to.
+$validationRulesAssignmentsCreateRequestBody = {"related_object_type":"voucher","related_object_id":"{{voucherId}}"}; // \OpenAPI\Client\Model\ValidationRulesAssignmentsCreateRequestBody | Specify the resource that you would like to assign the validation rule to.
 
 try {
     $result = $apiInstance->createValidationRuleAssignment($validationRuleId, $force, $validationRulesAssignmentsCreateRequestBody);
@@ -94,7 +94,7 @@ createValidationRules($validationRulesCreateRequestBody): \OpenAPI\Client\Model\
 
 Create Validation Rules
 
-Create validation rules.
+Create a validation rule.  🚧 Managing validation rules  It is recommended to [create or update validation rules](/personalize/create-validation-rules) in the Voucherify dashboard. The rule builder in the dashboard helps configuring the desired conditions in a convenient way. The API should not be used as a preferable way to create and manage validation rules.
 
 ### Example
 
@@ -120,7 +120,7 @@ $apiInstance = new OpenAPI\Client\Api\ValidationRulesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$validationRulesCreateRequestBody = {"name":"Set of Validation Rules","error":{"message":"Your order does not meet at least one of the required criteria."},"applicable_to":{"included_all":false,"excluded":[{"object":"product","id":"prod_0bae45ffc7003ffc52","source_id":"second_product","strict":false,"effect":"APPLY_TO_EVERY"}],"included":[{"object":"product","id":"prod_0b72b00ffed198e344","source_id":null,"effect":"APPLY_TO_MOST_EXPENSIVE","quantity_limit":1},{"object":"products_collection","id":"pc_4ndRXAsTOzwSdHcQcxf489uU","source_id":null,"effect":"APPLY_TO_EVERY","quantity_limit":5}]},"rules":{"1":{"name":"order.metadata","property":"location","rules":{},"conditions":{"$is":["Santorini"]},"error":{"message":"Your order must be placed at one of our Santorini shops."}},"2":{"name":"custom_event.metadata","property":"test","rules":{},"conditions":{"$greater_than_or_equal":[1]}},"3":{"name":"order.items.every","rules":{"1":{"name":"order.items.metadata","property":"test","rules":{},"conditions":{"$greater_than_or_equal":[1]}}},"conditions":{"$is":[{"id":"<PROD_ID>","effect":"APPLY_TO_EVERY","object":"product","source_id":"<SOURCE_ID>"}]}},"logic":"1 or 2"}}; // \OpenAPI\Client\Model\ValidationRulesCreateRequestBody | Specify the validation rules parameters.
+$validationRulesCreateRequestBody = {"name":"Set of Validation Rules","error":{"message":"Your order does not meet at least one of the required criteria."},"applicable_to":{"included_all":false,"excluded":[{"object":"product","id":"prod_0bae45ffc7003ffc52","source_id":"second_product","effect":"APPLY_TO_EVERY"}],"included":[{"object":"product","id":"prod_0b72b00ffed198e344","source_id":null,"effect":"APPLY_TO_MOST_EXPENSIVE","quantity_limit":1},{"object":"products_collection","id":"pc_4ndRXAsTOzwSdHcQcxf489uU","source_id":null,"effect":"APPLY_TO_EVERY","quantity_limit":5}]},"rules":{"1":{"name":"order.metadata","property":"location","rules":{},"conditions":{"$is":["Santorini"]},"error":{"message":"Your order must be placed at one of our Santorini shops."}},"2":{"name":"custom_event.metadata","property":"test","rules":{},"conditions":{"$greater_than_or_equal":[1]}},"3":{"name":"order.items.every","rules":{"1":{"name":"order.items.metadata","property":"test","rules":{},"conditions":{"$greater_than_or_equal":[1]}}},"conditions":{"$is":[{"id":"<PROD_ID>","effect":"APPLY_TO_EVERY","object":"product","source_id":"<SOURCE_ID>"}]}},"logic":"1 or 2"}}; // \OpenAPI\Client\Model\ValidationRulesCreateRequestBody | Specify the validation rules parameters.
 
 try {
     $result = $apiInstance->createValidationRules($validationRulesCreateRequestBody);
@@ -510,7 +510,7 @@ listValidationRulesAssignments($relatedObjectId, $rule, $page, $limit, $order): 
 
 List Validation Rules' Assignment(s)
 
-List all validation rules assignments or filter the results using the related object ID or the validation rule ID query parameters.  # How to retrieve specific validation rule assignments(s) ## Related object ID To find an assignment for a particular resource, you can use the ID of the object to which the validation rule was assigned. This could be, for example, an ID of a: voucher, campaign, distribution, reward assignment, earning rule, promotion tier.    ## Validation rule ID You can use the validation rule ID to find assignment(s) for a specific validation rule.
+List all validation rules assignments or filter the results using the related object ID or the validation rule ID query parameters.
 
 ### Example
 
@@ -585,7 +585,7 @@ updateValidationRule($validationRuleId, $validationRulesUpdateRequestBody): \Ope
 
 Update Validation Rule
 
-Update validation rule parameters.
+Update validation rule parameters.  🚧 Managing validation rules  It is recommended to [create or update validation rules](/personalize/create-validation-rules) in the Voucherify dashboard. The rule builder in the dashboard helps configuring the desired conditions in a convenient way. The API should not be used as a preferable way to create and manage validation rules.
 
 ### Example
 
@@ -612,7 +612,7 @@ $apiInstance = new OpenAPI\Client\Api\ValidationRulesApi(
     $config
 );
 $validationRuleId = 'validationRuleId_example'; // string | A unique validation rule ID.
-$validationRulesUpdateRequestBody = {"name":"Set of Validation Rules Updated","error":{"message":"Your orders do not meet at least one of the required criteria."},"applicable_to":{"included_all":false,"excluded":[{"object":"product","id":"prod_0bae45ffc7003ffccc","source_id":"second_product","strict":false,"effect":"APPLY_TO_EVERY"}],"included":[{"object":"product","id":"prod_0b72b00ffed198e333","source_id":null,"effect":"APPLY_TO_CHEAPEST","quantity_limit":1},{"object":"products_collection","id":"pc_4ndRXAsTOzwSdHcQcxf489uU","source_id":null,"effect":"APPLY_TO_EVERY","quantity_limit":5}]},"rules":{"1":{"name":"order.metadata","property":"place","rules":{},"conditions":{"$is":["Santorini"]},"error":{"message":"Your order must be placed at one of our Santorini shops on the beach."}},"2":{"name":"custom_event.metadata","property":"lining","rules":{},"conditions":{"$greater_than_or_equal":[1]}},"3":{"name":"order.items.every","rules":{"1":{"name":"order.items.metadata","property":"test","rules":{},"conditions":{"$greater_than_or_equal":[1]}}},"conditions":{"$is":[{"id":"<PRODs_ID>","effect":"APPLY_TO_EVERY","object":"product","source_id":"<SOURCEs_ID>"}]}},"logic":"1 and 2"}}; // \OpenAPI\Client\Model\ValidationRulesUpdateRequestBody | Specify the parameters to be updated.
+$validationRulesUpdateRequestBody = {"name":"Set of Validation Rules Updated","error":{"message":"Your orders do not meet at least one of the required criteria."},"applicable_to":{"included_all":false,"excluded":[{"object":"product","id":"prod_0bae45ffc7003ffccc","source_id":"second_product","effect":"APPLY_TO_EVERY"}],"included":[{"object":"product","id":"prod_0b72b00ffed198e333","source_id":null,"effect":"APPLY_TO_CHEAPEST","quantity_limit":1},{"object":"products_collection","id":"pc_4ndRXAsTOzwSdHcQcxf489uU","source_id":null,"effect":"APPLY_TO_EVERY","quantity_limit":5}]},"rules":{"1":{"name":"order.metadata","property":"place","rules":{},"conditions":{"$is":["Santorini"]},"error":{"message":"Your order must be placed at one of our Santorini shops on the beach."}},"2":{"name":"custom_event.metadata","property":"lining","rules":{},"conditions":{"$greater_than_or_equal":[1]}},"3":{"name":"order.items.every","rules":{"1":{"name":"order.items.metadata","property":"test","rules":{},"conditions":{"$greater_than_or_equal":[1]}}},"conditions":{"$is":[{"id":"<PRODs_ID>","effect":"APPLY_TO_EVERY","object":"product","source_id":"<SOURCEs_ID>"}]}},"logic":"1 and 2"}}; // \OpenAPI\Client\Model\ValidationRulesUpdateRequestBody | Specify the parameters to be updated.
 
 try {
     $result = $apiInstance->updateValidationRule($validationRuleId, $validationRulesUpdateRequestBody);

@@ -60,6 +60,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
     protected static $openAPITypes = [
         'type' => 'string',
         'points' => 'int',
+        'pointsFormula' => 'string',
         'calculationType' => 'string',
         'order' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrder',
         'orderItems' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemLoyaltyOrderItems',
@@ -77,6 +78,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
     protected static $openAPIFormats = [
         'type' => null,
         'points' => null,
+        'pointsFormula' => null,
         'calculationType' => null,
         'order' => null,
         'orderItems' => null,
@@ -92,6 +94,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
     protected static array $openAPINullables = [
         'type' => false,
 		'points' => true,
+		'pointsFormula' => true,
 		'calculationType' => false,
 		'order' => false,
 		'orderItems' => false,
@@ -187,6 +190,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
     protected static $attributeMap = [
         'type' => 'type',
         'points' => 'points',
+        'pointsFormula' => 'points_formula',
         'calculationType' => 'calculation_type',
         'order' => 'order',
         'orderItems' => 'order_items',
@@ -202,6 +206,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
     protected static $setters = [
         'type' => 'setType',
         'points' => 'setPoints',
+        'pointsFormula' => 'setPointsFormula',
         'calculationType' => 'setCalculationType',
         'order' => 'setOrder',
         'orderItems' => 'setOrderItems',
@@ -217,6 +222,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
     protected static $getters = [
         'type' => 'getType',
         'points' => 'getPoints',
+        'pointsFormula' => 'getPointsFormula',
         'calculationType' => 'getCalculationType',
         'order' => 'getOrder',
         'orderItems' => 'getOrderItems',
@@ -325,6 +331,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
     {
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('points', $data ?? [], null);
+        $this->setIfExists('pointsFormula', $data ?? [], null);
         $this->setIfExists('calculationType', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
         $this->setIfExists('orderItems', $data ?? [], null);
@@ -459,6 +466,40 @@ class LoyaltiesEarningRulesCreateRequestBodyItemLoyalty implements ModelInterfac
             }
         }
         $this->container['points'] = $points;
+
+        return $this;
+    }
+
+    /**
+     * Gets pointsFormula
+     *
+     * @return string|null
+     */
+    public function getPointsFormula()
+    {
+        return $this->container['pointsFormula'];
+    }
+
+    /**
+     * Sets pointsFormula
+     *
+     * @param string|null $pointsFormula Formula used to dynamically calculate the rewarded points.
+     *
+     * @return self
+     */
+    public function setPointsFormula($pointsFormula)
+    {
+        if (is_null($pointsFormula)) {
+            array_push($this->openAPINullablesSetToNull, 'pointsFormula');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('pointsFormula', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['pointsFormula'] = $pointsFormula;
 
         return $this;
     }

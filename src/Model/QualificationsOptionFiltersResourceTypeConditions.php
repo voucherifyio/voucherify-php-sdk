@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * QualificationsOptionFiltersResourceTypeConditions Class Doc Comment
  *
  * @category Class
- * @description Data filters used to narrow down the data records to be returned in the result.
+ * @description Data filters used to narrow down the data records to be returned in the result. - &#x60;campaign&#x60; refers to campaigns; - &#x60;voucher&#x60; refers to generic (standalone) vouchers or published vouchers; - &#x60;promotion_tier&#x60; refers to promotion tiers.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

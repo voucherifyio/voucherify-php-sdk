@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * CustomersUpdateResponseBodyAssets Class Doc Comment
  *
  * @category Class
- * @description Contains information about the customer&#39;s cockpit.
+ * @description Contains information about the customer&#39;s cockpit.  ⚠️ Warning: Customer cockpits were removed. The customer cockpit URLs redirect to customer preference center.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -59,7 +59,8 @@ class CustomersUpdateResponseBodyAssets implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'cockpitUrl' => 'string'
+        'cockpitUrl' => 'string',
+        'cockpitPreferenceCenterUrl' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class CustomersUpdateResponseBodyAssets implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'cockpitUrl' => null
+        'cockpitUrl' => null,
+        'cockpitPreferenceCenterUrl' => null
     ];
 
     /**
@@ -79,7 +81,8 @@ class CustomersUpdateResponseBodyAssets implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'cockpitUrl' => true
+        'cockpitUrl' => true,
+		'cockpitPreferenceCenterUrl' => true
     ];
 
     /**
@@ -168,7 +171,8 @@ class CustomersUpdateResponseBodyAssets implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'cockpitUrl' => 'cockpit_url'
+        'cockpitUrl' => 'cockpit_url',
+        'cockpitPreferenceCenterUrl' => 'cockpit_preference_center_url'
     ];
 
     /**
@@ -177,7 +181,8 @@ class CustomersUpdateResponseBodyAssets implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'cockpitUrl' => 'setCockpitUrl'
+        'cockpitUrl' => 'setCockpitUrl',
+        'cockpitPreferenceCenterUrl' => 'setCockpitPreferenceCenterUrl'
     ];
 
     /**
@@ -186,7 +191,8 @@ class CustomersUpdateResponseBodyAssets implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'cockpitUrl' => 'getCockpitUrl'
+        'cockpitUrl' => 'getCockpitUrl',
+        'cockpitPreferenceCenterUrl' => 'getCockpitPreferenceCenterUrl'
     ];
 
     /**
@@ -247,6 +253,7 @@ class CustomersUpdateResponseBodyAssets implements ModelInterface, ArrayAccess, 
     public function __construct(?array $data = null)
     {
         $this->setIfExists('cockpitUrl', $data ?? [], null);
+        $this->setIfExists('cockpitPreferenceCenterUrl', $data ?? [], null);
     }
 
     /**
@@ -304,7 +311,7 @@ class CustomersUpdateResponseBodyAssets implements ModelInterface, ArrayAccess, 
     /**
      * Sets cockpitUrl
      *
-     * @param string|null $cockpitUrl Customer's cockpit URL address.
+     * @param string|null $cockpitUrl URL address to customer preference center. Previously, a customer's cockpit URL address.
      *
      * @return self
      */
@@ -321,6 +328,40 @@ class CustomersUpdateResponseBodyAssets implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['cockpitUrl'] = $cockpitUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets cockpitPreferenceCenterUrl
+     *
+     * @return string|null
+     */
+    public function getCockpitPreferenceCenterUrl()
+    {
+        return $this->container['cockpitPreferenceCenterUrl'];
+    }
+
+    /**
+     * Sets cockpitPreferenceCenterUrl
+     *
+     * @param string|null $cockpitPreferenceCenterUrl URL address to customer preference center.
+     *
+     * @return self
+     */
+    public function setCockpitPreferenceCenterUrl($cockpitPreferenceCenterUrl)
+    {
+        if (is_null($cockpitPreferenceCenterUrl)) {
+            array_push($this->openAPINullablesSetToNull, 'cockpitPreferenceCenterUrl');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cockpitPreferenceCenterUrl', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['cockpitPreferenceCenterUrl'] = $cockpitPreferenceCenterUrl;
 
         return $this;
     }

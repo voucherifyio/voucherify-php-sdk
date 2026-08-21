@@ -60,7 +60,8 @@ class ValidationsRedeemableInapplicableResult implements ModelInterface, ArrayAc
       */
     protected static $openAPITypes = [
         'error' => '\OpenAPI\Client\Model\Error',
-        'details' => '\OpenAPI\Client\Model\ValidationsRedeemableInapplicableResultDetails'
+        'details' => '\OpenAPI\Client\Model\ValidationsRedeemableInapplicableResultDetails',
+        'bundle' => '\OpenAPI\Client\Model\Bundle'
     ];
 
     /**
@@ -72,7 +73,8 @@ class ValidationsRedeemableInapplicableResult implements ModelInterface, ArrayAc
       */
     protected static $openAPIFormats = [
         'error' => null,
-        'details' => null
+        'details' => null,
+        'bundle' => null
     ];
 
     /**
@@ -82,7 +84,8 @@ class ValidationsRedeemableInapplicableResult implements ModelInterface, ArrayAc
       */
     protected static array $openAPINullables = [
         'error' => false,
-		'details' => true
+		'details' => true,
+		'bundle' => false
     ];
 
     /**
@@ -172,7 +175,8 @@ class ValidationsRedeemableInapplicableResult implements ModelInterface, ArrayAc
      */
     protected static $attributeMap = [
         'error' => 'error',
-        'details' => 'details'
+        'details' => 'details',
+        'bundle' => 'bundle'
     ];
 
     /**
@@ -182,7 +186,8 @@ class ValidationsRedeemableInapplicableResult implements ModelInterface, ArrayAc
      */
     protected static $setters = [
         'error' => 'setError',
-        'details' => 'setDetails'
+        'details' => 'setDetails',
+        'bundle' => 'setBundle'
     ];
 
     /**
@@ -192,7 +197,8 @@ class ValidationsRedeemableInapplicableResult implements ModelInterface, ArrayAc
      */
     protected static $getters = [
         'error' => 'getError',
-        'details' => 'getDetails'
+        'details' => 'getDetails',
+        'bundle' => 'getBundle'
     ];
 
     /**
@@ -254,6 +260,7 @@ class ValidationsRedeemableInapplicableResult implements ModelInterface, ArrayAc
     {
         $this->setIfExists('error', $data ?? [], null);
         $this->setIfExists('details', $data ?? [], null);
+        $this->setIfExists('bundle', $data ?? [], null);
     }
 
     /**
@@ -355,6 +362,33 @@ class ValidationsRedeemableInapplicableResult implements ModelInterface, ArrayAc
             }
         }
         $this->container['details'] = $details;
+
+        return $this;
+    }
+
+    /**
+     * Gets bundle
+     *
+     * @return \OpenAPI\Client\Model\Bundle|null
+     */
+    public function getBundle()
+    {
+        return $this->container['bundle'];
+    }
+
+    /**
+     * Sets bundle
+     *
+     * @param \OpenAPI\Client\Model\Bundle|null $bundle bundle
+     *
+     * @return self
+     */
+    public function setBundle($bundle)
+    {
+        if (is_null($bundle)) {
+            throw new \InvalidArgumentException('non-nullable bundle cannot be null');
+        }
+        $this->container['bundle'] = $bundle;
 
         return $this;
     }

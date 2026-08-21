@@ -453,7 +453,7 @@ class ProductsApi
      *
      * Create SKU
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $productId A Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
      * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $productsSkusCreateRequestBody Specify the SKU parameters to be created. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSku'] to see the possible values for this operation
      *
@@ -472,7 +472,7 @@ class ProductsApi
      *
      * Create SKU
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $productId A Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
      * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $productsSkusCreateRequestBody Specify the SKU parameters to be created. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSku'] to see the possible values for this operation
      *
@@ -573,7 +573,7 @@ class ProductsApi
      *
      * Create SKU
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $productId A Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
      * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $productsSkusCreateRequestBody Specify the SKU parameters to be created. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSku'] to see the possible values for this operation
      *
@@ -595,7 +595,7 @@ class ProductsApi
      *
      * Create SKU
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $productId A Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
      * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $productsSkusCreateRequestBody Specify the SKU parameters to be created. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSku'] to see the possible values for this operation
      *
@@ -646,7 +646,7 @@ class ProductsApi
     /**
      * Create request for operation 'createSku'
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $productId A Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
      * @param  \OpenAPI\Client\Model\ProductsSkusCreateRequestBody $productsSkusCreateRequestBody Specify the SKU parameters to be created. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSku'] to see the possible values for this operation
      *
@@ -1013,8 +1013,8 @@ class ProductsApi
      *
      * Delete SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $productId A unique Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
+     * @param  string $skuId A Voucherify [SKU ID](/api-reference/products/get-sku) or SKU source ID. (required)
      * @param  bool $force If this flag is set to true, the SKU will be removed permanently. If it is set to false or not set at all, the SKU will be moved to the bin. Going forward, the user will be able to create another SKU with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSku'] to see the possible values for this operation
      *
@@ -1032,8 +1032,8 @@ class ProductsApi
      *
      * Delete SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $productId A unique Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
+     * @param  string $skuId A Voucherify [SKU ID](/api-reference/products/get-sku) or SKU source ID. (required)
      * @param  bool $force If this flag is set to true, the SKU will be removed permanently. If it is set to false or not set at all, the SKU will be moved to the bin. Going forward, the user will be able to create another SKU with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSku'] to see the possible values for this operation
      *
@@ -1094,8 +1094,8 @@ class ProductsApi
      *
      * Delete SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $productId A unique Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
+     * @param  string $skuId A Voucherify [SKU ID](/api-reference/products/get-sku) or SKU source ID. (required)
      * @param  bool $force If this flag is set to true, the SKU will be removed permanently. If it is set to false or not set at all, the SKU will be moved to the bin. Going forward, the user will be able to create another SKU with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSku'] to see the possible values for this operation
      *
@@ -1117,8 +1117,8 @@ class ProductsApi
      *
      * Delete SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $productId A unique Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
+     * @param  string $skuId A Voucherify [SKU ID](/api-reference/products/get-sku) or SKU source ID. (required)
      * @param  bool $force If this flag is set to true, the SKU will be removed permanently. If it is set to false or not set at all, the SKU will be moved to the bin. Going forward, the user will be able to create another SKU with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSku'] to see the possible values for this operation
      *
@@ -1156,8 +1156,8 @@ class ProductsApi
     /**
      * Create request for operation 'deleteSku'
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $productId A unique Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
+     * @param  string $skuId A Voucherify [SKU ID](/api-reference/products/get-sku) or SKU source ID. (required)
      * @param  bool $force If this flag is set to true, the SKU will be removed permanently. If it is set to false or not set at all, the SKU will be moved to the bin. Going forward, the user will be able to create another SKU with exactly the same source_id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSku'] to see the possible values for this operation
      *
@@ -2815,7 +2815,7 @@ class ProductsApi
      *
      * List SKUs in Product
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $productId A Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -2838,7 +2838,7 @@ class ProductsApi
      *
      * List SKUs in Product
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $productId A Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -2943,7 +2943,7 @@ class ProductsApi
      *
      * List SKUs in Product
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $productId A Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -2969,7 +2969,7 @@ class ProductsApi
      *
      * List SKUs in Product
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $productId A Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -3024,7 +3024,7 @@ class ProductsApi
     /**
      * Create request for operation 'listSkusInProduct'
      *
-     * @param  string $productId A Voucherify product ID or product source ID. (required)
+     * @param  string $productId A Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  ParameterOrder $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
@@ -3501,7 +3501,7 @@ class ProductsApi
      *
      * Update Products in Bulk
      *
-     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each product object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsInBulk'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -3519,7 +3519,7 @@ class ProductsApi
      *
      * Update Products in Bulk
      *
-     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each product object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsInBulk'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -3619,7 +3619,7 @@ class ProductsApi
      *
      * Update Products in Bulk
      *
-     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each product object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3640,7 +3640,7 @@ class ProductsApi
      *
      * Update Products in Bulk
      *
-     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each product object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3690,7 +3690,7 @@ class ProductsApi
     /**
      * Create request for operation 'updateProductsInBulk'
      *
-     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each customer object. (optional)
+     * @param  \OpenAPI\Client\Model\ProductsUpdateInBulkRequestBody[] $productsUpdateInBulkRequestBody List the product fields to be updated in each product object. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProductsInBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4073,8 +4073,8 @@ class ProductsApi
      *
      * Update SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $productId A unique Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
+     * @param  string $skuId A Voucherify [SKU ID](/api-reference/products/get-sku) or SKU source ID. (required)
      * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $productsSkusUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSku'] to see the possible values for this operation
      *
@@ -4093,8 +4093,8 @@ class ProductsApi
      *
      * Update SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $productId A unique Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
+     * @param  string $skuId A Voucherify [SKU ID](/api-reference/products/get-sku) or SKU source ID. (required)
      * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $productsSkusUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSku'] to see the possible values for this operation
      *
@@ -4195,8 +4195,8 @@ class ProductsApi
      *
      * Update SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $productId A unique Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
+     * @param  string $skuId A Voucherify [SKU ID](/api-reference/products/get-sku) or SKU source ID. (required)
      * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $productsSkusUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSku'] to see the possible values for this operation
      *
@@ -4218,8 +4218,8 @@ class ProductsApi
      *
      * Update SKU
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $productId A unique Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
+     * @param  string $skuId A Voucherify [SKU ID](/api-reference/products/get-sku) or SKU source ID. (required)
      * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $productsSkusUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSku'] to see the possible values for this operation
      *
@@ -4270,8 +4270,8 @@ class ProductsApi
     /**
      * Create request for operation 'updateSku'
      *
-     * @param  string $productId A unique Voucherify product ID or product source ID. (required)
-     * @param  string $skuId A Voucherify SKU ID or SKU source ID. (required)
+     * @param  string $productId A unique Voucherify [product](/api-reference/products/get-product) ID or product source ID. (required)
+     * @param  string $skuId A Voucherify [SKU ID](/api-reference/products/get-sku) or SKU source ID. (required)
      * @param  \OpenAPI\Client\Model\ProductsSkusUpdateRequestBody $productsSkusUpdateRequestBody Specify the parameters to be updated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSku'] to see the possible values for this operation
      *

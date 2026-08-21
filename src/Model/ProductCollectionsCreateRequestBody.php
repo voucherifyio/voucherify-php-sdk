@@ -84,7 +84,7 @@ class ProductCollectionsCreateRequestBody implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'type' => false,
+        'type' => true,
 		'name' => true,
 		'products' => true,
 		'filter' => true
@@ -248,6 +248,7 @@ class ProductCollectionsCreateRequestBody implements ModelInterface, ArrayAccess
     }
 
     public const TYPE__STATIC = 'STATIC';
+    public const TYPE_AUTO_UPDATE = 'AUTO_UPDATE';
 
     /**
      * Gets allowable values of the enum
@@ -258,6 +259,7 @@ class ProductCollectionsCreateRequestBody implements ModelInterface, ArrayAccess
     {
         return [
             self::TYPE__STATIC,
+            self::TYPE_AUTO_UPDATE,
         ];
     }
 
@@ -276,7 +278,7 @@ class ProductCollectionsCreateRequestBody implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('type', $data ?? [], 'STATIC');
+        $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('products', $data ?? [], null);
         $this->setIfExists('filter', $data ?? [], null);
@@ -346,17 +348,24 @@ class ProductCollectionsCreateRequestBody implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string|null $type Show that the product collection is static (manually selected products).
+     * @param string|null $type type
      *
      * @return self
      */
     public function setType($type)
     {
         if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowedValues, true)) {
+        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'type', must be one of '%s'",

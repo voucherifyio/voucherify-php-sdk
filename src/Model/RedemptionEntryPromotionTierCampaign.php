@@ -583,7 +583,7 @@ class RedemptionEntryPromotionTierCampaign implements ModelInterface, ArrayAcces
     /**
      * Sets active
      *
-     * @param bool|null $active A flag indicating whether the campaign is active or not active. A campaign can be disabled even though it's within the active period defined by the `start_date` and `expiration_date` using the <!-- [Disable Campaign](OpenAPI.json/paths/~1campaigns~1{campaignId}~1disable) -->[Disable Campaign](ref:disable-campaign) endpoint.    - `true` indicates an *active* campaign - `false` indicates an *inactive* campaign
+     * @param bool|null $active A flag indicating whether the campaign is active or not active. A campaign can be disabled even though it's within the active period defined by the `start_date` and `expiration_date` using the [Disable Campaign](/api-reference/disable-campaign) endpoint.    - `true` indicates an *active* campaign - `false` indicates an *inactive* campaign
      *
      * @return self
      */

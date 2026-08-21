@@ -36,7 +36,6 @@ use \OpenAPI\Client\ObjectSerializer;
  * ExportsGetResponseBody Class Doc Comment
  *
  * @category Class
- * @description Response body schema for **GET** &#x60;v1/exports/{exportId}&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

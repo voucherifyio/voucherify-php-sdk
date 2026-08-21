@@ -303,7 +303,7 @@ class ManagementProjectsUsersUpdateRoleRequestBody implements ModelInterface, Ar
     /**
      * Sets role
      *
-     * @param string|null $role The role of the user to be added. It can be a custom role or one of following predefined roles: `ADMIN`, `USER`, `VIEWER`, `MERCHANT` or an ID of a custom role..
+     * @param string|null $role The role of the user to be added. It can be a custom role or one of following predefined roles: - `ADMIN`, `USER`, `VIEWER`, `MERCHANT` - or an ID of a custom role.
      *
      * @return self
      */

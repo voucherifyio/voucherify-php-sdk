@@ -65,6 +65,8 @@ class LoyaltiesEarningRulesCreateRequestBodyItem implements ModelInterface, Arra
         'active' => 'bool',
         'startDate' => '\DateTime',
         'expirationDate' => '\DateTime',
+        'pendingPoints' => '\OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints',
+        'expirationRules' => '\OpenAPI\Client\Model\EarningRuleExpirationRules',
         'validityTimeframe' => '\OpenAPI\Client\Model\ValidityTimeframe',
         'validityDayOfWeek' => 'int[]',
         'validityHours' => '\OpenAPI\Client\Model\ValidityHours',
@@ -89,6 +91,8 @@ class LoyaltiesEarningRulesCreateRequestBodyItem implements ModelInterface, Arra
         'active' => null,
         'startDate' => 'date-time',
         'expirationDate' => 'date-time',
+        'pendingPoints' => null,
+        'expirationRules' => null,
         'validityTimeframe' => null,
         'validityDayOfWeek' => null,
         'validityHours' => null,
@@ -111,6 +115,8 @@ class LoyaltiesEarningRulesCreateRequestBodyItem implements ModelInterface, Arra
 		'active' => true,
 		'startDate' => true,
 		'expirationDate' => true,
+		'pendingPoints' => true,
+		'expirationRules' => false,
 		'validityTimeframe' => false,
 		'validityDayOfWeek' => true,
 		'validityHours' => false,
@@ -213,6 +219,8 @@ class LoyaltiesEarningRulesCreateRequestBodyItem implements ModelInterface, Arra
         'active' => 'active',
         'startDate' => 'start_date',
         'expirationDate' => 'expiration_date',
+        'pendingPoints' => 'pending_points',
+        'expirationRules' => 'expiration_rules',
         'validityTimeframe' => 'validity_timeframe',
         'validityDayOfWeek' => 'validity_day_of_week',
         'validityHours' => 'validity_hours',
@@ -235,6 +243,8 @@ class LoyaltiesEarningRulesCreateRequestBodyItem implements ModelInterface, Arra
         'active' => 'setActive',
         'startDate' => 'setStartDate',
         'expirationDate' => 'setExpirationDate',
+        'pendingPoints' => 'setPendingPoints',
+        'expirationRules' => 'setExpirationRules',
         'validityTimeframe' => 'setValidityTimeframe',
         'validityDayOfWeek' => 'setValidityDayOfWeek',
         'validityHours' => 'setValidityHours',
@@ -257,6 +267,8 @@ class LoyaltiesEarningRulesCreateRequestBodyItem implements ModelInterface, Arra
         'active' => 'getActive',
         'startDate' => 'getStartDate',
         'expirationDate' => 'getExpirationDate',
+        'pendingPoints' => 'getPendingPoints',
+        'expirationRules' => 'getExpirationRules',
         'validityTimeframe' => 'getValidityTimeframe',
         'validityDayOfWeek' => 'getValidityDayOfWeek',
         'validityHours' => 'getValidityHours',
@@ -355,6 +367,8 @@ class LoyaltiesEarningRulesCreateRequestBodyItem implements ModelInterface, Arra
         $this->setIfExists('active', $data ?? [], null);
         $this->setIfExists('startDate', $data ?? [], null);
         $this->setIfExists('expirationDate', $data ?? [], null);
+        $this->setIfExists('pendingPoints', $data ?? [], null);
+        $this->setIfExists('expirationRules', $data ?? [], null);
         $this->setIfExists('validityTimeframe', $data ?? [], null);
         $this->setIfExists('validityDayOfWeek', $data ?? [], null);
         $this->setIfExists('validityHours', $data ?? [], null);
@@ -568,7 +582,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItem implements ModelInterface, Arra
     /**
      * Sets startDate
      *
-     * @param \DateTime|null $startDate Start date defines when the earning rule starts to be active. Activation timestamp is presented in the ISO 8601 format. Earning rule is *inactive before* this date. If you don't define the start date for an earning rule, it'll inherit the campaign start date by default.
+     * @param \DateTime|null $startDate Start date defines when the earning rule starts to be active. Activation timestamp is presented in the ISO 8601 format. Earning rule is *inactive before* this date. If you don't define the start date for an earning rule, it will inherit the campaign start date by default.
      *
      * @return self
      */
@@ -602,7 +616,7 @@ class LoyaltiesEarningRulesCreateRequestBodyItem implements ModelInterface, Arra
     /**
      * Sets expirationDate
      *
-     * @param \DateTime|null $expirationDate Expiration date defines when the earning rule expires. Expiration timestamp is presented in the ISO 8601 format.  Earning rule is *inactive after* this date.If you don't define the expiration date for an earning rule, it'll inherit the campaign expiration date by default.
+     * @param \DateTime|null $expirationDate Expiration date defines when the earning rule expires. Expiration timestamp is presented in the ISO 8601 format.  Earning rule is *inactive after* this date.If you don't define the expiration date for an earning rule, it will inherit the campaign expiration date by default.
      *
      * @return self
      */
@@ -619,6 +633,67 @@ class LoyaltiesEarningRulesCreateRequestBodyItem implements ModelInterface, Arra
             }
         }
         $this->container['expirationDate'] = $expirationDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets pendingPoints
+     *
+     * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints|null
+     */
+    public function getPendingPoints()
+    {
+        return $this->container['pendingPoints'];
+    }
+
+    /**
+     * Sets pendingPoints
+     *
+     * @param \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateRequestBodyItemPendingPoints|null $pendingPoints pendingPoints
+     *
+     * @return self
+     */
+    public function setPendingPoints($pendingPoints)
+    {
+        if (is_null($pendingPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'pendingPoints');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('pendingPoints', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['pendingPoints'] = $pendingPoints;
+
+        return $this;
+    }
+
+    /**
+     * Gets expirationRules
+     *
+     * @return \OpenAPI\Client\Model\EarningRuleExpirationRules|null
+     */
+    public function getExpirationRules()
+    {
+        return $this->container['expirationRules'];
+    }
+
+    /**
+     * Sets expirationRules
+     *
+     * @param \OpenAPI\Client\Model\EarningRuleExpirationRules|null $expirationRules expirationRules
+     *
+     * @return self
+     */
+    public function setExpirationRules($expirationRules)
+    {
+        if (is_null($expirationRules)) {
+            throw new \InvalidArgumentException('non-nullable expirationRules cannot be null');
+        }
+        $this->container['expirationRules'] = $expirationRules;
 
         return $this;
     }

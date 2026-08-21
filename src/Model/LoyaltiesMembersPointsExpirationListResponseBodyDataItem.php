@@ -518,7 +518,7 @@ class LoyaltiesMembersPointsExpirationListResponseBodyDataItem implements ModelI
     /**
      * Sets status
      *
-     * @param string|null $status Loyalty point point bucket status.
+     * @param string|null $status Loyalty point bucket status.
      *
      * @return self
      */

@@ -436,7 +436,7 @@ class QualificationsRedeemable implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets id
      *
-     * @param string|null $id Id of the redeemable.
+     * @param string|null $id ID of the redeemable. For a voucher, it's its `code` value.
      *
      * @return self
      */

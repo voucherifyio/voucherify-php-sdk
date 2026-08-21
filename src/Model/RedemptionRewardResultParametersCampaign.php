@@ -352,7 +352,7 @@ class RedemptionRewardResultParametersCampaign implements ModelInterface, ArrayA
     /**
      * Sets balance
      *
-     * @param int|null $balance Points available for reward redemption.
+     * @param int|null $balance Points available for reward redemption. This is calculated as follows: `balance` = `points` - `expired_points` - `subtracted_points` - `redemption.redeemed_points`.
      *
      * @return self
      */

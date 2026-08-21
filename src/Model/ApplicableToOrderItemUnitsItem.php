@@ -59,7 +59,8 @@ class ApplicableToOrderItemUnitsItem implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'index' => 'int',
-        'units' => 'int[]'
+        'units' => 'int[]',
+        'unitsLimitExceeded' => 'bool'
     ];
 
     /**
@@ -71,7 +72,8 @@ class ApplicableToOrderItemUnitsItem implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'index' => null,
-        'units' => null
+        'units' => null,
+        'unitsLimitExceeded' => null
     ];
 
     /**
@@ -81,7 +83,8 @@ class ApplicableToOrderItemUnitsItem implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPINullables = [
         'index' => false,
-		'units' => false
+		'units' => false,
+		'unitsLimitExceeded' => false
     ];
 
     /**
@@ -171,7 +174,8 @@ class ApplicableToOrderItemUnitsItem implements ModelInterface, ArrayAccess, \Js
      */
     protected static $attributeMap = [
         'index' => 'index',
-        'units' => 'units'
+        'units' => 'units',
+        'unitsLimitExceeded' => 'units_limit_exceeded'
     ];
 
     /**
@@ -181,7 +185,8 @@ class ApplicableToOrderItemUnitsItem implements ModelInterface, ArrayAccess, \Js
      */
     protected static $setters = [
         'index' => 'setIndex',
-        'units' => 'setUnits'
+        'units' => 'setUnits',
+        'unitsLimitExceeded' => 'setUnitsLimitExceeded'
     ];
 
     /**
@@ -191,7 +196,8 @@ class ApplicableToOrderItemUnitsItem implements ModelInterface, ArrayAccess, \Js
      */
     protected static $getters = [
         'index' => 'getIndex',
-        'units' => 'getUnits'
+        'units' => 'getUnits',
+        'unitsLimitExceeded' => 'getUnitsLimitExceeded'
     ];
 
     /**
@@ -253,6 +259,7 @@ class ApplicableToOrderItemUnitsItem implements ModelInterface, ArrayAccess, \Js
     {
         $this->setIfExists('index', $data ?? [], null);
         $this->setIfExists('units', $data ?? [], null);
+        $this->setIfExists('unitsLimitExceeded', $data ?? [], null);
     }
 
     /**
@@ -281,6 +288,10 @@ class ApplicableToOrderItemUnitsItem implements ModelInterface, ArrayAccess, \Js
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['index']) && ($this->container['index'] < 0)) {
+            $invalidProperties[] = "invalid value for 'index', must be bigger than or equal to 0.";
+        }
 
         return $invalidProperties;
     }
@@ -319,6 +330,11 @@ class ApplicableToOrderItemUnitsItem implements ModelInterface, ArrayAccess, \Js
         if (is_null($index)) {
             throw new \InvalidArgumentException('non-nullable index cannot be null');
         }
+
+        if (($index < 0)) {
+            throw new \InvalidArgumentException('invalid value for $index when calling ApplicableToOrderItemUnitsItem., must be bigger than or equal to 0.');
+        }
+
         $this->container['index'] = $index;
 
         return $this;
@@ -337,7 +353,7 @@ class ApplicableToOrderItemUnitsItem implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets units
      *
-     * @param int[]|null $units Numbers of units in the order line covered by the discount; e.g. `2, 5, 8` for 10 units with the setting `\"skip_initially\": 1`, `\"repeat\": 3`. The counting of units starts from `1`.
+     * @param int[]|null $units Numbers of units in the order line covered by the discount; e.g. `2, 5, 8` for 10 units with the setting `\"skip_initially\": 1`, `\"repeat\": 3`. The counting of units starts from `1`. The maximum quantity of all handled units is 1000. If the quantity of all order items exceeds 1000, this array is not returned, but `units_limit_exceeded: true`. However, the discount is calculated properly for all relevant units.
      *
      * @return self
      */
@@ -347,6 +363,33 @@ class ApplicableToOrderItemUnitsItem implements ModelInterface, ArrayAccess, \Js
             throw new \InvalidArgumentException('non-nullable units cannot be null');
         }
         $this->container['units'] = $units;
+
+        return $this;
+    }
+
+    /**
+     * Gets unitsLimitExceeded
+     *
+     * @return bool|null
+     */
+    public function getUnitsLimitExceeded()
+    {
+        return $this->container['unitsLimitExceeded'];
+    }
+
+    /**
+     * Sets unitsLimitExceeded
+     *
+     * @param bool|null $unitsLimitExceeded Returned as `true` only when the sum total of `quantity` of all order items exceeds 1000.
+     *
+     * @return self
+     */
+    public function setUnitsLimitExceeded($unitsLimitExceeded)
+    {
+        if (is_null($unitsLimitExceeded)) {
+            throw new \InvalidArgumentException('non-nullable unitsLimitExceeded cannot be null');
+        }
+        $this->container['unitsLimitExceeded'] = $unitsLimitExceeded;
 
         return $this;
     }

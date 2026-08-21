@@ -814,7 +814,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets type
      *
-     * @param string|null $type Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of standalone vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published - `STANDALONE`: campaign for single vouchers
+     * @param string|null $type Defines whether the campaign can be updated with new vouchers after campaign creation or if the campaign consists of generic (standalone) vouchers.  - `AUTO_UPDATE`: the campaign is dynamic, i.e. vouchers will generate based on set criteria -  `STATIC`: vouchers need to be manually published - `STANDALONE`: campaign for single vouchers
      *
      * @return self
      */
@@ -919,7 +919,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets joinOnce
      *
-     * @param bool|null $joinOnce If this value is set to `true`, customers will be able to join the campaign only once. It is always `false` for standalone voucher campaigns and it cannot be changed in them.
+     * @param bool|null $joinOnce If this value is set to `true`, customers will be able to join the campaign only once. It is always `false` for generic (standalone) vouchers campaigns and it cannot be changed in them. It is always `true` for loyalty campaigns and it cannot be changed in them.
      *
      * @return self
      */
@@ -1478,7 +1478,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets readonly
      *
-     * @param bool|null $readonly Indicates whether the campaign can be only read by a restricted user in the Areas and Stores enterprise feature. It is returned only to restricted users; this field is not returned for users with other roles.
+     * @param bool|null $readonly Indicates whether the campaign can be only read by a restricted user in the Areas and Stores enterprise feature. It is returned only to restricted users; this field is not returned for users with other roles. It is also not returned for restricted users who use the [GET Campaign summary](/api-reference/campaigns/get-campaign-summary) endpoint.
      *
      * @return self
      */
@@ -1580,7 +1580,7 @@ class Campaign implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets categories
      *
-     * @param \OpenAPI\Client\Model\Category[]|null $categories Contains details about the category.
+     * @param \OpenAPI\Client\Model\Category[]|null $categories Contains details about the campaign category. For the GET [List campaigns](/api-reference/campaigns/list-campaigns) endpoint, this is returned only if the `expand=category` query parameter is passed in the request. Otherwise, it is returned as an empty array. For GET [Campaign summary](/api-reference/campaigns/get-campaign-summary) endpoint, it is always returned as an empty array.
      *
      * @return self
      */

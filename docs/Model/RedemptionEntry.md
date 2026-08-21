@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **redemption** | **string** | Unique redemption ID of the parent redemption. | [optional]
 **result** | **string** | Redemption result. | [optional]
 **status** | **string** |  | [optional]
+**session** | [**\OpenAPI\Client\Model\RedemptionEntrySession**](RedemptionEntrySession.md) |  | [optional]
 **relatedRedemptions** | [**\OpenAPI\Client\Model\RedemptionEntryRelatedRedemptions**](RedemptionEntryRelatedRedemptions.md) |  | [optional]
 **failureCode** | **string** | If the result is &#x60;FAILURE&#x60;, this parameter will provide a generic reason as to why the redemption failed. | [optional]
 **failureMessage** | **string** | If the result is &#x60;FAILURE&#x60;, this parameter will provide a more expanded reason as to why the redemption failed. | [optional]

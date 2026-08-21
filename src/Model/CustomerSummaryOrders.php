@@ -36,6 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * CustomerSummaryOrders Class Doc Comment
  *
  * @category Class
+ * @description Lists details about orders related to the customer. Lists only data for orders with the &#x60;PAID&#x60; or &#x60;FULFILLED&#x60; status. Data from orders with a &#x60;CREATED&#x60; or &#x60;CANCELED&#x60; status are not included. The data is updated also when an order changes status.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -331,7 +332,7 @@ class CustomerSummaryOrders implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets totalAmount
      *
-     * @param int|null $totalAmount The total amount spent by the customer. Value is multiplied by 100 to precisely represent 2 decimal places. For example `10000 cents` for `$100.00`.
+     * @param int|null $totalAmount The total amount spent by the customer. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */
@@ -399,7 +400,7 @@ class CustomerSummaryOrders implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets averageAmount
      *
-     * @param int|null $averageAmount Average amount spent on orders. `total_amount` &divide; `total_count`. Value is multiplied by 100 to precisely represent 2 decimal places. For example `10000 cents` for `$100.00`.
+     * @param int|null $averageAmount Average amount spent on orders. `total_amount` &divide; `total_count`. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */
@@ -433,7 +434,7 @@ class CustomerSummaryOrders implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets lastOrderAmount
      *
-     * @param int|null $lastOrderAmount Amount spent on last order. Value is multiplied by 100 to precisely represent 2 decimal places. For example `10000 cents` for `$100.00`.
+     * @param int|null $lastOrderAmount Amount spent on last order. The value is multiplied by 100 to represent 2 decimal places. For example `10000 cents` for `$100.00`.
      *
      * @return self
      */

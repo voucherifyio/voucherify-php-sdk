@@ -64,6 +64,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
         'trackingId' => 'string',
         'scenario' => 'string',
         'options' => '\OpenAPI\Client\Model\QualificationsOption',
+        'session' => '\OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBodySession',
         'metadata' => 'object'
     ];
 
@@ -80,6 +81,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
         'trackingId' => null,
         'scenario' => null,
         'options' => null,
+        'session' => null,
         'metadata' => null
     ];
 
@@ -94,6 +96,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
 		'trackingId' => true,
 		'scenario' => true,
 		'options' => false,
+		'session' => true,
 		'metadata' => true
     ];
 
@@ -188,6 +191,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
         'trackingId' => 'tracking_id',
         'scenario' => 'scenario',
         'options' => 'options',
+        'session' => 'session',
         'metadata' => 'metadata'
     ];
 
@@ -202,6 +206,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
         'trackingId' => 'setTrackingId',
         'scenario' => 'setScenario',
         'options' => 'setOptions',
+        'session' => 'setSession',
         'metadata' => 'setMetadata'
     ];
 
@@ -216,6 +221,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
         'trackingId' => 'getTrackingId',
         'scenario' => 'getScenario',
         'options' => 'getOptions',
+        'session' => 'getSession',
         'metadata' => 'getMetadata'
     ];
 
@@ -308,6 +314,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
         $this->setIfExists('trackingId', $data ?? [], null);
         $this->setIfExists('scenario', $data ?? [], null);
         $this->setIfExists('options', $data ?? [], null);
+        $this->setIfExists('session', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
     }
 
@@ -522,6 +529,40 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
     }
 
     /**
+     * Gets session
+     *
+     * @return \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBodySession|null
+     */
+    public function getSession()
+    {
+        return $this->container['session'];
+    }
+
+    /**
+     * Sets session
+     *
+     * @param \OpenAPI\Client\Model\QualificationsCheckEligibilityRequestBodySession|null $session session
+     *
+     * @return self
+     */
+    public function setSession($session)
+    {
+        if (is_null($session)) {
+            array_push($this->openAPINullablesSetToNull, 'session');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('session', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['session'] = $session;
+
+        return $this;
+    }
+
+    /**
      * Gets metadata
      *
      * @return object|null
@@ -534,7 +575,7 @@ class QualificationsCheckEligibilityRequestBody implements ModelInterface, Array
     /**
      * Sets metadata
      *
-     * @param object|null $metadata A set of key/value pairs that you can send in the request body to check against redeemables requiring **redemption** metadata validation rules to be satisfied. The validation runs against rules that are defined through the <!-- [Create Validation Rules](https://docs.voucherify.io/reference/create-validation-rules) -->[Create Validation Rules](ref:create-validation-rules) endpoint or via the Dashboard; in the _Advanced Rule Builder_ &rarr; _Advanced_ &rarr; _Redemption metadata satisfy_ or _Basic Builder_ &rarr; _Attributes match_ &rarr; _REDEMPTION METADATA_. [Read more](https://support.voucherify.io/article/148-how-to-build-a-rule).
+     * @param object|null $metadata A set of key/value pairs that you can send in the request body to check against redeemables requiring **redemption** metadata validation rules to be satisfied. The validation runs against rules that are defined through the [Create Validation Rules](/api-reference/validation-rules/create-validation-rules) endpoint or with the [Validation Rule Builder](/personalize/create-validation-rules) in the the Dashboard.
      *
      * @return self
      */

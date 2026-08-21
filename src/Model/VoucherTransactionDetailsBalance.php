@@ -62,6 +62,7 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
         'type' => 'string',
         'total' => 'int',
         'object' => 'string',
+        'amount' => 'int',
         'points' => 'int',
         'balance' => 'int',
         'operationType' => 'string',
@@ -79,6 +80,7 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
         'type' => null,
         'total' => null,
         'object' => null,
+        'amount' => null,
         'points' => null,
         'balance' => null,
         'operationType' => null,
@@ -94,6 +96,7 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
         'type' => true,
 		'total' => true,
 		'object' => true,
+		'amount' => true,
 		'points' => true,
 		'balance' => true,
 		'operationType' => true,
@@ -189,6 +192,7 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
         'type' => 'type',
         'total' => 'total',
         'object' => 'object',
+        'amount' => 'amount',
         'points' => 'points',
         'balance' => 'balance',
         'operationType' => 'operation_type',
@@ -204,6 +208,7 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
         'type' => 'setType',
         'total' => 'setTotal',
         'object' => 'setObject',
+        'amount' => 'setAmount',
         'points' => 'setPoints',
         'balance' => 'setBalance',
         'operationType' => 'setOperationType',
@@ -219,6 +224,7 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
         'type' => 'getType',
         'total' => 'getTotal',
         'object' => 'getObject',
+        'amount' => 'getAmount',
         'points' => 'getPoints',
         'balance' => 'getBalance',
         'operationType' => 'getOperationType',
@@ -328,6 +334,7 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('total', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'balance');
+        $this->setIfExists('amount', $data ?? [], null);
         $this->setIfExists('points', $data ?? [], null);
         $this->setIfExists('balance', $data ?? [], null);
         $this->setIfExists('operationType', $data ?? [], null);
@@ -521,6 +528,40 @@ class VoucherTransactionDetailsBalance implements ModelInterface, ArrayAccess, \
             );
         }
         $this->container['object'] = $object;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     *
+     * @return int|null
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     *
+     * @param int|null $amount Credits added or subtracted on a gift card.
+     *
+     * @return self
+     */
+    public function setAmount($amount)
+    {
+        if (is_null($amount)) {
+            array_push($this->openAPINullablesSetToNull, 'amount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('amount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['amount'] = $amount;
 
         return $this;
     }

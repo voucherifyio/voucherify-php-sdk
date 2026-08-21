@@ -78,6 +78,9 @@ class LoyaltiesApi
         'addMember' => [
             'application/json',
         ],
+        'adjustMemberPendingPoints' => [
+            'application/json',
+        ],
         'cancelMemberPendingPoints' => [
             'application/json',
         ],
@@ -109,6 +112,9 @@ class LoyaltiesApi
             'application/json',
         ],
         'enableEarningRule' => [
+            'application/json',
+        ],
+        'exportLoyaltyCampaignTransactions' => [
             'application/json',
         ],
         'exportLoyaltyCardTransactions' => [
@@ -145,6 +151,9 @@ class LoyaltiesApi
             'application/json',
         ],
         'listEarningRules' => [
+            'application/json',
+        ],
+        'listLoyaltyCampaignTransactions' => [
             'application/json',
         ],
         'listLoyaltyCardTransactions' => [
@@ -586,7 +595,7 @@ class LoyaltiesApi
      * Add Member
      *
      * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the [List Publications](/api-reference/publications/list-publications) endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -605,7 +614,7 @@ class LoyaltiesApi
      * Add Member
      *
      * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the [List Publications](/api-reference/publications/list-publications) endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -706,7 +715,7 @@ class LoyaltiesApi
      * Add Member
      *
      * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the [List Publications](/api-reference/publications/list-publications) endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -728,7 +737,7 @@ class LoyaltiesApi
      * Add Member
      *
      * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the [List Publications](/api-reference/publications/list-publications) endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -779,7 +788,7 @@ class LoyaltiesApi
      * Create request for operation 'addMember'
      *
      * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
-     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the List Publications endpoint. (optional)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the [List Publications](/api-reference/publications/list-publications) endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -829,6 +838,332 @@ class LoyaltiesApi
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesMembersCreateRequestBody));
             } else {
                 $httpBody = $loyaltiesMembersCreateRequestBody;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Id');
+        if ($apiKey !== null) {
+            $headers['X-App-Id'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Token');
+        if ($apiKey !== null) {
+            $headers['X-App-Token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation adjustMemberPendingPoints
+     *
+     * Adjust Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceRequestBody $loyaltiesMembersPendingPointsBalanceRequestBody Define the number of pending points to be added or subtracted. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adjustMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceResponseBody
+     */
+    public function adjustMemberPendingPoints($memberId, $pendingPointsId, $loyaltiesMembersPendingPointsBalanceRequestBody = null, string $contentType = self::contentTypes['adjustMemberPendingPoints'][0])
+    {
+        list($response) = $this->adjustMemberPendingPointsWithHttpInfo($memberId, $pendingPointsId, $loyaltiesMembersPendingPointsBalanceRequestBody, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation adjustMemberPendingPointsWithHttpInfo
+     *
+     * Adjust Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceRequestBody $loyaltiesMembersPendingPointsBalanceRequestBody Define the number of pending points to be added or subtracted. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adjustMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceResponseBody, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function adjustMemberPendingPointsWithHttpInfo($memberId, $pendingPointsId, $loyaltiesMembersPendingPointsBalanceRequestBody = null, string $contentType = self::contentTypes['adjustMemberPendingPoints'][0])
+    {
+        $request = $this->adjustMemberPendingPointsRequest($memberId, $pendingPointsId, $loyaltiesMembersPendingPointsBalanceRequestBody, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceResponseBody' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceResponseBody' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceResponseBody', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceResponseBody';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceResponseBody',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation adjustMemberPendingPointsAsync
+     *
+     * Adjust Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceRequestBody $loyaltiesMembersPendingPointsBalanceRequestBody Define the number of pending points to be added or subtracted. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adjustMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function adjustMemberPendingPointsAsync($memberId, $pendingPointsId, $loyaltiesMembersPendingPointsBalanceRequestBody = null, string $contentType = self::contentTypes['adjustMemberPendingPoints'][0])
+    {
+        return $this->adjustMemberPendingPointsAsyncWithHttpInfo($memberId, $pendingPointsId, $loyaltiesMembersPendingPointsBalanceRequestBody, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation adjustMemberPendingPointsAsyncWithHttpInfo
+     *
+     * Adjust Member Pending Points
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceRequestBody $loyaltiesMembersPendingPointsBalanceRequestBody Define the number of pending points to be added or subtracted. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adjustMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function adjustMemberPendingPointsAsyncWithHttpInfo($memberId, $pendingPointsId, $loyaltiesMembersPendingPointsBalanceRequestBody = null, string $contentType = self::contentTypes['adjustMemberPendingPoints'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceResponseBody';
+        $request = $this->adjustMemberPendingPointsRequest($memberId, $pendingPointsId, $loyaltiesMembersPendingPointsBalanceRequestBody, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'adjustMemberPendingPoints'
+     *
+     * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
+     * @param  string $pendingPointsId Unique pending point identifier, assigned by Voucherify. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceRequestBody $loyaltiesMembersPendingPointsBalanceRequestBody Define the number of pending points to be added or subtracted. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adjustMemberPendingPoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function adjustMemberPendingPointsRequest($memberId, $pendingPointsId, $loyaltiesMembersPendingPointsBalanceRequestBody = null, string $contentType = self::contentTypes['adjustMemberPendingPoints'][0])
+    {
+
+        // verify the required parameter 'memberId' is set
+        if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $memberId when calling adjustMemberPendingPoints'
+            );
+        }
+
+        // verify the required parameter 'pendingPointsId' is set
+        if ($pendingPointsId === null || (is_array($pendingPointsId) && count($pendingPointsId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pendingPointsId when calling adjustMemberPendingPoints'
+            );
+        }
+
+
+
+        $resourcePath = '/v1/loyalties/members/{memberId}/pending-points/{pendingPointsId}/balance';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($memberId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'memberId' . '}',
+                ObjectSerializer::toPathValue($memberId),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($pendingPointsId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pendingPointsId' . '}',
+                ObjectSerializer::toPathValue($pendingPointsId),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($loyaltiesMembersPendingPointsBalanceRequestBody)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesMembersPendingPointsBalanceRequestBody));
+            } else {
+                $httpBody = $loyaltiesMembersPendingPointsBalanceRequestBody;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2352,7 +2687,7 @@ class LoyaltiesApi
     /**
      * Operation createRewardAssignment1
      *
-     * Create Reward Assignment
+     * Create Loyalty Campaign Reward Assignment
      *
      * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] $loyaltiesRewardsCreateAssignmentItemRequestBody Define the cost of the rewards in loyalty points. (optional)
@@ -2371,7 +2706,7 @@ class LoyaltiesApi
     /**
      * Operation createRewardAssignment1WithHttpInfo
      *
-     * Create Reward Assignment
+     * Create Loyalty Campaign Reward Assignment
      *
      * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] $loyaltiesRewardsCreateAssignmentItemRequestBody Define the cost of the rewards in loyalty points. (optional)
@@ -2472,7 +2807,7 @@ class LoyaltiesApi
     /**
      * Operation createRewardAssignment1Async
      *
-     * Create Reward Assignment
+     * Create Loyalty Campaign Reward Assignment
      *
      * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] $loyaltiesRewardsCreateAssignmentItemRequestBody Define the cost of the rewards in loyalty points. (optional)
@@ -2494,7 +2829,7 @@ class LoyaltiesApi
     /**
      * Operation createRewardAssignment1AsyncWithHttpInfo
      *
-     * Create Reward Assignment
+     * Create Loyalty Campaign Reward Assignment
      *
      * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentItemRequestBody[] $loyaltiesRewardsCreateAssignmentItemRequestBody Define the cost of the rewards in loyalty points. (optional)
@@ -3225,7 +3560,7 @@ class LoyaltiesApi
     /**
      * Operation deleteRewardAssignment1
      *
-     * Delete Reward Assignment
+     * Delete Campaign Reward Assignment
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId A unique reward assignment ID. (required)
@@ -3243,7 +3578,7 @@ class LoyaltiesApi
     /**
      * Operation deleteRewardAssignment1WithHttpInfo
      *
-     * Delete Reward Assignment
+     * Delete Campaign Reward Assignment
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId A unique reward assignment ID. (required)
@@ -3304,7 +3639,7 @@ class LoyaltiesApi
     /**
      * Operation deleteRewardAssignment1Async
      *
-     * Delete Reward Assignment
+     * Delete Campaign Reward Assignment
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId A unique reward assignment ID. (required)
@@ -3326,7 +3661,7 @@ class LoyaltiesApi
     /**
      * Operation deleteRewardAssignment1AsyncWithHttpInfo
      *
-     * Delete Reward Assignment
+     * Delete Campaign Reward Assignment
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId A unique reward assignment ID. (required)
@@ -4108,6 +4443,312 @@ class LoyaltiesApi
     }
 
     /**
+     * Operation exportLoyaltyCampaignTransactions
+     *
+     * Export Loyalty Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTransactionsExportCreateRequestBody $loyaltiesTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody
+     */
+    public function exportLoyaltyCampaignTransactions($campaignId, $loyaltiesTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCampaignTransactions'][0])
+    {
+        list($response) = $this->exportLoyaltyCampaignTransactionsWithHttpInfo($campaignId, $loyaltiesTransactionsExportCreateRequestBody, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation exportLoyaltyCampaignTransactionsWithHttpInfo
+     *
+     * Export Loyalty Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTransactionsExportCreateRequestBody $loyaltiesTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function exportLoyaltyCampaignTransactionsWithHttpInfo($campaignId, $loyaltiesTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCampaignTransactions'][0])
+    {
+        $request = $this->exportLoyaltyCampaignTransactionsRequest($campaignId, $loyaltiesTransactionsExportCreateRequestBody, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation exportLoyaltyCampaignTransactionsAsync
+     *
+     * Export Loyalty Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTransactionsExportCreateRequestBody $loyaltiesTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function exportLoyaltyCampaignTransactionsAsync($campaignId, $loyaltiesTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCampaignTransactions'][0])
+    {
+        return $this->exportLoyaltyCampaignTransactionsAsyncWithHttpInfo($campaignId, $loyaltiesTransactionsExportCreateRequestBody, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation exportLoyaltyCampaignTransactionsAsyncWithHttpInfo
+     *
+     * Export Loyalty Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTransactionsExportCreateRequestBody $loyaltiesTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function exportLoyaltyCampaignTransactionsAsyncWithHttpInfo($campaignId, $loyaltiesTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCampaignTransactions'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody';
+        $request = $this->exportLoyaltyCampaignTransactionsRequest($campaignId, $loyaltiesTransactionsExportCreateRequestBody, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'exportLoyaltyCampaignTransactions'
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  \OpenAPI\Client\Model\LoyaltiesTransactionsExportCreateRequestBody $loyaltiesTransactionsExportCreateRequestBody Specify the parameters for the transaction export. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['exportLoyaltyCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function exportLoyaltyCampaignTransactionsRequest($campaignId, $loyaltiesTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCampaignTransactions'][0])
+    {
+
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $campaignId when calling exportLoyaltyCampaignTransactions'
+            );
+        }
+
+
+
+        $resourcePath = '/v1/loyalties/{campaignId}/transactions/export';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($campaignId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'campaignId' . '}',
+                ObjectSerializer::toPathValue($campaignId),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($loyaltiesTransactionsExportCreateRequestBody)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($loyaltiesTransactionsExportCreateRequestBody));
+            } else {
+                $httpBody = $loyaltiesTransactionsExportCreateRequestBody;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Id');
+        if ($apiKey !== null) {
+            $headers['X-App-Id'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Token');
+        if ($apiKey !== null) {
+            $headers['X-App-Token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation exportLoyaltyCardTransactions
      *
      * Export Loyalty Card Transactions
@@ -4416,7 +5057,7 @@ class LoyaltiesApi
     /**
      * Operation exportLoyaltyCardTransactions1
      *
-     * Export Loyalty Card Transactions
+     * Export Loyalty Card Transactions with campaign ID
      *
      * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. (required)
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
@@ -4436,7 +5077,7 @@ class LoyaltiesApi
     /**
      * Operation exportLoyaltyCardTransactions1WithHttpInfo
      *
-     * Export Loyalty Card Transactions
+     * Export Loyalty Card Transactions with campaign ID
      *
      * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. (required)
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
@@ -4538,7 +5179,7 @@ class LoyaltiesApi
     /**
      * Operation exportLoyaltyCardTransactions1Async
      *
-     * Export Loyalty Card Transactions
+     * Export Loyalty Card Transactions with campaign ID
      *
      * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. (required)
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
@@ -4561,7 +5202,7 @@ class LoyaltiesApi
     /**
      * Operation exportLoyaltyCardTransactions1AsyncWithHttpInfo
      *
-     * Export Loyalty Card Transactions
+     * Export Loyalty Card Transactions with campaign ID
      *
      * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to export. (required)
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to export transaction data for. (required)
@@ -5954,7 +6595,7 @@ class LoyaltiesApi
     /**
      * Operation getMember1
      *
-     * Get Member
+     * Get Member with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId Unique code that identifies the loyalty card. (required)
@@ -5973,7 +6614,7 @@ class LoyaltiesApi
     /**
      * Operation getMember1WithHttpInfo
      *
-     * Get Member
+     * Get Member with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId Unique code that identifies the loyalty card. (required)
@@ -6074,7 +6715,7 @@ class LoyaltiesApi
     /**
      * Operation getMember1Async
      *
-     * Get Member
+     * Get Member with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId Unique code that identifies the loyalty card. (required)
@@ -6096,7 +6737,7 @@ class LoyaltiesApi
     /**
      * Operation getMember1AsyncWithHttpInfo
      *
-     * Get Member
+     * Get Member with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId Unique code that identifies the loyalty card. (required)
@@ -6267,7 +6908,7 @@ class LoyaltiesApi
     /**
      * Operation getRewardAssignment1
      *
-     * Get Reward Assignment
+     * Get Campaign Reward Assignments
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId Unique reward assignment ID. (required)
@@ -6286,7 +6927,7 @@ class LoyaltiesApi
     /**
      * Operation getRewardAssignment1WithHttpInfo
      *
-     * Get Reward Assignment
+     * Get Campaign Reward Assignments
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId Unique reward assignment ID. (required)
@@ -6387,7 +7028,7 @@ class LoyaltiesApi
     /**
      * Operation getRewardAssignment1Async
      *
-     * Get Reward Assignment
+     * Get Campaign Reward Assignments
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId Unique reward assignment ID. (required)
@@ -6409,7 +7050,7 @@ class LoyaltiesApi
     /**
      * Operation getRewardAssignment1AsyncWithHttpInfo
      *
-     * Get Reward Assignment
+     * Get Campaign Reward Assignments
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId Unique reward assignment ID. (required)
@@ -6580,7 +7221,7 @@ class LoyaltiesApi
     /**
      * Operation getRewardAssignment2
      *
-     * Get Reward Assignment
+     * Get Campaign Reward Assignment
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId A unique reward assignment ID. (required)
@@ -6599,7 +7240,7 @@ class LoyaltiesApi
     /**
      * Operation getRewardAssignment2WithHttpInfo
      *
-     * Get Reward Assignment
+     * Get Campaign Reward Assignment
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId A unique reward assignment ID. (required)
@@ -6700,7 +7341,7 @@ class LoyaltiesApi
     /**
      * Operation getRewardAssignment2Async
      *
-     * Get Reward Assignment
+     * Get Campaign Reward Assignment
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId A unique reward assignment ID. (required)
@@ -6722,7 +7363,7 @@ class LoyaltiesApi
     /**
      * Operation getRewardAssignment2AsyncWithHttpInfo
      *
-     * Get Reward Assignment
+     * Get Campaign Reward Assignment
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId A unique reward assignment ID. (required)
@@ -7898,6 +8539,365 @@ class LoyaltiesApi
     }
 
     /**
+     * Operation listLoyaltyCampaignTransactions
+     *
+     * List Loyalty Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
+     * @param  ParametersFiltersListCampaignTransactions $filters Filters for listing responses. The id filter denotes the unique transaction identifier. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\LoyaltiesTransactionsListResponseBody
+     */
+    public function listLoyaltyCampaignTransactions($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listLoyaltyCampaignTransactions'][0])
+    {
+        list($response) = $this->listLoyaltyCampaignTransactionsWithHttpInfo($campaignId, $limit, $order, $startingAfterId, $filters, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation listLoyaltyCampaignTransactionsWithHttpInfo
+     *
+     * List Loyalty Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
+     * @param  ParametersFiltersListCampaignTransactions $filters Filters for listing responses. The id filter denotes the unique transaction identifier. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\LoyaltiesTransactionsListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listLoyaltyCampaignTransactionsWithHttpInfo($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listLoyaltyCampaignTransactions'][0])
+    {
+        $request = $this->listLoyaltyCampaignTransactionsRequest($campaignId, $limit, $order, $startingAfterId, $filters, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\LoyaltiesTransactionsListResponseBody' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\LoyaltiesTransactionsListResponseBody' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\LoyaltiesTransactionsListResponseBody', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\LoyaltiesTransactionsListResponseBody';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\LoyaltiesTransactionsListResponseBody',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listLoyaltyCampaignTransactionsAsync
+     *
+     * List Loyalty Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
+     * @param  ParametersFiltersListCampaignTransactions $filters Filters for listing responses. The id filter denotes the unique transaction identifier. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listLoyaltyCampaignTransactionsAsync($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listLoyaltyCampaignTransactions'][0])
+    {
+        return $this->listLoyaltyCampaignTransactionsAsyncWithHttpInfo($campaignId, $limit, $order, $startingAfterId, $filters, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listLoyaltyCampaignTransactionsAsyncWithHttpInfo
+     *
+     * List Loyalty Campaign Transactions
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
+     * @param  ParametersFiltersListCampaignTransactions $filters Filters for listing responses. The id filter denotes the unique transaction identifier. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listLoyaltyCampaignTransactionsAsyncWithHttpInfo($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listLoyaltyCampaignTransactions'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\LoyaltiesTransactionsListResponseBody';
+        $request = $this->listLoyaltyCampaignTransactionsRequest($campaignId, $limit, $order, $startingAfterId, $filters, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listLoyaltyCampaignTransactions'
+     *
+     * @param  string $campaignId You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value. (required)
+     * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
+     * @param  ParameterOrderListTransactions $order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
+     * @param  string $startingAfterId A cursor for pagination. It retrieves the transactions starting after a transaction with the given ID. (optional)
+     * @param  ParametersFiltersListCampaignTransactions $filters Filters for listing responses. The id filter denotes the unique transaction identifier. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listLoyaltyCampaignTransactions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listLoyaltyCampaignTransactionsRequest($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listLoyaltyCampaignTransactions'][0])
+    {
+
+        // verify the required parameter 'campaignId' is set
+        if ($campaignId === null || (is_array($campaignId) && count($campaignId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $campaignId when calling listLoyaltyCampaignTransactions'
+            );
+        }
+
+        if ($limit !== null && $limit > 100) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling LoyaltiesApi.listLoyaltyCampaignTransactions, must be smaller than or equal to 100.');
+        }
+        if ($limit !== null && $limit < 1) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling LoyaltiesApi.listLoyaltyCampaignTransactions, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+
+        $resourcePath = '/v1/loyalties/{campaignId}/transactions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $order,
+            'order', // param base name
+            'ParameterOrderListTransactions', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $startingAfterId,
+            'starting_after_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $filters,
+            'filters', // param base name
+            'object', // openApiType
+            'deepObject', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($campaignId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'campaignId' . '}',
+                ObjectSerializer::toPathValue($campaignId),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Id');
+        if ($apiKey !== null) {
+            $headers['X-App-Id'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-App-Token');
+        if ($apiKey !== null) {
+            $headers['X-App-Token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation listLoyaltyCardTransactions
      *
      * List Loyalty Card Transactions
@@ -8244,7 +9244,7 @@ class LoyaltiesApi
     /**
      * Operation listLoyaltyCardTransactions1
      *
-     * List Loyalty Card Transactions
+     * List Loyalty Card Transactions with campaign ID
      *
      * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
@@ -8266,7 +9266,7 @@ class LoyaltiesApi
     /**
      * Operation listLoyaltyCardTransactions1WithHttpInfo
      *
-     * List Loyalty Card Transactions
+     * List Loyalty Card Transactions with campaign ID
      *
      * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
@@ -8370,7 +9370,7 @@ class LoyaltiesApi
     /**
      * Operation listLoyaltyCardTransactions1Async
      *
-     * List Loyalty Card Transactions
+     * List Loyalty Card Transactions with campaign ID
      *
      * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
@@ -8395,7 +9395,7 @@ class LoyaltiesApi
     /**
      * Operation listLoyaltyCardTransactions1AsyncWithHttpInfo
      *
-     * List Loyalty Card Transactions
+     * List Loyalty Card Transactions with campaign ID
      *
      * @param  string $campaignId A unique identifier of the loyalty campaign containing the voucher whose transactions you would like to return. (required)
      * @param  string $memberId A unique code identifying the loyalty card that you are looking to retrieve transaction data for. (required)
@@ -10279,7 +11279,7 @@ class LoyaltiesApi
     /**
      * Operation listMemberActivity1
      *
-     * List Member Activity
+     * List Member Activity with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId A code that identifies the loyalty card. (required)
@@ -10301,7 +11301,7 @@ class LoyaltiesApi
     /**
      * Operation listMemberActivity1WithHttpInfo
      *
-     * List Member Activity
+     * List Member Activity with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId A code that identifies the loyalty card. (required)
@@ -10405,7 +11405,7 @@ class LoyaltiesApi
     /**
      * Operation listMemberActivity1Async
      *
-     * List Member Activity
+     * List Member Activity with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId A code that identifies the loyalty card. (required)
@@ -10430,7 +11430,7 @@ class LoyaltiesApi
     /**
      * Operation listMemberActivity1AsyncWithHttpInfo
      *
-     * List Member Activity
+     * List Member Activity with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId A code that identifies the loyalty card. (required)
@@ -11280,7 +12280,7 @@ class LoyaltiesApi
     /**
      * Operation listMemberPendingPoints1
      *
-     * List Member Pending Points
+     * List Member Pending Points with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
@@ -11302,7 +12302,7 @@ class LoyaltiesApi
     /**
      * Operation listMemberPendingPoints1WithHttpInfo
      *
-     * List Member Pending Points
+     * List Member Pending Points with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
@@ -11406,7 +12406,7 @@ class LoyaltiesApi
     /**
      * Operation listMemberPendingPoints1Async
      *
-     * List Member Pending Points
+     * List Member Pending Points with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
@@ -11431,7 +12431,7 @@ class LoyaltiesApi
     /**
      * Operation listMemberPendingPoints1AsyncWithHttpInfo
      *
-     * List Member Pending Points
+     * List Member Pending Points with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId Unique loyalty card code assigned to a particular customer. (required)
@@ -12732,7 +13732,7 @@ class LoyaltiesApi
     /**
      * Operation listRewardAssignments1
      *
-     * List Reward Assignments
+     * List Reward Assignments with campaign ID
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
@@ -12753,7 +13753,7 @@ class LoyaltiesApi
     /**
      * Operation listRewardAssignments1WithHttpInfo
      *
-     * List Reward Assignments
+     * List Reward Assignments with campaign ID
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
@@ -12856,7 +13856,7 @@ class LoyaltiesApi
     /**
      * Operation listRewardAssignments1Async
      *
-     * List Reward Assignments
+     * List Reward Assignments with campaign ID
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
@@ -12880,7 +13880,7 @@ class LoyaltiesApi
     /**
      * Operation listRewardAssignments1AsyncWithHttpInfo
      *
-     * List Reward Assignments
+     * List Reward Assignments with campaign ID
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
@@ -13082,7 +14082,7 @@ class LoyaltiesApi
     /**
      * Operation listRewardAssignments2
      *
-     * List Reward Assignments
+     * List Campaign Rewards
      *
      * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
@@ -13103,7 +14103,7 @@ class LoyaltiesApi
     /**
      * Operation listRewardAssignments2WithHttpInfo
      *
-     * List Reward Assignments
+     * List Campaign Rewards
      *
      * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
@@ -13206,7 +14206,7 @@ class LoyaltiesApi
     /**
      * Operation listRewardAssignments2Async
      *
-     * List Reward Assignments
+     * List Campaign Rewards
      *
      * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
@@ -13230,7 +14230,7 @@ class LoyaltiesApi
     /**
      * Operation listRewardAssignments2AsyncWithHttpInfo
      *
-     * List Reward Assignments
+     * List Campaign Rewards
      *
      * @param  string $campaignId Unique campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
@@ -13738,7 +14738,7 @@ class LoyaltiesApi
     /**
      * Operation redeemReward1
      *
-     * Redeem Reward
+     * Redeem Reward with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId A code that identifies the loyalty card. (required)
@@ -13758,7 +14758,7 @@ class LoyaltiesApi
     /**
      * Operation redeemReward1WithHttpInfo
      *
-     * Redeem Reward
+     * Redeem Reward with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId A code that identifies the loyalty card. (required)
@@ -13860,7 +14860,7 @@ class LoyaltiesApi
     /**
      * Operation redeemReward1Async
      *
-     * Redeem Reward
+     * Redeem Reward with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId A code that identifies the loyalty card. (required)
@@ -13883,7 +14883,7 @@ class LoyaltiesApi
     /**
      * Operation redeemReward1AsyncWithHttpInfo
      *
-     * Redeem Reward
+     * Redeem Reward with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId A code that identifies the loyalty card. (required)
@@ -14716,7 +15716,7 @@ class LoyaltiesApi
     /**
      * Operation updateLoyaltyCardBalance
      *
-     * Add or Remove Loyalty Card Balance
+     * Adjust Loyalty Card Balance
      *
      * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism. (optional)
@@ -14735,7 +15735,7 @@ class LoyaltiesApi
     /**
      * Operation updateLoyaltyCardBalanceWithHttpInfo
      *
-     * Add or Remove Loyalty Card Balance
+     * Adjust Loyalty Card Balance
      *
      * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism. (optional)
@@ -14836,7 +15836,7 @@ class LoyaltiesApi
     /**
      * Operation updateLoyaltyCardBalanceAsync
      *
-     * Add or Remove Loyalty Card Balance
+     * Adjust Loyalty Card Balance
      *
      * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism. (optional)
@@ -14858,7 +15858,7 @@ class LoyaltiesApi
     /**
      * Operation updateLoyaltyCardBalanceAsyncWithHttpInfo
      *
-     * Add or Remove Loyalty Card Balance
+     * Adjust Loyalty Card Balance
      *
      * @param  string $memberId Unique loyalty card assigned to a particular customer. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateRequestBody $loyaltiesMembersBalanceUpdateRequestBody Specify the point adjustment along with the expiration mechanism. (optional)
@@ -15022,7 +16022,7 @@ class LoyaltiesApi
     /**
      * Operation updateLoyaltyCardBalance1
      *
-     * Add or Remove Loyalty Card Balance
+     * Adjust Loyalty Card Balance with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId A code that identifies the loyalty card. (required)
@@ -15042,7 +16042,7 @@ class LoyaltiesApi
     /**
      * Operation updateLoyaltyCardBalance1WithHttpInfo
      *
-     * Add or Remove Loyalty Card Balance
+     * Adjust Loyalty Card Balance with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId A code that identifies the loyalty card. (required)
@@ -15144,7 +16144,7 @@ class LoyaltiesApi
     /**
      * Operation updateLoyaltyCardBalance1Async
      *
-     * Add or Remove Loyalty Card Balance
+     * Adjust Loyalty Card Balance with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId A code that identifies the loyalty card. (required)
@@ -15167,7 +16167,7 @@ class LoyaltiesApi
     /**
      * Operation updateLoyaltyCardBalance1AsyncWithHttpInfo
      *
-     * Add or Remove Loyalty Card Balance
+     * Adjust Loyalty Card Balance with campaign ID
      *
      * @param  string $campaignId Unique campaign ID. (required)
      * @param  string $memberId A code that identifies the loyalty card. (required)
@@ -15654,7 +16654,7 @@ class LoyaltiesApi
     /**
      * Operation updateRewardAssignment1
      *
-     * Update Reward Assignment
+     * Update Campaign Reward Assignment
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId A unique reward assignment ID. (required)
@@ -15674,7 +16674,7 @@ class LoyaltiesApi
     /**
      * Operation updateRewardAssignment1WithHttpInfo
      *
-     * Update Reward Assignment
+     * Update Campaign Reward Assignment
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId A unique reward assignment ID. (required)
@@ -15776,7 +16776,7 @@ class LoyaltiesApi
     /**
      * Operation updateRewardAssignment1Async
      *
-     * Update Reward Assignment
+     * Update Campaign Reward Assignment
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId A unique reward assignment ID. (required)
@@ -15799,7 +16799,7 @@ class LoyaltiesApi
     /**
      * Operation updateRewardAssignment1AsyncWithHttpInfo
      *
-     * Update Reward Assignment
+     * Update Campaign Reward Assignment
      *
      * @param  string $campaignId The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. (required)
      * @param  string $assignmentId A unique reward assignment ID. (required)

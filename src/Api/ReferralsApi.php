@@ -447,7 +447,7 @@ class ReferralsApi
     /**
      * Operation referralsAddHolders1
      *
-     * Add Referral Code Holders
+     * Add Referral Code Holders with Campaign ID
      *
      * @param  string $campaignId Unique identifier of a referral program campaign. (required)
      * @param  string $memberId Unique referral code or its identifier. (required)
@@ -467,7 +467,7 @@ class ReferralsApi
     /**
      * Operation referralsAddHolders1WithHttpInfo
      *
-     * Add Referral Code Holders
+     * Add Referral Code Holders with Campaign ID
      *
      * @param  string $campaignId Unique identifier of a referral program campaign. (required)
      * @param  string $memberId Unique referral code or its identifier. (required)
@@ -569,7 +569,7 @@ class ReferralsApi
     /**
      * Operation referralsAddHolders1Async
      *
-     * Add Referral Code Holders
+     * Add Referral Code Holders with Campaign ID
      *
      * @param  string $campaignId Unique identifier of a referral program campaign. (required)
      * @param  string $memberId Unique referral code or its identifier. (required)
@@ -592,7 +592,7 @@ class ReferralsApi
     /**
      * Operation referralsAddHolders1AsyncWithHttpInfo
      *
-     * Add Referral Code Holders
+     * Add Referral Code Holders with Campaign ID
      *
      * @param  string $campaignId Unique identifier of a referral program campaign. (required)
      * @param  string $memberId Unique referral code or its identifier. (required)
@@ -773,7 +773,7 @@ class ReferralsApi
     /**
      * Operation referralsCodeHolders
      *
-     * List Referral Code Holders
+     * List Referral Code Holders with campaign ID
      *
      * @param  string $campaignId Unique identifier of a referral program campaign. (required)
      * @param  string $memberId Unique referral code or its identifier. (required)
@@ -796,7 +796,7 @@ class ReferralsApi
     /**
      * Operation referralsCodeHoldersWithHttpInfo
      *
-     * List Referral Code Holders
+     * List Referral Code Holders with campaign ID
      *
      * @param  string $campaignId Unique identifier of a referral program campaign. (required)
      * @param  string $memberId Unique referral code or its identifier. (required)
@@ -901,7 +901,7 @@ class ReferralsApi
     /**
      * Operation referralsCodeHoldersAsync
      *
-     * List Referral Code Holders
+     * List Referral Code Holders with campaign ID
      *
      * @param  string $campaignId Unique identifier of a referral program campaign. (required)
      * @param  string $memberId Unique referral code or its identifier. (required)
@@ -927,7 +927,7 @@ class ReferralsApi
     /**
      * Operation referralsCodeHoldersAsyncWithHttpInfo
      *
-     * List Referral Code Holders
+     * List Referral Code Holders with campaign ID
      *
      * @param  string $campaignId Unique identifier of a referral program campaign. (required)
      * @param  string $memberId Unique referral code or its identifier. (required)
@@ -1770,7 +1770,7 @@ class ReferralsApi
     /**
      * Operation referralsRemoveHolder1
      *
-     * Remove Referral Card Holder
+     * Remove Referral Card Holder with campaign ID
      *
      * @param  string $campaignId Unique identifier of a referral program campaign. (required)
      * @param  string $memberId Unique referral code or its identifier. (required)
@@ -1789,7 +1789,7 @@ class ReferralsApi
     /**
      * Operation referralsRemoveHolder1WithHttpInfo
      *
-     * Remove Referral Card Holder
+     * Remove Referral Card Holder with campaign ID
      *
      * @param  string $campaignId Unique identifier of a referral program campaign. (required)
      * @param  string $memberId Unique referral code or its identifier. (required)
@@ -1851,7 +1851,7 @@ class ReferralsApi
     /**
      * Operation referralsRemoveHolder1Async
      *
-     * Remove Referral Card Holder
+     * Remove Referral Card Holder with campaign ID
      *
      * @param  string $campaignId Unique identifier of a referral program campaign. (required)
      * @param  string $memberId Unique referral code or its identifier. (required)
@@ -1874,7 +1874,7 @@ class ReferralsApi
     /**
      * Operation referralsRemoveHolder1AsyncWithHttpInfo
      *
-     * Remove Referral Card Holder
+     * Remove Referral Card Holder with campaign ID
      *
      * @param  string $campaignId Unique identifier of a referral program campaign. (required)
      * @param  string $memberId Unique referral code or its identifier. (required)

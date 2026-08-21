@@ -283,8 +283,8 @@ class CreatePublicationCampaign implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['count']) && ($this->container['count'] > 20)) {
-            $invalidProperties[] = "invalid value for 'count', must be smaller than or equal to 20.";
+        if (!is_null($this->container['count']) && ($this->container['count'] > 50)) {
+            $invalidProperties[] = "invalid value for 'count', must be smaller than or equal to 50.";
         }
 
         if (!is_null($this->container['count']) && ($this->container['count'] < 1)) {
@@ -370,8 +370,8 @@ class CreatePublicationCampaign implements ModelInterface, ArrayAccess, \JsonSer
             }
         }
 
-        if (!is_null($count) && ($count > 20)) {
-            throw new \InvalidArgumentException('invalid value for $count when calling CreatePublicationCampaign., must be smaller than or equal to 20.');
+        if (!is_null($count) && ($count > 50)) {
+            throw new \InvalidArgumentException('invalid value for $count when calling CreatePublicationCampaign., must be smaller than or equal to 50.');
         }
         if (!is_null($count) && ($count < 1)) {
             throw new \InvalidArgumentException('invalid value for $count when calling CreatePublicationCampaign., must be bigger than or equal to 1.');

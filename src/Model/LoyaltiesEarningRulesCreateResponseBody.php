@@ -76,6 +76,7 @@ class LoyaltiesEarningRulesCreateResponseBody implements ModelInterface, ArrayAc
         'validityDayOfWeek' => 'int[]',
         'validityHours' => '\OpenAPI\Client\Model\ValidityHours',
         'metadata' => 'object',
+        'expirationRules' => '\OpenAPI\Client\Model\EarningRuleExpirationRules',
         'validationRuleId' => 'string',
         'updatedAt' => '\DateTime',
         'active' => 'bool'
@@ -106,6 +107,7 @@ class LoyaltiesEarningRulesCreateResponseBody implements ModelInterface, ArrayAc
         'validityDayOfWeek' => null,
         'validityHours' => null,
         'metadata' => null,
+        'expirationRules' => null,
         'validationRuleId' => null,
         'updatedAt' => 'date-time',
         'active' => null
@@ -134,6 +136,7 @@ class LoyaltiesEarningRulesCreateResponseBody implements ModelInterface, ArrayAc
 		'validityDayOfWeek' => true,
 		'validityHours' => false,
 		'metadata' => true,
+		'expirationRules' => false,
 		'validationRuleId' => true,
 		'updatedAt' => true,
 		'active' => true
@@ -242,6 +245,7 @@ class LoyaltiesEarningRulesCreateResponseBody implements ModelInterface, ArrayAc
         'validityDayOfWeek' => 'validity_day_of_week',
         'validityHours' => 'validity_hours',
         'metadata' => 'metadata',
+        'expirationRules' => 'expiration_rules',
         'validationRuleId' => 'validation_rule_id',
         'updatedAt' => 'updated_at',
         'active' => 'active'
@@ -270,6 +274,7 @@ class LoyaltiesEarningRulesCreateResponseBody implements ModelInterface, ArrayAc
         'validityDayOfWeek' => 'setValidityDayOfWeek',
         'validityHours' => 'setValidityHours',
         'metadata' => 'setMetadata',
+        'expirationRules' => 'setExpirationRules',
         'validationRuleId' => 'setValidationRuleId',
         'updatedAt' => 'setUpdatedAt',
         'active' => 'setActive'
@@ -298,6 +303,7 @@ class LoyaltiesEarningRulesCreateResponseBody implements ModelInterface, ArrayAc
         'validityDayOfWeek' => 'getValidityDayOfWeek',
         'validityHours' => 'getValidityHours',
         'metadata' => 'getMetadata',
+        'expirationRules' => 'getExpirationRules',
         'validationRuleId' => 'getValidationRuleId',
         'updatedAt' => 'getUpdatedAt',
         'active' => 'getActive'
@@ -415,6 +421,7 @@ class LoyaltiesEarningRulesCreateResponseBody implements ModelInterface, ArrayAc
         $this->setIfExists('validityDayOfWeek', $data ?? [], null);
         $this->setIfExists('validityHours', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('expirationRules', $data ?? [], null);
         $this->setIfExists('validationRuleId', $data ?? [], null);
         $this->setIfExists('updatedAt', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
@@ -1050,6 +1057,33 @@ class LoyaltiesEarningRulesCreateResponseBody implements ModelInterface, ArrayAc
             }
         }
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets expirationRules
+     *
+     * @return \OpenAPI\Client\Model\EarningRuleExpirationRules|null
+     */
+    public function getExpirationRules()
+    {
+        return $this->container['expirationRules'];
+    }
+
+    /**
+     * Sets expirationRules
+     *
+     * @param \OpenAPI\Client\Model\EarningRuleExpirationRules|null $expirationRules expirationRules
+     *
+     * @return self
+     */
+    public function setExpirationRules($expirationRules)
+    {
+        if (is_null($expirationRules)) {
+            throw new \InvalidArgumentException('non-nullable expirationRules cannot be null');
+        }
+        $this->container['expirationRules'] = $expirationRules;
 
         return $this;
     }

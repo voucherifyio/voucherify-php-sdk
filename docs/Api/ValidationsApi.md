@@ -15,7 +15,7 @@ validateStackedDiscounts($validationsValidateRequestBody): \OpenAPI\Client\Model
 
 Validate Stackable Discounts
 
-Verify redeemables provided in the request. This method is designed for server side integration which means that it is accessible only through private keys.
+Verify redeemables provided in the request. This method is designed for server side integration which means that it is accessible only through private keys. API keys with a Merchant role cant use this endpoint.
 
 ### Example
 
@@ -41,7 +41,7 @@ $apiInstance = new OpenAPI\Client\Api\ValidationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$validationsValidateRequestBody = {"customer":{"source_id":"sample_customer","metadata":{"key":"value"}},"options":{"expand":["order","redeemable","category"]},"redeemables":[{"object":"voucher","id":"voucher-code"}],"session":{"type":"LOCK"},"order":{"amount":55000,"status":"PAID","items":[{"quantity":2,"price":20000,"source_id":"sample product1","related_object":"product","product":{"metadata":{"key":"value"}}},{"quantity":1,"price":15000,"source_id":"sample product2","related_object":"product","product":{"metadata":{"key":"value"}}}],"metadata":{"key":"value"}}}; // \OpenAPI\Client\Model\ValidationsValidateRequestBody
+$validationsValidateRequestBody = {"redeemables":[{"object":"voucher","id":"BLCKFRDY"}],"order":{"amount":5500}}; // \OpenAPI\Client\Model\ValidationsValidateRequestBody
 
 try {
     $result = $apiInstance->validateStackedDiscounts($validationsValidateRequestBody);

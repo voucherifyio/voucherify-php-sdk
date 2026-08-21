@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ParameterFiltersListCampaignsCampaignStatus Class Doc Comment
  *
  * @category Class
- * @description Type of the campaign. Allowed values: &#x60;DONE&#x60;, &#x60;IN_PROGRESS&#x60;, &#x60;DRAFT&#x60;, &#x60;FAILED&#x60; &#x60;MODIFYING&#x60;
+ * @description Status of the campaign. Allowed values: &#x60;DONE&#x60;, &#x60;IN_PROGRESS&#x60;, &#x60;DRAFT&#x60;, &#x60;FAILED&#x60; &#x60;MODIFYING&#x60;
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -79,7 +79,7 @@ class ParameterFiltersListCampaignsCampaignStatus implements ModelInterface, Arr
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'conditions' => false
+        'conditions' => true
     ];
 
     /**
@@ -311,7 +311,14 @@ class ParameterFiltersListCampaignsCampaignStatus implements ModelInterface, Arr
     public function setConditions($conditions)
     {
         if (is_null($conditions)) {
-            throw new \InvalidArgumentException('non-nullable conditions cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'conditions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('conditions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['conditions'] = $conditions;
 

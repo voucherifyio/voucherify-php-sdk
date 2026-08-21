@@ -337,6 +337,7 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
     public const EFFECT_ADD_MISSING_ITEMS = 'ADD_MISSING_ITEMS';
     public const EFFECT_ADD_NEW_ITEMS = 'ADD_NEW_ITEMS';
     public const EFFECT_ADD_MANY_ITEMS = 'ADD_MANY_ITEMS';
+    public const EFFECT_ADD_SAME_ITEMS = 'ADD_SAME_ITEMS';
 
     /**
      * Gets allowable values of the enum
@@ -369,6 +370,7 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
             self::EFFECT_ADD_MISSING_ITEMS,
             self::EFFECT_ADD_NEW_ITEMS,
             self::EFFECT_ADD_MANY_ITEMS,
+            self::EFFECT_ADD_SAME_ITEMS,
         ];
     }
 
@@ -557,7 +559,7 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets amountOffFormula
      *
-     * @param string|null $amountOffFormula amountOffFormula
+     * @param string|null $amountOffFormula Formula used to dynamically calculate the discount.
      *
      * @return self
      */
@@ -737,7 +739,7 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets unitOffFormula
      *
-     * @param string|null $unitOffFormula Formula used to calculate the number of units.
+     * @param string|null $unitOffFormula Formula used to dynamically calculate the number of units.
      *
      * @return self
      */
@@ -934,7 +936,7 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets percentOffFormula
      *
-     * @param string|null $percentOffFormula percentOffFormula
+     * @param string|null $percentOffFormula Formula used to dynamically calculate the discount.
      *
      * @return self
      */
@@ -1036,7 +1038,7 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fixedAmountFormula
      *
-     * @param string|null $fixedAmountFormula fixedAmountFormula
+     * @param string|null $fixedAmountFormula Formula used to dynamically calculate the discount.
      *
      * @return self
      */
