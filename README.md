@@ -138,7 +138,7 @@ This SDK is generated automatically from our [OpenAPI specification](https://git
 
 ## 🏷️ Link tags
 
-[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/tree/sdk-php-5.1.0).
+[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/tree/sdk-php-5.1.1).
 
 ## 🔐 Authorization
 
