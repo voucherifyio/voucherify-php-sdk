@@ -183,6 +183,8 @@ Authorization schemes defined for the API.
 
 ## 📅 Changelog
 
+- **2026-08-26** - `5.1.1`
+  - Fixed: `exchange_ratio` in COIN reward schemas typed as `float` (was `integer`/`string` in OpenAPI). The API returns fractional values (e.g. `0.01` for pay-with-points). Fixes deserialization errors on `list_redemptions` and related endpoints.
 - **2026-08-10** - `5.1.0`
   - Fixed: `ValidationsRedeemableSkippedResultDetails` was missing `no_effect` (`ValidationsRedeemableSkippedResultDetails::KEY_NO_EFFECT`), so deserializing a skipped redeemable with `"key": "no_effect"` threw `\InvalidArgumentException` (entire validations/redemptions response failed to parse).
   - This affects `POST /v1/validations` and stackable `POST /v1/redemptions` when `redeemables_no_effect_rule` is `SKIP` (globally or via `no_effect_skip_categories`).
