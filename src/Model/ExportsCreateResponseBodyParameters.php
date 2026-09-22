@@ -273,6 +273,10 @@ class ExportsCreateResponseBodyParameters implements ModelInterface, ArrayAccess
     public const ORDER_STATUS2 = 'status';
     public const ORDER_EXPIRES_AT = '-expires_at';
     public const ORDER_EXPIRES_AT2 = 'expires_at';
+    public const ORDER_PRODUCT_ID = '-product_id';
+    public const ORDER_PRODUCT_ID2 = 'product_id';
+    public const ORDER_SKU = '-sku';
+    public const ORDER_SKU2 = 'sku';
     public const FIELDS_CODE = 'code';
     public const FIELDS_VOUCHER_TYPE = 'voucher_type';
     public const FIELDS_VALUE = 'value';
@@ -362,6 +366,12 @@ class ExportsCreateResponseBodyParameters implements ModelInterface, ArrayAccess
     public const FIELDS_BALANCE = 'balance';
     public const FIELDS_RELATED_TRANSACTION_ID = 'related_transaction_id';
     public const FIELDS_DETAILS = 'details';
+    public const FIELDS_PRICE = 'price';
+    public const FIELDS_IMAGE_URL = 'image_url';
+    public const FIELDS_ATTRIBUTES = 'attributes';
+    public const FIELDS_SKU = 'sku';
+    public const FIELDS_PRODUCT_ID = 'product_id';
+    public const FIELDS_CURRENCY = 'currency';
 
     /**
      * Gets allowable values of the enum
@@ -397,6 +407,10 @@ class ExportsCreateResponseBodyParameters implements ModelInterface, ArrayAccess
             self::ORDER_STATUS2,
             self::ORDER_EXPIRES_AT,
             self::ORDER_EXPIRES_AT2,
+            self::ORDER_PRODUCT_ID,
+            self::ORDER_PRODUCT_ID2,
+            self::ORDER_SKU,
+            self::ORDER_SKU2,
         ];
     }
 
@@ -497,6 +511,12 @@ class ExportsCreateResponseBodyParameters implements ModelInterface, ArrayAccess
             self::FIELDS_BALANCE,
             self::FIELDS_RELATED_TRANSACTION_ID,
             self::FIELDS_DETAILS,
+            self::FIELDS_PRICE,
+            self::FIELDS_IMAGE_URL,
+            self::FIELDS_ATTRIBUTES,
+            self::FIELDS_SKU,
+            self::FIELDS_PRODUCT_ID,
+            self::FIELDS_CURRENCY,
         ];
     }
 
@@ -629,7 +649,7 @@ class ExportsCreateResponseBodyParameters implements ModelInterface, ArrayAccess
     /**
      * Sets fields
      *
-     * @param string[]|null $fields Array of strings containing the data in the export. These fields define the headers in the CSV file.
+     * @param string[]|null $fields Array of strings containing the data in the export. These fields define the headers in the CSV file. and Array of strings containing the data in the export. These fields define the headers in the CSV file. The `metadata` field expands into one CSV column per metadata property. You can also pass specific properties as `metadata.<property_name>`.
      *
      * @return self
      */
@@ -672,7 +692,7 @@ class ExportsCreateResponseBodyParameters implements ModelInterface, ArrayAccess
     /**
      * Sets filters
      *
-     * @param object|null $filters Allowed additional properties must start with \"metadata.\" or \"redemption.\" and Allowed additional properties must start with \"metadata.\" and Allowed additional properties must start with \"metadata.\" or \"address.\" or \"summary.\" or \"loyalty.\" or \"loyalty_tier.\" or \"loyalty_points.\" or \"system_metadata.\"
+     * @param object|null $filters Allowed additional properties must start with \"metadata.\" or \"redemption.\" and Allowed additional properties must start with \"metadata.\" and Allowed additional properties must start with \"metadata.\" or \"address.\" or \"summary.\" or \"loyalty.\" or \"loyalty_tier.\" or \"loyalty_points.\" or \"system_metadata.\" and Allowed additional properties must start with \"metadata.\" or \"attributes.\"
      *
      * @return self
      */
