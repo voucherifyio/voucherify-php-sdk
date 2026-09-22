@@ -103,7 +103,7 @@ class ValidationRule implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => true,
 		'rules' => false,
 		'bundleRules' => false,
-		'error' => false,
+		'error' => true,
 		'applicableTo' => true,
 		'type' => true,
 		'contextType' => true,
@@ -633,7 +633,14 @@ class ValidationRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setError($error)
     {
         if (is_null($error)) {
-            throw new \InvalidArgumentException('non-nullable error cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'error');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('error', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['error'] = $error;
 

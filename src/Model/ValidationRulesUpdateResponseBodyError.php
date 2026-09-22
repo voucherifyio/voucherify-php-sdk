@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidationRuleError
+ * ValidationRulesUpdateResponseBodyError
  *
  * PHP version 8.1
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * ValidationRuleError Class Doc Comment
+ * ValidationRulesUpdateResponseBodyError Class Doc Comment
  *
  * @category Class
  * @description Contains the error message returned from API when validation / redemption fails to meet requirements of defined rules.
@@ -42,7 +42,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ValidationRuleError implements ModelInterface, ArrayAccess, \JsonSerializable
+class ValidationRulesUpdateResponseBodyError implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ValidationRuleError implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ValidationRuleError';
+    protected static $openAPIModelName = 'ValidationRulesUpdateResponseBodyError';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
