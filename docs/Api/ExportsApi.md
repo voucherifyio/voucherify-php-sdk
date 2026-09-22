@@ -19,7 +19,7 @@ createExport($exportsCreateRequestBody): \OpenAPI\Client\Model\ExportsCreateResp
 
 Create Export
 
-Create export object. The export can be any of the following types: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.   # Defaults If you only specify the object type in the request body without specifying the fields, the API will return the following fields per export object:   <Note> <Badge color blue>Date and time in the export API</Badge> The exported date and times are always provided in the UTC time zone. </Note> # Fetching particular data sets Using the parameters body parameter, you can narrow down which fields to export and how to filter the results. The fields are an array of strings containing the data that you would like to export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields: # Orders     # Vouchers        # Publications   # Redemptions    # Customers       # Points Expirations    # Gift Card Transactions    # Loyalty Card Transactions
+Create export object. The export can be any of the following types: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.   # Defaults If you only specify the object type in the request body without specifying the fields, the API will return the following fields per export object:   <Note> <Badge color blue>Date and time in the export API</Badge> The exported date and times are always provided in the UTC time zone. </Note> # Fetching particular data sets Using the parameters body parameter, you can narrow down which fields to export and how to filter the results. The fields are an array of strings containing the data that you would like to export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields: # Orders     # Vouchers        # Publications   # Redemptions    # Customers       # Points Expirations    # Gift Card Transactions    # Loyalty Card Transactions    # Products   # SKUs
 
 ### Example
 
@@ -45,7 +45,7 @@ $apiInstance = new OpenAPI\Client\Api\ExportsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$exportsCreateRequestBody = new \OpenAPI\Client\Model\ExportsCreateRequestBody(); // \OpenAPI\Client\Model\ExportsCreateRequestBody | Specify the details of the export that you would like to create.
+$exportsCreateRequestBody = {"exported_object":"product","parameters":{"order":"-created_at","fields":["id","name","price","image_url","source_id","attributes","created_at"],"filters":{"junction":"and","created_at":{"conditions":{"$after":["2024-01-01T00:00:00.000Z"]}}}}}; // \OpenAPI\Client\Model\ExportsCreateRequestBody | Specify the details of the export that you would like to create.
 
 try {
     $result = $apiInstance->createExport($exportsCreateRequestBody);
@@ -112,7 +112,7 @@ $apiInstance = new OpenAPI\Client\Api\ExportsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$exportId = 'exportId_example'; // string | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.
+$exportId = 'exportId_example'; // string | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.
 
 try {
     $apiInstance->deleteExport($exportId);
@@ -125,7 +125,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **exportId** | **string**| Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. | |
+| **exportId** | **string**| Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku. | |
 
 ### Return type
 
@@ -247,7 +247,7 @@ $apiInstance = new OpenAPI\Client\Api\ExportsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$exportId = 'exportId_example'; // string | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.
+$exportId = 'exportId_example'; // string | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku.
 
 try {
     $result = $apiInstance->getExport($exportId);
@@ -261,7 +261,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **exportId** | **string**| Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. | |
+| **exportId** | **string**| Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku. | |
 
 ### Return type
 
