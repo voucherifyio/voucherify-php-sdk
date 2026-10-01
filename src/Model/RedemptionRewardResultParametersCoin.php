@@ -59,7 +59,7 @@ class RedemptionRewardResultParametersCoin implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'exchangeRatio' => 'int',
+        'exchangeRatio' => 'float',
         'pointsRatio' => 'int'
     ];
 
@@ -301,7 +301,7 @@ class RedemptionRewardResultParametersCoin implements ModelInterface, ArrayAcces
     /**
      * Gets exchangeRatio
      *
-     * @return int|null
+     * @return float|null
      */
     public function getExchangeRatio()
     {
@@ -311,7 +311,7 @@ class RedemptionRewardResultParametersCoin implements ModelInterface, ArrayAcces
     /**
      * Sets exchangeRatio
      *
-     * @param int|null $exchangeRatio The cash equivalent of the points defined in the `points_ratio` property.
+     * @param float|null $exchangeRatio The cash equivalent of the points defined in the `points_ratio` property.
      *
      * @return self
      */

@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * RedemptionsRedeemRequestBodyOptions Class Doc Comment
  *
  * @category Class
- * @description Configure parameters returned in the response.
+ * @description Configure response expansion and the language of custom validation-rule error messages.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -59,7 +59,8 @@ class RedemptionsRedeemRequestBodyOptions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'expand' => 'string[]'
+        'expand' => 'string[]',
+        'language' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class RedemptionsRedeemRequestBodyOptions implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'expand' => null
+        'expand' => null,
+        'language' => null
     ];
 
     /**
@@ -79,7 +81,8 @@ class RedemptionsRedeemRequestBodyOptions implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'expand' => true
+        'expand' => true,
+		'language' => true
     ];
 
     /**
@@ -168,7 +171,8 @@ class RedemptionsRedeemRequestBodyOptions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'expand' => 'expand'
+        'expand' => 'expand',
+        'language' => 'language'
     ];
 
     /**
@@ -177,7 +181,8 @@ class RedemptionsRedeemRequestBodyOptions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'expand' => 'setExpand'
+        'expand' => 'setExpand',
+        'language' => 'setLanguage'
     ];
 
     /**
@@ -186,7 +191,8 @@ class RedemptionsRedeemRequestBodyOptions implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'expand' => 'getExpand'
+        'expand' => 'getExpand',
+        'language' => 'getLanguage'
     ];
 
     /**
@@ -266,6 +272,7 @@ class RedemptionsRedeemRequestBodyOptions implements ModelInterface, ArrayAccess
     public function __construct(?array $data = null)
     {
         $this->setIfExists('expand', $data ?? [], null);
+        $this->setIfExists('language', $data ?? [], null);
     }
 
     /**
@@ -294,6 +301,14 @@ class RedemptionsRedeemRequestBodyOptions implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['language']) && (mb_strlen($this->container['language']) > 100)) {
+            $invalidProperties[] = "invalid value for 'language', the character length must be smaller than or equal to 100.";
+        }
+
+        if (!is_null($this->container['language']) && !preg_match("/^[a-zA-Z]{2,3}(-[a-zA-Z]{2,4})?$/", $this->container['language'])) {
+            $invalidProperties[] = "invalid value for 'language', must be conform to the pattern /^[a-zA-Z]{2,3}(-[a-zA-Z]{2,4})?$/.";
+        }
 
         return $invalidProperties;
     }
@@ -349,6 +364,47 @@ class RedemptionsRedeemRequestBodyOptions implements ModelInterface, ArrayAccess
             );
         }
         $this->container['expand'] = $expand;
+
+        return $this;
+    }
+
+    /**
+     * Gets language
+     *
+     * @return string|null
+     */
+    public function getLanguage()
+    {
+        return $this->container['language'];
+    }
+
+    /**
+     * Sets language
+     *
+     * @param string|null $language Selects the language for the custom validation-rule error message. Returns the message in this language when a validation rule fails. Falls back to the Error Message Library default language when omitted or when the requested language has no message. Omits the custom error when no message can be resolved.
+     *
+     * @return self
+     */
+    public function setLanguage($language)
+    {
+        if (is_null($language)) {
+            array_push($this->openAPINullablesSetToNull, 'language');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('language', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($language) && (mb_strlen($language) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $language when calling RedemptionsRedeemRequestBodyOptions., must be smaller than or equal to 100.');
+        }
+        if (!is_null($language) && (!preg_match("/^[a-zA-Z]{2,3}(-[a-zA-Z]{2,4})?$/", $language))) {
+            throw new \InvalidArgumentException("invalid value for \$language when calling RedemptionsRedeemRequestBodyOptions., must conform to the pattern /^[a-zA-Z]{2,3}(-[a-zA-Z]{2,4})?$/.");
+        }
+
+        $this->container['language'] = $language;
 
         return $this;
     }

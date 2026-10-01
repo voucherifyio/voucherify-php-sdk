@@ -426,7 +426,7 @@ class ExportsApi
      *
      * Delete Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -443,7 +443,7 @@ class ExportsApi
      *
      * Delete Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -503,7 +503,7 @@ class ExportsApi
      *
      * Delete Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -524,7 +524,7 @@ class ExportsApi
      *
      * Delete Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -561,7 +561,7 @@ class ExportsApi
     /**
      * Create request for operation 'deleteExport'
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -973,7 +973,7 @@ class ExportsApi
      *
      * Get Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -991,7 +991,7 @@ class ExportsApi
      *
      * Get Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -1091,7 +1091,7 @@ class ExportsApi
      *
      * Get Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1112,7 +1112,7 @@ class ExportsApi
      *
      * Get Export
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1162,7 +1162,7 @@ class ExportsApi
     /**
      * Create request for operation 'getExport'
      *
-     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. (required)
+     * @param  string $exportId Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, voucher_transactions, product, or sku. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getExport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

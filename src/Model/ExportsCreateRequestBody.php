@@ -242,6 +242,8 @@ class ExportsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
     public const EXPORTED_OBJECT_ORDER = 'order';
     public const EXPORTED_OBJECT_POINTS_EXPIRATION = 'points_expiration';
     public const EXPORTED_OBJECT_VOUCHER_TRANSACTIONS = 'voucher_transactions';
+    public const EXPORTED_OBJECT_PRODUCT = 'product';
+    public const EXPORTED_OBJECT_SKU = 'sku';
 
     /**
      * Gets allowable values of the enum
@@ -258,6 +260,8 @@ class ExportsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
             self::EXPORTED_OBJECT_ORDER,
             self::EXPORTED_OBJECT_POINTS_EXPIRATION,
             self::EXPORTED_OBJECT_VOUCHER_TRANSACTIONS,
+            self::EXPORTED_OBJECT_PRODUCT,
+            self::EXPORTED_OBJECT_SKU,
         ];
     }
 

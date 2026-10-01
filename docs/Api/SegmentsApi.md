@@ -17,7 +17,7 @@ createSegment($segmentsCreateRequestBody): \OpenAPI\Client\Model\SegmentsCreateR
 
 Create Segment
 
-Create a customer segment.  🚧 Limit on static segments  There is a cap on the number of customers that you can assign to a static segment: **20,000**. If you would like to create a bigger segment, then you can use the unlimited auto-update or passive segment instead and use some customer metadata to build this segment.  🚧 Limit on Active and Passive segments  You can create a maximum of 100 passive and active segments.
+Create a customer segment. <Warning> <Badge color yellow>Limit on static segments</Badge> There is a cap on the number of customers that you can assign to a static segment: **20,000**. If you would like to create a bigger segment, then you can use the unlimited auto-update or passive segment instead and use some customer metadata to build this segment. </Warning> <Warning> <Badge color yellow>Limit on Active and Passive segments</Badge> You can create a maximum of 100 passive and active segments. </Warning>
 
 ### Example
 

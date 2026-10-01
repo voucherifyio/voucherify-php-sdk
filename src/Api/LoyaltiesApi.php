@@ -288,6 +288,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsActivateResponseBody
+     * @deprecated
      */
     public function activateMemberPendingPoints($memberId, $pendingPointsId, string $contentType = self::contentTypes['activateMemberPendingPoints'][0])
     {
@@ -307,6 +308,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsActivateResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function activateMemberPendingPointsWithHttpInfo($memberId, $pendingPointsId, string $contentType = self::contentTypes['activateMemberPendingPoints'][0])
     {
@@ -407,6 +409,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function activateMemberPendingPointsAsync($memberId, $pendingPointsId, string $contentType = self::contentTypes['activateMemberPendingPoints'][0])
     {
@@ -429,6 +432,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function activateMemberPendingPointsAsyncWithHttpInfo($memberId, $pendingPointsId, string $contentType = self::contentTypes['activateMemberPendingPoints'][0])
     {
@@ -480,6 +484,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function activateMemberPendingPointsRequest($memberId, $pendingPointsId, string $contentType = self::contentTypes['activateMemberPendingPoints'][0])
     {
@@ -601,6 +606,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersCreateResponseBody
+     * @deprecated
      */
     public function addMember($campaignId, $loyaltiesMembersCreateRequestBody = null, string $contentType = self::contentTypes['addMember'][0])
     {
@@ -620,6 +626,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function addMemberWithHttpInfo($campaignId, $loyaltiesMembersCreateRequestBody = null, string $contentType = self::contentTypes['addMember'][0])
     {
@@ -720,6 +727,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function addMemberAsync($campaignId, $loyaltiesMembersCreateRequestBody = null, string $contentType = self::contentTypes['addMember'][0])
     {
@@ -742,6 +750,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function addMemberAsyncWithHttpInfo($campaignId, $loyaltiesMembersCreateRequestBody = null, string $contentType = self::contentTypes['addMember'][0])
     {
@@ -793,6 +802,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function addMemberRequest($campaignId, $loyaltiesMembersCreateRequestBody = null, string $contentType = self::contentTypes['addMember'][0])
     {
@@ -908,6 +918,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceResponseBody
+     * @deprecated
      */
     public function adjustMemberPendingPoints($memberId, $pendingPointsId, $loyaltiesMembersPendingPointsBalanceRequestBody = null, string $contentType = self::contentTypes['adjustMemberPendingPoints'][0])
     {
@@ -928,6 +939,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsBalanceResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function adjustMemberPendingPointsWithHttpInfo($memberId, $pendingPointsId, $loyaltiesMembersPendingPointsBalanceRequestBody = null, string $contentType = self::contentTypes['adjustMemberPendingPoints'][0])
     {
@@ -1029,6 +1041,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function adjustMemberPendingPointsAsync($memberId, $pendingPointsId, $loyaltiesMembersPendingPointsBalanceRequestBody = null, string $contentType = self::contentTypes['adjustMemberPendingPoints'][0])
     {
@@ -1052,6 +1065,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function adjustMemberPendingPointsAsyncWithHttpInfo($memberId, $pendingPointsId, $loyaltiesMembersPendingPointsBalanceRequestBody = null, string $contentType = self::contentTypes['adjustMemberPendingPoints'][0])
     {
@@ -1104,6 +1118,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function adjustMemberPendingPointsRequest($memberId, $pendingPointsId, $loyaltiesMembersPendingPointsBalanceRequestBody = null, string $contentType = self::contentTypes['adjustMemberPendingPoints'][0])
     {
@@ -1233,6 +1248,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
+     * @deprecated
      */
     public function cancelMemberPendingPoints($memberId, $pendingPointsId, string $contentType = self::contentTypes['cancelMemberPendingPoints'][0])
     {
@@ -1251,6 +1267,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function cancelMemberPendingPointsWithHttpInfo($memberId, $pendingPointsId, string $contentType = self::contentTypes['cancelMemberPendingPoints'][0])
     {
@@ -1311,6 +1328,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function cancelMemberPendingPointsAsync($memberId, $pendingPointsId, string $contentType = self::contentTypes['cancelMemberPendingPoints'][0])
     {
@@ -1333,6 +1351,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function cancelMemberPendingPointsAsyncWithHttpInfo($memberId, $pendingPointsId, string $contentType = self::contentTypes['cancelMemberPendingPoints'][0])
     {
@@ -1371,6 +1390,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function cancelMemberPendingPointsRequest($memberId, $pendingPointsId, string $contentType = self::contentTypes['cancelMemberPendingPoints'][0])
     {
@@ -1492,6 +1512,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateResponseBody[]
+     * @deprecated
      */
     public function createEarningRule($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem = null, string $contentType = self::contentTypes['createEarningRule'][0])
     {
@@ -1511,6 +1532,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesEarningRulesCreateResponseBody[], HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function createEarningRuleWithHttpInfo($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem = null, string $contentType = self::contentTypes['createEarningRule'][0])
     {
@@ -1611,6 +1633,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function createEarningRuleAsync($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem = null, string $contentType = self::contentTypes['createEarningRule'][0])
     {
@@ -1633,6 +1656,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function createEarningRuleAsyncWithHttpInfo($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem = null, string $contentType = self::contentTypes['createEarningRule'][0])
     {
@@ -1684,6 +1708,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function createEarningRuleRequest($campaignId, $loyaltiesEarningRulesCreateRequestBodyItem = null, string $contentType = self::contentTypes['createEarningRule'][0])
     {
@@ -1798,6 +1823,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltyTier[]
+     * @deprecated
      */
     public function createInBulkLoyaltyTiers($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
     {
@@ -1817,6 +1843,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltyTier[], HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function createInBulkLoyaltyTiersWithHttpInfo($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
     {
@@ -1917,6 +1944,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function createInBulkLoyaltyTiersAsync($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
     {
@@ -1939,6 +1967,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function createInBulkLoyaltyTiersAsyncWithHttpInfo($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
     {
@@ -1990,6 +2019,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function createInBulkLoyaltyTiersRequest($campaignId, $loyaltiesTiersCreateInBulkRequestBodyItem = null, string $contentType = self::contentTypes['createInBulkLoyaltyTiers'][0])
     {
@@ -2103,6 +2133,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesCreateCampaignResponseBody
+     * @deprecated
      */
     public function createLoyaltyProgram($loyaltiesCreateCampaignRequestBody = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
     {
@@ -2121,6 +2152,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesCreateCampaignResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function createLoyaltyProgramWithHttpInfo($loyaltiesCreateCampaignRequestBody = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
     {
@@ -2220,6 +2252,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function createLoyaltyProgramAsync($loyaltiesCreateCampaignRequestBody = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
     {
@@ -2241,6 +2274,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function createLoyaltyProgramAsyncWithHttpInfo($loyaltiesCreateCampaignRequestBody = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
     {
@@ -2291,6 +2325,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function createLoyaltyProgramRequest($loyaltiesCreateCampaignRequestBody = null, string $contentType = self::contentTypes['createLoyaltyProgram'][0])
     {
@@ -2390,6 +2425,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBody
+     * @deprecated
      */
     public function createPointsExpirationExport($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
     {
@@ -2409,6 +2445,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesPointsExpirationExportCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function createPointsExpirationExportWithHttpInfo($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
     {
@@ -2509,6 +2546,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function createPointsExpirationExportAsync($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
     {
@@ -2531,6 +2569,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function createPointsExpirationExportAsyncWithHttpInfo($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
     {
@@ -2582,6 +2621,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function createPointsExpirationExportRequest($campaignId, $loyaltiesPointsExpirationExportCreateRequestBody = null, string $contentType = self::contentTypes['createPointsExpirationExport'][0])
     {
@@ -2696,6 +2736,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentResponseBody
+     * @deprecated
      */
     public function createRewardAssignment1($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
     {
@@ -2715,6 +2756,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesRewardsCreateAssignmentResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function createRewardAssignment1WithHttpInfo($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
     {
@@ -2815,6 +2857,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function createRewardAssignment1Async($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
     {
@@ -2837,6 +2880,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function createRewardAssignment1AsyncWithHttpInfo($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
     {
@@ -2888,6 +2932,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function createRewardAssignment1Request($campaignId, $loyaltiesRewardsCreateAssignmentItemRequestBody = null, string $contentType = self::contentTypes['createRewardAssignment1'][0])
     {
@@ -3002,6 +3047,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
+     * @deprecated
      */
     public function deleteEarningRule($campaignId, $earningRuleId, string $contentType = self::contentTypes['deleteEarningRule'][0])
     {
@@ -3020,6 +3066,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function deleteEarningRuleWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['deleteEarningRule'][0])
     {
@@ -3080,6 +3127,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function deleteEarningRuleAsync($campaignId, $earningRuleId, string $contentType = self::contentTypes['deleteEarningRule'][0])
     {
@@ -3102,6 +3150,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function deleteEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['deleteEarningRule'][0])
     {
@@ -3140,6 +3189,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function deleteEarningRuleRequest($campaignId, $earningRuleId, string $contentType = self::contentTypes['deleteEarningRule'][0])
     {
@@ -3261,6 +3311,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesDeleteResponseBody
+     * @deprecated
      */
     public function deleteLoyaltyProgram($campaignId, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
     {
@@ -3280,6 +3331,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesDeleteResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function deleteLoyaltyProgramWithHttpInfo($campaignId, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
     {
@@ -3380,6 +3432,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function deleteLoyaltyProgramAsync($campaignId, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
     {
@@ -3402,6 +3455,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function deleteLoyaltyProgramAsyncWithHttpInfo($campaignId, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
     {
@@ -3453,6 +3507,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function deleteLoyaltyProgramRequest($campaignId, $force = null, string $contentType = self::contentTypes['deleteLoyaltyProgram'][0])
     {
@@ -3569,6 +3624,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
+     * @deprecated
      */
     public function deleteRewardAssignment1($campaignId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
     {
@@ -3587,6 +3643,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function deleteRewardAssignment1WithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
     {
@@ -3647,6 +3704,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function deleteRewardAssignment1Async($campaignId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
     {
@@ -3669,6 +3727,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function deleteRewardAssignment1AsyncWithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
     {
@@ -3707,6 +3766,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function deleteRewardAssignment1Request($campaignId, $assignmentId, string $contentType = self::contentTypes['deleteRewardAssignment1'][0])
     {
@@ -3828,6 +3888,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBody
+     * @deprecated
      */
     public function disableEarningRule($campaignId, $earningRuleId, string $contentType = self::contentTypes['disableEarningRule'][0])
     {
@@ -3847,6 +3908,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesEarningRulesDisableResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function disableEarningRuleWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['disableEarningRule'][0])
     {
@@ -3947,6 +4009,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function disableEarningRuleAsync($campaignId, $earningRuleId, string $contentType = self::contentTypes['disableEarningRule'][0])
     {
@@ -3969,6 +4032,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function disableEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['disableEarningRule'][0])
     {
@@ -4020,6 +4084,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function disableEarningRuleRequest($campaignId, $earningRuleId, string $contentType = self::contentTypes['disableEarningRule'][0])
     {
@@ -4141,6 +4206,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBody
+     * @deprecated
      */
     public function enableEarningRule($campaignId, $earningRuleId, string $contentType = self::contentTypes['enableEarningRule'][0])
     {
@@ -4160,6 +4226,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesEarningRulesEnableResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function enableEarningRuleWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['enableEarningRule'][0])
     {
@@ -4260,6 +4327,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function enableEarningRuleAsync($campaignId, $earningRuleId, string $contentType = self::contentTypes['enableEarningRule'][0])
     {
@@ -4282,6 +4350,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function enableEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['enableEarningRule'][0])
     {
@@ -4333,6 +4402,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function enableEarningRuleRequest($campaignId, $earningRuleId, string $contentType = self::contentTypes['enableEarningRule'][0])
     {
@@ -4454,6 +4524,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody
+     * @deprecated
      */
     public function exportLoyaltyCampaignTransactions($campaignId, $loyaltiesTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCampaignTransactions'][0])
     {
@@ -4473,6 +4544,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CampaignsTransactionsExportCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function exportLoyaltyCampaignTransactionsWithHttpInfo($campaignId, $loyaltiesTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCampaignTransactions'][0])
     {
@@ -4573,6 +4645,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function exportLoyaltyCampaignTransactionsAsync($campaignId, $loyaltiesTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCampaignTransactions'][0])
     {
@@ -4595,6 +4668,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function exportLoyaltyCampaignTransactionsAsyncWithHttpInfo($campaignId, $loyaltiesTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCampaignTransactions'][0])
     {
@@ -4646,6 +4720,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function exportLoyaltyCampaignTransactionsRequest($campaignId, $loyaltiesTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCampaignTransactions'][0])
     {
@@ -4760,6 +4835,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBody
+     * @deprecated
      */
     public function exportLoyaltyCardTransactions($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
     {
@@ -4779,6 +4855,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function exportLoyaltyCardTransactionsWithHttpInfo($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
     {
@@ -4879,6 +4956,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function exportLoyaltyCardTransactionsAsync($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
     {
@@ -4901,6 +4979,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function exportLoyaltyCardTransactionsAsyncWithHttpInfo($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
     {
@@ -4952,6 +5031,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function exportLoyaltyCardTransactionsRequest($memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions'][0])
     {
@@ -5067,6 +5147,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBody
+     * @deprecated
      */
     public function exportLoyaltyCardTransactions1($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
     {
@@ -5087,6 +5168,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersTransactionsExportCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function exportLoyaltyCardTransactions1WithHttpInfo($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
     {
@@ -5188,6 +5270,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function exportLoyaltyCardTransactions1Async($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
     {
@@ -5211,6 +5294,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function exportLoyaltyCardTransactions1AsyncWithHttpInfo($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
     {
@@ -5263,6 +5347,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function exportLoyaltyCardTransactions1Request($campaignId, $memberId, $loyaltiesMembersTransactionsExportCreateRequestBody = null, string $contentType = self::contentTypes['exportLoyaltyCardTransactions1'][0])
     {
@@ -5392,6 +5477,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesGetResponseBody
+     * @deprecated
      */
     public function getEarningRule($campaignId, $earningRuleId, string $contentType = self::contentTypes['getEarningRule'][0])
     {
@@ -5411,6 +5497,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesEarningRulesGetResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function getEarningRuleWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['getEarningRule'][0])
     {
@@ -5511,6 +5598,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getEarningRuleAsync($campaignId, $earningRuleId, string $contentType = self::contentTypes['getEarningRule'][0])
     {
@@ -5533,6 +5621,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, string $contentType = self::contentTypes['getEarningRule'][0])
     {
@@ -5584,6 +5673,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function getEarningRuleRequest($campaignId, $earningRuleId, string $contentType = self::contentTypes['getEarningRule'][0])
     {
@@ -5704,6 +5794,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesGetCampaignResponseBody
+     * @deprecated
      */
     public function getLoyaltyProgram($campaignId, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
     {
@@ -5722,6 +5813,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesGetCampaignResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function getLoyaltyProgramWithHttpInfo($campaignId, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
     {
@@ -5821,6 +5913,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getLoyaltyProgramAsync($campaignId, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
     {
@@ -5842,6 +5935,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getLoyaltyProgramAsyncWithHttpInfo($campaignId, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
     {
@@ -5892,6 +5986,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function getLoyaltyProgramRequest($campaignId, string $contentType = self::contentTypes['getLoyaltyProgram'][0])
     {
@@ -5998,6 +6093,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesTiersGetResponseBody
+     * @deprecated
      */
     public function getLoyaltyTier($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['getLoyaltyTier'][0])
     {
@@ -6017,6 +6113,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesTiersGetResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function getLoyaltyTierWithHttpInfo($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['getLoyaltyTier'][0])
     {
@@ -6117,6 +6214,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getLoyaltyTierAsync($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['getLoyaltyTier'][0])
     {
@@ -6139,6 +6237,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getLoyaltyTierAsyncWithHttpInfo($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['getLoyaltyTier'][0])
     {
@@ -6190,6 +6289,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function getLoyaltyTierRequest($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['getLoyaltyTier'][0])
     {
@@ -6310,6 +6410,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersGetResponseBody
+     * @deprecated
      */
     public function getMember($memberId, string $contentType = self::contentTypes['getMember'][0])
     {
@@ -6328,6 +6429,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersGetResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function getMemberWithHttpInfo($memberId, string $contentType = self::contentTypes['getMember'][0])
     {
@@ -6427,6 +6529,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getMemberAsync($memberId, string $contentType = self::contentTypes['getMember'][0])
     {
@@ -6448,6 +6551,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getMemberAsyncWithHttpInfo($memberId, string $contentType = self::contentTypes['getMember'][0])
     {
@@ -6498,6 +6602,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function getMemberRequest($memberId, string $contentType = self::contentTypes['getMember'][0])
     {
@@ -6604,6 +6709,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersGetResponseBody
+     * @deprecated
      */
     public function getMember1($campaignId, $memberId, string $contentType = self::contentTypes['getMember1'][0])
     {
@@ -6623,6 +6729,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersGetResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function getMember1WithHttpInfo($campaignId, $memberId, string $contentType = self::contentTypes['getMember1'][0])
     {
@@ -6723,6 +6830,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getMember1Async($campaignId, $memberId, string $contentType = self::contentTypes['getMember1'][0])
     {
@@ -6745,6 +6853,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getMember1AsyncWithHttpInfo($campaignId, $memberId, string $contentType = self::contentTypes['getMember1'][0])
     {
@@ -6796,6 +6905,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function getMember1Request($campaignId, $memberId, string $contentType = self::contentTypes['getMember1'][0])
     {
@@ -6917,6 +7027,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsGetResponseBody
+     * @deprecated
      */
     public function getRewardAssignment1($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment1'][0])
     {
@@ -6936,6 +7047,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsGetResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function getRewardAssignment1WithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment1'][0])
     {
@@ -7036,6 +7148,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getRewardAssignment1Async($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment1'][0])
     {
@@ -7058,6 +7171,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getRewardAssignment1AsyncWithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment1'][0])
     {
@@ -7109,6 +7223,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function getRewardAssignment1Request($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment1'][0])
     {
@@ -7230,6 +7345,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesRewardsGetResponseBody
+     * @deprecated
      */
     public function getRewardAssignment2($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment2'][0])
     {
@@ -7249,6 +7365,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesRewardsGetResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function getRewardAssignment2WithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment2'][0])
     {
@@ -7349,6 +7466,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getRewardAssignment2Async($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment2'][0])
     {
@@ -7371,6 +7489,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getRewardAssignment2AsyncWithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment2'][0])
     {
@@ -7422,6 +7541,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function getRewardAssignment2Request($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardAssignment2'][0])
     {
@@ -7543,6 +7663,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsRewardGetResponseBody
+     * @deprecated
      */
     public function getRewardDetails($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardDetails'][0])
     {
@@ -7562,6 +7683,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsRewardGetResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function getRewardDetailsWithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardDetails'][0])
     {
@@ -7662,6 +7784,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getRewardDetailsAsync($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardDetails'][0])
     {
@@ -7684,6 +7807,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function getRewardDetailsAsyncWithHttpInfo($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardDetails'][0])
     {
@@ -7735,6 +7859,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function getRewardDetailsRequest($campaignId, $assignmentId, string $contentType = self::contentTypes['getRewardDetails'][0])
     {
@@ -7858,6 +7983,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesPendingPointsListResponseBody
+     * @deprecated
      */
     public function listCampaignPendingPoints($campaignId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listCampaignPendingPoints'][0])
     {
@@ -7879,6 +8005,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesPendingPointsListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listCampaignPendingPointsWithHttpInfo($campaignId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listCampaignPendingPoints'][0])
     {
@@ -7981,6 +8108,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listCampaignPendingPointsAsync($campaignId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listCampaignPendingPoints'][0])
     {
@@ -8005,6 +8133,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listCampaignPendingPointsAsyncWithHttpInfo($campaignId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listCampaignPendingPoints'][0])
     {
@@ -8058,6 +8187,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listCampaignPendingPointsRequest($campaignId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listCampaignPendingPoints'][0])
     {
@@ -8202,6 +8332,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesListResponseBody
+     * @deprecated
      */
     public function listEarningRules($campaignId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
     {
@@ -8223,6 +8354,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesEarningRulesListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listEarningRulesWithHttpInfo($campaignId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
     {
@@ -8325,6 +8457,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listEarningRulesAsync($campaignId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
     {
@@ -8349,6 +8482,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listEarningRulesAsyncWithHttpInfo($campaignId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
     {
@@ -8402,6 +8536,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listEarningRulesRequest($campaignId, $limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listEarningRules'][0])
     {
@@ -8553,6 +8688,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesTransactionsListResponseBody
+     * @deprecated
      */
     public function listLoyaltyCampaignTransactions($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listLoyaltyCampaignTransactions'][0])
     {
@@ -8575,6 +8711,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesTransactionsListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listLoyaltyCampaignTransactionsWithHttpInfo($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listLoyaltyCampaignTransactions'][0])
     {
@@ -8678,6 +8815,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listLoyaltyCampaignTransactionsAsync($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listLoyaltyCampaignTransactions'][0])
     {
@@ -8703,6 +8841,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listLoyaltyCampaignTransactionsAsyncWithHttpInfo($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listLoyaltyCampaignTransactions'][0])
     {
@@ -8757,6 +8896,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listLoyaltyCampaignTransactionsRequest($campaignId, $limit = null, $order = null, $startingAfterId = null, $filters = null, string $contentType = self::contentTypes['listLoyaltyCampaignTransactions'][0])
     {
@@ -8911,6 +9051,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody
+     * @deprecated
      */
     public function listLoyaltyCardTransactions($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
@@ -8932,6 +9073,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listLoyaltyCardTransactionsWithHttpInfo($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
@@ -9034,6 +9176,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listLoyaltyCardTransactionsAsync($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
@@ -9058,6 +9201,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listLoyaltyCardTransactionsAsyncWithHttpInfo($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
@@ -9111,6 +9255,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listLoyaltyCardTransactionsRequest($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions'][0])
     {
@@ -9256,6 +9401,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody
+     * @deprecated
      */
     public function listLoyaltyCardTransactions1($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
@@ -9278,6 +9424,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersTransactionsListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listLoyaltyCardTransactions1WithHttpInfo($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
@@ -9381,6 +9528,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listLoyaltyCardTransactions1Async($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
@@ -9406,6 +9554,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listLoyaltyCardTransactions1AsyncWithHttpInfo($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
@@ -9460,6 +9609,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listLoyaltyCardTransactions1Request($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listLoyaltyCardTransactions1'][0])
     {
@@ -9618,6 +9768,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesListCampaignsResponseBody
+     * @deprecated
      */
     public function listLoyaltyPrograms($limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listLoyaltyPrograms'][0])
     {
@@ -9638,6 +9789,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesListCampaignsResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listLoyaltyProgramsWithHttpInfo($limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listLoyaltyPrograms'][0])
     {
@@ -9739,6 +9891,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listLoyaltyProgramsAsync($limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listLoyaltyPrograms'][0])
     {
@@ -9762,6 +9915,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listLoyaltyProgramsAsyncWithHttpInfo($limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listLoyaltyPrograms'][0])
     {
@@ -9814,6 +9968,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listLoyaltyProgramsRequest($limit = null, $page = null, $order = null, string $contentType = self::contentTypes['listLoyaltyPrograms'][0])
     {
@@ -9949,6 +10104,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesTiersEarningRulesListResponseBody
+     * @deprecated
      */
     public function listLoyaltyTierEarningRules($campaignId, $loyaltyTierId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
     {
@@ -9970,6 +10126,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesTiersEarningRulesListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listLoyaltyTierEarningRulesWithHttpInfo($campaignId, $loyaltyTierId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
     {
@@ -10072,6 +10229,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listLoyaltyTierEarningRulesAsync($campaignId, $loyaltyTierId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
     {
@@ -10096,6 +10254,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listLoyaltyTierEarningRulesAsyncWithHttpInfo($campaignId, $loyaltyTierId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
     {
@@ -10149,6 +10308,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listLoyaltyTierEarningRulesRequest($campaignId, $loyaltyTierId, $limit = null, $page = null, string $contentType = self::contentTypes['listLoyaltyTierEarningRules'][0])
     {
@@ -10302,6 +10462,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesTiersRewardsListResponseBody
+     * @deprecated
      */
     public function listLoyaltyTierRewards($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
     {
@@ -10321,6 +10482,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesTiersRewardsListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listLoyaltyTierRewardsWithHttpInfo($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
     {
@@ -10421,6 +10583,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listLoyaltyTierRewardsAsync($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
     {
@@ -10443,6 +10606,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listLoyaltyTierRewardsAsyncWithHttpInfo($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
     {
@@ -10494,6 +10658,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listLoyaltyTierRewardsRequest($campaignId, $loyaltyTierId, string $contentType = self::contentTypes['listLoyaltyTierRewards'][0])
     {
@@ -10616,6 +10781,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesTiersListResponseBody
+     * @deprecated
      */
     public function listLoyaltyTiers($campaignId, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
     {
@@ -10636,6 +10802,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesTiersListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listLoyaltyTiersWithHttpInfo($campaignId, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
     {
@@ -10737,6 +10904,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listLoyaltyTiersAsync($campaignId, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
     {
@@ -10760,6 +10928,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listLoyaltyTiersAsyncWithHttpInfo($campaignId, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
     {
@@ -10812,6 +10981,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listLoyaltyTiersRequest($campaignId, $limit = null, $order = null, string $contentType = self::contentTypes['listLoyaltyTiers'][0])
     {
@@ -10946,6 +11116,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMemberActivityListResponseBody
+     * @deprecated
      */
     public function listMemberActivity($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity'][0])
     {
@@ -10967,6 +11138,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMemberActivityListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listMemberActivityWithHttpInfo($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity'][0])
     {
@@ -11069,6 +11241,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listMemberActivityAsync($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity'][0])
     {
@@ -11093,6 +11266,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listMemberActivityAsyncWithHttpInfo($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity'][0])
     {
@@ -11146,6 +11320,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listMemberActivityRequest($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity'][0])
     {
@@ -11291,6 +11466,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMemberActivityListResponseBody
+     * @deprecated
      */
     public function listMemberActivity1($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
     {
@@ -11313,6 +11489,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMemberActivityListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listMemberActivity1WithHttpInfo($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
     {
@@ -11416,6 +11593,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listMemberActivity1Async($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
     {
@@ -11441,6 +11619,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listMemberActivity1AsyncWithHttpInfo($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
     {
@@ -11495,6 +11674,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listMemberActivity1Request($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberActivity1'][0])
     {
@@ -11651,6 +11831,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTiersListResponseBody
+     * @deprecated
      */
     public function listMemberLoyaltyTier($memberId, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
     {
@@ -11669,6 +11850,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersTiersListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listMemberLoyaltyTierWithHttpInfo($memberId, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
     {
@@ -11768,6 +11950,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listMemberLoyaltyTierAsync($memberId, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
     {
@@ -11789,6 +11972,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listMemberLoyaltyTierAsyncWithHttpInfo($memberId, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
     {
@@ -11839,6 +12023,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listMemberLoyaltyTierRequest($memberId, string $contentType = self::contentTypes['listMemberLoyaltyTier'][0])
     {
@@ -11947,6 +12132,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody
+     * @deprecated
      */
     public function listMemberPendingPoints($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints'][0])
     {
@@ -11968,6 +12154,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listMemberPendingPointsWithHttpInfo($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints'][0])
     {
@@ -12070,6 +12257,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listMemberPendingPointsAsync($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints'][0])
     {
@@ -12094,6 +12282,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listMemberPendingPointsAsyncWithHttpInfo($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints'][0])
     {
@@ -12147,6 +12336,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listMemberPendingPointsRequest($memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints'][0])
     {
@@ -12292,6 +12482,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody
+     * @deprecated
      */
     public function listMemberPendingPoints1($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints1'][0])
     {
@@ -12314,6 +12505,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersPendingPointsListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listMemberPendingPoints1WithHttpInfo($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints1'][0])
     {
@@ -12417,6 +12609,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listMemberPendingPoints1Async($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints1'][0])
     {
@@ -12442,6 +12635,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listMemberPendingPoints1AsyncWithHttpInfo($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints1'][0])
     {
@@ -12496,6 +12690,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listMemberPendingPoints1Request($campaignId, $memberId, $limit = null, $order = null, $startingAfterId = null, string $contentType = self::contentTypes['listMemberPendingPoints1'][0])
     {
@@ -12653,6 +12848,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersRewardsListResponseBody
+     * @deprecated
      */
     public function listMemberRewards($memberId, $affordableOnly = null, string $contentType = self::contentTypes['listMemberRewards'][0])
     {
@@ -12672,6 +12868,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersRewardsListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listMemberRewardsWithHttpInfo($memberId, $affordableOnly = null, string $contentType = self::contentTypes['listMemberRewards'][0])
     {
@@ -12772,6 +12969,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listMemberRewardsAsync($memberId, $affordableOnly = null, string $contentType = self::contentTypes['listMemberRewards'][0])
     {
@@ -12794,6 +12992,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listMemberRewardsAsyncWithHttpInfo($memberId, $affordableOnly = null, string $contentType = self::contentTypes['listMemberRewards'][0])
     {
@@ -12845,6 +13044,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listMemberRewardsRequest($memberId, $affordableOnly = null, string $contentType = self::contentTypes['listMemberRewards'][0])
     {
@@ -12968,6 +13168,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesListMembersResponseBody
+     * @deprecated
      */
     public function listMembers($campaignId, $limit = null, $page = null, $customer = null, $createdAt = null, $updatedAt = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
     {
@@ -12994,6 +13195,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesListMembersResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listMembersWithHttpInfo($campaignId, $limit = null, $page = null, $customer = null, $createdAt = null, $updatedAt = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
     {
@@ -13101,6 +13303,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listMembersAsync($campaignId, $limit = null, $page = null, $customer = null, $createdAt = null, $updatedAt = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
     {
@@ -13130,6 +13333,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listMembersAsyncWithHttpInfo($campaignId, $limit = null, $page = null, $customer = null, $createdAt = null, $updatedAt = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
     {
@@ -13188,6 +13392,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listMembersRequest($campaignId, $limit = null, $page = null, $customer = null, $createdAt = null, $updatedAt = null, $order = null, $code = null, $ids = null, string $contentType = self::contentTypes['listMembers'][0])
     {
@@ -13388,6 +13593,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersPointsExpirationListResponseBody
+     * @deprecated
      */
     public function listPointsExpiration($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
     {
@@ -13409,6 +13615,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersPointsExpirationListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listPointsExpirationWithHttpInfo($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
     {
@@ -13511,6 +13718,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listPointsExpirationAsync($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
     {
@@ -13535,6 +13743,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listPointsExpirationAsyncWithHttpInfo($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
     {
@@ -13588,6 +13797,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listPointsExpirationRequest($campaignId, $memberId, $limit = null, $page = null, string $contentType = self::contentTypes['listPointsExpiration'][0])
     {
@@ -13743,6 +13953,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsListResponseBody
+     * @deprecated
      */
     public function listRewardAssignments1($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
     {
@@ -13764,6 +13975,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesRewardAssignmentsListResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listRewardAssignments1WithHttpInfo($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
     {
@@ -13866,6 +14078,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listRewardAssignments1Async($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
     {
@@ -13890,6 +14103,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listRewardAssignments1AsyncWithHttpInfo($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
     {
@@ -13943,6 +14157,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listRewardAssignments1Request($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments1'][0])
     {
@@ -14093,6 +14308,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesRewardsListAssignmentsResponseBody
+     * @deprecated
      */
     public function listRewardAssignments2($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
     {
@@ -14114,6 +14330,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesRewardsListAssignmentsResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function listRewardAssignments2WithHttpInfo($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
     {
@@ -14216,6 +14433,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listRewardAssignments2Async($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
     {
@@ -14240,6 +14458,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function listRewardAssignments2AsyncWithHttpInfo($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
     {
@@ -14293,6 +14512,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function listRewardAssignments2Request($campaignId, $limit = null, $page = null, $assignmentId = null, string $contentType = self::contentTypes['listRewardAssignments2'][0])
     {
@@ -14441,6 +14661,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBody
+     * @deprecated
      */
     public function redeemReward($memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward'][0])
     {
@@ -14460,6 +14681,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function redeemRewardWithHttpInfo($memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward'][0])
     {
@@ -14560,6 +14782,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function redeemRewardAsync($memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward'][0])
     {
@@ -14582,6 +14805,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function redeemRewardAsyncWithHttpInfo($memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward'][0])
     {
@@ -14633,6 +14857,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function redeemRewardRequest($memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward'][0])
     {
@@ -14748,6 +14973,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBody
+     * @deprecated
      */
     public function redeemReward1($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward1'][0])
     {
@@ -14768,6 +14994,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersRedemptionRedeemResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function redeemReward1WithHttpInfo($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward1'][0])
     {
@@ -14869,6 +15096,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function redeemReward1Async($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward1'][0])
     {
@@ -14892,6 +15120,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function redeemReward1AsyncWithHttpInfo($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward1'][0])
     {
@@ -14944,6 +15173,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function redeemReward1Request($campaignId, $memberId, $loyaltiesMembersRedemptionRedeemRequestBody = null, string $contentType = self::contentTypes['redeemReward1'][0])
     {
@@ -15074,6 +15304,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBody
+     * @deprecated
      */
     public function transferPoints($campaignId, $memberId, $loyaltiesTransferPoints = null, string $contentType = self::contentTypes['transferPoints'][0])
     {
@@ -15094,6 +15325,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersTransfersCreateResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function transferPointsWithHttpInfo($campaignId, $memberId, $loyaltiesTransferPoints = null, string $contentType = self::contentTypes['transferPoints'][0])
     {
@@ -15195,6 +15427,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function transferPointsAsync($campaignId, $memberId, $loyaltiesTransferPoints = null, string $contentType = self::contentTypes['transferPoints'][0])
     {
@@ -15218,6 +15451,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function transferPointsAsyncWithHttpInfo($campaignId, $memberId, $loyaltiesTransferPoints = null, string $contentType = self::contentTypes['transferPoints'][0])
     {
@@ -15270,6 +15504,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function transferPointsRequest($campaignId, $memberId, $loyaltiesTransferPoints = null, string $contentType = self::contentTypes['transferPoints'][0])
     {
@@ -15400,6 +15635,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBody
+     * @deprecated
      */
     public function updateEarningRule($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateEarningRule'][0])
     {
@@ -15420,6 +15656,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesEarningRulesUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function updateEarningRuleWithHttpInfo($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateEarningRule'][0])
     {
@@ -15521,6 +15758,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function updateEarningRuleAsync($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateEarningRule'][0])
     {
@@ -15544,6 +15782,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function updateEarningRuleAsyncWithHttpInfo($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateEarningRule'][0])
     {
@@ -15596,6 +15835,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function updateEarningRuleRequest($campaignId, $earningRuleId, $loyaltiesEarningRulesUpdateRequestBody = null, string $contentType = self::contentTypes['updateEarningRule'][0])
     {
@@ -15725,6 +15965,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBody
+     * @deprecated
      */
     public function updateLoyaltyCardBalance($memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
     {
@@ -15744,6 +15985,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function updateLoyaltyCardBalanceWithHttpInfo($memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
     {
@@ -15844,6 +16086,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function updateLoyaltyCardBalanceAsync($memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
     {
@@ -15866,6 +16109,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function updateLoyaltyCardBalanceAsyncWithHttpInfo($memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
     {
@@ -15917,6 +16161,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function updateLoyaltyCardBalanceRequest($memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance'][0])
     {
@@ -16032,6 +16277,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBody
+     * @deprecated
      */
     public function updateLoyaltyCardBalance1($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
     {
@@ -16052,6 +16298,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesMembersBalanceUpdateResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function updateLoyaltyCardBalance1WithHttpInfo($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
     {
@@ -16153,6 +16400,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function updateLoyaltyCardBalance1Async($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
     {
@@ -16176,6 +16424,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function updateLoyaltyCardBalance1AsyncWithHttpInfo($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
     {
@@ -16228,6 +16477,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function updateLoyaltyCardBalance1Request($campaignId, $memberId, $loyaltiesMembersBalanceUpdateRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyCardBalance1'][0])
     {
@@ -16357,6 +16607,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesUpdateCampaignResponseBody
+     * @deprecated
      */
     public function updateLoyaltyProgram($campaignId, $loyaltiesUpdateCampaignRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
     {
@@ -16376,6 +16627,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesUpdateCampaignResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function updateLoyaltyProgramWithHttpInfo($campaignId, $loyaltiesUpdateCampaignRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
     {
@@ -16476,6 +16728,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function updateLoyaltyProgramAsync($campaignId, $loyaltiesUpdateCampaignRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
     {
@@ -16498,6 +16751,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function updateLoyaltyProgramAsyncWithHttpInfo($campaignId, $loyaltiesUpdateCampaignRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
     {
@@ -16549,6 +16803,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function updateLoyaltyProgramRequest($campaignId, $loyaltiesUpdateCampaignRequestBody = null, string $contentType = self::contentTypes['updateLoyaltyProgram'][0])
     {
@@ -16664,6 +16919,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentResponseBody
+     * @deprecated
      */
     public function updateRewardAssignment1($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
     {
@@ -16684,6 +16940,7 @@ class LoyaltiesApi
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\LoyaltiesRewardsUpdateAssignmentResponseBody, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function updateRewardAssignment1WithHttpInfo($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
     {
@@ -16785,6 +17042,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function updateRewardAssignment1Async($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
     {
@@ -16808,6 +17066,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function updateRewardAssignment1AsyncWithHttpInfo($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
     {
@@ -16860,6 +17119,7 @@ class LoyaltiesApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function updateRewardAssignment1Request($campaignId, $assignmentId, $loyaltiesRewardsUpdateAssignmentRequestBody = null, string $contentType = self::contentTypes['updateRewardAssignment1'][0])
     {

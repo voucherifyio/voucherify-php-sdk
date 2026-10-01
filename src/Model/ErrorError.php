@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ErrorError Class Doc Comment
  *
  * @category Class
- * @description Includes additional information about the error.
+ * @description Includes the resolved custom validation-rule error message when one is configured.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -304,7 +304,7 @@ class ErrorError implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets message
      *
-     * @param string|null $message The message configured by the user in a validation rule.
+     * @param string|null $message Resolved custom validation-rule error message for `options.language`, falling back to the Error Message Library default language. Present only when a custom message can be resolved.
      *
      * @return self
      */

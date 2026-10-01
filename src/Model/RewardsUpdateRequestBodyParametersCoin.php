@@ -59,7 +59,7 @@ class RewardsUpdateRequestBodyParametersCoin implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'exchangeRatio' => 'string',
+        'exchangeRatio' => 'float',
         'pointsRatio' => 'string'
     ];
 
@@ -301,7 +301,7 @@ class RewardsUpdateRequestBodyParametersCoin implements ModelInterface, ArrayAcc
     /**
      * Gets exchangeRatio
      *
-     * @return string|null
+     * @return float|null
      */
     public function getExchangeRatio()
     {
@@ -311,7 +311,7 @@ class RewardsUpdateRequestBodyParametersCoin implements ModelInterface, ArrayAcc
     /**
      * Sets exchangeRatio
      *
-     * @param string|null $exchangeRatio The cash equivalent of the points defined in the `points_ratio` property.
+     * @param float|null $exchangeRatio The cash equivalent of the points defined in the `points_ratio` property.
      *
      * @return self
      */

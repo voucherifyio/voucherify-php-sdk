@@ -138,7 +138,7 @@ This SDK is generated automatically from our [OpenAPI specification](https://git
 
 ## 🏷️ Link tags
 
-[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/tree/sdk-php-5.1.0).
+[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/tree/sdk-php-5.1.1).
 
 ## 🔐 Authorization
 
@@ -183,6 +183,11 @@ Authorization schemes defined for the API.
 
 ## 📅 Changelog
 
+- **2026-08-26** - `5.1.1`
+  - Fixed: `exchangeRatio` is `float` on COIN reward models (`RewardsCreateRequestBodyParametersCoin` and `RewardsUpdateRequestBodyParametersCoin` were `string`, `RedemptionRewardResultParametersCoin` was `int`). The API returns fractional values such as `0.01`.
+  - Added: `language` on `RedemptionsRedeemRequestBodyOptions` and `ValidationsValidateRequestBodyOptions`.
+  - Added: product/sku export order and field constants (`product_id`, `sku`, `price`, `image_url`, `attributes`, `currency`) on `ExportParameters`, `ExportsCreateRequestBodyParameters`, `ExportsCreateResponseBodyParameters`, and `ExportsGetResponseBodyParameters`.
+  - Note: `ErrorError.message` is the resolved custom validation-rule error for `options.language`, falling back to the Error Message Library default language.
 - **2026-08-10** - `5.1.0`
   - Fixed: `ValidationsRedeemableSkippedResultDetails` was missing `no_effect` (`ValidationsRedeemableSkippedResultDetails::KEY_NO_EFFECT`), so deserializing a skipped redeemable with `"key": "no_effect"` threw `\InvalidArgumentException` (entire validations/redemptions response failed to parse).
   - This affects `POST /v1/validations` and stackable `POST /v1/redemptions` when `redeemables_no_effect_rule` is `SKIP` (globally or via `no_effect_skip_categories`).
