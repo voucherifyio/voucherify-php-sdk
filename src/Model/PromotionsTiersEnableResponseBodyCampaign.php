@@ -584,7 +584,7 @@ class PromotionsTiersEnableResponseBodyCampaign implements ModelInterface, Array
     /**
      * Sets active
      *
-     * @param bool|null $active A flag indicating whether the campaign is active or not active. A campaign can be disabled even though it's within the active period defined by the `start_date` and `expiration_date` using the [Disable Campaign](/api-reference/disable-campaign) endpoint.    - `true` indicates an *active* campaign - `false` indicates an *inactive* campaign
+     * @param bool|null $active A flag indicating whether the campaign is active or not active. A campaign can be disabled even though it's within the active period defined by the `start_date` and `expiration_date` using the [Disable Campaign](/api-reference/campaigns/disable-campaign) endpoint.    - `true` indicates an *active* campaign - `false` indicates an *inactive* campaign
      *
      * @return self
      */
