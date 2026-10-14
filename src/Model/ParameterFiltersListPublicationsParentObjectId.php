@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ParameterFiltersListPublicationsParentObjectId Class Doc Comment
  *
  * @category Class
- * @description Filter publications by parent object id.
+ * @description Filter publications by parent object ID.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

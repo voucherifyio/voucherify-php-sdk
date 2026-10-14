@@ -393,7 +393,7 @@ class PublicationsListResponseBody implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets publications
      *
-     * @param \OpenAPI\Client\Model\PublicationsListResponseBodyPublicationsItem[]|null $publications Response schema model for publishing vouchers to a specific customer.
+     * @param \OpenAPI\Client\Model\PublicationsListResponseBodyPublicationsItem[]|null $publications Contains array of publication objects, voucher object will be simplified.
      *
      * @return self
      */

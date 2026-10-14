@@ -63,6 +63,7 @@ class CustomersGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
         'sourceId' => 'string',
         'summary' => '\OpenAPI\Client\Model\CustomerSummary',
         'loyalty' => '\OpenAPI\Client\Model\CustomerLoyalty',
+        'loyaltyMemberships' => '\OpenAPI\Client\Model\CustomerLoyaltyMembership[]',
         'referrals' => '\OpenAPI\Client\Model\CustomerReferrals',
         'systemMetadata' => 'object',
         'createdAt' => '\DateTime',
@@ -91,6 +92,7 @@ class CustomersGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
         'sourceId' => null,
         'summary' => null,
         'loyalty' => null,
+        'loyaltyMemberships' => null,
         'referrals' => null,
         'systemMetadata' => null,
         'createdAt' => 'date-time',
@@ -117,6 +119,7 @@ class CustomersGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
 		'sourceId' => true,
 		'summary' => false,
 		'loyalty' => false,
+		'loyaltyMemberships' => true,
 		'referrals' => false,
 		'systemMetadata' => true,
 		'createdAt' => true,
@@ -223,6 +226,7 @@ class CustomersGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
         'sourceId' => 'source_id',
         'summary' => 'summary',
         'loyalty' => 'loyalty',
+        'loyaltyMemberships' => 'loyalty_memberships',
         'referrals' => 'referrals',
         'systemMetadata' => 'system_metadata',
         'createdAt' => 'created_at',
@@ -249,6 +253,7 @@ class CustomersGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
         'sourceId' => 'setSourceId',
         'summary' => 'setSummary',
         'loyalty' => 'setLoyalty',
+        'loyaltyMemberships' => 'setLoyaltyMemberships',
         'referrals' => 'setReferrals',
         'systemMetadata' => 'setSystemMetadata',
         'createdAt' => 'setCreatedAt',
@@ -275,6 +280,7 @@ class CustomersGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
         'sourceId' => 'getSourceId',
         'summary' => 'getSummary',
         'loyalty' => 'getLoyalty',
+        'loyaltyMemberships' => 'getLoyaltyMemberships',
         'referrals' => 'getReferrals',
         'systemMetadata' => 'getSystemMetadata',
         'createdAt' => 'getCreatedAt',
@@ -365,6 +371,7 @@ class CustomersGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('sourceId', $data ?? [], null);
         $this->setIfExists('summary', $data ?? [], null);
         $this->setIfExists('loyalty', $data ?? [], null);
+        $this->setIfExists('loyaltyMemberships', $data ?? [], null);
         $this->setIfExists('referrals', $data ?? [], null);
         $this->setIfExists('systemMetadata', $data ?? [], null);
         $this->setIfExists('createdAt', $data ?? [], null);
@@ -550,6 +557,40 @@ class CustomersGetResponseBody implements ModelInterface, ArrayAccess, \JsonSeri
             throw new \InvalidArgumentException('non-nullable loyalty cannot be null');
         }
         $this->container['loyalty'] = $loyalty;
+
+        return $this;
+    }
+
+    /**
+     * Gets loyaltyMemberships
+     *
+     * @return \OpenAPI\Client\Model\CustomerLoyaltyMembership[]|null
+     */
+    public function getLoyaltyMemberships()
+    {
+        return $this->container['loyaltyMemberships'];
+    }
+
+    /**
+     * Sets loyaltyMemberships
+     *
+     * @param \OpenAPI\Client\Model\CustomerLoyaltyMembership[]|null $loyaltyMemberships List of Loyalty v2 program memberships for the customer. `null` when no memberships are stored.
+     *
+     * @return self
+     */
+    public function setLoyaltyMemberships($loyaltyMemberships)
+    {
+        if (is_null($loyaltyMemberships)) {
+            array_push($this->openAPINullablesSetToNull, 'loyaltyMemberships');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('loyaltyMemberships', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['loyaltyMemberships'] = $loyaltyMemberships;
 
         return $this;
     }
