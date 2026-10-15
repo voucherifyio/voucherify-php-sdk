@@ -249,8 +249,6 @@ class CustomerLoyaltyMembershipMember implements ModelInterface, ArrayAccess, \J
     }
 
     public const STATUS_ACTIVE = 'ACTIVE';
-    public const STATUS_INACTIVE = 'INACTIVE';
-    public const STATUS_DELETED = 'DELETED';
 
     /**
      * Gets allowable values of the enum
@@ -261,8 +259,6 @@ class CustomerLoyaltyMembershipMember implements ModelInterface, ArrayAccess, \J
     {
         return [
             self::STATUS_ACTIVE,
-            self::STATUS_INACTIVE,
-            self::STATUS_DELETED,
         ];
     }
 
@@ -282,7 +278,7 @@ class CustomerLoyaltyMembershipMember implements ModelInterface, ArrayAccess, \J
     public function __construct(?array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], 'ACTIVE');
         $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('updatedAt', $data ?? [], null);
     }
@@ -394,7 +390,7 @@ class CustomerLoyaltyMembershipMember implements ModelInterface, ArrayAccess, \J
     /**
      * Sets status
      *
-     * @param string|null $status Member status. List responses include only ACTIVE memberships. INACTIVE and DELETED remain so existing SDK callers keep compiling.
+     * @param string|null $status Member status. The value is `ACTIVE`.
      *
      * @return self
      */
