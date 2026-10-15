@@ -63,10 +63,10 @@ class CardPendingPointsBucket implements ModelInterface, ArrayAccess, \JsonSeria
         'cardDefinitionId' => 'string',
         'programId' => 'string',
         'memberId' => 'string',
+        'cardType' => 'string',
         'createdAt' => '\DateTime',
         'updatedAt' => '\DateTime',
         'id' => 'string',
-        'cardType' => 'string',
         'points' => '\OpenAPI\Client\Model\CardPendingPointsBucketPoints',
         'date' => '\DateTime',
         'type' => 'string',
@@ -86,10 +86,10 @@ class CardPendingPointsBucket implements ModelInterface, ArrayAccess, \JsonSeria
         'cardDefinitionId' => null,
         'programId' => null,
         'memberId' => null,
+        'cardType' => null,
         'createdAt' => 'date-time',
         'updatedAt' => 'date-time',
         'id' => null,
-        'cardType' => null,
         'points' => null,
         'date' => 'date',
         'type' => null,
@@ -107,10 +107,10 @@ class CardPendingPointsBucket implements ModelInterface, ArrayAccess, \JsonSeria
 		'cardDefinitionId' => true,
 		'programId' => true,
 		'memberId' => true,
+		'cardType' => true,
 		'createdAt' => true,
 		'updatedAt' => true,
 		'id' => true,
-		'cardType' => true,
 		'points' => true,
 		'date' => true,
 		'type' => true,
@@ -208,10 +208,10 @@ class CardPendingPointsBucket implements ModelInterface, ArrayAccess, \JsonSeria
         'cardDefinitionId' => 'card_definition_id',
         'programId' => 'program_id',
         'memberId' => 'member_id',
+        'cardType' => 'card_type',
         'createdAt' => 'created_at',
         'updatedAt' => 'updated_at',
         'id' => 'id',
-        'cardType' => 'card_type',
         'points' => 'points',
         'date' => 'date',
         'type' => 'type',
@@ -229,10 +229,10 @@ class CardPendingPointsBucket implements ModelInterface, ArrayAccess, \JsonSeria
         'cardDefinitionId' => 'setCardDefinitionId',
         'programId' => 'setProgramId',
         'memberId' => 'setMemberId',
+        'cardType' => 'setCardType',
         'createdAt' => 'setCreatedAt',
         'updatedAt' => 'setUpdatedAt',
         'id' => 'setId',
-        'cardType' => 'setCardType',
         'points' => 'setPoints',
         'date' => 'setDate',
         'type' => 'setType',
@@ -250,10 +250,10 @@ class CardPendingPointsBucket implements ModelInterface, ArrayAccess, \JsonSeria
         'cardDefinitionId' => 'getCardDefinitionId',
         'programId' => 'getProgramId',
         'memberId' => 'getMemberId',
+        'cardType' => 'getCardType',
         'createdAt' => 'getCreatedAt',
         'updatedAt' => 'getUpdatedAt',
         'id' => 'getId',
-        'cardType' => 'getCardType',
         'points' => 'getPoints',
         'date' => 'getDate',
         'type' => 'getType',
@@ -384,10 +384,10 @@ class CardPendingPointsBucket implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('cardDefinitionId', $data ?? [], null);
         $this->setIfExists('programId', $data ?? [], null);
         $this->setIfExists('memberId', $data ?? [], null);
+        $this->setIfExists('cardType', $data ?? [], 'INDIVIDUAL');
         $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('updatedAt', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('cardType', $data ?? [], 'INDIVIDUAL');
         $this->setIfExists('points', $data ?? [], null);
         $this->setIfExists('date', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
@@ -438,10 +438,6 @@ class CardPendingPointsBucket implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = "invalid value for 'memberId', must be conform to the pattern /^lmbr_[a-f0-9]+$/.";
         }
 
-        if (!is_null($this->container['id']) && !preg_match("/^lcppb_[a-f0-9]+$/", $this->container['id'])) {
-            $invalidProperties[] = "invalid value for 'id', must be conform to the pattern /^lcppb_[a-f0-9]+$/.";
-        }
-
         $allowedValues = $this->getCardTypeAllowableValues();
         if (!is_null($this->container['cardType']) && !in_array($this->container['cardType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -449,6 +445,10 @@ class CardPendingPointsBucket implements ModelInterface, ArrayAccess, \JsonSeria
                 $this->container['cardType'],
                 implode("', '", $allowedValues)
             );
+        }
+
+        if (!is_null($this->container['id']) && !preg_match("/^lcppb_[a-f0-9]+$/", $this->container['id'])) {
+            $invalidProperties[] = "invalid value for 'id', must be conform to the pattern /^lcppb_[a-f0-9]+$/.";
         }
 
         $allowedValues = $this->getTypeAllowableValues();
@@ -650,6 +650,50 @@ class CardPendingPointsBucket implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
+     * Gets cardType
+     *
+     * @return string|null
+     */
+    public function getCardType()
+    {
+        return $this->container['cardType'];
+    }
+
+    /**
+     * Sets cardType
+     *
+     * @param string|null $cardType Card type. Currently, only `INDIVIDUAL` is supported.
+     *
+     * @return self
+     */
+    public function setCardType($cardType)
+    {
+        if (is_null($cardType)) {
+            array_push($this->openAPINullablesSetToNull, 'cardType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cardType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getCardTypeAllowableValues();
+        if (!is_null($cardType) && !in_array($cardType, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'cardType', must be one of '%s'",
+                    $cardType,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['cardType'] = $cardType;
+
+        return $this;
+    }
+
+    /**
      * Gets createdAt
      *
      * @return \DateTime|null
@@ -752,50 +796,6 @@ class CardPendingPointsBucket implements ModelInterface, ArrayAccess, \JsonSeria
         }
 
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets cardType
-     *
-     * @return string|null
-     */
-    public function getCardType()
-    {
-        return $this->container['cardType'];
-    }
-
-    /**
-     * Sets cardType
-     *
-     * @param string|null $cardType Card type.
-     *
-     * @return self
-     */
-    public function setCardType($cardType)
-    {
-        if (is_null($cardType)) {
-            array_push($this->openAPINullablesSetToNull, 'cardType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('cardType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $allowedValues = $this->getCardTypeAllowableValues();
-        if (!is_null($cardType) && !in_array($cardType, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'cardType', must be one of '%s'",
-                    $cardType,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['cardType'] = $cardType;
 
         return $this;
     }

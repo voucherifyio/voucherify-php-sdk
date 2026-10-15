@@ -59,15 +59,15 @@ class CardSimple implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'cardType' => 'string',
-        'lifetimeBucket' => '\OpenAPI\Client\Model\CardLifetimeBucket',
-        'balance' => '\OpenAPI\Client\Model\CardBalance',
         'id' => 'string',
         'cardDefinitionId' => 'string',
+        'cardType' => 'string',
         'code' => 'string',
+        'lifetimeBucket' => '\OpenAPI\Client\Model\CardLifetimeBucket',
+        'balance' => '\OpenAPI\Client\Model\CardBalance',
+        'object' => 'string',
         'nextExpiration' => '\OpenAPI\Client\Model\CardNextExpiration',
-        'nextActivation' => '\OpenAPI\Client\Model\CardNextActivation',
-        'object' => 'string'
+        'nextActivation' => '\OpenAPI\Client\Model\CardNextActivation'
     ];
 
     /**
@@ -78,15 +78,15 @@ class CardSimple implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'cardType' => null,
-        'lifetimeBucket' => null,
-        'balance' => null,
         'id' => null,
         'cardDefinitionId' => null,
+        'cardType' => null,
         'code' => null,
+        'lifetimeBucket' => null,
+        'balance' => null,
+        'object' => null,
         'nextExpiration' => null,
-        'nextActivation' => null,
-        'object' => null
+        'nextActivation' => null
     ];
 
     /**
@@ -95,15 +95,15 @@ class CardSimple implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'cardType' => true,
+        'id' => true,
+		'cardDefinitionId' => true,
+		'cardType' => true,
+		'code' => true,
 		'lifetimeBucket' => false,
 		'balance' => false,
-		'id' => true,
-		'cardDefinitionId' => true,
-		'code' => true,
+		'object' => true,
 		'nextExpiration' => false,
-		'nextActivation' => false,
-		'object' => true
+		'nextActivation' => false
     ];
 
     /**
@@ -192,15 +192,15 @@ class CardSimple implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'cardType' => 'card_type',
-        'lifetimeBucket' => 'lifetime_bucket',
-        'balance' => 'balance',
         'id' => 'id',
         'cardDefinitionId' => 'card_definition_id',
+        'cardType' => 'card_type',
         'code' => 'code',
+        'lifetimeBucket' => 'lifetime_bucket',
+        'balance' => 'balance',
+        'object' => 'object',
         'nextExpiration' => 'next_expiration',
-        'nextActivation' => 'next_activation',
-        'object' => 'object'
+        'nextActivation' => 'next_activation'
     ];
 
     /**
@@ -209,15 +209,15 @@ class CardSimple implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'cardType' => 'setCardType',
-        'lifetimeBucket' => 'setLifetimeBucket',
-        'balance' => 'setBalance',
         'id' => 'setId',
         'cardDefinitionId' => 'setCardDefinitionId',
+        'cardType' => 'setCardType',
         'code' => 'setCode',
+        'lifetimeBucket' => 'setLifetimeBucket',
+        'balance' => 'setBalance',
+        'object' => 'setObject',
         'nextExpiration' => 'setNextExpiration',
-        'nextActivation' => 'setNextActivation',
-        'object' => 'setObject'
+        'nextActivation' => 'setNextActivation'
     ];
 
     /**
@@ -226,15 +226,15 @@ class CardSimple implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'cardType' => 'getCardType',
-        'lifetimeBucket' => 'getLifetimeBucket',
-        'balance' => 'getBalance',
         'id' => 'getId',
         'cardDefinitionId' => 'getCardDefinitionId',
+        'cardType' => 'getCardType',
         'code' => 'getCode',
+        'lifetimeBucket' => 'getLifetimeBucket',
+        'balance' => 'getBalance',
+        'object' => 'getObject',
         'nextExpiration' => 'getNextExpiration',
-        'nextActivation' => 'getNextActivation',
-        'object' => 'getObject'
+        'nextActivation' => 'getNextActivation'
     ];
 
     /**
@@ -320,15 +320,15 @@ class CardSimple implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('cardType', $data ?? [], 'INDIVIDUAL');
-        $this->setIfExists('lifetimeBucket', $data ?? [], null);
-        $this->setIfExists('balance', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('cardDefinitionId', $data ?? [], null);
+        $this->setIfExists('cardType', $data ?? [], 'INDIVIDUAL');
         $this->setIfExists('code', $data ?? [], null);
+        $this->setIfExists('lifetimeBucket', $data ?? [], null);
+        $this->setIfExists('balance', $data ?? [], null);
+        $this->setIfExists('object', $data ?? [], 'card');
         $this->setIfExists('nextExpiration', $data ?? [], null);
         $this->setIfExists('nextActivation', $data ?? [], null);
-        $this->setIfExists('object', $data ?? [], 'card');
     }
 
     /**
@@ -358,6 +358,14 @@ class CardSimple implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['id']) && !preg_match("/^lcrd_[a-f0-9]+$/", $this->container['id'])) {
+            $invalidProperties[] = "invalid value for 'id', must be conform to the pattern /^lcrd_[a-f0-9]+$/.";
+        }
+
+        if (!is_null($this->container['cardDefinitionId']) && !preg_match("/^lcdef_[a-f0-9]+$/", $this->container['cardDefinitionId'])) {
+            $invalidProperties[] = "invalid value for 'cardDefinitionId', must be conform to the pattern /^lcdef_[a-f0-9]+$/.";
+        }
+
         $allowedValues = $this->getCardTypeAllowableValues();
         if (!is_null($this->container['cardType']) && !in_array($this->container['cardType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -365,14 +373,6 @@ class CardSimple implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->container['cardType'],
                 implode("', '", $allowedValues)
             );
-        }
-
-        if (!is_null($this->container['id']) && !preg_match("/^lcrd_[a-f0-9]+$/", $this->container['id'])) {
-            $invalidProperties[] = "invalid value for 'id', must be conform to the pattern /^lcrd_[a-f0-9]+$/.";
-        }
-
-        if (!is_null($this->container['cardDefinitionId']) && !preg_match("/^lcdef_[a-f0-9]+$/", $this->container['cardDefinitionId'])) {
-            $invalidProperties[] = "invalid value for 'cardDefinitionId', must be conform to the pattern /^lcdef_[a-f0-9]+$/.";
         }
 
         $allowedValues = $this->getObjectAllowableValues();
@@ -398,6 +398,84 @@ class CardSimple implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id Identifies the card.
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        if (is_null($id)) {
+            array_push($this->openAPINullablesSetToNull, 'id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($id) && (!preg_match("/^lcrd_[a-f0-9]+$/", $id))) {
+            throw new \InvalidArgumentException("invalid value for \$id when calling CardSimple., must conform to the pattern /^lcrd_[a-f0-9]+$/.");
+        }
+
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardDefinitionId
+     *
+     * @return string|null
+     */
+    public function getCardDefinitionId()
+    {
+        return $this->container['cardDefinitionId'];
+    }
+
+    /**
+     * Sets cardDefinitionId
+     *
+     * @param string|null $cardDefinitionId Identifies the card definition.
+     *
+     * @return self
+     */
+    public function setCardDefinitionId($cardDefinitionId)
+    {
+        if (is_null($cardDefinitionId)) {
+            array_push($this->openAPINullablesSetToNull, 'cardDefinitionId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cardDefinitionId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($cardDefinitionId) && (!preg_match("/^lcdef_[a-f0-9]+$/", $cardDefinitionId))) {
+            throw new \InvalidArgumentException("invalid value for \$cardDefinitionId when calling CardSimple., must conform to the pattern /^lcdef_[a-f0-9]+$/.");
+        }
+
+        $this->container['cardDefinitionId'] = $cardDefinitionId;
+
+        return $this;
+    }
 
     /**
      * Gets cardType
@@ -439,6 +517,40 @@ class CardSimple implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['cardType'] = $cardType;
+
+        return $this;
+    }
+
+    /**
+     * Gets code
+     *
+     * @return string|null
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     *
+     * @param string|null $code Human-readable card code. Card code generation is asynchronous - this field is `null` right after member creation and is populated shortly after, once the background code generation completes.
+     *
+     * @return self
+     */
+    public function setCode($code)
+    {
+        if (is_null($code)) {
+            array_push($this->openAPINullablesSetToNull, 'code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['code'] = $code;
 
         return $this;
     }
@@ -498,113 +610,45 @@ class CardSimple implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets id
+     * Gets object
      *
      * @return string|null
      */
-    public function getId()
+    public function getObject()
     {
-        return $this->container['id'];
+        return $this->container['object'];
     }
 
     /**
-     * Sets id
+     * Sets object
      *
-     * @param string|null $id Unique Voucherify ID of the card.
+     * @param string|null $object Object type. Always `card`.
      *
      * @return self
      */
-    public function setId($id)
+    public function setObject($object)
     {
-        if (is_null($id)) {
-            array_push($this->openAPINullablesSetToNull, 'id');
+        if (is_null($object)) {
+            array_push($this->openAPINullablesSetToNull, 'object');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('id', $nullablesSetToNull);
+            $index = array_search('object', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-        if (!is_null($id) && (!preg_match("/^lcrd_[a-f0-9]+$/", $id))) {
-            throw new \InvalidArgumentException("invalid value for \$id when calling CardSimple., must conform to the pattern /^lcrd_[a-f0-9]+$/.");
+        $allowedValues = $this->getObjectAllowableValues();
+        if (!is_null($object) && !in_array($object, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'object', must be one of '%s'",
+                    $object,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
-
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets cardDefinitionId
-     *
-     * @return string|null
-     */
-    public function getCardDefinitionId()
-    {
-        return $this->container['cardDefinitionId'];
-    }
-
-    /**
-     * Sets cardDefinitionId
-     *
-     * @param string|null $cardDefinitionId Unique Voucherify ID of the card definition the card was created from.
-     *
-     * @return self
-     */
-    public function setCardDefinitionId($cardDefinitionId)
-    {
-        if (is_null($cardDefinitionId)) {
-            array_push($this->openAPINullablesSetToNull, 'cardDefinitionId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('cardDefinitionId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($cardDefinitionId) && (!preg_match("/^lcdef_[a-f0-9]+$/", $cardDefinitionId))) {
-            throw new \InvalidArgumentException("invalid value for \$cardDefinitionId when calling CardSimple., must conform to the pattern /^lcdef_[a-f0-9]+$/.");
-        }
-
-        $this->container['cardDefinitionId'] = $cardDefinitionId;
-
-        return $this;
-    }
-
-    /**
-     * Gets code
-     *
-     * @return string|null
-     */
-    public function getCode()
-    {
-        return $this->container['code'];
-    }
-
-    /**
-     * Sets code
-     *
-     * @param string|null $code Human-readable card code. Card code generation is asynchronous - this field is `null` right after member creation and is populated shortly after, once the background code generation completes.
-     *
-     * @return self
-     */
-    public function setCode($code)
-    {
-        if (is_null($code)) {
-            array_push($this->openAPINullablesSetToNull, 'code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('code', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['code'] = $code;
+        $this->container['object'] = $object;
 
         return $this;
     }
@@ -659,50 +703,6 @@ class CardSimple implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable nextActivation cannot be null');
         }
         $this->container['nextActivation'] = $nextActivation;
-
-        return $this;
-    }
-
-    /**
-     * Gets object
-     *
-     * @return string|null
-     */
-    public function getObject()
-    {
-        return $this->container['object'];
-    }
-
-    /**
-     * Sets object
-     *
-     * @param string|null $object Object type marker, always `card`.
-     *
-     * @return self
-     */
-    public function setObject($object)
-    {
-        if (is_null($object)) {
-            array_push($this->openAPINullablesSetToNull, 'object');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('object', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $allowedValues = $this->getObjectAllowableValues();
-        if (!is_null($object) && !in_array($object, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'object', must be one of '%s'",
-                    $object,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['object'] = $object;
 
         return $this;
     }

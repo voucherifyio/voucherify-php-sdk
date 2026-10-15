@@ -335,7 +335,7 @@ class EarningRulesReportListFilters implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets junction
      *
-     * @param string|null $junction Logical junction between the field filters. Defaults to AND behavior.
+     * @param string|null $junction Joins the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
      *
      * @return self
      */

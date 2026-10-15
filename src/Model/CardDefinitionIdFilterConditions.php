@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * CardDefinitionIdFilterConditions Class Doc Comment
  *
  * @category Class
- * @description ID filter conditions for card definition IDs. At least one condition is required.
+ * @description ID conditions. Format &#x60;lcdef_[a-f0-9]+&#x60;. At least one condition is required.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

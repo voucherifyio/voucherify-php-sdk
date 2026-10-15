@@ -41,7 +41,7 @@ $apiInstance = new OpenAPI\Client\Api\LV2BenefitsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$benefitId = 'benefitId_example'; // string | Unique benefit ID, prefixed with lben_.
+$benefitId = 'benefitId_example'; // string | Identifies the benefit. Format lben_[a-f0-9]+.
 
 try {
     $result = $apiInstance->getBenefit($benefitId);
@@ -55,7 +55,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **benefitId** | **string**| Unique benefit ID, prefixed with lben_. | |
+| **benefitId** | **string**| Identifies the benefit. Format lben_[a-f0-9]+. | |
 
 ### Return type
 

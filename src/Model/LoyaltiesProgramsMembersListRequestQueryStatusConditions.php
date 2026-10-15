@@ -420,7 +420,7 @@ class LoyaltiesProgramsMembersListRequestQueryStatusConditions implements ModelI
     /**
      * Sets is
      *
-     * @param string|null $is Value equals. Single value or an array with exactly one value.
+     * @param string|null $is Matches one value. A string or a one-element array.
      *
      * @return self
      */
@@ -464,7 +464,7 @@ class LoyaltiesProgramsMembersListRequestQueryStatusConditions implements ModelI
     /**
      * Sets isNot
      *
-     * @param string|null $isNot Value does not equal. Single value or an array with exactly one value.
+     * @param string|null $isNot Excludes one value. A string or a one-element array.
      *
      * @return self
      */
@@ -508,7 +508,7 @@ class LoyaltiesProgramsMembersListRequestQueryStatusConditions implements ModelI
     /**
      * Sets in
      *
-     * @param string|null $in Value is one of. Single value or an array of 1-10 values.
+     * @param string|null $in Matches any of the values. A string or an array of 1 to 10 values.
      *
      * @return self
      */
@@ -552,7 +552,7 @@ class LoyaltiesProgramsMembersListRequestQueryStatusConditions implements ModelI
     /**
      * Sets notIn
      *
-     * @param string|null $notIn Value is not one of. Single value or an array of 1-10 values.
+     * @param string|null $notIn Excludes any of the values. A string or an array of 1 to 10 values.
      *
      * @return self
      */

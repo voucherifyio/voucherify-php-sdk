@@ -335,7 +335,7 @@ class V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery implements Mo
     /**
      * Sets junction
      *
-     * @param string|null $junction How multiple field filters are combined. Defaults to `AND`.
+     * @param string|null $junction Joins the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
      *
      * @return self
      */

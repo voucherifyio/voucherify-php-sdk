@@ -128,7 +128,7 @@ class LV2RewardsApi
      *
      * Get reward by ID
      *
-     * @param  string $rewardId Unique reward identifier, prefixed with lrew_. (required)
+     * @param  string $rewardId Identifies the reward. Format lrew_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReward'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -146,7 +146,7 @@ class LV2RewardsApi
      *
      * Get reward by ID
      *
-     * @param  string $rewardId Unique reward identifier, prefixed with lrew_. (required)
+     * @param  string $rewardId Identifies the reward. Format lrew_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReward'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -246,7 +246,7 @@ class LV2RewardsApi
      *
      * Get reward by ID
      *
-     * @param  string $rewardId Unique reward identifier, prefixed with lrew_. (required)
+     * @param  string $rewardId Identifies the reward. Format lrew_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -267,7 +267,7 @@ class LV2RewardsApi
      *
      * Get reward by ID
      *
-     * @param  string $rewardId Unique reward identifier, prefixed with lrew_. (required)
+     * @param  string $rewardId Identifies the reward. Format lrew_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -317,7 +317,7 @@ class LV2RewardsApi
     /**
      * Create request for operation 'getReward'
      *
-     * @param  string $rewardId Unique reward identifier, prefixed with lrew_. (required)
+     * @param  string $rewardId Identifies the reward. Format lrew_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReward'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

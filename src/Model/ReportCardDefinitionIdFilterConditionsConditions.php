@@ -1,6 +1,6 @@
 <?php
 /**
- * SpendingReportFilterCardDefinitionIdConditions
+ * ReportCardDefinitionIdFilterConditionsConditions
  *
  * PHP version 8.1
  *
@@ -33,16 +33,15 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * SpendingReportFilterCardDefinitionIdConditions Class Doc Comment
+ * ReportCardDefinitionIdFilterConditionsConditions Class Doc Comment
  *
  * @category Class
- * @description ID filter conditions for card definition ids. Values must match pattern &#x60;^lcdef_[a-f0-9]+$&#x60;. &#x60;$is&#x60;/&#x60;$is_not&#x60; accept a single value (string or 1-element array); &#x60;$in&#x60;/&#x60;$not_in&#x60; accept a string or an array of 1-100 values.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SpendingReportFilterCardDefinitionIdConditions implements ModelInterface, ArrayAccess, \JsonSerializable
+class ReportCardDefinitionIdFilterConditionsConditions implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class SpendingReportFilterCardDefinitionIdConditions implements ModelInterface, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SpendingReportFilterCardDefinitionIdConditions';
+    protected static $openAPIModelName = 'ReportCardDefinitionIdFilterConditionsConditions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +58,10 @@ class SpendingReportFilterCardDefinitionIdConditions implements ModelInterface, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'conditions' => '\OpenAPI\Client\Model\SpendingReportFilterCardDefinitionIdConditionsConditions'
+        'is' => 'mixed',
+        'isNot' => 'mixed',
+        'in' => 'mixed',
+        'notIn' => 'mixed'
     ];
 
     /**
@@ -70,7 +72,10 @@ class SpendingReportFilterCardDefinitionIdConditions implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'conditions' => null
+        'is' => null,
+        'isNot' => null,
+        'in' => null,
+        'notIn' => null
     ];
 
     /**
@@ -79,7 +84,10 @@ class SpendingReportFilterCardDefinitionIdConditions implements ModelInterface, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'conditions' => true
+        'is' => true,
+		'isNot' => true,
+		'in' => true,
+		'notIn' => true
     ];
 
     /**
@@ -168,7 +176,10 @@ class SpendingReportFilterCardDefinitionIdConditions implements ModelInterface, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'conditions' => 'conditions'
+        'is' => '$is',
+        'isNot' => '$is_not',
+        'in' => '$in',
+        'notIn' => '$not_in'
     ];
 
     /**
@@ -177,7 +188,10 @@ class SpendingReportFilterCardDefinitionIdConditions implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-        'conditions' => 'setConditions'
+        'is' => 'setIs',
+        'isNot' => 'setIsNot',
+        'in' => 'setIn',
+        'notIn' => 'setNotIn'
     ];
 
     /**
@@ -186,7 +200,10 @@ class SpendingReportFilterCardDefinitionIdConditions implements ModelInterface, 
      * @var string[]
      */
     protected static $getters = [
-        'conditions' => 'getConditions'
+        'is' => 'getIs',
+        'isNot' => 'getIsNot',
+        'in' => 'getIn',
+        'notIn' => 'getNotIn'
     ];
 
     /**
@@ -246,7 +263,10 @@ class SpendingReportFilterCardDefinitionIdConditions implements ModelInterface, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('conditions', $data ?? [], null);
+        $this->setIfExists('is', $data ?? [], null);
+        $this->setIfExists('isNot', $data ?? [], null);
+        $this->setIfExists('in', $data ?? [], null);
+        $this->setIfExists('notIn', $data ?? [], null);
     }
 
     /**
@@ -292,35 +312,137 @@ class SpendingReportFilterCardDefinitionIdConditions implements ModelInterface, 
 
 
     /**
-     * Gets conditions
+     * Gets is
      *
-     * @return \OpenAPI\Client\Model\SpendingReportFilterCardDefinitionIdConditionsConditions|null
+     * @return mixed|null
      */
-    public function getConditions()
+    public function getIs()
     {
-        return $this->container['conditions'];
+        return $this->container['is'];
     }
 
     /**
-     * Sets conditions
+     * Sets is
      *
-     * @param \OpenAPI\Client\Model\SpendingReportFilterCardDefinitionIdConditionsConditions|null $conditions conditions
+     * @param mixed|null $is is
      *
      * @return self
      */
-    public function setConditions($conditions)
+    public function setIs($is)
     {
-        if (is_null($conditions)) {
-            array_push($this->openAPINullablesSetToNull, 'conditions');
+        if (is_null($is)) {
+            array_push($this->openAPINullablesSetToNull, 'is');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('conditions', $nullablesSetToNull);
+            $index = array_search('is', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['conditions'] = $conditions;
+        $this->container['is'] = $is;
+
+        return $this;
+    }
+
+    /**
+     * Gets isNot
+     *
+     * @return mixed|null
+     */
+    public function getIsNot()
+    {
+        return $this->container['isNot'];
+    }
+
+    /**
+     * Sets isNot
+     *
+     * @param mixed|null $isNot isNot
+     *
+     * @return self
+     */
+    public function setIsNot($isNot)
+    {
+        if (is_null($isNot)) {
+            array_push($this->openAPINullablesSetToNull, 'isNot');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('isNot', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['isNot'] = $isNot;
+
+        return $this;
+    }
+
+    /**
+     * Gets in
+     *
+     * @return mixed|null
+     */
+    public function getIn()
+    {
+        return $this->container['in'];
+    }
+
+    /**
+     * Sets in
+     *
+     * @param mixed|null $in in
+     *
+     * @return self
+     */
+    public function setIn($in)
+    {
+        if (is_null($in)) {
+            array_push($this->openAPINullablesSetToNull, 'in');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('in', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['in'] = $in;
+
+        return $this;
+    }
+
+    /**
+     * Gets notIn
+     *
+     * @return mixed|null
+     */
+    public function getNotIn()
+    {
+        return $this->container['notIn'];
+    }
+
+    /**
+     * Sets notIn
+     *
+     * @param mixed|null $notIn notIn
+     *
+     * @return self
+     */
+    public function setNotIn($notIn)
+    {
+        if (is_null($notIn)) {
+            array_push($this->openAPINullablesSetToNull, 'notIn');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('notIn', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['notIn'] = $notIn;
 
         return $this;
     }

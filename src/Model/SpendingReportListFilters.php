@@ -60,7 +60,7 @@ class SpendingReportListFilters implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPITypes = [
         'junction' => 'string',
-        'cardDefinitionId' => '\OpenAPI\Client\Model\SpendingReportFilterCardDefinitionIdConditions'
+        'cardDefinitionId' => '\OpenAPI\Client\Model\ReportCardDefinitionIdFilterConditions'
     ];
 
     /**
@@ -335,7 +335,7 @@ class SpendingReportListFilters implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets junction
      *
-     * @param string|null $junction Sets the logical junction between field filters. Allowed values: `AND`, `OR`. Defaults to `AND`.
+     * @param string|null $junction Joins the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
      *
      * @return self
      */
@@ -369,7 +369,7 @@ class SpendingReportListFilters implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets cardDefinitionId
      *
-     * @return \OpenAPI\Client\Model\SpendingReportFilterCardDefinitionIdConditions|null
+     * @return \OpenAPI\Client\Model\ReportCardDefinitionIdFilterConditions|null
      */
     public function getCardDefinitionId()
     {
@@ -379,7 +379,7 @@ class SpendingReportListFilters implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets cardDefinitionId
      *
-     * @param \OpenAPI\Client\Model\SpendingReportFilterCardDefinitionIdConditions|null $cardDefinitionId cardDefinitionId
+     * @param \OpenAPI\Client\Model\ReportCardDefinitionIdFilterConditions|null $cardDefinitionId cardDefinitionId
      *
      * @return self
      */

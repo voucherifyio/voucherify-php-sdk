@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltiesProgramsMembersListRequestQueryCustomerId Class Doc Comment
  *
  * @category Class
- * @description ID filter conditions for customer IDs. At least one condition is required.
+ * @description ID conditions. Format &#x60;cust_[a-zA-Z0-9]+&#x60;. At least one condition is required.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

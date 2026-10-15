@@ -63,11 +63,11 @@ class CardPointsBucket implements ModelInterface, ArrayAccess, \JsonSerializable
         'cardDefinitionId' => 'string',
         'programId' => 'string',
         'memberId' => 'string',
+        'cardType' => 'string',
         'createdAt' => '\DateTime',
         'updatedAt' => '\DateTime',
         'id' => 'string',
         'customerId' => 'string',
-        'cardType' => 'string',
         'points' => '\OpenAPI\Client\Model\CardPointsBucketPoints',
         'expirationDate' => '\DateTime',
         'expirationType' => 'string',
@@ -87,11 +87,11 @@ class CardPointsBucket implements ModelInterface, ArrayAccess, \JsonSerializable
         'cardDefinitionId' => null,
         'programId' => null,
         'memberId' => null,
+        'cardType' => null,
         'createdAt' => 'date-time',
         'updatedAt' => 'date-time',
         'id' => null,
         'customerId' => null,
-        'cardType' => null,
         'points' => null,
         'expirationDate' => 'date',
         'expirationType' => null,
@@ -109,11 +109,11 @@ class CardPointsBucket implements ModelInterface, ArrayAccess, \JsonSerializable
 		'cardDefinitionId' => true,
 		'programId' => true,
 		'memberId' => true,
+		'cardType' => true,
 		'createdAt' => true,
 		'updatedAt' => true,
 		'id' => true,
 		'customerId' => true,
-		'cardType' => true,
 		'points' => true,
 		'expirationDate' => true,
 		'expirationType' => true,
@@ -211,11 +211,11 @@ class CardPointsBucket implements ModelInterface, ArrayAccess, \JsonSerializable
         'cardDefinitionId' => 'card_definition_id',
         'programId' => 'program_id',
         'memberId' => 'member_id',
+        'cardType' => 'card_type',
         'createdAt' => 'created_at',
         'updatedAt' => 'updated_at',
         'id' => 'id',
         'customerId' => 'customer_id',
-        'cardType' => 'card_type',
         'points' => 'points',
         'expirationDate' => 'expiration_date',
         'expirationType' => 'expiration_type',
@@ -233,11 +233,11 @@ class CardPointsBucket implements ModelInterface, ArrayAccess, \JsonSerializable
         'cardDefinitionId' => 'setCardDefinitionId',
         'programId' => 'setProgramId',
         'memberId' => 'setMemberId',
+        'cardType' => 'setCardType',
         'createdAt' => 'setCreatedAt',
         'updatedAt' => 'setUpdatedAt',
         'id' => 'setId',
         'customerId' => 'setCustomerId',
-        'cardType' => 'setCardType',
         'points' => 'setPoints',
         'expirationDate' => 'setExpirationDate',
         'expirationType' => 'setExpirationType',
@@ -255,11 +255,11 @@ class CardPointsBucket implements ModelInterface, ArrayAccess, \JsonSerializable
         'cardDefinitionId' => 'getCardDefinitionId',
         'programId' => 'getProgramId',
         'memberId' => 'getMemberId',
+        'cardType' => 'getCardType',
         'createdAt' => 'getCreatedAt',
         'updatedAt' => 'getUpdatedAt',
         'id' => 'getId',
         'customerId' => 'getCustomerId',
-        'cardType' => 'getCardType',
         'points' => 'getPoints',
         'expirationDate' => 'getExpirationDate',
         'expirationType' => 'getExpirationType',
@@ -390,11 +390,11 @@ class CardPointsBucket implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('cardDefinitionId', $data ?? [], null);
         $this->setIfExists('programId', $data ?? [], null);
         $this->setIfExists('memberId', $data ?? [], null);
+        $this->setIfExists('cardType', $data ?? [], 'INDIVIDUAL');
         $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('updatedAt', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('customerId', $data ?? [], null);
-        $this->setIfExists('cardType', $data ?? [], 'INDIVIDUAL');
         $this->setIfExists('points', $data ?? [], null);
         $this->setIfExists('expirationDate', $data ?? [], null);
         $this->setIfExists('expirationType', $data ?? [], null);
@@ -445,14 +445,6 @@ class CardPointsBucket implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'memberId', must be conform to the pattern /^lmbr_[a-f0-9]+$/.";
         }
 
-        if (!is_null($this->container['id']) && !preg_match("/^lcpeb_[a-f0-9]+$/", $this->container['id'])) {
-            $invalidProperties[] = "invalid value for 'id', must be conform to the pattern /^lcpeb_[a-f0-9]+$/.";
-        }
-
-        if (!is_null($this->container['customerId']) && !preg_match("/^cust_[a-zA-Z0-9]+/", $this->container['customerId'])) {
-            $invalidProperties[] = "invalid value for 'customerId', must be conform to the pattern /^cust_[a-zA-Z0-9]+/.";
-        }
-
         $allowedValues = $this->getCardTypeAllowableValues();
         if (!is_null($this->container['cardType']) && !in_array($this->container['cardType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -460,6 +452,14 @@ class CardPointsBucket implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->container['cardType'],
                 implode("', '", $allowedValues)
             );
+        }
+
+        if (!is_null($this->container['id']) && !preg_match("/^lcpeb_[a-f0-9]+$/", $this->container['id'])) {
+            $invalidProperties[] = "invalid value for 'id', must be conform to the pattern /^lcpeb_[a-f0-9]+$/.";
+        }
+
+        if (!is_null($this->container['customerId']) && !preg_match("/^cust_[a-zA-Z0-9]+/", $this->container['customerId'])) {
+            $invalidProperties[] = "invalid value for 'customerId', must be conform to the pattern /^cust_[a-zA-Z0-9]+/.";
         }
 
         $allowedValues = $this->getExpirationTypeAllowableValues();
@@ -661,6 +661,50 @@ class CardPointsBucket implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets cardType
+     *
+     * @return string|null
+     */
+    public function getCardType()
+    {
+        return $this->container['cardType'];
+    }
+
+    /**
+     * Sets cardType
+     *
+     * @param string|null $cardType Card type. Currently, only `INDIVIDUAL` is supported.
+     *
+     * @return self
+     */
+    public function setCardType($cardType)
+    {
+        if (is_null($cardType)) {
+            array_push($this->openAPINullablesSetToNull, 'cardType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cardType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getCardTypeAllowableValues();
+        if (!is_null($cardType) && !in_array($cardType, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'cardType', must be one of '%s'",
+                    $cardType,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['cardType'] = $cardType;
+
+        return $this;
+    }
+
+    /**
      * Gets createdAt
      *
      * @return \DateTime|null
@@ -802,50 +846,6 @@ class CardPointsBucket implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['customerId'] = $customerId;
-
-        return $this;
-    }
-
-    /**
-     * Gets cardType
-     *
-     * @return string|null
-     */
-    public function getCardType()
-    {
-        return $this->container['cardType'];
-    }
-
-    /**
-     * Sets cardType
-     *
-     * @param string|null $cardType Card type. Currently, only `INDIVIDUAL` is supported.
-     *
-     * @return self
-     */
-    public function setCardType($cardType)
-    {
-        if (is_null($cardType)) {
-            array_push($this->openAPINullablesSetToNull, 'cardType');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('cardType', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $allowedValues = $this->getCardTypeAllowableValues();
-        if (!is_null($cardType) && !in_array($cardType, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'cardType', must be one of '%s'",
-                    $cardType,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['cardType'] = $cardType;
 
         return $this;
     }

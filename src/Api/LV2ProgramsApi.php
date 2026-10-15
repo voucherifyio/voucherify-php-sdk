@@ -257,10 +257,10 @@ class LV2ProgramsApi
      *
      * Activate pending point bucket
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Pending points bucket ID (format lcppb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the pending points bucket. Format lcppb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateCardPendingPointsBucket'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -278,10 +278,10 @@ class LV2ProgramsApi
      *
      * Activate pending point bucket
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Pending points bucket ID (format lcppb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the pending points bucket. Format lcppb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateCardPendingPointsBucket'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -381,10 +381,10 @@ class LV2ProgramsApi
      *
      * Activate pending point bucket
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Pending points bucket ID (format lcppb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the pending points bucket. Format lcppb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateCardPendingPointsBucket'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -405,10 +405,10 @@ class LV2ProgramsApi
      *
      * Activate pending point bucket
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Pending points bucket ID (format lcppb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the pending points bucket. Format lcppb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateCardPendingPointsBucket'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -458,10 +458,10 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'activateCardPendingPointsBucket'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Pending points bucket ID (format lcppb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the pending points bucket. Format lcppb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateCardPendingPointsBucket'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -622,8 +622,8 @@ class LV2ProgramsApi
      *
      * Activate program member
      *
-     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. Required. (required)
-     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. Required. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateProgramMember'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -641,8 +641,8 @@ class LV2ProgramsApi
      *
      * Activate program member
      *
-     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. Required. (required)
-     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. Required. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateProgramMember'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -742,8 +742,8 @@ class LV2ProgramsApi
      *
      * Activate program member
      *
-     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. Required. (required)
-     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. Required. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateProgramMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -764,8 +764,8 @@ class LV2ProgramsApi
      *
      * Activate program member
      *
-     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. Required. (required)
-     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. Required. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateProgramMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -815,8 +815,8 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'activateProgramMember'
      *
-     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. Required. (required)
-     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. Required. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateProgramMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -941,9 +941,9 @@ class LV2ProgramsApi
      *
      * Adjust card points
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody $v2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody v2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adjustCardPoints'] to see the possible values for this operation
      *
@@ -962,9 +962,9 @@ class LV2ProgramsApi
      *
      * Adjust card points
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody $v2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adjustCardPoints'] to see the possible values for this operation
      *
@@ -1065,9 +1065,9 @@ class LV2ProgramsApi
      *
      * Adjust card points
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody $v2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adjustCardPoints'] to see the possible values for this operation
      *
@@ -1089,9 +1089,9 @@ class LV2ProgramsApi
      *
      * Adjust card points
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody $v2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adjustCardPoints'] to see the possible values for this operation
      *
@@ -1142,9 +1142,9 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'adjustCardPoints'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody $v2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['adjustCardPoints'] to see the possible values for this operation
      *
@@ -1296,7 +1296,7 @@ class LV2ProgramsApi
      *
      * Batch create program members
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\MemberCreate[] $memberCreate memberCreate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchCreateProgramMembers'] to see the possible values for this operation
      *
@@ -1315,7 +1315,7 @@ class LV2ProgramsApi
      *
      * Batch create program members
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\MemberCreate[] $memberCreate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchCreateProgramMembers'] to see the possible values for this operation
      *
@@ -1416,7 +1416,7 @@ class LV2ProgramsApi
      *
      * Batch create program members
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\MemberCreate[] $memberCreate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchCreateProgramMembers'] to see the possible values for this operation
      *
@@ -1438,7 +1438,7 @@ class LV2ProgramsApi
      *
      * Batch create program members
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\MemberCreate[] $memberCreate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchCreateProgramMembers'] to see the possible values for this operation
      *
@@ -1489,7 +1489,7 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'batchCreateProgramMembers'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\MemberCreate[] $memberCreate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchCreateProgramMembers'] to see the possible values for this operation
      *
@@ -1605,10 +1605,10 @@ class LV2ProgramsApi
      *
      * Cancel pending point bucket
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Pending points bucket ID (format lcppb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the pending points bucket. Format lcppb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelCardPendingPointsBucket'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -1626,10 +1626,10 @@ class LV2ProgramsApi
      *
      * Cancel pending point bucket
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Pending points bucket ID (format lcppb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the pending points bucket. Format lcppb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelCardPendingPointsBucket'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -1729,10 +1729,10 @@ class LV2ProgramsApi
      *
      * Cancel pending point bucket
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Pending points bucket ID (format lcppb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the pending points bucket. Format lcppb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelCardPendingPointsBucket'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1753,10 +1753,10 @@ class LV2ProgramsApi
      *
      * Cancel pending point bucket
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Pending points bucket ID (format lcppb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the pending points bucket. Format lcppb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelCardPendingPointsBucket'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1806,10 +1806,10 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'cancelCardPendingPointsBucket'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Pending points bucket ID (format lcppb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the pending points bucket. Format lcppb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelCardPendingPointsBucket'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1970,8 +1970,8 @@ class LV2ProgramsApi
      *
      * Pay for order with points
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Identifies the program member (lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody $v2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody v2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMemberOrderPayment'] to see the possible values for this operation
      *
@@ -1990,8 +1990,8 @@ class LV2ProgramsApi
      *
      * Pay for order with points
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Identifies the program member (lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody $v2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMemberOrderPayment'] to see the possible values for this operation
      *
@@ -2092,8 +2092,8 @@ class LV2ProgramsApi
      *
      * Pay for order with points
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Identifies the program member (lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody $v2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMemberOrderPayment'] to see the possible values for this operation
      *
@@ -2115,8 +2115,8 @@ class LV2ProgramsApi
      *
      * Pay for order with points
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Identifies the program member (lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody $v2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMemberOrderPayment'] to see the possible values for this operation
      *
@@ -2167,8 +2167,8 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'createMemberOrderPayment'
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Identifies the program member (lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody $v2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMemberOrderPayment'] to see the possible values for this operation
      *
@@ -2302,7 +2302,7 @@ class LV2ProgramsApi
      *
      * Create program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCreateRequestBody $v2LoyaltiesProgramsMembersCreateRequestBody v2LoyaltiesProgramsMembersCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProgramMember'] to see the possible values for this operation
      *
@@ -2321,7 +2321,7 @@ class LV2ProgramsApi
      *
      * Create program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCreateRequestBody $v2LoyaltiesProgramsMembersCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProgramMember'] to see the possible values for this operation
      *
@@ -2422,7 +2422,7 @@ class LV2ProgramsApi
      *
      * Create program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCreateRequestBody $v2LoyaltiesProgramsMembersCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProgramMember'] to see the possible values for this operation
      *
@@ -2444,7 +2444,7 @@ class LV2ProgramsApi
      *
      * Create program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCreateRequestBody $v2LoyaltiesProgramsMembersCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProgramMember'] to see the possible values for this operation
      *
@@ -2495,7 +2495,7 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'createProgramMember'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCreateRequestBody $v2LoyaltiesProgramsMembersCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createProgramMember'] to see the possible values for this operation
      *
@@ -2611,8 +2611,8 @@ class LV2ProgramsApi
      *
      * Deactivate program member
      *
-     * @param  string $programId Identifies the loyalty program. Unique identifier in lprg_[a-f0-9]+ format. (required)
-     * @param  string $memberId Identifies the member. Unique identifier in lmbr_[a-f0-9]+ format. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deactivateProgramMember'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -2630,8 +2630,8 @@ class LV2ProgramsApi
      *
      * Deactivate program member
      *
-     * @param  string $programId Identifies the loyalty program. Unique identifier in lprg_[a-f0-9]+ format. (required)
-     * @param  string $memberId Identifies the member. Unique identifier in lmbr_[a-f0-9]+ format. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deactivateProgramMember'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -2731,8 +2731,8 @@ class LV2ProgramsApi
      *
      * Deactivate program member
      *
-     * @param  string $programId Identifies the loyalty program. Unique identifier in lprg_[a-f0-9]+ format. (required)
-     * @param  string $memberId Identifies the member. Unique identifier in lmbr_[a-f0-9]+ format. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deactivateProgramMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2753,8 +2753,8 @@ class LV2ProgramsApi
      *
      * Deactivate program member
      *
-     * @param  string $programId Identifies the loyalty program. Unique identifier in lprg_[a-f0-9]+ format. (required)
-     * @param  string $memberId Identifies the member. Unique identifier in lmbr_[a-f0-9]+ format. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deactivateProgramMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2804,8 +2804,8 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'deactivateProgramMember'
      *
-     * @param  string $programId Identifies the loyalty program. Unique identifier in lprg_[a-f0-9]+ format. (required)
-     * @param  string $memberId Identifies the member. Unique identifier in lmbr_[a-f0-9]+ format. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deactivateProgramMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2930,8 +2930,8 @@ class LV2ProgramsApi
      *
      * Delete program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProgramMember'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -2949,8 +2949,8 @@ class LV2ProgramsApi
      *
      * Delete program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProgramMember'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -3050,8 +3050,8 @@ class LV2ProgramsApi
      *
      * Delete program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProgramMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3072,8 +3072,8 @@ class LV2ProgramsApi
      *
      * Delete program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProgramMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3123,8 +3123,8 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'deleteProgramMember'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProgramMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3249,10 +3249,10 @@ class LV2ProgramsApi
      *
      * Expire point bucket
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Points expiration bucket ID (format lcpeb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the points expiration bucket. Format lcpeb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['expireCardPointsBucket'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -3270,10 +3270,10 @@ class LV2ProgramsApi
      *
      * Expire point bucket
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Points expiration bucket ID (format lcpeb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the points expiration bucket. Format lcpeb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['expireCardPointsBucket'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -3373,10 +3373,10 @@ class LV2ProgramsApi
      *
      * Expire point bucket
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Points expiration bucket ID (format lcpeb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the points expiration bucket. Format lcpeb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['expireCardPointsBucket'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3397,10 +3397,10 @@ class LV2ProgramsApi
      *
      * Expire point bucket
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Points expiration bucket ID (format lcpeb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the points expiration bucket. Format lcpeb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['expireCardPointsBucket'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3450,10 +3450,10 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'expireCardPointsBucket'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  string $bucketId Points expiration bucket ID (format lcpeb_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  string $bucketId Identifies the points expiration bucket. Format lcpeb_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['expireCardPointsBucket'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3614,12 +3614,12 @@ class LV2ProgramsApi
      *
      * List member earning-rule daily reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Unique loyalty member identifier (format: lmbr_ followed by hexadecimal characters). (required)
-     * @param  string $earningRuleId Unique earning rule identifier (format: lern_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $earningRuleId Identifies the earning rule. Format lern_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMemberEarningRuleDailyReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -3637,12 +3637,12 @@ class LV2ProgramsApi
      *
      * List member earning-rule daily reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Unique loyalty member identifier (format: lmbr_ followed by hexadecimal characters). (required)
-     * @param  string $earningRuleId Unique earning rule identifier (format: lern_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $earningRuleId Identifies the earning rule. Format lern_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMemberEarningRuleDailyReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -3742,12 +3742,12 @@ class LV2ProgramsApi
      *
      * List member earning-rule daily reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Unique loyalty member identifier (format: lmbr_ followed by hexadecimal characters). (required)
-     * @param  string $earningRuleId Unique earning rule identifier (format: lern_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $earningRuleId Identifies the earning rule. Format lern_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMemberEarningRuleDailyReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3768,12 +3768,12 @@ class LV2ProgramsApi
      *
      * List member earning-rule daily reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Unique loyalty member identifier (format: lmbr_ followed by hexadecimal characters). (required)
-     * @param  string $earningRuleId Unique earning rule identifier (format: lern_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $earningRuleId Identifies the earning rule. Format lern_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMemberEarningRuleDailyReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3823,12 +3823,12 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'getMemberEarningRuleDailyReport'
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Unique loyalty member identifier (format: lmbr_ followed by hexadecimal characters). (required)
-     * @param  string $earningRuleId Unique earning rule identifier (format: lern_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $earningRuleId Identifies the earning rule. Format lern_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMemberEarningRuleDailyReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4025,8 +4025,8 @@ class LV2ProgramsApi
      *
      * Get program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramMember'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -4044,8 +4044,8 @@ class LV2ProgramsApi
      *
      * Get program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramMember'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -4145,8 +4145,8 @@ class LV2ProgramsApi
      *
      * Get program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4167,8 +4167,8 @@ class LV2ProgramsApi
      *
      * Get program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4218,8 +4218,8 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'getProgramMember'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramMember'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4344,9 +4344,9 @@ class LV2ProgramsApi
      *
      * Get program membership
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $customerId Unique identifier of the customer or member, interpreted according to identification_type: a Voucherify customer ID (cust_...), a customer source_id, or a loyalty member ID (lmbr_...). (required)
-     * @param  string $identificationType Chooses how customerId is read. customer_id is the Voucherify customer ID and the default. customer_source_id is the customers source_id. member_id is the loyalty member ID. (optional, default to 'customer_id')
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $customerId Identifies the customer or member. identification_type selects the value: a Voucherify customer ID (cust_...), a customer source_id, or a loyalty member ID (lmbr_...). (required)
+     * @param  string $identificationType Selects how customerId is read. customer_id is the Voucherify customer ID and the default. customer_source_id is the customers source_id. member_id is the loyalty member ID. (optional, default to 'customer_id')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramMembership'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -4364,9 +4364,9 @@ class LV2ProgramsApi
      *
      * Get program membership
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $customerId Unique identifier of the customer or member, interpreted according to identification_type: a Voucherify customer ID (cust_...), a customer source_id, or a loyalty member ID (lmbr_...). (required)
-     * @param  string $identificationType Chooses how customerId is read. customer_id is the Voucherify customer ID and the default. customer_source_id is the customers source_id. member_id is the loyalty member ID. (optional, default to 'customer_id')
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $customerId Identifies the customer or member. identification_type selects the value: a Voucherify customer ID (cust_...), a customer source_id, or a loyalty member ID (lmbr_...). (required)
+     * @param  string $identificationType Selects how customerId is read. customer_id is the Voucherify customer ID and the default. customer_source_id is the customers source_id. member_id is the loyalty member ID. (optional, default to 'customer_id')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramMembership'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -4466,9 +4466,9 @@ class LV2ProgramsApi
      *
      * Get program membership
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $customerId Unique identifier of the customer or member, interpreted according to identification_type: a Voucherify customer ID (cust_...), a customer source_id, or a loyalty member ID (lmbr_...). (required)
-     * @param  string $identificationType Chooses how customerId is read. customer_id is the Voucherify customer ID and the default. customer_source_id is the customers source_id. member_id is the loyalty member ID. (optional, default to 'customer_id')
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $customerId Identifies the customer or member. identification_type selects the value: a Voucherify customer ID (cust_...), a customer source_id, or a loyalty member ID (lmbr_...). (required)
+     * @param  string $identificationType Selects how customerId is read. customer_id is the Voucherify customer ID and the default. customer_source_id is the customers source_id. member_id is the loyalty member ID. (optional, default to 'customer_id')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramMembership'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4489,9 +4489,9 @@ class LV2ProgramsApi
      *
      * Get program membership
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $customerId Unique identifier of the customer or member, interpreted according to identification_type: a Voucherify customer ID (cust_...), a customer source_id, or a loyalty member ID (lmbr_...). (required)
-     * @param  string $identificationType Chooses how customerId is read. customer_id is the Voucherify customer ID and the default. customer_source_id is the customers source_id. member_id is the loyalty member ID. (optional, default to 'customer_id')
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $customerId Identifies the customer or member. identification_type selects the value: a Voucherify customer ID (cust_...), a customer source_id, or a loyalty member ID (lmbr_...). (required)
+     * @param  string $identificationType Selects how customerId is read. customer_id is the Voucherify customer ID and the default. customer_source_id is the customers source_id. member_id is the loyalty member ID. (optional, default to 'customer_id')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramMembership'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4541,9 +4541,9 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'getProgramMembership'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $customerId Unique identifier of the customer or member, interpreted according to identification_type: a Voucherify customer ID (cust_...), a customer source_id, or a loyalty member ID (lmbr_...). (required)
-     * @param  string $identificationType Chooses how customerId is read. customer_id is the Voucherify customer ID and the default. customer_source_id is the customers source_id. member_id is the loyalty member ID. (optional, default to 'customer_id')
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $customerId Identifies the customer or member. identification_type selects the value: a Voucherify customer ID (cust_...), a customer source_id, or a loyalty member ID (lmbr_...). (required)
+     * @param  string $identificationType Selects how customerId is read. customer_id is the Voucherify customer ID and the default. customer_source_id is the customers source_id. member_id is the loyalty member ID. (optional, default to 'customer_id')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramMembership'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4675,11 +4675,11 @@ class LV2ProgramsApi
      *
      * List program points-earnings daily reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
-     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters rows by earning rule ID and card definition ID. Each field takes a conditions object. Omitting filters or setting it to null applies no field filters. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramPointsEarningsDailyReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -4697,11 +4697,11 @@ class LV2ProgramsApi
      *
      * List program points-earnings daily reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
-     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters rows by earning rule ID and card definition ID. Each field takes a conditions object. Omitting filters or setting it to null applies no field filters. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramPointsEarningsDailyReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -4801,11 +4801,11 @@ class LV2ProgramsApi
      *
      * List program points-earnings daily reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
-     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters rows by earning rule ID and card definition ID. Each field takes a conditions object. Omitting filters or setting it to null applies no field filters. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramPointsEarningsDailyReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4826,11 +4826,11 @@ class LV2ProgramsApi
      *
      * List program points-earnings daily reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
-     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters rows by earning rule ID and card definition ID. Each field takes a conditions object. Omitting filters or setting it to null applies no field filters. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramPointsEarningsDailyReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4880,11 +4880,11 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'getProgramPointsEarningsDailyReport'
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
-     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters rows by earning rule ID and card definition ID. Each field takes a conditions object. Omitting filters or setting it to null applies no field filters. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramPointsEarningsDailyReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5055,8 +5055,8 @@ class LV2ProgramsApi
      *
      * List program points-earnings summary reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters rows by earning rule ID and card definition ID. Each field takes a conditions object. Omitting filters or setting it to null applies no field filters. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramPointsEarningsSummaryReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -5074,8 +5074,8 @@ class LV2ProgramsApi
      *
      * List program points-earnings summary reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters rows by earning rule ID and card definition ID. Each field takes a conditions object. Omitting filters or setting it to null applies no field filters. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramPointsEarningsSummaryReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -5175,8 +5175,8 @@ class LV2ProgramsApi
      *
      * List program points-earnings summary reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters rows by earning rule ID and card definition ID. Each field takes a conditions object. Omitting filters or setting it to null applies no field filters. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramPointsEarningsSummaryReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5197,8 +5197,8 @@ class LV2ProgramsApi
      *
      * List program points-earnings summary reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters rows by earning rule ID and card definition ID. Each field takes a conditions object. Omitting filters or setting it to null applies no field filters. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramPointsEarningsSummaryReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5248,8 +5248,8 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'getProgramPointsEarningsSummaryReport'
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters rows by earning rule ID and card definition ID. Each field takes a conditions object. Omitting filters or setting it to null applies no field filters. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \OpenAPI\Client\Model\PointsEarningsReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramPointsEarningsSummaryReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5366,13 +5366,13 @@ class LV2ProgramsApi
      *
      * List card activities
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of activities to return. An integer from 1 to 100. Numeric strings are accepted and rounded to the nearest integer. Defaults to 10 when omitted. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are created_at and -created_at. Defaults to -created_at when omitted, null, or an empty array. Accepts one value or an array of those values. Any other value is rejected. An array that contains both directions is rejected. Rows that share a created_at millisecond are then ordered by id ascending. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsacrd_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters $filters Field-specific filter conditions, passed as a deep object, e.g. filters[type][conditions][$is] vl.card.created. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsacrd_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters $filters Filters the results. Pass a deep object, for example filters[type][conditions][$is] vl.card.created. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardActivities'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -5390,13 +5390,13 @@ class LV2ProgramsApi
      *
      * List card activities
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of activities to return. An integer from 1 to 100. Numeric strings are accepted and rounded to the nearest integer. Defaults to 10 when omitted. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are created_at and -created_at. Defaults to -created_at when omitted, null, or an empty array. Accepts one value or an array of those values. Any other value is rejected. An array that contains both directions is rejected. Rows that share a created_at millisecond are then ordered by id ascending. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsacrd_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters $filters Field-specific filter conditions, passed as a deep object, e.g. filters[type][conditions][$is] vl.card.created. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsacrd_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters $filters Filters the results. Pass a deep object, for example filters[type][conditions][$is] vl.card.created. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardActivities'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -5496,13 +5496,13 @@ class LV2ProgramsApi
      *
      * List card activities
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of activities to return. An integer from 1 to 100. Numeric strings are accepted and rounded to the nearest integer. Defaults to 10 when omitted. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are created_at and -created_at. Defaults to -created_at when omitted, null, or an empty array. Accepts one value or an array of those values. Any other value is rejected. An array that contains both directions is rejected. Rows that share a created_at millisecond are then ordered by id ascending. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsacrd_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters $filters Field-specific filter conditions, passed as a deep object, e.g. filters[type][conditions][$is] vl.card.created. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsacrd_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters $filters Filters the results. Pass a deep object, for example filters[type][conditions][$is] vl.card.created. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardActivities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5523,13 +5523,13 @@ class LV2ProgramsApi
      *
      * List card activities
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of activities to return. An integer from 1 to 100. Numeric strings are accepted and rounded to the nearest integer. Defaults to 10 when omitted. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are created_at and -created_at. Defaults to -created_at when omitted, null, or an empty array. Accepts one value or an array of those values. Any other value is rejected. An array that contains both directions is rejected. Rows that share a created_at millisecond are then ordered by id ascending. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsacrd_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters $filters Field-specific filter conditions, passed as a deep object, e.g. filters[type][conditions][$is] vl.card.created. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsacrd_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters $filters Filters the results. Pass a deep object, for example filters[type][conditions][$is] vl.card.created. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardActivities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5579,13 +5579,13 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listCardActivities'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of activities to return. An integer from 1 to 100. Numeric strings are accepted and rounded to the nearest integer. Defaults to 10 when omitted. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are created_at and -created_at. Defaults to -created_at when omitted, null, or an empty array. Accepts one value or an array of those values. Any other value is rejected. An array that contains both directions is rejected. Rows that share a created_at millisecond are then ordered by id ascending. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsacrd_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters $filters Field-specific filter conditions, passed as a deep object, e.g. filters[type][conditions][$is] vl.card.created. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsacrd_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters $filters Filters the results. Pass a deep object, for example filters[type][conditions][$is] vl.card.created. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardActivities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5777,13 +5777,13 @@ class LV2ProgramsApi
      *
      * List card expiring points buckets
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of buckets to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are expiration_date and -expiration_date; defaults to expiration_date (soonest expiration first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrspeb_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, for example filters[card_definition_id][conditions][$is] lcdef_1297339938ae248cea. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to expiration_date. Soonest expiration first. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrspeb_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_1297339938ae248cea. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardExpiringPoints'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -5801,13 +5801,13 @@ class LV2ProgramsApi
      *
      * List card expiring points buckets
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of buckets to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are expiration_date and -expiration_date; defaults to expiration_date (soonest expiration first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrspeb_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, for example filters[card_definition_id][conditions][$is] lcdef_1297339938ae248cea. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to expiration_date. Soonest expiration first. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrspeb_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_1297339938ae248cea. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardExpiringPoints'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -5907,13 +5907,13 @@ class LV2ProgramsApi
      *
      * List card expiring points buckets
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of buckets to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are expiration_date and -expiration_date; defaults to expiration_date (soonest expiration first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrspeb_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, for example filters[card_definition_id][conditions][$is] lcdef_1297339938ae248cea. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to expiration_date. Soonest expiration first. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrspeb_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_1297339938ae248cea. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardExpiringPoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5934,13 +5934,13 @@ class LV2ProgramsApi
      *
      * List card expiring points buckets
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of buckets to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are expiration_date and -expiration_date; defaults to expiration_date (soonest expiration first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrspeb_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, for example filters[card_definition_id][conditions][$is] lcdef_1297339938ae248cea. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to expiration_date. Soonest expiration first. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrspeb_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_1297339938ae248cea. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardExpiringPoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5990,13 +5990,13 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listCardExpiringPoints'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of buckets to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are expiration_date and -expiration_date; defaults to expiration_date (soonest expiration first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrspeb_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, for example filters[card_definition_id][conditions][$is] lcdef_1297339938ae248cea. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to expiration_date. Soonest expiration first. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrspeb_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_1297339938ae248cea. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardExpiringPoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6188,13 +6188,13 @@ class LV2ProgramsApi
      *
      * List card pending point buckets
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of buckets to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are date and -date; defaults to date (soonest activation first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrscppb_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, for example filters[card_definition_id][conditions][$is] lcdef_128f495f720c4bec8c. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to date. Soonest activation first. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrscppb_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_128f495f720c4bec8c. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardPendingPoints'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -6212,13 +6212,13 @@ class LV2ProgramsApi
      *
      * List card pending point buckets
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of buckets to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are date and -date; defaults to date (soonest activation first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrscppb_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, for example filters[card_definition_id][conditions][$is] lcdef_128f495f720c4bec8c. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to date. Soonest activation first. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrscppb_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_128f495f720c4bec8c. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardPendingPoints'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -6318,13 +6318,13 @@ class LV2ProgramsApi
      *
      * List card pending point buckets
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of buckets to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are date and -date; defaults to date (soonest activation first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrscppb_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, for example filters[card_definition_id][conditions][$is] lcdef_128f495f720c4bec8c. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to date. Soonest activation first. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrscppb_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_128f495f720c4bec8c. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardPendingPoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6345,13 +6345,13 @@ class LV2ProgramsApi
      *
      * List card pending point buckets
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of buckets to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are date and -date; defaults to date (soonest activation first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrscppb_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, for example filters[card_definition_id][conditions][$is] lcdef_128f495f720c4bec8c. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to date. Soonest activation first. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrscppb_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_128f495f720c4bec8c. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardPendingPoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6401,13 +6401,13 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listCardPendingPoints'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of buckets to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are date and -date; defaults to date (soonest activation first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrscppb_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, for example filters[card_definition_id][conditions][$is] lcdef_128f495f720c4bec8c. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to date. Soonest activation first. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrscppb_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_128f495f720c4bec8c. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardPendingPoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6599,13 +6599,13 @@ class LV2ProgramsApi
      *
      * List card transactions
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of transactions to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsctx_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, e.g. filters[id][conditions][$is] lctx_0f5d0a8878caa3ee5c. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsctx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[id][conditions][$is] lctx_0f5d0a8878caa3ee5c. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardTransactions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -6623,13 +6623,13 @@ class LV2ProgramsApi
      *
      * List card transactions
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of transactions to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsctx_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, e.g. filters[id][conditions][$is] lctx_0f5d0a8878caa3ee5c. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsctx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[id][conditions][$is] lctx_0f5d0a8878caa3ee5c. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardTransactions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -6729,13 +6729,13 @@ class LV2ProgramsApi
      *
      * List card transactions
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of transactions to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsctx_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, e.g. filters[id][conditions][$is] lctx_0f5d0a8878caa3ee5c. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsctx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[id][conditions][$is] lctx_0f5d0a8878caa3ee5c. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6756,13 +6756,13 @@ class LV2ProgramsApi
      *
      * List card transactions
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of transactions to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsctx_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, e.g. filters[id][conditions][$is] lctx_0f5d0a8878caa3ee5c. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsctx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[id][conditions][$is] lctx_0f5d0a8878caa3ee5c. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6812,13 +6812,13 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listCardTransactions'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  string $cardId Loyalty card ID (format lcrd_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of transactions to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsctx_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery $filters Field-specific filter conditions, passed as a deep object, e.g. filters[id][conditions][$is] lctx_0f5d0a8878caa3ee5c. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsctx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[id][conditions][$is] lctx_0f5d0a8878caa3ee5c. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCardTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7010,12 +7010,12 @@ class LV2ProgramsApi
      *
      * List member benefit transactions
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are id and -id; defaults to -id (newest first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsbtx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery $filters Field filters, e.g. filters[benefit_id][conditions][$is] lben_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsbtx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[benefit_id][conditions][$is] lben_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberBenefitTransactions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -7033,12 +7033,12 @@ class LV2ProgramsApi
      *
      * List member benefit transactions
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are id and -id; defaults to -id (newest first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsbtx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery $filters Field filters, e.g. filters[benefit_id][conditions][$is] lben_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsbtx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[benefit_id][conditions][$is] lben_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberBenefitTransactions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -7138,12 +7138,12 @@ class LV2ProgramsApi
      *
      * List member benefit transactions
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are id and -id; defaults to -id (newest first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsbtx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery $filters Field filters, e.g. filters[benefit_id][conditions][$is] lben_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsbtx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[benefit_id][conditions][$is] lben_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberBenefitTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7164,12 +7164,12 @@ class LV2ProgramsApi
      *
      * List member benefit transactions
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are id and -id; defaults to -id (newest first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsbtx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery $filters Field filters, e.g. filters[benefit_id][conditions][$is] lben_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsbtx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[benefit_id][conditions][$is] lben_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberBenefitTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7219,12 +7219,12 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listMemberBenefitTransactions'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Valid orders are id and -id; defaults to -id (newest first). Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsbtx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery $filters Field filters, e.g. filters[benefit_id][conditions][$is] lben_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsbtx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[benefit_id][conditions][$is] lben_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberBenefitTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7398,12 +7398,12 @@ class LV2ProgramsApi
      *
      * List card daily points reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Unique loyalty member identifier (format: lmbr_ followed by hexadecimal characters). (required)
-     * @param  string $cardId Unique loyalty card identifier (format: lcrd_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberCardDailyReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -7421,12 +7421,12 @@ class LV2ProgramsApi
      *
      * List card daily points reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Unique loyalty member identifier (format: lmbr_ followed by hexadecimal characters). (required)
-     * @param  string $cardId Unique loyalty card identifier (format: lcrd_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberCardDailyReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -7526,12 +7526,12 @@ class LV2ProgramsApi
      *
      * List card daily points reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Unique loyalty member identifier (format: lmbr_ followed by hexadecimal characters). (required)
-     * @param  string $cardId Unique loyalty card identifier (format: lcrd_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberCardDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7552,12 +7552,12 @@ class LV2ProgramsApi
      *
      * List card daily points reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Unique loyalty member identifier (format: lmbr_ followed by hexadecimal characters). (required)
-     * @param  string $cardId Unique loyalty card identifier (format: lcrd_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberCardDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7607,12 +7607,12 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listMemberCardDailyReports'
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Unique loyalty member identifier (format: lmbr_ followed by hexadecimal characters). (required)
-     * @param  string $cardId Unique loyalty card identifier (format: lcrd_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  string $cardId Identifies the loyalty card. Format lcrd_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberCardDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7809,12 +7809,12 @@ class LV2ProgramsApi
      *
      * List member order payments
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Identifies the program member (lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsotx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery $filters Filters results by field, e.g. filters[id][conditions][$is] lotx_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsotx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[id][conditions][$is] lotx_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberOrderPayments'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -7832,12 +7832,12 @@ class LV2ProgramsApi
      *
      * List member order payments
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Identifies the program member (lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsotx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery $filters Filters results by field, e.g. filters[id][conditions][$is] lotx_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsotx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[id][conditions][$is] lotx_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberOrderPayments'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -7937,12 +7937,12 @@ class LV2ProgramsApi
      *
      * List member order payments
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Identifies the program member (lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsotx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery $filters Filters results by field, e.g. filters[id][conditions][$is] lotx_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsotx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[id][conditions][$is] lotx_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberOrderPayments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7963,12 +7963,12 @@ class LV2ProgramsApi
      *
      * List member order payments
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Identifies the program member (lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsotx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery $filters Filters results by field, e.g. filters[id][conditions][$is] lotx_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsotx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[id][conditions][$is] lotx_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberOrderPayments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8018,12 +8018,12 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listMemberOrderPayments'
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Identifies the program member (lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsotx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery $filters Filters results by field, e.g. filters[id][conditions][$is] lotx_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsotx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[id][conditions][$is] lotx_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberOrderPayments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8197,12 +8197,12 @@ class LV2ProgramsApi
      *
      * List member reward purchases
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrstrx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery $filters Field filters, e.g. filters[reward_id][conditions][$is] lrew_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrstrx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberRewardPurchases'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -8220,12 +8220,12 @@ class LV2ProgramsApi
      *
      * List member reward purchases
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrstrx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery $filters Field filters, e.g. filters[reward_id][conditions][$is] lrew_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrstrx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberRewardPurchases'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -8325,12 +8325,12 @@ class LV2ProgramsApi
      *
      * List member reward purchases
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrstrx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery $filters Field filters, e.g. filters[reward_id][conditions][$is] lrew_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrstrx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberRewardPurchases'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8351,12 +8351,12 @@ class LV2ProgramsApi
      *
      * List member reward purchases
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrstrx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery $filters Field filters, e.g. filters[reward_id][conditions][$is] lrew_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrstrx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberRewardPurchases'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8406,12 +8406,12 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listMemberRewardPurchases'
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrstrx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery $filters Field filters, e.g. filters[reward_id][conditions][$is] lrew_.... Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrstrx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberRewardPurchases'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8426,7 +8426,10 @@ class LV2ProgramsApi
                 'Missing the required parameter $programId when calling listMemberRewardPurchases'
             );
         }
-
+        if (!preg_match("/^lprg_[a-f0-9]+$/", $programId)) {
+            throw new \InvalidArgumentException("invalid value for \"programId\" when calling LV2ProgramsApi.listMemberRewardPurchases, must conform to the pattern /^lprg_[a-f0-9]+$/.");
+        }
+        
         // verify the required parameter 'memberId' is set
         if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
@@ -8582,12 +8585,12 @@ class LV2ProgramsApi
      *
      * List member tier transactions
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are id and -id. Defaults to -id, newest first, when omitted, null, or an empty array. Accepts one value or an array of those values. An array that contains both directions is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsttx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery $filters Field filters. card_id, card_definition_id, and created_at. Example: filters[card_id][conditions][$is] lcrd_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsttx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_id][conditions][$is] lcrd_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberTierTransactions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -8605,12 +8608,12 @@ class LV2ProgramsApi
      *
      * List member tier transactions
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are id and -id. Defaults to -id, newest first, when omitted, null, or an empty array. Accepts one value or an array of those values. An array that contains both directions is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsttx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery $filters Field filters. card_id, card_definition_id, and created_at. Example: filters[card_id][conditions][$is] lcrd_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsttx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_id][conditions][$is] lcrd_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberTierTransactions'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -8710,12 +8713,12 @@ class LV2ProgramsApi
      *
      * List member tier transactions
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are id and -id. Defaults to -id, newest first, when omitted, null, or an empty array. Accepts one value or an array of those values. An array that contains both directions is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsttx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery $filters Field filters. card_id, card_definition_id, and created_at. Example: filters[card_id][conditions][$is] lcrd_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsttx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_id][conditions][$is] lcrd_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberTierTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8736,12 +8739,12 @@ class LV2ProgramsApi
      *
      * List member tier transactions
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are id and -id. Defaults to -id, newest first, when omitted, null, or an empty array. Accepts one value or an array of those values. An array that contains both directions is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsttx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery $filters Field filters. card_id, card_definition_id, and created_at. Example: filters[card_id][conditions][$is] lcrd_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsttx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_id][conditions][$is] lcrd_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberTierTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8791,12 +8794,12 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listMemberTierTransactions'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are id and -id. Defaults to -id, newest first, when omitted, null, or an empty array. Accepts one value or an array of those values. An array that contains both directions is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response (format: lcrsttx_ followed by hexadecimal characters). (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery $filters Field filters. card_id, card_definition_id, and created_at. Example: filters[card_id][conditions][$is] lcrd_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsttx_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery $filters Filters the results. Pass a deep object, for example filters[card_id][conditions][$is] lcrd_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMemberTierTransactions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8970,10 +8973,10 @@ class LV2ProgramsApi
      *
      * List program earning rule assignments
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrserna_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRuleAssignments'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -8991,10 +8994,10 @@ class LV2ProgramsApi
      *
      * List program earning rule assignments
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrserna_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRuleAssignments'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -9094,10 +9097,10 @@ class LV2ProgramsApi
      *
      * List program earning rule assignments
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrserna_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRuleAssignments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -9118,10 +9121,10 @@ class LV2ProgramsApi
      *
      * List program earning rule assignments
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrserna_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRuleAssignments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -9171,10 +9174,10 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramEarningRuleAssignments'
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrserna_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRuleAssignments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -9314,11 +9317,11 @@ class LV2ProgramsApi
      *
      * List program earning-rules daily reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
-     * @param  EarningRulesReportListFilters $filters Field filters. Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  EarningRulesReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRulesDailyReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -9336,11 +9339,11 @@ class LV2ProgramsApi
      *
      * List program earning-rules daily reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
-     * @param  EarningRulesReportListFilters $filters Field filters. Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  EarningRulesReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRulesDailyReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -9440,11 +9443,11 @@ class LV2ProgramsApi
      *
      * List program earning-rules daily reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
-     * @param  EarningRulesReportListFilters $filters Field filters. Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  EarningRulesReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRulesDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -9465,11 +9468,11 @@ class LV2ProgramsApi
      *
      * List program earning-rules daily reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
-     * @param  EarningRulesReportListFilters $filters Field filters. Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  EarningRulesReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRulesDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -9519,11 +9522,11 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramEarningRulesDailyReports'
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Start of the report date range (inclusive), in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. (required)
-     * @param  EarningRulesReportListFilters $filters Field filters. Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  EarningRulesReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRulesDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -9694,8 +9697,8 @@ class LV2ProgramsApi
      *
      * List program earning-rules summary reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  EarningRulesReportListFilters $filters Filters rows by field. Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  EarningRulesReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRulesSummaryReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -9713,8 +9716,8 @@ class LV2ProgramsApi
      *
      * List program earning-rules summary reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  EarningRulesReportListFilters $filters Filters rows by field. Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  EarningRulesReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRulesSummaryReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -9814,8 +9817,8 @@ class LV2ProgramsApi
      *
      * List program earning-rules summary reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  EarningRulesReportListFilters $filters Filters rows by field. Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  EarningRulesReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRulesSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -9836,8 +9839,8 @@ class LV2ProgramsApi
      *
      * List program earning-rules summary reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  EarningRulesReportListFilters $filters Filters rows by field. Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  EarningRulesReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRulesSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -9887,8 +9890,8 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramEarningRulesSummaryReports'
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  EarningRulesReportListFilters $filters Filters rows by field. Each field accepts a conditions object with condition operators. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  EarningRulesReportListFilters $filters Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramEarningRulesSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -10005,12 +10008,12 @@ class LV2ProgramsApi
      *
      * List program member activities
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of activities to return. An integer from 1 to 100. Numeric strings are accepted and rounded to the nearest integer. Defaults to 10 when omitted. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are created_at and -created_at. Defaults to -created_at when omitted, null, or an empty array. Accepts one value or an array of those values. Any other value is rejected. An array that contains both directions is rejected. Rows that share a created_at millisecond are then ordered by id ascending. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsambr_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters $filters Field-specific filter conditions, passed as a deep object, e.g. filters[type][conditions][$is] vl.member.created. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsambr_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters $filters Filters the results. Pass a deep object, for example filters[type][conditions][$is] vl.member.created. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMemberActivities'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -10028,12 +10031,12 @@ class LV2ProgramsApi
      *
      * List program member activities
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of activities to return. An integer from 1 to 100. Numeric strings are accepted and rounded to the nearest integer. Defaults to 10 when omitted. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are created_at and -created_at. Defaults to -created_at when omitted, null, or an empty array. Accepts one value or an array of those values. Any other value is rejected. An array that contains both directions is rejected. Rows that share a created_at millisecond are then ordered by id ascending. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsambr_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters $filters Field-specific filter conditions, passed as a deep object, e.g. filters[type][conditions][$is] vl.member.created. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsambr_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters $filters Filters the results. Pass a deep object, for example filters[type][conditions][$is] vl.member.created. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMemberActivities'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -10133,12 +10136,12 @@ class LV2ProgramsApi
      *
      * List program member activities
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of activities to return. An integer from 1 to 100. Numeric strings are accepted and rounded to the nearest integer. Defaults to 10 when omitted. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are created_at and -created_at. Defaults to -created_at when omitted, null, or an empty array. Accepts one value or an array of those values. Any other value is rejected. An array that contains both directions is rejected. Rows that share a created_at millisecond are then ordered by id ascending. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsambr_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters $filters Field-specific filter conditions, passed as a deep object, e.g. filters[type][conditions][$is] vl.member.created. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsambr_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters $filters Filters the results. Pass a deep object, for example filters[type][conditions][$is] vl.member.created. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMemberActivities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -10159,12 +10162,12 @@ class LV2ProgramsApi
      *
      * List program member activities
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of activities to return. An integer from 1 to 100. Numeric strings are accepted and rounded to the nearest integer. Defaults to 10 when omitted. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are created_at and -created_at. Defaults to -created_at when omitted, null, or an empty array. Accepts one value or an array of those values. Any other value is rejected. An array that contains both directions is rejected. Rows that share a created_at millisecond are then ordered by id ascending. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsambr_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters $filters Field-specific filter conditions, passed as a deep object, e.g. filters[type][conditions][$is] vl.member.created. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsambr_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters $filters Filters the results. Pass a deep object, for example filters[type][conditions][$is] vl.member.created. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMemberActivities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -10214,12 +10217,12 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramMemberActivities'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of activities to return. An integer from 1 to 100. Numeric strings are accepted and rounded to the nearest integer. Defaults to 10 when omitted. (optional, default to 10)
-     * @param  string $order Sort field. Allowed values are created_at and -created_at. Defaults to -created_at when omitted, null, or an empty array. Accepts one value or an array of those values. Any other value is rejected. An array that contains both directions is rejected. Rows that share a created_at millisecond are then ordered by id ascending. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsambr_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters $filters Field-specific filter conditions, passed as a deep object, e.g. filters[type][conditions][$is] vl.member.created. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsambr_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters $filters Filters the results. Pass a deep object, for example filters[type][conditions][$is] vl.member.created. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMemberActivities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -10393,11 +10396,11 @@ class LV2ProgramsApi
      *
      * List program members
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of members to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Prefix with - for descending order. Accepts a single value or an array of values. Defaults to -created_at. Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsmbr_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery $filters Field-specific filter conditions, passed as a deep object, e.g. filters[status][conditions][$is] ACTIVE. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsmbr_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery $filters Filters the results. Pass a deep object, for example filters[status][conditions][$is] ACTIVE. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembers'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -10415,11 +10418,11 @@ class LV2ProgramsApi
      *
      * List program members
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of members to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Prefix with - for descending order. Accepts a single value or an array of values. Defaults to -created_at. Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsmbr_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery $filters Field-specific filter conditions, passed as a deep object, e.g. filters[status][conditions][$is] ACTIVE. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsmbr_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery $filters Filters the results. Pass a deep object, for example filters[status][conditions][$is] ACTIVE. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembers'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -10519,11 +10522,11 @@ class LV2ProgramsApi
      *
      * List program members
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of members to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Prefix with - for descending order. Accepts a single value or an array of values. Defaults to -created_at. Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsmbr_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery $filters Field-specific filter conditions, passed as a deep object, e.g. filters[status][conditions][$is] ACTIVE. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsmbr_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery $filters Filters the results. Pass a deep object, for example filters[status][conditions][$is] ACTIVE. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -10544,11 +10547,11 @@ class LV2ProgramsApi
      *
      * List program members
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of members to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Prefix with - for descending order. Accepts a single value or an array of values. Defaults to -created_at. Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsmbr_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery $filters Field-specific filter conditions, passed as a deep object, e.g. filters[status][conditions][$is] ACTIVE. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsmbr_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery $filters Filters the results. Pass a deep object, for example filters[status][conditions][$is] ACTIVE. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -10598,11 +10601,11 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramMembers'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  int $limit Maximum number of members to return. Must be between 1 and 100. Defaults to 10 when not provided. (optional, default to 10)
-     * @param  string $order Field(s) to order results by. Prefix with - for descending order. Accepts a single value or an array of values. Defaults to -created_at. Ordering by the same field in both directions simultaneously is rejected. (optional)
-     * @param  string $cursor Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsmbr_[a-f0-9]+$. (optional)
-     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery $filters Field-specific filter conditions, passed as a deep object, e.g. filters[status][conditions][$is] ACTIVE. (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  int $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to 10)
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsmbr_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
+     * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery $filters Filters the results. Pass a deep object, for example filters[status][conditions][$is] ACTIVE. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -10758,10 +10761,10 @@ class LV2ProgramsApi
      *
      * List program members daily reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembersDailyReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -10779,10 +10782,10 @@ class LV2ProgramsApi
      *
      * List program members daily reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembersDailyReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -10882,10 +10885,10 @@ class LV2ProgramsApi
      *
      * List program members daily reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembersDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -10906,10 +10909,10 @@ class LV2ProgramsApi
      *
      * List program members daily reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembersDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -10959,10 +10962,10 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramMembersDailyReports'
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembersDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -10977,7 +10980,10 @@ class LV2ProgramsApi
                 'Missing the required parameter $programId when calling listProgramMembersDailyReports'
             );
         }
-
+        if (!preg_match("/^lprg_[a-f0-9]+$/", $programId)) {
+            throw new \InvalidArgumentException("invalid value for \"programId\" when calling LV2ProgramsApi.listProgramMembersDailyReports, must conform to the pattern /^lprg_[a-f0-9]+$/.");
+        }
+        
         // verify the required parameter 'startDate' is set
         if ($startDate === null || (is_array($startDate) && count($startDate) === 0)) {
             throw new \InvalidArgumentException(
@@ -11120,7 +11126,7 @@ class LV2ProgramsApi
      *
      * List program members summary reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembersSummaryReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -11138,7 +11144,7 @@ class LV2ProgramsApi
      *
      * List program members summary reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembersSummaryReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -11238,7 +11244,7 @@ class LV2ProgramsApi
      *
      * List program members summary reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembersSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -11259,7 +11265,7 @@ class LV2ProgramsApi
      *
      * List program members summary reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembersSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -11309,7 +11315,7 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramMembersSummaryReports'
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramMembersSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -11324,7 +11330,10 @@ class LV2ProgramsApi
                 'Missing the required parameter $programId when calling listProgramMembersSummaryReports'
             );
         }
-
+        if (!preg_match("/^lprg_[a-f0-9]+$/", $programId)) {
+            throw new \InvalidArgumentException("invalid value for \"programId\" when calling LV2ProgramsApi.listProgramMembersSummaryReports, must conform to the pattern /^lprg_[a-f0-9]+$/.");
+        }
+        
 
         $resourcePath = '/v2/loyalties/programs/{programId}/reports/members/summary';
         $formParams = [];
@@ -11413,10 +11422,10 @@ class LV2ProgramsApi
      *
      * List program reward assignments
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. Non-integer values are rounded. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsrewa_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardAssignments'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -11434,10 +11443,10 @@ class LV2ProgramsApi
      *
      * List program reward assignments
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. Non-integer values are rounded. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsrewa_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardAssignments'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -11537,10 +11546,10 @@ class LV2ProgramsApi
      *
      * List program reward assignments
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. Non-integer values are rounded. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsrewa_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardAssignments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -11561,10 +11570,10 @@ class LV2ProgramsApi
      *
      * List program reward assignments
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. Non-integer values are rounded. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsrewa_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardAssignments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -11614,10 +11623,10 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramRewardAssignments'
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. Non-integer values are rounded. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrsrewa_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardAssignments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -11757,11 +11766,11 @@ class LV2ProgramsApi
      *
      * List program rewards daily reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
-     * @param  RewardsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  RewardsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsDailyReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -11779,11 +11788,11 @@ class LV2ProgramsApi
      *
      * List program rewards daily reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
-     * @param  RewardsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  RewardsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsDailyReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -11883,11 +11892,11 @@ class LV2ProgramsApi
      *
      * List program rewards daily reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
-     * @param  RewardsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  RewardsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -11908,11 +11917,11 @@ class LV2ProgramsApi
      *
      * List program rewards daily reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
-     * @param  RewardsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  RewardsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -11962,11 +11971,11 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramRewardsDailyReports'
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
-     * @param  RewardsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  RewardsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -11981,7 +11990,10 @@ class LV2ProgramsApi
                 'Missing the required parameter $programId when calling listProgramRewardsDailyReports'
             );
         }
-
+        if (!preg_match("/^lprg_[a-f0-9]+$/", $programId)) {
+            throw new \InvalidArgumentException("invalid value for \"programId\" when calling LV2ProgramsApi.listProgramRewardsDailyReports, must conform to the pattern /^lprg_[a-f0-9]+$/.");
+        }
+        
         // verify the required parameter 'startDate' is set
         if ($startDate === null || (is_array($startDate) && count($startDate) === 0)) {
             throw new \InvalidArgumentException(
@@ -12134,11 +12146,11 @@ class LV2ProgramsApi
      *
      * List program rewards spendings daily reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
-     * @param  RewardsSpendingsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  RewardsSpendingsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSpendingsDailyReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -12156,11 +12168,11 @@ class LV2ProgramsApi
      *
      * List program rewards spendings daily reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
-     * @param  RewardsSpendingsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  RewardsSpendingsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSpendingsDailyReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -12260,11 +12272,11 @@ class LV2ProgramsApi
      *
      * List program rewards spendings daily reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
-     * @param  RewardsSpendingsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  RewardsSpendingsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSpendingsDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -12285,11 +12297,11 @@ class LV2ProgramsApi
      *
      * List program rewards spendings daily reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
-     * @param  RewardsSpendingsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  RewardsSpendingsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSpendingsDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -12339,11 +12351,11 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramRewardsSpendingsDailyReports'
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. (required)
-     * @param  RewardsSpendingsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  RewardsSpendingsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSpendingsDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -12358,7 +12370,10 @@ class LV2ProgramsApi
                 'Missing the required parameter $programId when calling listProgramRewardsSpendingsDailyReports'
             );
         }
-
+        if (!preg_match("/^lprg_[a-f0-9]+$/", $programId)) {
+            throw new \InvalidArgumentException("invalid value for \"programId\" when calling LV2ProgramsApi.listProgramRewardsSpendingsDailyReports, must conform to the pattern /^lprg_[a-f0-9]+$/.");
+        }
+        
         // verify the required parameter 'startDate' is set
         if ($startDate === null || (is_array($startDate) && count($startDate) === 0)) {
             throw new \InvalidArgumentException(
@@ -12511,8 +12526,8 @@ class LV2ProgramsApi
      *
      * List program rewards spendings summary reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  RewardsSpendingsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  RewardsSpendingsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSpendingsSummaryReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -12530,8 +12545,8 @@ class LV2ProgramsApi
      *
      * List program rewards spendings summary reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  RewardsSpendingsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  RewardsSpendingsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSpendingsSummaryReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -12631,8 +12646,8 @@ class LV2ProgramsApi
      *
      * List program rewards spendings summary reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  RewardsSpendingsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  RewardsSpendingsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSpendingsSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -12653,8 +12668,8 @@ class LV2ProgramsApi
      *
      * List program rewards spendings summary reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  RewardsSpendingsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  RewardsSpendingsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSpendingsSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -12704,8 +12719,8 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramRewardsSpendingsSummaryReports'
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  RewardsSpendingsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  RewardsSpendingsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSpendingsSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -12720,7 +12735,10 @@ class LV2ProgramsApi
                 'Missing the required parameter $programId when calling listProgramRewardsSpendingsSummaryReports'
             );
         }
-
+        if (!preg_match("/^lprg_[a-f0-9]+$/", $programId)) {
+            throw new \InvalidArgumentException("invalid value for \"programId\" when calling LV2ProgramsApi.listProgramRewardsSpendingsSummaryReports, must conform to the pattern /^lprg_[a-f0-9]+$/.");
+        }
+        
 
 
         $resourcePath = '/v2/loyalties/programs/{programId}/reports/rewards/spendings/summary';
@@ -12819,8 +12837,8 @@ class LV2ProgramsApi
      *
      * List program rewards summary reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  RewardsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  RewardsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSummaryReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -12838,8 +12856,8 @@ class LV2ProgramsApi
      *
      * List program rewards summary reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  RewardsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  RewardsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSummaryReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -12939,8 +12957,8 @@ class LV2ProgramsApi
      *
      * List program rewards summary reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  RewardsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  RewardsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -12961,8 +12979,8 @@ class LV2ProgramsApi
      *
      * List program rewards summary reports
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  RewardsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  RewardsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -13012,8 +13030,8 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramRewardsSummaryReports'
      *
-     * @param  string $programId Identifies the loyalty program (lprg_ followed by hexadecimal characters). (required)
-     * @param  RewardsReportListFilters $filters Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  RewardsReportListFilters $filters Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramRewardsSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -13028,7 +13046,10 @@ class LV2ProgramsApi
                 'Missing the required parameter $programId when calling listProgramRewardsSummaryReports'
             );
         }
-
+        if (!preg_match("/^lprg_[a-f0-9]+$/", $programId)) {
+            throw new \InvalidArgumentException("invalid value for \"programId\" when calling LV2ProgramsApi.listProgramRewardsSummaryReports, must conform to the pattern /^lprg_[a-f0-9]+$/.");
+        }
+        
 
 
         $resourcePath = '/v2/loyalties/programs/{programId}/reports/rewards/summary';
@@ -13127,11 +13148,11 @@ class LV2ProgramsApi
      *
      * List program spending daily reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range (YYYY-MM-DD). Must be before end_date. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range (YYYY-MM-DD). Must be after start_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allowed date range: day max 90 days, week max 12 weeks, month max 12 months, quarter max 4 quarters. (required)
-     * @param  SpendingReportListFilters $filters Filters rows by field conditions, e.g. filters[card_definition_id][conditions][$is] lcdef_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  SpendingReportListFilters $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramSpendingDailyReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -13149,11 +13170,11 @@ class LV2ProgramsApi
      *
      * List program spending daily reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range (YYYY-MM-DD). Must be before end_date. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range (YYYY-MM-DD). Must be after start_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allowed date range: day max 90 days, week max 12 weeks, month max 12 months, quarter max 4 quarters. (required)
-     * @param  SpendingReportListFilters $filters Filters rows by field conditions, e.g. filters[card_definition_id][conditions][$is] lcdef_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  SpendingReportListFilters $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramSpendingDailyReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -13253,11 +13274,11 @@ class LV2ProgramsApi
      *
      * List program spending daily reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range (YYYY-MM-DD). Must be before end_date. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range (YYYY-MM-DD). Must be after start_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allowed date range: day max 90 days, week max 12 weeks, month max 12 months, quarter max 4 quarters. (required)
-     * @param  SpendingReportListFilters $filters Filters rows by field conditions, e.g. filters[card_definition_id][conditions][$is] lcdef_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  SpendingReportListFilters $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramSpendingDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -13278,11 +13299,11 @@ class LV2ProgramsApi
      *
      * List program spending daily reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range (YYYY-MM-DD). Must be before end_date. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range (YYYY-MM-DD). Must be after start_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allowed date range: day max 90 days, week max 12 weeks, month max 12 months, quarter max 4 quarters. (required)
-     * @param  SpendingReportListFilters $filters Filters rows by field conditions, e.g. filters[card_definition_id][conditions][$is] lcdef_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  SpendingReportListFilters $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramSpendingDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -13332,11 +13353,11 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramSpendingDailyReports'
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the report date range (YYYY-MM-DD). Must be before end_date. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the report date range (YYYY-MM-DD). Must be after start_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allowed date range: day max 90 days, week max 12 weeks, month max 12 months, quarter max 4 quarters. (required)
-     * @param  SpendingReportListFilters $filters Filters rows by field conditions, e.g. filters[card_definition_id][conditions][$is] lcdef_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  SpendingReportListFilters $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramSpendingDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -13351,7 +13372,10 @@ class LV2ProgramsApi
                 'Missing the required parameter $programId when calling listProgramSpendingDailyReports'
             );
         }
-
+        if (!preg_match("/^lprg_[a-f0-9]+$/", $programId)) {
+            throw new \InvalidArgumentException("invalid value for \"programId\" when calling LV2ProgramsApi.listProgramSpendingDailyReports, must conform to the pattern /^lprg_[a-f0-9]+$/.");
+        }
+        
         // verify the required parameter 'startDate' is set
         if ($startDate === null || (is_array($startDate) && count($startDate) === 0)) {
             throw new \InvalidArgumentException(
@@ -13504,8 +13528,8 @@ class LV2ProgramsApi
      *
      * List program spending summary reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  SpendingReportListFilters $filters Filters rows by field conditions, e.g. filters[card_definition_id][conditions][$is] lcdef_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  SpendingReportListFilters $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramSpendingSummaryReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -13523,8 +13547,8 @@ class LV2ProgramsApi
      *
      * List program spending summary reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  SpendingReportListFilters $filters Filters rows by field conditions, e.g. filters[card_definition_id][conditions][$is] lcdef_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  SpendingReportListFilters $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramSpendingSummaryReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -13624,8 +13648,8 @@ class LV2ProgramsApi
      *
      * List program spending summary reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  SpendingReportListFilters $filters Filters rows by field conditions, e.g. filters[card_definition_id][conditions][$is] lcdef_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  SpendingReportListFilters $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramSpendingSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -13646,8 +13670,8 @@ class LV2ProgramsApi
      *
      * List program spending summary reports
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  SpendingReportListFilters $filters Filters rows by field conditions, e.g. filters[card_definition_id][conditions][$is] lcdef_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  SpendingReportListFilters $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramSpendingSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -13697,8 +13721,8 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramSpendingSummaryReports'
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  SpendingReportListFilters $filters Filters rows by field conditions, e.g. filters[card_definition_id][conditions][$is] lcdef_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  SpendingReportListFilters $filters Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramSpendingSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -13713,7 +13737,10 @@ class LV2ProgramsApi
                 'Missing the required parameter $programId when calling listProgramSpendingSummaryReports'
             );
         }
-
+        if (!preg_match("/^lprg_[a-f0-9]+$/", $programId)) {
+            throw new \InvalidArgumentException("invalid value for \"programId\" when calling LV2ProgramsApi.listProgramSpendingSummaryReports, must conform to the pattern /^lprg_[a-f0-9]+$/.");
+        }
+        
 
 
         $resourcePath = '/v2/loyalties/programs/{programId}/reports/spending/summary';
@@ -13812,10 +13839,10 @@ class LV2ProgramsApi
      *
      * List program tier structure assignments
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. Non-integer values are rounded. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrstsa_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTierStructureAssignments'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -13833,10 +13860,10 @@ class LV2ProgramsApi
      *
      * List program tier structure assignments
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. Non-integer values are rounded. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrstsa_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTierStructureAssignments'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -13936,10 +13963,10 @@ class LV2ProgramsApi
      *
      * List program tier structure assignments
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. Non-integer values are rounded. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrstsa_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTierStructureAssignments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -13960,10 +13987,10 @@ class LV2ProgramsApi
      *
      * List program tier structure assignments
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. Non-integer values are rounded. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrstsa_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTierStructureAssignments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -14013,10 +14040,10 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramTierStructureAssignments'
      *
-     * @param  string $programId Unique program identifier. (required)
-     * @param  string $limit Maximum number of items to return. Between 1 and 100. Defaults to 10. Non-integer values are rounded. (optional, default to '10')
-     * @param  string $order Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. (optional)
-     * @param  string $cursor Pagination cursor returned by a previous call (cursor.next). (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $limit Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. (optional, default to '10')
+     * @param  string $order Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. (optional)
+     * @param  string $cursor Continues pagination. Pass the cursor.next value from a previous response. Format lcrstsa_[a-f0-9]+. The cursor matches the filters and order of that response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTierStructureAssignments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -14156,11 +14183,11 @@ class LV2ProgramsApi
      *
      * List program tiers daily reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the range, in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allowed range: day up to 90 days, week up to 12 weeks, month up to 12 months, quarter up to 4 quarters. (required)
-     * @param  TiersReportListFilters $filters Filters rows by tier_structure_id and tier_id. Example: filters[tier_structure_id][conditions][$is] lts_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  TiersReportListFilters $filters Filters the results. Pass a deep object, for example filters[tier_structure_id][conditions][$is] lts_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTiersDailyReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -14178,11 +14205,11 @@ class LV2ProgramsApi
      *
      * List program tiers daily reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the range, in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allowed range: day up to 90 days, week up to 12 weeks, month up to 12 months, quarter up to 4 quarters. (required)
-     * @param  TiersReportListFilters $filters Filters rows by tier_structure_id and tier_id. Example: filters[tier_structure_id][conditions][$is] lts_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  TiersReportListFilters $filters Filters the results. Pass a deep object, for example filters[tier_structure_id][conditions][$is] lts_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTiersDailyReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -14282,11 +14309,11 @@ class LV2ProgramsApi
      *
      * List program tiers daily reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the range, in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allowed range: day up to 90 days, week up to 12 weeks, month up to 12 months, quarter up to 4 quarters. (required)
-     * @param  TiersReportListFilters $filters Filters rows by tier_structure_id and tier_id. Example: filters[tier_structure_id][conditions][$is] lts_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  TiersReportListFilters $filters Filters the results. Pass a deep object, for example filters[tier_structure_id][conditions][$is] lts_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTiersDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -14307,11 +14334,11 @@ class LV2ProgramsApi
      *
      * List program tiers daily reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the range, in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allowed range: day up to 90 days, week up to 12 weeks, month up to 12 months, quarter up to 4 quarters. (required)
-     * @param  TiersReportListFilters $filters Filters rows by tier_structure_id and tier_id. Example: filters[tier_structure_id][conditions][$is] lts_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  TiersReportListFilters $filters Filters the results. Pass a deep object, for example filters[tier_structure_id][conditions][$is] lts_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTiersDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -14361,11 +14388,11 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramTiersDailyReports'
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  \DateTime $startDate Sets the inclusive start of the range, in YYYY-MM-DD format. (required)
-     * @param  \DateTime $endDate Sets the inclusive end of the range, in YYYY-MM-DD format. Must be after start_date. (required)
-     * @param  string $resolution Sets the aggregation resolution. Allowed range: day up to 90 days, week up to 12 weeks, month up to 12 months, quarter up to 4 quarters. (required)
-     * @param  TiersReportListFilters $filters Filters rows by tier_structure_id and tier_id. Example: filters[tier_structure_id][conditions][$is] lts_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  \DateTime $startDate Sets the inclusive start of the report date range. Format YYYY-MM-DD. (required)
+     * @param  \DateTime $endDate Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. (required)
+     * @param  string $resolution Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. (required)
+     * @param  TiersReportListFilters $filters Filters the results. Pass a deep object, for example filters[tier_structure_id][conditions][$is] lts_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTiersDailyReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -14380,7 +14407,10 @@ class LV2ProgramsApi
                 'Missing the required parameter $programId when calling listProgramTiersDailyReports'
             );
         }
-
+        if (!preg_match("/^lprg_[a-f0-9]+$/", $programId)) {
+            throw new \InvalidArgumentException("invalid value for \"programId\" when calling LV2ProgramsApi.listProgramTiersDailyReports, must conform to the pattern /^lprg_[a-f0-9]+$/.");
+        }
+        
         // verify the required parameter 'startDate' is set
         if ($startDate === null || (is_array($startDate) && count($startDate) === 0)) {
             throw new \InvalidArgumentException(
@@ -14533,8 +14563,8 @@ class LV2ProgramsApi
      *
      * List program tiers summary reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  TiersReportListFilters $filters Filters rows by tier_structure_id and tier_id. Omitting filters or setting it to null applies no field filter. Example: filters[tier_id][conditions][$is] lt_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  TiersReportListFilters $filters Filters the results. Pass a deep object, for example filters[tier_id][conditions][$is] lt_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTiersSummaryReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -14552,8 +14582,8 @@ class LV2ProgramsApi
      *
      * List program tiers summary reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  TiersReportListFilters $filters Filters rows by tier_structure_id and tier_id. Omitting filters or setting it to null applies no field filter. Example: filters[tier_id][conditions][$is] lt_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  TiersReportListFilters $filters Filters the results. Pass a deep object, for example filters[tier_id][conditions][$is] lt_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTiersSummaryReports'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -14653,8 +14683,8 @@ class LV2ProgramsApi
      *
      * List program tiers summary reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  TiersReportListFilters $filters Filters rows by tier_structure_id and tier_id. Omitting filters or setting it to null applies no field filter. Example: filters[tier_id][conditions][$is] lt_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  TiersReportListFilters $filters Filters the results. Pass a deep object, for example filters[tier_id][conditions][$is] lt_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTiersSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -14675,8 +14705,8 @@ class LV2ProgramsApi
      *
      * List program tiers summary reports
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  TiersReportListFilters $filters Filters rows by tier_structure_id and tier_id. Omitting filters or setting it to null applies no field filter. Example: filters[tier_id][conditions][$is] lt_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  TiersReportListFilters $filters Filters the results. Pass a deep object, for example filters[tier_id][conditions][$is] lt_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTiersSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -14726,8 +14756,8 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'listProgramTiersSummaryReports'
      *
-     * @param  string $programId Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. (required)
-     * @param  TiersReportListFilters $filters Filters rows by tier_structure_id and tier_id. Omitting filters or setting it to null applies no field filter. Example: filters[tier_id][conditions][$is] lt_.... (optional)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  TiersReportListFilters $filters Filters the results. Pass a deep object, for example filters[tier_id][conditions][$is] lt_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listProgramTiersSummaryReports'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -14742,7 +14772,10 @@ class LV2ProgramsApi
                 'Missing the required parameter $programId when calling listProgramTiersSummaryReports'
             );
         }
-
+        if (!preg_match("/^lprg_[a-f0-9]+$/", $programId)) {
+            throw new \InvalidArgumentException("invalid value for \"programId\" when calling LV2ProgramsApi.listProgramTiersSummaryReports, must conform to the pattern /^lprg_[a-f0-9]+$/.");
+        }
+        
 
 
         $resourcePath = '/v2/loyalties/programs/{programId}/reports/tiers/summary';
@@ -14841,8 +14874,8 @@ class LV2ProgramsApi
      *
      * Purchase reward with points
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody $v2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody v2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purchaseMemberReward'] to see the possible values for this operation
      *
@@ -14861,8 +14894,8 @@ class LV2ProgramsApi
      *
      * Purchase reward with points
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody $v2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purchaseMemberReward'] to see the possible values for this operation
      *
@@ -14963,8 +14996,8 @@ class LV2ProgramsApi
      *
      * Purchase reward with points
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody $v2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purchaseMemberReward'] to see the possible values for this operation
      *
@@ -14986,8 +15019,8 @@ class LV2ProgramsApi
      *
      * Purchase reward with points
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody $v2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purchaseMemberReward'] to see the possible values for this operation
      *
@@ -15038,8 +15071,8 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'purchaseMemberReward'
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody $v2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purchaseMemberReward'] to see the possible values for this operation
      *
@@ -15055,7 +15088,10 @@ class LV2ProgramsApi
                 'Missing the required parameter $programId when calling purchaseMemberReward'
             );
         }
-
+        if (!preg_match("/^lprg_[a-f0-9]+$/", $programId)) {
+            throw new \InvalidArgumentException("invalid value for \"programId\" when calling LV2ProgramsApi.purchaseMemberReward, must conform to the pattern /^lprg_[a-f0-9]+$/.");
+        }
+        
         // verify the required parameter 'memberId' is set
         if ($memberId === null || (is_array($memberId) && count($memberId) === 0)) {
             throw new \InvalidArgumentException(
@@ -15170,8 +15206,8 @@ class LV2ProgramsApi
      *
      * Refund reward purchase
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $rewardTransactionId Unique reward transaction identifier of the purchase to refund (format: lrtx_ followed by hexadecimal characters). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $rewardTransactionId Identifies the reward transaction of the purchase to refund. Format lrtx_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsRewardsPurchasesRefundRequestBody $v2LoyaltiesProgramsRewardsPurchasesRefundRequestBody Optional refund policies. An empty payload is allowed. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRewardPurchase'] to see the possible values for this operation
      *
@@ -15190,8 +15226,8 @@ class LV2ProgramsApi
      *
      * Refund reward purchase
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $rewardTransactionId Unique reward transaction identifier of the purchase to refund (format: lrtx_ followed by hexadecimal characters). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $rewardTransactionId Identifies the reward transaction of the purchase to refund. Format lrtx_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsRewardsPurchasesRefundRequestBody $v2LoyaltiesProgramsRewardsPurchasesRefundRequestBody Optional refund policies. An empty payload is allowed. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRewardPurchase'] to see the possible values for this operation
      *
@@ -15292,8 +15328,8 @@ class LV2ProgramsApi
      *
      * Refund reward purchase
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $rewardTransactionId Unique reward transaction identifier of the purchase to refund (format: lrtx_ followed by hexadecimal characters). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $rewardTransactionId Identifies the reward transaction of the purchase to refund. Format lrtx_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsRewardsPurchasesRefundRequestBody $v2LoyaltiesProgramsRewardsPurchasesRefundRequestBody Optional refund policies. An empty payload is allowed. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRewardPurchase'] to see the possible values for this operation
      *
@@ -15315,8 +15351,8 @@ class LV2ProgramsApi
      *
      * Refund reward purchase
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $rewardTransactionId Unique reward transaction identifier of the purchase to refund (format: lrtx_ followed by hexadecimal characters). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $rewardTransactionId Identifies the reward transaction of the purchase to refund. Format lrtx_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsRewardsPurchasesRefundRequestBody $v2LoyaltiesProgramsRewardsPurchasesRefundRequestBody Optional refund policies. An empty payload is allowed. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRewardPurchase'] to see the possible values for this operation
      *
@@ -15367,8 +15403,8 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'refundRewardPurchase'
      *
-     * @param  string $programId Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). (required)
-     * @param  string $rewardTransactionId Unique reward transaction identifier of the purchase to refund (format: lrtx_ followed by hexadecimal characters). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $rewardTransactionId Identifies the reward transaction of the purchase to refund. Format lrtx_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsRewardsPurchasesRefundRequestBody $v2LoyaltiesProgramsRewardsPurchasesRefundRequestBody Optional refund policies. An empty payload is allowed. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRewardPurchase'] to see the possible values for this operation
      *
@@ -15502,8 +15538,8 @@ class LV2ProgramsApi
      *
      * Update program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersUpdateRequestBody $v2LoyaltiesProgramsMembersUpdateRequestBody v2LoyaltiesProgramsMembersUpdateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProgramMember'] to see the possible values for this operation
      *
@@ -15522,8 +15558,8 @@ class LV2ProgramsApi
      *
      * Update program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersUpdateRequestBody $v2LoyaltiesProgramsMembersUpdateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProgramMember'] to see the possible values for this operation
      *
@@ -15624,8 +15660,8 @@ class LV2ProgramsApi
      *
      * Update program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersUpdateRequestBody $v2LoyaltiesProgramsMembersUpdateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProgramMember'] to see the possible values for this operation
      *
@@ -15647,8 +15683,8 @@ class LV2ProgramsApi
      *
      * Update program member
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersUpdateRequestBody $v2LoyaltiesProgramsMembersUpdateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProgramMember'] to see the possible values for this operation
      *
@@ -15699,8 +15735,8 @@ class LV2ProgramsApi
     /**
      * Create request for operation 'updateProgramMember'
      *
-     * @param  string $programId Unique loyalty program ID (format lprg_[a-f0-9]+). (required)
-     * @param  string $memberId Program member ID (format lmbr_[a-f0-9]+). (required)
+     * @param  string $programId Identifies the loyalty program. Format lprg_[a-f0-9]+. (required)
+     * @param  string $memberId Identifies the member. Format lmbr_[a-f0-9]+. (required)
      * @param  \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersUpdateRequestBody $v2LoyaltiesProgramsMembersUpdateRequestBody (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateProgramMember'] to see the possible values for this operation
      *

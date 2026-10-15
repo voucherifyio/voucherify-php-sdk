@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltiesProgramsMembersTiersTransactionsListRequestQueryCardDefinitionId Class Doc Comment
  *
  * @category Class
- * @description ID filter conditions for card definition ids. Values must match pattern &#x60;^lcdef_[a-f0-9]+$&#x60;. &#x60;$is&#x60;/&#x60;$is_not&#x60; accept a single value (string or 1-element array); &#x60;$in&#x60;/&#x60;$not_in&#x60; accept a string or an array of 1-100 values.
+ * @description ID filter conditions for card definition IDs. Values must match pattern &#x60;^lcdef_[a-f0-9]+$&#x60;. &#x60;$is&#x60;/&#x60;$is_not&#x60; accept a single value (string or 1-element array); &#x60;$in&#x60;/&#x60;$not_in&#x60; accept a string or an array of 1-100 values.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

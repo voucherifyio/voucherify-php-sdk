@@ -2661,15 +2661,16 @@ class CustomersApi
      * @param  \DateTime $updatedAtAfter Filter customers by date customer was updated last time. (optional)
      * @param  ParameterOrderListCustomers $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  \DateTime $startingAfter A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
+     * @param  object $filters Filters customers by field conditions. Read [Advanced filters for fetching resources](/api-reference/listing#advanced-filters-for-fetching-resources) for examples. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomers'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomersListResponseBody
      */
-    public function listCustomers($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listCustomers'][0])
+    public function listCustomers($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, $filters = null, string $contentType = self::contentTypes['listCustomers'][0])
     {
-        list($response) = $this->listCustomersWithHttpInfo($limit, $page, $email, $city, $name, $segmentId, $createdAtBefore, $createdAtAfter, $updatedAtBefore, $updatedAtAfter, $order, $startingAfter, $contentType);
+        list($response) = $this->listCustomersWithHttpInfo($limit, $page, $email, $city, $name, $segmentId, $createdAtBefore, $createdAtAfter, $updatedAtBefore, $updatedAtAfter, $order, $startingAfter, $filters, $contentType);
         return $response;
     }
 
@@ -2690,15 +2691,16 @@ class CustomersApi
      * @param  \DateTime $updatedAtAfter Filter customers by date customer was updated last time. (optional)
      * @param  ParameterOrderListCustomers $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  \DateTime $startingAfter A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
+     * @param  object $filters Filters customers by field conditions. Read [Advanced filters for fetching resources](/api-reference/listing#advanced-filters-for-fetching-resources) for examples. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomers'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomersListResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listCustomersWithHttpInfo($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listCustomers'][0])
+    public function listCustomersWithHttpInfo($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, $filters = null, string $contentType = self::contentTypes['listCustomers'][0])
     {
-        $request = $this->listCustomersRequest($limit, $page, $email, $city, $name, $segmentId, $createdAtBefore, $createdAtAfter, $updatedAtBefore, $updatedAtAfter, $order, $startingAfter, $contentType);
+        $request = $this->listCustomersRequest($limit, $page, $email, $city, $name, $segmentId, $createdAtBefore, $createdAtAfter, $updatedAtBefore, $updatedAtAfter, $order, $startingAfter, $filters, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2801,14 +2803,15 @@ class CustomersApi
      * @param  \DateTime $updatedAtAfter Filter customers by date customer was updated last time. (optional)
      * @param  ParameterOrderListCustomers $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  \DateTime $startingAfter A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
+     * @param  object $filters Filters customers by field conditions. Read [Advanced filters for fetching resources](/api-reference/listing#advanced-filters-for-fetching-resources) for examples. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCustomersAsync($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listCustomers'][0])
+    public function listCustomersAsync($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, $filters = null, string $contentType = self::contentTypes['listCustomers'][0])
     {
-        return $this->listCustomersAsyncWithHttpInfo($limit, $page, $email, $city, $name, $segmentId, $createdAtBefore, $createdAtAfter, $updatedAtBefore, $updatedAtAfter, $order, $startingAfter, $contentType)
+        return $this->listCustomersAsyncWithHttpInfo($limit, $page, $email, $city, $name, $segmentId, $createdAtBefore, $createdAtAfter, $updatedAtBefore, $updatedAtAfter, $order, $startingAfter, $filters, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2833,15 +2836,16 @@ class CustomersApi
      * @param  \DateTime $updatedAtAfter Filter customers by date customer was updated last time. (optional)
      * @param  ParameterOrderListCustomers $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  \DateTime $startingAfter A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
+     * @param  object $filters Filters customers by field conditions. Read [Advanced filters for fetching resources](/api-reference/listing#advanced-filters-for-fetching-resources) for examples. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listCustomersAsyncWithHttpInfo($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listCustomers'][0])
+    public function listCustomersAsyncWithHttpInfo($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, $filters = null, string $contentType = self::contentTypes['listCustomers'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomersListResponseBody';
-        $request = $this->listCustomersRequest($limit, $page, $email, $city, $name, $segmentId, $createdAtBefore, $createdAtAfter, $updatedAtBefore, $updatedAtAfter, $order, $startingAfter, $contentType);
+        $request = $this->listCustomersRequest($limit, $page, $email, $city, $name, $segmentId, $createdAtBefore, $createdAtAfter, $updatedAtBefore, $updatedAtAfter, $order, $startingAfter, $filters, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2894,12 +2898,13 @@ class CustomersApi
      * @param  \DateTime $updatedAtAfter Filter customers by date customer was updated last time. (optional)
      * @param  ParameterOrderListCustomers $order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. (optional)
      * @param  \DateTime $startingAfter A cursor for pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list. (optional)
+     * @param  object $filters Filters customers by field conditions. Read [Advanced filters for fetching resources](/api-reference/listing#advanced-filters-for-fetching-resources) for examples. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listCustomersRequest($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, string $contentType = self::contentTypes['listCustomers'][0])
+    public function listCustomersRequest($limit = null, $page = null, $email = null, $city = null, $name = null, $segmentId = null, $createdAtBefore = null, $createdAtAfter = null, $updatedAtBefore = null, $updatedAtAfter = null, $order = null, $startingAfter = null, $filters = null, string $contentType = self::contentTypes['listCustomers'][0])
     {
 
         if ($limit !== null && $limit > 100) {
@@ -2916,6 +2921,7 @@ class CustomersApi
             throw new \InvalidArgumentException('invalid value for "$page" when calling CustomersApi.listCustomers, must be bigger than or equal to 1.');
         }
         
+
 
 
 
@@ -3039,6 +3045,15 @@ class CustomersApi
             'starting_after', // param base name
             'string', // openApiType
             'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $filters,
+            'filters', // param base name
+            'object', // openApiType
+            'deepObject', // style
             true, // explode
             false // required
         ) ?? []);

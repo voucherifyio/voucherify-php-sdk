@@ -61,7 +61,7 @@ class PointsEarningsReportListFilters implements ModelInterface, ArrayAccess, \J
     protected static $openAPITypes = [
         'junction' => 'string',
         'earningRuleId' => '\OpenAPI\Client\Model\EarningRuleIdFilterConditions',
-        'cardDefinitionId' => '\OpenAPI\Client\Model\PointsEarningsReportFilterCardDefinitionIdConditions'
+        'cardDefinitionId' => '\OpenAPI\Client\Model\ReportCardDefinitionIdFilterConditions'
     ];
 
     /**
@@ -342,7 +342,7 @@ class PointsEarningsReportListFilters implements ModelInterface, ArrayAccess, \J
     /**
      * Sets junction
      *
-     * @param string|null $junction Combines the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
+     * @param string|null $junction Joins the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
      *
      * @return self
      */
@@ -403,7 +403,7 @@ class PointsEarningsReportListFilters implements ModelInterface, ArrayAccess, \J
     /**
      * Gets cardDefinitionId
      *
-     * @return \OpenAPI\Client\Model\PointsEarningsReportFilterCardDefinitionIdConditions|null
+     * @return \OpenAPI\Client\Model\ReportCardDefinitionIdFilterConditions|null
      */
     public function getCardDefinitionId()
     {
@@ -413,7 +413,7 @@ class PointsEarningsReportListFilters implements ModelInterface, ArrayAccess, \J
     /**
      * Sets cardDefinitionId
      *
-     * @param \OpenAPI\Client\Model\PointsEarningsReportFilterCardDefinitionIdConditions|null $cardDefinitionId cardDefinitionId
+     * @param \OpenAPI\Client\Model\ReportCardDefinitionIdFilterConditions|null $cardDefinitionId cardDefinitionId
      *
      * @return self
      */

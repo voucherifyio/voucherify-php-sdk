@@ -394,7 +394,7 @@ class CustomerLoyaltyMembershipMember implements ModelInterface, ArrayAccess, \J
     /**
      * Sets status
      *
-     * @param string|null $status Member status.
+     * @param string|null $status Member status. List responses include only ACTIVE memberships. INACTIVE and DELETED remain so existing SDK callers keep compiling.
      *
      * @return self
      */

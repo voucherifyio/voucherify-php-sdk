@@ -128,7 +128,7 @@ class LV2EarningRulesApi
      *
      * Get earning rule
      *
-     * @param  string $earningRuleId Earning rule ID. (required)
+     * @param  string $earningRuleId Identifies the earning rule. Format lern_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -146,7 +146,7 @@ class LV2EarningRulesApi
      *
      * Get earning rule
      *
-     * @param  string $earningRuleId Earning rule ID. (required)
+     * @param  string $earningRuleId Identifies the earning rule. Format lern_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEarningRule'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -246,7 +246,7 @@ class LV2EarningRulesApi
      *
      * Get earning rule
      *
-     * @param  string $earningRuleId Earning rule ID. (required)
+     * @param  string $earningRuleId Identifies the earning rule. Format lern_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -267,7 +267,7 @@ class LV2EarningRulesApi
      *
      * Get earning rule
      *
-     * @param  string $earningRuleId Earning rule ID. (required)
+     * @param  string $earningRuleId Identifies the earning rule. Format lern_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -317,7 +317,7 @@ class LV2EarningRulesApi
     /**
      * Create request for operation 'getEarningRule'
      *
-     * @param  string $earningRuleId Earning rule ID. (required)
+     * @param  string $earningRuleId Identifies the earning rule. Format lern_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEarningRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

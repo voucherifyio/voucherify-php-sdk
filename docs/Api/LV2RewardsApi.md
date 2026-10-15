@@ -41,7 +41,7 @@ $apiInstance = new OpenAPI\Client\Api\LV2RewardsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$rewardId = 'rewardId_example'; // string | Unique reward identifier, prefixed with lrew_.
+$rewardId = 'rewardId_example'; // string | Identifies the reward. Format lrew_[a-f0-9]+.
 
 try {
     $result = $apiInstance->getReward($rewardId);
@@ -55,7 +55,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **rewardId** | **string**| Unique reward identifier, prefixed with lrew_. | |
+| **rewardId** | **string**| Identifies the reward. Format lrew_[a-f0-9]+. | |
 
 ### Return type
 

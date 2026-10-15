@@ -84,10 +84,10 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
-$cardId = 'cardId_example'; // string | Loyalty card ID (format lcrd_[a-f0-9]+).
-$bucketId = 'bucketId_example'; // string | Pending points bucket ID (format lcppb_[a-f0-9]+).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$cardId = 'cardId_example'; // string | Identifies the loyalty card. Format lcrd_[a-f0-9]+.
+$bucketId = 'bucketId_example'; // string | Identifies the pending points bucket. Format lcppb_[a-f0-9]+.
 
 try {
     $result = $apiInstance->activateCardPendingPointsBucket($programId, $memberId, $cardId, $bucketId);
@@ -101,10 +101,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
-| **cardId** | **string**| Loyalty card ID (format lcrd_[a-f0-9]+). | |
-| **bucketId** | **string**| Pending points bucket ID (format lcppb_[a-f0-9]+). | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **cardId** | **string**| Identifies the loyalty card. Format lcrd_[a-f0-9]+. | |
+| **bucketId** | **string**| Identifies the pending points bucket. Format lcppb_[a-f0-9]+. | |
 
 ### Return type
 
@@ -157,8 +157,8 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+. Required.
-$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+. Required.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
 
 try {
     $result = $apiInstance->activateProgramMember($programId, $memberId);
@@ -172,8 +172,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. Required. | |
-| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. Required. | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
 
 ### Return type
 
@@ -226,9 +226,9 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
-$cardId = 'cardId_example'; // string | Loyalty card ID (format lcrd_[a-f0-9]+).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$cardId = 'cardId_example'; // string | Identifies the loyalty card. Format lcrd_[a-f0-9]+.
 $v2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody = {"points":100}; // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody
 
 try {
@@ -243,9 +243,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
-| **cardId** | **string**| Loyalty card ID (format lcrd_[a-f0-9]+). | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **cardId** | **string**| Identifies the loyalty card. Format lcrd_[a-f0-9]+. | |
 | **v2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody**](../Model/V2LoyaltiesProgramsMembersCardsPointsAdjustRequestBody.md)|  | [optional] |
 
 ### Return type
@@ -299,7 +299,7 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
 $memberCreate = [{"customer_identification":{"type":"customer_id","customer_id":"cust_X07elh40iNWLujRmDNmBufxd"}},{"customer_identification":{"type":"customer_source_id","customer_source_id":"crm-1001"},"status":"ACTIVE"}]; // \OpenAPI\Client\Model\MemberCreate[]
 
 try {
@@ -314,7 +314,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
 | **memberCreate** | [**\OpenAPI\Client\Model\MemberCreate[]**](../Model/MemberCreate.md)|  | [optional] |
 
 ### Return type
@@ -368,10 +368,10 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
-$cardId = 'cardId_example'; // string | Loyalty card ID (format lcrd_[a-f0-9]+).
-$bucketId = 'bucketId_example'; // string | Pending points bucket ID (format lcppb_[a-f0-9]+).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$cardId = 'cardId_example'; // string | Identifies the loyalty card. Format lcrd_[a-f0-9]+.
+$bucketId = 'bucketId_example'; // string | Identifies the pending points bucket. Format lcppb_[a-f0-9]+.
 
 try {
     $result = $apiInstance->cancelCardPendingPointsBucket($programId, $memberId, $cardId, $bucketId);
@@ -385,10 +385,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
-| **cardId** | **string**| Loyalty card ID (format lcrd_[a-f0-9]+). | |
-| **bucketId** | **string**| Pending points bucket ID (format lcppb_[a-f0-9]+). | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **cardId** | **string**| Identifies the loyalty card. Format lcrd_[a-f0-9]+. | |
+| **bucketId** | **string**| Identifies the pending points bucket. Format lcppb_[a-f0-9]+. | |
 
 ### Return type
 
@@ -441,8 +441,8 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program (lprg_ followed by hexadecimal characters).
-$memberId = 'memberId_example'; // string | Identifies the program member (lmbr_[a-f0-9]+).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
 $v2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody = {"payment_limit":{"type":"CARD_BALANCE"},"mode":"TRANSACTION","card_id":"lcrd_128f962dbd8c4ba5e1","order":{"id":"ord_12b4cdf5f30c158825"}}; // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody
 
 try {
@@ -457,8 +457,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program (lprg_ followed by hexadecimal characters). | |
-| **memberId** | **string**| Identifies the program member (lmbr_[a-f0-9]+). | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
 | **v2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody**](../Model/V2LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBody.md)|  | [optional] |
 
 ### Return type
@@ -512,7 +512,7 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
 $v2LoyaltiesProgramsMembersCreateRequestBody = {"customer_identification":{"type":"customer_id","customer_id":"cust_X07elh40iNWLujRmDNmBufxd"}}; // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCreateRequestBody
 
 try {
@@ -527,7 +527,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
 | **v2LoyaltiesProgramsMembersCreateRequestBody** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCreateRequestBody**](../Model/V2LoyaltiesProgramsMembersCreateRequestBody.md)|  | [optional] |
 
 ### Return type
@@ -581,8 +581,8 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program. Unique identifier in lprg_[a-f0-9]+ format.
-$memberId = 'memberId_example'; // string | Identifies the member. Unique identifier in lmbr_[a-f0-9]+ format.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
 
 try {
     $result = $apiInstance->deactivateProgramMember($programId, $memberId);
@@ -596,8 +596,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program. Unique identifier in lprg_[a-f0-9]+ format. | |
-| **memberId** | **string**| Identifies the member. Unique identifier in lmbr_[a-f0-9]+ format. | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
 
 ### Return type
 
@@ -650,8 +650,8 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
 
 try {
     $result = $apiInstance->deleteProgramMember($programId, $memberId);
@@ -665,8 +665,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
 
 ### Return type
 
@@ -719,10 +719,10 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
-$cardId = 'cardId_example'; // string | Loyalty card ID (format lcrd_[a-f0-9]+).
-$bucketId = 'bucketId_example'; // string | Points expiration bucket ID (format lcpeb_[a-f0-9]+).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$cardId = 'cardId_example'; // string | Identifies the loyalty card. Format lcrd_[a-f0-9]+.
+$bucketId = 'bucketId_example'; // string | Identifies the points expiration bucket. Format lcpeb_[a-f0-9]+.
 
 try {
     $result = $apiInstance->expireCardPointsBucket($programId, $memberId, $cardId, $bucketId);
@@ -736,10 +736,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
-| **cardId** | **string**| Loyalty card ID (format lcrd_[a-f0-9]+). | |
-| **bucketId** | **string**| Points expiration bucket ID (format lcpeb_[a-f0-9]+). | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **cardId** | **string**| Identifies the loyalty card. Format lcrd_[a-f0-9]+. | |
+| **bucketId** | **string**| Identifies the points expiration bucket. Format lcpeb_[a-f0-9]+. | |
 
 ### Return type
 
@@ -792,12 +792,12 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters).
-$memberId = 'memberId_example'; // string | Unique loyalty member identifier (format: lmbr_ followed by hexadecimal characters).
-$earningRuleId = 'earningRuleId_example'; // string | Unique earning rule identifier (format: lern_ followed by hexadecimal characters).
-$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Start of the report date range (inclusive), in YYYY-MM-DD format.
-$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date.
-$resolution = 'resolution_example'; // string | Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$earningRuleId = 'earningRuleId_example'; // string | Identifies the earning rule. Format lern_[a-f0-9]+.
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive start of the report date range. Format YYYY-MM-DD.
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date.
+$resolution = 'resolution_example'; // string | Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters.
 
 try {
     $result = $apiInstance->getMemberEarningRuleDailyReport($programId, $memberId, $earningRuleId, $startDate, $endDate, $resolution);
@@ -811,12 +811,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). | |
-| **memberId** | **string**| Unique loyalty member identifier (format: lmbr_ followed by hexadecimal characters). | |
-| **earningRuleId** | **string**| Unique earning rule identifier (format: lern_ followed by hexadecimal characters). | |
-| **startDate** | **\DateTime**| Start of the report date range (inclusive), in YYYY-MM-DD format. | |
-| **endDate** | **\DateTime**| End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. | |
-| **resolution** | **string**| Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **earningRuleId** | **string**| Identifies the earning rule. Format lern_[a-f0-9]+. | |
+| **startDate** | **\DateTime**| Sets the inclusive start of the report date range. Format YYYY-MM-DD. | |
+| **endDate** | **\DateTime**| Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. | |
+| **resolution** | **string**| Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. | |
 
 ### Return type
 
@@ -869,8 +869,8 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
 
 try {
     $result = $apiInstance->getProgramMember($programId, $memberId);
@@ -884,8 +884,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
 
 ### Return type
 
@@ -938,9 +938,9 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$customerId = 'customerId_example'; // string | Unique identifier of the customer or member, interpreted according to identification_type: a Voucherify customer ID (cust_...), a customer source_id, or a loyalty member ID (lmbr_...).
-$identificationType = 'customer_id'; // string | Chooses how customerId is read. customer_id is the Voucherify customer ID and the default. customer_source_id is the customers source_id. member_id is the loyalty member ID.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$customerId = 'customerId_example'; // string | Identifies the customer or member. identification_type selects the value: a Voucherify customer ID (cust_...), a customer source_id, or a loyalty member ID (lmbr_...).
+$identificationType = 'customer_id'; // string | Selects how customerId is read. customer_id is the Voucherify customer ID and the default. customer_source_id is the customers source_id. member_id is the loyalty member ID.
 
 try {
     $result = $apiInstance->getProgramMembership($programId, $customerId, $identificationType);
@@ -954,9 +954,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **customerId** | **string**| Unique identifier of the customer or member, interpreted according to identification_type: a Voucherify customer ID (cust_...), a customer source_id, or a loyalty member ID (lmbr_...). | |
-| **identificationType** | **string**| Chooses how customerId is read. customer_id is the Voucherify customer ID and the default. customer_source_id is the customers source_id. member_id is the loyalty member ID. | [optional] [default to &#39;customer_id&#39;] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **customerId** | **string**| Identifies the customer or member. identification_type selects the value: a Voucherify customer ID (cust_...), a customer source_id, or a loyalty member ID (lmbr_...). | |
+| **identificationType** | **string**| Selects how customerId is read. customer_id is the Voucherify customer ID and the default. customer_source_id is the customers source_id. member_id is the loyalty member ID. | [optional] [default to &#39;customer_id&#39;] |
 
 ### Return type
 
@@ -1009,11 +1009,11 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters.
-$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Start of the report date range (inclusive), in YYYY-MM-DD format.
-$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date.
-$resolution = 'resolution_example'; // string | Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters.
-$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\PointsEarningsReportListFilters(); // \OpenAPI\Client\Model\PointsEarningsReportListFilters | Filters rows by earning rule ID and card definition ID. Each field takes a conditions object. Omitting filters or setting it to null applies no field filters.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive start of the report date range. Format YYYY-MM-DD.
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date.
+$resolution = 'resolution_example'; // string | Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters.
+$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\PointsEarningsReportListFilters(); // \OpenAPI\Client\Model\PointsEarningsReportListFilters | Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->getProgramPointsEarningsDailyReport($programId, $startDate, $endDate, $resolution, $filters);
@@ -1027,11 +1027,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. | |
-| **startDate** | **\DateTime**| Start of the report date range (inclusive), in YYYY-MM-DD format. | |
-| **endDate** | **\DateTime**| End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. | |
-| **resolution** | **string**| Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. | |
-| **filters** | [**\OpenAPI\Client\Model\PointsEarningsReportListFilters**](../Model/.md)| Filters rows by earning rule ID and card definition ID. Each field takes a conditions object. Omitting filters or setting it to null applies no field filters. | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **startDate** | **\DateTime**| Sets the inclusive start of the report date range. Format YYYY-MM-DD. | |
+| **endDate** | **\DateTime**| Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. | |
+| **resolution** | **string**| Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. | |
+| **filters** | [**\OpenAPI\Client\Model\PointsEarningsReportListFilters**](../Model/.md)| Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -1084,8 +1084,8 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters.
-$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\PointsEarningsReportListFilters(); // \OpenAPI\Client\Model\PointsEarningsReportListFilters | Filters rows by earning rule ID and card definition ID. Each field takes a conditions object. Omitting filters or setting it to null applies no field filters.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\PointsEarningsReportListFilters(); // \OpenAPI\Client\Model\PointsEarningsReportListFilters | Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->getProgramPointsEarningsSummaryReport($programId, $filters);
@@ -1099,8 +1099,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. | |
-| **filters** | [**\OpenAPI\Client\Model\PointsEarningsReportListFilters**](../Model/.md)| Filters rows by earning rule ID and card definition ID. Each field takes a conditions object. Omitting filters or setting it to null applies no field filters. | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **filters** | [**\OpenAPI\Client\Model\PointsEarningsReportListFilters**](../Model/.md)| Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -1153,13 +1153,13 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
-$cardId = 'cardId_example'; // string | Loyalty card ID (format lcrd_[a-f0-9]+).
-$limit = 10; // int | Maximum number of activities to return. An integer from 1 to 100. Numeric strings are accepted and rounded to the nearest integer. Defaults to 10 when omitted.
-$order = 'order_example'; // string | Sort field. Allowed values are created_at and -created_at. Defaults to -created_at when omitted, null, or an empty array. Accepts one value or an array of those values. Any other value is rejected. An array that contains both directions is rejected. Rows that share a created_at millisecond are then ordered by id ascending.
-$cursor = 'cursor_example'; // string | Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsacrd_[a-f0-9]+$.
-$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters | Field-specific filter conditions, passed as a deep object, e.g. filters[type][conditions][$is] vl.card.created.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$cardId = 'cardId_example'; // string | Identifies the loyalty card. Format lcrd_[a-f0-9]+.
+$limit = 10; // int | Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer.
+$order = 'order_example'; // string | Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending.
+$cursor = 'cursor_example'; // string | Continues pagination. Pass the cursor.next value from a previous response. Format lcrsacrd_[a-f0-9]+. The cursor matches the filters and order of that response.
+$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters | Filters the results. Pass a deep object, for example filters[type][conditions][$is] vl.card.created. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listCardActivities($programId, $memberId, $cardId, $limit, $order, $cursor, $filters);
@@ -1173,13 +1173,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
-| **cardId** | **string**| Loyalty card ID (format lcrd_[a-f0-9]+). | |
-| **limit** | **int**| Maximum number of activities to return. An integer from 1 to 100. Numeric strings are accepted and rounded to the nearest integer. Defaults to 10 when omitted. | [optional] [default to 10] |
-| **order** | **string**| Sort field. Allowed values are created_at and -created_at. Defaults to -created_at when omitted, null, or an empty array. Accepts one value or an array of those values. Any other value is rejected. An array that contains both directions is rejected. Rows that share a created_at millisecond are then ordered by id ascending. | [optional] |
-| **cursor** | **string**| Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsacrd_[a-f0-9]+$. | [optional] |
-| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters**](../Model/.md)| Field-specific filter conditions, passed as a deep object, e.g. filters[type][conditions][$is] vl.card.created. | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **cardId** | **string**| Identifies the loyalty card. Format lcrd_[a-f0-9]+. | |
+| **limit** | **int**| Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. | [optional] [default to 10] |
+| **order** | **string**| Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. | [optional] |
+| **cursor** | **string**| Continues pagination. Pass the cursor.next value from a previous response. Format lcrsacrd_[a-f0-9]+. The cursor matches the filters and order of that response. | [optional] |
+| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsActivitiesListRequestQueryFilters**](../Model/.md)| Filters the results. Pass a deep object, for example filters[type][conditions][$is] vl.card.created. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -1232,13 +1232,13 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
-$cardId = 'cardId_example'; // string | Loyalty card ID (format lcrd_[a-f0-9]+).
-$limit = 10; // int | Maximum number of buckets to return. Must be between 1 and 100. Defaults to 10 when not provided.
-$order = 'order_example'; // string | Field(s) to order results by. Valid orders are expiration_date and -expiration_date; defaults to expiration_date (soonest expiration first). Ordering by the same field in both directions simultaneously is rejected.
-$cursor = 'cursor_example'; // string | Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrspeb_[a-f0-9]+$.
-$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery | Field-specific filter conditions, passed as a deep object, for example filters[card_definition_id][conditions][$is] lcdef_1297339938ae248cea.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$cardId = 'cardId_example'; // string | Identifies the loyalty card. Format lcrd_[a-f0-9]+.
+$limit = 10; // int | Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer.
+$order = 'order_example'; // string | Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to expiration_date. Soonest expiration first. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending.
+$cursor = 'cursor_example'; // string | Continues pagination. Pass the cursor.next value from a previous response. Format lcrspeb_[a-f0-9]+. The cursor matches the filters and order of that response.
+$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery | Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_1297339938ae248cea. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listCardExpiringPoints($programId, $memberId, $cardId, $limit, $order, $cursor, $filters);
@@ -1252,13 +1252,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
-| **cardId** | **string**| Loyalty card ID (format lcrd_[a-f0-9]+). | |
-| **limit** | **int**| Maximum number of buckets to return. Must be between 1 and 100. Defaults to 10 when not provided. | [optional] [default to 10] |
-| **order** | **string**| Field(s) to order results by. Valid orders are expiration_date and -expiration_date; defaults to expiration_date (soonest expiration first). Ordering by the same field in both directions simultaneously is rejected. | [optional] |
-| **cursor** | **string**| Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrspeb_[a-f0-9]+$. | [optional] |
-| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery**](../Model/.md)| Field-specific filter conditions, passed as a deep object, for example filters[card_definition_id][conditions][$is] lcdef_1297339938ae248cea. | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **cardId** | **string**| Identifies the loyalty card. Format lcrd_[a-f0-9]+. | |
+| **limit** | **int**| Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. | [optional] [default to 10] |
+| **order** | **string**| Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to expiration_date. Soonest expiration first. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. | [optional] |
+| **cursor** | **string**| Continues pagination. Pass the cursor.next value from a previous response. Format lcrspeb_[a-f0-9]+. The cursor matches the filters and order of that response. | [optional] |
+| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsExpiringPointsListRequestQuery**](../Model/.md)| Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_1297339938ae248cea. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -1311,13 +1311,13 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
-$cardId = 'cardId_example'; // string | Loyalty card ID (format lcrd_[a-f0-9]+).
-$limit = 10; // int | Maximum number of buckets to return. Must be between 1 and 100. Defaults to 10 when not provided.
-$order = 'order_example'; // string | Field(s) to order results by. Valid orders are date and -date; defaults to date (soonest activation first). Ordering by the same field in both directions simultaneously is rejected.
-$cursor = 'cursor_example'; // string | Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrscppb_[a-f0-9]+$.
-$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery | Field-specific filter conditions, passed as a deep object, for example filters[card_definition_id][conditions][$is] lcdef_128f495f720c4bec8c.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$cardId = 'cardId_example'; // string | Identifies the loyalty card. Format lcrd_[a-f0-9]+.
+$limit = 10; // int | Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer.
+$order = 'order_example'; // string | Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to date. Soonest activation first. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending.
+$cursor = 'cursor_example'; // string | Continues pagination. Pass the cursor.next value from a previous response. Format lcrscppb_[a-f0-9]+. The cursor matches the filters and order of that response.
+$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery | Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_128f495f720c4bec8c. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listCardPendingPoints($programId, $memberId, $cardId, $limit, $order, $cursor, $filters);
@@ -1331,13 +1331,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
-| **cardId** | **string**| Loyalty card ID (format lcrd_[a-f0-9]+). | |
-| **limit** | **int**| Maximum number of buckets to return. Must be between 1 and 100. Defaults to 10 when not provided. | [optional] [default to 10] |
-| **order** | **string**| Field(s) to order results by. Valid orders are date and -date; defaults to date (soonest activation first). Ordering by the same field in both directions simultaneously is rejected. | [optional] |
-| **cursor** | **string**| Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrscppb_[a-f0-9]+$. | [optional] |
-| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery**](../Model/.md)| Field-specific filter conditions, passed as a deep object, for example filters[card_definition_id][conditions][$is] lcdef_128f495f720c4bec8c. | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **cardId** | **string**| Identifies the loyalty card. Format lcrd_[a-f0-9]+. | |
+| **limit** | **int**| Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. | [optional] [default to 10] |
+| **order** | **string**| Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to date. Soonest activation first. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. | [optional] |
+| **cursor** | **string**| Continues pagination. Pass the cursor.next value from a previous response. Format lcrscppb_[a-f0-9]+. The cursor matches the filters and order of that response. | [optional] |
+| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsPendingPointsListRequestQuery**](../Model/.md)| Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_128f495f720c4bec8c. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -1390,13 +1390,13 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
-$cardId = 'cardId_example'; // string | Loyalty card ID (format lcrd_[a-f0-9]+).
-$limit = 10; // int | Maximum number of transactions to return. Must be between 1 and 100. Defaults to 10 when not provided.
-$order = 'order_example'; // string | Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected.
-$cursor = 'cursor_example'; // string | Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsctx_[a-f0-9]+$.
-$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery | Field-specific filter conditions, passed as a deep object, e.g. filters[id][conditions][$is] lctx_0f5d0a8878caa3ee5c.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$cardId = 'cardId_example'; // string | Identifies the loyalty card. Format lcrd_[a-f0-9]+.
+$limit = 10; // int | Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer.
+$order = 'order_example'; // string | Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions.
+$cursor = 'cursor_example'; // string | Continues pagination. Pass the cursor.next value from a previous response. Format lcrsctx_[a-f0-9]+. The cursor matches the filters and order of that response.
+$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery | Filters the results. Pass a deep object, for example filters[id][conditions][$is] lctx_0f5d0a8878caa3ee5c. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listCardTransactions($programId, $memberId, $cardId, $limit, $order, $cursor, $filters);
@@ -1410,13 +1410,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
-| **cardId** | **string**| Loyalty card ID (format lcrd_[a-f0-9]+). | |
-| **limit** | **int**| Maximum number of transactions to return. Must be between 1 and 100. Defaults to 10 when not provided. | [optional] [default to 10] |
-| **order** | **string**| Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. | [optional] |
-| **cursor** | **string**| Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsctx_[a-f0-9]+$. | [optional] |
-| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery**](../Model/.md)| Field-specific filter conditions, passed as a deep object, e.g. filters[id][conditions][$is] lctx_0f5d0a8878caa3ee5c. | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **cardId** | **string**| Identifies the loyalty card. Format lcrd_[a-f0-9]+. | |
+| **limit** | **int**| Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. | [optional] [default to 10] |
+| **order** | **string**| Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. | [optional] |
+| **cursor** | **string**| Continues pagination. Pass the cursor.next value from a previous response. Format lcrsctx_[a-f0-9]+. The cursor matches the filters and order of that response. | [optional] |
+| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersCardsTransactionsListRequestQuery**](../Model/.md)| Filters the results. Pass a deep object, for example filters[id][conditions][$is] lctx_0f5d0a8878caa3ee5c. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -1469,12 +1469,12 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
-$limit = 10; // int | Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10.
-$order = 'order_example'; // string | Field(s) to order results by. Valid orders are id and -id; defaults to -id (newest first). Ordering by the same field in both directions simultaneously is rejected.
-$cursor = 'cursor_example'; // string | Pagination cursor returned in the cursor.next field of a previous response (format: lcrsbtx_ followed by hexadecimal characters).
-$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery | Field filters, e.g. filters[benefit_id][conditions][$is] lben_.... Each field accepts a conditions object with condition operators.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$limit = 10; // int | Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer.
+$order = 'order_example'; // string | Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions.
+$cursor = 'cursor_example'; // string | Continues pagination. Pass the cursor.next value from a previous response. Format lcrsbtx_[a-f0-9]+. The cursor matches the filters and order of that response.
+$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery | Filters the results. Pass a deep object, for example filters[benefit_id][conditions][$is] lben_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listMemberBenefitTransactions($programId, $memberId, $limit, $order, $cursor, $filters);
@@ -1488,12 +1488,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
-| **limit** | **int**| Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. | [optional] [default to 10] |
-| **order** | **string**| Field(s) to order results by. Valid orders are id and -id; defaults to -id (newest first). Ordering by the same field in both directions simultaneously is rejected. | [optional] |
-| **cursor** | **string**| Pagination cursor returned in the cursor.next field of a previous response (format: lcrsbtx_ followed by hexadecimal characters). | [optional] |
-| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery**](../Model/.md)| Field filters, e.g. filters[benefit_id][conditions][$is] lben_.... Each field accepts a conditions object with condition operators. | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **limit** | **int**| Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. | [optional] [default to 10] |
+| **order** | **string**| Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. | [optional] |
+| **cursor** | **string**| Continues pagination. Pass the cursor.next value from a previous response. Format lcrsbtx_[a-f0-9]+. The cursor matches the filters and order of that response. | [optional] |
+| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersBenefitsTransactionsListRequestQuery**](../Model/.md)| Filters the results. Pass a deep object, for example filters[benefit_id][conditions][$is] lben_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -1546,12 +1546,12 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters).
-$memberId = 'memberId_example'; // string | Unique loyalty member identifier (format: lmbr_ followed by hexadecimal characters).
-$cardId = 'cardId_example'; // string | Unique loyalty card identifier (format: lcrd_ followed by hexadecimal characters).
-$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Start of the report date range (inclusive), in YYYY-MM-DD format.
-$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date.
-$resolution = 'resolution_example'; // string | Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$cardId = 'cardId_example'; // string | Identifies the loyalty card. Format lcrd_[a-f0-9]+.
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive start of the report date range. Format YYYY-MM-DD.
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date.
+$resolution = 'resolution_example'; // string | Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters.
 
 try {
     $result = $apiInstance->listMemberCardDailyReports($programId, $memberId, $cardId, $startDate, $endDate, $resolution);
@@ -1565,12 +1565,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). | |
-| **memberId** | **string**| Unique loyalty member identifier (format: lmbr_ followed by hexadecimal characters). | |
-| **cardId** | **string**| Unique loyalty card identifier (format: lcrd_ followed by hexadecimal characters). | |
-| **startDate** | **\DateTime**| Start of the report date range (inclusive), in YYYY-MM-DD format. | |
-| **endDate** | **\DateTime**| End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. | |
-| **resolution** | **string**| Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **cardId** | **string**| Identifies the loyalty card. Format lcrd_[a-f0-9]+. | |
+| **startDate** | **\DateTime**| Sets the inclusive start of the report date range. Format YYYY-MM-DD. | |
+| **endDate** | **\DateTime**| Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. | |
+| **resolution** | **string**| Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. | |
 
 ### Return type
 
@@ -1623,12 +1623,12 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program (lprg_ followed by hexadecimal characters).
-$memberId = 'memberId_example'; // string | Identifies the program member (lmbr_[a-f0-9]+).
-$limit = 10; // int | Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10.
-$order = 'order_example'; // string | Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected.
-$cursor = 'cursor_example'; // string | Pagination cursor returned in the cursor.next field of a previous response (format: lcrsotx_ followed by hexadecimal characters).
-$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery | Filters results by field, e.g. filters[id][conditions][$is] lotx_.... Each field accepts a conditions object with condition operators.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$limit = 10; // int | Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer.
+$order = 'order_example'; // string | Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions.
+$cursor = 'cursor_example'; // string | Continues pagination. Pass the cursor.next value from a previous response. Format lcrsotx_[a-f0-9]+. The cursor matches the filters and order of that response.
+$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery | Filters the results. Pass a deep object, for example filters[id][conditions][$is] lotx_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listMemberOrderPayments($programId, $memberId, $limit, $order, $cursor, $filters);
@@ -1642,12 +1642,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program (lprg_ followed by hexadecimal characters). | |
-| **memberId** | **string**| Identifies the program member (lmbr_[a-f0-9]+). | |
-| **limit** | **int**| Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. | [optional] [default to 10] |
-| **order** | **string**| Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. | [optional] |
-| **cursor** | **string**| Pagination cursor returned in the cursor.next field of a previous response (format: lcrsotx_ followed by hexadecimal characters). | [optional] |
-| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery**](../Model/.md)| Filters results by field, e.g. filters[id][conditions][$is] lotx_.... Each field accepts a conditions object with condition operators. | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **limit** | **int**| Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. | [optional] [default to 10] |
+| **order** | **string**| Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. | [optional] |
+| **cursor** | **string**| Continues pagination. Pass the cursor.next value from a previous response. Format lcrsotx_[a-f0-9]+. The cursor matches the filters and order of that response. | [optional] |
+| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersOrdersPaymentsListRequestQuery**](../Model/.md)| Filters the results. Pass a deep object, for example filters[id][conditions][$is] lotx_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -1700,12 +1700,12 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
-$limit = 10; // int | Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10.
-$order = 'order_example'; // string | Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected.
-$cursor = 'cursor_example'; // string | Pagination cursor returned in the cursor.next field of a previous response (format: lcrstrx_ followed by hexadecimal characters).
-$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery | Field filters, e.g. filters[reward_id][conditions][$is] lrew_.... Each field accepts a conditions object with condition operators.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$limit = 10; // int | Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer.
+$order = 'order_example'; // string | Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions.
+$cursor = 'cursor_example'; // string | Continues pagination. Pass the cursor.next value from a previous response. Format lcrstrx_[a-f0-9]+. The cursor matches the filters and order of that response.
+$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery | Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listMemberRewardPurchases($programId, $memberId, $limit, $order, $cursor, $filters);
@@ -1719,12 +1719,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
-| **limit** | **int**| Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. | [optional] [default to 10] |
-| **order** | **string**| Orders results by transaction id. -id is newest first and the default. id is oldest first. An array that orders by id and -id together is rejected. | [optional] |
-| **cursor** | **string**| Pagination cursor returned in the cursor.next field of a previous response (format: lcrstrx_ followed by hexadecimal characters). | [optional] |
-| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery**](../Model/.md)| Field filters, e.g. filters[reward_id][conditions][$is] lrew_.... Each field accepts a conditions object with condition operators. | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **limit** | **int**| Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. | [optional] [default to 10] |
+| **order** | **string**| Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. | [optional] |
+| **cursor** | **string**| Continues pagination. Pass the cursor.next value from a previous response. Format lcrstrx_[a-f0-9]+. The cursor matches the filters and order of that response. | [optional] |
+| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesListRequestQuery**](../Model/.md)| Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -1777,12 +1777,12 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
-$limit = 10; // int | Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10.
-$order = 'order_example'; // string | Sort field. Allowed values are id and -id. Defaults to -id, newest first, when omitted, null, or an empty array. Accepts one value or an array of those values. An array that contains both directions is rejected.
-$cursor = 'cursor_example'; // string | Pagination cursor returned in the cursor.next field of a previous response (format: lcrsttx_ followed by hexadecimal characters).
-$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery | Field filters. card_id, card_definition_id, and created_at. Example: filters[card_id][conditions][$is] lcrd_....
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$limit = 10; // int | Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer.
+$order = 'order_example'; // string | Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions.
+$cursor = 'cursor_example'; // string | Continues pagination. Pass the cursor.next value from a previous response. Format lcrsttx_[a-f0-9]+. The cursor matches the filters and order of that response.
+$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery | Filters the results. Pass a deep object, for example filters[card_id][conditions][$is] lcrd_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listMemberTierTransactions($programId, $memberId, $limit, $order, $cursor, $filters);
@@ -1796,12 +1796,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
-| **limit** | **int**| Maximum number of items to return. An integer between 1 and 100; numeric strings are also accepted. Defaults to 10. | [optional] [default to 10] |
-| **order** | **string**| Sort field. Allowed values are id and -id. Defaults to -id, newest first, when omitted, null, or an empty array. Accepts one value or an array of those values. An array that contains both directions is rejected. | [optional] |
-| **cursor** | **string**| Pagination cursor returned in the cursor.next field of a previous response (format: lcrsttx_ followed by hexadecimal characters). | [optional] |
-| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery**](../Model/.md)| Field filters. card_id, card_definition_id, and created_at. Example: filters[card_id][conditions][$is] lcrd_.... | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **limit** | **int**| Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. | [optional] [default to 10] |
+| **order** | **string**| Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -id. Newest first. The same field cannot be used in both directions. | [optional] |
+| **cursor** | **string**| Continues pagination. Pass the cursor.next value from a previous response. Format lcrsttx_[a-f0-9]+. The cursor matches the filters and order of that response. | [optional] |
+| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersTiersTransactionsListRequestQuery**](../Model/.md)| Filters the results. Pass a deep object, for example filters[card_id][conditions][$is] lcrd_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -1854,10 +1854,10 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique program identifier.
-$limit = '10'; // string | Maximum number of items to return. Between 1 and 100. Defaults to 10.
-$order = 'order_example'; // string | Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once.
-$cursor = 'cursor_example'; // string | Pagination cursor returned by a previous call (cursor.next).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$limit = '10'; // string | Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer.
+$order = 'order_example'; // string | Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending.
+$cursor = 'cursor_example'; // string | Continues pagination. Pass the cursor.next value from a previous response. Format lcrserna_[a-f0-9]+. The cursor matches the filters and order of that response.
 
 try {
     $result = $apiInstance->listProgramEarningRuleAssignments($programId, $limit, $order, $cursor);
@@ -1871,10 +1871,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique program identifier. | |
-| **limit** | **string**| Maximum number of items to return. Between 1 and 100. Defaults to 10. | [optional] [default to &#39;10&#39;] |
-| **order** | **string**| Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. | [optional] |
-| **cursor** | **string**| Pagination cursor returned by a previous call (cursor.next). | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **limit** | **string**| Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. | [optional] [default to &#39;10&#39;] |
+| **order** | **string**| Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. | [optional] |
+| **cursor** | **string**| Continues pagination. Pass the cursor.next value from a previous response. Format lcrserna_[a-f0-9]+. The cursor matches the filters and order of that response. | [optional] |
 
 ### Return type
 
@@ -1927,11 +1927,11 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters).
-$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Start of the report date range (inclusive), in YYYY-MM-DD format.
-$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date.
-$resolution = 'resolution_example'; // string | Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters.
-$filters = new \OpenAPI\Client\Model\EarningRulesReportListFilters(); // EarningRulesReportListFilters | Field filters. Each field accepts a conditions object with condition operators.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive start of the report date range. Format YYYY-MM-DD.
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date.
+$resolution = 'resolution_example'; // string | Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters.
+$filters = new \OpenAPI\Client\Model\EarningRulesReportListFilters(); // EarningRulesReportListFilters | Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listProgramEarningRulesDailyReports($programId, $startDate, $endDate, $resolution, $filters);
@@ -1945,11 +1945,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). | |
-| **startDate** | **\DateTime**| Start of the report date range (inclusive), in YYYY-MM-DD format. | |
-| **endDate** | **\DateTime**| End of the report date range (inclusive), in YYYY-MM-DD format. Must be after start_date. | |
-| **resolution** | **string**| Aggregation resolution of the report. The allowed date range depends on the resolution: day – max 90 days; week – max 12 weeks; month – max 12 months; quarter – max 4 quarters. | |
-| **filters** | [**EarningRulesReportListFilters**](../Model/.md)| Field filters. Each field accepts a conditions object with condition operators. | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **startDate** | **\DateTime**| Sets the inclusive start of the report date range. Format YYYY-MM-DD. | |
+| **endDate** | **\DateTime**| Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. | |
+| **resolution** | **string**| Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. | |
+| **filters** | [**EarningRulesReportListFilters**](../Model/.md)| Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -2002,8 +2002,8 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters.
-$filters = new \OpenAPI\Client\Model\EarningRulesReportListFilters(); // EarningRulesReportListFilters | Filters rows by field. Each field accepts a conditions object with condition operators.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$filters = new \OpenAPI\Client\Model\EarningRulesReportListFilters(); // EarningRulesReportListFilters | Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listProgramEarningRulesSummaryReports($programId, $filters);
@@ -2017,8 +2017,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. | |
-| **filters** | [**EarningRulesReportListFilters**](../Model/.md)| Filters rows by field. Each field accepts a conditions object with condition operators. | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **filters** | [**EarningRulesReportListFilters**](../Model/.md)| Filters the results. Pass a deep object, for example filters[earning_rule_id][conditions][$is] lern_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -2071,12 +2071,12 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
-$limit = 10; // int | Maximum number of activities to return. An integer from 1 to 100. Numeric strings are accepted and rounded to the nearest integer. Defaults to 10 when omitted.
-$order = 'order_example'; // string | Sort field. Allowed values are created_at and -created_at. Defaults to -created_at when omitted, null, or an empty array. Accepts one value or an array of those values. Any other value is rejected. An array that contains both directions is rejected. Rows that share a created_at millisecond are then ordered by id ascending.
-$cursor = 'cursor_example'; // string | Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsambr_[a-f0-9]+$.
-$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters | Field-specific filter conditions, passed as a deep object, e.g. filters[type][conditions][$is] vl.member.created.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
+$limit = 10; // int | Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer.
+$order = 'order_example'; // string | Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending.
+$cursor = 'cursor_example'; // string | Continues pagination. Pass the cursor.next value from a previous response. Format lcrsambr_[a-f0-9]+. The cursor matches the filters and order of that response.
+$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters | Filters the results. Pass a deep object, for example filters[type][conditions][$is] vl.member.created. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listProgramMemberActivities($programId, $memberId, $limit, $order, $cursor, $filters);
@@ -2090,12 +2090,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
-| **limit** | **int**| Maximum number of activities to return. An integer from 1 to 100. Numeric strings are accepted and rounded to the nearest integer. Defaults to 10 when omitted. | [optional] [default to 10] |
-| **order** | **string**| Sort field. Allowed values are created_at and -created_at. Defaults to -created_at when omitted, null, or an empty array. Accepts one value or an array of those values. Any other value is rejected. An array that contains both directions is rejected. Rows that share a created_at millisecond are then ordered by id ascending. | [optional] |
-| **cursor** | **string**| Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsambr_[a-f0-9]+$. | [optional] |
-| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters**](../Model/.md)| Field-specific filter conditions, passed as a deep object, e.g. filters[type][conditions][$is] vl.member.created. | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
+| **limit** | **int**| Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. | [optional] [default to 10] |
+| **order** | **string**| Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. | [optional] |
+| **cursor** | **string**| Continues pagination. Pass the cursor.next value from a previous response. Format lcrsambr_[a-f0-9]+. The cursor matches the filters and order of that response. | [optional] |
+| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersActivitiesListRequestQueryFilters**](../Model/.md)| Filters the results. Pass a deep object, for example filters[type][conditions][$is] vl.member.created. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -2148,11 +2148,11 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$limit = 10; // int | Maximum number of members to return. Must be between 1 and 100. Defaults to 10 when not provided.
-$order = 'order_example'; // string | Field(s) to order results by. Prefix with - for descending order. Accepts a single value or an array of values. Defaults to -created_at. Ordering by the same field in both directions simultaneously is rejected.
-$cursor = 'cursor_example'; // string | Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsmbr_[a-f0-9]+$.
-$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery | Field-specific filter conditions, passed as a deep object, e.g. filters[status][conditions][$is] ACTIVE.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$limit = 10; // int | Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer.
+$order = 'order_example'; // string | Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending.
+$cursor = 'cursor_example'; // string | Continues pagination. Pass the cursor.next value from a previous response. Format lcrsmbr_[a-f0-9]+. The cursor matches the filters and order of that response.
+$filters = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery | Filters the results. Pass a deep object, for example filters[status][conditions][$is] ACTIVE. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listProgramMembers($programId, $limit, $order, $cursor, $filters);
@@ -2166,11 +2166,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **limit** | **int**| Maximum number of members to return. Must be between 1 and 100. Defaults to 10 when not provided. | [optional] [default to 10] |
-| **order** | **string**| Field(s) to order results by. Prefix with - for descending order. Accepts a single value or an array of values. Defaults to -created_at. Ordering by the same field in both directions simultaneously is rejected. | [optional] |
-| **cursor** | **string**| Pagination cursor returned in the cursor.next field of a previous response. Must match the pattern ^lcrsmbr_[a-f0-9]+$. | [optional] |
-| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery**](../Model/.md)| Field-specific filter conditions, passed as a deep object, e.g. filters[status][conditions][$is] ACTIVE. | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **limit** | **int**| Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. | [optional] [default to 10] |
+| **order** | **string**| Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. | [optional] |
+| **cursor** | **string**| Continues pagination. Pass the cursor.next value from a previous response. Format lcrsmbr_[a-f0-9]+. The cursor matches the filters and order of that response. | [optional] |
+| **filters** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersListRequestQuery**](../Model/.md)| Filters the results. Pass a deep object, for example filters[status][conditions][$is] ACTIVE. Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -2223,10 +2223,10 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program (lprg_ followed by hexadecimal characters).
-$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive start of the report date range, in YYYY-MM-DD format.
-$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date.
-$resolution = 'resolution_example'; // string | Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter.
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive start of the report date range. Format YYYY-MM-DD.
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date.
+$resolution = 'resolution_example'; // string | Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters.
 
 try {
     $result = $apiInstance->listProgramMembersDailyReports($programId, $startDate, $endDate, $resolution);
@@ -2240,10 +2240,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program (lprg_ followed by hexadecimal characters). | |
-| **startDate** | **\DateTime**| Sets the inclusive start of the report date range, in YYYY-MM-DD format. | |
-| **endDate** | **\DateTime**| Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. | |
-| **resolution** | **string**| Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **startDate** | **\DateTime**| Sets the inclusive start of the report date range. Format YYYY-MM-DD. | |
+| **endDate** | **\DateTime**| Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. | |
+| **resolution** | **string**| Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. | |
 
 ### Return type
 
@@ -2296,7 +2296,7 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program (lprg_ followed by hexadecimal characters).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
 
 try {
     $result = $apiInstance->listProgramMembersSummaryReports($programId);
@@ -2310,7 +2310,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program (lprg_ followed by hexadecimal characters). | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
 
 ### Return type
 
@@ -2363,10 +2363,10 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique program identifier.
-$limit = '10'; // string | Maximum number of items to return. Between 1 and 100. Defaults to 10. Non-integer values are rounded.
-$order = 'order_example'; // string | Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once.
-$cursor = 'cursor_example'; // string | Pagination cursor returned by a previous call (cursor.next).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$limit = '10'; // string | Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer.
+$order = 'order_example'; // string | Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending.
+$cursor = 'cursor_example'; // string | Continues pagination. Pass the cursor.next value from a previous response. Format lcrsrewa_[a-f0-9]+. The cursor matches the filters and order of that response.
 
 try {
     $result = $apiInstance->listProgramRewardAssignments($programId, $limit, $order, $cursor);
@@ -2380,10 +2380,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique program identifier. | |
-| **limit** | **string**| Maximum number of items to return. Between 1 and 100. Defaults to 10. Non-integer values are rounded. | [optional] [default to &#39;10&#39;] |
-| **order** | **string**| Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. | [optional] |
-| **cursor** | **string**| Pagination cursor returned by a previous call (cursor.next). | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **limit** | **string**| Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. | [optional] [default to &#39;10&#39;] |
+| **order** | **string**| Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. | [optional] |
+| **cursor** | **string**| Continues pagination. Pass the cursor.next value from a previous response. Format lcrsrewa_[a-f0-9]+. The cursor matches the filters and order of that response. | [optional] |
 
 ### Return type
 
@@ -2436,11 +2436,11 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program (lprg_ followed by hexadecimal characters).
-$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive start of the report date range, in YYYY-MM-DD format.
-$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date.
-$resolution = 'resolution_example'; // string | Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter.
-$filters = new \OpenAPI\Client\Model\RewardsReportListFilters(); // RewardsReportListFilters | Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_....
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive start of the report date range. Format YYYY-MM-DD.
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date.
+$resolution = 'resolution_example'; // string | Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters.
+$filters = new \OpenAPI\Client\Model\RewardsReportListFilters(); // RewardsReportListFilters | Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listProgramRewardsDailyReports($programId, $startDate, $endDate, $resolution, $filters);
@@ -2454,11 +2454,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program (lprg_ followed by hexadecimal characters). | |
-| **startDate** | **\DateTime**| Sets the inclusive start of the report date range, in YYYY-MM-DD format. | |
-| **endDate** | **\DateTime**| Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. | |
-| **resolution** | **string**| Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. | |
-| **filters** | [**RewardsReportListFilters**](../Model/.md)| Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **startDate** | **\DateTime**| Sets the inclusive start of the report date range. Format YYYY-MM-DD. | |
+| **endDate** | **\DateTime**| Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. | |
+| **resolution** | **string**| Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. | |
+| **filters** | [**RewardsReportListFilters**](../Model/.md)| Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -2511,11 +2511,11 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program (lprg_ followed by hexadecimal characters).
-$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive start of the report date range, in YYYY-MM-DD format.
-$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date.
-$resolution = 'resolution_example'; // string | Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter.
-$filters = new \OpenAPI\Client\Model\RewardsSpendingsReportListFilters(); // RewardsSpendingsReportListFilters | Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_....
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive start of the report date range. Format YYYY-MM-DD.
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date.
+$resolution = 'resolution_example'; // string | Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters.
+$filters = new \OpenAPI\Client\Model\RewardsSpendingsReportListFilters(); // RewardsSpendingsReportListFilters | Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listProgramRewardsSpendingsDailyReports($programId, $startDate, $endDate, $resolution, $filters);
@@ -2529,11 +2529,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program (lprg_ followed by hexadecimal characters). | |
-| **startDate** | **\DateTime**| Sets the inclusive start of the report date range, in YYYY-MM-DD format. | |
-| **endDate** | **\DateTime**| Sets the inclusive end of the report date range, in YYYY-MM-DD format. Requires start_date to be before end_date. | |
-| **resolution** | **string**| Sets the aggregation resolution. Allows at most 90 days for day, 12 weeks for week, 12 months for month, and 4 quarters for quarter. | |
-| **filters** | [**RewardsSpendingsReportListFilters**](../Model/.md)| Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **startDate** | **\DateTime**| Sets the inclusive start of the report date range. Format YYYY-MM-DD. | |
+| **endDate** | **\DateTime**| Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. | |
+| **resolution** | **string**| Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. | |
+| **filters** | [**RewardsSpendingsReportListFilters**](../Model/.md)| Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -2586,8 +2586,8 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program (lprg_ followed by hexadecimal characters).
-$filters = new \OpenAPI\Client\Model\RewardsSpendingsReportListFilters(); // RewardsSpendingsReportListFilters | Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_....
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$filters = new \OpenAPI\Client\Model\RewardsSpendingsReportListFilters(); // RewardsSpendingsReportListFilters | Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listProgramRewardsSpendingsSummaryReports($programId, $filters);
@@ -2601,8 +2601,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program (lprg_ followed by hexadecimal characters). | |
-| **filters** | [**RewardsSpendingsReportListFilters**](../Model/.md)| Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **filters** | [**RewardsSpendingsReportListFilters**](../Model/.md)| Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -2655,8 +2655,8 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program (lprg_ followed by hexadecimal characters).
-$filters = new \OpenAPI\Client\Model\RewardsReportListFilters(); // RewardsReportListFilters | Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_....
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$filters = new \OpenAPI\Client\Model\RewardsReportListFilters(); // RewardsReportListFilters | Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listProgramRewardsSummaryReports($programId, $filters);
@@ -2670,8 +2670,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program (lprg_ followed by hexadecimal characters). | |
-| **filters** | [**RewardsReportListFilters**](../Model/.md)| Filters rows by field conditions, e.g. filters[reward_id][conditions][$is] lrew_.... | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **filters** | [**RewardsReportListFilters**](../Model/.md)| Filters the results. Pass a deep object, for example filters[reward_id][conditions][$is] lrew_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -2724,11 +2724,11 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters).
-$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive start of the report date range (YYYY-MM-DD). Must be before end_date.
-$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive end of the report date range (YYYY-MM-DD). Must be after start_date.
-$resolution = 'resolution_example'; // string | Sets the aggregation resolution. Allowed date range: day max 90 days, week max 12 weeks, month max 12 months, quarter max 4 quarters.
-$filters = new \OpenAPI\Client\Model\SpendingReportListFilters(); // SpendingReportListFilters | Filters rows by field conditions, e.g. filters[card_definition_id][conditions][$is] lcdef_....
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive start of the report date range. Format YYYY-MM-DD.
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date.
+$resolution = 'resolution_example'; // string | Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters.
+$filters = new \OpenAPI\Client\Model\SpendingReportListFilters(); // SpendingReportListFilters | Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listProgramSpendingDailyReports($programId, $startDate, $endDate, $resolution, $filters);
@@ -2742,11 +2742,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). | |
-| **startDate** | **\DateTime**| Sets the inclusive start of the report date range (YYYY-MM-DD). Must be before end_date. | |
-| **endDate** | **\DateTime**| Sets the inclusive end of the report date range (YYYY-MM-DD). Must be after start_date. | |
-| **resolution** | **string**| Sets the aggregation resolution. Allowed date range: day max 90 days, week max 12 weeks, month max 12 months, quarter max 4 quarters. | |
-| **filters** | [**SpendingReportListFilters**](../Model/.md)| Filters rows by field conditions, e.g. filters[card_definition_id][conditions][$is] lcdef_.... | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **startDate** | **\DateTime**| Sets the inclusive start of the report date range. Format YYYY-MM-DD. | |
+| **endDate** | **\DateTime**| Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. | |
+| **resolution** | **string**| Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. | |
+| **filters** | [**SpendingReportListFilters**](../Model/.md)| Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -2799,8 +2799,8 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters).
-$filters = new \OpenAPI\Client\Model\SpendingReportListFilters(); // SpendingReportListFilters | Filters rows by field conditions, e.g. filters[card_definition_id][conditions][$is] lcdef_....
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$filters = new \OpenAPI\Client\Model\SpendingReportListFilters(); // SpendingReportListFilters | Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listProgramSpendingSummaryReports($programId, $filters);
@@ -2814,8 +2814,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). | |
-| **filters** | [**SpendingReportListFilters**](../Model/.md)| Filters rows by field conditions, e.g. filters[card_definition_id][conditions][$is] lcdef_.... | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **filters** | [**SpendingReportListFilters**](../Model/.md)| Filters the results. Pass a deep object, for example filters[card_definition_id][conditions][$is] lcdef_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -2868,10 +2868,10 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique program identifier.
-$limit = '10'; // string | Maximum number of items to return. Between 1 and 100. Defaults to 10. Non-integer values are rounded.
-$order = 'order_example'; // string | Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once.
-$cursor = 'cursor_example'; // string | Pagination cursor returned by a previous call (cursor.next).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$limit = '10'; // string | Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer.
+$order = 'order_example'; // string | Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending.
+$cursor = 'cursor_example'; // string | Continues pagination. Pass the cursor.next value from a previous response. Format lcrstsa_[a-f0-9]+. The cursor matches the filters and order of that response.
 
 try {
     $result = $apiInstance->listProgramTierStructureAssignments($programId, $limit, $order, $cursor);
@@ -2885,10 +2885,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique program identifier. | |
-| **limit** | **string**| Maximum number of items to return. Between 1 and 100. Defaults to 10. Non-integer values are rounded. | [optional] [default to &#39;10&#39;] |
-| **order** | **string**| Sorting order. A single value or an array of values. Prefix with - for descending. Defaults to -created_at. The same field cannot be used in both ascending and descending order at once. | [optional] |
-| **cursor** | **string**| Pagination cursor returned by a previous call (cursor.next). | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **limit** | **string**| Limits the page size to an integer from 1 to 100. Defaults to 10. A numeric string is accepted and rounded to the nearest integer. | [optional] [default to &#39;10&#39;] |
+| **order** | **string**| Orders the results. Accepts one value or an array. Prefix a field with - for descending order. Defaults to -created_at. The same field cannot be used in both directions. Rows with the same sort value are then ordered by id ascending. | [optional] |
+| **cursor** | **string**| Continues pagination. Pass the cursor.next value from a previous response. Format lcrstsa_[a-f0-9]+. The cursor matches the filters and order of that response. | [optional] |
 
 ### Return type
 
@@ -2941,11 +2941,11 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters.
-$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive start of the range, in YYYY-MM-DD format.
-$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive end of the range, in YYYY-MM-DD format. Must be after start_date.
-$resolution = 'resolution_example'; // string | Sets the aggregation resolution. Allowed range: day up to 90 days, week up to 12 weeks, month up to 12 months, quarter up to 4 quarters.
-$filters = new \OpenAPI\Client\Model\TiersReportListFilters(); // TiersReportListFilters | Filters rows by tier_structure_id and tier_id. Example: filters[tier_structure_id][conditions][$is] lts_....
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive start of the report date range. Format YYYY-MM-DD.
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date.
+$resolution = 'resolution_example'; // string | Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters.
+$filters = new \OpenAPI\Client\Model\TiersReportListFilters(); // TiersReportListFilters | Filters the results. Pass a deep object, for example filters[tier_structure_id][conditions][$is] lts_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listProgramTiersDailyReports($programId, $startDate, $endDate, $resolution, $filters);
@@ -2959,11 +2959,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. | |
-| **startDate** | **\DateTime**| Sets the inclusive start of the range, in YYYY-MM-DD format. | |
-| **endDate** | **\DateTime**| Sets the inclusive end of the range, in YYYY-MM-DD format. Must be after start_date. | |
-| **resolution** | **string**| Sets the aggregation resolution. Allowed range: day up to 90 days, week up to 12 weeks, month up to 12 months, quarter up to 4 quarters. | |
-| **filters** | [**TiersReportListFilters**](../Model/.md)| Filters rows by tier_structure_id and tier_id. Example: filters[tier_structure_id][conditions][$is] lts_.... | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **startDate** | **\DateTime**| Sets the inclusive start of the report date range. Format YYYY-MM-DD. | |
+| **endDate** | **\DateTime**| Sets the inclusive end of the report date range. Format YYYY-MM-DD. Must be after start_date. | |
+| **resolution** | **string**| Sets the aggregation resolution. day allows at most 90 days, week at most 12 weeks, month at most 12 months, and quarter at most 4 quarters. | |
+| **filters** | [**TiersReportListFilters**](../Model/.md)| Filters the results. Pass a deep object, for example filters[tier_structure_id][conditions][$is] lts_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -3016,8 +3016,8 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters.
-$filters = new \OpenAPI\Client\Model\TiersReportListFilters(); // TiersReportListFilters | Filters rows by tier_structure_id and tier_id. Omitting filters or setting it to null applies no field filter. Example: filters[tier_id][conditions][$is] lt_....
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$filters = new \OpenAPI\Client\Model\TiersReportListFilters(); // TiersReportListFilters | Filters the results. Pass a deep object, for example filters[tier_id][conditions][$is] lt_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter.
 
 try {
     $result = $apiInstance->listProgramTiersSummaryReports($programId, $filters);
@@ -3031,8 +3031,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Identifies the loyalty program. Format: lprg_ followed by hexadecimal characters. | |
-| **filters** | [**TiersReportListFilters**](../Model/.md)| Filters rows by tier_structure_id and tier_id. Omitting filters or setting it to null applies no field filter. Example: filters[tier_id][conditions][$is] lt_.... | [optional] |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **filters** | [**TiersReportListFilters**](../Model/.md)| Filters the results. Pass a deep object, for example filters[tier_id][conditions][$is] lt_.... Fields combine through junction, which defaults to AND. Omit filters to apply no field filter. | [optional] |
 
 ### Return type
 
@@ -3085,8 +3085,8 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
 $v2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody = new \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody
 
 try {
@@ -3101,8 +3101,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
 | **v2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody**](../Model/V2LoyaltiesProgramsMembersRewardsPurchasesCreateRequestBody.md)|  | [optional] |
 
 ### Return type
@@ -3156,8 +3156,8 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters).
-$rewardTransactionId = 'rewardTransactionId_example'; // string | Unique reward transaction identifier of the purchase to refund (format: lrtx_ followed by hexadecimal characters).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$rewardTransactionId = 'rewardTransactionId_example'; // string | Identifies the reward transaction of the purchase to refund. Format lrtx_[a-f0-9]+.
 $v2LoyaltiesProgramsRewardsPurchasesRefundRequestBody = new \OpenAPI\Client\Model\V2LoyaltiesProgramsRewardsPurchasesRefundRequestBody(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsRewardsPurchasesRefundRequestBody | Optional refund policies. An empty payload is allowed.
 
 try {
@@ -3172,8 +3172,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program identifier (format: lprg_ followed by hexadecimal characters). | |
-| **rewardTransactionId** | **string**| Unique reward transaction identifier of the purchase to refund (format: lrtx_ followed by hexadecimal characters). | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **rewardTransactionId** | **string**| Identifies the reward transaction of the purchase to refund. Format lrtx_[a-f0-9]+. | |
 | **v2LoyaltiesProgramsRewardsPurchasesRefundRequestBody** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsRewardsPurchasesRefundRequestBody**](../Model/V2LoyaltiesProgramsRewardsPurchasesRefundRequestBody.md)| Optional refund policies. An empty payload is allowed. | [optional] |
 
 ### Return type
@@ -3227,8 +3227,8 @@ $apiInstance = new OpenAPI\Client\Api\LV2ProgramsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$programId = 'programId_example'; // string | Unique loyalty program ID (format lprg_[a-f0-9]+).
-$memberId = 'memberId_example'; // string | Program member ID (format lmbr_[a-f0-9]+).
+$programId = 'programId_example'; // string | Identifies the loyalty program. Format lprg_[a-f0-9]+.
+$memberId = 'memberId_example'; // string | Identifies the member. Format lmbr_[a-f0-9]+.
 $v2LoyaltiesProgramsMembersUpdateRequestBody = new \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersUpdateRequestBody(); // \OpenAPI\Client\Model\V2LoyaltiesProgramsMembersUpdateRequestBody
 
 try {
@@ -3243,8 +3243,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **programId** | **string**| Unique loyalty program ID (format lprg_[a-f0-9]+). | |
-| **memberId** | **string**| Program member ID (format lmbr_[a-f0-9]+). | |
+| **programId** | **string**| Identifies the loyalty program. Format lprg_[a-f0-9]+. | |
+| **memberId** | **string**| Identifies the member. Format lmbr_[a-f0-9]+. | |
 | **v2LoyaltiesProgramsMembersUpdateRequestBody** | [**\OpenAPI\Client\Model\V2LoyaltiesProgramsMembersUpdateRequestBody**](../Model/V2LoyaltiesProgramsMembersUpdateRequestBody.md)|  | [optional] |
 
 ### Return type

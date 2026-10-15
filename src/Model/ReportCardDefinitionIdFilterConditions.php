@@ -1,6 +1,6 @@
 <?php
 /**
- * PointsEarningsReportFilterCardDefinitionIdConditions
+ * ReportCardDefinitionIdFilterConditions
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * PointsEarningsReportFilterCardDefinitionIdConditions Class Doc Comment
+ * ReportCardDefinitionIdFilterConditions Class Doc Comment
  *
  * @category Class
- * @description ID filter conditions for card definition ID. Values must match pattern &#x60;^lcdef_[a-f0-9]+$&#x60;. &#x60;$is&#x60;/&#x60;$is_not&#x60; accept a single value (string or 1-element array); &#x60;$in&#x60;/&#x60;$not_in&#x60; accept a string or an array of 1-100 values.
+ * @description ID filter conditions for card definition IDs. Values must match pattern &#x60;^lcdef_[a-f0-9]+$&#x60;. &#x60;$is&#x60;/&#x60;$is_not&#x60; accept a single value (string or 1-element array); &#x60;$in&#x60;/&#x60;$not_in&#x60; accept a string or an array of 1-100 values.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PointsEarningsReportFilterCardDefinitionIdConditions implements ModelInterface, ArrayAccess, \JsonSerializable
+class ReportCardDefinitionIdFilterConditions implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class PointsEarningsReportFilterCardDefinitionIdConditions implements ModelInter
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PointsEarningsReportFilterCardDefinitionIdConditions';
+    protected static $openAPIModelName = 'ReportCardDefinitionIdFilterConditions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class PointsEarningsReportFilterCardDefinitionIdConditions implements ModelInter
       * @var string[]
       */
     protected static $openAPITypes = [
-        'conditions' => '\OpenAPI\Client\Model\PointsEarningsReportFilterCardDefinitionIdConditionsConditions'
+        'conditions' => '\OpenAPI\Client\Model\ReportCardDefinitionIdFilterConditionsConditions'
     ];
 
     /**
@@ -294,7 +294,7 @@ class PointsEarningsReportFilterCardDefinitionIdConditions implements ModelInter
     /**
      * Gets conditions
      *
-     * @return \OpenAPI\Client\Model\PointsEarningsReportFilterCardDefinitionIdConditionsConditions|null
+     * @return \OpenAPI\Client\Model\ReportCardDefinitionIdFilterConditionsConditions|null
      */
     public function getConditions()
     {
@@ -304,7 +304,7 @@ class PointsEarningsReportFilterCardDefinitionIdConditions implements ModelInter
     /**
      * Sets conditions
      *
-     * @param \OpenAPI\Client\Model\PointsEarningsReportFilterCardDefinitionIdConditionsConditions|null $conditions conditions
+     * @param \OpenAPI\Client\Model\ReportCardDefinitionIdFilterConditionsConditions|null $conditions conditions
      *
      * @return self
      */

@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltiesProgramsMembersActivitiesListRequestQueryFiltersType Class Doc Comment
  *
  * @category Class
- * @description Enum filter conditions for member activity types. At least one condition is required.
+ * @description Enum conditions. At least one condition is required.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

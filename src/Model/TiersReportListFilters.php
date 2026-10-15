@@ -342,7 +342,7 @@ class TiersReportListFilters implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets junction
      *
-     * @param string|null $junction Joins the field filters. Allowed values: `AND`, `OR`. Defaults to `AND`.
+     * @param string|null $junction Joins the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
      *
      * @return self
      */

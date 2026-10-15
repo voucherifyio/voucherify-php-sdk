@@ -335,7 +335,7 @@ class RewardsReportListFilters implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets junction
      *
-     * @param string|null $junction Sets the logical junction between the field filters. Defaults to `AND`.
+     * @param string|null $junction Joins the field filters. Allowed values are `AND` and `OR`. Defaults to `AND`.
      *
      * @return self
      */

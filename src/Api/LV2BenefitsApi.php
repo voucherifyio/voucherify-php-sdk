@@ -128,7 +128,7 @@ class LV2BenefitsApi
      *
      * Get benefit
      *
-     * @param  string $benefitId Unique benefit ID, prefixed with lben_. (required)
+     * @param  string $benefitId Identifies the benefit. Format lben_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBenefit'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -146,7 +146,7 @@ class LV2BenefitsApi
      *
      * Get benefit
      *
-     * @param  string $benefitId Unique benefit ID, prefixed with lben_. (required)
+     * @param  string $benefitId Identifies the benefit. Format lben_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBenefit'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -246,7 +246,7 @@ class LV2BenefitsApi
      *
      * Get benefit
      *
-     * @param  string $benefitId Unique benefit ID, prefixed with lben_. (required)
+     * @param  string $benefitId Identifies the benefit. Format lben_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBenefit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -267,7 +267,7 @@ class LV2BenefitsApi
      *
      * Get benefit
      *
-     * @param  string $benefitId Unique benefit ID, prefixed with lben_. (required)
+     * @param  string $benefitId Identifies the benefit. Format lben_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBenefit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -317,7 +317,7 @@ class LV2BenefitsApi
     /**
      * Create request for operation 'getBenefit'
      *
-     * @param  string $benefitId Unique benefit ID, prefixed with lben_. (required)
+     * @param  string $benefitId Identifies the benefit. Format lben_[a-f0-9]+. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBenefit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

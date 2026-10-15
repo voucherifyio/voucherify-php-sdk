@@ -41,7 +41,7 @@ $apiInstance = new OpenAPI\Client\Api\LV2EarningRulesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$earningRuleId = 'earningRuleId_example'; // string | Earning rule ID.
+$earningRuleId = 'earningRuleId_example'; // string | Identifies the earning rule. Format lern_[a-f0-9]+.
 
 try {
     $result = $apiInstance->getEarningRule($earningRuleId);
@@ -55,7 +55,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **earningRuleId** | **string**| Earning rule ID. | |
+| **earningRuleId** | **string**| Identifies the earning rule. Format lern_[a-f0-9]+. | |
 
 ### Return type
 
