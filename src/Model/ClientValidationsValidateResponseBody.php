@@ -431,7 +431,7 @@ class ClientValidationsValidateResponseBody implements ModelInterface, ArrayAcce
     /**
      * Sets redeemables
      *
-     * @param \OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItem[]|null $redeemables redeemables
+     * @param \OpenAPI\Client\Model\ClientValidationsValidateResponseBodyRedeemablesItem[]|null $redeemables Lists validation results of each redeemable. If  `redeemables_application_mode` is `PARTIAL` in the `stacking_rules` object, all redeemables here will be `APPLICABLE`. Read more in [the Stacking rules article](/orchestrate/stacking-rules).
      *
      * @return self
      */

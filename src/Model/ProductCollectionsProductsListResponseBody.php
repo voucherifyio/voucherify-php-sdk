@@ -393,7 +393,7 @@ class ProductCollectionsProductsListResponseBody implements ModelInterface, Arra
     /**
      * Sets data
      *
-     * @param \OpenAPI\Client\Model\ProductCollectionsProductsListResponseBodyDataItem[]|null $data data
+     * @param \OpenAPI\Client\Model\ProductCollectionsProductsListResponseBodyDataItem[]|null $data A dictionary that contains an array of products and SKUs.
      *
      * @return self
      */

@@ -318,6 +318,14 @@ class RedemptionsRedeemRequestBody implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['redeemables']) && (count($this->container['redeemables']) > 30)) {
+            $invalidProperties[] = "invalid value for 'redeemables', number of items must be less than or equal to 30.";
+        }
+
+        if (!is_null($this->container['redeemables']) && (count($this->container['redeemables']) < 1)) {
+            $invalidProperties[] = "invalid value for 'redeemables', number of items must be greater than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -380,7 +388,7 @@ class RedemptionsRedeemRequestBody implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets redeemables
      *
-     * @param \OpenAPI\Client\Model\RedemptionsRedeemRequestBodyRedeemablesItem[]|null $redeemables redeemables
+     * @param \OpenAPI\Client\Model\RedemptionsRedeemRequestBodyRedeemablesItem[]|null $redeemables An array of redeemables. You can combine `voucher`(s) and `promotion_tier`(s). Alternatively, send one unique`promotion_stack` in the array. Each unique redeemable can be sent in one request only once.
      *
      * @return self
      */
@@ -395,6 +403,13 @@ class RedemptionsRedeemRequestBody implements ModelInterface, ArrayAccess, \Json
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
+        }
+
+        if (!is_null($redeemables) && (count($redeemables) > 30)) {
+            throw new \InvalidArgumentException('invalid value for $redeemables when calling RedemptionsRedeemRequestBody., number of items must be less than or equal to 30.');
+        }
+        if (!is_null($redeemables) && (count($redeemables) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $redeemables when calling RedemptionsRedeemRequestBody., number of items must be greater than or equal to 1.');
         }
         $this->container['redeemables'] = $redeemables;
 
