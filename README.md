@@ -192,6 +192,7 @@ Authorization schemes defined for the API.
   - Added an optional `filters` query parameter on list customers.
   - Customer loyalty membership responses list only `ACTIVE` memberships.
   - Replaced deprecated `GuzzleHttp\Utils::jsonEncode()` with PHP `json_encode(..., JSON_THROW_ON_ERROR)` in generated API request bodies (Guzzle 7.15+).
+  - Added e2e coverage for Loyalty v2 member and runtime flows, with HTTP setup for admin endpoints that are not in the SDK.
 - **2026-08-26** - `5.1.1`
   - Fixed: `exchangeRatio` is `float` on COIN reward models (`RewardsCreateRequestBodyParametersCoin` and `RewardsUpdateRequestBodyParametersCoin` were `string`, `RedemptionRewardResultParametersCoin` was `int`). The API returns fractional values such as `0.01`.
   - Added: `language` on `RedemptionsRedeemRequestBodyOptions` and `ValidationsValidateRequestBodyOptions`.
