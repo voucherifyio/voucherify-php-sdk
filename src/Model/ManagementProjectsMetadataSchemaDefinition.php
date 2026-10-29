@@ -713,7 +713,7 @@ class ManagementProjectsMetadataSchemaDefinition implements ModelInterface, Arra
     /**
      * Sets eq
      *
-     * @param mixed[]|null $eq eq
+     * @param mixed[]|null $eq Array of values that are allowed. Available only for the `string` and `number` types.
      *
      * @return self
      */

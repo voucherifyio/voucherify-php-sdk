@@ -441,7 +441,7 @@ class CustomersRedeemablesListResponseBody implements ModelInterface, ArrayAcces
     /**
      * Sets total
      *
-     * @param int|null $total Total number of results returned.
+     * @param int|null $total Total number of results returned on this page.
      *
      * @return self
      */

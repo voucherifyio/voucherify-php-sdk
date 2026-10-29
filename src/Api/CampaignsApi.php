@@ -428,7 +428,8 @@ class CampaignsApi
         if (isset($campaignsVouchersCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaignsVouchersCreateRequestBody));
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($campaignsVouchersCreateRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $campaignsVouchersCreateRequestBody;
             }
@@ -449,7 +450,8 @@ class CampaignsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -749,7 +751,8 @@ class CampaignsApi
         if (isset($campaignsVouchersCreateInBulkRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaignsVouchersCreateInBulkRequestBody));
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($campaignsVouchersCreateInBulkRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $campaignsVouchersCreateInBulkRequestBody;
             }
@@ -770,7 +773,8 @@ class CampaignsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1035,7 +1039,8 @@ class CampaignsApi
         if (isset($campaignsCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaignsCreateRequestBody));
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($campaignsCreateRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $campaignsCreateRequestBody;
             }
@@ -1056,7 +1061,8 @@ class CampaignsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1364,7 +1370,8 @@ class CampaignsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1657,7 +1664,8 @@ class CampaignsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1950,7 +1958,8 @@ class CampaignsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2235,7 +2244,8 @@ class CampaignsApi
         if (isset($campaignsTransactionsExportCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaignsTransactionsExportCreateRequestBody));
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($campaignsTransactionsExportCreateRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $campaignsTransactionsExportCreateRequestBody;
             }
@@ -2256,7 +2266,8 @@ class CampaignsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2549,7 +2560,8 @@ class CampaignsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2872,7 +2884,8 @@ class CampaignsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -3157,7 +3170,8 @@ class CampaignsApi
         if (isset($campaignsImportVoucherItem)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaignsImportVoucherItem));
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($campaignsImportVoucherItem), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $campaignsImportVoucherItem;
             }
@@ -3178,7 +3192,8 @@ class CampaignsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -3489,7 +3504,8 @@ class CampaignsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -3848,7 +3864,8 @@ class CampaignsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -4223,7 +4240,8 @@ class CampaignsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -4508,7 +4526,8 @@ class CampaignsApi
         if (isset($campaignsUpdateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($campaignsUpdateRequestBody));
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($campaignsUpdateRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $campaignsUpdateRequestBody;
             }
@@ -4529,7 +4548,8 @@ class CampaignsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

@@ -364,7 +364,8 @@ class OrdersApi
         if (isset($ordersCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ordersCreateRequestBody));
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ordersCreateRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $ordersCreateRequestBody;
             }
@@ -385,7 +386,8 @@ class OrdersApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -650,7 +652,8 @@ class OrdersApi
         if (isset($ordersExportCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ordersExportCreateRequestBody));
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ordersExportCreateRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $ordersExportCreateRequestBody;
             }
@@ -671,7 +674,8 @@ class OrdersApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -964,7 +968,8 @@ class OrdersApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1229,7 +1234,8 @@ class OrdersApi
         if (isset($ordersImportCreateRequestBodyItem)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ordersImportCreateRequestBodyItem));
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ordersImportCreateRequestBodyItem), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $ordersImportCreateRequestBodyItem;
             }
@@ -1250,7 +1256,8 @@ class OrdersApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1580,7 +1587,8 @@ class OrdersApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1865,7 +1873,8 @@ class OrdersApi
         if (isset($ordersUpdateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ordersUpdateRequestBody));
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ordersUpdateRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $ordersUpdateRequestBody;
             }
@@ -1886,7 +1895,8 @@ class OrdersApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

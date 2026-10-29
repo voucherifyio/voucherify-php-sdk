@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **minLength** | **int** | Value indicating the minimum length. Available only for the &#x60;string&#x60; type. | [optional]
 **maxLength** | **int** | Value indicating the maximum length. Available only for the &#x60;string&#x60; type. | [optional]
 **exactLength** | **int** | Value indicating the exact length. Available only for the &#x60;string&#x60; type. | [optional]
-**eq** | **mixed[]** |  | [optional]
+**eq** | **mixed[]** | Array of values that are allowed. Available only for the &#x60;string&#x60; and &#x60;number&#x60; types. | [optional]
 **ne** | **float[]** | Array of values that are not allowed. Available only for the &#x60;number&#x60; type. | [optional]
 **lt** | **float** | A property of the &#x60;number&#x60; type must have &#x60;less than&#x60; this value. The value should be up to two decimal places. | [optional]
 **lte** | **float** | A property of the &#x60;number&#x60; type must be &#x60;less than or equal&#x60; to this value. The value should be up to two decimal places. | [optional]

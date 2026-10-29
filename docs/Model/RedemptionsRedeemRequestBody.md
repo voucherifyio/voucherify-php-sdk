@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **options** | [**\OpenAPI\Client\Model\RedemptionsRedeemRequestBodyOptions**](RedemptionsRedeemRequestBodyOptions.md) |  | [optional]
-**redeemables** | [**\OpenAPI\Client\Model\RedemptionsRedeemRequestBodyRedeemablesItem[]**](RedemptionsRedeemRequestBodyRedeemablesItem.md) |  | [optional]
+**redeemables** | [**\OpenAPI\Client\Model\RedemptionsRedeemRequestBodyRedeemablesItem[]**](RedemptionsRedeemRequestBodyRedeemablesItem.md) | An array of redeemables. You can combine &#x60;voucher&#x60;(s) and &#x60;promotion_tier&#x60;(s). Alternatively, send one unique&#x60;promotion_stack&#x60; in the array. Each unique redeemable can be sent in one request only once. | [optional]
 **order** | [**\OpenAPI\Client\Model\Order**](Order.md) |  | [optional]
 **customer** | [**\OpenAPI\Client\Model\Customer**](Customer.md) |  | [optional]
 **session** | [**\OpenAPI\Client\Model\Session**](Session.md) |  | [optional]

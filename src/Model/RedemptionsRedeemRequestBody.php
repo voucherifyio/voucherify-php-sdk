@@ -380,7 +380,7 @@ class RedemptionsRedeemRequestBody implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets redeemables
      *
-     * @param \OpenAPI\Client\Model\RedemptionsRedeemRequestBodyRedeemablesItem[]|null $redeemables redeemables
+     * @param \OpenAPI\Client\Model\RedemptionsRedeemRequestBodyRedeemablesItem[]|null $redeemables An array of redeemables. You can combine `voucher`(s) and `promotion_tier`(s). Alternatively, send one unique`promotion_stack` in the array. Each unique redeemable can be sent in one request only once.
      *
      * @return self
      */

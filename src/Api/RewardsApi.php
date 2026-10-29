@@ -376,7 +376,8 @@ class RewardsApi
         if (isset($rewardsCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($rewardsCreateRequestBody));
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($rewardsCreateRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $rewardsCreateRequestBody;
             }
@@ -397,7 +398,8 @@ class RewardsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -682,7 +684,8 @@ class RewardsApi
         if (isset($rewardsAssignmentsCreateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($rewardsAssignmentsCreateRequestBody));
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($rewardsAssignmentsCreateRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $rewardsAssignmentsCreateRequestBody;
             }
@@ -703,7 +706,8 @@ class RewardsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -942,7 +946,8 @@ class RewardsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1201,7 +1206,8 @@ class RewardsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1494,7 +1500,8 @@ class RewardsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1807,7 +1814,8 @@ class RewardsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2142,7 +2150,8 @@ class RewardsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2472,7 +2481,8 @@ class RewardsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2757,7 +2767,8 @@ class RewardsApi
         if (isset($rewardsUpdateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($rewardsUpdateRequestBody));
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($rewardsUpdateRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $rewardsUpdateRequestBody;
             }
@@ -2778,7 +2789,8 @@ class RewardsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -3083,7 +3095,8 @@ class RewardsApi
         if (isset($rewardsAssignmentsUpdateRequestBody)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($rewardsAssignmentsUpdateRequestBody));
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($rewardsAssignmentsUpdateRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $rewardsAssignmentsUpdateRequestBody;
             }
@@ -3104,7 +3117,8 @@ class RewardsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                # Use PHP json_encode: GuzzleHttp\Utils::jsonEncode() is deprecated since guzzle 7.15 and removed in 8.0
+                $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

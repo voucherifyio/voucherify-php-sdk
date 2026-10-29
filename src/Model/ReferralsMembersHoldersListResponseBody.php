@@ -441,7 +441,7 @@ class ReferralsMembersHoldersListResponseBody implements ModelInterface, ArrayAc
     /**
      * Sets total
      *
-     * @param int|null $total Total number of holders assigned to the redeemable.
+     * @param int|null $total Total number of results returned on this page.
      *
      * @return self
      */
