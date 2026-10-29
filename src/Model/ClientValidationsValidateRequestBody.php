@@ -318,14 +318,6 @@ class ClientValidationsValidateRequestBody implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['redeemables']) && (count($this->container['redeemables']) > 30)) {
-            $invalidProperties[] = "invalid value for 'redeemables', number of items must be less than or equal to 30.";
-        }
-
-        if (!is_null($this->container['redeemables']) && (count($this->container['redeemables']) < 1)) {
-            $invalidProperties[] = "invalid value for 'redeemables', number of items must be greater than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -403,13 +395,6 @@ class ClientValidationsValidateRequestBody implements ModelInterface, ArrayAcces
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
-        }
-
-        if (!is_null($redeemables) && (count($redeemables) > 30)) {
-            throw new \InvalidArgumentException('invalid value for $redeemables when calling ClientValidationsValidateRequestBody., number of items must be less than or equal to 30.');
-        }
-        if (!is_null($redeemables) && (count($redeemables) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $redeemables when calling ClientValidationsValidateRequestBody., number of items must be greater than or equal to 1.');
         }
         $this->container['redeemables'] = $redeemables;
 
