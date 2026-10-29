@@ -42,70 +42,86 @@ class LoyaltiesV2Test extends TestCase
             return;
         }
 
-        self::$fixtureCtx = LoyaltyV2Fixture::setup();
+        try {
+            self::$fixtureCtx = LoyaltyV2Fixture::setup();
 
-        $customersApi = Config::customersApiInstance();
-        $customerBody = new CustomersCreateRequestBody();
-        $customerBody->setSourceId('lv2_customer_' . self::$fixtureCtx['suffix']);
-        $customerBody->setName('Loyalty v2 PHP SDK test');
-        self::$customer = $customersApi->createCustomer($customerBody);
+            $customersApi = Config::customersApiInstance();
+            $customerBody = new CustomersCreateRequestBody();
+            $customerBody->setSourceId('lv2_customer_' . self::$fixtureCtx['suffix']);
+            $customerBody->setName('Loyalty v2 PHP SDK test');
+            self::$customer = $customersApi->createCustomer($customerBody);
 
-        $programsApi = Config::lv2ProgramsApiInstance();
-        $memberBody = new V2LoyaltiesProgramsMembersCreateRequestBody();
-        $memberBody->setCustomerIdentification([
-            'type' => 'customer_id',
-            'customer_id' => self::$customer->getId(),
-            'customer_source_id' => null,
-        ]);
-        self::$member = $programsApi->createProgramMember(
-            self::$fixtureCtx['programId'],
-            $memberBody
-        );
-        self::$primaryCardId = self::resolvePrimaryCardId(self::$member);
+            $programsApi = Config::lv2ProgramsApiInstance();
+            $memberBody = new V2LoyaltiesProgramsMembersCreateRequestBody();
+            $memberBody->setCustomerIdentification([
+                'type' => 'customer_id',
+                'customer_id' => self::$customer->getId(),
+                'customer_source_id' => null,
+            ]);
+            self::$member = $programsApi->createProgramMember(
+                self::$fixtureCtx['programId'],
+                $memberBody
+            );
+            self::$primaryCardId = self::resolvePrimaryCardId(self::$member);
+        } catch (Throwable $error) {
+            // Always clean partial setup so a failed before-class does not leave orphans.
+            self::tearDownAfterClass();
+            throw $error;
+        }
     }
 
     public static function tearDownAfterClass(): void
     {
-        $programsApi = Config::lv2ProgramsApiInstance();
-        $customersApi = Config::customersApiInstance();
+        // Always runs after assertions fail; never rethrow — unsupported deletes must not fail the suite.
+        try {
+            $programsApi = Config::lv2ProgramsApiInstance();
+            $customersApi = Config::customersApiInstance();
 
-        $ignore = function (string $label, callable $fn): void {
-            try {
-                $fn();
-            } catch (ApiException $error) {
-                if ($error->getCode() === 404) {
-                    return;
+            $ignore = function (string $label, callable $fn): void {
+                try {
+                    $fn();
+                } catch (ApiException $error) {
+                    if ($error->getCode() === 404) {
+                        return;
+                    }
+                    error_log($label . ': ' . $error->getMessage());
+                } catch (Throwable $error) {
+                    $status = $error->loyaltyV2Status ?? null;
+                    if ($status === 404) {
+                        return;
+                    }
+                    error_log($label . ': ' . $error->getMessage());
                 }
-                error_log($label . ': ' . $error->getMessage());
-            } catch (Throwable $error) {
-                $status = $error->loyaltyV2Status ?? null;
-                if ($status === 404) {
-                    return;
-                }
-                error_log($label . ': ' . $error->getMessage());
+            };
+
+            if (self::$fixtureCtx && self::$member) {
+                $programId = self::$fixtureCtx['programId'];
+                $memberId = self::$member->getId();
+                $ignore(
+                    'deactivateProgramMember',
+                    fn () => $programsApi->deactivateProgramMember($programId, $memberId)
+                );
+                $ignore(
+                    'deleteProgramMember',
+                    fn () => $programsApi->deleteProgramMember($programId, $memberId)
+                );
             }
-        };
 
-        if (self::$fixtureCtx && self::$member) {
-            $programId = self::$fixtureCtx['programId'];
-            $memberId = self::$member->getId();
-            $ignore('deactivateProgramMember', fn () => $programsApi->deactivateProgramMember($programId, $memberId));
-            $ignore('deleteProgramMember', fn () => $programsApi->deleteProgramMember($programId, $memberId));
+            if (self::$customer) {
+                $customerId = self::$customer->getId();
+                $ignore('deleteCustomer', fn () => $customersApi->deleteCustomer($customerId));
+            }
+
+            // HTTP: delete program first (drops assignments), then earning/reward, then cards.
+            if (self::$fixtureCtx) {
+                LoyaltyV2Fixture::teardown(self::$fixtureCtx);
+            }
+        } finally {
+            self::$fixtureCtx = null;
+            self::$member = null;
+            self::$customer = null;
+            self::$primaryCardId = null;
         }
-
-        if (self::$customer) {
-            $customerId = self::$customer->getId();
-            $ignore('deleteCustomer', fn () => $customersApi->deleteCustomer($customerId));
-        }
-
-        if (self::$fixtureCtx) {
-            LoyaltyV2Fixture::teardown(self::$fixtureCtx);
-        }
-
-        self::$fixtureCtx = null;
-        self::$member = null;
-        self::$customer = null;
-        self::$primaryCardId = null;
     }
 
     private static function resolvePrimaryCardId($memberBody): string

@@ -201,6 +201,7 @@ class LoyaltyV2Fixture
         $earningRuleId = $ctx['earningRuleId'] ?? null;
         $rewardId = $ctx['rewardId'] ?? null;
 
+        // Program first: delete removes assignments so later card deletes avoid 423.
         if ($programId) {
             $ignore('deactivateProgram', fn () => LoyaltyV2Http::deactivateProgram($programId));
             $ignore('deleteProgram', fn () => LoyaltyV2Http::deleteProgram($programId));
@@ -216,10 +217,30 @@ class LoyaltyV2Fixture
         usleep(500000);
 
         if ($earningRuleId) {
-            $ignore('deleteEarningRule', fn () => LoyaltyV2Http::deleteEarningRule($earningRuleId));
+            $ignore('deleteEarningRule', function () use ($earningRuleId, $ignore) {
+                try {
+                    LoyaltyV2Http::deleteEarningRule($earningRuleId);
+                } catch (Throwable $error) {
+                    $ignore(
+                        'deactivateEarningRule after delete reject',
+                        fn () => LoyaltyV2Http::deactivateEarningRule($earningRuleId)
+                    );
+                    throw $error;
+                }
+            });
         }
         if ($rewardId) {
-            $ignore('deleteReward', fn () => LoyaltyV2Http::deleteReward($rewardId));
+            $ignore('deleteReward', function () use ($rewardId, $ignore) {
+                try {
+                    LoyaltyV2Http::deleteReward($rewardId);
+                } catch (Throwable $error) {
+                    $ignore(
+                        'deactivateReward after delete reject',
+                        fn () => LoyaltyV2Http::deactivateReward($rewardId)
+                    );
+                    throw $error;
+                }
+            });
         }
         foreach ([$cardDefinitionId, $rewardCardDefinitionId] as $id) {
             if ($id) {
