@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * EarningRuleTrigger Class Doc Comment
  *
  * @category Class
- * @description Event that triggers the earning rule. Depending on &#x60;event&#x60;, either &#x60;custom_event&#x60; or &#x60;segment&#x60; is required and the other trigger contexts must be null/absent. The API validates field combinations that this schema does not express.
+ * @description Event that triggers the earning rule. Depending on &#x60;event&#x60;, either &#x60;custom_event&#x60; or &#x60;segment&#x60; is required and the other trigger contexts must be &#x60;null&#x60;/absent. The API validates field combinations that this schema does not express.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
