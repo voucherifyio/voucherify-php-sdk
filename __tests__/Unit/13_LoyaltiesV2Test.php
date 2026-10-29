@@ -8,6 +8,13 @@ require_once __DIR__ . '/../lib/utils.php';
 use OpenAPI\Client\ApiException;
 use OpenAPI\Client\Model\Customer;
 use OpenAPI\Client\Model\CustomersCreateRequestBody;
+use OpenAPI\Client\Model\ExamineCustomerIdentification;
+use OpenAPI\Client\Model\LoyaltiesExamineEarningRulesExamineRequestBody;
+use OpenAPI\Client\Model\LoyaltiesExamineEarningRulesExamineRequestBodyCustomerOrderPaid;
+use OpenAPI\Client\Model\LoyaltiesExamineEarningRulesExamineRequestBodyOrder;
+use OpenAPI\Client\Model\LoyaltiesExamineEarningRulesExamineRequestBodyTrigger;
+use OpenAPI\Client\Model\LoyaltiesExamineEarningRulesExamineRequestBodyTriggerSpecific;
+use OpenAPI\Client\Model\LoyaltiesExamineRewardsExamineRequestBody;
 use OpenAPI\Client\Model\LoyaltiesProgramsMembersOrdersPaymentsCreateRequestBodyLimit;
 use OpenAPI\Client\Model\OrderPaymentOrder;
 use OpenAPI\Client\Model\OrdersCreateRequestBody;
@@ -319,5 +326,90 @@ class LoyaltiesV2Test extends TestCase
         $this->requireLiveContext();
         // Fixture uses pending_points.type = IMMEDIATE, so no pending bucket is created.
         $this->assertTrue(true, 'Pending-point activate/cancel skipped: fixture has no pending bucket');
+    }
+
+    public function testExamineEarningRulesAndRewards(): void
+    {
+        $this->requireLiveContext();
+
+        $examineApi = Config::lv2ExamineApiInstance();
+        $memberId = self::$member->getId();
+
+        $identification = new ExamineCustomerIdentification();
+        $identification->setType('member_id');
+        $identification->setMemberId($memberId);
+
+        $triggerSpecific = new LoyaltiesExamineEarningRulesExamineRequestBodyTriggerSpecific();
+        $triggerSpecific->setEvent('customer.order.paid');
+        $trigger = new LoyaltiesExamineEarningRulesExamineRequestBodyTrigger();
+        $trigger->setType('SPECIFIC');
+        $trigger->setSpecific($triggerSpecific);
+
+        $order = new LoyaltiesExamineEarningRulesExamineRequestBodyOrder();
+        $order->setAmount(5000);
+        $customerOrderPaid = new LoyaltiesExamineEarningRulesExamineRequestBodyCustomerOrderPaid();
+        $customerOrderPaid->setOrder($order);
+
+        $earningBody = new LoyaltiesExamineEarningRulesExamineRequestBody();
+        $earningBody->setTrigger($trigger);
+        $earningBody->setCustomerIdentification($identification);
+        $earningBody->setCustomerOrderPaid($customerOrderPaid);
+
+        $earningRules = $examineApi->examineEarningRules($earningBody);
+        $this->assertNotNull($earningRules);
+
+        $rewardsBody = new LoyaltiesExamineRewardsExamineRequestBody();
+        $rewardsBody->setCustomerIdentification($identification);
+        $rewards = $examineApi->examineRewards($rewardsBody);
+        $this->assertNotNull($rewards);
+    }
+
+    public function testSelectedLoyaltyV2ReportsAndGets(): void
+    {
+        $this->requireLiveContext();
+
+        $programsApi = Config::lv2ProgramsApiInstance();
+        $programId = self::$fixtureCtx['programId'];
+
+        $membersSummary = $programsApi->listProgramMembersSummaryReports($programId);
+        $this->assertNotNull($membersSummary);
+        $this->assertIsArray($membersSummary->getData() ?? []);
+
+        $rewardsSummary = $programsApi->listProgramRewardsSummaryReports($programId);
+        $this->assertNotNull($rewardsSummary);
+        $this->assertIsArray($rewardsSummary->getData() ?? []);
+
+        $endDate = (new DateTimeImmutable('today'))->format('Y-m-d');
+        $startDate = (new DateTimeImmutable('yesterday'))->format('Y-m-d');
+
+        $membersDaily = $programsApi->listProgramMembersDailyReports(
+            $programId,
+            $startDate,
+            $endDate,
+            'day'
+        );
+        $this->assertNotNull($membersDaily);
+        $this->assertIsArray($membersDaily->getData() ?? []);
+
+        $cardDaily = $programsApi->listMemberCardDailyReports(
+            $programId,
+            self::$member->getId(),
+            self::$primaryCardId,
+            $startDate,
+            $endDate,
+            'day'
+        );
+        $this->assertNotNull($cardDaily);
+        $this->assertIsArray($cardDaily->getData() ?? []);
+
+        $earningRule = Config::lv2EarningRulesApiInstance()->getEarningRule(
+            self::$fixtureCtx['earningRuleId']
+        );
+        $this->assertNotNull($earningRule);
+        $this->assertSame(self::$fixtureCtx['earningRuleId'], $earningRule->getId());
+
+        $reward = Config::lv2RewardsApiInstance()->getReward(self::$fixtureCtx['rewardId']);
+        $this->assertNotNull($reward);
+        $this->assertSame(self::$fixtureCtx['rewardId'], $reward->getId());
     }
 }
