@@ -17,6 +17,11 @@ use OpenAPI\Client\Api\EventsApi;
 use OpenAPI\Client\Api\OrdersApi;
 use OpenAPI\Client\Api\LoyaltiesApi;
 use OpenAPI\Client\Api\ValidationsApi;
+use OpenAPI\Client\Api\LV2ProgramsApi;
+use OpenAPI\Client\Api\LV2ExamineApi;
+use OpenAPI\Client\Api\LV2EarningRulesApi;
+use OpenAPI\Client\Api\LV2RewardsApi;
+use OpenAPI\Client\Api\LV2BenefitsApi;
 
 class Config
 {
@@ -105,6 +110,31 @@ class Config
     public static function validationsApiInstance(): ValidationsApi
     {
         return new ValidationsApi(self::getClient(), self::getConfig());
+    }
+
+    public static function lv2ProgramsApiInstance(): LV2ProgramsApi
+    {
+        return new LV2ProgramsApi(self::getClient(), self::getConfig());
+    }
+
+    public static function lv2ExamineApiInstance(): LV2ExamineApi
+    {
+        return new LV2ExamineApi(self::getClient(), self::getConfig());
+    }
+
+    public static function lv2EarningRulesApiInstance(): LV2EarningRulesApi
+    {
+        return new LV2EarningRulesApi(self::getClient(), self::getConfig());
+    }
+
+    public static function lv2RewardsApiInstance(): LV2RewardsApi
+    {
+        return new LV2RewardsApi(self::getClient(), self::getConfig());
+    }
+
+    public static function lv2BenefitsApiInstance(): LV2BenefitsApi
+    {
+        return new LV2BenefitsApi(self::getClient(), self::getConfig());
     }
 }
 
