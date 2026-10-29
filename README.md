@@ -187,7 +187,7 @@ Authorization schemes defined for the API.
 ## 📅 Changelog
 
 - **2026-10-14** - `5.2.0`
-  - Added Loyalty v2 API methods under `/v2/loyalties` for member create, update, delete, activate, and deactivate, point adjustments, order payments, reward purchase, and refund, plus memberships, cards, examine, and reports.
+  - Added Loyalty v2 API methods under `/v2/loyalties` for member create, update, delete, activate, and deactivate, point adjustments, order payments, reward purchase, and refund, plus memberships, cards, examine, reports, list endpoints, and reads for a benefit, an earning rule, and a reward.
   - Added `loyalty_memberships` on customer summary models.
   - Customer loyalty membership responses list only `ACTIVE` memberships.
   - Replaced deprecated `GuzzleHttp\Utils::jsonEncode()` with PHP `json_encode(..., JSON_THROW_ON_ERROR)` in generated API request bodies (Guzzle 7.15+).
