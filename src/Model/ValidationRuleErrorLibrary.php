@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidationRulesUpdateRequestBodyError
+ * ValidationRuleErrorLibrary
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * ValidationRulesUpdateRequestBodyError Class Doc Comment
+ * ValidationRuleErrorLibrary Class Doc Comment
  *
  * @category Class
- * @description Contains the error message returned from API when validation / redemption fails to meet requirements of defined rules.
+ * @description References an Error Message Library entry. Required when &#x60;mode&#x60; is &#x60;LIBRARY&#x60;. Must be omitted or &#x60;null&#x60; when &#x60;mode&#x60; is &#x60;MESSAGES&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ValidationRulesUpdateRequestBodyError implements ModelInterface, ArrayAccess, \JsonSerializable
+class ValidationRuleErrorLibrary implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ValidationRulesUpdateRequestBodyError implements ModelInterface, ArrayAcce
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ValidationRulesUpdateRequestBodyError';
+    protected static $openAPIModelName = 'ValidationRuleErrorLibrary';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class ValidationRulesUpdateRequestBodyError implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'message' => 'string'
+        'key' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class ValidationRulesUpdateRequestBodyError implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'message' => null
+        'key' => null
     ];
 
     /**
@@ -79,7 +79,7 @@ class ValidationRulesUpdateRequestBodyError implements ModelInterface, ArrayAcce
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'message' => true
+        'key' => true
     ];
 
     /**
@@ -168,7 +168,7 @@ class ValidationRulesUpdateRequestBodyError implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message'
+        'key' => 'key'
     ];
 
     /**
@@ -177,7 +177,7 @@ class ValidationRulesUpdateRequestBodyError implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage'
+        'key' => 'setKey'
     ];
 
     /**
@@ -186,7 +186,7 @@ class ValidationRulesUpdateRequestBodyError implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage'
+        'key' => 'getKey'
     ];
 
     /**
@@ -246,7 +246,7 @@ class ValidationRulesUpdateRequestBodyError implements ModelInterface, ArrayAcce
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('message', $data ?? [], null);
+        $this->setIfExists('key', $data ?? [], null);
     }
 
     /**
@@ -276,6 +276,10 @@ class ValidationRulesUpdateRequestBodyError implements ModelInterface, ArrayAcce
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['key']) && (mb_strlen($this->container['key']) > 100)) {
+            $invalidProperties[] = "invalid value for 'key', the character length must be smaller than or equal to 100.";
+        }
+
         return $invalidProperties;
     }
 
@@ -292,35 +296,39 @@ class ValidationRulesUpdateRequestBodyError implements ModelInterface, ArrayAcce
 
 
     /**
-     * Gets message
+     * Gets key
      *
      * @return string|null
      */
-    public function getMessage()
+    public function getKey()
     {
-        return $this->container['message'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets message
+     * Sets key
      *
-     * @param string|null $message The error message returned from API when validation / redemption fails to meet requirements of defined rules.
+     * @param string|null $key Identifies the library message. Use a validation-rule name such as `order.amount`, or a custom attribute key such as `order.metadata.location`.
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setKey($key)
     {
-        if (is_null($message)) {
-            array_push($this->openAPINullablesSetToNull, 'message');
+        if (is_null($key)) {
+            array_push($this->openAPINullablesSetToNull, 'key');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('message', $nullablesSetToNull);
+            $index = array_search('key', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['message'] = $message;
+        if (!is_null($key) && (mb_strlen($key) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $key when calling ValidationRuleErrorLibrary., must be smaller than or equal to 100.');
+        }
+
+        $this->container['key'] = $key;
 
         return $this;
     }

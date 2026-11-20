@@ -62,7 +62,7 @@ class ValidationRulesGetResponseBody implements ModelInterface, ArrayAccess, \Js
         'name' => 'string',
         'rules' => 'object',
         'bundleRules' => 'object',
-        'error' => '\OpenAPI\Client\Model\ValidationRulesGetResponseBodyError',
+        'error' => '\OpenAPI\Client\Model\ValidationRuleError',
         'applicableTo' => '\OpenAPI\Client\Model\ValidationRulesGetResponseBodyApplicableTo',
         'type' => 'string',
         'contextType' => 'string',
@@ -104,7 +104,7 @@ class ValidationRulesGetResponseBody implements ModelInterface, ArrayAccess, \Js
         'name' => true,
 		'rules' => false,
 		'bundleRules' => false,
-		'error' => true,
+		'error' => false,
 		'applicableTo' => true,
 		'type' => true,
 		'contextType' => true,
@@ -617,7 +617,7 @@ class ValidationRulesGetResponseBody implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets error
      *
-     * @return \OpenAPI\Client\Model\ValidationRulesGetResponseBodyError|null
+     * @return \OpenAPI\Client\Model\ValidationRuleError|null
      */
     public function getError()
     {
@@ -627,21 +627,14 @@ class ValidationRulesGetResponseBody implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets error
      *
-     * @param \OpenAPI\Client\Model\ValidationRulesGetResponseBodyError|null $error error
+     * @param \OpenAPI\Client\Model\ValidationRuleError|null $error error
      *
      * @return self
      */
     public function setError($error)
     {
         if (is_null($error)) {
-            array_push($this->openAPINullablesSetToNull, 'error');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('error', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable error cannot be null');
         }
         $this->container['error'] = $error;
 

@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ValidationRuleError Class Doc Comment
  *
  * @category Class
- * @description Contains the error message returned from API when validation / redemption fails to meet requirements of defined rules.
+ * @description Defines the custom error returned when validation or redemption fails this rule. Use legacy &#x60;message&#x60;, &#x60;mode: MESSAGES&#x60; with per-language &#x60;messages&#x60;, or &#x60;mode: LIBRARY&#x60; with a library &#x60;key&#x60;. &#x60;MESSAGES&#x60; and &#x60;LIBRARY&#x60; are mutually exclusive. At validation or redemption time the API resolves this object to a single &#x60;{ message }&#x60; using &#x60;options.language&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -59,7 +59,10 @@ class ValidationRuleError implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'message' => 'string'
+        'message' => 'string',
+        'mode' => 'string',
+        'messages' => 'array<string,string>',
+        'library' => '\OpenAPI\Client\Model\ValidationRuleErrorLibrary'
     ];
 
     /**
@@ -70,7 +73,10 @@ class ValidationRuleError implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'message' => null
+        'message' => null,
+        'mode' => null,
+        'messages' => null,
+        'library' => null
     ];
 
     /**
@@ -79,7 +85,10 @@ class ValidationRuleError implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'message' => true
+        'message' => true,
+		'mode' => true,
+		'messages' => true,
+		'library' => false
     ];
 
     /**
@@ -168,7 +177,10 @@ class ValidationRuleError implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message'
+        'message' => 'message',
+        'mode' => 'mode',
+        'messages' => 'messages',
+        'library' => 'library'
     ];
 
     /**
@@ -177,7 +189,10 @@ class ValidationRuleError implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage'
+        'message' => 'setMessage',
+        'mode' => 'setMode',
+        'messages' => 'setMessages',
+        'library' => 'setLibrary'
     ];
 
     /**
@@ -186,7 +201,10 @@ class ValidationRuleError implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage'
+        'message' => 'getMessage',
+        'mode' => 'getMode',
+        'messages' => 'getMessages',
+        'library' => 'getLibrary'
     ];
 
     /**
@@ -230,6 +248,21 @@ class ValidationRuleError implements ModelInterface, ArrayAccess, \JsonSerializa
         return self::$openAPIModelName;
     }
 
+    public const MODE_MESSAGES = 'MESSAGES';
+    public const MODE_LIBRARY = 'LIBRARY';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getModeAllowableValues()
+    {
+        return [
+            self::MODE_MESSAGES,
+            self::MODE_LIBRARY,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -247,6 +280,9 @@ class ValidationRuleError implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(?array $data = null)
     {
         $this->setIfExists('message', $data ?? [], null);
+        $this->setIfExists('mode', $data ?? [], null);
+        $this->setIfExists('messages', $data ?? [], null);
+        $this->setIfExists('library', $data ?? [], null);
     }
 
     /**
@@ -276,6 +312,23 @@ class ValidationRuleError implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['message']) && (mb_strlen($this->container['message']) > 255)) {
+            $invalidProperties[] = "invalid value for 'message', the character length must be smaller than or equal to 255.";
+        }
+
+        $allowedValues = $this->getModeAllowableValues();
+        if (!is_null($this->container['mode']) && !in_array($this->container['mode'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'mode', must be one of '%s'",
+                $this->container['mode'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if (!is_null($this->container['messages']) && (count($this->container['messages']) > 100)) {
+            $invalidProperties[] = "invalid value for 'messages', number of items must be less than or equal to 100.";
+        }
+
         return $invalidProperties;
     }
 
@@ -304,7 +357,7 @@ class ValidationRuleError implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets message
      *
-     * @param string|null $message The error message returned from API when validation / redemption fails to meet requirements of defined rules.
+     * @param string|null $message Legacy single-language error message. Used when `mode` is omitted. In `MESSAGES` mode, used when neither the requested language nor the default language has a translation.
      *
      * @return self
      */
@@ -320,7 +373,120 @@ class ValidationRuleError implements ModelInterface, ArrayAccess, \JsonSerializa
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+        if (!is_null($message) && (mb_strlen($message) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $message when calling ValidationRuleError., must be smaller than or equal to 255.');
+        }
+
         $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets mode
+     *
+     * @return string|null
+     */
+    public function getMode()
+    {
+        return $this->container['mode'];
+    }
+
+    /**
+     * Sets mode
+     *
+     * @param string|null $mode Selects how the custom error is defined. `MESSAGES` stores per-language text in `messages`. `LIBRARY` references an Error Message Library entry in `library`. Omit `mode` to use the legacy `message` field only.
+     *
+     * @return self
+     */
+    public function setMode($mode)
+    {
+        if (is_null($mode)) {
+            array_push($this->openAPINullablesSetToNull, 'mode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('mode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getModeAllowableValues();
+        if (!is_null($mode) && !in_array($mode, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'mode', must be one of '%s'",
+                    $mode,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['mode'] = $mode;
+
+        return $this;
+    }
+
+    /**
+     * Gets messages
+     *
+     * @return array<string,string>|null
+     */
+    public function getMessages()
+    {
+        return $this->container['messages'];
+    }
+
+    /**
+     * Sets messages
+     *
+     * @param array<string,string>|null $messages Per-language custom messages keyed by language code (`en`, `pl`, `en-US`). Required when `mode` is `MESSAGES`. Must be omitted or `null` when `mode` is `LIBRARY`.
+     *
+     * @return self
+     */
+    public function setMessages($messages)
+    {
+        if (is_null($messages)) {
+            array_push($this->openAPINullablesSetToNull, 'messages');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('messages', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($messages) && (count($messages) > 100)) {
+            throw new \InvalidArgumentException('invalid value for $messages when calling ValidationRuleError., number of items must be less than or equal to 100.');
+        }
+        $this->container['messages'] = $messages;
+
+        return $this;
+    }
+
+    /**
+     * Gets library
+     *
+     * @return \OpenAPI\Client\Model\ValidationRuleErrorLibrary|null
+     */
+    public function getLibrary()
+    {
+        return $this->container['library'];
+    }
+
+    /**
+     * Sets library
+     *
+     * @param \OpenAPI\Client\Model\ValidationRuleErrorLibrary|null $library library
+     *
+     * @return self
+     */
+    public function setLibrary($library)
+    {
+        if (is_null($library)) {
+            throw new \InvalidArgumentException('non-nullable library cannot be null');
+        }
+        $this->container['library'] = $library;
 
         return $this;
     }

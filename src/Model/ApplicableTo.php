@@ -64,7 +64,7 @@ class ApplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
         'productId' => 'string',
         'productSourceId' => 'string',
         'price' => 'float',
-        'priceFormula' => 'float',
+        'priceFormula' => 'string',
         'effect' => 'string',
         'quantityLimit' => 'int',
         'aggregatedQuantityLimit' => 'int',
@@ -794,7 +794,7 @@ class ApplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets priceFormula
      *
-     * @return float|null
+     * @return string|null
      */
     public function getPriceFormula()
     {
@@ -804,7 +804,7 @@ class ApplicableTo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets priceFormula
      *
-     * @param float|null $priceFormula Formula used to dynamically calculate the discounted price of an item.
+     * @param string|null $priceFormula Formula used to dynamically calculate the discounted price of an item.
      *
      * @return self
      */

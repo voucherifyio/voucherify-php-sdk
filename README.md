@@ -138,7 +138,7 @@ This SDK is generated automatically from our [OpenAPI specification](https://git
 
 ## 🏷️ Link tags
 
-[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/tree/sdk-php-5.1.1).
+[OpenAPI generated from tag](https://github.com/voucherifyio/voucherify-openapi/tree/sdk-php-5.1.2).
 
 ## 🔐 Authorization
 
@@ -183,11 +183,10 @@ Authorization schemes defined for the API.
 
 ## 📅 Changelog
 
+- **2026-11-20** - `5.1.2`
+  - Fixed: `price_formula` in `ApplicableTo` and `InapplicableTo` is typed as `string` (was `float`). The API expects a formula expression string such as `IF(ORDER_AMOUNT > 300;ORDER_ITEM_PRICE * 0.8;ORDER_ITEM_PRICE)`.
 - **2026-08-26** - `5.1.1`
-  - Fixed: `exchangeRatio` is `float` on COIN reward models (`RewardsCreateRequestBodyParametersCoin` and `RewardsUpdateRequestBodyParametersCoin` were `string`, `RedemptionRewardResultParametersCoin` was `int`). The API returns fractional values such as `0.01`.
-  - Added: `language` on `RedemptionsRedeemRequestBodyOptions` and `ValidationsValidateRequestBodyOptions`.
-  - Added: product/sku export order and field constants (`product_id`, `sku`, `price`, `image_url`, `attributes`, `currency`) on `ExportParameters`, `ExportsCreateRequestBodyParameters`, `ExportsCreateResponseBodyParameters`, and `ExportsGetResponseBodyParameters`.
-  - Note: `ErrorError.message` is the resolved custom validation-rule error for `options.language`, falling back to the Error Message Library default language.
+  - Fixed: `exchange_ratio` in COIN reward schemas typed as `float` (was `integer`/`string` in OpenAPI). The API returns fractional values (e.g. `0.01` for pay-with-points). Fixes deserialization errors on `list_redemptions` and related endpoints.
 - **2026-08-10** - `5.1.0`
   - Fixed: `ValidationsRedeemableSkippedResultDetails` was missing `no_effect` (`ValidationsRedeemableSkippedResultDetails::KEY_NO_EFFECT`), so deserializing a skipped redeemable with `"key": "no_effect"` threw `\InvalidArgumentException` (entire validations/redemptions response failed to parse).
   - This affects `POST /v1/validations` and stackable `POST /v1/redemptions` when `redeemables_no_effect_rule` is `SKIP` (globally or via `no_effect_skip_categories`).
@@ -1654,26 +1653,22 @@ Class | Method | HTTP request | Description
 - [ValidationRuleAssignment](docs/Model/ValidationRuleAssignment.md)
 - [ValidationRuleAssignmentsList](docs/Model/ValidationRuleAssignmentsList.md)
 - [ValidationRuleError](docs/Model/ValidationRuleError.md)
+- [ValidationRuleErrorLibrary](docs/Model/ValidationRuleErrorLibrary.md)
 - [ValidationRulesAssignmentsCreateRequestBody](docs/Model/ValidationRulesAssignmentsCreateRequestBody.md)
 - [ValidationRulesAssignmentsCreateResponseBody](docs/Model/ValidationRulesAssignmentsCreateResponseBody.md)
 - [ValidationRulesAssignmentsList](docs/Model/ValidationRulesAssignmentsList.md)
 - [ValidationRulesAssignmentsListResponseBody](docs/Model/ValidationRulesAssignmentsListResponseBody.md)
 - [ValidationRulesCreateRequestBody](docs/Model/ValidationRulesCreateRequestBody.md)
 - [ValidationRulesCreateRequestBodyApplicableTo](docs/Model/ValidationRulesCreateRequestBodyApplicableTo.md)
-- [ValidationRulesCreateRequestBodyError](docs/Model/ValidationRulesCreateRequestBodyError.md)
 - [ValidationRulesCreateResponseBody](docs/Model/ValidationRulesCreateResponseBody.md)
 - [ValidationRulesCreateResponseBodyApplicableTo](docs/Model/ValidationRulesCreateResponseBodyApplicableTo.md)
-- [ValidationRulesCreateResponseBodyError](docs/Model/ValidationRulesCreateResponseBodyError.md)
 - [ValidationRulesGetResponseBody](docs/Model/ValidationRulesGetResponseBody.md)
 - [ValidationRulesGetResponseBodyApplicableTo](docs/Model/ValidationRulesGetResponseBodyApplicableTo.md)
-- [ValidationRulesGetResponseBodyError](docs/Model/ValidationRulesGetResponseBodyError.md)
 - [ValidationRulesListResponseBody](docs/Model/ValidationRulesListResponseBody.md)
 - [ValidationRulesUpdateRequestBody](docs/Model/ValidationRulesUpdateRequestBody.md)
 - [ValidationRulesUpdateRequestBodyApplicableTo](docs/Model/ValidationRulesUpdateRequestBodyApplicableTo.md)
-- [ValidationRulesUpdateRequestBodyError](docs/Model/ValidationRulesUpdateRequestBodyError.md)
 - [ValidationRulesUpdateResponseBody](docs/Model/ValidationRulesUpdateResponseBody.md)
 - [ValidationRulesUpdateResponseBodyApplicableTo](docs/Model/ValidationRulesUpdateResponseBodyApplicableTo.md)
-- [ValidationRulesUpdateResponseBodyError](docs/Model/ValidationRulesUpdateResponseBodyError.md)
 - [ValidationsRedeemableInapplicable](docs/Model/ValidationsRedeemableInapplicable.md)
 - [ValidationsRedeemableInapplicableResult](docs/Model/ValidationsRedeemableInapplicableResult.md)
 - [ValidationsRedeemableInapplicableResultDetails](docs/Model/ValidationsRedeemableInapplicableResultDetails.md)
