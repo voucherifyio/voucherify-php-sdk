@@ -393,7 +393,7 @@ $startingAfterId = 'startingAfterId_example'; // string | A cursor for paginatio
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format.
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
 $campaignId = 'campaignId_example'; // string | Requests only events related to specific campaign identified by its ID.
-$campaignType = new \OpenAPI\Client\Model\ParameterCampaignType(); // ParameterCampaignType | Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM.
+$campaignType = new \OpenAPI\Client\Model\ParameterCampaignType(); // ParameterCampaignType | Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. LOYALTY_PROGRAM is the campaign type for **legacy loyalty** (loyalty card campaigns), not v2/loyalties programs.
 $category = new \OpenAPI\Client\Model\ParameterActivityCategory(); // ParameterActivityCategory | Filters activities for actions or effects. Allowed values:  ACTION, EFFECT.
 $type = 'type_example'; // string | Event name of the customer event.
 
@@ -416,7 +416,7 @@ try {
 | **startDate** | **\DateTime**| Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. | [optional] |
 | **endDate** | **\DateTime**| Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
 | **campaignId** | **string**| Requests only events related to specific campaign identified by its ID. | [optional] |
-| **campaignType** | [**ParameterCampaignType**](../Model/.md)| Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. | [optional] |
+| **campaignType** | [**ParameterCampaignType**](../Model/.md)| Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. LOYALTY_PROGRAM is the campaign type for **legacy loyalty** (loyalty card campaigns), not v2/loyalties programs. | [optional] |
 | **category** | [**ParameterActivityCategory**](../Model/.md)| Filters activities for actions or effects. Allowed values:  ACTION, EFFECT. | [optional] |
 | **type** | **string**| Event name of the customer event. | [optional] |
 

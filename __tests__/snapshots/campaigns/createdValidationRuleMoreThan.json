@@ -12,7 +12,7 @@
   },
   "error": null,
   "applicable_to": null,
-  "type": "basic",
+  "type": "expression",
   "context_type": "global",
   "id": "val_tdKWWozwHAjd",
   "created_at": "2024-09-04T10:17:53+00:00",

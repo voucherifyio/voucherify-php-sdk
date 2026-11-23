@@ -15,7 +15,7 @@ getReward($rewardId): \OpenAPI\Client\Model\V2LoyaltiesRewardsGetResponseBody
 
 Get reward by ID
 
-Returns a single reward by its ID.
+Returns a single reward by its ID. A successful call records no activity.
 
 ### Example
 

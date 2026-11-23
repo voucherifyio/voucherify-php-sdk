@@ -354,7 +354,7 @@ class RewardsAssignmentsCreateRequestBodyParametersLoyalty implements ModelInter
     /**
      * Sets autoRedeem
      *
-     * @param bool|null $autoRedeem Determines if the reward is redeemed automatically when the customer reaches the sufficient number of points to redeem it. Value `true` means that the automatic reward redemption is active. Only one reward can be set to be redeemed automatically in a loyalty campaign, i.e. only one can have the value `true`.
+     * @param bool|null $autoRedeem Determines if the reward is redeemed automatically when the customer reaches the sufficient number of points to redeem it. Value `true` means that the automatic reward redemption is active. Only one reward can be set to be redeemed automatically in a **legacy loyalty** campaign, i.e. only one can have the value `true`.
      *
      * @return self
      */

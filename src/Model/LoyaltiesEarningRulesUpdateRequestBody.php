@@ -36,6 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltiesEarningRulesUpdateRequestBody Class Doc Comment
  *
  * @category Class
+ * @description Request body for updating an earning rule in a **legacy loyalty** campaign (&#x60;PUT /v1/loyalties/{campaignId}/earning-rules/{earningRuleId}&#x60;).
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

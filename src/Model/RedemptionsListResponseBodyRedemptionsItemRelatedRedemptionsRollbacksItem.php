@@ -59,7 +59,7 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem 
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'date' => '\DateTime',
+        'date' => 'string',
         'rollbackOrderMode' => 'string'
     ];
 
@@ -72,7 +72,7 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem 
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'date' => 'date-time',
+        'date' => null,
         'rollbackOrderMode' => null
     ];
 
@@ -358,7 +358,7 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem 
     /**
      * Gets date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDate()
     {
@@ -368,7 +368,7 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRollbacksItem 
     /**
      * Sets date
      *
-     * @param \DateTime|null $date Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
+     * @param string|null $date date
      *
      * @return self
      */

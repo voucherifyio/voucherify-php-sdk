@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * RedemptionRewardResultParametersCoin Class Doc Comment
  *
  * @category Class
- * @description Defines the ratio by mapping the number of loyalty points in &#x60;points_ratio&#x60; to a predefined cash amount in &#x60;exchange_ratio&#x60;.
+ * @description Defines the ratio by mapping the number of loyalty points (**legacy loyalty**) in &#x60;points_ratio&#x60; to a predefined cash amount in &#x60;exchange_ratio&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -345,7 +345,7 @@ class RedemptionRewardResultParametersCoin implements ModelInterface, ArrayAcces
     /**
      * Sets pointsRatio
      *
-     * @param int|null $pointsRatio The number of loyalty points that will map to the predefined cash amount defined by the `exchange_ratio` property.
+     * @param int|null $pointsRatio The number of loyalty points (**legacy loyalty**) that will map to the predefined cash amount defined by the `exchange_ratio` property.
      *
      * @return self
      */

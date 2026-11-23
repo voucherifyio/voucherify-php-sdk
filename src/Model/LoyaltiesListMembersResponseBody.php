@@ -425,7 +425,7 @@ class LoyaltiesListMembersResponseBody implements ModelInterface, ArrayAccess, \
     /**
      * Sets vouchers
      *
-     * @param \OpenAPI\Client\Model\LoyaltyMember[]|null $vouchers Contains array of voucher objects representing loyalty cards, in other words, loyalty program members.
+     * @param \OpenAPI\Client\Model\LoyaltyMember[]|null $vouchers Contains an array of voucher objects representing loyalty cards (legacy loyalty campaign members).
      *
      * @return self
      */

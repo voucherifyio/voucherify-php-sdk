@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | Unique benefit ID, prefixed with &#x60;lben_&#x60;. | [optional]
-**name** | **string** | Benefit name, unique within the project. | [optional]
+**name** | **string** | Benefit name. | [optional]
 **type** | **string** | Benefit type. | [optional]
 **status** | **string** | Current benefit status. &#x60;DELETED&#x60; appears only in the response of the delete endpoint and in activity snapshots. | [optional]
 **stock** | [**\OpenAPI\Client\Model\V2LoyaltiesBenefitsGetResponseBodyStock**](V2LoyaltiesBenefitsGetResponseBodyStock.md) |  | [optional]

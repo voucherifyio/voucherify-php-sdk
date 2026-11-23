@@ -292,6 +292,7 @@ class Reward implements ModelInterface, ArrayAccess, \JsonSerializable
     public const TYPE_CAMPAIGN = 'CAMPAIGN';
     public const TYPE_COIN = 'COIN';
     public const TYPE_MATERIAL = 'MATERIAL';
+    public const TYPE_LOYALTY_POINTS = 'LOYALTY_POINTS';
     public const OBJECT_REWARD = 'reward';
 
     /**
@@ -305,6 +306,7 @@ class Reward implements ModelInterface, ArrayAccess, \JsonSerializable
             self::TYPE_CAMPAIGN,
             self::TYPE_COIN,
             self::TYPE_MATERIAL,
+            self::TYPE_LOYALTY_POINTS,
         ];
     }
 
@@ -628,7 +630,7 @@ class Reward implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets type
      *
-     * @param string|null $type Reward type.
+     * @param string|null $type Reward type. `LOYALTY_POINTS` credits points on a `v2/loyalties` (loyalty hub) card (for example from a referral tier).
      *
      * @return self
      */

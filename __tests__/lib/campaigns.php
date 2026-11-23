@@ -30,7 +30,7 @@ function createValidationRuleApplicableTo(ValidationRulesApi $validationRulesApi
 
     $validationRule->setName(generateRandomString());
     $validationRule->setApplicableTo($validationRuleApplicableTo);
-    $validationRule->setType('basic');
+    $validationRule->setType('expression');
 
     try {
         $createdValidaitonRule = $validationRulesApiInstance->createValidationRules($validationRule);
@@ -58,7 +58,7 @@ function createValidationRuleMoreThan(ValidationRulesApi $validationRulesApiInst
 
     $validationRuleRequestBody->setName(generateRandomString());
     $validationRuleRequestBody->setRules((object) ["1" => $rule]);
-    $validationRuleRequestBody->setType('basic');
+    $validationRuleRequestBody->setType('expression');
 
     try {
         $createdValidationRule = $validationRulesApiInstance->createValidationRules($validationRuleRequestBody);

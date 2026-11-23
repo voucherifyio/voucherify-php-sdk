@@ -36,6 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltyCampaign Class Doc Comment
  *
  * @category Class
+ * @description Loyalty campaign object (**legacy loyalty**). Created and managed through &#x60;/v1/loyalties&#x60; and campaign endpoints with type &#x60;LOYALTY_PROGRAM&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -861,7 +862,7 @@ class LoyaltyCampaign implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets autoJoin
      *
-     * @param bool|null $autoJoin Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
+     * @param bool|null $autoJoin Indicates whether customers will be able to auto-join a **legacy loyalty** campaign if any earning rule is fulfilled.
      *
      * @return self
      */
@@ -895,7 +896,7 @@ class LoyaltyCampaign implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets joinOnce
      *
-     * @param bool|null $joinOnce Always set to `true` for loyalty campaigns, meaning customers can join the campaign only once. It can't be changed to `false`.
+     * @param bool|null $joinOnce Always set to `true` for **legacy loyalty** campaigns, meaning customers can join the campaign only once. It can't be changed to `false`.
      *
      * @return self
      */

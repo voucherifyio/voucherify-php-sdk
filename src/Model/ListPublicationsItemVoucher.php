@@ -506,7 +506,7 @@ class ListPublicationsItemVoucher implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets loyaltyCard
      *
-     * @param object|null $loyaltyCard Defines the loyalty card details.
+     * @param object|null $loyaltyCard Defines the legacy loyalty card details.
      *
      * @return self
      */

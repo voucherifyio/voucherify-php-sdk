@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * V2LoyaltiesBenefitsGetResponseBodyPointsProportional Class Doc Comment
  *
  * @category Class
- * @description Proportional points effect - points are calculated from an order amount, order items, or a metadata property. Exactly one calculation source object (&#x60;order&#x60;, &#x60;customer&#x60;, &#x60;custom_event&#x60;, or &#x60;order_items&#x60;) is required, determined by &#x60;calculation_type&#x60;. In requests, the remaining source properties may be omitted or set to &#x60;null&#x60;. In responses, they are omitted. The API validates field combinations that this schema does not express.
+ * @description Proportional points effect. Points are calculated from an order amount, order items, or a metadata property. Exactly one calculation source object (&#x60;order&#x60;, &#x60;customer&#x60;, &#x60;custom_event&#x60;, or &#x60;order_items&#x60;) is required, determined by &#x60;calculation_type&#x60;. In requests, the remaining source properties may be omitted or set to &#x60;null&#x60;. In responses, they are omitted. The API validates field combinations that this schema does not express.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -379,7 +379,7 @@ class V2LoyaltiesBenefitsGetResponseBodyPointsProportional implements ModelInter
     /**
      * Sets calculationType
      *
-     * @param string|null $calculationType How the points are calculated: - `PRE_DISCOUNT_ORDER_AMOUNT` - points per every specified order amount before discounts (requires `order.amount`) - `POST_DISCOUNT_ORDER_AMOUNT` - points per every specified order amount after discounts (requires `order.total_amount`) - `PRE_DISCOUNT_ORDER_ITEMS_AMOUNT` - points per every specified amount spent on selected products before discounts (requires `order_items.amount`) - `POST_DISCOUNT_ORDER_ITEMS_AMOUNT` - points per every specified amount spent on selected products after discounts (requires `order_items.subtotal_amount`) - `ORDER_ITEMS_QUANTITY` - points per every specified quantity of selected products, excluding free items (requires `order_items.quantity`) - `ORDER_METADATA_VALUE` - points per every specified value in the order metadata (requires `order.metadata`) - `CUSTOMER_METADATA_VALUE` - points per every specified value in the customer metadata (requires `customer.metadata`) - `CUSTOM_EVENT_METADATA_VALUE` - points per every specified value in the custom event metadata (requires `custom_event.metadata`)
+     * @param string|null $calculationType How the points are calculated: - `PRE_DISCOUNT_ORDER_AMOUNT`: points per every specified order amount before discounts (requires `order.amount`) - `POST_DISCOUNT_ORDER_AMOUNT`: Points per every specified order amount after discounts (requires `order.total_amount`) - `PRE_DISCOUNT_ORDER_ITEMS_AMOUNT`: Points per every specified amount spent on selected products before discounts (requires `order_items.amount`) - `POST_DISCOUNT_ORDER_ITEMS_AMOUNT`: Points per every specified amount spent on selected products after discounts (requires `order_items.subtotal_amount`) - `ORDER_ITEMS_QUANTITY`: Points per every specified quantity of selected products, excluding free items (requires `order_items.quantity`) - `ORDER_METADATA_VALUE`: Points per every specified value in the order metadata (requires `order.metadata`) - `CUSTOMER_METADATA_VALUE`: Points per every specified value in the customer metadata (requires `customer.metadata`) - `CUSTOM_EVENT_METADATA_VALUE`: Points per every specified value in the custom event metadata (requires `custom_event.metadata`)
      *
      * @return self
      */
@@ -423,7 +423,7 @@ class V2LoyaltiesBenefitsGetResponseBodyPointsProportional implements ModelInter
     /**
      * Sets cardDefinitionId
      *
-     * @param string|null $cardDefinitionId ID of the card definition whose cards receive the points. The card definition must exist and be ACTIVE.
+     * @param string|null $cardDefinitionId ID of the card definition whose cards receive the points. The card definition must exist. Creating with `status: ACTIVE`, or updating with this object, requires an `ACTIVE` card definition.
      *
      * @return self
      */

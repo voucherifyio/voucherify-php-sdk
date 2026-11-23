@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltiesCreateCampaignRequestBody Class Doc Comment
  *
  * @category Class
- * @description Request body schema for **POST** &#x60;/loyalties&#x60;.
+ * @description **Legacy loyalty.** Request body schema for **POST** &#x60;/loyalties&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -626,7 +626,7 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
     /**
      * Sets joinOnce
      *
-     * @param bool|null $joinOnce If this value is set to `true`, customers will be able to join the campaign only once. For loyalty campaigns, it's forced to `true`, even if `join_once: false` is passed in the request.
+     * @param bool|null $joinOnce If this value is set to `true`, customers will be able to join the campaign only once. For **legacy loyalty** campaigns, it's forced to `true`, even if `join_once: false` is passed in the request.
      *
      * @return self
      */
@@ -660,7 +660,7 @@ class LoyaltiesCreateCampaignRequestBody implements ModelInterface, ArrayAccess,
     /**
      * Sets autoJoin
      *
-     * @param bool|null $autoJoin Indicates whether customers will be able to auto-join a loyalty campaign if any earning rule is fulfilled.
+     * @param bool|null $autoJoin Indicates whether customers will be able to auto-join a **legacy loyalty** campaign if any earning rule is fulfilled.
      *
      * @return self
      */

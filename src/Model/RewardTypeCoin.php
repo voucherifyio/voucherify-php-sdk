@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * RewardTypeCoin Class Doc Comment
  *
  * @category Class
- * @description Defines the ratio by mapping the number of loyalty points in points_ratio to a predefined cash amount in exchange_ratio.
+ * @description Defines the ratio by mapping the number of legacy loyalty points in &#x60;points_rati&#x60;o to a predefined cash amount in &#x60;exchange_ratio&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -311,7 +311,7 @@ class RewardTypeCoin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets exchangeRatio
      *
-     * @param float|null $exchangeRatio The cash equivalent of the points defined in the points_ratio property.
+     * @param float|null $exchangeRatio The cash equivalent of the points defined in the `points_ratio` property.
      *
      * @return self
      */
@@ -345,7 +345,7 @@ class RewardTypeCoin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets pointsRatio
      *
-     * @param int|null $pointsRatio The number of loyalty points that will map to the predefined cash amount defined by the exchange_ratio property.
+     * @param int|null $pointsRatio The number of loyalty points (**legacy loyalty**) that will map to the predefined cash amount defined by the `exchange_ratio` property.
      *
      * @return self
      */

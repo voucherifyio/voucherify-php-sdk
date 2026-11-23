@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ParameterFiltersListCustomerRedeemablesCampaignType Class Doc Comment
  *
  * @category Class
- * @description Type of the campaign. Allowed values: &#x60;DISCOUNT_COUPONS&#x60;, &#x60;REFERRAL_PROGRAM&#x60;, &#x60;GIFT_VOUCHERS&#x60;, &#x60;LOYALTY_PROGRAM&#x60;
+ * @description Type of the campaign. Allowed values: &#x60;DISCOUNT_COUPONS&#x60;, &#x60;REFERRAL_PROGRAM&#x60;, &#x60;GIFT_VOUCHERS&#x60;, &#x60;LOYALTY_PROGRAM&#x60;  &#x60;LOYALTY_PROGRAM&#x60; is the campaign type for **legacy loyalty** (loyalty card campaigns). It does not refer to &#x60;v2/loyalties&#x60; programs.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -365,7 +365,7 @@ class V2LoyaltiesBenefitsGetResponseBodyPoints implements ModelInterface, ArrayA
     /**
      * Sets cardDefinitionId
      *
-     * @param string|null $cardDefinitionId ID of the card definition whose cards receive the points. The card definition must exist and be `ACTIVE`.
+     * @param string|null $cardDefinitionId ID of the card definition whose cards receive the points. The card definition must exist. Creating with `status: ACTIVE`, or updating with this object, requires an `ACTIVE` card definition.
      *
      * @return self
      */

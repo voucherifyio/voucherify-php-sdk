@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * BenefitPointsProportionalOrderAmount Class Doc Comment
  *
  * @category Class
- * @description Ratio definition - &#x60;value&#x60; points for every &#x60;every&#x60; units.
+ * @description Ratio definition. &#x60;value&#x60; points for every &#x60;every&#x60; units.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -311,6 +311,8 @@ class CardTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public const TYPE_PENDING_POINTS_ADDED = 'PENDING_POINTS_ADDED';
     public const TYPE_PENDING_POINTS_ACTIVATED = 'PENDING_POINTS_ACTIVATED';
     public const TYPE_PENDING_POINTS_CANCELED = 'PENDING_POINTS_CANCELED';
+    public const TYPE_REFERRER_POINTS_EARNED = 'REFERRER_POINTS_EARNED';
+    public const TYPE_REFEREE_POINTS_EARNED = 'REFEREE_POINTS_EARNED';
     public const STATUS_PENDING = 'PENDING';
     public const STATUS_PROCESSING = 'PROCESSING';
     public const STATUS_APPROVED = 'APPROVED';
@@ -351,6 +353,8 @@ class CardTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
             self::TYPE_PENDING_POINTS_ADDED,
             self::TYPE_PENDING_POINTS_ACTIVATED,
             self::TYPE_PENDING_POINTS_CANCELED,
+            self::TYPE_REFERRER_POINTS_EARNED,
+            self::TYPE_REFEREE_POINTS_EARNED,
         ];
     }
 

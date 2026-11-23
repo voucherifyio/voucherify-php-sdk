@@ -600,7 +600,7 @@ class LoyaltiesApi
      *
      * Add Member
      *
-     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the legacy loyalty campaign. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the [List Publications](/api-reference/publications/list-publications) endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
@@ -620,7 +620,7 @@ class LoyaltiesApi
      *
      * Add Member
      *
-     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the legacy loyalty campaign. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the [List Publications](/api-reference/publications/list-publications) endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
@@ -722,7 +722,7 @@ class LoyaltiesApi
      *
      * Add Member
      *
-     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the legacy loyalty campaign. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the [List Publications](/api-reference/publications/list-publications) endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
@@ -745,7 +745,7 @@ class LoyaltiesApi
      *
      * Add Member
      *
-     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the legacy loyalty campaign. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the [List Publications](/api-reference/publications/list-publications) endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
@@ -797,7 +797,7 @@ class LoyaltiesApi
     /**
      * Create request for operation 'addMember'
      *
-     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the legacy loyalty campaign. (required)
      * @param  \OpenAPI\Client\Model\LoyaltiesMembersCreateRequestBody $loyaltiesMembersCreateRequestBody Provide details to whom the loyalty card should be assigned.     You can choose to either specify the exact loyalty card code that you want to publish from existin (non-assigned) codes, or choose not to specify a voucher code. If you choose not to specify a code in the request paylaod, then the system will choose the next available voucher code available to be assigned to a customer.   You can also include metadata in the request payload. This metadata will be assigned to the publication object, but will not be returned in the response to this endpoint. To see of publications (assignments of particular codes to customers) and publication metadata, use the [List Publications](/api-reference/publications/list-publications) endpoint. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addMember'] to see the possible values for this operation
      *
@@ -13204,7 +13204,7 @@ class LoyaltiesApi
      *
      * List Members
      *
-     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the legacy loyalty campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $customer A tracking identifier of a customer who is the holder of the vouchers. It can be an id generated by Voucherify or the source_id. Remember to use the proper URL escape codes if the source_id contains special characters. (optional)
@@ -13231,7 +13231,7 @@ class LoyaltiesApi
      *
      * List Members
      *
-     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the legacy loyalty campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $customer A tracking identifier of a customer who is the holder of the vouchers. It can be an id generated by Voucherify or the source_id. Remember to use the proper URL escape codes if the source_id contains special characters. (optional)
@@ -13340,7 +13340,7 @@ class LoyaltiesApi
      *
      * List Members
      *
-     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the legacy loyalty campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $customer A tracking identifier of a customer who is the holder of the vouchers. It can be an id generated by Voucherify or the source_id. Remember to use the proper URL escape codes if the source_id contains special characters. (optional)
@@ -13370,7 +13370,7 @@ class LoyaltiesApi
      *
      * List Members
      *
-     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the legacy loyalty campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $customer A tracking identifier of a customer who is the holder of the vouchers. It can be an id generated by Voucherify or the source_id. Remember to use the proper URL escape codes if the source_id contains special characters. (optional)
@@ -13429,7 +13429,7 @@ class LoyaltiesApi
     /**
      * Create request for operation 'listMembers'
      *
-     * @param  string $campaignId Unique campaign ID of the loyalty program. (required)
+     * @param  string $campaignId Unique campaign ID of the legacy loyalty campaign. (required)
      * @param  int $limit Limits the number of objects to be returned. The limit can range between 1 and 100 items. If no limit is set, it returns 10 items. (optional)
      * @param  int $page Which page of results to return. The lowest value is 1. (optional)
      * @param  string $customer A tracking identifier of a customer who is the holder of the vouchers. It can be an id generated by Voucherify or the source_id. Remember to use the proper URL escape codes if the source_id contains special characters. (optional)

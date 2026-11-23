@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * CustomerLoyaltyCampaignsEntry Class Doc Comment
  *
  * @category Class
- * @description Contains details about the point balances left on loyalty cards and the number of referred customers in each campaign.
+ * @description Contains details about the point balances left on loyalty cards (**legacy loyalty**) and the number of referred customers in each campaign.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -345,7 +345,7 @@ class CustomerLoyaltyCampaignsEntry implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets loyaltyTier
      *
-     * @param string|null $loyaltyTier Customer's loyalty tier within the campaign.
+     * @param string|null $loyaltyTier Customer's loyalty tier within the **legacy loyalty** campaign.
      *
      * @return self
      */

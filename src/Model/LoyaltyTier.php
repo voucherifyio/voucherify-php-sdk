@@ -36,6 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltyTier Class Doc Comment
  *
  * @category Class
+ * @description Loyalty tier within a **legacy loyalty** campaign.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

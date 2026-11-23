@@ -36,6 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltiesTransferPoints Class Doc Comment
  *
  * @category Class
+ * @description Request body for transferring points between **legacy loyalty** cards.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

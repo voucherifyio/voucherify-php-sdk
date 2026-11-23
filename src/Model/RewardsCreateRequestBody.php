@@ -59,6 +59,7 @@ class RewardsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPITypes = [
         'name' => 'string',
+        'type' => 'string',
         'parameters' => '\OpenAPI\Client\Model\RewardsCreateRequestBodyParameters',
         'metadata' => 'object',
         'stock' => 'int',
@@ -74,6 +75,7 @@ class RewardsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPIFormats = [
         'name' => null,
+        'type' => null,
         'parameters' => null,
         'metadata' => null,
         'stock' => null,
@@ -87,6 +89,7 @@ class RewardsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static array $openAPINullables = [
         'name' => true,
+		'type' => true,
 		'parameters' => true,
 		'metadata' => true,
 		'stock' => true,
@@ -180,6 +183,7 @@ class RewardsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'type' => 'type',
         'parameters' => 'parameters',
         'metadata' => 'metadata',
         'stock' => 'stock',
@@ -193,6 +197,7 @@ class RewardsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $setters = [
         'name' => 'setName',
+        'type' => 'setType',
         'parameters' => 'setParameters',
         'metadata' => 'setMetadata',
         'stock' => 'setStock',
@@ -206,6 +211,7 @@ class RewardsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $getters = [
         'name' => 'getName',
+        'type' => 'getType',
         'parameters' => 'getParameters',
         'metadata' => 'getMetadata',
         'stock' => 'getStock',
@@ -253,6 +259,25 @@ class RewardsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
         return self::$openAPIModelName;
     }
 
+    public const TYPE_CAMPAIGN = 'CAMPAIGN';
+    public const TYPE_MATERIAL = 'MATERIAL';
+    public const TYPE_COIN = 'COIN';
+    public const TYPE_LOYALTY_POINTS = 'LOYALTY_POINTS';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_CAMPAIGN,
+            self::TYPE_MATERIAL,
+            self::TYPE_COIN,
+            self::TYPE_LOYALTY_POINTS,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -270,6 +295,7 @@ class RewardsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
     public function __construct(?array $data = null)
     {
         $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('parameters', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('stock', $data ?? [], null);
@@ -302,6 +328,15 @@ class RewardsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -348,6 +383,50 @@ class RewardsCreateRequestBody implements ModelInterface, ArrayAccess, \JsonSeri
             }
         }
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }

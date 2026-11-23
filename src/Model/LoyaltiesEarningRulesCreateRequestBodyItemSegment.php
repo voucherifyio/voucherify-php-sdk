@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltiesEarningRulesCreateRequestBodyItemSegment Class Doc Comment
  *
  * @category Class
- * @description Contains the ID of a customer segment. **Required** for the &#x60;customer.segment.entered&#x60; option in &#x60;event&#x60;.
+ * @description Contains the ID of a customer segment. Required for the &#x60;customer.segment.entered&#x60; option in &#x60;event&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

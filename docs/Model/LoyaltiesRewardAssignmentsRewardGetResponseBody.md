@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **redeemed** | **int** | Defines the number of already invoked (successful) reward redemptions. | [optional]
 **attributes** | [**\OpenAPI\Client\Model\LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes**](LoyaltiesRewardAssignmentsRewardGetResponseBodyAttributes.md) |  | [optional]
 **metadata** | **object** | The metadata object stores all custom attributes assigned to the reward. A set of key/value pairs that you can attach to a reward object. It can be useful for storing additional information about the reward in a structured format. | [optional]
-**type** | **string** | Reward type. | [optional]
+**type** | **string** | Reward type. &#x60;LOYALTY_POINTS&#x60; credits points on a &#x60;v2/loyalties&#x60; (loyalty hub) card (for example from a referral tier). | [optional]
 **parameters** | [**\OpenAPI\Client\Model\RewardType**](RewardType.md) |  | [optional]
 **createdAt** | **\DateTime** | Timestamp representing the date and time when the reward was created. The value is shown in the ISO 8601 format. | [optional]
 **updatedAt** | **\DateTime** | Timestamp representing the date and time when the reward was updated. The value is shown in the ISO 8601 format. | [optional]

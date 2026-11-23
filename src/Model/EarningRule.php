@@ -36,6 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * EarningRule Class Doc Comment
  *
  * @category Class
+ * @description Earning rule for a **legacy loyalty** campaign. For Loyalty hub earning rules, see &#x60;/v2/loyalties/earning-rules&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

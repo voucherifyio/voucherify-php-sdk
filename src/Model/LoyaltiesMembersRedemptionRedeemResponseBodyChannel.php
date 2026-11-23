@@ -371,7 +371,7 @@ class LoyaltiesMembersRedemptionRedeemResponseBodyChannel implements ModelInterf
     /**
      * Sets channelType
      *
-     * @param string|null $channelType The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard, `API` corresponds to the API, and `AUTO_REDEEM` corresponds to a loyalty campaign reward that has been redeemed automatically.
+     * @param string|null $channelType The source of the channel for the redemption. A `USER` corresponds to the Voucherify Dashboard, `API` corresponds to the API, and `AUTO_REDEEM` corresponds to a **legacy loyalty** campaign reward that has been redeemed automatically.
      *
      * @return self
      */

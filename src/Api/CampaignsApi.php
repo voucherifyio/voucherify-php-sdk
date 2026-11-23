@@ -818,7 +818,7 @@ class CampaignsApi
      *
      * Create Campaign
      *
-     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. For loyalty campaigns, this creates a **legacy loyalty** campaign (campaign type LOYALTY_PROGRAM). For loyalty programs in the Loyalty hub, use /v2/loyalties/programs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -836,7 +836,7 @@ class CampaignsApi
      *
      * Create Campaign
      *
-     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. For loyalty campaigns, this creates a **legacy loyalty** campaign (campaign type LOYALTY_PROGRAM). For loyalty programs in the Loyalty hub, use /v2/loyalties/programs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCampaign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -936,7 +936,7 @@ class CampaignsApi
      *
      * Create Campaign
      *
-     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. For loyalty campaigns, this creates a **legacy loyalty** campaign (campaign type LOYALTY_PROGRAM). For loyalty programs in the Loyalty hub, use /v2/loyalties/programs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -957,7 +957,7 @@ class CampaignsApi
      *
      * Create Campaign
      *
-     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. For loyalty campaigns, this creates a **legacy loyalty** campaign (campaign type LOYALTY_PROGRAM). For loyalty programs in the Loyalty hub, use /v2/loyalties/programs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1007,7 +1007,7 @@ class CampaignsApi
     /**
      * Create request for operation 'createCampaign'
      *
-     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. (optional)
+     * @param  \OpenAPI\Client\Model\CampaignsCreateRequestBody $campaignsCreateRequestBody Specify the details of the campaign that you would like to create. For loyalty campaigns, this creates a **legacy loyalty** campaign (campaign type LOYALTY_PROGRAM). For loyalty programs in the Loyalty hub, use /v2/loyalties/programs. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCampaign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

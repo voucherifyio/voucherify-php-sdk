@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * MemberActivity Class Doc Comment
  *
  * @category Class
- * @description This is an object representing member activity.    This is a general object which presents moments from members&#39; activity. There are all types of different events that members perform during their journey once they participate in a loyalty program. Events describe moments when the members redeem loyalty cards and earn points or rewards. The list of all types of activities is listed below.  The details describing the activity are collected in an array property named &#x60;data&#x60;. In this object, software integrators can find all further information explaining the event context.
+ * @description This is an object representing member activity.    This is a general object which presents moments from members&#39; activity. There are all types of different events that members perform during their journey once they participate in a legacy loyalty campaign. Events describe moments when the members redeem loyalty cards and earn points or rewards. The list of all types of activities is listed below.  The details describing the activity are collected in an array property named &#x60;data&#x60;. In this object, software integrators can find all further information explaining the event context.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

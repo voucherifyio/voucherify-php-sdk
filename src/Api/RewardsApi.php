@@ -444,7 +444,7 @@ class RewardsApi
      * Create Reward Assignment
      *
      * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody For digital, material, and pay-with-points rewards, provide the campaign ID and, when required, the loyalty points cost. For a LOYALTY_POINTS reward, provide related_object_type referral_tier and the referral tier ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -463,7 +463,7 @@ class RewardsApi
      * Create Reward Assignment
      *
      * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody For digital, material, and pay-with-points rewards, provide the campaign ID and, when required, the loyalty points cost. For a LOYALTY_POINTS reward, provide related_object_type referral_tier and the referral tier ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
@@ -564,7 +564,7 @@ class RewardsApi
      * Create Reward Assignment
      *
      * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody For digital, material, and pay-with-points rewards, provide the campaign ID and, when required, the loyalty points cost. For a LOYALTY_POINTS reward, provide related_object_type referral_tier and the referral tier ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -586,7 +586,7 @@ class RewardsApi
      * Create Reward Assignment
      *
      * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody For digital, material, and pay-with-points rewards, provide the campaign ID and, when required, the loyalty points cost. For a LOYALTY_POINTS reward, provide related_object_type referral_tier and the referral tier ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -637,7 +637,7 @@ class RewardsApi
      * Create request for operation 'createRewardAssignment'
      *
      * @param  string $rewardId A unique reward ID. (required)
-     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points. (optional)
+     * @param  \OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBody $rewardsAssignmentsCreateRequestBody For digital, material, and pay-with-points rewards, provide the campaign ID and, when required, the loyalty points cost. For a LOYALTY_POINTS reward, provide related_object_type referral_tier and the referral tier ID. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRewardAssignment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

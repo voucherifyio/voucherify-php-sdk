@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * CampaignLoyaltyCardExpirationRules Class Doc Comment
  *
  * @category Class
- * @description Defines the loyalty point expiration rule. This expiration rule applies when there are no &#x60;expiration_rules&#x60; defined for an earning rule.
+ * @description Defines the loyalty point expiration rule (**legacy loyalty**). This expiration rule applies when there are no &#x60;expiration_rules&#x60; defined for an earning rule.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

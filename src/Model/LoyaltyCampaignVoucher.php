@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltyCampaignVoucher Class Doc Comment
  *
  * @category Class
- * @description Schema model for a campaign voucher.
+ * @description **Legacy loyalty.** Schema model for a campaign voucher.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

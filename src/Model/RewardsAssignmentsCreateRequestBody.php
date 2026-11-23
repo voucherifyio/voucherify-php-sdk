@@ -59,8 +59,10 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'campaign' => 'string',
+        'relatedObjectType' => 'string',
         'parameters' => '\OpenAPI\Client\Model\RewardsAssignmentsCreateRequestBodyParameters',
-        'validationRules' => 'string[]'
+        'validationRules' => 'string[]',
+        'relatedObjectId' => 'string'
     ];
 
     /**
@@ -72,8 +74,10 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'campaign' => null,
+        'relatedObjectType' => null,
         'parameters' => null,
-        'validationRules' => null
+        'validationRules' => null,
+        'relatedObjectId' => null
     ];
 
     /**
@@ -83,8 +87,10 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
       */
     protected static array $openAPINullables = [
         'campaign' => true,
+		'relatedObjectType' => true,
 		'parameters' => true,
-		'validationRules' => true
+		'validationRules' => true,
+		'relatedObjectId' => true
     ];
 
     /**
@@ -174,8 +180,10 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'campaign' => 'campaign',
+        'relatedObjectType' => 'related_object_type',
         'parameters' => 'parameters',
-        'validationRules' => 'validation_rules'
+        'validationRules' => 'validation_rules',
+        'relatedObjectId' => 'related_object_id'
     ];
 
     /**
@@ -185,8 +193,10 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'campaign' => 'setCampaign',
+        'relatedObjectType' => 'setRelatedObjectType',
         'parameters' => 'setParameters',
-        'validationRules' => 'setValidationRules'
+        'validationRules' => 'setValidationRules',
+        'relatedObjectId' => 'setRelatedObjectId'
     ];
 
     /**
@@ -196,8 +206,10 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'campaign' => 'getCampaign',
+        'relatedObjectType' => 'getRelatedObjectType',
         'parameters' => 'getParameters',
-        'validationRules' => 'getValidationRules'
+        'validationRules' => 'getValidationRules',
+        'relatedObjectId' => 'getRelatedObjectId'
     ];
 
     /**
@@ -241,6 +253,21 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    public const RELATED_OBJECT_TYPE_CAMPAIGN = 'campaign';
+    public const RELATED_OBJECT_TYPE_REFERRAL_TIER = 'referral_tier';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getRelatedObjectTypeAllowableValues()
+    {
+        return [
+            self::RELATED_OBJECT_TYPE_CAMPAIGN,
+            self::RELATED_OBJECT_TYPE_REFERRAL_TIER,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -258,8 +285,10 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
     public function __construct(?array $data = null)
     {
         $this->setIfExists('campaign', $data ?? [], null);
+        $this->setIfExists('relatedObjectType', $data ?? [], null);
         $this->setIfExists('parameters', $data ?? [], null);
         $this->setIfExists('validationRules', $data ?? [], null);
+        $this->setIfExists('relatedObjectId', $data ?? [], null);
     }
 
     /**
@@ -288,6 +317,15 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getRelatedObjectTypeAllowableValues();
+        if (!is_null($this->container['relatedObjectType']) && !in_array($this->container['relatedObjectType'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'relatedObjectType', must be one of '%s'",
+                $this->container['relatedObjectType'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -334,6 +372,50 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
             }
         }
         $this->container['campaign'] = $campaign;
+
+        return $this;
+    }
+
+    /**
+     * Gets relatedObjectType
+     *
+     * @return string|null
+     */
+    public function getRelatedObjectType()
+    {
+        return $this->container['relatedObjectType'];
+    }
+
+    /**
+     * Sets relatedObjectType
+     *
+     * @param string|null $relatedObjectType relatedObjectType
+     *
+     * @return self
+     */
+    public function setRelatedObjectType($relatedObjectType)
+    {
+        if (is_null($relatedObjectType)) {
+            array_push($this->openAPINullablesSetToNull, 'relatedObjectType');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('relatedObjectType', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getRelatedObjectTypeAllowableValues();
+        if (!is_null($relatedObjectType) && !in_array($relatedObjectType, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'relatedObjectType', must be one of '%s'",
+                    $relatedObjectType,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['relatedObjectType'] = $relatedObjectType;
 
         return $this;
     }
@@ -402,6 +484,40 @@ class RewardsAssignmentsCreateRequestBody implements ModelInterface, ArrayAccess
             }
         }
         $this->container['validationRules'] = $validationRules;
+
+        return $this;
+    }
+
+    /**
+     * Gets relatedObjectId
+     *
+     * @return string|null
+     */
+    public function getRelatedObjectId()
+    {
+        return $this->container['relatedObjectId'];
+    }
+
+    /**
+     * Sets relatedObjectId
+     *
+     * @param string|null $relatedObjectId Unique referral tier ID, assigned by Voucherify.
+     *
+     * @return self
+     */
+    public function setRelatedObjectId($relatedObjectId)
+    {
+        if (is_null($relatedObjectId)) {
+            array_push($this->openAPINullablesSetToNull, 'relatedObjectId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('relatedObjectId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['relatedObjectId'] = $relatedObjectId;
 
         return $this;
     }

@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltyMember Class Doc Comment
  *
  * @category Class
- * @description This is an object representing a loyalty member.
+ * @description **Legacy loyalty.** This is an object representing a loyalty member.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

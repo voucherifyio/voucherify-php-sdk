@@ -312,7 +312,7 @@ class LoyaltyV2ActivityBenefitStockLimited implements ModelInterface, ArrayAcces
     /**
      * Sets quantity
      *
-     * @param int|null $quantity Available Remaining stock quantity. For responses, updates with each benefit purchase.
+     * @param int|null $quantity Remaining stock quantity. On create, this is the starting quantity. Each benefit purchase decreases it by one.
      *
      * @return self
      */
