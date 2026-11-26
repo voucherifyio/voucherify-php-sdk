@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * AccessSettingsUnassign Class Doc Comment
  *
  * @category Class
- * @description Unassigns the campaign from an area or a store. Provide the area and/or store IDs in the respective arrays. If a campaign changes assignments between areas or stores, unassign it first. For example, if a campaign is assigned to Area-01, but it must be now assigned to Store-01 within this area, you have to unassign the campaign from Area-01 and assigned to Store-01 only.  If you want to assign the campaign to stores only, you do not have to send the area ID.
+ * @description Unassigns the resource from an area or a store. Provide the area and/or store IDs in the respective arrays. If a resource changes assignments between areas or stores, unassign it first. For example, if a resource is assigned to Area-01, but it must be now assigned to Store-01 within this area, you have to unassign the resource from Area-01 and assigned to Store-01 only.  If you want to assign the resource to stores only, you do not have to send the area ID.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -318,7 +318,7 @@ class AccessSettingsUnassign implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets areasIds
      *
-     * @param string[]|null $areasIds List all area IDs from which the campaign will be unassigned.
+     * @param string[]|null $areasIds List all area IDs from which the resource will be unassigned.
      *
      * @return self
      */
@@ -352,7 +352,7 @@ class AccessSettingsUnassign implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets areaStoresIds
      *
-     * @param string[]|null $areaStoresIds List all store IDs from which the campaign will be unassigned.
+     * @param string[]|null $areaStoresIds List all store IDs from which the resource will be unassigned.
      *
      * @return self
      */
@@ -386,7 +386,7 @@ class AccessSettingsUnassign implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets areaAllStoresIds
      *
-     * @param string[]|null $areaAllStoresIds List all area IDs where the campaign will be unassigned from all stores in the area. This unassignment is not equal to the unassignment from all `area_stores_ids` listed separately.
+     * @param string[]|null $areaAllStoresIds List all area IDs where the resource will be unassigned from all stores in the area. This unassignment is not equal to the unassignment from all `area_stores_ids` listed separately.
      *
      * @return self
      */

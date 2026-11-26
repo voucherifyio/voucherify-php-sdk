@@ -59,7 +59,7 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRedemptionsIte
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'date' => 'string'
+        'date' => '\DateTime'
     ];
 
     /**
@@ -71,7 +71,7 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRedemptionsIte
       */
     protected static $openAPIFormats = [
         'id' => null,
-        'date' => null
+        'date' => 'date-time'
     ];
 
     /**
@@ -327,7 +327,7 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRedemptionsIte
     /**
      * Gets date
      *
-     * @return string|null
+     * @return \DateTime|null
      */
     public function getDate()
     {
@@ -337,7 +337,7 @@ class RedemptionsListResponseBodyRedemptionsItemRelatedRedemptionsRedemptionsIte
     /**
      * Sets date
      *
-     * @param string|null $date date
+     * @param \DateTime|null $date Timestamp representing the date and time when the object was created. The value is shown in the ISO 8601 format.
      *
      * @return self
      */

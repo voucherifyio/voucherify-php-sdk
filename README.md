@@ -192,6 +192,7 @@ Authorization schemes defined for the API.
   - Added the `LOYALTY_POINTS` reward type: the `LOYALTY_POINTS` value on reward `type` fields, and `parameters.loyaltyPoints` (`points`, `programId`, `cardDefinitionId`, `onMissingMember`) on reward create, update, response, and member activity parameter models.
   - Added optional `type` on `RewardsCreateRequestBody` (`CAMPAIGN`, `MATERIAL`, `COIN`, `LOYALTY_POINTS`). The SDK does not set it by default and Voucherify infers the type from `parameters`, so creating a campaign, product, or pay-with-points reward without `type` works as before.
   - Fixed: `priceFormula` in `ApplicableTo` and `InapplicableTo` is typed as `string` (was `float`). The API expects a formula expression string such as `IF(ORDER_AMOUNT > 300;ORDER_ITEM_PRICE * 0.8;ORDER_ITEM_PRICE)`.
+  - Fixed: `date` on nested related-redemption items in redemption models is typed as `\DateTime` (was `string`).
 - **2026-10-14** - `5.2.0`
   - Added Loyalty v2 API methods under `/v2/loyalties` for member create, update, delete, activate, and deactivate, point adjustments, order payments, reward purchase, and refund, plus memberships, cards, examine, reports, list endpoints, and reads for a benefit, an earning rule, and a reward.
   - Added `loyalty_memberships` on customer summary models.
@@ -639,6 +640,7 @@ Class | Method | HTTP request | Description
 - [AccessSettings](docs/Model/AccessSettings.md)
 - [AccessSettingsAssign](docs/Model/AccessSettingsAssign.md)
 - [AccessSettingsCampaignAssignmentsList](docs/Model/AccessSettingsCampaignAssignmentsList.md)
+- [AccessSettingsProductCollectionAssignmentsList](docs/Model/AccessSettingsProductCollectionAssignmentsList.md)
 - [AccessSettingsUnassign](docs/Model/AccessSettingsUnassign.md)
 - [ActivitySource](docs/Model/ActivitySource.md)
 - [ActivitySourceApiKey](docs/Model/ActivitySourceApiKey.md)
@@ -647,6 +649,7 @@ Class | Method | HTTP request | Description
 - [ApplicableToOrderItemUnitsItem](docs/Model/ApplicableToOrderItemUnitsItem.md)
 - [ApplicableToResultList](docs/Model/ApplicableToResultList.md)
 - [AreaStoreCampaignAssignment](docs/Model/AreaStoreCampaignAssignment.md)
+- [AreaStoreProductCollectionAssignment](docs/Model/AreaStoreProductCollectionAssignment.md)
 - [AsyncActionBase](docs/Model/AsyncActionBase.md)
 - [AsyncActionGetResponseBody](docs/Model/AsyncActionGetResponseBody.md)
 - [AsyncActionsListResponseBody](docs/Model/AsyncActionsListResponseBody.md)
