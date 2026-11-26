@@ -500,7 +500,7 @@ class V2LoyaltiesBenefitsGetResponseBody implements ModelInterface, ArrayAccess,
     /**
      * Sets name
      *
-     * @param string|null $name Benefit name, unique within the project.
+     * @param string|null $name Benefit name.
      *
      * @return self
      */

@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltyPendingPointsDetailsHolderLoyaltyTier Class Doc Comment
  *
  * @category Class
- * @description Loyalty tier of the loyalty card holder at the moment when the transaction occurred. The loyalty tier is the tier in which the holder was at the moment pending points were created.
+ * @description Legacy loyalty tier of the loyalty card holder at the moment when the transaction occurred. The loyalty tier is the tier in which the holder was at the moment pending points were created.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

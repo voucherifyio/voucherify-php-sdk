@@ -72,6 +72,8 @@ class CardDailyReportEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         'pointsReturned' => 'float',
         'pointsLocked' => 'float',
         'pointsUnlocked' => 'float',
+        'referrerPointsEarned' => 'float',
+        'refereePointsEarned' => 'float',
         'pendingPointsTotal' => 'float',
         'pendingPointsActivated' => 'float',
         'pendingPointsCanceled' => 'float',
@@ -99,6 +101,8 @@ class CardDailyReportEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         'pointsReturned' => null,
         'pointsLocked' => null,
         'pointsUnlocked' => null,
+        'referrerPointsEarned' => null,
+        'refereePointsEarned' => null,
         'pendingPointsTotal' => null,
         'pendingPointsActivated' => null,
         'pendingPointsCanceled' => null,
@@ -124,6 +128,8 @@ class CardDailyReportEntry implements ModelInterface, ArrayAccess, \JsonSerializ
 		'pointsReturned' => true,
 		'pointsLocked' => true,
 		'pointsUnlocked' => true,
+		'referrerPointsEarned' => true,
+		'refereePointsEarned' => true,
 		'pendingPointsTotal' => true,
 		'pendingPointsActivated' => true,
 		'pendingPointsCanceled' => true,
@@ -229,6 +235,8 @@ class CardDailyReportEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         'pointsReturned' => 'points_returned',
         'pointsLocked' => 'points_locked',
         'pointsUnlocked' => 'points_unlocked',
+        'referrerPointsEarned' => 'referrer_points_earned',
+        'refereePointsEarned' => 'referee_points_earned',
         'pendingPointsTotal' => 'pending_points_total',
         'pendingPointsActivated' => 'pending_points_activated',
         'pendingPointsCanceled' => 'pending_points_canceled',
@@ -254,6 +262,8 @@ class CardDailyReportEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         'pointsReturned' => 'setPointsReturned',
         'pointsLocked' => 'setPointsLocked',
         'pointsUnlocked' => 'setPointsUnlocked',
+        'referrerPointsEarned' => 'setReferrerPointsEarned',
+        'refereePointsEarned' => 'setRefereePointsEarned',
         'pendingPointsTotal' => 'setPendingPointsTotal',
         'pendingPointsActivated' => 'setPendingPointsActivated',
         'pendingPointsCanceled' => 'setPendingPointsCanceled',
@@ -279,6 +289,8 @@ class CardDailyReportEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         'pointsReturned' => 'getPointsReturned',
         'pointsLocked' => 'getPointsLocked',
         'pointsUnlocked' => 'getPointsUnlocked',
+        'referrerPointsEarned' => 'getReferrerPointsEarned',
+        'refereePointsEarned' => 'getRefereePointsEarned',
         'pendingPointsTotal' => 'getPendingPointsTotal',
         'pendingPointsActivated' => 'getPendingPointsActivated',
         'pendingPointsCanceled' => 'getPendingPointsCanceled',
@@ -368,6 +380,8 @@ class CardDailyReportEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('pointsReturned', $data ?? [], null);
         $this->setIfExists('pointsLocked', $data ?? [], null);
         $this->setIfExists('pointsUnlocked', $data ?? [], null);
+        $this->setIfExists('referrerPointsEarned', $data ?? [], null);
+        $this->setIfExists('refereePointsEarned', $data ?? [], null);
         $this->setIfExists('pendingPointsTotal', $data ?? [], null);
         $this->setIfExists('pendingPointsActivated', $data ?? [], null);
         $this->setIfExists('pendingPointsCanceled', $data ?? [], null);
@@ -472,7 +486,7 @@ class CardDailyReportEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets pointsTotal
      *
-     * @param float|null $pointsTotal Points credited to the card in the period. Sums `points_earned`, `points_added`, and `points_purchased`. Points spent, expired, subtracted, refunded, returned, or reversed are not deducted.
+     * @param float|null $pointsTotal Points credited to the card in the period. Sums `points_earned`, `points_added`, `points_purchased`, `referrer_points_earned`, and `referee_points_earned`. Points spent, expired, subtracted, refunded, returned, or reversed are not deducted.
      *
      * @return self
      */
@@ -863,6 +877,74 @@ class CardDailyReportEntry implements ModelInterface, ArrayAccess, \JsonSerializ
             }
         }
         $this->container['pointsUnlocked'] = $pointsUnlocked;
+
+        return $this;
+    }
+
+    /**
+     * Gets referrerPointsEarned
+     *
+     * @return float|null
+     */
+    public function getReferrerPointsEarned()
+    {
+        return $this->container['referrerPointsEarned'];
+    }
+
+    /**
+     * Sets referrerPointsEarned
+     *
+     * @param float|null $referrerPointsEarned Points credited from referral referrer awards in the period (`REFERRER_POINTS_EARNED` card transactions, for example a `LOYALTY_POINTS` reward assigned to a referrer tier). Also counted in `points_total`. Not counted in `points_earned`.
+     *
+     * @return self
+     */
+    public function setReferrerPointsEarned($referrerPointsEarned)
+    {
+        if (is_null($referrerPointsEarned)) {
+            array_push($this->openAPINullablesSetToNull, 'referrerPointsEarned');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('referrerPointsEarned', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['referrerPointsEarned'] = $referrerPointsEarned;
+
+        return $this;
+    }
+
+    /**
+     * Gets refereePointsEarned
+     *
+     * @return float|null
+     */
+    public function getRefereePointsEarned()
+    {
+        return $this->container['refereePointsEarned'];
+    }
+
+    /**
+     * Sets refereePointsEarned
+     *
+     * @param float|null $refereePointsEarned Points credited from referral referee awards in the period (`REFEREE_POINTS_EARNED` card transactions, for example a `LOYALTY_POINTS` reward assigned to a referee tier). Also counted in `points_total`. Not counted in `points_earned`.
+     *
+     * @return self
+     */
+    public function setRefereePointsEarned($refereePointsEarned)
+    {
+        if (is_null($refereePointsEarned)) {
+            array_push($this->openAPINullablesSetToNull, 'refereePointsEarned');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('refereePointsEarned', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['refereePointsEarned'] = $refereePointsEarned;
 
         return $this;
     }

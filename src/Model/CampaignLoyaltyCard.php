@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * CampaignLoyaltyCard Class Doc Comment
  *
  * @category Class
- * @description Schema model for a campaign loyalty card.
+ * @description Schema model for a campaign loyalty card (**legacy loyalty**).
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

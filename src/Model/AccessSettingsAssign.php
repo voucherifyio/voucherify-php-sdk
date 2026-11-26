@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * AccessSettingsAssign Class Doc Comment
  *
  * @category Class
- * @description Assigns the campaign to an area or a store. Provide the area and/or store IDs in the respective arrays. If a campaign changes assignments between areas or stores, unassign it from the area. For example, if a campaign is assigned to Area-01, but it must be now assigned to Store-01 within this area, you have to unassign the campaign from Area-01 and assign to Store-01 only.  If you want to assign the campaign to stores only, you do not have to send the area ID.
+ * @description Assigns the resource to an area or a store. Provide the area and/or store IDs in the respective arrays. If a resource changes assignments between areas or stores, unassign it from the area. For example, if a resource is assigned to Area-01, but it must be now assigned to Store-01 within this area, you have to unassign the resource from Area-01 and assign to Store-01 only.  If you want to assign the resource to stores only, you do not have to send the area ID.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -318,7 +318,7 @@ class AccessSettingsAssign implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets areasIds
      *
-     * @param string[]|null $areasIds List all area IDs to which the campaign will be assigned.
+     * @param string[]|null $areasIds List all area IDs to which the resource will be assigned.
      *
      * @return self
      */
@@ -352,7 +352,7 @@ class AccessSettingsAssign implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets areaStoresIds
      *
-     * @param string[]|null $areaStoresIds List all store IDs to which the campaign will be assigned.
+     * @param string[]|null $areaStoresIds List all store IDs to which the resource will be assigned.
      *
      * @return self
      */
@@ -386,7 +386,7 @@ class AccessSettingsAssign implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets areaAllStoresIds
      *
-     * @param string[]|null $areaAllStoresIds List all area IDs where the campaign is assigned to all stores in the area. This assignment is not equal to the assignment to all `area_stores_ids` listed separately.
+     * @param string[]|null $areaAllStoresIds List all area IDs where the resource is assigned to all stores in the area. This assignment is not equal to the assignment to all `area_stores_ids` listed separately.
      *
      * @return self
      */

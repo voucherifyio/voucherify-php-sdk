@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltiesListCampaignsResponseBody Class Doc Comment
  *
  * @category Class
- * @description Response body schema for **Get** &#x60;/loyalties&#x60;.
+ * @description **Legacy loyalty.** Response body schema for **Get** &#x60;/loyalties&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

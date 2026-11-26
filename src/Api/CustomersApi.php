@@ -1576,7 +1576,7 @@ class CustomersApi
      * @param  \DateTime $startDate Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
      * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $campaignId Requests only events related to specific campaign identified by its ID. (optional)
-     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
+     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. LOYALTY_PROGRAM is the campaign type for **legacy loyalty** (loyalty card campaigns), not v2/loyalties programs. (optional)
      * @param  ParameterActivityCategory $category Filters activities for actions or effects. Allowed values:  ACTION, EFFECT. (optional)
      * @param  string $type Event name of the customer event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerActivity'] to see the possible values for this operation
@@ -1603,7 +1603,7 @@ class CustomersApi
      * @param  \DateTime $startDate Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
      * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $campaignId Requests only events related to specific campaign identified by its ID. (optional)
-     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
+     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. LOYALTY_PROGRAM is the campaign type for **legacy loyalty** (loyalty card campaigns), not v2/loyalties programs. (optional)
      * @param  ParameterActivityCategory $category Filters activities for actions or effects. Allowed values:  ACTION, EFFECT. (optional)
      * @param  string $type Event name of the customer event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerActivity'] to see the possible values for this operation
@@ -1712,7 +1712,7 @@ class CustomersApi
      * @param  \DateTime $startDate Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
      * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $campaignId Requests only events related to specific campaign identified by its ID. (optional)
-     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
+     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. LOYALTY_PROGRAM is the campaign type for **legacy loyalty** (loyalty card campaigns), not v2/loyalties programs. (optional)
      * @param  ParameterActivityCategory $category Filters activities for actions or effects. Allowed values:  ACTION, EFFECT. (optional)
      * @param  string $type Event name of the customer event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerActivity'] to see the possible values for this operation
@@ -1742,7 +1742,7 @@ class CustomersApi
      * @param  \DateTime $startDate Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
      * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $campaignId Requests only events related to specific campaign identified by its ID. (optional)
-     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
+     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. LOYALTY_PROGRAM is the campaign type for **legacy loyalty** (loyalty card campaigns), not v2/loyalties programs. (optional)
      * @param  ParameterActivityCategory $category Filters activities for actions or effects. Allowed values:  ACTION, EFFECT. (optional)
      * @param  string $type Event name of the customer event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerActivity'] to see the possible values for this operation
@@ -1801,7 +1801,7 @@ class CustomersApi
      * @param  \DateTime $startDate Timestamp representing the date and time which results must begin on. Represented in ISO 8601 format. (optional)
      * @param  \DateTime $endDate Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. (optional)
      * @param  string $campaignId Requests only events related to specific campaign identified by its ID. (optional)
-     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. (optional)
+     * @param  ParameterCampaignType $campaignType Filters related customers activity for the selected campaign types. Allowed values:  DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM. LOYALTY_PROGRAM is the campaign type for **legacy loyalty** (loyalty card campaigns), not v2/loyalties programs. (optional)
      * @param  ParameterActivityCategory $category Filters activities for actions or effects. Allowed values:  ACTION, EFFECT. (optional)
      * @param  string $type Event name of the customer event. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listCustomerActivity'] to see the possible values for this operation

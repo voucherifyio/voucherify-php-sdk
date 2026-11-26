@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * AccessSettings Class Doc Comment
  *
  * @category Class
- * @description Assigns or unassigns an area or store to the campaign.  **NOTE**: this object can be sent if the Areas and Stores enterprise feature is enabled. Contact [Voucherify Sales](https://www.voucherify.io/contact-sales) to learn more.
+ * @description Assigns or unassigns an area or store to the resource, for example a campaign or a product collection.  &lt;Note&gt;This object can be sent if the Areas and Stores enterprise feature is enabled for the given resource type. Contact [Voucherify Sales](https://www.voucherify.io/contact-sales) to learn more.&lt;/Note&gt;
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

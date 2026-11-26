@@ -317,7 +317,7 @@ class ManagementProjectsUsersAssignRequestBody implements ModelInterface, ArrayA
     /**
      * Sets id
      *
-     * @param string|null $id The unique identifier of the user who will be assigned to the project. It can be found in Team Settings > Team > Edit member. **Required** with the `role` string.  Do **not** use with the `login` string.
+     * @param string|null $id The unique identifier of the user who will be assigned to the project. It can be found in Team Settings > Team > Edit member. Required with the `role` string.  Do **not** use with the `login` string.
      *
      * @return self
      */
@@ -351,7 +351,7 @@ class ManagementProjectsUsersAssignRequestBody implements ModelInterface, ArrayA
     /**
      * Sets login
      *
-     * @param string|null $login The login data of the user who will be assigned to the project. **Required** with the `role` string.  Do **not** use with the `id` string.
+     * @param string|null $login The login data of the user who will be assigned to the project. Required with the `role` string.  Do **not** use with the `id` string.
      *
      * @return self
      */

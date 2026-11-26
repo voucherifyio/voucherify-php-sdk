@@ -457,7 +457,7 @@ class ProductCollectionsListResponseBody implements ModelInterface, ArrayAccess,
     /**
      * Sets data
      *
-     * @param \OpenAPI\Client\Model\ProductCollectionsItem[]|null $data A dictionary that contains an array of product collections and their details.
+     * @param \OpenAPI\Client\Model\ProductCollectionsItem[]|null $data A dictionary that contains an array of product collections and their details.  <Note>If the Areas and Stores enterprise feature is enabled for product collections, this list does not return `access_settings_assignments`. To get the areas and stores to which a product collection is assigned, use [GET Product Collection](/api-reference/product-collections/get-product-collection). Contact [Voucherify Sales](https://www.voucherify.io/contact-sales) to learn more.</Note>
      *
      * @return self
      */

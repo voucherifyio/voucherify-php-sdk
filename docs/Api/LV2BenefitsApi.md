@@ -15,7 +15,7 @@ getBenefit($benefitId): \OpenAPI\Client\Model\V2LoyaltiesBenefitsGetResponseBody
 
 Get benefit
 
-Returns a single benefit by its ID.
+Returns a single benefit by its ID. A successful call records no activity.
 
 ### Example
 

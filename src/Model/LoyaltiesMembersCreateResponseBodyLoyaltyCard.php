@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltiesMembersCreateResponseBodyLoyaltyCard Class Doc Comment
  *
  * @category Class
- * @description Object representing loyalty card parameters. Child attributes are present only if &#x60;type&#x60; is &#x60;LOYALTY_CARD&#x60;. Defaults to &#x60;null&#x60;.
+ * @description Object representing legacy loyalty card parameters. Child attributes are present only if &#x60;type&#x60; is &#x60;LOYALTY_CARD&#x60;. Defaults to &#x60;null&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

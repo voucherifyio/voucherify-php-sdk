@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltyV2ActivityEarningRuleEffectPointsExpirationRollingExpirationRounding Class Doc Comment
  *
  * @category Class
- * @description &#x60;value&#x60; is the month (1-12). Required when &#x60;type&#x60; is &#x60;END_OF_PARTICULAR_MONTH&#x60;. Absent for other rounding types. The API validates field combinations that this schema does not express.
+ * @description &#x60;value&#x60; is the month (1–12). Required when &#x60;type&#x60; is &#x60;END_OF_PARTICULAR_MONTH&#x60;. Absent for other rounding types. The API validates field combinations that this schema does not express.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -393,7 +393,7 @@ class LoyaltyV2ActivityEarningRuleEffectPointsExpirationRollingExpirationRoundin
     /**
      * Sets value
      *
-     * @param int|null $value Month number (1-12). Present only when `type` is `END_OF_PARTICULAR_MONTH`.
+     * @param int|null $value Month number (1–12). Present only when `type` is `END_OF_PARTICULAR_MONTH`.
      *
      * @return self
      */

@@ -369,7 +369,7 @@ class LoyaltyV2ActivityEarningRuleEffectPointsExpirationCalendarExpirationDate i
     /**
      * Sets month
      *
-     * @param int|null $month Month number (1-12).
+     * @param int|null $month Month number (1–12).
      *
      * @return self
      */

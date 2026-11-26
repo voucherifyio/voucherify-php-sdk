@@ -274,6 +274,7 @@ class RewardsAssignmentsCreateResponseBody implements ModelInterface, ArrayAcces
 
     public const OBJECT_REWARD_ASSIGNMENT = 'reward_assignment';
     public const RELATED_OBJECT_TYPE_CAMPAIGN = 'campaign';
+    public const RELATED_OBJECT_TYPE_REFERRAL_TIER = 'referral_tier';
 
     /**
      * Gets allowable values of the enum
@@ -296,6 +297,7 @@ class RewardsAssignmentsCreateResponseBody implements ModelInterface, ArrayAcces
     {
         return [
             self::RELATED_OBJECT_TYPE_CAMPAIGN,
+            self::RELATED_OBJECT_TYPE_REFERRAL_TIER,
         ];
     }
 
@@ -577,7 +579,7 @@ class RewardsAssignmentsCreateResponseBody implements ModelInterface, ArrayAcces
     /**
      * Sets relatedObjectId
      *
-     * @param string|null $relatedObjectId Related object ID to which the reward was assigned.
+     * @param string|null $relatedObjectId Related object ID to which the reward was assigned. For `related_object_type` `campaign`, this is the campaign ID. For `referral_tier`, this is the referral tier ID.
      *
      * @return self
      */
@@ -611,7 +613,7 @@ class RewardsAssignmentsCreateResponseBody implements ModelInterface, ArrayAcces
     /**
      * Sets relatedObjectType
      *
-     * @param string|null $relatedObjectType Related object type to which the reward was assigned.
+     * @param string|null $relatedObjectType Related object type to which the reward was assigned. Use `campaign` for **legacy loyalty** campaign rewards. Use `referral_tier` for `LOYALTY_POINTS` rewards that credit a `v2/loyalties` (loyalty hub) card from a referral tier. A `LOYALTY_POINTS` reward can only be assigned to a referral tier.
      *
      * @return self
      */

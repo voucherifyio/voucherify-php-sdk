@@ -60,7 +60,8 @@ class RewardType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'campaign' => '\OpenAPI\Client\Model\RewardTypeCampaign',
         'coin' => '\OpenAPI\Client\Model\RewardTypeCoin',
-        'product' => '\OpenAPI\Client\Model\RewardTypeProduct'
+        'product' => '\OpenAPI\Client\Model\RewardTypeProduct',
+        'loyaltyPoints' => '\OpenAPI\Client\Model\RewardTypeLoyaltyPoints'
     ];
 
     /**
@@ -73,7 +74,8 @@ class RewardType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'campaign' => null,
         'coin' => null,
-        'product' => null
+        'product' => null,
+        'loyaltyPoints' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class RewardType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'campaign' => true,
 		'coin' => true,
-		'product' => true
+		'product' => true,
+		'loyaltyPoints' => true
     ];
 
     /**
@@ -175,7 +178,8 @@ class RewardType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'campaign' => 'campaign',
         'coin' => 'coin',
-        'product' => 'product'
+        'product' => 'product',
+        'loyaltyPoints' => 'loyalty_points'
     ];
 
     /**
@@ -186,7 +190,8 @@ class RewardType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'campaign' => 'setCampaign',
         'coin' => 'setCoin',
-        'product' => 'setProduct'
+        'product' => 'setProduct',
+        'loyaltyPoints' => 'setLoyaltyPoints'
     ];
 
     /**
@@ -197,7 +202,8 @@ class RewardType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'campaign' => 'getCampaign',
         'coin' => 'getCoin',
-        'product' => 'getProduct'
+        'product' => 'getProduct',
+        'loyaltyPoints' => 'getLoyaltyPoints'
     ];
 
     /**
@@ -260,6 +266,7 @@ class RewardType implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('campaign', $data ?? [], null);
         $this->setIfExists('coin', $data ?? [], null);
         $this->setIfExists('product', $data ?? [], null);
+        $this->setIfExists('loyaltyPoints', $data ?? [], null);
     }
 
     /**
@@ -402,6 +409,40 @@ class RewardType implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['product'] = $product;
+
+        return $this;
+    }
+
+    /**
+     * Gets loyaltyPoints
+     *
+     * @return \OpenAPI\Client\Model\RewardTypeLoyaltyPoints|null
+     */
+    public function getLoyaltyPoints()
+    {
+        return $this->container['loyaltyPoints'];
+    }
+
+    /**
+     * Sets loyaltyPoints
+     *
+     * @param \OpenAPI\Client\Model\RewardTypeLoyaltyPoints|null $loyaltyPoints loyaltyPoints
+     *
+     * @return self
+     */
+    public function setLoyaltyPoints($loyaltyPoints)
+    {
+        if (is_null($loyaltyPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'loyaltyPoints');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('loyaltyPoints', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['loyaltyPoints'] = $loyaltyPoints;
 
         return $this;
     }

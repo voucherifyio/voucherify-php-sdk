@@ -327,7 +327,7 @@ class LoyaltyV2ActivityEarningRulePointsProportionalEvery implements ModelInterf
     /**
      * Sets every
      *
-     * @param int|null $every The divisor – every this amount (e.g. in cents) awards `value` points.
+     * @param int|null $every The divisor - every this amount (e.g. in cents) awards `value` points.
      *
      * @return self
      */

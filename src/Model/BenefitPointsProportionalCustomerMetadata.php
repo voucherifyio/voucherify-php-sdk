@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * BenefitPointsProportionalCustomerMetadata Class Doc Comment
  *
  * @category Class
- * @description Metadata-based ratio definition - &#x60;value&#x60; points for every &#x60;every&#x60; units of the metadata property.
+ * @description Metadata-based ratio definition. &#x60;value&#x60; points for every &#x60;every&#x60; units of the metadata property.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

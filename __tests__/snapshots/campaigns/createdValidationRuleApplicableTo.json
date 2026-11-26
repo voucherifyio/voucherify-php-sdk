@@ -24,7 +24,7 @@
     ],
     "included_all": false
   },
-  "type": "basic",
+  "type": "expression",
   "context_type": "global",
   "id": "val_LxzewGp59iIK",
   "created_at": "2024-08-02T11:32:23+00:00",

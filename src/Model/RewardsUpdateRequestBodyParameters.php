@@ -60,7 +60,8 @@ class RewardsUpdateRequestBodyParameters implements ModelInterface, ArrayAccess,
     protected static $openAPITypes = [
         'campaign' => '\OpenAPI\Client\Model\RewardsUpdateRequestBodyParametersCampaign',
         'product' => '\OpenAPI\Client\Model\RewardsUpdateRequestBodyParametersProduct',
-        'coin' => '\OpenAPI\Client\Model\RewardsUpdateRequestBodyParametersCoin'
+        'coin' => '\OpenAPI\Client\Model\RewardsUpdateRequestBodyParametersCoin',
+        'loyaltyPoints' => '\OpenAPI\Client\Model\RewardsUpdateRequestBodyParametersLoyaltyPoints'
     ];
 
     /**
@@ -73,7 +74,8 @@ class RewardsUpdateRequestBodyParameters implements ModelInterface, ArrayAccess,
     protected static $openAPIFormats = [
         'campaign' => null,
         'product' => null,
-        'coin' => null
+        'coin' => null,
+        'loyaltyPoints' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class RewardsUpdateRequestBodyParameters implements ModelInterface, ArrayAccess,
     protected static array $openAPINullables = [
         'campaign' => true,
 		'product' => true,
-		'coin' => true
+		'coin' => true,
+		'loyaltyPoints' => true
     ];
 
     /**
@@ -175,7 +178,8 @@ class RewardsUpdateRequestBodyParameters implements ModelInterface, ArrayAccess,
     protected static $attributeMap = [
         'campaign' => 'campaign',
         'product' => 'product',
-        'coin' => 'coin'
+        'coin' => 'coin',
+        'loyaltyPoints' => 'loyalty_points'
     ];
 
     /**
@@ -186,7 +190,8 @@ class RewardsUpdateRequestBodyParameters implements ModelInterface, ArrayAccess,
     protected static $setters = [
         'campaign' => 'setCampaign',
         'product' => 'setProduct',
-        'coin' => 'setCoin'
+        'coin' => 'setCoin',
+        'loyaltyPoints' => 'setLoyaltyPoints'
     ];
 
     /**
@@ -197,7 +202,8 @@ class RewardsUpdateRequestBodyParameters implements ModelInterface, ArrayAccess,
     protected static $getters = [
         'campaign' => 'getCampaign',
         'product' => 'getProduct',
-        'coin' => 'getCoin'
+        'coin' => 'getCoin',
+        'loyaltyPoints' => 'getLoyaltyPoints'
     ];
 
     /**
@@ -260,6 +266,7 @@ class RewardsUpdateRequestBodyParameters implements ModelInterface, ArrayAccess,
         $this->setIfExists('campaign', $data ?? [], null);
         $this->setIfExists('product', $data ?? [], null);
         $this->setIfExists('coin', $data ?? [], null);
+        $this->setIfExists('loyaltyPoints', $data ?? [], null);
     }
 
     /**
@@ -402,6 +409,40 @@ class RewardsUpdateRequestBodyParameters implements ModelInterface, ArrayAccess,
             }
         }
         $this->container['coin'] = $coin;
+
+        return $this;
+    }
+
+    /**
+     * Gets loyaltyPoints
+     *
+     * @return \OpenAPI\Client\Model\RewardsUpdateRequestBodyParametersLoyaltyPoints|null
+     */
+    public function getLoyaltyPoints()
+    {
+        return $this->container['loyaltyPoints'];
+    }
+
+    /**
+     * Sets loyaltyPoints
+     *
+     * @param \OpenAPI\Client\Model\RewardsUpdateRequestBodyParametersLoyaltyPoints|null $loyaltyPoints loyaltyPoints
+     *
+     * @return self
+     */
+    public function setLoyaltyPoints($loyaltyPoints)
+    {
+        if (is_null($loyaltyPoints)) {
+            array_push($this->openAPINullablesSetToNull, 'loyaltyPoints');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('loyaltyPoints', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['loyaltyPoints'] = $loyaltyPoints;
 
         return $this;
     }

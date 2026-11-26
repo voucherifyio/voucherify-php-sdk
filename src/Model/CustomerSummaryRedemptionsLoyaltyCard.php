@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * CustomerSummaryRedemptionsLoyaltyCard Class Doc Comment
  *
  * @category Class
- * @description Summary of loyalty points.
+ * @description Summary of loyalty points (**legacy loyalty**).
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

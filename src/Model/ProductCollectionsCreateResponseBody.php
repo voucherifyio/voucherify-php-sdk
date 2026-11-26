@@ -65,6 +65,8 @@ class ProductCollectionsCreateResponseBody implements ModelInterface, ArrayAcces
         'filter' => 'object',
         'products' => '\OpenAPI\Client\Model\ProductCollectionsCreateResponseBodyProductsItem[]',
         'createdAt' => '\DateTime',
+        'readonly' => 'bool',
+        'accessSettingsAssignments' => '\OpenAPI\Client\Model\AccessSettingsProductCollectionAssignmentsList',
         'object' => 'string'
     ];
 
@@ -82,6 +84,8 @@ class ProductCollectionsCreateResponseBody implements ModelInterface, ArrayAcces
         'filter' => null,
         'products' => null,
         'createdAt' => 'date-time',
+        'readonly' => null,
+        'accessSettingsAssignments' => null,
         'object' => null
     ];
 
@@ -97,6 +101,8 @@ class ProductCollectionsCreateResponseBody implements ModelInterface, ArrayAcces
 		'filter' => true,
 		'products' => true,
 		'createdAt' => true,
+		'readonly' => true,
+		'accessSettingsAssignments' => false,
 		'object' => true
     ];
 
@@ -192,6 +198,8 @@ class ProductCollectionsCreateResponseBody implements ModelInterface, ArrayAcces
         'filter' => 'filter',
         'products' => 'products',
         'createdAt' => 'created_at',
+        'readonly' => 'readonly',
+        'accessSettingsAssignments' => 'access_settings_assignments',
         'object' => 'object'
     ];
 
@@ -207,6 +215,8 @@ class ProductCollectionsCreateResponseBody implements ModelInterface, ArrayAcces
         'filter' => 'setFilter',
         'products' => 'setProducts',
         'createdAt' => 'setCreatedAt',
+        'readonly' => 'setReadonly',
+        'accessSettingsAssignments' => 'setAccessSettingsAssignments',
         'object' => 'setObject'
     ];
 
@@ -222,6 +232,8 @@ class ProductCollectionsCreateResponseBody implements ModelInterface, ArrayAcces
         'filter' => 'getFilter',
         'products' => 'getProducts',
         'createdAt' => 'getCreatedAt',
+        'readonly' => 'getReadonly',
+        'accessSettingsAssignments' => 'getAccessSettingsAssignments',
         'object' => 'getObject'
     ];
 
@@ -316,6 +328,8 @@ class ProductCollectionsCreateResponseBody implements ModelInterface, ArrayAcces
         $this->setIfExists('filter', $data ?? [], null);
         $this->setIfExists('products', $data ?? [], null);
         $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('readonly', $data ?? [], null);
+        $this->setIfExists('accessSettingsAssignments', $data ?? [], null);
         $this->setIfExists('object', $data ?? [], 'products_collection');
     }
 
@@ -589,6 +603,67 @@ class ProductCollectionsCreateResponseBody implements ModelInterface, ArrayAcces
             }
         }
         $this->container['createdAt'] = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets readonly
+     *
+     * @return bool|null
+     */
+    public function getReadonly()
+    {
+        return $this->container['readonly'];
+    }
+
+    /**
+     * Sets readonly
+     *
+     * @param bool|null $readonly Indicates whether the product collection can only be read by the caller in the Areas and Stores enterprise feature. Returned only when area and store visibility rules apply to the caller. A read-only product collection can't be updated or deleted.
+     *
+     * @return self
+     */
+    public function setReadonly($readonly)
+    {
+        if (is_null($readonly)) {
+            array_push($this->openAPINullablesSetToNull, 'readonly');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('readonly', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['readonly'] = $readonly;
+
+        return $this;
+    }
+
+    /**
+     * Gets accessSettingsAssignments
+     *
+     * @return \OpenAPI\Client\Model\AccessSettingsProductCollectionAssignmentsList|null
+     */
+    public function getAccessSettingsAssignments()
+    {
+        return $this->container['accessSettingsAssignments'];
+    }
+
+    /**
+     * Sets accessSettingsAssignments
+     *
+     * @param \OpenAPI\Client\Model\AccessSettingsProductCollectionAssignmentsList|null $accessSettingsAssignments accessSettingsAssignments
+     *
+     * @return self
+     */
+    public function setAccessSettingsAssignments($accessSettingsAssignments)
+    {
+        if (is_null($accessSettingsAssignments)) {
+            throw new \InvalidArgumentException('non-nullable accessSettingsAssignments cannot be null');
+        }
+        $this->container['accessSettingsAssignments'] = $accessSettingsAssignments;
 
         return $this;
     }

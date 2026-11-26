@@ -338,7 +338,7 @@ class LoyaltyV2ActivityEarningRulePointsProportionalMetadata implements ModelInt
     /**
      * Sets every
      *
-     * @param int|null $every The divisor – every this metadata value awards `value` points.
+     * @param int|null $every The divisor - every this metadata value awards `value` points.
      *
      * @return self
      */

@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltiesEarningRulesCreateRequestBodyItemCustomEvent Class Doc Comment
  *
  * @category Class
- * @description Contains the schema id of a custom event. **Required** for the custom event option in &#x60;event&#x60;.
+ * @description Contains the schema ID of a custom event. Required for the custom event option in &#x60;event&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

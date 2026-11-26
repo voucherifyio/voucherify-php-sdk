@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * SimpleLoyaltyCard Class Doc Comment
  *
  * @category Class
- * @description Simplified loyalty card data.
+ * @description Simplified legacy loyalty card data.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

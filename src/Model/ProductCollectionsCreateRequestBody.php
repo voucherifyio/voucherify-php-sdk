@@ -61,6 +61,7 @@ class ProductCollectionsCreateRequestBody implements ModelInterface, ArrayAccess
         'type' => 'string',
         'name' => 'string',
         'products' => '\OpenAPI\Client\Model\ProductCollectionsCreateRequestBodyProductsItem[]',
+        'accessSettings' => '\OpenAPI\Client\Model\AccessSettings',
         'filter' => 'object'
     ];
 
@@ -75,6 +76,7 @@ class ProductCollectionsCreateRequestBody implements ModelInterface, ArrayAccess
         'type' => null,
         'name' => null,
         'products' => null,
+        'accessSettings' => null,
         'filter' => null
     ];
 
@@ -87,6 +89,7 @@ class ProductCollectionsCreateRequestBody implements ModelInterface, ArrayAccess
         'type' => true,
 		'name' => true,
 		'products' => true,
+		'accessSettings' => false,
 		'filter' => true
     ];
 
@@ -179,6 +182,7 @@ class ProductCollectionsCreateRequestBody implements ModelInterface, ArrayAccess
         'type' => 'type',
         'name' => 'name',
         'products' => 'products',
+        'accessSettings' => 'access_settings',
         'filter' => 'filter'
     ];
 
@@ -191,6 +195,7 @@ class ProductCollectionsCreateRequestBody implements ModelInterface, ArrayAccess
         'type' => 'setType',
         'name' => 'setName',
         'products' => 'setProducts',
+        'accessSettings' => 'setAccessSettings',
         'filter' => 'setFilter'
     ];
 
@@ -203,6 +208,7 @@ class ProductCollectionsCreateRequestBody implements ModelInterface, ArrayAccess
         'type' => 'getType',
         'name' => 'getName',
         'products' => 'getProducts',
+        'accessSettings' => 'getAccessSettings',
         'filter' => 'getFilter'
     ];
 
@@ -281,6 +287,7 @@ class ProductCollectionsCreateRequestBody implements ModelInterface, ArrayAccess
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('products', $data ?? [], null);
+        $this->setIfExists('accessSettings', $data ?? [], null);
         $this->setIfExists('filter', $data ?? [], null);
     }
 
@@ -443,6 +450,33 @@ class ProductCollectionsCreateRequestBody implements ModelInterface, ArrayAccess
             }
         }
         $this->container['products'] = $products;
+
+        return $this;
+    }
+
+    /**
+     * Gets accessSettings
+     *
+     * @return \OpenAPI\Client\Model\AccessSettings|null
+     */
+    public function getAccessSettings()
+    {
+        return $this->container['accessSettings'];
+    }
+
+    /**
+     * Sets accessSettings
+     *
+     * @param \OpenAPI\Client\Model\AccessSettings|null $accessSettings accessSettings
+     *
+     * @return self
+     */
+    public function setAccessSettings($accessSettings)
+    {
+        if (is_null($accessSettings)) {
+            throw new \InvalidArgumentException('non-nullable accessSettings cannot be null');
+        }
+        $this->container['accessSettings'] = $accessSettings;
 
         return $this;
     }

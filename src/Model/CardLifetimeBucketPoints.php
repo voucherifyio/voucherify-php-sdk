@@ -70,7 +70,9 @@ class CardLifetimeBucketPoints implements ModelInterface, ArrayAccess, \JsonSeri
         'refunded' => 'float',
         'returned' => 'float',
         'locked' => 'float',
-        'unlocked' => 'float'
+        'unlocked' => 'float',
+        'referrerEarned' => 'float',
+        'refereeEarned' => 'float'
     ];
 
     /**
@@ -92,7 +94,9 @@ class CardLifetimeBucketPoints implements ModelInterface, ArrayAccess, \JsonSeri
         'refunded' => null,
         'returned' => null,
         'locked' => null,
-        'unlocked' => null
+        'unlocked' => null,
+        'referrerEarned' => null,
+        'refereeEarned' => null
     ];
 
     /**
@@ -112,7 +116,9 @@ class CardLifetimeBucketPoints implements ModelInterface, ArrayAccess, \JsonSeri
 		'refunded' => true,
 		'returned' => true,
 		'locked' => true,
-		'unlocked' => true
+		'unlocked' => true,
+		'referrerEarned' => true,
+		'refereeEarned' => true
     ];
 
     /**
@@ -212,7 +218,9 @@ class CardLifetimeBucketPoints implements ModelInterface, ArrayAccess, \JsonSeri
         'refunded' => 'refunded',
         'returned' => 'returned',
         'locked' => 'locked',
-        'unlocked' => 'unlocked'
+        'unlocked' => 'unlocked',
+        'referrerEarned' => 'referrer_earned',
+        'refereeEarned' => 'referee_earned'
     ];
 
     /**
@@ -232,7 +240,9 @@ class CardLifetimeBucketPoints implements ModelInterface, ArrayAccess, \JsonSeri
         'refunded' => 'setRefunded',
         'returned' => 'setReturned',
         'locked' => 'setLocked',
-        'unlocked' => 'setUnlocked'
+        'unlocked' => 'setUnlocked',
+        'referrerEarned' => 'setReferrerEarned',
+        'refereeEarned' => 'setRefereeEarned'
     ];
 
     /**
@@ -252,7 +262,9 @@ class CardLifetimeBucketPoints implements ModelInterface, ArrayAccess, \JsonSeri
         'refunded' => 'getRefunded',
         'returned' => 'getReturned',
         'locked' => 'getLocked',
-        'unlocked' => 'getUnlocked'
+        'unlocked' => 'getUnlocked',
+        'referrerEarned' => 'getReferrerEarned',
+        'refereeEarned' => 'getRefereeEarned'
     ];
 
     /**
@@ -324,6 +336,8 @@ class CardLifetimeBucketPoints implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('returned', $data ?? [], 0);
         $this->setIfExists('locked', $data ?? [], 0);
         $this->setIfExists('unlocked', $data ?? [], 0);
+        $this->setIfExists('referrerEarned', $data ?? [], 0);
+        $this->setIfExists('refereeEarned', $data ?? [], 0);
     }
 
     /**
@@ -772,6 +786,74 @@ class CardLifetimeBucketPoints implements ModelInterface, ArrayAccess, \JsonSeri
             }
         }
         $this->container['unlocked'] = $unlocked;
+
+        return $this;
+    }
+
+    /**
+     * Gets referrerEarned
+     *
+     * @return float|null
+     */
+    public function getReferrerEarned()
+    {
+        return $this->container['referrerEarned'];
+    }
+
+    /**
+     * Sets referrerEarned
+     *
+     * @param float|null $referrerEarned Total points credited as a referrer from a `LOYALTY_POINTS` referral reward. Already included in `total`, not in `earned`.
+     *
+     * @return self
+     */
+    public function setReferrerEarned($referrerEarned)
+    {
+        if (is_null($referrerEarned)) {
+            array_push($this->openAPINullablesSetToNull, 'referrerEarned');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('referrerEarned', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['referrerEarned'] = $referrerEarned;
+
+        return $this;
+    }
+
+    /**
+     * Gets refereeEarned
+     *
+     * @return float|null
+     */
+    public function getRefereeEarned()
+    {
+        return $this->container['refereeEarned'];
+    }
+
+    /**
+     * Sets refereeEarned
+     *
+     * @param float|null $refereeEarned Total points credited as a referee from a `LOYALTY_POINTS` referral reward. Already included in `total`, not in `earned`.
+     *
+     * @return self
+     */
+    public function setRefereeEarned($refereeEarned)
+    {
+        if (is_null($refereeEarned)) {
+            array_push($this->openAPINullablesSetToNull, 'refereeEarned');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('refereeEarned', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['refereeEarned'] = $refereeEarned;
 
         return $this;
     }

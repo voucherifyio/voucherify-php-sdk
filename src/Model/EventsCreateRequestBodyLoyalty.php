@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * EventsCreateRequestBodyLoyalty Class Doc Comment
  *
  * @category Class
- * @description If an earning rule in a loyalty program is based on a custom event. This objects let&#39;s you specify the loyalty card to which the custom event should be attributed to.
+ * @description If an earning rule in a **legacy loyalty** campaign is based on a custom event, use this object to specify the loyalty card to which the custom event should be attributed.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

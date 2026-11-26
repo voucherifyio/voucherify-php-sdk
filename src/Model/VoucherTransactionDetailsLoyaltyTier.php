@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * VoucherTransactionDetailsLoyaltyTier Class Doc Comment
  *
  * @category Class
- * @description Contains information about the loyalty tier that is mapped for the earning rule and used in the transaction.
+ * @description Contains information about the legacy loyalty tier that is mapped for the earning rule and used in the transaction.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

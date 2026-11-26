@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **object** | **string** | The type of the object represented by JSON. | [optional] [default to 'voucher']
 **campaign** | **string** | Campaign name | [optional]
 **gift** | [**\OpenAPI\Client\Model\Gift**](Gift.md) |  | [optional]
-**loyaltyCard** | **object** | Defines the loyalty card details. | [optional]
+**loyaltyCard** | **object** | Defines the legacy loyalty card details. | [optional]
 **discount** | [**\OpenAPI\Client\Model\Discount**](Discount.md) |  | [optional]
 **isReferralCode** | **bool** | Flag indicating whether this voucher is a referral code; &#x60;true&#x60; for campaign type &#x60;REFERRAL_PROGRAM&#x60;. | [optional]
 

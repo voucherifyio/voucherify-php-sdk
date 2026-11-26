@@ -317,6 +317,7 @@ class V2LoyaltiesEarningRulesGetResponseBody implements ModelInterface, ArrayAcc
     public const STATUS_DRAFT = 'DRAFT';
     public const STATUS_ACTIVE = 'ACTIVE';
     public const STATUS_INACTIVE = 'INACTIVE';
+    public const STATUS_DELETED = 'DELETED';
     public const OBJECT_EARNING_RULE = 'earning_rule';
 
     /**
@@ -330,6 +331,7 @@ class V2LoyaltiesEarningRulesGetResponseBody implements ModelInterface, ArrayAcc
             self::STATUS_DRAFT,
             self::STATUS_ACTIVE,
             self::STATUS_INACTIVE,
+            self::STATUS_DELETED,
         ];
     }
 
@@ -551,7 +553,7 @@ class V2LoyaltiesEarningRulesGetResponseBody implements ModelInterface, ArrayAcc
     /**
      * Sets status
      *
-     * @param string|null $status Current status. `DELETED` also exists internally but deleted rules are excluded from API reads.
+     * @param string|null $status Current status. `DELETED` is returned only by the delete operation.
      *
      * @return self
      */

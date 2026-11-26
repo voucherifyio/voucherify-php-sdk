@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltiesEarningRulesListResponseBody Class Doc Comment
  *
  * @category Class
- * @description Response body schema for listing earning rules using **GET** &#x60;v1/loyalties/{campaignId}/earning-rules&#x60; endpoint.
+ * @description **Legacy loyalty.** Response body schema for listing earning rules using **GET** &#x60;v1/loyalties/{campaignId}/earning-rules&#x60; endpoint.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

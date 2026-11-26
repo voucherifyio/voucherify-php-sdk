@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * LoyaltyTiersExpirationAll Class Doc Comment
  *
  * @category Class
- * @description Defines the Loyalty Tiers Expiration.
+ * @description **Legacy loyalty.** Defines the Loyalty Tiers Expiration.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

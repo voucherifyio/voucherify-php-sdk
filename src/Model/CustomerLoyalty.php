@@ -36,6 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * CustomerLoyalty Class Doc Comment
  *
  * @category Class
+ * @description Summary of the customer&#39;s **legacy loyalty** activity: points on loyalty cards and referred customers. Loyalty hub memberships are listed separately under &#x60;loyalty_memberships&#x60; on the customer object.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -317,7 +318,7 @@ class CustomerLoyalty implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets points
      *
-     * @param int|null $points Customer's loyalty points minus expired for all loyalty cards which the customer has.
+     * @param int|null $points Customer's loyalty points minus expired points for all loyalty cards (**legacy loyalty**) which the customer has.
      *
      * @return self
      */
@@ -385,7 +386,7 @@ class CustomerLoyalty implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets campaigns
      *
-     * @param array<string,\OpenAPI\Client\Model\CustomerLoyaltyCampaignsEntry>|null $campaigns Contains campaigns with details about point balances and how many customers were referred by the customer.
+     * @param array<string,\OpenAPI\Client\Model\CustomerLoyaltyCampaignsEntry>|null $campaigns Contains **legacy loyalty** and referral campaigns with details about point balances and how many customers were referred by the customer.
      *
      * @return self
      */
